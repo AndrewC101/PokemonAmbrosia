@@ -120,12 +120,12 @@ CherrygroveCityGuideGent:
 	db "MAP CARD@"
 
 GuideGentRunningShoesText:
-    text "Here these will"
+    text "Here, these will"
     line "help you keep"
     cont "up with me."
 
     para "When you put"
-    line "these on you will"
+    line "these on, you will"
     cont "run by default."
 
     para "You can then"
@@ -138,7 +138,7 @@ GuideGentRunningShoesText:
     line "be running"
     cont "indoors."
 
-    para "Here I'll put"
+    para "Here, I'll put"
     line "these on you!"
     done
 
@@ -433,7 +433,7 @@ GuideGentIntroText:
 
 	para "You're starting"
 	line "a great adventure"
-	cont "aren't you."
+	cont "aren't you?"
 
 	para "I was young"
 	line "once too..."
@@ -470,7 +470,7 @@ GuideGentMartText:
 	para "But this one"
 	line "rarely has much."
 
-	para "The don't even"
+	para "They don't even"
 	line "have #BALLS"
 	cont "right now."
 	done
@@ -669,7 +669,7 @@ CherrygroveYoungsterText_HavePokedex:
 	done
 
 MysticWaterGuyTextBefore:
-	text "Here you can have"
+	text "Here, you can have"
 	line "this."
 	para "Trust me..."
 	para "I wont be needing"
@@ -681,7 +681,7 @@ MysticWaterGuyTextAfter:
 	line "already filled my"
 	cont "PC with nothing"
 	cont "but MAGIKARP but I"
-	cont "just can't stop."
+	cont "just can't stop!"
 	para "I need help, I'm"
 	line "hoarding these"
 	cont "things."
@@ -721,8 +721,8 @@ EvilOldManScript:
 	end
 
 takeLifeOrbText:
-    text "Here take this for"
-    line "your trouble."
+    text "Here, take this"
+    line "for your trouble."
 
     para "Heh heh heh."
     done

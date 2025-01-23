@@ -593,7 +593,7 @@ CooltrainerfCaraSeenText:
 	done
 
 CooltrainerfCaraBeatenText:
-	text "I tried CLAIR."
+	text "I tried, CLAIR."
 	done
 
 CooltrainerfCaraAfterBattleText:

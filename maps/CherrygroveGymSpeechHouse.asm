@@ -33,7 +33,7 @@ CherrygroveGymSpeechHouseBugCatcherText:
 	line "I'm going to be a"
 	cont "GYM LEADER!"
 
-	para "Im going to show"
+	para "I'm going to show"
 	line "that WALLACE not"
 	cont "to pick on my"
 	cont "family!"

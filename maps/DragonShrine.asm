@@ -378,7 +378,7 @@ DragonShrineElderGreetingText:
 
 	para "To be worthy to"
 	line "yield such a"
-	cont "devine power"
+	cont "divine power"
 	cont "I must test you."
 
 	para "Prepare for the"
@@ -400,19 +400,19 @@ DragonShrineQuestion2Text:
 DragonShrineQuestion3Text:
 	text "Which of these"
 	line "DRAGONS has the"
-	cont "greatest ATTACK."
+	cont "greatest ATTACK?"
 	done
 
 DragonShrineQuestion4Text:
 	text "Which of these"
 	line "DRAGONS has the"
-	cont "least weaknesses."
+	cont "least weaknesses?"
 	done
 
 DragonShrineQuestion5Text:
 	text "Which of these"
 	line "DRAGONS has the"
-	cont "most HP."
+	cont "most HP?"
 	done
 
 DragonShrinePassedTestText:
@@ -508,7 +508,7 @@ DragonShrineClairsGrandfatherText:
 	text "CLAIR is a"
 	line "mighty trainer."
 
-	para "But here ego and"
+	para "But her ego and"
 	line "arrogance sits"
 	cont "just beneath the"
 	cont "surface."
@@ -665,7 +665,7 @@ DragonShrineRisingBadgeExplanationText:
 
 	para "It also enables"
 	line "#MON to use"
-	line "WATERFALL outside"
+	cont "WATERFALL outside"
 	cont "of battle."
 	done
 

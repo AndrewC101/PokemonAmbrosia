@@ -39,11 +39,11 @@ CianwoodPharmacyBookshelf:
 	jumpstd DifficultBookshelfScript
 
 PharmacistGiveSecretpotionText:
-	text "Who's there!"
+	text "Who's there?"
 
 	para "Ah a customer!"
 
-	para "Step right up a"
+	para "Step right up and"
 	line "be the first to"
 	cont "sample my wonder"
 	cont "cure!"

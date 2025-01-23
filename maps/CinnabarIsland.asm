@@ -101,7 +101,7 @@ CinnabarIslandBlueText:
 	line "with HOENN."
 
 	para "You know what the"
-	line "LEAUGE does."
+	line "LEAGUE does?"
 
 	para "Nothing!"
 
@@ -135,8 +135,8 @@ CinnabarIslandGymSignText:
 	line "here…"
 
 	para "CINNABAR GYM has"
-	line "relocated to SEA-"
-	cont "FOAM ISLANDS."
+	line "relocated to"
+	cont "SEAFOAM ISLANDS."
 
 	para "BLAINE"
 	done

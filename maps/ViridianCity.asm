@@ -140,7 +140,7 @@ ViridianCityGrampsNearGymText:
 	line "here is very"
 	cont "busy trying to"
 	cont "do the jobs the"
-	cont "#MON LEAUGE"
+	cont "#MON LEAGUE"
 	cont "should be doing!"
 
 	para "BLUE will always"
@@ -169,7 +169,7 @@ ViridianCityGrampsNearGymBlueReturnedText:
 
 ViridianCityDreamEaterFisherText:
 	text "How did you get"
-	line "in here."
+	line "in here?"
 
 	para "What what!"
 
@@ -186,7 +186,7 @@ ViridianCityDreamEaterFisherText:
 	cont "in these fractious"
 	cont "times!"
 
-	para "Here hurry and"
+	para "Here, hurry and"
 	line "take this!"
 
 	para "Look lively now!"

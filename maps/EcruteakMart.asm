@@ -26,7 +26,7 @@ EcruteakMartSuperNerdText:
 	para "Should I evolve"
 	line "my EEVEE into an"
 	cont "ESPEON or an"
-	cont "UMBREON."
+	cont "UMBREON?"
 
 	para "They are both"
 	line "cool in their"

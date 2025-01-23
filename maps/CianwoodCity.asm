@@ -264,8 +264,8 @@ CianwoodCityYoungsterText:
 	text "If you use FLY,"
 	line "you can get back"
 
-	para "to OLIVINE in-"
-	line "stantly."
+	para "to OLIVINE"
+	line "instantly."
 
 	para "As long as you"
 	line "have a"
@@ -683,7 +683,7 @@ CameHereToGetMedicine:
 
     para "I'm AMBER."
 
-    para "Hang on don't"
+    para "Hang on, don't"
     line "tell me..."
 
     para "You are here to"
@@ -728,7 +728,7 @@ HoenSpyBelieve:
     cont "friend."
 
     para "But you believe"
-    line "me right?"
+    line "me, right?"
     done
 
 SeeYouAtBeach:
@@ -850,7 +850,7 @@ HeIsASpy:
     done
 
 YesIAm:
-    text "Very good little"
+    text "Very good, little"
     line "Psychic."
 
     para "I am no meager"

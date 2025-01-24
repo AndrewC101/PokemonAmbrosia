@@ -80,7 +80,7 @@ GoldenrodBikeShopClerkAgreedText:
 	done
 
 BorrowedABicycleText:
-	text "<PLAYER> recieved a"
+	text "<PLAYER> received a"
 	line "BICYCLE."
 	done
 
@@ -90,7 +90,7 @@ GoldenrodBikeShopClerkFirstRateBikesText:
 	para "It can be fun"
 	line "I swear."
 
-	para "You know there is"
+	para "You know, there is"
 	line "a big road in"
 	cont "KANTO where you"
 	cont "need to ride a"

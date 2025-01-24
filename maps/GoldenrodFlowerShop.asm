@@ -108,7 +108,7 @@ GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 	text "I see you have"
 	line "beaten WHITNEY."
 
-	para "Here you can be"
+	para "Here, you can be"
 	line "trusted with this"
 	cont "HOLY WATER."
 	done

@@ -255,7 +255,7 @@ SSAquaGrandpaApproachesPlayerMovement:
 	step_end
 
 SSAquaCaptainExhaustingText:
-	text "My goodness that"
+	text "My goodness! That"
 	line "little girl asks"
 	cont "all sorts of"
 	cont "questions."
@@ -287,7 +287,7 @@ SSAquaCantFindGranddaughterText:
 
 	para "Granddaughter."
 
-	para "Have you seen her!"
+	para "Have you seen her?"
 
 	para "If you do please"
 	line "let her know"
@@ -309,7 +309,7 @@ SSAquaEntertainedGranddaughterText:
 	cont "best operatives."
 
 	para "We use the"
-	line "graddaughter"
+	line "granddaughter"
 	cont "persona as a"
 	cont "cover."
 
@@ -423,7 +423,7 @@ SSAquaGranddaughterHasToFindGrandpaText:
 	text "Hi! Will you play"
 	line "with us?"
 
-	para "Ah my grandad is"
+	para "Ah my granddad is"
 	line "looking for me."
 
 	para "OK I'll go back"
@@ -508,8 +508,8 @@ TwinsMegandpeg1BeatenText:
 
 TwinsMegandpeg1AfterBattleText:
 	text "My cat is the"
-	line "cutest don't"
-	cont "you think."
+	line "cutest, don't"
+	cont "you think?"
 	done
 
 TwinsMegandpeg2SeenText:
@@ -538,7 +538,7 @@ TwinsMegandpeg2AfterBattleText:
 PsychicRodneySeenText:
 	text "Have you heard"
 	line "SAFFRON has a"
-	cont "second GYM."
+	cont "second GYM?"
 
 	para "They showed up"
 	line "and beat up the"
@@ -574,7 +574,7 @@ PokefanmJeremySeenText:
 	cont "dark side!"
 
 	para "You're not a"
-	line "sequel fan are"
+	line "sequel fan, are"
 	cont "you?"
 	done
 

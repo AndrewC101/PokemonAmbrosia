@@ -85,7 +85,7 @@ GoldenrodDeptStoreB1FBlackBelt1Text:
 	done
 
 GoldenrodDeptStoreB1FBlackBelt2Text:
-	text "Hey kid you want"
+	text "Hey kid, you want"
 	line "to be strong like"
 	cont "me?"
 	para "I can hook you up"
@@ -98,7 +98,7 @@ GoldenrodDeptStoreB1FBlackBelt2Text:
 	done
 
 GoldenrodDeptStoreB1FBlackBelt3Text:
-	text "Hey you're a"
+	text "Hey, you're a"
 	line "trainer!"
 	para "I used to be a"
 	line "trainer at CHUCKs"

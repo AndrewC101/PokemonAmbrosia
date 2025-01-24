@@ -175,7 +175,7 @@ FuchsiaCityYoungsterText:
 	cont "HOENN."
 
 	para "We will never"
-	line "forget you KOGA."
+	line "forget you, KOGA."
 
 	para "You fought and"
 	line "died for us."
@@ -248,11 +248,11 @@ InvadedFuchsiaCityPokefanMText:
 	line "was going to"
 	cont "kill her."
 
-	para "his #MON!"
+	para "His #MON!"
 
 	para "How can anyone"
 	line "withstand such"
-	cont "forces of nature."
+	cont "forces of nature?"
 
 	para "We are doomed."
 	done
@@ -640,7 +640,7 @@ FuchsiaSelfConfidenceText1:
     done
 
 FuchsiaSelfDefeatText1:
-    text "What was that!"
+    text "What was that!?"
 
     para "No we will die!"
     done

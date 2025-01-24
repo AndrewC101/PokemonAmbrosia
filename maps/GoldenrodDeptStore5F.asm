@@ -100,7 +100,7 @@ GoldenrodDeptStore5FPokefanMText:
 
 	para "But there are"
 	line "better TMs at"
-	cont "the GAME CORNOR."
+	cont "the GAME CORNER."
 
 	para "Then there is"
 	line "the MOVE TUTOR"

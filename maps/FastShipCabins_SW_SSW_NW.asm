@@ -140,7 +140,7 @@ FirebreatherLyleAfterBattleText:
 
 BugCatcherKenSeenText:
 	text "There used to be"
-	line "a big forrest in"
+	line "a big forest in"
 	cont "VIRIDIAN."
 
 	para "It was ravaged"

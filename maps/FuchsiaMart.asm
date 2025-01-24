@@ -37,7 +37,7 @@ FuchsiaMartCooltrainerFScript:
     jumptextfaceplayer FuchsiaMartCooltrainerFText_Saved
 
 FuchsiaMartFisherText:
-	text "Aw cool I can"
+	text "Aw cool, I can"
 	line "buy MAX REVIVE"
 	cont "here!"
 
@@ -63,7 +63,7 @@ FuchsiaMartFisherText_Saved:
 	line "us all."
 
 	para "Please allow me"
-	line "to but you some"
+	line "to buy you some"
 	cont "MAX REVIVE!"
 	done
 
@@ -90,7 +90,7 @@ FuchsiaMartCooltrainerFText_Invaded:
 	done
 
 FuchsiaMartCooltrainerFText_Saved:
-	text "Yo saved me!"
+	text "You saved me!"
 
 	para "I'm not going to"
 	line "end up as a"

@@ -99,10 +99,10 @@ GruntM24AfterBattleText:
 	done
 
 DirectorIntroText:
-	text "LANCE is that"
+	text "LANCE, is that"
 	line "you?"
 
-	para "Oh sorry I"
+	para "Oh sorry, I"
 	line "thought you"
 	cont "were somebody"
 	cont "else."
@@ -134,7 +134,7 @@ DirectorAfterText:
 
 	para "If TEAM ROCKET"
 	line "control the"
-	cont "transmitter they"
+	cont "transmitter, they"
 	cont "could do terrible"
 	cont "things."
 

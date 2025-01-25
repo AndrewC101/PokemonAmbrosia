@@ -386,7 +386,7 @@ EusineAfterText:
 	para "I know we will"
 	line "meet again."
 
-	para "Good luck"
+	para "Good luck,"
 	line "<PLAYER>."
 	done
 
@@ -986,8 +986,8 @@ ByeBye:
     cont "people from the"
     cont "forces of HOENN."
 
-    para "Good luck"
-    line "<PLAYER>"
+    para "Good luck,"
+    line "<PLAYER>."
     done
 
 Movement_PsychicGirlAppearsAgain:

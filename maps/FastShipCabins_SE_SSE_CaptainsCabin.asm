@@ -303,7 +303,7 @@ SSAquaEntertainedGranddaughterText:
 	para "CHAMPION <PLAYER>."
 
 	para "I am in fact a"
-	line "secret angent and"
+	line "secret agent and"
 	cont "this little girl"
 	cont "is one of our"
 	cont "best operatives."

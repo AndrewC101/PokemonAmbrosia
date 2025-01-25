@@ -606,7 +606,7 @@ GoldenrodCityMoveTutorNotYetText:
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "50000."
+	line "¥50000."
 
 	para "Do you accept?"
 	done

@@ -916,7 +916,7 @@ DrownThem:
 KittyHelp:
     text "Ahhhhh!"
 
-    para "KITTY HELP!"
+    para "KITTY, HELP!"
     done
 
 HoenSpyBegs:
@@ -954,9 +954,9 @@ ThanksHereIsTm:
     cont "called KITTY"
     cont "here."
 
-    para "Don't worry KITTYS"
-    line "trainer doesn't"
-    cont "mind."
+    para "Don't worry,"
+    line "KITTY's trainer"
+    cont "doesn't mind."
 
     para "You might have"
     line "latent Psychic"

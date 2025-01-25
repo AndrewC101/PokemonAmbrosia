@@ -496,7 +496,7 @@ PokemaniacDonaldSeenText:
 	para "I played slots"
 	line "for months."
 
-	para "I quite my"
+	para "I quit my"
 	line "job."
 
 	para "Then I finally"
@@ -611,7 +611,7 @@ GoldenrodUndergroundYoungerHaircutBrotherAllDoneText:
 	done
 
 GoldenrodUndergroundYoungerHaircutBrotherHowDisappointingText:
-	text "No? "
+	text "No?"
 	line "How disappointing!"
 	done
 

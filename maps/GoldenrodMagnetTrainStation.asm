@@ -161,7 +161,7 @@ GoldenrodMagnetTrainStationGentlemanText:
 	line "JOHTO much closer"
 	cont "to KANTO."
 
-	para "Well SAFFRON at"
+	para "Well, SAFFRON at"
 	line "least."
 
 	para "I don't want to"

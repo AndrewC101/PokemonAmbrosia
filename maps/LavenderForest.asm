@@ -154,7 +154,7 @@ AgathaSisterScript:
 AgathaSeenText:
     text "It's been two"
     line "years since you"
-    cont "left me sister."
+    cont "left me, sister."
 
     para "I still find I"
     line "have guilt any"
@@ -179,7 +179,7 @@ AgathaSeenText2:
     cont "member."
 
     para "Last time HOENN"
-    line "attacked she"
+    line "attacked, she"
     cont "defended our"
     cont "home."
 
@@ -195,7 +195,7 @@ AgathaSeenText2:
 
     para "Will you help"
     line "me gain their"
-    cont "respect."
+    cont "respect?"
     done
 
 AgathaBeatenText:

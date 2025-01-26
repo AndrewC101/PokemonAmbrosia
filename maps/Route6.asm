@@ -212,7 +212,7 @@ InvaderBackstaberScript:
 
 InvaderBackstabberSeenText:
 	text "You might think"
-	line "that wining every"
+	line "that winning every"
 	cont "match in one hit"
 	cont "would get boring."
 
@@ -224,7 +224,7 @@ InvaderBackstabberVictoryText:
 	done
 
 InvaderBackstabberBeatenText:
-	text "You jus got"
+	text "You just got"
 	line "lucky."
 	done
 

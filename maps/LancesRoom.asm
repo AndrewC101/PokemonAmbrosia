@@ -310,7 +310,7 @@ LancesRoomElmText1:
 
 	para "You did it!"
 
-	para "I saw the battle"
+	para "I saw the battle,"
 	line "it was terrifying!"
 
 	para "I've never seen"

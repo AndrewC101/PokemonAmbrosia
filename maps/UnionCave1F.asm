@@ -237,7 +237,7 @@ UnionCave1FFieldMon3Script:
 	faceplayer
 	cry ONIX
 	pause 15
-	loadwildmon ONIX, 15
+	loadwildmon ONIX, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

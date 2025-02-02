@@ -478,7 +478,7 @@ SproutTower3FFieldMon3Script:
 	faceplayer
 	cry HONEDGE
 	pause 15
-	loadwildmon HONEDGE, 13
+	loadwildmon HONEDGE, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

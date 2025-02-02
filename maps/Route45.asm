@@ -618,7 +618,7 @@ Route45FieldMon7Script:
 	faceplayer
 	cry PONYTA
 	pause 15
-	loadwildmon PONYTA, 14
+	loadwildmon PONYTA, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

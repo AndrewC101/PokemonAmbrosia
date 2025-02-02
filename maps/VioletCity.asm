@@ -361,7 +361,7 @@ VioletCityFieldMon2Script:
 	faceplayer
 	cry HOOTHOOT
 	pause 15
-	loadwildmon HOOTHOOT, 11
+	loadwildmon HOOTHOOT, 9
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -383,7 +383,7 @@ VioletCityFieldMon4Script:
 	faceplayer
 	cry STARLY
 	pause 15
-	loadwildmon STARLY, 12
+	loadwildmon STARLY, 9
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
@@ -395,7 +395,7 @@ VioletCityFieldMon5Script:
 	faceplayer
 	cry MEOWTH
 	pause 15
-	loadwildmon MEOWTH, 12
+	loadwildmon MEOWTH, 10
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

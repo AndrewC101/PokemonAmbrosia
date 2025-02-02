@@ -194,7 +194,7 @@ UnionCaveB1FFieldMon4Script:
 	faceplayer
 	cry GIBLE
 	pause 15
-	loadwildmon GIBLE, 18
+	loadwildmon GIBLE, 15
     loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

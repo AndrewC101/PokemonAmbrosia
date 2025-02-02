@@ -32,9 +32,9 @@ IcePathB3FFieldMon1Script:
 
 IcePathB3FFieldMon2Script:
 	faceplayer
-	cry PILOSWINE
+	cry ARCTOZOLT
 	pause 15
-	loadwildmon PILOSWINE, 34
+	loadwildmon ARCTOZOLT, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -45,7 +45,7 @@ IcePathB3FFieldMon3Script:
 	faceplayer
 	cry PILOSWINE
 	pause 15
-	loadwildmon PILOSWINE, 33
+	loadwildmon PILOSWINE, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

@@ -151,9 +151,9 @@ SupernerdMarkusSeenText:
 	para "I will truly"
 	line "miss him."
 
-	para "Now how do I"
+	para "Now, how do I"
 	line "get out of"
-	cont "here."
+	cont "here?"
 	done
 
 SupernerdMarkusBeatenText:

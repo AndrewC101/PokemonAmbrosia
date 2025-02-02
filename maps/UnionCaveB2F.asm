@@ -204,7 +204,7 @@ UnionCaveB2FFieldMon4Script:
 	faceplayer
 	cry GIBLE
 	pause 15
-	loadwildmon STEELIX, 42
+	loadwildmon STEELIX, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

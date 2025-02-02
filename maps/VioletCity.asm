@@ -372,7 +372,7 @@ VioletCityFieldMon3Script:
 	faceplayer
 	cry STARAPTOR
 	pause 15
-	loadwildmon STARAPTOR, 44
+	loadwildmon STARAPTOR, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

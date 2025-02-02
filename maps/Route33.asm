@@ -257,7 +257,7 @@ Route33FieldMon2Script:
 	faceplayer
 	cry DROWZEE
 	pause 15
-	loadwildmon DROWZEE, 16
+	loadwildmon DROWZEE, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

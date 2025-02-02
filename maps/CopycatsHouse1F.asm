@@ -64,7 +64,7 @@ CopycatsHouse1FPokefanFText:
 	cont "houses."
 
 	para "What is this city"
-	cont "coming to."
+	line "coming to."
 	done
 
 CopycatsHouse1FPokefanFText_ReturnedMachinePart:

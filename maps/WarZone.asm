@@ -251,8 +251,8 @@ WarZoneOakText:
     cont "ability."
 
     para "Perhaps you might"
-    line "even be be able"
-    cont "to defeat him."
+    line "even be able to"
+    cont "defeat him."
 
     para "RED."
 

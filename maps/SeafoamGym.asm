@@ -137,11 +137,11 @@ BlaineFightDoneText:
 	line "waters I am the"
 	cont "first line of"
 	cont "defense against"
-	cont "any attcker."
+	cont "any attacker."
 
 	para "I will endure any"
 	line "hardship to"
-	cont "fulfil this vital"
+	cont "fulfill this vital"
 	cont "purpose!"
 	done
 

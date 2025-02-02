@@ -140,15 +140,12 @@ ViridianCityGrampsNearGymText:
 	line "here is very"
 	cont "busy trying to"
 	cont "do the jobs the"
-	cont "#MON LEAUGE"
+	cont "#MON LEAGUE"
 	cont "should be doing!"
 
-	para "BLUE will always"
-	line "be a CHAMPION to"
-	cont "to us."
-
-	para "The peoples"
-	line "CHAMPION."
+	para "BLUE is currently"
+	line "away visiting"
+	cont "CINNABAR."
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:

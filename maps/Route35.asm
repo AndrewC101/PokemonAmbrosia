@@ -635,7 +635,7 @@ Route35FieldMon4Script:
 	faceplayer
 	cry JIGGLYPUFF
 	pause 15
-	loadwildmon JIGGLYPUFF, 27
+	loadwildmon JIGGLYPUFF, 24
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

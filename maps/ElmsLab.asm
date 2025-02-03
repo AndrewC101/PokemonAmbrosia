@@ -825,6 +825,13 @@ ElmBeatRocketsText:
 	para "You are a"
 	line "remarkable"
 	cont "trainer."
+	para "You should go"
+	line "see the MOVE TUTOR"
+	cont "in GOLDENROD if"
+	cont "have 8 badges."
+	para "His moves will"
+	line "help you I am"
+	cont "sure."
 	done
 
 ElmStandardText:
@@ -1290,6 +1297,11 @@ ElmGiveMasterBallText2:
 
 	para "any #MON"
 	line "without fail."
+
+	para "At least there is"
+	line "no known #MON"
+	cont "strong enough to"
+	cont "break out of it."
 
 	para "It's given only to"
 	line "recognized #MON"

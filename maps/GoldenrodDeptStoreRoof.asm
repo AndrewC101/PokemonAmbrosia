@@ -104,7 +104,7 @@ GoldenrodDeptStoreRoofPokefanFText:
 	done
 
 GoldenrodDeptStoreRoofFisherText:
-	text "No my precious"
+	text "No! My precious"
 	line "dolls, they are"
 	cont "out of #DOLLS!"
 	para "They will need a"
@@ -122,17 +122,17 @@ GoldenrodDeptStoreRoofTwinText:
 	done
 
 GoldenrodDeptStoreRoofSuperNerdOhWowText:
-	text "Hey baby, yeah I"
+	text "Hey baby, yeah, I"
 	line "got the POTIONS."
 	para "You are the only"
-	line "POTION I need"
+	line "POTION I need,"
 	cont "baby."
-	para "Hang on a moment"
+	para "Hang on a moment,"
 	line "darling."
 	done
 
 GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
-	text "Who are you!"
+	text "Who are you!?"
 	para "You make a habit"
 	line "of just waltzing"
 	cont "up to strangers"
@@ -181,7 +181,7 @@ Binoculars1Text:
 	done
 
 Binoculars2Text:
-	text "To the East a huge"
+	text "To the EAST a huge"
 	line "silver mountain"
 	cont "dominates the"
 	cont "skyline."
@@ -189,7 +189,7 @@ Binoculars2Text:
 	done
 
 Binoculars3Text:
-	text "To the south the"
+	text "To the SOUTH the"
 	line "security guard has"
 	cont "his binoculars"
 	cont "out..."

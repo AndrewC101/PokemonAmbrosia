@@ -295,12 +295,12 @@ ChuckExplainBadgeText:
 
 BeatJasmineText:
 	text "You done well but"
-	line "you have beat both"
+	line "you must beat both"
 	cont "me and JASMINE in"
 	cont "OLIVINE to"
 	cont "increase your"
 	cont "level caps."
-	para "Hey I don't make"
+	para "Hey, I don't make"
 	line "the rules!"
 	done
 
@@ -354,14 +354,14 @@ BlackbeltYoshiAfterText:
 	text "Are you a fan"
 	line "of DBZ?"
 
-	para "Here I will"
+	para "Here, I will"
 	line "lend you my"
 	cont "complete dvd"
 	cont "collection!"
 	done
 
 BlackbeltLaoSeenText:
-	text "The best villian"
+	text "The best villain"
 	line "is clearly CELL."
 
 	para "FRIEZA is over"

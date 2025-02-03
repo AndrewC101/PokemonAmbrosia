@@ -165,9 +165,9 @@ PryceText_Intro:
 	cont "begged for help."
 
 	para "If I had tried"
-	line "to help him we"
-	cont "both would have"
-	cont "died."
+	line "to help him"
+	cont "we both would"
+	cont "have died."
 
 	para "One day I was"
 	line "careless and found"
@@ -182,8 +182,8 @@ PryceText_Intro:
 	cont "picked me up"
 	cont "and saved me."
 
-	para "After that I"
-	line "channeled all"
+	para "After that"
+	line "I channeled all"
 	cont "my passion into"
 	cont "battle."
 	done
@@ -200,7 +200,7 @@ PryceText_Impressed:
 	done
 
 PryceWinText:
-    text "you are too"
+    text "You are too"
     line "young."
     done
 
@@ -212,7 +212,7 @@ Text_ReceivedGlacierBadge:
 PryceText_GlacierBadgeSpeech:
     text "With the"
     line "GLACIERBADGE"
-    line "you can now train"
+    cont "you can now train"
     cont "#MON up to"
     cont "level 60."
 
@@ -379,7 +379,7 @@ MahoganyGymGuideText:
 	done
 
 MahoganyGymGuideWinText:
-	text "HA you kicked"
+	text "HA! You kicked"
 	line "that old guys"
 	cont "butt!"
 

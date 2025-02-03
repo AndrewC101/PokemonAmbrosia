@@ -247,7 +247,7 @@ MahoganySelfText3:
 
 MahoganySelfText4:
     text "Even if he"
-    line "weren't..."
+    line "wasn't..."
 
     para "You would get"
     line "him killed."

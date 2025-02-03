@@ -166,7 +166,7 @@ ViridianCityGrampsNearGymBlueReturnedText:
 
 ViridianCityDreamEaterFisherText:
 	text "How did you get"
-	line "in here."
+	line "in here?"
 
 	para "What what!"
 
@@ -183,7 +183,7 @@ ViridianCityDreamEaterFisherText:
 	cont "in these fractious"
 	cont "times!"
 
-	para "Here hurry and"
+	para "Here, hurry and"
 	line "take this!"
 
 	para "Look lively now!"

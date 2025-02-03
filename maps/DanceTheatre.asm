@@ -233,7 +233,7 @@ KimonoGirlMikiSeenText:
 
 	para "What kind of"
 	line "#MON are"
-	cont "you."
+	cont "you?"
 	done
 
 KimonoGirlMikiBeatenText:

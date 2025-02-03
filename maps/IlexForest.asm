@@ -82,7 +82,7 @@ IlexForestCharcoalApprenticeScript:
 
 ApprenticeGivesCutText:
     text "My master gave"
-    line "gave me this"
+    line "me this"
     cont "special move."
 
     para "I'm supposed to"
@@ -93,7 +93,7 @@ ApprenticeGivesCutText:
     line "#MON that are"
     cont "able to do it."
 
-    para "Here maybe you"
+    para "Here, maybe you"
     line "can try it."
 
     para "You don't need to"
@@ -103,7 +103,7 @@ ApprenticeGivesCutText:
 
     para "As long as it"
     line "able to learn"
-    cont "the move it"
+    cont "the move, it"
     cont "will be able"
     cont "to use it."
 

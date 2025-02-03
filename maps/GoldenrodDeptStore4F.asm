@@ -38,13 +38,13 @@ GoldenrodDeptStore4FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore4FCooltrainerMText:
-	text "PROTIEN!"
+	text "PROTEIN!"
 
 	para "I NEED!"
 
 	para "MORE!"
 
-	para "PROTIEN..."
+	para "PROTEIN..."
 
 	para "RAWARRRRUH!!"
 	done

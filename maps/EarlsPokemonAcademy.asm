@@ -161,7 +161,7 @@ AcademyEarlSpinMovement:
 AcademyEarlIntroText:
 	text "I am EARL but you"
 	line "will call me"
-	cont "SENSAI."
+	cont "SENSEI."
 	para "Now tell me, do"
 	line "you want to be the"
 	cont "very best, like no"

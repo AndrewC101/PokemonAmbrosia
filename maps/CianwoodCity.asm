@@ -264,8 +264,8 @@ CianwoodCityYoungsterText:
 	text "If you use FLY,"
 	line "you can get back"
 
-	para "to OLIVINE in-"
-	line "stantly."
+	para "to OLIVINE"
+	line "instantly."
 
 	para "As long as you"
 	line "have a"
@@ -386,7 +386,7 @@ EusineAfterText:
 	para "I know we will"
 	line "meet again."
 
-	para "Good luck"
+	para "Good luck,"
 	line "<PLAYER>."
 	done
 
@@ -683,7 +683,7 @@ CameHereToGetMedicine:
 
     para "I'm AMBER."
 
-    para "Hang on don't"
+    para "Hang on, don't"
     line "tell me..."
 
     para "You are here to"
@@ -728,7 +728,7 @@ HoenSpyBelieve:
     cont "friend."
 
     para "But you believe"
-    line "me right?"
+    line "me, right?"
     done
 
 SeeYouAtBeach:
@@ -850,7 +850,7 @@ HeIsASpy:
     done
 
 YesIAm:
-    text "Very good little"
+    text "Very good, little"
     line "Psychic."
 
     para "I am no meager"
@@ -916,7 +916,7 @@ DrownThem:
 KittyHelp:
     text "Ahhhhh!"
 
-    para "KITTY HELP!"
+    para "KITTY, HELP!"
     done
 
 HoenSpyBegs:
@@ -954,9 +954,9 @@ ThanksHereIsTm:
     cont "called KITTY"
     cont "here."
 
-    para "Don't worry KITTYS"
-    line "trainer doesn't"
-    cont "mind."
+    para "Don't worry,"
+    line "KITTY's trainer"
+    cont "doesn't mind."
 
     para "You might have"
     line "latent Psychic"
@@ -986,8 +986,8 @@ ByeBye:
     cont "people from the"
     cont "forces of HOENN."
 
-    para "Good luck"
-    line "<PLAYER>"
+    para "Good luck,"
+    line "<PLAYER>."
     done
 
 Movement_PsychicGirlAppearsAgain:

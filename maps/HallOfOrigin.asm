@@ -103,7 +103,7 @@ OakBeatenArceusText:
     para "You achieved the"
     line "unprecedented."
 
-    para "You destiny is"
+    para "Your destiny is"
     line "fulfilled beyond"
     cont "your knowing."
 
@@ -452,7 +452,7 @@ MasterOakOfferPrizeText:
 
 MasterOakAfterBattleText:
     text "My existence has"
-    line "has found purpose"
+    line "found purpose"
     cont "through you."
 
     para "You shall live"
@@ -811,7 +811,7 @@ MasterBlueSeenText:
     done
 
 MasterBlueBeatenText:
-    text "Not bad kid."
+    text "Not bad, kid."
     done
 
 MasterBlueAfterBattleText:
@@ -822,7 +822,7 @@ MasterBlueAfterBattleText:
     line "feel like my"
     cont "old self."
 
-    para "what was it I"
+    para "What was it I"
     line "used to say..."
 
     para "Smell ya later!"
@@ -1063,7 +1063,7 @@ MasterWallaceSeenText:
 MasterWallaceWinText:
     text "Do you now see"
     line "the beauty of"
-    cont "HOENN."
+    cont "HOENN?"
     done
 
 MasterWallaceLoseText:
@@ -1084,15 +1084,15 @@ MasterWallaceAfterBattleText:
     para "I have ruined"
     line "many lives."
 
-    para "I wish saw it"
+    para "I wish I saw it"
     line "earlier."
 
     para "I don't deserve"
     line "to live."
 
-    para "I dedicate the"
+    para "I'll dedicate the"
     line "rest of my"
-    cont "life to making"
+    cont "life to make"
     cont "HOENN the defender"
     cont "of the world."
     done
@@ -1310,7 +1310,7 @@ RolePlay7PrizeText:
     text "We finished a"
     line "new game."
 
-    para "Here take this"
+    para "Here, take this"
     line "for playing."
     done
 

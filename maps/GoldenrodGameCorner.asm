@@ -438,7 +438,7 @@ GoldenrodGameCornerGentlemanText:
 	line "months to get"
 	cont "enough coins."
 
-	para "Patients is the"
+	para "Patience is the"
 	line "ultimate move."
 	done
 

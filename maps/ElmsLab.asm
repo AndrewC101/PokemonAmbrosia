@@ -1108,7 +1108,7 @@ ElmAfterTheftText1:
 	line "secret AGENT."
 
 	para "Did he give you"
-	line "anything."
+	line "anything?"
 	done
 
 ElmAfterTheftText2:
@@ -1156,16 +1156,16 @@ ElmAfterTheftText5:
 	para "You need to seek"
 	line "out #MON GYMS"
 	cont "and defeat the"
-	cont "GYM LEADER."
+	cont "GYM LEADERS."
 
 	para "When you have"
 	line "beaten all 8"
-	cont "GYMS you can"
+	cont "GYMS, you can"
 	cont "take on the ELITE"
 	cont "FOUR."
 
 	para "If you defeat"
-	line "them you gain"
+	line "them, you gain"
 	cont "the title of"
 	cont "CHAMPION."
 
@@ -1288,8 +1288,8 @@ ElmGiveMasterBallText2:
 	para "It's the ultimate"
 	line "BALL! It'll catch"
 
-	para "any #MON with-"
-	line "out fail."
+	para "any #MON"
+	line "without fail."
 
 	para "It's given only to"
 	line "recognized #MON"
@@ -1311,7 +1311,7 @@ ElmGiveTicketText1:
 	cont "the first JOHTO"
 	cont "CHAMPION!"
 
-    para "you can now train"
+    para "You can now train"
     line "#MON up to"
     cont "level 85."
 
@@ -1374,7 +1374,7 @@ ElmKantoExplainText:
 	cont "CHAMPION of JOHTO"
 	cont "you have immense"
 	cont "responsibilities."
-	para "You first"
+	para "Your first"
 	line "responsibility is"
 	cont "to protect people"
 	cont "and #MON."
@@ -1905,7 +1905,7 @@ MumGoodbyeText:
     line "how strong you"
     cont "have become."
 
-    para "thanks for taking"
+    para "Thanks for taking"
     line "it easy on your"
     cont "father."
 
@@ -1923,11 +1923,11 @@ ELmsLabMovement_MumLeaves:
     step_end
 
 ElmsFinalWordsText:
-    text "You done the"
+    text "You've done the"
     line "right thing"
     cont "<PLAYER>."
 
-    para "You father wants"
+    para "Your father wants"
     line "to protect you."
 
     para "Now he knows it"

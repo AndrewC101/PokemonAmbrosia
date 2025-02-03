@@ -211,7 +211,7 @@ EcruteakTinTowerEntranceSageText_HearsClearBell:
 	para "It… It's sublime!"
 
 	para "I've never heard"
-	line "so beautiful a"
+	line "a so beautiful"
 	cont "sound before!"
 
 	para "That bell's chime"

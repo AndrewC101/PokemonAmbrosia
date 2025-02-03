@@ -188,7 +188,8 @@ CeruleanCitySuperNerdText:
 	cont "is sitting open."
 
 	para "It's a horrifying"
-	line "place with insanely"
+	line "place with"
+        cont "insanely"
 	cont "strong #MON."
 
 	para "Let's explore it!"

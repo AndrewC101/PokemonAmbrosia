@@ -341,10 +341,10 @@ PicnickerDebraBeatenText:
 
 PicnickerDebraAfterBattleText:
 	text "Are you the"
-	line "CHAMPION!"
+	line "CHAMPION!?"
 
 	para "Is your secret"
-	line "MOO MOO MILK!"
+	line "MOO MOO MILK!?"
 	done
 
 JugglerFritzSeenText:
@@ -377,7 +377,7 @@ SailorGarrettSeenText:
 	text "Did you feel that?"
 
 	para "Did we just get"
-	line "hit by a missile!"
+	line "hit by a missile!?"
 
 	para "Hull breach!!!"
 	done
@@ -388,10 +388,10 @@ SailorGarrettBeatenText:
 
 SailorGarrettAfterBattleText:
 	text "Where is your"
-	line "life jacket."
+	line "life jacket?"
 
 	para "You're not wearing"
-	line "it, are you mad!"
+	line "it, are you mad!?"
 	done
 
 FisherJonahSeenText:
@@ -469,7 +469,7 @@ SailorKennethBeatenText:
 	done
 
 SailorKennethAfterBattleText:
-	text "Come on you"
+	text "Come on, you"
 	line "don't need it!"
 
 	para "Your #MON"
@@ -479,7 +479,7 @@ SailorKennethAfterBattleText:
 TeacherShirleySeenText:
 	text "Did you hear there"
 	line "is now a JOHTO"
-	cont "CHAMPION."
+	cont "CHAMPION?"
 
 	para "This is awful!"
 
@@ -550,7 +550,7 @@ SchoolboyRickyBeatenText:
 SchoolboyRickyAfterBattleText:
 	text "I'm sorry."
 
-	para "I though I was"
+	para "I thought I was"
 	line "strong enough"
 	cont "to be the CHAMP."
 

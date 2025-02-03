@@ -123,7 +123,7 @@ HiFriendText:
 	text "Oh it's you, are"
 	line "you doing well?"
 	para "How about a drink?"
-	para "Hi if you have any"
+	para "If you have any"
 	line "friends you could"
 	cont "bring them around"
 	cont "here sometime..."
@@ -131,12 +131,12 @@ HiFriendText:
 
 MurderGivesThunderboltText:
     text "What are you"
-    line "doing!"
+    line "doing!?"
 
     para "Attacking me"
-    line "in my own home."
+    line "in my own home!"
 
-    para "Here look I"
+    para "Here, look, I"
     line "will forget this"
     cont "ever happened."
 

@@ -43,7 +43,7 @@ CinnabarPokecenter1FFisherText:
 	para "There is nothing"
 	line "to rebuild on."
 
-	para "Everyhting is"
+	para "Everything is"
 	line "gone."
 
 	para "Even BLAINE now"

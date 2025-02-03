@@ -36,7 +36,7 @@ CianwoodPokecenter1FSuperNerdScript:
 	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
 
 CianwoodPokecenter1FLassText:
-	text "I so sick of"
+	text "I'm so sick of"
 	line "all the muscle"
 	cont "heads here."
 

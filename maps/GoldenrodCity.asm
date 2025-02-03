@@ -342,7 +342,7 @@ GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
 
 	para "Couldn't you have"
 	line "waited another"
-	cont "day or two!"
+	cont "day or two?"
 
 	para "The RADIO TOWER"
 	line "share price could"
@@ -438,8 +438,8 @@ GoldenrodCityRocketScoutText2:
 	done
 
 GoldenrodCityRocket1Text:
-	text "Don't worry"
-	line "we are here to"
+	text "Don't worry."
+	line "We are here to"
 	cont "help."
 
 	para "Now go away."
@@ -472,7 +472,7 @@ GoldenrodCityRocket3Text:
 	done
 
 GoldenrodCityRocket4Text:
-	text "Man this is"
+	text "Man, this is"
 	line "boring!"
 
 	para "Just standing"
@@ -481,7 +481,7 @@ GoldenrodCityRocket4Text:
 
 	para "How am I meant"
 	line "to stand out"
-	cont "and get promoted."
+	cont "and get promoted?"
 	done
 
 GoldenrodCityRocket5Text:
@@ -501,7 +501,7 @@ GoldenrodCityRocket6Text:
 	para "I always wanted"
 	line "to be the hero!"
 
-	para "Never fear dear"
+	para "Never fear, dear"
 	line "citizen."
 
 	para "TEAM ROCKET"
@@ -606,7 +606,7 @@ GoldenrodCityMoveTutorNotYetText:
 
 GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "50000."
+	line "¥50000."
 
 	para "Do you accept?"
 	done
@@ -641,7 +641,7 @@ GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	done
 
 GoldenrodCityMoveTutorFarewellKidText:
-	text "Farwell CHAMPION!"
+	text "Farewell, CHAMPION!"
 	done
 
 GoldenrodCityMoveTutorBButText:

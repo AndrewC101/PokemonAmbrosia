@@ -47,7 +47,7 @@ DayOfWeekSiblingsHousePokedexText2:
 	cont "purest of souls."
 
 	para "So that we might"
-	line "make a devine"
+	line "make a divine"
 	cont "offering to the"
 	cont "one true GOD."
 

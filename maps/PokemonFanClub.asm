@@ -134,7 +134,7 @@ PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
 	cont "esteemed #MON"
 	cont "fans."
 
-	para "Excuss me."
+	para "Excuse me."
 
 	para "Are you here"
 	line "for the meeting?"
@@ -191,11 +191,11 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	para "Thank you for"
 	line "listening to me."
 
-	para "Surly now you must"
+	para "Surely now you must"
 	line "agree with my"
 	cont "assessment."
 
-	para "Here take this"
+	para "Here, take this"
 	line "for listening."
 	done
 

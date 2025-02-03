@@ -225,7 +225,7 @@ WhitneyBeforeText:
 	para "Just like me."
 
 	para "If you want to"
-	line "to a great"
+	line "be a great"
 	cont "trainer too"
 	cont "you will have"
 	cont "to beat me."
@@ -310,7 +310,7 @@ WhitneyAttractText:
 	line "love into power!"
 
 	para "Isn't that"
-	line "beautiful."
+	line "beautiful?"
 	done
 
 WhitneyGoodCryText:
@@ -391,7 +391,7 @@ BeautyVictoriaSeenText:
 	line "little trainer! "
 
 	para "Have you heard"
-	line "of DIANTHA!"
+	line "of DIANTHA?"
 
 	para "She is a beautiful"
 	line "actress and a"
@@ -462,7 +462,7 @@ GoldenrodGymGuideText:
 GoldenrodGymGuideWinText:
 	text "Looks like you"
 	line "upstaged them"
-	cont "all eh!"
+	cont "all, eh!"
 	done
 
 RematchTextWhitney:
@@ -473,7 +473,7 @@ RematchTextWhitney:
 
 RematchRefuseTextWhitney:
     text "I'm not good"
-    line "enough huh?"
+    line "enough, huh?"
 
     para "How Fetch!"
     done

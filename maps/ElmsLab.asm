@@ -828,7 +828,7 @@ ElmBeatRocketsText:
 	para "You should go"
 	line "see the MOVE TUTOR"
 	cont "in GOLDENROD if"
-	cont "have 8 badges."
+	cont "you have 8 badges."
 	para "His moves will"
 	line "help you I am"
 	cont "sure."

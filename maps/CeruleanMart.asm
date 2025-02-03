@@ -45,7 +45,7 @@ CeruleanMart_CooltrainerFText:
 	line "strong."
 
 	para "But she can't"
-	cont "keep boyfriends."
+	line "keep boyfriends."
 
 	para "She has high"
 	line "standards and"

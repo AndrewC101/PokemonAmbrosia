@@ -89,7 +89,7 @@ SlowpokeWellB2FFieldMon1Script:
 SlowpokeWellB2FFieldMon2Script:
 	cry SLOWBRO
 	pause 15
-	loadwildmon SLOWBRO, 45
+	loadwildmon SLOWBRO, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -99,7 +99,7 @@ SlowpokeWellB2FFieldMon2Script:
 SlowpokeWellB2FFieldMon3Script:
 	cry SLOWBRO
 	pause 15
-	loadwildmon SLOWBRO, 45
+	loadwildmon SLOWBRO, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -109,7 +109,7 @@ SlowpokeWellB2FFieldMon3Script:
 SlowpokeWellB2FFieldMon4Script:
 	cry SLOWBRO
 	pause 15
-	loadwildmon SLOWBRO, 45
+	loadwildmon SLOWBRO, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -119,7 +119,7 @@ SlowpokeWellB2FFieldMon4Script:
 SlowpokeWellB2FFieldMon5Script:
 	cry SLOWBRO
 	pause 15
-	loadwildmon SLOWBRO, 45
+	loadwildmon SLOWBRO, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

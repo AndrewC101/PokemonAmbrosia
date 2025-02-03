@@ -87,7 +87,7 @@ CeladonDeptStore3FGameboyKid2Text:
 	cont "forever."
 
 	para "Equivalent"
-	cont "exchange."
+	line "exchange."
 	done
 
 CeladonDeptStore3FSuperNerdText:

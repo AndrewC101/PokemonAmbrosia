@@ -167,26 +167,26 @@ MrPokemonsHouse_OakExits:
 	step_end
 
 MrPokemonIntroText1:
-	text "Who are you!"
+	text "Who are you!?"
 
-	para "A HOENN spy!"
+	para "A HOENN spy!?"
 
-	para "A double agent!"
+	para "A double agent!?"
 
 	para "...."
 
-	para "Sorry I've just"
+	para "Sorry, I've just"
 	line "spent six months"
 	cont "in HOENN as a"
 	cont "spy."
 
-	para "It's is hard to"
-	line "switch off you"
+	para "It's hard to"
+	line "switch off, you"
 	cont "know."
 	done
 
 MrPokemonIntroText2:
-	text "Here I smuggled"
+	text "Here, I smuggled"
 	line "this out of HOENN."
 	done
 
@@ -224,10 +224,10 @@ MrPokemonIntroText5:
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
-	text "You are returning"
+	text "Are you returning"
 	line "to PROF.ELM?"
 
-	para "Here. Your #MON"
+	para "Here, your #MON"
 	line "should have some"
 	cont "rest."
 	done
@@ -252,11 +252,11 @@ MrPokemonGiveRemembrallText:
     cont "moves they have"
     cont "forgotten too."
 
-    para "Here take it."
+    para "Here, take it."
 
     para "You might not"
-    line "need it now but"
-    cont "when you do it"
+    line "need it now, but"
+    cont "when you do, it"
     cont "will be a life"
     cont "saver."
     done
@@ -271,7 +271,7 @@ MrPokemonText_AlwaysNewDiscoveries:
 	cont "place."
 
 	para "It's easy to"
-	line "forget it's leader"
+	line "forget its leader"
 	cont "wants to bring"
 	cont "pain and death"
 	cont "to so many."
@@ -293,15 +293,14 @@ MrPokemonsHouse_OakText1:
 	cont "as strong as you"
 	cont "can."
 
-	para "Here this is the"
+	para "Here, this is the"
 	line "latest version of"
 	cont "#DEX."
 
 	para "It automatically"
 	line "records data on"
-
-	para "#MON you've"
-	line "seen or caught."
+	cont "#MON you've"
+	cont "seen or caught."
 
 	para "It's a hi-tech"
 	line "encyclopedia!"
@@ -350,12 +349,12 @@ MrPokemonsHouse_OakText2:
 	cont "battle, even the"
 	cont "ones that didn't"
 	cont "fight."
-	para "Here I'll turn it"
-	line "on for you!"
+	para "Here, I'll turn"
+	line "it on for you!"
 	para "You can always"
-	line "turn it off but"
+	line "turn it off, but"
 	cont "why would you do"
-	cont "that!"
+	cont "that?"
 
 	para "<PLAY_G>, I'm"
 	line "putting my faith"
@@ -371,9 +370,9 @@ MrPokemonsHouse_ForeignMagazinesText:
 	done
 
 MrPokemonsHouse_BrokenComputerText:
-	text "It's a big com-"
-	line "puter. Hmm. It's"
-	cont "broken."
+	text "It's a big"
+	line "computer."
+	cont "Hmm. It's broken."
 	done
 
 MrPokemonsHouse_StrangeCoinsText:

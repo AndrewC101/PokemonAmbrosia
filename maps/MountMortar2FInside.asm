@@ -117,7 +117,7 @@ SupernerdHughSeenText:
 
 	para "Did he send"
 	line "you to finish"
-	cont "the job!"
+	cont "the job!?"
 	done
 
 SupernerdHughBeatenText:

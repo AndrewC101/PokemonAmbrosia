@@ -32,10 +32,10 @@ MoveRelearnerScript:
 	end
 
 RelearnerIntroText:
-	text "Hello I'm the Move"
-	line "Relearner, I"
-	cont "remember it so"
-	cont "your don't have"
+	text "Hello, I'm the"
+	line "Move Relearner."
+	cont "I remember it so"
+	cont "you don't have"
 	cont "to!"
 	para "Would you like a"
 	line "#MON to"
@@ -44,9 +44,9 @@ RelearnerIntroText:
 
 RelearnerRefusedText:
 	text "If you need your"
-	line "memory jogged you"
-	cont "remember where to"
-	cont "come!"
+	line "memory jogged"
+	cont "you remember where"
+	cont "to come!"
 	done
 
 MoveDeletersHouseBookshelf:

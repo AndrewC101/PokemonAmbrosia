@@ -11,7 +11,7 @@ A Romhack based on Pokémon Crystal with a focus on unique features, fun gamepla
 - All Pokémon have one or more abilities.
   - Some are the abilities you might expect such a Tyranitar Sandstream.
   - some are different such as Lucario with Intrepid Sword.
-  - some are completely new such as Guardevoir raising light screen upon switch in.
+  - some are completely new such as Gardevoir raising Light Screen upon switch in.
 
 <img src="/screenshots/rayquaza.png" width="150" height="150" />    <img src="/screenshots/garchomp.png" width="150" height="150" />    <img src="/screenshots/stance.png" width="150" height="150" />
 
@@ -22,13 +22,13 @@ A Romhack based on Pokémon Crystal with a focus on unique features, fun gamepla
 - Pokémon wander in the overworld. They randomly spawn and come in 3 varieties.
   - Normal Pokémon that appear in various colours and are at an appropriate level.
   - Aggressive Pokémon that appear red and will attack the player on sight, they are at high levels and can only be escaped from by using a Pokedoll.
-  - Shinny Pokémon that appear gold and generally have a 1/8 chance to spawn in the area.
+  - Shiny Pokémon that appear gold and generally have a 1/8 chance to spawn in the area.
 
 <img src="/screenshots/fieldmon.png" width="150" height="150" />    <img src="/screenshots/aggressive.png" width="150" height="150" />    <img src="/screenshots/shiny.png" width="150" height="150" />
 
 ## Story
 
-- The story is completely new and centers on an immanent invasion of Kanto due to a war with Hoen.
+- The story is completely new and centers on an immanent invasion of Kanto due to a war with Hoenn.
 - New dialog for every NPC and event in the entire game  
 - Three recurring rivals, one of which uses an exact copy of the players party including stats, items, nicknames, everything.
 
@@ -100,8 +100,8 @@ Many important new and existing items.
     - Aura Sphere
     - Dark Pulse
     - Moon Blast
-- New item the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle costs all the players money.
-- New rare item Ambrosia maximises all stat exp (evs) and happiness. Acting like using 25 of each vitamin in one item.
+- New item: the Red Eye Orb allows player to become a dark souls like invader. This gives the player a Red sprite, gives them double prize money upon winning a battle but losing a battle costs all the players money.
+- New rare item: Ambrosia maximises all stat exp (evs) and happiness. Acting like using 25 of each vitamin in one item.
 
 <img src="/screenshots/items.png" width="150" height="150" />     <img src="/screenshots/cloyster.png" width="150" height="150" />    <img src="/screenshots/xerneas.png" width="150" height="150" />    <img src="/screenshots/invading.png" width="150" height="150" />
 
@@ -111,11 +111,11 @@ Many important new and existing items.
     - Battle Mirror where you battle an exact copy of your current team.
     - Battle Roulette where you battle a random boss enemy you have fought before and receive a random reward.
     - Battle Arcade where you select a team to use, then an enemy to fight against from a selection of Gym Leader, Elite Four and boss teams. You start with all Gym leaders and unlock other characters as you play through the story.
-    - Battle trial where you face consecutive story enemies of increasing strength 	with your party only being healed every three fights.
-    - Battle tower which now consists of four 6v6 fights with no rules and has five difficulties.
-    - Battle tower (mirror mode) here instead of using your own party you use an exact copy of the random enemy party. Keeping the fights interesting.
+    - Battle Trial where you face consecutive story enemies of increasing strength with your party only being healed every three fights.
+    - Battle Tower which now consists of four 6v6 fights with no rules and has five difficulties.
+    - Battle Tower (Mirror mode) where instead of using your own party you use an exact copy of a random enemy party, keeping the fights interesting.
 - A recurring RPG minigame where the player plays through stories from popular IPs such as Star Wars, DBZ and Lord of the Rings where the player takes part in battles with fixed teams.
-- Invader enemy class based on dark souls invaders. They don't generally have high level Pokémon but their Pokémon are min-maxed and they utilize meta strategies. They are all avoidable.
+- Invader enemy class based on Dark Souls invaders. They don't generally have high level Pokémon but their Pokémon are min-maxed and they utilize meta strategies. They are all avoidable.
 
 <img src="/screenshots/battletower.png" width="150" height="150" />     <img src="/screenshots/mirrormode.png" width="150" height="150" />    <img src="/screenshots/arcademenu.png" width="150" height="150" />    <img src="/screenshots/arcadeconfirm.png" width="150" height="150" />
 
@@ -133,14 +133,14 @@ AI has been extensively improved. At all times it has knowledge of
 
 It uses all these to make decisions, take these moves for example
 - Recover
-  - AI will use if it will only get one more turn before being defeated by the player.
-  - Unless the player can 2HKO AI from max HP, no point using recover in that case.
+  - AI will use it if it will only get one more turn before being defeated by the player.
+  - Unless the player can 2HKO AI from max HP, no point using Recover in that case.
   
 - Swords Dance
-  - AI will use if it will be able to get off at least one attack after using it.
-  - It will not use if the player can 1HKO unless all the following are true
+  - AI will use it if it will be able to get off at least one attack after using it.
+  - It will not use it if the player can 1HKO unless all the following are true
     - The AI outspeeds player
-    - AI has intact focus sash or sturdy
+    - AI has intact Focus Sash or Sturdy
     - The player does not have a priority move  
 
 <img src="/screenshots/switch.png" width="150" height="150" />    <img src="/screenshots/swordsdance.png" width="150" height="150" />    <img src="/screenshots/whirlwind.png" width="150" height="150" />

@@ -28,7 +28,7 @@ A Romhack based on Pokémon Crystal with a focus on unique features, fun gamepla
 
 ## Story
 
-- The story is completely new and centers on an immanent invasion of Kanto due to a war with Hoenn.
+- The story is completely new and centers on an imminent invasion of Kanto due to a war with Hoenn.
 - New dialog for every NPC and event in the entire game  
 - Three recurring rivals, one of which uses an exact copy of the players party including stats, items, nicknames, everything.
 

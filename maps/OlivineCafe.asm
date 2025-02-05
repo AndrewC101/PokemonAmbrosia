@@ -64,8 +64,8 @@ OlivineCafeFishingGuruText:
 	done
 
 OlivineCafeSailorText:
-	text "Aww man I need"
-	line "more PROTIEN."
+	text "Aww man, I need"
+	line "more PROTEIN."
 
 	para "This is the"
 	line "best place for"

@@ -140,10 +140,9 @@ Jasmine_SteelTypeIntro:
 	line "brute CHUCK."
 
 	para "In difficult"
-	line "times."
-
-	para "Hope is something"
-	line "you give yourself."
+	line "times,"
+	cont "Hope is something"
+	cont "you give yourself."
 
 	para "That is true"
 	line "strength."
@@ -172,7 +171,7 @@ Text_ReceivedMineralBadge:
 Jasmine_BadgeSpeech:
     text "With the"
     line "MINERALBADGE"
-    line "you can now train"
+    cont "you can now train"
     cont "#MON up to"
     cont "level 55."
 
@@ -198,7 +197,7 @@ JasmineBeatChuckText:
 	text "You have done well"
 	line "but I'm afraid you"
 	cont "also must defeat"
-	cont "CHUCK in CAINWOOD"
+	cont "CHUCK in CIANWOOD"
 	cont "to increase your"
 	cont "level caps."
 	para "It should not be"
@@ -268,8 +267,8 @@ OlivineGymGuidePreText:
 	line "to a sick #MON."
 
 	para "A strong trainer"
-	line "has to be compas-"
-	cont "sionate."
+	line "has to be"
+	cont "compassionate."
 	done
 
 RematchTextJasmine:

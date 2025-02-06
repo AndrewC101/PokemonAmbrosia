@@ -155,13 +155,13 @@ OakAfterBattleText:
     text "That takes me"
     line "back."
 
-    para "You know there"
+    para "You know, there"
     line "are many #MON"
     cont "with amazing"
     cont "abilities."
 
     para "When I was your"
-    line "age I met one"
+    line "age, I met one"
     cont "that could travel"
     cont "through time."
 
@@ -226,8 +226,8 @@ OakGoodLuck:
     done
 
 OakLabDexCheckText:
-	text "How is your #-"
-	line "DEX coming?"
+	text "How is your"
+	line "#DEX coming?"
 
 	para "Let's see…"
 	done
@@ -255,7 +255,7 @@ OakOpenMtSilverText:
 	para "You are a true"
 	line "CHAMPION!"
 
-	para "Here let me give"
+	para "Here, let me give"
 	line "your EXP.SHARE"
 	cont "my final upgrade."
 
@@ -279,17 +279,16 @@ OakOpenMtSilverText:
 
 	para "MT.SILVER is a big"
 	line "mountain that is"
-
-	para "home to many wild"
-	line "#MON far"
-	cont "to powerful for"
+	cont "home to many wild"
+	cont "#MON far"
+	cont "too powerful for"
 	cont "any trainer to"
 	cont "conquer."
 
 	para "Head west from"
 	line "VIRIDIAN."
 
-	para "reach MT.SILVER"
+	para "Reach MT.SILVER"
 	line "from there."
 
 	para "In MT.SILVER you"
@@ -315,11 +314,11 @@ OakOpenMtSilverText:
 	done
 
 OakGiveWarpDeviceText:
-    text "Now you are a"
-    line "Hero you will"
+    text "Now that you are"
+    line "a Hero, you will"
     cont "be very busy."
 
-    para "Here this will"
+    para "Here, this will"
     line "help you get"
     cont "around."
 
@@ -363,13 +362,13 @@ OakYesKantoBadgesText:
 	cont "LEADER!"
 
 	para "If you ever beat"
-	line "him you must"
+	line "him, you must"
 	cont "come see me."
 	done
 
 OaksAssistant1Text:
 	text "We are working"
-	line "closly with BILL"
+	line "closely with BILL"
 	cont "on adjustments"
 	cont "to the EXP SHARE."
 	done
@@ -379,7 +378,7 @@ OaksAssistant2Text:
 	line "your #DEX."
 
 	para "The information"
-	line "is very valubal."
+	line "is very valuable."
 
 	para "Seriously, a"
 	line "completed #DEX"
@@ -391,9 +390,8 @@ OaksAssistant2Text:
 OaksAssistant3Text:
 	text "Don't tell anyone,"
 	line "but PROF.OAK'S"
-
-	para "#MON TALK isn't"
-	line "a live broadcast."
+	cont "#MON TALK isn't"
+	cont "a live broadcast."
 	done
 
 OaksLabPoster1Text:

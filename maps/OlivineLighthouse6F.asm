@@ -166,7 +166,7 @@ JasmineCianwoodPharmacyText:
 	para "This AMPHAROS"
 	line "always kept the"
 	cont "lighthouse lit"
-	cont "on dark nights"
+	cont "on dark nights."
 
 	para "But now it is"
 	line "very sick."
@@ -230,7 +230,7 @@ JasmineThankYouText:
 	text "Thank you so"
 	line "much."
 
-	para "You kindness"
+	para "Your kindness"
 	line "shines brighter"
 	cont "than any"
 	cont "lighthouse."
@@ -251,7 +251,7 @@ JasmineISeeText:
 	done
 
 JasmineAmphyHangOnText:
-	text "hang on!"
+	text "Hang on!"
 	done
 
 AmphyPalPalooText:

@@ -37,7 +37,7 @@ SailorHueySeenText:
 	line "give up."
 
 	para "This is the BATTLE"
-	line "TOWER right?"
+	line "TOWER, right?"
 	done
 	done
 
@@ -46,7 +46,7 @@ SailorHueyBeatenText:
     done
 
 SailorHueyAfterBattleText:
-	text "Wait this isn't"
+	text "Wait, this isn't"
 	line "the BATTLE TOWER!"
 	para "I'm not going to"
 	line "get a prize for"
@@ -54,7 +54,7 @@ SailorHueyAfterBattleText:
 	done
 
 GentlemanAlfredSeenText:
-	text "Dear child you"
+	text "Dear child, you"
 	line "can't possibly"
 	cont "be naive enough"
 	cont "to believe you"
@@ -75,7 +75,7 @@ GentlemanAlfredAfterBattleText:
 	done
 
 SailorHueyGiveProteinText:
-	text "Here don't"
+	text "Here, don't"
 	line "tell anyone you"
 	cont "got this from"
 	cont "me."

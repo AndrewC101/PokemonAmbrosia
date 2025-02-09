@@ -63,9 +63,9 @@ PalletTownTeacherText:
 
 PalletTownFisherText:
 	text "Have you met"
-	line "LANCE!"
+	line "LANCE!?"
 
-	para "Aww man he is"
+	para "Aww man, he is"
 	line "so cool!"
 
 	para "LEON is cool too"
@@ -184,7 +184,7 @@ Aerith2SeenText:
     para "What brings you"
     line "here?"
 
-    para "I can feel there"
+    para "I can feel there's"
     line "something special"
     cont "about this town."
 
@@ -205,10 +205,10 @@ Aerith2SeenText:
     cont "all of them!"
     done
 Aerith2BeatenText:
-    text "Well done"
+    text "Well done."
     done
 Aerith2WinsText:
-    text "Good try"
+    text "Good try."
     done
 Aerith2OfferFightText:
     text "Let's have a"
@@ -216,18 +216,18 @@ Aerith2OfferFightText:
     done
 Aerith2AfterBattleText:
     text "No matter what"
-    line "happens you"
+    line "happens, you"
     cont "have to protect"
-    cont "the planet OK."
+    cont "the planet. OK?"
 
     para "It's like a child"
     line "lost and looking"
-    cont "for it's mother."
+    cont "for its mother."
 
-    para "I can hear her"
+    para "I can hear it"
     line "crying."
 
-    para "can't you."
+    para "Can't you?"
     done
 RematchTextAerith2:
     text "Let's fight?"
@@ -291,7 +291,7 @@ PalletTownCrystalText_Intro:
 
     para "It's been a while!"
 
-    para "You know I always"
+    para "You know, I always"
     line "thought KANTO was"
     cont "much more urban"
     cont "and polluted than"

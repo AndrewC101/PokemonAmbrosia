@@ -207,7 +207,7 @@ RematchFisherText:
     done
 RematchRefuseFisherText:
     text "You are not yet"
-    line "ready young"
+    line "ready, young"
     cont "LARVESTA."
     done
 
@@ -249,7 +249,7 @@ SwimmerfNikkiAfterBattleText:
 	text "I know I lost but"
 	line "would you like to"
 	cont "help me with the"
-	cont "lotion anyway."
+	cont "lotion anyway?"
 	para "I really don't"
 	line "want to burn."
 	done
@@ -268,7 +268,7 @@ FisherArnoldSeenText:
 	done
 
 FisherArnoldWinsText:
-	text "Rest now dear"
+	text "Rest now, dear"
 	line "child."
 	done
 

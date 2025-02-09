@@ -190,7 +190,7 @@ TeacherHillarySeenText:
 	cont "grow and learn."
 	para "But what kind of"
 	line "world will we"
-	cont "leave for them."
+	cont "leave for them?"
 	done
 
 TeacherHillaryBeatenText:
@@ -225,10 +225,9 @@ SchoolboyTommyAfterBattleText:
 	text "We are learning"
 	line "about #MON"
 	cont "abilities in"
-	cont "class, It all"
+	cont "class. It all"
 	cont "seems like"
-	cont "something someone"
-	cont "made up."
+	cont "someone made up."
 	done
 
 SchoolboyJohnnySeenText:
@@ -237,7 +236,7 @@ SchoolboyJohnnySeenText:
 	cont "abilities!"
 	para "Some #MON have"
 	line "more than one."
-	para "Do you know know"
+	para "Do you know"
 	line "which #MON has"
 	cont "the most"
 	cont "abilities?"

@@ -89,16 +89,16 @@ BirdKeeperBobSeenText:
 	para "I can't find the"
 	line "FLY TM."
 
-	para "Where is it!"
+	para "Where is it!?"
 	done
 
 BirdKeeperBobBeatenText:
-	text "Where."
+	text "Where?"
 	done
 
 BirdKeeperBobAfterBattleText:
-	text "Wait so it's in"
-	line "JOHTO."
+	text "Wait, so it's in"
+	line "JOHTO!"
 
 	para "Good thing my"
 	line "#MON learnt"

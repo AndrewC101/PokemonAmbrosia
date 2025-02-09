@@ -54,7 +54,7 @@ Route30BerrySpeechHouseText:
 	done
 
 Route30BerrySpeechHouseTakeBerryText:
-	text "Here for being"
+	text "Here, for being"
 	line "so sympathetic you"
 	cont "can have one!"
 

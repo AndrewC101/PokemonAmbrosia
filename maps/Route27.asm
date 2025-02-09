@@ -250,7 +250,7 @@ Route27FisherText:
 	cont "patrol."
 
 	para "The country is"
-	line "in lock down due"
+	line "in lockdown due"
 	cont "to the threat of"
 	cont "the HOENN war."
 
@@ -279,12 +279,12 @@ Route27AfterFisherText:
 	done
 
 CooltrainermBlakeSeenText:
-	text "Ah a fresh face"
+	text "Ah, a fresh face"
 	line "around here."
 
 	para "Are you heading"
 	line "to battle the"
-	cont "ELITE FOUR."
+	cont "ELITE FOUR?"
 
 	para "You're the third"
 	line "person today"
@@ -297,12 +297,12 @@ CooltrainermBlakeSeenText:
 	para "Even I can beat"
 	line "you."
 
-	para "Come on let's"
+	para "Come on, let's"
 	line "go!"
 	done
 
 CooltrainermBlakeBeatenText:
-	text "Not again."
+	text "Not again!"
 	done
 
 CooltrainermBlakeAfterBattleText:
@@ -311,10 +311,9 @@ CooltrainermBlakeAfterBattleText:
 	cont "lost a battle."
 
 	para "But even though"
-	line "you beat me."
-
-	para "You are going"
-	line "to get destroyed"
+	line "you beat me,"
+	cont "you are going"
+	cont "to get destroyed"
 	cont "by the ELITE FOUR!"
 	done
 
@@ -342,7 +341,7 @@ CooltrainerfReenaAfterBattleText:
 
 CooltrainerfMeganSeenText:
 	text "We all know we"
-	line "destined to"
+	line "are destined to"
 	cont "become soldiers."
 
 	para "But it's what"
@@ -355,12 +354,12 @@ CooltrainerfMeganSeenText:
 
 CooltrainerfMeganBeatenText:
 	text "You don't need"
-	line "protecting."
+	line "protection."
 	done
 
 CooltrainerfMeganAfterBattleText:
 	text "#MON start"
-	line "of weak but they"
+	line "weak but they"
 	cont "grow and get"
 	cont "stronger."
 
@@ -380,14 +379,14 @@ BirdKeeperJoseSeenText:
 	done
 
 BirdKeeperJoseBeatenText:
-	text "You are nobodies"
+	text "You are nobody's"
 	line "prey."
 	done
 
 BirdKeeperJoseAfterBattleText:
 	text "Let HOENN come!"
 
-	para "my #MON will"
+	para "My #MON will"
 	line "feast on their"
 	cont "fish #MON!"
 	done

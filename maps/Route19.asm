@@ -168,8 +168,8 @@ SwimmermHaroldAfterBattleText:
 	done
 
 SwimmermTuckerSeenText:
-	text "Dude I'm trying to"
-	line "propose to me"
+	text "Dude, I'm trying"
+	line "to propose to me"
 	cont "girlfriend!"
 	para "It's not going"
 	line "working as I'd"
@@ -185,7 +185,7 @@ SwimmermTuckerAfterBattleText:
 	text "I think I've"
 	line "forgot the ring!"
 	para "Forget it!"
-	para "Dawn will you"
+	para "Dawn, will you"
 	line "marry me?"
 	done
 
@@ -206,7 +206,7 @@ SwimmerfDawnAfterBattleText:
 	text "Alright it's now"
 	line "or never."
 	para "I have the rings."
-	para "Tucker will you"
+	para "Tucker, will you"
 	line "marry me?"
 	done
 
@@ -223,7 +223,7 @@ Route19Fisher1Text:
 	done
 
 Route19Fisher1Text_RocksCleared:
-	text "Well that was"
+	text "Well, that was"
 	line "lucky."
 	para "The road is clear"
 	line "and my work here"
@@ -241,7 +241,7 @@ Route19Fisher2Text_RocksCleared:
 	line "kind fo small"
 	cont "earthquake and it"
 	cont "shifted the rocks!"
-	para "it was HOENN!"
+	para "It was HOENN!"
 	para "I'll have to thank"
 	line "them when they get"
 	cont "here eh!"

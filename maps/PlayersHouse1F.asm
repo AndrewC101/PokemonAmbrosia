@@ -318,9 +318,9 @@ ElmsLookingForYouText:
 	cont "already!"
 
 	para "Oh! Don't forget"
-	line "Your #GEAR is"
+	line "your #GEAR."
 
-	para "back from the"
+	para "It's back from the"
 	line "repair shop."
 
 	para "Here you go!"
@@ -378,8 +378,8 @@ InstructionsNextText:
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
+	text "PROF.ELM is"
+	line "waiting for you."
 
 	para "Good luck my"
 	line "darling."

@@ -226,7 +226,7 @@ MuseumBlockText:
 MuseumOpenText:
 	text "Having proven your"
 	line "strength against"
-	cont "BROCK you may"
+	cont "BROCK, you may"
 	cont "pass."
 	para "There is"
 	line "something..."

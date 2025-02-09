@@ -331,7 +331,7 @@ InvaderGiantDad:
 
 GiantDadSeenText:
     text "I have found"
-    line "you host!"
+    line "you, host!"
 
     para "I have invaded"
     line "your world!"
@@ -367,8 +367,8 @@ GiantDadWinsText:
 GiantDadAfterBattleText:
     text "Hey, I gave"
     line "you a memorable"
-    cont "experience did"
-    cont "I not!"
+    cont "experience, did"
+    cont "I not?"
     done
     
 Route31FieldMon1Script:

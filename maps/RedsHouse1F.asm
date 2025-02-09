@@ -64,7 +64,7 @@ RedsMomText1:
 	para "Said he didn't"
 	line "need it anymore."
 
-	para "Here you can have"
+	para "Here, you can have"
 	line "it. It might be"
 	cont "of use to you."
 	done

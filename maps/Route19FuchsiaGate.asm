@@ -45,7 +45,7 @@ Route19FuchsiaGateOfficerText_RocksCleared:
 
 	para "How can anyone"
 	line "make a volcano"
-	cont "erupt."
+	cont "erupt?"
 
 	para "That's nonsense!"
 	done

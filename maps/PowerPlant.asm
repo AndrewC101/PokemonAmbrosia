@@ -233,7 +233,7 @@ PowerPlantOfficer1ReturnToPostMovement:
 
 PowerPlantOfficer1AThiefBrokeInText:
 	text "This POWER PLANT"
-	line "is ultra high"
+	line "has ultra high"
 	cont "security."
 	para "You better be well"
 	line "behaved or I'll"
@@ -286,7 +286,7 @@ PowerPlantGymGuide1GeneratorUpAndRunningText:
 	para "It would mean the"
 	line "reactor was open."
 	cont "But it couldn't be"
-	cont "open it's"
+	cont "open, it's"
 	cont "protected by three"
 	cont "magnetic fields."
 	para "Do you see!"
@@ -378,7 +378,7 @@ PowerPlantManagerThatsThePartText:
 PowerPlantManagerTakeThisTMText:
 	text "You have made a"
 	line "wise choice."
-	para "Here I bestow upon"
+	para "Here, I bestow upon"
 	line "you my mighty"
 	cont "weapon."
 	done

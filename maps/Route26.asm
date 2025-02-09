@@ -348,7 +348,7 @@ CooltrainermJakeSeenText:
 	para "I have a legendary"
 	line "#MON!"
 	para "Do you have one?"
-	para "I didn't think so."
+	para "I don't think so."
 	para "You don't stand a"
 	line "chance."
 	done
@@ -372,7 +372,7 @@ CooltrainermGaven3SeenText:
     text "LANCE is so cool!"
 
 	para "LANCE is CHAMPION"
-	line "of KANTO but is"
+	line "of KANTO but he's"
 	cont "acting CHAMPION"
 	cont "of JOHTO until"
 	cont "we can produce"
@@ -394,7 +394,7 @@ CooltrainermGaven3BeatenText:
 
 CooltrainermGavenAfterText:
 	text "To become CHAMPION"
-	line "you wil have to"
+	line "you will have to"
 	cont "defeat LANCE."
 
 	para "His strength is"
@@ -522,7 +522,7 @@ PsychicRichardAfterBattleText:
 	text "That was close."
 
 	para "Do you think she"
-	line "fell for it!"
+	line "fell for it?"
 	done
 
 Route26SignText:
@@ -703,7 +703,7 @@ Route26CrystalText_Serious:
     cont "far."
 
     para "Now that we are"
-    line "here."
+    line "here..."
 
     para "I don't want to"
     line "go on."
@@ -718,7 +718,7 @@ Route26CrystalText_Serious:
     cont "forever."
 
     para "But that can't"
-    line "happen"
+    line "happen."
     done
 
 Route26CrystalText_Battle:
@@ -736,11 +736,11 @@ Crystal5LosesText:
 
 Crystal5WinsText:
     text "Can we just"
-    line "go home."
+    line "go home?"
     done
 
 Route26CrystalText_KeepItUp:
-    text "Well it seems"
+    text "Well, it seems"
     line "you have won our"
     cont "race."
 
@@ -749,8 +749,8 @@ Route26CrystalText_KeepItUp:
     cont "have become."
 
     para "If anyone can"
-    line "win the war. You"
-    cont "can."
+    line "win the war,"
+    cont "you can."
 
     para "And I'll be right"
     line "there with you!"

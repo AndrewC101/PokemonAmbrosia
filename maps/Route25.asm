@@ -234,7 +234,7 @@ Route25MistyLeavesMovement:
 
 Route25MistyDateText:
 	text "What do you think"
-	line "you're doing!"
+	line "you're doing!?"
 
 	para "That date was"
 	line "going really well!"
@@ -246,10 +246,10 @@ Route25MistyDateText:
 
 	para "...."
 
-	para "Oh you want a"
+	para "Oh, you want a"
 	line "GYM battle."
 
-	para "Yes I am MISTY"
+	para "Yes, I am MISTY"
 	line "the GYM LEADER."
 
 	para "I'll be all too"
@@ -299,7 +299,7 @@ LassEllenSeenText:
 	cont "bars and energy"
 	cont "drinks."
 
-	para "Here have some"
+	para "Here, have some"
 	line "RED TAUROS!"
 	done
 
@@ -368,7 +368,7 @@ LassLauraSeenText:
 
 	para "Who will sponsor"
 	line "me to battle this"
-	cont "stranger!"
+	cont "stranger?"
 	done
 
 LassLauraBeatenText:
@@ -416,7 +416,7 @@ CamperLloydAfterBattleText:
 	line "any of this gear!"
 
 	para "Don't you feel"
-	line "naked without it!"
+	line "naked without it!?"
 	done
 
 LassShannonSeenText:
@@ -455,7 +455,7 @@ CooltrainermKevinNuggetText:
 	line "giving the troops"
 	cont "a good warm up."
 
-	para "Here take this!"
+	para "Here, take this!"
 	done
 
 CooltrainermKevinSeenText:
@@ -478,9 +478,9 @@ CooltrainermKevinAfterBattleText:
 	text "That was a great"
 	line "battle!"
 
-	para "You and your #-"
-	line "MON are truly out-"
-	cont "standing!"
+	para "You and your"
+	line "#MON are truly"
+	cont "outstanding!"
 	done
 
 BillsHouseSignText:

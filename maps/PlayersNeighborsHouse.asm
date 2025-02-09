@@ -64,7 +64,7 @@ WallaceBeatenRadio:
 	text "The war is over!"
 	para "The new CHAMPION"
 	line "<PLAYER> from"
-	cont "NEWBARK TOWN"
+	cont "NEW BARK TOWN"
 	cont "defeated WALLACE"
 	cont "and has saved us"
 	cont "all!"
@@ -80,7 +80,7 @@ PlayersNeighborsDaughterText:
 
 	para "Every #MON"
 	line "has some special"
-	cont "ability."
+	cont "abilities."
 
 	para "You can see"
 	line "them on the"

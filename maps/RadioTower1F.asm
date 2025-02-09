@@ -230,8 +230,8 @@ RadioTower1FReceptionistNoToursText:
 
 RadioTower1FLuckyNumberManAskToPlayText:
 	text "Hi, are you here"
-	line "for the LUCKY NUM-"
-	cont "BER SHOW?"
+	line "for the LUCKY"
+	cont "NUMBER SHOW?"
 
 	para "Want me to check"
 	line "the ID numbers of"

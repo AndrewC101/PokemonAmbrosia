@@ -261,7 +261,7 @@ PsychicFidelSeenText:
 	done
 
 PsychicFidelBeatenText:
-	text "See I made it"
+	text "See? I made it"
 	line "move!"
 	done
 

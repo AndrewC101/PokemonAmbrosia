@@ -295,7 +295,7 @@ CatchingTutorialIntroText:
 	cont "away for good."
 
 	para "There is a woman"
-	line "in NEWBARK TOWN"
+	line "in NEW BARK TOWN"
 	cont "who has one."
 	done
 
@@ -369,7 +369,7 @@ Route29CooltrainerMText_WaitingForNight:
 
 Route29CooltrainerMText_WaitingForMorning:
 	text "Get down!"
-	para "There is huge"
+	para "There is a huge"
 	line "violent URSARING"
 	cont "around here at"
 	cont "night."
@@ -379,10 +379,10 @@ Route29CooltrainerMText_WaitingForMorning:
 	done
 
 MeetTuscanyText:
-	text "TUSCANY: I do be-"
-	line "lieve that this is"
+	text "TUSCANY: I do"
+	line "believe that this"
 
-	para "the first time"
+	para "is the first time"
 	line "we've met?"
 
 	para "Please allow me to"

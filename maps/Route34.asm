@@ -668,9 +668,9 @@ PokefanmBrandonSeenText:
 	line "attract criminals."
 
 	para "But where there"
-	line "are criminals."
+	line "are criminals"
 
-	para "There are heroes"
+	para "there are heroes"
 	line "ready to face"
 	cont "them!"
 
@@ -767,9 +767,8 @@ CooltrainerfKateAfterText:
 
 	para "We never expected"
 	line "anyone to find us"
-
-	para "here. You sure"
-	line "startled us."
+	cont "here. You sure"
+	cont "startled us."
 	done
 
 Route34IlexForestSignText:

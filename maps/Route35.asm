@@ -269,7 +269,7 @@ TrainerBugCatcherArnie:
 ArnieNumberAcceptedText:
 	text "When the day comes"
 	line "and the BUGS swarm"
-	cont "these lands I will"
+	cont "these lands, I'll"
 	cont "let you know."
 	done
 
@@ -279,7 +279,7 @@ ArnieRematchText:
     done
 
 ArnieRematchRefuseText:
-    text "The swam comes"
+    text "The swarm comes"
     line "soon."
     done
 
@@ -335,7 +335,7 @@ Route35FruitTree:
 	fruittree FRUITTREE_ROUTE_35
 
 InvaderLautrecSeenText:
-	text "Well look at"
+	text "Well, look at"
 	line "you."
 
 	para "I thought you"
@@ -343,7 +343,7 @@ InvaderLautrecSeenText:
 
 	para "I thought wrong!"
 
-	para "Tis a terrible"
+	para "This is a terrible"
 	line "pity."
 
 	para "Like a moth"
@@ -365,14 +365,14 @@ InvaderLautrecVictoryText:
 
 InvaderLautrecAfterBattleText:
 	text "Beware the one"
-	line "known as PATCHES"
+	line "known as PATCHES."
 
 	para "He might seen"
 	line "an unassuming"
 	cont "fool."
 
 	para "But he is"
-	line "very dangerous"
+	line "very dangerous."
 	done
 
 CamperElliotSeenText:
@@ -471,7 +471,7 @@ BirdKeeperBryanBeatenText:
 	done
 
 BirdKeeperBryanAfterBattleText:
-	text "You know I"
+	text "You know, I"
 	line "think KANTO have"
 	cont "it coming."
 

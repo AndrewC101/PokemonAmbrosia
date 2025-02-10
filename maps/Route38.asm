@@ -219,9 +219,8 @@ TrainerLassDana1:
 DanaNumberAcceptedText:
 	text "Next time a boy"
 	line "gives me something"
-
-	para "after a battle,"
-	line "I'll share some!"
+	cont "after a battle,"
+	cont "I'll share some!"
 
 	para "Does that make me"
 	line "bad?"
@@ -234,7 +233,7 @@ DanaRematchText:
 
 DanaRematchRefuseText:
     text "Do I look"
-    line "bothered!"
+    line "bothered!?"
     done
 
 TrainerSchoolboyChad1:
@@ -404,7 +403,7 @@ BirdKeeperTobySeenText:
 	cont "evolve."
 
 	para "I don't think"
-	line "it's level."
+	line "it's by level."
 	done
 
 BirdKeeperTobyBeatenText:
@@ -412,7 +411,7 @@ BirdKeeperTobyBeatenText:
 	done
 
 BirdKeeperTobyAfterBattleText:
-	text "Is it a stone!"
+	text "Is it a stone?"
 
 	para "Maybe happiness!"
 	done
@@ -474,7 +473,7 @@ BeautyValerieSeenText:
 	done
 
 BeautyValerieBeatenText:
-	text "You villain."
+	text "You villain!"
 	done
 
 BeautyValerieAfterBattleText:
@@ -543,9 +542,9 @@ Route38TrainerTipsText:
 	line "trying to evolve,"
 	cont "you can stop it."
 
-	para "Press the B But-"
-	line "ton during evolu-"
-	cont "tion."
+	para "Just press the"
+	line "B Button during"
+	cont "evolution."
 
 	para "That startles the"
 	line "#MON and stops"

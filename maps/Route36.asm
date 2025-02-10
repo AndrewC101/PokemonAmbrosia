@@ -315,7 +315,7 @@ TrainerSchoolboyAlan1:
 	end
 
 AlanNumberAcceptedText:
-	text "Great we shall"
+	text "Great, we shall"
 	line "study together."
 
 	para "I'll call you if I"
@@ -334,7 +334,7 @@ AlanRematchText:
 
 AlanRematchRefuseText:
     text "Only through me"
-    line "can you increase"
+    line "you can increase"
     cont "your salary."
     done
 
@@ -481,7 +481,7 @@ FloriaText1:
 	cont "#MON."
 
 	para "An evil"
-	line "#MON."
+	line "#MON!"
 
 	para "I'm going to"
 	line "get my sister at"
@@ -531,7 +531,7 @@ RockSmashGuyText2:
 	para "And that evil"
 	line "spirit was"
 	cont "actually a"
-	cont "#MON."
+	cont "#MON!"
 	done
 
 Route36LassText:
@@ -584,7 +584,7 @@ SchoolboyAlan1SeenText:
 	done
 
 SchoolboyAlan1BeatenText:
-	text "I miss clicked."
+	text "I misclicked."
 	done
 
 SchoolboyAlanBooksText:
@@ -613,9 +613,8 @@ ArthurGivesGiftText:
 ArthurGaveGiftText:
 	text "ARTHUR: A #MON"
 	line "that uses rock-"
-
-	para "type moves should"
-	line "hold on to that."
+	cont "type moves should"
+	cont "hold on to that."
 
 	para "It pumps up rock-"
 	line "type attacks."
@@ -624,9 +623,8 @@ ArthurGaveGiftText:
 ArthurThursdayText:
 	text "ARTHUR: I'm ARTHUR"
 	line "of Thursday. I'm"
-
-	para "the second son out"
-	line "of seven children."
+	cont "the second son out"
+	cont "of seven children."
 	done
 
 ArthurNotThursdayText:
@@ -811,8 +809,8 @@ Route36CrystalText_Intro:
     cont "LITWICK."
 
     para "I still have a"
-    line "scar on my arm"
-    cont "see..."
+    line "scar on my arm."
+    cont "See..."
 
     para "But I am working"
     line "to face my fears."
@@ -860,7 +858,7 @@ Route36CrystalText_KeepItUp:
     para "I'm going in!"
 
     para "Get out of my"
-    line "way Ghosts!"
+    line "way, Ghosts!"
 
     para "See you later"
     line "<PLAYER>."

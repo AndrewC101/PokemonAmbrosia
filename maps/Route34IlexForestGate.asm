@@ -100,7 +100,7 @@ Route34IlexForestGateTeacher_ForestIsRestless:
 	line "my life to protect"
 	cont "the forest."
 
-	para "CELEBI have mercy"
+	para "CELEBI, have mercy"
 	line "on me!"
 	done
 

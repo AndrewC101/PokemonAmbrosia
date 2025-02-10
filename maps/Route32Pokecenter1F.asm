@@ -61,7 +61,8 @@ Route32Pokecenter1FFishingGuruText_Question:
 
 Route32Pokecenter1FFishingGuruText_Yes:
 	text "You have made"
-	line "this old mans day!"
+	line "this old man's"
+	cont "day!"
 	done
 
 Route32Pokecenter1FFishingGuruText_GiveOldRod:
@@ -74,7 +75,7 @@ Route32Pokecenter1FFishingGuruText_GiveOldRod:
 	done
 
 Route32Pokecenter1FFishingGuruText_No:
-	text "Hey kid you just"
+	text "Hey kid, you just"
 	line "don't know a"
 	cont "quality instrument"
 	cont "when you see one."
@@ -83,7 +84,7 @@ Route32Pokecenter1FFishingGuruText_No:
 Route32Pokecenter1FFishingGuruText_After:
 	text "Are you getting"
 	line "enjoyment from"
-	cont "my OLD ROD!"
+	cont "my OLD ROD?"
 
 	para "You can catch"
 	line "all sorts of"

@@ -141,8 +141,8 @@ Route37HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_37_HIDDEN_ETHER
 
 TwinsAnnandanne1SeenText:
-	text "My sister and"
-	line "I died here many"
+	text "My sister and I"
+	line "died here many"
 	cont "years ago."
 
 	para "We are lonely."
@@ -168,8 +168,8 @@ TwinsAnnandanne2SeenText:
 	cont "to come here."
 
 	para "If I hadn't"
-	line "of listened to"
-	cont "her I'd be an"
+	line "listened to her"
+	cont "I'd be an"
 	cont "old woman now."
 
 	para "I miss being"
@@ -177,7 +177,7 @@ TwinsAnnandanne2SeenText:
 	done
 
 TwinsAnnandanne2BeatenText:
-	text "Don't leave."
+	text "Don't leave!"
 	done
 
 TwinsAnnandanne2AfterBattleText:
@@ -217,9 +217,9 @@ PsychicGregAfterBattleText:
 MeetSunnyText:
 	text "SUNNY: Hi!"
 
-	para "I'm SUNNY of Sun-"
-	line "day, meaning it's"
-	cont "Sunday today!"
+	para "I'm SUNNY of"
+	line "Sunday, meaning"
+	cont "it's Sunday today!"
 	done
 
 SunnyGivesGiftText1:
@@ -239,7 +239,7 @@ SunnyGaveGiftText:
 
 	para "Um…"
 
-	para "… What was it now…"
+	para "…What was it now?…"
 
 	para "…"
 
@@ -248,9 +248,8 @@ SunnyGaveGiftText:
 
 	para "A #MON that"
 	line "knows electric"
-
-	para "moves should hold"
-	line "it."
+	cont "moves should hold"
+	cont "it."
 
 	para "My sis MONICA said"
 	line "it powers up"

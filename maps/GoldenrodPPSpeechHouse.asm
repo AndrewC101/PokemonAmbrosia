@@ -30,7 +30,7 @@ GoldenrodPPSpeechHouseFisherText:
 	line "to heal your"
 	cont "#MON anywhere."
 
-	text "Like what's the"
+	para "Like what's the"
 	line "point in #MON"
 	cont "CENTERS!"
 	done

@@ -106,7 +106,7 @@ Route39BarnTwinMoomooIsSickText:
 	text "MOOMOO is sick…"
 
 	para "She needs a"
-	line "GOLDEN BERRY"
+	line "GOLD BERRY."
 	done
 
 Route39BarnTwinWereFeedingMoomooText:
@@ -132,13 +132,13 @@ MoomooHappyMooText:
 	done
 
 Route39BarnAskGiveBerryText:
-	text "Give GOLDBERRY to"
-	line "MILTANK?"
+	text "Give GOLD BERRY"
+	line "to MILTANK?"
 	done
 
 Route39BarnGaveBerryText:
 	text "<PLAYER> gave a"
-	line "GOLDBERRY to"
+	line "GOLD BERRY to"
 	cont "MILTANK."
 	done
 
@@ -149,7 +149,7 @@ Route39BarnTotallyHealthyText:
 
 Route39BarnNoBerriesText:
 	text "<PLAYER> has no"
-	line "GOLD BERRY"
+	line "GOLD BERRY."
 	done
 
 Route39BarnRefusedBerryText:

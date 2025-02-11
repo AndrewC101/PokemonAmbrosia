@@ -188,7 +188,7 @@ SwimmermSimonBeatenText:
 SwimmermSimonAfterBattleText:
 	text "You just have"
 	line "to keep an open"
-	cont "mind man."
+	cont "mind, man."
 	done
 
 SwimmermRandallSeenText:
@@ -215,7 +215,7 @@ SwimmermRandallAfterBattleText:
 
 	para "Do you really"
 	line "understand what"
-	cont "I mean."
+	cont "I mean?"
 	done
 
 SwimmerfElaineSeenText:

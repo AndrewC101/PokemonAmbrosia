@@ -126,7 +126,7 @@ FarmerMText_BuyMilk:
 	para "You saved me"
 	line "business."
 
-	para "Here you can"
+	para "Here, you can"
 	line "have some lovely"
 	cont "MOOMOO MILK at"
 	cont "a discounted price"
@@ -199,7 +199,7 @@ FarmerFText_HealedMiltank:
 	line "have a home to"
 	cont "go back to."
 
-	para "Here I want you"
+	para "Here, I want you"
 	line "to have this."
 	done
 

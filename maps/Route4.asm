@@ -127,7 +127,7 @@ BirdKeeperHankBeatenText:
 
 BirdKeeperHankAfterBattleText:
 	text "I've heard legends"
-	line "of hugh bird"
+	line "of huge bird"
 	cont "#MON in JOHTO."
 	para "I could make loads"
 	line "of money with"

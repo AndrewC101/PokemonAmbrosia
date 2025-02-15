@@ -128,7 +128,7 @@ BrockLossText:
 	text "You don't"
 	line "shatter easily."
 
-	para "Here take the"
+	para "Here, take the"
 	line "BOULDERBADGE."
 	done
 
@@ -149,8 +149,8 @@ BrockFightDoneText:
 	cont "ago."
 
 	para "Since you have"
-	line "defeated me I"
-	cont "grant you"
+	line "defeated me"
+	cont "I grant you"
 	cont "permission to"
 	cont "enter it."
 
@@ -186,7 +186,7 @@ CamperJerryBeatenText:
 
 CamperJerryAfterBattleText:
 	text "We will never"
-	line "keep fighting"
+	line "stop fighting"
 	cont "to restore PEWTER"
 	cont "and its people."
 

@@ -222,9 +222,8 @@ Route33LassText:
 
 	para "I got too tired to"
 	line "explore the whole"
-
-	para "thing, so I came"
-	line "outside."
+	cont "thing, so I came"
+	cont "outside."
 	done
 
 Route33SignText:

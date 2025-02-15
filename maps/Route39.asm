@@ -200,7 +200,7 @@ PokefanMDerekText_NotBragging:
 	text "I need to"
 	line "learn a defense"
 	cont "against"
-	cont "AVADA KADAVRA."
+	cont "AVADA KEDAVRA."
 	done
 
 PokefanfRuthSeenText:
@@ -257,9 +257,9 @@ PokefanfJaimeSeenText:
 
 	para "Have you come"
 	line "to take my little"
-	cont "pretties away."
+	cont "pretties away?"
 
-	para "I wont let you!"
+	para "I won't let you!"
 
 	para "Never!"
 	done

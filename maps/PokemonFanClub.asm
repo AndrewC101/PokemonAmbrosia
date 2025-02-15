@@ -144,7 +144,7 @@ PokemonFanClubChairmanRapidashText:
 	text "Very well."
 
 	para "I shall commence"
-	line "todays proceedings"
+	line "today's proceedings"
 	cont "by explaining in"
 	cont "comprehensive and"
 	cont "explicit detail"
@@ -255,25 +255,21 @@ PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
 PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
 	text "I love CLEFAIRY,"
 	line "but I could never"
-
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# DOLL that I"
-	line "found."
+	cont "catch one. So I'm"
+	cont "making do with a"
+	cont "# DOLL that I"
+	cont "found."
 	done
 
 PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	text "Oh, I see now. The"
 	line "girl who lost this"
-
-	para "# DOLL is sad…"
+	cont "# DOLL is sad…"
 
 	para "OK. Could you take"
 	line "this # DOLL"
-
-	para "back to that poor"
-	line "little girl?"
+	cont "back to that poor"
+	cont "little girl?"
 
 	para "I'll befriend a"
 	line "real CLEFAIRY."
@@ -291,7 +287,7 @@ PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	line "expedition to"
 	cont "MT MOON to find"
 	cont "a real, honest"
-	cont "and true CLFAIRY."
+	cont "and true CLEFAIRY."
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:
@@ -311,16 +307,16 @@ PokemonFanClubTeacherText:
 	para "But I know it"
 	line "does..."
 
-	para "Right."
+	para "Right?"
 	done
 
 PokemonFanClubClefairyDollText:
 	text "It's a CLEFAIRY!"
 	line "Huh?"
 
-	para "Oh, right. It's a"
-	line "CLEFAIRY #"
-	cont "DOLL."
+	para "Oh, right."
+	line "It's a CLEFAIRY"
+	cont "# DOLL."
 	done
 
 PokemonFanClubBayleefText:

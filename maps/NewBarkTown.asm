@@ -243,7 +243,7 @@ Text_GearIsImpressive:
 	line "holding B."
 
 	para "Unless you have"
-	line "SPORT SHOES then"
+	line "SPORT SHOES, then"
 	cont "you can run by"
 	cont "default."
 	done
@@ -253,7 +253,7 @@ Text_SafeWithYou:
 	line "<PLAYER>!"
 	para "You make me so"
 	line "proud to be from"
-	cont "NEWBARK TOWN."
+	cont "NEW BARK TOWN."
 	para "I feel safe with"
 	line "you here."
 	done

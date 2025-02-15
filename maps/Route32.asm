@@ -264,7 +264,7 @@ TrainerPicnickerLiz1:
 	end
 
 LizNumberAcceptedText:
-	text "Really!"
+	text "Really!?"
 	para "Thank you!"
 	para "I'll keep in"
 	line "touch."
@@ -276,8 +276,8 @@ LizRematchText:
     done
 
 LizRematchRefuseText:
-    text "You'll call me"
-    line "wont you."
+    text "You'll call me,"
+    line "won't you?"
     done
 
 TrainerYoungsterGordon:
@@ -395,7 +395,7 @@ Route32CooltrainerMText_AideIsWaiting:
 
 
 Route32CooltrainerMText_VioletGym:
-	text "Listen buddy."
+	text "Listen, buddy."
 
 	para "I had a dear"
 	line "friend who went"
@@ -443,20 +443,20 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 	cont "back!"
 
 	para "Damn those rapid"
-	line "QUAGSIRE."
+	line "QUAGSIRE!"
 	done
 
 FisherJustinSeenText:
 	text "Whoa!"
 
-	para "Hey kid you made"
+	para "Hey kid, you made"
 	line "me lose that"
 	cont "delicious"
 	cont "MAGIKARP!"
 
 	para "How will I"
 	line "feed my family"
-	cont "now!"
+	cont "now!?"
 	done
 
 FisherJustinBeatenText:
@@ -476,10 +476,10 @@ FisherJustinAfterText:
 	done
 
 FisherRalph1SeenText:
-	text "I'm so close"
+	text "I'm so close."
 
-	para "once my #MON"
-	line "evolve I shall"
+	para "Once my #MON"
+	line "evolve, I shall"
 	cont "be the envy of"
 	cont "all fishers!"
 	done
@@ -591,7 +591,7 @@ CamperRolandAfterText:
 	line "evolve!?"
 
 	para "What kind of"
-	line "joke is this."
+	line "joke is this!?"
 	done
 
 PicnickerLiz1SeenText:
@@ -621,7 +621,7 @@ PicnickerLiz1AfterText:
 	cont "a picnic or a"
 	cont "date."
 
-	para "You know if it"
+	para "You know, if it"
 	line "wasn't for the"
 	cont "flying death"
 	cont "machines..."
@@ -681,7 +681,7 @@ MeetFriedaText:
 	done
 
 FriedaGivesGiftText:
-	text "Here take this."
+	text "Here, take this."
 
 	para "It will help"
 	line "you through the"
@@ -712,7 +712,7 @@ FriedaFridayText:
 	line "weekend is"
 	cont "here!"
 
-	para "You know unless"
+	para "You know, unless"
 	line "you're lazy and"
 	cont "have a four day"
 	cont "week."

@@ -157,7 +157,7 @@ BikerRileySeenText:
 	done
 
 BikerRileyBeatenText:
-	text "Ok, ok you"
+	text "Ok, ok. You"
 	line "can go free."
 	done
 
@@ -212,7 +212,7 @@ BikerGlennSeenText:
 	done
 
 BikerGlennBeatenText:
-	text "It's ona and"
+	text "It's one and"
 	line "all for one."
 	done
 
@@ -256,7 +256,7 @@ BikerCharlesBeatenText:
 
 BikerCharlesAfterBattleText:
     text "I can always make"
-    line "myself feel happy"
+    line "myself feel happy."
     cont "I just need to"
     cont "think about poor"
 	cont "wee ZEKE!"

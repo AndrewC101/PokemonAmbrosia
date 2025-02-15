@@ -153,9 +153,8 @@ BugCatchingContestant5AText:
 BugCatchingContestant6AText:
 	text "BARRY: You should"
 	line "weaken bug #MON"
-
-	para "first, then throw"
-	line "a BALL."
+	cont "first, then throw"
+	cont "a BALL."
 	done
 
 BugCatchingContestant7AText:
@@ -169,9 +168,8 @@ BugCatchingContestant7AText:
 BugCatchingContestant8AText:
 	text "JOSH: I've been"
 	line "collecting bug"
-
-	para "#MON since I"
-	line "was just a baby."
+	cont "#MON since I"
+	cont "was just a baby."
 
 	para "There's no way I'm"
 	line "going to lose!"
@@ -180,9 +178,8 @@ BugCatchingContestant8AText:
 BugCatchingContestant9AText:
 	text "SAMUEL: If you've"
 	line "got the time to"
-
-	para "chat, go find some"
-	line "bug #MON."
+	cont "chat, go find some"
+	cont "bug #MON."
 	done
 
 BugCatchingContestant10AText:

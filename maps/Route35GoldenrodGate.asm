@@ -107,8 +107,8 @@ Route35GoldenrodGateRandyThanksText:
 	cont "trained."
 
 	para "It will help"
-	line "you out I'm"
-	cont "sure."
+	line "you out,"
+	cont "I'm sure."
 	done
 
 Route35GoldenrodGatePlayerReceivedAMonWithMailText:
@@ -135,7 +135,7 @@ Route35GoldenrodGateRandyCantCarryAnotherMonText:
 	done
 
 Route35GoldenrodGateRandyOhNeverMindThenText:
-	text "Oh… Never mind,"
+	text "Oh… Nevermind,"
 	line "then…"
 	done
 

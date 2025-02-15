@@ -32,9 +32,9 @@ Route2NuggetHouseFisherText:
 	cont "this house on this"
 	cont "peaceful plot of"
 	cont "land."
-	para "Listen I greatly"
+	para "Listen, I greatly"
 	line "value my privacy!"
-	para "Here take this and"
+	para "Here, take this and"
 	line "don't tell anyone"
 	cont "about me."
 	done

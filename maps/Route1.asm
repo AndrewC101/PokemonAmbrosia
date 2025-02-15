@@ -170,7 +170,7 @@ CooltrainerfQuinnBeatenText:
 
 CooltrainerfQuinnAfterBattleText:
 	text "It is my duty"
-	line "as as trainer"
+	line "as a trainer"
 	cont "to destroy my"
 	cont "enemies."
 	para "No matter how"

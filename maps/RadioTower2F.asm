@@ -345,7 +345,7 @@ RadioTower2FTeacherText:
 
 	para "Of course you"
 	line "need a special"
-	cont "add on to tune"
+	cont "add-on to tune"
 	cont "into KANTO radio."
 	done
 
@@ -373,7 +373,7 @@ RadioTower2FBlackBelt1Text:
 	para "By order of the"
 	line "DIRECTOR!"
 
-	para "He didn't used"
+	para "He didn't use"
 	line "to be like"
 	cont "this."
 

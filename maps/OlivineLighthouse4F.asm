@@ -31,8 +31,8 @@ TrainerSailorKent:
 
 SailorKentSeenText:
 	text "I have been"
-	line "been training"
-	cont "here for days."
+	line "training here"
+	cont "for days."
 
 	para "I believe in"
 	line "my partner."

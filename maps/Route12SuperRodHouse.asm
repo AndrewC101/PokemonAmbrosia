@@ -76,7 +76,7 @@ GaveSuperRodText:
 
 DontWantSuperRodText:
 	text "The first step to"
-	line "achieving your"
+	line "achieve your"
 	cont "dreams is"
 	cont "admitting that you"
 	cont "want them."

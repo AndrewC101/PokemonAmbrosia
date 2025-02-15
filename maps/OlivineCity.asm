@@ -185,7 +185,7 @@ OlivineSilverConfrontsCrystal:
     para "It longed for a"
     line "strong trainer."
 
-    para "It certinly would"
+    para "It certainly would"
     line "not have found one"
     cont "in NEW BARK TOWN."
 
@@ -218,9 +218,9 @@ OlivineCrystalChallengeSilver:
 OlivineSilverFightCrystal:
     text "How much can you"
     line "really care about"
-    cont "your #MON."
+    cont "your #MON?"
 
-    para "If you did you"
+    para "If you did, you"
     line "wouldn't willingly"
     cont "let me beat them."
     done
@@ -338,7 +338,7 @@ OlivineCityRivalText:
 	para "I see the fear"
 	line "in your eyes."
 
-	para "Don't worry I'm"
+	para "Don't worry, I'm"
 	line "too busy to battle"
 	cont "you right now."
 
@@ -498,7 +498,7 @@ YunaWinAfterBattleText:
     para "You just have"
     line "to keep smiling."
 
-    para "even when it"
+    para "Even when it"
     line "hurts inside."
     done
 
@@ -1045,7 +1045,7 @@ RolePlay3PrizeText:
     text "We finished a"
     line "new game."
 
-    para "Here take this"
+    para "Here, take this"
     line "for playing."
     done
 
@@ -1201,7 +1201,7 @@ DBZCh2VillainText:
     line "full of people."
 
     para "With a flick of"
-    line "your finger all"
+    line "your finger, all"
     cont "their lives end."
 
     para "A group arrives."
@@ -1238,7 +1238,7 @@ DBZCh3HeroText:
 
 DBZCh3VillainText:
     text "One after another"
-    line "Your foes die."
+    line "your foes die."
 
     para "You feel no"
     line "pleasure."
@@ -1249,7 +1249,7 @@ DBZCh3VillainText:
     cont "allow such an"
     cont "indulgence."
 
-    para "What is this!"
+    para "What is this!?"
 
     para "A massive power"
     line "heading this way"
@@ -1268,11 +1268,11 @@ DBZCh4HeroText:
     line "flee to space."
 
     para "You need to head"
-    line "to PICCOLOS home"
+    line "to PICCOLO's home"
     cont "planet to acquire"
     cont "DRAGON BALLS."
 
-    para "With them you"
+    para "With them, you"
     line "can revive your"
     cont "friends."
 
@@ -1291,7 +1291,7 @@ DBZCh4HeroText:
 
     para "Something evil."
 
-    para "FRIEZA Emperor"
+    para "FRIEZA, Emperor"
     line "of the universe"
     cont "is here."
 

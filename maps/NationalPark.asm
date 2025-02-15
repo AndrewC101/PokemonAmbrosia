@@ -459,7 +459,7 @@ NationalParkTeacher1Text:
 	para "Don't tell"
 	line "anyone."
 
-	para "Here take this."
+	para "Here, take this."
 	done
 
 NationalParkTeacher1Text_GotQuickClaw:
@@ -473,7 +473,7 @@ NationalParkTeacher1Text_GotQuickClaw:
 	cont "its stats."
 
 	para "Isn't that"
-	line "unfair!"
+	line "unfair?"
 	done
 
 NationalParkYoungster2Text:
@@ -518,7 +518,7 @@ NationalParkTeacher2LeonText:
 	para "I love you!!"
 
 	para "I feel safe"
-	line "with leon here."
+	line "with LEON here."
 
 	para "He could take on"
 	line "the HOENN army by"
@@ -631,16 +631,16 @@ LassKriseSeenText:
 	para "..."
 
 	para "What is your"
-	line "problem!"
+	line "problem!?"
 	done
 
 LassKriseBeatenText:
 	text "Don't look"
-	line "at me."
+	line "at me!"
 	done
 
 LassKriseAfterBattleText:
-	text "Oh you just"
+	text "Oh, you just"
 	line "wanted a battle."
 
 	para "I thought you"
@@ -831,7 +831,7 @@ YoureStrongKidText:
 
 LeonGiftText:
     text "You got heart kid."
-    para "Here this will"
+    para "Here, this will"
     line "help you get"
     cont "stronger."
     done

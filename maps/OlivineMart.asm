@@ -38,7 +38,7 @@ OlivineMartLassText:
 	cont "from here."
 
 	para "I have a bag"
-	line "full of them.!"
+	line "full of them!"
 	done
 
 OlivineMart_MapEvents:

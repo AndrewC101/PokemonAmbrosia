@@ -235,8 +235,8 @@ TrainerYoungsterJoey:
 JoeyNumberAcceptedText:
 	text "When it is time"
 	line "for you to fulfill"
-	cont "your destiny I"
-	cont "shall call."
+	cont "your destiny"
+	cont "I shall call."
 	done
 
 JoeyRematchText:
@@ -353,7 +353,7 @@ YoungsterJoey1SeenText:
 
 	para "One day we shall"
 	line "reach the peak"
-	cont "of power"
+	cont "of power."
 
 	para "Come now!"
 
@@ -367,9 +367,9 @@ YoungsterJoey1BeatenText:
 	done
 
 YoungsterJoey1WinText:
-	text "It was my devine"
+	text "It was my divine"
 	line "destiny to win"
-	cont "battle"
+	cont "battle."
 	done
 
 YoungsterJoey1AfterText:
@@ -429,7 +429,7 @@ BugCatcherDonBeatenText:
 BugCatcherDonAfterText:
 	text "If you see a"
 	line "bright red"
-	cont "trainer you"
+	cont "trainer,"
 	cont "be sure to run!"
 
 	para "Don't let them"

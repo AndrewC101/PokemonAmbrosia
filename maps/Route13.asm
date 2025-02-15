@@ -253,8 +253,8 @@ BirdKeeperPerryBeatenText:
 	done
 
 BirdKeeperPerryAfterBattleText:
-	text "What, if I were my"
-	line "brother would I"
+	text "What if I were my"
+	line "brother? Would I"
 	cont "say this path"
 	cont "leads to death?"
 	para "Um..."

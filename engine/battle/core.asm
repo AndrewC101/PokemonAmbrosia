@@ -7604,17 +7604,17 @@ GiveExperiencePoints:
     ld [wStringBuffer2 + 2], a
 ; DevNote - Rematch exp
 ; Boost experience for a Trainer Battle unless in a REMATCH, unless we have all kanto badges
-   	ld a, [wKantoBadges]
-   	cp %11111111 ; all badges
-    jr z, .ignoreRematch
-    ld a, [wBattleType]
-    cp BATTLETYPE_REMATCH
-    jr z, .noTrainerBoost
-.ignoreRematch
+;   	ld a, [wKantoBadges]
+;   	cp %11111111 ; all badges
+;    jr z, .ignoreRematch
+;    ld a, [wBattleType]
+;    cp BATTLETYPE_REMATCH
+;    jr z, .noTrainerBoost
+;.ignoreRematch
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
-.noTrainerBoost
+;.noTrainerBoost
 ; DevNote - exp reduced until all Kanto badges are obtained
     call BoostExp
    	ld a, [wKantoBadges]

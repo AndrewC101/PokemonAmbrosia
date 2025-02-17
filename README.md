@@ -55,7 +55,7 @@ Open world design is balanced by two levels caps, both of which are visible on y
 ## Quality of Life
 
 Many massively impactful quality of life changes.
-- Can rematch any trainer by talking to them, including Gym leaders. However, rematches give reduced exp and forbid the use of items.
+- Can rematch any trainer by talking to them, including Gym leaders. However, rematches forbid the use of items.
 - Can forfeit almost any battle via the Run option.
 - Exp share available from very early game, giving 50% exp to all Pokémon who do not participate. This is upgraded by endgame to give 200% exp to all Pokémon.
 - Sport Shoes which allows the player to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).

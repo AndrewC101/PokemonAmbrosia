@@ -408,9 +408,6 @@ YoungsterMikeyAfterText:
 	line "trainers by"
 	cont "talking to them"
 	cont "again."
-
-	para "But you don't"
-	line "get as much EXP."
 	done
 
 BugCatcherDonSeenText:

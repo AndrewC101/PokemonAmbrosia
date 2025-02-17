@@ -265,13 +265,6 @@ OakOpenMtSilverText:
 	line "gain double"
 	cont "full EXP!"
 
-	para "Not only that."
-
-	para "But you will"
-	line "no longer get"
-	cont "reduced EXP"
-	cont "from rematches."
-
     para "I have also made"
 	line "arrangements so"
 	cont "that you can go to"

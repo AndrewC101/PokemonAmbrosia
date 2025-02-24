@@ -237,7 +237,7 @@ WhitneyShouldntBeSoSeriousText:
 	para "How could you"
 	line "use such brutish"
 	cont "force against a"
-	cont "delegate beauty"
+	cont "delicate beauty"
 	cont "like me."
 	done
 

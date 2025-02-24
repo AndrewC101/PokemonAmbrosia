@@ -103,6 +103,13 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	cont "be fully healed"
 	cont "after each battle"
 	cont "if you win!"
+
+	para "You should check"
+	line "out the MOVE TUTOR"
+	cont "in GOLDENROD!"
+
+	para "He has some moves"
+	line "that will help."
 	done
 
 TeleportGuyText1:

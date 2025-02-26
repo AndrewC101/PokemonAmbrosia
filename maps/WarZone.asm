@@ -137,7 +137,6 @@ WallaceScript:
     disappear WARZONE_SOLDIER_1
     disappear WARZONE_SOLDIER_2
     disappear WARZONE_SOLDIER_3
-    disappear WARZONE_SOLDIER_4
     disappear WARZONE_SOLDIER_5
     dontrestartmapmusic
     reloadmap

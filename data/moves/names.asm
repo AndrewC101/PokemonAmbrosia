@@ -227,7 +227,7 @@ MoveNames::
 	li "DRAGON PULSE"
 	li "BATON PASS"
 	li "ENCORE"
-	li "PURSUIT"
+	li "FEINT ATTACK"
 	li "RAPID SPIN"
 	li "SHELL SMASH"
 	li "IRON HEAD"

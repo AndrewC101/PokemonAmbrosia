@@ -233,7 +233,7 @@
 	const DRAGON_PULSE ; e1
 	const BATON_PASS   ; e2
 	const ENCORE       ; e3
-	const PURSUIT      ; e4
+	const FEINT_ATTACK ; e4
 	const RAPID_SPIN   ; e5
 	const SHELL_SMASH  ; e6
 	const IRON_HEAD    ; e7

@@ -33,7 +33,7 @@ SquirtleEggMoves:
 	db -1 ; end
 
 StarlyEggMoves:
-	db PURSUIT
+	db FEINT_ATTACK
 	db NIGHT_SLASH
 	db -1 ; end
 
@@ -55,7 +55,7 @@ BunearyEggMoves:
 	db -1 ; end
 
 EkansEggMoves:
-	db PURSUIT
+	db FEINT_ATTACK
 	db CRUNCH
 	db -1 ; end
 
@@ -94,7 +94,7 @@ VulpixEggMoves:
 
 ZubatEggMoves:
 	db QUICK_ATTACK
-	db PURSUIT
+	db FEINT_ATTACK
 	db NIGHT_SLASH
 	db GUST
 	db WHIRLWIND
@@ -278,7 +278,7 @@ RhyhornEggMoves:
 	db REVERSAL
 	db ROCK_SLIDE
 	db THRASH
-	db PURSUIT
+	db FEINT_ATTACK
 	db COUNTER
 	db MAGNITUDE
 	db -1 ; end
@@ -363,7 +363,7 @@ GardevoirEggMoves:
 
 AerodactylEggMoves:
 	db WHIRLWIND
-	db PURSUIT
+	db FEINT_ATTACK
 	db -1 ; end
 
 SnorlaxEggMoves:
@@ -429,7 +429,7 @@ JoltikEggMoves:
 	db DISABLE
 	db SONICBOOM
 	db BATON_PASS
-	db PURSUIT
+	db FEINT_ATTACK
 	db -1 ; end
 
 ChinchouEggMoves:
@@ -572,14 +572,14 @@ SwinubEggMoves:
 
 SkarmoryEggMoves:
 	db DRILL_PECK
-	db PURSUIT
+	db FEINT_ATTACK
 	db WHIRLWIND
 	db -1 ; end
 
 HoundourEggMoves:
 	db FIRE_SPIN
 	db RAGE
-	db PURSUIT
+	db FEINT_ATTACK
 	db COUNTER
 	db REVERSAL
 	db -1 ; end
@@ -596,7 +596,7 @@ MiltankEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
-	db PURSUIT
+	db FEINT_ATTACK
 	db STOMP
 	db OUTRAGE
 	db FOCUS_ENERGY

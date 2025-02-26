@@ -642,7 +642,7 @@ PawniardEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 10, METAL_CLAW
-	db 15, PURSUIT
+	db 15, FEINT_ATTACK
 	db 18, FALSE_SWIPE
 	db 20, MACH_PUNCH
 	db 25, BULLET_PUNCH
@@ -656,7 +656,7 @@ BisharpEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 10, METAL_CLAW
-	db 15, PURSUIT
+	db 15, FEINT_ATTACK
 	db 18, FALSE_SWIPE
 	db 20, MACH_PUNCH
 	db 25, BULLET_PUNCH
@@ -1711,7 +1711,7 @@ WeavileEvosAttacks:
 	db 1, SCRATCH
 	db 1, FOCUS_ENERGY
 	db 14, POWDER_SNOW
-	db 18, PURSUIT
+	db 18, FEINT_ATTACK
 	db 22, SLASH
 	db 25, SCREECH
 	db 30, ICE_PUNCH
@@ -1789,7 +1789,7 @@ HonchkrowEvosAttacks:
 	db 1, PECK
 	db 1, NIGHT_SHADE
 	db 1, MEAN_LOOK
-	db 1, PURSUIT
+	db 1, FEINT_ATTACK
 	db 16, HAZE
 	db 21, WING_ATTACK
 	db 30, AIR_SLASH
@@ -1862,7 +1862,7 @@ ScytherEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, LEER
 	db 6, FOCUS_ENERGY
-	db 12, PURSUIT
+	db 12, FEINT_ATTACK
 	db 15, FALSE_SWIPE
 	db 18, SLASH
 	db 24, WING_ATTACK
@@ -1940,7 +1940,7 @@ TaurosEvosAttacks:
 	db 4, TAIL_WHIP
 	db 8, RAGE
 	db 10, HORN_ATTACK
-	db 16, PURSUIT
+	db 16, FEINT_ATTACK
 	db 22, HEADBUTT
 	db 30, THRASH
 	db 35, BODY_SLAM
@@ -2293,7 +2293,7 @@ TreeckoEvosAttacks:
 	db 1, FOCUS_ENERGY
 	db 8, ABSORB
 	db 12, QUICK_ATTACK
-	db 14, PURSUIT
+	db 14, FEINT_ATTACK
 	db 17, RAZOR_LEAF
 	db 20, MEGA_DRAIN
 	db 25, SLASH
@@ -2309,7 +2309,7 @@ GrovyleEvosAttacks:
 	db 1, POUND
 	db 1, FOCUS_ENERGY
 	db 8, ABSORB
-	db 14, PURSUIT
+	db 14, FEINT_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
 	db 20, MEGA_DRAIN
@@ -2325,7 +2325,7 @@ SceptileEvosAttacks:
 	db 1, POUND
 	db 1, FOCUS_ENERGY
 	db 8, ABSORB
-	db 14, PURSUIT
+	db 14, FEINT_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
 	db 20, MEGA_DRAIN
@@ -2896,7 +2896,7 @@ BeldumEvosAttacks:
 	db 1, CONFUSION
 	db 1, METAL_CLAW
 	db 1, TAKE_DOWN
-	db 28, PURSUIT
+	db 28, FEINT_ATTACK
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
@@ -2913,7 +2913,7 @@ MetangEvosAttacks:
 	db 1, CONFUSION
 	db 1, METAL_CLAW
 	db 1, TAKE_DOWN
-	db 28, PURSUIT
+	db 28, FEINT_ATTACK
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
@@ -2929,7 +2929,7 @@ MetagrossEvosAttacks:
 	db 1, CONFUSION
 	db 1, METAL_CLAW
 	db 1, TAKE_DOWN
-	db 28, PURSUIT
+	db 28, FEINT_ATTACK
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
@@ -3007,7 +3007,7 @@ UmbreonEvosAttacks:
 	db 1, BATON_PASS
 	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
-	db 16, PURSUIT
+	db 16, FEINT_ATTACK
 	db 20, CONFUSE_RAY
 	db 25, CRUNCH
 	db 28, MEAN_LOOK
@@ -3022,7 +3022,7 @@ MurkrowEvosAttacks:
 	db 1, PECK
 	db 1, NIGHT_SHADE
 	db 1, MEAN_LOOK
-	db 1, PURSUIT
+	db 1, FEINT_ATTACK
 	db 16, CONFUSE_RAY
 	db 21, WING_ATTACK
 	db 30, AIR_SLASH
@@ -3226,7 +3226,7 @@ ScizorEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, METAL_CLAW
 	db 6, FOCUS_ENERGY
-	db 12, PURSUIT
+	db 12, FEINT_ATTACK
 	db 18, FALSE_SWIPE
 	db 24, AGILITY
 	db 30, BULLET_PUNCH
@@ -3272,7 +3272,7 @@ SneaselEvosAttacks:
 	db 1, SCRATCH
 	db 1, FOCUS_ENERGY
 	db 12, POWDER_SNOW
-	db 15, PURSUIT
+	db 15, FEINT_ATTACK
 	db 22, SLASH
 	db 25, SCREECH
 	db 30, ICE_PUNCH

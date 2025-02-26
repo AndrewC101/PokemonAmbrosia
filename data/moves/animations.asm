@@ -229,7 +229,7 @@ BattleAnimations::
 	dw BattleAnim_Dragonbreath
 	dw BattleAnim_BatonPass
 	dw BattleAnim_Encore
-	dw BattleAnim_Pursuit
+	dw BattleAnim_FeintAttack
 	dw BattleAnim_RapidSpin
 	dw BattleAnim_ShellSmash
 	dw BattleAnim_IronTail
@@ -3485,7 +3485,7 @@ BattleAnim_ScaryFace:
 	anim_ret
 
 BattleAnim_SuckerPunch:
-BattleAnim_FaintAttack:
+BattleAnim_FeintAttack:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE
 	anim_call BattleAnim_TargetObj_1Row

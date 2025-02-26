@@ -16,9 +16,22 @@ VioletPokecenter1F_MapScripts:
     disappear VIOLETPOKECENTER1F_BILL
     endcallback
 	
-BillExpShareScript:
+BillExpShareScriptLeft:
     checkevent EVENT_GOT_EXP_SHARE
     iftrue .finish
+    sjump BillExpShareScript
+.finish
+	end
+
+BillExpShareScriptRight:
+    checkevent EVENT_GOT_EXP_SHARE
+    iftrue .finish
+	applymovement PLAYER, VioletPokecenter1FPlayerMovement2
+	sjump BillExpShareScript
+.finish
+	end
+
+BillExpShareScript:
 	pause 30
 	playsound SFX_EXIT_BUILDING
 	appear VIOLETPOKECENTER1F_BILL
@@ -38,6 +51,7 @@ BillExpShareScript:
 	opentext
 	writetext VioletPokecenter1F_BillText1
 	promptbutton
+	verbosegiveitem LUCKY_EGG
 	closetext
 	turnobject PLAYER, DOWN
 	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
@@ -47,7 +61,6 @@ BillExpShareScript:
 	setflag ENGINE_TIME_CAPSULE
 	setevent EVENT_GOT_EXP_SHARE
 	waitsfx
-.finish
 	end
 
 VioletPokecenter1FBillMovement1:
@@ -73,6 +86,11 @@ VioletPokecenter1FPlayerMovement1:
 	step UP
 	step UP
 	step UP
+	step_end
+
+VioletPokecenter1FPlayerMovement2:
+	step LEFT
+	turn_head UP
 	step_end
 
 VioletPokecenter1F_BillText1:
@@ -101,9 +119,12 @@ VioletPokecenter1F_BillText1:
 	cont "EXP and perhaps"
 	cont "even boosted EXP"
 	cont "one day."
-	para "You be sure to use"
-	line "it so I can gather"
-	cont "data."
+	para "Until then I have"
+	line "another rare gift"
+	cont "for you."
+	para "It will help you"
+	line "grow stronger"
+	cont "even faster!"
 	para "Good luck"
 	line "<PLAYER>!"
 	done
@@ -317,7 +338,8 @@ VioletPokecenter1F_MapEvents:
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
-	coord_event 3, 7, SCENE_ALWAYS, BillExpShareScript
+	coord_event 3, 7, SCENE_ALWAYS, BillExpShareScriptLeft
+	coord_event 4, 7, SCENE_ALWAYS, BillExpShareScriptRight
 
 	def_bg_events
 

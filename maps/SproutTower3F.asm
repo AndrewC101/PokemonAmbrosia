@@ -327,6 +327,11 @@ SageLiFlashExplanationText:
 	cont "for your #MON"
 	cont "to use it."
 
+	para "However you"
+	line "will need the"
+	cont "VIOLET GYM"
+	cont "BADGE."
+
 	para "Check your"
 	line "#MON when in"
 	cont "a dark place to"

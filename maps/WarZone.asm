@@ -6,7 +6,6 @@
 	const WARZONE_SOLDIER_1
 	const WARZONE_SOLDIER_2
 	const WARZONE_SOLDIER_3
-	const WARZONE_SOLDIER_4
 	const WARZONE_SOLDIER_5
 	const WARZONE_BLUE
 	const WARZONE_SILVER
@@ -1053,59 +1052,6 @@ Soldier3AfterBattleText:
     para "Starting with you."
     done
 
-TrainerSoldier4:
-	trainer SOLDIER, SOLDIER_4, EVENT_BEAT_SOLDIER_4, Soldier4SeenText, Soldier4BeatenText, Soldier4WinsText, .Script
-.Script:
-    loadmem wNoRematch, 1
-	opentext
-	writetext Soldier4AfterBattleText
-	waitbutton
-	closetext
-	end
-Soldier4SeenText:
-    text "Any moment now"
-    line "floods more"
-    cont "soldiers will"
-    cont "converge upon"
-    cont "FUCHSIA."
-
-    para "Even if you beat"
-    line "me..."
-
-    para "WALLACE will end"
-    line "everyone!"
-    done
-Soldier4BeatenText:
-    text "Let it burn!"
-    line "Let it al burn!"
-    done
-Soldier4WinsText:
-    text "I'll slit your"
-    line "throat quick."
-    done
-Soldier4AfterBattleText:
-    text "You aren't nearly"
-    line "strong enough to"
-    cont "beat WALLACE."
-
-    para "I haven't heard"
-    line "anything from my"
-    cont "troops."
-
-    para "Maybe LANCE,"
-    line "CYNTHIA and LEON"
-    cont "have all come to"
-    cont "your rescue."
-
-    para "It doesn't matter."
-
-    para "WALLACE can not"
-    line "lose."
-
-    para "WALLACE and HOENN"
-    line "will live forever."
-    done
-
 TrainerSoldier5:
 	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier5SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
 .Script:
@@ -1387,10 +1333,9 @@ WarZone_MapEvents:
 	object_event 20,  0, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, StevenScript, EVENT_FIELD_MON_7
 	object_event 15,  4, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_8
 	object_event 26,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LeonScript, EVENT_FIELD_MON_9
-	object_event 10, 28, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier1, EVENT_BEAT_WALLACE
-	object_event  4,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
-	object_event 23, 26, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
-	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier4, EVENT_BEAT_WALLACE
+	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier1, EVENT_BEAT_WALLACE
+	object_event 23, 16, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
+	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
 	object_event 23, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier5, EVENT_BEAT_WALLACE
 
 	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3

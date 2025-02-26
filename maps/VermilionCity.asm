@@ -612,7 +612,7 @@ HoenCaptainAfterBattleText:
 	para "EMPEROR WALLACE"
 	line "has our strongest"
 	cont "squad with him."
-	para "Four CAPTAINS and"
+	para "Three CAPTAINS and"
 	line "ADMIRAL DRAKE!"
 	para "DRAKE has beaten"
 	line "CHAMPIONS much"

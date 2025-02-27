@@ -6,5 +6,5 @@
 	next "a current flows."
 
 	page "Immune to"
-	next "ELECTRIC"
-	next "attacks.@"
+	next "ELECTRIC and"
+	next "recoil.@"

@@ -798,7 +798,7 @@ PsyduckEvosAttacks:
 	db 16, CONFUSION
 	db 20, BUBBLEBEAM
 	db 23, HYPNOSIS
-	db 28, PSYCH_UP
+	db 28, AURORA_BEAM
 	db 34, ZEN_HEADBUTT
 	db 37, PSYCHIC_M
 	db 50, HYDRO_PUMP
@@ -813,7 +813,7 @@ GolduckEvosAttacks:
 	db 16, CONFUSION
 	db 20, BUBBLEBEAM
 	db 23, HYPNOSIS
-	db 28, PSYCH_UP
+	db 28, AURORA_BEAM
 	db 33, ZEN_HEADBUTT
 	db 37, PSYCHIC_M
 	db 50, HYDRO_PUMP
@@ -1254,16 +1254,15 @@ MamoswineEvosAttacks:
 ElectivireEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
-	db 1, LEER
 	db 1, THUNDERSHOCK
-	db 12, SWIFT
 	db 16, LIGHT_SCREEN
 	db 20, THUNDER_WAVE
-	db 25, THUNDERPUNCH
-	db 30, DISCHARGE
+	db 24, THUNDERPUNCH
+	db 28, SUBMISSION
+	db 32, DISCHARGE
 	db 36, THUNDERBOLT
 	db 40, THUNDER
-	db 55, VOLT_TACKLE
+	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 MagnezoneEvosAttacks:
@@ -1891,15 +1890,15 @@ ElectabuzzEvosAttacks:
 	db EVOLVE_LEVEL, 40, ELECTIVIRE
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
-	db 1, LEER
 	db 1, THUNDERSHOCK
 	db 16, LIGHT_SCREEN
 	db 20, THUNDER_WAVE
-	db 25, THUNDERPUNCH
-	db 30, DISCHARGE
+	db 24, THUNDERPUNCH
+	db 28, SUBMISSION
+	db 32, DISCHARGE
 	db 36, THUNDERBOLT
 	db 41, THUNDER
-	db 55, VOLT_TACKLE
+	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:

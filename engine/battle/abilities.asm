@@ -70,6 +70,8 @@ RockHeadPokemon:
     db HAWLUCHA
     db MOLTRES
     db REGIGIGAS
+    db ELECTABUZZ
+    db ELECTIVIRE
     db -1
 
 GutsPokemon:

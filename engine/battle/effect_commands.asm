@@ -1731,6 +1731,28 @@ BattleCommand_CheckHit:
 	ret z
 .notThunder
 
+; DevNote - make Fire Blast always hit for Magmortar
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp FIRE_BLAST
+	jr nz, .notFireBlast
+    call GetCurrentMon
+	cp MAGMORTAR
+	ret z
+	cp MAGMAR
+	ret z
+.notFireBlast
+
+; DevNote - make Blizzard always hit for Jynx
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp BLIZZARD
+	jr nz, .notBlizzard
+    call GetCurrentMon
+	cp JYNX
+	ret z
+.notBlizzard
+
 	call .StatModifiers
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
@@ -5769,25 +5791,22 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
-	ret
+    ret
+;	ld a, [wAttackMissed]
+;	and a
+;	ret nz
+;	call CheckSubstituteOpp
+;	jr nz, .fail
+;	ld a, BATTLE_VARS_STATUS_OPP
+;	call GetBattleVar
+;	and 1 << FRZ | SLP
+;	jr nz, .fail
+;	call CheckOpponentWentFirst
+;	jr z, FlinchTarget
+;.fail
+;	ld a, 1
+;	ld [wAttackMissed], a
+;	ret
 
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp

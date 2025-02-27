@@ -228,7 +228,7 @@ MoveDescriptions::
 	dw DragonPulseDescription
 	dw BatonPassDescription
 	dw EncoreDescription
-	dw PursuitDescription
+	dw FeintAttackDescription
 	dw RapidSpinDescription
 	dw ShellSmashDescription
 	dw IronHeadDescription
@@ -1174,9 +1174,9 @@ EncoreDescription:
 	db   "Makes the foe re-"
 	line "peat 2-6 times.@"
 
-PursuitDescription:
-	db   "Relentless dark"
-	line "strike.@"
+FeintAttackDescription:
+	db   "An attack that"
+	line "never misses.@"
 
 RapidSpinDescription:
 	db   "A high-speed"

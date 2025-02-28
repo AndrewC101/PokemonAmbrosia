@@ -4467,6 +4467,8 @@ SwitchInEffects:
     jp z, .spAtkUp
     cp ESPEON
     jp z, .spAtkUp
+    cp RAICHU
+    jp z, .spAtkUp
 
     cp SUICUNE
     jp z, .defUp

@@ -6,4 +6,4 @@
 	next "scale buildings."
 
 	page "Has increased"
-	next "accuracy.@"
+	next "ACCURACY.@"

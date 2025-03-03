@@ -205,8 +205,6 @@ UberImmunePokemon:
 ;    db GENGAR
 ;    db MISDREAVUS
 ;    db MISMAGIUS
-;    db KOFFING
-;    db WEEZING
 ;    db LATIAS
 ;    db LATIOS
 ;    db ROTOM

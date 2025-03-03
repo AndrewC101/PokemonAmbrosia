@@ -5,6 +5,6 @@
 	next "it charges up the"
 	next "faster it gets."
 
-	page "Unleashes a"
-	next "final attack upon"
-	next "being defeated.@"
+	page "Lowers foes"
+	next "ACCURACY. Has"
+	next "a final attack.@"

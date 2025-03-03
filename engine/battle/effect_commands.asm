@@ -7460,4 +7460,8 @@ CompoundEyes:
     call z, IncrementB
     cp GRENINJA
     call z, IncrementB
+    cp DROWZEE
+    call z, IncrementB
+    cp HYPNO
+    call z, IncrementB
     ret

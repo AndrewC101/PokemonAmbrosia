@@ -6,4 +6,4 @@
 	next "hides itself."
 
 	page "Has increased"
-	next "accuracy.@"
+	next "ACCURACY.@"

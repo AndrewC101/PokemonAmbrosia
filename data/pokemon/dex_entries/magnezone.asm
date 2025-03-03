@@ -6,5 +6,5 @@
 	next "immense energy."
 
 	page "ZAP CANNON"
-	next "hits. Attacks"
-	next "upon defeat.@"
+	next "hits. Has a"
+	next "final attack.@"

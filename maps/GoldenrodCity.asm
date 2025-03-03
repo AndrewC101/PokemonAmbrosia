@@ -641,7 +641,8 @@ GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText:
 	done
 
 GoldenrodCityMoveTutorFarewellKidText:
-	text "Farewell, CHAMPION!"
+	text "Farewell"
+	line "CHAMPION!"
 	done
 
 GoldenrodCityMoveTutorBButText:

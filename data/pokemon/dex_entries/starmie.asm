@@ -6,4 +6,4 @@
 	next "into space."
 
 	page "Has increased"
-	next "accuracy.@"
+	next "ACCURACY.@"

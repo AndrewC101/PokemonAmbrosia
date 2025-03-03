@@ -5,6 +5,6 @@
 	next "to it when it"
 	next "expels poison."
 
-	page "Immune to"
-	next "GROUND type"
-	next "moves.@"
+	page "Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

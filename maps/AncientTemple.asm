@@ -18,9 +18,11 @@ AncientTempleSacredAsh:
     itemball SACRED_ASH
 
 HoohLugiaBlockScript:
-    checkevent EVENT_FOUGHT_HO_OH
+    setval HO_OH
+	special MonCheck
     iffalse .block
-    checkevent EVENT_FOUGHT_LUGIA
+    setval LUGIA
+	special MonCheck
     iffalse .block
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_1
     end
@@ -45,9 +47,11 @@ HoohLugiaBlockText:
     done
 
 GroudonKyogreBlockScript:
-    checkevent EVENT_CAUGHT_GROUDON
+    setval GROUDON
+	special MonCheck
     iffalse .block
-    checkevent EVENT_CAUGHT_KYOGRE
+    setval KYOGRE
+	special MonCheck
     iffalse .block
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_2
     end
@@ -72,9 +76,11 @@ GroudonKyogreBlockText:
     done
 
 PalkiaDialgaBlockScript:
-    checkevent EVENT_CAUGHT_PALKIA
+    setval PALKIA
+	special MonCheck
     iffalse .block
-    checkevent EVENT_CAUGHT_DIALGA
+    setval DIALGA
+	special MonCheck
     iffalse .block
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_3
     end
@@ -99,9 +105,11 @@ PalkiaDialgaBlockText:
     done
 
 RayquazaGiratinaBlockScript:
-    checkevent EVENT_CAUGHT_RAYQUAZA
+    setval RAYQUAZA
+	special MonCheck
     iffalse .block
-    checkevent EVENT_CAUGHT_GIRATINA
+    setval GIRATINA
+	special MonCheck
     iffalse .block
     setmapscene ANCIENT_TEMPLE, SCENE_CUSTOM_4
     end
@@ -126,9 +134,11 @@ RayquazaGiratinaBlockText:
     done
 
 XerneasYveltalBlockScript:
-    checkevent EVENT_CAUGHT_YVELTAL
+    setval YVELTAL
+	special MonCheck
     iffalse .block
-    checkevent EVENT_CAUGHT_XERNEAS
+    setval XERNEAS
+	special MonCheck
     iffalse .block
     setmapscene ANCIENT_TEMPLE, SCENE_FINISHED
     end

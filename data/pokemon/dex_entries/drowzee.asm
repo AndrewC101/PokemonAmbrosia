@@ -5,6 +5,6 @@
 	next "its nose, it can"
 	next "see dreams."
 
-	page "Gives"
-	next "nightmares to"
-	next "sleeping foes.@"
+	page "Has increased"
+	next "ACCURACY. Gives"
+	next "nightmares.@"

@@ -6,4 +6,4 @@
 	next "it floats up."
 
 	page "Has increased"
-	next "accuracy.@"
+	next "ACCURACY.@"

@@ -129,6 +129,7 @@ BattleTowerOutsideSignText:
 	done
 
 BTGrampsScript:
+    faceplayer
     checkevent EVENT_TAKEN_BT_TOUR
     iffalse .tour
     opentext

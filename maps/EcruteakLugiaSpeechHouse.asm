@@ -48,7 +48,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 	line "the mountains."
 
     para "Then a #MON"
-    line "bight as the"
+    line "bright as the"
     cont "sun appeared."
 
     para "Its fire engulfed"

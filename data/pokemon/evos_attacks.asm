@@ -1343,14 +1343,13 @@ ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, DEFENSE_CURL
+	db 1, PROTECT
 	db 9, POWDER_SNOW
 	db 17, AURORA_BEAM
-	db 22, PROTECT
-	db 25, BUBBLEBEAM
-	db 35, CLAMP
-	db 40, WATERFALL
-	db 45, ICE_BEAM
+	db 22, BUBBLEBEAM
+	db 30, CLAMP
+	db 35, WATERFALL
+	db 40, ICE_BEAM
 	db 50, HYDRO_PUMP
 	db 55, AVALANCHE
 	db 60, SHELL_SMASH
@@ -1358,15 +1357,13 @@ ShellderEvosAttacks:
 
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DEFENSE_CURL
 	db 1, AURORA_BEAM
 	db 1, PROTECT
-	db 30, SPIKES
-	db 35, CLAMP
-	db 40, WATERFALL
-	db 45, ICE_BEAM
-	db 50, HYDRO_PUMP
-	db 55, AVALANCHE
+	db 22, BUBBLEBEAM
+	db 30, CLAMP
+	db 35, WATERFALL
+	db 40, ICE_BEAM
+	db 45, SPIKES
 	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
@@ -1441,7 +1438,8 @@ DrowzeeEvosAttacks:
 	db 1, POUND
 	db 1, HYPNOSIS
 	db 10, DISABLE
-	db 18, CONFUSION
+	db 12, CONFUSION
+	db 18, POISON_GAS
 	db 22, HEADBUTT
 	db 27, PSYBEAM
 	db 30, MEDITATE
@@ -1455,10 +1453,11 @@ HypnoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, HYPNOSIS
-	db 1, CONFUSION
 	db 10, DISABLE
+	db 12, CONFUSION
+	db 18, POISON_GAS
 	db 22, HEADBUTT
-	db 26, PSYBEAM
+	db 27, PSYBEAM
 	db 30, MEDITATE
 	db 33, HYPNOSIS
 	db 36, ZEN_HEADBUTT
@@ -1964,8 +1963,9 @@ GyaradosEvosAttacks:
 	db 35, CRUNCH
 	db 40, WATERFALL
 	db 45, DRAGON_DANCE
-	db 50, HURRICANE
-	db 55, HYPER_BEAM
+	db 50, OUTRAGE
+	db 55, HURRICANE
+	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LaprasEvosAttacks:

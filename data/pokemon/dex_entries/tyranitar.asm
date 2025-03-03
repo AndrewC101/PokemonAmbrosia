@@ -6,5 +6,5 @@
 	next "shake the earth."
 
 	page "Summons a"
-	next "sand storm upon"
+	next "SANDSTORM upon"
 	next "entering battle.@"

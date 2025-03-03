@@ -554,7 +554,7 @@ DetermineMoveOrder:
 ; ==============================
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
-    jr nz, .continue
+    jp nz, .continue
 
     ld a, [wEnemyMonSpecies]
     cp DRILBUR
@@ -611,6 +611,9 @@ DetermineMoveOrder:
     ld a, [wPlayerSpdLevel]
     cp BASE_STAT_LEVEL + 2
     jr nc, .continue
+    ld a, [wEnemySpdLevel]
+    cp BASE_STAT_LEVEL - 1
+    jr c, .continue
     jr .enemy_first
 
 ; player moves first unless player is paralysed or enemy is >+2 speed - in which case compare speed as normal
@@ -621,6 +624,9 @@ DetermineMoveOrder:
     ld a, [wEnemySpdLevel]
     cp BASE_STAT_LEVEL + 2
     jr nc, .continue
+    ld a, [wPlayerSpdLevel]
+    cp BASE_STAT_LEVEL - 1
+    jr c, .continue
     jr .player_first
 
 .continue
@@ -2579,6 +2585,10 @@ Aftermath:
     jr z, .aftermath
     cp ELECTRODE
     jr z, .aftermath
+    cp KOFFING
+    jr z, .aftermath
+    cp WEEZING
+    jr z, .aftermath
     cp MAGNEZONE
     jr z, .aftermath
     ret
@@ -4511,6 +4521,8 @@ SwitchInEffects:
     jp z, .atkDown
 
     cp WEEZING
+    jp z, .accDown
+    cp ELECTRODE
     jp z, .accDown
 
     cp AEGISLASH
@@ -8141,9 +8153,9 @@ AnimateExpBar:
 
 ; DevNote - Space can be saved in core by commenting out most of below so message is always go ... as in link battles.
 SendOutMonText:
-	ld a, [wLinkMode]
-	and a
-	jr z, .not_linked
+;	ld a, [wLinkMode]
+;	and a
+;	jr z, .not_linked
 
 ; If we're in a LinkBattle print just "Go <PlayerMon>"
 ; unless DoBattle already set [wBattleHasJustStarted]
@@ -8152,53 +8164,53 @@ SendOutMonText:
 	and a
 	jr nz, .skip_to_textbox
 
-.not_linked
+;.not_linked
 ; Depending on the HP of the enemy mon, the game prints a different text
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	or [hl]
-	ld hl, GoMonText
-	jr z, .skip_to_textbox
+;	ld hl, wEnemyMonHP
+;	ld a, [hli]
+;	or [hl]
+;	ld hl, GoMonText
+;	jr z, .skip_to_textbox
 
 	; compute enemy health remaining as a percentage
-	xor a
-	ldh [hMultiplicand + 0], a
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	ld [wEnemyHPAtTimeOfPlayerSwitch], a
-	ldh [hMultiplicand + 1], a
-	ld a, [hl]
-	ld [wEnemyHPAtTimeOfPlayerSwitch + 1], a
-	ldh [hMultiplicand + 2], a
-	ld a, 25
-	ldh [hMultiplier], a
-	call Multiply
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ld b, [hl]
-	srl a
-	rr b
-	srl a
-	rr b
-	ld a, b
-	ld b, 4
-	ldh [hDivisor], a
-	call Divide
+;	xor a
+;	ldh [hMultiplicand + 0], a
+;	ld hl, wEnemyMonHP
+;	ld a, [hli]
+;	ld [wEnemyHPAtTimeOfPlayerSwitch], a
+;	ldh [hMultiplicand + 1], a
+;	ld a, [hl]
+;	ld [wEnemyHPAtTimeOfPlayerSwitch + 1], a
+;	ldh [hMultiplicand + 2], a
+;	ld a, 25
+;	ldh [hMultiplier], a
+;	call Multiply
+;	ld hl, wEnemyMonMaxHP
+;	ld a, [hli]
+;	ld b, [hl]
+;	srl a
+;	rr b
+;	srl a
+;	rr b
+;	ld a, b
+;	ld b, 4
+;	ldh [hDivisor], a
+;	call Divide
 
-	ldh a, [hQuotient + 3]
-	ld hl, GoMonText
-	cp 70
-	jr nc, .skip_to_textbox
+;	ldh a, [hQuotient + 3]
+;	ld hl, GoMonText
+;	cp 70
+;	jr nc, .skip_to_textbox
 
-	ld hl, DoItMonText
-	cp 40
-	jr nc, .skip_to_textbox
+;	ld hl, DoItMonText
+;	cp 40
+;	jr nc, .skip_to_textbox
 
-	ld hl, GoForItMonText
-	cp 10
-	jr nc, .skip_to_textbox
+;	ld hl, GoForItMonText
+;	cp 10
+;	jr nc, .skip_to_textbox
 
-	ld hl, YourFoesWeakGetmMonText
+;	ld hl, YourFoesWeakGetmMonText
 .skip_to_textbox
 	jp BattleTextbox
 

@@ -5,6 +5,6 @@
 	next "its gases it can"
 	next "kill all around."
 
-	page "lowers foes"
-	next "ACCURACY upon"
-	next "entering battle.@"
+	page "Lowers foes"
+	next "ACCURACY. Has"
+	next "a final attack.@"

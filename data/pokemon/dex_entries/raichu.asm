@@ -5,6 +5,6 @@
 	next "from the air"
 	next "with its tail"
 
-	page "Immune to"
-	next "ELECTRIC"
-	next "attacks.@"
+	page "S.ATK boost upon"
+	next "switch. Immune"
+	next "to ELECTRIC.@"

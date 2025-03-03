@@ -6,4 +6,4 @@
 	next "collecting honey."
 
 	page "Has increased"
-	next "accuracy.@"
+	next "ACCURACY.@"

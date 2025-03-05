@@ -199,9 +199,6 @@ HikerBenjaminAfterBattleText:
 	cont "to with a special"
 	cont "WATER #MON"
 	cont "move."
-
-	para "That's why I"
-	line "have QUAGSIRE."
 	done
 
 PokemaniacShaneSeenText:

@@ -43,7 +43,7 @@ SailorKentSeenText:
 
 SailorKentBeatenText:
 	text "You did well"
-	line "QUAGSIRE."
+	line "SWAMPERT."
 	done
 
 SailorKentAfterBattleText:

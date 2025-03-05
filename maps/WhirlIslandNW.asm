@@ -28,7 +28,7 @@ WhirlIslandNWFieldMon2Script:
 	faceplayer
 	cry QUAGSIRE
 	pause 15
-	loadwildmon QUAGSIRE, 34
+	loadwildmon QUAGSIRE, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

@@ -105,8 +105,8 @@ PokemonCries::
 	mon_cry CRY_DROWZEE,     238,  192 ; HYPNO
 	mon_cry CRY_KRABBY,      200,  400 ; FEEBAS
 	mon_cry CRY_VENONAT,     100,  150 ; MILOTIC
-	mon_cry CRY_VOLTORB,     237,  256 ; VOLTORB
-	mon_cry CRY_VOLTORB,     168,  272 ; ELECTRODE
+	mon_cry CRY_WOOPER,      147,  175 ; VOLTORB
+	mon_cry CRY_CATERPIE,    100,  250 ; ELECTRODE
 	mon_cry CRY_DIGLETT,       0,  256 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR
 	mon_cry CRY_MARILL,      283,  288 ; MARILL
@@ -199,8 +199,8 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  200,  150 ; METANG
 	mon_cry CRY_TYPHLOSION,  300,  100 ; METAGROSS
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA
-	mon_cry CRY_WOOPER,      147,  175 ; WOOPER
-	mon_cry CRY_WOOPER,     -198,  320 ; QUAGSIRE
+	mon_cry CRY_WOOPER,      100,  200 ; WOOPER
+	mon_cry CRY_WOOPER,     -250,  320 ; QUAGSIRE
 	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
 	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW

@@ -1,10 +1,10 @@
-	db "BALL@" ; species name
-	dw 311, 1470 ; height, weight
+	db "DISGUISE@" ; species name
+	dw 008, 15 ; height, weight
 
-	db   "The more energy"
-	next "it charges up the"
-	next "faster it gets."
+	db   "Hides its awful"
+	next "appearance under"
+	next "a lonely rag."
 
-	page "Lowers foes"
-	next "ACCURACY. Has"
-	next "a final attack.@"
+	page "Immune to OHKO"
+	next "and passive"
+	next "damage.@"

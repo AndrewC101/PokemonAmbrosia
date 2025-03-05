@@ -33,14 +33,14 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_9
 	db 4 percent ; encounter rate
 	db 30, CHINCHOU
-	db 35, QUAGSIRE
+	db 35, STARYU
 	db 40, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
 	db 4 percent ; encounter rate
 	db 30, CHINCHOU
-	db 35, QUAGSIRE
+	db 35, STARYU
 	db 40, LANTURN
 	end_water_wildmons
 
@@ -102,7 +102,7 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_26
 	db 6 percent ; encounter rate
-	db 40, QUAGSIRE
+	db 40, POLITOED
 	db 40, LANTURN
 	db 40, STARMIE
 	end_water_wildmons
@@ -118,7 +118,7 @@ KantoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 65, LANTURN
 	db 65, CLOYSTER
-	db 65, QUAGSIRE
+	db 65, STARMIE
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
@@ -158,7 +158,7 @@ KantoWaterWildMons:
 
 	def_water_wildmons FUCHSIA_CITY
 	db 2 percent ; encounter rate
-	db 40, QUAGSIRE
+	db 40, STARMIE
 	db 40, SLOWBRO
 	db 40, ARCTOVISH
 	end_water_wildmons

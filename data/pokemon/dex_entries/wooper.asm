@@ -1,9 +1,9 @@
-	db "WATER FISH@" ; species name
-	dw 104, 190 ; height, weight
+	db "MUD FISH@" ; species name
+	dw 204, 617 ; height, weight
 
-	db   "A mucous"
-	next "membrane covers"
-	next "its body."
+	db   "Its sturdy legs"
+	next "give it traction"
+	next "in the mud."
 
 	page "Immune to"
 	next "WATER attacks.@"

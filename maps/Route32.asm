@@ -407,7 +407,8 @@ Route32CooltrainerMText_VioletGym:
 
 	para "I am sure he was"
 	line "attacked by a"
-	cont "rapid QUAGSIRE."
+	cont "band of rabid"
+	cont "MUDKIP!"
 
 	para "If only he"
 	line "had trained to"
@@ -429,7 +430,7 @@ Route32CooltrainerMText_HaveThisSeed:
 
 	para "It will protect"
 	line "you from the"
-	cont "QUAGSIRE."
+	cont "MUDKIPS."
 	done
 
 Route32CooltrainerMText_ExperiencesShouldBeUseful:
@@ -443,7 +444,7 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 	cont "back!"
 
 	para "Damn those rapid"
-	line "QUAGSIRE!"
+	line "MUDKIP!"
 	done
 
 FisherJustinSeenText:
@@ -500,7 +501,7 @@ FisherRalphAfterText:
 FisherHenrySeenText:
 	text "All I can find"
 	line "are these damn"
-	cont "WOOPER!"
+	cont "MUDKIP!"
 
 	para "They are mocking"
 	line "me!"
@@ -508,7 +509,7 @@ FisherHenrySeenText:
 
 FisherHenryBeatenText:
 	text "Maybe I need"
-	line "a WOOPER."
+	line "a MUDKIP."
 	done
 
 FisherHenryAfterText:
@@ -518,7 +519,7 @@ FisherHenryAfterText:
 	cont "right."
 
 	para "I don't know"
-	line "about WOOPER"
+	line "about MUDKIP"
 	cont "though."
 	done
 
@@ -750,7 +751,7 @@ Route32FieldMon1Script:
     end
 
 Route32FieldMon2Script:
-	trainer QUAGSIRE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 22, 0, .script
+	trainer DROWZEE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 25, 0, .script
 .script
     disappear ROUTE32_FIELDMON_2
     end
@@ -790,9 +791,9 @@ Route32FieldMon5Script:
 
 Route32FieldMon6Script:
 	faceplayer
-	cry WOOPER
+	cry VOLTORB
 	pause 15
-	loadwildmon WOOPER, 15
+	loadwildmon VOLTORB, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

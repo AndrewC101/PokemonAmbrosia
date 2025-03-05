@@ -42,9 +42,9 @@ Route27FieldMon1Script:
 
 Route27FieldMon2Script:
 	faceplayer
-	cry STARMIE
+	cry QUAGSIRE
 	pause 15
-	loadwildmon QUAGSIRE, 47
+	loadwildmon QUAGSIRE, 50
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

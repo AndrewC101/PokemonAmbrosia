@@ -29,6 +29,7 @@ AI_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
+    db ELECTRODE
     db $FF
 
 AI_LevitatePokemon:
@@ -43,6 +44,7 @@ AI_LevitatePokemon:
     db $FF
 
 AI_WaterAbsorbPokemon:
+    db VOLTORB
     db WOOPER
     db QUAGSIRE
     db VAPOREON
@@ -65,6 +67,7 @@ AI_VoltAbsorbPokemon:
     db MAREEP
     db FLAAFFY
     db AMPHAROS
+    db RAIKOU
     db $FF
 
 AI_FireAbsorbPokemon:
@@ -107,6 +110,7 @@ AI_SturdyPokemon:
     db BELDUM
     db METANG
     db METAGROSS
+    db ELECTRODE
     db $FF
 
 AI_ClearBodyPokemon:

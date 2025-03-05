@@ -1,9 +1,9 @@
-	db "WATER FISH@" ; species name
-	dw 407, 1650 ; height, weight
+	db "MUD FISH@" ; species name
+	dw 411, 1806 ; height, weight
 
-	db   "Its body is quite"
-	next "slimy. It often"
-	next "bangs its head."
+	db   "Its arms are"
+	next "rock hard and"
+	next "powerful."
 
 	page "Immune to"
 	next "WATER attacks.@"

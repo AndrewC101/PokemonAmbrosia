@@ -4,21 +4,21 @@ JohtoWaterWildMons:
 
 	def_water_wildmons RUINS_OF_ALPH_OUTSIDE
 	db 2 percent ; encounter rate
-	db 15, WOOPER
+	db 15, VOLTORB
 	db 20, SHELLDER
 	db 15, FEEBAS
 	end_water_wildmons
 
 	def_water_wildmons UNION_CAVE_1F
 	db 2 percent ; encounter rate
-	db 15, WOOPER
+	db 15, VOLTORB
 	db 20, POLIWAG
 	db 15, SHELLDER
 	end_water_wildmons
 
 	def_water_wildmons UNION_CAVE_B1F
 	db 2 percent ; encounter rate
-	db 15, WOOPER
+	db 15, VOLTORB
 	db 20, POLIWAG
 	db 15, SHELLDER
 	end_water_wildmons
@@ -26,7 +26,7 @@ JohtoWaterWildMons:
 	def_water_wildmons UNION_CAVE_B2F
 	db 4 percent ; encounter rate
 	db 25, POLIWHIRL
-	db 30, QUAGSIRE
+	db 30, SLOWPOKE
 	db 30, TENTACRUEL
 	end_water_wildmons
 

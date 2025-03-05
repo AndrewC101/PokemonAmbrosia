@@ -1486,34 +1486,34 @@ MiloticEvosAttacks:
 	db 0 ; no more level-up moves
 
 VoltorbEvosAttacks:
-	db EVOLVE_LEVEL, 30, ELECTRODE
+	db EVOLVE_LEVEL, 16, WOOPER
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, THUNDERSHOCK
-	db 9, SCREECH
-	db 17, SONICBOOM
-	db 20, SELFDESTRUCT
-	db 23, THUNDER_WAVE
-	db 27, ROLLOUT
-	db 31, DISCHARGE
-	db 36, MIRROR_COAT
-	db 40, THUNDERBOLT
-	db 45, EXPLOSION
+	db 1, WATER_GUN
+	db 11, ROCK_THROW
+    db 16, MAGNITUDE
+	db 20, BUBBLEBEAM
+	db 25, ROCK_SLIDE
+	db 30, BODY_SLAM
+	db 36, WATERFALL
+	db 40, AMNESIA
+	db 45, SCALD
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, THUNDERSHOCK
-	db 9, SCREECH
-	db 17, SONICBOOM
-	db 20, SELFDESTRUCT
-	db 23, THUNDER_WAVE
-	db 27, ROLLOUT
-	db 30, DISCHARGE
-	db 36, MIRROR_COAT
-	db 40, THUNDERBOLT
-	db 45, EXPLOSION
+	db 1, SPLASH
+	db 1, LICK
+	db 1, PAIN_SPLIT
+	db 10, MIMIC
+	db 15, DRAIN_KISS
+	db 20, CHARM
+	db 25, NIGHT_SLASH
+	db 30, SUCKER_PUNCH
+	db 35, SHADOW_FIST
+	db 40, PLAY_ROUGH
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -2956,34 +2956,34 @@ YanmaEvosAttacks:
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
-	db EVOLVE_LEVEL, 20, QUAGSIRE
+	db EVOLVE_LEVEL, 36, QUAGSIRE
 	db 0 ; no more evolutions
+	db 1, TACKLE
 	db 1, WATER_GUN
-	db 1, TAIL_WHIP
-	db 11, RAIN_DANCE
+	db 11, ROCK_THROW
     db 16, MAGNITUDE
-	db 21, BUBBLEBEAM
-	db 25, BODY_SLAM
-	db 31, RECOVER
-	db 36, SCALD
-	db 41, AMNESIA
-	db 45, EARTHQUAKE
-	db 51, HAZE
+	db 20, BUBBLEBEAM
+	db 25, ROCK_SLIDE
+	db 30, BODY_SLAM
+	db 36, WATERFALL
+	db 40, AMNESIA
+	db 45, SCALD
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TACKLE
 	db 1, WATER_GUN
-	db 1, TAIL_WHIP
-	db 11, RAIN_DANCE
+	db 11, ROCK_THROW
     db 16, MAGNITUDE
 	db 20, BUBBLEBEAM
-	db 25, BODY_SLAM
-	db 31, RECOVER
-	db 36, SCALD
-	db 41, AMNESIA
-	db 45, EARTHQUAKE
-	db 51, HAZE
+	db 25, ROCK_SLIDE
+	db 30, BODY_SLAM
+	db 36, WATERFALL
+	db 40, AMNESIA
+	db 45, SCALD
+	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 EspeonEvosAttacks:

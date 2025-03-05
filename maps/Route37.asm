@@ -296,7 +296,7 @@ Route37FieldMon3Script:
     end
 
 Route37FieldMon4Script:
-	trainer DOUBLADE, FIELD_MON, EVENT_FIELD_MON_4, Route37PokemonAttacksText, 28, 3, .script
+	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_4, Route37PokemonAttacksText, 28, 3, .script
 .script
     disappear ROUTE37_FIELDMON_4
     end
@@ -319,7 +319,7 @@ Route37FieldMon6Script:
     end
 
 Route37FieldMon7Script:
-	trainer MISDREAVUS, FIELD_MON, EVENT_FIELD_MON_7, Route37PokemonAttacksText, 24, 3, .script
+	trainer DOUBLADE, FIELD_MON, EVENT_FIELD_MON_7, Route37PokemonAttacksText, 24, 3, .script
 .script
     disappear ROUTE37_FIELDMON_7
     end

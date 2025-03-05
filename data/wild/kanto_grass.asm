@@ -426,7 +426,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, PIKACHU
-	db 37, ELECTRODE
+	db 37, AMPHAROS
 	db 38, RAICHU
 	db 40, MAGNEZONE
 	db 41, ROTOM
@@ -434,7 +434,7 @@ KantoGrassWildMons:
 	db 52, ELECTIVIRE
 	; day
 	db 35, PIKACHU
-	db 37, ELECTRODE
+	db 37, AMPHAROS
 	db 38, RAICHU
 	db 40, MAGNEZONE
 	db 41, ROTOM
@@ -442,7 +442,7 @@ KantoGrassWildMons:
 	db 52, ELECTIVIRE
 	; nite
 	db 35, PIKACHU
-	db 37, ELECTRODE
+	db 37, AMPHAROS
 	db 38, RAICHU
 	db 40, MAGNEZONE
 	db 41, ROTOM
@@ -500,7 +500,7 @@ KantoGrassWildMons:
 	db 38, HONCHKROW
 	db 38, NOCTOWL
 	db 40, POLIWRATH
-	db 40, QUAGSIRE
+	db 40, POLITOED
 	db 43, CLEFABLE
 	db 43, GENGAR
 	db 77, DITTO
@@ -528,7 +528,7 @@ KantoGrassWildMons:
 	db 38, HONCHKROW
 	db 38, NOCTOWL
 	db 40, POLIWRATH
-	db 40, QUAGSIRE
+	db 40, POLITOED
 	db 43, CLEFABLE
 	db 43, GENGAR
 	db 56, TAUROS
@@ -782,7 +782,7 @@ KantoGrassWildMons:
 	db 42, ROTOM
 	db 43, SCIZOR
 	db 44, BISHARP
-	db 45, QUAGSIRE
+	db 45, POLITOED
 	db 66, VOLCARONA
 	end_grass_wildmons
 
@@ -810,7 +810,7 @@ KantoGrassWildMons:
 	db 42, ROTOM
 	db 43, SCIZOR
 	db 44, BISHARP
-	db 45, QUAGSIRE
+	db 45, POLITOED
 	db 66, VOLCARONA
 	end_grass_wildmons
 
@@ -874,7 +874,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 60, RAICHU
-	db 61, ELECTRODE
+	db 61, TAUROS
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
 	db 64, ALAKAZAM
@@ -882,7 +882,7 @@ KantoGrassWildMons:
 	db 77, DITTO
 	; day
 	db 60, RAICHU
-	db 61, ELECTRODE
+	db 61, TAUROS
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
 	db 64, ALAKAZAM
@@ -890,7 +890,7 @@ KantoGrassWildMons:
 	db 77, DITTO
 	; nite
 	db 60, RAICHU
-	db 61, ELECTRODE
+	db 61, TAUROS
 	db 62, RHYPERIOR
 	db 63, WIGGLYTUFF
 	db 64, ALAKAZAM

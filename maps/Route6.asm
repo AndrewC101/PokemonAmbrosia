@@ -84,9 +84,9 @@ Route6FieldMon4Script:
 
 Route6FieldMon5Script:
 	faceplayer
-	cry ELECTRODE
+	cry MAGNETON
 	pause 15
-	loadwildmon ELECTRODE, 40
+	loadwildmon MAGNETON, 35
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

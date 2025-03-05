@@ -46,7 +46,7 @@ MountMortar1FOutsideFieldMon3Script:
 	faceplayer
 	cry ELECTABUZZ
 	pause 15
-	loadwildmon ELECTIVIRE, 31
+	loadwildmon ELECTABUZZ, 31
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

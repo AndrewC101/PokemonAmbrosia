@@ -1240,6 +1240,7 @@ Core_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
+    db ELECTRODE
     db -1
 
 Core_SpikesImmunePokemon:
@@ -2581,10 +2582,6 @@ FaintEnemyPokemon:
 ; =====================
 Aftermath:
     call GetOpposingMonCore
-    cp VOLTORB
-    jr z, .aftermath
-    cp ELECTRODE
-    jr z, .aftermath
     cp KOFFING
     jr z, .aftermath
     cp WEEZING
@@ -4521,8 +4518,6 @@ SwitchInEffects:
     jp z, .atkDown
 
     cp WEEZING
-    jp z, .accDown
-    cp ELECTRODE
     jp z, .accDown
 
     cp AEGISLASH

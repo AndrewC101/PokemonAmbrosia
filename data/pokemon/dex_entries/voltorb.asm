@@ -1,10 +1,9 @@
-	db "BALL@" ; species name
-	dw 108, 230 ; height, weight
+	db "MUD FISH@" ; species name
+	dw 104, 168 ; height, weight
 
-	db   "The components"
-	next "of this #MON,"
-	next "are unnatural."
+	db   "Can sense the"
+	next "currents with"
+	next "its head fin."
 
-	page "Unleashes a"
-	next "final attack upon"
-	next "being defeated.@"
+	page "Immune to"
+	next "WATER attacks.@"

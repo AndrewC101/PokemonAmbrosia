@@ -707,7 +707,7 @@ Route43FieldMon5Script:
 	faceplayer
 	cry QUAGSIRE
 	pause 15
-	loadwildmon QUAGSIRE, 33
+	loadwildmon QUAGSIRE, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

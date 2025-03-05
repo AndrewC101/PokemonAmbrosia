@@ -25,6 +25,7 @@ SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
+    db ELECTRODE
     db -1
 
 SniperPokemon:
@@ -147,6 +148,7 @@ MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
+    db ELECTRODE
     db -1
 
 ClearBodyPokemon:

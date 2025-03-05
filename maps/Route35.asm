@@ -611,9 +611,9 @@ Route35PokemonAttacksText:
 
 Route35FieldMon2Script:
 	faceplayer
-	cry VOLTORB
+	cry DROWZEE
 	pause 15
-	loadwildmon VOLTORB, 25
+	loadwildmon DROWZEE, 25
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -622,9 +622,9 @@ Route35FieldMon2Script:
 
 Route35FieldMon3Script:
 	faceplayer
-	cry ELECTRODE
+	cry AMPHAROS
 	pause 15
-	loadwildmon ELECTRODE, 41
+	loadwildmon AMPHAROS, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

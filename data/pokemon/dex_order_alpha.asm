@@ -55,7 +55,6 @@ AlphabeticalPokedexOrder:
 	db EKANS
 	db ELECTABUZZ
 	db ELECTIVIRE
-	db ELECTRODE
 	db ENTEI
 	db ESPEON
 	db EXCADRILL
@@ -137,6 +136,7 @@ AlphabeticalPokedexOrder:
 	db MAMOSWINE
 	db MAREEP
 	db MARILL
+	db WOOPER
 	db MEOWTH
 	db METAGROSS
 	db METANG
@@ -145,11 +145,13 @@ AlphabeticalPokedexOrder:
 	db MEWTWO
 	db MILOTIC
 	db MILTANK
+	db ELECTRODE
 	db MISDREAVUS
 	db MISMAGIUS
 	db MOLTRES
 	db MONFERNO
 	db MR__MIME
+	db VOLTORB
 	db MURKROW
 	db NIDOKING
 	db NIDOQUEEN
@@ -177,7 +179,6 @@ AlphabeticalPokedexOrder:
 	db PORYGONZ
 	db PSYDUCK
 	db PUPITAR
-	db QUAGSIRE
 	db RAICHU
 	db RAIKOU
 	db RALTS
@@ -219,6 +220,7 @@ AlphabeticalPokedexOrder:
 	db STARYU
 	db STEELIX
 	db SUICUNE
+	db QUAGSIRE
 	db SWINUB
 	db SYLVEON
 	db TAUROS
@@ -238,7 +240,6 @@ AlphabeticalPokedexOrder:
 	db VENUSAUR
 	db VICTREEBEL
 	db VOLCARONA
-	db VOLTORB
 	db VULPIX
 	db WARTORTLE
 	db WEAVILE
@@ -247,7 +248,6 @@ AlphabeticalPokedexOrder:
 	db WHIMSICOTT
 	db WIGGLYTUFF
 	db WOBBUFFET
-	db WOOPER
 	db XERNEAS
 	db YANMA
 	db YANMEGA

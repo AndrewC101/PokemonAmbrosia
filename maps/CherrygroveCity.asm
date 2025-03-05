@@ -1752,9 +1752,9 @@ CherrygroveGentScene:
 
 CherrygroveMon1Script:
 	faceplayer
-	cry RATTATA
+	cry VOLTORB
 	pause 15
-	loadwildmon RATTATA, 4
+	loadwildmon VOLTORB, 5
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

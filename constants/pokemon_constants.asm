@@ -118,7 +118,7 @@
 	const HYPNO      ; 61
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
-	const VOLTORB    ; 64
+	const MUDKIP    ; 64
 	const ELECTRODE  ; 65
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67

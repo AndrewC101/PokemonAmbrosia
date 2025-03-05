@@ -151,7 +151,7 @@ AlphabeticalPokedexOrder:
 	db MOLTRES
 	db MONFERNO
 	db MR__MIME
-	db VOLTORB
+	db MUDKIP
 	db MURKROW
 	db NIDOKING
 	db NIDOQUEEN

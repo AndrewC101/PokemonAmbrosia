@@ -105,7 +105,7 @@ PokemonCries::
 	mon_cry CRY_DROWZEE,     238,  192 ; HYPNO
 	mon_cry CRY_KRABBY,      200,  400 ; FEEBAS
 	mon_cry CRY_VENONAT,     100,  150 ; MILOTIC
-	mon_cry CRY_WOOPER,      147,  175 ; VOLTORB
+	mon_cry CRY_WOOPER,      147,  175 ; MUDKIP
 	mon_cry CRY_CATERPIE,    100,  250 ; ELECTRODE
 	mon_cry CRY_DIGLETT,       0,  256 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR

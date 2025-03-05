@@ -100,7 +100,7 @@ PokedexDataPointerTable:
 	dw HypnoPokedexEntry
 	dw FeebasPokedexEntry
 	dw MiloticPokedexEntry
-	dw VoltorbPokedexEntry
+	dw MudkipPokedexEntry
 	dw ElectrodePokedexEntry
 	dw ExeggcutePokedexEntry
 	dw ExeggutorPokedexEntry

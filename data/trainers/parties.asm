@@ -2148,7 +2148,7 @@ BugCatcherGroup:
 FisherGroup:
 	; FISHER (1)
 	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db  15, VOLTORB
+	db  15, MUDKIP
 	db  16, PSYDUCK
 	db  17, CHINCHOU
 	db  18, WARTORTLE
@@ -2179,9 +2179,9 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db  13, VOLTORB
-	db  13, VOLTORB
-	db  13, VOLTORB
+	db  13, MUDKIP
+	db  13, MUDKIP
+	db  13, MUDKIP
 	db  20, FROGADIER
 	db -1 ; end
 

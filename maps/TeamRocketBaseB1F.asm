@@ -765,7 +765,7 @@ TeamRocketBaseB1F_MapEvents:
 	coord_event 22, 16, SCENE_DEFAULT, SecurityCamera4
 	coord_event  8, 16, SCENE_DEFAULT, SecurityCamera5
 	; There are spots on the floor that trigger a Pokémon battle.
-	; Each Pokémon (Voltorb, Koffing, Geodude) knows Selfdestruct.
+	; Each Pokémon (electrode, Koffing, Geodude) knows Selfdestruct.
 	coord_event  2,  7, SCENE_DEFAULT, ExplodingTrap1
 	coord_event  3,  7, SCENE_DEFAULT, ExplodingTrap2
 	coord_event  4,  7, SCENE_DEFAULT, ExplodingTrap3

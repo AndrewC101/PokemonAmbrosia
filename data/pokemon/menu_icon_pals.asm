@@ -104,7 +104,7 @@ MonMenuIconPals:
 	icon_pals GOLD,  PURPLE  ; HYPNO
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
-	icon_pals BLUE,  PURPLE     ; VOLTORB
+	icon_pals BLUE,  PURPLE     ; MUDKIP
 	icon_pals PURPLE,  SILVER     ; ELECTRODE
 	icon_pals GREEN,  PURPLE      ; EXEGGCUTE
 	icon_pals GREEN,  PURPLE       ; EXEGGUTOR

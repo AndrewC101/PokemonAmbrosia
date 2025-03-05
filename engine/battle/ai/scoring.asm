@@ -44,7 +44,7 @@ AI_LevitatePokemon:
     db $FF
 
 AI_WaterAbsorbPokemon:
-    db VOLTORB
+    db MUDKIP
     db WOOPER
     db QUAGSIRE
     db VAPOREON

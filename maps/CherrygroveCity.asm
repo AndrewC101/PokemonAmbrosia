@@ -1752,9 +1752,9 @@ CherrygroveGentScene:
 
 CherrygroveMon1Script:
 	faceplayer
-	cry VOLTORB
+	cry MUDKIP
 	pause 15
-	loadwildmon VOLTORB, 5
+	loadwildmon MUDKIP, 5
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

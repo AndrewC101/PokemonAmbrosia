@@ -60,7 +60,7 @@ FishGroups:
 	db 100 percent,     FEEBAS,    15
 .Lake_Good:
 	db  35 percent,     FEEBAS,   20
-	db  70 percent,     VOLTORB,    30
+	db  70 percent,     MUDKIP,    30
 	db  90 percent + 1, GOLDUCK,    30
 	db 100 percent,     time_group 4
 .Lake_Super:

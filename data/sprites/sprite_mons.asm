@@ -28,7 +28,7 @@ SpriteMons:
 	db TENTACOOL
 	db TAUROS
 	db MACHOP
-	db VOLTORB
+	db MUDKIP
 	db LAPRAS
 	db RHYDON
 	db MOLTRES

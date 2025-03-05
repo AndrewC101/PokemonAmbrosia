@@ -1485,7 +1485,7 @@ MiloticEvosAttacks:
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
-VoltorbEvosAttacks:
+MudkipEvosAttacks:
 	db EVOLVE_LEVEL, 16, WOOPER
 	db 0 ; no more evolutions
 	db 1, TACKLE

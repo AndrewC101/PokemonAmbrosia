@@ -113,7 +113,7 @@ NewPokedexOrder:
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
-	db VOLTORB
+	db MUDKIP
 	db ELECTRODE
 	db VULPIX
 	db NINETALES

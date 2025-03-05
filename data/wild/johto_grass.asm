@@ -1349,7 +1349,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 7, VOLTORB
+	db 7, MUDKIP
 	db 7, MAREEP
 	db 9, BELLSPROUT
 	db 9, MARILL
@@ -1357,7 +1357,7 @@ JohtoGrassWildMons:
 	db 11, ABRA
 	db 15, SIGILYPH
 	; day
-	db 7, VOLTORB
+	db 7, MUDKIP
 	db 7, MAREEP
 	db 9, BELLSPROUT
 	db 9, MARILL
@@ -1365,7 +1365,7 @@ JohtoGrassWildMons:
 	db 11, ABRA
 	db 15, SIGILYPH
 	; nite
-	db 7, VOLTORB
+	db 7, MUDKIP
 	db 7, POLIWAG
 	db 9, CLEFAIRY
 	db 9, MARILL
@@ -1377,7 +1377,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 9, VOLTORB
+	db 9, MUDKIP
 	db 9, POLIWAG
 	db 10, CHINCHOU
 	db 11, MACHOP
@@ -1385,7 +1385,7 @@ JohtoGrassWildMons:
 	db 12, RIOLU
 	db 21, WOOPER
 	; day
-	db 9, VOLTORB
+	db 9, MUDKIP
 	db 9, POLIWAG
 	db 10, CHINCHOU
 	db 11, MACHOP
@@ -1393,7 +1393,7 @@ JohtoGrassWildMons:
 	db 12, RIOLU
 	db 21, WOOPER
 	; nite
-	db 9, VOLTORB
+	db 9, MUDKIP
 	db 9, POLIWAG
 	db 11, CHINCHOU
 	db 11, MACHOP

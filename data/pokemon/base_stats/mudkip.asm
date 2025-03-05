@@ -1,4 +1,4 @@
-	db VOLTORB ; 100
+	db MUDKIP ; 100
 
 	db  50,  70,  50, 40,  50,  50
 	;   hp  atk  def  spd  sat  sdf

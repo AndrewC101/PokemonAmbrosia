@@ -101,7 +101,7 @@ EvosAttacksPointers::
 	dw HypnoEvosAttacks
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
-	dw VoltorbEvosAttacks
+	dw MudkipEvosAttacks
 	dw ElectrodeEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw ExeggutorEvosAttacks

@@ -791,9 +791,9 @@ Route32FieldMon5Script:
 
 Route32FieldMon6Script:
 	faceplayer
-	cry VOLTORB
+	cry MUDKIP
 	pause 15
-	loadwildmon VOLTORB, 15
+	loadwildmon MUDKIP, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

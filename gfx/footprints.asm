@@ -231,7 +231,7 @@ INCBIN "gfx/footprints/drowzee.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/hypno.1bpp",      footprint_top
 INCBIN "gfx/footprints/feebas.1bpp",     footprint_top
 INCBIN "gfx/footprints/milotic.1bpp",    footprint_top
-INCBIN "gfx/footprints/voltorb.1bpp",    footprint_top
+INCBIN "gfx/footprints/mudkip.1bpp",    footprint_top
 INCBIN "gfx/footprints/electrode.1bpp",  footprint_top
 INCBIN "gfx/footprints/exeggcute.1bpp",  footprint_top
 INCBIN "gfx/footprints/exeggutor.1bpp",  footprint_top
@@ -240,7 +240,7 @@ INCBIN "gfx/footprints/marill.1bpp",     footprint_top
 INCBIN "gfx/footprints/hypno.1bpp",      footprint_bottom
 INCBIN "gfx/footprints/feebas.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/milotic.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/voltorb.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/mudkip.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/electrode.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/exeggcute.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/exeggutor.1bpp",  footprint_bottom

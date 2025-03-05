@@ -209,7 +209,7 @@ SECTION "Pokedex Entries 193-251", ROMX
 
 YanmaPokedexEntry::      INCLUDE "data/pokemon/dex_entries/yanma.asm"
 MarshtompPokedexEntry::     INCLUDE "data/pokemon/dex_entries/marshtomp.asm"
-QuagsirePokedexEntry::   INCLUDE "data/pokemon/dex_entries/quagsire.asm"
+SwampertPokedexEntry::   INCLUDE "data/pokemon/dex_entries/swampert.asm"
 EspeonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/espeon.asm"
 UmbreonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/umbreon.asm"
 MurkrowPokedexEntry::    INCLUDE "data/pokemon/dex_entries/murkrow.asm"

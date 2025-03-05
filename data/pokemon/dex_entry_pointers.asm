@@ -195,7 +195,7 @@ PokedexDataPointerTable:
 	dw MetagrossPokedexEntry
 	dw YanmaPokedexEntry
 	dw MarshtompPokedexEntry
-	dw QuagsirePokedexEntry
+	dw SwampertPokedexEntry
 	dw EspeonPokedexEntry
 	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry

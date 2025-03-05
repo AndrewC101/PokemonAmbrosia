@@ -212,7 +212,7 @@ IvysaurFrontpic:     INCBIN "gfx/pokemon/ivysaur/front.animated.2bpp.lz"
 LucarioFrontpic:      INCBIN "gfx/pokemon/lucario/front.animated.2bpp.lz"
 ChimcharFrontpic:   INCBIN "gfx/pokemon/chimchar/front.animated.2bpp.lz"
 DuosionFrontpic:  INCBIN "gfx/pokemon/duosion/front.animated.2bpp.lz"
-QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
+SwampertFrontpic:    INCBIN "gfx/pokemon/swampert/front.animated.2bpp.lz"
 
 
 SECTION "Pics 9", ROMX
@@ -542,7 +542,7 @@ JasminePic:          INCBIN "gfx/trainers/jasmine.2bpp.lz"
 ShelgonBackpic:       INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
 MetapodFrontpic:     INCBIN "gfx/pokemon/metapod/front.animated.2bpp.lz"
 YanmegaBackpic:         INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
-QuagsireBackpic:     INCBIN "gfx/pokemon/quagsire/back.2bpp.lz"
+SwampertBackpic:     INCBIN "gfx/pokemon/swampert/back.2bpp.lz"
 WhitneyPic:          INCBIN "gfx/trainers/whitney.2bpp.lz"
 JolteonBackpic:      INCBIN "gfx/pokemon/jolteon/back.2bpp.lz"
 CaterpieFrontpic:    INCBIN "gfx/pokemon/caterpie/front.animated.2bpp.lz"

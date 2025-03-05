@@ -1,4 +1,4 @@
-	db QUAGSIRE ; 195
+	db SWAMPERT ; 195
 
 	db  100, 110, 90, 60,  85,  90
 	;   hp  atk  def  spd  sat  sdf

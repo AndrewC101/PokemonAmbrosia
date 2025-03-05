@@ -26,9 +26,9 @@ WhirlIslandNWFieldMon1Script:
 
 WhirlIslandNWFieldMon2Script:
 	faceplayer
-	cry QUAGSIRE
+	cry SWAMPERT
 	pause 15
-	loadwildmon QUAGSIRE, 40
+	loadwildmon SWAMPERT, 40
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

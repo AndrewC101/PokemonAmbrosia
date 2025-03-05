@@ -196,7 +196,7 @@ EvosAttacksPointers::
 	dw MetagrossEvosAttacks
 	dw YanmaEvosAttacks
 	dw MarshtompEvosAttacks
-	dw QuagsireEvosAttacks
+	dw SwampertEvosAttacks
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
 	dw MurkrowEvosAttacks

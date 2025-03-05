@@ -220,7 +220,7 @@ AlphabeticalPokedexOrder:
 	db STARYU
 	db STEELIX
 	db SUICUNE
-	db QUAGSIRE
+	db SWAMPERT
 	db SWINUB
 	db SYLVEON
 	db TAUROS

@@ -391,8 +391,8 @@ PokemonPicPointers::
 	dba_pic YanmaBackpic
 	dba_pic MarshtompFrontpic
 	dba_pic MarshtompBackpic
-	dba_pic QuagsireFrontpic
-	dba_pic QuagsireBackpic
+	dba_pic SwampertFrontpic
+	dba_pic SwampertBackpic
 	dba_pic EspeonFrontpic
 	dba_pic EspeonBackpic
 	dba_pic UmbreonFrontpic

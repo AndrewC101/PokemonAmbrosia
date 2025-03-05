@@ -199,7 +199,7 @@ MonMenuIconPals:
 	icon_pals SILVER,  GOLD    ; METAGROSS
 	icon_pals GREEN,  TEAL         ; YANMA
 	icon_pals BLUE,  PURPLE     ; MARSHTOMP
-	icon_pals BLUE,  PURPLE    ; QUAGSIRE
+	icon_pals BLUE,  PURPLE    ; SWAMPERT
 	icon_pals PURPLE,  GREEN        ; ESPEON
 	icon_pals BROWN,  BLUE         ; UMBREON
 	icon_pals BLUE,  PURPLE       ; MURKROW

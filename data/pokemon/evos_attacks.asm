@@ -2956,7 +2956,7 @@ YanmaEvosAttacks:
 	db 0 ; no more level-up moves
 
 MarshtompEvosAttacks:
-	db EVOLVE_LEVEL, 36, QUAGSIRE
+	db EVOLVE_LEVEL, 36, SWAMPERT
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
@@ -2971,7 +2971,7 @@ MarshtompEvosAttacks:
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
-QuagsireEvosAttacks:
+SwampertEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN

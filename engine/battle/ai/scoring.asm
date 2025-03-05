@@ -46,7 +46,7 @@ AI_LevitatePokemon:
 AI_WaterAbsorbPokemon:
     db MUDKIP
     db MARSHTOMP
-    db QUAGSIRE
+    db SWAMPERT
     db VAPOREON
     db LAPRAS
     db ARCTOVISH

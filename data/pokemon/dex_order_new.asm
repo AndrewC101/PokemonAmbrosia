@@ -63,7 +63,7 @@ NewPokedexOrder:
 	db FLAAFFY
 	db AMPHAROS
 	db MARSHTOMP
-	db QUAGSIRE
+	db SWAMPERT
 	db GASTLY
 	db HAUNTER
 	db GENGAR

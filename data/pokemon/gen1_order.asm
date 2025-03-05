@@ -234,7 +234,7 @@ Pokered_MonIndices:
 	db METAGROSS
 	db YANMA
 	db MARSHTOMP
-	db QUAGSIRE
+	db SWAMPERT
 	db ESPEON
 	db UMBREON
 	db MURKROW

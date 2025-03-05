@@ -214,7 +214,7 @@ JOHTO_POKEMON EQU const_value
 	const METAGROSS  ; c0
 	const YANMA      ; c1
 	const MARSHTOMP     ; c2 *
-	const QUAGSIRE   ; c3 *
+	const SWAMPERT   ; c3 *
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6

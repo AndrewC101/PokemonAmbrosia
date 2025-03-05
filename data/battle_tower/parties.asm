@@ -835,7 +835,7 @@ BattleTowerMons:
     bigdw 58
 	db "GARAGARA@@@"
 
-	db QUAGSIRE
+	db SWAMPERT
 	db MUSCLE_BAND
 	db WATERFALL, ICE_PUNCH, DIG, HEADBUTT
 	dw 0 ; OT ID
@@ -5815,7 +5815,7 @@ BattleTowerMons:
 	bigdw 228 ; SDef
 	db "RANTA-N@@@@"
 
-	db QUAGSIRE
+	db SWAMPERT
 	db LEFTOVERS
 	db WATERFALL, CURSE, AMNESIA, RECOVER
 	dw 0 ; OT ID

@@ -196,7 +196,7 @@ MonMenuIcons:
 	db ICON_GEODUDE     ; METAGROSS
 	db ICON_BUG         ; YANMA
 	db ICON_MONSTER     ; MARSHTOMP
-	db ICON_MONSTER     ; QUAGSIRE
+	db ICON_MONSTER     ; SWAMPERT
 	db ICON_FOX         ; ESPEON
 	db ICON_FOX         ; UMBREON
 	db ICON_BIRD        ; MURKROW

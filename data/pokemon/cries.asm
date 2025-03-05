@@ -200,7 +200,7 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  300,  100 ; METAGROSS
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA
 	mon_cry CRY_WOOPER,      100,  200 ; MARSHTOMP
-	mon_cry CRY_WOOPER,     -250,  320 ; QUAGSIRE
+	mon_cry CRY_WOOPER,     -250,  320 ; SWAMPERT
 	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
 	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW

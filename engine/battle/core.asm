@@ -1240,7 +1240,7 @@ Core_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
-    db ELECTRODE
+    db MIMIKYU
     db -1
 
 Core_SpikesImmunePokemon:

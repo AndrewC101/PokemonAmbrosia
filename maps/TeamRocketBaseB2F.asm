@@ -1009,7 +1009,7 @@ RockerBaseLanceElectrodeFaintText:
 	para "I fear the only"
 	line "means to stop it"
 	cont "is to disconnect"
-	cont "the electrode."
+	cont "the MAGNETON."
 
 	para "The only way to"
 	line "do this is through"

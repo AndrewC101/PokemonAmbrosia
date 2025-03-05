@@ -416,7 +416,7 @@ MetangFrontpic:     INCBIN "gfx/pokemon/metang/front.animated.2bpp.lz"
 NidorinoBackpic:     INCBIN "gfx/pokemon/nidorino/back.2bpp.lz"
 MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
-ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
+MimikyuFrontpic:   INCBIN "gfx/pokemon/mimikyu/front.animated.2bpp.lz"
 
 
 SECTION "Pics 14", ROMX
@@ -631,7 +631,7 @@ GastlyBackpic:       INCBIN "gfx/pokemon/gastly/back.2bpp.lz"
 LopunnyBackpic:       INCBIN "gfx/pokemon/lopunny/back.2bpp.lz"
 MismagiusBackpic:       INCBIN "gfx/pokemon/mismagius/back.2bpp.lz"
 DratiniBackpic:      INCBIN "gfx/pokemon/dratini/back.2bpp.lz"
-ElectrodeBackpic:    INCBIN "gfx/pokemon/electrode/back.2bpp.lz"
+MimikyuBackpic:    INCBIN "gfx/pokemon/mimikyu/back.2bpp.lz"
 SkarmoryBackpic:     INCBIN "gfx/pokemon/skarmory/back.2bpp.lz"
 MetapodBackpic:      INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
 JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"

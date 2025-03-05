@@ -248,7 +248,7 @@ DarkCaveBlackthornEntranceFieldMon2Script:
     end
 
 DarkCaveBlackthornEntranceFieldMon3Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 71, 0, .script
+	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 71, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     end

@@ -114,7 +114,7 @@ NewPokedexOrder:
 	db MAGNETON
 	db MAGNEZONE
 	db MUDKIP
-	db ELECTRODE
+	db MIMIKYU
 	db VULPIX
 	db NINETALES
 	db GROWLITHE

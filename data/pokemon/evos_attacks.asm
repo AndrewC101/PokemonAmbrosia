@@ -1501,7 +1501,7 @@ MudkipEvosAttacks:
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
-ElectrodeEvosAttacks:
+MimikyuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, LICK

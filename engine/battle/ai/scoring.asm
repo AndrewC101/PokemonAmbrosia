@@ -29,7 +29,7 @@ AI_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
-    db ELECTRODE
+    db MIMIKYU
     db $FF
 
 AI_LevitatePokemon:
@@ -110,7 +110,7 @@ AI_SturdyPokemon:
     db BELDUM
     db METANG
     db METAGROSS
-    db ELECTRODE
+    db MIMIKYU
     db $FF
 
 AI_ClearBodyPokemon:

@@ -1494,7 +1494,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, ELECTRODE
+	db 24, MIMIKYU
 	db 38, GENGAR
 	; day
 	db 20, GASTLY
@@ -1502,7 +1502,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, ELECTRODE
+	db 24, MIMIKYU
 	db 38, GENGAR
 	; nite
 	db 20, GASTLY
@@ -1510,7 +1510,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, ELECTRODE
+	db 24, MIMIKYU
 	db 38, GENGAR
 	end_grass_wildmons
 

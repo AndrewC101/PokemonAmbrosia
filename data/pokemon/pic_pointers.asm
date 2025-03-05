@@ -203,8 +203,8 @@ PokemonPicPointers::
 	dba_pic MiloticBackpic
 	dba_pic MudkipFrontpic
 	dba_pic MudkipBackpic
-	dba_pic ElectrodeFrontpic
-	dba_pic ElectrodeBackpic
+	dba_pic MimikyuFrontpic
+	dba_pic MimikyuBackpic
 	dba_pic ExeggcuteFrontpic
 	dba_pic ExeggcuteBackpic
 	dba_pic ExeggutorFrontpic

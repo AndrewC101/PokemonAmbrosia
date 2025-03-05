@@ -140,7 +140,7 @@ Pokered_MonIndices:
 	db MILOTIC
 	db CLOYSTER
 	db DIALGA ; MISSINGNO.
-	db ELECTRODE
+	db MIMIKYU
 	db CLEFABLE
 	db WEEZING
 	db PERSIAN

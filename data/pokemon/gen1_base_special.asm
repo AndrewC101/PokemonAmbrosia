@@ -102,7 +102,7 @@ KantoMonSpecials:
 	db  25 ; FEEBAS
 	db  50 ; MILOTIC
 	db  55 ; MUDKIP
-	db  80 ; ELECTRODE
+	db  80 ; MIMIKYU
 	db  60 ; EXEGGCUTE
 	db 125 ; EXEGGUTOR
 	db  40 ; MARILL

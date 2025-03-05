@@ -145,7 +145,7 @@ AlphabeticalPokedexOrder:
 	db MEWTWO
 	db MILOTIC
 	db MILTANK
-	db ELECTRODE
+	db MIMIKYU
 	db MISDREAVUS
 	db MISMAGIUS
 	db MOLTRES

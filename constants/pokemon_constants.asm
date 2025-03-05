@@ -119,7 +119,7 @@
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
 	const MUDKIP    ; 64
-	const ELECTRODE  ; 65
+	const MIMIKYU  ; 65
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
 	const MARILL     ; 68

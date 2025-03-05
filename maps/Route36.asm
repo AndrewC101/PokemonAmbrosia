@@ -111,7 +111,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	writetext SudowoodoAttackedText
 	waitbutton
 	closetext
-	loadwildmon ELECTRODE, 30
+	loadwildmon MIMIKYU, 30
 	startbattle
 	setevent EVENT_FOUGHT_SPIRITOMB
 	ifequal DRAW, DidntCatchSudowoodo

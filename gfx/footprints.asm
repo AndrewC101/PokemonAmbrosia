@@ -445,7 +445,7 @@ INCBIN "gfx/footprints/metang.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/metagross.1bpp",   footprint_bottom
 ; 193-200 top halves
 INCBIN "gfx/footprints/yanma.1bpp",      footprint_top
-INCBIN "gfx/footprints/wooper.1bpp",     footprint_top
+INCBIN "gfx/footprints/marshtomp.1bpp",     footprint_top
 INCBIN "gfx/footprints/quagsire.1bpp",   footprint_top
 INCBIN "gfx/footprints/espeon.1bpp",     footprint_top
 INCBIN "gfx/footprints/umbreon.1bpp",    footprint_top
@@ -454,7 +454,7 @@ INCBIN "gfx/footprints/slowking.1bpp",   footprint_top
 INCBIN "gfx/footprints/misdreavus.1bpp", footprint_top
 ; 193-200 bottom halves
 INCBIN "gfx/footprints/yanma.1bpp",      footprint_bottom
-INCBIN "gfx/footprints/wooper.1bpp",     footprint_bottom
+INCBIN "gfx/footprints/marshtomp.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/quagsire.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/espeon.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/umbreon.1bpp",    footprint_bottom

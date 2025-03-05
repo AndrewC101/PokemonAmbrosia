@@ -489,7 +489,7 @@ YanmaEggMoves:
 	db LEECH_LIFE
 	db -1 ; end
 
-WooperEggMoves:
+MarshtompEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db SAFEGUARD

@@ -136,7 +136,7 @@ AlphabeticalPokedexOrder:
 	db MAMOSWINE
 	db MAREEP
 	db MARILL
-	db WOOPER
+	db MARSHTOMP
 	db MEOWTH
 	db METAGROSS
 	db METANG

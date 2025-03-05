@@ -208,7 +208,7 @@ MetagrossPokedexEntry::   INCLUDE "data/pokemon/dex_entries/metagross.asm"
 SECTION "Pokedex Entries 193-251", ROMX
 
 YanmaPokedexEntry::      INCLUDE "data/pokemon/dex_entries/yanma.asm"
-WooperPokedexEntry::     INCLUDE "data/pokemon/dex_entries/wooper.asm"
+MarshtompPokedexEntry::     INCLUDE "data/pokemon/dex_entries/marshtomp.asm"
 QuagsirePokedexEntry::   INCLUDE "data/pokemon/dex_entries/quagsire.asm"
 EspeonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/espeon.asm"
 UmbreonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/umbreon.asm"

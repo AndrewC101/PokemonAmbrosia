@@ -594,7 +594,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (4) ; route 33
 	db "GORDON@", TRAINERTYPE_NORMAL
-	db 17, WOOPER
+	db 17, MARSHTOMP
 	db 18, RIOLU
 	db -1 ; end
 

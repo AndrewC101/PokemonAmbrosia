@@ -198,7 +198,7 @@ MonMenuIconPals:
 	icon_pals SILVER,  GOLD     ; METANG
 	icon_pals SILVER,  GOLD    ; METAGROSS
 	icon_pals GREEN,  TEAL         ; YANMA
-	icon_pals BLUE,  PURPLE     ; WOOPER
+	icon_pals BLUE,  PURPLE     ; MARSHTOMP
 	icon_pals BLUE,  PURPLE    ; QUAGSIRE
 	icon_pals PURPLE,  GREEN        ; ESPEON
 	icon_pals BROWN,  BLUE         ; UMBREON

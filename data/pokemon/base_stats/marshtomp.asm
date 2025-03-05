@@ -1,4 +1,4 @@
-	db WOOPER ; 194
+	db MARSHTOMP ; 194
 
 	db  70,  85,  70,  50,  60,  70
 	;   hp  atk  def  spd  sat  sdf

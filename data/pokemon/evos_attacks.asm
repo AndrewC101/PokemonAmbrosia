@@ -1486,7 +1486,7 @@ MiloticEvosAttacks:
 	db 0 ; no more level-up moves
 
 MudkipEvosAttacks:
-	db EVOLVE_LEVEL, 16, WOOPER
+	db EVOLVE_LEVEL, 16, MARSHTOMP
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
@@ -2955,7 +2955,7 @@ YanmaEvosAttacks:
 	db 44, BUG_BUZZ
 	db 0 ; no more level-up moves
 
-WooperEvosAttacks:
+MarshtompEvosAttacks:
 	db EVOLVE_LEVEL, 36, QUAGSIRE
 	db 0 ; no more evolutions
 	db 1, TACKLE

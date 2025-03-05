@@ -1383,7 +1383,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 21, WOOPER
+	db 21, MARSHTOMP
 	; day
 	db 9, MUDKIP
 	db 9, POLIWAG
@@ -1391,7 +1391,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 21, WOOPER
+	db 21, MARSHTOMP
 	; nite
 	db 9, MUDKIP
 	db 9, POLIWAG
@@ -1399,7 +1399,7 @@ JohtoGrassWildMons:
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
-	db 21, WOOPER
+	db 21, MARSHTOMP
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34

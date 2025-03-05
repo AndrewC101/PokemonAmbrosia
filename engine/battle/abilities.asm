@@ -213,7 +213,7 @@ UberImmunePokemon:
 ;    db -1
 
 ;WaterAbsorbPokemon:
-;    db WOOPER
+;    db MARSHTOMP
 ;    db QUAGSIRE
 ;    db VAPOREON
 ;    db LAPRAS

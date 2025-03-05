@@ -233,7 +233,7 @@ Pokered_MonIndices:
 	db METANG
 	db METAGROSS
 	db YANMA
-	db WOOPER
+	db MARSHTOMP
 	db QUAGSIRE
 	db ESPEON
 	db UMBREON

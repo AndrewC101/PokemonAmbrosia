@@ -142,9 +142,9 @@ CooltrainerfGwenAfterBattleText:
 	text "I'm sure he is"
 	line "meeting her here."
 
-	para "When I find her."
+	para "When I find her…"
 
-	para "I will kill her."
+	para "I will kill her!"
 	done
 
 CooltrainerfEmmaSeenText:

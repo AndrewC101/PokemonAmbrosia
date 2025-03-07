@@ -1,4 +1,4 @@
-	db JIGGLYPUFF ; 039
+	db MAWILE ; 039
 
 	db 50, 85,  100,  50,  55,  70
 	;   hp  atk  def  spd  sat  sdf

@@ -99,7 +99,7 @@ Pokered_MonIndices:
 	db POLTEGEIST
 	db RALTS
 	db KIRLIA
-	db JIGGLYPUFF
+	db MAWILE
 	db WIGGLYTUFF
 	db EEVEE
 	db FLAREON

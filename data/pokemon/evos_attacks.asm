@@ -572,7 +572,7 @@ NinetalesEvosAttacks:
 	db 45, FIRE_BLAST
 	db 0 ; no more level-up moves
 
-JigglypuffEvosAttacks:
+MawileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 10, BITE

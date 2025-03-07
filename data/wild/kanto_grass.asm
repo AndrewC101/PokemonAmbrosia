@@ -230,7 +230,7 @@ KantoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 25, TEDDIURSA
-	db 26, JIGGLYPUFF
+	db 26, CLEFAIRY
 	db 30, KIRLIA
 	db 31, LOPUNNY
 	db 34, NIDOQUEEN
@@ -238,7 +238,7 @@ KantoGrassWildMons:
 	db 42, CLEFABLE
 	; day
 	db 25, TEDDIURSA
-	db 26, JIGGLYPUFF
+	db 26, CLEFAIRY
 	db 30, KIRLIA
 	db 31, LOPUNNY
 	db 34, NIDOQUEEN
@@ -246,7 +246,7 @@ KantoGrassWildMons:
 	db 42, CLEFABLE
 	; nite
 	db 25, CLEFAIRY
-	db 26, JIGGLYPUFF
+	db 26, CLEFAIRY
 	db 30, DOUBLADE
 	db 31, HAUNTER
 	db 34, UMBREON
@@ -341,7 +341,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 33, JIGGLYPUFF
+	db 33, CLEFAIRY
 	db 33, PIKACHU
 	db 34, KIRLIA
 	db 38, ARCANINE
@@ -349,7 +349,7 @@ KantoGrassWildMons:
 	db 41, GALLADE
 	db 50, EEVEE
 	; day
-	db 33, JIGGLYPUFF
+	db 33, CLEFAIRY
 	db 33, PIKACHU
 	db 34, KIRLIA
 	db 38, ARCANINE

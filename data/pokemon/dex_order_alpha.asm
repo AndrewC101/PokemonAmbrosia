@@ -103,7 +103,7 @@ AlphabeticalPokedexOrder:
 	db HYPNO
 	db INFERNAPE
 	db IVYSAUR
-	db JIGGLYPUFF
+	db MAWILE
 	db JOLTEON
 	db JOLTIK
 	db JYNX

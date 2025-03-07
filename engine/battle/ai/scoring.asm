@@ -896,14 +896,11 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SPEED_DOWN_HIT,   AI_Smart_SpeedDownHit
 	dbw EFFECT_SUBSTITUTE,       AI_Smart_Substitute
 	dbw EFFECT_HYPER_BEAM,       AI_Smart_HyperBeam
-	dbw EFFECT_MIMIC,            AI_Smart_Mimic
 	dbw EFFECT_LEECH_SEED,       AI_Smart_LeechSeed
 	dbw EFFECT_DISABLE,          AI_Smart_Disable
 	dbw EFFECT_COUNTER,          AI_Smart_Counter
 	dbw EFFECT_ENCORE,           AI_Smart_Encore
 	dbw EFFECT_PAIN_SPLIT,       AI_Smart_PainSplit
-	dbw EFFECT_SNORE,            AI_Smart_Snore
-	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
@@ -924,16 +921,12 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
 	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
 	dbw EFFECT_MOONLIGHT,        AI_Smart_Moonlight
-	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
 	dbw EFFECT_BELLY_DRUM,       AI_Smart_BellyDrum
-	dbw EFFECT_PSYCH_UP,         AI_Smart_PsychUp
 	dbw EFFECT_MIRROR_COAT,      AI_Smart_MirrorCoat
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
-	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
-	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HOLY_ARMOUR,      AI_Smart_HolyArmour
 	dbw EFFECT_SERENITY,         AI_Smart_Serenity
@@ -1101,110 +1094,6 @@ AI_Smart_LeechHit:
 
 	inc [hl]
 	ret
-
-AI_Smart_LockOn:
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .player_locked_on
-
-	push hl
-	call AICheckEnemyQuarterHP
-	jr nc, .discourage
-
-	call AICheckEnemyHalfHP
-	jr c, .skip_speed_check
-
-	call DoesAIOutSpeedPlayer
-	jr nc, .discourage
-
-.skip_speed_check
-	ld a, [wPlayerEvaLevel]
-	cp BASE_STAT_LEVEL + 3
-	jr nc, .maybe_encourage
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .do_nothing
-
-	ld a, [wEnemyAccLevel]
-	cp BASE_STAT_LEVEL - 2
-	jr c, .maybe_encourage
-	cp BASE_STAT_LEVEL
-	jr c, .do_nothing
-
-	ld hl, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	dec c
-	jr z, .discourage
-
-	ld a, [hli]
-	and a
-	jr z, .discourage
-
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 71 percent - 1
-	jr nc, .checkmove
-
-	ld a, 1
-	ldh [hBattleTurn], a
-
-	push hl
-	push bc
-	farcall BattleCheckTypeMatchup
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop bc
-	pop hl
-	jr c, .checkmove
-
-.do_nothing
-	pop hl
-	ret
-
-.discourage
-	pop hl
-	inc [hl]
-	ret
-
-.maybe_encourage
-	pop hl
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.player_locked_on
-	push hl
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-
-.checkmove2
-	inc hl
-	dec c
-	jr z, .dismiss
-
-	ld a, [de]
-	and a
-	jr z, .dismiss
-
-	inc de
-	call AIGetEnemyMove
-
-	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 71 percent - 1
-	jr nc, .checkmove2
-
-	dec [hl]
-	dec [hl]
-	jr .checkmove2
-
-.dismiss
-	pop hl
-	jp AIDiscourageMove
 
 AI_Smart_Selfdestruct:
 ; Selfdestruct, Explosion
@@ -2280,57 +2169,6 @@ AI_Smart_HyperBeam:
 	inc [hl]
 	ret
 
-AI_Smart_Mimic:
-; Discourage this move if the player did not use any move last turn.
-	ld a, [wLastPlayerCounterMove]
-	and a
-	jr z, .dismiss
-
-	call AICheckEnemyHalfHP
-	jr nc, .discourage
-
-	push hl
-	ld a, [wLastPlayerCounterMove]
-	call AIGetEnemyMove
-
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	pop hl
-	jr c, .discourage
-	jr z, .skip_encourage
-
-	call AI_50_50
-	jr c, .skip_encourage
-
-	dec [hl]
-
-.skip_encourage
-	ld a, [wLastPlayerCounterMove]
-	push hl
-	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-
-	pop hl
-	ret nc
-	call AI_50_50
-	ret c
-	dec [hl]
-	ret
-
-.dismiss
-; Dismiss this move if the enemy is faster than the player.
-	call DoesAIOutSpeedPlayer
-	jp c, AIDiscourageMove
-
-.discourage
-	inc [hl]
-	ret
-
 AI_Smart_Counter:
     call BattleRandom
     cp 10 percent + 1
@@ -3383,44 +3221,6 @@ AI_Smart_RapidSpin:
 	dec [hl]
 	ret
 
-AI_Smart_HiddenPower:
-	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
-
-; Calculate Hidden Power's type and base power based on enemy's DVs.
-	callfar HiddenPowerDamage
-	callfar BattleCheckTypeMatchup
-	pop hl
-
-; Discourage Hidden Power if not very effective.
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	jr c, .bad
-
-; Discourage Hidden Power if its base power	is lower than 50.
-	ld a, d
-	cp 50
-	jr c, .bad
-
-; Encourage Hidden Power if super-effective.
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE + 1
-	jr nc, .good
-
-; Encourage Hidden Power if its base power is 70.
-	ld a, d
-	cp 70
-	ret c
-
-.good
-	dec [hl]
-	ret
-
-.bad
-	inc [hl]
-	ret
-
 AI_Smart_RainDance:
 ; don't use if already raining
 	ld a, [wBattleWeather]
@@ -3617,33 +3417,6 @@ AI_Smart_BellyDrum:
     jp StandardDiscourage
 	ret
 
-AI_Smart_PsychUp:
-; don't use if we are already +2 in an offensive stat
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
-
-; encourage if player has a boosted stat
-    ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .encourage
-    ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .encourage
-
-; discourage by default
-.discourage
-	inc [hl]
-	inc [hl]
-	ret
-.encourage
-    dec [hl]
-    dec [hl]
-    ret
-
 AI_Smart_MirrorCoat:
     call BattleRandom
     cp 10 percent + 1
@@ -3659,21 +3432,6 @@ rept 10
 	dec [hl]
 endr
     ret
-
-AI_Smart_FutureSight:
-; Greatly encourage this move if the player is
-; flying or underground, and slower than the enemy.
-
-	call DoesAIOutSpeedPlayer
-	ret nc
-
-	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	ret z
-
-	dec [hl]
-	dec [hl]
-	ret
 
 AI_Smart_Solarbeam:
 ; 80% chance to encourage this move when it's sunny.
@@ -3700,20 +3458,6 @@ AI_Smart_Solarbeam:
 
 	dec [hl]
 	dec [hl]
-	ret
-
-AI_Smart_Thunder:
-; 90% chance to discourage this move when it's sunny.
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	ret nz
-
-	call Random
-	cp 10 percent
-	ret c
-
-	inc [hl]
 	ret
 
 AI_Smart_HolyArmour:
@@ -3754,6 +3498,10 @@ AI_Smart_Serenity:
 
 ; don't boost if choice locked
     call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
+; don't boost against a powerful priority user that can 2hko
+    call IsPowerfulPriorityUser
     jp c, .discourage
 
 .continue
@@ -3846,6 +3594,10 @@ AI_Smart_CalmMind:
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
+
+; don't boost against a powerful priority user that can 2hko
+    call IsPowerfulPriorityUser
+    jp c, StandardDiscourage
 
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
@@ -3976,6 +3728,10 @@ AI_Smart_Agility:
     call DoesAIOutSpeedPlayer
     jp c, StandardDiscourage
 
+; don't boost against a powerful priority user that can 2hko
+    call IsPowerfulPriorityUser
+    jp c, StandardDiscourage
+
 ; discourage if we will be KOd
     call CanPlayerKO
     jp c, StandardDiscourage
@@ -3999,6 +3755,10 @@ AI_Smart_Geomancy:
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
+
+; don't boost against a powerful priority user that can 2hko
+    call IsPowerfulPriorityUser
+    jp c, StandardDiscourage
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
@@ -4201,8 +3961,6 @@ AI_Smart_Flinch:
     jr z, .encourage
     cp TOGEKISS
     jr z, .encourage
-    cp DUNSPARCE
-    jr z, .encourage
 
     ret
 .encourage
@@ -4315,6 +4073,10 @@ ShouldAIBoost:
 	call Random
 	cp 50 percent
 	jp c, .decideNotToBoost
+
+; don't boost against a powerful priority user that can 2hko
+    call IsPowerfulPriorityUser
+    jp c, .decideNotToBoost
 
 .noForceSwitch
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
@@ -5922,6 +5684,28 @@ IsSpecialDefenseMaxed:
 	ld a, [wEnemyMonSpclDef]
 	sbc HIGH(MAX_STAT_VALUE)
 	jr z, .yes
+.no
+    xor a
+    ret
+.yes
+    scf
+    ret
+
+IsPowerfulPriorityUser:
+	ld b, EFFECT_PRIORITY_HIT
+	call PlayerHasMoveEffect
+	jr nc, .no
+    ld a, [wBattleMonSpecies]
+    cp SCIZOR
+    jr z, .check2HKO
+    cp HONCHKROW
+    jr z, .check2HKO
+    cp WIGGLYTUFF
+    jr z, .check2HKO
+    jr .no
+.check2HKO
+    call CanPlayer2HKO
+    jr z, .yes
 .no
     xor a
     ret

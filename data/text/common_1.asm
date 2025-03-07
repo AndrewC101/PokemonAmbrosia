@@ -287,7 +287,7 @@ _LookClefairyPosterText::
 
 _LookJigglypuffPosterText::
 	text "It's a poster of a"
-	line "cute JIGGLYPUFF."
+	line "cute MAWILE."
 	done
 
 _LookAdorableDecoText::

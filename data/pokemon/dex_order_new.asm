@@ -49,7 +49,7 @@ NewPokedexOrder:
 	db CROBAT
 	db CLEFAIRY
 	db CLEFABLE
-	db JIGGLYPUFF
+	db MAWILE
 	db WIGGLYTUFF
 	db TOGEPI
 	db TOGETIC

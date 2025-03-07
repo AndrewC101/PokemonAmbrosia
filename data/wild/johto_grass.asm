@@ -1405,7 +1405,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1413,7 +1413,7 @@ JohtoGrassWildMons:
 	db 12, ABRA
 	db 23, KADABRA
 	; day
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1421,7 +1421,7 @@ JohtoGrassWildMons:
 	db 12, ABRA
 	db 23, KADABRA
 	; nite
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1688,7 +1688,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, PSYDUCK
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1696,7 +1696,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, PSYDUCK
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1704,7 +1704,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, HOOTHOOT
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, PSYDUCK
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR

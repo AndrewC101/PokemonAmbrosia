@@ -43,7 +43,7 @@ MonMenuIconPals:
 	icon_pals PURPLE,  GREEN    ; CLEFABLE
 	icon_pals RED,   GOLD     ; VULPIX
 	icon_pals GOLD,  TEAL     ; NINETALES
-	icon_pals RED,   PURPLE     ; JIGGLYPUFF
+	icon_pals RED,   PURPLE     ; MAWILE
 	icon_pals RED,   BLUE     ; WIGGLYTUFF
 	icon_pals BLUE,  GREEN    ; ZUBAT
 	icon_pals BLUE,  GREEN    ; GOLBAT

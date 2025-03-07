@@ -40,7 +40,7 @@ KantoMonSpecials:
 	db  85 ; CLEFABLE
 	db  65 ; VULPIX
 	db 100 ; NINETALES
-	db  25 ; JIGGLYPUFF
+	db  25 ; MAWILE
 	db  50 ; WIGGLYTUFF
 	db  40 ; ZUBAT
 	db  75 ; GOLBAT

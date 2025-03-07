@@ -241,8 +241,8 @@ VermilionPortAskBoardingText:
 	text "Welcome to FAST"
 	line "SHIP S.S.AQUA."
 
-	para "Will you be board-"
-	line "ing today?"
+	para "Will you be"
+	line "boarding today?"
 	done
 
 VermilionPortAskTicketText:

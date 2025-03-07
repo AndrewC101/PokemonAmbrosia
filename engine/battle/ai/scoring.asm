@@ -49,7 +49,7 @@ AI_WaterAbsorbPokemon:
     db SWAMPERT
     db VAPOREON
     db LAPRAS
-    db ARCTOVISH
+    db DRACOVISH
     db POLIWAG
     db POLIWHIRL
     db $FF

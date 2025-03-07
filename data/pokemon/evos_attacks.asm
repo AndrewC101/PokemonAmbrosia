@@ -750,7 +750,7 @@ ArctozoltEvosAttacks:
 	db 50, BOLT_BREAK
 	db 0 ; no more level-up moves
 
-ArctovishEvosAttacks:
+DracovishEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN

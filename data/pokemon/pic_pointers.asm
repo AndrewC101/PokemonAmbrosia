@@ -103,8 +103,8 @@ PokemonPicPointers::
 	dba_pic VolcaronaBackpic
 	dba_pic ArctozoltFrontpic
 	dba_pic ArctozoltBackpic
-	dba_pic ArctovishFrontpic
-	dba_pic ArctovishBackpic
+	dba_pic DracovishFrontpic
+	dba_pic DracovishBackpic
 	dba_pic MeowthFrontpic
 	dba_pic MeowthBackpic
 	dba_pic PersianFrontpic

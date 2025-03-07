@@ -794,7 +794,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -802,7 +802,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -810,7 +810,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -822,7 +822,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -830,7 +830,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -838,7 +838,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -850,7 +850,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -858,7 +858,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -866,7 +866,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -1018,7 +1018,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; day
 	db 34, GABITE
@@ -1026,7 +1026,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; nite
 	db 34, GABITE
@@ -1034,7 +1034,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	end_grass_wildmons
 
@@ -1046,7 +1046,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; day
 	db 34, GABITE
@@ -1054,7 +1054,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; nite
 	db 34, GABITE
@@ -1062,7 +1062,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	end_grass_wildmons
 

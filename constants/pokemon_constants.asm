@@ -69,7 +69,7 @@
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
 	const ARCTOZOLT    ; 32
-	const ARCTOVISH    ; 33
+	const DRACOVISH    ; 33
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
 	const SNOVER    ; 36

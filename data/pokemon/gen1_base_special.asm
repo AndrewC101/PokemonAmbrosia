@@ -52,7 +52,7 @@ KantoMonSpecials:
 	db  40 ; LARVESTA
 	db  90 ; VOLCARONA
 	db  45 ; ARCTOZOLT
-	db  70 ; ARCTOVISH
+	db  70 ; DRACOVISH
 	db  40 ; MEOWTH
 	db  65 ; PERSIAN
 	db  50 ; SNOVER

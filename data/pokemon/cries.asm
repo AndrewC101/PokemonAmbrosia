@@ -56,7 +56,7 @@ PokemonCries::
 	mon_cry CRY_VENONAT,      68,  192 ; LARVESTA
 	mon_cry CRY_VENONAT,      41,  256 ; VOLCARONA
 	mon_cry CRY_RAICHU,       50,  150 ; ARCTOZOLT
-	mon_cry CRY_LAPRAS,      -50,  200 ; ARCTOVISH
+	mon_cry CRY_LAPRAS,      -50,  200 ; DRACOVISH
 	mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN
 	mon_cry CRY_PSYDUCK,     100,  224 ; SNOVER

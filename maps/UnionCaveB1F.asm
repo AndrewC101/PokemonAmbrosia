@@ -180,7 +180,7 @@ UnionCaveB1FFieldMon2Script:
     end
     
 UnionCaveB1FFieldMon3Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 53, 0, .script
+	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 53, 0, .script
 .script
     disappear UNIONCAVEB1F_FIELDMON_3
     end

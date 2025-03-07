@@ -10,7 +10,7 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARCEUS
-	db ARCTOVISH
+	db DRACOVISH
 	db ARCTOZOLT
 	db ARTICUNO
     db AZUMARILL

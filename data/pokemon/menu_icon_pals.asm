@@ -55,7 +55,7 @@ MonMenuIconPals:
 	icon_pals RED,  GOLD ; LARVESTA
 	icon_pals RED,  GOLD        ; VOLCARONA
 	icon_pals BLUE,  SILVER     ; ARCTOZOLT
-	icon_pals BLUE,  SILVER        ; ARCTOVISH
+	icon_pals BLUE,  SILVER        ; DRACOVISH
 	icon_pals SILVER,  BROWN         ; MEOWTH
 	icon_pals SILVER,  BROWN        ; PERSIAN
 	icon_pals GREEN,  PURPLE     ; SNOVER

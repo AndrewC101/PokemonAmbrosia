@@ -52,7 +52,7 @@ EvosAttacksPointers::
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
 	dw ArctozoltEvosAttacks
-	dw ArctovishEvosAttacks
+	dw DracovishEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
 	dw SnoverEvosAttacks

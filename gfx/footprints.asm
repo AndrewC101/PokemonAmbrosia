@@ -122,7 +122,7 @@ INCBIN "gfx/footprints/larvesta.1bpp",    footprint_bottom
 ; 049-056 top halves
 INCBIN "gfx/footprints/volcarona.1bpp",   footprint_top
 INCBIN "gfx/footprints/arctozolt.1bpp",    footprint_top
-INCBIN "gfx/footprints/arctovish.1bpp",    footprint_top
+INCBIN "gfx/footprints/dracovish.1bpp",    footprint_top
 INCBIN "gfx/footprints/meowth.1bpp",     footprint_top
 INCBIN "gfx/footprints/persian.1bpp",    footprint_top
 INCBIN "gfx/footprints/snover.1bpp",    footprint_top
@@ -131,7 +131,7 @@ INCBIN "gfx/footprints/shroomish.1bpp",     footprint_top
 ; 049-056 bottom halves
 INCBIN "gfx/footprints/volcarona.1bpp",   footprint_bottom
 INCBIN "gfx/footprints/arctozolt.1bpp",    footprint_bottom
-INCBIN "gfx/footprints/arctovish.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/dracovish.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/meowth.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/persian.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/snover.1bpp",    footprint_bottom

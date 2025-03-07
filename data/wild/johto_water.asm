@@ -95,7 +95,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 65, ARCTOVISH
+	db 65, DRACOVISH
 	db 65, CLOYSTER
 	db 65, LAPRAS
 	end_water_wildmons

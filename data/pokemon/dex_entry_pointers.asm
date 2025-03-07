@@ -51,7 +51,7 @@ PokedexDataPointerTable:
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
 	dw ArctozoltPokedexEntry
-	dw ArctovishPokedexEntry
+	dw DracovishPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
 	dw SnoverPokedexEntry

@@ -48,7 +48,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 15, SLOWPOKE
 	db 10, SLOWPOKE
-	db 15, GOLDUCK
+	db 15, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -167,7 +167,7 @@ JohtoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 20, SLOWPOKE
 	db 20, SLOWPOKE
-	db 35, GOLDUCK
+	db 35, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_40

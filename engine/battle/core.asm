@@ -4465,7 +4465,7 @@ SwitchInEffects:
 
     cp RAYQUAZA
     jp z, .clearField
-    cp GOLDUCK
+    cp ABOMASNOW
     jp z, .clearField
 
     cp GENESECT

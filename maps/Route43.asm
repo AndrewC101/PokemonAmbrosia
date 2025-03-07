@@ -683,9 +683,9 @@ Route43PokemonAttacksText:
 
 Route43FieldMon3Script:
 	faceplayer
-	cry GOLDUCK
+	cry ABOMASNOW
 	pause 15
-	loadwildmon GOLDUCK, 41
+	loadwildmon ABOMASNOW, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

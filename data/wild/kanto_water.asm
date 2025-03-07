@@ -27,7 +27,7 @@ KantoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 30, SLOWPOKE
 	db 30, POLIWHIRL
-	db 40, GOLDUCK
+	db 40, POLIWRATH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_9

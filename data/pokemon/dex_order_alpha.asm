@@ -81,7 +81,7 @@ AlphabeticalPokedexOrder:
 	db GLIGAR
 	db GLISCOR
 	db GOLBAT
-	db GOLDUCK
+	db ABOMASNOW
 	db GOLEM
 	db GRAVELER
 	db GRENINJA

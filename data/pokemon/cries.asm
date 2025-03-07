@@ -60,7 +60,7 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN
 	mon_cry CRY_PSYDUCK,     100,  224 ; SNOVER
-	mon_cry CRY_PSYDUCK,       0,  300 ; GOLDUCK
+	mon_cry CRY_PSYDUCK,       0,  300 ; ABOMASNOW
 	mon_cry CRY_NIDOQUEEN,   151,  224 ; SHROOMISH
 	mon_cry CRY_NIDOQUEEN,   125,  192 ; BRELOOM
 	mon_cry CRY_GROWLITHE,    32,  192 ; GROWLITHE

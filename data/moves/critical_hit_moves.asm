@@ -6,6 +6,6 @@ CriticalHitMoves:
 	db NIGHT_SLASH
 	db PSYCHO_SLASH
 	db LEAF_BLADE
-	db SHADOW_FIST
+	db SHADOW_PUNCH
 	db STONE_EDGE
 	db -1

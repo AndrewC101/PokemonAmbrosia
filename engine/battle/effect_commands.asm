@@ -1753,7 +1753,7 @@ BattleCommand_CheckHit:
 	ret z
 	cp SNOVER
 	ret z
-	cp GOLDUCK
+	cp ABOMASNOW
 	ret z
 .notBlizzard
 

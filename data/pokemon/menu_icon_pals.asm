@@ -59,7 +59,7 @@ MonMenuIconPals:
 	icon_pals SILVER,  BROWN         ; MEOWTH
 	icon_pals SILVER,  BROWN        ; PERSIAN
 	icon_pals GREEN,  PURPLE     ; SNOVER
-	icon_pals GREEN,  PURPLE     ; GOLDUCK
+	icon_pals GREEN,  PURPLE     ; ABOMASNOW
 	icon_pals GREEN,  RED      ; SHROOMISH
 	icon_pals GREEN,  RED     ; BRELOOM
 	icon_pals RED,  GREEN        ; GROWLITHE

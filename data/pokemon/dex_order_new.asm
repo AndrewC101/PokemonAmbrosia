@@ -124,7 +124,7 @@ NewPokedexOrder:
 	db MEOWTH
 	db PERSIAN
 	db SNOVER
-	db GOLDUCK
+	db ABOMASNOW
 	db MACHOP
 	db MACHOKE
 	db MACHAMP

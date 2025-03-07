@@ -111,8 +111,8 @@ PokemonPicPointers::
 	dba_pic PersianBackpic
 	dba_pic SnoverFrontpic
 	dba_pic SnoverBackpic
-	dba_pic GolduckFrontpic
-	dba_pic GolduckBackpic
+	dba_pic AbomasnowFrontpic
+	dba_pic AbomasnowBackpic
 	dba_pic ShroomishFrontpic
 	dba_pic ShroomishBackpic
 	dba_pic BreloomFrontpic

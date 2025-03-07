@@ -73,7 +73,7 @@
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
 	const SNOVER    ; 36
-	const GOLDUCK    ; 37
+	const ABOMASNOW    ; 37
 	const SHROOMISH  ; 38
 	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a

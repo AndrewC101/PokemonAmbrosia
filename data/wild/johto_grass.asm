@@ -568,7 +568,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 33, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -576,7 +576,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 30, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -584,7 +584,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 30, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -1646,7 +1646,7 @@ JohtoGrassWildMons:
 	db 56, MILOTIC
 	; nite
 	db 31, DRATINI
-	db 27, GOLDUCK
+	db 27, POLIWHIRL
 	db 33, LANTURN
 	db 33, CHANSEY
 	db 40, TOGEKISS

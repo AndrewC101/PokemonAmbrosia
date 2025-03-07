@@ -330,7 +330,7 @@ KantoGrassWildMons:
 	db 41, HERACROSS
 	; nite
 	db 36, POLIWHIRL
-	db 36, GOLDUCK
+	db 36, FERROTHORN
 	db 38, MAGNETON
 	db 38, HOUNDOOM
 	db 40, SCIZOR

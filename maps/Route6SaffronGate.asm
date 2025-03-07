@@ -28,20 +28,19 @@ Route6SaffronGuardWelcomeText:
 	line "opportunity."
 
 	para "If you can make"
-	line "it here you can"
+	line "it here, you can"
 	cont "make it anywhere."
 
 	para "Now hurry up and"
-	line "get out of here"
-	cont "you immigrant."
+	line "get out of here,"
+	cont "you immigrant!"
 	done
 
 Route6SaffronGuardMagnetTrainText:
 	text "The MAGNET TRAIN"
 	line "is the most famous"
-
-	para "thing about SAF-"
-	line "FRON."
+	cont "thing about"
+	cont "SAFFRON."
 	done
 
 Route6SaffronGate_MapEvents:

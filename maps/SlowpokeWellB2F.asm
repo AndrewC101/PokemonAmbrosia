@@ -56,19 +56,19 @@ SlowpokeWellB2FGymGuideText:
 
 	para "...."
 
-	para "Ok I'm not a"
-	line "scientist but"
+	para "Ok, I'm not a"
+	line "scientist, but"
 	cont "these glasses"
 	cont "make me look"
-	cont "smart don't they?"
+	cont "smart, don't they?"
 
-	para "Here you can have"
+	para "Here, you can have"
 	line "a pair."
 	done
 
 SlowpokeWellB2FGymGuideText_GotLeftovers:
 	text "Once I understand"
-	line "their ways I will"
+	line "their ways, I will"
 	cont "live with them"
 	cont "and write a book"
 	cont "about it."

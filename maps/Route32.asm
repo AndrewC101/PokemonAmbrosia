@@ -813,9 +813,9 @@ Route32FieldMon7Script:
 
 Route32FieldMon8Script:
 	faceplayer
-	cry PSYDUCK
+	cry SNOVER
 	pause 15
-	loadwildmon PSYDUCK, 14
+	loadwildmon SNOVER, 14
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

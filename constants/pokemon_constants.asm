@@ -68,12 +68,12 @@
 	const HAWLUCHA   ; 2f
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
-	const ARCTOZOLT    ; 32 *
-	const ARCTOVISH    ; 33 *
+	const ARCTOZOLT    ; 32
+	const ARCTOVISH    ; 33
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
-	const PSYDUCK    ; 36 *
-	const GOLDUCK    ; 37 *
+	const SNOVER    ; 36
+	const GOLDUCK    ; 37
 	const SHROOMISH  ; 38
 	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a

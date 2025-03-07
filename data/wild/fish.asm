@@ -72,7 +72,7 @@ FishGroups:
 .Pond_Old:
 	db  70 percent + 1, MAGIKARP,   15
 	db  85 percent + 1, MAGIKARP,   15
-	db 100 percent,     PSYDUCK,    15
+	db 100 percent,     SLOWPOKE,    15
 .Pond_Good:
 	db  35 percent,     DRATINI,   20
 	db  70 percent,     POLIWHIRL,    30

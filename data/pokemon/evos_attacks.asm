@@ -786,7 +786,7 @@ PersianEvosAttacks:
 	db 28, SLASH
 	db 0 ; no more level-up moves
 
-PsyduckEvosAttacks:
+SnoverEvosAttacks:
 	db EVOLVE_LEVEL, 35, GOLDUCK
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW

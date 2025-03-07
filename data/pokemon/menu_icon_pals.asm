@@ -58,7 +58,7 @@ MonMenuIconPals:
 	icon_pals BLUE,  SILVER        ; ARCTOVISH
 	icon_pals SILVER,  BROWN         ; MEOWTH
 	icon_pals SILVER,  BROWN        ; PERSIAN
-	icon_pals GREEN,  PURPLE     ; PSYDUCK
+	icon_pals GREEN,  PURPLE     ; SNOVER
 	icon_pals GREEN,  PURPLE     ; GOLDUCK
 	icon_pals GREEN,  RED      ; SHROOMISH
 	icon_pals GREEN,  RED     ; BRELOOM

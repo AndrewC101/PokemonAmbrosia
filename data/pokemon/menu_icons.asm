@@ -55,7 +55,7 @@ MonMenuIcons:
 	db ICON_BIGMON      ; ARCTOVISH
 	db ICON_FOX         ; MEOWTH
 	db ICON_FOX         ; PERSIAN
-	db ICON_ODDISH      ; PSYDUCK
+	db ICON_ODDISH      ; SNOVER
 	db ICON_ODDISH      ; GOLDUCK
 	db ICON_ODDISH      ; SHROOMISH
 	db ICON_ODDISH      ; BRELOOM

@@ -1751,7 +1751,7 @@ BattleCommand_CheckHit:
     call GetCurrentMon
 	cp JYNX
 	ret z
-	cp PSYDUCK
+	cp SNOVER
 	ret z
 	cp GOLDUCK
 	ret z

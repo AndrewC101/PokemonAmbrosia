@@ -539,7 +539,7 @@ JohtoGrassWildMons:
 	; morn
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -547,7 +547,7 @@ JohtoGrassWildMons:
 	; day
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -555,7 +555,7 @@ JohtoGrassWildMons:
 	; nite
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -1453,7 +1453,7 @@ JohtoGrassWildMons:
 	db 16, DROWZEE
 	db 12, RALTS
 	db 12, ABRA
-    db 18, PSYDUCK
+    db 18, SLOWPOKE
     db 18, YANMA
 	db 25, YANMEGA
 	end_grass_wildmons
@@ -1688,7 +1688,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, PSYDUCK
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1696,7 +1696,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, PSYDUCK
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1704,7 +1704,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, HOOTHOOT
 	db 8, GEODUDE
-	db 8, PSYDUCK
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR

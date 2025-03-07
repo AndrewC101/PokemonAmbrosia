@@ -55,7 +55,7 @@ KantoMonSpecials:
 	db  70 ; ARCTOVISH
 	db  40 ; MEOWTH
 	db  65 ; PERSIAN
-	db  50 ; PSYDUCK
+	db  50 ; SNOVER
 	db  80 ; GOLDUCK
 	db  35 ; SHROOMISH
 	db  60 ; BRELOOM

@@ -19,7 +19,7 @@ MrFujisHouseLassScript:
 MrFujisPsyduck:
 	opentext
 	writetext MrFujisPsyduckText
-	cry PSYDUCK
+	cry SLOWPOKE
 	waitbutton
 	closetext
 	end
@@ -64,7 +64,7 @@ MrFujisHouseLassText:
 	done
 
 MrFujisPsyduckText:
-	text "PSYDUCK: Gu-guwa?"
+	text "SLOWPOKE: Slowww?"
 	done
 
 MrFujisNidorinoText:

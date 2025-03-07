@@ -123,7 +123,7 @@ NewPokedexOrder:
 	db BRELOOM
 	db MEOWTH
 	db PERSIAN
-	db PSYDUCK
+	db SNOVER
 	db GOLDUCK
 	db MACHOP
 	db MACHOKE

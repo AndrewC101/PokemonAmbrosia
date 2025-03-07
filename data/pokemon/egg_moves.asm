@@ -123,7 +123,7 @@ MeowthEggMoves:
 	db AMNESIA
 	db -1 ; end
 
-PsyduckEggMoves:
+SnoverEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
 	db PSYBEAM

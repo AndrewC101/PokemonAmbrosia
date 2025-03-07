@@ -46,7 +46,7 @@ Pokered_MonIndices:
 	db DUOSION
 	db ARBOK
 	db HAWLUCHA
-	db PSYDUCK
+	db SNOVER
 	db DROWZEE
 	db GOLEM
 	db HERACROSS ; MISSINGNO.

@@ -54,7 +54,7 @@ PokedexDataPointerTable:
 	dw ArctovishPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
-	dw PsyduckPokedexEntry
+	dw SnoverPokedexEntry
 	dw GolduckPokedexEntry
 	dw ShroomishPokedexEntry
 	dw BreloomPokedexEntry

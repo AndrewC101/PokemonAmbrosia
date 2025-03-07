@@ -55,7 +55,7 @@ EvosAttacksPointers::
 	dw ArctovishEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
-	dw PsyduckEvosAttacks
+	dw SnoverEvosAttacks
 	dw GolduckEvosAttacks
 	dw ShroomishEvosAttacks
 	dw BreloomEvosAttacks

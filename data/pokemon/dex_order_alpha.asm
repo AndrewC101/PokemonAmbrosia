@@ -177,7 +177,7 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PORYGONZ
-	db PSYDUCK
+	db SNOVER
 	db PUPITAR
 	db RAICHU
 	db RAIKOU

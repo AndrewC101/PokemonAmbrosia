@@ -29,10 +29,10 @@ VermilionMartBeautyScript:
 	jumptextfaceplayer VermilionMartBeautyText
 
 VermilionMartSuperNerdText:
-	text "I need lots of"
-	line "POTION to get"
-	cont "over my hang-"
-	cont "over from the"
+	text "I need lots"
+	line "of POTIONS to"
+	cont "get over my"
+	cont "hangover from the"
 	cont "last SOLENOID"
 	cont "concert."
 	done

@@ -128,17 +128,16 @@ RuinsOfAlphHoOhChamberWallHoleText:
 	done
 
 RuinsOfAlphHoOhChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It's a replica"
+	line "of an ancient"
+	cont "#MON."
 	done
 
 RuinsOfAlphHoOhChamberDescriptionText:
 	text "A #MON that"
 	line "flew gracefully on"
-
-	para "rainbow-colored"
-	line "wings."
+	cont "rainbow-colored"
+	cont "wings."
 	done
 
 RuinsOfAlphHoOhChamber_MapEvents:

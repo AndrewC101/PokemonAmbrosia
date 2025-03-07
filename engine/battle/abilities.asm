@@ -118,6 +118,7 @@ ThickFatPokemon:
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
+    db ARCTOVISH
     db -1
 
 TechnicianPokemon:
@@ -127,12 +128,14 @@ TechnicianPokemon:
     db PERSIAN
     db PAWNIARD
     db BISHARP
+    db WIGGLYTUFF
     db SHROOMISH
     db BRELOOM
-    db PSYDUCK
     db PORYGON
     db BULBASAUR
     db IVYSAUR
+    db MARILL
+
     db -1
 
 MagicGuardPokemon:

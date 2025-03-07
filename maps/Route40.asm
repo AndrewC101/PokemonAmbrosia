@@ -408,9 +408,9 @@ AreaPokemonAttacksText:
 
 AreaFieldMon4Script:
 	faceplayer
-	cry GOLDUCK
+	cry POLIWHIRL
 	pause 15
-	loadwildmon GOLDUCK, 30
+	loadwildmon POLIWHIRL, 30
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

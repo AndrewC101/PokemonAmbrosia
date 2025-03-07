@@ -446,9 +446,9 @@ NewBarkFieldMon4Script:
 
 NewBarkFieldMon5Script:
 	faceplayer
-	cry JIGGLYPUFF
+	cry CLEFAIRY
 	pause 15
-	loadwildmon JIGGLYPUFF, 3
+	loadwildmon CLEFAIRY, 3
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

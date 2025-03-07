@@ -16,9 +16,9 @@ MountMoon_MapScripts:
 
 MountMoonFieldMon3Script:
 	faceplayer
-	cry WIGGLYTUFF
+	cry JIGGLYPUFF
 	pause 15
-	loadwildmon WIGGLYTUFF, 41
+	loadwildmon JIGGLYPUFF, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

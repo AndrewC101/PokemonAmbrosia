@@ -44,8 +44,8 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    170,  160 ; CLEFABLE
 	mon_cry CRY_VULPIX,       79,  144 ; VULPIX
 	mon_cry CRY_VULPIX,      136,  224 ; NINETALES
-	mon_cry CRY_PIDGEY,      255,  181 ; JIGGLYPUFF
-	mon_cry CRY_PIDGEY,      104,  224 ; WIGGLYTUFF
+	mon_cry CRY_PIDGEY,     -400,  400 ; JIGGLYPUFF
+	mon_cry CRY_ODDISH,     -100,  300 ; WIGGLYTUFF
 	mon_cry CRY_SQUIRTLE,    224,  256 ; ZUBAT
 	mon_cry CRY_SQUIRTLE,    250,  256 ; GOLBAT
 	mon_cry CRY_ODDISH,      150,  100 ; PAWNIARD
@@ -59,8 +59,8 @@ PokemonCries::
 	mon_cry CRY_LAPRAS,      -50,  200 ; ARCTOVISH
 	mon_cry CRY_CLEFAIRY,    119,  144 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    153,  383 ; PERSIAN
-	mon_cry CRY_PSYDUCK,      32,  224 ; PSYDUCK
-	mon_cry CRY_PSYDUCK,     255,  192 ; GOLDUCK
+	mon_cry CRY_PSYDUCK,     100,  224 ; PSYDUCK
+	mon_cry CRY_PSYDUCK,       0,  300 ; GOLDUCK
 	mon_cry CRY_NIDOQUEEN,   151,  224 ; SHROOMISH
 	mon_cry CRY_NIDOQUEEN,   125,  192 ; BRELOOM
 	mon_cry CRY_GROWLITHE,    32,  192 ; GROWLITHE

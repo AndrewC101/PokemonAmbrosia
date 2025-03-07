@@ -5,7 +5,6 @@
 	next "body naturally"
 	next "repels water."
 
-	page "Has double"
-	next "ATTACK in"
-	next "battle.@"
+	page "Makes weaker"
+	next "moves stronger.@"
 

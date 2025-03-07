@@ -1,10 +1,10 @@
-	db "BALLOON@" ; species name
-	dw 108, 120 ; height, weight
+	db "DECEIVER@" ; species name
+	dw 200, 254 ; height, weight
 
-	db   "It rolls its cute"
-	next "eyes as it sings"
-	next "soothing songs."
+	db   "Looks cute but"
+	next "will tear its"
+	next "prey apart."
 
-	page "SPECIAL DEFENSE"
-	next "increases upon"
-	next "entering battle.@"
+	page "Has double"
+	next "ATTACK in"
+	next "battle.@"

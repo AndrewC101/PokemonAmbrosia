@@ -685,7 +685,7 @@ Route43FieldMon3Script:
 	faceplayer
 	cry GOLDUCK
 	pause 15
-	loadwildmon GOLDUCK, 31
+	loadwildmon GOLDUCK, 41
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

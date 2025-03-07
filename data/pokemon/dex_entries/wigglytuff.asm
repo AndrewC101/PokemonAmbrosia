@@ -1,10 +1,9 @@
-	db "BALLOON@" ; species name
-	dw 303, 260 ; height, weight
+	db "BIG BLADE@" ; species name
+	dw 607, 2646 ; height, weight
 
-	db   "The rich, fluffy"
-	next "fur that covers"
-	next "it feels good."
+	db   "The final form"
+	next "of the most"
+	next "skilled BISHARP."
 
-	page "SPECIAL DEFENSE"
-	next "increases upon"
-	next "entering battle.@"
+	page "Boosts ATTACK"
+	next "and weak moves.@"

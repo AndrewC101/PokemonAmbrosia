@@ -219,9 +219,9 @@ Route3FieldMon3Script:
 
 Route3FieldMon4Script:
 	faceplayer
-	cry JIGGLYPUFF
+	cry CLEFAIRY
 	pause 15
-	loadwildmon JIGGLYPUFF, 27
+	loadwildmon CLEFAIRY, 27
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

@@ -1,10 +1,10 @@
-	db "DUCK@" ; species name
-	dw 507, 1690 ; height, weight
+	db "FROST TREE@" ; species name
+	dw 703, 2987 ; height, weight
 
-	db   "It swims grace-"
-	next "fully along the"
-	next "quiet rivers."
+	db   "Creates mighty"
+	next "blizzards when"
+	next "angered."
 
-	page "Clears"
-	next "field upon"
-	next "switching in.@"
+	page "Clears field."
+	next "BLIZZARD wont"
+	next "miss.@"

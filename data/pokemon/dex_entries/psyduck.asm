@@ -1,9 +1,9 @@
-	db "DUCK@" ; species name
-	dw 207, 430 ; height, weight
+	db "FROST TREE@" ; species name
+	dw 303, 1113 ; height, weight
 
-	db   "It uses psychic"
-	next "powers only when"
-	next "its brain awakes."
+	db   "Lives on snow"
+	next "covered summits"
+	next "in the spring."
 
-	page "Makes weaker"
-	next "moves stronger.@"
+	page "BLIZZARD will"
+	next "always hit.@"

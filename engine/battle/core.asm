@@ -4501,6 +4501,8 @@ SwitchInEffects:
     jp z, .atkUp
     cp LUCARIO
     jp z, .atkUp
+    cp WIGGLYTUFF
+    jp z, .atkUp
 
     cp GYARADOS
     jp z, .atkDown
@@ -4523,10 +4525,6 @@ SwitchInEffects:
     cp AEGISLASH
     jp z, .defenseMode
 
-    cp JIGGLYPUFF
-    jp z, .spDefUp
-    cp WIGGLYTUFF
-    jp z, .spDefUp
     cp CELEBI
     jp z, .spDefUp
     cp UMBREON

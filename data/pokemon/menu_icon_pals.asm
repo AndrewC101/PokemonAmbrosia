@@ -44,7 +44,7 @@ MonMenuIconPals:
 	icon_pals RED,   GOLD     ; VULPIX
 	icon_pals GOLD,  TEAL     ; NINETALES
 	icon_pals RED,   PURPLE     ; JIGGLYPUFF
-	icon_pals RED,   PURPLE     ; WIGGLYTUFF
+	icon_pals RED,   BLUE     ; WIGGLYTUFF
 	icon_pals BLUE,  GREEN    ; ZUBAT
 	icon_pals BLUE,  GREEN    ; GOLBAT
 	icon_pals RED,   BLUE     ; PAWNIARD
@@ -58,8 +58,8 @@ MonMenuIconPals:
 	icon_pals BLUE,  SILVER        ; ARCTOVISH
 	icon_pals SILVER,  BROWN         ; MEOWTH
 	icon_pals SILVER,  BROWN        ; PERSIAN
-	icon_pals GOLD,  TEAL     ; PSYDUCK
-	icon_pals BLUE,  TEAL     ; GOLDUCK
+	icon_pals GREEN,  PURPLE     ; PSYDUCK
+	icon_pals GREEN,  PURPLE     ; GOLDUCK
 	icon_pals GREEN,  RED      ; SHROOMISH
 	icon_pals GREEN,  RED     ; BRELOOM
 	icon_pals RED,  GREEN        ; GROWLITHE

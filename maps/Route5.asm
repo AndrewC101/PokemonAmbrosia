@@ -17,9 +17,9 @@ Route5_MapScripts:
 
 Route5FieldMon1Script:
 	faceplayer
-	cry WIGGLYTUFF
+	cry CLEFABLE
 	pause 15
-	loadwildmon WIGGLYTUFF, 38
+	loadwildmon CLEFABLE, 38
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

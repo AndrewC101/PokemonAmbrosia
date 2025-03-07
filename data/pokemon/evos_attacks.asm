@@ -573,32 +573,30 @@ NinetalesEvosAttacks:
 	db 0 ; no more level-up moves
 
 JigglypuffEvosAttacks:
-	db EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
-	db 1, SING
 	db 1, POUND
-	db 4, DEFENSE_CURL
-	db 8, DISABLE
-	db 12, DOUBLESLAP
-	db 16, DRAIN_KISS
-	db 25, REST
-	db 30, BODY_SLAM
-	db 36, PLAY_ROUGH
-	db 40, MOON_BLAST
+	db 10, BITE
+	db 15, METAL_CLAW
+	db 20, DRAIN_KISS
+	db 25, CRUNCH
+	db 30, SUCKER_PUNCH
+	db 35, IRON_HEAD
+	db 40, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SING
-	db 1, POUND
-	db 4, DEFENSE_CURL
-	db 8, DISABLE
-	db 12, DOUBLESLAP
-	db 16, DRAIN_KISS
-	db 25, REST
-	db 30, BODY_SLAM
-	db 36, PLAY_ROUGH
-	db 40, MOON_BLAST
+	db 1, SCRATCH
+	db 10, METAL_CLAW
+	db 15, FEINT_ATTACK
+	db 18, FALSE_SWIPE
+	db 20, MACH_PUNCH
+	db 25, BULLET_PUNCH
+	db 30, NIGHT_SLASH
+	db 35, IRON_HEAD
+	db 41, SUCKER_PUNCH
+	db 50, SWORDS_DANCE
+	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -649,10 +647,11 @@ PawniardEvosAttacks:
 	db 31, NIGHT_SLASH
 	db 35, IRON_HEAD
 	db 41, SUCKER_PUNCH
-	db 50, SWORDS_DANCE
+	db 51, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 BisharpEvosAttacks:
+    db EVOLVE_LEVEL, 50, WIGGLYTUFF
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 10, METAL_CLAW
@@ -663,8 +662,7 @@ BisharpEvosAttacks:
 	db 30, NIGHT_SLASH
 	db 35, IRON_HEAD
 	db 41, SUCKER_PUNCH
-	db 50, SWORDS_DANCE
-	db 60, GUILLOTINE
+	db 51, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 RegigigasEvosAttacks:
@@ -754,16 +752,16 @@ ArctozoltEvosAttacks:
 
 ArctovishEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POWDER_SNOW
+	db 1, TACKLE
 	db 1, WATER_GUN
 	db 12, BITE
 	db 21, ANCIENTPOWER
 	db 28, BUBBLEBEAM
-	db 30, ICY_WIND
+	db 30, DRAGON_CLAW
 	db 35, CRUNCH
 	db 40, SURF
-	db 42, ICE_BEAM
-	db 45, AVALANCHE
+	db 42, DRAGON_PULSE
+	db 45, OUTRAGE
 	db 50, SAVAGE_REND
 	db 0 ; no more level-up moves
 
@@ -789,34 +787,34 @@ PersianEvosAttacks:
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
-	db EVOLVE_LEVEL, 33, GOLDUCK
+	db EVOLVE_LEVEL, 35, GOLDUCK
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 5, TAIL_WHIP
-	db 10, DISABLE
-	db 13, FURY_SWIPES
-	db 16, CONFUSION
-	db 20, BUBBLEBEAM
-	db 23, HYPNOSIS
-	db 28, AURORA_BEAM
-	db 34, ZEN_HEADBUTT
-	db 37, PSYCHIC_M
-	db 50, HYDRO_PUMP
+	db 1, POWDER_SNOW
+	db 1, ABSORB
+	db 15, LEECH_SEED
+	db 20, RAZOR_LEAF
+	db 25, ICY_WIND
+	db 30, ICE_PUNCH
+	db 35, LEAF_BLADE
+	db 41, GIGA_DRAIN
+	db 45, ICE_BEAM
+	db 50, AVALANCHE
+	db 55, BLIZZARD
 	db 0 ; no more level-up moves
 
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 5, TAIL_WHIP
-	db 10, DISABLE
-	db 13, FURY_SWIPES
-	db 16, CONFUSION
-	db 20, BUBBLEBEAM
-	db 23, HYPNOSIS
-	db 28, AURORA_BEAM
-	db 33, ZEN_HEADBUTT
-	db 37, PSYCHIC_M
-	db 50, HYDRO_PUMP
+	db 1, POWDER_SNOW
+	db 1, ABSORB
+	db 15, LEECH_SEED
+	db 20, RAZOR_LEAF
+	db 25, ICY_WIND
+	db 30, ICE_PUNCH
+	db 35, LEAF_BLADE
+	db 40, GIGA_DRAIN
+	db 45, ICE_BEAM
+	db 50, AVALANCHE
+	db 55, BLIZZARD
 	db 0 ; no more level-up moves
 
 ShroomishEvosAttacks:

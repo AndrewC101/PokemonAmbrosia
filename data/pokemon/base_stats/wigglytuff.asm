@@ -1,21 +1,21 @@
 	db WIGGLYTUFF ; 040
 
-	db 140,  70,  45,  45,  85,  50
+	db  100, 135, 120, 50,  60,  85
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, FAIRY ; type
-	db 50 ; catch rate
-	db 109 ; base exp
+	db DARK, STEEL ; type
+	db 25 ; catch rate
+	db 250 ; base exp
 	db NO_ITEM, NO_ITEM ; items
-	db GENDER_F75 ; gender ratio
+	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
 	db 5 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/wigglytuff/front.dimensions"
+	INCBIN "gfx/pokemon/dragonite/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_FAST ; growth rate
-	dn EGG_FAIRY, EGG_FAIRY ; egg groups
+	db GROWTH_MEDIUM_FAST ; growth rate
+	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 
 	; tm/hm learnset
-	tmhm DRAIN_PUNCH, BODY_SLAM, HEADBUTT, CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, BLIZZARD, ICE_BEAM, HYPER_BEAM, PROTECT, RAIN_DANCE, SUBSTITUTE, SOLARBEAM, THUNDER, RETURN, DOUBLE_EDGE, PSYCHIC_M, CALM_MIND, AURA_SPHERE, SHADOW_BALL, DARK_PULSE, ICE_PUNCH, SLEEP_TALK, FIRE_BLAST, THUNDERPUNCH, REST, FIRE_PUNCH, STRENGTH, FLASH, FLAMETHROWER, THUNDERBOLT, THUNDER_WAVE, ICE_BEAM, SWIFT, IRON_HEAD
+	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, RAIN_DANCE, SUNNY_DAY, SANDSTORM, AIR_SLASH, THUNDER_WAVE, HYPER_BEAM, PROTECT, SUBSTITUTE, RETURN, DOUBLE_EDGE, SLEEP_TALK, SWIFT, REST, X_SCISSOR, CUT, STRENGTH, SWORDS_DANCE, DARK_PULSE, THUNDERPUNCH, IRON_HEAD, ROCK_SLIDE, DRAIN_PUNCH, AURA_SPHERE
 	; end

@@ -151,11 +151,10 @@ RuinsOfAlphKabutoChamberReceptionistText:
 
 	para "There are sliding"
 	line "panels that depict"
+	cont "a #MON drawn by"
+	cont "the ancients."
 
-	para "a #MON drawn by"
-	line "the ancients."
-
-	para "But their not in"
+	para "But they're not in"
 	line "the right order."
 
 	para "This puzzle has"
@@ -171,11 +170,11 @@ RuinsOfAlphKabutoChamberReceptionistText:
 
 RuinsOfAlphKabutoChamberScientistCrypticText:
 	text "What does this"
-	line "mean!"
+	line "mean?!"
 
-	para "What is it!"
+	para "What is it?!"
 
-	para "Are these letters!"
+	para "Are these letters?!"
 
 	para "Curse my lack"
 	line "of real"
@@ -228,9 +227,9 @@ RuinsOfAlphKabutoChamberWallHoleText:
 	done
 
 RuinsOfAlphKabutoChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It's a replica"
+	line "of an ancient"
+	cont "#MON."
 	done
 
 RuinsOfAlphKabutoChamberDescriptionText:

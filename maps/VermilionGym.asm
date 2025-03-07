@@ -204,7 +204,7 @@ LtSurgeSingAndBattle:
 
     para "...."
 
-	para "Man that has me"
+	para "Man, that has me"
 	line "in the mood."
 
 	para "Let's FIGHT!"
@@ -292,7 +292,7 @@ GentlemanGregoryAfterBattleText:
 	done
 
 GuitaristVincentSeenText:
-	text "Hang on little"
+	text "Hang on, little"
 	line "dude."
 
 	para "I'm the lead"
@@ -338,11 +338,11 @@ JugglerHortonAfterBattleText:
 	cont "guitarist."
 
 	para "Is he still on"
-	line "the ship!"
+	line "the ship?!"
 	done
 
 VermilionGymGuideText:
-	text "Hey welcome to"
+	text "Hey, welcome to"
 	line "the gig!"
 
 	para "The trainers here"
@@ -362,8 +362,8 @@ VermilionGymGuideText:
 
 	para "But SURGE has"
 	line "faced them many"
-	cont "times before I'm"
-	cont "sure."
+	cont "times before,"
+	cont "I'm sure."
 	done
 
 VermilionGymGuideWinText:

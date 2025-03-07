@@ -3079,7 +3079,7 @@ ExplainImpossibleTrialText:
 
 WhatTrialText:
     text "Which Trial do"
-    line "you want to take."
+    line "you want to take?"
     prompt
 
 BattleMirrorIntroText:

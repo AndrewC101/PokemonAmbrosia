@@ -33,7 +33,7 @@ KantoGrassWildMons:
 	def_grass_wildmons MOUNT_MOON
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 32, WIGGLYTUFF
+	db 32, LOPUNNY
 	db 32, CLEFABLE
 	db 34, NIDOKING
 	db 34, NIDOQUEEN
@@ -41,7 +41,7 @@ KantoGrassWildMons:
 	db 37, MISMAGIUS
 	db 41, GARDEVOIR
 	; day
-	db 32, WIGGLYTUFF
+	db 32, LOPUNNY
 	db 32, CLEFABLE
 	db 34, NIDOKING
 	db 34, NIDOQUEEN
@@ -49,7 +49,7 @@ KantoGrassWildMons:
 	db 37, MISMAGIUS
 	db 41, GARDEVOIR
 	; nite
-	db 32, WIGGLYTUFF
+	db 32, LOPUNNY
 	db 32, CLEFABLE
 	db 34, NIDOKING
 	db 34, NIDOQUEEN
@@ -290,7 +290,7 @@ KantoGrassWildMons:
 	db 36, STARAPTOR
 	db 36, VICTREEBEL
 	db 38, GARDEVOIR
-	db 39, WIGGLYTUFF
+	db 39, CLEFABLE
 	db 41, ARBOK
 	; day
 	db 34, LOPUNNY
@@ -298,7 +298,7 @@ KantoGrassWildMons:
 	db 36, STARAPTOR
 	db 36, VICTREEBEL
 	db 38, GARDEVOIR
-	db 39, WIGGLYTUFF
+	db 39, CLEFABLE
 	db 41, ARBOK
 	; nite
 	db 34, PERSIAN
@@ -306,7 +306,7 @@ KantoGrassWildMons:
 	db 36, NOCTOWL
 	db 36, FERROTHORN
 	db 38, GARDEVOIR
-	db 39, WIGGLYTUFF
+	db 39, CLEFABLE
 	db 41, ARBOK
 	end_grass_wildmons
 
@@ -876,7 +876,7 @@ KantoGrassWildMons:
 	db 60, RAICHU
 	db 61, TAUROS
 	db 62, RHYPERIOR
-	db 63, WIGGLYTUFF
+	db 63, CLEFABLE
 	db 64, ALAKAZAM
 	db 66, CHANSEY
 	db 77, DITTO
@@ -884,7 +884,7 @@ KantoGrassWildMons:
 	db 60, RAICHU
 	db 61, TAUROS
 	db 62, RHYPERIOR
-	db 63, WIGGLYTUFF
+	db 63, CLEFABLE
 	db 64, ALAKAZAM
 	db 66, CHANSEY
 	db 77, DITTO
@@ -892,7 +892,7 @@ KantoGrassWildMons:
 	db 60, RAICHU
 	db 61, TAUROS
 	db 62, RHYPERIOR
-	db 63, WIGGLYTUFF
+	db 63, CLEFABLE
 	db 64, ALAKAZAM
 	db 66, CHANSEY
 	db 77, DITTO

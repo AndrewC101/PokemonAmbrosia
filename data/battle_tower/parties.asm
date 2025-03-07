@@ -211,9 +211,9 @@ BattleTowerMons:
     bigdw 70
 	db "BURAtuKI-@@"
 
-	db WIGGLYTUFF
-	db MUSCLE_BAND
-	db AI_RETURN, DRAIN_KISS, THUNDERPUNCH, ICE_PUNCH
+	db MAWILE
+	db CHOICE_BAND
+	db IRON_HEAD, AI_RETURN, DRAIN_PUNCH, BITE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -228,12 +228,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 123
-    bigdw 123
-    bigdw 60
-    bigdw 48
-    bigdw 48
     bigdw 68
+    bigdw 68
+    bigdw 57
+    bigdw 63
+    bigdw 43
+    bigdw 45
     bigdw 51
 	db "NAtuSI-@@@@"
 

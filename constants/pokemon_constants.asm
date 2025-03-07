@@ -58,7 +58,7 @@
 	const VULPIX     ; 25
 	const NINETALES  ; 26
 	const MAWILE ; 27
-	const WIGGLYTUFF ; 28
+	const KINGAMBIT ; 28
 	const ZUBAT      ; 29
 	const GOLBAT     ; 2a
 	const PAWNIARD     ; 2b  ....

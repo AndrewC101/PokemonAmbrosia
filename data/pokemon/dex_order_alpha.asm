@@ -246,7 +246,7 @@ AlphabeticalPokedexOrder:
 	db WEEPINBELL
 	db WEEZING
 	db WHIMSICOTT
-	db WIGGLYTUFF
+	db KINGAMBIT
 	db WOBBUFFET
 	db XERNEAS
 	db YANMA

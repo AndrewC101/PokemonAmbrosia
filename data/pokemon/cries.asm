@@ -45,7 +45,7 @@ PokemonCries::
 	mon_cry CRY_VULPIX,       79,  144 ; VULPIX
 	mon_cry CRY_VULPIX,      136,  224 ; NINETALES
 	mon_cry CRY_PIDGEY,     -400,  400 ; MAWILE
-	mon_cry CRY_ODDISH,     -100,  300 ; WIGGLYTUFF
+	mon_cry CRY_ODDISH,     -100,  300 ; KINGAMBIT
 	mon_cry CRY_SQUIRTLE,    224,  256 ; ZUBAT
 	mon_cry CRY_SQUIRTLE,    250,  256 ; GOLBAT
 	mon_cry CRY_ODDISH,      150,  100 ; PAWNIARD

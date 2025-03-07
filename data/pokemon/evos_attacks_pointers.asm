@@ -41,7 +41,7 @@ EvosAttacksPointers::
 	dw VulpixEvosAttacks
 	dw NinetalesEvosAttacks
 	dw MawileEvosAttacks
-	dw WigglytuffEvosAttacks
+	dw KingambitEvosAttacks
 	dw ZubatEvosAttacks
 	dw GolbatEvosAttacks
 	dw PawniardEvosAttacks

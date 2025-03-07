@@ -50,7 +50,7 @@ NewPokedexOrder:
 	db CLEFAIRY
 	db CLEFABLE
 	db MAWILE
-	db WIGGLYTUFF
+	db KINGAMBIT
 	db TOGEPI
 	db TOGETIC
 	db TOGEKISS

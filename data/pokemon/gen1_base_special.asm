@@ -41,7 +41,7 @@ KantoMonSpecials:
 	db  65 ; VULPIX
 	db 100 ; NINETALES
 	db  25 ; MAWILE
-	db  50 ; WIGGLYTUFF
+	db  50 ; KINGAMBIT
 	db  40 ; ZUBAT
 	db  75 ; GOLBAT
 	db  75 ; PAWNIARD

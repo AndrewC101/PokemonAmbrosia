@@ -81,8 +81,8 @@ PokemonPicPointers::
 	dba_pic NinetalesBackpic
 	dba_pic MawileFrontpic
 	dba_pic MawileBackpic
-	dba_pic WigglytuffFrontpic
-	dba_pic WigglytuffBackpic
+	dba_pic KingambitFrontpic
+	dba_pic KingambitBackpic
 	dba_pic ZubatFrontpic
 	dba_pic ZubatBackpic
 	dba_pic GolbatFrontpic

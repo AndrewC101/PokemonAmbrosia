@@ -40,7 +40,7 @@ PokedexDataPointerTable:
 	dw VulpixPokedexEntry
 	dw NinetalesPokedexEntry
 	dw MawilePokedexEntry
-	dw WigglytuffPokedexEntry
+	dw KingambitPokedexEntry
 	dw ZubatPokedexEntry
 	dw GolbatPokedexEntry
 	dw PawniardPokedexEntry

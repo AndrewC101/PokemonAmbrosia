@@ -584,7 +584,7 @@ MawileEvosAttacks:
 	db 40, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
-WigglytuffEvosAttacks:
+KingambitEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 10, METAL_CLAW
@@ -651,7 +651,7 @@ PawniardEvosAttacks:
 	db 0 ; no more level-up moves
 
 BisharpEvosAttacks:
-    db EVOLVE_LEVEL, 50, WIGGLYTUFF
+    db EVOLVE_LEVEL, 50, KINGAMBIT
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 10, METAL_CLAW

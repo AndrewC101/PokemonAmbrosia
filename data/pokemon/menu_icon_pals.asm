@@ -44,7 +44,7 @@ MonMenuIconPals:
 	icon_pals RED,   GOLD     ; VULPIX
 	icon_pals GOLD,  TEAL     ; NINETALES
 	icon_pals RED,   PURPLE     ; MAWILE
-	icon_pals RED,   BLUE     ; WIGGLYTUFF
+	icon_pals RED,   BLUE     ; KINGAMBIT
 	icon_pals BLUE,  GREEN    ; ZUBAT
 	icon_pals BLUE,  GREEN    ; GOLBAT
 	icon_pals RED,   BLUE     ; PAWNIARD

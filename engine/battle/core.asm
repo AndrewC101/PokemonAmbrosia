@@ -4501,7 +4501,7 @@ SwitchInEffects:
     jp z, .atkUp
     cp LUCARIO
     jp z, .atkUp
-    cp WIGGLYTUFF
+    cp KINGAMBIT
     jp z, .atkUp
 
     cp GYARADOS

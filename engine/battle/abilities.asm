@@ -128,7 +128,7 @@ TechnicianPokemon:
     db PERSIAN
     db PAWNIARD
     db BISHARP
-    db WIGGLYTUFF
+    db KINGAMBIT
     db SHROOMISH
     db BRELOOM
     db PORYGON

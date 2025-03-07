@@ -5700,7 +5700,7 @@ IsPowerfulPriorityUser:
     jr z, .check2HKO
     cp HONCHKROW
     jr z, .check2HKO
-    cp WIGGLYTUFF
+    cp KINGAMBIT
     jr z, .check2HKO
     jr .no
 .check2HKO

@@ -101,7 +101,7 @@ UnionCave1FUnusedSign: ; unreferenced
 
 HikerRussellSeenText:
 	text "I am sure there"
-	line "is treasure in"
+	line "is a treasure in"
 	cont "the RUINS OF"
 	cont "ALPH."
 
@@ -117,9 +117,9 @@ HikerRussellBeatenText:
 	done
 
 HikerRussellAfterBattleText:
-	text "Alright back to"
-	line "operation UNION"
-	cont "STORM!"
+	text "Alright, back"
+	line "to operation"
+	cont "UNION STORM!"
 	done
 
 PokemaniacLarrySeenText:

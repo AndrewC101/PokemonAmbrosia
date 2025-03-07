@@ -128,17 +128,16 @@ RuinsOfAlphOmanyteChamberWallHoleText:
 	done
 
 RuinsOfAlphOmanyteChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It's a replica"
+	line "of an ancient"
+	cont "#MON."
 	done
 
 RuinsOfAlphOmanyteChamberDescriptionText:
 	text "This #MON"
 	line "drifted in the"
-
-	para "sea by twisting"
-	line "its ten tentacles."
+	cont "sea by twisting"
+	cont "its ten tentacles."
 	done
 
 RuinsOfAlphOmanyteChamber_MapEvents:

@@ -139,7 +139,7 @@ SabrinaIntroText:
 
 	para "I traveled the"
 	line "world visiting"
-	cont "ruins and all the"
+	cont "ruins and all"
 	cont "while my PSYCHIC"
 	cont "#MON were"
 	cont "growing powerful."
@@ -157,7 +157,7 @@ SabrinaIntroText:
 	para "CHAMPION <PLAYER>."
 
 	para "As SAFFRON CITY"
-	line "GYM LEADER I do"
+	line "GYM LEADER, I do"
 	cont "hereby accept your"
 	cont "challenge."
 	done
@@ -268,8 +268,8 @@ PsychicFranklinAfterBattleText:
 
 MediumDorisSeenText:
 	text "When the other GYM"
-	line "first arrived the"
-	cont "GYM LEADER"
+	line "first arrived,"
+	cont "the GYM LEADER"
 	cont "challenged us."
 
 	para "He made quick"

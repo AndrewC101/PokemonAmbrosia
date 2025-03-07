@@ -167,11 +167,11 @@ MustBeatAllGymsText:
     cont "the KANTO GYMs."
 
     para "Then I will fight"
-    line "you JOHTO CHAMP!"
+    line "you, JOHTO CHAMP!"
     done
 
 FalseIntroText:
-    text "Well CHAMPION!"
+    text "Well, CHAMPION!"
 
     para "You finally ready"
     line "for a real test?"
@@ -224,7 +224,7 @@ WarHasBegunText:
     done
 
 LeaderBlueBeforeText:
-	text "Well if it isn't"
+	text "Well, if it isn't"
 	line "the saviour of"
 	cont "KANTO!"
 
@@ -308,11 +308,11 @@ LeaderBlueEpilogueText:
 	para "You have earned"
 	line "that right."
 
-	para "Now go do some-"
-	line "thing useful"
+	para "Now go do"
+	line "something useful"
 	cont "with your talent."
 
-	para "Oh great CHAMPION"
+	para "Oh, great CHAMPION"
 	line "of CHAMPIONS and"
 	cont "saviour of KANTO."
 	done

@@ -133,7 +133,7 @@ BirdKeeperVance1MercyText:
     para "You came through"
     line "from BLACKTHORN."
 
-    para "Oh I don't think"
+    para "Oh, I don't think"
     line "you will be able"
     cont "to get back"
     cont "without STRENGTH."
@@ -352,11 +352,11 @@ FisherWilton1SeenText:
 
 	para "Nothing compares."
 
-	para "Nothing."
+	para "Nothing!"
 
 	para "Now what am I"
 	line "meant to have"
-	cont "for dinner."
+	cont "for dinner?"
 	done
 
 FisherWilton1BeatenText:
@@ -366,9 +366,9 @@ FisherWilton1BeatenText:
 FisherWiltonHugePoliwagText:
 	text "If you look"
 	line "after your FEEBAS"
-	cont "and love it, it"
-	cont "will evolve into"
-	cont "a MILOTIC."
+	cont "and love it,"
+	cont "it will evolve"
+	cont "into a MILOTIC."
 
 	para "But there isn't a"
 	line "man alive who can"
@@ -405,7 +405,7 @@ BirdKeeperVanceLegendaryBirdsText:
 
 	para "MOLTRES"
 
-	para "HO OH"
+	para "HO-OH"
 
 	para "LUGIA"
 

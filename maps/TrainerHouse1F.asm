@@ -60,7 +60,7 @@ TrainerHouse1FCooltrainerMText:
 	cont "as an antidote."
 
 	para "When we have them"
-	line "hooked they will"
+	line "hooked, they will"
 	cont "be our slaves!"
 	done
 
@@ -100,7 +100,7 @@ TrainerHouse1FYoungsterText:
 	done
 
 TrainerHouse1FGentlemanText:
-	text "Hello everyone"
+	text "Hello everyone."
 
 	para "...."
 
@@ -109,26 +109,26 @@ TrainerHouse1FGentlemanText:
 
 	para "Uh...."
 
-	para "Yes the war room!"
+	para "Yes, the war room!"
 
 	para "...."
 
 	para "Let's have some"
 	line "tea."
 
-	para "Oh and those"
+	para "Oh! And those"
 	line "little cakes too."
 	done
 
 TrainerHouseSign1Text:
 	text "To know your"
-	line "enemy you must"
+	line "enemy, you must"
 	cont "become your enemy."
 	done
 
 TrainerHouseSign2Text:
 	text "Until death itself"
-	line "comes no calamity"
+	line "comes, no calamity"
 	cont "need be feared."
 	done
 

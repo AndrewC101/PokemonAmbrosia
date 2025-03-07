@@ -338,7 +338,7 @@ Movement_AshToPlayer:
      step_end
 
 AshFightText:
-    text "Hey I'm ASH"
+    text "Hey, I'm ASH"
     line "from PALLET town."
 
     para "Though not the"
@@ -355,8 +355,8 @@ AshFightText:
     para "Did he send you"
     line "too?"
 
-    para "This guy RED seems"
-    line "tough."
+    para "This guy, RED,"
+    line "seems tough."
 
     para "Whoever beats him"
     line "becomes the most"
@@ -370,11 +370,11 @@ AshFightText:
 
     para "How about we have"
     line "a battle and the"
-    cont "winner faces RED."
+    cont "winner faces RED?"
     done
 
 AshBeatenText:
-    text "Wow you are"
+    text "Wow! You are"
     line "really strong!"
 
     para "Go on and fight"

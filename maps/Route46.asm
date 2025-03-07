@@ -201,7 +201,7 @@ HikerBaileyMercyText:
     text "I got close but"
     line "can't beat CLAIR!"
 
-    para "Oh you should"
+    para "Oh, you should"
     line "not be here!"
 
     para "This cave is too"
@@ -212,10 +212,9 @@ HikerBaileyMercyText:
     line "#MON in there."
 
     para "Even if you get"
-    line "through somehow."
-
-    para "Other trainers"
-    line "will crush you."
+    line "through somehow"
+    cont "other trainers"
+    cont "will crush you."
 
     para "Do you want me"
     line "to show you?"
@@ -234,7 +233,7 @@ Route46FruitTree2:
 	fruittree FRUITTREE_ROUTE_46_2
 
 HikerBaileySeenText:
-	text "Ah I see you"
+	text "Ah, I see you"
 	line "have gotten"
 	cont "real strong."
 
@@ -265,7 +264,7 @@ CamperTedSeenText:
 	text "Kid! We are on"
 	line "a date!"
 
-	para "Damn I need to"
+	para "Damn, I need to"
 	line "play it cool."
 
 	para "Hey fellow trainer"
@@ -278,7 +277,7 @@ CamperTedBeatenText:
 	para "Well done..."
 
 	para "I am a good"
-	line "loser see..."
+	line "loser, see..."
 	done
 
 CamperTedAfterBattleText:
@@ -295,7 +294,7 @@ CamperTedAfterBattleText:
 	done
 
 PicnickerErin1SeenText:
-	text "Hey, un we are"
+	text "Hey, um, we are"
 	line "on a date."
 
 	para "I think..."
@@ -321,7 +320,7 @@ PicnickerErinAfterBattleText:
 
 	para "Um..."
 
-	para "Whats your"
+	para "What's your"
 	line "favorite..."
 
 	para "#MON?"

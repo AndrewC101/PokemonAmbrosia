@@ -909,7 +909,7 @@ Movement_TRB_TurnBack:
     step_end
 
 RocketBaseExecutiveFHoldItText:
-	text "Oh well done."
+	text "Oh, well done."
 	done
 
 RocketBaseBossFThrashText:
@@ -919,11 +919,11 @@ RocketBaseBossFThrashText:
 	para "You must be a"
 	line "real little hero."
 
-	para "Well my little"
+	para "Well, my little"
 	line "hero."
 
 	para "It's time you"
-	line "learnt that life"
+	line "learn that life"
 	cont "can be violent,"
 	cont "unfair and all"
 	cont "too short."
@@ -961,12 +961,12 @@ RocketBaseBossRetreatText:
 	cont "end."
 
 	para "However our"
-    line "experiments have"
-    cont "been a success."
-
-    para "Your small"
-    line "victory here"
-    cont "means nothing."
+	line "experiments have"
+	cont "been a success."
+	
+	para "Your small"
+	line "victory here"
+	cont "means nothing."
 	done
 
 RocketBaseLancePostBattleText:
@@ -979,12 +979,12 @@ RocketBaseLancePostBattleText:
 	cont "command as he"
 	cont "would mine."
 
-	para "DARGONITEs judge"
+	para "DRAGONITE's judge"
 	line "of character is"
 	cont "beyond question."
 
 	para "Having earned his"
-	line "respect you have"
+	line "respect, you have"
 	cont "more than earned"
 	cont "mine."
 	done
@@ -1125,7 +1125,7 @@ LanceHealsText2:
 	line "and continue our"
 	cont "assault!"
 
-	para "Stay visualant."
+	para "Stay vigilant."
 	done
 
 GruntM19SeenText:

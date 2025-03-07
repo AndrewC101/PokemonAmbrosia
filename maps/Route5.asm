@@ -48,7 +48,7 @@ HouseForSaleSign:
 
 Route5PokefanMText:
 	text "The road is closed"
-	line "until for now."
+	line "for now."
 
 	para "People have been"
 	line "dropping all their"

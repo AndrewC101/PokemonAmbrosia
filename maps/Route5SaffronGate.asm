@@ -19,7 +19,7 @@ Route5SaffronGateOfficerText:
 	para "They can read"
 	line "your mind."
 
-	para "creeps me out!"
+	para "It creeps me out!"
 	done
 
 Route5SaffronGate_MapEvents:

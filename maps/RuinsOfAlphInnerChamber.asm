@@ -80,9 +80,9 @@ RuinsOfAlphInnerChamberGrampsText:
 	done
 
 RuinsOfAlphInnerChamberStatueText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It's a replica"
+	line "of an ancient"
+	cont "#MON."
 	done
 
 RuinsOfAlphInnerChamberWiseGlasses:
@@ -131,7 +131,7 @@ ArceusStatueScript:
 arceusStatueText:
 	text "An ancient and"
 	line "worn statue of"
-	cont "ARCEUS the"
+	cont "ARCEUS, the"
 	cont "creator."
 	para "Words are too"
 	line "weathered to read."

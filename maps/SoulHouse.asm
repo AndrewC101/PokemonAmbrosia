@@ -28,7 +28,7 @@ MrFujiText:
 	para "In this hallowed"
 	line "place are layed"
 	cont "to rest the souls"
-	cont "many a #MON."
+	cont "of many #MON."
 
 	para "They were close"
 	line "friends, and"

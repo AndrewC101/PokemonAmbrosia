@@ -110,7 +110,7 @@ CeruleanCaveFieldMon6Script:
     end
 
 CeruleanCaveFieldMon7Script:
-	trainer WIGGLYTUFF, FIELD_MON, EVENT_FIELD_MON_7, CeruleanCavePokemonAttacksText, 76, 0, .script
+	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_7, CeruleanCavePokemonAttacksText, 76, 0, .script
 .script
     disappear CERULEANCAVE_FIELDMON_7
     end

@@ -211,9 +211,9 @@ BattleTowerMons:
     bigdw 70
 	db "BURAtuKI-@@"
 
-	db WIGGLYTUFF
-	db MUSCLE_BAND
-	db AI_RETURN, DRAIN_KISS, THUNDERPUNCH, ICE_PUNCH
+	db MAWILE
+	db CHOICE_BAND
+	db IRON_HEAD, AI_RETURN, DRAIN_PUNCH, BITE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -228,12 +228,12 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 123
-    bigdw 123
-    bigdw 60
-    bigdw 48
-    bigdw 48
     bigdw 68
+    bigdw 68
+    bigdw 57
+    bigdw 63
+    bigdw 43
+    bigdw 45
     bigdw 51
 	db "NAtuSI-@@@@"
 
@@ -1437,7 +1437,7 @@ BattleTowerMons:
 
     db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, BULLET_PUNCH, SHADOW_FIST, IRON_HEAD
+	db KINGS_SHIELD, BULLET_PUNCH, SHADOW_PUNCH, IRON_HEAD
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2533,7 +2533,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3001,7 +3001,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3105,7 +3105,7 @@ BattleTowerMons:
 
     db CONKELDURR
 	db LEFTOVERS
-	db BULK_UP, DRAIN_PUNCH, MACH_PUNCH, SHADOW_FIST
+	db BULK_UP, DRAIN_PUNCH, MACH_PUNCH, SHADOW_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3367,7 +3367,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3863,7 +3863,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4463,7 +4463,7 @@ BattleTowerMons:
 
 	db REGIGIGAS
 	db LEFTOVERS
-	db DOUBLE_EDGE, SHADOW_FIST, DRAIN_PUNCH, BULK_UP
+	db DOUBLE_EDGE, SHADOW_PUNCH, DRAIN_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4959,7 +4959,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_FIST, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, CLOSE_COMBAT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5115,7 +5115,7 @@ BattleTowerMons:
 
     db MACHAMP
 	db QUICK_CLAW
-	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_FIST, THUNDERPUNCH
+	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5583,7 +5583,7 @@ BattleTowerMons:
 
 	db CONKELDURR
 	db LEFTOVERS
-	db DRAIN_PUNCH, MACH_PUNCH, SHADOW_FIST, BULK_UP
+	db DRAIN_PUNCH, MACH_PUNCH, SHADOW_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

@@ -107,7 +107,7 @@ WhirlIslandB1FFieldMon4Script:
     end
 
 WhirlIslandB1FFieldMon5Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, WhirlIslandB1FPokemonAttacksText, 65, 0, .script
+	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_5, WhirlIslandB1FPokemonAttacksText, 65, 0, .script
 .script
     disappear WHIRLISLANDB1F_FIELDMON_5
     end

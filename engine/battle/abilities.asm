@@ -118,7 +118,7 @@ ThickFatPokemon:
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
-    db ARCTOVISH
+    db DRACOVISH
     db -1
 
 TechnicianPokemon:
@@ -128,7 +128,7 @@ TechnicianPokemon:
     db PERSIAN
     db PAWNIARD
     db BISHARP
-    db WIGGLYTUFF
+    db KINGAMBIT
     db SHROOMISH
     db BRELOOM
     db PORYGON
@@ -220,7 +220,7 @@ UberImmunePokemon:
 ;    db SWAMPERT
 ;    db VAPOREON
 ;    db LAPRAS
-;    db ARCTOVISH
+;    db DRACOVISH
 ;    db POLIWAG
 ;    db POLIWHIRL
 ;    db -1

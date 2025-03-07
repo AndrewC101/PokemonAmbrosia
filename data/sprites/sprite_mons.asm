@@ -21,7 +21,7 @@ SpriteMons:
 	db JYNX
 	db STARMIE
 	db BULBASAUR
-	db JIGGLYPUFF
+	db MAWILE
 	db FERROSEED
 	db EKANS
 	db ZYGARDE

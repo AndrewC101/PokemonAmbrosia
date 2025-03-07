@@ -10,7 +10,7 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARCEUS
-	db ARCTOVISH
+	db DRACOVISH
 	db ARCTOZOLT
 	db ARTICUNO
     db AZUMARILL
@@ -81,7 +81,7 @@ AlphabeticalPokedexOrder:
 	db GLIGAR
 	db GLISCOR
 	db GOLBAT
-	db GOLDUCK
+	db ABOMASNOW
 	db GOLEM
 	db GRAVELER
 	db GRENINJA
@@ -103,7 +103,7 @@ AlphabeticalPokedexOrder:
 	db HYPNO
 	db INFERNAPE
 	db IVYSAUR
-	db JIGGLYPUFF
+	db MAWILE
 	db JOLTEON
 	db JOLTIK
 	db JYNX
@@ -177,7 +177,7 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PORYGONZ
-	db PSYDUCK
+	db SNOVER
 	db PUPITAR
 	db RAICHU
 	db RAIKOU
@@ -246,7 +246,7 @@ AlphabeticalPokedexOrder:
 	db WEEPINBELL
 	db WEEZING
 	db WHIMSICOTT
-	db WIGGLYTUFF
+	db KINGAMBIT
 	db WOBBUFFET
 	db XERNEAS
 	db YANMA

@@ -1,4 +1,4 @@
-	db ARCTOVISH ; 051
+	db DRACOVISH ; 051
 
 	db  90, 90,  100, 75,  70,  80
 	;   hp  atk  def  spd  sat  sdf

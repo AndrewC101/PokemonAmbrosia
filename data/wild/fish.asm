@@ -61,10 +61,10 @@ FishGroups:
 .Lake_Good:
 	db  35 percent,     FEEBAS,   20
 	db  70 percent,     MUDKIP,    30
-	db  90 percent + 1, GOLDUCK,    30
+	db  90 percent + 1, MARSHTOMP,    30
 	db 100 percent,     time_group 4
 .Lake_Super:
-	db  40 percent,     GOLDUCK,    50
+	db  40 percent,     SLOWBRO,    50
 	db  70 percent,     time_group 5
 	db  90 percent + 1, GYARADOS,   50
 	db 100 percent,     MILOTIC,    60
@@ -72,11 +72,11 @@ FishGroups:
 .Pond_Old:
 	db  70 percent + 1, MAGIKARP,   15
 	db  85 percent + 1, MAGIKARP,   15
-	db 100 percent,     PSYDUCK,    15
+	db 100 percent,     SLOWPOKE,    15
 .Pond_Good:
 	db  35 percent,     DRATINI,   20
 	db  70 percent,     POLIWHIRL,    30
-	db  90 percent + 1, GOLDUCK,    30
+	db  90 percent + 1, SLOWBRO,    30
 	db 100 percent,     time_group 6
 .Pond_Super:
 	db  40 percent,     POLITOED,    50

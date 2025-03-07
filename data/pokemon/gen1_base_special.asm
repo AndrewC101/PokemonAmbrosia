@@ -40,8 +40,8 @@ KantoMonSpecials:
 	db  85 ; CLEFABLE
 	db  65 ; VULPIX
 	db 100 ; NINETALES
-	db  25 ; JIGGLYPUFF
-	db  50 ; WIGGLYTUFF
+	db  25 ; MAWILE
+	db  50 ; KINGAMBIT
 	db  40 ; ZUBAT
 	db  75 ; GOLBAT
 	db  75 ; PAWNIARD
@@ -52,11 +52,11 @@ KantoMonSpecials:
 	db  40 ; LARVESTA
 	db  90 ; VOLCARONA
 	db  45 ; ARCTOZOLT
-	db  70 ; ARCTOVISH
+	db  70 ; DRACOVISH
 	db  40 ; MEOWTH
 	db  65 ; PERSIAN
-	db  50 ; PSYDUCK
-	db  80 ; GOLDUCK
+	db  50 ; SNOVER
+	db  80 ; ABOMASNOW
 	db  35 ; SHROOMISH
 	db  60 ; BRELOOM
 	db  50 ; GROWLITHE

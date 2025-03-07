@@ -135,9 +135,9 @@ SilverCaveItemRoomFieldMon8Script:
 
 SilverCaveItemRoomFieldMon9Script:
 	faceplayer
-	cry ARCTOVISH
+	cry DRACOVISH
 	pause 15
-	loadwildmon ARCTOVISH, 73
+	loadwildmon DRACOVISH, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9

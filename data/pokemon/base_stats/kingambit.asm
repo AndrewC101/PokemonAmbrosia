@@ -1,4 +1,4 @@
-	db WIGGLYTUFF ; 040
+	db KINGAMBIT ; 040
 
 	db  100, 135, 120, 50,  60,  85
 	;   hp  atk  def  spd  sat  sdf

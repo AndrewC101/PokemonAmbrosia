@@ -400,7 +400,7 @@ JohtoGrassWildMons:
 	db 30, SIGILYPH
 	db 20, SMEARGLE
 	db 25, IVYSAUR
-	db 32, WIGGLYTUFF
+	db 32, CLEFABLE
 	db 32, WOBBUFFET
 	db 32, METANG
 	db 40, ALAKAZAM
@@ -408,7 +408,7 @@ JohtoGrassWildMons:
 	db 30, SIGILYPH
 	db 20, SMEARGLE
 	db 25, CHARMELEON
-	db 32, WIGGLYTUFF
+	db 32, CLEFABLE
 	db 32, WOBBUFFET
 	db 32, METANG
 	db 40, ALAKAZAM
@@ -539,7 +539,7 @@ JohtoGrassWildMons:
 	; morn
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -547,7 +547,7 @@ JohtoGrassWildMons:
 	; day
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -555,7 +555,7 @@ JohtoGrassWildMons:
 	; nite
 	db 14, SLOWPOKE
 	db 14, ZUBAT
-	db 15, PSYDUCK
+	db 15, SLOWPOKE
 	db 15, POLIWAG
 	db 16, MARILL
 	db 16, STARYU
@@ -568,7 +568,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 33, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -576,7 +576,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 30, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -584,7 +584,7 @@ JohtoGrassWildMons:
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
 	db 30, POLIWHIRL
-	db 33, GOLDUCK
+	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
 	db 40, SLOWKING
@@ -794,7 +794,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -802,7 +802,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -810,7 +810,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -822,7 +822,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -830,7 +830,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -838,7 +838,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -850,7 +850,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; day
 	db 32, CLOYSTER
@@ -858,7 +858,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	; nite
 	db 32, CLOYSTER
@@ -866,7 +866,7 @@ JohtoGrassWildMons:
 	db 38, JYNX
 	db 38, WEAVILE
 	db 40, ARCTOZOLT
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -1018,7 +1018,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; day
 	db 34, GABITE
@@ -1026,7 +1026,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; nite
 	db 34, GABITE
@@ -1034,7 +1034,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	end_grass_wildmons
 
@@ -1046,7 +1046,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; day
 	db 34, GABITE
@@ -1054,7 +1054,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	; nite
 	db 34, GABITE
@@ -1062,7 +1062,7 @@ JohtoGrassWildMons:
 	db 37, PUPITAR
 	db 37, SLOWBRO
 	db 42, ARCTOZOLT
-	db 42, ARCTOVISH
+	db 42, DRACOVISH
 	db 52, GARCHOMP
 	end_grass_wildmons
 
@@ -1405,7 +1405,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1413,7 +1413,7 @@ JohtoGrassWildMons:
 	db 12, ABRA
 	db 23, KADABRA
 	; day
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1421,7 +1421,7 @@ JohtoGrassWildMons:
 	db 12, ABRA
 	db 23, KADABRA
 	; nite
-	db 16, JIGGLYPUFF
+	db 16, CLEFAIRY
 	db 16, COTTONEE
 	db 18, DROWZEE
 	db 18, PONYTA
@@ -1453,7 +1453,7 @@ JohtoGrassWildMons:
 	db 16, DROWZEE
 	db 12, RALTS
 	db 12, ABRA
-    db 18, PSYDUCK
+    db 18, SLOWPOKE
     db 18, YANMA
 	db 25, YANMEGA
 	end_grass_wildmons
@@ -1646,7 +1646,7 @@ JohtoGrassWildMons:
 	db 56, MILOTIC
 	; nite
 	db 31, DRATINI
-	db 27, GOLDUCK
+	db 27, POLIWHIRL
 	db 33, LANTURN
 	db 33, CHANSEY
 	db 40, TOGEKISS
@@ -1688,7 +1688,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1696,7 +1696,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1704,7 +1704,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, HOOTHOOT
 	db 8, GEODUDE
-	db 8, JIGGLYPUFF
+	db 8, SLOWPOKE
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR

@@ -57,8 +57,8 @@
 	const CLEFABLE   ; 24
 	const VULPIX     ; 25
 	const NINETALES  ; 26
-	const JIGGLYPUFF ; 27
-	const WIGGLYTUFF ; 28
+	const MAWILE ; 27
+	const KINGAMBIT ; 28
 	const ZUBAT      ; 29
 	const GOLBAT     ; 2a
 	const PAWNIARD     ; 2b  ....
@@ -68,12 +68,12 @@
 	const HAWLUCHA   ; 2f
 	const LARVESTA   ; 30
 	const VOLCARONA  ; 31
-	const ARCTOZOLT    ; 32 *
-	const ARCTOVISH    ; 33 *
+	const ARCTOZOLT    ; 32
+	const DRACOVISH    ; 33
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
-	const PSYDUCK    ; 36 *
-	const GOLDUCK    ; 37 *
+	const SNOVER    ; 36
+	const ABOMASNOW    ; 37
 	const SHROOMISH  ; 38
 	const BRELOOM    ; 39
 	const GROWLITHE  ; 3a

@@ -633,9 +633,9 @@ Route35FieldMon3Script:
 
 Route35FieldMon4Script:
 	faceplayer
-	cry JIGGLYPUFF
+	cry PONYTA
 	pause 15
-	loadwildmon JIGGLYPUFF, 24
+	loadwildmon PONYTA, 24
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

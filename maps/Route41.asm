@@ -447,7 +447,7 @@ Route41FieldMon2Script:
     end
 
 Route41FieldMon3Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_3, Route41PokemonAttacksText, 48, 0, .script
+	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_3, Route41PokemonAttacksText, 48, 0, .script
 .script
     disappear ROUTE41_FIELDMON_3
     end

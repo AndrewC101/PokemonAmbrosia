@@ -98,9 +98,9 @@ Route21FieldMon4Script:
 
 Route21FieldMon5Script:
 	faceplayer
-	cry GOLDUCK
+	cry POLIWRATH
 	pause 15
-	loadwildmon GOLDUCK, 44
+	loadwildmon POLIWRATH, 44
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

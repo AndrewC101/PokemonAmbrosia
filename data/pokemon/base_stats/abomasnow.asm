@@ -1,4 +1,4 @@
-	db GOLDUCK ; 055
+	db ABOMASNOW ; 055
 
 	db  90,  92,  75,  60,  92,  120
 	;   hp  atk  def  spd  sat  sdf

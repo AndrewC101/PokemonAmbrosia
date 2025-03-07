@@ -39,8 +39,8 @@ PokedexDataPointerTable:
 	dw ClefablePokedexEntry
 	dw VulpixPokedexEntry
 	dw NinetalesPokedexEntry
-	dw JigglypuffPokedexEntry
-	dw WigglytuffPokedexEntry
+	dw MawilePokedexEntry
+	dw KingambitPokedexEntry
 	dw ZubatPokedexEntry
 	dw GolbatPokedexEntry
 	dw PawniardPokedexEntry
@@ -51,11 +51,11 @@ PokedexDataPointerTable:
 	dw LarvestaPokedexEntry
 	dw VolcaronaPokedexEntry
 	dw ArctozoltPokedexEntry
-	dw ArctovishPokedexEntry
+	dw DracovishPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
-	dw PsyduckPokedexEntry
-	dw GolduckPokedexEntry
+	dw SnoverPokedexEntry
+	dw AbomasnowPokedexEntry
 	dw ShroomishPokedexEntry
 	dw BreloomPokedexEntry
 	dw GrowlithePokedexEntry

@@ -1,4 +1,4 @@
-	db PSYDUCK ; 054
+	db SNOVER ; 054
 
 	db  60,  62,  50,  40,  62,  70
 	;   hp  atk  def  spd  sat  sdf

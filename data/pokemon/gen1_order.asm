@@ -46,7 +46,7 @@ Pokered_MonIndices:
 	db DUOSION
 	db ARBOK
 	db HAWLUCHA
-	db PSYDUCK
+	db SNOVER
 	db DROWZEE
 	db GOLEM
 	db HERACROSS ; MISSINGNO.
@@ -99,8 +99,8 @@ Pokered_MonIndices:
 	db POLTEGEIST
 	db RALTS
 	db KIRLIA
-	db JIGGLYPUFF
-	db WIGGLYTUFF
+	db MAWILE
+	db KINGAMBIT
 	db EEVEE
 	db FLAREON
 	db JOLTEON
@@ -117,7 +117,7 @@ Pokered_MonIndices:
 	db HOUNDOOM ; MISSINGNO.
 	db MAGNEZONE
 	db BRELOOM
-	db ARCTOVISH
+	db DRACOVISH
 	db VOLCARONA
 	db GLISCOR
 	db KINGDRA ; MISSINGNO.
@@ -127,7 +127,7 @@ Pokered_MonIndices:
 	db BUTTERFREE
 	db MACHAMP
 	db WHIMSICOTT ; MISSINGNO.
-	db GOLDUCK
+	db ABOMASNOW
 	db HYPNO
 	db GOLBAT
 	db DARKRAI

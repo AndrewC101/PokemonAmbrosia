@@ -41,7 +41,7 @@ RattataEggMoves:
 	db SCREECH
 	db FLAME_WHEEL
 	db FURY_SWIPES
-	db SHADOW_FIST
+	db SHADOW_PUNCH
 	db COUNTER
 	db REVERSAL
 	db -1 ; end
@@ -123,7 +123,7 @@ MeowthEggMoves:
 	db AMNESIA
 	db -1 ; end
 
-PsyduckEggMoves:
+SnoverEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
 	db PSYBEAM

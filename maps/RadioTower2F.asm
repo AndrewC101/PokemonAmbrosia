@@ -41,7 +41,7 @@ RadioTower2FTeacherScript:
 RadioTowerJigglypuff:
 	opentext
 	writetext RadioTowerJigglypuffText
-	cry JIGGLYPUFF
+	cry CLEFAIRY
 	waitbutton
 	closetext
 	end
@@ -361,8 +361,8 @@ RadioTower2FTeacherText_Rockets:
 	done
 
 RadioTowerJigglypuffText:
-	text "JIGGLYPUFF:"
-	line "Jiggly…"
+	text "CLEFAIRY:"
+	line "clef…"
 	done
 
 RadioTower2FBlackBelt1Text:

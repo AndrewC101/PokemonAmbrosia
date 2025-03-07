@@ -79,10 +79,10 @@ PokemonPicPointers::
 	dba_pic VulpixBackpic
 	dba_pic NinetalesFrontpic
 	dba_pic NinetalesBackpic
-	dba_pic JigglypuffFrontpic
-	dba_pic JigglypuffBackpic
-	dba_pic WigglytuffFrontpic
-	dba_pic WigglytuffBackpic
+	dba_pic MawileFrontpic
+	dba_pic MawileBackpic
+	dba_pic KingambitFrontpic
+	dba_pic KingambitBackpic
 	dba_pic ZubatFrontpic
 	dba_pic ZubatBackpic
 	dba_pic GolbatFrontpic
@@ -103,16 +103,16 @@ PokemonPicPointers::
 	dba_pic VolcaronaBackpic
 	dba_pic ArctozoltFrontpic
 	dba_pic ArctozoltBackpic
-	dba_pic ArctovishFrontpic
-	dba_pic ArctovishBackpic
+	dba_pic DracovishFrontpic
+	dba_pic DracovishBackpic
 	dba_pic MeowthFrontpic
 	dba_pic MeowthBackpic
 	dba_pic PersianFrontpic
 	dba_pic PersianBackpic
-	dba_pic PsyduckFrontpic
-	dba_pic PsyduckBackpic
-	dba_pic GolduckFrontpic
-	dba_pic GolduckBackpic
+	dba_pic SnoverFrontpic
+	dba_pic SnoverBackpic
+	dba_pic AbomasnowFrontpic
+	dba_pic AbomasnowBackpic
 	dba_pic ShroomishFrontpic
 	dba_pic ShroomishBackpic
 	dba_pic BreloomFrontpic

@@ -69,13 +69,13 @@ Route20FieldMon4Script:
     end
 
 Route20FieldMon5Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_5, Route20PokemonAttacksText, 74, 0, .script
+	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_5, Route20PokemonAttacksText, 74, 0, .script
 .script
     disappear ROUTE20_FIELDMON_5
     end
 
 Route20FieldMon6Script:
-	trainer ARCTOVISH, FIELD_MON, EVENT_FIELD_MON_6, Route20PokemonAttacksText, 73, 0, .script
+	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_6, Route20PokemonAttacksText, 73, 0, .script
 .script
     disappear ROUTE20_FIELDMON_6
     end
@@ -101,7 +101,7 @@ Route20FieldMon8Script:
 	faceplayer
 	cry LAPRAS
 	pause 15
-	loadwildmon ARCTOVISH, 50
+	loadwildmon DRACOVISH, 50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

@@ -25,9 +25,9 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_6
 	db 2 percent ; encounter rate
-	db 30, PSYDUCK
+	db 30, SLOWPOKE
 	db 30, POLIWHIRL
-	db 40, GOLDUCK
+	db 40, POLIWRATH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_9
@@ -68,7 +68,7 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_20
 	db 6 percent ; encounter rate
 	db 40, CLOYSTER
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 50, LAPRAS
 	end_water_wildmons
 
@@ -160,13 +160,13 @@ KantoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 40, STARMIE
 	db 40, SLOWBRO
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	end_water_wildmons
 
 	def_water_wildmons CINNABAR_ISLAND
 	db 6 percent ; encounter rate
 	db 40, CLOYSTER
-	db 40, ARCTOVISH
+	db 40, DRACOVISH
 	db 50, LAPRAS
 	end_water_wildmons
 

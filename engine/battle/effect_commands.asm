@@ -1751,9 +1751,9 @@ BattleCommand_CheckHit:
     call GetCurrentMon
 	cp JYNX
 	ret z
-	cp PSYDUCK
+	cp SNOVER
 	ret z
-	cp GOLDUCK
+	cp ABOMASNOW
 	ret z
 .notBlizzard
 
@@ -2896,7 +2896,7 @@ ThickClubBoost:
 ; If the attacking monster is Marill or Azumarill - double it.
 	push bc
 	push de
-	ld b, JIGGLYPUFF
+	ld b, MAWILE
 	ld c, AZUMARILL
 	ld d, THICK_CLUB
 	call SpeciesItemBoost
@@ -2947,7 +2947,7 @@ SpeciesItemBoost:
 	ret nz
 
 .GetItemHeldEffect:
-    cp JIGGLYPUFF
+    cp MAWILE
     jr z, .skipItemCheck
     cp AZUMARILL
     jr z, .skipItemCheck

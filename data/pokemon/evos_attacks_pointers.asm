@@ -40,8 +40,8 @@ EvosAttacksPointers::
 	dw ClefableEvosAttacks
 	dw VulpixEvosAttacks
 	dw NinetalesEvosAttacks
-	dw JigglypuffEvosAttacks
-	dw WigglytuffEvosAttacks
+	dw MawileEvosAttacks
+	dw KingambitEvosAttacks
 	dw ZubatEvosAttacks
 	dw GolbatEvosAttacks
 	dw PawniardEvosAttacks
@@ -52,11 +52,11 @@ EvosAttacksPointers::
 	dw LarvestaEvosAttacks
 	dw VolcaronaEvosAttacks
 	dw ArctozoltEvosAttacks
-	dw ArctovishEvosAttacks
+	dw DracovishEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
-	dw PsyduckEvosAttacks
-	dw GolduckEvosAttacks
+	dw SnoverEvosAttacks
+	dw AbomasnowEvosAttacks
 	dw ShroomishEvosAttacks
 	dw BreloomEvosAttacks
 	dw GrowlitheEvosAttacks

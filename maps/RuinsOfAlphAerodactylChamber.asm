@@ -127,17 +127,16 @@ RuinsOfAlphAerodactylChamberWallHoleText:
 	done
 
 RuinsOfAlphAerodactylChamberAncientReplicaText:
-	text "It's a replica of"
-	line "an ancient #-"
-	cont "MON."
+	text "It's a replica"
+	line "of an ancient"
+	cont "#MON."
 	done
 
 RuinsOfAlphAerodactylChamberDescriptionText:
-	text "This flying #-"
-	line "MON attacked its"
-
-	para "prey with saw-like"
-	line "fangs."
+	text "This flying"
+	line "#MON attacked"
+	cont "its prey with"
+	cont "saw-like fangs."
 	done
 
 RuinsOfAlphAerodactylChamber_MapEvents:

@@ -96,7 +96,7 @@ HikerPhillipBeatenText:
 	done
 
 HikerPhillipAfterBattleText:
-	text "Yes you go first."
+	text "Yes, you go first."
 
 	para "There are probably"
 	line "ancient traps in"
@@ -105,14 +105,14 @@ HikerPhillipAfterBattleText:
 
 HikerLeonardSeenText:
 	text "My brother went"
-	line "into ROCKY TUNNEL"
+	line "into ROCK TUNNEL"
 	cont "in KANTO."
 
 	para "He never came"
 	line "back."
 
 	para "When I am good"
-	line "enough I will"
+	line "enough, I will"
 	cont "go find him."
 	done
 
@@ -146,7 +146,7 @@ PokemaniacAndrewAfterBattleText:
 	done
 
 PokemaniacCalvinSeenText:
-	text "I just barley"
+	text "I just barely"
 	line "escaped."
 
 	para "There is a sea"

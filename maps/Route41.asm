@@ -191,11 +191,11 @@ SwimmermCharlieAfterBattleText:
 SwimmermGeorgeSeenText:
 	text "Hey kid."
 
-	para "That a real nice"
+	para "That's a real nice"
 	line "#MON ya"
 	cont "got der."
 
-	para "get you off"
+	para "Get you off"
 	line "now."
 	done
 
@@ -214,7 +214,7 @@ SwimmermGeorgeAfterBattleText:
 	done
 
 SwimmermBerkeSeenText:
-	text "Oh hello there."
+	text "Oh, hello there."
 
 	para "You're looking"
 	line "like you might"
@@ -264,14 +264,14 @@ SwimmermKirkSeenText:
 	para "Do you have the"
 	line "correct papers"
 	cont "to operate in"
-	cont "these waters."
+	cont "these waters?"
 
 	para "No..."
 
 	para "Another rotten"
 	line "pirate."
 
-	para "Well I shall"
+	para "Well. I shall"
 	line "see to it you"
 	cont "are dealt with."
 	done
@@ -283,7 +283,7 @@ SwimmermKirkBeatenText:
 SwimmermKirkAfterBattleText:
 	text "If you run into"
 	line "a pirate named"
-	cont "Jack you be sure"
+	cont "Jack, you be sure"
 	cont "to alert me!"
 	done
 
@@ -299,8 +299,8 @@ SwimmermMathewSeenText:
 	done
 
 SwimmermMathewBeatenText:
-	text "Forgive me great"
-	line "LUGIA."
+	text "Forgive me, great"
+	line "LUGIA!"
 	done
 
 SwimmermMathewAfterBattleText:
@@ -329,7 +329,7 @@ SwimmerfKayleeSeenText:
 	done
 
 SwimmerfKayleeBeatenText:
-	text "I'm doomed"
+	text "I'm doomed!"
 	done
 
 SwimmerfKayleeAfterBattleText:
@@ -349,16 +349,16 @@ SwimmerfSusieSeenText:
 	done
 
 SwimmerfSusieBeatenText:
-	text "Q.E.D"
+	text "Q.E.D."
 	done
 
 SwimmerfSusieAfterBattleText:
 	text "Why are these"
 	line "barriers not"
-	cont "perfect squares."
+	cont "perfect squares?"
 
 	para "Who would make"
-	line "this!"
+	line "this?!"
 	done
 
 SwimmerfDeniseSeenText:
@@ -368,7 +368,7 @@ SwimmerfDeniseSeenText:
 	para "I will use my"
 	line "ninja jutsu"
 	cont "to slip under"
-	cont "these"
+	cont "these."
 	done
 
 SwimmerfDeniseBeatenText:

@@ -372,12 +372,12 @@ TrainerPicnickerTiffany:
 	end
 
 TiffanyNumberAcceptedText:
-	text "Remember your best"
+	text "Remember, your best"
 	line "chance at"
 	cont "surviving is to"
 	cont "run away."
 	para "Never go with them"
-	line "no mater what."
+	line "no matter what."
 	para "Be careful out"
 	line "there."
 	done
@@ -388,7 +388,7 @@ TiffanyRematchText:
     done
 
 TiffanyRematchRefuseText:
-    text "Stay safe friend."
+    text "Stay safe, friend."
     done
 
 Route43Sign1:
@@ -427,7 +427,7 @@ PokemaniacBenBeatenText:
 	done
 
 PokemaniacBenAfterBattleText:
-	text "Fine you can"
+	text "Fine, you can"
 	line "have the GYARADOS."
 
 	para "I'll find a FEEBAS"
@@ -436,7 +436,7 @@ PokemaniacBenAfterBattleText:
 	done
 
 PokemaniacBrentSeenText:
-	text "Come on where"
+	text "Come on, where"
 	line "are all the super"
 	cont "aggressive crazy"
 	cont "#MON!"
@@ -471,7 +471,7 @@ InvaderPatchesSeenText:
 	line "looking for"
 	cont "treasure!"
 
-	para "The is a rare"
+	para "There is a rare"
 	line "treasure just"
 	cont "ahead."
 
@@ -497,7 +497,7 @@ InvaderPatchesSeenText:
 
 InvaderPatchesBeatenText:
 	text "Curses..."
-	line "I'm finished.."
+	line "I'm finished..."
 	cont "What did I ever.."
 	done
 
@@ -551,8 +551,8 @@ FisherMarvinAfterBattleText:
 	done
 
 CamperSpencerSeenText:
-	text "Hey kid be"
-	line "careful."
+	text "Hey kid,"
+	line "be careful."
 
 	para "I'm an undercover"
 	line "detective."
@@ -571,10 +571,10 @@ CamperSpencerSeenText:
 	cont "drinks laced with"
 	cont "SLEEP POWDER."
 
-	para "Oh that's right"
+	para "Oh, that's right"
 	line "I'm a trainer."
 
-	para "Yes let's do"
+	para "Yes, let's do"
 	line "that thing"
 	cont "trainers do."
 	done

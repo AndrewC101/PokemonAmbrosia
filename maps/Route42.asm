@@ -189,7 +189,7 @@ HikerBenjaminSeenText:
 	done
 
 HikerBenjaminBeatenText:
-	text "Ok ok go on!"
+	text "Ok, ok, go on!"
 	done
 
 HikerBenjaminAfterBattleText:
@@ -213,7 +213,7 @@ PokemaniacShaneBeatenText:
 	done
 
 PokemaniacShaneAfterBattleText:
-	text "Ok I'm acting"
+	text "Ok, I'm acting"
 	line "tough so people"
 	cont "don't bother me."
 

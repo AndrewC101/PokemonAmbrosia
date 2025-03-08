@@ -394,7 +394,7 @@ RocketBaseRivalText:
 	para "He destroyed me."
 
 	para "With a single"
-	line "#MON."
+	line "#MON!"
 
 	para "I've never been"
 	line "so decisively"
@@ -440,7 +440,7 @@ ExecutiveM4BeforeText:
 	line "WELL."
 
 	para "You interfered"
-	line "with us then but"
+	line "with us then, but"
 	cont "you were too late."
 
 	para "The mission was a"
@@ -502,7 +502,7 @@ GruntF5SeenText:
 
 	para "Fine."
 
-	para "The password is."
+	para "The password is…"
 
 	para "...."
 
@@ -515,7 +515,7 @@ GruntF5BeatenText:
 	done
 
 GruntF5AfterBattleText:
-	text "Fine you have"
+	text "Fine, you have"
 	line "beaten me."
 
 	para "I'll tell you."
@@ -525,7 +525,7 @@ GruntF5AfterBattleText:
 	para "Just don't"
 	line "hurt me."
 
-	para "The password is."
+	para "The password is…"
 
 	para "SLOWPOKETAIL."
 	done

@@ -180,7 +180,7 @@ InvadedVermilionCityTeacherText:
 	done
 
 VermilionMachopOwnerText:
-	text "Ah hello young"
+	text "Ah, hello young"
 	line "traveler!"
 
 	para "You know the best"
@@ -188,7 +188,7 @@ VermilionMachopOwnerText:
 	cont "when you're"
 	cont "young."
 
-	para "Give me 100000"
+	para "Give me ¥100000"
 	line "and I'll give"
 	cont "back 10 times"
 	cont "that in 10 years."
@@ -222,9 +222,9 @@ VermilionCitySuperNerdText:
 	done
 
 InvadedVermilionCitySuperNerdText:
-    text "They have locked"
-    line "the trainers in"
-    cont "the GYM!"
+	text "They have locked"
+	line "the trainers in"
+	cont "the GYM!"
 
 	para "Just do as they"
 	line "say and keep"
@@ -261,7 +261,7 @@ VermilionCityBadgeGuyTrainerText:
 	line "CHAMPIONS!"
 
 	para "If you can beat"
-	line "them all come"
+	line "them all, come"
 	cont "and let me know."
 	done
 
@@ -270,8 +270,8 @@ VermilionCityBadgeGuySomeBadgesText:
 	line "collect KANTO GYM"
 	cont "BADGES?"
 
-	para "It's tough isn't"
-	line "it."
+	para "It's tough,"
+	line "isn't it?"
 
 	para "You must exploit"
 	line "their type"
@@ -425,9 +425,9 @@ TrainerSoldier6:
 	closetext
 	end
 Soldier6SeenText:
-	text "Stop you filthy"
+	text "Stop, you filthy"
 	line "KANTO son of a"
-	cont "DUNSPARCE scum."
+	cont "DUNSPARCE scum!"
 	para "Kneel and kiss my"
 	line "boots and I might"
 	cont "let you live."
@@ -511,11 +511,11 @@ Soldier8SeenText:
 	para "We are just the"
 	line "first wave."
 	para "Once we take"
-	line "SAFFRON your"
+	line "SAFFRON, your"
 	cont "country is ours."
 	done
 Soldier8BeatenText:
-    text "I done my job"
+    text "I've done my job"
     line "well."
     done
 Soldier8WinsText:
@@ -524,7 +524,7 @@ Soldier8WinsText:
     done
 Soldier8AfterBattleText:
 	text "Once WALLACE joins"
-	line "the battle you"
+	line "the battle, you"
 	cont "will know total"
 	cont "desperation."
 	done
@@ -602,7 +602,7 @@ HoenCaptainAfterBattleText:
 	para "Wait..."
 	para "You are the new"
 	line "CHAMPION!"
-	para "You have failed"
+	para "You have failed,"
 	line "CHAMPION."
 	para "I've accomplished"
 	line "my mission."
@@ -682,7 +682,7 @@ Yuna2WinAfterBattleText:
     line "much stronger!"
 
     para "When the time"
-    line "comes I know"
+    line "comes, I know"
     cont "these people can"
     cont "count on you."
     done
@@ -718,10 +718,10 @@ VermilionYunaSeenText:
     cont "too."
     done
 VermilionYunaBeatenText:
-    text "Thank you"
+    text "Thank you."
     done
 VermilionYunaWinsText:
-    text "Thank you"
+    text "Thank you."
     done
 VermilionYunaOfferFightText:
     text "Would you like"

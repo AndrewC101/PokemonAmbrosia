@@ -9,7 +9,7 @@ A Romhack based on Pokémon Crystal with a focus on unique features, fun gamepla
 - Fully reworked Pokedex which includes fan favorite Pokémon and legendaries from the first 6 generations with 253 Pokémon in total.
 
 - All Pokémon have one or more abilities.
-  - Some are the abilities you might expect such a Tyranitar Sandstream.
+  - Some are the abilities you might expect such as Tyranitar's Sandstream.
   - some are different such as Lucario with Intrepid Sword.
   - some are completely new such as Gardevoir raising Light Screen upon switch in.
 

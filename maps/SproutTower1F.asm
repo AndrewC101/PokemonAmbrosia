@@ -80,7 +80,7 @@ SproutTower1FSage1Text:
 
 SproutTower1FSage2Text:
 	text "SPROUT TOWER was"
-	line "built long ago"
+	line "built long ago."
 
 	para "Here we train"
 	line "to fight the"

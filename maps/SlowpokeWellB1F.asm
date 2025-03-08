@@ -170,7 +170,7 @@ SlowpokeWellB1FKurtText:
 
 	para "Use your rage."
 
-	para "seize upon your"
+	para "Seize upon your"
 	line "hate..."
 
 	para "Free the dear"
@@ -182,7 +182,7 @@ SlowpokeWellB1FKurtText:
 KurtLeaveSlowpokeWellText:
 	text "You did it!"
 
-	para "I seen the"
+	para "I've seen the"
 	line "ROCKETS run"
 	cont "away with fear"
 	cont "in their eyes."
@@ -277,7 +277,7 @@ TrainerGruntM1WhenTalkText:
 GruntM2SeenText:
 	text "You beat JESSIE!"
 	para "She may be nasty"
-	line "and mean but I"
+	line "and mean, but I"
 	cont "will make you pay"
 	cont "for what you've"
 	cont "done!"

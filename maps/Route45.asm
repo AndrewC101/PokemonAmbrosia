@@ -314,12 +314,12 @@ HikerMichaelSeenText:
 
 HikerMichaelBeatenText:
 	text "Why do we"
-	line "battle."
+	line "battle?"
 	done
 
 HikerMichaelAfterBattleText:
 	text "Watch out down"
-	line "there kid."
+	line "there, kid."
 
 	para "That GARCHOMP"
 	line "isn't messing"
@@ -343,7 +343,7 @@ HikerParry3SeenText:
 	done
 
 HikerParry3BeatenText:
-	text "Aww my knees"
+	text "Aww, my knees"
 	line "have buckled."
 	done
 
@@ -355,7 +355,7 @@ HikerParryAfterBattleText:
 	cont "muscular legs."
 
 	para "Not as big as"
-	line "mine mind you."
+	line "mine, mind you."
 	done
 
 HikerTimothySeenText:
@@ -382,13 +382,13 @@ HikerTimothyAfterBattleText:
 
 	para "If I fought a"
 	line "legendary #MON"
-	cont "right now I"
-	cont "don't think I"
-	cont "would win."
+	cont "right now"
+	cont "I don't think"
+	cont "I would win."
 	done
 
 HikerParryGivesIronText:
-	text "Here this will"
+	text "Here, this will"
 	line "help toughen"
 	cont "those legs."
 	done
@@ -457,7 +457,7 @@ BlackbeltKenjiNightText:
 	done
 
 CooltrainermRyanSeenText:
-	text "You know maybe"
+	text "You know, maybe"
 	line "I'm the only"
 	cont "person who"
 	cont "thinks this."
@@ -550,9 +550,9 @@ CamperQuentinSeenText:
 	line "though."
 
 	para "Aye I fear"
-	line "her I do."
+	line "her, I do."
 
-	para "Is why I camp"
+	para "It's why I camp"
 	line "so much."
 	done
 

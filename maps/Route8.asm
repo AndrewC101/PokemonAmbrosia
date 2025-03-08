@@ -209,7 +209,7 @@ BikerHarrisSeenText:
 
 	para "This is our turf!"
 
-	para "Right ZEKE?"
+	para "Right, ZEKE?"
 
 	para "He's just not the"
 	line "same anymore."
@@ -251,7 +251,7 @@ BikerZekeSeenText:
 BikerZekeBeatenText:
 	text "NOOOO!"
 
-	para "NO NOT AGAIN!"
+	para "NO, NOT AGAIN!"
 
 	para "PLEASE!!"
 	done
@@ -279,11 +279,11 @@ SupernerdSamSeenText:
 	para "Darn!"
 
 	para "You are jealous"
-	line "of my beauty."
+	line "of my beauty!"
 	done
 
 SupernerdSamBeatenText:
-	text "You are toxic."
+	text "You are toxic!"
 	done
 
 SupernerdSamAfterBattleText:
@@ -297,12 +297,12 @@ SupernerdSamAfterBattleText:
 SupernerdTomSeenText:
 	text "I like to use"
 	line "old fashioned"
-    cont "and well tested"
-    cont "strategies."
+	cont "and well tested"
+	cont "strategies."
 
-    para "I have wiped out"
-    line "may a noob with"
-    cont "this."
+	para "I have wiped out"
+	line "many noobs with"
+	cont "this."
 	done
 
 SupernerdTomBeatenText:

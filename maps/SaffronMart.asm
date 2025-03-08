@@ -21,7 +21,7 @@ SaffronMartCooltrainerFScript:
 	jumptextfaceplayer SaffronMartCooltrainerFText
 
 SaffronMartCooltrainerMText:
-	text "Oh you are from"
+	text "Oh, you are from"
 	line "JOHTO."
 
 	para "I've always said"
@@ -31,7 +31,7 @@ SaffronMartCooltrainerMText:
 	cont "fortunate."
 
 	para "How are you"
-	line "finding it here."
+	line "finding it here?"
 
 	para "Yes, very good."
 	done

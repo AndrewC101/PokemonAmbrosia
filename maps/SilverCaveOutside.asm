@@ -366,7 +366,7 @@ SilverCaveOutsideMovement_CrystalGoodbye:
     step_end
 
 SilverCaveSilverIntroText:
-    text "Wait up Hero."
+    text "Wait up, Hero."
 
     para "Everyone's talking"
     line "about the saviour"
@@ -390,10 +390,10 @@ SilverCaveSilverIntroText:
 SilverCaveCrystalIntroText:
     text "Hi <PLAYER>!"
 
-    para "So now that you"
-    line "have saved us"
-    cont "all you are here"
-    cont "to fight some guy"
+    para "So, now that you"
+    line "have saved us all,"
+    cont "you are here to"
+    cont "fight some guy"
     cont "called RED."
 
     para "To see if you are"
@@ -413,7 +413,7 @@ SilverCaveSilverBattleText:
 
     para "Where was he"
     line "when the world"
-    cont "needed him."
+    cont "needed him?"
 
     para "Hiding away here."
 
@@ -450,7 +450,7 @@ SilverCaveSilverAfterBattleText:
     done
 
 SilverCaveCrystalBattleText:
-    text "Well of course"
+    text "Well, of course"
     line "<PLAYER> won."
 
     para "But like <RIVAL>"
@@ -459,14 +459,14 @@ SilverCaveCrystalBattleText:
     para "We have both got"
     line "much stronger."
 
-    para "Now before you"
+    para "Now, before you"
     line "go off and beat"
     cont "whoever awaits"
-    cont "you in there."
+    cont "you in there..."
 
     para "How about giving"
     line "me one last"
-    cont "lesson."
+    cont "lesson?"
 
     para "I'll heal your"
     line "#MON first of"
@@ -484,7 +484,7 @@ Crystal7WinsText:
     done
 
 SilverCaveCrystalAfterBattleText:
-    text "Haha.."
+    text "Haha..."
 
     para "That was fun."
 
@@ -518,9 +518,8 @@ SilverCaveCrystalFriendshipText:
     para "<RIVAL> was"
     line "expressing his"
     cont "appreciation for"
-    cont "you in his"
-    cont "usual charismatic"
-    cont "way."
+    cont "you in his usual"
+    cont "charismatic way."
 
     para "Then I got right"
     line "up in his face"
@@ -537,9 +536,9 @@ SilverCaveCrystalFriendshipText:
 
     para "I guess once"
     line "you're a #MON"
-    cont "MASTER I wont"
+    cont "MASTER, I wont"
     cont "see you so much"
-    cont "anymore"
+    cont "anymore."
     done
 
 SilverCaveSilverFriendshipText:
@@ -547,7 +546,7 @@ SilverCaveSilverFriendshipText:
     line "not have thrashed"
     cont "me..."
 
-    para "OK you probably"
+    para "OK, you probably"
     line "would have."
 
     para "I nearly got"
@@ -607,15 +606,15 @@ SilverCaveSilverWhatYouMeanText:
     text "Why would I"
     line "go!"
 
-    para "NEW BARK town"
+    para "NEW BARK TOWN"
     line "isn't my home."
 
     para "Would you miss"
-    line "me that much!"
+    line "me that much?!"
     done
 
 SilverCaveCrystalYouStoleText:
-    text "Yeah I really"
+    text "Yeah, I really"
     line "couldn't bear"
     cont "to be apart"
     cont "from you...."
@@ -640,8 +639,7 @@ SilverCaveSilverYouRightText:
     para "You are right."
 
     para "I need to clear"
-    line "my name if I"
-    cont "can."
+    line "my name if I can."
     done
 
 SilverCaveSilverGoodbyeText:
@@ -669,8 +667,7 @@ SilverCaveCrystalGoodbyeText:
     para "<PLAYER>..."
 
     para "I want to thank"
-    line "you for saving"
-    cont "me."
+    line "you for saving me."
 
     para "And my family."
 
@@ -952,7 +949,7 @@ RolePlay6PrizeText:
     para "You are my best"
     line "gaming buddy."
 
-    para "Here take this."
+    para "Here, take this."
     done
 
 HoenWarIntroText:
@@ -999,7 +996,7 @@ HoenWarCh1HeroText:
 
     para "Like a frozen"
     line "breeze on a still"
-    cont "night you move"
+    cont "night, you move"
     cont "silently."
 
     para "Across the"
@@ -1125,7 +1122,7 @@ HoenWarCh3HeroText:
 
     para "Looking down on"
     line "you from his"
-    cont "living throne he"
+    cont "living throne, he"
     cont "seems more a God"
     cont "than a man."
 
@@ -1278,7 +1275,7 @@ HoenWarCh4HeroText:
     line "of light."
 
     para "Has your prayer"
-    line "been answered."
+    line "been answered?"
     done
 
 HoenWarCh1VillainText:
@@ -1324,7 +1321,7 @@ HoenWarCh1VillainText:
     cont "has faced death"
     cont "many times."
 
-    para "But to you he"
+    para "But to you, he's"
     line "just another face."
     done
 
@@ -1335,7 +1332,7 @@ HoenWarCh3VillainText:
     cont "intruder."
 
     para "You make your"
-    line "way to STEVENS"
+    line "way to STEVEN'S"
     cont "chamber."
 
     para "The room is"

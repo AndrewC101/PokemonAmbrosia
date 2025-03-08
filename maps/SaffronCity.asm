@@ -175,10 +175,10 @@ SaffronCityPokefanMText_BeatWallace:
 	para "You have saved my"
 	line "investments!"
 
-	para "Listen if you ever"
+	para "Listen, if you ever"
 	line "want to get into"
 	cont "the real estate"
-	cont "market you come"
+	cont "market, you come"
 	cont "straight to me!"
 	done
 
@@ -229,7 +229,7 @@ SaffronCityCooltrainerFText:
 
 SaffronCityFisherText:
 	text "Last time HOENN"
-	line "invaded they made"
+	line "invaded, they made"
 	cont "it to SAFFRON."
 	
 	para "I was a kid."
@@ -251,7 +251,7 @@ SaffronCityFisherText_BeatWallace:
 	para "You saved us all!"
 	
 	para "Last time HOENN"
-	line "invaded it was"
+	line "invaded, it was"
 	cont "LANCE saving us."
 	
 	para "He was young then."
@@ -293,11 +293,11 @@ SaffronCityLass2Text:
 	cont "this city."
 	
 	para "We are told they"
-	line "are gone but we"
-	cont "all know that isn't"
-	cont "true."
+	line "are gone, but we"
+	cont "all know that"
+	cont "isn't true."
 	
-	para "In fact."
+	para "In fact..."
 	
 	para "I support them!"
 	
@@ -438,7 +438,7 @@ SaffronSilverPokemonFreedText:
 
     para "I gave all my"
     line "#MON the choice"
-    cont "to stay with me.."
+    cont "to stay with me..."
 
     para "They didn't all"
     line "accept..."

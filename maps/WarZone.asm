@@ -256,7 +256,7 @@ WarZoneOakText:
 
     para "In recognition"
     line "of your authority"
-    cont "as a trainer you"
+    cont "as a trainer, you"
     cont "can now train"
     cont "and capture"
     cont "#MON up to"
@@ -264,7 +264,7 @@ WarZoneOakText:
 
     para "Now you have one"
     line "more badge to"
-    cont "obtain do you"
+    cont "obtain, do you"
     cont "not?"
 
     para "Head to VIRIDIAN"
@@ -272,7 +272,7 @@ WarZoneOakText:
     cont "nephew BLUE."
 
     para "If you defeat"
-    line "him then I am"
+    line "him, then I am"
     cont "certain about"
     cont "you."
 
@@ -369,7 +369,7 @@ WarZoneCrystalGoodbyeText:
     done
 
 WallaceSeenText:
-    text "Ah just in time."
+    text "Ah, just in time."
 
     para "You must be the"
     line "new CHAMPION of"
@@ -447,7 +447,7 @@ WallaceAfterBattleText2:
     line "HOENN have"
     cont "rejected your"
     cont "brand of weak"
-    cont "passivism"
+    cont "passivism."
 
     para "They believe in"
     line "my vision of a"
@@ -495,7 +495,7 @@ StevenIntroText:
     done
 
 StevenText:
-    text "It's over WALLACE."
+    text "It's over, WALLACE."
 
     para "You have lost."
 
@@ -655,7 +655,7 @@ StevenAfterBattleText:
     cont "him will decide"
     cont "to make war again."
 
-    para "By then however."
+    para "By then however..."
 
     para "You will be"
     line "unstoppable."
@@ -841,7 +841,7 @@ LeonWinsText:
     text "Not bad."
     done
 LeonOfferFightText:
-    text "Say do you think"
+    text "Say, do you think"
     line "you would last..."
 
     para "Against the"
@@ -853,7 +853,7 @@ LeonAfterBattleText:
     text "You are a worthy"
     line "CHAMPION."
 
-    para "Unlike DYANTHIA"
+    para "Unlike DYANTHA"
     line "and ALDER."
 
     para "Both too busy"
@@ -876,9 +876,9 @@ Soldier1SeenText:
     cont "you stands a"
     cont "chance against"
     cont "HOENNs most elite"
-    cont "soldiers."
+    cont "soldiers?"
     para "Your hubris will"
-    line "Get you killed."
+    line "get you killed."
     done
 Soldier1BeatenText:
     text "You are too late."
@@ -891,7 +891,7 @@ Soldier1AfterBattleText:
     text "Reinforcements"
     line "are pouring in."
 
-    para "Ah my Lieutenants"
+    para "Ah, my Lieutenants"
     line "are reporting now!"
 
     para "...."
@@ -899,13 +899,13 @@ Soldier1AfterBattleText:
     para "Yes...."
 
     para "What do you mean"
-    line "LT SURGE is free!"
+    line "LT SURGE is free?!"
 
     para "...."
 
     para "Raining down"
     line "THUNDER on our"
-    cont "ships."
+    cont "ships..."
 
     para "...."
 
@@ -966,7 +966,7 @@ Soldier2AfterBattleText:
 
     para "Too fast to see!"
 
-    para "DRAGONS"
+    para "DRAGONS!"
 
     para "...."
 
@@ -1086,7 +1086,7 @@ Soldier5SeenText:
     line "another face."
     done
 Soldier5BeatenText:
-    text "Remarkable"
+    text "Remarkable."
     done
 Soldier5WinsText:
     text "Forgive me."
@@ -1188,7 +1188,7 @@ WarZoneBlueText:
     cont "LEAGUE."
 
     para "I will argue that"
-    line "The CHAMPIONs"
+    line "the CHAMPIONs"
     cont "should be exempt"
     cont "from political"
     cont "neutrality."
@@ -1252,17 +1252,17 @@ InvaderOroboroScript:
 InvaderOroboroSeenText:
     text "Oh Hi!"
 
-    para "Nope you're not"
+    para "Nope, you're not"
     line "making it to"
     cont "boss fog."
 
-    para "Hang on let me"
+    para "Hang on, let me"
     line "get my buffs up."
 	done
 
 InvaderOroboroVictoryText:
 	text "Hahahaha!"
-	line "get recked dude"
+	line "Get recked dude"
 	done
 
 InvaderOroboroBeatenText:

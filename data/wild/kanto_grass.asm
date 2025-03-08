@@ -794,7 +794,7 @@ KantoGrassWildMons:
 	db 42, ROTOM
 	db 43, SCIZOR
 	db 44, HERACROSS
-	db 45, STARMIE
+	db 45, ABOMASNOW
 	db 66, VOLCARONA
 	; day
 	db 40, URSARING
@@ -802,7 +802,7 @@ KantoGrassWildMons:
 	db 42, ROTOM
 	db 43, SCIZOR
 	db 44, HERACROSS
-	db 45, STARMIE
+	db 45, ABOMASNOW
 	db 66, VOLCARONA
 	; nite
 	db 40, MISMAGIUS
@@ -810,7 +810,7 @@ KantoGrassWildMons:
 	db 42, ROTOM
 	db 43, SCIZOR
 	db 44, BISHARP
-	db 45, POLITOED
+	db 45, ABOMASNOW
 	db 66, VOLCARONA
 	end_grass_wildmons
 
@@ -853,7 +853,7 @@ KantoGrassWildMons:
 	db 75, SCEPTILE
 	db 80, GENESECT
 	; day
-	db 71, SKARMORY
+	db 71, SWAMPERT
 	db 71, SMEARGLE
 	db 72, BLISSEY
 	db 72, SNORLAX
@@ -863,7 +863,7 @@ KantoGrassWildMons:
 	; nite
 	db 71, ROTOM
 	db 71, POLTEGEIST
-	db 72, BISHARP
+	db 72, KINGAMBIT
 	db 72, NINETALES
 	db 75, INFERNAPE
 	db 75, GRENINJA

@@ -66,7 +66,7 @@ Route9FieldMon1Script:
     end
 
 Route9FieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route9PokemonAttacksText, 63, 0, .script
+	trainer ABOMASNOW, FIELD_MON, EVENT_FIELD_MON_2, Route9PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE9_FIELDMON_2
     end

@@ -751,13 +751,13 @@ Route32FieldMon1Script:
     end
 
 Route32FieldMon2Script:
-	trainer DROWZEE, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 25, 0, .script
+	trainer MUDKIP, FIELD_MON, EVENT_FIELD_MON_2, Route32PokemonAttacksText, 15, 0, .script
 .script
     disappear ROUTE32_FIELDMON_2
     end
     
 Route32FieldMon3Script:
-	trainer DUOSION, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 30, 0, .script
+	trainer MARSHTOMP, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 30, 0, .script
 .script
     disappear ROUTE32_FIELDMON_3
     end
@@ -813,9 +813,9 @@ Route32FieldMon7Script:
 
 Route32FieldMon8Script:
 	faceplayer
-	cry SNOVER
+	cry MUDKIP
 	pause 15
-	loadwildmon SNOVER, 14
+	loadwildmon MUDKIP, 14
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

@@ -43,9 +43,9 @@ DragonsDenB1F_MapScripts:
     endcallback
 
 DragonsDenB1FieldMon1Script:
-	cry DRAGONAIR
+	cry DRACOVISH
 	pause 15
-	loadwildmon DRAGONAIR, 46
+	loadwildmon DRACOVISH, 46
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

@@ -59,25 +59,25 @@ DarkCaveVioletEntranceHiddenElixer:
 	hiddenitem ELIXER, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_ELIXER
 
 DarkCaveVioletEntranceFieldMon1Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveVioletEntrancePokemonAttacksText, 42, 0, .script
+	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveVioletEntrancePokemonAttacksText, 52, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_1
     end
 
 DarkCaveVioletEntranceFieldMon2Script:
-	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveVioletEntrancePokemonAttacksText, 22, 0, .script
+	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveVioletEntrancePokemonAttacksText, 20, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_2
     end
 
 DarkCaveVioletEntranceFieldMon3Script:
-	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveVioletEntrancePokemonAttacksText, 24, 0, .script
+	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveVioletEntrancePokemonAttacksText, 18, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_3
     end
 
 DarkCaveVioletEntranceFieldMon4Script:
-	trainer MISDREAVUS, FIELD_MON, EVENT_FIELD_MON_4, DarkCaveVioletEntrancePokemonAttacksText, 25, 0, .script
+	trainer MAWILE, FIELD_MON, EVENT_FIELD_MON_4, DarkCaveVioletEntrancePokemonAttacksText, 15, 0, .script
 .script
     disappear DARKCAVEVIOLETENTRANCE_FIELDMON_4
     end
@@ -154,7 +154,7 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event  8,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 34, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 26,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 17,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 17,  4, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveVioletEntranceFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 14, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 13, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 16, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7

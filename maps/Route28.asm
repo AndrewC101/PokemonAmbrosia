@@ -128,9 +128,9 @@ Route28FieldMon8Script:
 
 Route28FieldMon9Script:
 	faceplayer
-	cry BISHARP
+	cry KINGAMBIT
 	pause 15
-	loadwildmon BISHARP, 73
+	loadwildmon KINGAMBIT, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -140,9 +140,9 @@ Route28FieldMon9Script:
 
 Route28FieldMon10Script:
 	faceplayer
-	cry TAUROS
+	cry SWAMPERT
 	pause 15
-	loadwildmon TAUROS, 73
+	loadwildmon SWAMPERT, 73
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

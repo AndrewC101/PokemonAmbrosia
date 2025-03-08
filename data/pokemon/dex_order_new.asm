@@ -20,6 +20,9 @@ NewPokedexOrder:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
+	db MUDKIP
+	db MARSHTOMP
+	db SWAMPERT
 	db STARLY
 	db STARAVIA
 	db STARAPTOR
@@ -50,7 +53,6 @@ NewPokedexOrder:
 	db CLEFAIRY
 	db CLEFABLE
 	db MAWILE
-	db KINGAMBIT
 	db TOGEPI
 	db TOGETIC
 	db TOGEKISS
@@ -62,8 +64,6 @@ NewPokedexOrder:
 	db MAREEP
 	db FLAAFFY
 	db AMPHAROS
-	db MARSHTOMP
-	db SWAMPERT
 	db GASTLY
 	db HAUNTER
 	db GENGAR
@@ -85,6 +85,7 @@ NewPokedexOrder:
 	db SLOWKING
 	db PAWNIARD
 	db BISHARP
+	db KINGAMBIT
 	db DROWZEE
 	db HYPNO
 	db ABRA
@@ -113,7 +114,6 @@ NewPokedexOrder:
 	db MAGNEMITE
 	db MAGNETON
 	db MAGNEZONE
-	db MUDKIP
 	db MIMIKYU
 	db VULPIX
 	db NINETALES

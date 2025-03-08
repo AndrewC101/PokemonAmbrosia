@@ -111,9 +111,9 @@ SilverCaveOutsideFieldMon6Script:
 
 SilverCaveOutsideFieldMon7Script:
 	faceplayer
-	cry EXEGGUTOR
+	cry ABOMASNOW
 	pause 15
-	loadwildmon EXEGGUTOR, 72
+	loadwildmon ABOMASNOW, 72
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

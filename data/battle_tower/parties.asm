@@ -835,7 +835,7 @@ BattleTowerMons:
     bigdw 58
 	db "GARAGARA@@@"
 
-	db SWAMPERT
+	db MARSHTOMP
 	db MUSCLE_BAND
 	db WATERFALL, ICE_PUNCH, DIG, HEADBUTT
 	dw 0 ; OT ID
@@ -852,13 +852,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 86
-    bigdw 86
+    bigdw 76
+    bigdw 76
     bigdw 57
-    bigdw 57
-    bigdw 37
-    bigdw 49
-    bigdw 49
+    bigdw 51
+    bigdw 43
+    bigdw 47
+    bigdw 51
 	db "RAPURASU@@@"
 
 	db NOCTOWL
@@ -5711,9 +5711,9 @@ BattleTowerMons:
 ;	bigdw 288 ; SDef
 ;	db "RANTA-N@@@@"
 
-	db MISMAGIUS
-	db FOCUS_SASH
-	db SHADOW_BALL, THUNDERBOLT, ICY_WIND, NASTY_PLOT
+	db KINGAMBIT
+	db BLACKGLASSES
+	db SUCKER_PUNCH, BULLET_PUNCH, MACH_PUNCH, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5723,18 +5723,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 24, 32 ; PP
+	db 16, 32, 48, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 323 ; HP
-	bigdw 323 ; Max HP
-	bigdw 218 ; Atk
-	bigdw 218 ; Def
-	bigdw 308 ; Spd
-	bigdw 308 ; SAtk
-	bigdw 308 ; SDef
+    bigdw 403
+    bigdw 403
+    bigdw 368
+    bigdw 338
+    bigdw 198
+    bigdw 218
+    bigdw 268
 	db "RANTA-N@@@@"
 
 	db SYLVEON
@@ -5817,7 +5817,7 @@ BattleTowerMons:
 
 	db SWAMPERT
 	db LEFTOVERS
-	db WATERFALL, CURSE, AMNESIA, RECOVER
+	db WATERFALL, CURSE, AMNESIA, REST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5832,13 +5832,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-    bigdw 393
-    bigdw 393
+    bigdw 403
+    bigdw 403
+    bigdw 318
+    bigdw 278
+    bigdw 218
     bigdw 268
-    bigdw 268
-    bigdw 168
-    bigdw 228
-    bigdw 228
+    bigdw 278
 	db "RANTA-N@@@@"
 
 	db MAMOSWINE

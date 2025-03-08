@@ -271,7 +271,7 @@ SwimmermKirkSeenText:
 	para "Another rotten"
 	line "pirate."
 
-	para "Well. I shall"
+	para "Well, I shall"
 	line "see to it you"
 	cont "are dealt with."
 	done

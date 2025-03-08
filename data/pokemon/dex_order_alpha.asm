@@ -2,6 +2,7 @@
 
 AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
+	db ABOMASNOW
 	db ABRA
 	db AEGISLASH
 	db AERODACTYL
@@ -10,7 +11,6 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARCEUS
-	db DRACOVISH
 	db ARCTOZOLT
 	db ARTICUNO
     db AZUMARILL
@@ -44,6 +44,7 @@ AlphabeticalPokedexOrder:
 	db DIALGA
 	db DITTO
 	db DOUBLADE
+	db DRACOVISH
 	db DRAGONAIR
 	db DRAGONITE
 	db DRATINI
@@ -81,7 +82,6 @@ AlphabeticalPokedexOrder:
 	db GLIGAR
 	db GLISCOR
 	db GOLBAT
-	db ABOMASNOW
 	db GOLEM
 	db GRAVELER
 	db GRENINJA
@@ -103,11 +103,11 @@ AlphabeticalPokedexOrder:
 	db HYPNO
 	db INFERNAPE
 	db IVYSAUR
-	db MAWILE
 	db JOLTEON
 	db JOLTIK
 	db JYNX
 	db KADABRA
+	db KINGAMBIT
 	db KINGDRA
 	db KIRLIA
 	db KLEFKI
@@ -137,6 +137,7 @@ AlphabeticalPokedexOrder:
 	db MAREEP
 	db MARILL
 	db MARSHTOMP
+	db MAWILE
 	db MEOWTH
 	db METAGROSS
 	db METANG
@@ -177,7 +178,6 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PORYGONZ
-	db SNOVER
 	db PUPITAR
 	db RAICHU
 	db RAIKOU
@@ -210,6 +210,7 @@ AlphabeticalPokedexOrder:
 	db SMEARGLE
 	db SNEASEL
 	db SNORLAX
+	db SNOVER
 	db SOLOSIS
 	db SPIRITOMB
 	db SQUIRTLE
@@ -246,7 +247,6 @@ AlphabeticalPokedexOrder:
 	db WEEPINBELL
 	db WEEZING
 	db WHIMSICOTT
-	db KINGAMBIT
 	db WOBBUFFET
 	db XERNEAS
 	db YANMA

@@ -223,7 +223,7 @@ AncientRuinsPresentFieldMon4Script:
     end
 
 AncientRuinsPresentFieldMon5Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 71, 0, .script
+	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 71, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_5
     end

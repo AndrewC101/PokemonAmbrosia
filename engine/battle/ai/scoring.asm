@@ -4073,12 +4073,12 @@ ShouldAIBoost:
 	call Random
 	cp 50 percent
 	jp c, .decideNotToBoost
+.noForceSwitch
 
 ; don't boost against a powerful priority user that can 2hko
     call IsPowerfulPriorityUser
     jp c, .decideNotToBoost
 
-.noForceSwitch
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
 ; this is to prevent the AI from boosting until it only gets one attack off, should attack earlier for more damage
 	ld a, [wEnemyAtkLevel]
@@ -5705,7 +5705,7 @@ IsPowerfulPriorityUser:
     jr .no
 .check2HKO
     call CanPlayer2HKO
-    jr z, .yes
+    jr c, .yes
 .no
     xor a
     ret

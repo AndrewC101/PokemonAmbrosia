@@ -76,7 +76,7 @@ RockTunnelB1FFieldMon1Script:
     end
 
 RockTunnelB1FFieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, RockTunnelB1FPokemonAttacksText, 63, 0, .script
+	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_2, RockTunnelB1FPokemonAttacksText, 63, 0, .script
 .script
     disappear ROCKTUNNELB1F_FIELDMON_2
     end

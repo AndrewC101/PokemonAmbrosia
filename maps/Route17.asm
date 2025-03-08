@@ -39,7 +39,7 @@ Route17FieldMon1Script:
     end
 
 Route17FieldMon2Script:
-	trainer BISHARP, FIELD_MON, EVENT_FIELD_MON_2, Route17PokemonAttacksText, 61, 0, .script
+	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_2, Route17PokemonAttacksText, 61, 0, .script
 .script
     disappear ROUTE17_FIELDMON_2
     end

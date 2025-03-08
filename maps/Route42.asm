@@ -267,9 +267,9 @@ Route42PokemonAttacksText:
 
 Route42FieldMon3Script:
 	faceplayer
-	cry LOPUNNY
+	cry SNOVER
 	pause 15
-	loadwildmon LOPUNNY, 31
+	loadwildmon SNOVER, 31
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

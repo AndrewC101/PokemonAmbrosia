@@ -59,7 +59,6 @@ Route44_MapScripts:
     appear ROUTE44_FIELDMON_2
 
 ; Pokemon that don't appear at night
-    disappear ROUTE44_FIELDMON_7
     disappear ROUTE44_FIELDMON_8
 
 .end
@@ -595,9 +594,9 @@ Route44FieldMon6Script:
 
 Route44FieldMon7Script:
 	faceplayer
-	cry TOGEPI
+	cry ABOMASNOW
 	pause 15
-	loadwildmon TOGEPI, 5
+	loadwildmon ABOMASNOW, 42
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

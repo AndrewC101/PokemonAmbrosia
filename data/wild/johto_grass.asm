@@ -738,7 +738,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	; day
 	db 31, SNEASEL
@@ -746,7 +746,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	; nite
 	db 31, SNEASEL
@@ -754,7 +754,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -766,7 +766,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	; day
 	db 31, SNEASEL
@@ -774,7 +774,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	; nite
 	db 31, SNEASEL
@@ -782,7 +782,7 @@ JohtoGrassWildMons:
 	db 32, CLOYSTER
 	db 32, PILOSWINE
 	db 38, JYNX
-	db 38, WEAVILE
+	db 42, ABOMASNOW
 	db 51, MAMOSWINE
 	end_grass_wildmons
 
@@ -1257,7 +1257,7 @@ JohtoGrassWildMons:
 	db 45, HONCHKROW
 	db 46, WEAVILE
 	db 47, HOUNDOOM
-	db 49, BISHARP
+	db 50, KINGAMBIT
 	db 51, SPIRITOMB
 	db 54, TYRANITAR
 	end_grass_wildmons
@@ -1349,28 +1349,28 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 7, MUDKIP
 	db 7, MAREEP
 	db 9, BELLSPROUT
 	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
+	db 11, MUDKIP
 	db 15, SIGILYPH
 	; day
-	db 7, MUDKIP
 	db 7, MAREEP
 	db 9, BELLSPROUT
 	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
+	db 11, MUDKIP
 	db 15, SIGILYPH
 	; nite
-	db 7, MUDKIP
 	db 7, POLIWAG
 	db 9, CLEFAIRY
 	db 9, MARILL
 	db 11, SOLOSIS
 	db 11, ABRA
+	db 11, MUDKIP
 	db 15, SIGILYPH
 	end_grass_wildmons
 
@@ -1592,7 +1592,7 @@ JohtoGrassWildMons:
 	db 26, POLIWHIRL
 	db 26, GOLBAT
 	db 26, SWINUB
-	db 27, AZUMARILL
+	db 27, MARSHTOMP
 	db 27, SNEASEL
 	db 28, MAGMAR
 	db 40, MAGMORTAR
@@ -1606,7 +1606,7 @@ JohtoGrassWildMons:
 	db 27, EXEGGCUTE
 	db 28, BAGON
 	db 30, AMPHAROS
-	db 36, STARAPTOR
+	db 36, SWAMPERT
 	db 45, STARAPTOR
 	; day
 	db 26, SLOWPOKE
@@ -1614,7 +1614,7 @@ JohtoGrassWildMons:
 	db 27, EXEGGCUTE
 	db 28, BAGON
 	db 36, AMPHAROS
-	db 36, HAWLUCHA
+	db 36, SWAMPERT
 	db 45, STARAPTOR
 	; nite
 	db 26, SLOWPOKE
@@ -1622,7 +1622,7 @@ JohtoGrassWildMons:
 	db 27, GOLBAT
 	db 28, BAGON
 	db 36, AMPHAROS
-	db 36, HONCHKROW
+	db 36, SWAMPERT
 	db 45, STARAPTOR
 	end_grass_wildmons
 
@@ -1825,7 +1825,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 51, GENGAR
-	db 53, BISHARP
+	db 53, KINGAMBIT
 	db 53, RHYPERIOR
 	db 65, METAGROSS
 	db 65, GARCHOMP
@@ -1833,7 +1833,7 @@ JohtoGrassWildMons:
 	db 70, DARKRAI
 	; day
 	db 51, GENGAR
-	db 53, BISHARP
+	db 53, KINGAMBIT
 	db 53, RHYPERIOR
 	db 65, METAGROSS
 	db 65, GARCHOMP
@@ -1841,7 +1841,7 @@ JohtoGrassWildMons:
 	db 70, DARKRAI
 	; nite
 	db 51, GENGAR
-	db 53, BISHARP
+	db 53, KINGAMBIT
 	db 53, RHYPERIOR
 	db 65, METAGROSS
 	db 65, GARCHOMP

@@ -5,6 +5,6 @@
 	next "stores energy"
 	next "inside its body,"
 
-	page "SPEED"
-	next "increases upon"
-	next "entering battle.@"
+	page "SPEED boost on"
+	next "switch. IMMUNE"
+	next "to ELECTRIC.@"

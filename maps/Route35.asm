@@ -611,9 +611,9 @@ Route35PokemonAttacksText:
 
 Route35FieldMon2Script:
 	faceplayer
-	cry DROWZEE
+	cry TEDDIURSA
 	pause 15
-	loadwildmon DROWZEE, 25
+	loadwildmon TEDDIURSA, 21
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -670,6 +670,6 @@ Route35_MapEvents:
 	object_event  2, 25, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35FruitTree, -1
 
 	object_event 0,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route35FieldMon1Script, EVENT_FIELD_MON_1
-   	object_event 10, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 2, Route35FieldMon2Script, EVENT_FIELD_MON_2
+   	object_event 10, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route35FieldMon2Script, EVENT_FIELD_MON_2
    	object_event 0, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route35FieldMon3Script, EVENT_FIELD_MON_3
    	object_event 8, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route35FieldMon4Script, EVENT_FIELD_MON_4

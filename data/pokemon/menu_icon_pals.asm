@@ -58,8 +58,8 @@ MonMenuIconPals:
 	icon_pals BLUE,  SILVER        ; DRACOVISH
 	icon_pals SILVER,  BROWN         ; MEOWTH
 	icon_pals SILVER,  BROWN        ; PERSIAN
-	icon_pals GREEN,  PURPLE     ; SNOVER
-	icon_pals GREEN,  PURPLE     ; ABOMASNOW
+	icon_pals GREEN,  BLUE     ; SNOVER
+	icon_pals GREEN,  BLUE     ; ABOMASNOW
 	icon_pals GREEN,  RED      ; SHROOMISH
 	icon_pals GREEN,  RED     ; BRELOOM
 	icon_pals RED,  GREEN        ; GROWLITHE
@@ -100,8 +100,8 @@ MonMenuIconPals:
 	icon_pals PURPLE,  BROWN      ; HAUNTER
 	icon_pals PURPLE,  BROWN       ; GENGAR
 	icon_pals BROWN,  TEAL     ; ONIX
-	icon_pals BROWN,  PURPLE  ; DROWZEE
-	icon_pals GOLD,  PURPLE  ; HYPNO
+	icon_pals BROWN,  SILVER  ; URSALUNA
+	icon_pals BROWN,  SILVER  ; URSALUNA_B
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
 	icon_pals BLUE,  PURPLE     ; MUDKIP
@@ -220,8 +220,8 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE     ; SHAYMIN
 	icon_pals BLUE,  PURPLE        ; HERACROSS
 	icon_pals BLUE,  GOLD         ; SNEASEL
-	icon_pals RED,  GREEN    ; TEDDIURSA
-	icon_pals RED,  GREEN     ; URSARING
+	icon_pals BROWN,  SILVER    ; TEDDIURSA
+	icon_pals BROWN,  SILVER     ; URSARING
 	icon_pals RED,  GOLD     ; LATIAS
 	icon_pals RED,  GOLD  ; DEOXYS
 	icon_pals BROWN,  SILVER      ; SWINUB

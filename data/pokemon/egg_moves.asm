@@ -244,9 +244,7 @@ OnixEggMoves:
 	db FLAIL
 	db -1 ; end
 
-DrowzeeEggMoves:
-	db LIGHT_SCREEN
-	db BARRIER
+UrsalunaEggMoves:
 	db -1 ; end
 
 FeebasEggMoves:

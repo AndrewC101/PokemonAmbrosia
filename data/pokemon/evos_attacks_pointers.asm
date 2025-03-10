@@ -97,8 +97,8 @@ EvosAttacksPointers::
 	dw HaunterEvosAttacks
 	dw GengarEvosAttacks
 	dw OnixEvosAttacks
-	dw DrowzeeEvosAttacks
-	dw HypnoEvosAttacks
+	dw UrsalunaEvosAttacks
+	dw UrsalunaBEvosAttacks
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
 	dw MudkipEvosAttacks

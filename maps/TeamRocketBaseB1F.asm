@@ -56,13 +56,13 @@ TeamRocketBaseB1FFieldMon4Script:
     end
 
  TeamRocketBaseB1FFieldMon5Script:
- 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_5, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
+ 	trainer MAWILE, FIELD_MON, EVENT_FIELD_MON_5, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
  .script
      disappear TEAMROCKETBASEB1F_FIELDMON_5
      end
 
  TeamRocketBaseB1FFieldMon6Script:
- 	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_6, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
+ 	trainer MAWILE, FIELD_MON, EVENT_FIELD_MON_6, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
  .script
      disappear TEAMROCKETBASEB1F_FIELDMON_6
      end

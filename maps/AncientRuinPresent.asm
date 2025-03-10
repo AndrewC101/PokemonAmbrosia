@@ -199,13 +199,13 @@ AncientRuinsPresentAmbrosia:
     itemball AMBROSIA
 
 AncientRuinsPresentFieldMon1Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_1, AncientRuinsPresentPokemonAttacksText, 62, 0, .script
+	trainer URSALUNA, FIELD_MON, EVENT_FIELD_MON_1, AncientRuinsPresentPokemonAttacksText, 62, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_1
     end
 
 AncientRuinsPresentFieldMon2Script:
-	trainer WEAVILE, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 61, 0, .script
+	trainer URSALUNA_B, FIELD_MON, EVENT_FIELD_MON_2, AncientRuinsPresentPokemonAttacksText, 61, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_2
     end

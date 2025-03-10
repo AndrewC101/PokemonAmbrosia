@@ -83,7 +83,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 51, RHYPERIOR
+	db 51, URSARING
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_B1F
@@ -117,28 +117,28 @@ KantoGrassWildMons:
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, STEELIX
+	db 60, RHYPERIOR
 	db 62, GARCHOMP
 	; day
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, STEELIX
+	db 60, RHYPERIOR
 	db 62, GARCHOMP
 	; nite
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, URSALUNA
+	db 60, URSALUNA_B
 	db 62, GARCHOMP
 	end_grass_wildmons
 
@@ -276,7 +276,7 @@ KantoGrassWildMons:
 	db 32, ARBOK
 	db 33, MURKROW
 	db 36, EXCADRILL
-	db 37, HYPNO
+	db 37, DUOSION
 	db 38, HOUNDOOM
 	db 38, PERSIAN
 	db 65, BLASTOISE
@@ -457,25 +457,25 @@ KantoGrassWildMons:
 	db 34, PONYTA
 	db 38, STARAPTOR
 	db 40, URSARING
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	; day
 	db 34, ARBOK
 	db 34, PONYTA
 	db 38, STARAPTOR
 	db 40, URSARING
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	; nite
 	db 34, ARBOK
 	db 34, HOUNDOUR
 	db 38, HONCHKROW
 	db 40, CHANDELURE
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_13
@@ -567,7 +567,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -575,7 +575,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -583,7 +583,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -595,7 +595,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -603,7 +603,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -611,7 +611,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -623,7 +623,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -631,7 +631,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -639,7 +639,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -694,7 +694,7 @@ KantoGrassWildMons:
 	db 25, PERSIAN
 	; nite
 	db 3, HOOTHOOT
-	db 3, DROWZEE
+	db 3, RATTATA
 	db 5, NIDORAN_M
 	db 5, NIDORAN_F
 	db 5, PIKACHU

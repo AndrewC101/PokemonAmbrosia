@@ -86,8 +86,6 @@ NewPokedexOrder:
 	db PAWNIARD
 	db BISHARP
 	db KINGAMBIT
-	db DROWZEE
-	db HYPNO
 	db ABRA
 	db KADABRA
 	db ALAKAZAM
@@ -172,6 +170,8 @@ NewPokedexOrder:
 	db MAMOSWINE
 	db TEDDIURSA
 	db URSARING
+	db URSALUNA
+	db URSALUNA_B
 	db COTTONEE
 	db WHIMSICOTT
 	db SKARMORY

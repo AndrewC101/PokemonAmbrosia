@@ -6516,6 +6516,8 @@ BattleCommand_RechargeNextTurn:
     call GetCurrentMon
     cp PORYGONZ
     ret z
+    cp URSALUNA_B
+    ret z
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_RECHARGE, [hl]
@@ -7463,9 +7465,5 @@ CompoundEyes:
     cp FROGADIER
     call z, IncrementB
     cp GRENINJA
-    call z, IncrementB
-    cp DROWZEE
-    call z, IncrementB
-    cp HYPNO
     call z, IncrementB
     ret

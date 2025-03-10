@@ -1381,10 +1381,6 @@ ResidualDamage:
     call GetOpposingMonCore
     cp DARKRAI
     jr z, .checkSleep
-    cp DROWZEE
-    jr z, .checkSleep
-    cp HYPNO
-    jr z, .checkSleep
     cp JYNX
     jr nz, .not_nightmare
 

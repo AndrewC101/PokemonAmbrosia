@@ -114,8 +114,8 @@
 	const HAUNTER    ; 5d
 	const GENGAR     ; 5e
 	const ONIX       ; 5f
-	const DROWZEE    ; 60
-	const HYPNO      ; 61
+	const URSALUNA    ; 60
+	const URSALUNA_B      ; 61
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
 	const MUDKIP    ; 64

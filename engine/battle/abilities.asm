@@ -73,6 +73,7 @@ RockHeadPokemon:
     db REGIGIGAS
     db ELECTABUZZ
     db ELECTIVIRE
+    db URSALUNA
     db -1
 
 GutsPokemon:
@@ -89,6 +90,7 @@ GutsPokemon:
     db CONKELDURR
     db TEDDIURSA
     db URSARING
+    db URSALUNA
     db -1
 
 RivalryPokemon:

@@ -795,7 +795,7 @@ SnoverEvosAttacks:
 	db 20, RAZOR_LEAF
 	db 25, ICY_WIND
 	db 30, ICE_PUNCH
-	db 35, LEAF_BLADE
+	db 36, LEAF_BLADE
 	db 41, GIGA_DRAIN
 	db 45, ICE_BEAM
 	db 50, AVALANCHE
@@ -1430,37 +1430,36 @@ OnixEvosAttacks:
 	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
-DrowzeeEvosAttacks:
-	db EVOLVE_LEVEL, 26, HYPNO
+UrsalunaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 1, HYPNOSIS
-	db 10, DISABLE
-	db 12, CONFUSION
-	db 18, POISON_GAS
-	db 22, HEADBUTT
-	db 27, PSYBEAM
-	db 30, MEDITATE
-	db 33, HYPNOSIS
-	db 36, ZEN_HEADBUTT
-	db 40, PSYCHIC_M
-	db 45, DREAM_EATER
+	db 1, SCRATCH
+	db 8, LICK
+	db 15, HEADBUTT
+	db 22, REST
+	db 26, CRUNCH
+	db 30, SLASH
+	db 33, PLAY_ROUGH
+	db 35, BODY_SLAM
+	db 40, CLOSE_COMBAT
+	db 45, EARTHQUAKE
+	db 50, DOUBLE_EDGE
+	db 60, MOONLIGHT
 	db 0 ; no more level-up moves
 
-HypnoEvosAttacks:
+UrsalunaBEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 1, HYPNOSIS
-	db 10, DISABLE
-	db 12, CONFUSION
-	db 18, POISON_GAS
-	db 22, HEADBUTT
-	db 27, PSYBEAM
-	db 30, MEDITATE
-	db 33, HYPNOSIS
-	db 36, ZEN_HEADBUTT
-	db 40, PSYCHIC_M
-	db 45, DREAM_EATER
+	db 1, SCRATCH
+	db 8, LICK
+	db 15, HEADBUTT
+	db 22, REST
+	db 26, CRUNCH
+	db 30, SLASH
+	db 33, PLAY_ROUGH
+	db 35, TRI_ATTACK
+	db 40, MOONLIGHT
+	db 45, EARTH_POWER
+	db 50, MOON_BLAST
+	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
@@ -1489,7 +1488,7 @@ MudkipEvosAttacks:
 	db 1, TACKLE
 	db 1, WATER_GUN
 	db 11, ROCK_THROW
-    db 16, MAGNITUDE
+    db 17, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
 	db 30, BODY_SLAM
@@ -2963,7 +2962,7 @@ MarshtompEvosAttacks:
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
 	db 30, BODY_SLAM
-	db 36, WATERFALL
+	db 37, WATERFALL
 	db 40, AMNESIA
 	db 45, SCALD
 	db 50, EARTHQUAKE
@@ -3287,24 +3286,25 @@ TeddiursaEvosAttacks:
 	db 8, LICK
 	db 15, HEADBUTT
 	db 22, REST
-	db 26, NIGHT_SLASH
+	db 26, CRUNCH
 	db 31, SLASH
-	db 33, PLAY_ROUGH
-	db 35, THRASH
-	db 40, BODY_SLAM
+	db 32, PLAY_ROUGH
+	db 35, BODY_SLAM
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
+    db EVOLVE_ITEM, MOON_STONE, URSALUNA_B
+    db EVOLVE_ITEM, SUN_STONE, URSALUNA
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 8, LICK
 	db 15, HEADBUTT
 	db 22, REST
-	db 26, NIGHT_SLASH
+	db 26, CRUNCH
 	db 30, SLASH
-	db 33, PLAY_ROUGH
-	db 40, BODY_SLAM
+	db 32, PLAY_ROUGH
+	db 35, BODY_SLAM
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 

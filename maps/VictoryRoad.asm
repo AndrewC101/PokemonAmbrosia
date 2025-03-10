@@ -287,19 +287,19 @@ InvaderSolaireAfterBattleText:
 	done
 
 VictoryRoadFieldMon1Script:
-	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 62, 0, .script
+	trainer URSALUNA, FIELD_MON, EVENT_FIELD_MON_1, VictoryRoadPokemonAttacksText, 62, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_1
     end
 
 VictoryRoadFieldMon2Script:
-	trainer MACHAMP, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 61, 0, .script
+	trainer URSALUNA_B, FIELD_MON, EVENT_FIELD_MON_2, VictoryRoadPokemonAttacksText, 61, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_2
     end
 
 VictoryRoadFieldMon3Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 58, 0, .script
+	trainer LUCARIO, FIELD_MON, EVENT_FIELD_MON_3, VictoryRoadPokemonAttacksText, 58, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_3
     end

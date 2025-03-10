@@ -647,7 +647,7 @@ OfficerKeithAfterText:
 	line "the night"
 	cont "stalker..."
 
-	para "HYPNO."
+	para "HAUNTER."
 	done
 
 OfficerKeithDaytimeText:

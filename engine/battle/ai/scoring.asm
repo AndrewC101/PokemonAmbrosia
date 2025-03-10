@@ -1041,10 +1041,6 @@ AI_Smart_Sleep:
     ld a, [wEnemyMonSpecies]
     cp DARKRAI
     jr z, .encourage50
-    cp DROWZEE
-    jr z, .encourage50
-    cp HYPNO
-    jr z, .encourage50
     cp JYNX
     jr z, .encourage50
 
@@ -2145,6 +2141,8 @@ AI_Smart_Substitute:
 AI_Smart_HyperBeam:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
+    ret z
+    cp HYPNO
     ret z
 
 	call AICheckEnemyHalfHP
@@ -4420,6 +4418,8 @@ CanPlayer2HKO:
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
+    cp HYPNO
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopPlayer2HKOMoves
@@ -4486,6 +4486,8 @@ CanPlayer2HKOMaxHP:
 ; skip moves that can't be used on consecutive turns - exception for Porygonz which can use Hyper Beam consecutively
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
+    jr z, .setFlag
+    cp HYPNO
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4556,6 +4558,8 @@ CanPlayer3HKOMaxHP:
 ; skip moves that can't be used on consecutive turns - exception for Porygonz which can use Hyper Beam consecutively
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
+    jr z, .setFlag
+    cp HYPNO
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4674,6 +4678,8 @@ CanAI2HKO:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
+    cp HYPNO
+    jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopMoves
@@ -4740,6 +4746,8 @@ CanAI2HKOMaxHP:
 ; skip moves that can't be used on consecutive turns, except hyper beam
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
+    jr z, .setFlag
+    cp HYPNO
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4811,6 +4819,8 @@ CanAI3HKO:
 ; skip moves that can't be used on consecutive turns, except hyper beam
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
+    jr z, .setFlag
+    cp HYPNO
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT

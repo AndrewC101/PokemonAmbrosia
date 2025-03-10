@@ -276,7 +276,7 @@ KantoGrassWildMons:
 	db 32, ARBOK
 	db 33, MURKROW
 	db 36, EXCADRILL
-	db 37, HYPNO
+	db 37, DUOSION
 	db 38, HOUNDOOM
 	db 38, PERSIAN
 	db 65, BLASTOISE
@@ -457,25 +457,25 @@ KantoGrassWildMons:
 	db 34, PONYTA
 	db 38, STARAPTOR
 	db 40, URSARING
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	; day
 	db 34, ARBOK
 	db 34, PONYTA
 	db 38, STARAPTOR
 	db 40, URSARING
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	; nite
 	db 34, ARBOK
 	db 34, HOUNDOUR
 	db 38, HONCHKROW
 	db 40, CHANDELURE
-	db 43, HYPNO
+	db 43, REUNICLUS
 	db 43, RAPIDASH
-	db 57, HYPNO
+	db 57, REUNICLUS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_13
@@ -567,7 +567,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -575,7 +575,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -583,7 +583,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -595,7 +595,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -603,7 +603,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -611,7 +611,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -623,7 +623,7 @@ KantoGrassWildMons:
 	; morn
 	db 38, ESPEON
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -631,7 +631,7 @@ KantoGrassWildMons:
 	; day
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, BRELOOM
 	db 45, TOGEKISS
@@ -639,7 +639,7 @@ KantoGrassWildMons:
 	; nite
 	db 38, ARBOK
 	db 39, WEEZING
-	db 40, HYPNO
+	db 40, KADABRA
 	db 41, SCIZOR
 	db 45, EXEGGUTOR
 	db 45, WEAVILE
@@ -694,7 +694,7 @@ KantoGrassWildMons:
 	db 25, PERSIAN
 	; nite
 	db 3, HOOTHOOT
-	db 3, DROWZEE
+	db 3, RATTATA
 	db 5, NIDORAN_M
 	db 5, NIDORAN_F
 	db 5, PIKACHU

@@ -53,7 +53,7 @@ Route16FieldMon1Script:
     end
     
 Route16FieldMon2Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_2, Route16PokemonAttacksText, 60, 0, .script
+	trainer ALAKAZAM, FIELD_MON, EVENT_FIELD_MON_2, Route16PokemonAttacksText, 60, 0, .script
 .script
     disappear ROUTE16_FIELDMON_2
     end

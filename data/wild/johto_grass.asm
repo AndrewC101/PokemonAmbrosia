@@ -372,26 +372,26 @@ JohtoGrassWildMons:
 	db 17, BUNEARY
 	db 18, STARAVIA
 	db 20, BUTTERFREE
-	db 21, SOLOSIS
+	db 21, TEDDIURSA
 	db 22, SCYTHER
 	db 22, HERACROSS
-	db 30, URSARING
+	db 35, URSARING
 	; day
 	db 17, BUNEARY
 	db 18, STARAVIA
 	db 20, JOLTIK
-	db 21, SOLOSIS
+	db 21, TEDDIURSA
 	db 22, SCYTHER
 	db 22, HERACROSS
-	db 30, URSARING
+	db 35, URSARING
 	; nite
 	db 17, MEOWTH
 	db 18, MURKROW
 	db 20, LARVESTA
-	db 21, DROWZEE
+	db 21, TEDDIURSA
 	db 22, SCYTHER
 	db 22, HERACROSS
-	db 30, HOUNDOOM
+	db 35, HOUNDOOM
 	end_grass_wildmons
 
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
@@ -1407,7 +1407,7 @@ JohtoGrassWildMons:
 	; morn
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, DROWZEE
+	db 18, FERROSEED
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1415,7 +1415,7 @@ JohtoGrassWildMons:
 	; day
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, DROWZEE
+	db 18, FERROSEED
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1423,7 +1423,7 @@ JohtoGrassWildMons:
 	; nite
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, DROWZEE
+	db 18, FERROSEED
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1434,7 +1434,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, STARAVIA
-	db 16, DROWZEE
+	db 16, TEDDIURSA
 	db 12, RALTS
 	db 12, ABRA
     db 18, GROWLITHE
@@ -1442,7 +1442,7 @@ JohtoGrassWildMons:
 	db 25, YANMEGA
 	; day
 	db 16, STARAVIA
-	db 16, DROWZEE
+	db 16, TEDDIURSA
 	db 12, RALTS
 	db 12, ABRA
     db 18, GROWLITHE
@@ -1450,7 +1450,7 @@ JohtoGrassWildMons:
 	db 25, YANMEGA
 	; nite
 	db 16, MURKROW
-	db 16, DROWZEE
+	db 16, TEDDIURSA
 	db 12, RALTS
 	db 12, ABRA
     db 18, SLOWPOKE

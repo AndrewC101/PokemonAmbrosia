@@ -1,10 +1,10 @@
-	db "HYPNOSIS@" ; species name
-	dw 503, 1670 ; height, weight
+	db "MYSTIC BEAST@" ; species name
+	dw 810, 9393 ; height, weight
 
-	db   "Lures away"
-	next "children at"
-	next "night."
+	db   "Preternatural"
+	next "hunter with"
+	next "primal power."
 
-	page "Has increased"
-	next "ACCURACY. Gives"
-	next "nightmares.@"
+	page "HYPER BEAM"
+	next "does not need"
+	next "to recharge.@"

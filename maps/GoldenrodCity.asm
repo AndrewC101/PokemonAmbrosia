@@ -310,7 +310,7 @@ GoldenrodCityYoungster1Text:
 	line "the night"
 	cont "stalker."
 
-	para "A HYPNO that"
+	para "A HAUNTER that"
 	line "roams the street"
 	cont "at night."
 
@@ -661,7 +661,7 @@ GoldenrodCityMoveTutorMoveText:
 	done
 
 GoldenrodCityFieldMon1Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_1, GoldenrodCityPokemonAttacksText, 30, 0, .script
+	trainer HAUNTER, FIELD_MON, EVENT_FIELD_MON_1, GoldenrodCityPokemonAttacksText, 30, 0, .script
 .script
     disappear GOLDENRODCITY_FIELDMON_1
     end

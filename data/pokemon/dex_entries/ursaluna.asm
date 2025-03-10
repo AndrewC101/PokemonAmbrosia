@@ -1,4 +1,4 @@
-	db "FERAL BEAST@" ; species name
+	db "FERAL BEAR@" ; species name
 	dw 710, 11341 ; height, weight
 
 	db   "A mighty and"

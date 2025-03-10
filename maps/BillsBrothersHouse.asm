@@ -14,7 +14,7 @@ BillsBrothersHouseYoungsterScript:
 	jumptextfaceplayer BillsBrothersHouseYoungsterText
 
 BillsBrotherText:
-	text "My grandpa is at "
+	text "My grandpa is at"
 	line "my brother BILL's"
 	cont "on CERULEAN CAPE."
 
@@ -22,7 +22,7 @@ BillsBrotherText:
 	line "money and fame."
 
 	para "We all know he"
-	line "is dads favorite."
+	line "is dad's favorite."
 
 	para "Every holiday we"
 	line "get together and"

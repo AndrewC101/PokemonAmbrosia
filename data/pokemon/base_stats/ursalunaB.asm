@@ -1,4 +1,4 @@
-	db HYPNO ; 097
+	db URSALUNA_B ; 097
 
 	db  113, 70, 120, 52,  135,  65
 	;   hp  atk  def  spd  sat  sdf

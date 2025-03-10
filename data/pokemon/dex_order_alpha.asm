@@ -49,7 +49,6 @@ AlphabeticalPokedexOrder:
 	db DRAGONITE
 	db DRATINI
 	db DRILBUR
-	db URSALUNA
 	db DUOSION
 	db DUNSPARCE
 	db EEVEE
@@ -100,7 +99,6 @@ AlphabeticalPokedexOrder:
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
-	db HYPNO
 	db INFERNAPE
 	db IVYSAUR
 	db JOLTEON
@@ -236,6 +234,8 @@ AlphabeticalPokedexOrder:
 	db TYRANITAR
 	db UMBREON
 	db UNOWN
+	db URSALUNA
+	db URSALUNA_B
 	db URSARING
 	db VAPOREON
 	db VENUSAUR

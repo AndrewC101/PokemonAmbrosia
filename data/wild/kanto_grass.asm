@@ -83,7 +83,7 @@ KantoGrassWildMons:
 	db 38, RHYHORN
 	db 42, MACHAMP
 	db 42, GENGAR
-	db 51, RHYPERIOR
+	db 51, URSARING
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_B1F
@@ -117,28 +117,28 @@ KantoGrassWildMons:
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, STEELIX
+	db 60, RHYPERIOR
 	db 62, GARCHOMP
 	; day
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, STEELIX
+	db 60, RHYPERIOR
 	db 62, GARCHOMP
 	; nite
-	db 45, GOLEM
-	db 45, MACHAMP
-	db 48, ALAKAZAM
-	db 48, GENGAR
-	db 50, STEELIX
-	db 50, RHYPERIOR
+	db 55, GOLEM
+	db 55, MACHAMP
+	db 58, ALAKAZAM
+	db 58, GENGAR
+	db 60, URSALUNA
+	db 60, URSALUNA_B
 	db 62, GARCHOMP
 	end_grass_wildmons
 

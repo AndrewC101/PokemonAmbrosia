@@ -6516,7 +6516,7 @@ BattleCommand_RechargeNextTurn:
     call GetCurrentMon
     cp PORYGONZ
     ret z
-    cp HYPNO
+    cp URSALUNA_B
     ret z
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr

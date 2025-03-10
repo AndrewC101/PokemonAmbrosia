@@ -154,7 +154,7 @@ RadioTower3FGymGuideText:
 	cont "it."
 
 	para "I call it"
-	line "HYPNO hunt!"
+	line "GASTLY tunes!"
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:

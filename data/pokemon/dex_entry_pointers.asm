@@ -97,7 +97,7 @@ PokedexDataPointerTable:
 	dw GengarPokedexEntry
 	dw OnixPokedexEntry
 	dw UrsalunaPokedexEntry
-	dw HypnoPokedexEntry
+	dw UrsalunaBPokedexEntry
 	dw FeebasPokedexEntry
 	dw MiloticPokedexEntry
 	dw MudkipPokedexEntry

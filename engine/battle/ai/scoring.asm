@@ -2142,7 +2142,7 @@ AI_Smart_HyperBeam:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
     ret z
-    cp HYPNO
+    cp URSALUNA_B
     ret z
 
 	call AICheckEnemyHalfHP
@@ -4418,7 +4418,7 @@ CanPlayer2HKO:
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4487,7 +4487,7 @@ CanPlayer2HKOMaxHP:
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4559,7 +4559,7 @@ CanPlayer3HKOMaxHP:
     ld a, [wBattleMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4678,7 +4678,7 @@ CanAI2HKO:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4747,7 +4747,7 @@ CanAI2HKOMaxHP:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4820,7 +4820,7 @@ CanAI3HKO:
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
     jr z, .setFlag
-    cp HYPNO
+    cp URSALUNA_B
     jr z, .setFlag
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT

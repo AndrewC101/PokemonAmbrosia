@@ -35,13 +35,13 @@ RockTunnel1FFieldMon2Script:
     end
 
 RockTunnel1FFieldMon3Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 68, 0, .script
+	trainer URSALUNA, FIELD_MON, EVENT_FIELD_MON_3, RockTunnel1FPokemonAttacksText, 68, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_3
     end
 
 RockTunnel1FFieldMon4Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_4, RockTunnel1FPokemonAttacksText, 61, 0, .script
+	trainer URSALUNA_B, FIELD_MON, EVENT_FIELD_MON_4, RockTunnel1FPokemonAttacksText, 68, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_4
     end

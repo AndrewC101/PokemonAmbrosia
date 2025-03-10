@@ -98,7 +98,7 @@ KantoMonSpecials:
 	db 130 ; GENGAR
 	db  30 ; ONIX
 	db  90 ; URSALUNA
-	db 115 ; HYPNO
+	db 115 ; URSALUNA_B
 	db  25 ; FEEBAS
 	db  50 ; MILOTIC
 	db  55 ; MUDKIP

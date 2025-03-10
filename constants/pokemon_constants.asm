@@ -115,7 +115,7 @@
 	const GENGAR     ; 5e
 	const ONIX       ; 5f
 	const URSALUNA    ; 60
-	const HYPNO      ; 61
+	const URSALUNA_B      ; 61
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
 	const MUDKIP    ; 64

@@ -1446,7 +1446,7 @@ UrsalunaEvosAttacks:
 	db 60, MOONLIGHT
 	db 0 ; no more level-up moves
 
-HypnoEvosAttacks:
+UrsalunaBEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 8, LICK
@@ -3294,7 +3294,7 @@ TeddiursaEvosAttacks:
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
-    db EVOLVE_ITEM, MOON_STONE, HYPNO
+    db EVOLVE_ITEM, MOON_STONE, URSALUNA_B
     db EVOLVE_ITEM, SUN_STONE, URSALUNA
 	db 0 ; no more evolutions
 	db 1, SCRATCH

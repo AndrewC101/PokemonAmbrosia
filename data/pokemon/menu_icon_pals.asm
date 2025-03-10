@@ -101,7 +101,7 @@ MonMenuIconPals:
 	icon_pals PURPLE,  BROWN       ; GENGAR
 	icon_pals BROWN,  TEAL     ; ONIX
 	icon_pals BROWN,  SILVER  ; URSALUNA
-	icon_pals BROWN,  SILVER  ; HYPNO
+	icon_pals BROWN,  SILVER  ; URSALUNA_B
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
 	icon_pals BLUE,  PURPLE     ; MUDKIP

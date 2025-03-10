@@ -1133,16 +1133,16 @@ JohtoGrassWildMons:
 	db 75, TOGEKISS
 	db 80, SNORLAX
 	; day
-	db 70, BRELOOM
-	db 70, HAWLUCHA
+	db 70, GALLADE
+	db 70, GARDEVOIR
 	db 72, HERACROSS
 	db 72, CONKELDURR
 	db 75, KLEFKI
 	db 75, TOGEKISS
 	db 80, SNORLAX
 	; nite
-	db 70, GALLADE
-	db 70, GARDEVOIR
+	db 70, URSALUNA
+	db 70, URSALUNA_B
 	db 72, MACHAMP
 	db 72, PORYGONZ
 	db 75, STEELIX
@@ -1824,29 +1824,29 @@ JohtoGrassWildMons:
     def_grass_wildmons ANCIENT_RUIN_PRESENT
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 51, GENGAR
-	db 53, KINGAMBIT
-	db 53, RHYPERIOR
+	db 62, RHYPERIOR
+	db 63, KINGAMBIT
+	db 64, URSALUNA
+	db 64, URSALUNA_B
 	db 65, METAGROSS
 	db 65, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 70, GENESECT
 	; day
-	db 51, GENGAR
-	db 53, KINGAMBIT
-	db 53, RHYPERIOR
+	db 62, RHYPERIOR
+	db 63, KINGAMBIT
+	db 64, URSALUNA
+	db 64, URSALUNA_B
 	db 65, METAGROSS
 	db 65, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 70, GENESECT
 	; nite
-	db 51, GENGAR
-	db 53, KINGAMBIT
-	db 53, RHYPERIOR
+	db 62, RHYPERIOR
+	db 63, KINGAMBIT
+	db 64, URSALUNA
+	db 64, URSALUNA_B
 	db 65, METAGROSS
 	db 65, GARCHOMP
-	db 65, GENESECT
-	db 70, DARKRAI
+	db 70, GENESECT
 	end_grass_wildmons
 
     def_grass_wildmons ANCIENT_RUIN_PAST

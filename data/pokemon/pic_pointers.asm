@@ -195,8 +195,8 @@ PokemonPicPointers::
 	dba_pic OnixBackpic
 	dba_pic UrsalunaFrontpic
 	dba_pic UrsalunaBackpic
-	dba_pic HypnoFrontpic
-	dba_pic HypnoBackpic
+	dba_pic UrsalunaBFrontpic
+	dba_pic UrsalunaBBackpic
 	dba_pic FeebasFrontpic
 	dba_pic FeebasBackpic
 	dba_pic MiloticFrontpic

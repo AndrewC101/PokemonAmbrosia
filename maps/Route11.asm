@@ -24,6 +24,7 @@ Route11_MapScripts:
     appear ROUTE11_FIELDMON_1
     appear ROUTE11_FIELDMON_3
     appear ROUTE11_FIELDMON_4
+    disappear ROUTE11_FIELDMON_2
 
 ; Pokemon that sometimes appear
     random 2
@@ -66,7 +67,7 @@ Route11FieldMon1Script:
     end
 
 Route11FieldMon2Script:
-	trainer HYPNO, FIELD_MON, EVENT_FIELD_MON_2, Route11PokemonAttacksText, 62, 0, .script
+	trainer URSALUNA_B, FIELD_MON, EVENT_FIELD_MON_2, Route11PokemonAttacksText, 62, 0, .script
 .script
     disappear ROUTE11_FIELDMON_2
     end

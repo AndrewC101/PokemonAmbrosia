@@ -35,9 +35,9 @@ SilverCaveRoom2_MapScripts:
 
 SilverCaveRoom2FieldMon1Script:
 	faceplayer
-	cry BRELOOM
+	cry MACHAMP
 	pause 15
-	loadwildmon BRELOOM, 70
+	loadwildmon MACHAMP, 70
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -79,9 +79,9 @@ SilverCaveRoom2FieldMon4Script:
 
 SilverCaveRoom2FieldMon5Script:
 	faceplayer
-	cry MACHAMP
+	cry URSALUNA
 	pause 15
-	loadwildmon MACHAMP, 72
+	loadwildmon URSALUNA, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
@@ -90,9 +90,9 @@ SilverCaveRoom2FieldMon5Script:
 
 SilverCaveRoom2FieldMon6Script:
 	faceplayer
-	cry GALLADE
+	cry URSALUNA_B
 	pause 15
-	loadwildmon GALLADE, 73
+	loadwildmon URSALUNA_B, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -101,9 +101,9 @@ SilverCaveRoom2FieldMon6Script:
 
 SilverCaveRoom2FieldMon7Script:
 	faceplayer
-	cry GARDEVOIR
+	cry PORYGONZ
 	pause 15
-	loadwildmon GARDEVOIR, 73
+	loadwildmon PORYGONZ, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -112,9 +112,9 @@ SilverCaveRoom2FieldMon7Script:
 
 SilverCaveRoom2FieldMon8Script:
 	faceplayer
-	cry PORYGONZ
+	cry GALLADE
 	pause 15
-	loadwildmon PORYGONZ, 71
+	loadwildmon GALLADE, 71
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -123,9 +123,9 @@ SilverCaveRoom2FieldMon8Script:
 
 SilverCaveRoom2FieldMon9Script:
 	faceplayer
-	cry CLEFABLE
+	cry GARDEVOIR
 	pause 15
-	loadwildmon CLEFABLE, 72
+	loadwildmon GARDEVOIR, 72
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9

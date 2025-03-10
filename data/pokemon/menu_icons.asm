@@ -98,7 +98,7 @@ MonMenuIcons:
 	db ICON_GHOST       ; GENGAR
 	db ICON_SERPENT     ; ONIX
 	db ICON_MONSTER     ; URSALUNA
-	db ICON_MONSTER     ; HYPNO
+	db ICON_MONSTER     ; URSALUNA_B
 	db ICON_SHELL       ; FEEBAS
 	db ICON_SHELL       ; MILOTIC
 	db ICON_MONSTER     ; MUDKIP

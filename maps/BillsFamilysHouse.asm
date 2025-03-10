@@ -144,7 +144,7 @@ BillEeveeMayEvolveText:
 	line "from the store."
 
 	para "If you don't"
-	line "use a stone EEVEE"
+	line "use a stone, EEVEE"
 	cont "will still evolve"
 	cont "eventually if you"
 	cont "are kind to it."
@@ -191,7 +191,7 @@ RecordedBillsNumberText:
 BillsSisterRefusedNumberText:
 	text "I was going to"
 	line "give you my"
-	cont "brothers number."
+	cont "brother's number."
 
 	para "You should feel"
 	line "honored."
@@ -205,9 +205,8 @@ BillsSisterPhoneFullText:
 BillsSisterStorageSystemText:
 	text "My big brother"
 	line "BILL made the PC"
-
-	para "#MON storage"
-	line "system."
+	cont "#MON storage"
+	cont "system."
 
 	para "He has changed"
 	line "the world!"

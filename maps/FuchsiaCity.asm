@@ -208,9 +208,8 @@ InvadedFuchsiaCityYoungsterText:
 FuchsiaCityPokefanMText:
 	text "KOGA's daughter"
 	line "succeeded him as"
-
-	para "the GYM LEADER"
-	line "after he fell"
+	cont "the GYM LEADER"
+	cont "after he fell"
 	cont "in battle."
 
 	para "We are all very"
@@ -642,7 +641,7 @@ FuchsiaSelfConfidenceText1:
 FuchsiaSelfDefeatText1:
     text "What was that!?"
 
-    para "No we will die!"
+    para "No, we will die!"
     done
 
 FuchsiaSelfConfidenceText2:
@@ -664,7 +663,7 @@ FuchsiaSelfConfidenceText3:
 	para "Maybe he will."
 	para "It doesn't matter."
 	para "If I don't stop"
-	line "him now he will"
+	line "him now, he will"
 	cont "kill us eventually"
 	cont "anyway."
 	para "I have to stop"

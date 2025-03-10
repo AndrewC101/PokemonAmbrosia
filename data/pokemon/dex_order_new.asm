@@ -86,7 +86,7 @@ NewPokedexOrder:
 	db PAWNIARD
 	db BISHARP
 	db KINGAMBIT
-	db DROWZEE
+	db URSALUNA
 	db HYPNO
 	db ABRA
 	db KADABRA

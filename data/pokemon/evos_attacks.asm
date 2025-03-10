@@ -1430,7 +1430,7 @@ OnixEvosAttacks:
 	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
-DrowzeeEvosAttacks:
+UrsalunaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 8, LICK
@@ -3295,7 +3295,7 @@ TeddiursaEvosAttacks:
 
 UrsaringEvosAttacks:
     db EVOLVE_ITEM, MOON_STONE, HYPNO
-    db EVOLVE_ITEM, SUN_STONE, DROWZEE
+    db EVOLVE_ITEM, SUN_STONE, URSALUNA
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 8, LICK

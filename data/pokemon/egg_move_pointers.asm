@@ -95,7 +95,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw OnixEggMoves
-	dw DrowzeeEggMoves
+	dw UrsalunaEggMoves
 	dw NoEggMoves
 	dw FeebasEggMoves
 	dw NoEggMoves

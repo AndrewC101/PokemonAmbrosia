@@ -101,7 +101,7 @@ PokemonCries::
 	mon_cry CRY_METAPOD,      48,  192 ; HAUNTER
 	mon_cry CRY_MUK,           0,  383 ; GENGAR
 	mon_cry CRY_EKANS,       255,  320 ; ONIX
-	mon_cry CRY_TEDDIURSA,  1000,  300 ; DROWZEE
+	mon_cry CRY_TEDDIURSA,  1000,  300 ; URSALUNA
 	mon_cry CRY_TEDDIURSA,  1400,  200 ; HYPNO
 	mon_cry CRY_KRABBY,      200,  400 ; FEEBAS
 	mon_cry CRY_VENONAT,     100,  150 ; MILOTIC

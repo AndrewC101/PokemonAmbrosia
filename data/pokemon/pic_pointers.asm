@@ -193,8 +193,8 @@ PokemonPicPointers::
 	dba_pic GengarBackpic
 	dba_pic OnixFrontpic
 	dba_pic OnixBackpic
-	dba_pic DrowzeeFrontpic
-	dba_pic DrowzeeBackpic
+	dba_pic UrsalunaFrontpic
+	dba_pic UrsalunaBackpic
 	dba_pic HypnoFrontpic
 	dba_pic HypnoBackpic
 	dba_pic FeebasFrontpic

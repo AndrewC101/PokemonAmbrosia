@@ -100,7 +100,7 @@ MonMenuIconPals:
 	icon_pals PURPLE,  BROWN      ; HAUNTER
 	icon_pals PURPLE,  BROWN       ; GENGAR
 	icon_pals BROWN,  TEAL     ; ONIX
-	icon_pals BROWN,  SILVER  ; DROWZEE
+	icon_pals BROWN,  SILVER  ; URSALUNA
 	icon_pals BROWN,  SILVER  ; HYPNO
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
@@ -220,8 +220,8 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE     ; SHAYMIN
 	icon_pals BLUE,  PURPLE        ; HERACROSS
 	icon_pals BLUE,  GOLD         ; SNEASEL
-	icon_pals BROWN,  GREEN    ; TEDDIURSA
-	icon_pals BROWN,  GREEN     ; URSARING
+	icon_pals BROWN,  SILVER    ; TEDDIURSA
+	icon_pals BROWN,  SILVER     ; URSARING
 	icon_pals RED,  GOLD     ; LATIAS
 	icon_pals RED,  GOLD  ; DEOXYS
 	icon_pals BROWN,  SILVER      ; SWINUB

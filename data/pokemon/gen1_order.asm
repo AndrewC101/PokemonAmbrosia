@@ -47,7 +47,7 @@ Pokered_MonIndices:
 	db ARBOK
 	db HAWLUCHA
 	db SNOVER
-	db DROWZEE
+	db URSALUNA
 	db GOLEM
 	db HERACROSS ; MISSINGNO.
 	db MAGMAR

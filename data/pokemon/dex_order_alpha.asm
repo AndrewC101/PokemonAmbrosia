@@ -49,7 +49,7 @@ AlphabeticalPokedexOrder:
 	db DRAGONITE
 	db DRATINI
 	db DRILBUR
-	db DROWZEE
+	db URSALUNA
 	db DUOSION
 	db DUNSPARCE
 	db EEVEE

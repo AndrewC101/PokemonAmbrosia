@@ -217,7 +217,7 @@ INCBIN "gfx/footprints/gastly.1bpp",     footprint_top
 INCBIN "gfx/footprints/haunter.1bpp",    footprint_top
 INCBIN "gfx/footprints/gengar.1bpp",     footprint_top
 INCBIN "gfx/footprints/onix.1bpp",       footprint_top
-INCBIN "gfx/footprints/drowzee.1bpp",    footprint_top
+INCBIN "gfx/footprints/ursaluna.1bpp",    footprint_top
 ; 089-096 bottom halves
 INCBIN "gfx/footprints/ferrothorn.1bpp",        footprint_bottom
 INCBIN "gfx/footprints/shellder.1bpp",   footprint_bottom
@@ -226,7 +226,7 @@ INCBIN "gfx/footprints/gastly.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/haunter.1bpp",    footprint_bottom
 INCBIN "gfx/footprints/gengar.1bpp",     footprint_bottom
 INCBIN "gfx/footprints/onix.1bpp",       footprint_bottom
-INCBIN "gfx/footprints/drowzee.1bpp",    footprint_bottom
+INCBIN "gfx/footprints/ursaluna.1bpp",    footprint_bottom
 ; 097-104 top halves
 INCBIN "gfx/footprints/hypno.1bpp",      footprint_top
 INCBIN "gfx/footprints/feebas.1bpp",     footprint_top

@@ -367,12 +367,12 @@ BuenaPhoneStarterPokemonText:
 	line "the first #MON"
 
 	para "MARY caught was a"
-	line "DROWZEE?"
+	line "HOOTHOOT?"
 
 	para "Isn't that so out"
 	line "of character?"
 
-	para "But MARY's DROWZEE"
+	para "But HOOTHOOT"
 	line "kept making her"
 
 	para "fall asleep on the"

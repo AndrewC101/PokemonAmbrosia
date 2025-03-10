@@ -1,4 +1,4 @@
-	db DROWZEE ; 096
+	db URSALUNA ; 096
 
 	db  130, 140, 105, 50, 45,  80
 	;   hp  atk  def  spd  sat  sdf

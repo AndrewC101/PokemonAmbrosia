@@ -97,7 +97,7 @@ KantoMonSpecials:
 	db 115 ; HAUNTER
 	db 130 ; GENGAR
 	db  30 ; ONIX
-	db  90 ; DROWZEE
+	db  90 ; URSALUNA
 	db 115 ; HYPNO
 	db  25 ; FEEBAS
 	db  50 ; MILOTIC

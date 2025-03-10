@@ -96,7 +96,7 @@ PokedexDataPointerTable:
 	dw HaunterPokedexEntry
 	dw GengarPokedexEntry
 	dw OnixPokedexEntry
-	dw DrowzeePokedexEntry
+	dw UrsalunaPokedexEntry
 	dw HypnoPokedexEntry
 	dw FeebasPokedexEntry
 	dw MiloticPokedexEntry

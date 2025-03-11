@@ -143,7 +143,7 @@ Text_ClairIsOut:
 
 	para "The GYM LEADER"
 	line "CLAIR is in the"
-	cont "DRAGONS DEN."
+	cont "DRAGON'S DEN."
 
 	para "She is a very"
 	line "busy woman."
@@ -311,13 +311,13 @@ BlackthornCooltrainerF2Text:
 	cont "dedicate our"
 	cont "lives to the"
 	cont "great DRAGON LORD"
-	cont "in DRAGONS DEN."
+	cont "in DRAGON'S DEN."
 
 	para "Of course only"
 	line "a handful of"
 	cont "people are able"
 	cont "to actually enter"
-	cont "DRAGONS DEN."
+	cont "DRAGON'S DEN."
 	done
 
 BlackthornCitySignText:
@@ -720,7 +720,7 @@ RolePlay4PrizeText:
     text "We finished a"
     line "new game."
 
-    para "Here take this"
+    para "Here, take this"
     line "for playing."
     done
 
@@ -739,7 +739,7 @@ LOTRIntroText:
 
     para "Would you like to"
     line "play? You'll need"
-    cont "to Save your game?"
+    cont "to Save your game."
     done
 
 LOTRHeroOrVillainChoiceText:
@@ -962,7 +962,7 @@ LOTRVillainConcText:
 LOTRCh3VillainText:
     text "Now to kill FRODO."
 
-    para "What is that."
+    para "What is that?"
 
     para "A distant magic."
 
@@ -991,7 +991,7 @@ LOTRCh3VillainText:
     done
 
 LOTRCh4HeroText:
-    text "GANDALFs new"
+    text "GANDALF's new"
     line "power is more"
     cont "than enough to"
     cont "defeat SARUMAN."
@@ -1062,14 +1062,14 @@ LOTRCh4VillainText:
     cont "from the sky."
 
     para "Did ARAGORN do"
-    line "that!"
+    line "that?!"
 
     para "Attack at will!"
     done
 
 LOTRCh5HeroText:
     text "Between GANDALF"
-    line "and ARAGORN all"
+    line "and ARAGORN, all"
     cont "SAURONS forces"
     cont "are defeated."
 
@@ -1114,8 +1114,8 @@ LOTRCh5HeroText:
 
 LOTRCh5VillainText:
     text "Between GANDALF"
-    line "and ARAGORN all"
-    cont "SAURONS forces"
+    line "and ARAGORN, all"
+    cont "SAURON'S forces"
     cont "are defeated."
 
     para "FRODO means to"
@@ -1229,7 +1229,7 @@ LOTRBonusRoundText:
     done
 
 LOTRStopText:
-    text "OK we will leave"
+    text "OK, we will leave"
     line "it there then."
 
     para "Maybe we can do"

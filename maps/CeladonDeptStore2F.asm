@@ -55,11 +55,11 @@ CeladonDeptStore2FYoungsterText:
 	cont "stuff for him"
 	cont "to learn."
 
-	para "Yes GROUND is"
+	para "Yes, GROUND is"
 	line "weak to WATER!"
 
 	para "Why is that so"
-	line "confusing."
+	line "confusing?"
 	done
 
 CeladonDeptStore2FDirectoryText:

@@ -495,7 +495,7 @@ StevenIntroText:
     done
 
 StevenText:
-    text "It's over, WALLACE."
+    text "It's over, WALLACE"
 
     para "You have lost."
 

@@ -175,7 +175,7 @@ SaffronCityPokefanMText_BeatWallace:
 	para "You have saved my"
 	line "investments!"
 
-	para "Listen, if you ever"
+	para "Listen if you ever"
 	line "want to get into"
 	cont "the real estate"
 	cont "market, you come"

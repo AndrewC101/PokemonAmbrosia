@@ -2,6 +2,7 @@
     const SPROUTTOWERB1F_SAGE
     const SPROUTTOWERB1F_FIELDMON_1
     const SPROUTTOWERB1F_FIELDMON_2
+    const SPROUTTOWERB1F_FIELDMON_3
 
 SproutTowerB1F_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,13 @@ SproutTowerB1F_MapScripts:
 .SproutTowerB1FFieldMon:
     appear SPROUTTOWERB1F_FIELDMON_1
     appear SPROUTTOWERB1F_FIELDMON_2
+
+    random 5
+    ifequal 1, .spawn
+    disappear SPROUTTOWERB1F_FIELDMON_3
+    endcallback
+.spawn
+    appear SPROUTTOWERB1F_FIELDMON_3
     endcallback
 
 SproutTowerB1FFieldMon1Script:
@@ -25,6 +33,18 @@ SproutTowerB1FFieldMon2Script:
 .script
     disappear SPROUTTOWERB1F_FIELDMON_2
     end
+
+SproutTowerB1FFieldMon3Script:
+	faceplayer
+	cry MIMIKYU
+	pause 15
+	loadwildmon MIMIKYU, 15
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear SPROUTTOWERB1F_FIELDMON_3
+	end
 
 SproutTowerB1FPokemonAttacksText:
 	text "Wild #MON"
@@ -98,3 +118,4 @@ SproutTowerB1F_MapEvents:
 	object_event  9, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SageScript, -1
 	object_event 16, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event  4,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTowerB1FFieldMon3Script, EVENT_FIELD_MON_3

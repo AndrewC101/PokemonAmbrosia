@@ -80,31 +80,31 @@ LavenderForestFieldMon4Script:
     end
 
 LavenderForestFieldMon5Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 64, 0, .script
+	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 64, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_5
     end
 
 LavenderForestFieldMon6Script:
-	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_6, LavenderForestPokemonAttacksText, 67, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_6, LavenderForestPokemonAttacksText, 67, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_6
     end
 
 LavenderForestFieldMon7Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_7, LavenderForestPokemonAttacksText, 63, 0, .script
+	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_7, LavenderForestPokemonAttacksText, 63, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_7
     end
 
 LavenderForestFieldMon8Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_8, LavenderForestPokemonAttacksText, 65, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_8, LavenderForestPokemonAttacksText, 65, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_8
     end
 
 LavenderForestFieldMon9Script:
-	trainer SPIRITOMB, FIELD_MON, EVENT_FIELD_MON_9, LavenderForestPokemonAttacksText, 68, 0, .script
+	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_9, LavenderForestPokemonAttacksText, 68, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_9
     end

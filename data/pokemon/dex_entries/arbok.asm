@@ -5,6 +5,6 @@
 	next "foes, it spreads"
 	next "its chest wide."
 
-	page "lowers foes"
-	next "ATTACK upon"
-	next "entering battle.@"
+	page "Armoured at"
+	next "max HP. Lowers"
+	next "foes ATTACK.@"

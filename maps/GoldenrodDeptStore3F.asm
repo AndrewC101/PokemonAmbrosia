@@ -42,18 +42,19 @@ GoldenrodDeptStore3FSuperNerdText:
 	cont "via MOON STONE."
 
 	para "Which do I pick!?"
+
+	para "And don't get me"
+	line "started on my"
+	cont "EEVEE."
 	done
 
 GoldenrodDeptStore3FRockerText:
-    text "HA HA!"
-
-    para "I have the"
-    line "FIRE STONE!"
-
-	para "Finally my weak"
-	line "GROWLITHE can"
-	cont "become a mighty"
-	cont "ARCANINE!"
+	text "My URSARING can"
+	line "evolve in two ways"
+	cont "with a SUN STONE"
+	cont "or MOON STONE."
+	para "Which should I"
+	line "pick?"
 	done
 
 GoldenrodDeptStore3FDirectoryText:

@@ -1,4 +1,4 @@
-	db "MYSTIC BEAST@" ; species name
+	db "MYSTIC BEAR@" ; species name
 	dw 810, 9393 ; height, weight
 
 	db   "Preternatural"

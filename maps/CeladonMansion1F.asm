@@ -54,8 +54,8 @@ CeladonMansionManagerText:
 	cont "help build this"
 	cont "world."
 
-	para "Don't we MEOWTH"
-	line "you're a good"
+	para "Don't we, MEOWTH?"
+	line "You're a good"
 	cont "kitty!"
 	done
 

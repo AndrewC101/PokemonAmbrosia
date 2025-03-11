@@ -50,18 +50,17 @@ CeladonDeptStore3FDirectory:
 CeladonDeptStore3FYoungsterText:
 	text "I can't decide"
 	line "which #MON I"
+	cont "should use this TM"
+	cont "on…"
 
-	para "should use this TM"
-	line "on…"
-
-    para "Lucky for me,"
+	para "Lucky for me,"
 	line "it's reusable!"
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
 	text "Ok ok..."
 
-	para "now lets not mess"
+	para "Now lets not mess"
 	line "it up this time!"
 
 	para "When I tell you"
@@ -76,11 +75,11 @@ CeladonDeptStore3FGameboyKid2Text:
 	text "My friend says"
 	line "if I turn off"
 	cont "my gameboy as"
-	cont "we trade it can"
+	cont "we trade, it can"
 	cont "somehow end up"
 	cont "cloning the"
 	cont "#MON and"
-	cont "it's item."
+	cont "its item."
 
 	para "But another"
 	line "#MON is lost"

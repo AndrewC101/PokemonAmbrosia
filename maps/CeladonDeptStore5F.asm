@@ -40,7 +40,7 @@ CeladonDeptStore5FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore5FGentlemanText:
-	text "I'm alway looking"
+	text "I'm always looking"
 	line "for the best ways"
 	cont "to make my money"
 	cont "work for me."

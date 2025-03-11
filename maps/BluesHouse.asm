@@ -64,7 +64,7 @@ DaisyScript:
 	end
 
 DaisyHelloText:
-	text "Hi! Oh you are"
+	text "Hi! Oh, you are"
 	line "from JOHTO."
 
 	para "You may have met"
@@ -91,7 +91,7 @@ DaisyOfferGroomingText:
 	para "Would you like"
 	cont "some?"
 
-	para "Oh I could groom"
+	para "Oh, I could groom"
 	line "your #MON"
 	cont "while you drink."
 	done
@@ -135,9 +135,8 @@ DaisyAlreadyGroomedText:
 DaisyRefusedText:
 	text "You don't want"
 	line "to have one"
-
-	para "groomed? OK, we'll"
-	line "just have tea."
+	cont "groomed? OK, we'll"
+	cont "just have tea."
 	done
 
 DaisyCantGroomEggText:

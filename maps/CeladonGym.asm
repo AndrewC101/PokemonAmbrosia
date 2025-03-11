@@ -138,7 +138,7 @@ CeladonGymStatue:
 	jumpstd GymStatue2Script
 
 ErikaBeforeBattleText:
-	text "Oh hello there."
+	text "Oh, hello there."
 
 	para "It is pleasant"
 	line "and peaceful here."
@@ -191,7 +191,7 @@ ErikaExplainTMText:
 	line "has the solution"
 	cont "to many problems."
 
-	para "Here take this."
+	para "Here, take this."
 
 	para "It is versatile"
 	line "and I know it"
@@ -255,9 +255,9 @@ PicnickerTanyaBeatenText:
 	done
 
 PicnickerTanyaAfterBattleText:
-	text "Yeah let's battle."
+	text "Yeah let's battle!"
 
-	para "Ok I need to"
+	para "Ok, I need to"
 	line "calm down."
 	done
 
@@ -278,7 +278,7 @@ BeautyJuliaBeatenText:
 	done
 
 BeautyJuliaAfterBattleText:
-	text "It's ok I know"
+	text "It's ok, I know"
 	line "I'm pretty."
 
 	para "Even I find it"

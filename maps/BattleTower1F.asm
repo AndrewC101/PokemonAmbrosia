@@ -546,7 +546,7 @@ Text_BattleTowerYoungster:
 
 	para "The final one"
 	line "uses only the"
-	cont "best #MON"
+	cont "best #MON."
 
 	para "And there is"
 	line "one #MON"
@@ -606,12 +606,12 @@ Text_BattleTowerBugCatcher:
 
 	para "With my keen"
 	line "intellectual"
-	cont "prowess I can"
+	cont "prowess, I can"
 	cont "often win."
 
 	para "It takes some"
-	line "luck too of"
-	cont "course."
+	line "luck too,"
+	cont "of course."
 	done
 
 TurnOffHandOfGodScript:

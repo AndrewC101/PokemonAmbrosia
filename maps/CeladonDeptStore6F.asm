@@ -148,7 +148,7 @@ CeladonDeptStore6FYoungsterText:
 	cont "and the RADIO"
 	cont "TOWER!"
 
-	para "See they are"
+	para "See, they are"
 	line "right over there."
 	done
 

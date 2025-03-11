@@ -77,7 +77,7 @@ BillGrampsTakeThisMewText:
 	text "Hm? You know BILL?"
 	line "He's my grandson."
 
-	para "Oh you are a"
+	para "Oh, you are a"
 	line "CHAMPION!"
 
 	para "I shouldn't tell"
@@ -88,7 +88,7 @@ BillGrampsTakeThisMewText:
 	cont "rare and ancient"
 	cont "#MON!"
 
-	para "Apparently He"
+	para "Apparently he"
 	line "found it in a"
 	cont "truck at the"
 	cont "harbour."
@@ -103,7 +103,7 @@ BillGrampsTakeThisMewText:
 
 	para "Hmmm..."
 
-	para "Yes I can see"
+	para "Yes, I can see"
 	line "why."
 
 	para "You are a"
@@ -140,7 +140,7 @@ BillGrampsGotMew:
 	done
 
 BillGrampsTooBad:
-    text "Aw that is"
+    text "Aw, that is"
     line "a real shame."
 
     para "This #MON"

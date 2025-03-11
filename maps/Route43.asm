@@ -372,7 +372,7 @@ TrainerPicnickerTiffany:
 	end
 
 TiffanyNumberAcceptedText:
-	text "Remember, your best"
+	text "Remember your best"
 	line "chance at"
 	cont "surviving is to"
 	cont "run away."

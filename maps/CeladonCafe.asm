@@ -110,7 +110,7 @@ ChefText_Eatathon:
 
 	para "If you want to"
 	line "put on some real"
-	cont "beef come see"
+	cont "beef, come see"
 	cont "me."
 
 	para "I'll hook you up."
@@ -131,7 +131,7 @@ Fisher1Text_Concentration:
 	done
 
 Fisher2Text_GulpChew:
-	text "What is this..."
+	text "What is this?..."
 	done
 
 Fisher2Text_Quantity:
@@ -166,7 +166,7 @@ TeacherText_CrunchCrunch:
 
 TeacherText_NoCoinCase:
 	text "I know it sounds"
-	line "stupid but an"
+	line "stupid, but an"
 	cont "adult can still"
 	cont "be bullied by"
 	cont "kids."

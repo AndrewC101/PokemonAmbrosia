@@ -94,7 +94,7 @@ VioletPokecenter1FPlayerMovement2:
 	step_end
 
 VioletPokecenter1F_BillText1:
-	text "Hi I'm BILL, the"
+	text "Hi, I'm BILL, the"
 	line "creator of the PC."
 	para "You must be"
 	line "<PLAYER>."
@@ -125,7 +125,7 @@ VioletPokecenter1F_BillText1:
 	para "It will help you"
 	line "grow stronger"
 	cont "even faster!"
-	para "Good luck"
+	para "Good luck,"
 	line "<PLAYER>!"
 	done
 
@@ -228,7 +228,7 @@ MovementData_AideFinishesLeavingPokecenter:
 
 VioletPokecenterElmsAideFavorText:
 	text "<PLAY_G>, long"
-	line "time, no see."
+	line "time no see."
 
 	para "PROF.ELM asked me"
 	line "to find you."
@@ -245,7 +245,7 @@ VioletPokecenterElmsAideGiveEggText:
 	line "FAIRY #MON"
 	cont "it may need to"
 	cont "form a strong bond"
-	cont "with it's trainer"
+	cont "with its trainer"
 	cont "to obtain its"
 	cont "full power."
 
@@ -264,7 +264,7 @@ VioletCityElmsAideFullPartyText:
 	done
 
 VioletPokecenterElmsAideRefuseText:
-	text "Look if I go"
+	text "Look, if I go"
 	line "with this EGG"
 	cont "it's not going"
 	cont "to look good for"

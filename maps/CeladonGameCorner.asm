@@ -221,7 +221,7 @@ CeladonGymGuideText:
 	para "Are you playing"
 	line "the slots too?"
 
-	para "Look I need to"
+	para "Look, I need to"
 	line "get money somehow."
 
 	para "You don't pay me"
@@ -236,10 +236,10 @@ CeladonGameCornerGrampsText:
 
 	para "But I have come"
 	line "to learn the error"
-	cont "of my ways."
+	cont "of my ways..."
 
 	para "SOLOSIS is way"
-	line "smaller."
+	line "smaller!"
 
 	para "I can fit several"
 	line "in my pockets."

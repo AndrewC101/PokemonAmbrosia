@@ -163,7 +163,7 @@ BurnedTowerSilver_BeforeText:
     cont "#MON used"
     cont "to dwell here."
 
-    para "Well if it did"
+    para "Well, if it did,"
     line "it's long gone"
     cont "now."
 
@@ -204,10 +204,10 @@ BurnedTowerSilver_AfterText1:
 	line "explored all"
 	cont "over here."
 
-	para "Besides even if"
+	para "Besides, even if"
 	line "you found a"
 	cont "legendary"
-	cont "#MON you"
+	cont "#MON, you"
 	cont "would never be"
 	cont "able to catch it"
 

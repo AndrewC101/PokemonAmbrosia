@@ -35,9 +35,8 @@ CeladonDeptStore1FReceptionistText:
 CeladonDeptStore1FGentlemanText:
 	text "This DEPT.STORE is"
 	line "part of the same"
-
-	para "chain as the one"
-	line "in GOLDENROD CITY."
+	cont "chain as the one"
+	cont "in GOLDENROD CITY."
 
 	para "I know because"
 	line "I have dumped my"
@@ -56,7 +55,7 @@ CeladonDeptStore1FTeacherText:
 	cont "potions."
 
 	para "Where can I"
-	line "just get them."
+	line "just get them?"
 	done
 
 CeladonDeptStore1FDirectoryText:

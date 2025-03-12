@@ -44,14 +44,14 @@ CeladonAndrewInitialIntroText:
     para "I am the creator"
     line "of this romhack."
 
-    para "Well I'm the game"
+    para "Well, I'm the game"
     line "representation"
     cont "of him of course."
 
-    para "What you don't"
-    line "believe me!"
+    para "What? You don't"
+    line "believe me?!"
 
-    para "You need proof!"
+    para "You need proof?!"
 
     para "Very well, here"
     line "is your proof."
@@ -62,9 +62,9 @@ CeladonAndrewWinsText:
     done
 
 CeladonAndrewBeatenText:
-    text "Oh very good!"
+    text "Oh, very good!"
 
-    para "really well done!"
+    para "Really well done!"
 
     para "You totally did"
     line "that legit."
@@ -72,7 +72,7 @@ CeladonAndrewBeatenText:
     para "No gameshark"
     line "codes required!"
 
-    para "Yeah I know"
+    para "Yeah, I know"
     line "what you are"
     cont "doing."
 
@@ -93,7 +93,7 @@ CeladonAndrewAfterBattleText:
     para "But I think I've"
     line "made my point."
 
-    para "Here take this"
+    para "Here, take this"
     line "for being a good"
     cont "sport."
     done
@@ -110,7 +110,7 @@ CeladonAndrewFinalText:
     line "you get there."
 
     para "If you complete"
-    line "the game I'll"
+    line "the game, I'll"
     cont "give you a very"
     cont "special item."
 
@@ -122,7 +122,7 @@ CeladonAndrewFinalText:
     cont "for any player."
 
     para "If you complete"
-    line "the game I'll"
+    line "the game, I'll"
     cont "give you the"
     cont "HAND OF GOD."
 

@@ -151,7 +151,7 @@ SeafoamGymGuideWinText2:
 	cont "it out like a"
 	cont "feeble ember."
 
-	para "Man you really"
+	para "Man, you really"
 	line "are the best!"
 	done
 

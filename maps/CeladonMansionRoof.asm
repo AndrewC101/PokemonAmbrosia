@@ -20,7 +20,7 @@ CeladonMansionRoofFisherText:
 	para "You exist up"
 	line "there somewhere."
 
-	para "You are a devine"
+	para "You are a divine"
 	line "entity."
 
 	para "One known as a..."

@@ -230,7 +230,7 @@ FalknerZephyrBadgeText:
 	line "enables #MON"
 	cont "to use FLASH."
 
-	para "Here--take this"
+	para "Here, take this"
 	line "too."
 	done
 
@@ -347,9 +347,9 @@ BirdKeeperAbeAfterBattleText:
 	done
 
 VioletGymGuideText:
-	text "Hey! I'm no train-"
-	line "er but I can give"
-	cont "some advice!"
+	text "Hey! I'm not a"
+	line "trainer, but I can"
+	cont "give some advice!"
 
 	para "This GYM utilizes"
 	line "FLYING type"
@@ -362,7 +362,7 @@ VioletGymGuideText:
 
 	para "DARK CAVE might"
 	line "have some such"
-	cont "#MON"
+	cont "#MON."
 	done
 
 VioletGymGuideWinText:

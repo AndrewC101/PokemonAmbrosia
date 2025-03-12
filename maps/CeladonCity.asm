@@ -94,7 +94,7 @@ CeladonCityFisherText:
 	cont "crushed."
 
 	para "Isn't that right"
-	line "POLIWRATH."
+	line "POLIWRATH?"
 	done
 
 CeladonCityPoliwrathText:
@@ -124,8 +124,7 @@ CeladonCityTeacher1Text:
 
 CeladonCityGramps1Text:
 	text "I've lived here"
-	line "here my whole"
-	cont "life."
+	line "my whole life."
 
 	para "Here is my"
 	line "secret."
@@ -147,7 +146,7 @@ CeladonCityGramps2Text:
 	cont "crime, pollution"
 	cont "and immorality"
 	cont "gets bigger and"
-	cont "bigger."
+	cont "bigger..."
 
 	para "This GYM stays"
 	line "the same."

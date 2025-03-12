@@ -23,16 +23,16 @@ CeruleanDiglett:
 	end
 
 CeruleanPoliceStationFishingGuruText:
-	text "Stop thief!"
+	text "Stop, thief!"
 
-	para "Oh sorry."
+	para "Oh, sorry."
 
 	para "I was about to"
 	line "wack you with"
 	cont "my baton."
 
 	para "I'm in charge of"
-	line "the neighbor hood"
+	line "the neighborhood"
 	cont "watch."
 
 	para "If you see any"

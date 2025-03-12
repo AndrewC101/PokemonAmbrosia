@@ -47,9 +47,8 @@ Route7UndergroundPathSignText:
 
 	para "… Uncouth trainers"
 	line "have been holding"
-
-	para "battles in the"
-	line "UNDERGROUND PATH."
+	cont "battles in the"
+	cont "UNDERGROUND PATH."
 
 	para "Because of rising"
 	line "complaints by lo-"

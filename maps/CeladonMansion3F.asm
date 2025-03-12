@@ -61,14 +61,14 @@ GameFreakGameDesignerText:
 	para "The creator went"
 	line "back and forth on"
 	cont "whether to have"
-	cont "level caps but"
+	cont "level caps, but"
 	cont "in the end it"
 	cont "was better than"
 	cont "global exp scaling"
 	cont "for balancing."
 
 	para "If you complete"
-	line "the #DEX let"
+	line "the #DEX, let"
 	cont "me know!"
 	done
 

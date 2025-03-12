@@ -224,7 +224,7 @@ RuinsOfAlphOutsideYoungster1Text:
 	done
 
 RuinsOfAlphOutsideYoungster2Text:
-	text "Is he here!"
+	text "He is here!"
 
 	para "There was a guy"
 	line "here at night"

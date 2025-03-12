@@ -43,7 +43,7 @@ VermilionMagnetTrainSpeechHousePokefanFText:
 	done
 
 VermilionMagnetTrainSpeechHouseYoungsterText:
-	text "Mums always going"
+	text "Mum's always going"
 	line "on about how she"
 	cont "hates the MAGNET"
 	cont "TRAIN."

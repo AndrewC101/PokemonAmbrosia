@@ -228,7 +228,7 @@ GreenOfferFightText:
     done
 GreenBeatenText:
     text "That brings back"
-    line "some memories"
+    line "some memories."
     done
 GreenWinsText:
     text "Told you I was"
@@ -241,7 +241,7 @@ GreenAfterBattleText:
 
     para "He is like you."
 
-    para "Somehow just.."
+    para "Somehow just..."
 
     para "Better than anyone"
     line "else."

@@ -138,7 +138,7 @@ PicnickerHopeSeenText:
 	text "Did you come from"
 	line "MT MOON?"
 	para "Did you see that"
-	line "girl GREEN."
+	line "girl, GREEN?"
 	para "She is really"
 	line "strong and pretty!"
 	para "I am her biggest"

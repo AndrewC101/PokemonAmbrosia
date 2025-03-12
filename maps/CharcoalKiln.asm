@@ -80,8 +80,8 @@ CharcoalKilnBossText1:
 	line "have disappeared"
 	cont "from the town."
 
-	para "The forest's pro-"
-	line "tector will be"
+	para "The forest's"
+	line "protector will be"
 	cont "angry with us."
 
 	para "I must punish"
@@ -141,7 +141,7 @@ CharcoalKilnApprenticeText2:
 
 CharcoalKilnApprenticeText3:
 	text "With the SLOWPOKE"
-	line "back we have"
+	line "back, we have"
 	cont "plenty of"
 	cont "sacrifices for"
 	cont "the spirits."

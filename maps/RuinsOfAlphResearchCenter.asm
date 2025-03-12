@@ -144,9 +144,8 @@ RuinsOfAlphResearchCenterModifiedDexText:
 
 	para "I added an"
 	line "optional #DEX"
-
-	para "to store UNOWN"
-	line "data."
+	cont "to store UNOWN"
+	cont "data."
 
 	para "It records them in"
 	line "the sequence that"
@@ -174,7 +173,7 @@ RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	text "You caught all the"
 	line "UNOWN variations?"
 
-	para "That's amazing"
+	para "That's amazing!"
 
 	para "So what is the"
 	line "secret to their"

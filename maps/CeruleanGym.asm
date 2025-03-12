@@ -256,7 +256,7 @@ CeruleanGymGruntByeText:
 	cont "follow me if you"
 	cont "value your life."
 
-	para "I am the PRIMERA"
+	para "I am the PRIMERA."
 
 	para "The strongest of"
 	line "all ROCKETS."
@@ -330,7 +330,7 @@ ReceivedCascadeBadgeText:
 	done
 
 MistyFightDoneText:
-	text "Well now I need"
+	text "Well, now I need"
 	line "to ring that guy"
 	cont "back and try to"
 	cont "organise another"
@@ -359,7 +359,7 @@ SwimmerfDianaSeenText:
 	cont "left."
 
 	para "It can be our"
-	line "secret ok?"
+	line "secret, ok?"
 	done
 
 SwimmerfDianaBeatenText:
@@ -382,9 +382,9 @@ SwimmerfBrianaSeenText:
 	text "How about instead"
 	line "of a battle we"
 	cont "have a swimming"
-	cont "race!"
+	cont "race?!"
 
-	para "No."
+	para "No?"
 
 	para "OK let's go then."
 	done
@@ -405,11 +405,12 @@ SwimmerfBrianaAfterBattleText:
 
 SwimmermParkerSeenText:
 	text "As a WATER"
-	line "trainer I feel"
-	cont "an extra respons-"
-	cont "ibility to do my"
-	cont "part to fight"
-	cont "against HOENN."
+	line "trainer, I"
+	cont "feel an extra"
+	cont "responsibility"
+	cont "to do my part to"
+	cont "to fight against"
+	cont "HOENN."
 
 	para "I need to train!"
 	done
@@ -447,11 +448,11 @@ CeruleanGymGuideWinText:
 
 	para "Do you think a"
 	line "guy like me and"
-	cont "a woman like her."
+	cont "a woman like her…"
 
 	para "...."
 
-	para "Aww never mind."
+	para "Aww, never mind."
 
 	para "I'm just being"
 	line "stupid."

@@ -275,7 +275,7 @@ AzaleaTownRivalWinText:
 	line "#MON!"
 
 	para "Why aren't they"
-	line "strong enough!"
+	line "strong enough!?"
 	done
 
 AzaleaTownRivalLossText:
@@ -291,7 +291,7 @@ AzaleaTownRivalAfterText:
 	cont "dedication."
 
 	para "You may be strong"
-	line "now but you have"
+	line "now, but you have"
 	cont "already reached"
 	cont "your peak."
 
@@ -315,7 +315,7 @@ AzaleaTownRocket1Text:
 	para "We are making"
 	line "it safer."
 
-	para "Sorry but nobody"
+	para "Sorry, but nobody"
 	line "can enter until"
 	cont "we are finished."
 	done
@@ -337,7 +337,7 @@ AzaleaTownRocket2Text:
 
 	para "BUGSY!"
 
-	para "Yes that's his"
+	para "Yes, that's his"
 	line "name."
 	done
 
@@ -754,7 +754,7 @@ RolePlay2PrizeText:
     text "We finished a"
     line "new game."
 
-    para "Here take this"
+    para "Here, take this"
     line "for playing."
     done
 
@@ -819,7 +819,7 @@ YuGiOhHenshin1Text:
 
 YuGiOhHenshin2Text:
     text "Having narrowly"
-    line "escaped you"
+    line "escaped, you"
     cont "hide in the"
     cont "palace."
 
@@ -832,7 +832,7 @@ YuGiOhHenshin2Text:
 
     para "You are horrified"
     line "by the immense"
-    cont "power of YAMIs"
+    cont "power of YAMI's"
     cont "cards."
 
     para "SETO lies on"
@@ -867,7 +867,7 @@ YuGiOhHenshin3Text:
 
     para "ATEM triumphs."
 
-    para "YAMIS monsters"
+    para "YAMI's monsters"
     line "banish HENSHIN"
     cont "to the shadow"
     cont "realm."
@@ -888,7 +888,7 @@ YuGiOhHenshin3Text:
     para "BAKURA."
 
     para "In the shadow"
-    line "realm an ancient"
+    line "realm, an ancient"
     cont "entity consumes"
     cont "their souls."
 
@@ -1026,7 +1026,7 @@ YuGiOhYami2Text:
     para "Utterly defeated"
     line "but still alive."
 
-    para "What is that!!"
+    para "What is that?!"
 
     para "You find yourself"
     line "on the ground."
@@ -1042,7 +1042,7 @@ YuGiOhYami2Text:
     line "is HENSHIN."
 
     para "The high priest"
-    line "of SETOs house."
+    line "of SETO's house."
 
     para "Was this his"
     line "plan..."
@@ -1065,7 +1065,7 @@ YuGiOhRolePlayYamiSetoText:
 
     para "ATEM triumphs."
 
-    para "YAMIS monsters"
+    para "YAMI's monsters"
     line "banish HENSHIN"
     cont "to the shadow"
     cont "realm."
@@ -1080,7 +1080,7 @@ YuGiOhRolePlayYamiSetoText:
     cont "state."
 
     para "SETO retrieves"
-    line "YAMIs God cards."
+    line "YAMI's God cards."
 
     para "And uses their"
     line "power to heal"
@@ -1107,7 +1107,7 @@ YuGiOhYami3Text:
     para "BAKURA."
 
     para "In the shadow"
-    line "realm an ancient"
+    line "realm, an ancient"
     cont "entity consumes"
     cont "their souls."
 

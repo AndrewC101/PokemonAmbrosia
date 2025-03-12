@@ -45,19 +45,19 @@ CherrygroveMartCooltrainerMText:
 	line "of #BALLS!"
 
 	para "If I have no"
-	line "balls how am"
+	line "balls, how am"
 	cont "I meant to"
-	cont "catch #MON!"
+	cont "catch #MON?!"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
+	text "#BALLS are in"
 	line "stock!"
 
 	para "I am full of"
 	line "balls now!"
 
-	para "#MON better"
+	para "#MON, better"
 	line "watch out!"
 	done
 

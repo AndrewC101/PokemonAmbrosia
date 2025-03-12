@@ -86,7 +86,7 @@ ViridianCityMartSign:
 	jumpstd MartSignScript
 
 ViridianCityCoffeeGrampsQuestionText:
-	text "It's ok dear"
+	text "It's ok, dear"
 	line "child."
 
 	para "You have nothing"

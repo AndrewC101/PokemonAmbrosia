@@ -208,7 +208,7 @@ SproutTowerElderLecturesRivalText:
 	line "powerful."
 
 	para "And though you"
-	line "may not know it"
+	line "may not know it,"
 	cont "there is light"
 	cont "in your heart."
 
@@ -258,7 +258,7 @@ SproutTowerRivalUsedEscapeRopeText:
 	done
 
 SageLiSeenText:
-	text "Ah it is good"
+	text "Ah, it is good"
 	line "to see you."
 
 	para "There are in"
@@ -347,7 +347,7 @@ SageLiAfterBattleText:
 
 	para "You are a blazing"
 	line "star that erases"
-	cont "all darkness"
+	cont "all darkness."
 
 	para "But even stars"
 	line "fade."

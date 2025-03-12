@@ -172,10 +172,10 @@ ClairIntroText:
 	line "of BLACKTHORN."
 
 	para "Defender of the"
-	line "DRAGONS FANG."
+	line "DRAGON'S FANG."
 
 	para "Keeper of the"
-	line "DRAGONS DEN."
+	line "DRAGON'S DEN."
 
 	para "I am second"
 	line "only to LANCE"
@@ -238,7 +238,7 @@ ClairText_GoToDragonsDen:
 	cont "prove yourself."
 
 	para "Behind the GYM is"
-	line "DRAGONS DEN."
+	line "DRAGON'S DEN."
 
 	para "A sacred place."
 
@@ -255,7 +255,7 @@ ClairText_GoToDragonsDen:
 
 ClairText_TooMuchToExpect:
 	text "Do you think this"
-	line "is unfair."
+	line "is unfair?"
 
 	para "Life is unfair."
 
@@ -265,8 +265,8 @@ ClairText_TooMuchToExpect:
 	para "You must take"
 	line "what you want."
 
-	para "Now go to DRAGONS"
-	line "DEN."
+	para "Now go to"
+	line "DRAGON'S DEN."
 
 	para "And claim what you"
 	line "think you deserve!"
@@ -340,7 +340,7 @@ CooltrainermPaulAfterBattleText:
 	para "You commanded his"
 	line "DRAGONITE!!!"
 
-	para "Okay now I know"
+	para "Okay, now I know"
 	line "you are making"
 	cont "this up!"
 	done
@@ -351,7 +351,7 @@ CooltrainermMikeSeenText:
 
 	para "My #MON"
 	line "will probably"
-	cont "out live me."
+	cont "outlive me."
 
 	para "I will do my"
 	line "best to help"
@@ -385,7 +385,7 @@ CooltrainerfLolaSeenText:
 
 	para "That's why she"
 	line "wont allow me"
-	cont "into DRAGONS DEN."
+	cont "into DRAGON'S DEN."
 
 	para "I want more."
 
@@ -403,8 +403,8 @@ CooltrainerfLolaAfterBattleText:
 	line "to be close to"
 	cont "CLAIR."
 
-	para "Then when the"
-	line "time is right."
+	para "Then, when the"
+	line "time is right..."
 
 	para "I will claim my"
 	line "birthright."

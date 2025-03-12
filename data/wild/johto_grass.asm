@@ -1407,7 +1407,7 @@ JohtoGrassWildMons:
 	; morn
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, FERROSEED
+	db 18, EKANS
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1415,7 +1415,7 @@ JohtoGrassWildMons:
 	; day
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, FERROSEED
+	db 18, EKANS
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1423,7 +1423,7 @@ JohtoGrassWildMons:
 	; nite
 	db 16, CLEFAIRY
 	db 16, COTTONEE
-	db 18, FERROSEED
+	db 18, EKANS
 	db 18, PONYTA
 	db 12, RALTS
 	db 12, ABRA
@@ -1688,7 +1688,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, SLOWPOKE
+	db 8, SWINUB
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1696,7 +1696,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, STARLY
 	db 8, GEODUDE
-	db 8, SLOWPOKE
+	db 8, SWINUB
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR
@@ -1704,7 +1704,7 @@ JohtoGrassWildMons:
     db 5, RATTATA
 	db 6, HOOTHOOT
 	db 8, GEODUDE
-	db 8, SLOWPOKE
+	db 8, SWINUB
 	db 9, CLEFAIRY
 	db 9, DRATINI
 	db 10, GLIGAR

@@ -1623,7 +1623,7 @@ ReuniclusEvosAttacks:
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:
-	db EVOLVE_LEVEL, 33, WEEZING
+	db EVOLVE_LEVEL, 32, WEEZING
 	db 0 ; no more evolutions
 	db 1, ACID
 	db 1, TACKLE
@@ -1631,7 +1631,7 @@ KoffingEvosAttacks:
 	db 20, SELFDESTRUCT
 	db 24, SMOKESCREEN
 	db 28, HAZE
-	db 34, SLUDGE_BOMB
+	db 33, SLUDGE_BOMB
 	db 40, EXPLOSION
 	db 45, DESTINY_BOND
 	db 50, TOXIC
@@ -1645,7 +1645,7 @@ WeezingEvosAttacks:
 	db 21, SELFDESTRUCT
 	db 24, SMOKESCREEN
 	db 28, HAZE
-	db 33, SLUDGE_BOMB
+	db 32, SLUDGE_BOMB
 	db 40, EXPLOSION
 	db 45, DESTINY_BOND
 	db 50, TOXIC

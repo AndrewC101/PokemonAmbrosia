@@ -1,4 +1,4 @@
-NUM_ODD_EGGS EQU 6
+NUM_ODD_EGGS EQU 7
 
 prob: MACRO
 prob_total += \1
@@ -9,12 +9,13 @@ OddEggProbabilities:
 ; entries correspond to OddEggs (below)
 	table_width 2, OddEggProbabilities
 prob_total = 0
-	prob 17
-	prob 17
-	prob 17
-	prob 17
-	prob 17
-	prob 15
+	prob 14
+	prob 14
+	prob 14
+	prob 14
+	prob 14
+	prob 14
+	prob 16
 	assert_table_length NUM_ODD_EGGS
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
@@ -164,6 +165,32 @@ OddEggs:
 	bigdw 0
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 30, 0, 0 ; PP
+	db 10 ; step cycles to hatch
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 1 ; Level
+	db 0, 0 ; Status
+    bigdw 0
+    bigdw 12
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+    bigdw 6
+	db "EGG@@@@@@@@"
+
+	db MUDKIP
+	db NO_ITEM
+	db TACKLE, WATER_GUN, 0, 0
+	dw 00666 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 0
+	bigdw 0
+	bigdw 0
+	bigdw 0
+	bigdw 0
+	dn 15, 13, 15, 15 ; DVs
+	db 35, 25, 0, 0 ; PP
 	db 10 ; step cycles to hatch
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 1 ; Level

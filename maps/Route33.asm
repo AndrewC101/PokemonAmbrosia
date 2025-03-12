@@ -6,6 +6,7 @@
 	const ROUTE33_FIELDMON_2
 	const ROUTE33_FIELDMON_3
 	const ROUTE33_FIELDMON_4
+	const ROUTE33_FIELDMON_5
 
 Route33_MapScripts:
 	def_scene_scripts
@@ -17,6 +18,7 @@ Route33_MapScripts:
     appear ROUTE33_FIELDMON_1
     appear ROUTE33_FIELDMON_2
     appear ROUTE33_FIELDMON_3
+    appear ROUTE33_FIELDMON_5
 
     random 5
     ifequal 1, .spawn
@@ -275,6 +277,17 @@ Route33FieldMon4Script:
 	disappear ROUTE33_FIELDMON_4
 	end
 
+Route33FieldMon5Script:
+	faceplayer
+	cry FERROSEED
+	pause 15
+	loadwildmon FERROSEED, 13
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROUTE33_FIELDMON_5
+	end
+
 Route33_MapEvents:
 	db 0, 0 ; filler
 
@@ -295,4 +308,4 @@ Route33_MapEvents:
 	object_event  5, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  6,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route33FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 9, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route33FieldMon4Script, EVENT_FIELD_MON_4
-
+	object_event  6,  4, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon5Script, EVENT_FIELD_MON_5

@@ -499,28 +499,25 @@ FisherRalphAfterText:
 	done
 
 FisherHenrySeenText:
-	text "All I can find"
-	line "are these damn"
-	cont "MUDKIP!"
-
-	para "They are mocking"
-	line "me!"
+	text "I have it good"
+	line "authority that you"
+	cont "possess an"
+	cont "affinity for"
+	cont "MUDKIPs."
+	para "I am something of"
+	line "a MUDKIP fan"
+	cont "myself."
 	done
 
 FisherHenryBeatenText:
-	text "Maybe I need"
-	line "a MUDKIP."
+	text "I need moar!"
 	done
 
 FisherHenryAfterText:
-	text "Nearly all"
-	line "#MON can be"
-	cont "strong if raised"
-	cont "right."
-
-	para "I don't know"
-	line "about MUDKIP"
-	cont "though."
+	text "No other Pokemon"
+	line "is worth catching"
+	cont "except MUDKIP!"
+	para "Don't you agree?"
 	done
 
 YoungsterGordonSeenText:
@@ -1039,7 +1036,7 @@ Route32_MapEvents:
 	object_event  3, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  2, 69, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 47, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
-	object_event  7, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
+	object_event 12, 43, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1, 50, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 8,  74, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8

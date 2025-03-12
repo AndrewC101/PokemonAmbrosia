@@ -429,6 +429,11 @@ BlockingSoldier1Text:
     cont "the sight of"
     cont "HOENN legendary"
     cont "#MON."
+
+    para "We are securing"
+    line "the training"
+    cont "grounds to the"
+    cont "north."
     done
 
 BlockingSoldier2Text:
@@ -442,7 +447,12 @@ BlockingSoldier2Text:
     cont "GYM LEADER on"
     cont "his knees before"
     cont "our EMPEROR."
+
+    para "We will set up"
+    line "our base in the"
+    cont "old SAFARI ZONE."
     done
+
     
 FuchsiaCitySelfScript:
     checkevent EVENT_BEAT_FUCHSIA_SELF

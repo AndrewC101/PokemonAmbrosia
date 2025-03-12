@@ -461,7 +461,10 @@ UsedSquirtbottleText:
 	done
 
 SudowoodoAttackedText:
-	text "The old man is"
+	text "The disguise is"
+	line "broken!"
+
+	para "The old man is"
 	line "revealed as an"
 	cont "evil spirit."
 

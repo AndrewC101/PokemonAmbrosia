@@ -423,9 +423,8 @@ _BTGreetingF2Text:
 	done
 
 _BTLossF2Text:
-	text "Oh my I may"
-	line "overdid it a"
-	cont "tad."
+	text "Oh my, I may have"
+	line "overdid it a tad."
 	done
 
 _BTWinF2Text:

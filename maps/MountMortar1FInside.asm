@@ -238,9 +238,9 @@ MountMortar1FInsideFieldMon7Script:
 
 MountMortar1FInsideFieldMon8Script:
 	faceplayer
-	cry MAGMAR
+	cry ELECTABUZZ
 	pause 15
-	loadwildmon MAGMAR, 30
+	loadwildmon ELECTABUZZ, 30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

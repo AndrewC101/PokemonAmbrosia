@@ -2178,11 +2178,13 @@ FisherGroup:
 	db -1 ; end
 
 	; FISHER (5)
-	db "HENRY@", TRAINERTYPE_NORMAL
-	db  13, MUDKIP
-	db  13, MUDKIP
-	db  13, MUDKIP
-	db  20, FROGADIER
+	db "HENRY@", TRAINERTYPE_NICKNAME | TRAINERTYPE_NORMAL
+	db  15, MUDKIP, "MUDKIP 1@"
+	db  15, MUDKIP, "MUDKIP 2@"
+	db  15, MUDKIP, "MUDKIP 3@"
+	db  15, MUDKIP, "MUDKIP 4@"
+	db  15, MUDKIP, "MUDKIP 5@"
+	db  15, MUDKIP, "MUDKIP 6@"
 	db -1 ; end
 
 	; FISHER (6)

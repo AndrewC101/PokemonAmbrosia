@@ -499,28 +499,25 @@ FisherRalphAfterText:
 	done
 
 FisherHenrySeenText:
-	text "All I can find"
-	line "are these damn"
-	cont "MUDKIP!"
-
-	para "They are mocking"
-	line "me!"
+	text "I have it good"
+	line "authority that you"
+	cont "possess an"
+	cont "affinity for"
+	cont "MUDKIPs."
+	para "I am something of"
+	line "a MUDKIP fan"
+	cont "myself."
 	done
 
 FisherHenryBeatenText:
-	text "Maybe I need"
-	line "a MUDKIP."
+	text "I need moar!"
 	done
 
 FisherHenryAfterText:
-	text "Nearly all"
-	line "#MON can be"
-	cont "strong if raised"
-	cont "right."
-
-	para "I don't know"
-	line "about MUDKIP"
-	cont "though."
+	text "No other Pokemon"
+	line "is worth catching"
+	cont "except MUDKIP!"
+	para "Don't you agree?"
 	done
 
 YoungsterGordonSeenText:

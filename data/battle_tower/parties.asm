@@ -3264,8 +3264,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db URSALUNA
-	db LEFTOVERS
-	db DOUBLE_EDGE, EARTHQUAKE, BULK_UP, MOONLIGHT
+	db PINK_BOW
+	db DOUBLE_EDGE, BULK_UP, REST, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3275,7 +3275,7 @@ BattleTowerMons:
     bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 24, 10 ; PP
+	db 24, 16, 5, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 84 ; Level

@@ -426,6 +426,7 @@
     const EVENT_BEAT_ULTIMA
     const EVENT_FOUGHT_PARK_LEON
     const EVENT_AVGN_FLAME_ORB
+    const EVENT_CINNABAR_FLAME_ORB
 
     ; ======================================
     ; DevNote - here

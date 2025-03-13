@@ -357,9 +357,9 @@ EusineBeatenText:
 
 EusineWinsText:
 	text "Did you see"
-	line "this SUICUNE!"
+	line "this, SUICUNE?!"
 
-	para "Accept me!!"
+	para "Accept me!!!"
 	done
 
 EusineAfterText:
@@ -380,8 +380,8 @@ EusineAfterText:
 	cont "with chains I"
 	cont "can never break."
 
-	para "Where she goes I"
-	line "must follow."
+	para "Where she goes"
+	line "I must follow."
 
 	para "I know we will"
 	line "meet again."
@@ -810,7 +810,7 @@ HeIsOverThere:
 
 WhoAreYou:
     text "How did you sneak"
-    line "up on me!"
+    line "up on me?!"
 
     para "I am just a"
     line "sailor waiting"
@@ -1110,7 +1110,7 @@ HoenSpyScript:
     jumptextfaceplayer HoenSpyText
 
 HoenSpyText:
-    text "Run along child."
+    text "Run along, child."
 
     para "I am admiring"
     line "the strategic"

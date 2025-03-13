@@ -6,5 +6,5 @@
 	next "without fear."
 
 	page "lowers foes"
-	next "ATTACK upon"
-	next "entering battle.@"
+	next "ATTACK. Status"
+    next "boosts ATTACK.@"

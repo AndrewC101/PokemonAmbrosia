@@ -41,6 +41,9 @@ Route16FuchsiaSpeechHouseMusicianText:
 	cont "here."
 	done
 
+AvgnFlameOrb:
+    itemball FLAME_ORB
+
 Route16FuchsiaSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -57,3 +60,5 @@ Route16FuchsiaSpeechHouse_MapEvents:
 	def_object_events
 	object_event  4,  5, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseAVGNScript, -1
 	object_event  3,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route16FuchsiaSpeechHouseMusicianScript, -1
+	object_event  4,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AvgnFlameOrb, EVENT_AVGN_FLAME_ORB
+

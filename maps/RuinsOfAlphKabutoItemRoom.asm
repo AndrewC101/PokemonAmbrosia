@@ -10,7 +10,7 @@ RuinsOfAlphKabutoItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphKabutoItemRoomBerry:
-	itemball GOLD_BERRY
+	itemball FLAME_ORB
 
 RuinsOfAlphKabutoItemRoomPsncureberry:
 	itemball TM_ROCK_SMASH

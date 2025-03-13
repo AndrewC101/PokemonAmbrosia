@@ -334,7 +334,7 @@ Route44FruitTree:
 	fruittree FRUITTREE_ROUTE_44
 
 Route44LifeOrb:
-	itemball LIFE_ORB
+	itemball FLAME_ORB
 
 Route44HiddenAmbrosia:
 	hiddenitem LUCKY_EGG, EVENT_ROUTE_44_HIDDEN_LUCKY_EGG

@@ -4366,6 +4366,23 @@ SapHealth:
 	call RefreshBattleHuds
 	jp UpdateBattleMonInParty
 
+BattleCommand_FlameOrb:
+	call GetUserItem
+	ld a, b
+	cp HELD_FLAME_ORB
+	ret nz
+    ld hl, FlameOrbText
+	call StdBattleTextbox
+    ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateUserInParty
+	call BattleCommand_SwitchTurn
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
+    ret
+
 BattleCommand_BurnTarget:
 ; burntarget
 

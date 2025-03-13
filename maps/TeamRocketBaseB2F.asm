@@ -979,7 +979,7 @@ RocketBaseLancePostBattleText:
 	cont "command as he"
 	cont "would mine."
 
-	para "DARGONITEs judge"
+	para "DRAGONITEs judge"
 	line "of character is"
 	cont "beyond question."
 

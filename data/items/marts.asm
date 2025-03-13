@@ -405,6 +405,7 @@ MartPatches:
     db MUSCLE_BAND
     db WISE_GLASSES
     db EXPERT_BELT
+    db FLAME_ORB
     db QUICK_CLAW
     db BRIGHTPOWDER
     db SCOPE_LENS
@@ -413,7 +414,7 @@ MartPatches:
     db -1
 
 MartFrontier:
-    db 15 ; # items
+    db 16 ; # items
     db FULL_RESTORE
     db MAX_REVIVE
     db MAX_ELIXER
@@ -425,6 +426,7 @@ MartFrontier:
     db MUSCLE_BAND
     db WISE_GLASSES
     db EXPERT_BELT
+    db FLAME_ORB
     db MIRACLEBERRY
     db SCOPE_LENS
     db KINGS_ROCK

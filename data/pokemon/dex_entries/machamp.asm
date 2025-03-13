@@ -5,6 +5,6 @@
 	next "move faster than"
 	next "can be seen."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Status boosts"
+	next "ATTACK. DYNAMIC"
+	next "PUNCH hits.@"

@@ -104,7 +104,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; ITEM_5A
+	dw NoEffect            ; FLAME_ORB
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -1249,7 +1249,7 @@ VitaminEffect:
 
 ; DevNote - Vitamins have no limit
 	ld a, [hl]
-	cp 250
+	cp 245
 	jp nc, NoEffectMessage
 
 	add 10

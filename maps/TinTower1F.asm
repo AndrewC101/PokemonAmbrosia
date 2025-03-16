@@ -9,6 +9,7 @@
 	const TINTOWER1F_SAGE4
 	const TINTOWER1F_SAGE5
 	const TINTOWER1F_SAGE6
+	const TINTOWER1F_POKE_BALL
 
 TinTower1F_MapScripts:
 	def_scene_scripts
@@ -523,6 +524,9 @@ TinTower1FSage6Text2:
 	line "with SUICUNE."
 	done
 
+TinTowerSunStone:
+    itemball SUN_STONE
+
 TinTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -546,3 +550,4 @@ TinTower1F_MapEvents:
 	object_event  4,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage4Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	object_event  9,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage5Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	object_event 14,  2, SPRITE_SAGE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage6Script, EVENT_TIN_TOWER_1F_WISE_TRIO_2
+	object_event 16, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TinTowerSunStone, EVENT_TIN_TOWER_SUN_STONE

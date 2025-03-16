@@ -17,6 +17,9 @@ AncientTempleAmbrosia:
 AncientTempleSacredAsh:
     itemball SACRED_ASH
 
+AncientTempleMoonStone:
+    itemball MOON_STONE
+
 HoohLugiaBlockScript:
     setval HO_OH
 	special MonCheck
@@ -198,3 +201,4 @@ AncientTemple_MapEvents:
 	object_event 23, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientTempleLifeOrb, EVENT_ANCIENT_TEMPLE_LIFE_ORB
 	object_event 20,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientTempleAmbrosia, EVENT_ANCIENT_TEMPLE_AMBROSIA
 	object_event 22, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientTempleSacredAsh, EVENT_ANCIENT_TEMPLE_SACRED_ASH
+	object_event 20, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AncientTempleMoonStone, EVENT_ANCIENT_TEMPLE_MOON_STONE

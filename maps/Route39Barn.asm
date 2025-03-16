@@ -2,6 +2,7 @@
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
+	const ROUTE39BARN_MOONSTONE
 
 Route39Barn_MapScripts:
 	def_scene_scripts
@@ -159,6 +160,9 @@ Route39BarnRefusedBerryText:
 	para "MILTANK looks sad."
 	done
 
+BarnMoonStone:
+    itemball MOON_STONE
+
 Route39Barn_MapEvents:
 	db 0, 0 ; filler
 
@@ -174,3 +178,4 @@ Route39Barn_MapEvents:
 	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
 	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
 	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  0,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BarnMoonStone, EVENT_BARN_MOON_STONE

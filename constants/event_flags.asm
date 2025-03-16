@@ -427,6 +427,11 @@
     const EVENT_FOUGHT_PARK_LEON
     const EVENT_AVGN_FLAME_ORB
     const EVENT_CINNABAR_FLAME_ORB
+    const EVENT_ANCIENT_TEMPLE_MOON_STONE
+    const EVENT_BARN_MOON_STONE
+    const EVENT_TIN_TOWER_SUN_STONE
+    const EVENT_ROUTE43_LEAF_STONE
+    const EVENT_LIGHTHOUSE_WATER_STONE
 
     ; ======================================
     ; DevNote - here

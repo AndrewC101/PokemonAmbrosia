@@ -809,9 +809,25 @@ NationalParkLeonScript:
     writetext LeonGiftText
     waitbutton
     verbosegiveitem LUCKY_EGG
+    iffalse .LeonNoRoom
     closetext
     setevent EVENT_FOUGHT_PARK_LEON
     end
+.LeonNoRoom
+    writetext LeonNoRoomText
+    waitbutton
+    closetext
+    end
+
+LeonNoRoomText:
+	text "You have no space"
+	line "in your bag champ!"
+	para "You'll never be"
+	line "the best if you"
+	cont "don't organise"
+	cont "your supplies"
+	cont "better."
+	done
 
 HeyHeroText:
     text "Hey <PLAYER>!"

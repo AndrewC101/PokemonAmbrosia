@@ -431,7 +431,8 @@
     const EVENT_BARN_MOON_STONE
     const EVENT_TIN_TOWER_SUN_STONE
     const EVENT_ROUTE43_LEAF_STONE
-    const EVENT_LIGHTHOUSE_WATER_STONE
+    const EVENT_LIGHTHOUSE_THUNDER_STONE
+    const EVENT_ROUTE44_WATER_STONE
 
     ; ======================================
     ; DevNote - here

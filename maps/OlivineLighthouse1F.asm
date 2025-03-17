@@ -42,8 +42,8 @@ OlivineLighthouse1FPokefanFText:
 	cont "train here."
 	done
 
-LightHouseWaterStone:
-    itemball WATER_STONE
+LightHouseThunderStone:
+    itemball THUNDERSTONE
 
 OlivineLighthouse1F_MapEvents:
 	db 0, 0 ; filler
@@ -62,4 +62,4 @@ OlivineLighthouse1F_MapEvents:
 	def_object_events
 	object_event  8,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FSailorScript, -1
 	object_event 16,  9, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse1FPokefanFScript, -1
-	object_event 15,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LightHouseWaterStone, EVENT_LIGHTHOUSE_WATER_STONE
+	object_event 15,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LightHouseThunderStone, EVENT_LIGHTHOUSE_THUNDER_STONE

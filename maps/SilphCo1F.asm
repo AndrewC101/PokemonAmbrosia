@@ -50,14 +50,16 @@ SilphCoOfficerText:
 	done
 
 SilphCoOfficerText_GotUpGrade:
-	text "Those special"
-	line "specs make your"
-	cont "special attacks"
-	cont "much stronger."
-
-	para "But you must"
-	line "pick your move"
-	cont "wisely."
+	text "EXPERT BELT"
+	line "increases the"
+	cont "damage of super"
+	cont "effective moves."
+	para "It's only for pro"
+	line "trainers who know"
+	cont "all the type match"
+	cont "ups."
+	para "I have no use for"
+	line "it then."
 	done
 
 SilphCo1F_MapEvents:

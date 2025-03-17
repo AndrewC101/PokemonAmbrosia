@@ -17,15 +17,27 @@ RedsMom:
 	iftrue .MetAlready
 	writetext RedsMomText1
 	waitbutton
-	;closetext
 	verbosegiveitem LUCKY_EGG
+	iffalse .NoRoom
 	setevent EVENT_MET_REDS_MOM
-	;end
 .MetAlready:
 	writetext RedsMomText2
 	waitbutton
 	closetext
 	end
+.NoRoom:
+    writetext RedsMumNoRoomText
+    waitbutton
+    closetext
+    end
+
+RedsMumNoRoomText:
+	text "Oh you don't have"
+	line "room for this."
+	para "You should"
+	line "organise your"
+	cont "stuff better."
+	done
 
 RedsHouse1FTV:
 	jumptext RedsHouse1FTVText

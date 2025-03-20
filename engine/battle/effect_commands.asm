@@ -696,8 +696,8 @@ BattleCommand_CheckObedience:
 
 ; Sleep-only moves have separate handling, and a higher chance of
 ; being ignored. Lazy monsters like their sleep.
-	call IgnoreSleepOnly
-	ret c
+	;call IgnoreSleepOnly
+	;ret c
 
 ; Another random number from 0 to obedience level + monster level
 .rand2
@@ -873,30 +873,25 @@ BattleCommand_CheckObedience:
 
 	jp EndMoveEffect
 
-IgnoreSleepOnly:
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-
+;IgnoreSleepOnly:
+;	ld a, BATTLE_VARS_MOVE_ANIM
+;	call GetBattleVar
 	; Sleep Talk bypass sleep.
-	cp SLEEP_TALK
-	jr z, .CheckSleep
-	and a
-	ret
-
-.CheckSleep:
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and SLP
-	ret z
-
+;	cp SLEEP_TALK
+;	jr z, .CheckSleep
+;	and a
+;	ret
+;.CheckSleep:
+;	ld a, BATTLE_VARS_STATUS
+;	call GetBattleVar
+;	and SLP
+;	ret z
 ; 'ignored orders…sleeping!'
-	ld hl, IgnoredSleepingText
-	call StdBattleTextbox
-
-	call EndMoveEffect
-
-	scf
-	ret
+;	ld hl, IgnoredSleepingText
+;	call StdBattleTextbox
+;	call EndMoveEffect
+;	scf
+;	ret
 
 BattleCommand_UsedMoveText:
 ; DevNote - Aegislash attack stance change
@@ -4365,6 +4360,25 @@ SapHealth:
 	predef AnimateHPBar
 	call RefreshBattleHuds
 	jp UpdateBattleMonInParty
+
+BattleCommand_FlameOrb:
+	call GetUserItem
+	ld a, b
+	cp HELD_FLAME_ORB
+	ret nz
+	farcall ShouldIgniteFlameOrb
+	ret nc
+    ld hl, FlameOrbText
+	call StdBattleTextbox
+    ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateUserInParty
+	call BattleCommand_SwitchTurn
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
+    ret
 
 BattleCommand_BurnTarget:
 ; burntarget

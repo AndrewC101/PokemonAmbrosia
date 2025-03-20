@@ -49,6 +49,7 @@ SuperLuckPokemon:
     db CHARMANDER
     db CHARMELEON
     db JOLTEON
+    db TAUROS
     db -1
 
 SereneGracePokemon:
@@ -79,6 +80,7 @@ RockHeadPokemon:
 GutsPokemon:
     db STARLY
     db STARAVIA
+    db STARAPTOR
     db RATTATA
     db RATICATE
     db HERACROSS

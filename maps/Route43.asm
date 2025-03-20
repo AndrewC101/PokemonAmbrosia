@@ -15,6 +15,7 @@
     const ROUTE43_FIELDMON_6
     const ROUTE43_FIELDMON_7
     const ROUTE43_FIELDMON_8
+    const ROUTE43_POKE_BALL_2
 
 Route43_MapScripts:
 	def_scene_scripts
@@ -748,6 +749,9 @@ Route43FieldMon8Script:
 	disappear ROUTE43_FIELDMON_8
 	end
 
+Route43LeafStone:
+    itemball LEAF_STONE
+
 Route43_MapEvents:
 	db 0, 0 ; filler
 
@@ -783,3 +787,4 @@ Route43_MapEvents:
 	object_event 18, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route43FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 24, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 24,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route43FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 25, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43LeafStone, EVENT_ROUTE43_LEAF_STONE

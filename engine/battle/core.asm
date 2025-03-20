@@ -4444,6 +4444,9 @@ SwitchInEffects:
 	ld [wFailedMessage], a
 	ld [wEffectFailed], a
 	ld [wAttackMissed], a
+
+	farcall BattleCommand_FlameOrb
+
     call GetCurrentMonCore
 ; DevNote - abilities that activate on switching in
     cp KYOGRE

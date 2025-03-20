@@ -234,6 +234,8 @@ ChucksWifeEasierToFlyText:
 ChucksWifeGiveHMText:
 	text "You beat CHUNK!"
 
+	para "I mean CHUCK..."
+
 	para "I hope that"
 	line "humbles him a"
 	cont "little."

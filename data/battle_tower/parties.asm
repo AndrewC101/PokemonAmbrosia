@@ -1332,7 +1332,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db CONKELDURR
-	db LEFTOVERS
+	db FLAME_ORB
 	db BULK_UP, DRAIN_PUNCH, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -1672,7 +1672,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db STARAPTOR
-	db LIFE_ORB
+	db FLAME_ORB
 	db FLY, DOUBLE_EDGE, EXTREMESPEED, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -1802,7 +1802,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db HERACROSS
-	db BLACKBELT_I
+	db FLAME_ORB
 	db X_SCISSOR, DRAIN_PUNCH, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -2690,7 +2690,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db STARAPTOR
-	db LIFE_ORB
+	db FLAME_ORB
 	db BRAVE_BIRD, CLOSE_COMBAT, EXTREMESPEED, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -4020,7 +4020,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db STARAPTOR
-	db LIFE_ORB
+	db FLAME_ORB
 	db BRAVE_BIRD, CLOSE_COMBAT, EXTREMESPEED, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -5116,7 +5116,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db MACHAMP
-	db QUICK_CLAW
+	db FLAME_ORB
 	db DYNAMICPUNCH, ICE_PUNCH, SHADOW_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -5584,7 +5584,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CONKELDURR
-	db LEFTOVERS
+	db FLAME_ORB
 	db DRAIN_PUNCH, MACH_PUNCH, SHADOW_PUNCH, BULK_UP
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -5922,7 +5922,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db URSALUNA
-	db LEFTOVERS
+	db FLAME_ORB
 	db DOUBLE_EDGE, EARTHQUAKE, BULK_UP, MOONLIGHT
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -6182,7 +6182,7 @@ BattleTowerMons:
 ;	db "RANTA-N@@@@"
 
 	db STARAPTOR
-	db LIFE_ORB
+	db FLAME_ORB
 	db BRAVE_BIRD, CLOSE_COMBAT, EXTREMESPEED, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp

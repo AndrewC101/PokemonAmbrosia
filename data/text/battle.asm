@@ -669,6 +669,11 @@ AttackModeText:
     line "Attack stance"
     prompt
 
+FlameOrbText:
+    text "FLAME ORB"
+    line "ignites!"
+    prompt
+
 CriticalHitText:
 	text "A critical hit!"
 	prompt

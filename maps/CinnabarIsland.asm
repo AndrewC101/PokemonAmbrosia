@@ -171,6 +171,9 @@ Movement_CinnabarTurnBack:
 	step DOWN
 	step_end
 
+CinnabarFlameOrb:
+    itemball FLAME_ORB
+
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler
 
@@ -189,3 +192,4 @@ CinnabarIsland_MapEvents:
 
 	def_object_events
 	object_event  9,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event  5,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CinnabarFlameOrb, EVENT_CINNABAR_FLAME_ORB

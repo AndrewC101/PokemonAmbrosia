@@ -103,6 +103,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_HOLY_CROWN
 	const HELD_WISE_GLASSES
 	const HELD_CHOICE_SPECS
+	const HELD_FLAME_ORB
 
 	const_next 50
 	const HELD_NORMAL_BOOST

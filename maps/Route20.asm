@@ -99,7 +99,7 @@ Route20FieldMon7Script:
 
 Route20FieldMon8Script:
 	faceplayer
-	cry LAPRAS
+	cry DRACOVISH
 	pause 15
 	loadwildmon DRACOVISH, 50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY

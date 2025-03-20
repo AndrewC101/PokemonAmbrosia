@@ -13,6 +13,7 @@
     const ROUTE44_FIELDMON_6
     const ROUTE44_FIELDMON_7
     const ROUTE44_FIELDMON_8
+    const ROUTE44_POKEBALL_2
 
 Route44_MapScripts:
 	def_scene_scripts
@@ -334,7 +335,7 @@ Route44FruitTree:
 	fruittree FRUITTREE_ROUTE_44
 
 Route44LifeOrb:
-	itemball LIFE_ORB
+	itemball FLAME_ORB
 
 Route44HiddenAmbrosia:
 	hiddenitem LUCKY_EGG, EVENT_ROUTE_44_HIDDEN_LUCKY_EGG
@@ -625,6 +626,9 @@ VanceEncounterScript:
     sjump TrainerBirdKeeperVance1
     setmapscene ROUTE_44, SCENE_FINISHED
 
+Route44WaterStone:
+    itemball WATER_STONE
+
 Route44_MapEvents:
 	db 0, 0 ; filler
 
@@ -655,3 +659,4 @@ Route44_MapEvents:
 	object_event 37,  9, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route44FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 51,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route44FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 35,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route44FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 23,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44WaterStone, EVENT_ROUTE44_WATER_STONE

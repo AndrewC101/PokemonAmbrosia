@@ -105,7 +105,7 @@ HikerPhillipAfterBattleText:
 
 HikerLeonardSeenText:
 	text "My brother went"
-	line "into ROCKY TUNNEL"
+	line "into ROCK TUNNEL"
 	cont "in KANTO."
 
 	para "He never came"
@@ -146,7 +146,7 @@ PokemaniacAndrewAfterBattleText:
 	done
 
 PokemaniacCalvinSeenText:
-	text "I just barley"
+	text "I just barely"
 	line "escaped."
 
 	para "There is a sea"

@@ -245,7 +245,7 @@ VioletPokecenterElmsAideGiveEggText:
 	line "FAIRY #MON"
 	cont "it may need to"
 	cont "form a strong bond"
-	cont "with it's trainer"
+	cont "with its trainer"
 	cont "to obtain its"
 	cont "full power."
 

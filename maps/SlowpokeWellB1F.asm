@@ -170,7 +170,7 @@ SlowpokeWellB1FKurtText:
 
 	para "Use your rage."
 
-	para "seize upon your"
+	para "Seize upon your"
 	line "hate..."
 
 	para "Free the dear"

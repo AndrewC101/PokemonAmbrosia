@@ -195,7 +195,7 @@ SwimmermGeorgeSeenText:
 	line "#MON ya"
 	cont "got der."
 
-	para "get you off"
+	para "Get you off"
 	line "now."
 	done
 
@@ -368,7 +368,7 @@ SwimmerfDeniseSeenText:
 	para "I will use my"
 	line "ninja jutsu"
 	cont "to slip under"
-	cont "these"
+	cont "these."
 	done
 
 SwimmerfDeniseBeatenText:

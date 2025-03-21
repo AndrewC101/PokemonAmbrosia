@@ -301,7 +301,7 @@ SupernerdTomSeenText:
     cont "strategies."
 
     para "I have wiped out"
-    line "may a noob with"
+    line "many a noob with"
     cont "this."
 	done
 

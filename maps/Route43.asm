@@ -378,7 +378,7 @@ TiffanyNumberAcceptedText:
 	cont "surviving is to"
 	cont "run away."
 	para "Never go with them"
-	line "no mater what."
+	line "no matter what."
 	para "Be careful out"
 	line "there."
 	done
@@ -472,7 +472,7 @@ InvaderPatchesSeenText:
 	line "looking for"
 	cont "treasure!"
 
-	para "The is a rare"
+	para "There is a rare"
 	line "treasure just"
 	cont "ahead."
 

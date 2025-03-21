@@ -39,7 +39,7 @@ HoohLugiaBlockScript:
 
 HoohLugiaBlockText:
     text "Only those who"
-    line "who have mastered"
+    line "have mastered"
     cont "the powers of"
     cont "fire and wind."
 
@@ -68,7 +68,7 @@ GroudonKyogreBlockScript:
 
 GroudonKyogreBlockText:
     text "Only those who"
-    line "who have mastered"
+    line "have mastered"
     cont "the powers of"
     cont "earth and water."
 
@@ -97,7 +97,7 @@ PalkiaDialgaBlockScript:
 
 PalkiaDialgaBlockText:
     text "Only those who"
-    line "who have mastered"
+    line "have mastered"
     cont "the powers of"
     cont "space and time."
 
@@ -126,7 +126,7 @@ RayquazaGiratinaBlockScript:
 
 RayquazaGiratinaBlockText:
     text "Only those who"
-    line "who have mastered"
+    line "have mastered"
     cont "the powers of"
     cont "good and evil."
 
@@ -155,7 +155,7 @@ XerneasYveltalBlockScript:
 
 XerneasYveltalBlockText:
     text "Only those who"
-    line "who have mastered"
+    line "have mastered"
     cont "the powers of"
     cont "life and death."
 

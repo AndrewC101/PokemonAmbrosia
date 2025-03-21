@@ -64,25 +64,21 @@ CeladonAndrewWinsText:
 CeladonAndrewBeatenText:
     text "Oh very good!"
 
-    para "really well done!"
+    para "Really well done!"
 
     para "You totally did"
     line "that legit."
 
-    para "No gameshark"
+    para "No Gameshark"
     line "codes required!"
 
     para "Yeah I know"
     line "what you are"
-    cont "doing."
+    cont "doing with"
+    cont "that DITTO."
 
     para "I applaud your"
     line "initiative."
-
-    para "But this text is"
-    line "the only cool"
-    cont "easter egg you"
-    cont "will get."
     done
 
 CeladonAndrewAfterBattleText:

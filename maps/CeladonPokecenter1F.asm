@@ -90,7 +90,7 @@ Eusine2WinAfterBattleText:
 Eusine2SeenText:
     text "Hi <PLAYER>!"
 
-    para "I'm vising my"
+    para "I'm visiting my"
     line "home town and"
     cont "seeing my family."
 

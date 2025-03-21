@@ -518,9 +518,8 @@ SilverCaveCrystalFriendshipText:
     para "<RIVAL> was"
     line "expressing his"
     cont "appreciation for"
-    cont "you in his"
-    cont "usual charismatic"
-    cont "way."
+    cont "you in his usual"
+    cont "charismatic way."
 
     para "Then I got right"
     line "up in his face"
@@ -669,8 +668,7 @@ SilverCaveCrystalGoodbyeText:
     para "<PLAYER>..."
 
     para "I want to thank"
-    line "you for saving"
-    cont "me."
+    line "you for saving me"
 
     para "And my family."
 

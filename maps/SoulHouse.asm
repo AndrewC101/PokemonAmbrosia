@@ -26,9 +26,9 @@ MrFujiText:
 	text "Welcome child."
 
 	para "In this hallowed"
-	line "place are layed"
+	line "place are laid"
 	cont "to rest the souls"
-	cont "many a #MON."
+	cont "of many a #MON."
 
 	para "They were close"
 	line "friends, and"

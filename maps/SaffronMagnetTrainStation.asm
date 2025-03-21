@@ -157,7 +157,7 @@ SaffronMagnetTrainStationOfficerArrivedInSaffronText:
 	done
 
 SaffronMagnetTrainStationGymGuideText:
-	text "Oh excuses me did"
+	text "Oh excuse me did"
 	line "I get in your way?"
 	para "Apologies."
 	done

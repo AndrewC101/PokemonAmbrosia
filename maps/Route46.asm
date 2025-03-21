@@ -23,6 +23,7 @@ Route46_MapScripts:
     appear ROUTE46_FIELDMON_2
     appear ROUTE46_FIELDMON_3
     appear ROUTE46_FIELDMON_5
+    appear ROUTE46_FIELDMON_6
 
     random 5
     ifequal 1, .spawn
@@ -321,7 +322,7 @@ PicnickerErinAfterBattleText:
 
 	para "Um..."
 
-	para "Whats your"
+	para "What's your"
 	line "favorite..."
 
 	para "#MON?"

@@ -832,7 +832,7 @@ YuGiOhHenshin2Text:
 
     para "You are horrified"
     line "by the immense"
-    cont "power of YAMIs"
+    cont "power of ATEM's"
     cont "cards."
 
     para "SETO lies on"
@@ -867,7 +867,7 @@ YuGiOhHenshin3Text:
 
     para "ATEM triumphs."
 
-    para "YAMIS monsters"
+    para "ATEM's monsters"
     line "banish HENSHIN"
     cont "to the shadow"
     cont "realm."
@@ -1065,7 +1065,7 @@ YuGiOhRolePlayYamiSetoText:
 
     para "ATEM triumphs."
 
-    para "YAMIS monsters"
+    para "ATEM's monsters"
     line "banish HENSHIN"
     cont "to the shadow"
     cont "realm."
@@ -1080,7 +1080,7 @@ YuGiOhRolePlayYamiSetoText:
     cont "state."
 
     para "SETO retrieves"
-    line "YAMIs God cards."
+    line "ATEM's God cards."
 
     para "And uses their"
     line "power to heal"

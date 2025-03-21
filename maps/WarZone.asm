@@ -447,7 +447,7 @@ WallaceAfterBattleText2:
     line "HOENN have"
     cont "rejected your"
     cont "brand of weak"
-    cont "passivism"
+    cont "passivism."
 
     para "They believe in"
     line "my vision of a"
@@ -853,7 +853,7 @@ LeonAfterBattleText:
     text "You are a worthy"
     line "CHAMPION."
 
-    para "Unlike DYANTHIA"
+    para "Unlike DYANTHA"
     line "and ALDER."
 
     para "Both too busy"
@@ -878,7 +878,7 @@ Soldier1SeenText:
     cont "HOENNs most elite"
     cont "soldiers."
     para "Your hubris will"
-    line "Get you killed."
+    line "get you killed."
     done
 Soldier1BeatenText:
     text "You are too late."
@@ -1188,7 +1188,7 @@ WarZoneBlueText:
     cont "LEAGUE."
 
     para "I will argue that"
-    line "The CHAMPIONs"
+    line "the CHAMPIONs"
     cont "should be exempt"
     cont "from political"
     cont "neutrality."
@@ -1262,7 +1262,7 @@ InvaderOroboroSeenText:
 
 InvaderOroboroVictoryText:
 	text "Hahahaha!"
-	line "get recked dude"
+	line "Get recked dude"
 	done
 
 InvaderOroboroBeatenText:

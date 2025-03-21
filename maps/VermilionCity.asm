@@ -188,7 +188,7 @@ VermilionMachopOwnerText:
 	cont "when you're"
 	cont "young."
 
-	para "Give me 100000"
+	para "Give me ¥100000"
 	line "and I'll give"
 	cont "back 10 times"
 	cont "that in 10 years."

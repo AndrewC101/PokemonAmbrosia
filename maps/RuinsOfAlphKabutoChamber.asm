@@ -155,7 +155,7 @@ RuinsOfAlphKabutoChamberReceptionistText:
 	para "a #MON drawn by"
 	line "the ancients."
 
-	para "But their not in"
+	para "But they're not in"
 	line "the right order."
 
 	para "This puzzle has"

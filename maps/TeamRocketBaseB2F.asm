@@ -1125,7 +1125,7 @@ LanceHealsText2:
 	line "and continue our"
 	cont "assault!"
 
-	para "Stay visualant."
+	para "Stay vigilant."
 	done
 
 GruntM19SeenText:

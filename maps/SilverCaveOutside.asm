@@ -668,7 +668,7 @@ SilverCaveCrystalGoodbyeText:
     para "<PLAYER>..."
 
     para "I want to thank"
-    line "you for saving me"
+    line "you for saving me."
 
     para "And my family."
 

@@ -237,7 +237,9 @@ CherrygroveTeacherScript:
     writetext CherrygroveTeacherGiveDollText
     waitbutton
     verbosegiveitem POKE_DOLL
+    iffalse .end
     setevent EVENT_CHERRYGROVE_POKEDOLL
+.end
     closetext
     end
 
@@ -713,10 +715,11 @@ EvilOldManScript:
 	iftrue .finish
 	waitbutton
 	writetext takeLifeOrbText
+	waitbutton
 	verbosegiveitem LIFE_ORB
+	iffalse .finish
 	setevent EVENT_GOT_LIFE_ORB
 .finish
-	waitbutton
 	closetext
 	end
 
@@ -955,6 +958,7 @@ Peasant2Script:
     writetext TakeNuggetText
     waitbutton
     verbosegiveitem FOCUS_SASH
+    iffalse .end
     setevent EVENT_GOT_JULIUS_NUGGET
 .end
     closetext

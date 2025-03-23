@@ -29,9 +29,11 @@ CeladonMansionRoofHouseAndrewScript:
 	writetext CeladonAndrewAfterBattleText
 	waitbutton
 	verbosegiveitem AMBROSIA
+	iffalse .end
 .noBattle
 	writetext CeladonAndrewFinalText
 	waitbutton
+.end
 	closetext
 	end
 

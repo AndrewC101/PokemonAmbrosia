@@ -499,7 +499,7 @@ FisherRalphAfterText:
 	done
 
 FisherHenrySeenText:
-	text "I have it good"
+	text "I have it on good"
 	line "authority that you"
 	cont "possess an"
 	cont "affinity for"

@@ -293,7 +293,7 @@ AI_Basic:
 
 .checkFireAbsorb
     cp FIRE
-	jr nz, .checkMonoAttack
+	jr nz, .checkKO
 	ld a, [wBattleMonSpecies]
 	push hl
 	push de
@@ -311,37 +311,36 @@ AI_Basic:
 ;	bit SCREENS_SAFEGUARD, a
 ;	jr z, .discourage
 
-.checkMonoAttack
+;.checkMonoAttack
 ; switch if current move is common mon-attacking move and it is are out of pp
 ; note - this will be blocked by other logic in AI_TrySwitch if the mon has set up, which it probably has
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-    cp PSYBLAST
-    jr z, .checkPP
-    cp DRACO_METEOR
-    jr z, .checkPP
-    cp DRAGON_PULSE
-    jr z, .checkPP
-    cp MOON_BLAST
-    jr z, .checkPP
-    jr .checkKO
-.checkPP
-    push hl
-    push bc
-    ld hl, wEnemyMonPP
-    ld a, [wCurEnemyMoveNum]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	pop bc
-	pop hl
-	jp nz, .checkKO
-
+;	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+;    cp PSYBLAST
+;    jr z, .checkPP
+;    cp DRACO_METEOR
+;    jr z, .checkPP
+;    cp DRAGON_PULSE
+;    jr z, .checkPP
+;    cp MOON_BLAST
+;    jr z, .checkPP
+;    jr .checkKO
+;.checkPP
+;    push hl
+;    push bc
+;    ld hl, wEnemyMonPP
+;    ld a, [wCurEnemyMoveNum]
+;	ld c, a
+;	ld b, 0
+;	add hl, bc
+;	ld a, [hl]
+;	and PP_MASK
+;	pop bc
+;	pop hl
+;	jp nz, .checkKO
 ; switch since pp is 0
-    ld a, $1
-    ld [wEnemyIsSwitching], a
-	ret
+;    ld a, $1
+;    ld [wEnemyIsSwitching], a
+;	ret
 
 ; Greatly encourage a move if it will KO the player
 ; skip if enemy is slower and weakened and has priority

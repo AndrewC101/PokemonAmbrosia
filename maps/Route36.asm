@@ -33,10 +33,17 @@ Route36_MapScripts:
 
 .ArthurCallback:
 ; Pokemon which always appear
-    appear ROUTE36_FIELDMON_3
     appear ROUTE36_FIELDMON_6
     disappear ROUTE36_CRYSTAL
 
+    random 5
+    ifequal 1, .spawnShiny
+    disappear ROUTE36_FIELDMON_3
+    sjump .mon4
+.spawnShiny
+    appear ROUTE36_FIELDMON_3
+
+.mon4
     random 2
     ifequal 1, .spawn4
     disappear ROUTE36_FIELDMON_4
@@ -689,9 +696,10 @@ Route36PokemonAttacksText:
 
 Route36FieldMon3Script:
 	faceplayer
-	cry HOUNDOUR
+	cry ZUBAT
 	pause 15
-	loadwildmon HOUNDOUR, 22
+	loadwildmon ZUBAT, 14
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -910,7 +918,7 @@ Route36_MapEvents:
 	
 	object_event 10,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 17,  3, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route36FieldMon2Script, EVENT_FIELD_MON_2
-	object_event 17,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 48,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route36FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 31,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 26,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route36FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 16, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6

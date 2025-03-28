@@ -443,9 +443,8 @@ PicnickerKimSeenText:
 	done
 
 PicnickerKimBeatenText:
-	text "Punch them in"
-	line "the face"
-	cont "LOPUNNY!!"
+	text "Devour them"
+	line "MAWILE!!"
 	done
 
 PicnickerKimAfterBattleText:
@@ -455,7 +454,7 @@ PicnickerKimAfterBattleText:
 
 	para "That'll show"
 	line "them how cute"
-	cont "my LOPUNNY is."
+	cont "my MAWILE is."
 	done
 
 BirdKeeperBryanSeenText:

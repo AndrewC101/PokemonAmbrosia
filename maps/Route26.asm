@@ -343,29 +343,27 @@ Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
 CooltrainermJakeSeenText:
-	text "I am a legendary"
-	line "trainer!"
-	para "I have a legendary"
-	line "#MON!"
-	para "Do you have one?"
-	para "I don't think so."
-	para "You don't stand a"
-	line "chance."
+	text "Are your #MON"
+	line "fully evolved?"
+	para "That is your"
+	line "mistake!"
+	para "EVIOLITE is my"
+	line "secret to victory."
 	done
 
 CooltrainermJakeBeatenText:
-	text "But my stats are"
-	line "superior!"
+	text "Is evolution the"
+	line "answer!?"
 	done
 
 CooltrainermJakeAfterBattleText:
-	text "I have no interest"
-	line "in weak ordinary"
-	cont "#MON."
-	para "I'm going to be a"
-	line "legendary trainer"
-	cont "like my hero"
-	cont "TOBIAS."
+	text "I hear CHANSEY and"
+	line "PORYGON2 are the"
+	cont "best users of"
+	cont "EVIOLITE."
+	para "But I don't know"
+	line "how to find either"
+	cont "of them."
 	done
 
 CooltrainermGaven3SeenText:

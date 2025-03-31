@@ -249,11 +249,11 @@
 	const SUNNY_DAY    ; f1
 	const CRUNCH       ; f2
 	const MIRROR_COAT  ; f3
-	const PSYCH_UP     ; f4 can be removed
+	const PSYCH_UP     ; f4 - Not used
 	const EXTREMESPEED ; f5
 	const ANCIENTPOWER ; f6
 	const SHADOW_BALL  ; f7
-	const FUTURE_SIGHT ; f8
+	const FUTURE_SIGHT ; f8 - Not used
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const DRAIN_PUNCH  ; fb

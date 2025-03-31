@@ -112,7 +112,7 @@ ItemDescriptions:
 	dw MiracleBerryDesc
 	dw PearlDesc
 	dw BigPearlDesc
-	dw EverStoneDesc
+	dw EvioliteDesc
 	dw SpellTagDesc
 	dw RageCandyBarDesc
 	dw GSBallDesc
@@ -695,9 +695,9 @@ BigPearlDesc:
 	db   "A big, beautiful"
 	next "pearl. Sell high.@"
 
-EverStoneDesc:
-	db   "Stops evolution."
-	next "(HOLD)@"
+EvioliteDesc:
+	db   "Boosts defenses."
+	next "Stops evolution.@"
 
 SpellTagDesc:
 	db   "Powers up ghost-"

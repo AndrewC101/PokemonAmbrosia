@@ -137,10 +137,10 @@ TechnicianPokemon:
     db SHROOMISH
     db BRELOOM
     db PORYGON
+    db PORYGON2
     db BULBASAUR
     db IVYSAUR
     db MARILL
-
     db -1
 
 MagicGuardPokemon:

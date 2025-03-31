@@ -942,7 +942,6 @@ KadabraEvosAttacks:
 	db 18, DISABLE
 	db 21, PSYBEAM
 	db 26, RECOVER
-	db 30, FUTURE_SIGHT
     db 33, ZEN_HEADBUTT
 	db 38, PSYCHIC_M
 	db 41, CALM_MIND
@@ -956,7 +955,6 @@ AlakazamEvosAttacks:
 	db 18, DISABLE
 	db 21, PSYBEAM
 	db 26, RECOVER
-	db 31, FUTURE_SIGHT
     db 33, ZEN_HEADBUTT
 	db 38, PSYCHIC_M
 	db 40, CALM_MIND
@@ -1584,9 +1582,8 @@ SolosisEvosAttacks:
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
-	db 25, FUTURE_SIGHT
-	db 31, RECOVER
-	db 36, BARRIER
+	db 30, RECOVER
+	db 35, BARRIER
 	db 41, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
@@ -1600,9 +1597,8 @@ DuosionEvosAttacks:
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
-	db 25, FUTURE_SIGHT
 	db 30, RECOVER
-	db 36, BARRIER
+	db 35, BARRIER
 	db 41, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
@@ -1615,9 +1611,8 @@ ReuniclusEvosAttacks:
 	db 16, PSYBEAM
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
-	db 30, FUTURE_SIGHT
-	db 32, RECOVER
-	db 36, BARRIER
+	db 30, RECOVER
+	db 35, BARRIER
 	db 40, PSYCHIC_M
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
@@ -1862,6 +1857,7 @@ ScytherEvosAttacks:
 	db 18, SLASH
 	db 24, WING_ATTACK
     db 31, X_SCISSOR
+    db 40, LEECH_LIFE
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -2060,7 +2056,9 @@ PorygonEvosAttacks:
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
-	db 32, LOCK_ON
+	db 31, SWIFT
+	db 33, FEINT_ATTACK
+	db 36, LOCK_ON
 	db 36, ZAP_CANNON
 	db 41, TRI_ATTACK
 	db 50, AGILITY
@@ -2804,7 +2802,9 @@ PorygonzEvosAttacks:
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
-	db 32, LOCK_ON
+	db 30, SWIFT
+	db 33, FEINT_ATTACK
+	db 36, LOCK_ON
 	db 36, ZAP_CANNON
 	db 40, TRI_ATTACK
 	db 50, AGILITY
@@ -3227,6 +3227,7 @@ ScizorEvosAttacks:
 	db 24, AGILITY
 	db 30, BULLET_PUNCH
 	db 36, X_SCISSOR
+	db 40, LEECH_LIFE
 	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -3523,7 +3524,9 @@ Porygon2EvosAttacks:
 	db 12, PSYBEAM
 	db 20, RECOVER
 	db 24, DEFENSE_CURL
-	db 32, LOCK_ON
+	db 30, SWIFT
+	db 33, FEINT_ATTACK
+	db 36, LOCK_ON
 	db 36, ZAP_CANNON
 	db 41, TRI_ATTACK
 	db 50, AGILITY

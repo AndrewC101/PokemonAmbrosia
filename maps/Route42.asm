@@ -115,10 +115,10 @@ Route42Sign2:
 	jumptext Route42Sign2Text
 
 Route42UltraBall:
-	itemball ULTRA_BALL
+	itemball QUICK_CLAW
 
 Route42SuperPotion:
-	itemball MAX_POTION
+	itemball EVIOLITE
 
 Route42FruitTree1:
 	fruittree FRUITTREE_ROUTE_42_1

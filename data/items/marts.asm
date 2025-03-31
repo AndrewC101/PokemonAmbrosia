@@ -121,7 +121,7 @@ MartGoldenrod3F:
 	db THUNDERSTONE
 	db MOON_STONE
 	db SUN_STONE
-	db EVERSTONE
+	db EVIOLITE
 	db -1 ; end
 
 MartGoldenrod4F:

@@ -56,7 +56,7 @@ BattleTowerMons:
 	db "BURAtuKI-@@"
 
 	db DRATINI
-	db GOLD_BERRY
+	db EVIOLITE
 	db DRAGON_RAGE, THUNDER_WAVE, THUNDERBOLT, ICE_BEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -263,9 +263,9 @@ BattleTowerMons:
     bigdw 63
 	db "PUTERA@@@@@"
 
-	db EXEGGUTOR
-	db LEFTOVERS
-	db PSYCHIC_M, GIGA_DRAIN, LEECH_SEED, HYPNOSIS
+	db SCYTHER
+	db EVIOLITE
+	db WING_ATTACK, X_SCISSOR, QUICK_ATTACK, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -275,18 +275,18 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 15, 10, 20 ; PP
+	db 30, 15, 30, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 23 ; Level
 	db 0, 0 ; Status
-	bigdw 98
-    bigdw 98
-    bigdw 70
-    bigdw 65
+    bigdw 86
+    bigdw 86
+    bigdw 76
+    bigdw 63
+    bigdw 74
     bigdw 51
-    bigdw 83
-    bigdw 56
+    bigdw 63
 	db "HAPINASU@@@"
 
 	db STARMIE
@@ -445,9 +445,9 @@ BattleTowerMons:
     bigdw 79
 	db "MIRUTANKU@@"
 
-	db WHIMSICOTT
-	db LEFTOVERS
-	db STUN_SPORE, LEECH_SEED, CONFUSE_RAY, DRAIN_KISS
+	db MURKROW
+	db EVIOLITE
+	db NIGHT_SHADE, CONFUSE_RAY, FLASH, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -457,18 +457,18 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 10, 10, 20 ; PP
+	db 15, 10, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
 	db 0, 0 ; Status
-	bigdw 78
     bigdw 78
-    bigdw 54
-    bigdw 62
-    bigdw 76
-    bigdw 59
-    bigdw 58
+    bigdw 78
+    bigdw 60
+    bigdw 43
+    bigdw 65
+    bigdw 60
+    bigdw 43
 	db "PUKURIN@@@@"
 
 	db CLOYSTER
@@ -809,8 +809,8 @@ BattleTowerMons:
     bigdw 79
 	db "RIBBON@@@@@"
 
-	db CROBAT
-	db BRIGHTPOWDER
+	db GOLBAT
+	db EVIOLITE
 	db ROOST, CONFUSE_RAY, FLY, TOXIC
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -826,17 +826,17 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
 	db 0, 0 ; Status
-	bigdw 86
-    bigdw 86
+    bigdw 82
+    bigdw 82
+    bigdw 58
+    bigdw 53
     bigdw 62
     bigdw 58
-    bigdw 79
-    bigdw 53
-    bigdw 58
+    bigdw 56
 	db "GARAGARA@@@"
 
 	db MARSHTOMP
-	db MUSCLE_BAND
+	db EVIOLITE
 	db WATERFALL, ICE_PUNCH, DIG, HEADBUTT
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -2977,7 +2977,7 @@ BattleTowerMons:
 
     db SCIZOR
 	db LEFTOVERS
-	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROOST
+	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3343,7 +3343,7 @@ BattleTowerMons:
 
     db SCIZOR
 	db LEFTOVERS
-	db SWORDS_DANCE, BULLET_PUNCH, X_SCISSOR, ROOST
+	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROCK_SMASH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4831,7 +4831,7 @@ BattleTowerMons:
 
     db SCIZOR
 	db METAL_COAT
-	db BULLET_PUNCH, X_SCISSOR, SWORDS_DANCE, ROOST
+	db BULLET_PUNCH, LEECH_LIFE, SWORDS_DANCE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5973,9 +5973,9 @@ BattleTowerMons:
     bigdw 228
 	db "RANTA-N@@@@"
 
-	db REUNICLUS
-	db LEFTOVERS
-	db PSYCHIC_M, AURA_SPHERE, CALM_MIND, RECOVER
+	db PORYGON2
+	db EVIOLITE
+	db SWIFT, SHADOW_BALL, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5985,18 +5985,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 32, 24, 10 ; PP
+	db 32, 24, 24, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 423 ; HP
-	bigdw 423 ; Max HP
-	bigdw 228 ; Atk
-	bigdw 248 ; Def
-	bigdw 158 ; Spd
-	bigdw 348 ; SAtk
-	bigdw 268 ; SDef
+    bigdw 373
+    bigdw 373
+    bigdw 258
+    bigdw 278
+    bigdw 218
+    bigdw 298
+    bigdw 288
 	db "RANTA-N@@@@"
 
 	db GARDEVOIR

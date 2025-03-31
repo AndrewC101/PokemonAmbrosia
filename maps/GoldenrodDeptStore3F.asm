@@ -53,8 +53,15 @@ GoldenrodDeptStore3FRockerText:
 	line "evolve in two ways"
 	cont "with a SUN STONE"
 	cont "or MOON STONE."
-	para "Which should I"
-	line "pick?"
+
+	para "Or I could give it"
+	line "an EVIOLITE which"
+	cont "would boost its"
+	cont "defenses but"
+	cont "prevent it from"
+	cont "evolving."
+
+	para "What do I do!?"
 	done
 
 GoldenrodDeptStore3FDirectoryText:

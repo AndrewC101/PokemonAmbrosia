@@ -1023,8 +1023,8 @@ SludgeBombDescription:
 	line "poison the foe.@"
 
 AvalancheDescription:
-	db   "Crush foe with"
-	line "ice boulders.@"
+	db   "An attack that may"
+	line "freeze the foe.@"
 
 FlareBlitzDescription:
 	db   "An attack that al-"

@@ -89,7 +89,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_PREVENT_CONFUSE
 
 	const_next 30
-	const HELD_30
+	const HELD_EVIOLITE
 	const HELD_ATTACK_UP
 	const HELD_DEFENSE_UP
 	const HELD_SPEED_UP

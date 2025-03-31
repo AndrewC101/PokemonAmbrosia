@@ -5,5 +5,6 @@
 	next "work together to"
 	next "pull down planes."
 
-	page "Can not be KOd"
-	next "from full HP.@"
+	page "ZAP CANNON"
+	next "hits. Immune"
+	next "to OHKO.@"

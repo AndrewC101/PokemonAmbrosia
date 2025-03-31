@@ -117,7 +117,7 @@
 	const MIRACLEBERRY ; 6d
 	const PEARL        ; 6e
 	const BIG_PEARL    ; 6f
-	const EVERSTONE    ; 70
+	const EVIOLITE    ; 70
 	const SPELL_TAG    ; 71
 	const RAGECANDYBAR ; 72
 	const GS_BALL      ; 73

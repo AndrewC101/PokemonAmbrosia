@@ -112,7 +112,7 @@ ItemNames::
 	li "MIRACLEBERRY"
 	li "PEARL"
 	li "BIG PEARL"
-	li "EVERSTONE"
+	li "EVIOLITE"
 	li "SPELL TAG"
 	li "RAGECANDYBAR"
 	li "GS BALL"

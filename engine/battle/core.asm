@@ -273,7 +273,7 @@ HandleBetweenTurnEffects:
 	jr z, .CheckEnemyFirst
 	call CheckFaint_PlayerThenEnemy
 	ret c
-	call HandleFutureSight
+	;call HandleFutureSight
 	call CheckFaint_PlayerThenEnemy
 	ret c
 	call HandleWeather
@@ -291,7 +291,7 @@ HandleBetweenTurnEffects:
 .CheckEnemyFirst:
 	call CheckFaint_EnemyThenPlayer
 	ret c
-	call HandleFutureSight
+	;call HandleFutureSight
 	call CheckFaint_EnemyThenPlayer
 	ret c
 	call HandleWeather
@@ -1800,63 +1800,63 @@ HandleLeftovers:
 ;	ld hl, BattleText_UserRecoveredPPUsing
 ;	jp StdBattleTextbox
 
-HandleFutureSight:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .enemy_first
-	call SetPlayerTurn
-	call .do_it
-	call SetEnemyTurn
-	jp .do_it
+;HandleFutureSight:
+;	ldh a, [hSerialConnectionStatus]
+;	cp USING_EXTERNAL_CLOCK
+;	jr z, .enemy_first
+;	call SetPlayerTurn
+;	call .do_it
+;	call SetEnemyTurn
+;	jp .do_it
 
-.enemy_first
-	call SetEnemyTurn
-	call .do_it
-	call SetPlayerTurn
+;.enemy_first
+;	call SetEnemyTurn
+;	call .do_it
+;	call SetPlayerTurn
 
-.do_it
-	ld hl, wPlayerFutureSightCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .okay
-	ld hl, wEnemyFutureSightCount
+;.do_it
+;	ld hl, wPlayerFutureSightCount
+;	ldh a, [hBattleTurn]
+;	and a
+;	jr z, .okay
+;	ld hl, wEnemyFutureSightCount
 
-.okay
-	ld a, [hl]
-	and a
-	ret z
-	dec a
-	ld [hl], a
-	cp $1
-	ret nz
+;.okay
+;	ld a, [hl]
+;	and a
+;	ret z
+;	dec a
+;	ld [hl], a
+;	cp $1
+;	ret nz
 
-	ld hl, BattleText_TargetWasHitByFutureSight
-	call StdBattleTextbox
+;	ld hl, BattleText_TargetWasHitByFutureSight
+;	call StdBattleTextbox
 
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	push af
-	ld a, FUTURE_SIGHT
-	ld [hl], a
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVarAddr
+;	push af
+;	ld a, FUTURE_SIGHT
+;	ld [hl], a
 
-	callfar UpdateMoveData
-	xor a
-	ld [wAttackMissed], a
-	ld [wAlreadyDisobeyed], a
-	ld a, EFFECTIVE
-	ld [wTypeModifier], a
-	callfar DoMove
-	xor a
-	ld [wCurDamage], a
-	ld [wCurDamage + 1], a
+;	callfar UpdateMoveData
+;	xor a
+;	ld [wAttackMissed], a
+;	ld [wAlreadyDisobeyed], a
+;	ld a, EFFECTIVE
+;	ld [wTypeModifier], a
+;	callfar DoMove
+;	xor a
+;	ld [wCurDamage], a
+;	ld [wCurDamage + 1], a
 
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	pop af
-	ld [hl], a
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVarAddr
+;	pop af
+;	ld [hl], a
 
-	call UpdateBattleMonInParty
-	jp UpdateEnemyMonInParty
+;	call UpdateBattleMonInParty
+;	jp UpdateEnemyMonInParty
 
 HandleDefrost:
 	ldh a, [hSerialConnectionStatus]
@@ -2527,6 +2527,9 @@ ApplyExperienceAfterEnemyCaught:
     call BoostExp
     jr .continue
 .noUpgrade
+    ld a, [wHallOfFameCount]
+    and a
+    jr nz, .continue
     srl [hl] ; halve exp
 .continue
 	ld a, [wBattleParticipantsNotFainted]
@@ -4477,8 +4480,6 @@ SwitchInEffects:
     jp z, .spAtkUp
 
     cp SUICUNE
-    jp z, .defUp
-    cp PORYGON2
     jp z, .defUp
     cp SHELLDER
     jp z, .defUp

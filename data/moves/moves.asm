@@ -200,7 +200,7 @@ Moves: ; 41afb
 	move BOLT_BREAK,   EFFECT_NORMAL_HIT,        150, ELECTRIC,      PHYSICAL, 100,  5,   0
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 15,  30
-	move AVALANCHE,    EFFECT_NORMAL_HIT,        100, ICE,           PHYSICAL, 100, 10,   0
+	move AVALANCHE,    EFFECT_FREEZE_HIT,        100, ICE,           PHYSICAL, 100, 10,  10
 	move FLARE_BLITZ,  EFFECT_RECOIL_HIT,        120, FIRE,          PHYSICAL, 100, 15,   0
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0
 	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50, 10, 100

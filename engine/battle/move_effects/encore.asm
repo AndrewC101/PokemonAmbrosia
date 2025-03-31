@@ -21,8 +21,6 @@ BattleCommand_Encore:
 	jp z, .failed
 	cp ENCORE
 	jp z, .failed
-	cp MIRROR_MOVE
-	jp z, .failed ; if the move is any of these encore fails
 	ld b, a ; b is the last move
 
 .got_move

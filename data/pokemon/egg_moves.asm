@@ -125,11 +125,7 @@ MeowthEggMoves:
 
 SnoverEggMoves:
 	db ICE_BEAM
-	db HYPNOSIS
-	db PSYBEAM
 	db LIGHT_SCREEN
-	db FUTURE_SIGHT
-	db PSYCHIC_M
 	db -1 ; end
 
 ShroomishEggMoves:
@@ -200,12 +196,10 @@ PonytaEggMoves:
 SlowpokeEggMoves:
 	db SAFEGUARD
 	db BELLY_DRUM
-	db FUTURE_SIGHT
 	db STOMP
 	db -1 ; end
 
 MamoswineEggMoves:
-	db MIRROR_MOVE
 	db QUICK_ATTACK
 	db FLAIL
 	db -1 ; end
@@ -317,7 +311,6 @@ MagmortarEggMoves:
 	db -1 ; end
 
 MrMimeEggMoves:
-	db FUTURE_SIGHT
 	db HYPNOSIS
 	db MIMIC
 	db -1 ; end
@@ -407,7 +400,6 @@ RioluEggMoves:
 	db -1 ; end
 
 HoothootEggMoves:
-	db MIRROR_MOVE
 	db SUPERSONIC
 	db NIGHT_SLASH
 	db WING_ATTACK
@@ -441,9 +433,7 @@ LitwickEggMoves:
 	db -1 ; end
 
 TogepiEggMoves:
-	db MIRROR_MOVE
 	db PECK
-	db FUTURE_SIGHT
 	db -1 ; end
 
 TogekissEggMoves:
@@ -465,7 +455,6 @@ MareepEggMoves:
 MarillEggMoves:
 	db LIGHT_SCREEN
 	db AMNESIA
-	db FUTURE_SIGHT
 	db BELLY_DRUM
 	db PERISH_SONG
 	db PLAY_ROUGH
@@ -497,7 +486,6 @@ MurkrowEggMoves:
 	db WHIRLWIND
 	db DRILL_PECK
 	db QUICK_ATTACK
-	db MIRROR_MOVE
 	db WING_ATTACK
 	db -1 ; end
 

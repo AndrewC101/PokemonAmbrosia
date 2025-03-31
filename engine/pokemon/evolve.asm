@@ -390,7 +390,7 @@ IsMonHoldingEverstone:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld a, [hl]
-	cp EVERSTONE
+	cp EVIOLITE
 	pop hl
 	ret
 

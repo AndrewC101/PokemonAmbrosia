@@ -1702,6 +1702,8 @@ BattleCommand_CheckHit:
     call GetCurrentMon
 	cp MACHAMP
 	ret z
+	cp MACHOKE
+	ret z
 .notDynamicPunch
 
 ; DevNote - make Zap Cannon always hit for Magnezone
@@ -1711,6 +1713,8 @@ BattleCommand_CheckHit:
 	jr nz, .notZapCannon
     call GetCurrentMon
 	cp MAGNEZONE
+	ret z
+	cp MAGNETON
 	ret z
 .notZapCannon
 
@@ -2649,6 +2653,64 @@ EndMoveEffect:
 	ld [hl], a
 	ret
 
+UnevolvedEviolite:
+; get the defender's species
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .got_species
+	ld a, [wTempEnemyMonSpecies]
+
+.got_species
+; check if the defender has any evolutions
+; hl := EvosAttacksPointers + (species - 1) * 2
+	dec a
+	push hl
+	push bc
+	ld c, a
+	ld b, 0
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+; hl := the species' entry from EvosAttacksPointers
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarWord
+; a := the first byte of the species' *EvosAttacks data
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+; if a == 0, there are no evolutions, so don't boost stats
+	and a
+	pop bc
+	pop hl
+	ret z
+
+; check if the defender's item is Eviolite
+	push bc
+	call GetOpponentItem
+	ld a, b
+	cp HELD_EVIOLITE
+	pop bc
+	ret nz
+
+; boost the relevant defense stat in bc by 50%
+	ld a, c
+	srl a
+	add c
+	ld c, a
+	ret nc
+
+	srl b
+	ld a, b
+	and a
+	jr nz, .done
+	inc b
+.done
+	scf
+	rr c
+	ret
+
 ;DittoMetalPowder:
 ;	ld a, MON_SPECIES
 ;	call BattlePartyAttr
@@ -2791,7 +2853,7 @@ PlayerAttackDamage:
 
 	ld a, [wBattleMonLevel]
 	ld e, a
-	;call DittoMetalPowder
+	call UnevolvedEviolite
 
 	ld a, 1
 	and a
@@ -3056,6 +3118,8 @@ EnemyAttackDamage:
 	call TruncateHL_BC
 	ld a, [wEnemyMonLevel]
 	ld e, a
+	call UnevolvedEviolite
+
 	ld a, 1
 	and a
 	ret
@@ -4377,6 +4441,9 @@ BattleCommand_FlameOrb:
 	call BattleCommand_SwitchTurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
+	ld de, ANIM_BRN
+	call PlayOpponentBattleAnim
+	call RefreshBattleHuds
 	call BattleCommand_SwitchTurn
     ret
 
@@ -6841,7 +6908,7 @@ CheckSubstituteOpp:
 
 INCLUDE "engine/battle/move_effects/selfdestruct.asm"
 
-INCLUDE "engine/battle/move_effects/mirror_move.asm"
+INCLUDE "engine/battle/move_effects/mirror_move.asm" ; not used
 
 INCLUDE "engine/battle/move_effects/metronome.asm"
 

@@ -964,7 +964,7 @@ ManorFact6Text:
 
 ManorFact7Text:
 	text "This romhack took"
-	line "nearly 3 years and"
+	line "over 3 years and"
 	cont "900 commits to"
 	cont "create."
 	para "I had my first"

@@ -126,7 +126,7 @@ ItemEffects:
 	dw StatusHealingEffect ; MIRACLEBERRY
 	dw NoEffect            ; PEARL
 	dw NoEffect            ; BIG_PEARL
-	dw NoEffect            ; EVERSTONE
+	dw NoEffect            ; EVIOLITE
 	dw NoEffect            ; SPELL_TAG
 	dw RestoreHPEffect     ; RAGECANDYBAR
 	dw NoEffect            ; GS_BALL
@@ -1212,7 +1212,7 @@ EvoStoneEffect:
 	call GetPartyParamLocation
 
 	ld a, [hl]
-	cp EVERSTONE
+	cp EVIOLITE
 	jr z, .NoEffect
 
 	ld a, TRUE

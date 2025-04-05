@@ -4441,9 +4441,13 @@ BattleCommand_FlameOrb:
 	call BattleCommand_SwitchTurn
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
+.skipAnim
 	call BattleCommand_SwitchTurn
     ret
 

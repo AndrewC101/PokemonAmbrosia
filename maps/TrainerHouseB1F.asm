@@ -1223,7 +1223,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem POTION
+	verbosegiveitem HP_UP
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1261,7 +1261,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem GOLD_BERRY
+	verbosegiveitem NUGGET
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1299,7 +1299,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem WISE_GLASSES
+	verbosegiveitem QUICK_CLAW
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1337,7 +1337,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem MUSCLE_BAND
+	verbosegiveitem FOCUS_SASH
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1375,7 +1375,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem SCOPE_LENS
+	verbosegiveitem LIFE_ORB
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1413,7 +1413,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem BRIGHTPOWDER
+	verbosegiveitem CHOICE_BAND
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1451,7 +1451,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem FOCUS_SASH
+	verbosegiveitem CHOICE_SPECS
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData
@@ -1527,7 +1527,7 @@ BattleTrialReceptionistScript:
 	opentext
 	writetext AcceptPrize
 	waitbutton
-	verbosegiveitem LIFE_ORB
+	verbosegiveitem AMBROSIA
 	writetext NowHeal
 	waitbutton
 	special LoadPokemonData

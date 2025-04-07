@@ -35,7 +35,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 	line "it was an"
 	cont "accident."
 
-	para "I barley managed"
+	para "I barely managed"
 	line "to escape."
 
 	para "When I got"
@@ -77,12 +77,16 @@ EcruteakLugiaSpeechHouseGrampsText:
 	done
 
 EcruteakLugiaSpeechHouseYoungsterText:
-	text "My grandad used"
-	line "to be a monk."
-
-	para "He still visits"
-	line "the TIN TOWER"
-	cont "everyday."
+	text "We've tried"
+	line "telling him many"
+	cont "times."
+	para "The Burned Tower"
+	line "was struck by"
+	cont "lightning."
+	para "It wasn't grandads"
+	line "fault."
+	para "But he can't let"
+	line "it go."
 	done
 
 EcruteakLugiaSpeechHouse_MapEvents:

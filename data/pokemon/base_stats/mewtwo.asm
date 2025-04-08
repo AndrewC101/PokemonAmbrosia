@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
-	db 5 ; catch rate - all balls act like Pokeballs for Mewtwo
+	db 10 ; catch rate - all balls act like Pokeballs for Mewtwo
 	db 255 ; base exp
 	db BERSERK_GENE, BERSERK_GENE ; items
 	db GENDER_UNKNOWN ; gender ratio

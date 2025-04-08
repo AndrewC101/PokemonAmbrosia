@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, GROUND ; type
-	db 5 ; catch rate - all balls act like Pokeballs for Zygarde
+	db 10 ; catch rate - all balls act like Pokeballs for Zygarde
 	db 255 ; base exp
 	db LEFTOVERS, LEFTOVERS ; items
     db GENDER_UNKNOWN ; gender ratio

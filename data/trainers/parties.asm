@@ -890,9 +890,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (5)
 	db "TOBY@", TRAINERTYPE_NORMAL
-	db 32, TOGETIC
-	db 34, MURKROW
-	db 35, NOCTOWL
+	db 35, TOGETIC
+	db 36, MURKROW
 	db -1 ; end
 
 	; BIRD_KEEPER (6)

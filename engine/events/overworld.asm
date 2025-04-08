@@ -2135,11 +2135,6 @@ PocketPCFunction:
 	ld l, e
 	ret
 .CheckEnvironment:
-	;call GetMapEnvironment
-    ;cp DUNGEON
-    ;jr z, .nope
-    ;cp CAVE
-    ;jr z, .nope
     ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]
@@ -2151,11 +2146,8 @@ PocketPCFunction:
 	jr z, .nope
 	cp LANDMARK_INDIGO_PLATEAU
 	jr z, .nope
-	jr .ok
-.ok
-	call GetPlayerStandingTile
-	and $f ; lo nybble only
-	jr nz, .nope ; not FLOOR_TILE
+	cp LANDMARK_CERULEAN_CAVE
+	jr z, .nope
 	xor a
 	ret
 .nope

@@ -605,7 +605,7 @@ PicnickerTiffanySeenText:
 	line "alone."
 
 	para "I'm with my best"
-	line "friend CLEFABLE."
+	line "friend MAWILE."
 
 	para "I'll show you"
 	line "we can look"
@@ -614,7 +614,7 @@ PicnickerTiffanySeenText:
 
 PicnickerTiffanyBeatenText:
 	text "You did great"
-	line "CLEFABLE!"
+	line "MAWILE!"
 	done
 
 PicnickerTiffanyWantsPicnicText:
@@ -627,7 +627,7 @@ PicnickerTiffanyWantsPicnicText:
 	done
 
 PicnickerTiffanyClefairyText:
-	text "Isn't my CLEFABLE"
+	text "Isn't my MAWILE"
 	line "adorable and"
 	cont "strong?"
 	done

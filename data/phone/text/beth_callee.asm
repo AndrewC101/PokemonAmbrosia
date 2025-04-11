@@ -63,11 +63,11 @@ BethGreetNiteText:
 
 BethGenericText:
 	text "I was about to"
-	line "face the ELITe"
+	line "face the ELITE"
 	cont "FOUR but then I"
 	cont "stopped myself."
 	para "What am I"
-	line "thinking."
+	line "thinking?"
 	para "I'm not ready yet."
 	para "I don't even know"
 	line "all of their"

@@ -19,10 +19,10 @@ ArnieDefeatedMonText:
 
 ArnieLostAMonText:
 	text "Are you ready for"
-	line "the BUG invasion."
+	line "the BUG invasion?"
 	para "If it happened"
 	line "right now would"
-	cont "you be ready!"
+	cont "you be ready?"
 	para "I didn't think"
 	line "so..."
 	done

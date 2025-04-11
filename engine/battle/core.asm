@@ -6787,7 +6787,7 @@ LoadEnemyMon:
 
 .Happiness:
 ; Set happiness
-	ld a, BASE_HAPPINESS
+	ld a, 255 ; DevNote - Happiness for enemy trainers is max
 	ld [wEnemyMonHappiness], a
 ; Set level
 	ld a, [wCurPartyLevel]

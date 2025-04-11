@@ -25,7 +25,6 @@ Route39_MapScripts:
     appear ROUTE39_FIELDMON_3
     appear ROUTE39_FIELDMON_5
     appear ROUTE39_FIELDMON_6
-    appear ROUTE39_FIELDMON_7
 
 ; Pokemon that sometimes appear
     random 5
@@ -39,9 +38,17 @@ Route39_MapScripts:
     random 2
     ifequal 1, .spawn7
     disappear ROUTE39_FIELDMON_8
-    sjump .checkNight
+    sjump .mon8
 .spawn7
     appear ROUTE39_FIELDMON_8
+
+.mon8
+    random 5
+    ifequal 1, .spawn8
+    disappear ROUTE39_FIELDMON_7
+    sjump .checkNight
+.spawn8
+    appear ROUTE39_FIELDMON_7
 
 .checkNight
 ; Pokemon that only appear at night
@@ -369,6 +376,7 @@ Route39FieldMon7Script:
 	cry MILTANK
 	pause 15
 	loadwildmon MILTANK, 30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -419,5 +427,5 @@ Route39_MapEvents:
 	object_event 11, 30, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, Route39FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 3,  14, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 9,  12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon6Script, EVENT_FIELD_MON_6
-	object_event 13, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 13, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route39FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 10, 15, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FieldMon8Script, EVENT_FIELD_MON_8

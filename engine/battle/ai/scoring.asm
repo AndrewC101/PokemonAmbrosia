@@ -1257,10 +1257,12 @@ AI_Smart_AccuracyDown:
     jr c, .discourage
 
 ; 50% chance to encourage slightly if player has full accuracy
-    call AI_50_50
-    jr c, .discourage
     ld a, [wPlayerAccLevel]
     cp BASE_STAT_LEVEL
+    jr nc, .maybeEncourage
+    ret
+.maybeEncourage
+    call AI_50_50
     jr c, .discourage
     dec [hl]
     ret

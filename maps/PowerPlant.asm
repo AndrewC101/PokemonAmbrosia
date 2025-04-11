@@ -378,8 +378,8 @@ PowerPlantManagerThatsThePartText:
 PowerPlantManagerTakeThisTMText:
 	text "You have made a"
 	line "wise choice."
-	para "Here, I bestow upon"
-	line "you my mighty"
+	para "Here, I bestow"
+	line "upon you my mighty "
 	cont "weapon."
 	done
 

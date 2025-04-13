@@ -3385,7 +3385,7 @@ INCLUDE "data/battle/ai/sunny_day_moves.asm"
 
 AI_Smart_BellyDrum:
 ; don't use if already at +2
-    ld a, [wEnemySAtkLevel]
+    ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 2
     jr nc, .discourage
 

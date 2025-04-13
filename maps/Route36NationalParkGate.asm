@@ -247,7 +247,7 @@ Route36Officer_ContestHasConcluded:
 .Sunstone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem SUN_STONE
+	verbosegiveitem LEFTOVERS
 	iffalse .BagFull
 	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	closetext
@@ -256,7 +256,7 @@ Route36Officer_ContestHasConcluded:
 .Everstone:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem EVIOLITE
+	verbosegiveitem LIFE_ORB
 	iffalse .BagFull
 	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
 	closetext
@@ -265,7 +265,7 @@ Route36Officer_ContestHasConcluded:
 .GoldBerry:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem GOLD_BERRY
+	verbosegiveitem NUGGET
 	iffalse .BagFull
 	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
 	closetext
@@ -274,7 +274,7 @@ Route36Officer_ContestHasConcluded:
 .Berry:
 	writetext Route36NationalParkGateOfficer1HeresThePrizeText
 	promptbutton
-	verbosegiveitem BERRY
+	verbosegiveitem GOLD_BERRY
 	iffalse .BagFull
 	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	closetext

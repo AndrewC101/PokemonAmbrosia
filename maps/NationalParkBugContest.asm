@@ -21,7 +21,7 @@ NationalParkBugContest_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .NationalParkContestFieldMon
 
 .NationalParkContestFieldMon
-    random 20
+    random 15
     ifequal 1, .spawn1
     disappear NATIONALPARKBUGCONTEST_FIELDMON_1
     sjump .mon2
@@ -29,7 +29,7 @@ NationalParkBugContest_MapScripts:
     appear NATIONALPARKBUGCONTEST_FIELDMON_1
 
 .mon2
-    random 20
+    random 15
     ifequal 1, .spawn2
     disappear NATIONALPARKBUGCONTEST_FIELDMON_2
     sjump .end
@@ -242,7 +242,7 @@ NationalParkBugContestFieldMon1Script:
 	cry SCYTHER
 	pause 15
 	loadwildmon SCYTHER, 25
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CONTEST
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -254,7 +254,7 @@ NationalParkBugContestFieldMon2Script:
 	cry PINSIR
 	pause 15
 	loadwildmon PINSIR, 25
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CONTEST
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -291,5 +291,5 @@ NationalParkBugContest_MapEvents:
 	object_event 17, 34, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10AScript, EVENT_BUG_CATCHING_CONTESTANT_10A
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestTMDig, EVENT_NATIONAL_PARK_TM_DIG
-	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 18, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 18, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestFieldMon2Script, EVENT_FIELD_MON_2

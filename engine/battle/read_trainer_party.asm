@@ -146,8 +146,8 @@ ReadTrainerPartyPieces:
 ; 0 badges = 0
 ; FALKNER badge = $1000 = 4096 stat exp = 16/64 extra stat at lvl 100
 ; WHITNEY badge = $4000 = 16384 stat exp = 32/64 extra stat at lvl 100
-; JASMINE badges = $9000 = 36864 stat exp = 48/64 extra stat at lvl 100
-; CLAIR badges = $FFFF = 65536 stat exp = 64/64 extra stat at lvl 100
+; CHUCK badge = $9000 = 36864 stat exp = 48/64 extra stat at lvl 100
+; CLAIR badge = $FFFF = 65535 stat exp = 64/64 extra stat at lvl 100
     push hl
 
     ; boss battles have max stat exp
@@ -189,7 +189,7 @@ ReadTrainerPartyPieces:
     bit RISINGBADGE, [hl]
 	jr nz, .fullStatExp
 
-    bit MINERALBADGE, [hl]
+    bit STORMBADGE, [hl]
     jr nz, .highStatExp
 
     bit PLAINBADGE, [hl]

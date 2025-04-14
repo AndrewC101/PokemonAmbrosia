@@ -194,8 +194,9 @@ RuinsOfAlphKabutoChamberScientistHoleText:
 RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	text "You caught all the"
 	line "UNOWN!"
-	para "Your work ethic"
-	line "terrifies me."
+	para "Slow down or"
+	line "you'll put us all"
+	cont "out of a job!"
 	done
 
 RuinsOfAlphKabutoChamberScientistTremorText:

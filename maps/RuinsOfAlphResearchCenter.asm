@@ -97,6 +97,14 @@ RuinsOfAlphResearchCenterScientist2Script:
 .GotAllUnown:
 	writetext RuinsOfAlphResearchCenterScientist2Text_GotAllUnown
 	waitbutton
+	checkevent EVENT_GOT_UNOWN_AMBROSIA
+	iftrue .end
+	writetext RuinsOfAlphResearchCenterScientist2Text_GiveAmbrosia
+	waitbutton
+	verbosegiveitem AMBROSIA
+	iffalse .end
+	setevent EVENT_GOT_UNOWN_AMBROSIA
+.end
 	closetext
 	end
 
@@ -186,8 +194,13 @@ RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	line "really are as"
 	cont "weak as they seem."
 
-	para "I've wasted my"
-	line "life...."
+	para "All that funding"
+	line "wasted..."
+
+	para "Speak to my"
+	line "colleague, his"
+	cont "name can go on the"
+	cont "paper."
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:
@@ -273,12 +286,20 @@ RuinsOfAlphResearchCenterScientist2Text_GotAllUnown:
 	cont "all!"
 	para "I don't believe"
 	line "it."
-	para "I was only joking,"
-	line "those #MON are"
-	cont "useless."
-	para "You got too much"
-	line "time on your"
-	cont "hands."
+	para "I'm sure the"
+	line "ancients would be"
+	cont "pleased."
+	done
+
+RuinsOfAlphResearchCenterScientist2Text_GiveAmbrosia:
+	text "Here I want you to"
+	line "have this."
+	para "I found it"
+	line "embedded in the"
+	cont "old ARCEUS statue,"
+	cont "I don't know what"
+	cont "it is but I think"
+	cont "it might help you."
 	done
 
 RuinsOfAlphResearchCenterComputerText:

@@ -433,6 +433,7 @@
     const EVENT_ROUTE43_LEAF_STONE
     const EVENT_LIGHTHOUSE_THUNDER_STONE
     const EVENT_ROUTE44_WATER_STONE
+    const EVENT_GOT_UNOWN_AMBROSIA
 
     ; ======================================
     ; DevNote - here

@@ -115,7 +115,7 @@ Route42Sign2:
 	jumptext Route42Sign2Text
 
 Route42UltraBall:
-	itemball QUICK_CLAW
+	itemball SUN_STONE
 
 Route42SuperPotion:
 	itemball EVIOLITE

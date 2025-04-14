@@ -409,8 +409,7 @@ MartPatches:
     db QUICK_CLAW
     db BRIGHTPOWDER
     db SCOPE_LENS
-    db MIRACLEBERRY
-    db PP_UP
+    db SACRED_ASH
     db -1
 
 MartFrontier:

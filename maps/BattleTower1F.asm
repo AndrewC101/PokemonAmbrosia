@@ -601,17 +601,16 @@ Text_BattleTowerGranny:
 	done
 
 Text_BattleTowerBugCatcher:
-	text "I only play"
-	line "on MIRROR mode."
+	text "I only play on"
+	line "MIRROR mode."
 
 	para "With my keen"
 	line "intellectual"
 	cont "prowess I can"
-	cont "often win."
+	cont "win sometimes."
 
-	para "It takes some"
-	line "luck too of"
-	cont "course."
+	para "The reward is"
+	line "worth the effort."
 	done
 
 TurnOffHandOfGodScript:

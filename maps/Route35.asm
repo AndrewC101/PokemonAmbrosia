@@ -634,7 +634,7 @@ Route35FieldMon4Script:
 	faceplayer
 	cry PONYTA
 	pause 15
-	loadwildmon PONYTA, 24
+	loadwildmon YANMA, 24
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

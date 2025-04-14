@@ -69,7 +69,9 @@ BattleTowerOutsideBeautyText:
 	para "But I do well"
 	line "in MIRROR mode."
 
-	para "I even won once!"
+	para "I even won once"
+	line "and I got an"
+	cont "amazing prize!"
 	done
 
 BattleTowerOutsidePokefanText:

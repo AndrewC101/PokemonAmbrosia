@@ -115,7 +115,7 @@ Script_BeatenAllTrainers2:
     opentext
     writetext Text_CongratulationsMirror
     waitbutton
-    verbosegiveitem SACRED_ASH
+    verbosegiveitem AMBROSIA
     waitbutton
     closetext
 	setval BATTLETOWERACTION_CHALLENGECANCELED

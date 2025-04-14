@@ -37,7 +37,7 @@ Route41_MapScripts:
     appear ROUTE41_FIELDMON_5
 
 .mon8
-    random 5 ; shiny
+    random 2 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE41_FIELDMON_6
     sjump .end
@@ -479,7 +479,6 @@ Route41FieldMon6Script:
 	cry LAPRAS
 	pause 15
 	loadwildmon LAPRAS, 40
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

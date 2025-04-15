@@ -28,7 +28,7 @@ BulbasaurEvosAttacks:
 	db 10, VINE_WHIP
 	db 17, SLUDGE
 	db 18, SLEEP_POWDER
-	db 20, RAZOR_LEAF
+	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
 	db 30, POISON_JAB
 	db 33, SLUDGE_BOMB
@@ -46,7 +46,7 @@ IvysaurEvosAttacks:
 	db 10, VINE_WHIP
 	db 16, SLUDGE
 	db 18, SLEEP_POWDER
-	db 20, RAZOR_LEAF
+	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
 	db 30, POISON_JAB
 	db 33, SLUDGE_BOMB
@@ -63,7 +63,7 @@ VenusaurEvosAttacks:
 	db 10, VINE_WHIP
 	db 16, SLUDGE
 	db 18, SLEEP_POWDER
-	db 20, RAZOR_LEAF
+	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
 	db 30, POISON_JAB
 	db 32, SLUDGE_BOMB

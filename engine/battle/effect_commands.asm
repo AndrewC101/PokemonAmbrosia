@@ -4140,10 +4140,19 @@ BattleCommand_SleepTarget:
 	call AnimateCurrentMove
 	ld b, SLP
 
-; DevNote - Sleep now lasts 1 to 3 turns - except against WALLACE, then sleep lasts 1 to 2 turns
+; DevNote - Sleep now lasts 1 to 3 turns - except for some trainers for whom sleep lasts 1 to 2 turns
     ld a, [wOtherTrainerClass]
     cp WALLACE
+    jr z, .twoTurn
+    cp LANCE
+    jr z, .twoTurn
+    cp BLUE
+    jr z, .twoTurn
+    cp LEAF
+    jr z, .twoTurn
+    cp RED
     jr nz, .normal
+.twoTurn
     call BattleRandom
     cp 50 percent
     jr c, .oneTurn

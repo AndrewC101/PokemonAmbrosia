@@ -50,6 +50,7 @@ SuperLuckPokemon:
     db CHARMELEON
     db JOLTEON
     db TAUROS
+    db ALAKAZAM
     db -1
 
 SereneGracePokemon:

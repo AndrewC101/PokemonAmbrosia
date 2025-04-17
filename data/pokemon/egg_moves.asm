@@ -16,7 +16,6 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
 	db SAFEGUARD
-	db PETAL_DANCE
 	db -1 ; end
 
 CharmanderEggMoves:

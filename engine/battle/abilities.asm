@@ -51,6 +51,7 @@ SuperLuckPokemon:
     db JOLTEON
     db TAUROS
     db ALAKAZAM
+    db WEAVILE
     db -1
 
 SereneGracePokemon:
@@ -94,6 +95,7 @@ GutsPokemon:
     db TEDDIURSA
     db URSARING
     db URSALUNA
+    db LOPUNNY
     db -1
 
 RivalryPokemon:
@@ -173,6 +175,7 @@ ClearBodyPokemon:
     db DUNSPARCE
     db VAPOREON
     db WOBBUFFET
+    db GLISCOR
     db -1
 
 SolidRockPokemon:

@@ -91,7 +91,7 @@ Moves: ; 41afb
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0
 	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,         STATUS,    90, 20,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,         STATUS,    70, 15,   0
-	move PETAL_DANCE,  EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0
+	move PETAL_DANCE,  EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0 ; not used
 	move DRAGON_CLAW,  EFFECT_NORMAL_HIT,         80, DRAGON,        PHYSICAL, 100, 15,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,   70, 15,   0
@@ -139,7 +139,7 @@ Moves: ; 41afb
 	move CLOSE_COMBAT, EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL, 100, 10,   0
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85, 10,  10
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,         PHYSICAL, 100, 15,  20
-	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0
+	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0 ; not used
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0
 	move PSYCHO_BOOST, EFFECT_NORMAL_HIT,        120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0
 	move DISCHARGE,    EFFECT_PARALYZE_HIT,       80, ELECTRIC,      SPECIAL,  100, 15,  30
@@ -213,12 +213,12 @@ Moves: ; 41afb
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        PHYSICAL, 100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0
-	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, GRASS,         SPECIAL,  100, 15,   0
+	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          90, GRASS,         SPECIAL,  100, 15,   0
 	move ENDURE,       EFFECT_ENDURE,              0, NORMAL,        STATUS,   100, 10,   0
 	move CHARM,        EFFECT_ATTACK_DOWN_2,       0, FAIRY,         STATUS,   100, 20,   0
 	move ROLLOUT,      EFFECT_ROLLOUT,            30, ROCK,          PHYSICAL,  90, 20,   0
 	move FALSE_SWIPE,  EFFECT_FALSE_SWIPE,        50, NORMAL,        PHYSICAL, 100, 40,   0
-	move SWAGGER,      EFFECT_SWAGGER,             0, NORMAL,        STATUS,    90, 15, 100
+	move SWAGGER,      EFFECT_SWAGGER,             0, NORMAL,        STATUS,    90, 15, 100 ; not used
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
 	move VOLT_TACKLE,  EFFECT_RECOIL_HIT,        120, ELECTRIC,      PHYSICAL, 100, 15,   0
 	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING,      STATUS,   100, 15,   0
@@ -255,11 +255,11 @@ Moves: ; 41afb
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,   100, 10,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE,  SPECIAL,  100, 20,   0
-	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0
+	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0 ; not used
 	move EXTREMESPEED, EFFECT_PRIORITY_HIT,       80, NORMAL,        PHYSICAL, 100, 10,   0
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100, 10,  10
-	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
-	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0
+	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    90, GHOST,         SPECIAL,  100, 15,  20
+	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0 ; not used
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   50, FIGHTING,      PHYSICAL, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          80, FIGHTING,      PHYSICAL, 100, 15,   0

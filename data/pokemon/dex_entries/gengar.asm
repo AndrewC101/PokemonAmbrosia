@@ -6,5 +6,5 @@
 	next "it absorbs souls."
 
 	page "Immune to"
-	next "GROUND type"
-	next "moves.@"
+	next "GROUND. Has a"
+	next "final attack.@"

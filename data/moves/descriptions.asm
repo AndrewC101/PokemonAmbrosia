@@ -590,8 +590,8 @@ PetalDanceDescription:
 	line "and confuses user.@"
 
 DragonClawDescription:
-	db   "Rend foe with"
-	line "mighty claws.@"
+	db   "Has a high criti-"
+	line "cal hit ratio.@"
 
 DragonRageDescription:
 	db   "Always inflicts"

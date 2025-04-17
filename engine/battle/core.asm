@@ -1276,6 +1276,7 @@ Core_RegeneratorPokemon:
     db WOBBUFFET
     db HO_OH
     db ZYGARDE
+    db VENUSAUR
     db -1
 
 ResidualDamage:
@@ -2584,6 +2585,8 @@ Aftermath:
     cp KOFFING
     jr z, .aftermath
     cp WEEZING
+    jr z, .aftermath
+    cp GENGAR
     jr z, .aftermath
     cp MAGNEZONE
     jr z, .aftermath
@@ -4478,6 +4481,8 @@ SwitchInEffects:
     jp z, .spAtkUp
     cp RAICHU
     jp z, .spAtkUp
+    cp HOUNDOOM
+    jp z, .spAtkUp
 
     cp SUICUNE
     jp z, .defUp
@@ -4517,6 +4522,8 @@ SwitchInEffects:
     cp TAUROS
     jp z, .atkDown
     cp STARAPTOR
+    jp z, .atkDown
+    cp MAWILE
     jp z, .atkDown
 
     cp WEEZING

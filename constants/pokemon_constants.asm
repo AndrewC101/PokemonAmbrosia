@@ -114,12 +114,12 @@
 	const HAUNTER    ; 5d
 	const GENGAR     ; 5e
 	const ONIX       ; 5f
-	const URSALUNA    ; 60
-	const URSALUNA_B      ; 61
+	const URSALUNA   ; 60
+	const URSALUNA_B ; 61
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
-	const MUDKIP    ; 64
-	const MIMIKYU  ; 65
+	const MUDKIP     ; 64
+	const MIMIKYU    ; 65
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
 	const MARILL     ; 68
@@ -159,7 +159,7 @@
 	const RALTS      ; 8a
 	const KIRLIA     ; 8b
 	const GARDEVOIR  ; 8c
-	const GALLADE     ; 8d
+	const GALLADE    ; 8d
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
 	const ARTICUNO   ; 90
@@ -213,8 +213,8 @@ JOHTO_POKEMON EQU const_value
 	const METANG     ; bf
 	const METAGROSS  ; c0
 	const YANMA      ; c1
-	const MARSHTOMP     ; c2 *
-	const SWAMPERT   ; c3 *
+	const MARSHTOMP  ; c2
+	const SWAMPERT   ; c3
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6

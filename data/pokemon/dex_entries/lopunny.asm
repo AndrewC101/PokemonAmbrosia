@@ -5,6 +5,6 @@
 	next "fluffy. It is"
 	next "aware of danger."
 
-	page "EVASION"
-	next "increases upon"
-	next "entering battle.@"
+	page "Boosted EVASION."
+	next "ATTACK boost on"
+	next "status.@"

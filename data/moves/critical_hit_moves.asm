@@ -8,4 +8,5 @@ CriticalHitMoves:
 	db LEAF_BLADE
 	db SHADOW_PUNCH
 	db STONE_EDGE
+	db DRAGON_CLAW
 	db -1

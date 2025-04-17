@@ -5,6 +5,6 @@
 	next "and viciously"
 	next "devious #MON."
 
-	page "EVASION"
-	next "increases upon"
-	next "entering battle.@"
+	page "Boosted EVASION"
+	next "and critical"
+	next "rate.@"

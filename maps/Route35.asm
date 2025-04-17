@@ -632,7 +632,7 @@ Route35FieldMon3Script:
 
 Route35FieldMon4Script:
 	faceplayer
-	cry PONYTA
+	cry YANMA
 	pause 15
 	loadwildmon YANMA, 24
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY

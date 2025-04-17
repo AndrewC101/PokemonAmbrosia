@@ -535,7 +535,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 15, 10 ; PP
+	db 20, 15, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
@@ -2898,8 +2898,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db KINGDRA
-	db MYSTIC_WATER
-	db RAIN_DANCE, HYDRO_PUMP, ICE_BEAM, WATERFALL
+	db MINT_BERRY
+	db DRAGON_DANCE, DRAGON_CLAW, WATERFALL, REST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2909,7 +2909,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 10, 10, 15 ; PP
+	db 15, 15, 15, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 62 ; Level
@@ -5325,7 +5325,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db MYSTIC_WATER
-	db RAIN_DANCE, HYDRO_PUMP, ICE_BEAM, WATERFALL
+	db RAIN_DANCE, HYDRO_PUMP, ICE_BEAM, DRAGON_CLAW
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

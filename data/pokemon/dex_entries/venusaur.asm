@@ -5,6 +5,6 @@
 	next "that embodies the"
 	next "ancient forest."
 
-	page "SPEED"
-	next "increases in"
-	next "the sun.@"
+	page "Boosted SPEED"
+	next "in sun. Regens"
+	next "HP.@"

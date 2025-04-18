@@ -367,9 +367,9 @@ BattleTowerMons:
     bigdw 50
 	db "EBIWARA-@@@"
 
-	db MISMAGIUS
-	db WISE_GLASSES
-	db SHADOW_BALL, AURA_SPHERE, THUNDERBOLT, ICY_WIND
+	db HOUNDOOM
+	db CHOICE_SPECS
+	db FIRE_BLAST, DARK_PULSE, SLUDGE_BOMB, AURA_SPHERE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -379,18 +379,18 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 20, 15, 15 ; PP
+	db 10, 15, 20, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 23 ; Level
+	db 24 ; Level
 	db 0, 0 ; Status
-	bigdw 81
-    bigdw 81
-    bigdw 53
-    bigdw 53
-    bigdw 74
-    bigdw 74
-    bigdw 74
+    bigdw 92
+    bigdw 92
+    bigdw 70
+    bigdw 51
+    bigdw 75
+    bigdw 80
+    bigdw 65
 	db "KENTAROSU@@"
 
 	db GALLADE

@@ -32,7 +32,7 @@ Route37_MapScripts:
     appear ROUTE37_FIELDMON_7
 
 ; Pokemon that sometimes appear
-    random 5 ; shiny
+    random 2 ; shiny
     ifequal 1, .spawn8
     disappear ROUTE37_FIELDMON_8
     sjump .sun
@@ -325,10 +325,16 @@ Route37FieldMon7Script:
     end
 
 Route37FieldMon8Script:
-	trainer HAUNTER, FIELD_MON, EVENT_FIELD_MON_8, Route37PokemonAttacksText, 24, 3, .script
-.script
-    disappear ROUTE37_FIELDMON_8
-    end
+	faceplayer
+	cry HAUNTER
+	pause 15
+	loadwildmon HAUNTER, 25
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
+	disappear ROUTE29_FIELDMON_8
+	end
 
 Route37_MapEvents:
 	db 0, 0 ; filler
@@ -361,4 +367,4 @@ Route37_MapEvents:
 	object_event 4,   5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 1,   9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, Route37FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 15, 14, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, Route37FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 2,  19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_TRAINER, 2, Route37FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 2,  19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, Route37FieldMon8Script, EVENT_FIELD_MON_8

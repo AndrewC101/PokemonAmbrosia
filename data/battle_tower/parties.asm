@@ -30,7 +30,7 @@ BattleTowerMons:
 	db "BURAtuKI-@@"
 
 	db GYARADOS
-	db LEFTOVERS
+	db GOLD_BERRY
 	db DRAGON_RAGE, WATERFALL, EARTHQUAKE, FLY
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -603,7 +603,7 @@ BattleTowerMons:
 
 	db TOGEKISS
 	db LEFTOVERS
-	db DRAIN_KISS, AURA_SPHERE, THUNDER_WAVE, ROOST
+	db AIR_SLASH, ANCIENTPOWER, THUNDER_WAVE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -613,7 +613,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 20, 20, 10 ; PP
+	db 15, 10, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level

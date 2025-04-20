@@ -2089,9 +2089,9 @@ BattleTowerMons:
 
 ; ELITE level
 
-	db SUICUNE
-	db LEFTOVERS
-	db CALM_MIND, SCALD, REST, SLEEP_TALK
+	db LATIOS
+	db DRAGON_SCALE
+	db DRAGON_PULSE, THUNDERBOLT, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2101,18 +2101,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 5, 10 ; PP
+	db 24, 24, 24, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 65 ; Level
 	db 0, 0 ; Status
-	bigdw 265 ; HP
-	bigdw 265 ; Max HP
-	bigdw 162 ; Atk
-	bigdw 214 ; Def
-	bigdw 175 ; Spd
-	bigdw 182 ; SAtk
-	bigdw 214 ; SDef
+    bigdw 239
+    bigdw 239
+    bigdw 182
+    bigdw 169
+    bigdw 208
+    bigdw 234
+    bigdw 208
 	db "RANTA-N@@@@"
 
     db GENESECT
@@ -3133,9 +3133,9 @@ BattleTowerMons:
 
 ; CHAMP level
 
-	db LUGIA
-	db LEFTOVERS
-	db AEROBLAST, EARTH_POWER, CALM_MIND, RECOVER
+	db RAYQUAZA
+	db SHARP_BEAK
+	db DRACO_ASCENT, EARTHQUAKE, DRAGON_DANCE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3145,18 +3145,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 24, 10 ; PP
+	db 16, 16, 32, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 85 ; Level
 	db 0, 0 ; Status
-	bigdw 354 ; HP
-	bigdw 354 ; Max HP
-	bigdw 237 ; Atk
-	bigdw 305 ; Def
-	bigdw 271 ; Spd
-	bigdw 237 ; SAtk
-	bigdw 345 ; SDef
+    bigdw 352
+    bigdw 352
+    bigdw 339
+    bigdw 237
+    bigdw 245
+    bigdw 339
+    bigdw 237
 	db "RANTA-N@@@@"
 
 	db LATIAS

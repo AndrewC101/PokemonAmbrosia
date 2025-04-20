@@ -376,7 +376,7 @@ TreeckoEggMoves:
 	db -1 ; end
 
 ChimcharEggMoves:
-	db FURY_SWIPES
+	db FLARE_BLITZ
 	db QUICK_ATTACK
 	db REVERSAL
 	db THRASH

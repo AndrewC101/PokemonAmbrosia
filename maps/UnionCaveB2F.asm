@@ -47,7 +47,7 @@ UnionCaveB2F_MapScripts:
 UnionCaveLapras:
 	faceplayer
 	cry LAPRAS
-	loadwildmon LAPRAS, 50
+	loadwildmon LAPRAS, 40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS

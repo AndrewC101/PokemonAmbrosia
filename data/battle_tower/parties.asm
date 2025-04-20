@@ -5,7 +5,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db GOLD_BERRY
-	db DRAGON_RAGE, EARTHQUAKE, ROCK_SLIDE, FLY
+	db DRAGON_RAGE, EARTHQUAKE, ROCK_SLIDE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -15,7 +15,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 24, 24 ; PP
+	db 16, 16, 24, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 25 ; Level
@@ -135,7 +135,7 @@ BattleTowerMons:
 
 	db NIDOKING
 	db MUSCLE_BAND
-	db THRASH, EARTHQUAKE, ROCK_SLIDE, FIRE_PUNCH
+	db EARTHQUAKE, THRASH, ROCK_SLIDE, FIRE_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -145,7 +145,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 15, 15 ; PP
+	db 20, 10, 15, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 24 ; Level
@@ -265,7 +265,7 @@ BattleTowerMons:
 
 	db SCYTHER
 	db EVIOLITE
-	db WING_ATTACK, X_SCISSOR, QUICK_ATTACK, ROCK_SMASH
+	db WING_ATTACK, X_SCISSOR, ROCK_SMASH, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -275,7 +275,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 15, 30, 15 ; PP
+	db 30, 15, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 23 ; Level
@@ -317,7 +317,7 @@ BattleTowerMons:
 
 	db SLOWKING
 	db LEFTOVERS
-	db CURSE, WATERFALL, ZEN_HEADBUTT, REST
+	db WATERFALL, ZEN_HEADBUTT, CURSE, REST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -327,7 +327,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 15, 15, 5 ; PP
+	db 15, 15, 10, 5 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 23 ; Level
@@ -499,7 +499,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db LEFTOVERS
-	db ROOST, TOXIC, FLY, IRON_HEAD
+	db FLY, IRON_HEAD, TOXIC, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -509,7 +509,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 10, 15, 15 ; PP
+	db 15, 15, 10, 10 ; PP
 	db 0 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
@@ -525,7 +525,7 @@ BattleTowerMons:
 
 	db BLISSEY
 	db LEFTOVERS
-	db THUNDER_WAVE, THUNDERBOLT, ICE_BEAM, SOFTBOILED
+	db THUNDERBOLT, ICE_BEAM, THUNDER_WAVE, SOFTBOILED
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -535,7 +535,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 10, 10 ; PP
+	db 15, 10, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
@@ -551,7 +551,7 @@ BattleTowerMons:
 
 	db LUCARIO
 	db LIFE_ORB
-	db DRAIN_PUNCH, CRUNCH, ICE_PUNCH, THUNDERPUNCH
+	db DRAIN_PUNCH, IRON_HEAD, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

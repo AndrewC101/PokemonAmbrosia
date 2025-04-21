@@ -97,7 +97,7 @@ IcePathB1FieldMon3Script:
 	faceplayer
 	cry LAPRAS
 	pause 15
-	loadwildmon LAPRAS, 44
+	loadwildmon LAPRAS, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

@@ -3727,6 +3727,11 @@ AI_Smart_Agility:
     call DoesAIOutSpeedPlayer
     jp c, StandardDiscourage
 
+; discourage if enemy is paralyzed
+    ld a, [wEnemyMonStatus]
+	and 1 << PAR
+	jp nz, StandardDiscourage
+
 ; don't boost against a powerful priority user that can 2hko
     call IsPowerfulPriorityUser
     jp c, StandardDiscourage

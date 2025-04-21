@@ -731,8 +731,7 @@ VolcaronaEvosAttacks:
 	db 40, BUG_BUZZ
 	db 50, QUIVER_DANCE
 	db 55, FIRE_BLAST
-	db 60, FLARE_BLITZ
-	db 65, MORNING_SUN
+	db 60, MORNING_SUN
 	db 0 ; no more level-up moves
 
 ArctozoltEvosAttacks:

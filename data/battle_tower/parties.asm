@@ -316,7 +316,7 @@ BattleTowerMons:
 	db "RAPURASU@@@"
 
 	db SLOWKING
-	db LEFTOVERS
+	db GOLD_BERRY
 	db WATERFALL, ZEN_HEADBUTT, CURSE, REST
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -498,7 +498,7 @@ BattleTowerMons:
 	db "NIDOKINGU@@"
 
 	db SKARMORY
-	db LEFTOVERS
+	db GOLD_BERRY
 	db FLY, IRON_HEAD, TOXIC, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -629,7 +629,7 @@ BattleTowerMons:
 
 	db LOPUNNY
 	db BRIGHTPOWDER
-	db AI_RETURN, DRAIN_PUNCH, ICE_PUNCH, THUNDERPUNCH
+	db DRAIN_PUNCH, AI_RETURN, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -639,7 +639,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 15, 15 ; PP
+	db 15, 20, 15, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
@@ -889,7 +889,7 @@ BattleTowerMons:
 
 	db IVYSAUR
 	db LEFTOVERS
-	db SLEEP_POWDER, LEECH_SEED, VINE_WHIP, PROTECT
+	db RAZOR_LEAF, EARTH_POWER, LEECH_SEED, PROTECT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -899,7 +899,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 10, 20, 10 ; PP
+	db 25, 10, 10, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level

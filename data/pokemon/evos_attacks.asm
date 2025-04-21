@@ -25,8 +25,8 @@ BulbasaurEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 17, SLUDGE
+	db 12, SLUDGE
+	db 17, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
@@ -43,8 +43,8 @@ IvysaurEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 16, SLUDGE
+	db 12, SLUDGE
+	db 16, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
@@ -60,8 +60,8 @@ VenusaurEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 7, LEECH_SEED
-	db 10, VINE_WHIP
-	db 16, SLUDGE
+	db 12, SLUDGE
+	db 16, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE

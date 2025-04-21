@@ -143,6 +143,7 @@ TechnicianPokemon:
     db PORYGON2
     db BULBASAUR
     db IVYSAUR
+    db VENUSAUR
     db MARILL
     db -1
 

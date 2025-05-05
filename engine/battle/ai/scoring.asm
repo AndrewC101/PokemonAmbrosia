@@ -1861,6 +1861,14 @@ endr
 AI_Smart_Fly:
 ; Fly, Dig
 
+; discourage if player knows protect or kings shield
+	ld b, EFFECT_PROTECT
+	call PlayerHasMoveEffect
+	jr c, .discourage
+	ld b, EFFECT_KINGS_SHIELD
+	call PlayerHasMoveEffect
+	jr c, .discourage
+
 ; Greatly encourage this move if the player is
 ; flying or underground, and slower than the enemy.
 
@@ -1875,6 +1883,11 @@ AI_Smart_Fly:
 	dec [hl]
 	dec [hl]
 	ret
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
 
 AI_Smart_Paralyze:
 ; never use if player already has a status

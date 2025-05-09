@@ -95,6 +95,7 @@ GutsPokemon:
     db TEDDIURSA
     db URSARING
     db URSALUNA
+    db BUNEARY
     db LOPUNNY
     db -1
 
@@ -121,12 +122,10 @@ MultiScalePokemon:
 ThickFatPokemon:
     db SNORLAX
     db MILTANK
-    db LAPRAS
     db SWINUB
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
-    db DRACOVISH
     db -1
 
 TechnicianPokemon:
@@ -145,6 +144,7 @@ TechnicianPokemon:
     db IVYSAUR
     db VENUSAUR
     db MARILL
+    db BUTTERFREE
     db -1
 
 MagicGuardPokemon:
@@ -161,6 +161,7 @@ MagicGuardPokemon:
     db XERNEAS
     db YVELTAL
     db MIMIKYU
+    db LOPUNNY
     db -1
 
 ClearBodyPokemon:

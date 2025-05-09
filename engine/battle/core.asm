@@ -1241,6 +1241,7 @@ Core_MagicGuardPokemon:
     db XERNEAS
     db YVELTAL
     db MIMIKYU
+    db LOPUNNY
     db -1
 
 Core_SpikesImmunePokemon:
@@ -1265,6 +1266,8 @@ Core_SpikesImmunePokemon:
     db LATIAS
     db LATIOS
     db ROTOM
+    db MIMIKYU
+    db LOPUNNY
     db -1
 
 Core_RegeneratorPokemon:
@@ -4537,10 +4540,6 @@ SwitchInEffects:
     cp UMBREON
     jp z, .spDefUp
 
-    cp BUNEARY
-    jp z, .evasionUp
-    cp LOPUNNY
-    jp z, .evasionUp
     cp SNEASEL
     jp z, .evasionUp
     cp WEAVILE

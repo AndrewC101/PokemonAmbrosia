@@ -5,6 +5,6 @@
 	next "fluffy. It is"
 	next "aware of danger."
 
-	page "Boosted EVASION."
-	next "ATTACK boost on"
-	next "status.@"
+	page "ATTACK boost on"
+	next "status. Immune to"
+	next "passive damage.@"

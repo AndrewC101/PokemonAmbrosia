@@ -5,6 +5,6 @@
 	next "it loves its"
 	next "trainer."
 
-	page "EVASION"
-	next "increases upon"
-	next "entering battle.@"
+	page "Boosted damage"
+	next "when afflicted by"
+	next "a status.@"

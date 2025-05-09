@@ -628,7 +628,7 @@ BattleTowerMons:
 	db "RU-ZIyuRA@@"
 
 	db LOPUNNY
-	db BRIGHTPOWDER
+	db FLAME_ORB
 	db DRAIN_PUNCH, AI_RETURN, ICE_PUNCH, THUNDERPUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp

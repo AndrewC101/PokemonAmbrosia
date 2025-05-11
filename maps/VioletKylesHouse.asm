@@ -36,7 +36,14 @@ VioletKylesHousePokefanMText:
 	line "dream of being a"
 	cont "DRAGON trainer."
 
-	para "But since moving"
+	para "He was given a"
+	line "DRAGON #MON."
+
+	para "But turns out it"
+	line "wasn't really a"
+	cont "DRAGON."
+
+	para "Now since moving"
 	line "here he has become"
 	cont "infatuated by"
 	cont "DARK types."

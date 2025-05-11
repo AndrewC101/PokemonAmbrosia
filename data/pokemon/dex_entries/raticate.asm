@@ -5,6 +5,6 @@
 	next "legs enable it to"
 	next "cross rivers."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Status boosts"
+	next "ATTACK. Resists"
+	next "FIRE and ICE.@"

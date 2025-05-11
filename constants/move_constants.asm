@@ -139,7 +139,7 @@
 	const DISCHARGE    ; 83
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
-	const POISON_JAB   ; 86
+	const CROSS_POISON   ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89

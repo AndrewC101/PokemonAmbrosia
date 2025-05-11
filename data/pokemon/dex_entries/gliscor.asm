@@ -5,6 +5,6 @@
 	next "soundless. Its"
 	next "fangs are wicked."
 
-	page "Immune to stat"
-	next "drops. Boosted"
+	page "SANDSTORM upon"
+	next "switch in. Boost"
 	next "EVASION in sand.@"

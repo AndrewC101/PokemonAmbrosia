@@ -38,6 +38,7 @@ SniperPokemon:
     db GABITE
     db GARCHOMP
     db FLAREON
+    db CROBAT
     db -1
 
 SuperLuckPokemon:
@@ -61,6 +62,7 @@ SereneGracePokemon:
     db TOGETIC
     db TOGEKISS
     db SHAYMIN
+    db LANTURN
     db -1
 
 RockHeadPokemon:
@@ -108,6 +110,7 @@ RivalryPokemon:
     db NIDOQUEEN
     db RALTS
     db KIRLIA
+    db MILTANK
     db -1
 
 MultiScalePokemon:
@@ -126,6 +129,7 @@ ThickFatPokemon:
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
+    db RATICATE
     db -1
 
 TechnicianPokemon:

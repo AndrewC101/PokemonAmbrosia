@@ -5,6 +5,6 @@
 	next "lures prey with"
 	next "its bright body."
 
-	page "Immune to"
-	next "ELECTRIC"
-	next "attacks.@"
+    page "Electric immune."
+	next "Move effects are"
+	next "more likely.@"

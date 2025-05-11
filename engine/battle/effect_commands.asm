@@ -3421,8 +3421,8 @@ BattleCommand_DamageCalc:
 	jr nc, .continue
 	call CheckOppositeGender
 	jr c, .continue
-    call FifteenPercentBoost
-    call FifteenPercentBoost
+    call TenPercentBoost
+    call TenPercentBoost
 
 .continue
 ; Critical hits

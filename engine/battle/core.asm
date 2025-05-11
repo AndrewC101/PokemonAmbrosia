@@ -4470,6 +4470,8 @@ SwitchInEffects:
 
     cp TYRANITAR
     jp z,  .sand
+    cp GLISCOR
+    jp z, .sand
 
     cp RAYQUAZA
     jp z, .clearField

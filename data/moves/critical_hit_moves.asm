@@ -9,4 +9,5 @@ CriticalHitMoves:
 	db SHADOW_PUNCH
 	db STONE_EDGE
 	db DRAGON_CLAW
+	db CROSS_POISON
 	db -1

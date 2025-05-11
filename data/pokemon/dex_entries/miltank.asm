@@ -5,6 +5,6 @@
 	next "milk which it"
 	next "defends fiercely."
 
-	page "Takes half"
-	next "damage from FIRE"
-	next "and ICE moves.@"
+	page "Extra damage on"
+	next "opposite gender."
+	next "Resists FIRE/ICE.@"

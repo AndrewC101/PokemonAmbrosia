@@ -3,6 +3,7 @@
 	const MOUNTMOONSQUARE_FAIRY2
 	const MOUNTMOONSQUARE_ROCK
 	const MOUNTMOONSQUARE_GREEN
+	const MOUNTMOONSQUARE_FIELDMON_1
 
 MountMoonSquare_MapScripts:
 	def_scene_scripts
@@ -20,11 +21,20 @@ MountMoonSquare_MapScripts:
 	endcallback
 
 .DisappearRock:
+    disappear MOUNTMOONSQUARE_FIELDMON_1
 	disappear MOUNTMOONSQUARE_ROCK
 	appear MOUNTMOONSQUARE_GREEN
 	checkevent EVENT_HOEN_INVASION_UNDERWAY
-	iffalse .end
+	iffalse .cont
 	disappear MOUNTMOONSQUARE_GREEN
+.cont
+	checktime NITE
+	iffalse .end
+	random 2
+	ifequal 1, .spawn
+	sjump .end
+.spawn
+	appear MOUNTMOONSQUARE_FIELDMON_1
 .end
 	endcallback
 
@@ -268,6 +278,18 @@ MtMoonGreenWinAfterBattleText:
 	cont "one day."
 	done
 
+MountMoonSquareFieldMon1Script:
+	faceplayer
+	cry URSALUNA_B
+	pause 15
+	loadwildmon URSALUNA_B, 40
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear MOUNTMOONSQUARE_FIELDMON_1
+	end
+
 MountMoonSquare_MapEvents:
 	db 0, 0 ; filler
 
@@ -288,4 +310,4 @@ MountMoonSquare_MapEvents:
 	object_event  7,  6, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_SQUARE_CLEFAIRY
 	object_event  7,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonSquareRock, EVENT_MT_MOON_SQUARE_ROCK
 	object_event  17,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MtMoonGreenScript, EVENT_FIELD_MON_1
-
+	object_event 24,  4, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MountMoonSquareFieldMon1Script, EVENT_FIELD_MON_2

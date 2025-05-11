@@ -30,7 +30,7 @@ BulbasaurEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 33, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
@@ -48,7 +48,7 @@ IvysaurEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 33, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
@@ -65,7 +65,7 @@ VenusaurEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 20, STUN_SPORE
 	db 25, LEAF_BLADE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 32, SLUDGE_BOMB
 	db 40, GROWTH
 	db 45, SYNTHESIS
@@ -371,7 +371,7 @@ EkansEvosAttacks:
 	db 15, BITE
 	db 23, GLARE
 	db 28, CRUNCH
-	db 33, POISON_JAB
+	db 33, CROSS_POISON
 	db 40, HAZE
 	db 45, DRAGON_DANCE
 	db 0 ; no more level-up moves
@@ -384,7 +384,7 @@ ArbokEvosAttacks:
 	db 15, BITE
 	db 23, GLARE
 	db 28, CRUNCH
-	db 33, POISON_JAB
+	db 33, CROSS_POISON
 	db 40, HAZE
 	db 45, DRAGON_DANCE
 	db 0 ; no more level-up moves
@@ -512,7 +512,7 @@ NidokingEvosAttacks:
 	db 1, POISON_STING
 	db 20, SLUDGE
 	db 30, THRASH
-	db 35, POISON_JAB
+	db 35, CROSS_POISON
 	db 40, EARTHQUAKE
 	db 0 ; no more level-up moves
 
@@ -613,7 +613,7 @@ ZubatEvosAttacks:
 	db 30, AIR_SLASH
 	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
-	db 45, POISON_JAB
+	db 45, CROSS_POISON
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
@@ -630,7 +630,7 @@ GolbatEvosAttacks:
 	db 30, AIR_SLASH
 	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
-	db 45, POISON_JAB
+	db 45, CROSS_POISON
 	db 50, BRAVE_BIRD
 	db 55, HAZE
 	db 0 ; no more level-up moves
@@ -1019,7 +1019,7 @@ BellsproutEvosAttacks:
 	db 22, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
 	db 0 ; no more level-up moves
@@ -1036,7 +1036,7 @@ WeepinbellEvosAttacks:
 	db 21, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
 	db 0 ; no more level-up moves
@@ -1052,7 +1052,7 @@ VictreebelEvosAttacks:
 	db 21, SLUDGE
 	db 24, POISONPOWDER
 	db 26, STUN_SPORE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
 	db 50, SOLARBEAM
@@ -1068,7 +1068,7 @@ TentacoolEvosAttacks:
 	db 15, WRAP
 	db 20, BUBBLEBEAM
 	db 25, SLUDGE
-	db 31, POISON_JAB
+	db 31, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, SCALD
 	db 50, HYDRO_PUMP
@@ -1083,7 +1083,7 @@ TentacruelEvosAttacks:
 	db 15, WRAP
 	db 20, BUBBLEBEAM
 	db 25, SLUDGE
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, SCALD
 	db 50, HYDRO_PUMP
@@ -1162,7 +1162,7 @@ RapidashEvosAttacks:
 	db 23, FLAME_WHEEL
 	db 26, FIRE_SPIN
 	db 30, MEGAHORN
-	db 33, POISON_JAB
+	db 33, CROSS_POISON
 	db 36, FLAMETHROWER
 	db 45, FIRE_BLAST
 	db 50, FLARE_BLITZ
@@ -1626,9 +1626,9 @@ KoffingEvosAttacks:
 	db 24, SMOKESCREEN
 	db 28, HAZE
 	db 33, SLUDGE_BOMB
-	db 40, EXPLOSION
-	db 45, DESTINY_BOND
-	db 50, TOXIC
+	db 40, DESTINY_BOND
+	db 45, NASTY_PLOT
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
@@ -1640,9 +1640,9 @@ WeezingEvosAttacks:
 	db 24, SMOKESCREEN
 	db 28, HAZE
 	db 32, SLUDGE_BOMB
-	db 40, EXPLOSION
-	db 45, DESTINY_BOND
-	db 50, TOXIC
+	db 40, DESTINY_BOND
+	db 45, NASTY_PLOT
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:
@@ -1653,7 +1653,7 @@ RhyhornEvosAttacks:
 	db 12, ROCK_THROW
 	db 16, MAGNITUDE
 	db 22, TAKE_DOWN
-	db 28, POISON_JAB
+	db 28, CROSS_POISON
 	db 32, ROCK_SLIDE
 	db 36, HORN_DRILL
 	db 40, MEGAHORN
@@ -1669,12 +1669,13 @@ RhydonEvosAttacks:
 	db 12, ROCK_THROW
 	db 16, MAGNITUDE
 	db 22, TAKE_DOWN
-	db 28, POISON_JAB
+	db 28, CROSS_POISON
 	db 32, ROCK_SLIDE
 	db 35, HORN_DRILL
 	db 40, MEGAHORN
 	db 45, EARTHQUAKE
 	db 51, STONE_EDGE
+	db 55, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -1718,12 +1719,13 @@ RhyperiorEvosAttacks:
 	db 12, ROCK_THROW
 	db 16, MAGNITUDE
 	db 22, TAKE_DOWN
-	db 28, POISON_JAB
+	db 28, CROSS_POISON
 	db 32, ROCK_SLIDE
 	db 36, HORN_DRILL
 	db 40, MEGAHORN
 	db 45, EARTHQUAKE
 	db 50, STONE_EDGE
+	db 55, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
@@ -2581,7 +2583,7 @@ CrobatEvosAttacks:
 	db 30, AIR_SLASH
 	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
-	db 45, POISON_JAB
+	db 45, CROSS_POISON
 	db 50, BRAVE_BIRD
 	db 55, HAZE
 	db 86, AFTER_IMAGE
@@ -3147,7 +3149,7 @@ GligarEvosAttacks:
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
-	db 30, POISON_JAB
+	db 30, CROSS_POISON
 	db 33, SANDSTORM
 	db 37, X_SCISSOR
 	db 42, EARTHQUAKE

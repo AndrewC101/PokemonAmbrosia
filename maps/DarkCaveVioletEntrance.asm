@@ -13,6 +13,7 @@
     const DARKCAVEVIOLETENTRANCE_FIELDMON_7
     const DARKCAVEVIOLETENTRANCE_FIELDMON_8
     const DARKCAVEVIOLETENTRANCE_POKE_BALL5
+    const DARKCAVEVIOLETENTRANCE_FIELDMON_9
 
 DarkCaveVioletEntrance_MapScripts:
 	def_scene_scripts
@@ -28,6 +29,7 @@ DarkCaveVioletEntrance_MapScripts:
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_5
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_6
     appear DARKCAVEVIOLETENTRANCE_FIELDMON_8
+    appear DARKCAVEVIOLETENTRANCE_FIELDMON_9
 
     random 5
     ifequal 1, .spawn
@@ -127,6 +129,17 @@ DarkCaveVioletEntranceFieldMon8Script:
 	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_8
 	end
 
+DarkCaveVioletEntranceFieldMon9Script:
+	faceplayer
+	cry GLIGAR
+	pause 15
+	loadwildmon GLIGAR, 8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_9
+	disappear DARKCAVEVIOLETENTRANCE_FIELDMON_9
+	end
+
 DarkCaveVioletEntrancePokemonAttacksText:
 	text "Wild #MON"
 	line "attacks!"
@@ -160,3 +173,4 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 16, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 15, 18, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 15, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceBlackGlasses, EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
+	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon9Script, EVENT_FIELD_MON_9

@@ -5,6 +5,6 @@
 	next "environment makes"
 	next "it grow heads."
 
-	page "SPEED"
-	next "increases in"
-	next "the sun.@"
+	page "SPEED boost in"
+	next "sun. Has reduced"
+	next "weaknesses.@"

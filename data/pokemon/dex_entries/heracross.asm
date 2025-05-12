@@ -5,6 +5,6 @@
 	next "powers, it can"
 	next "lift anything."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "ATTACK boost on"
+	next "status. Reduced"
+	next "weaknesses.@"

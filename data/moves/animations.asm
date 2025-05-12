@@ -135,7 +135,7 @@ BattleAnimations::
 	dw BattleAnim_Discharge
 	dw BattleAnim_DragonDance
 	dw BattleAnim_Amnesia
-	dw BattleAnim_PoisonJab
+	dw BattleAnim_CrossPoison
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
@@ -1502,6 +1502,7 @@ BattleAnim_AuroraBeam:
 	anim_ret
 
 BattleAnim_XScissor:
+BattleAnim_CrossPoison:
 BattleAnim_Vicegrip:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_VICEGRIP
@@ -2318,7 +2319,6 @@ BattleAnim_HornDrill:
 	anim_loop 3, .loop
 	anim_ret
 
-BattleAnim_PoisonJab:
 BattleAnim_PoisonSting:
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_obj ANIM_OBJ_NEEDLE, 64, 92, $14

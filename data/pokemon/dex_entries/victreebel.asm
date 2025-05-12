@@ -5,6 +5,6 @@
 	next "and dissolve"
 	next "anything."
 
-	page "Boosted SPEED"
-	next "in SUN and gets"
-	next "crits often.@"
+	page "Boosted critical"
+	next "hit ratio and"
+	next "damage.@"

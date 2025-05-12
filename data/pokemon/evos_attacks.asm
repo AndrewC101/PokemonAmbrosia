@@ -1017,7 +1017,7 @@ BellsproutEvosAttacks:
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 22, SLUDGE
-	db 24, POISONPOWDER
+	db 24, SLASH
 	db 26, STUN_SPORE
 	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
@@ -1034,7 +1034,7 @@ WeepinbellEvosAttacks:
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 21, SLUDGE
-	db 24, POISONPOWDER
+	db 24, SLASH
 	db 26, STUN_SPORE
 	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
@@ -1050,12 +1050,11 @@ VictreebelEvosAttacks:
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 21, SLUDGE
-	db 24, POISONPOWDER
+	db 24, SLASH
 	db 26, STUN_SPORE
 	db 30, CROSS_POISON
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
-	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
 TentacoolEvosAttacks:

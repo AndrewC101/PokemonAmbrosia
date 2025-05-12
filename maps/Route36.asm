@@ -698,7 +698,7 @@ Route36FieldMon3Script:
 	faceplayer
 	cry ZUBAT
 	pause 15
-	loadwildmon ZUBAT, 14
+	loadwildmon ZUBAT, 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

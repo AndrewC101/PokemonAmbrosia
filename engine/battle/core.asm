@@ -531,8 +531,6 @@ DetermineMoveOrder:
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
     jr z, .checkOtherPlayerSun
-    cp VICTREEBEL
-    jr z, .checkOtherPlayerSun
     cp EXEGGCUTE
     jr z, .checkOtherPlayerSun
     cp EXEGGUTOR
@@ -540,8 +538,6 @@ DetermineMoveOrder:
 
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
-    jr z, .simulatePlayerDoubleSpeed
-    cp VICTREEBEL
     jr z, .simulatePlayerDoubleSpeed
     cp EXEGGCUTE
     jr z, .simulatePlayerDoubleSpeed
@@ -4491,6 +4487,8 @@ SwitchInEffects:
 
     cp SUICUNE
     jp z, .defUp
+    cp NOCTOWL
+    jp z, .defUp
     cp SHELLDER
     jp z, .defUp
     cp CLOYSTER
@@ -4538,6 +4536,8 @@ SwitchInEffects:
     jp z, .defenseMode
 
     cp CELEBI
+    jp z, .spDefUp
+    cp CLEFABLE
     jp z, .spDefUp
     cp UMBREON
     jp z, .spDefUp

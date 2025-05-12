@@ -328,7 +328,7 @@ Route37FieldMon8Script:
 	faceplayer
 	cry HAUNTER
 	pause 15
-	loadwildmon HAUNTER, 25
+	loadwildmon HAUNTER, 30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

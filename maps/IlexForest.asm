@@ -660,9 +660,9 @@ IlexForestFieldMon5Script:
 
 IlexForestFieldMon6Script:
 	faceplayer
-	cry YANMA
+	cry LARVESTA
 	pause 15
-	loadwildmon YANMA, 18
+	loadwildmon LARVESTA, 16
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -682,9 +682,9 @@ IlexForestFieldMon7Script:
 
 IlexForestFieldMon8Script:
 	faceplayer
-	cry LARVESTA
+	cry SCYTHER
 	pause 15
-	loadwildmon LARVESTA, 18
+	loadwildmon SCYTHER, 20
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

@@ -39,6 +39,7 @@ SniperPokemon:
     db GARCHOMP
     db FLAREON
     db CROBAT
+    db VICTREEBEL
     db -1
 
 SuperLuckPokemon:
@@ -181,7 +182,6 @@ ClearBodyPokemon:
     db DUNSPARCE
     db VAPOREON
     db WOBBUFFET
-    db GLISCOR
     db -1
 
 SolidRockPokemon:
@@ -192,6 +192,8 @@ SolidRockPokemon:
     db METANG
     db METAGROSS
     db RAYQUAZA
+    db EXEGGUTOR
+    db HERACROSS
     db -1
 
 UberImmunePokemon:

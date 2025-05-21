@@ -5,6 +5,6 @@
 	next "proud fire drake"
 	next "that loves battle"
 
-	page "Summons"
-	next "harsh sun upon"
-	next "entering battle.@"
+	page "Summons sun on"
+	next "switch in. Gets"
+	next "crits often.@"

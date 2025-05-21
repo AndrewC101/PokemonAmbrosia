@@ -4602,6 +4602,8 @@ SwitchInEffects:
     jp z, .safeguard
     cp PALKIA
     jp z, .safeguard
+    cp STARMIE
+    jp z, .safeguard
     ret
 
 .rain

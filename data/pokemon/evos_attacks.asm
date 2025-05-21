@@ -549,12 +549,12 @@ VulpixEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, EMBER
 	db 10, CONFUSE_RAY
-	db 14, CONFUSION
-	db 21, FIRE_SPIN
-	db 23, PSYBEAM
+	db 14, DRAIN_KISS
+	db 20, PSYBEAM
 	db 25, HYPNOSIS
 	db 30, FLAME_WHEEL
 	db 36, FLAMETHROWER
+	db 40, MOON_BLAST
 	db 45, FIRE_BLAST
 	db 0 ; no more level-up moves
 
@@ -563,12 +563,12 @@ NinetalesEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, EMBER
 	db 10, CONFUSE_RAY
-	db 14, CONFUSION
-	db 21, FIRE_SPIN
-	db 23, PSYBEAM
+	db 14, DRAIN_KISS
+	db 20, PSYBEAM
 	db 25, HYPNOSIS
 	db 30, FLAME_WHEEL
 	db 36, FLAMETHROWER
+	db 40, MOON_BLAST
 	db 45, FIRE_BLAST
 	db 0 ; no more level-up moves
 

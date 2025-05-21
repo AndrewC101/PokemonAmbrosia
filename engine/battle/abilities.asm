@@ -50,6 +50,7 @@ SuperLuckPokemon:
     db VICTREEBEL
     db CHARMANDER
     db CHARMELEON
+    db CHARIZARD
     db JOLTEON
     db TAUROS
     db ALAKAZAM

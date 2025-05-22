@@ -1754,6 +1754,8 @@ BattleCommand_CheckHit:
 	ret z
 	cp ABOMASNOW
 	ret z
+	cp ARTICUNO
+	ret z
 .notBlizzard
 
 	call .StatModifiers

@@ -91,7 +91,7 @@ GiovanniFightDoneText:
     line "to give you."
 
 	para "But I do have some"
-	line "advise."
+	line "advice."
 	done
 
 GiovanniAfterBattleText:

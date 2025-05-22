@@ -5,6 +5,6 @@
 	next "#MON that"
 	next "causes hailstorms."
 
-	page "Raises"
-	next "REFLECT upon"
-	next "entering battle.@"
+	page "BLIZZARD always"
+	next "hits. On switch"
+	next "raises REFLECT.@"

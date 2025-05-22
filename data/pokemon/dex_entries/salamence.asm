@@ -6,5 +6,5 @@
 	next "in its assault."
 
 	page "lowers foes"
-	next "ATTACK upon"
-	next "entering battle.@"
+	next "ATTACK. Immune"
+	next "to recoil.@"

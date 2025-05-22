@@ -50,7 +50,6 @@ AI_WaterAbsorbPokemon:
     db SWAMPERT
     db VAPOREON
     db LAPRAS
-    db DRACOVISH
     db POLIWAG
     db POLIWHIRL
     db $FF
@@ -99,6 +98,8 @@ AI_SturdyPokemon:
     db MAGNEZONE
     db ONIX
     db STEELIX
+    db SQUIRTLE
+    db WARTORTLE
     db BLASTOISE
     db FERROSEED
     db FERROTHORN
@@ -108,9 +109,6 @@ AI_SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
-    db BELDUM
-    db METANG
-    db METAGROSS
     db MIMIKYU
     db $FF
 
@@ -124,6 +122,7 @@ AI_ClearBodyPokemon:
     db ARCEUS
     db REGIGIGAS
     db DEOXYS
+    db VAPOREON
     db $FF
 
 AI_UberImmunePokemon:

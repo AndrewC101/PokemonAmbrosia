@@ -3787,7 +3787,7 @@ BattleTowerMons:
 
 	db ARTICUNO
 	db LEFTOVERS
-	db ICE_BEAM, AIR_SLASH, CALM_MIND, ROOST
+	db BLIZZARD, AIR_SLASH, CALM_MIND, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5533,7 +5533,7 @@ BattleTowerMons:
 
 	db ARTICUNO
 	db LEFTOVERS
-	db ICE_BEAM, AIR_SLASH, CALM_MIND, ROOST
+	db BLIZZARD, AIR_SLASH, CALM_MIND, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

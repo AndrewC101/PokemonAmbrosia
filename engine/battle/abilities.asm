@@ -132,6 +132,7 @@ ThickFatPokemon:
     db MAMOSWINE
     db PALKIA
     db RATICATE
+    db DRACOVISH
     db -1
 
 TechnicianPokemon:
@@ -234,11 +235,11 @@ UberImmunePokemon:
 ;    db -1
 
 ;WaterAbsorbPokemon:
+;    db MUDKIP
 ;    db MARSHTOMP
 ;    db SWAMPERT
 ;    db VAPOREON
 ;    db LAPRAS
-;    db DRACOVISH
 ;    db POLIWAG
 ;    db POLIWHIRL
 ;    db -1
@@ -256,6 +257,7 @@ UberImmunePokemon:
 ;    db MAREEP
 ;    db FLAAFFY
 ;    db AMPHAROS
+;    db RAIKOU
 ;    db -1
 
 ;FireAbsorbPokemon:
@@ -274,4 +276,5 @@ UberImmunePokemon:
 ;    db CHANDELURE
 ;    db GROWLITHE
 ;    db ARCANINE
+;    db VOLCARONA
 ;    db -1

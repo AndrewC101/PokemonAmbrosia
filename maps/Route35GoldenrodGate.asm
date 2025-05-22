@@ -68,10 +68,10 @@ RandyScript:
 ;	next "to another road@"
 
 GiftSpearowName:
-	db "PIKACHU@"
+	db "SPARKY@"
 
 GiftSpearowOTName:
-	db "ASH@"
+	db "RITCHIE@"
 
 	db 0 ; unused
 

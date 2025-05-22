@@ -1031,7 +1031,7 @@ Soldier3AfterBattleText:
 
     para "Fighting together."
 
-    para "Well surly you"
+    para "Well surely you"
     line "can handle...."
 
     para "...."

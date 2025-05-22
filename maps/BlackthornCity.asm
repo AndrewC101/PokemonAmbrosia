@@ -888,7 +888,7 @@ LOTRCh2VillainText:
     cont "you."
 
     para "SAURON will"
-    line "surly find you"
+    line "surely find you"
     cont "at MT DOOM."
 
     para "GANDALF is going"

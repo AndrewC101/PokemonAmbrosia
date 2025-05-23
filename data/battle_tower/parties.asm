@@ -3807,7 +3807,7 @@ BattleTowerMons:
 	bigdw 223 ; Atk
 	bigdw 248 ; Def
 	bigdw 223 ; Spd
-	bigdw 239 ; SAtk
+	bigdw 264 ; SAtk
 	bigdw 289 ; SDef
 	db "RANTA-N@@@@"
 
@@ -5553,7 +5553,7 @@ BattleTowerMons:
 	bigdw 268 ; Atk
 	bigdw 298 ; Def
 	bigdw 268 ; Spd
-	bigdw 288 ; SAtk
+	bigdw 318 ; SAtk
 	bigdw 348 ; SDef
 	db "RANTA-N@@@@"
 

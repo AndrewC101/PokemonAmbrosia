@@ -5,5 +5,6 @@
 	next "SHELLDER won't let"
 	next "go."
 
-	page "Regenerates"
-	next "HP every turn.@"
+	page "SPECIAL DEFENSE"
+	next "increases upon"
+	next "entering battle.@"

@@ -680,8 +680,8 @@ BattleTowerMons:
 	db "KIREIHANA@@"
 
 	db FLAREON
-	db CHARCOAL
-	db FIRE_BLAST, FLAME_WHEEL, DIG, AI_RETURN
+	db LEFTOVERS
+	db LAVA_PLUME, EARTH_POWER, GIGA_DRAIN, MORNING_SUN
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -691,18 +691,18 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 25, 15, 20 ; PP
+	db 15, 10, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
 	db 0, 0 ; Status
-	bigdw 77
-    bigdw 77
-    bigdw 79
+    bigdw 96
+    bigdw 96
     bigdw 49
     bigdw 51
     bigdw 64
-    bigdw 70
+    bigdw 79
+    bigdw 51
 	db "HAPINASU@@@"
 
 	db JOLTEON

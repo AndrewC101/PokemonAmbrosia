@@ -410,14 +410,13 @@ PikachuEvosAttacks:
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
-	db 1, GROWL
-	db 6, TAIL_WHIP
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 20, BODY_SLAM
 	db 26, DISCHARGE
 	db 33, CRUNCH
 	db 36, THUNDERBOLT
+	db 40, EXTREMESPEED
 	db 45, THUNDER
 	db 50, VOLT_TACKLE
 	db 0 ; no more level-up moves
@@ -714,7 +713,7 @@ LarvestaEvosAttacks:
 	db 1, LEECH_LIFE
 	db 15, ANCIENTPOWER
 	db 25, FLAME_WHEEL
-	db 30, X_SCISSOR
+	db 30, LAVA_PLUME
 	db 40, BUG_BUZZ
 	db 51, FIRE_BLAST
 	db 60, FLARE_BLITZ
@@ -727,7 +726,7 @@ VolcaronaEvosAttacks:
 	db 1, LEECH_LIFE
 	db 15, ANCIENTPOWER
 	db 25, FLAME_WHEEL
-	db 30, X_SCISSOR
+	db 30, LAVA_PLUME
 	db 40, BUG_BUZZ
 	db 50, QUIVER_DANCE
 	db 55, FIRE_BLAST
@@ -1768,7 +1767,7 @@ MagmortarEvosAttacks:
 	db 14, FLAME_WHEEL
 	db 19, CONFUSE_RAY
 	db 24, FIRE_PUNCH
-	db 30, LOW_KICK
+	db 30, LAVA_PLUME
 	db 36, SUNNY_DAY
 	db 40, FLAMETHROWER
 	db 50, FIRE_BLAST
@@ -1902,7 +1901,7 @@ MagmarEvosAttacks:
 	db 14, FLAME_WHEEL
 	db 19, CONFUSE_RAY
 	db 24, FIRE_PUNCH
-	db 30, LOW_KICK
+	db 30, LAVA_PLUME
 	db 36, SUNNY_DAY
 	db 41, FLAMETHROWER
 	db 50, FIRE_BLAST
@@ -2037,13 +2036,12 @@ FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWTH
 	db 1, BATON_PASS
-	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, EMBER
 	db 20, BITE
 	db 25, FLAME_WHEEL
-	db 28, CRUNCH
-	db 32, FIRE_SPIN
+	db 28, MORNING_SUN
+	db 32, LAVA_PLUME
 	db 36, FLAMETHROWER
 	db 45, FIRE_BLAST
 	db 50, FLARE_BLITZ
@@ -2195,7 +2193,7 @@ MoltresEvosAttacks:
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 37, ENDURE
-	db 45, AIR_SLASH
+	db 45, LAVA_PLUME
 	db 48, ROOST
 	db 50, FIRE_BLAST
 	db 55, HURRICANE
@@ -3419,7 +3417,7 @@ KyogreEvosAttacks:
 GroudonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCARY_FACE
-	db 1, EARTH_POWER
+	db 1, LAVA_PLUME
 	db 1, ANCIENTPOWER
 	db 20, FIRE_PUNCH
 	db 30, SOLARBEAM
@@ -3677,7 +3675,7 @@ EnteiEvosAttacks:
 	db 1, LEER
 	db 11, EMBER
 	db 21, ROAR
-	db 31, FLAMETHROWER
+	db 31, LAVA_PLUME
 	db 41, FIRE_BLAST
 	db 45, EXTREMESPEED
 	db 50, CLOSE_COMBAT

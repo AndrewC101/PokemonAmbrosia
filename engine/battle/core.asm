@@ -1268,7 +1268,6 @@ Core_SpikesImmunePokemon:
 
 Core_RegeneratorPokemon:
     db SLOWPOKE
-    db SLOWBRO
     db SLOWKING
     db TENTACOOL
     db TENTACRUEL
@@ -4532,6 +4531,17 @@ SwitchInEffects:
     cp WEEZING
     jp z, .accDown
 
+    cp FLAREON
+    jp z, .spAtkDown
+    cp LAPRAS
+    jp z, .spAtkDown
+    cp MISMAGIUS
+    jp z, .spAtkDown
+    cp MILTANK
+    jp z, .spAtkDown
+    cp REUNICLUS
+    jp z, .spAtkDown
+
     cp AEGISLASH
     jp z, .defenseMode
 
@@ -4540,6 +4550,8 @@ SwitchInEffects:
     cp CLEFABLE
     jp z, .spDefUp
     cp UMBREON
+    jp z, .spDefUp
+    cp SLOWBRO
     jp z, .spDefUp
 
     cp SNEASEL
@@ -4680,7 +4692,14 @@ SwitchInEffects:
     ret nz ; printing the message before enemy sends out mon causes visual glitches
 	farcall BattleCommand_StatDownMessage
 	ret
-.accDown
+.spAtkDown
+    farcall BattleCommand_SpecialAttackDown
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz ; printing the message before enemy sends out mon causes visual glitches
+	farcall BattleCommand_StatDownMessage
+	ret
+.accDown ; DevNote - only Weezing uses this, can remove it if more room needed
     farcall BattleCommand_AccuracyDown
     ld a, [wBattleHasJustStarted]
     and a

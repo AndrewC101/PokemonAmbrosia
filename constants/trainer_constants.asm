@@ -118,7 +118,6 @@ KRIS EQU __trainer_class__
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
 	const MASTER_SURGE
-	const DAD
 
 	trainerclass SCIENTIST ; 14
 	const ROSS
@@ -887,5 +886,8 @@ KRIS EQU __trainer_class__
 
 	trainerclass CAL_F
 	const CAL_F1
+
+	trainerclass DAD
+	const DAD_1
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

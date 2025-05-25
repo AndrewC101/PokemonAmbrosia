@@ -367,15 +367,6 @@ PlaceEnemysName::
 	cp RIVAL2
 	jr z, .rival
 
-; skip printing class for some trainers
-	cp LT_SURGE
-	jr nz, .notSurge
-	ld a, [wOtherTrainerID]
-	cp DAD
-	jr z, .skipClass
-	jr .printClass
-.notSurge
-
 ; the following code would not print class for some trainers
 ; however the game would crash after credits with this in
 ; probably because it used up all the space in the section?

@@ -37,7 +37,6 @@ SniperPokemon:
     db GIBLE
     db GABITE
     db GARCHOMP
-    db FLAREON
     db CROBAT
     db VICTREEBEL
     db -1
@@ -65,6 +64,7 @@ SereneGracePokemon:
     db TOGEKISS
     db SHAYMIN
     db LANTURN
+    db FLAREON
     db -1
 
 RockHeadPokemon:
@@ -126,7 +126,6 @@ MultiScalePokemon:
 
 ThickFatPokemon:
     db SNORLAX
-    db MILTANK
     db SWINUB
     db PILOSWINE
     db MAMOSWINE

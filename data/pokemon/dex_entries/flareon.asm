@@ -5,6 +5,6 @@
 	next "can reach up to"
 	next "1700 degrees."
 
-	page "Immune to"
-	next "FIRE and has"
-	next "boosted crits.@"
+	page "Boosted effect"
+	next "chance. Lowers"
+	next "foes SP ATTACK.@"

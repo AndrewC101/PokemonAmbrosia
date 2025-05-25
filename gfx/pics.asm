@@ -726,6 +726,7 @@ GreenPic:        INCBIN "gfx/trainers/green.2bpp.lz"
 LordOakPic:          INCBIN "gfx/trainers/lord_oak.2bpp.lz"
 RolePlayerPic:       INCBIN "gfx/trainers/role_player.2bpp.lz"
 CalFemalePic:       INCBIN "gfx/trainers/calFemale.2bpp.lz"
+DadPic:            INCBIN "gfx/trainers/dad.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

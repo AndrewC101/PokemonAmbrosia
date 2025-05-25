@@ -5,6 +5,6 @@
 	next "like incantations"
 	next "tormenting all."
 
-	page "Immune to"
-	next "GROUND type"
-	next "moves.@"
+	page "Lowers foes SP"
+	next "ATTACK on switch."
+	next "Immune to GROUND.@"

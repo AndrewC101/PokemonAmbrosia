@@ -77,4 +77,5 @@ TrainerPicPointers::
 	dba_pic RolePlayerPic
 	dba_pic RolePlayerPic
 	dba_pic CalFemalePic
+	dba_pic DadPic
 	assert_table_length NUM_TRAINER_CLASSES

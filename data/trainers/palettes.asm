@@ -83,5 +83,6 @@ INCBIN "gfx/trainers/lord_oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/role_player.gbcpal", middle_colors
 INCBIN "gfx/trainers/role_player.gbcpal", middle_colors
 INCBIN "gfx/trainers/calFemale.gbcpal", middle_colors
+INCBIN "gfx/trainers/dad.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -306,10 +306,12 @@ PlayBattleMusic:
 
 	ld de, MUSIC_GUILE_THEME
 	cp CHUCK
-	jr z, .done
+	jp z, .done
 	cp LT_SURGE
 	jr z, .done
 	cp LEON
+	jr z, .done
+	cp DAD
 	jr z, .done
 
 	ld de, MUSIC_UNOVA_ELITE_FOUR

@@ -118,7 +118,7 @@ MoveNames::
 	li "FOCUS ENERGY"
 	li "AURA SPHERE"
 	li "METRONOME"
-	li "MIRROR MOVE"
+	li "LAVA PLUME"
 	li "SELFDESTRUCT"
 	li "BRAVE BIRD"
 	li "LICK"

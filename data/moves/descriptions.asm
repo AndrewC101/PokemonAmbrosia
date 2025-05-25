@@ -119,7 +119,7 @@ MoveDescriptions::
 	dw FocusEnergyDescription
 	dw BideDescription
 	dw MetronomeDescription
-	dw MirrorMoveDescription
+	dw LavaPlumeDescription
 	dw SelfdestructDescription
 	dw BraveBirdDescription
 	dw LickDescription
@@ -742,9 +742,9 @@ MetronomeDescription:
 	db   "Randomly uses any"
 	line "#MON move.@"
 
-MirrorMoveDescription:
-	db   "Counters with the"
-	line "same move.@"
+LavaPlumeDescription:
+	db   "An attack that"
+	line "may cause a burn.@"
 
 SelfdestructDescription:
 	db   "Powerful but makes"

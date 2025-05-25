@@ -124,7 +124,7 @@
 	const FOCUS_ENERGY ; 74
 	const AURA_SPHERE  ; 75
 	const METRONOME    ; 76
-	const MIRROR_MOVE  ; 77  - not used
+	const LAVA_PLUME   ; 77
 	const SELFDESTRUCT ; 78
 	const BRAVE_BIRD   ; 79
 	const LICK         ; 7a

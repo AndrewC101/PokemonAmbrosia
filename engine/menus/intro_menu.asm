@@ -741,7 +741,7 @@ OakSpeech:
 
 	xor a
 	ld [wCurPartySpecies], a
-	ld a, LT_SURGE
+	ld a, DAD
 	ld [wTrainerClass], a
 	call Intro_PrepTrainerPic
 

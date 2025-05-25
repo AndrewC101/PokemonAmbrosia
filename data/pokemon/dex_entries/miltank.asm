@@ -6,5 +6,5 @@
 	next "defends fiercely."
 
 	page "Extra damage on"
-	next "opposite gender."
-	next "Resists FIRE/ICE.@"
+	next "males. Lowers"
+	next "foes SP ATTACK.@"

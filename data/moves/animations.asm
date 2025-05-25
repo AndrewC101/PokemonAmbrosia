@@ -120,7 +120,7 @@ BattleAnimations::
 	dw BattleAnim_FocusEnergy
 	dw BattleAnim_AuraSphere
 	dw BattleAnim_Metronome
-	dw BattleAnim_MirrorMove
+	dw BattleAnim_LavaPlume
 	dw BattleAnim_Selfdestruct
 	dw BattleAnim_BraveBird
 	dw BattleAnim_Lick
@@ -889,6 +889,7 @@ BattleAnim_FireSpin:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_LavaPlume:
 BattleAnim_DragonRage:
 	anim_1gfx ANIM_GFX_FIRE
 .loop

@@ -3978,6 +3978,8 @@ AI_Smart_Flinch:
     jr z, .encourage
     cp TOGEKISS
     jr z, .encourage
+    cp LANTURN
+    jr z, .encourage
 
     ret
 .encourage

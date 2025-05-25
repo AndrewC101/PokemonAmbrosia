@@ -76,4 +76,5 @@ TrainerClassDVs:
     dn 15, 15, 15, 15 ; ROLE_PLAYER_NORMAL
     dn 15, 13, 15, 15 ; ROLE_PLAYER_SHINY
 	dn 15, 15, 15, 15 ; CAL_F
+	dn 15, 15, 15, 15 ; DAD
 	assert_table_length NUM_TRAINER_CLASSES

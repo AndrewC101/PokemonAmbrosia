@@ -5,6 +5,6 @@
 	next "as one mighty"
 	next "psychic unit."
 
-	page "Immune to"
-	next "all passive"
-	next "damage.@"
+	page "Passive damage"
+	next "immune. Lowers"
+	next "foes SP ATTACK.@"

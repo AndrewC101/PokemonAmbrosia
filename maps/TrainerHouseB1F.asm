@@ -685,7 +685,7 @@ BattleRouletteReceptionistScript:
 .Dad
     checkevent EVENT_BEAT_DAD
     iffalse .sample
-    loadtrainer LT_SURGE, DAD
+    loadtrainer DAD, DAD_1
     sjump .finish
 
 .Oak

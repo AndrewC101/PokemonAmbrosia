@@ -4,5 +4,6 @@
 	db   "A gentle and"
 	next "caring #MON"
 
-	page "Immune to"
-	next "WATER attacks.@"
+	page "Lowers foes SP"
+	next "ATTACK on switch."
+	next "Immune to WATER.@"

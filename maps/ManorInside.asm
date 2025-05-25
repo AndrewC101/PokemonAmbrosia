@@ -60,7 +60,7 @@ AndrewScript:
 	writemem wBattleMusicOverride
 	winlosstext AndrewBeatenText, AndrewWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ME
+	loadtrainer DAD, ME
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -89,7 +89,8 @@ AndrewScript:
 	writemem wBattleMusicOverride
    	winlosstext AndrewImpossibleBeatenText, AndrewImpossibleWinText
    	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-   	loadtrainer RED, ME_IMPOSSIBLE
+   	;loadtrainer DAD, ME_IMPOSSIBLE
+   	loadtrainer DAD, CELADON_ME
    	startbattle
    	ifequal LOSE, .loseImpossible
    	opentext
@@ -320,7 +321,7 @@ WifeScript:
 	writemem wBattleMusicOverride
 	winlosstext WifeBeatenText, WifeWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer LEAF, WIFE
+	loadtrainer CYNTHIA, WIFE
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -459,7 +460,7 @@ BrotherScript:
 	writemem wBattleMusicOverride
 	winlosstext BrotherBeatenText, BrotherWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BLUE, BROTHER
+	loadtrainer LEON, BROTHER
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -1211,5 +1212,5 @@ ManorInside_MapEvents:
 
 	def_object_events
 	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
-	object_event   1, 17, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
+	object_event   1, 17, SPRITE_JASMINE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
 	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1

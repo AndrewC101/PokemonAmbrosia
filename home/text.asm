@@ -367,6 +367,17 @@ PlaceEnemysName::
 	cp RIVAL2
 	jr z, .rival
 
+; don't print titles in silver manor
+    push bc
+    ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_MANOR
+	pop bc
+    jr z, .skipClass
+
 ; the following code would not print class for some trainers
 ; however the game would crash after credits with this in
 ; probably because it used up all the space in the section?

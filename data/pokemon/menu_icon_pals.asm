@@ -253,7 +253,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  BROWN    ; LARVITAR
 	icon_pals GREEN,  BROWN     ; PUPITAR
 	icon_pals GREEN,  BROWN     ; TYRANITAR
-	icon_pals SILVER,  BLUE       ; LUGIA
+	icon_pals SILVER,  GOLD       ; LUGIA
 	icon_pals RED,  GOLD      ; HO_OH
 	icon_pals GREEN,  PURPLE  ; CELEBI
 	icon_pals SILVER,  GOLD  ; MEWTWO

@@ -364,6 +364,7 @@ KRIS EQU __trainer_class__
 	trainerclass CYNTHIA ; 22
 	const CHAMP_CYNTHIA
 	const MASTER_CYNTHIA
+	const WIFE
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -564,6 +565,7 @@ KRIS EQU __trainer_class__
 	trainerclass LEON ; 31 ; Remove?
 	const CHAMP_LEON
 	const MASTER_LEON
+	const BROTHER
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1 ; unused
@@ -755,16 +757,12 @@ KRIS EQU __trainer_class__
 	const MASTER_ASH
 	const ATEM
 	const RED_MEWTWO
-	const CELADON_ME
-	const ME
-	const ME_IMPOSSIBLE
 
 	trainerclass BLUE ; 40
 	const BLUE1
 	const MASTER_BLUE
 	const SETO
 	const MASTER_SETO
-	const BROTHER
 	const BLUE_ARCADE
 
 	trainerclass OFFICER ; 41 ; Remove?
@@ -813,7 +811,6 @@ KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
-    const WIFE
     const GREEN_ARCADE
 
     trainerclass LORD_OAK ; 47
@@ -889,5 +886,8 @@ KRIS EQU __trainer_class__
 
 	trainerclass DAD
 	const DAD_1
+	const CELADON_ME
+	const ME
+	const ME_IMPOSSIBLE
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

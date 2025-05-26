@@ -699,10 +699,10 @@ BattleTowerMons:
     bigdw 96
     bigdw 96
     bigdw 49
-    bigdw 51
-    bigdw 64
+    bigdw 53
+    bigdw 60
     bigdw 79
-    bigdw 51
+    bigdw 53
 	db "HAPINASU@@@"
 
 	db JOLTEON
@@ -748,13 +748,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
 	db 0, 0 ; Status
-	bigdw 77
+    bigdw 77
     bigdw 77
     bigdw 51
     bigdw 49
     bigdw 70
-    bigdw 79
-    bigdw 64
+    bigdw 74
+    bigdw 68
 	db "KAIRIKI-@@@"
 
 	db UMBREON

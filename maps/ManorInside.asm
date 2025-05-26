@@ -1211,6 +1211,6 @@ ManorInside_MapEvents:
 	bg_event  15,  1, BGEVENT_READ, ManorFact22
 
 	def_object_events
-	object_event  15,  4, SPRITE_RED, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
-	object_event   1, 17, SPRITE_JASMINE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
+	object_event  15,  4, SPRITE_BILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
+	object_event   1, 17, SPRITE_KAREN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
 	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1

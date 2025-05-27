@@ -190,8 +190,10 @@ AndrewWinText:
 	done
 
 AndrewImpossibleBeatenText:
-	text "Very good..."
-	para "Nice cheat codes."
+	text "You're either"
+	line "cheating..."
+	para "Or you're a"
+	line "genius!"
 	done
 
 AndrewImpossibleWinText:
@@ -261,12 +263,16 @@ AndrewAfterBattleText:
 	done
 
 AndrewUnreachableText:
-	text "You totally"
-	line "cheated to get"
-	cont "here."
-	para "This text should"
-	line "never be"
-	cont "displayed!"
+	text "Well I wasn't"
+	line "expecting that!"
+	para "If you done that"
+	line "without cheats you"
+	cont "have my deepest"
+	cont "respect."
+	para "If you did"
+	line "cheat..."
+	para "I can still"
+	line "appreciate that."
 	done
 
 AndrewLoseAfterBattleText:

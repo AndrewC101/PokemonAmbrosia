@@ -5,6 +5,6 @@
 	next "sea. It seeks"
 	next "global flood."
 
-	page "Summons a"
-	next "rain storm upon"
-	next "entering battle.@"
+	page "Summons rain on"
+	next "switch in. Immune"
+	next "to stat drops.@"

@@ -518,11 +518,17 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
 
-; switch if enemy attack at -2 or lower and unboosted special attack
+; switch if enemy attack or special attack at -2 or lower, unless the other offense is boosted
+    ld a, [wEnemyAtkLevel]
+    cp BASE_STAT_LEVEL + 1
+    jr nc, .magicGuard
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .magicGuard
     ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL - 1
+	jp c, .switch
+    ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL - 1
 	jp c, .switch
 

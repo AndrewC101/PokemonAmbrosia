@@ -183,6 +183,7 @@ ClearBodyPokemon:
     db DUNSPARCE
     db VAPOREON
     db WOBBUFFET
+    db KYOGRE
     db -1
 
 SolidRockPokemon:

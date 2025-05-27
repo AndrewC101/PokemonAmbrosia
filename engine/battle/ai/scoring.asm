@@ -1489,9 +1489,9 @@ AI_Smart_Moonlight:
 	jp nc, .healBelowHalf
 
 ; if the player is using Smeargle just attack, kill it!
-    ld a, [wBattleMonSpecies]
-    cp SMEARGLE
-    jp z, .discourage
+    ;ld a, [wBattleMonSpecies]
+    ;cp SMEARGLE
+    ;jp z, .discourage
 
 ; check if the move is Rest, it must be handled differently
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]

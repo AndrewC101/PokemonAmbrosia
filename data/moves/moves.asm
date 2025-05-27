@@ -180,7 +180,7 @@ Moves: ; 41afb
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,        STATUS,   100,  1,   0
 	move QUIVER_DANCE, EFFECT_QUIVER_DANCE,        0, BUG,           STATUS,   100, 15,   0
 	move BUG_BUZZ,     EFFECT_SP_DEF_DOWN_HIT,    90, BUG,           SPECIAL,  100, 15,  10
-	move SAVAGE_REND,  EFFECT_NORMAL_HIT,        150, WATER,         PHYSICAL, 100,  5,   0
+	move SAVAGE_REND,  EFFECT_NORMAL_HIT,        180, WATER,         PHYSICAL, 100,  5,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,         STATUS,   100, 15,   0
 	move FLAME_WHEEL,  EFFECT_RECOIL_HIT,        60, FIRE,          PHYSICAL, 100,  25,  10
@@ -197,7 +197,7 @@ Moves: ; 41afb
 	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, FIGHTING,      PHYSICAL, 100, 30,   0
 	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, NORMAL,        STATUS,    90, 10,   0
 	move NIGHT_SLASH,  EFFECT_NORMAL_HIT,         80, DARK,          PHYSICAL, 100, 15,   0
-	move BOLT_BREAK,   EFFECT_NORMAL_HIT,        150, ELECTRIC,      PHYSICAL, 100,  5,   0
+	move BOLT_BREAK,   EFFECT_NORMAL_HIT,        180, ELECTRIC,      PHYSICAL, 100,  5,   0
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 15,  30
 	move AVALANCHE,    EFFECT_FREEZE_HIT,        100, ICE,           PHYSICAL, 100, 10,  10

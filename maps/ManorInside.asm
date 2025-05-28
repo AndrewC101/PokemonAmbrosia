@@ -64,6 +64,7 @@ AndrewScript:
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
+.checkBeaten
 	checkevent EVENT_BEAT_ANDREW
 	iftrue .skipHandOfGod
 	setevent EVENT_BEAT_ANDREW
@@ -89,15 +90,16 @@ AndrewScript:
 	writemem wBattleMusicOverride
    	winlosstext AndrewImpossibleBeatenText, AndrewImpossibleWinText
    	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-   	;loadtrainer DAD, ME_IMPOSSIBLE
    	loadtrainer DAD, CELADON_ME
    	startbattle
    	ifequal LOSE, .loseImpossible
+   	reloadmapafterbattle
    	opentext
    	writetext AndrewUnreachableText
    	waitbutton
    	closetext
    	special HealParty
+    sjump .checkBeaten
    	end
 .lose
     special HealParty
@@ -1218,5 +1220,5 @@ ManorInside_MapEvents:
 
 	def_object_events
 	object_event  15,  4, SPRITE_BILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
-	object_event   1, 17, SPRITE_KAREN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
+	object_event   1, 17, SPRITE_SABRINA, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
 	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1

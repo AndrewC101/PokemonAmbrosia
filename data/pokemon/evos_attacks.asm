@@ -551,7 +551,7 @@ VulpixEvosAttacks:
 	db 14, DRAIN_KISS
 	db 20, PSYBEAM
 	db 25, HYPNOSIS
-	db 30, FLAME_WHEEL
+	db 30, LAVA_PLUME
 	db 36, FLAMETHROWER
 	db 40, MOON_BLAST
 	db 45, FIRE_BLAST
@@ -565,7 +565,7 @@ NinetalesEvosAttacks:
 	db 14, DRAIN_KISS
 	db 20, PSYBEAM
 	db 25, HYPNOSIS
-	db 30, FLAME_WHEEL
+	db 30, LAVA_PLUME
 	db 36, FLAMETHROWER
 	db 40, MOON_BLAST
 	db 45, FIRE_BLAST
@@ -3445,25 +3445,25 @@ SkarmoryEvosAttacks:
 HoundourEvosAttacks:
 	db EVOLVE_LEVEL, 24, HOUNDOOM
 	db 0 ; no more evolutions
-	db 1, LEER
 	db 1, EMBER
 	db 13, POISON_GAS
 	db 20, BITE
 	db 25, CRUNCH
 	db 30, DARK_PULSE
+	db 30, LAVA_PLUME
 	db 36, FLAMETHROWER
 	db 45, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEER
 	db 1, EMBER
 	db 7, ROAR
 	db 13, POISON_GAS
 	db 20, BITE
 	db 24, CRUNCH
 	db 30, DARK_PULSE
+	db 30, LAVA_PLUME
 	db 36, FLAMETHROWER
 	db 45, NASTY_PLOT
 	db 0 ; no more level-up moves

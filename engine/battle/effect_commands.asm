@@ -7107,6 +7107,8 @@ INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
+INCLUDE "engine/battle/move_effects/sucker_punch.asm"
+
 BattleCommand_HealMorn:
 ; healmorn
 	ld b, MORN_F

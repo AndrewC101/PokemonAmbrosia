@@ -956,6 +956,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_DEFENSE_CURL,     AI_Smart_LesserStatChange
     dbw EFFECT_PARALYZE_HIT,     AI_Smart_ParalyzeHit
     dbw EFFECT_JUDGEMENT,        AI_Smart_Judgement
+    dbw EFFECT_SUCKER_PUNCH,     AI_Smart_SuckerPunch
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -3518,10 +3519,6 @@ AI_Smart_Serenity:
     call DoesEnemyHaveChoiceItem
     jp c, .discourage
 
-; don't boost against a powerful priority user that can 2hko
-    call IsPowerfulPriorityUser
-    jp c, .discourage
-
 .continue
 ; if player physical consider normal boost logic
 ; if player special consider only if they can outspeed and OHKO
@@ -3612,10 +3609,6 @@ AI_Smart_CalmMind:
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
-
-; don't boost against a powerful priority user that can 2hko
-    call IsPowerfulPriorityUser
-    jp c, StandardDiscourage
 
 ; don't use if we are at risk of being KOd, just attack them
     call ShouldAIBoost
@@ -3751,10 +3744,6 @@ AI_Smart_Agility:
 	and 1 << PAR
 	jp nz, StandardDiscourage
 
-; don't boost against a powerful priority user that can 2hko
-    call IsPowerfulPriorityUser
-    jp c, StandardDiscourage
-
 ; discourage if we will be KOd
     call CanPlayerKO
     jp c, StandardDiscourage
@@ -3778,10 +3767,6 @@ AI_Smart_Geomancy:
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
-
-; don't boost against a powerful priority user that can 2hko
-    call IsPowerfulPriorityUser
-    jp c, StandardDiscourage
 
 ; is the player setting up - if so we may want to boost to force them to stop and attack
 ; if the player already has +4 attack or special attack then they have already set up, just attack
@@ -4046,6 +4031,20 @@ AI_Smart_LesserStatChange:
     inc [hl]
     ret
 
+AI_Smart_SuckerPunch:
+; if the players last move had no power - 50% chance to discourage.
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	ret nz
+	call AI_50_50
+	ret c
+rept 12
+	inc [hl]
+endr
+	ret
+
 ; DevNote - functions which check if the player can KO the AI and decide to use boosting moves
 
 ; decide if AI should use boosting moves
@@ -4099,10 +4098,6 @@ ShouldAIBoost:
 	cp 50 percent
 	jp c, .decideNotToBoost
 .noForceSwitch
-
-; don't boost against a powerful priority user that can 2hko
-    call IsPowerfulPriorityUser
-    jp c, .decideNotToBoost
 
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
 ; this is to prevent the AI from boosting until it only gets one attack off, should attack earlier for more damage
@@ -5721,28 +5716,6 @@ IsSpecialDefenseMaxed:
 	ld a, [wEnemyMonSpclDef]
 	sbc HIGH(MAX_STAT_VALUE)
 	jr z, .yes
-.no
-    xor a
-    ret
-.yes
-    scf
-    ret
-
-IsPowerfulPriorityUser:
-	ld b, EFFECT_PRIORITY_HIT
-	call PlayerHasMoveEffect
-	jr nc, .no
-    ld a, [wBattleMonSpecies]
-    cp SCIZOR
-    jr z, .check2HKO
-    cp HONCHKROW
-    jr z, .check2HKO
-    cp KINGAMBIT
-    jr z, .check2HKO
-    jr .no
-.check2HKO
-    call CanPlayer2HKO
-    jr c, .yes
 .no
     xor a
     ret

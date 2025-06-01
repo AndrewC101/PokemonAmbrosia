@@ -184,4 +184,5 @@ BattleCommandPointers:
 	dw BattleCommand_CalmMind
 	dw BattleCommand_CheckStatusImmunity
 	dw BattleCommand_FlameOrb
+	dw BattleCommand_SuckerPunch
 	assert_table_length NUM_EFFECT_COMMANDS

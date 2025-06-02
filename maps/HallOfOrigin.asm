@@ -1176,7 +1176,7 @@ MultiverseRolePlayScript:
 	setval MULTIVERSE_HEROES
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ZINNIA_BATTLE
+	setval MUSIC_CHAMPION_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext MultiverseVictoryText, MultiverseDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

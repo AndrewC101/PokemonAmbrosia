@@ -122,6 +122,10 @@
 	const MUSIC_RED_INDIGO_PLATEAU           ; 80
 	const MUSIC_RED_LAVENDER                 ; 81
 	const MUSIC_RED_DUNGEON                  ; 82
+	const MUSIC_CHAMPION_DPPT                ; 83
+	const MUSIC_ELITE_FOUR_PRISM             ; 84
+	const MUSIC_MEGALOVANIA                  ; 85
+	const MUSIC_HO_OH_BATTLE                 ; 86
 NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

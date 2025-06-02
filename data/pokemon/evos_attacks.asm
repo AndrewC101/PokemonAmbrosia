@@ -341,7 +341,6 @@ BunearyEvosAttacks:
 	db 33, DRAIN_PUNCH
 	db 36, SUCKER_PUNCH
 	db 40, PLAY_ROUGH
-	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
@@ -358,7 +357,6 @@ LopunnyEvosAttacks:
 	db 33, DRAIN_PUNCH
 	db 36, SUCKER_PUNCH
 	db 40, PLAY_ROUGH
-	db 46, MEGA_KICK
 	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 

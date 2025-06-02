@@ -360,7 +360,7 @@ MerlinRolePlayScript:
 	setval MERLIN_EMRYS
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_FINAL_BATTLE
+	setval MUSIC_HO_OH_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext MerlinVictoryText, MerlinDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WEAK_BATTLE

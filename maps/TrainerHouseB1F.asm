@@ -1202,7 +1202,7 @@ BattleTrialReceptionistScript:
 	writetext Trial2Text
 	waitbutton
 	closetext
-	setval MUSIC_LUGIA_SONG
+	setval MUSIC_HO_OH_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

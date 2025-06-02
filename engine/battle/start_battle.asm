@@ -128,7 +128,7 @@ PlayBattleMusic:
 	cp LUGIA
 	jr z, .lugia
 	cp HO_OH
-	jr z, .lugia
+	jr z, .hooh
 	cp ZYGARDE
 	jr z, .lugia
 	cp KYOGRE
@@ -138,7 +138,7 @@ PlayBattleMusic:
 	cp RAYQUAZA
 	jr z, .hoen
 	cp GIRATINA
-	jr z, .creation
+	jr z, .mega
 	cp PALKIA
 	jr z, .creation
 	cp DIALGA
@@ -163,6 +163,10 @@ PlayBattleMusic:
     ld de, MUSIC_LUGIA_SONG
     jp .done
 
+.hooh
+    ld de, MUSIC_HO_OH_BATTLE
+    jp .done
+
 .hoen
     ld de, MUSIC_HOEN_CHAMPION
     jp .done
@@ -171,8 +175,12 @@ PlayBattleMusic:
     ld de, MUSIC_ZINNIA_BATTLE
     jp .done
 
+.mega
+    ld de, MUSIC_MEGALOVANIA
+    jp .done
+
 .life
-    ld de, MUSIC_UNOVA_ELITE_FOUR
+    ld de, MUSIC_ELITE_FOUR_PRISM
     jp .done
 
 .notUber
@@ -252,6 +260,8 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jp z, .done
+
+	ld de, MUSIC_CHAMPION_DPPT
 	cp CYNTHIA
 	jp z, .done
 
@@ -309,12 +319,10 @@ PlayBattleMusic:
 	jp z, .done
 	cp LT_SURGE
 	jr z, .done
-	cp LEON
-	jr z, .done
 	cp DAD
 	jr z, .done
 
-	ld de, MUSIC_UNOVA_ELITE_FOUR
+	ld de, MUSIC_ELITE_FOUR_PRISM
 	cp SABRINA
 	jr z, .done
 	cp BRUNO
@@ -322,8 +330,10 @@ PlayBattleMusic:
 	cp KAREN
 	jr z, .done
 
-	ld de, MUSIC_ARCHIE_BATTLE
+	ld de, MUSIC_MEGALOVANIA
 	cp GIOVANNI
+	jr z, .done
+	cp LEON
 	jr z, .done
 
 	ld de, MUSIC_SUICUNE_BATTLE
@@ -350,7 +360,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp RIVAL2_SILVER_CAVE ; Rival in Silver Cave
 	jr c, .done
-	ld de, MUSIC_ARCHIE_BATTLE
+	ld de, MUSIC_HO_OH_BATTLE
 	jr .done
 
 .checkCrystal
@@ -359,7 +369,7 @@ PlayBattleMusic:
 	ld a, [wOtherTrainerID]
 	cp CRYSTAL_7
 	jr c, .done
-	ld de, MUSIC_SUICUNE_BATTLE
+	ld de, MUSIC_CHAMPION_DPPT
 	jr .done
 
 .othertrainer

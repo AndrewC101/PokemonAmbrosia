@@ -4060,6 +4060,16 @@ ShouldAIBoost:
     call DoesEnemyHaveChoiceItem
     jp c, .dontBoost
 
+; if players last move was sucker punch - 50% chance to boost
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_SUCKER_PUNCH
+    jr nz, .notUsingSuckerPunch
+	call AI_50_50
+	ret c
+
+.notUsingSuckerPunch
 ; if we are faster and player is flying or underground just boost
     call DoesAIOutSpeedPlayer
     jr nc, .checkEvasion

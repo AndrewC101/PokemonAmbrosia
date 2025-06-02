@@ -174,7 +174,7 @@ TrainerFisherArnold:
 	writetext FisherArnoldSeenText
 	waitbutton
 	closetext
-	setval MUSIC_CHAMPION_BATTLE
+	setval MUSIC_CHAMPION_DPPT
 	writemem wBattleMusicOverride
 	winlosstext FisherArnoldBeatenText, FisherArnoldWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE

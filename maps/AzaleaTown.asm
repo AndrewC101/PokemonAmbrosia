@@ -647,7 +647,7 @@ YuGiOhRolePlayScript:
 	setval YGO_SETO_YAMI
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ZINNIA_BATTLE
+	setval MUSIC_MEGALOVANIA
 	writemem wBattleMusicOverride
 	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -710,7 +710,7 @@ YuGiOhRolePlayScript:
 	setval YGO_SETO_YAMI
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ZINNIA_BATTLE
+	setval MUSIC_MEGALOVANIA
 	writemem wBattleMusicOverride
 	winlosstext YuGiOhVictoryText, YuGiOhDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

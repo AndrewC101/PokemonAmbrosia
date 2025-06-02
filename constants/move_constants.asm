@@ -30,7 +30,7 @@
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
-	const MEGA_KICK    ; 19
+	const MEGA_KICK    ; 19   not used
 	const MOON_BLAST   ; 1a
 	const BIG_RECOVER  ; 1b
 	const SAND_ATTACK  ; 1c

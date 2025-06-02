@@ -1111,7 +1111,7 @@ StarWarsRolePlayScript:
 	setval SW_CH4_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_ELITE_FOUR_PRISM
 	writemem wBattleMusicOverride
 	winlosstext StarWarsVictoryText, StarWarsDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -1253,7 +1253,7 @@ StarWarsRolePlayScript:
 	setval SW_CH4_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_ELITE_FOUR_PRISM
 	writemem wBattleMusicOverride
 	winlosstext StarWarsVictoryText, StarWarsDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

@@ -3719,6 +3719,16 @@ AI_Smart_Barrier:
     jr .toxic
 
 .mewtwo
+; if players last move was sucker punch - 50% chance to boost
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_SUCKER_PUNCH
+    jr nz, .notUsingSuckerPunch
+	call AI_50_50
+	jr c, .skipKOCheck
+
+.notUsingSuckerPunch
 ; if player physical don't use only if they can outspeed and OHKO
 	call DoesAIOutSpeedPlayer
 	jr c, .skipKOCheck
@@ -3909,6 +3919,16 @@ AI_Smart_ShellSmash:
 	and 1 << PAR
 	jp nz, StandardDiscourage
 
+; if players last move was sucker punch - 50% chance to boost
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_SUCKER_PUNCH
+    jr nz, .notUsingSuckerPunch
+	call AI_50_50
+	jr c, .skipKOCheck
+
+.notUsingSuckerPunch
 ; don't use if we will be koed
 ; skip if player is SLP or FRZ
 	ld a, [wBattleMonStatus]

@@ -25,7 +25,7 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw AquaJetDescription
 	dw MoonBlastDescription
 	dw BigRecoverDescription
 	dw SandAttackDescription
@@ -363,9 +363,9 @@ DoubleKickDescription:
 	db   "A double kicking"
 	line "attack.@"
 
-MegaKickDescription:
-	db   "A powerful kicking"
-	line "attack.@"
+AquaJetDescription:
+	db   "Lets the user get"
+	line "in the first hit.@"
 
 MoonBlastDescription:
 	db   "An attack that may"
@@ -643,8 +643,8 @@ ConfusionDescription:
 	line "cause confusion.@"
 
 PsychicMDescription:
-	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	db   "Has a high criti-"
+	line "cal hit ratio.@"
 
 HypnosisDescription:
 	db   "May put the foe to"

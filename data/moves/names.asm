@@ -24,7 +24,7 @@ MoveNames::
 	li "VINE WHIP"
 	li "STOMP"
 	li "DOUBLE KICK"
-	li "MEGA KICK"
+	li "AQUA JET"
 	li "MOON BLAST"
 	li "RECOVER"
 	li "SAND-ATTACK"

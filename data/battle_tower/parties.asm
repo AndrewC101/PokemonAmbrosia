@@ -109,7 +109,7 @@ BattleTowerMons:
 
 	db AZUMARILL
 	db CHOICE_BAND
-	db PLAY_ROUGH, WATERFALL, AI_RETURN, ICE_PUNCH
+	db PLAY_ROUGH, WATERFALL, AQUA_JET, ICE_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5273,7 +5273,7 @@ BattleTowerMons:
 
 	db LUCARIO
 	db FOCUS_SASH
-	db CLOSE_COMBAT, IRON_HEAD, EXTREMESPEED, CRUNCH
+	db METEOR_MASH, CLOSE_COMBAT, CRUNCH, EXTREMESPEED
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5283,7 +5283,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 16, 24 ; PP
+	db 16, 16, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

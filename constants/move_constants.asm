@@ -30,7 +30,7 @@
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
-	const MEGA_KICK    ; 19   not used
+	const AQUA_JET     ; 19   not used
 	const MOON_BLAST   ; 1a
 	const BIG_RECOVER  ; 1b
 	const SAND_ATTACK  ; 1c
@@ -150,7 +150,7 @@
 	const LOVELY_KISS  ; 8e
 	const SHADOW_FORCE ; 8f
 	const TRANSFORM    ; 90
-	const BUBBLE       ; 91
+	const BUBBLE       ; 91     not used
 	const DIZZY_PUNCH  ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94

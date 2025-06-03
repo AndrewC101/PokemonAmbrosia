@@ -121,9 +121,9 @@ SquirtleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 7, BUBBLE
+	db 7, WATER_GUN
 	db 10, DEFENSE_CURL
-	db 12, WATER_GUN
+	db 12, AQUA_JET
 	db 17, BITE
 	db 20, RAPID_SPIN
 	db 25, BUBBLEBEAM
@@ -139,9 +139,9 @@ WartortleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 7, BUBBLE
+	db 7, WATER_GUN
 	db 10, DEFENSE_CURL
-	db 13, WATER_GUN
+	db 12, AQUA_JET
 	db 16, BITE
 	db 20, RAPID_SPIN
 	db 25, BUBBLEBEAM
@@ -156,9 +156,9 @@ BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 7, BUBBLE
+	db 7, WATER_GUN
 	db 10, DEFENSE_CURL
-	db 13, WATER_GUN
+	db 12, AQUA_JET
 	db 19, BITE
 	db 20, RAPID_SPIN
 	db 25, BUBBLEBEAM
@@ -752,7 +752,7 @@ DracovishEvosAttacks:
 	db 1, WATER_GUN
 	db 12, BITE
 	db 21, ANCIENTPOWER
-	db 28, BUBBLEBEAM
+	db 28, AQUA_JET
 	db 30, DRAGON_CLAW
 	db 35, CRUNCH
 	db 40, SURF
@@ -878,9 +878,9 @@ ArcanineEvosAttacks:
 PoliwagEvosAttacks:
 	db EVOLVE_LEVEL, 25, POLIWHIRL
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 13, DOUBLESLAP
 	db 20, BUBBLEBEAM
 	db 26, BODY_SLAM
@@ -895,9 +895,9 @@ PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
 	db EVOLVE_LEVEL, 40, POLITOED
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 13, DOUBLESLAP
 	db 20, BUBBLEBEAM
 	db 25, BODY_SLAM
@@ -910,9 +910,9 @@ PoliwhirlEvosAttacks:
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 13, DOUBLESLAP
 	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
@@ -1273,7 +1273,7 @@ MagnezoneEvosAttacks:
 
 YanmegaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GUST
+	db 1, SONICBOOM
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 14, LEECH_LIFE
@@ -1480,7 +1480,8 @@ MudkipEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
-	db 11, ROCK_THROW
+	db 8, AQUA_JET
+	db 12, ROCK_THROW
     db 17, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
@@ -1543,7 +1544,7 @@ MarillEvosAttacks:
 	db 1, TACKLE
 	db 1, WATER_GUN
 	db 6, DEFENSE_CURL
-	db 15, BUBBLEBEAM
+	db 15, AQUA_JET
 	db 19, HEADBUTT
 	db 22, RAIN_DANCE
 	db 25, ROLLOUT
@@ -1558,7 +1559,7 @@ AzumarillEvosAttacks:
 	db 1, TACKLE
 	db 1, WATER_GUN
 	db 6, DEFENSE_CURL
-	db 16, BUBBLEBEAM
+	db 16, AQUA_JET
 	db 18, HEADBUTT
 	db 22, RAIN_DANCE
 	db 25, ROLLOUT
@@ -1727,10 +1728,9 @@ RhyperiorEvosAttacks:
 HorseaEvosAttacks:
 	db EVOLVE_LEVEL, 25, SEADRA
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 8, SMOKESCREEN
-	db 10, LEER
-	db 13, WATER_GUN
+	db 10, AQUA_JET
 	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
 	db 31, WATERFALL
@@ -1743,10 +1743,9 @@ HorseaEvosAttacks:
 SeadraEvosAttacks:
 	db EVOLVE_LEVEL, 40, KINGDRA
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 8, SMOKESCREEN
-	db 10, LEER
-	db 13, WATER_GUN
+	db 10, AQUA_JET
 	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
 	db 30, WATERFALL
@@ -2380,9 +2379,9 @@ FroakieEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SMOKESCREEN
-	db 6, BUBBLE
+	db 6, WATER_GUN
 	db 8, QUICK_ATTACK
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 12, LICK
 	db 17, SWIFT
 	db 20, NIGHT_SHADE
@@ -2399,9 +2398,9 @@ FrogadierEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SMOKESCREEN
-	db 6, BUBBLE
+	db 6, WATER_GUN
 	db 8, QUICK_ATTACK
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 12, LICK
 	db 16, SWIFT
 	db 20, NIGHT_SHADE
@@ -2417,9 +2416,9 @@ GreninjaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SMOKESCREEN
-	db 6, BUBBLE
+	db 6, WATER_GUN
 	db 8, QUICK_ATTACK
-	db 10, WATER_GUN
+	db 10, AQUA_JET
 	db 12, LICK
 	db 16, SWIFT
 	db 20, NIGHT_SHADE
@@ -2470,6 +2469,7 @@ LucarioEvosAttacks:
 	db 45, BULK_UP
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
+	db 85, METEOR_MASH
 	db 0 ; no more level-up moves
 
 HoothootEvosAttacks:
@@ -2824,9 +2824,9 @@ GenesectEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BUBBLE
-	db 1, HYPNOSIS
+	db 1, WATER_GUN
 	db 7, HYPNOSIS
+	db 10, AQUA_JET
 	db 10, WATER_GUN
 	db 13, DOUBLESLAP
 	db 20, BUBBLEBEAM
@@ -2936,7 +2936,7 @@ YanmaEvosAttacks:
 	db EVOLVE_LEVEL, 30, YANMEGA
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, GUST
+	db 1, SONICBOOM
 	db 7, QUICK_ATTACK
 	db 10, BITE
 	db 14, LEECH_LIFE
@@ -2953,7 +2953,8 @@ MarshtompEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
-	db 11, ROCK_THROW
+	db 8, AQUA_JET
+	db 12, ROCK_THROW
     db 16, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
@@ -2968,7 +2969,8 @@ SwampertEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
-	db 11, ROCK_THROW
+	db 8, AQUA_JET
+	db 12, ROCK_THROW
     db 16, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
@@ -3131,7 +3133,8 @@ DunsparceEvosAttacks:
 	db 30, ROOST
 	db 40, DOUBLE_EDGE
 	db 50, DRAGON_DANCE
-	db 100, AFTER_IMAGE
+	db 85, BOLT_BREAK
+	db 85, SAVAGE_REND
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -3468,10 +3471,9 @@ HoundoomEvosAttacks:
 
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BUBBLE
+	db 1, WATER_GUN
 	db 8, SMOKESCREEN
-	db 10, LEER
-	db 13, WATER_GUN
+	db 10, AQUA_JET
 	db 20, BUBBLEBEAM
 	db 25, RAIN_DANCE
 	db 33, WATERFALL

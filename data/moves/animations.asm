@@ -26,7 +26,7 @@ BattleAnimations::
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
-	dw BattleAnim_MegaKick
+	dw BattleAnim_AquaJet
 	dw BattleAnim_MoonBlast
 	dw BattleAnim_BigRecover
 	dw BattleAnim_SandAttack
@@ -3331,6 +3331,7 @@ BattleAnim_Curse:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_AquaJet:
 BattleAnim_Flail:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row

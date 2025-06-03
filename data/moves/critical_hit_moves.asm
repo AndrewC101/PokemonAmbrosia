@@ -10,4 +10,5 @@ CriticalHitMoves:
 	db STONE_EDGE
 	db DRAGON_CLAW
 	db CROSS_POISON
+	db PSYCHIC_M
 	db -1

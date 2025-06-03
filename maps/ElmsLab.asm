@@ -506,6 +506,7 @@ AideScript_GiveYouBalls:
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOTHING
+	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	end
 
 AideScript_ReceiveTheBalls:

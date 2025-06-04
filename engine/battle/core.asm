@@ -3582,6 +3582,7 @@ AddBattleParticipant:
 	ld hl, wBattleParticipantsIncludingFainted
 	predef_jump SmallFarFlagAction
 
+; DevNote - switch - logic for picking switch in
 FindMonInOTPartyToSwitchIntoBattle:
 	ld b, -1
 	ld a, %000001
@@ -3622,8 +3623,8 @@ FindMonInOTPartyToSwitchIntoBattle:
 	pop bc
 	jr nz, .discourage ; DevNote - discourage switch to a SLP or FRZ mon
 
-	call LookUpTheEffectivenessOfEveryEnemyMove ; does the current AI mon have a SE move on the player
-	call AreThePlayerMonMovesEffectiveAgainstOTMon ; Does the player have a SE move on the current AI mon
+	call LookUpTheEffectivenessOfEveryEnemyMove ; DevNote - switch - does the current AI mon have a SE move on the player
+	call AreThePlayerMonMovesEffectiveAgainstOTMon ; DevNote - switch - Does the player have a SE move on the current AI mon
 	jr .loop
 .discourage
 	ld hl, wPlayerEffectivenessVsEnemyMons
@@ -3668,6 +3669,11 @@ LookUpTheEffectivenessOfEveryEnemyMove:
 	ret
 
 AreThePlayerMonMovesEffectiveAgainstOTMon:
+    ld a, [wOtherTrainerClass]
+    cp LORD_OAK
+    jr nz, .notLordOak
+    ret
+.notLordOak
 ; Calculates the effectiveness of the types of the PlayerMon
 ; against the OTMon
 	push bc
@@ -3727,6 +3733,7 @@ AreThePlayerMonMovesEffectiveAgainstOTMon:
 	pop bc
 	ret
 
+; DevNote - switch - score type matchups for switch
 ScoreMonTypeMatchups:
 .loop1
 	ld hl, wEnemyEffectivenessVsPlayerMons

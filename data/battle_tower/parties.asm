@@ -213,7 +213,7 @@ BattleTowerMons:
 
 	db MAWILE
 	db CHOICE_BAND
-	db IRON_HEAD, AI_RETURN, DRAIN_PUNCH, BITE
+	db IRON_HEAD, BULLET_PUNCH, DRAIN_PUNCH, BITE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

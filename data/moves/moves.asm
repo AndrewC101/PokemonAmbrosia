@@ -22,7 +22,7 @@ Moves: ; 41afb
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,           PHYSICAL, 100, 15,  10
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC,      PHYSICAL, 100, 15,  10
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
-	move DARK_PULSE,   EFFECT_FLINCH_HIT,         90, DARK,          SPECIAL,  100, 15,  20
+	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
 	move GUILLOTINE,   EFFECT_OHKO,                0, BUG,           PHYSICAL,  30, 10,   0
 	move DRACO_ASCENT, EFFECT_NORMAL_HIT,        120, FLYING,        PHYSICAL, 100, 10,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
@@ -105,7 +105,7 @@ Moves: ; 41afb
 	move DIG,          EFFECT_FLY,                80, GROUND,        PHYSICAL, 100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,        STATUS,    85, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE,  SPECIAL,  100, 25,  10
-	move PSYCHIC_M,    EFFECT_NORMAL_HIT,         90, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0
+	move PSYCHIC_M,    EFFECT_PSYCHIC,            90, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC_TYPE,  STATUS,    55, 20,   0
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE,  STATUS,   100, 40,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE,  STATUS,   100, 30,   0

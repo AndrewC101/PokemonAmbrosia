@@ -76,7 +76,7 @@
 	const EFFECT_SKY_ATTACK
 	const EFFECT_CONFUSE_HIT
 	const EFFECT_POISON_MULTI_HIT ; not used
-	const EFFECT_UNUSED_4E
+	const EFFECT_PSYCHIC ; only used for very niche AI situation
 	const EFFECT_SUBSTITUTE
 	const EFFECT_HYPER_BEAM
 	const EFFECT_RAGE

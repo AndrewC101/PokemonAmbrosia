@@ -102,6 +102,29 @@ SageWarningText:
     line "child."
     done
 
+Maxwell:
+	faceplayer
+	opentext
+	writetext mawileTradeText
+	waitbutton
+	trade NPC_TRADE_MAXWELL
+	waitbutton
+	closetext
+	end
+
+mawileTradeText:
+	text "My brother would"
+	line "never understand."
+	para "Avoiding that"
+	line "which we fear only"
+	cont "strengthens said"
+	cont "fear."
+	para "We must lure our"
+	line "fears to us."
+	para "Embrace them."
+	para "Then devour them!"
+	done
+
 SproutTowerB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -115,7 +138,7 @@ SproutTowerB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SageScript, -1
+	object_event  9, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Maxwell, -1
 	object_event 16, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event  4,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTowerB1FFieldMon3Script, EVENT_FIELD_MON_3

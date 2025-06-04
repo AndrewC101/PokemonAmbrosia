@@ -44,7 +44,7 @@ DontSwitch:
 	call AI_TryItem
 	ret
 
-; DevNote - this switches with probabilities - 50%, 80%, 96% depending on switch score
+; DevNote - switch - this switches with probabilities - 50%, 80%, 96% depending on switch score
 SwitchOften:
     call CheckSetUp
     jp c, DontSwitch
@@ -82,7 +82,7 @@ SwitchOften:
 	ld [wEnemySwitchMonIndex], a
 	jp AI_TrySwitch
 
-; DevNote - this switches with probabilities - 8%, 12%, 80% depending on switch score
+; DevNote - switch - this switches with probabilities - 8%, 12%, 80% depending on switch score
 SwitchRarely:
     call CheckSetUp
     jp c, DontSwitch

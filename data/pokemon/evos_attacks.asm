@@ -574,7 +574,7 @@ MawileEvosAttacks:
 	db 1, POUND
 	db 10, BITE
 	db 15, METAL_CLAW
-	db 20, DRAIN_KISS
+	db 20, BULLET_PUNCH
 	db 25, CRUNCH
 	db 30, SUCKER_PUNCH
 	db 35, IRON_HEAD

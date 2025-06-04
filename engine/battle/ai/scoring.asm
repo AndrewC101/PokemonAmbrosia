@@ -3496,6 +3496,14 @@ AI_Smart_HolyArmour:
     call CanPlayerKO
     jr c, .discourage
 
+; if player is Mewtwo and has Psychic, don't use
+    ld a, [wBattleMonSpecies]
+    cp MEWTWO
+    jr nz, .encourage
+	ld b, EFFECT_PSYCHIC
+	call PlayerHasMoveEffect
+	jr c, .discourage
+
 ; encourage enough to overcome encouragement to score a KO
 .encourage
 rept 12
@@ -3533,6 +3541,10 @@ AI_Smart_Serenity:
 	call CanPlayerKO
 	jr c, .discourage
 .doneKOCheck
+
+; if we are very low on health discourage
+    call AICheckEnemyQuarterHP
+    jr nc, .discourage
 
 ; strongly encourage if player has higher SpAtk than Atk
     call IsPlayerPhysicalOrSpecial

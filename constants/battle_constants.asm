@@ -201,7 +201,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const_skip
 	const SUBSTATUS_SUBSTITUTE
 	const SUBSTATUS_RECHARGE
-	const SUBSTATUS_RAGE
+	const SUBSTATUS_UNUSED_4
 	const SUBSTATUS_LEECH_SEED
 
 ; wPlayerSubStatus5 or wEnemySubStatus5 bit flags

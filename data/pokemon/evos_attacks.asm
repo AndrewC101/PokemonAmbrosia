@@ -105,7 +105,6 @@ CharizardEvosAttacks:
 	db 1, GROWL
 	db 7, EMBER
 	db 13, SMOKESCREEN
-	db 20, RAGE
 	db 25, SLASH
 	db 30, DRAGON_PULSE
 	db 36, WING_ATTACK
@@ -1925,7 +1924,6 @@ TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, TAIL_WHIP
-	db 8, RAGE
 	db 10, HORN_ATTACK
 	db 16, FEINT_ATTACK
 	db 22, HEADBUTT
@@ -3076,7 +3074,6 @@ BagonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-	db 1, RAGE
 	db 16, HEADBUTT
 	db 25, EMBER
 	db 31, CRUNCH
@@ -3093,7 +3090,6 @@ ShelgonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-	db 1, RAGE
 	db 16, HEADBUTT
 	db 25, EMBER
 	db 30, CRUNCH
@@ -3109,7 +3105,6 @@ SalamenceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-	db 1, RAGE
 	db 16, HEADBUTT
 	db 25, EMBER
 	db 30, CRUNCH
@@ -3124,11 +3119,11 @@ SalamenceEvosAttacks:
 
 DunsparceEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, RAGE
-	db 5, DEFENSE_CURL
-	db 10, ROLLOUT
+	db 1, DEFENSE_CURL
+	db 1, ROLLOUT
 	db 12, GLARE
-	db 20, ANCIENTPOWER
+	db 15, ANCIENTPOWER
+	db 20, HEADBUTT
 	db 25, CRUNCH
 	db 30, ROOST
 	db 40, DOUBLE_EDGE

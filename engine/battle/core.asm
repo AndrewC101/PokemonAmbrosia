@@ -752,9 +752,7 @@ ParsePlayerAction:
 .locked_in
 	xor a
 	ld [wPlayerProtectCount], a
-	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
-	res SUBSTATUS_RAGE, [hl]
 
 .continue_protect
 	call ParseEnemyAction
@@ -764,9 +762,7 @@ ParsePlayerAction:
 .reset_rage
 	xor a
 	ld [wPlayerProtectCount], a
-	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
-	res SUBSTATUS_RAGE, [hl]
 	xor a
 	ret
 
@@ -3988,7 +3984,6 @@ endr
 	ld [hl], a
 	ld [wEnemyDisableCount], a
 	ld [wEnemyProtectCount], a
-	ld [wEnemyRageCounter], a
 	ld [wEnemyDisabledMove], a
 	ld [wEnemyMinimized], a
 	ld [wPlayerWrapCount], a
@@ -4313,7 +4308,6 @@ endr
 	ld [hl], a
 	ld [wPlayerDisableCount], a
 	ld [wPlayerProtectCount], a
-	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
 	ld [wPlayerMinimized], a
 	ld [wEnemyWrapCount], a
@@ -5792,7 +5786,6 @@ BattleMonEntrance:
 	call DelayFrames
 
 	ld hl, wPlayerSubStatus4
-	res SUBSTATUS_RAGE, [hl]
 
 	call SetEnemyTurn
 	;call PursuitSwitch
@@ -6466,10 +6459,6 @@ ParseEnemyAction:
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage
-	ld hl, wEnemySubStatus4
-	res SUBSTATUS_RAGE, [hl]
-	xor a
-	ld [wEnemyRageCounter], a
 
 .no_rage
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -6488,9 +6477,7 @@ ParseEnemyAction:
 ResetVarsForSubstatusRage:
 	xor a
 	ld [wEnemyProtectCount], a
-	ld [wEnemyRageCounter], a
 	ld hl, wEnemySubStatus4
-	res SUBSTATUS_RAGE, [hl]
 	ret
 
 CheckEnemyLockedIn:

@@ -4335,6 +4335,21 @@ CheckIfTargetIsPoisonType:
 	cp POISON
 	ret
 
+CheckIfTargetIsFireType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp FIRE
+	ret z
+	ld a, [de]
+	cp FIRE
+	ret
+
 PoisonOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -6540,6 +6555,9 @@ BattleCommand_Paralyze:
 
 BattleCommand_Burn:
 ; burn
+
+	call CheckIfTargetIsFireType
+	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar

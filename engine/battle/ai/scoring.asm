@@ -970,6 +970,8 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_PARALYZE_HIT,     AI_Smart_ParalyzeHit
     dbw EFFECT_JUDGEMENT,        AI_Smart_Judgement
     dbw EFFECT_SUCKER_PUNCH,     AI_Smart_SuckerPunch
+    dbw EFFECT_TAUNT,            AI_Smart_Taunt
+    dbw EFFECT_BURN,             AI_Smart_Burn
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -4089,6 +4091,128 @@ rept 12
 	inc [hl]
 endr
 	ret
+
+AI_Smart_Taunt:
+; if player is already taunted - discourage
+    ld [wPlayerTauntCount], a
+    and a
+    jr nz, .discourage
+
+; if player can KO - discourage
+    call ShouldAIBoost
+    jr nc, .discourage
+
+; if player has a setup move or healing move - encourage
+    ld a, [wLastPlayerMove]
+
+    ld b, EFFECT_BULK_UP
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_CALM_MIND
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_CURSE
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_ATTACK_UP_2
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_SP_ATK_UP_2
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_DRAGON_DANCE
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_SHELL_SMASH
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_QUIVER_DANCE
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_HEAL
+	call PlayerHasMoveEffect
+	jr c, .encourage
+
+; if players last move had 0 power - 50% chance to encourage
+	ld a, [wLastPlayerMove]
+	call AIGetEnemyMove
+	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .discourage
+	call AI_50_50
+	jr c, .encourage
+
+; otherwise discourage
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
+.encourage
+rept 6
+    dec [hl]
+endr
+    ret
+
+AI_Smart_Burn:
+; if enemy is already statused - discourage
+    ld a, [wBattleMonStatus]
+    and a
+    jr nz, .discourage
+
+; never use if player has substitute
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jp nz, .discourage
+
+; if enemy is fire type - discourage
+    ld a, [wBattleMonType1]
+	cp FIRE
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp FIRE
+	jr z, .discourage
+
+; if enemy is immune to fire - discourage
+	ld a, [wBattleMonSpecies]
+	push hl
+	push de
+	push bc
+	ld hl, AI_FireAbsorbPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+    jp c, .discourage
+
+; if enemy is immune to status discourage
+    ld a, [wBattleMonSpecies]
+    cp ARCEUS
+    jr z, .discourage
+    cp SYLVEON
+    jr z, .discourage
+    cp DUNSPARCE
+    jp z, .discourage
+
+; strongly encourage if enemy is physical
+    Call IsPlayerPhysicalOrSpecial
+    jr nc, .basicEncourage
+
+    dec [hl]
+    dec [hl]
+    dec [hl]
+.basicEncourage
+    dec [hl]
+    ret
+.discourage
+    inc [hl]
+    inc [hl]
+    ret
 
 ; DevNote - functions which check if the player can KO the AI and decide to use boosting moves
 

@@ -144,7 +144,7 @@ MoveNames::
 	li "LOVELY KISS"
 	li "SHADOW FORCE"
 	li "TRANSFORM"
-	li "BUBBLE"
+	li "TAUNT"
 	li "DIZZY PUNCH"
 	li "SPORE"
 	li "FLASH"

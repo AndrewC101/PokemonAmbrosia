@@ -145,7 +145,7 @@ MoveDescriptions::
 	dw LovelyKissDescription
 	dw ShadowForceDescription
 	dw TransformDescription
-	dw BubbleDescription
+	dw TauntDescription
 	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
@@ -846,9 +846,9 @@ TransformDescription:
 	db   "The user assumes"
 	line "the foe's guise.@"
 
-BubbleDescription:
-	db   "An attack that may"
-	line "reduce SPEED.@"
+TauntDescription:
+	db   "Provokes enemy"
+	next "into attacking.@"
 
 DizzyPunchDescription:
 	db   "An attack that may"

@@ -1152,6 +1152,7 @@ Disable:
 	usedmovetext
 	doturn
 	checkhit
+	checkdeathimmunity
 	disable
 	endmove
 
@@ -1274,6 +1275,7 @@ Encore:
 	usedmovetext
 	doturn
 	checkhit
+	checkdeathimmunity
 	encore
 	endmove
 
@@ -2124,4 +2126,13 @@ SuckerPunch:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	endmove
+
+Taunt:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	checkdeathimmunity
+	taunt
 	endmove

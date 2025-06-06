@@ -61,7 +61,7 @@ Moves: ; 41afb
 	move SING,         EFFECT_SLEEP,               0, NORMAL,        STATUS,    55, 15,   0
 	move SUPERSONIC,   EFFECT_CONFUSE,             0, NORMAL,        STATUS,    55, 20,   0
 	move SONICBOOM,    EFFECT_STATIC_DAMAGE,      20, NORMAL,        SPECIAL,   90, 20,   0
-	move DISABLE,      EFFECT_DISABLE,             0, NORMAL,        STATUS,    65, 20,   0
+	move DISABLE,      EFFECT_DISABLE,             0, NORMAL,        STATUS,   100, 20,   0
 	move ACID,         EFFECT_DEFENSE_DOWN_HIT,   40, POISON,        SPECIAL,  100, 30,  10
 	move EMBER,        EFFECT_BURN_HIT,           40, FIRE,          SPECIAL,  100, 25,  10
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,          SPECIAL,  100, 15,  10
@@ -156,7 +156,7 @@ Moves: ; 41afb
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        STATUS,    70, 10,   0
 	move SHADOW_FORCE, EFFECT_FLY,               120, GHOST,         SPECIAL,  100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,        STATUS,   100, 10,   0
-	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     30, WATER,         SPECIAL,  100, 30,  10
+	move TAUNT,        EFFECT_TAUNT,               0, DARK,          STATUS,   100, 20,   0
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,        PHYSICAL, 100, 10,  20
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,         STATUS,   100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   100, 20,   0

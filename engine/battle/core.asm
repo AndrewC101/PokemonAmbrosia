@@ -712,11 +712,6 @@ ParsePlayerAction:
 	ld a, [wBattlePlayerAction]
 	cp BATTLEPLAYERACTION_SWITCH
 	jr z, .reset_rage
-	and a
-	jr nz, .reset_bide
-	ld a, [wPlayerSubStatus3]
-	and 1 << SUBSTATUS_BIDE
-	jr nz, .locked_in
 	xor a
 	ld [wMoveSelectionMenuType], a
 	inc a ; POUND
@@ -741,20 +736,6 @@ ParsePlayerAction:
 	callfar UpdateMoveData
 	xor a
 	ld [wPlayerCharging], a
-	;ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-	;cp EFFECT_FURY_CUTTER
-	;jr z, .continue_fury_cutter
-	;xor a
-	;ld [wPlayerFuryCutterCount], a
-
-;.continue_fury_cutter
-;	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-;	cp EFFECT_RAGE
-;	jr z, .continue_rage
-;	ld hl, wPlayerSubStatus4
-;	res SUBSTATUS_RAGE, [hl]
-;	xor a
-;	ld [wPlayerRageCounter], a
 
 .continue_rage
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
@@ -768,13 +749,8 @@ ParsePlayerAction:
 	ld [wPlayerProtectCount], a
 	jr .continue_protect
 
-.reset_bide
-	ld hl, wPlayerSubStatus3
-	res SUBSTATUS_BIDE, [hl]
-
 .locked_in
 	xor a
-;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -787,7 +763,6 @@ ParsePlayerAction:
 
 .reset_rage
 	xor a
-;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -4012,7 +3987,6 @@ rept 4
 endr
 	ld [hl], a
 	ld [wEnemyDisableCount], a
-	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld [wEnemyDisabledMove], a
@@ -4020,6 +3994,7 @@ endr
 	ld [wPlayerWrapCount], a
 	ld [wEnemyWrapCount], a
 	ld [wEnemyTurnsTaken], a
+    ld [wEnemyTauntCount], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -4337,7 +4312,6 @@ endr
 	ld [hli], a
 	ld [hl], a
 	ld [wPlayerDisableCount], a
-;	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
@@ -4345,6 +4319,7 @@ endr
 	ld [wEnemyWrapCount], a
 	ld [wPlayerWrapCount], a
 	ld [wPlayerTurnsTaken], a
+	ld [wPlayerTauntCount], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ret
@@ -6061,6 +6036,7 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -6070,6 +6046,20 @@ MoveSelectionScreen:
 	ld b, 0
 	add hl, bc
 	ld a, [hl]
+
+	; DevNote - Taunt - Here we actually block the use of moves with 0 power when taunted
+	; maybe we can just use the taunt count and not actually care about the taunt substatus
+	ld b, a                         ; a and b are the index of the current move
+	ld a, [wPlayerTauntCount]       ; a is now the player taunt count
+	and a                           ; is the player taunt count 0
+    ld a, b                         ; a is again the index of the current move
+	jr z, .skip2                    ; if player taunt count is 0 we continue
+	push bc                         ; save b
+    call GetMovePower               ; get the move power in a
+    pop bc                          ; retrieve b
+    and a                           ; is the move power 0
+    ld a, b                         ; a in now index of the current move
+    jr z, .move_disabled            ; if power is 0 the move is disabled
 
 .skip2
 	ld [wCurPlayerMove], a
@@ -6306,6 +6296,9 @@ CheckPlayerHasUsableMoves:
 	ld hl, wBattleMonPP
 	jr nz, .disabled
 
+	; DevNote - Taunt - here we would force struggle if there are no usable moves
+	; if the move has 0 power and we are taunted maybe we can jump to disabled
+
 	ld a, [hli]
 	or [hl]
 	inc hl
@@ -6372,7 +6365,7 @@ ParseEnemyAction:
 	bit SUBSTATUS_ROLLOUT, a
 	jp nz, .skip_load
 	ld a, [wEnemySubStatus3]
-	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
 	jp nz, .skip_load
 
 	ld hl, wEnemySubStatus5
@@ -6444,6 +6437,7 @@ ParseEnemyAction:
 	dec a
 	cp c
 	jr z, .loop2
+
 	ld a, [hl]
 	and a
 	jr z, .loop2
@@ -6469,13 +6463,6 @@ ParseEnemyAction:
 	ld [wEnemyCharging], a
 
 .raging
-	;ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	;cp EFFECT_FURY_CUTTER
-	;jr z, .fury_cutter
-	;xor a
-	;ld [wEnemyFuryCutterCount], a
-
-;.fury_cutter
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage
@@ -6500,7 +6487,6 @@ ParseEnemyAction:
 
 ResetVarsForSubstatusRage:
 	xor a
-	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld hl, wEnemySubStatus4
@@ -6514,7 +6500,7 @@ CheckEnemyLockedIn:
 
 	ld hl, wEnemySubStatus3
 	ld a, [hl]
-	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
+	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE
 	ret nz
 
 	ld hl, wEnemySubStatus1
@@ -8962,7 +8948,7 @@ CleanUpBattleRAM:
 	ld [wItemsPocketScrollPosition], a
 	ld [wBallsPocketScrollPosition], a
 	ld hl, wPlayerSubStatus1
-	ld b, wEnemyFuryCutterCount - wPlayerSubStatus1
+	ld b, wEnemyTauntCount - wPlayerSubStatus1
 .loop
 	ld [hli], a
 	dec b

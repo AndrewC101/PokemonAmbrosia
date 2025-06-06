@@ -255,11 +255,7 @@ AI_TryItem:
 	inc a
 	ld [wEnemyGoesFirst], a
 
-	ld hl, wEnemySubStatus3
-	res SUBSTATUS_BIDE, [hl]
-
 	xor a
-	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 
@@ -303,6 +299,7 @@ AI_TryItem:
 	scf
 	ret
 
+; DevNote - space - The AI only uses FULL_RESTORE, could save space by deleting all this
 AI_Items:
 	dbw FULL_RESTORE, .FullRestore
 	dbw MAX_POTION,   .MaxPotion
@@ -311,7 +308,6 @@ AI_Items:
 	dbw POTION,       .Potion
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
-	dbw GUARD_SPEC,   .GuardSpec
 	dbw X_ATTACK,     .XAttack
 	dbw X_DEFEND,     .XDefend
 	dbw X_SPEED,      .XSpeed
@@ -484,12 +480,6 @@ AI_Items:
 	call .XItem
 	jp c, .DontUse
 	call EnemyUsedXAccuracy
-	jp .Use
-
-.GuardSpec:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedGuardSpec
 	jp .Use
 
 .XAttack:
@@ -820,45 +810,6 @@ EnemyUsedXAccuracy:
 	set SUBSTATUS_X_ACCURACY, [hl]
 	ld a, X_ACCURACY
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-EnemyUsedGuardSpec:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_MIST, [hl]
-	ld a, GUARD_SPEC
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-AICheckEnemyFractionMaxHP: ; unreferenced
-; Input: a = divisor
-; Work: bc = [wEnemyMonMaxHP] / a
-; Work: de = [wEnemyMonHP]
-; Output:
-; -  c, nz if [wEnemyMonHP] > [wEnemyMonMaxHP] / a
-; - nc,  z if [wEnemyMonHP] = [wEnemyMonMaxHP] / a
-; - nc, nz if [wEnemyMonHP] < [wEnemyMonMaxHP] / a
-	ldh [hDivisor], a
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ldh [hDividend], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld c, a
-	ldh a, [hQuotient + 2]
-	ld b, a
-	ld hl, wEnemyMonHP + 1
-	ld a, [hld]
-	ld e, a
-	ld a, [hl]
-	ld d, a
-	ld a, d
-	sub b
-	ret nz
-	ld a, e
-	sub c
-	ret
 
 EnemyUsedXAttack:
 	ld b, ATTACK

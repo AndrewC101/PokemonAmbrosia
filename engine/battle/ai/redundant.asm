@@ -30,7 +30,6 @@ AI_Redundant:
 	dbw EFFECT_MEAN_LOOK,    .MeanLook
 	dbw EFFECT_NIGHTMARE,    .Nightmare
 	dbw EFFECT_SPIKES,       .Spikes
-	dbw EFFECT_FORESIGHT,    .Foresight
 	dbw EFFECT_PERISH_SONG,  .PerishSong
 	dbw EFFECT_SANDSTORM,    .Sandstorm
 	dbw EFFECT_ATTRACT,      .Attract
@@ -116,11 +115,6 @@ AI_Redundant:
 .Spikes:
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	ret
-
-.Foresight:
-	ld a, [wPlayerSubStatus1]
-	bit SUBSTATUS_IDENTIFIED, a
 	ret
 
 .PerishSong:

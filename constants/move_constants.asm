@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const DARK_PULSE   ; 0b
 	const GUILLOTINE   ; 0c
-	const DRACO_ASCENT   ; 0d
+	const DRACO_ASCENT ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -26,11 +26,11 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const OBLIVION     ; 14
-	const OBLITERATE  ; 15
+	const OBLITERATE   ; 15
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
-	const AQUA_JET     ; 19   not used
+	const AQUA_JET     ; 19
 	const MOON_BLAST   ; 1a
 	const BIG_RECOVER  ; 1b
 	const SAND_ATTACK  ; 1c
@@ -139,7 +139,7 @@
 	const DISCHARGE    ; 83
 	const DRAGON_DANCE ; 84
 	const AMNESIA      ; 85
-	const CROSS_POISON   ; 86
+	const CROSS_POISON ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
@@ -150,8 +150,8 @@
 	const LOVELY_KISS  ; 8e
 	const SHADOW_FORCE ; 8f
 	const TRANSFORM    ; 90
-	const BUBBLE       ; 91     not used
-	const DIZZY_PUNCH  ; 92
+	const TAUNT        ; 91
+	const DIZZY_PUNCH  ; 92     not used
 	const SPORE        ; 93
 	const FLASH        ; 94
 	const PSYBLAST     ; 95

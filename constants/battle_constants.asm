@@ -172,7 +172,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const SUBSTATUS_NIGHTMARE
 	const SUBSTATUS_CURSE
 	const SUBSTATUS_PROTECT
-	const SUBSTATUS_IDENTIFIED
+	const SUBSTATUS_UNUSED_1
 	const SUBSTATUS_PERISH
 	const SUBSTATUS_ENDURE
 	const SUBSTATUS_ROLLOUT
@@ -184,7 +184,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def
-	const SUBSTATUS_BIDE
+	const SUBSTATUS_UNUSED_2
 	const SUBSTATUS_RAMPAGE
 	const SUBSTATUS_IN_LOOP
 	const SUBSTATUS_FLINCHED
@@ -196,7 +196,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 ; wPlayerSubStatus4 or wEnemySubStatus4 bit flags
 	const_def
 	const SUBSTATUS_X_ACCURACY
-	const SUBSTATUS_MIST
+	const SUBSTATUS_UNUSED_3
 	const SUBSTATUS_FOCUS_ENERGY
 	const_skip
 	const SUBSTATUS_SUBSTITUTE

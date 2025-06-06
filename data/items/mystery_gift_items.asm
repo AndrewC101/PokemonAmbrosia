@@ -5,7 +5,6 @@ MysteryGiftItems:
 	db ICE_BERRY
 	db BURNT_BERRY
 	db PSNCUREBERRY
-	db GUARD_SPEC
 	db X_DEFEND
 	db X_ATTACK
 	db BITTER_BERRY

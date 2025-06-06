@@ -416,7 +416,7 @@ wPlayerToxicCount:: db
 wPlayerDisableCount:: db
 wPlayerEncoreCount:: db
 wPlayerPerishCount:: db
-wPlayerFuryCutterCount:: db ; DevNote - this is not used
+wPlayerTauntCount:: db ; DevNote - this is not used
 wPlayerProtectCount:: db
 
 wEnemyRolloutCount:: db
@@ -425,7 +425,7 @@ wEnemyToxicCount:: db
 wEnemyDisableCount:: db
 wEnemyEncoreCount:: db
 wEnemyPerishCount:: db
-wEnemyFuryCutterCount:: db
+wEnemyTauntCount:: db
 wEnemyProtectCount:: db
 
 wPlayerDamageTaken:: dw

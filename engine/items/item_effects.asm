@@ -54,7 +54,7 @@ ItemEffects:
 	dw StatusHealingEffect ; FULL_HEAL
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
-	dw GuardSpecEffect     ; GUARD_SPEC
+	dw UnusedItemEffect    ; not used
 	dw GoldDiceEffect      ; GOLD_DICE
 	;dw MaxRepelEffect      ; MAX_REPEL
     dw RunningShoesEffect  ; RUNNING_SHOES
@@ -2346,12 +2346,8 @@ PokeDollEffect:
 	ld [wItemEffectSucceeded], a
 	ret
 
-GuardSpecEffect:
-	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_MIST, [hl]
-	jp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_MIST, [hl]
-	jp UseItemText
+UnusedItemEffect:
+    ret
 
 RepulsorEffect:
 	ld a, [wRepulsorToggle]

@@ -71,7 +71,6 @@ MoveGrammar:
 	db LICK
 	db CLAMP
 	db POISON_GAS
-	db BUBBLE
 	db SLASH
 	db NIGHTMARE
 	db CURSE

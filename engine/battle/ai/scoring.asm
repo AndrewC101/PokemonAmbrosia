@@ -187,7 +187,7 @@ AI_Basic:
     pop bc
     jp nz, .checkRedundant
     xor a
-    ld [hl], a
+    ld [hl], a ; set priority for last used move to max - which is 0
     jp .checkmove
 
 .checkRedundant
@@ -200,7 +200,16 @@ AI_Basic:
 	pop hl
 	jp nz, .discourage ; discourage if AI_Redundant - loop bck to check move
 
+; DevNote - Taunt - Check enemy is taunted and discourage 0 power moves
+    ld a, [wEnemyTauntCount]
+    and a
+    jr z, .checkStatusImmunity
+    ld a, [wEnemyMoveStruct + MOVE_POWER]
+    and a
+    jp z, .discourage
+
 ; Dismiss status-only moves if the player can't be statused.
+.checkStatusImmunity
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	push hl
 	push de
@@ -2582,7 +2591,7 @@ endr
 ; 80% chance to greatly encourage this move if the player is either
 ; in love, identified, stuck in Rollout, or has a Nightmare.
 	ld a, [wPlayerSubStatus1]
-	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_IDENTIFIED | 1 << SUBSTATUS_NIGHTMARE
+	and 1 << SUBSTATUS_IN_LOVE | 1 << SUBSTATUS_ROLLOUT | 1 << SUBSTATUS_NIGHTMARE
 	jr nz, .encourage
 
 ; Otherwise, discourage this move unless the player only has not very effective moves against the enemy.
@@ -5393,7 +5402,14 @@ AI_Aggressive:
 	pop bc
 	pop de
 	pop hl
-	jp .checkmove
+; DevNote - Taunt - here we block the enemy from using moves with 0 power if taunted
+; discourage 0 power moves if taunted
+    ;ld a, [wEnemyTauntCount]
+    ;and a
+    ;jp z, .checkmove
+    ;xor a
+    ;ld [hl], a
+    ;jp .checkmove
 
 .gotstrongestmove
 ; Nothing we can do if no attacks did damage.
@@ -5621,7 +5637,7 @@ AI_None:
 
 AIDiscourageMove:
 	ld a, [hl]
-	add 10
+	add 20
 	ld [hl], a
 	ret
 

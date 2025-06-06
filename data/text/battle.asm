@@ -410,6 +410,11 @@ DisabledNoMoreText:
 	line "disabled no more!"
 	prompt
 
+TauntedNoMoreText:
+	text "<USER>'s"
+	line "TAUNT wore off!"
+	prompt
+
 IsConfusedText:
 	text "<USER>"
 	line "is confused!"
@@ -706,6 +711,11 @@ RageBuildingText:
 GotAnEncoreText:
 	text "<TARGET>"
 	line "got an ENCORE!"
+	prompt
+
+GotTauntedText:
+	text "<TARGET>"
+	line "received a TAUNT!"
 	prompt
 
 SharedPainText:

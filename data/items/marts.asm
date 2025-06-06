@@ -394,13 +394,14 @@ MartUnderground:
 	db -1 ; end
 
 MartPatches:
-    db 15 ; # items
+    db 16 ; # items
     db RARE_CANDY
     db MASTER_BALL
     db LEFTOVERS
     db LIFE_ORB
     db CHOICE_BAND
     db CHOICE_SPECS
+    db ASSAULT_VEST
     db FOCUS_SASH
     db MUSCLE_BAND
     db WISE_GLASSES
@@ -421,6 +422,7 @@ MartFrontier:
     db LIFE_ORB
     db CHOICE_BAND
     db CHOICE_SPECS
+    db ASSAULT_VEST
     db FOCUS_SASH
     db MUSCLE_BAND
     db WISE_GLASSES
@@ -428,7 +430,6 @@ MartFrontier:
     db FLAME_ORB
     db MIRACLEBERRY
     db SCOPE_LENS
-    db KINGS_ROCK
     db LUCKY_EGG
     db -1
 

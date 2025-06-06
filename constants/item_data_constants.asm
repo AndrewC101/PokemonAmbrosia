@@ -97,7 +97,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_SP_DEFENSE_UP
 	const HELD_ACCURACY_UP
 	const HELD_EVASION_UP
-	const HELD_38
+	const HELD_ASSAULT_VEST
 
 	const_next 40
 	const HELD_HOLY_CROWN

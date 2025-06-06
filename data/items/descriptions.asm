@@ -41,7 +41,7 @@ ItemDescriptions:
 	dw FullHealDesc
 	dw ReviveDesc
 	dw MaxReviveDesc
-	dw GuardSpecDesc
+	dw AssaultVestDesc
 	dw GoldDiceDesc
 	dw SportShoesDesc
 	dw RepulsorDesc
@@ -418,9 +418,9 @@ MaxReviveDesc:
 	db   "Fully restores a"
 	next "fainted #MON.@"
 
-GuardSpecDesc:
-	db   "Prevents stats"
-	next "reduction. (1 BTL)@"
+AssaultVestDesc:
+	db   "Boost SP.DEF but"
+	next "forces attacks.@"
 
 GoldDiceDesc:
 	db   "Play any of the"

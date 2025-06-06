@@ -40,7 +40,7 @@ ItemNames::
 	li "FULL HEAL"
 	li "REVIVE"
 	li "MAX REVIVE"
-	li "GUARD SPEC."
+	li "ASSAULT VEST"
 	li "GOLD DICE"
 	;li "MAX REPEL"
 	li "SPORT SHOES"

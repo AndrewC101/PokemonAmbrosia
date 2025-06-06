@@ -46,7 +46,7 @@
 	const FULL_HEAL    ; 26
 	const REVIVE       ; 27
 	const MAX_REVIVE   ; 28
-	const UNUSED_ITEM  ; 29  not used
+	const ASSAULT_VEST ; 29
 	const GOLD_DICE    ; 2a
 	const RUNNING_SHOES; 2b
 	const REPULSOR     ; 2c

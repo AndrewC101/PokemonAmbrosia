@@ -343,7 +343,7 @@ BattleText_TheresNoPPLeftForThisMove:
 
 BattleText_TheMoveIsDisabled:
 	text "The move is"
-	line "DISABLED!"
+	line "BLOCKED!"
 	prompt
 
 BattleText_MonHasNoMovesLeft:
@@ -538,7 +538,7 @@ DisabledMoveText:
 	line "@"
 	text_ram wStringBuffer1
 	text " is"
-	cont "DISABLED!"
+	cont "BLOCKED!"
 	prompt
 
 LoafingAroundText:
@@ -920,7 +920,7 @@ WasDisabledText:
 	line "@"
 	text_ram wStringBuffer1
 	text " was"
-	cont "DISABLED!"
+	cont "BLOCKED!"
 	prompt
 
 CoinsScatteredText:

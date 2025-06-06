@@ -200,10 +200,14 @@ AI_Basic:
 	pop hl
 	jp nz, .discourage ; discourage if AI_Redundant - loop bck to check move
 
-; DevNote - Taunt - Check enemy is taunted and discourage 0 power moves
+; DevNote - Taunt - Check enemy is taunted or holding assault vest and discourage 0 power moves
     ld a, [wEnemyTauntCount]
     and a
-    jr z, .checkStatusImmunity
+    jr nz, .discourageNonDamagingMoves
+    ld a, [wEnemyMonItem]
+    cp ASSAULT_VEST
+    jr nz, .checkStatusImmunity
+.discourageNonDamagingMoves
     ld a, [wEnemyMoveStruct + MOVE_POWER]
     and a
     jp z, .discourage

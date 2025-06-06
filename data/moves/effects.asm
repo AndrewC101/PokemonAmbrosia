@@ -2136,3 +2136,14 @@ Taunt:
 	checkdeathimmunity
 	taunt
 	endmove
+
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	checkstatusimmunity
+	burn
+	endmove

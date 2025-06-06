@@ -99,7 +99,7 @@ MoveDescriptions::
 	dw MeditateDescription
 	dw AgilityDescription
 	dw QuickAttackDescription
-	dw RageDescription
+	dw WillOWispDescription
 	dw TeleportDescription
 	dw NightShadeDescription
 	dw MimicDescription
@@ -662,9 +662,9 @@ QuickAttackDescription:
 	db   "Lets the user get"
 	line "in the first hit.@"
 
-RageDescription:
-	db   "Raises ATTACK if"
-	line "the user is hit.@"
+WillOWispDescription:
+	db   "An attack that may"
+	line "cause a burn.@"
 
 TeleportDescription:
 	db   "A move for fleeing"

@@ -186,4 +186,5 @@ BattleCommandPointers:
 	dw BattleCommand_FlameOrb
 	dw BattleCommand_SuckerPunch
 	dw BattleCommand_Taunt
+	dw BattleCommand_Burn
 	assert_table_length NUM_EFFECT_COMMANDS

@@ -11,7 +11,6 @@ StallMoves:
 	db GROWTH
 	db MEDITATE
 	db AGILITY
-	db RAGE
 	db MIMIC
 	db SCREECH
 	db HARDEN

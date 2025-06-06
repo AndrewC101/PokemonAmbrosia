@@ -6497,18 +6497,7 @@ BattleCommand_Paralyze:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
-; DevNote - there is no such item
-	;call GetOpponentItem
-	;ld a, b
-	;cp HELD_PREVENT_PARALYZE
-	;jr nz, .no_item_protection
-	;ld a, [hl]
-	;ld [wNamedObjectIndex], a
-	;call GetItemName
-	;call AnimateFailedMove
-	;ld hl, ProtectedByText
-	;jp StdBattleTextbox
-;.no_item_protection
+
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -6540,6 +6529,57 @@ BattleCommand_Paralyze:
 .paralyzed
 	call AnimateFailedMove
 	ld hl, AlreadyParalyzedText
+	jp StdBattleTextbox
+
+.failed
+	jp PrintDidntAffect2
+
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect
+
+BattleCommand_Burn:
+; burn
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit BRN, a
+	jr nz, .burn
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	ld a, [wEffectFailed]
+	and a
+	jr nz, .failed
+	call CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	call UpdateBattleHuds
+	call PrintBurn
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
+
+.burn
+	call AnimateFailedMove
+	ld hl, AlreadyBurnedText
 	jp StdBattleTextbox
 
 .failed
@@ -6898,6 +6938,10 @@ PrintDidntAffect2:
 PrintParalyze:
 ; 'paralyzed! maybe it can't attack!'
 	ld hl, ParalyzedText
+	jp StdBattleTextbox
+
+PrintBurn:
+	ld hl, WasBurnedText
 	jp StdBattleTextbox
 
 CheckSubstituteOpp:

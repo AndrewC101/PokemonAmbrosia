@@ -161,4 +161,5 @@ MoveEffectsPointers:
 	dw Hurricane
 	dw SuckerPunch
 	dw Taunt
+	dw DoBurn
 	assert_table_length NUM_MOVE_EFECTS

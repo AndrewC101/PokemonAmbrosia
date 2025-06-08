@@ -4545,10 +4545,11 @@ SwitchInEffects:
     jp z, .randomStatUp
     cp DUNSPARCE
     jp z, .randomStatUp
-    cp SMEARGLE
-    jp z, .randomStatUp
     cp MEW
     jp z, .randomStatUp
+
+    cp SMEARGLE
+    jp z, .smeargle
 
     cp FERROTHORN
     jp z, .spikes
@@ -4579,8 +4580,6 @@ SwitchInEffects:
     jp z, .lightScreen
 
     cp MOLTRES
-    jp z, .safeguard
-    cp VULPIX
     jp z, .safeguard
     cp NINETALES
     jp z, .safeguard
@@ -4619,6 +4618,9 @@ SwitchInEffects:
 .safeguard
     farcall SafeguardSwitch
     ret
+.smeargle
+    farcall SafeguardSwitch
+    jp .randomStatUp
 .clearField
 	farcall ClearField
 	ret

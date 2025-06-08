@@ -4096,15 +4096,31 @@ AI_Smart_Taunt:
 ; if player is already taunted - discourage
     ld a, [wPlayerTauntCount]
     and a
-    jr nz, .discourage
+    jp nz, .discourage
+
+; never use if player has safeguard
+	ld a, [wPlayerScreens]
+	bit SCREENS_SAFEGUARD, a
+	jp nz, .discourage
+
+; never use against uber immune Pokemon
+    ld a, [wBattleMonSpecies]
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .discourage
 
 ; if player can KO - discourage
     call ShouldAIBoost
     jr nc, .discourage
 
-; if player has a setup move, status move,  or healing move - encourage
-    ld a, [wLastPlayerMove]
-
+; if player has a setup move, status move, or healing move - encourage
     ld b, EFFECT_TAUNT
 	call PlayerHasMoveEffect
 	jr c, .encourage

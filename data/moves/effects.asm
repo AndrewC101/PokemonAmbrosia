@@ -1152,6 +1152,7 @@ Disable:
 	usedmovetext
 	doturn
 	checkhit
+	checksafeguard
 	checkdeathimmunity
 	disable
 	endmove
@@ -1275,6 +1276,7 @@ Encore:
 	usedmovetext
 	doturn
 	checkhit
+	checksafeguard
 	checkdeathimmunity
 	encore
 	endmove
@@ -2133,6 +2135,7 @@ Taunt:
 	usedmovetext
 	doturn
 	checkhit
+	checksafeguard
 	checkdeathimmunity
 	taunt
 	endmove

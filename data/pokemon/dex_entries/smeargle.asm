@@ -6,5 +6,5 @@
 	next "mastery."
 
 	page "Random stat"
-	next "boosts. Immune"
-	next "to SLEEP.@"
+	next "boosts. Raises"
+	next "SAFEGUARD.@"

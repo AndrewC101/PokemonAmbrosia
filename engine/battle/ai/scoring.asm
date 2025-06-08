@@ -4094,7 +4094,7 @@ endr
 
 AI_Smart_Taunt:
 ; if player is already taunted - discourage
-    ld [wPlayerTauntCount], a
+    ld a, [wPlayerTauntCount]
     and a
     jr nz, .discourage
 
@@ -4102,9 +4102,12 @@ AI_Smart_Taunt:
     call ShouldAIBoost
     jr nc, .discourage
 
-; if player has a setup move or healing move - encourage
+; if player has a setup move, status move,  or healing move - encourage
     ld a, [wLastPlayerMove]
 
+    ld b, EFFECT_TAUNT
+	call PlayerHasMoveEffect
+	jr c, .encourage
     ld b, EFFECT_BULK_UP
 	call PlayerHasMoveEffect
 	jr c, .encourage
@@ -4127,6 +4130,15 @@ AI_Smart_Taunt:
 	call PlayerHasMoveEffect
 	jr c, .encourage
     ld b, EFFECT_QUIVER_DANCE
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_PARALYZE
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_BURN
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_TOXIC
 	call PlayerHasMoveEffect
 	jr c, .encourage
     ld b, EFFECT_HEAL
@@ -5530,14 +5542,7 @@ AI_Aggressive:
 	pop bc
 	pop de
 	pop hl
-; DevNote - Taunt - here we block the enemy from using moves with 0 power if taunted
-; discourage 0 power moves if taunted
-    ;ld a, [wEnemyTauntCount]
-    ;and a
-    ;jp z, .checkmove
-    ;xor a
-    ;ld [hl], a
-    ;jp .checkmove
+    jp .checkmove
 
 .gotstrongestmove
 ; Nothing we can do if no attacks did damage.

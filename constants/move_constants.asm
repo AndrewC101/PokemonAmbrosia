@@ -53,7 +53,7 @@
 	const GROWL        ; 2d
 	const ROAR         ; 2e
 	const SING         ; 2f
-	const SUPERSONIC   ; 30
+	const SUPERSONIC   ; 30 - Not Used
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33

@@ -25,7 +25,6 @@ AI_Redundant:
 	dbw EFFECT_LEECH_SEED,   .LeechSeed
 	dbw EFFECT_DISABLE,      .Disable
 	dbw EFFECT_ENCORE,       .Encore
-	dbw EFFECT_SNORE,        .Snore
 	dbw EFFECT_SLEEP_TALK,   .SleepTalk
 	dbw EFFECT_MEAN_LOOK,    .MeanLook
 	dbw EFFECT_NIGHTMARE,    .Nightmare
@@ -40,8 +39,6 @@ AI_Redundant:
 	dbw EFFECT_MORNING_SUN,  .MorningSun
 	dbw EFFECT_SYNTHESIS,    .Synthesis
 	dbw EFFECT_MOONLIGHT,    .Moonlight
-	dbw EFFECT_SWAGGER,      .Swagger
-	dbw EFFECT_FUTURE_SIGHT, .FutureSight
 	db -1
 
 .LightScreen:
@@ -92,7 +89,6 @@ AI_Redundant:
 	bit SUBSTATUS_ENCORED, a
 	ret
 
-.Snore:
 .SleepTalk:
 	ld a, [wEnemyMonStatus]
 	and SLP
@@ -157,16 +153,6 @@ AI_Redundant:
 	and SLP
 	jr z, .Redundant
 	jr .NotRedundant
-
-.Swagger:
-	ld a, [wPlayerSubStatus3]
-	bit SUBSTATUS_CONFUSED, a
-	ret
-
-.FutureSight:
-	ld a, [wEnemyFutureSightCount]
-	and a
-	ret
 
 .Heal:
 .MorningSun:

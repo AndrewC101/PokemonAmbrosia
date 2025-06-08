@@ -6468,10 +6468,8 @@ BattleCommand_FinishConfusingTarget:
 	call GetBattleVar
 	cp EFFECT_CONFUSE_HIT
 	jr z, .got_effect
-	cp EFFECT_SNORE
-	jr z, .got_effect
-	cp EFFECT_SWAGGER
-	jr z, .got_effect
+    cp EFFECT_HURRICANE
+    jr z, .got_effect
 	call AnimateCurrentMove
 
 .got_effect
@@ -6496,9 +6494,7 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 	call GetBattleVar
 	cp EFFECT_CONFUSE_HIT
 	ret z
-	cp EFFECT_SNORE
-	ret z
-	cp EFFECT_SWAGGER
+	cp EFFECT_HURRICANE
 	ret z
 	jp PrintDidntAffect2
 

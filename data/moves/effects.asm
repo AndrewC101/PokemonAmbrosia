@@ -2150,3 +2150,31 @@ DoBurn:
 	checkstatusimmunity
 	burn
 	endmove
+
+StealthRock:
+	checkobedience
+	usedmovetext
+	doturn
+	stealthrock
+	endmove
+
+ToxicSpikes:
+	checkobedience
+	usedmovetext
+	doturn
+	toxicspikes
+	endmove
+
+StickyWeb:
+	checkobedience
+	usedmovetext
+	doturn
+	stickyweb
+	endmove
+
+TrickRoom:
+	checkobedience
+	usedmovetext
+	doturn
+	trickroom
+	endmove

@@ -1449,7 +1449,6 @@ FeebasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 15, TACKLE
-	db 30, FLAIL
 	db 100, WATER_GUN
 	db 0 ; no more level-up moves
 
@@ -1920,7 +1919,6 @@ MagikarpEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 15, TACKLE
-	db 30, FLAIL
 	db 100, WATER_GUN
 	db 0 ; no more level-up moves
 
@@ -2411,12 +2409,10 @@ RioluEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, LUCARIO
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
-	db 1, ENDURE
 	db 6, COUNTER
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, TAUNT
-	db 18, REVERSAL
 	db 20, CRUNCH
     db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
@@ -2431,12 +2427,10 @@ RioluEvosAttacks:
 LucarioEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
-	db 1, ENDURE
 	db 6, COUNTER
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, TAUNT
-	db 18, REVERSAL
 	db 20, CRUNCH
     db 25, BULLET_PUNCH
 	db 30, AURA_SPHERE
@@ -2565,7 +2559,6 @@ ChinchouEvosAttacks:
 	db EVOLVE_LEVEL, 27, LANTURN
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 10, FLAIL
 	db 14, THUNDERSHOCK
 	db 18, BUBBLEBEAM
 	db 21, RAIN_DANCE
@@ -2581,7 +2574,6 @@ ChinchouEvosAttacks:
 LanturnEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 10, FLAIL
 	db 14, THUNDERSHOCK
 	db 18, BUBBLEBEAM
 	db 21, RAIN_DANCE
@@ -3043,7 +3035,7 @@ UnownEvosAttacks:
 
 WobbuffetEvosAttacks:
 	db 0 ; no more evolutions
-    db 1, TAUNT
+    db 1, ENCORE
 	db 1, COUNTER
 	db 1, MIRROR_COAT
 	db 1, DESTINY_BOND
@@ -3220,13 +3212,11 @@ HeracrossEvosAttacks:
 	db 1, TACKLE
 	db 1, FOCUS_ENERGY
 	db 6, HORN_ATTACK
-	db 10, ENDURE
 	db 14, LEECH_LIFE
 	db 18, KARATE_CHOP
 	db 22, COUNTER
 	db 30, X_SCISSOR
 	db 33, DRAIN_PUNCH
-	db 36, REVERSAL
 	db 40, NIGHT_SLASH
 	db 45, CLOSE_COMBAT
 	db 50, MEGAHORN
@@ -3580,7 +3570,6 @@ YveltalEvosAttacks:
 GiratinaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCARY_FACE
-	db 1, SLASH
 	db 1, SHADOW_PUNCH
 	db 1, ANCIENTPOWER
 	db 40, DRAGON_CLAW

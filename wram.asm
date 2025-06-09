@@ -531,7 +531,10 @@ wPlayerScreens::
 ; 2 safeguard
 ; 3 light screen
 ; 4 reflect
-; 5-7 unused
+; DeNote - Hazards - adding the following
+; 5 stealth rock
+; 6 toxic spikes
+; 7 sticky web
 	db
 
 wEnemyScreens::
@@ -599,8 +602,9 @@ wBackupEnemyMonBaseExp:: db
 
 wPlayerFutureSightDamage:: dw
 wEnemyFutureSightDamage:: dw
-wPlayerRageCounter:: db ; not used
-wEnemyRageCounter:: db ; not used
+wTrickRoomCount:: db
+
+wUnusedBit:: db ; not used
 
 wBeatUpHitAtLeastOnce:: db
 

@@ -890,9 +890,7 @@ AI_Smart:
 
 AI_Smart_EffectHandlers:
 	dbw EFFECT_SLEEP,            AI_Smart_Sleep
-	dbw EFFECT_LEECH_HIT,        AI_Smart_LeechHit
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
-	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
 	dbw EFFECT_EVASION_UP_2,     AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
@@ -921,7 +919,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_PAIN_SPLIT,       AI_Smart_PainSplit
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
-	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
 	dbw EFFECT_HEAL_BELL,        AI_Smart_HealBell
 	dbw EFFECT_PRIORITY_HIT,     AI_Smart_PriorityHit
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
@@ -929,7 +926,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
 	dbw EFFECT_PERISH_SONG,      AI_Smart_PerishSong
 	dbw EFFECT_SANDSTORM,        AI_Smart_Sandstorm
-	dbw EFFECT_ENDURE,           AI_Smart_Endure
 	dbw EFFECT_ROLLOUT,          AI_Smart_Rollout
 	dbw EFFECT_BULK_UP,          AI_Smart_BulkUp
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
@@ -950,7 +946,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SERENITY,         AI_Smart_Serenity
 	dbw EFFECT_ATTACK_UP_2,      AI_Smart_SwordsDance
 	dbw EFFECT_DEFENSE_UP_2,     AI_Smart_Barrier
-	dbw EFFECT_SP_ATK_UP,        AI_Smart_Growth
+	dbw EFFECT_SP_ATK_UP,        AI_Smart_Growth ; is this needed
 	dbw EFFECT_SP_ATK_UP_2,      AI_Smart_NastyPlot
 	dbw EFFECT_SPEED_UP_2,       AI_Smart_Agility
 	dbw EFFECT_GEOMANCY,         AI_Smart_Geomancy
@@ -962,7 +958,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
     dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
-    dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage
+    dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage ; is this needed
     dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
     dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
@@ -972,6 +968,10 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_SUCKER_PUNCH,     AI_Smart_SuckerPunch
     dbw EFFECT_TAUNT,            AI_Smart_Taunt
     dbw EFFECT_BURN,             AI_Smart_Burn
+    dbw EFFECT_STEALTH_ROCK,     AI_Smart_StealthRock
+    dbw EFFECT_TOXIC_SPIKES,     AI_Smart_ToxicSpikes
+    dbw EFFECT_STICKY_WEB,       AI_Smart_StickyWeb
+    dbw EFFECT_TRICK_ROOM,       AI_Smart_TrickRoom
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1078,40 +1078,6 @@ rept 12
 endr
     ret
 
-AI_Smart_LeechHit:
-	push hl
-	ld a, 1
-	ldh [hBattleTurn], a
-	callfar BattleCheckTypeMatchup
-	pop hl
-
-; 60% chance to discourage this move if not very effective.
-	ld a, [wTypeMatchup]
-	cp EFFECTIVE
-	jr c, .discourage
-
-; Do nothing if effectiveness is neutral.
-	ret z
-
-; Do nothing if enemy's HP is full.
-	call AICheckEnemyMaxHP
-	ret c
-
-; 80% chance to encourage this move otherwise.
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	ret
-
-.discourage
-	call Random
-	cp 39 percent + 1
-	ret c
-
-	inc [hl]
-	ret
-
 AI_Smart_Selfdestruct:
 ; Selfdestruct, Explosion
 
@@ -1182,18 +1148,6 @@ AI_Smart_Selfdestruct:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	ret
-
-AI_Smart_DreamEater:
-; 90% chance to greatly encourage this move.
-; The AI_Basic layer will make sure that
-; Dream Eater is only used against sleeping targets.
-	call Random
-	cp 10 percent
-	ret c
-	dec [hl]
-	dec [hl]
-	dec [hl]
 	ret
 
 AI_Smart_EvasionUp:
@@ -1432,17 +1386,26 @@ AI_Smart_Spikes:
 ; discourage if player has spikes on the field, otherwise encourage
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
-	jr nz, .discourage
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-.discourage
-    inc [hl]
-    inc [hl]
-    inc [hl]
-    inc [hl]
-    ret
+	jp nz, StandardDiscourage
+    jp StrongEncourage
+
+AI_Smart_StealthRock:
+	ld a, [wPlayerScreens]
+	bit SCREENS_STEALTH_ROCK, a
+	jp nz, StandardDiscourage
+    jp StrongEncourage
+
+AI_Smart_ToxicSpikes:
+	ld a, [wPlayerScreens]
+	bit SCREENS_TOXIC_SPIKES, a
+	jp nz, StandardDiscourage
+    jp StrongEncourage
+
+AI_Smart_StickyWeb:
+	ld a, [wPlayerScreens]
+	bit SCREENS_STICKY_WEB, a
+	jp nz, StandardDiscourage
+    jp StrongEncourage
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
@@ -2385,13 +2348,6 @@ AI_Smart_DestinyBond:
     dec [hl]
     ret
 
-AI_Smart_Reversal:
-; Discourage this move if enemy's HP is above 25%.
-	call AICheckEnemyQuarterHP
-	ret nc
-	inc [hl]
-	ret
-
 AI_Smart_HealBell:
 ; Dismiss this move if none of the opponent's Pokemon is statused.
 ; Encourage this move if the enemy is statused.
@@ -2529,31 +2485,6 @@ endr
 
 AI_Smart_Disable:
 	call DoesAIOutSpeedPlayer
-	jr nc, .discourage
-
-	push hl
-	ld a, [wLastPlayerCounterMove]
-	ld hl, UsefulMoves
-	ld de, 1
-	call IsInArray
-
-	pop hl
-	jr nc, .notencourage
-
-	call Random
-	cp 39 percent + 1
-	ret c
-	dec [hl]
-	ret
-
-.notencourage
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
-	and a
-	ret nz
-
-.discourage
-	call Random
-	cp 8 percent
 	ret c
 	inc [hl]
 	ret
@@ -2798,8 +2729,6 @@ AI_Smart_KingsShield:
 	ld a, [wCurEnemyMove]
 	cp PROTECT
 	jr z, .discourage
-	cp ENDURE
-	jr z, .discourage
     cp KINGS_SHIELD
 	jr z, .discourage
 
@@ -2853,8 +2782,6 @@ AI_Smart_Protect:
 ; Greatly discourage this move if the enemy already used Protect.
 	ld a, [wCurEnemyMove]
 	cp PROTECT
-	jr z, .greatly_discourage
-	cp ENDURE
 	jr z, .greatly_discourage
     cp KINGS_SHIELD
 	jr z, .greatly_discourage
@@ -3039,50 +2966,6 @@ AI_Smart_Sandstorm:
 	db GROUND
 	db STEEL
 	db -1 ; end
-
-AI_Smart_Endure:
-; Greatly discourage this move if the enemy already used Protect.
-	ld a, [wEnemyProtectCount]
-	and a
-	jr nz, .greatly_discourage
-
-; Greatly discourage if player can't KO.
-    call CanPlayerKO
-    jr nc, .greatly_discourage
-
-; If the enemy has Reversal...
-	ld b, EFFECT_REVERSAL
-	call AIHasMoveEffect
-	jr nc, .no_reversal
-
-; ...80% chance to greatly encourage this move.
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
-.no_reversal
-; If the enemy is not locked on, do nothing.
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	ret z
-
-; 50% chance to greatly encourage this move.
-	call AI_50_50
-	ret c
-
-	dec [hl]
-	dec [hl]
-	ret
-
-.greatly_discourage
-	inc [hl]
-.discourage
-	inc [hl]
-	ret
 
 AI_Smart_Rollout:
 ; Rollout, Fury Cutter
@@ -3771,6 +3654,12 @@ AI_Smart_Barrier:
 ; encourage if we get here
 	jp StrongEncourage
 
+AI_Smart_TrickRoom:
+    ld a, [wTrickRoomCount]
+    and a
+    jp nz, StandardDiscourage
+    ; fall through
+
 AI_Smart_Agility:
 ; discourage if we are faster
     call DoesAIOutSpeedPlayer
@@ -3786,7 +3675,7 @@ AI_Smart_Agility:
     jp c, StandardDiscourage
 
 ; otherwise use
-    jp StandardEncourage
+    jp StrongEncourage
 
 AI_Smart_Geomancy:
 	call IsSpecialAttackMaxed
@@ -5156,9 +5045,21 @@ DoesAIOutSpeedPlayer:
 	pop bc
 	ret
 .yes
+    ld a, [wTrickRoomCount]
+    and a
+    jr z, .doYes
+    xor a
+    ret
+.doYes
     scf
     ret
 .no
+    ld a, [wTrickRoomCount]
+    and a
+    jr z, .doNo
+    scf
+    ret
+.doNo
     xor a
     ret
 
@@ -6219,6 +6120,48 @@ SpikesSwitch:
 	farcall Call_PlayBattleAnim
 .skipAnim
 	ld hl, SpikesText
+	jp StdBattleTextbox
+
+StealthRockSwitch:
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens
+	ld hl, wPlayerScreens
+.got_screens
+	set SCREENS_STEALTH_ROCK, [hl]
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, STEALTH_ROCK
+	farcall Call_PlayBattleAnim
+.skipAnim
+	ld hl, StealthRockText
+	jp StdBattleTextbox
+
+ToxicSpikesSwitch:
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens
+	ld hl, wPlayerScreens
+.got_screens
+	set SCREENS_TOXIC_SPIKES, [hl]
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
+    ld de, TOXIC_SPIKES
+	farcall Call_PlayBattleAnim
+.skipAnim
+	ld hl, ToxicSpikesText
+	jp StdBattleTextbox
+
+TrickRoomSwitch:
+    ld a, 5
+    ld [wTrickRoomCount], a
+    ld de, TRICK_ROOM
+	farcall Call_PlayBattleAnim
+	ld hl, TrickRoomText
 	jp StdBattleTextbox
 
 ReflectSwitch:

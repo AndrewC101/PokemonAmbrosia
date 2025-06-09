@@ -187,4 +187,8 @@ BattleCommandPointers:
 	dw BattleCommand_SuckerPunch
 	dw BattleCommand_Taunt
 	dw BattleCommand_Burn
+	dw BattleCommand_StealthRock
+	dw BattleCommand_ToxicSpikes
+	dw BattleCommand_StickyWeb
+	dw BattleCommand_TrickRoom
 	assert_table_length NUM_EFFECT_COMMANDS

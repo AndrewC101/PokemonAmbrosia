@@ -113,9 +113,9 @@ UnownPrinter:
 	ret
 
 DisplayLinkRecord:
-	call FadeToMenu
-	farcall _DisplayLinkRecord
-	call ExitAllMenus
+	;call FadeToMenu
+	;farcall _DisplayLinkRecord
+	;call ExitAllMenus
 	ret
 
 PlayersHousePC:

@@ -48,7 +48,7 @@ MoveDescriptions::
 	dw GrowlDescription
 	dw RoarDescription
 	dw SingDescription
-	dw SupersonicDescription
+	dw StealthRockDescription
 	dw SonicboomDescription
 	dw DisableDescription
 	dw AcidDescription
@@ -146,7 +146,7 @@ MoveDescriptions::
 	dw ShadowForceDescription
 	dw TransformDescription
 	dw TauntDescription
-	dw DizzyPunchDescription
+	dw TrickRoomDescription
 	dw SporeDescription
 	dw FlashDescription
 	dw PsyblastDescription
@@ -175,11 +175,11 @@ MoveDescriptions::
 	dw FlameWheelDescription
 	dw HurricaneDescription
 	dw CurseDescription
-	dw FlailDescription
+	dw StickyWebDescription
 	dw KingsShieldDescription
 	dw AeroblastDescription
 	dw ShadowFistDescription
-	dw ReversalDescription
+	dw ToxicSpikesDescription
 	dw SuckerPunchDescription
 	dw PowderSnowDescription
 	dw ProtectDescription
@@ -457,9 +457,17 @@ SingDescription:
 	db   "May cause the foe"
 	line "to fall asleep.@"
 
-SupersonicDescription:
-	db   "Sound waves that"
-	line "cause confusion.@"
+ToxicSpikesDescription:
+	db   "Poisons foes when"
+	next "they switch in.@"
+
+StealthRockDescription:
+	db   "Hurts foes when"
+	next "they switch in.@"
+
+StickyWebDescription:
+	db   "Slows foes when"
+	next "they switch in.@"
 
 SonicboomDescription:
 	db   "Always inflicts"
@@ -850,9 +858,9 @@ TauntDescription:
 	db   "Provokes enemy"
 	next "into attacking.@"
 
-DizzyPunchDescription:
-	db   "An attack that may"
-	line "cause confusion.@"
+TrickRoomDescription:
+	db   "Reverses the move"
+	next "order for 5 turns.@"
 
 SporeDescription:
 	db   "A move that"

@@ -59,7 +59,7 @@ Moves: ; 41afb
 	move GROWL,        EFFECT_ATTACK_DOWN,         0, NORMAL,        STATUS,   100, 40,   0
 	move ROAR,         EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
 	move SING,         EFFECT_SLEEP,               0, NORMAL,        STATUS,    55, 15,   0
-	move SUPERSONIC,   EFFECT_CONFUSE,             0, NORMAL,        STATUS,    55, 20,   0
+	move STEALTH_ROCK, EFFECT_STEALTH_ROCK,        0, ROCK,          STATUS,   100, 20,   0
 	move SONICBOOM,    EFFECT_STATIC_DAMAGE,      20, NORMAL,        SPECIAL,   90, 20,   0
 	move DISABLE,      EFFECT_DISABLE,             0, NORMAL,        STATUS,   100, 20,   0
 	move ACID,         EFFECT_DEFENSE_DOWN_HIT,   40, POISON,        SPECIAL,  100, 30,  10
@@ -157,7 +157,7 @@ Moves: ; 41afb
 	move SHADOW_FORCE, EFFECT_FLY,               120, GHOST,         SPECIAL,  100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,        STATUS,   100, 10,   0
 	move TAUNT,        EFFECT_TAUNT,               0, DARK,          STATUS,   100, 20,   0
-	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,        PHYSICAL, 100, 10,  20
+	move TRICK_ROOM,   EFFECT_TRICK_ROOM,          0, PSYCHIC_TYPE,  STATUS,   100, 10,   0
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,         STATUS,   100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   100, 20,   0
 	move PSYBLAST,     EFFECT_SP_DEF_DOWN_HIT,   130, UBER,          SPECIAL,  100, 30,  30
@@ -186,11 +186,11 @@ Moves: ; 41afb
 	move FLAME_WHEEL,  EFFECT_RECOIL_HIT,         60, FIRE,          PHYSICAL, 100,  25,  10
 	move HURRICANE,    EFFECT_HURRICANE,         120, FLYING,        SPECIAL,   75, 10,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,         STATUS,   100, 10,   0
-	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0
+	move STICKY_WEB,   EFFECT_STICKY_WEB,          0, BUG,           STATUS,   100, 15,   0
 	move KINGS_SHIELD, EFFECT_KINGS_SHIELD,        0, STEEL,         STATUS,   100, 30,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,        SPECIAL,  100, 10,   0
-	move SHADOW_PUNCH,  EFFECT_NORMAL_HIT,         80, GHOST,         PHYSICAL, 100, 15,   0
-	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,      PHYSICAL, 100, 15,   0
+	move SHADOW_PUNCH, EFFECT_NORMAL_HIT,         80, GHOST,         PHYSICAL, 100, 15,   0
+	move TOXIC_SPIKES, EFFECT_TOXIC_SPIKES,        0, POISON,        STATUS,   100, 15,   0
 	move SUCKER_PUNCH, EFFECT_SUCKER_PUNCH,       70, DARK,          PHYSICAL, 100, 10,   0
 	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, ICE,           SPECIAL,  100, 25,  10
 	move PROTECT,      EFFECT_PROTECT,             0, NORMAL,        STATUS,   100, 10,   0

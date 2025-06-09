@@ -187,6 +187,10 @@ ENDM
 	command suckerpunch             ; b5
 	command taunt                   ; b6
 	command burn                    ; b7
+	command stealthrock             ; b8
+	command toxicspikes             ; b9
+	command stickyweb               ; ba
+	command trickroom               ; bb
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

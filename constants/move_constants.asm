@@ -53,7 +53,7 @@
 	const GROWL        ; 2d
 	const ROAR         ; 2e
 	const SING         ; 2f
-	const SUPERSONIC   ; 30 - Not Used
+	const STEALTH_ROCK ; 30
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
@@ -151,7 +151,7 @@
 	const SHADOW_FORCE ; 8f
 	const TRANSFORM    ; 90
 	const TAUNT        ; 91
-	const DIZZY_PUNCH  ; 92     not used
+	const TRICK_ROOM   ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94
 	const PSYBLAST     ; 95
@@ -180,11 +180,11 @@
 	const FLAME_WHEEL  ; ac
 	const HURRICANE    ; ad
 	const CURSE        ; ae
-	const FLAIL        ; af
+	const STICKY_WEB   ; af
 	const KINGS_SHIELD ; b0
 	const AEROBLAST    ; b1
-	const SHADOW_PUNCH  ; b2
-	const REVERSAL     ; b3
+	const SHADOW_PUNCH ; b2
+	const TOXIC_SPIKES ; b3
 	const SUCKER_PUNCH ; b4
 	const POWDER_SNOW  ; b5
 	const PROTECT      ; b6
@@ -208,7 +208,7 @@
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
 	const GIGA_DRAIN   ; ca
-	const ENDURE       ; cb
+	const ENDURE       ; cb - not used
 	const CHARM        ; cc
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce

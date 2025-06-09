@@ -162,4 +162,8 @@ MoveEffectsPointers:
 	dw SuckerPunch
 	dw Taunt
 	dw DoBurn
+	dw StealthRock
+	dw ToxicSpikes
+	dw StickyWeb
+	dw TrickRoom
 	assert_table_length NUM_MOVE_EFECTS

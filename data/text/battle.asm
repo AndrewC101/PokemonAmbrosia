@@ -303,6 +303,11 @@ BattleText_UserHurtBySpikes:
 	line "hurt by SPIKES!"
 	prompt
 
+BattleText_UserHurtByStealthRock:
+	text "Stones dug into"
+	line "<USER>!"
+	prompt
+
 RecoveredUsingText:
 	text "<TARGET>"
 	line "recovered using a"
@@ -1155,6 +1160,43 @@ BlewSpikesText:
 ClearFieldText:
 	text "Enemy field was"
 	line "swept clear!"
+	prompt
+
+ToxicSpikesText:
+	text "TOXIC SPIKES scat-"
+	line "tered all around"
+	cont "<TARGET>!"
+	prompt
+
+AbsorbedToxicSpikesText:
+	text "<USER>"
+	line "absorbed the"
+	cont "TOXIC SPIKES!"
+	prompt
+
+StealthRockText:
+	text "Pointed stones"
+	line "float all around"
+	cont "<TARGET>!"
+	prompt
+
+StickyWebText:
+	text "A STICKY WEB has"
+	line "been laid beneath"
+	cont "<TARGET>!"
+	prompt
+
+TrickRoomText:
+	text "<USER>"
+	line "twisted the"
+	cont "dimensions!"
+	prompt
+
+TrickRoomEndedText:
+	text "The twisted"
+	line "dimensions"
+	cont "returned to"
+	cont "normal!"
 	prompt
 
 DownpourText:

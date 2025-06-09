@@ -18,7 +18,6 @@ MoveGrammar:
 	db MIND_READER
 	db PROTECT
 	db SPIKES
-	db ENDURE
 	db ROLLOUT
 	db SWAGGER
 	db SLEEP_TALK
@@ -32,7 +31,6 @@ MoveGrammar:
 	db TELEPORT
 	db SELFDESTRUCT
 	db AMNESIA
-	db FLAIL
 	db 0 ; end set
 
 ; 2: originally "[mon]の¯[move]¯した!" ("[mon]¯did¯[move]!")

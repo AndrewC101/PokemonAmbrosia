@@ -49,7 +49,7 @@ BattleAnimations::
 	dw BattleAnim_Growl
 	dw BattleAnim_Roar
 	dw BattleAnim_Sing
-	dw BattleAnim_Supersonic
+	dw BattleAnim_StealthRock
 	dw BattleAnim_Sonicboom
 	dw BattleAnim_Disable
 	dw BattleAnim_Acid
@@ -147,7 +147,7 @@ BattleAnimations::
 	dw BattleAnim_ShadowForce
 	dw BattleAnim_Transform
 	dw BattleAnim_Taunt
-	dw BattleAnim_DizzyPunch
+	dw BattleAnim_TrickRoom
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
 	dw BattleAnim_Psyblast
@@ -176,11 +176,11 @@ BattleAnimations::
 	dw BattleAnim_FlameWheel
 	dw BattleAnim_Hurricane
 	dw BattleAnim_Curse
-	dw BattleAnim_Flail
+	dw BattleAnim_StickyWeb
 	dw BattleAnim_KingsShield
 	dw BattleAnim_Aeroblast
 	dw BattleAnim_ShadowClaw
-	dw BattleAnim_Reversal
+	dw BattleAnim_ToxicSpikes
 	dw BattleAnim_SuckerPunch
 	dw BattleAnim_PowderSnow
 	dw BattleAnim_Protect
@@ -3204,6 +3204,7 @@ BattleAnim_Thief:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_StickyWeb:
 BattleAnim_SpiderWeb:
 	anim_1gfx ANIM_GFX_WEB
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
@@ -3604,6 +3605,19 @@ BattleAnim_Spikes:
 	anim_wait 8
 	anim_sound 6, 2, SFX_MENU
 	anim_obj ANIM_OBJ_SPIKES, 48, 88, $28
+	anim_wait 64
+	anim_ret
+
+BattleAnim_ToxicSpikes:
+	anim_1gfx ANIM_GFX_MISC
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $20
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $30
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $28
 	anim_wait 64
 	anim_ret
 
@@ -4572,6 +4586,19 @@ BattleAnim_Extremespeed:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_StealthRock:
+	anim_1gfx ANIM_GFX_ROCKS
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_SMALL_ROCK, 116, 68, $40
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_SMALL_ROCK, 156, 68, $30
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj ANIM_OBJ_SMALL_ROCK, 136, 68, $30
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Ancientpower:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_SPARK
@@ -4612,6 +4639,7 @@ BattleAnim_ShadowBall:
 
 BattleAnim_DracoMeteor:
 BattleAnim_PsychoBoost:
+BattleAnim_TrickRoom:
 BattleAnim_FutureSight:
 	anim_1gfx ANIM_GFX_WIND
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

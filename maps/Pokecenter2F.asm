@@ -581,12 +581,6 @@ Script_LeftTimeCapsule:
 	setmapscene TIME_CAPSULE, SCENE_DEFAULT
 	end
 
-Pokecenter2FLinkRecordSign:
-	refreshscreen
-	special DisplayLinkRecord
-	closetext
-	end
-
 Pokecenter2FOfficerScript:
 	faceplayer
 	opentext
@@ -1034,7 +1028,6 @@ Pokecenter2F_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
 	def_object_events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1

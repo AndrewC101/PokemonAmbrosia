@@ -3861,7 +3861,7 @@ StartMobileBattle:
 Function101a4f:
 	ld a, 1
 	ld [wDisableTextAcceleration], a
-	farcall DisplayLinkBattleResult
+	;farcall DisplayLinkBattleResult
 	xor a
 	ld [wDisableTextAcceleration], a
 	farcall CleanUpBattleRAM

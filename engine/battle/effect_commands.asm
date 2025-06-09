@@ -2266,18 +2266,6 @@ BattleCommand_FailureText:
 
 BattleCommand_ApplyDamage:
 ; applydamage
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_ENDURE, a
-	jr z, .focus_band
-
-	call BattleCommand_FalseSwipe
-	ld b, 0
-	jr nc, .damage
-	ld b, 1
-	jr .damage
-
-.focus_band
 	call GetOpponentItem
 	ld a, b
 	cp HELD_FOCUS_BAND
@@ -3709,128 +3697,17 @@ BattleCommand_ConstantDamage:
 	ld a, 0
 	jr z, .got_power
 
-	;cp EFFECT_SUPER_FANG
-	;jr z, .super_fang
-
-	cp EFFECT_REVERSAL
-	jr z, .reversal
-
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	ld b, a
 	ld a, $0
 	jr .got_power
 
-;.super_fang
-;	ld hl, wEnemyMonHP
-;	ldh a, [hBattleTurn]
-;	and a
-;	jr z, .got_hp
-;	ld hl, wBattleMonHP
-;.got_hp
-;	ld a, [hli]
-;	srl a
-;	ld b, a
-;	ld a, [hl]
-;	rr a
-;	push af
-;	ld a, b
-;	pop bc
-;	and a
-;	jr nz, .got_power
-;	or b
-;	ld a, 0
-;	jr nz, .got_power
-;	ld b, 1
-;	jr .got_power
-
 .got_power
 	ld hl, wCurDamage
 	ld [hli], a
 	ld [hl], b
 	ret
-
-.reversal
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .reversal_got_hp
-	ld hl, wEnemyMonHP
-.reversal_got_hp
-	xor a
-	ldh [hDividend], a
-	ldh [hMultiplicand + 0], a
-	ld a, [hli]
-	ldh [hMultiplicand + 1], a
-	ld a, [hli]
-	ldh [hMultiplicand + 2], a
-	ld a, 48
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, [hli]
-	ld b, a
-	ld a, [hl]
-	ldh [hDivisor], a
-	ld a, b
-	and a
-	jr z, .skip_to_divide
-
-	ldh a, [hProduct + 4]
-	srl b
-	rr a
-	srl b
-	rr a
-	ldh [hDivisor], a
-	ldh a, [hProduct + 2]
-	ld b, a
-	srl b
-	ldh a, [hProduct + 3]
-	rr a
-	srl b
-	rr a
-	ldh [hDividend + 3], a
-	ld a, b
-	ldh [hDividend + 2], a
-
-.skip_to_divide
-	ld b, 4
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld b, a
-	ld hl, FlailReversalPower
-
-.reversal_loop
-	ld a, [hli]
-	cp b
-	jr nc, .break_loop
-	inc hl
-	jr .reversal_loop
-
-.break_loop
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr nz, .notPlayersTurn
-
-	ld hl, wPlayerMoveStructPower
-	ld [hl], a
-	push hl
-	call PlayerAttackDamage
-	jr .notEnemysTurn
-
-.notPlayersTurn
-	ld hl, wEnemyMoveStructPower
-	ld [hl], a
-	push hl
-	call EnemyAttackDamage
-
-.notEnemysTurn
-	call BattleCommand_DamageCalc
-	pop hl
-	ld [hl], 1
-	ret
-
-INCLUDE "data/moves/flail_reversal_power.asm"
 
 INCLUDE "engine/battle/abilities.asm"
 
@@ -7083,11 +6960,17 @@ INCLUDE "engine/battle/move_effects/dragondance.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 
-INCLUDE "engine/battle/move_effects/endure.asm"
-
 INCLUDE "engine/battle/move_effects/spikes.asm"
 
-INCLUDE "engine/battle/move_effects/foresight.asm"
+INCLUDE "engine/battle/move_effects/stealth_rock.asm"
+
+INCLUDE "engine/battle/move_effects/toxic_spikes.asm"
+
+INCLUDE "engine/battle/move_effects/sticky_web.asm"
+
+INCLUDE "engine/battle/move_effects/trick_room.asm"
+
+;INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
@@ -7095,19 +6978,9 @@ INCLUDE "engine/battle/move_effects/sandstorm.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
-BattleCommand_Unused5D:
-; effect0x5d
-	ret
-
-INCLUDE "engine/battle/move_effects/fury_cutter.asm"
-
 INCLUDE "engine/battle/move_effects/attract.asm"
 
 INCLUDE "engine/battle/move_effects/return.asm"
-
-INCLUDE "engine/battle/move_effects/present.asm"
-
-INCLUDE "engine/battle/move_effects/frustration.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 
@@ -7624,4 +7497,10 @@ CompoundEyes:
     call z, IncrementB
     cp GRENINJA
     call z, IncrementB
+    ret
+
+BattleCommand_Endure:
+BattleCommand_Present:
+BattleCommand_Foresight:
+BattleCommand_FrustrationPower:
     ret

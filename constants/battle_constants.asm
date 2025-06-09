@@ -174,7 +174,7 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const SUBSTATUS_PROTECT
 	const SUBSTATUS_UNUSED_1
 	const SUBSTATUS_PERISH
-	const SUBSTATUS_ENDURE
+	const SUBSTATUS_ENDURE ; not used
 	const SUBSTATUS_ROLLOUT
 	const SUBSTATUS_IN_LOVE
 
@@ -222,6 +222,9 @@ ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
 	const SCREENS_SAFEGUARD
 	const SCREENS_LIGHT_SCREEN
 	const SCREENS_REFLECT
+	const SCREENS_STEALTH_ROCK
+	const SCREENS_TOXIC_SPIKES
+	const SCREENS_STICKY_WEB
 
 ; values in wBattleWeather
 	const_def

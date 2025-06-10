@@ -4238,7 +4238,23 @@ SpikesDamage:
 	ld hl, BattleText_UserHurtByStealthRock
 	call StdBattleTextbox
 
+    ld h, d
+	ld l, e
+	callfar CheckStealthRockTypeMatchup
+	push de
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE + 1
+	jr nc, .doubleDamage
+	cp EFFECTIVE - 1
+	jr c, .halfDamage
 	call GetEighthMaxHP
+	jr .finish
+.halfDamage
+    call GetSixteenthMaxHP
+    jr .finish
+.doubleDamage
+    call GetQuarterMaxHP
+.finish
 	call SubtractHPFromTarget
 	call WaitBGMap
 	jp .pop

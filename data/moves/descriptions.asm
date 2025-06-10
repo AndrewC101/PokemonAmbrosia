@@ -203,7 +203,7 @@ MoveDescriptions::
 	dw OutrageDescription
 	dw SandstormDescription
 	dw GigaDrainDescription
-	dw EndureDescription
+	dw DefogDescription
 	dw CharmDescription
 	dw RolloutDescription
 	dw FalseSwipeDescription
@@ -1082,9 +1082,9 @@ GigaDrainDescription:
 	db   "Steals 1/2 of the"
 	line "damage inflicted.@"
 
-EndureDescription:
-	db   "Always leaves at"
-	line "least 1HP.@"
+DefogDescription:
+	db   "Clears the field"
+	next "of all effects.@"
 
 CharmDescription:
 	db   "Sharply lowers the"

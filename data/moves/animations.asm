@@ -204,7 +204,7 @@ BattleAnimations::
 	dw BattleAnim_Outrage
 	dw BattleAnim_Sandstorm
 	dw BattleAnim_GigaDrain
-	dw BattleAnim_Endure
+	dw BattleAnim_Defog
 	dw BattleAnim_Charm
 	dw BattleAnim_Rollout
 	dw BattleAnim_FalseSwipe
@@ -2239,6 +2239,7 @@ BattleAnim_Haze:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_Defog:
 BattleAnim_Mist:
 	anim_obp0 $54
 	anim_1gfx ANIM_GFX_HAZE
@@ -3595,6 +3596,7 @@ BattleAnim_Octazooka:
 .done
 	anim_ret
 
+BattleAnim_ToxicSpikes:
 BattleAnim_Spikes:
 	anim_1gfx ANIM_GFX_MISC
 	anim_sound 6, 2, SFX_MENU
@@ -3605,19 +3607,6 @@ BattleAnim_Spikes:
 	anim_wait 8
 	anim_sound 6, 2, SFX_MENU
 	anim_obj ANIM_OBJ_SPIKES, 48, 88, $28
-	anim_wait 64
-	anim_ret
-
-BattleAnim_ToxicSpikes:
-	anim_1gfx ANIM_GFX_MISC
-	anim_sound 6, 2, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $20
-	anim_wait 8
-	anim_sound 6, 2, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $30
-	anim_wait 8
-	anim_sound 6, 2, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 48, 88, $28
 	anim_wait 64
 	anim_ret
 

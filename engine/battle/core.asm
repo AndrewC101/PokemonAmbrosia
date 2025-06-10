@@ -4162,6 +4162,11 @@ SpikesDamage:
 	and a
 	ret nz
 
+	xor a
+	ld [wFailedMessage], a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
+
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
@@ -4174,11 +4179,10 @@ SpikesDamage:
 	ld bc, UpdateEnemyHUD
 	ld a, [wEnemyMonSpecies]
 .ok
-	call .StickyWeb
-
 	call .Spikes
 	call .StealthRock
-	jp .ToxicSpikes
+	call .ToxicSpikes
+	jp .StickyWeb
 
 .Spikes
 	bit SCREENS_SPIKES, [hl]
@@ -4196,6 +4200,7 @@ SpikesDamage:
     push hl
     push de
 	push bc
+	call GetCurrentMonCore
 	ld hl, Core_SpikesImmunePokemon
 	ld de, 1
 	call IsInArray
@@ -4223,6 +4228,7 @@ SpikesDamage:
     push hl
     push de
 	push bc
+	call GetCurrentMonCore
 	ld hl, Core_MagicGuardPokemon
 	ld de, 1
 	call IsInArray
@@ -4238,6 +4244,7 @@ SpikesDamage:
 	ld hl, BattleText_UserHurtByStealthRock
 	call StdBattleTextbox
 
+    pop de
     ld h, d
 	ld l, e
 	callfar CheckStealthRockTypeMatchup
@@ -4268,6 +4275,7 @@ SpikesDamage:
     push hl
     push de
 	push bc
+	call GetCurrentMonCore
 	ld hl, Core_LevitatePokemon
 	ld de, 1
 	call IsInArray
@@ -4300,16 +4308,16 @@ SpikesDamage:
 
 ; Toxic Spikes can't poison a Safeguarded target
 	farcall SafeCheckSafeguard
-	jr nz, .pop
+	jp nz, .pop
 
 ; Toxic Spikes can't poison a status immune Pokemon
-    call GetOpposingMonCore
+    call GetCurrentMonCore
     cp ARCEUS
-    ret z
+    jr z, .pop
     cp SYLVEON
-    ret z
+    jr z, .pop
     cp DUNSPARCE
-    ret z
+    jr z, .pop
 
 ; Toxic Spikes can't poison a Pokemon that already has a status condition
 	ld a, BATTLE_VARS_STATUS
@@ -4355,6 +4363,7 @@ SpikesDamage:
     push hl
     push de
 	push bc
+	call GetCurrentMonCore
 	ld hl, Core_LevitatePokemon
 	ld de, 1
 	call IsInArray
@@ -4381,8 +4390,6 @@ SpikesDamage:
 	call SwitchTurnCore
 	call Call_PlayBattleAnim
 	farcall BattleCommand_SpeedDown
-	ld a, SPEED
-	ld [wLoweredStat], a
 	farcall BattleCommand_StatDownMessage
 	call SwitchTurnCore
 
@@ -4652,7 +4659,7 @@ SwitchInEffects:
     farcall SafeguardSwitch
     jp .randomStatUp
 .clearField
-	farcall ClearField
+	farcall BattleCommand_Defog
 	ret
 .spAtkUp
     farcall BattleCommand_SpecialAttackUp

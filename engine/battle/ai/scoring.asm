@@ -972,6 +972,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_TOXIC_SPIKES,     AI_Smart_ToxicSpikes
     dbw EFFECT_STICKY_WEB,       AI_Smart_StickyWeb
     dbw EFFECT_TRICK_ROOM,       AI_Smart_TrickRoom
+    dbw EFFECT_DEFOG,            AI_Smart_Defog
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -1383,29 +1384,90 @@ AI_Smart_ResetStats:
 	ret
 
 AI_Smart_Spikes:
-; discourage if player has spikes on the field, otherwise encourage
+; don't use if already up
 	ld a, [wPlayerScreens]
 	bit SCREENS_SPIKES, a
 	jp nz, StandardDiscourage
+
+; don't use if player has only one pokemon left
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, StandardDiscourage
+
+; use otherwise
     jp StrongEncourage
 
 AI_Smart_StealthRock:
+; don't use if already up
 	ld a, [wPlayerScreens]
 	bit SCREENS_STEALTH_ROCK, a
 	jp nz, StandardDiscourage
+
+; don't use if player has only one pokemon left
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, StandardDiscourage
+
+; use otherwise
     jp StrongEncourage
 
 AI_Smart_ToxicSpikes:
+; don't use if already up
 	ld a, [wPlayerScreens]
 	bit SCREENS_TOXIC_SPIKES, a
 	jp nz, StandardDiscourage
+
+; don't use if player has only one pokemon left
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, StandardDiscourage
+
+; use otherwise
     jp StrongEncourage
 
 AI_Smart_StickyWeb:
+; don't use if already up
 	ld a, [wPlayerScreens]
 	bit SCREENS_STICKY_WEB, a
 	jp nz, StandardDiscourage
+
+; don't use if player has only one pokemon left
+	push hl
+	call AICheckLastPlayerMon
+	pop hl
+	jp z, StandardDiscourage
+
+; use otherwise
     jp StrongEncourage
+
+AI_Smart_Defog:
+; don't use if player has only one pokemon left
+	;push hl
+	;call AICheckLastPlayerMon
+	;pop hl
+	;jr z, StandardDiscourage
+
+; use if player has any screens up
+	ld a, [wPlayerScreens]
+	bit SCREENS_STEALTH_ROCK, a
+	jp nz, StandardEncourage
+	bit SCREENS_SPIKES, a
+	jp nz, StandardEncourage
+	bit SCREENS_TOXIC_SPIKES, a
+	jp nz, StandardEncourage
+	bit SCREENS_STICKY_WEB, a
+	jp nz, StandardEncourage
+	;bit SCREENS_LIGHT_SCREEN, a
+	;jp nz, StandardEncourage
+	;bit SCREENS_REFLECT, a
+	;jp nz, StandardEncourage
+
+; otherwise discourage
+    jp StandardDiscourage
+
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
@@ -3115,25 +3177,16 @@ AI_Smart_BatonPass:
     ret
 
 AI_Smart_RapidSpin:
-; 80% chance to greatly encourage this move if the enemy is
-; trapped (Bind effect), seeded, or scattered with spikes.
-
-	ld a, [wEnemyWrapCount]
-	and a
-	jr nz, .encourage
-
-	ld a, [wEnemySubStatus4]
-	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .encourage
-
 	ld a, [wEnemyScreens]
 	bit SCREENS_SPIKES, a
+	jr nz, .encourage
+	bit SCREENS_STEALTH_ROCK, a
+	jr nz, .encourage
+	bit SCREENS_TOXIC_SPIKES, a
+	jr nz, .encourage
+	bit SCREENS_STICKY_WEB, a
 	ret z
-
 .encourage
-	call AI_80_20
-	ret c
-
 	dec [hl]
 	dec [hl]
 	ret
@@ -3658,7 +3711,7 @@ AI_Smart_TrickRoom:
     ld a, [wTrickRoomCount]
     and a
     jp nz, StandardDiscourage
-    ; fall through
+    ; fallthrough
 
 AI_Smart_Agility:
 ; discourage if we are faster
@@ -6225,38 +6278,6 @@ SafeguardSwitch:
 	farcall Call_PlayBattleAnim
 .skipAnim
     ld hl, CoveredByVeilText
-	jp StdBattleTextbox
-
-ClearField:
-; clear enemy field of screens
-	ld a, 1
-	ld [wWeatherCount], a
-	ld hl, wPlayerScreens
-	ld bc, wPlayerSafeguardCount
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .gotScreens
-	ld hl, wEnemyScreens
-	ld bc, wEnemySafeguardCount
-.gotScreens
-	ld a, 1
-	ld [bc], a
-	inc bc
-	ld [bc], a
-	inc bc
-	ld [bc], a
-
-; clear user field of spikes
-	ld hl, wPlayerScreens
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .gotSpikesScreen
-	ld hl, wEnemyScreens
-.gotSpikesScreen
-	res SCREENS_SPIKES, [hl]
-
-; print text
-	ld hl, ClearFieldText
 	jp StdBattleTextbox
 
 HasWildBattleBegun:

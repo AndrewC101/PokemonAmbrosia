@@ -191,6 +191,7 @@ ENDM
 	command toxicspikes             ; b9
 	command stickyweb               ; ba
 	command trickroom               ; bb
+	command defog                   ; bc
 NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

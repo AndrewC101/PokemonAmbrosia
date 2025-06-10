@@ -1154,18 +1154,17 @@ ShedLeechSeedText:
 
 BlewSpikesText:
 	text "<USER>"
-	line "blew away SPIKES!"
+	line "blew away hazards!"
 	prompt
 
 ClearFieldText:
-	text "Enemy field was"
+	text "The field was"
 	line "swept clear!"
 	prompt
 
 ToxicSpikesText:
 	text "TOXIC SPIKES scat-"
-	line "tered all around"
-	cont "<TARGET>!"
+	line "tered all around."
 	prompt
 
 AbsorbedToxicSpikesText:
@@ -1176,14 +1175,12 @@ AbsorbedToxicSpikesText:
 
 StealthRockText:
 	text "Pointed stones"
-	line "float all around"
-	cont "<TARGET>!"
+	line "float all around."
 	prompt
 
 StickyWebText:
 	text "A STICKY WEB has"
-	line "been laid beneath"
-	cont "<TARGET>!"
+	line "been laid."
 	prompt
 
 TrickRoomText:

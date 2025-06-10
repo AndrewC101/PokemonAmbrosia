@@ -19,7 +19,6 @@ MoveGrammar:
 	db PROTECT
 	db SPIKES
 	db ROLLOUT
-	db SWAGGER
 	db SLEEP_TALK
 	db HIDDEN_POWER
 	db PSYCH_UP

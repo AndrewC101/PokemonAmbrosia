@@ -208,11 +208,11 @@
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
 	const GIGA_DRAIN   ; ca
-	const ENDURE       ; cb - not used
+	const DEFOG        ; cb
 	const CHARM        ; cc
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce
-	const SWAGGER      ; cf
+	const SWAGGER      ; cf - not used
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
 	const BULK_UP      ; d2

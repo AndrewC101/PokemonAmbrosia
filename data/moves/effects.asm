@@ -2178,3 +2178,10 @@ TrickRoom:
 	doturn
 	trickroom
 	endmove
+
+Defog:
+	checkobedience
+	usedmovetext
+	doturn
+	defog
+	endmove

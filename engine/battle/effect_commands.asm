@@ -4905,9 +4905,6 @@ BattleCommand_StatDown:
 .clearBody:
 	ld hl, ClearBodyText
 	call StdBattleTextbox
-	; fallthrough
-
-.Mist:
 	ld a, 2
 	ld [wFailedMessage], a
 	ld a, 1
@@ -6979,6 +6976,8 @@ INCLUDE "engine/battle/move_effects/toxic_spikes.asm"
 INCLUDE "engine/battle/move_effects/sticky_web.asm"
 
 INCLUDE "engine/battle/move_effects/trick_room.asm"
+
+INCLUDE "engine/battle/move_effects/defog.asm"
 
 ;INCLUDE "engine/battle/move_effects/foresight.asm"
 

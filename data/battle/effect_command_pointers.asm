@@ -191,4 +191,5 @@ BattleCommandPointers:
 	dw BattleCommand_ToxicSpikes
 	dw BattleCommand_StickyWeb
 	dw BattleCommand_TrickRoom
+	dw BattleCommand_Defog
 	assert_table_length NUM_EFFECT_COMMANDS

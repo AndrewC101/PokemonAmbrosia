@@ -4982,8 +4982,6 @@ DoesAIOutSpeedPlayer:
 	jr z, .yes
 	cp EXEGGUTOR
 	jr z, .yes
-	cp VICTREEBEL
-	jr z, .yes
 .checkSand
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -5019,8 +5017,6 @@ DoesAIOutSpeedPlayer:
 	jr z, .no
 	cp EXEGGUTOR
 	jr z, .no
-	cp VICTREEBEL
-	jr z, .no
 .checkSandPlayer
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -5043,7 +5039,7 @@ DoesAIOutSpeedPlayer:
 	ld a, [wBattleMonSpeed]
 	sbc b
 	pop bc
-	ret
+	jr nc, .no
 .yes
     ld a, [wTrickRoomCount]
     and a
@@ -6159,8 +6155,12 @@ ToxicSpikesSwitch:
 TrickRoomSwitch:
     ld a, 5
     ld [wTrickRoomCount], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .skipAnim
     ld de, TRICK_ROOM
 	farcall Call_PlayBattleAnim
+.skipAnim
 	ld hl, TrickRoomText
 	jp StdBattleTextbox
 

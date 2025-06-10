@@ -462,16 +462,16 @@ DetermineMoveOrder:
 	jr z, .both_have_quick_claw
 	call BattleRandom
 	cp e
-	jr nc, .speed_check
+	jr nc, .trick_room_check
 	jp .player_first
 
 .player_no_quick_claw
 	ld a, b
 	cp HELD_QUICK_CLAW
-	jr nz, .speed_check
+	jr nz, .trick_room_check
 	call BattleRandom
 	cp c
-	jr nc, .speed_check
+	jr nc, .trick_room_check
 	jp .enemy_first
 
 .both_have_quick_claw
@@ -493,7 +493,6 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jp c, .enemy_first
-	jr .trick_room_check
 
 ; DevNote - Trick Room - In Trick Room, the slower Pokemon attacks first.
 .trick_room_check
@@ -1218,18 +1217,7 @@ Core_MagicGuardPokemon:
     db LOPUNNY
     db -1
 
-Core_SpikesImmunePokemon:
-    db CLEFAIRY
-    db CLEFABLE
-    db ABRA
-    db KADABRA
-    db ALAKAZAM
-    db ARCEUS
-    db SOLOSIS
-    db DUOSION
-    db REUNICLUS
-    db XERNEAS
-    db YVELTAL
+Core_LevitatePokemon:
     db GASTLY
     db HAUNTER
     db GENGAR
@@ -1240,8 +1228,31 @@ Core_SpikesImmunePokemon:
     db LATIAS
     db LATIOS
     db ROTOM
+    db -1
+
+Core_SpikesImmunePokemon: ; magic guard + levitate
+    db CLEFAIRY
+    db CLEFABLE
+    db ABRA
+    db KADABRA
+    db ALAKAZAM
+    db ARCEUS
+    db SOLOSIS
+    db DUOSION
+    db REUNICLUS
+    db XERNEAS
     db MIMIKYU
     db LOPUNNY
+    db GASTLY
+    db HAUNTER
+    db GENGAR
+    db MISDREAVUS
+    db MISMAGIUS
+    db KOFFING
+    db WEEZING
+    db LATIAS
+    db LATIOS
+    db ROTOM
     db -1
 
 Core_RegeneratorPokemon:
@@ -1253,22 +1264,6 @@ Core_RegeneratorPokemon:
     db HO_OH
     db ZYGARDE
     db VENUSAUR
-    db -1
-
-Core_ClearBodyPokemon:
-    db TENTACOOL
-    db TENTACRUEL
-    db BELDUM
-    db METANG
-    db METAGROSS
-    db DIALGA
-    db ARCEUS
-    db REGIGIGAS
-    db DEOXYS
-    db DUNSPARCE
-    db VAPOREON
-    db WOBBUFFET
-    db KYOGRE
     db -1
 
 ResidualDamage:
@@ -4181,18 +4176,6 @@ SpikesDamage:
 .ok
 	call .StickyWeb
 
-; Pokemon who are immune to residual damage (magic guard and levitate) take no damage
-    push hl
-    push de
-	push bc
-	ld hl, Core_SpikesImmunePokemon
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	pop hl
-	ret c
-
 	call .Spikes
 	call .StealthRock
 	jp .ToxicSpikes
@@ -4210,6 +4193,17 @@ SpikesDamage:
 	cp FLYING
 	ret z
 
+    push hl
+    push de
+	push bc
+	ld hl, Core_SpikesImmunePokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret c
+
 	push bc
 	push hl
 	push de
@@ -4225,6 +4219,17 @@ SpikesDamage:
 .StealthRock
 	bit SCREENS_STEALTH_ROCK, [hl]
 	ret z
+
+    push hl
+    push de
+	push bc
+	ld hl, Core_MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret c
 
 	push bc
 	push hl
@@ -4243,6 +4248,17 @@ SpikesDamage:
 ; End if there aren't Toxic Spikes down.
 	bit SCREENS_TOXIC_SPIKES, [hl]
 	ret z
+
+    push hl
+    push de
+	push bc
+	ld hl, Core_LevitatePokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	ret c
 
 ; Toxic Spikes can't poison a Flying-, Steel-, or Poison-type
 	ld a, [de]
@@ -4320,11 +4336,10 @@ SpikesDamage:
 	bit SCREENS_STICKY_WEB, [hl]
 	ret z
 
-; Clear body Pokemon aren't affected
     push hl
     push de
 	push bc
-	ld hl, Core_ClearBodyPokemon
+	ld hl, Core_LevitatePokemon
 	ld de, 1
 	call IsInArray
 	pop bc
@@ -4355,19 +4370,11 @@ SpikesDamage:
 	farcall BattleCommand_StatDownMessage
 	call SwitchTurnCore
 
-	jr .pop
-
 .pop
     pop de
 	pop hl
 	pop bc
 	ret
-
-;	pop hl
-;	call .hl
-;	jp WaitBGMap
-;.hl
-;	jp hl
 
 FieldWeather:
 ; is weather already set up
@@ -4502,8 +4509,6 @@ SwitchInEffects:
     jp z, .spAtkDown
     cp MILTANK
     jp z, .spAtkDown
-    cp REUNICLUS
-    jp z, .spAtkDown
 
     cp AEGISLASH
     jp z, .defenseMode
@@ -4612,8 +4617,7 @@ SwitchInEffects:
     farcall ToxicSpikesSwitch
     ret
 .trickroom
-    ld a, 5
-    ld [wTrickRoomCount], a
+    farcall TrickRoomSwitch
     ret
 .bothScreens
     farcall ReflectSwitch

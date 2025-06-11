@@ -49,9 +49,10 @@ AI_WaterAbsorbPokemon:
     db MARSHTOMP
     db SWAMPERT
     db VAPOREON
-    db LAPRAS
     db POLIWAG
     db POLIWHIRL
+    db POLIWRATH
+    db LAPRAS
     db $FF
 
 AI_VoltAbsorbPokemon:
@@ -4118,7 +4119,7 @@ AI_Smart_Taunt:
     inc [hl]
     ret
 .encourage
-rept 6
+rept 4
     dec [hl]
 endr
     ret

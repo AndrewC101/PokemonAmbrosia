@@ -5,5 +5,5 @@
 	next "caring #MON"
 
 	page "Lowers foes SP"
-	next "ATTACK on switch."
-	next "Immune to WATER.@"
+	next "ATTACK and clears"
+	next "field on switch.@"

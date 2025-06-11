@@ -34,6 +34,7 @@ SniperPokemon:
     db SCEPTILE
     db HORSEA
     db SEADRA
+    db KINGDRA
     db GIBLE
     db GABITE
     db GARCHOMP
@@ -239,9 +240,10 @@ UberImmunePokemon:
 ;    db MARSHTOMP
 ;    db SWAMPERT
 ;    db VAPOREON
-;    db LAPRAS
 ;    db POLIWAG
 ;    db POLIWHIRL
+;    db POLIWRATH
+;    db LAPRAS
 ;    db -1
 
 ;VoltAbsorbPokemon:

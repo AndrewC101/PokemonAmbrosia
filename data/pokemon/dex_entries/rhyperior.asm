@@ -5,6 +5,6 @@
 	next "able to withstand"
 	next "volcanic blasts."
 
-	page "Takes reduced"
-	next "damage from super"
-	next "effective moves.@"
+	page "Lays STEALTH"
+	next "ROCK. Has reduced"
+	next "weaknesses.@"

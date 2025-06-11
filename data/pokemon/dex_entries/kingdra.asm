@@ -5,6 +5,6 @@
 	next "by sleeping at"
 	next "underwater depths"
 
-	page "SPEED"
-	next "increases in"
-	next "the rain.@"
+	page "SPEED boost in"
+	next "rain. Boosted"
+	next "critical damage.@"

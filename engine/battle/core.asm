@@ -4465,6 +4465,8 @@ SwitchInEffects:
     jp z, .clearField
     cp ABOMASNOW
     jp z, .clearField
+    cp LAPRAS
+    jp z, .lapras
 
     cp GENESECT
     jp z, .spAtkUp
@@ -4525,8 +4527,6 @@ SwitchInEffects:
     jp z, .accDown
 
     cp FLAREON
-    jp z, .spAtkDown
-    cp LAPRAS
     jp z, .spAtkDown
     cp MISMAGIUS
     jp z, .spAtkDown
@@ -4655,9 +4655,6 @@ SwitchInEffects:
 .safeguard
     farcall SafeguardSwitch
     ret
-.smeargle
-    farcall SafeguardSwitch
-    jp .randomStatUp
 .clearField
 	farcall BattleCommand_Defog
 	ret
@@ -4685,6 +4682,9 @@ SwitchInEffects:
     farcall BattleCommand_EvasionUp
 	farcall PrintEvasionUpMessage
 	ret
+.smeargle
+    farcall SafeguardSwitch
+    ; fallthrough
 .randomStatUp
     call BattleRandom
     cp 43
@@ -4707,6 +4707,9 @@ SwitchInEffects:
     ret nz ; printing the message before enemy sends out mon causes visual glitches
 	farcall BattleCommand_StatDownMessage
 	ret
+.lapras
+	farcall BattleCommand_Defog
+	; fallthrough
 .spAtkDown
     farcall BattleCommand_SpecialAttackDown
     ld a, [wBattleHasJustStarted]

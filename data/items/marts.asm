@@ -407,9 +407,9 @@ MartPatches:
     db WISE_GLASSES
     db EXPERT_BELT
     db FLAME_ORB
+    db HEAVY_BOOTS
     db QUICK_CLAW
     db BRIGHTPOWDER
-    db SCOPE_LENS
     db SACRED_ASH
     db -1
 
@@ -428,7 +428,7 @@ MartFrontier:
     db WISE_GLASSES
     db EXPERT_BELT
     db FLAME_ORB
-    db MIRACLEBERRY
+    db HEAVY_BOOTS
     db SCOPE_LENS
     db LUCKY_EGG
     db -1

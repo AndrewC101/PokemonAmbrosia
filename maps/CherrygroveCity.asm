@@ -957,7 +957,7 @@ Peasant2Script:
     iftrue .end
     writetext TakeNuggetText
     waitbutton
-    verbosegiveitem FOCUS_SASH
+    verbosegiveitem ASSAULT_VEST
     iffalse .end
     setevent EVENT_GOT_JULIUS_NUGGET
 .end
@@ -1150,7 +1150,7 @@ StarWarsRolePlayScript:
     opentext
     writetext RolePlay1PrizeText
     waitbutton
-    verbosegiveitem MUSCLE_BAND
+    verbosegiveitem FOCUS_SASH
     closetext
     setevent EVENT_BEAT_ROLEPLAY_1
 .skipPrizeHero
@@ -1292,7 +1292,7 @@ StarWarsRolePlayScript:
     opentext
     writetext RolePlay1PrizeText
     waitbutton
-    verbosegiveitem MUSCLE_BAND
+    verbosegiveitem FOCUS_SASH
     closetext
     setevent EVENT_BEAT_ROLEPLAY_1
 .skipPrizeVillain

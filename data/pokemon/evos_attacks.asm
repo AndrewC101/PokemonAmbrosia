@@ -3076,27 +3076,29 @@ ShelgonEvosAttacks:
 	db 16, HEADBUTT
 	db 25, EMBER
 	db 30, CRUNCH
-	db 38, DRAGON_PULSE
+	db 35, DRAGON_PULSE
+	db 40, DOUBLE_EDGE
 	db 45, DRAGON_CLAW
-	db 53, FIRE_BLAST
-	db 55, DRAGON_DANCE
-	db 60, OUTRAGE
-	db 70, DRACO_METEOR
+	db 53, DRAGON_DANCE
+	db 55, OUTRAGE
+	db 60, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 SalamenceEvosAttacks:
 	db 0 ; no more evolutions
-	db 16, HEADBUTT
 	db 25, EMBER
 	db 30, CRUNCH
-	db 38, DRAGON_PULSE
+	db 35, DRAGON_PULSE
+	db 40, DOUBLE_EDGE
 	db 45, DRAGON_CLAW
 	db 50, FLY
-	db 53, FIRE_BLAST
-	db 55, DRAGON_DANCE
+	db 53, DRAGON_DANCE
+	db 55, OUTRAGE
 	db 58, DEFOG
-	db 60, OUTRAGE
-	db 70, DRACO_METEOR
+	db 60, DRACO_METEOR
+	db 63, VOLT_TACKLE
+	db 66, FLARE_BLITZ
+	db 70, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:

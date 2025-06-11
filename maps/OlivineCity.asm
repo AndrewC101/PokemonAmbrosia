@@ -723,7 +723,7 @@ DBZRolePlayScript:
     opentext
     writetext RolePlay3PrizeText
     waitbutton
-    verbosegiveitem FOCUS_SASH
+    verbosegiveitem ASSAULT_VEST
     closetext
     setevent EVENT_BEAT_ROLEPLAY_3
 .skipPrizeGokuHero
@@ -768,7 +768,7 @@ DBZRolePlayScript:
     opentext
     writetext RolePlay3PrizeText
     waitbutton
-    verbosegiveitem FOCUS_SASH
+    verbosegiveitem ASSAULT_VEST
     closetext
     setevent EVENT_BEAT_ROLEPLAY_3
 .skipPrizeVegetaHero
@@ -924,7 +924,7 @@ DBZRolePlayScript:
     opentext
     writetext RolePlay3PrizeText
     waitbutton
-    verbosegiveitem FOCUS_SASH
+    verbosegiveitem ASSAULT_VEST
     closetext
     setevent EVENT_BEAT_ROLEPLAY_3
 .skipPrizeGokuVillain
@@ -969,7 +969,7 @@ DBZRolePlayScript:
     opentext
     writetext RolePlay3PrizeText
     waitbutton
-    verbosegiveitem FOCUS_SASH
+    verbosegiveitem ASSAULT_VEST
     closetext
     setevent EVENT_BEAT_ROLEPLAY_3
 .skipPrizeVegetaVillain

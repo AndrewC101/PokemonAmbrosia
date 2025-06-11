@@ -4162,6 +4162,11 @@ SpikesDamage:
 	and a
 	ret nz
 
+	callfar GetUserItem
+	ld a, b
+	cp HELD_HEAVY_BOOTS
+	ret z
+
 	xor a
 	ld [wFailedMessage], a
 	ld [wEffectFailed], a

@@ -6,5 +6,5 @@
 	next "world conflict."
 
 	page "lowers foes"
-	next "ATTACK upon"
-	next "entering battle.@"
+	next "ATTACK. Ignores"
+	next "WATER immunity.@"

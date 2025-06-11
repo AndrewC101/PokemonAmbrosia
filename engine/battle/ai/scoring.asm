@@ -264,60 +264,35 @@ AI_Basic:
 	cp GROUND
 	jr nz, .checkWaterAbsorb
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_LevitatePokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveLevitate
     jp c, .discourage
 
 .checkWaterAbsorb
     cp WATER
 	jr nz, .checkVoltAbsorb
+
+	; DevNote - Gyarados ignores water absorb
+	ld a, [wEnemyMonSpecies]
+	cp GYARADOS
+	jr z, .checkVoltAbsorb
+
+
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_WaterAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveWaterAbsorb
     jp c, .discourage
 
 .checkVoltAbsorb
     cp ELECTRIC
 	jr nz, .checkFireAbsorb
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_VoltAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveVoltAbsorb
     jp c, .discourage
 
 .checkFireAbsorb
     cp FIRE
 	jr nz, .checkKO
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_FireAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveFireAbsorb
     jp c, .discourage
 
 ; Dismiss Safeguard if it's already active.
@@ -403,6 +378,8 @@ AI_Basic:
     cp AERODACTYL
     jr z, .skipRecoilCheck
     cp INFERNAPE
+    jr z, .skipRecoilCheck
+    cp MOLTRES
     jr z, .skipRecoilCheck
     cp HAWLUCHA
     jr z, .skipRecoilCheck
@@ -549,15 +526,7 @@ AI_Smart_Switch:
 .magicGuard
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
     ld a, [wEnemyMonSpecies]
-    push hl
-    push de
-	push bc
-	ld hl, AI_MagicGuardPokemon
-	ld de, 1
-	call IsInArray
-	pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveMagicGuard
 	ret c
 
 ; switch if enemy is cursed
@@ -1149,7 +1118,6 @@ AI_Smart_Selfdestruct:
 	inc [hl]
 	inc [hl]
 	inc [hl]
-	inc [hl]
 	ret
 
 AI_Smart_EvasionUp:
@@ -1218,15 +1186,7 @@ AI_Smart_AlwaysHit:
 AI_Smart_AccuracyDown:
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_ClearBodyPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveClearBody
 	jr c, .discourage
 
 ; discourage after player is at -3
@@ -1254,15 +1214,7 @@ AI_Smart_AccuracyDown:
 AI_Smart_AttackDown:
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_ClearBodyPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveClearBody
     jr c, .discourage
 
 	call ShouldAIBoost
@@ -1288,15 +1240,7 @@ AI_Smart_AttackDown:
 AI_Smart_SpeedDown:
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_ClearBodyPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveClearBody
     jr c, .discourage
 
 	call ShouldAIBoost
@@ -1319,15 +1263,7 @@ AI_Smart_SpeedDown:
 AI_Smart_StatDown:
 ; discourage if enemy is immune to stat drops
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_ClearBodyPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveClearBody
     jr c, .discourage
 
 	call ShouldAIBoost
@@ -1474,15 +1410,7 @@ AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .discourage
 
 ; don't use if player has only one pokemon left
@@ -1667,15 +1595,7 @@ AI_Smart_Toxic:
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_MagicGuardPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveMagicGuard
    	jr c, .discourage
 
 ; don't use if player below 50% HP
@@ -1712,15 +1632,7 @@ AI_Smart_LeechSeed:
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_MagicGuardPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveMagicGuard
    	jr c, .discourage
 
 ; don't use on already seeded player
@@ -1748,75 +1660,22 @@ endr
     ret
 
 AI_Smart_LightScreen:
-    call DoesEnemyHaveIntactFocusSashOrSturdy
-    jr c, .skipKOCheck
-    call CanPlayerKO
-    jr c, .discourage
-.skipKOCheck
+    call ShouldAIBoost
+    jp nc, StandardDiscourage
 
-; discourage if player has boosted Atk
-	ld a, [wPlayerAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
-
-; discourage if afflicted with toxic
-    ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
-    jr nz, .discourage
-
-; strongly encourage if player has boosted special attack
-	ld a, [wPlayerSAtkLevel]
-	cp BASE_STAT_LEVEL + 1
-	jr nc, .encourage
-
-; encourage if players attack is higher than special attack
 	call IsPlayerPhysicalOrSpecial
-	jr nc, .encourage
+	jp nc, StandardEncourage
 
-; fallthrough
-
-.discourage
-    inc [hl]
-    inc [hl]
-    ret
-.encourage
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    ret
+	jp StandardDiscourage
 
 AI_Smart_Reflect:
-; discourage if we will be koed unless we have a sash/sturdy
-    call DoesEnemyHaveIntactFocusSashOrSturdy
-    jr c, .skipKOCheck
-    call CanPlayerKO
-    jr c, .discourage
-.skipKOCheck
+    call ShouldAIBoost
+    jp nc, StandardDiscourage
 
-; discourage if afflicted with toxic
-    ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_TOXIC, a
-    jr nz, .discourage
-
-; encourage if players attack is higher than special attack
 	call IsPlayerPhysicalOrSpecial
-	jr c, .encourage
+	jp c, StandardEncourage
 
-; fallthrough
-
-.discourage
-    inc [hl]
-    inc [hl]
-    ret
-.encourage
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    dec [hl]
-    ret
+	jp StandardDiscourage
 
 AI_Smart_Ohko:
 ; Dismiss this move if player's level is higher than enemy's level.
@@ -1836,15 +1695,7 @@ AI_Smart_Ohko:
 .notFissure
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .discourage
 
 	ld a, [wBattleMonLevel]
@@ -1861,19 +1712,9 @@ AI_Smart_Ohko:
 AI_Smart_StaticDamage:
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
-   	jr c, .discourage
-   	ret
-.discourage
-   	inc [hl]
+    call DoesPokemonHaveUberImmunity
+   	ret nc
+
    	inc [hl]
    	inc [hl]
    	ret
@@ -1964,15 +1805,7 @@ AI_Smart_Paralyze:
 	cp GROUND
 	jr z, .discourage
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_VoltAbsorbPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveVoltAbsorb
 	jr c, .discourage
 
 .glare
@@ -2007,12 +1840,13 @@ AI_Smart_Paralyze:
 	jr c, .discourage50
 	jr .checkEvasion
 
-; if we are faster and either the player or us can 2HKO, discourage
+; if we are faster and either the player or us can 2HKO, discourage - otherwise discourage 50%
 .AIFaster
     call CanPlayer2HKOMaxHP
     jr c, .discourage
     call CanAI2HKO
     jr c, .discourage
+    jr .discourage50
 
 .checkEvasion
 ; if player is evasive and we know an always hit move then discourage so we just attack
@@ -2030,7 +1864,6 @@ AI_Smart_Paralyze:
 .encourage
 ; needs to overcome encouragement to attack
 ; no good reason not to paralyze
-;rept 12
 rept 8
     dec [hl]
 endr
@@ -2039,6 +1872,8 @@ endr
     call AI_50_50
     ret c
 .discourage
+    inc [hl]
+    inc [hl]
     inc [hl]
     inc [hl]
     inc [hl]
@@ -2064,15 +1899,7 @@ AI_Smart_ParalyzeHit:
 	cp GROUND
 	jr z, .discourage
     ld a, [wBattleMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_VoltAbsorbPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
+    call DoesPokemonHaveVoltAbsorb
 	jr c, .discourage
 
 ; if they are not statused
@@ -2093,29 +1920,14 @@ AI_Smart_ParalyzeHit:
     ret
 
 AI_Smart_SpeedDownHit:
-; Icy Wind
-
-; Almost 90% chance to greatly encourage this move if the following conditions all meet:
-; Enemy's HP is higher than 25%.
-; It's the first turn of player's Pokemon.
-; Player is faster than enemy.
-
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-	cp ICY_WIND
-	ret nz
-	call AICheckEnemyQuarterHP
-	ret nc
-	ld a, [wPlayerTurnsTaken]
-	and a
-	ret nz
 	call DoesAIOutSpeedPlayer
 	ret c
-	call Random
-	cp 12 percent
-	ret c
-	dec [hl]
-	dec [hl]
-	ret
+
+    ld a, [wBattleMonSpecies]
+    call DoesPokemonHaveClearBody
+	jp c, StandardDiscourage
+
+	jp StandardEncourage
 
 AI_Smart_Substitute:
 ; don't boost if choice locked
@@ -2276,15 +2088,7 @@ AI_Smart_Encore:
 
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .discourage
 
 ; don't use if no last move recorded
@@ -2919,15 +2723,7 @@ AI_Smart_PerishSong:
 
 ; don't use on Uber Pokemon as they are immune
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .discourage
 
 ; encourage if player has only one pokemon left
@@ -4048,20 +3844,20 @@ AI_Smart_Taunt:
 
 ; never use against uber immune Pokemon
     ld a, [wBattleMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .discourage
 
 ; if player can KO - discourage
     call ShouldAIBoost
     jr nc, .discourage
+
+; if player is already set up - discourage
+    ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage
+    ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .discourage
 
 ; if player has a setup move, status move, or healing move - encourage
     ld b, EFFECT_TAUNT
@@ -4150,15 +3946,7 @@ AI_Smart_Burn:
 
 ; if enemy is immune to fire - discourage
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_FireAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveFireAbsorb
     jp c, .discourage
 
 ; if enemy is immune to status discourage
@@ -4172,12 +3960,9 @@ AI_Smart_Burn:
 
 ; strongly encourage if enemy is physical
     Call IsPlayerPhysicalOrSpecial
-    jr nc, .basicEncourage
+    ret nc
 
     dec [hl]
-    dec [hl]
-    dec [hl]
-.basicEncourage
     dec [hl]
     ret
 .discourage
@@ -4226,15 +4011,7 @@ ShouldAIBoost:
 .checkHaze
 ; if the player has roar/whirlwind/haze and we aren't immune to it then 50% to not boost
     ld a, [wEnemyMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_UberImmunePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveUberImmunity
    	jr c, .noForceSwitch
     ld b, EFFECT_FORCE_SWITCH
 	call PlayerHasMoveEffect
@@ -4467,15 +4244,7 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 
 IsAIToxified:
     ld a, [wEnemyMonSpecies]
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_MagicGuardPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
+    call DoesPokemonHaveMagicGuard
    	jr c, .no
 
     ld a, [wEnemySubStatus5]
@@ -5342,6 +5111,8 @@ StandardDiscourage:
     inc [hl]
     inc [hl]
     inc [hl]
+    inc [hl]
+    inc [hl]
     ret
 
 INCLUDE "data/battle/ai/useful_moves.asm"
@@ -5435,60 +5206,34 @@ AI_Aggressive:
 	cp GROUND
 	jr nz, .waterAbsorb
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_LevitatePokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveLevitate
     jp c, .checkmove
 
 .waterAbsorb
     cp WATER
 	jr nz, .voltAbsorb
+
+	; DevNote - Gyarados ignores water absorb
+	ld a, [wEnemyMonSpecies]
+	cp GYARADOS
+	jr z, .voltAbsorb
+
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_WaterAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveWaterAbsorb
     jp c, .checkmove
 
 .voltAbsorb
     cp ELECTRIC
 	jr nz, .fireAbsorb
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_VoltAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveVoltAbsorb
     jp c, .checkmove
 
 .fireAbsorb
     cp ELECTRIC
 	jr nz, .continue
 	ld a, [wBattleMonSpecies]
-	push hl
-	push de
-	push bc
-	ld hl, AI_FireAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    pop bc
-	pop de
-	pop hl
+    call DoesPokemonHaveFireAbsorb
     jp c, .checkmove
 
 .continue
@@ -5881,6 +5626,125 @@ IsSpecialDefenseMaxed:
     scf
     ret
 
+DoesPokemonHaveUberImmunity:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_UberImmunePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveMagicGuard:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_MagicGuardPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveClearBody:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_ClearBodyPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveVoltAbsorb:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_VoltAbsorbPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveWaterAbsorb:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_WaterAbsorbPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveFireAbsorb:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_FireAbsorbPokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
+DoesPokemonHaveLevitate:
+    push hl
+    push de
+   	push bc
+   	ld hl, AI_LevitatePokemon
+   	ld de, 1
+   	call IsInArray
+   	pop bc
+   	pop de
+   	pop hl
+   	jr c, .yes
+   	xor a
+   	ret
+.yes
+    scf
+    ret
+
 AI_80_20:
 	call Random
 	cp 20 percent - 1
@@ -5906,9 +5770,7 @@ Levitate:
 .checkType
 	and TYPE_MASK
 	cp GROUND
-	jr z, .getPokemon
-	ret
-.getPokemon
+	jr nc, .no
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5918,12 +5780,14 @@ Levitate:
 	ld hl, AI_LevitatePokemon
 	ld de, 1
 	call IsInArray
-    jr c, .found
-    ret
-.found
+	jr nc, .no
 	ld hl, LevitateText
 	call StdBattleTextbox
-    ret z
+	scf
+    ret
+.no
+    xor a
+    ret
 
 WaterAbsorb:
     ldh a, [hBattleTurn]
@@ -5934,9 +5798,8 @@ WaterAbsorb:
 .checkType
 	and TYPE_MASK
 	cp WATER
-	jr z, .getPokemon
-	ret
-.getPokemon
+	jr nz, .no
+
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5946,12 +5809,25 @@ WaterAbsorb:
 	ld hl, AI_WaterAbsorbPokemon
 	ld de, 1
 	call IsInArray
-    jr c, .found
-    ret
-.found
+	jr nc, .no
+
+; DevNote - Gyarados ignores water absorb
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkGyarados
+	ld a, [wBattleMonSpecies]
+.checkGyarados
+    cp GYARADOS
+    jr z, .no
+
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-    ret z
+	scf
+    ret
+.no
+    xor a
+    ret
 
 VoltAbsorb:
     ldh a, [hBattleTurn]
@@ -5962,9 +5838,7 @@ VoltAbsorb:
 .checkType
 	and TYPE_MASK
 	cp ELECTRIC
-	jr z, .getPokemon
-	ret
-.getPokemon
+	jr nz, .no
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5974,12 +5848,14 @@ VoltAbsorb:
 	ld hl, AI_VoltAbsorbPokemon
 	ld de, 1
 	call IsInArray
-    jr c, .found
-    ret
-.found
+	jr nc, .no
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-    ret z
+    scf
+    ret
+.no
+    xor a
+    ret
 
 FireAbsorb:
     ldh a, [hBattleTurn]
@@ -5990,9 +5866,7 @@ FireAbsorb:
 .checkType
 	and TYPE_MASK
 	cp FIRE
-	jr z, .getPokemon
-	ret
-.getPokemon
+	jr nz, .no
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -6002,12 +5876,14 @@ FireAbsorb:
 	ld hl, AI_FireAbsorbPokemon
 	ld de, 1
 	call IsInArray
-    jr c, .found
-    ret
-.found
+	jr nc, .no
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-    ret z
+    scf
+    ret
+.no
+    xor a
+    ret
 
 DreamEaterMiss:
 ; Return z if we're trying to eat the dream of

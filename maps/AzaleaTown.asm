@@ -730,7 +730,7 @@ YuGiOhRolePlayScript:
     opentext
     writetext RolePlay2PrizeText
     waitbutton
-    verbosegiveitem WISE_GLASSES
+    verbosegiveitem EVIOLITE
     closetext
     setevent EVENT_BEAT_ROLEPLAY_2
 .skipPrize

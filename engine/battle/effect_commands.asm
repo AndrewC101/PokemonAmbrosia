@@ -1726,16 +1726,16 @@ BattleCommand_CheckHit:
     ; DevNote - levitate, water absorb, volt absorb, fire absorb here
     ; note these functions are defined in scoring.asm as this file is out of space
 	farcall Levitate
-	jp z, .Miss
+	jp c, .Miss
 
 	farcall WaterAbsorb
-	jp z, .Miss
+	jp c, .Miss
 
 	farcall VoltAbsorb
-    jp z, .Miss
+    jp c, .Miss
 
 	farcall FireAbsorb
-    jp z, .Miss
+    jp c, .Miss
 
 	farcall DreamEaterMiss
 	jp z, .Miss

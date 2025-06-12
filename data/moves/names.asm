@@ -206,7 +206,7 @@ MoveNames::
 	li "CHARM"
 	li "ROLLOUT"
 	li "FALSE SWIPE"
-	li "SWAGGER"
+	li "DRAGON CRASH"
 	li "MILK DRINK"
 	li "VOLT TACKLE"
 	li "BULK UP"

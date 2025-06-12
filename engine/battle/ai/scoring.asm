@@ -1794,6 +1794,11 @@ AI_Smart_Paralyze:
 	bit SCREENS_SAFEGUARD, a
 	jp nz, .discourage
 
+; never use while in trick room
+    ld a, [wTrickRoomCount]
+    and a
+    jp nz, .discourage
+
 ; never use thunderwave against ground types or volt absorbers
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp THUNDER_WAVE
@@ -3345,6 +3350,11 @@ AI_Smart_QuiverDance:
     cp BASE_STAT_LEVEL + 2
     jp nc, StandardDiscourage
 
+; never use while in trick room
+    ld a, [wTrickRoomCount]
+    and a
+    jp nz, StandardDiscourage
+
 ; encourage to +2
 	ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL + 2
@@ -3403,6 +3413,11 @@ AI_Smart_DragonDance:
     ld a, [wPlayerSpdLevel]
     cp BASE_STAT_LEVEL + 2
     jp nc, StandardDiscourage
+
+; never use while in trick room
+    ld a, [wTrickRoomCount]
+    and a
+    jp nz, StandardDiscourage
 
 ; discourage if players level is >10 higher than AI
     ld a, [wBattleMonLevel]
@@ -3684,6 +3699,11 @@ AI_Smart_ShellSmash:
     ld a, [wEnemyMonStatus]
 	and 1 << PAR
 	jp nz, StandardDiscourage
+
+; never use while in trick room
+    ld a, [wTrickRoomCount]
+    and a
+    jp nz, StandardDiscourage
 
 ; if players last move was sucker punch - 50% chance to boost
     ld a, [wCurPlayerMove]
@@ -6027,12 +6047,8 @@ SpikesSwitch:
 	ld hl, wPlayerScreens
 .got_screens
 	set SCREENS_SPIKES, [hl]
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, SPIKES
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
 	ld hl, SpikesText
 	jp StdBattleTextbox
 
@@ -6044,12 +6060,8 @@ StealthRockSwitch:
 	ld hl, wPlayerScreens
 .got_screens
 	set SCREENS_STEALTH_ROCK, [hl]
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, STEALTH_ROCK
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
 	ld hl, StealthRockText
 	jp StdBattleTextbox
 
@@ -6061,24 +6073,16 @@ ToxicSpikesSwitch:
 	ld hl, wPlayerScreens
 .got_screens
 	set SCREENS_TOXIC_SPIKES, [hl]
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, TOXIC_SPIKES
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
 	ld hl, ToxicSpikesText
 	jp StdBattleTextbox
 
 TrickRoomSwitch:
     ld a, 5
     ld [wTrickRoomCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, TRICK_ROOM
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
 	ld hl, TrickRoomText
 	jp StdBattleTextbox
 
@@ -6094,12 +6098,8 @@ ReflectSwitch:
 	set SCREENS_REFLECT, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, REFLECT
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
     ld hl, ReflectEffectText
 	jp StdBattleTextbox
 
@@ -6115,12 +6115,8 @@ LightScreenSwitch:
 	set SCREENS_LIGHT_SCREEN, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    jr nz, .skipAnim
     ld de, LIGHT_SCREEN
-	farcall Call_PlayBattleAnim
-.skipAnim
+    call PlayAnimationIfNotFirstTurn
     ld hl, LightScreenEffectText
 	jp StdBattleTextbox
 
@@ -6136,14 +6132,91 @@ SafeguardSwitch:
 	set SCREENS_SAFEGUARD, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
+    ld de, SAFEGUARD
+    call PlayAnimationIfNotFirstTurn
+    ld hl, CoveredByVeilText
+	jp StdBattleTextbox
+
+DefogSwitch:
+    ld de, DEFOG
+    call PlayAnimationIfNotFirstTurn
+    callfar BattleCommand_Defog
+	ret
+
+SpecialAttackUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_SpecialAttackUp
+	call PrintSpecialAttackUpMessage
+	ret
+
+AttackUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_AttackUp
+	call PrintAttackUpMessage
+	ret
+
+SpecialDefenseUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_SpecialDefenseUp
+	call PrintSpecialDefenseUpMessage
+	ret
+
+DefenseUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_DefenseUp
+	call PrintDefenseUpMessage
+	ret
+
+SpeedUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_SpeedUp
+	call PrintSpeedUpMessage
+	ret
+
+EvasionUpSwitch:
+    call PlayBoostAnimation
+    callfar BattleCommand_EvasionUp
+	call PrintEvasionUpMessage
+	ret
+
+AttackDownSwitch:
+    callfar BattleCommand_AttackDown
+    call PlayDropAnimation
+	ret
+
+SpecialAttackDownSwitch:
+    callfar BattleCommand_SpecialAttackDown
+    call PlayDropAnimation
+	ret
+
+AccuracyDownSwitch:
+    callfar BattleCommand_AccuracyDown
+    call PlayDropAnimation
+	ret
+
+PlayBoostAnimation:
+    ld de, HOLY_ARMOUR
+    call PlayAnimationIfNotFirstTurn
+    ret
+
+PlayDropAnimation:
+    ld de, ANIM_ENEMY_STAT_DOWN
+    call PlayAnimationIfNotFirstTurn
+    ret nc
+    callfar BattleCommand_StatDownMessage
+    ret
+
+PlayAnimationIfNotFirstTurn:
+; assume animation in de
     ld a, [wBattleHasJustStarted]
     and a
     jr nz, .skipAnim
-    ld de, SAFEGUARD
 	farcall Call_PlayBattleAnim
+	scf
+	ret
 .skipAnim
-    ld hl, CoveredByVeilText
-	jp StdBattleTextbox
+    xor a
+    ret
 
 HasWildBattleBegun:
     ld a, [wBattleMode]

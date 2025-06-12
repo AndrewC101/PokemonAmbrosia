@@ -681,6 +681,7 @@ ZygardeEvosAttacks:
 	db 50, DRAGON_CLAW
 	db 60, GLARE
 	db 70, DRAGON_DANCE
+	db 75, DRAGON_CRASH
 	db 80, OBLITERATE
 	db 0 ; no more level-up moves
 
@@ -757,7 +758,8 @@ DracovishEvosAttacks:
 	db 40, SURF
 	db 42, DRAGON_PULSE
 	db 45, OUTRAGE
-	db 50, SAVAGE_REND
+	db 50, DRAGON_CRASH
+	db 55, SAVAGE_REND
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:
@@ -2128,7 +2130,8 @@ AerodactylEvosAttacks:
 	db 40, STEALTH_ROCK
 	db 40, DEFOG
 	db 45, STONE_EDGE
-	db 50, BRAVE_BIRD
+	db 50, DRAGON_CRASH
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -2237,7 +2240,8 @@ DragoniteEvosAttacks:
 	db 53, DEFOG
 	db 55, DRAGON_DANCE
 	db 60, DRAGON_CLAW
-	db 70, OUTRAGE
+	db 65, OUTRAGE
+	db 70, DRAGON_CRASH
 	db 75, DRACO_METEOR
 	db 0 ; no more level-up moves
 
@@ -2363,6 +2367,7 @@ InfernapeEvosAttacks:
 	db 40, FLAMETHROWER
 	db 45, CLOSE_COMBAT
 	db 50, FLARE_BLITZ
+	db 55, DRAGON_CRASH
 	db 0 ; no more level-up moves
 
 FroakieEvosAttacks:
@@ -3098,7 +3103,7 @@ SalamenceEvosAttacks:
 	db 60, DRACO_METEOR
 	db 63, VOLT_TACKLE
 	db 66, FLARE_BLITZ
-	db 70, BRAVE_BIRD
+	db 70, DRAGON_CRASH
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
@@ -3194,6 +3199,7 @@ GarchompEvosAttacks:
 	db 42, EARTHQUAKE
 	db 48, OUTRAGE
 	db 55, SWORDS_DANCE
+	db 60, DRAGON_CRASH
 	db 0 ; no more level-up moves
 
 ScizorEvosAttacks:
@@ -3464,6 +3470,7 @@ KingdraEvosAttacks:
 	db 50, HYDRO_PUMP
 	db 55, DRAGON_DANCE
 	db 60, OUTRAGE
+	db 65, DRAGON_CRASH
 	db 0 ; no more level-up moves
 
 CottoneeEvosAttacks:
@@ -3525,9 +3532,10 @@ RayquazaEvosAttacks:
 	db 30, REST
 	db 35, EXTREMESPEED
 	db 40, DRAGON_CLAW
-	db 50, DRAGON_DANCE
+	db 50, OUTRAGE
+	db 55, DRAGON_DANCE
 	db 60, DRACO_ASCENT
-	db 65, OUTRAGE
+	db 65, DRAGON_CRASH
 	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 

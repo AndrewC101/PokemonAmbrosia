@@ -154,7 +154,7 @@ _OKComeBackText::
 	text_end
 
 _GoodComeBackText::
-	text " good!"
+	text "Good!"
 	line "Come back!@"
 	text_end
 

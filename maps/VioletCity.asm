@@ -119,7 +119,7 @@ VioletCityMartSign:
 	jumpstd MartSignScript
 
 VioletCityChoiceBand:
-	itemball CHOICE_BAND
+	itemball ASSAULT_VEST
 
 VioletCityRareCandy:
 	itemball RARE_CANDY

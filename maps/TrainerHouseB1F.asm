@@ -724,8 +724,8 @@ GivePrize:
     ifequal 8, .MuscleBand
     ifequal 9, .WiseGlasses
     ifequal 10, .RareCandy
-    ifequal 69, .QuickClaw
-    ifequal 70, .BrightPowder
+    ifequal 69, .AssaultVest
+    ifequal 70, .HeavyBoots
     ifequal 99, .LuckyEgg
 
 ; 2% prizes
@@ -937,11 +937,11 @@ GivePrize:
 .MaxElixer:
     verbosegiveitem MAX_ELIXER
     sjump .done
-.QuickClaw:
-    verbosegiveitem QUICK_CLAW
+.AssaultVest:
+    verbosegiveitem ASSAULT_VEST
     sjump .done
-.BrightPowder:
-    verbosegiveitem BRIGHTPOWDER
+.HeavyBoots:
+    verbosegiveitem HEAVY_BOOTS
     sjump .done
 .LuckyEgg:
     verbosegiveitem LUCKY_EGG

@@ -337,7 +337,7 @@ MartCeladon5F2:
 	db -1 ; end
 
 MartFuchsia:
-	db 8 ; # items
+	db 9 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -346,6 +346,7 @@ MartFuchsia:
 	db MAX_REVIVE
 	db FULL_HEAL
 	db FLOWER_MAIL
+	db HEAVY_BOOTS
 	db -1 ; end
 
 MartSaffron:

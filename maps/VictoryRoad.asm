@@ -132,7 +132,7 @@ VictoryRoadMaxRevive:
 	itemball FOCUS_SASH
 
 VictoryRoadLifeOrb:
-	itemball LIFE_ORB
+	itemball ASSAULT_VEST
 
 VictoryRoadTMFlamethrower:
 	itemball TM_FLAMETHROWER

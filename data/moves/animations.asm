@@ -208,7 +208,7 @@ BattleAnimations::
 	dw BattleAnim_Charm
 	dw BattleAnim_Rollout
 	dw BattleAnim_FalseSwipe
-	dw BattleAnim_Swagger
+	dw BattleAnim_DragonCrash
 	dw BattleAnim_MilkDrink
 	dw BattleAnim_VoltTackle
 	dw BattleAnim_BulkUp
@@ -2161,6 +2161,7 @@ BattleAnim_TakeDown:
 	anim_ret
 
 BattleAnim_BraveBird:
+BattleAnim_DragonCrash:
 BattleAnim_DoubleEdge:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
@@ -2228,6 +2229,7 @@ BattleAnim_Hypnosis:
 	anim_wait 56
 	anim_ret
 
+BattleAnim_Defog:
 BattleAnim_Haze:
 	anim_1gfx ANIM_GFX_HAZE
 	anim_sound 0, 1, SFX_SURF
@@ -2239,7 +2241,6 @@ BattleAnim_Haze:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_Defog:
 BattleAnim_Mist:
 	anim_obp0 $54
 	anim_1gfx ANIM_GFX_HAZE
@@ -3288,8 +3289,6 @@ BattleAnim_Snore:
 	anim_wait 8
 	anim_ret
 
-BattleAnim_Geomancy:
-BattleAnim_Serenity:
 BattleAnim_Curse:
 	anim_if_param_equal $1, .NotGhost
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
@@ -4706,6 +4705,8 @@ BattleAnim_BeatUp:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_Geomancy:
+BattleAnim_Serenity:
 BattleAnim_HolyArmour:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row

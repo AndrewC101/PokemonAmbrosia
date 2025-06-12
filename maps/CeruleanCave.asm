@@ -68,10 +68,10 @@ CeruleanCaveHiddenQuickClaw:
 	hiddenitem QUICK_CLAW, EVENT_CERULEAN_CAVE_HIDDEN_QUICK_CLAW
 
 CeruleanCaveHiddenScopeLens:
-	hiddenitem SCOPE_LENS, EVENT_CERULEAN_CAVE_HIDDEN_SCOPE_LENS
+	hiddenitem ASSAULT_VEST, EVENT_CERULEAN_CAVE_HIDDEN_SCOPE_LENS
 
 CeruleanCaveHiddenKingsRock:
-	hiddenitem KINGS_ROCK, EVENT_CERULEAN_CAVE_HIDDEN_KINGS_ROCK
+	hiddenitem HEAVY_BOOTS, EVENT_CERULEAN_CAVE_HIDDEN_KINGS_ROCK
 	
 CeruleanCaveFieldMon1Script:
 	trainer RAICHU, FIELD_MON, EVENT_FIELD_MON_1, CeruleanCavePokemonAttacksText, 73, 0, .script

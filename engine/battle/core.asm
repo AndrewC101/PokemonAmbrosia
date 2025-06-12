@@ -4662,31 +4662,25 @@ SwitchInEffects:
     farcall SafeguardSwitch
     ret
 .clearField
-	farcall BattleCommand_Defog
+	farcall DefogSwitch
 	ret
 .spAtkUp
-    farcall BattleCommand_SpecialAttackUp
-	farcall PrintSpecialAttackUpMessage
+    farcall SpecialAttackUpSwitch
 	ret
 .spDefUp
-    farcall BattleCommand_SpecialDefenseUp
-	farcall PrintSpecialDefenseUpMessage
+    farcall SpecialDefenseUpSwitch
 	ret
 .defUp
-    farcall BattleCommand_DefenseUp
-	farcall PrintDefenseUpMessage
+    farcall DefenseUpSwitch
 	ret
 .spdUp
-    farcall BattleCommand_SpeedUp
-	farcall PrintSpeedUpMessage
+    farcall SpeedUpSwitch
 	ret
 .atkUp
-    farcall BattleCommand_AttackUp
-    farcall PrintAttackUpMessage
+    farcall AttackUpSwitch
 	ret
 .evasionUp
-    farcall BattleCommand_EvasionUp
-	farcall PrintEvasionUpMessage
+    farcall EvasionUpSwitch
 	ret
 .smeargle
     farcall SafeguardSwitch
@@ -4707,28 +4701,16 @@ SwitchInEffects:
     jr c, .evasionUp
     ret
 .atkDown
-    farcall BattleCommand_AttackDown
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz ; printing the message before enemy sends out mon causes visual glitches
-	farcall BattleCommand_StatDownMessage
+    farcall AttackDownSwitch
 	ret
 .lapras
-	farcall BattleCommand_Defog
+	farcall DefogSwitch
 	; fallthrough
 .spAtkDown
-    farcall BattleCommand_SpecialAttackDown
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz ; printing the message before enemy sends out mon causes visual glitches
-	farcall BattleCommand_StatDownMessage
+    farcall SpecialAttackDownSwitch
 	ret
 .accDown ; DevNote - only Weezing uses this, can remove it if more room needed
-    farcall BattleCommand_AccuracyDown
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz ; printing the message before enemy sends out mon causes visual glitches
-	farcall BattleCommand_StatDownMessage
+    farcall AccuracyDownSwitch
 	ret
 .defenseMode
     farcall BattleCommand_DefenseUp2

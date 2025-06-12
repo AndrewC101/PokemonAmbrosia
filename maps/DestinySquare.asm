@@ -3,8 +3,8 @@
     const DESTINYSQUARE_CRYSTAL
     const DESTINYSQUARE_CYNTHIA
     const DESTINYSQUARE_STEVEN
-    const DESTINYSQUARE_DIANTHA
-    const DESTINYSQUARE_ALDER
+    ;const DESTINYSQUARE_DIANTHA
+    ;const DESTINYSQUARE_ALDER
     const DESTINYSQUARE_LEON
     const DESTINYSQUARE_ADAM
     const DESTINYSQUARE_MEWTWO
@@ -385,184 +385,184 @@ MasterStevenLoseAfterBattleText:
 	para "Now show me again."
 	done
 
-MasterDianthaScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_DIANTHA
-	iftrue .FightDone
-.fight
-	writetext MasterDianthaSeenText
-	waitbutton
-	closetext
-	winlosstext MasterDianthaBeatenText, MasterDianthaWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BEAUTY, MASTER_DIANTHA
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_DIANTHA
-	opentext
-	writetext MasterDianthaAfterBattleText
-	waitbutton
-	closetext
-	special HealParty
-	end
-.FightDone:
-	writetext MasterDianthaAfterBattleText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
-.Lose
-    special HealParty
-    reloadmap
-    opentext
-    writetext MasterDianthaLoseAfterBattleText
-    waitbutton
-    closetext
-    end
+;MasterDianthaScript:
+;	faceplayer
+;	opentext
+;	checkevent EVENT_BEAT_MASTER_DIANTHA
+;	iftrue .FightDone
+;.fight
+;	writetext MasterDianthaSeenText
+;	waitbutton
+;	closetext
+;	winlosstext MasterDianthaBeatenText, MasterDianthaWinText
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+;	loadtrainer BEAUTY, MASTER_DIANTHA
+;	startbattle
+;	ifequal LOSE, .Lose
+;	reloadmapafterbattle
+;	setevent EVENT_BEAT_MASTER_DIANTHA
+;	opentext
+;	writetext MasterDianthaAfterBattleText
+;	waitbutton
+;	closetext
+;	special HealParty
+;	end
+;.FightDone:
+;	writetext MasterDianthaAfterBattleText
+;	waitbutton
+;    closetext
+;	opentext
+;	writetext RematchTextDestinySquare
+;	yesorno
+;	iftrue .fight
+;	writetext RematchRefuseTextDestinySquare
+;	waitbutton
+;	closetext
+;	end
+;.Lose
+;    special HealParty
+;    reloadmap
+;    opentext
+;    writetext MasterDianthaLoseAfterBattleText
+;    waitbutton
+;    closetext
+;    end
 
-MasterDianthaSeenText:
-	text "Everyone saw"
-	line "DIANTHA the movie"
-	cont "star."
-	para "I wanted to be"
-	line "taken seriously as"
-	cont "a trainer."
-	para "Even as CHAMPION I"
-	line "was still not"
-	cont "recognised."
-	para "I can tell you are"
-	line "not like them, you"
-	cont "only see the"
-	cont "trainer."
-	done
+;MasterDianthaSeenText:
+;	text "Everyone saw"
+;	line "DIANTHA the movie"
+;	cont "star."
+;	para "I wanted to be"
+;	line "taken seriously as"
+;	cont "a trainer."
+;	para "Even as CHAMPION I"
+;	line "was still not"
+;	cont "recognised."
+;	para "I can tell you are"
+;	line "not like them, you"
+;	cont "only see the"
+;	cont "trainer."
+;	done
 
-MasterDianthaBeatenText:
-    text "Thank you!"
-    done
+;MasterDianthaBeatenText:
+;    text "Thank you!"
+;    done
 
-MasterDianthaWinText:
-	text "I'm more than just"
-	line "a pretty face."
-	done
+;MasterDianthaWinText:
+;	text "I'm more than just"
+;	line "a pretty face."
+;	done
 
-MasterDianthaAfterBattleText:
-	text "We are all actors"
-	line "to some extent."
-	para "In battle your"
-	line "true self emerges."
-	para "That's why I love"
-	line "battle, it reminds"
-	cont "me who I really"
-	cont "am."
-	done
+;MasterDianthaAfterBattleText:
+;	text "We are all actors"
+;	line "to some extent."
+;	para "In battle your"
+;	line "true self emerges."
+;	para "That's why I love"
+;	line "battle, it reminds"
+;	cont "me who I really"
+;	cont "am."
+;	done
 
-MasterDianthaLoseAfterBattleText:
-	text "It's hard when"
-	line "everyone idolises"
-	cont "and scrutinises"
-	cont "you."
-	para "All waiting for"
-	line "you to fail."
-	para "You only fail if"
-	line "you let it get to"
-	cont "you."
-	done
+;MasterDianthaLoseAfterBattleText:
+;	text "It's hard when"
+;	line "everyone idolises"
+;	cont "and scrutinises"
+;	cont "you."
+;	para "All waiting for"
+;	line "you to fail."
+;	para "You only fail if"
+;	line "you let it get to"
+;	cont "you."
+;	done
 
-MasterAlderScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MASTER_ALDER
-	iftrue .FightDone
-.fight
-	writetext MasterAlderSeenText
-	waitbutton
-	closetext
-	winlosstext MasterAlderBeatenText, MasterAlderWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer HIKER, MASTER_ALDER
-	startbattle
-	ifequal LOSE, .Lose
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_ALDER
-	opentext
-	writetext MasterAlderAfterBattleText
-	waitbutton
-	closetext
-	special HealParty
-	end
-.FightDone:
-	writetext MasterAlderAfterBattleText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextDestinySquare
-	yesorno
-	iftrue .fight
-	writetext RematchRefuseTextDestinySquare
-	waitbutton
-	closetext
-	end
-.Lose
-    special HealParty
-    reloadmap
-    opentext
-    writetext MasterAlderLoseAfterBattleText
-    waitbutton
-    closetext
-    end
+;MasterAlderScript:
+;	faceplayer
+;	opentext
+;	checkevent EVENT_BEAT_MASTER_ALDER
+;	iftrue .FightDone
+;.fight
+;	writetext MasterAlderSeenText
+;	waitbutton
+;	closetext
+;	winlosstext MasterAlderBeatenText, MasterAlderWinText
+;	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+;	loadtrainer HIKER, MASTER_ALDER
+;	startbattle
+;	ifequal LOSE, .Lose
+;	reloadmapafterbattle
+;	setevent EVENT_BEAT_MASTER_ALDER
+;	opentext
+;	writetext MasterAlderAfterBattleText
+;	waitbutton
+;	closetext
+;	special HealParty
+;	end
+;.FightDone:
+;	writetext MasterAlderAfterBattleText
+;	waitbutton
+;    closetext
+;	opentext
+;	writetext RematchTextDestinySquare
+;	yesorno
+;	iftrue .fight
+;	writetext RematchRefuseTextDestinySquare
+;	waitbutton
+;	closetext
+;	end
+;.Lose
+;    special HealParty
+;    reloadmap
+;    opentext
+;    writetext MasterAlderLoseAfterBattleText
+;    waitbutton
+;    closetext
+;    end
 
-MasterAlderSeenText:
-	text "All conflict comes"
-	line "from a lack of"
-	cont "communication."
-	para "We all have"
-	line "something in"
-	cont "common."
-	para "We are alive here"
-	line "and now."
-	para "That should be"
-	line "enough to look"
-	cont "after each other."
-	para "You understand?"
-	done
+;MasterAlderSeenText:
+;	text "All conflict comes"
+;	line "from a lack of"
+;	cont "communication."
+;	para "We all have"
+;	line "something in"
+;	cont "common."
+;	para "We are alive here"
+;	line "and now."
+;	para "That should be"
+;	line "enough to look"
+;	cont "after each other."
+;	para "You understand?"
+;	done
 
-MasterAlderBeatenText:
-    text "I see you do."
-    done
+;MasterAlderBeatenText:
+;    text "I see you do."
+;    done
 
-MasterAlderWinText:
-	text "There are no"
-	line "winners."
-	done
+;MasterAlderWinText:
+;	text "There are no"
+;	line "winners."
+;	done
 
-MasterAlderAfterBattleText:
-	text "Even if we don't"
-	line "understand each"
-	cont "other, that's not"
-	cont "a reason to reject"
-	cont "each other."
-	para "There is no one"
-	line "point of view that"
-	cont "has all the"
-	cont "answers."
-	done
+;MasterAlderAfterBattleText:
+;	text "Even if we don't"
+;	line "understand each"
+;	cont "other, that's not"
+;	cont "a reason to reject"
+;	cont "each other."
+;	para "There is no one"
+;	line "point of view that"
+;	cont "has all the"
+;	cont "answers."
+;	done
 
-MasterAlderLoseAfterBattleText:
-	text "Without trainers"
-	line "would #MON"
-	cont "still fight?"
-	para "If #MON didn't"
-	line "fight would they"
-	cont "still be happy."
-	done
+;MasterAlderLoseAfterBattleText:
+;	text "Without trainers"
+;	line "would #MON"
+;	cont "still fight?"
+;	para "If #MON didn't"
+;	line "fight would they"
+;	cont "still be happy."
+;	done
 
 MasterLeonScript:
 	faceplayer
@@ -951,10 +951,10 @@ ChampionsBlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_CYNTHIA
     iffalse .block
-    checkevent EVENT_BEAT_MASTER_ALDER
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_DIANTHA
-    iffalse .block
+    ;checkevent EVENT_BEAT_MASTER_ALDER
+    ;iffalse .block
+    ;checkevent EVENT_BEAT_MASTER_DIANTHA
+    ;iffalse .block
     checkevent EVENT_BEAT_MASTER_LEON
     iffalse .block
     setmapscene DESTINY_SQUARE, SCENE_CUSTOM_1
@@ -1005,11 +1005,11 @@ DestinySquare_MapEvents:
 	def_object_events
 	object_event  5, 18, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterRivalScript, -1
 	object_event  8, 18, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCrystalScript, -1
-	object_event  8, 21, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
-	object_event  4, 24, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
-	object_event  5, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterDianthaScript, -1
-	object_event  9, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterAlderScript, -1
-	object_event  9, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
+	object_event  9, 22, SPRITE_JASMINE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterCynthiaScript, -1
+	object_event  4, 23, SPRITE_FALKNER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterStevenScript, -1
+	;object_event  5, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterDianthaScript, -1
+	;object_event  9, 24, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterAlderScript, -1
+	object_event  5, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterLeonScript, -1
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterAdamScript, -1
 	object_event  6,  3, SPRITE_MEWTWO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoScript, EVENT_CAUGHT_MEWTWO
 

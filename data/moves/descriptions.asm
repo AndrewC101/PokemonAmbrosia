@@ -207,7 +207,7 @@ MoveDescriptions::
 	dw CharmDescription
 	dw RolloutDescription
 	dw FalseSwipeDescription
-	dw SwaggerDescription
+	dw DragonCrashDescription
 	dw MilkDrinkDescription
 	dw VoltTackleDescription
 	dw BulkUpDescription
@@ -1098,9 +1098,9 @@ FalseSwipeDescription:
 	db   "Leaves the foe"
 	line "with at least 1HP.@"
 
-SwaggerDescription:
-	db   "Causes confusion"
-	line "and raises ATTACK.@"
+DragonCrashDescription:
+	db   "A attack that also"
+	line "hurts the user.@"
 
 MilkDrinkDescription:
 	db   "Restores HP by 1/2"

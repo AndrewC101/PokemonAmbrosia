@@ -212,7 +212,7 @@
 	const CHARM        ; cc
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce
-	const SWAGGER      ; cf - not used
+	const DRAGON_CRASH ; cf
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
 	const BULK_UP      ; d2

@@ -5770,7 +5770,9 @@ Levitate:
 .checkType
 	and TYPE_MASK
 	cp GROUND
-	jr nc, .no
+    jr z, .getPokemon
+	ret
+.getPokemon
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5780,14 +5782,12 @@ Levitate:
 	ld hl, AI_LevitatePokemon
 	ld de, 1
 	call IsInArray
-	jr nc, .no
+    jr c, .found
+    ret
+.found
 	ld hl, LevitateText
 	call StdBattleTextbox
-	scf
-    ret
-.no
-    xor a
-    ret
+    ret z
 
 WaterAbsorb:
     ldh a, [hBattleTurn]
@@ -5798,8 +5798,9 @@ WaterAbsorb:
 .checkType
 	and TYPE_MASK
 	cp WATER
-	jr nz, .no
-
+    jr z, .getPokemon
+	ret
+.getPokemon
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5809,25 +5810,12 @@ WaterAbsorb:
 	ld hl, AI_WaterAbsorbPokemon
 	ld de, 1
 	call IsInArray
-	jr nc, .no
-
-; DevNote - Gyarados ignores water absorb
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkGyarados
-	ld a, [wBattleMonSpecies]
-.checkGyarados
-    cp GYARADOS
-    jr z, .no
-
+    jr c, .found
+    ret
+.found
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-	scf
-    ret
-.no
-    xor a
-    ret
+    ret z
 
 VoltAbsorb:
     ldh a, [hBattleTurn]
@@ -5838,7 +5826,9 @@ VoltAbsorb:
 .checkType
 	and TYPE_MASK
 	cp ELECTRIC
-	jr nz, .no
+    jr z, .getPokemon
+	ret
+.getPokemon
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5848,14 +5838,12 @@ VoltAbsorb:
 	ld hl, AI_VoltAbsorbPokemon
 	ld de, 1
 	call IsInArray
-	jr nc, .no
+    jr c, .found
+    ret
+.found
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-    scf
-    ret
-.no
-    xor a
-    ret
+    ret z
 
 FireAbsorb:
     ldh a, [hBattleTurn]
@@ -5866,7 +5854,9 @@ FireAbsorb:
 .checkType
 	and TYPE_MASK
 	cp FIRE
-	jr nz, .no
+    jr z, .getPokemon
+	ret
+.getPokemon
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
@@ -5876,14 +5866,12 @@ FireAbsorb:
 	ld hl, AI_FireAbsorbPokemon
 	ld de, 1
 	call IsInArray
-	jr nc, .no
+    jr c, .found
+    ret
+.found
 	ld hl, ElementAbsorbText
 	call StdBattleTextbox
-    scf
-    ret
-.no
-    xor a
-    ret
+    ret z
 
 DreamEaterMiss:
 ; Return z if we're trying to eat the dream of

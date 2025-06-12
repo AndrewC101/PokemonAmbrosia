@@ -4199,6 +4199,7 @@ SpikesDamage:
 	ret z
 	inc de
 	ld a, [de]
+	dec de
 	cp FLYING
 	ret z
 

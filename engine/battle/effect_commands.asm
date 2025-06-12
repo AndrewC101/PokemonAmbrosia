@@ -1726,16 +1726,26 @@ BattleCommand_CheckHit:
     ; DevNote - levitate, water absorb, volt absorb, fire absorb here
     ; note these functions are defined in scoring.asm as this file is out of space
 	farcall Levitate
-	jp c, .Miss
+	jp z, .Miss
 
+; DevNote - Gyarados ignores water absorb
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .checkGyarados
+	ld a, [wBattleMonSpecies]
+.checkGyarados
+    cp GYARADOS
+    jr z, .skipWaterAbsorb
 	farcall WaterAbsorb
-	jp c, .Miss
+	jp z, .Miss
+.skipWaterAbsorb
 
 	farcall VoltAbsorb
-    jp c, .Miss
+    jp z, .Miss
 
 	farcall FireAbsorb
-    jp c, .Miss
+    jp z, .Miss
 
 	farcall DreamEaterMiss
 	jp z, .Miss

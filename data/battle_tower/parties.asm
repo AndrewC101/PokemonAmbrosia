@@ -2063,7 +2063,7 @@ BattleTowerMons:
 
 	db YANMEGA
 	db FOCUS_SASH
-	db AIR_SLASH, BUG_BUZZ, STICKY_WEB, HYPNOSIS
+	db HYPNOSIS, HURRICANE, BUG_BUZZ, STICKY_WEB
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2073,7 +2073,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 15, 15, 20 ; PP
+	db 15, 10, 15, 20 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 43 ; Level
@@ -2169,7 +2169,7 @@ BattleTowerMons:
 
 	db GARCHOMP
 	db LEFTOVERS
-	db SWORDS_DANCE, DRAGON_CRASH, EARTHQUAKE, STEALTH_ROCK
+	db SWORDS_DANCE, DRACO_IMPACT, EARTHQUAKE, STEALTH_ROCK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2403,7 +2403,7 @@ BattleTowerMons:
 
 	db INFERNAPE
 	db FOCUS_SASH
-	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, THUNDERPUNCH
+	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, DRACO_IMPACT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2743,7 +2743,7 @@ BattleTowerMons:
 
 	db TENTACRUEL
 	db LEFTOVERS
-	db SURF, ICE_BEAM, TOXIC_SPIKES, PROTECT
+	db SURF, ICE_BEAM, SLUDGE_BOMB, PROTECT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3211,6 +3211,32 @@ BattleTowerMons:
 	bigdw 267 ; SDef
 	db "RANTA-N@@@@"
 
+	db MEW
+	db LEFTOVERS
+	db PSYCHIC_M, TAUNT, WILL_O_WISP, RECOVER
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 32, 24, 10 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 84 ; Level
+	db 0, 0 ; Status
+    bigdw 340
+    bigdw 340
+    bigdw 251
+    bigdw 251
+    bigdw 251
+    bigdw 251
+    bigdw 251
+	db "RANTA-N@@@@"
+
 	db PORYGONZ
 	db FOCUS_SASH
 	db HYPER_BEAM, DARK_PULSE, NASTY_PLOT, AGILITY
@@ -3603,7 +3629,7 @@ BattleTowerMons:
 
 	db GARCHOMP
 	db LEFTOVERS
-	db SWORDS_DANCE, DRAGON_CRASH, EARTHQUAKE, STEALTH_ROCK
+	db SWORDS_DANCE, DRACO_IMPACT, EARTHQUAKE, STEALTH_ROCK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3626,6 +3652,8 @@ BattleTowerMons:
 	bigdw 212 ; SAtk
 	bigdw 220 ; SDef
 	db "RANTA-N@@@@"
+
+	; ===== final trainer end - 20 mons ======
 
     db METAGROSS
 	db ASSAULT_VEST
@@ -3653,9 +3681,7 @@ BattleTowerMons:
 	bigdw 228 ; SDef
 	db "RANTA-N@@@@"
 
-	; ===== final trainer end - 20 mons ======
-
-   db SCIZOR
+    db SCIZOR
 	db LEFTOVERS
 	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROCK_SMASH
 	dw 0 ; OT ID
@@ -3683,7 +3709,7 @@ BattleTowerMons:
 
     db SALAMENCE
 	db FOCUS_SASH
-	db DRAGON_DANCE, DRAGON_CRASH, FLARE_BLITZ, VOLT_TACKLE
+	db DRAGON_DANCE, DRACO_IMPACT, FLARE_BLITZ, VOLT_TACKLE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3993,32 +4019,6 @@ BattleTowerMons:
 	bigdw 183 ; SDef
 	db "RANTA-N@@@@"
 
-	db ROTOM
-	db LEFTOVERS
-	db NASTY_PLOT, THUNDERBOLT, SHADOW_BALL, SURF
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 24, 24 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 80 ; Level
-	db 0, 0 ; Status
-	bigdw 244 ; HP
-	bigdw 244 ; Max HP
-	bigdw 183 ; Atk
-	bigdw 250 ; Def
-	bigdw 217 ; Spd
-	bigdw 247 ; SAtk
-	bigdw 250 ; SDef
-	db "RANTA-N@@@@"
-
 	db STARAPTOR
 	db FLAME_ORB
 	db BRAVE_BIRD, CLOSE_COMBAT, EXTREMESPEED, ROOST
@@ -4125,7 +4125,7 @@ BattleTowerMons:
 
 	db INFERNAPE
 	db FOCUS_SASH
-	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, THUNDERPUNCH
+	db SWORDS_DANCE, CLOSE_COMBAT, FLARE_BLITZ, DRACO_IMPACT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4805,7 +4805,7 @@ BattleTowerMons:
 
 	db GARCHOMP
 	db LEFTOVERS
-	db DRAGON_CRASH, EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE
+	db DRACO_IMPACT, EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4961,7 +4961,7 @@ BattleTowerMons:
 
     db SALAMENCE
 	db FOCUS_SASH
-	db DRAGON_CRASH, FLARE_BLITZ, VOLT_TACKLE, DRAGON_DANCE
+	db DRACO_IMPACT, FLARE_BLITZ, VOLT_TACKLE, DRAGON_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5247,7 +5247,7 @@ BattleTowerMons:
 
 	db AERODACTYL
 	db CHOICE_BAND
-	db STONE_EDGE, BRAVE_BIRD, EARTHQUAKE, DRAGON_CRASH
+	db STONE_EDGE, BRAVE_BIRD, EARTHQUAKE, DRACO_IMPACT
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -6079,7 +6079,7 @@ BattleTowerMons:
 
 	db INFERNAPE ; 70 - mons
 	db FOCUS_SASH
-	db CLOSE_COMBAT, FLARE_BLITZ, THUNDERPUNCH, SWORDS_DANCE
+	db CLOSE_COMBAT, FLARE_BLITZ, DRACO_IMPACT, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -6365,7 +6365,7 @@ BattleTowerMons:
 
 	db DRACOVISH
 	db CHOICE_BAND
-	db SAVAGE_REND, DRAGON_CRASH, EARTHQUAKE, ROCK_SLIDE
+	db SAVAGE_REND, DRACO_IMPACT, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

@@ -85,7 +85,7 @@
 	const POISONPOWDER ; 4d
 	const STUN_SPORE   ; 4e
 	const SLEEP_POWDER ; 4f
-	const PETAL_DANCE  ; 50
+	const PETAL_DANCE  ; 50 - Not Used
 	const DRAGON_CLAW  ; 51
 	const DRAGON_RAGE  ; 52
 	const FIRE_SPIN    ; 53
@@ -133,7 +133,7 @@
 	const CLOSE_COMBAT ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
-	const CLAMP        ; 80
+	const CLAMP        ; 80 - not used
 	const SWIFT        ; 81
 	const PSYCHO_BOOST ; 82
 	const DISCHARGE    ; 83
@@ -212,7 +212,7 @@
 	const CHARM        ; cc
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce
-	const DRAGON_CRASH ; cf
+	const DRACO_IMPACT ; cf
 	const MILK_DRINK   ; d0
 	const VOLT_TACKLE  ; d1
 	const BULK_UP      ; d2

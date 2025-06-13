@@ -3984,6 +3984,7 @@ AI_Smart_Burn:
 
     dec [hl]
     dec [hl]
+    dec [hl]
     ret
 .discourage
     inc [hl]

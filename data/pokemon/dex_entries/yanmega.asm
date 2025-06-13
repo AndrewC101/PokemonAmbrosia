@@ -3,8 +3,7 @@
 
 	db   "It can fly fast"
 	next "and bite its"
-	next "foe apart."
+	next "foe asunder."
 
-	page "SPEED"
-	next "increases upon"
-	next "entering battle.@"
+	page "Boosted SPEED"
+	next "and ACCURACY.@"

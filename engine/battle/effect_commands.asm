@@ -4049,6 +4049,8 @@ BattleCommand_SleepTarget:
     jr z, .twoTurn
     cp LANCE
     jr z, .twoTurn
+    cp DAD
+    jr z, .twoTurn
     cp BLUE
     jr z, .twoTurn
     cp LEAF
@@ -6238,19 +6240,27 @@ BattleCommand_Recoil:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
-; get 1/4 damage or 1 HP, whichever is higher
+; get 1/3 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
 	ld b, a
 	ld a, [wCurDamage + 1]
 	ld c, a
-	srl b
-	rr c
-	srl b
-	rr c
-	ld a, b
-	or c
+	xor a
+	inc b
+.third_hp_loop
+	dec b
+	inc a
+	dec bc
+	dec bc
+	dec bc
+	inc b
+	jr nz, .third_hp_loop
+	dec a
+	ld c, a
 	jr nz, .min_damage
 	inc c
+	jr .min_damage
+
 .min_damage
 	ld a, [hli]
 	ld [wHPBuffer1 + 1], a
@@ -7501,6 +7511,8 @@ CompoundEyes:
     cp CATERPIE
     call z, IncrementB
     cp BUTTERFREE
+    call z, IncrementB
+    cp YANMEGA
     call z, IncrementB
     cp STARYU
     call z, IncrementB

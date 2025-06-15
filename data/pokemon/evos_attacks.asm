@@ -2269,6 +2269,7 @@ MewEvosAttacks:
 	db 45, SHADOW_PUNCH
 	db 50, PSYCHIC_M
 	db 60, BATON_PASS
+	db 85, PSYBLAST
 	db 0 ; no more level-up moves
 
 TreeckoEvosAttacks:

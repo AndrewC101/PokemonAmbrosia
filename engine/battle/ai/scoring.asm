@@ -3865,19 +3865,19 @@ AI_Smart_Taunt:
 ; never use against uber immune Pokemon
     ld a, [wBattleMonSpecies]
     call DoesPokemonHaveUberImmunity
-   	jr c, .discourage
+   	jp c, .discourage
 
 ; if player can KO - discourage
     call ShouldAIBoost
-    jr nc, .discourage
+    jp nc, .discourage
 
 ; if player is already set up - discourage
     ld a, [wPlayerAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
+	jp nc, .discourage
     ld a, [wPlayerSAtkLevel]
 	cp BASE_STAT_LEVEL + 2
-	jr nc, .discourage
+	jp nc, .discourage
 
 ; if player has a setup move, status move, or healing move - encourage
     ld b, EFFECT_TAUNT
@@ -3917,6 +3917,12 @@ AI_Smart_Taunt:
 	call PlayerHasMoveEffect
 	jr c, .encourage
     ld b, EFFECT_HEAL
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_LEECH_SEED
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_STEALTH_ROCK
 	call PlayerHasMoveEffect
 	jr c, .encourage
 

@@ -33,7 +33,7 @@ TrainerSailorErnest:
 	end
 
 OlivineLighthouse5FRareCandy:
-	itemball TM_AIR_SLASH
+	itemball ASSAULT_VEST
 
 OlivineLighthouse5FSuperRepel:
 	itemball CARBOS

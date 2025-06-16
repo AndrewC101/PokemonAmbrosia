@@ -263,7 +263,7 @@ TM01 EQU const_value
 	add_tm SUBSTITUTE   ; ea
 	add_tm ICE_BEAM     ; eb
 	add_tm REST         ; ec
-	add_tm AIR_SLASH    ; ed
+	add_tm TAUNT        ; ed
 	add_tm ROCK_SLIDE   ; ee
 	add_tm THUNDER_WAVE ; ef
 	add_tm FIRE_PUNCH   ; f0

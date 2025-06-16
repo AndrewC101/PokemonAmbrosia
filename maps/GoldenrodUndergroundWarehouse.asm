@@ -65,10 +65,10 @@ GoldenrodUndergroundWarehouseDirectorScript:
 	end
 
 GoldenrodUndergroundWarehouseMaxEther:
-	itemball POKE_DOLL
+	itemball TM_SLEEP_TALK
 
 GoldenrodUndergroundWarehouseTMSleepTalk:
-	itemball TM_SLEEP_TALK
+	itemball TM_TAUNT
 
 GoldenrodUndergroundWarehouseUltraBall:
 	itemball FULL_RESTORE

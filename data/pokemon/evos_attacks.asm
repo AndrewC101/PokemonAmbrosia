@@ -602,8 +602,7 @@ ZubatEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, SLUDGE
 	db 23, WING_ATTACK
-	db 26, TAUNT
-	db 30, AIR_SLASH
+	db 28, AIR_SLASH
 	db 35, CRUNCH
 	db 40, SLUDGE_BOMB
 	db 45, CROSS_POISON
@@ -618,8 +617,7 @@ GolbatEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, SLUDGE
 	db 22, WING_ATTACK
-	db 26, TAUNT
-	db 30, AIR_SLASH
+	db 28, AIR_SLASH
 	db 33, CRUNCH
 	db 37, SLUDGE_BOMB
 	db 40, DEFOG
@@ -962,7 +960,6 @@ MachopEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
-	db 10, TAUNT
 	db 13, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 23, MACH_PUNCH
@@ -978,7 +975,6 @@ MachokeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
-	db 10, TAUNT
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 23, MACH_PUNCH
@@ -993,7 +989,6 @@ MachampEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
-	db 10, TAUNT
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 23, MACH_PUNCH
@@ -1271,8 +1266,7 @@ YanmegaEvosAttacks:
 	db 10, BITE
 	db 14, LEECH_LIFE
 	db 18, WING_ATTACK
-	db 21, TAUNT
-	db 26, HYPNOSIS
+	db 24, HYPNOSIS
 	db 30, ANCIENTPOWER
 	db 33, STICKY_WEB
 	db 35, AIR_SLASH
@@ -1283,7 +1277,6 @@ YanmegaEvosAttacks:
 GliscorEvosAttacks:
 	db 0 ; no more evolutions
 	db 6, SAND_ATTACK
-	db 9, TAUNT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
@@ -1366,7 +1359,6 @@ GastlyEvosAttacks:
 	db 10, DISABLE
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
-	db 19, TAUNT
 	db 22, WILL_O_WISP
 	db 26, SLUDGE
 	db 30, SHADOW_BALL
@@ -1385,7 +1377,6 @@ HaunterEvosAttacks:
 	db 10, DISABLE
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
-	db 19, TAUNT
 	db 22, WILL_O_WISP
 	db 25, SLUDGE
 	db 30, SHADOW_BALL
@@ -1403,7 +1394,6 @@ GengarEvosAttacks:
 	db 10, DISABLE
 	db 13, MEAN_LOOK
 	db 16, NIGHT_SHADE
-	db 19, TAUNT
 	db 22, WILL_O_WISP
 	db 25, SLUDGE
 	db 30, SHADOW_BALL
@@ -1941,7 +1931,6 @@ GyaradosEvosAttacks:
 	db 1, THRASH
 	db 20, BITE
 	db 25, DRAGON_RAGE
-	db 30, TAUNT
 	db 35, CRUNCH
 	db 40, WATERFALL
 	db 45, DRAGON_DANCE
@@ -2124,7 +2113,6 @@ AerodactylEvosAttacks:
 	db 1, WING_ATTACK
 	db 10, DRAGON_RAGE
 	db 15, BITE
-	db 27, TAUNT
 	db 30, ANCIENTPOWER
 	db 33, CRUNCH
 	db 35, ROCK_SLIDE
@@ -2185,6 +2173,7 @@ MoltresEvosAttacks:
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 37, WILL_O_WISP
+	db 40, AIR_SLASH
 	db 45, LAVA_PLUME
 	db 48, ROOST
 	db 50, FIRE_BLAST
@@ -2236,11 +2225,11 @@ DragoniteEvosAttacks:
 	db 30, DRAGON_CLAW
 	db 35, WATERFALL
 	db 40, DRAGON_PULSE
-	db 50, HURRICANE
+	db 50, AIR_SLASH
 	db 50, ROOST
 	db 53, DEFOG
 	db 55, DRAGON_DANCE
-	db 60, DRAGON_CLAW
+	db 60, HURRICANE
 	db 65, OUTRAGE
 	db 70, DRACO_IMPACT
 	db 75, DRACO_METEOR
@@ -2263,8 +2252,7 @@ MewEvosAttacks:
 	db 1, POUND
 	db 10, TRANSFORM
 	db 30, RECOVER
-	db 35, TAUNT
-	db 38, WILL_O_WISP
+	db 35, WILL_O_WISP
 	db 40, PSYCHO_SLASH
 	db 45, SHADOW_PUNCH
 	db 50, PSYCHIC_M
@@ -2564,8 +2552,7 @@ CrobatEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, SLUDGE
 	db 22, WING_ATTACK
-	db 26, TAUNT
-	db 30, AIR_SLASH
+	db 28, AIR_SLASH
 	db 33, CRUNCH
 	db 37, SLUDGE_BOMB
 	db 40, DEFOG
@@ -2771,7 +2758,6 @@ MismagiusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 14, MEAN_LOOK
 	db 16, HYPNOSIS
-	db 18, TAUNT
 	db 20, PSYBEAM
     db 22, WILL_O_WISP
 	db 25, PAIN_SPLIT
@@ -2927,8 +2913,7 @@ YanmaEvosAttacks:
 	db 10, BITE
 	db 14, LEECH_LIFE
 	db 18, WING_ATTACK
-	db 21, TAUNT
-	db 26, HYPNOSIS
+	db 24, HYPNOSIS
 	db 31, ANCIENTPOWER
 	db 33, STICKY_WEB
 	db 35, AIR_SLASH
@@ -3038,7 +3023,6 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 14, MEAN_LOOK
 	db 16, HYPNOSIS
-	db 18, TAUNT
 	db 20, PSYBEAM
     db 22, WILL_O_WISP
 	db 25, PAIN_SPLIT
@@ -3129,7 +3113,6 @@ GligarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 6, SAND_ATTACK
-	db 9, TAUNT
 	db 14, CUT
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
@@ -3137,6 +3120,7 @@ GligarEvosAttacks:
 	db 30, CROSS_POISON
 	db 33, SANDSTORM
 	db 37, X_SCISSOR
+	db 40, AIR_SLASH
 	db 42, EARTHQUAKE
 	db 50, SWORDS_DANCE
 	db 55, GUILLOTINE
@@ -3226,7 +3210,6 @@ ShayminEvosAttacks:
 	db 35, LEECH_SEED
 	db 40, AIR_SLASH
 	db 50, SEED_FLARE
-	db 55, TAUNT
 	db 0 ; no more level-up moves
 
 HeracrossEvosAttacks:
@@ -3426,7 +3409,6 @@ SkarmoryEvosAttacks:
 	db 19, SWIFT
 	db 25, STEALTH_ROCK
 	db 28, ROOST
-	db 30, TAUNT
 	db 33, IRON_HEAD
 	db 35, DRILL_PECK
 	db 40, DEFOG
@@ -3733,9 +3715,10 @@ TyranitarEvosAttacks:
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
     db 1, ANCIENTPOWER
-    db 1, PSYCHIC_M
-    db 1, AEROBLAST
-    db 1, RECOVER
+    db 1, AIR_SLASH
+    db 30, PSYCHIC_M
+    db 40, RECOVER
+    db 50, AEROBLAST
     db 65, HURRICANE
     db 70, CALM_MIND
 	db 0 ; no more level-up moves
@@ -3744,8 +3727,8 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ANCIENTPOWER
 	db 1, FLY
-	db 1, SACRED_FIRE
-	db 1, RECOVER
+	db 40, RECOVER
+	db 50, SACRED_FIRE
 	db 65, BRAVE_BIRD
 	db 70, SWORDS_DANCE
 	db 0 ; no more level-up moves
@@ -3753,11 +3736,11 @@ HoOhEvosAttacks:
 CelebiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_SEED
-	db 1, PSYCHIC_M
-	db 1, RECOVER
 	db 1, HEAL_BELL
-	db 20, ANCIENTPOWER
+	db 1, ANCIENTPOWER
+	db 20, RECOVER
 	db 30, BATON_PASS
+	db 35, PSYCHIC_M
 	db 55, PSYCHO_SLASH
 	db 60, LEAF_BLADE
 	db 65, SYNTHESIS
@@ -3766,7 +3749,6 @@ CelebiEvosAttacks:
 MewtwoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
-	db 1, TAUNT
 	db 1, WILL_O_WISP
 	db 1, BARRIER
 	db 1, PSYCHIC_M

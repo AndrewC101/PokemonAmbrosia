@@ -105,7 +105,7 @@ DirectorIntroText:
 
 	para "You saved me!"
 
-	line "The ROCKETS may"
+	para "The ROCKETS may"
 	line "have strong"
 	cont "#MON."
 

@@ -459,15 +459,15 @@ SingDescription:
 
 ToxicSpikesDescription:
 	db   "Poisons foes when"
-	next "they switch in.@"
+	line "they switch in.@"
 
 StealthRockDescription:
 	db   "Hurts foes when"
-	next "they switch in.@"
+	line "they switch in.@"
 
 StickyWebDescription:
 	db   "Slows foes when"
-	next "they switch in.@"
+	line "they switch in.@"
 
 SonicboomDescription:
 	db   "Always inflicts"
@@ -856,11 +856,11 @@ TransformDescription:
 
 TauntDescription:
 	db   "Provokes enemy"
-	next "into attacking.@"
+	line "into attacking.@"
 
 TrickRoomDescription:
 	db   "Reverses the move"
-	next "order for 5 turns.@"
+	line "order for 5 turns.@"
 
 SporeDescription:
 	db   "A move that"
@@ -1084,7 +1084,7 @@ GigaDrainDescription:
 
 DefogDescription:
 	db   "Clears the field"
-	next "of all effects.@"
+	line "of all effects.@"
 
 CharmDescription:
 	db   "Sharply lowers the"

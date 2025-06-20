@@ -74,28 +74,24 @@ GoldenrodUndergroundWarehouseUltraBall:
 	itemball FULL_RESTORE
 
 GruntM24SeenText:
-	text "The DIRECTOR"
-	line "is not well."
-
-	para "He may have the"
-	line "#RUS!"
-
-	para "I am looking"
-	line "after him."
-
-	para "You need to"
-	line "leave."
+	text "I may be a ROCKET"
+	line "but I have"
+	cont "feelings."
+	para "That old man keeps"
+	line "verbally abusing"
+	cont "me!"
 	done
 
 GruntM24BeatenText:
-	text "You thug."
+	text "Please make him"
+	line "shut up."
 	done
 
 GruntM24AfterBattleText:
-	text "TEAM ROCKET will"
-	line "save KANTO even"
-	cont "in spite of your"
-	cont "misguided efforts."
+	text "Go ahead and save"
+	line "him."
+	para "Spare me from his"
+	line "savage tongue."
 	done
 
 DirectorIntroText:
@@ -109,22 +105,23 @@ DirectorIntroText:
 
 	para "You saved me!"
 
-	para "There is little"
-	line "time!"
+	line "The ROCKETS may"
+	line "have strong"
+	cont "#MON."
 
-	para "You must stop"
-	line "TEAM ROCKET!"
+	para "But they have weak"
+	line "self esteem."
 
-	para "You can be sure"
-	line "their plans will"
-	cont "cause suffering."
+	para "Throw some insults"
+	line "at them and watch"
+	cont "them crumble."
 
 	para "Take this key."
 	done
 
 DirectorCardKeyText:
 	text "That will open"
-	line "the blast door"
+	line "the security door"
 	cont "on 3F."
 	done
 

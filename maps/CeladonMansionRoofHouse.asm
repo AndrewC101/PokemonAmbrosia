@@ -171,4 +171,4 @@ CeladonMansionRoofHouse_MapEvents:
     bg_event  0,  1, BGEVENT_READ, CeladonRoofHouseBooksScript
 
 	def_object_events
-	object_event  3,  2, SPRITE_BILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseAndrewScript, -1
+	object_event  3,  2, SPRITE_BILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CeladonMansionRoofHouseAndrewScript, EVENT_BEAT_RED

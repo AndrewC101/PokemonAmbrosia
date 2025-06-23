@@ -1728,18 +1728,8 @@ BattleCommand_CheckHit:
 	farcall Levitate
 	jp z, .Miss
 
-; DevNote - Gyarados ignores water absorb
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .checkGyarados
-	ld a, [wBattleMonSpecies]
-.checkGyarados
-    cp GYARADOS
-    jr z, .skipWaterAbsorb
 	farcall WaterAbsorb
 	jp z, .Miss
-.skipWaterAbsorb
 
 	farcall VoltAbsorb
     jp z, .Miss

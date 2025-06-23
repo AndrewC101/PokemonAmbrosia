@@ -5,5 +5,5 @@
 	next "full of rage."
 
 	page "lowers foes"
-	next "ATTACK. Gets"
-	next "crits often.@"
+	next "ATTACK. ATTACK"
+	next "boost on KO.@"

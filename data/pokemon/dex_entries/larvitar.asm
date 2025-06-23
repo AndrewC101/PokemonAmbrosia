@@ -5,5 +5,5 @@
 	next "ground, this"
 	next "#MON eats dirt."
 
-	page "Can not be KOd"
-	next "from full HP.@"
+	page "ATTACK boost on"
+	next "defeating foe.@"

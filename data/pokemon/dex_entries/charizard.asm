@@ -6,5 +6,5 @@
 	next "that loves battle"
 
 	page "Summons sun on"
-	next "switch in. Gets"
-	next "crits often.@"
+	next "switch. SP.ATK"
+	next "boost on KO.@"

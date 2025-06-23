@@ -5,5 +5,5 @@
 	next "still, even while"
 	next "it's a pupa."
 
-	page "Can not be KOd"
-	next "from full HP.@"
+	page "ATTACK boost on"
+	next "defeating foe.@"

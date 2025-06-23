@@ -5,5 +5,5 @@
 	next "the flame on its"
 	next "tail blazes."
 
-	page "Gets critical"
-	next "hits often.@"
+	page "SP.ATK boost on"
+	next "defeating foe.@"

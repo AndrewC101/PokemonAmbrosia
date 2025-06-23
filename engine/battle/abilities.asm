@@ -20,8 +20,6 @@ SturdyPokemon:
     db FERROSEED
     db FERROTHORN
     db METAPOD
-    db LARVITAR
-    db PUPITAR
     db HONEDGE
     db DOUBLADE
     db PINSIR
@@ -48,13 +46,30 @@ SuperLuckPokemon:
     db BELLSPROUT
     db WEEPINBELL
     db VICTREEBEL
+    db ALAKAZAM
+    db WEAVILE
+    db -1
+
+MoxiePokemon:
+    db GYARADOS
+    db SALAMENCE
+    db HERACROSS
+    db SCEPTILE
+    db TAUROS
+    db LARVITAR
+    db PUPITAR
+    db TYRANITAR
+    db -1
+
+GrimPokemon:
+    db GIRATINA
+    db GENGAR
+    db VOLCARONA
+    db CHANDELURE
+    db JOLTEON
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
-    db JOLTEON
-    db TAUROS
-    db ALAKAZAM
-    db WEAVILE
     db -1
 
 SereneGracePokemon:
@@ -196,7 +211,6 @@ SolidRockPokemon:
     db METAGROSS
     db RAYQUAZA
     db EXEGGUTOR
-    db HERACROSS
     db -1
 
 UberImmunePokemon:

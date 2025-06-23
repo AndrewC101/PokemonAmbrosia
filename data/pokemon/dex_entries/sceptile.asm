@@ -5,6 +5,6 @@
 	next "body are a sharp"
 	next "as swords."
 
-	page "Deals extra"
-	next "critical hit"
-	next "damage.@"
+	page "Boosted crit"
+	next "damage. ATTACK"
+	next "boost on KO.@"

@@ -1266,6 +1266,28 @@ Core_RegeneratorPokemon:
     db VENUSAUR
     db -1
 
+Core_MoxiePokemon:
+    db GYARADOS
+    db SALAMENCE
+    db HERACROSS
+    db SCEPTILE
+    db TAUROS
+    db LARVITAR
+    db PUPITAR
+    db TYRANITAR
+    db -1
+
+Core_GrimPokemon:
+    db GIRATINA
+    db GENGAR
+    db VOLCARONA
+    db CHANDELURE
+    db JOLTEON
+    db CHARMANDER
+    db CHARMELEON
+    db CHARIZARD
+    db -1
+
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
     call GetCurrentMonCore
@@ -2351,6 +2373,7 @@ StopDangerSound:
 
 FaintYourPokemon:
     call Aftermath
+    call KOBoost
 	call StopDangerSound
 	call WaitSFX
 	ld a, $f0
@@ -2366,6 +2389,7 @@ FaintYourPokemon:
 
 FaintEnemyPokemon:
     call Aftermath
+    call KOBoost
 	call WaitSFX
 	ld de, SFX_KINESIS
 	call PlaySFX
@@ -2378,6 +2402,33 @@ FaintEnemyPokemon:
 	ld hl, BattleText_EnemyMonFainted
 	jp StdBattleTextbox
 
+
+; ==========================
+; ==== Moxie and Grim ======
+; ==========================
+KOBoost:
+    call GetCurrentMonCore
+	ld hl, Core_MoxiePokemon
+	ld de, 1
+	call IsInArray
+	jr c, .moxie
+
+    call GetCurrentMonCore
+	ld hl, Core_GrimPokemon
+	ld de, 1
+	call IsInArray
+	jr c, .grim
+
+    ret
+.grim
+    call ClearFailures
+    farcall SpecialAttackUpSwitch
+    ret
+.moxie
+    call ClearFailures
+    farcall AttackUpSwitch
+    ret
+
 ; =====================
 ; ==== Aftermath ======
 ; =====================
@@ -2386,8 +2437,6 @@ Aftermath:
     cp KOFFING
     jr z, .aftermath
     cp WEEZING
-    jr z, .aftermath
-    cp GENGAR
     jr z, .aftermath
     cp MAGNEZONE
     jr z, .aftermath
@@ -4167,10 +4216,7 @@ SpikesDamage:
 	cp HELD_HEAVY_BOOTS
 	ret z
 
-	xor a
-	ld [wFailedMessage], a
-	ld [wEffectFailed], a
-	ld [wAttackMissed], a
+    call ClearFailures
 
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -4443,10 +4489,7 @@ FieldWeather:
 
 ; DevNote - function for Pokemon with effects on switching in
 SwitchInEffects:
-	xor a
-	ld [wFailedMessage], a
-	ld [wEffectFailed], a
-	ld [wAttackMissed], a
+    call ClearFailures
 
 	farcall BattleCommand_FlameOrb
 
@@ -4513,8 +4556,6 @@ SwitchInEffects:
     jp z, .atkUp
 
     cp GYARADOS
-    jp z, .atkDown
-    cp SALAMENCE
     jp z, .atkDown
     cp ARCANINE
     jp z, .atkDown
@@ -8622,6 +8663,13 @@ ExitBattle:
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
 	farcall GivePokerusAndConvertBerries
+	ret
+
+ClearFailures:
+	xor a
+	ld [wFailedMessage], a
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a
 	ret
 
 CleanUpBattleRAM:

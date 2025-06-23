@@ -88,31 +88,29 @@ CharmanderEvosAttacks:
 CharmeleonEvosAttacks:
 	db EVOLVE_LEVEL, 36, CHARIZARD
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, GROWL
 	db 7, EMBER
 	db 13, SMOKESCREEN
 	db 16, FLAME_WHEEL
-	db 25, SLASH
-	db 30, WILL_O_WISP
+	db 20, SLASH
+	db 25, WILL_O_WISP
+	db 30, LAVA_PLUME
 	db 37, FLAMETHROWER
 	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CharizardEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, GROWL
-	db 7, EMBER
-	db 13, SMOKESCREEN
-	db 25, SLASH
-	db 30, WILL_O_WISP
+	db 20, SLASH
+	db 25, WILL_O_WISP
+	db 30, LAVA_PLUME
 	db 36, WING_ATTACK
 	db 36, FLAMETHROWER
 	db 40, AIR_SLASH
+	db 45, SOLARBEAM
 	db 50, FIRE_BLAST
-	db 55, FLARE_BLITZ
-	db 60, DRAGON_DANCE
+	db 55, ANCIENTPOWER
+	db 60, FLARE_BLITZ
+	db 65, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 SquirtleEvosAttacks:
@@ -2307,7 +2305,9 @@ SceptileEvosAttacks:
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
 	db 40, LEAF_BLADE
-	db 45, SOLARBEAM
+	db 43, NIGHT_SLASH
+	db 46, DRAGON_CLAW
+	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
 ChimcharEvosAttacks:

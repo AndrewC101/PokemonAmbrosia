@@ -5,5 +5,6 @@
 	next "incandescent"
 	next "embodiment of sun"
 
-	page "Immune to"
-	next "FIRE attacks.@"
+	page "Immune to FIRE."
+	next "SP.ATTACK boost"
+	next "on KO.@"

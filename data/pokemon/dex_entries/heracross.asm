@@ -6,5 +6,5 @@
 	next "lift anything."
 
 	page "ATTACK boost on"
-	next "status. Reduced"
-	next "weaknesses.@"
+	next "status. ATTACK"
+	next "boost on KO.@"

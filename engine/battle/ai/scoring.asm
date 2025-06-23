@@ -271,12 +271,6 @@ AI_Basic:
     cp WATER
 	jr nz, .checkVoltAbsorb
 
-	; DevNote - Gyarados ignores water absorb
-	ld a, [wEnemyMonSpecies]
-	cp GYARADOS
-	jr z, .checkVoltAbsorb
-
-
 	ld a, [wBattleMonSpecies]
     call DoesPokemonHaveWaterAbsorb
     jp c, .discourage
@@ -5239,11 +5233,6 @@ AI_Aggressive:
 .waterAbsorb
     cp WATER
 	jr nz, .voltAbsorb
-
-	; DevNote - Gyarados ignores water absorb
-	ld a, [wEnemyMonSpecies]
-	cp GYARADOS
-	jr z, .voltAbsorb
 
 	ld a, [wBattleMonSpecies]
     call DoesPokemonHaveWaterAbsorb

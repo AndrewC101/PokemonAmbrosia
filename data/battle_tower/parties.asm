@@ -1098,8 +1098,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CHARIZARD
-	db LIFE_ORB
-	db FIRE_BLAST, FLY, EARTHQUAKE, ROCK_SLIDE
+	db CHARCOAL
+	db FIRE_BLAST, AIR_SLASH, SOLARBEAM, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1109,7 +1109,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 15, 10, 15 ; PP
+	db 10, 15, 10, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 44 ; Level
@@ -1489,7 +1489,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db MYSTIC_WATER
-	db RAIN_DANCE, SURF, ICE_BEAM, WATERFALL
+	db RAIN_DANCE, SURF, ICE_BEAM, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1499,7 +1499,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 10, 15, 10, 15 ; DVs
-	db 8, 16, 24, 24 ; PP
+	db 10, 15, 15, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 42 ; Level
@@ -2350,8 +2350,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CHARIZARD
-	db LIFE_ORB
-	db DRAGON_DANCE, FLARE_BLITZ, FLY, EARTHQUAKE
+	db ASSAULT_VEST
+	db FIRE_BLAST, SOLARBEAM, ANCIENTPOWER, AIR_SLASH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2361,7 +2361,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 20, 15, 15, 10 ; PP
+	db 10, 10, 10, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 63 ; Level
@@ -2898,8 +2898,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db KINGDRA
-	db MINT_BERRY
-	db DRAGON_DANCE, DRAGON_CLAW, WATERFALL, REST
+	db MYSTIC_WATER
+	db HYDRO_PUMP, DRAGON_PULSE, ICE_BEAM, RAIN_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2909,7 +2909,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 15, 15, 10 ; PP
+	db 1O, 15, 15, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 62 ; Level
@@ -4072,8 +4072,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CHARIZARD
-	db LIFE_ORB
-	db DRAGON_DANCE, FLARE_BLITZ, FLY, EARTHQUAKE
+	db CHOICE_SPECS
+	db FIRE_BLAST, FLAMETHROWER, AIR_SLASH, SOLARBEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4083,7 +4083,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 24, 16 ; PP
+	db 16, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 81 ; Level
@@ -4777,7 +4777,7 @@ BattleTowerMons:
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
 
-	db RAIKOU ; Remove
+	db RAIKOU
 	db MAGNET
 	db THUNDERBOLT, DARK_PULSE, AURA_SPHERE, CALM_MIND
 	dw 0 ; OT ID
@@ -5351,7 +5351,7 @@ BattleTowerMons:
 
 	db KINGDRA
 	db MYSTIC_WATER
-	db RAIN_DANCE, HYDRO_PUMP, ICE_BEAM, DRAGON_CLAW
+	db RAIN_DANCE, HYDRO_PUMP, DRACO_METEOR, ICE_BEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5361,7 +5361,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 24, 24 ; PP
+	db 16, 16, 16, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5428,8 +5428,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CHARIZARD
-	db CHARCOAL
-	db FLARE_BLITZ, EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE
+	db CHOICE_SPECS
+	db FIRE_BLAST, FLAMETHROWER, AIR_SLASH, SOLARBEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5439,7 +5439,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 16, 24, 32 ; PP
+	db 16, 24, 24, 16 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

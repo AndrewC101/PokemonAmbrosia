@@ -3444,7 +3444,6 @@ HoundoomEvosAttacks:
 
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
 	db 8, SMOKESCREEN
 	db 10, AQUA_JET
 	db 20, BUBBLEBEAM
@@ -3453,9 +3452,10 @@ KingdraEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 45, DRAGON_CLAW
 	db 50, HYDRO_PUMP
-	db 55, DRAGON_DANCE
-	db 60, OUTRAGE
-	db 65, DRACO_IMPACT
+	db 53, DRAGON_DANCE
+	db 56, OUTRAGE
+	db 60, DRACO_IMPACT
+	db 65, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 CottoneeEvosAttacks:

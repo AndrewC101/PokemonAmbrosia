@@ -1269,8 +1269,8 @@ Core_RegeneratorPokemon:
 Core_MoxiePokemon:
     db GYARADOS
     db SALAMENCE
+    db DRACOVISH
     db HERACROSS
-    db SCEPTILE
     db TAUROS
     db LARVITAR
     db PUPITAR
@@ -1278,11 +1278,11 @@ Core_MoxiePokemon:
     db -1
 
 Core_GrimPokemon:
+    db RAIKOU
     db GIRATINA
     db GENGAR
+    db KINGDRA
     db VOLCARONA
-    db CHANDELURE
-    db JOLTEON
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
@@ -2422,10 +2422,12 @@ KOBoost:
     ret
 .grim
     call ClearFailures
+    ld [wNumHits], a
     farcall SpecialAttackUpSwitch
     ret
 .moxie
     call ClearFailures
+    ld [wNumHits], a
     farcall AttackUpSwitch
     ret
 

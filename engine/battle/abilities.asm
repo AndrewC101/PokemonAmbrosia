@@ -32,7 +32,6 @@ SniperPokemon:
     db SCEPTILE
     db HORSEA
     db SEADRA
-    db KINGDRA
     db GIBLE
     db GABITE
     db GARCHOMP
@@ -42,34 +41,13 @@ SniperPokemon:
 
 SuperLuckPokemon:
     db MEWTWO
+    db ALAKAZAM
+    db JOLTEON
     db HONCHKROW
+    db WEAVILE
     db BELLSPROUT
     db WEEPINBELL
     db VICTREEBEL
-    db ALAKAZAM
-    db WEAVILE
-    db -1
-
-MoxiePokemon:
-    db GYARADOS
-    db SALAMENCE
-    db HERACROSS
-    db SCEPTILE
-    db TAUROS
-    db LARVITAR
-    db PUPITAR
-    db TYRANITAR
-    db -1
-
-GrimPokemon:
-    db GIRATINA
-    db GENGAR
-    db VOLCARONA
-    db CHANDELURE
-    db JOLTEON
-    db CHARMANDER
-    db CHARMELEON
-    db CHARIZARD
     db -1
 
 SereneGracePokemon:
@@ -293,4 +271,26 @@ UberImmunePokemon:
 ;    db GROWLITHE
 ;    db ARCANINE
 ;    db VOLCARONA
+;    db -1
+
+;MoxiePokemon:
+;    db GYARADOS
+;    db SALAMENCE
+;    db DRACOVISH
+;    db HERACROSS
+;    db TAUROS
+;    db LARVITAR
+;    db PUPITAR
+;    db TYRANITAR
+;    db -1
+
+;GrimPokemon:
+;    db RAIKOU
+;    db GIRATINA
+;    db GENGAR
+;    db KINGDRA
+;    db VOLCARONA
+;    db CHARMANDER
+;    db CHARMELEON
+;    db CHARIZARD
 ;    db -1

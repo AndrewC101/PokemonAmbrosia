@@ -5,6 +5,6 @@
 	next "every aspect of"
 	next "its opponent."
 
-	page "Protected"
-	next "while using"
-	next "TRANSFORM.@"
+	page "TRANSFORMS into"
+	next "the enemy upon"
+	next "switching in.@"

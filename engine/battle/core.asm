@@ -928,8 +928,6 @@ GetPlayerMovePriority:
     jr z, .prankster
     cp RIOLU
     jr z, .prankster
-    cp DITTO
-    jr z, .prankster
     cp MURKROW
     jr z, .prankster
     jr .noPrankster
@@ -982,8 +980,6 @@ GetEnemyMovePriority:
     cp KLEFKI
     jr z, .prankster
     cp RIOLU
-    jr z, .prankster
-    cp DITTO
     jr z, .prankster
     cp MURKROW
     jr z, .prankster
@@ -4497,6 +4493,9 @@ SwitchInEffects:
 
     call GetCurrentMonCore
 ; DevNote - abilities that activate on switching in
+    cp DITTO
+    jp z, .imposter
+
     cp KYOGRE
     jp z, .rain
     cp POLITOED
@@ -4703,6 +4702,9 @@ SwitchInEffects:
     ret
 .safeguard
     farcall SafeguardSwitch
+    ret
+.imposter
+    farcall BattleCommand_Transform
     ret
 .clearField
 	farcall DefogSwitch

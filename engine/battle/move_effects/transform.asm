@@ -13,17 +13,6 @@ BattleCommand_Transform:
 	bit SUBSTATUS_SUBSTITUTE, [hl]
 	jp nz, BattleEffect_ButItFailed
 
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .gotSpecies
-	ld a, [wEnemyMonSpecies]
-.gotSpecies
-	cp DITTO
-	jr nz, .notDitto
-    call BattleCommand_Protect
-.notDitto
-
 	xor a
 	ld [wNumHits], a
 	ld [wFXAnimID + 1], a
@@ -142,9 +131,18 @@ BattleCommand_Transform:
 	ld [wFXAnimID + 1], a
 	ld a, $2
 	ld [wBattleAnimParam], a
-	pop af
-	ld a, SUBSTITUTE
-	call nz, LoadAnim
+
+	;pop af
+	;ld a, SUBSTITUTE
+	;call nz, LoadAnim
+
+    ldh a, [hBattleTurn]
+	and a
+	jr nz, .skipAnim
+    ld a, TRANSFORM
+	call LoadAnim
+.skipAnim
+
 	ld hl, TransformedText
 	jp StdBattleTextbox
 

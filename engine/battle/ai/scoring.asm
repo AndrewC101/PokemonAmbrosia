@@ -5998,9 +5998,9 @@ RainSwitch:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
+	call IsOpponentPresent
+	and a
+	ret z
     ld de, RAIN_DANCE
 	farcall Call_PlayBattleAnim
 	ld hl, DownpourText
@@ -6014,9 +6014,9 @@ SunSwitch:
     ld a, 0
 	ld [wBattleTimeOfDay], a
 	farcall _CGB_BattleColors
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
+	call IsOpponentPresent
+	and a
+	ret z
     ld de, SUNNY_DAY
 	farcall Call_PlayBattleAnim
 	ld hl, SunGotBrightText
@@ -6027,9 +6027,9 @@ SandSwitch:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-    ld a, [wBattleHasJustStarted]
-    and a
-    ret nz
+	call IsOpponentPresent
+	and a
+	ret z
     ld de, ANIM_IN_SANDSTORM
 	farcall Call_PlayBattleAnim
 	ld hl, SandstormBrewedText
@@ -6190,6 +6190,13 @@ AccuracyDownSwitch:
     call PlayDropAnimation
 	ret
 
+TransformSwitch:
+    call IsOpponentPresent
+    and a
+    ret z
+    callfar BattleCommand_Transform
+    ret
+
 PlayBoostAnimation:
     ld de, HOLY_ARMOUR
     call PlayAnimationIfNotFirstTurn
@@ -6204,14 +6211,23 @@ PlayDropAnimation:
 
 PlayAnimationIfNotFirstTurn:
 ; assume animation in de
-    ld a, [wBattleHasJustStarted]
+    call IsOpponentPresent
     and a
-    jr nz, .skipAnim
+    jr z, .skipAnim
 	farcall Call_PlayBattleAnim
 	scf
 	ret
 .skipAnim
     xor a
+    ret
+
+IsOpponentPresent:
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .done
+	ld a, [wEnemyMonSpecies]
+.done
     ret
 
 HasWildBattleBegun:

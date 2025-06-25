@@ -4704,7 +4704,7 @@ SwitchInEffects:
     farcall SafeguardSwitch
     ret
 .imposter
-    farcall BattleCommand_Transform
+    farcall TransformSwitch
     ret
 .clearField
 	farcall DefogSwitch

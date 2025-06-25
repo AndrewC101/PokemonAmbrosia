@@ -7,4 +7,4 @@
 
 	page "SPEED boost in"
 	next "rain. SP.ATK"
-	next "boost on KO."
+	next "boost on KO.@"

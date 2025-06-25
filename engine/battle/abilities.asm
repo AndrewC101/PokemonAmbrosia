@@ -125,7 +125,6 @@ ThickFatPokemon:
     db MAMOSWINE
     db PALKIA
     db RATICATE
-    db DRACOVISH
     db -1
 
 TechnicianPokemon:

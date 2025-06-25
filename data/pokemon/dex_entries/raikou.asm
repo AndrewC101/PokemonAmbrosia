@@ -7,4 +7,4 @@
 
 	page "SPEED boost on"
 	next "switch. SP.ATK"
-	next "boost on KO."
+	next "boost on KO.@"

@@ -5998,9 +5998,9 @@ RainSwitch:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	call IsOpponentPresent
-	and a
-	ret z
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
     ld de, RAIN_DANCE
 	farcall Call_PlayBattleAnim
 	ld hl, DownpourText
@@ -6014,9 +6014,9 @@ SunSwitch:
     ld a, 0
 	ld [wBattleTimeOfDay], a
 	farcall _CGB_BattleColors
-	call IsOpponentPresent
-	and a
-	ret z
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
     ld de, SUNNY_DAY
 	farcall Call_PlayBattleAnim
 	ld hl, SunGotBrightText
@@ -6027,9 +6027,9 @@ SandSwitch:
 	ld [wBattleWeather], a
 	ld a, 255
 	ld [wWeatherCount], a
-	call IsOpponentPresent
-	and a
-	ret z
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
     ld de, ANIM_IN_SANDSTORM
 	farcall Call_PlayBattleAnim
 	ld hl, SandstormBrewedText

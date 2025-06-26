@@ -1184,9 +1184,8 @@ StickyWebText:
 	prompt
 
 TrickRoomText:
-	text "<USER>"
-	line "twisted the"
-	cont "dimensions!"
+	text "The dimensions"
+	line "were twisted!"
 	prompt
 
 TrickRoomEndedText:

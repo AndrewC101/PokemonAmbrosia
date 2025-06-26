@@ -6042,6 +6042,8 @@ SpikesSwitch:
 	jr z, .got_screens
 	ld hl, wPlayerScreens
 .got_screens
+    bit SCREENS_SPIKES, [hl]
+    ret nz
 	set SCREENS_SPIKES, [hl]
     ld de, SPIKES
     call PlayAnimationIfNotFirstTurn
@@ -6055,6 +6057,8 @@ StealthRockSwitch:
 	jr z, .got_screens
 	ld hl, wPlayerScreens
 .got_screens
+    bit SCREENS_STEALTH_ROCK, [hl]
+    ret nz
 	set SCREENS_STEALTH_ROCK, [hl]
     ld de, STEALTH_ROCK
     call PlayAnimationIfNotFirstTurn
@@ -6068,6 +6072,8 @@ ToxicSpikesSwitch:
 	jr z, .got_screens
 	ld hl, wPlayerScreens
 .got_screens
+    bit SCREENS_TOXIC_SPIKES, [hl]
+    ret nz
 	set SCREENS_TOXIC_SPIKES, [hl]
     ld de, TOXIC_SPIKES
     call PlayAnimationIfNotFirstTurn

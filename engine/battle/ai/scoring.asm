@@ -6191,9 +6191,8 @@ AccuracyDownSwitch:
 	ret
 
 TransformSwitch:
-    call IsOpponentPresent
-    and a
-    ret z
+    call ShouldPlayAnim
+    ret nc
     callfar BattleCommand_Transform
     ret
 
@@ -6211,9 +6210,8 @@ PlayDropAnimation:
 
 PlayAnimationIfNotFirstTurn:
 ; assume animation in de
-    call IsOpponentPresent
-    and a
-    jr z, .skipAnim
+    call ShouldPlayAnim
+    jr nc, .skipAnim
 	farcall Call_PlayBattleAnim
 	scf
 	ret
@@ -6221,14 +6219,30 @@ PlayAnimationIfNotFirstTurn:
     xor a
     ret
 
-IsOpponentPresent:
+ShouldPlayAnim:
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .checkEnemyPresent
+	ld a, [wBattleHasJustStarted]
+	and a
+	jr nz, .no
+	jr .yes
+.checkEnemyPresent
     ldh a, [hBattleTurn]
 	and a
 	ld a, [wBattleMonSpecies]
-	jr nz, .done
+	jr nz, .gotEnemy
 	ld a, [wEnemyMonSpecies]
-.done
+.gotEnemy
+    and a
+    jr z, .no
+.yes
+    scf
     ret
+.no
+    xor a
+    ret
+
 
 HasWildBattleBegun:
     ld a, [wBattleMode]

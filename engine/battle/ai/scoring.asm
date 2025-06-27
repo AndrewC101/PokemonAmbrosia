@@ -1342,7 +1342,7 @@ AI_Smart_StealthRock:
 	jp z, StandardDiscourage
 
 ; use otherwise
-    jp StrongEncourage
+    jp DoIt
 
 AI_Smart_ToxicSpikes:
 ; don't use if already up
@@ -1372,7 +1372,7 @@ AI_Smart_StickyWeb:
 	jp z, StandardDiscourage
 
 ; use otherwise
-    jp StrongEncourage
+    jp DoIt
 
 AI_Smart_Defog:
 ; don't use if player has only one pokemon left
@@ -2275,7 +2275,10 @@ AI_Smart_PriorityHit:
 ; never use extremespeed against a ghost type
 	ld a, [wEnemyMoveStruct + MOVE_ANIM]
 	cp EXTREMESPEED
-	jr nz, .notESpeed
+	jr z, .ghostImmune
+	cp MACH_PUNCH
+	jr nz, .notGhostImmune
+.ghostImmune
     ld a, [wBattleMonType1]
 	cp GHOST
 	jp z, AIDiscourageMove
@@ -2283,7 +2286,7 @@ AI_Smart_PriorityHit:
 	cp GHOST
 	jp z, AIDiscourageMove
 
-.notESpeed
+.notGhostImmune
 ; Dismiss this move if the player is flying or underground.
 	ld a, [wPlayerSubStatus3]
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -2633,10 +2636,7 @@ AI_Smart_KingsShield:
 
 .massiveEncourage
 ; this must overcome encouragement from a potential ko
-rept 12
-	dec [hl]
-endr
-    ret
+    jp DoIt
 
 .discourage
     inc [hl]
@@ -3063,11 +3063,9 @@ AI_Smart_SunnyDay:
 ; encourage if AI is a Chlorophyll mon
     ld a, [wEnemyMonSpecies]
     cp VENUSAUR
-    jr z, .encourage
-    cp VICTREEBEL
-    jr z, .encourage
+    jp z, DoIt
     cp EXEGGUTOR
-    jr z, .encourage
+    jp z, DoIt
 ; discourage if we will be koed
     call ShouldAIBoost
     jr nc, .discourage
@@ -3088,11 +3086,6 @@ AI_Smart_SunnyDay:
 	push hl
 	ld hl, SunnyDayMoves
 	jp AI_Smart_WeatherMove
-.encourage
-rept 12
-    dec [hl] ; enough to overcome KO as it could be SOLARBEAM
-endr
-    ret
 .discourage
     inc [hl]
     inc [hl]
@@ -3837,9 +3830,9 @@ AI_Smart_SuckerPunch:
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
-	ret nz
+	jp nz, AI_Smart_PriorityHit
 	call AI_50_50
-	ret c
+	jp c, AI_Smart_PriorityHit
 rept 12
 	inc [hl]
 endr
@@ -3922,8 +3915,8 @@ AI_Smart_Taunt:
 
 ; if players last move had 0 power - 50% chance to encourage
 	ld a, [wLastPlayerMove]
-	call AIGetEnemyMove
-	ld a, [wEnemyMoveStruct + MOVE_POWER]
+	call AIGetPlayerMove
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
 	jr nz, .discourage
 	call AI_50_50
@@ -5120,6 +5113,10 @@ AIHasMoveInArray:
 	pop hl
 	ret
 
+DoIt:
+rept 7
+    dec [hl]
+endr
 StrongEncourage:
 	dec [hl]
 StandardEncourage:

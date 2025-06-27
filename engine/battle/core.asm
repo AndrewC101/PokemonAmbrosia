@@ -1268,7 +1268,6 @@ Core_RegeneratorPokemon:
     db -1
 
 Core_MoxiePokemon:
-    db GYARADOS
     db SALAMENCE
     db DRACOVISH
     db HERACROSS
@@ -1283,7 +1282,6 @@ Core_GrimPokemon:
     db GIRATINA
     db GENGAR
     db KINGDRA
-    db VOLCARONA
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD

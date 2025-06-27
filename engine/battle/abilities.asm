@@ -273,7 +273,6 @@ UberImmunePokemon:
 ;    db -1
 
 ;MoxiePokemon:
-;    db GYARADOS
 ;    db SALAMENCE
 ;    db DRACOVISH
 ;    db HERACROSS
@@ -288,7 +287,6 @@ UberImmunePokemon:
 ;    db GIRATINA
 ;    db GENGAR
 ;    db KINGDRA
-;    db VOLCARONA
 ;    db CHARMANDER
 ;    db CHARMELEON
 ;    db CHARIZARD

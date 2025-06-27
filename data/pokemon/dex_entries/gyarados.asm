@@ -6,5 +6,5 @@
 	next "world conflict."
 
 	page "lowers foes"
-	next "ATTACK. ATTACK"
-	next "boost on KO.@"
+	next "ATTACK upon"
+	next "switch in.@"

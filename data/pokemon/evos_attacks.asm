@@ -3084,12 +3084,11 @@ SalamenceEvosAttacks:
 	db 40, DOUBLE_EDGE
 	db 45, DRAGON_CLAW
 	db 50, FLY
+	db 50, DEFOG
 	db 53, DRAGON_DANCE
 	db 55, OUTRAGE
-	db 58, DEFOG
 	db 60, DRACO_METEOR
-	db 63, VOLT_TACKLE
-	db 66, FLARE_BLITZ
+	db 65, FLARE_BLITZ
 	db 70, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
@@ -3452,10 +3451,10 @@ KingdraEvosAttacks:
 	db 40, DRAGON_PULSE
 	db 45, DRAGON_CLAW
 	db 50, HYDRO_PUMP
-	db 53, DRAGON_DANCE
-	db 56, OUTRAGE
-	db 60, DRACO_IMPACT
-	db 65, DRACO_METEOR
+	db 55, DRAGON_DANCE
+	db 60, OUTRAGE
+	db 65, DRACO_IMPACT
+	db 75, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 CottoneeEvosAttacks:

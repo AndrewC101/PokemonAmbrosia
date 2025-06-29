@@ -1700,7 +1700,7 @@ HandleDefrost:
 	ret nz
 
 	call BattleRandom
-	cp 10 percent
+	cp 20 percent
 	ret nc
 	xor a
 	ld [wBattleMonStatus], a
@@ -1721,7 +1721,7 @@ HandleDefrost:
 	and a
 	ret nz
 	call BattleRandom
-	cp 10 percent
+	cp 20 percent
 	ret nc
 	xor a
 	ld [wEnemyMonStatus], a
@@ -2406,7 +2406,20 @@ FaintEnemyPokemon:
 ; ==== Moxie and Grim ======
 ; ==========================
 KOBoost:
+    push bc
     call GetCurrentMonCore
+    ld b, a
+    ld a, [hli]
+    and a
+    jr nz, .cont
+    ld a, [hl]
+    and a
+    jr nz, .cont
+    pop bc
+    ret
+.cont
+    ld a, b
+    pop bc
 	ld hl, Core_MoxiePokemon
 	ld de, 1
 	call IsInArray
@@ -9198,8 +9211,10 @@ GetCurrentMonCore:
 .trainer
     ldh a, [hBattleTurn]
 	and a
+	ld hl, wBattleMonHP
 	ld a, [wBattleMonSpecies]
 	jr z, .done
+	ld hl, wEnemyMonHP
 	ld a, [wEnemyMonSpecies]
 .done
     ret

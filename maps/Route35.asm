@@ -24,7 +24,7 @@ Route35_MapScripts:
 ; Pokemon which always appear
     appear ROUTE35_FIELDMON_3
 
-    random 2
+    random 3
     ifequal 1, .spawn2
     disappear ROUTE35_FIELDMON_2
     sjump .next

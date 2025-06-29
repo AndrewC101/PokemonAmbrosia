@@ -604,6 +604,7 @@ StevenWinsAfterBattleText:
     para "You will be a"
     line "great leader"
     cont "one day."
+    done
 StevenSeenText:
     text "I am sorry..."
 
@@ -819,6 +820,7 @@ LeonWinsAfterBattleText:
     para "But no shame in"
     line "being beaten by"
     cont "the best."
+    done
 LeonSeenText:
     text "It's a real shame"
     line "I didn't get here"

@@ -81,8 +81,8 @@ CharmanderEvosAttacks:
 	db 13, SMOKESCREEN
 	db 17, FLAME_WHEEL
 	db 25, SLASH
-	db 36, FLAMETHROWER
-	db 50, FIRE_BLAST
+	db 45, FLAMETHROWER
+	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CharmeleonEvosAttacks:
@@ -94,8 +94,8 @@ CharmeleonEvosAttacks:
 	db 20, SLASH
 	db 25, WILL_O_WISP
 	db 30, LAVA_PLUME
-	db 37, FLAMETHROWER
-	db 50, FIRE_BLAST
+	db 45, FLAMETHROWER
+	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 CharizardEvosAttacks:
@@ -104,11 +104,11 @@ CharizardEvosAttacks:
 	db 25, WILL_O_WISP
 	db 30, LAVA_PLUME
 	db 36, WING_ATTACK
-	db 36, FLAMETHROWER
 	db 40, AIR_SLASH
-	db 45, SOLARBEAM
-	db 50, FIRE_BLAST
-	db 55, ANCIENTPOWER
+	db 42, ANCIENTPOWER
+	db 45, FLAMETHROWER
+	db 50, SOLARBEAM
+	db 55, FIRE_BLAST
 	db 60, FLARE_BLITZ
 	db 65, DRAGON_DANCE
 	db 0 ; no more level-up moves

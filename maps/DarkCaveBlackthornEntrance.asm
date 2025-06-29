@@ -236,19 +236,19 @@ InvaderJackAfterBattleText:
 	done
 
 DarkCaveBlackthornEntranceFieldMon1Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveBlackthornEntrancePokemonAttacksText, 80, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveBlackthornEntrancePokemonAttacksText, 64, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
     end
 
 DarkCaveBlackthornEntranceFieldMon2Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 72, 0, .script
+	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 62, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     end
 
 DarkCaveBlackthornEntranceFieldMon3Script:
-	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 71, 0, .script
+	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 61, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     end

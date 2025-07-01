@@ -459,14 +459,9 @@ AI_Smart_Switch:
 ; possibly switch if enemy is setup bait
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ
-	jp nz, .checkSetUpAndSwitchIfPlayerSetsUp
-    ;ld a, [wEnemyMonStatus]
-	;and SLP
-	;jp nz, .checkSetUpAndSwitchIfPlayerSetsUp50
+	jp nz, .checkSetupAndSwitchIfPlayerSetsUp
 
 ; switch if choice locked into a NVE move
-   ; call CanAI3HKO
-   ; jr c, .not_encored
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
@@ -491,7 +486,7 @@ AI_Smart_Switch:
 	add hl, bc
 	ld a, [hl]
 	and PP_MASK
-	jp z, .switch
+	jr z, .switch
 .not_encored
 
 ; don't switch if enemy is weakened, just let it die
@@ -501,7 +496,7 @@ AI_Smart_Switch:
 ; switch if enemy accuracy at -2 or lower
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
-	jp c, .switch
+	jr c, .switch
 
 ; switch if enemy attack or special attack at -2 or lower, unless the other offense is boosted
     ld a, [wEnemyAtkLevel]
@@ -512,10 +507,10 @@ AI_Smart_Switch:
     jr nc, .magicGuard
     ld a, [wEnemyAtkLevel]
 	cp BASE_STAT_LEVEL - 1
-	jp c, .switch
+	jr c, .checkSetupAndSwitchIfWeCantKO
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL - 1
-	jp c, .switch
+	jr c, .checkSetupAndSwitchIfWeCantKO
 
 .magicGuard
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -526,7 +521,7 @@ AI_Smart_Switch:
 ; switch if enemy is cursed
     ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_CURSE, a
-	jp nz, .switch
+	jr nz, .checkSetupAndSwitchIfWeCantKO
 
 ; if enemy afflicted with toxic
 ; 50% chance to switch when above 50% hp if not set up
@@ -535,32 +530,25 @@ AI_Smart_Switch:
 	bit SUBSTATUS_TOXIC, a
     jr z, .checkLeechSeed
 	call AICheckEnemyHalfHP
-	jp nc, .switch
-	jp .checkSetUpAndSwitch50
+	jr nc, .checkSetupAndSwitchIfWeCantKO
+	call AI_50_50
+	jr c, .checkLeechSeed
+	jr .checkSetupAndSwitchIfWeCantKO
 
 .checkLeechSeed
-; 50% chance to switch per turn if enemy afflicted with leech seed
+; 30% chance to switch per turn if enemy afflicted with leech seed
     ld a, [wEnemySubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
-	jr nz, .switch50
+	ret z
+	call Random
+	cp 70 percent + 1
+	ret c
+	jr .checkSetupAndSwitchIfWeCantKO
 
-    ret
-
-.checkSetUpAndSwitchIfPlayerSetsUp
+.checkSetupAndSwitchIfPlayerSetsUp
 ; don't switch if enemy mon is already set up
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-
+    call IsAISetup
+    ret c
 ; switch if player attempts to set up
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
     push hl
@@ -574,55 +562,13 @@ AI_Smart_Switch:
 	pop hl
 	jr c, .switch
 	ret
-
-;.checkSetUpAndSwitchIfPlayerSetsUp50
-; don't switch if enemy mon is already set up
-;    ld a, [wEnemyAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	ret nc
-;   ld a, [wEnemySAtkLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	ret nc
-;   ld a, [wEnemyDefLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	ret nc
-;   ld a, [wEnemySDefLevel]
-;	cp BASE_STAT_LEVEL + 2
-;	ret nc
-
-; switch if player attempts to set up
-;	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-;   push hl
-;   push de
-;	push bc
-;	ld hl, BoostingMoveEffects
-;	ld de, 1
-;	call IsInArray
-;	pop bc
-;	pop de
-;	pop hl
-;	jr c, .switch50
-;	ret
-
-.checkSetUpAndSwitch50
-; don't switch if enemy mon is already set up
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySAtkLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemyDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-    ld a, [wEnemySDefLevel]
-	cp BASE_STAT_LEVEL + 2
-	ret nc
-	jr .switch50
-
-.switch50
-    call AI_50_50
-	ret c
+	
+.checkSetupAndSwitchIfWeCantKO
+    call CanAIKO
+    ret c
+    call IsAISetup
+    ret c
+    ; fallthrough
 .switch
 ; can't switch if trapped
 	ld a, [wBattleMonSpecies]
@@ -638,6 +584,26 @@ AI_Smart_Switch:
     ld a, $1
     ld [wEnemyIsSwitching], a
 	ret
+	
+IsAISetup:
+; don't switch if enemy mon is already set up
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .yes
+    ld a, [wEnemySAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jr nc, .yes
+    ;ld a, [wEnemyDefLevel]
+	;cp BASE_STAT_LEVEL + 2
+	;jr nc, .yes
+    ;ld a, [wEnemySDefLevel]
+	;cp BASE_STAT_LEVEL + 2
+	;jr nc, .yes
+    xor a
+    ret
+.yes
+    scf
+    ret
 
 ; DevNote - this is commented out because this is stupid and will not be used
 AI_Setup:
@@ -4027,6 +3993,13 @@ ShouldAIBoost:
     ld a, [wEnemyMonSpecies]
     call DoesPokemonHaveUberImmunity
    	jr c, .noForceSwitch
+
+    ld a, [wCurPlayerMove]
+	call AIGetPlayerMove
+    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+    cp EFFECT_FORCE_SWITCH
+    jp z, .dontBoost
+
     ld b, EFFECT_FORCE_SWITCH
 	call PlayerHasMoveEffect
 	jr c, .maybeDontBoost

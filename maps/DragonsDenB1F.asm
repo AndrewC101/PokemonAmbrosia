@@ -685,6 +685,9 @@ Text_NoRoomForDragonFang:
 	line "carry any more"
 	cont "items."
 	done
+
+DragonsDenB1FAmbrosiaScript:
+    itemball AMBROSIA
 	
 InvaderLoganScript:
 	trainer INVADER, LOGAN, EVENT_BEAT_INVADER_LOGAN, InvaderLoganSeenText, InvaderLoganBeatenText, InvaderLoganVictoryText, .Script
@@ -760,7 +763,6 @@ DragonsDenB1F_MapEvents:
 	bg_event 18, 24, BGEVENT_READ, DragonShrineSignpost
 	bg_event 33, 29, BGEVENT_ITEM, DragonsDenB1FHiddenRevive
 	bg_event 21, 17, BGEVENT_ITEM, DragonsDenB1FHiddenMaxPotion
-	bg_event 35,  9, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
 	object_event 32, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
@@ -779,4 +781,6 @@ DragonsDenB1F_MapEvents:
 	object_event 34, 15, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 36, 13, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 19,  7, SPRITE_WILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderLoganScript, -1
+	object_event 35, 9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, DragonsDenB1FAmbrosiaScript, EVENT_DRAGONS_DEN_B1F_HIDDEN_MAX_ELIXER
+
 

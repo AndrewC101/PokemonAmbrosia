@@ -34,8 +34,8 @@ CeruleanCave_MapScripts:
     appear CERULEANCAVE_GENESECT
     endcallback
 
-CeruleanCaveHiddenAmbrosia:
-	hiddenitem AMBROSIA, EVENT_CERULEAN_CAVE_HIDDEN_AMBROSIA
+CeruleanCaveAmbrosiaScript:
+	itemball AMBROSIA
 
 CeruleanCaveHiddenMasterBall:
 	hiddenitem MASTER_BALL, EVENT_CERULEAN_CAVE_HIDDEN_MASTER_BALL
@@ -284,7 +284,6 @@ CeruleanCave_MapEvents:
 	coord_event 27, 46, SCENE_DEFAULT, FightAizenScript
 
 	def_bg_events
-	bg_event 19, 37, BGEVENT_ITEM, CeruleanCaveHiddenAmbrosia
 	bg_event 19, 45, BGEVENT_ITEM, CeruleanCaveHiddenMasterBall
 	bg_event 29, 31, BGEVENT_ITEM, CeruleanCaveHiddenExpertBelt
 	bg_event 21, 31, BGEVENT_ITEM, CeruleanCaveHiddenLifeOrb
@@ -312,3 +311,4 @@ CeruleanCave_MapEvents:
 	object_event  9, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 1, CeruleanCaveFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 23, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, CeruleanCaveFieldMon9Script, EVENT_FIELD_MON_9
 	object_event 23, 48, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, CeruleanCaveFieldMon10Script, EVENT_FIELD_MON_10
+	object_event 19, 37, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, CeruleanCaveAmbrosiaScript, EVENT_CERULEAN_CAVE_HIDDEN_AMBROSIA

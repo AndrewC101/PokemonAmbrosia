@@ -4536,8 +4536,6 @@ SwitchInEffects:
 
     cp GENESECT
     jp z, .spAtkUp
-    cp PORYGONZ
-    jp z, .spAtkUp
     cp ESPEON
     jp z, .spAtkUp
     cp RAICHU

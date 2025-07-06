@@ -5,6 +5,6 @@
 	next "to travel alien"
 	next "dimensions."
 
-	page "S.ATK boost upon"
-	next "switch in. Can"
-	next "spam HYPER BEAM.@"
+	page "HYPER BEAM"
+	next "does not need"
+	next "to recharge.@"

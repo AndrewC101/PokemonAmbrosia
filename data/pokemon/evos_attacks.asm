@@ -2874,7 +2874,7 @@ BeldumEvosAttacks:
 	db 0 ; no more level-up moves
 
 MetangEvosAttacks:
-	db EVOLVE_LEVEL, 50, METAGROSS
+	db EVOLVE_LEVEL, 48, METAGROSS
 	db 0 ; no more evolutions
 	db 1, CONFUSION
 	db 1, METAL_CLAW
@@ -2884,8 +2884,8 @@ MetangEvosAttacks:
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
 	db 43, IRON_HEAD
-	db 46, AGILITY
-	db 51, METEOR_MASH
+	db 45, AGILITY
+	db 49, METEOR_MASH
 	db 55, HYPER_BEAM
 	db 60, EXPLOSION
 	db 0 ; no more level-up moves
@@ -2897,8 +2897,8 @@ MetagrossEvosAttacks:
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
 	db 43, IRON_HEAD
-	db 46, AGILITY
-	db 50, METEOR_MASH
+	db 45, AGILITY
+	db 48, METEOR_MASH
 	db 55, TRICK_ROOM
 	db 60, HYPER_BEAM
 	db 60, EXPLOSION

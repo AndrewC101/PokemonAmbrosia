@@ -1216,6 +1216,7 @@ Core_MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
+    db MEW
     db -1
 
 Core_LevitatePokemon:
@@ -1254,6 +1255,7 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db LATIAS
     db LATIOS
     db ROTOM
+    db MEW
     db -1
 
 Core_RegeneratorPokemon:
@@ -1265,6 +1267,7 @@ Core_RegeneratorPokemon:
     db HO_OH
     db ZYGARDE
     db VENUSAUR
+    db MEW
     db -1
 
 Core_MoxiePokemon:
@@ -4621,8 +4624,6 @@ SwitchInEffects:
     cp EEVEE
     jp z, .randomStatUp
     cp DUNSPARCE
-    jp z, .randomStatUp
-    cp MEW
     jp z, .randomStatUp
 
     cp SMEARGLE

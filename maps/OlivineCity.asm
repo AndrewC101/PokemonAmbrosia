@@ -493,7 +493,7 @@ YunaScript:
     closetext
     end
 YunaWinAfterBattleText:
-    text "Hey it's ok"
+    text "Hey it's ok."
 
     para "You just have"
     line "to keep smiling."

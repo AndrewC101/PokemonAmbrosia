@@ -64,7 +64,7 @@ EcruteakLugiaSpeechHouseGrampsText:
     line "my guilt."
 
     para "I knew then"
-    line "that HO OH had"
+    line "that HO-OH had"
     cont "forgiven me."
 
     para "I wept like a"

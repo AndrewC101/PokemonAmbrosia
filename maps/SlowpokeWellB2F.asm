@@ -29,7 +29,7 @@ SlowpokeWellB2FGymGuideScript:
 	iftrue .GotLeftovers
 	writetext SlowpokeWellB2FGymGuideText
 	promptbutton
-	verbosegiveitem WISE_GLASSES
+	verbosegiveitem CHOICE_SPECS
 	iffalse .NoRoom
 	setevent EVENT_GOT_WISE_GLASSES_IN_SLOWPOKE_WELL
 .NoRoom:

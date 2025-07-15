@@ -405,7 +405,7 @@ BirdKeeperVanceLegendaryBirdsText:
 
 	para "MOLTRES"
 
-	para "HO OH"
+	para "HO-OH"
 
 	para "LUGIA"
 

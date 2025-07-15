@@ -355,14 +355,14 @@ VioletGymGuideText:
 	line "FLYING type"
 	cont "#MON."
 
-	para "These wont do"
+	para "These can't do"
 	line "much damage to"
 	cont "a good ROCK or"
 	cont "STEEL type."
 
 	para "DARK CAVE might"
-	line "have some such"
-	cont "#MON"
+	line "have such"
+	cont "#MON."
 	done
 
 VioletGymGuideWinText:

@@ -2822,6 +2822,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+    call AssaultVestSpDefBoost
 	call SandstormSpDefBoost
 
 	ld a, [wEnemyScreens]

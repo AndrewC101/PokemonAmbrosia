@@ -6110,6 +6110,22 @@ SafeguardSwitch:
     ld hl, CoveredByVeilText
 	jp StdBattleTextbox
 
+NaturalCureSwitch:
+    ld hl, wBattleMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_status
+	ld hl, wEnemyMonStatus
+.got_status
+    ld a, [hl]
+    and a
+    ret z
+    xor a
+    ld [hl], a
+    ld de, RECOVER
+    call PlayAnimationIfNotFirstTurn
+    ret
+
 DefogSwitch:
     ld de, DEFOG
     call PlayAnimationIfNotFirstTurn

@@ -5,6 +5,6 @@
 	next "free spirited"
 	next "adventurer."
 
-	page "Move effects"
-	next "are more likely"
-	next "to occur.@"
+	page "Move effects are"
+	next "more likely. Heals"
+	next "status on switch.@"

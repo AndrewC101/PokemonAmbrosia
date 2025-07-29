@@ -4602,7 +4602,7 @@ SwitchInEffects:
     jp z, .defenseMode
 
     cp CELEBI
-    jp z, .spDefUp
+    jp z, .celebi
     cp CLEFABLE
     jp z, .spDefUp
     cp UMBREON
@@ -4680,8 +4680,17 @@ SwitchInEffects:
     jp z, .safeguard
     cp PALKIA
     jp z, .safeguard
+
     cp STARMIE
-    jp z, .safeguard
+    jp z, .naturalCure
+    cp SCEPTILE
+    jp z, .naturalCure
+    cp CHANSEY
+    jp z, .naturalCure
+    cp BLISSEY
+    jp z, .naturalCure
+    cp SHAYMIN
+    jp z, .naturalCure
     ret
 
 .rain
@@ -4727,6 +4736,12 @@ SwitchInEffects:
 .spAtkUp
     farcall SpecialAttackUpSwitch
 	ret
+.naturalCure
+    farcall NaturalCureSwitch
+    ret
+.celebi
+    farcall NaturalCureSwitch
+    ; fallthrough
 .spDefUp
     farcall SpecialDefenseUpSwitch
 	ret

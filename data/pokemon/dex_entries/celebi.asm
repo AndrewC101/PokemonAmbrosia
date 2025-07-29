@@ -6,5 +6,5 @@
 	next "forest."
 
 	page "SPECIAL DEFENSE"
-	next "increases upon"
-	next "entering battle.@"
+	next "boost and heals"
+	next "status on switch.@"

@@ -6,5 +6,5 @@
 	next "into space."
 
 	page "Has increased"
-	next "ACCURACY. Raises"
-	next "SAFEGUARD.@"
+	next "ACCURACY. Heals"
+	next "status on switch.@"

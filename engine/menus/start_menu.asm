@@ -228,12 +228,51 @@ StartMenu::
     ld b, a
     ldh a, [hMinutes]
     ld c, a
-    decoord 1, 16
+    decoord 1, 15
     farcall PrintHoursMins
+
+	ld hl, .MenuTodayText
+	bccoord 1, 14
+	call PlaceHLTextAtBC
+
+    hlcoord 1, 16
+	call .PlaceWeatherString
+
     pop hl
     pop de
     pop bc
     ret
+
+.MenuTodayText:
+	text_far _GearTodayText
+	text_end
+
+.PlaceWeatherString:
+	push hl
+	ld a, [wFieldWeather]
+	ld e, a
+	ld d, 0
+	ld hl, .WeatherStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+
+.WeatherStrings:
+; entries correspond to wCurDay constants (see constants/wram_constants.asm)
+	dw .ClearSkies
+	dw .Raining
+	dw .Sunny
+	dw .Sandy
+
+.ClearSkies:   db "CLEAR@"
+.Raining:      db "RAINING@"
+.Sunny:        db "SUNNY@"
+.Sandy:        db "SANDY@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
@@ -324,7 +363,7 @@ endr
 	ret
 
 .DrawMenuClockTextBox:
-	jp ._DrawMenuClockTextBox
+	jr ._DrawMenuClockTextBox
 
 .PrintMenuClock:
 	call .IsMenuClockOn
@@ -335,8 +374,8 @@ endr
 ._DrawMenuClockTextBox:
 	call .IsMenuClockOn
 	ret z
-    hlcoord 0, 15
-	lb bc, 1, 8
+    hlcoord 0, 13
+	lb bc, 3, 8
 	jp Textbox
 
 .IsMenuClockOn:

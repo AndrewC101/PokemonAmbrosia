@@ -434,6 +434,8 @@
     const EVENT_LIGHTHOUSE_THUNDER_STONE
     const EVENT_ROUTE44_WATER_STONE
     const EVENT_GOT_UNOWN_AMBROSIA
+    const EVENT_BEAT_MASTER_JONATHAN
+    const EVENT_BEAT_JONATHAN
 
     ; ======================================
     ; DevNote - here

@@ -63,7 +63,7 @@ BattleRouletteReceptionistScript:
     ifequal 17, .Bruno
     ifequal 18, .Karen
     ifequal 19, .Adam
-    ifequal 20, .Drake
+    ifequal 20, .Jonathan
     ifequal 21, .Lance
     ifequal 22, .Steven
     ifequal 23, .Wallace
@@ -345,15 +345,15 @@ BattleRouletteReceptionistScript:
     loadtrainer ADAM, ADAM_ELITE
     sjump .finish
 
-.Drake
+.Jonathan
     checkevent EVENT_BEAT_RED
-    iffalse .Drake1
-    loadtrainer SOLDIER, MASTER_DRAKE
+    iffalse .Jonathan1
+    loadtrainer JONATHAN, MASTER_JONATHAN
     sjump .finish
-.Drake1
-    checkevent EVENT_BEAT_SOLDIER_5
+.Jonathan1
+    checkevent EVENT_BEAT_WALLACE
     iffalse .sample
-    loadtrainer SOLDIER, SOLDIER_5
+    loadtrainer JONATHAN, JONATHAN_1
     sjump .finish
 
 .Lance
@@ -1548,7 +1548,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer SOLDIER, SOLDIER_5
+    loadtrainer JONATHAN, JONATHAN_1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1865,8 +1865,8 @@ BattleArcadeReceptionistScript:
 	ifequal 23, .LeonPlayer
 	ifequal 24, .WallacePlayer
     ifequal 25, .AdamPlayer
-    ifequal 26, .LancePlayer
-    ifequal 27, .GreenPlayer
+    ifequal 26, .JonathanPlayer
+    ifequal 27, .LancePlayer
     ifequal 28, .BluePlayer
     ifequal 29, .RedPlayer
 	ifequal 30, .AshPlayer
@@ -1923,8 +1923,8 @@ BattleArcadeReceptionistScript:
 	ifequal 23, .LeonEnemy
 	ifequal 24, .WallaceEnemy
     ifequal 25, .AdamEnemy
-    ifequal 26, .LanceEnemy
-    ifequal 27, .GreenEnemy
+    ifequal 26, .JonathanEnemy
+    ifequal 27, .LanceEnemy
     ifequal 28, .BlueEnemy
     ifequal 29, .RedEnemy
     ifequal 30, .AshEnemy
@@ -2466,32 +2466,32 @@ BattleArcadeReceptionistScript:
 	loadtrainer RED, MASTER_RED
 	sjump .beginBattle
 
-.GreenPlayer
-    writetext PlayAsGreenText
+.JonathanPlayer
+    writetext PlayAsJonathanText
     yesorno
     iffalse .ChoosePlayerCharacter
-	setval LEAF
+	setval JONATHAN
 	writemem wOtherTrainerClass
     scall WhichVariantChoice
-    ifequal TRUE, .MasterGreenPlayer
-	setval GREEN_ARCADE
+    ifequal TRUE, .MasterJonathanPlayer
+	setval JONATHAN_ARCADE
 	sjump .RedPlayerDone
-.MasterGreenPlayer
-	setval MASTER_GREEN
-.GreenPlayerDone
+.MasterJonathanPlayer
+	setval MASTER_JONATHAN
+.JonathanPlayerDone
 	writemem wOtherTrainerID
 	special OverridePlayerParty
     sjump .chooseEnemy
-.GreenEnemy
-    writetext PlayAgainstGreenText
+.JonathanEnemy
+    writetext PlayAgainstJonathanText
     yesorno
     iffalse .ChooseEnemyCharacter
     scall WhichVariantChoice
-    ifequal TRUE, .MasterGreenEnemy
-	loadtrainer LEAF, GREEN_ARCADE
+    ifequal TRUE, .MasterJonathanEnemy
+	loadtrainer JONATHAN, JONATHAN_ARCADE
 	sjump .beginBattle
-.MasterGreenEnemy
-	loadtrainer LEAF, MASTER_GREEN
+.MasterJonathanEnemy
+	loadtrainer JONATHAN, MASTER_JONATHAN
 	sjump .beginBattle
 
 .OakPlayer
@@ -2535,7 +2535,7 @@ BattleArcadeReceptionistScript:
 	db "MS@"
 	db "SU@"
 	db "ER@"
-    db "JN@"
+    db "JA@"
     db "WL@"
     db "BL@"
 	db "SB@"
@@ -2548,8 +2548,8 @@ BattleArcadeReceptionistScript:
     db "LE@"
     db "WC@"
     db "AD@"
+    db "JN@"
     db "LN@"
-    db "GR@"
     db "BU@"
     db "RD@"
     db "AS@"
@@ -2578,7 +2578,7 @@ BattleArcadeReceptionistScript:
 	db "MS@"
 	db "SU@"
 	db "ER@"
-    db "JN@"
+    db "JA@"
     db "WL@"
     db "BL@"
 	db "SB@"
@@ -2615,7 +2615,7 @@ BattleArcadeReceptionistScript:
 	db "MS@"
 	db "SU@"
 	db "ER@"
-    db "JN@"
+    db "JA@"
     db "WL@"
     db "BL@"
 	db "SB@"
@@ -2648,7 +2648,7 @@ BattleArcadeReceptionistScript:
 	db "MS@"
 	db "SU@"
 	db "ER@"
-    db "JN@"
+    db "JA@"
     db "WL@"
     db "BL@"
 
@@ -2945,14 +2945,14 @@ PlayAgainstLanceText:
     line "LANCE?"
     done
 
-PlayAsGreenText:
+PlayAsJonathanText:
     text "Play as"
-    line "GREEN?"
+    line "JONATHAN?"
     done
 
-PlayAgainstGreenText:
+PlayAgainstJonathanText:
     text "Play against"
-    line "GREEN?"
+    line "JONATHAN?"
     done
 
 PlayAsBlueText:

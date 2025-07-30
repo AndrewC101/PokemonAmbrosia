@@ -373,9 +373,8 @@ WifeIntroText:
 	line "live here with my"
 	cont "husband."
 	para "You have met our"
-	line "son ADAM, he takes"
-	cont "his ELITE FOUR job"
-	cont "very seriously."
+	line "sons, ADAM and"
+	cont "JONATHAN?"
 	para "You still have"
 	line "plenty left to do,"
 	cont "come see us when"
@@ -418,10 +417,10 @@ WifeWinText:
 
 WifeAfterBattleText:
 	text "My husband and I"
-	line "miss ADAM being"
-	cont "here."
-	para "He will always be"
-	line "our wee boy."
+	line "miss ADAM and"
+	cont "JONATHAN."
+	para "They will always"
+	line "be our wee boys."
 	para "Instead I have to"
 	line "put up with the"
 	cont "brother in-law."
@@ -430,8 +429,6 @@ WifeAfterBattleText:
 WifeLoseAfterBattleText:
 	text "You are really"
 	line "good."
-	para "You and ADAM must"
-	line "get along."
 	done
 
 WifeBattleRefusedText:
@@ -557,7 +554,8 @@ BrotherAfterBattleText:
 	line "with my brother,"
 	cont "his wife and"
 	cont "sometimes my"
-	cont "nephew ADAM."
+	cont "nephews ADAM"
+	cont "and JONATHAN."
 	para "My brother made"
 	line "this world but I'm"
 	cont "far more"
@@ -976,9 +974,9 @@ ManorFact7Text:
 	line "over 3 years and"
 	cont "1000 commits to"
 	cont "create."
-	para "I had my first"
-	line "child and got"
-	cont "married while"
+	para "I got married "
+	line "and had two"
+	cont "children while"
 	cont "making it."
 	para "I'm very grateful"
 	line "to my wife for"

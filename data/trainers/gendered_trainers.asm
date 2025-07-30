@@ -28,6 +28,7 @@ MaleTrainers:
 	db ROLE_PLAYER_NORMAL
 	db ROLE_PLAYER_SHINY
 	db DAD
+	db JONATHAN
 .End
 
 FemaleTrainers:

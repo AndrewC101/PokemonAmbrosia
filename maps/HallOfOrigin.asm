@@ -6,6 +6,7 @@
     const HALLOFORIGIN_ZYGARDE_1
     const HALLOFORIGIN_ZYGARDE_2
     const HALLOFORIGIN_ROLEPLAYER
+    const HALLOFORIGIN_JONATHAN
 
 HallOfOrigin_MapScripts:
 	def_scene_scripts
@@ -1385,20 +1386,10 @@ MultiverseHeroes1Text:
     para "He is happy and"
     line "seeks challenge."
 
-    para "You can tell he"
-    line "contains immense"
-    cont "power."
-
     para "One more arrives."
 
     para "It is a young"
     line "peasant man."
-
-    para "The permanent"
-    line "glow in his eyes"
-    cont "hides a power"
-    cont "greater than any"
-    cont "other."
 
     para "Together you"
     line "make for the"
@@ -1421,9 +1412,6 @@ MultiverseHeroes2Text:
     text "JIREN and GOKU"
     line "engage first."
 
-    para "You go right"
-    line "for PALPATINE."
-
     para "The dark magic"
     line "girl comes to"
     cont "your aid and you"
@@ -1434,11 +1422,6 @@ MultiverseHeroes2Text:
     line "together and"
     cont "take out"
     cont "NIGHTMARE."
-
-    para "Meanwhile GANDALF"
-    line "struggles with"
-    cont "MORGANA and"
-    cont "SAURON."
 
     para "At his full"
     line "power MERLIN"
@@ -1460,10 +1443,6 @@ MultiverseHeroes2Text:
     line "all mortals are"
     cont "evil."
 
-    para "You don't care"
-    line "who are what"
-    cont "they are."
-
     para "You will protect"
     line "your new friends!"
     done
@@ -1477,25 +1456,14 @@ MultiverseVillains1Text:
     cont "what appears"
     cont "to be a tower."
 
-    para "You are not"
-    line "alone."
-
     para "A large man in"
     line "gold armour sits"
     cont "in a dark corner."
-
-    para "You sense many"
-    line "souls within him."
 
     para "An old man in a"
     line "dark cloak stands"
     cont "pensively in a"
     cont "corner."
-
-    para "The old man"
-    line "is not a wizard"
-    cont "but commands some"
-    cont "kind of force."
 
     para "Another appears."
 
@@ -1504,11 +1472,6 @@ MultiverseVillains1Text:
     cont "man with grey"
     cont "skin and black"
     cont "eyes."
-
-    para "You sense an"
-    line "endless well"
-    cont "of power within"
-    cont "him."
 
     para "One more comes!"
 
@@ -1543,10 +1506,6 @@ MultiverseVillains1Text:
 
     para "All these beings"
     line "would."
-
-    para "You resolve to"
-    line "bend them to"
-    cont "your will."
     done
 
 MultiverseVillains2Text:
@@ -1559,9 +1518,6 @@ MultiverseVillains2Text:
     para "SAURON reaches"
     line "full power and"
    cont "rampages."
-
-    para "Enemies being to"
-    line "fall."
 
     para "Then..."
 
@@ -1580,18 +1536,11 @@ MultiverseVillains2Text:
    para "His shirt tears"
    line "apart."
 
-    para "The white light"
-    line "gives way to a"
-    cont "sunburst red."
-
     para "...."
 
     para "The sky clears."
 
     para "You have won."
-
-    para "You are all"
-    line "horribly wounded."
 
     para "PALPATINE heals"
     line "everyone and"
@@ -1617,9 +1566,6 @@ MultiverseDeities1Text:
     line "summoned to grant"
     cont "a wish."
 
-    para "Nobody else is"
-    line "here!"
-
     para "You start to"
     line "grow impatient."
 
@@ -1630,13 +1576,8 @@ MultiverseDeities1Text:
     cont "chains on its"
     cont "arms and legs."
 
-    para "It doesn't move"
-    line "or speak."
-
-    para "Just stands in"
+    para "It just stands in"
     line "reflection."
-
-    para "Like you."
 
     para "A regal woman"
     line "communicates with"
@@ -1645,8 +1586,6 @@ MultiverseDeities1Text:
 
     para "Their magic is"
     line "ancient and pure."
-
-    para "Like you."
 
     para "Your body moves"
     line "by itself."
@@ -1676,10 +1615,6 @@ MultiverseDeities1Text:
     cont "their way up"
     cont "the tower."
 
-    para "They summit and"
-    line "look upon your"
-    cont "group."
-
     para "You sense their"
     line "dark ambitions."
 
@@ -1698,9 +1633,6 @@ MultiverseDeities2Text:
 
     para "SAURON is at"
     line "full power."
-
-    para "Your team mates"
-    line "fall."
 
     para "But a warmth"
     line "grows..."
@@ -1724,17 +1656,12 @@ MultiverseDeities2Text:
     para "Unless you can"
     line "stop him!"
 
-    para "PALPATINE freezes"
-    line "you from the"
-    cont "shadows but you"
-    cont "break free."
-
     para "With the last of"
     line "your strength"
     cont "you interrupt"
     cont "JIRENs power up."
 
-    para"Just long enough"
+    para "Just long enough"
     line "for ARCEUS to"
     cont "finish the group."
 
@@ -1742,9 +1669,6 @@ MultiverseDeities2Text:
     line "everyone."
 
     para "Some time passes."
-
-    para "None of you seem"
-    line "in any hurry."
 
     para "Time is no"
     line "concern to the"
@@ -1755,12 +1679,6 @@ MultiverseDeities2Text:
     cont "with you."
 
     para "They are mortal."
-
-    para "All mortal beings"
-    line "are driven to"
-    cont "evil by their"
-    cont "desire to exist"
-    cont "beyond their time."
 
     para "You must end"
     line "suffering by"
@@ -1780,35 +1698,20 @@ MultiverseRolePlayFinalText:
 
     para "...."
 
-    para "You are back!"
-
     para "You wonder was"
     line "any of that real."
 
     para "What even is real?"
 
-    para "Are we real?"
-
-    para "Is this real?"
-
-    para "Or are we all"
-    line "part of another"
-    cont "persons roleplay"
-    cont "game!"
+    para "Is this a game!"
     done
 
 MultiverseRolePlayEndText:
     text "Thanks for that"
     line "last game."
 
-    para "The games that"
-    line "matter to us"
-    cont "will always be"
-    cont "there to come"
-    cont "back to."
-
-    para "They are old"
-    line "friends."
+    para "These games are"
+    line "old friends."
 
     para "Like us."
     done
@@ -1899,9 +1802,6 @@ InvaderMasterPatchesSeenText:
 	text "What you again?"
 	line "Well, well!"
 
-	para "You've been a"
-	line "stranger."
-
 	para "You must be"
 	line "searching for"
 	cont "the ultimate"
@@ -1909,10 +1809,6 @@ InvaderMasterPatchesSeenText:
 
 	para "It's just up"
 	line "ahead."
-
-	para "But don't"
-	line "get your"
-	cont "hopes up."
 
 	para "There is a"
 	line "group of max"
@@ -1923,13 +1819,6 @@ InvaderMasterPatchesSeenText:
 
 	para "Even with my"
 	line "cheat codes!"
-
-	para "Oh, you caught"
-	line "me!"
-
-	para "Heh heh, this"
-	line "is what I do"
-	cont "my friend."
 
 	para "The #MON"
 	line "I'll be taking"
@@ -1962,11 +1851,6 @@ InvaderMasterPatchesAfterText:
 
 	para "Go on take a"
 	line "look."
-
-	para "It'll shimmer"
-	line "you blind."
-
-	para "Heh, heh, heh..."
 	done
 
 PatchesAttacks:
@@ -2022,20 +1906,14 @@ MasterJoeySeenText:
 	text "At last we have"
 	line "fulfilled our"
 	cont "destiny."
-	para "We have claimed"
-	line "the infinite stair"
-	cont "and reached throne"
-	cont "immortal."
 	para "Behold the RAT"
 	line "GOD!"
 	done
 
 MasterJoeyBeatenText:
 	text "But how!"
-	para "I am in the top"
+	para "I am the top"
 	line "percentile!"
-	para "I break the"
-	line "percentiles!"
 	done
 
 MasterJoeyWinText:
@@ -2043,10 +1921,7 @@ MasterJoeyWinText:
     done
 
 MasterJoeyAfterBattleText:
-	text "It was always our"
-	line "destiny to inherit"
-	cont "Godhood."
-	para "I say onto thee,"
+	text "I say onto thee,"
 	line "kneel before us."
 	done
 
@@ -2054,16 +1929,114 @@ MasterJoeyLoseAfterBattleText:
 	text "Fear not for the"
 	line "RAT GOD is"
 	cont "merciful."
-	para "Since we are fond"
-	line "of you, you shall"
-	cont "be spared."
 	done
 
 MasterJoeyWinAfterBattleText:
 	text "The RAT GOD takes"
-	line "pity upon you and"
-	cont "blesses you with"
-	cont "mercy."
+	line "pity upon you."
+	done
+
+MasterJonathanScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_MASTER_JONATHAN
+	iftrue .FightDone
+.fight
+	writetext MasterJonathanSeenText
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_MASTER_JONATHAN
+	iftrue .skipRequest
+	opentext
+	writetext MasterJonathanOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.skipRequest
+	winlosstext MasterJonathanBeatenText, MasterJonathanWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JONATHAN, MASTER_JONATHAN
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MASTER_JONATHAN
+	opentext
+	writetext MasterJonathanAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext MasterJonathanAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextMasterJonathan
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextMasterJonathan
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext MasterJonathanWinAfterBattleText
+    waitbutton
+    closetext
+    end
+MasterJonathanSeenText:
+	text "Good to see you've"
+	line "made it!"
+	para "You must have"
+	line "beaten ADAM."
+	para "It's quite nice"
+	line "here."
+	para "Though a few too"
+	line "many people."
+	para "I bet you're"
+	line "expecting me to"
+	cont "battle you."
+	done
+MasterJonathanOfferFightText:
+    text "Is that what you"
+    line "want?"
+    done
+MasterJonathanBeatenText:
+    text "I can see how"
+    line "you beat ADAM."
+    done
+MasterJonathanWinsText:
+    text "Don't worry about"
+    line "it."
+    done
+MasterJonathanAfterBattleText:
+	text "It might seem like"
+	line "your adventure is"
+	cont "nearing its end."
+	para "But you don't have"
+	line "to stop."
+	para "This place will"
+	line "always be here."
+	para "Go have fun!"
+	done
+RematchTextMasterJonathan:
+    text "Would you like to"
+    line "battle some more?"
+    done
+RematchRefuseTextMasterJonathan:
+    text "Spoiled for choice"
+    line "with battles are"
+    cont "you?"
+    done
+MasterJonathanWinAfterBattleText:
+	text "As long as you had"
+	line "fun, you won."
+	para "Except you didn't"
+	line "really though."
 	done
 
 HallOfOrigin_MapEvents:
@@ -2097,6 +2070,8 @@ HallOfOrigin_MapEvents:
 	object_event 15, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MasterGreenScript, -1
 	object_event 13, 18, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterBlueScript, -1
 	object_event 13, 23, SPRITE_KOGA, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterWallaceScript, -1
-	object_event 2, 21, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MultiverseRolePlayScript, -1
+	object_event  2, 20, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, MultiverseRolePlayScript, -1
 	object_event 13, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderMasterPatches, -1
 	object_event  9, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
+	object_event 21, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterJonathanScript, -1
+

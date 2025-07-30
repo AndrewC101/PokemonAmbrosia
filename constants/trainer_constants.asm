@@ -890,4 +890,9 @@ KRIS EQU __trainer_class__
 	const ME
 	const ME_IMPOSSIBLE
 
+	trainerclass JONATHAN
+	const JONATHAN_1
+	const JONATHAN_ARCADE
+	const MASTER_JONATHAN
+
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

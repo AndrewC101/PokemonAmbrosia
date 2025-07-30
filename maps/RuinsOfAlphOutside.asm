@@ -372,7 +372,7 @@ RuinsOfAlphOutsideFieldMon1Script:
 	faceplayer
 	cry SNEASEL
 	pause 15
-	loadwildmon SNEASEL, 13
+	loadwildmon SNEASEL, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

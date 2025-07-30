@@ -12,6 +12,7 @@
 	const WARZONE_CRYSTAL
 	const WARZONE_INVADER
 	const WARZONE_OAK
+	const WARZONE_JONATHAN
 
 WarZone_MapScripts:
 	def_scene_scripts
@@ -1311,6 +1312,135 @@ WarZoneMovement_PlayerForward:
 WarZoneMovement_PlayerBackward:
     step DOWN
     step_end
+    
+JonathanScript:
+    faceplayer
+	opentext
+	checkevent EVENT_BEAT_JONATHAN
+	iftrue .FightDone
+.fight
+    checkevent EVENT_BEAT_WALLACE
+    iftrue .wallaceBeat
+	writetext JonathanSeenText
+	sjump .cont
+.wallaceBeat
+    writetext JonathanSeenWallaceBeatText
+.cont
+	waitbutton
+	closetext
+	checkevent EVENT_BEAT_JONATHAN
+	iftrue .skipRequest
+	opentext
+	writetext JonathanOfferFightText
+	waitbutton
+	yesorno
+	iffalse .refused
+	closetext
+.skipRequest
+	winlosstext JonathanBeatenText, JonathanWinsText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JONATHAN, JONATHAN_1
+	startbattle
+	ifequal LOSE, .lose
+	reloadmapafterbattle
+	checkevent EVENT_BEAT_JONATHAN
+	iftrue .skipPrize
+    opentext
+    writetext JonathanGiveAmbrosiaText
+    waitbutton
+    verbosegiveitem AMBROSIA
+    closetext
+	setevent EVENT_BEAT_JONATHAN
+.skipPrize
+	opentext
+	writetext JonathanAfterBattleText
+	waitbutton
+	closetext
+	special HealParty
+	end
+.FightDone:
+	writetext JonathanAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextJonathan
+	yesorno
+	iftrue .fight
+.refused
+	writetext RematchRefuseTextJonathan
+	waitbutton
+	closetext
+	end
+.lose
+    special HealParty
+    reloadmap
+    opentext
+    writetext JonathanWinAfterBattleText
+    waitbutton
+    closetext
+    end
+JonathanSeenText:
+	text "Hello there hero."
+	para "You're a bit late."
+	para "I'm here to deal"
+	line "with this."
+	para "I'm JONATHAN by"
+	line "the way."
+	para "You've beaten my"
+	line "brother ADAM."
+	para "Well done on that."
+	done
+JonathanSeenWallaceBeatText:
+	text "So you beat"
+	line "WALLACE."
+	para "You are a real"
+	line "hero after all."
+	para "It's actually"
+	line "quite nice here"
+	cont "when people aren't"
+	cont "killing each"
+	cont "other."
+	done
+JonathanOfferFightText:
+    text "How about a quick"
+    line "training session?"
+    done
+JonathanBeatenText:
+    text "You got this!"
+    done
+JonathanWinsText:
+    text "Better losing to"
+    next "me than WALLACE."
+    done
+JonathanGiveAmbrosiaText:
+    text "Here, my dad gave"
+    line "me this."
+    para "It might help you."
+    done
+JonathanAfterBattleText:
+	text "Well hero, you've"
+	line "got to have some"
+	cont "important stuff to"
+	cont "do."
+	para "Try to have fun"
+	line "with it."
+	done
+RematchTextJonathan:
+    text "Would you like to"
+    line "battle again?"
+    done
+RematchRefuseTextJonathan:
+    text "You're a very busy"
+    line "person I see."
+    done
+JonathanWinAfterBattleText:
+	text "That was good!"
+	para "Let's keep"
+	line "training and"
+	cont "you'll get"
+	cont "stronger in no"
+	cont "time."
+	done
 
 WarZone_MapEvents:
 	db 0, 0 ; filler
@@ -1335,7 +1465,7 @@ WarZone_MapEvents:
 	object_event 15,  4, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_8
 	object_event 26,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LeonScript, EVENT_FIELD_MON_9
 	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier1, EVENT_BEAT_WALLACE
-	object_event 20, 18, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
+	object_event 21, 23, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier2, EVENT_BEAT_WALLACE
 	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
 	object_event 23, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSoldier5, EVENT_BEAT_WALLACE
 
@@ -1344,3 +1474,4 @@ WarZone_MapEvents:
 	object_event 21, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
 	object_event 34,  4, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
 	object_event 21, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_6
+	object_event 20, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, JonathanScript, -1

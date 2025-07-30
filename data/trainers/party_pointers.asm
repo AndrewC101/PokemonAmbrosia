@@ -78,4 +78,5 @@ TrainerGroups:
 	dba RolePlayerShinyGroup
 	dba CalFemaleGroup
 	dba DadGroup
+	dba JonathanGroup
 	assert_table_length NUM_TRAINER_CLASSES

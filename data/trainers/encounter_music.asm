@@ -79,4 +79,5 @@ TrainerEncounterMusic::
 	db MUSIC_NONE                  ; role_player_shiny
 	db MUSIC_HIKER_ENCOUNTER       ; cal_f
 	db MUSIC_NONE                  ; dad
+	db MUSIC_OFFICER_ENCOUNTER     ; jonathan
 	assert_table_length NUM_TRAINER_CLASSES + 1

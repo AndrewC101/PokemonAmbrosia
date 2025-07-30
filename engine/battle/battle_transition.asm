@@ -722,7 +722,7 @@ StartTrainerBattle_LoadPokeBallGraphics:
     cp JASMINE
 	jp z, .load_pals
     cp PRYCE
-	jr z, .load_pals
+	jp z, .load_pals
     cp CLAIR
 	jr z, .load_pals
     cp BROCK
@@ -760,6 +760,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	cp BLUE
 	jr z, .load_pals
 	cp LEAF
+	jr z, .load_pals
+	cp JONATHAN
 	jr z, .load_pals
 	cp ADAM
 	jr nz, .notAdamPals

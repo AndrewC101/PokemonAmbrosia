@@ -255,6 +255,8 @@ PlayBattleMusic:
     jp z, .done
     cp ADAM
     jp z, .done
+    cp JONATHAN
+    jp z, .done
 
     ; champion music
 	ld de, MUSIC_CHAMPION_BATTLE

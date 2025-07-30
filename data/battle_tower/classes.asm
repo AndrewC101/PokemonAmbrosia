@@ -35,7 +35,7 @@ BattleTowerTrainers:
 	db "RACHEL@@@@", SWIMMERF
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
-	db "GERRY@@@@@", OFFICER
+	db "JONATHAN@@", COOLTRAINERM
     db "ROBERT@@@@", SAILOR
     db "ANNIE@@@@@", KIMONO_GIRL
     db "MIN@@@@@@@", POKEFANF
@@ -71,7 +71,7 @@ BattleTowerTrainers:
 	db "RACHEL@@@@", SWIMMERF
 	db "ASHLEY@@@@", FISHER
 	db "MEREDITH@@", COOLTRAINERF
-	db "GERRY@@@@@", OFFICER
+	db "JONATHAN@@", COOLTRAINERM
     db "ROBERT@@@@", SAILOR
     db "ANNIE@@@@@", KIMONO_GIRL
     db "MIN@@@@@@@", POKEFANF

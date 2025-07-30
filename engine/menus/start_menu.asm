@@ -228,11 +228,11 @@ StartMenu::
     ld b, a
     ldh a, [hMinutes]
     ld c, a
-    decoord 1, 15
+    decoord 1, 14
     farcall PrintHoursMins
 
 	ld hl, .MenuTodayText
-	bccoord 1, 14
+	bccoord 1, 13
 	call PlaceHLTextAtBC
 
     hlcoord 1, 16
@@ -271,8 +271,8 @@ StartMenu::
 
 .ClearSkies:   db "CLEAR@"
 .Raining:      db "RAINING@"
-.Sunny:        db "SUNNY@"
-.Sandy:        db "SANDY@"
+.Sunny:        db "SUNNY DAY@"
+.Sandy:        db "SANDSTORM@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a
@@ -374,8 +374,8 @@ endr
 ._DrawMenuClockTextBox:
 	call .IsMenuClockOn
 	ret z
-    hlcoord 0, 13
-	lb bc, 3, 8
+    hlcoord 0, 12
+	lb bc, 4, 9
 	jp Textbox
 
 .IsMenuClockOn:

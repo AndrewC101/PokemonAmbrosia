@@ -1931,9 +1931,9 @@ GyaradosEvosAttacks:
 	db 25, DRAGON_RAGE
 	db 35, CRUNCH
 	db 40, WATERFALL
-	db 45, DRAGON_DANCE
+	db 45, HURRICANE
 	db 50, OUTRAGE
-	db 55, HURRICANE
+	db 55, DRAGON_DANCE
 	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 

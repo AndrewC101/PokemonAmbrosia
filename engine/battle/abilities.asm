@@ -161,7 +161,6 @@ MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
-    db MEW
     db -1
 
 ClearBodyPokemon:
@@ -274,7 +273,7 @@ UberImmunePokemon:
 ;    db -1
 
 ;MoxiePokemon:
-;    db SALAMENCE
+;    db GYARADOS
 ;    db DRACOVISH
 ;    db HERACROSS
 ;    db TAUROS
@@ -286,7 +285,7 @@ UberImmunePokemon:
 ;GrimPokemon:
 ;    db RAIKOU
 ;    db GIRATINA
-;    db GENGAR
+;    db CHANDELURE
 ;    db KINGDRA
 ;    db CHARMANDER
 ;    db CHARMELEON

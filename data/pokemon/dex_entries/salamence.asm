@@ -5,6 +5,6 @@
 	next "and merciless"
 	next "in its assault."
 
-	page "ATTACK boost"
-	next "on KO. Immune"
-	next "to recoil.@"
+	page "lowers foes"
+	next "ATTACK upon"
+	next "switch in.@"

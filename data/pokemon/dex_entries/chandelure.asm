@@ -5,6 +5,6 @@
 	next "of its victim in"
 	next "its flames."
 
-	page "Prevents enemy"
-	next "switching. Immune"
-	next "to FIRE.@"
+	page "Blocks switching."
+	next "SP.ATK boost on"
+	next "KO.@"

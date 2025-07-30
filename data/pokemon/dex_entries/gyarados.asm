@@ -5,6 +5,6 @@
 	next "ever there is"
 	next "world conflict."
 
-	page "lowers foes"
-	next "ATTACK upon"
-	next "switch in.@"
+	page "ATTACK boost"
+	next "on KO. Immune"
+	next "to recoil.@"

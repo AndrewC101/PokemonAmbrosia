@@ -6,5 +6,5 @@
 	next "Learns any move."
 
 	page "Regenerates HP."
-	next "Immune to all"
-	next "passive damage.@"
+	next "Heals status on"
+	next "switch in.@"

@@ -1216,7 +1216,6 @@ Core_MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
-    db MEW
     db -1
 
 Core_LevitatePokemon:
@@ -1271,7 +1270,7 @@ Core_RegeneratorPokemon:
     db -1
 
 Core_MoxiePokemon:
-    db SALAMENCE
+    db GYARADOS
     db DRACOVISH
     db HERACROSS
     db TAUROS
@@ -1283,7 +1282,7 @@ Core_MoxiePokemon:
 Core_GrimPokemon:
     db RAIKOU
     db GIRATINA
-    db GENGAR
+    db CHANDELURE
     db KINGDRA
     db CHARMANDER
     db CHARMELEON
@@ -2456,6 +2455,8 @@ Aftermath:
     cp WEEZING
     jr z, .aftermath
     cp MAGNEZONE
+    jr z, .aftermath
+    cp GENGAR
     jr z, .aftermath
     ret
 .aftermath
@@ -4573,7 +4574,7 @@ SwitchInEffects:
     cp KINGAMBIT
     jp z, .atkUp
 
-    cp GYARADOS
+    cp SALAMENCE
     jp z, .atkDown
     cp ARCANINE
     jp z, .atkDown
@@ -4690,6 +4691,10 @@ SwitchInEffects:
     cp BLISSEY
     jp z, .naturalCure
     cp SHAYMIN
+    jp z, .naturalCure
+    cp TOGEKISS
+    jp z, .naturalCure
+    cp MEW
     jp z, .naturalCure
     ret
 

@@ -257,7 +257,7 @@ BattleAnimations::
 	dw BattleAnim_Judgement
 	dw BattleAnim_Serenity
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_SweetScent2
+	dw BattleAnim_Dodge
 	assert_table_length $100
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -289,17 +289,14 @@ BattleAnim_254:
 BattleAnim_MirrorMove:
 	anim_ret
 
-BattleAnim_SweetScent2:
-	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
-	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
-	anim_wait 2
-	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
-	anim_wait 64
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $15
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $2a
-	anim_obj ANIM_OBJ_COTTON, 136, 40, $3f
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_wait 128
+BattleAnim_Dodge:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_sound 0, 0, SFX_SUBMISSION
+	anim_bgeffect ANIM_BG_FLAIL, $0, BG_EFFECT_USER, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_FLAIL
+	anim_jump BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_ThrowPokeBall:

@@ -9413,3 +9413,21 @@ TryToRunAwayFromBattle:
 	call LoadTilemapToTempTilemap
 	scf
 	ret
+
+BattleMissAnim:
+	push hl
+	push de
+	push bc
+	call EmptyBattleTextbox
+	ld a, ANIM_DODGE
+	ld [wFXAnimID], a
+	call SwitchTurnCore
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	call SwitchTurnCore
+	pop bc
+	pop de
+	pop hl
+	ret

@@ -1755,6 +1755,21 @@ BattleCommand_CheckHit:
 	farcall XAccuracy
 	ret nz
 
+; if defender is asleep or frozen then all moves hit
+;	ld a, [hBattleTurn]
+;	and a
+;	jr nz, .enemyAttacking
+;	ld a, [wEnemyMonStatus]
+;	jr .checkImmobile
+;.enemyAttacking
+;	ld a, [wBattleMonStatus]
+;.checkImmobile
+;	and 1 << FRZ | SLP
+;	jr z, .notImmobile
+;	scf
+;	ret
+;.notImmobile
+
 	; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -2390,12 +2405,8 @@ GetFailureResultText:
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .got_text
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_FUTURE_SIGHT
-	ld hl, ButItFailedText
-	ld de, ItFailedText
-	jr z, .got_text
+
+	farcall BattleMissAnim
 	ld hl, AttackMissedText
 	ld de, AttackMissed2Text
 	ld a, [wCriticalHit]

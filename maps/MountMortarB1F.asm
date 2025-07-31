@@ -124,7 +124,7 @@ MountMortarB1FMaxEther:
 	itemball MAX_REVIVE
 
 MountMortarB1FPPUp:
-	itemball PP_UP
+	itemball PP_MAX
 
 MountMortarB1FHiddenMaxRevive:
 	hiddenitem EXPERT_BELT, EVENT_MOUNT_MORTAR_B1F_HIDDEN_MAX_REVIVE

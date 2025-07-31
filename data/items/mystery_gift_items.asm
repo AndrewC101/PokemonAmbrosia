@@ -28,7 +28,7 @@ MysteryGiftItems:
 	db MAX_REVIVE
 	db SCOPE_LENS
 	db HP_UP
-	db PP_UP
+	db PP_MAX
 	db RARE_CANDY
 	db BLUESKY_MAIL
 	db MIRAGE_MAIL

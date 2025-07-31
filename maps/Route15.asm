@@ -159,7 +159,7 @@ Route15Sign:
 	jumptext Route15SignText
 
 Route15PPUp:
-	itemball PP_UP
+	itemball PP_MAX
 
 TeacherColetteSeenText:
 	text "Some #MON are"

@@ -67,7 +67,7 @@
 	const GOOD_ROD     ; 3b
 	const SILVER_LEAF  ; 3c  find a use for this?
 	const SUPER_ROD    ; 3d
-	const PP_UP        ; 3e
+	const PP_MAX        ; 3e
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41

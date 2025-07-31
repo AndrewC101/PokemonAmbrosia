@@ -79,7 +79,7 @@ CeladonCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
 CeladonCityHiddenPpUp:
-	hiddenitem PP_UP, EVENT_CELADON_CITY_HIDDEN_PP_UP
+	hiddenitem PP_MAX, EVENT_CELADON_CITY_HIDDEN_PP_UP
 
 CeladonCityFisherText:
 	text "My buddy here is"

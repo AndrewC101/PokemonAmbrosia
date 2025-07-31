@@ -27,7 +27,7 @@ RockTunnelB1FIron:
 	itemball IRON
 
 RockTunnelB1FPPUp:
-	itemball PP_UP
+	itemball PP_MAX
 
 RockTunnelB1FRevive:
 	itemball MAX_REVIVE

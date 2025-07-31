@@ -62,7 +62,7 @@ ItemNames::
 	li "GOOD ROD"
 	li "SILVER LEAF"
 	li "SUPER ROD"
-	li "PP UP"
+	li "PP MAX"
 	li "ETHER"
 	li "MAX ETHER"
 	li "ELIXIR"

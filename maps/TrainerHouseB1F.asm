@@ -932,7 +932,7 @@ GivePrize:
     verbosegiveitem HP_UP
     sjump .done
 .PpUp:
-    verbosegiveitem PP_UP
+    verbosegiveitem PP_MAX
     sjump .done
 .MaxElixer:
     verbosegiveitem MAX_ELIXER

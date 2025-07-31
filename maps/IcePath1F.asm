@@ -56,7 +56,7 @@ IcePath1FHMWaterfall:
 	itemball HM_WATERFALL
 
 IcePath1FPPUp:
-	itemball PP_UP
+	itemball PP_MAX
 
 IcePath1FChoiceSpecs:
 	itemball CHOICE_SPECS

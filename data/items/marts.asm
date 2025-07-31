@@ -131,7 +131,7 @@ MartGoldenrod4F:
 	db CARBOS
 	db CALCIUM
 	db HP_UP
-	db PP_UP
+	db PP_MAX
 	db -1 ; end
 
 MartGoldenrod5F:
@@ -313,7 +313,7 @@ MartCeladon5F1:
 	db IRON
 	db CARBOS
 	db CALCIUM
-	db PP_UP
+	db PP_MAX
 	db -1 ; end
 
 MartCeladon5F2:

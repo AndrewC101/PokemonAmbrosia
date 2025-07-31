@@ -71,7 +71,7 @@ GoldenrodDeptStoreB1FBurnHeal:
 	itemball POKE_DOLL
 
 GoldenrodDeptStoreB1FUltraBall:
-	itemball PP_UP
+	itemball PP_MAX
 
 GoldenrodDeptStoreB1FBlackBelt1Text:
 	text "I'd really"

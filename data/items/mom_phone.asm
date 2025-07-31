@@ -9,7 +9,7 @@ MomItems_1:
 	momitem      0,   600, MOM_ITEM, MIRACLEBERRY
 	momitem      0,    90, MOM_ITEM, RARE_CANDY
 	momitem      0,   180, MOM_ITEM, ULTRA_BALL
-	momitem      0,   450, MOM_ITEM, PP_UP
+	momitem      0,   450, MOM_ITEM, PP_MAX
 	momitem      0,   500, MOM_ITEM, GOLD_BERRY
 .End
 

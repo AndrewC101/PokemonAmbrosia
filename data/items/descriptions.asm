@@ -62,7 +62,7 @@ ItemDescriptions:
 	dw GoodRodDesc
 	dw SilverLeafDesc
 	dw SuperRodDesc
-	dw PPUpDesc
+	dw PPMaxDesc
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
@@ -501,8 +501,8 @@ SuperRodDesc:
 	db   "The best ROD for"
 	next "catching #MON.@"
 
-PPUpDesc:
-	db   "Raises max PP of"
+PPMaxDesc:
+	db   "Maximises PP of"
 	next "a selected move.@"
 
 EtherDesc:

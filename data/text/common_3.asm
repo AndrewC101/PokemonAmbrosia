@@ -1347,7 +1347,7 @@ _PPIsMaxedOutText::
 _PPsIncreasedText::
 	text_ram wStringBuffer2
 	text "'s PP"
-	line "increased."
+	line "maximised."
 	prompt
 
 _PPRestoredText::

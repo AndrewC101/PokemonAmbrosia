@@ -76,7 +76,7 @@ ItemEffects:
 	dw GoodRodEffect       ; GOOD_ROD
 	dw NoEffect            ; SILVER_LEAF
 	dw SuperRodEffect      ; SUPER_ROD
-	dw RestorePPEffect     ; PP_UP
+	dw RestorePPEffect     ; PP_MAX
 	dw RestorePPEffect     ; ETHER
 	dw RestorePPEffect     ; MAX_ETHER
 	dw RestorePPEffect     ; ELIXER
@@ -2568,7 +2568,7 @@ RestorePPEffect:
 
 	ld hl, RaiseThePPOfWhichMoveText
 	ld a, [wTempRestorePPItem]
-	cp PP_UP
+	cp PP_MAX
 	jr z, .ppup
 	ld hl, RestoreThePPOfWhichMoveText
 
@@ -2599,7 +2599,7 @@ RestorePPEffect:
 	pop hl
 
 	ld a, [wTempRestorePPItem]
-	cp PP_UP
+	cp PP_MAX
 	jp nz, Not_PP_Up
 
 	ld a, [hl]
@@ -2618,14 +2618,29 @@ RestorePPEffect:
 	jr .loop2
 
 .do_ppup
+	ld c, 3 << 6
+	ld b, 3
+.pp_restore_loop
+	push hl
+	push bc
 	ld a, [hl]
-	add PP_UP_ONE
+	add PP_UP_ONE ; increase PP Up count by 1
 	ld [hl], a
 	ld a, TRUE
 	ld [wUsePPUp], a
 	call ApplyPPUp
-	call Play_SFX_FULL_HEAL
+	pop bc
+	pop hl
 
+	; Unless PP is maxed, we might want to continue increasing PP further.
+	ld a, [hl]
+	and c
+	cp c
+	jr z, .maxed_pp
+	dec b
+	jr nz, .pp_restore_loop
+.maxed_pp
+	call Play_SFX_FULL_HEAL
 	ld hl, PPsIncreasedText
 	call PrintText
 

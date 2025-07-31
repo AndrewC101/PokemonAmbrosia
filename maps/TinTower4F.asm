@@ -42,7 +42,7 @@ TinTower4FUltraBall:
 	itemball ULTRA_BALL
 
 TinTower4FPPUp:
-	itemball PP_UP
+	itemball PP_MAX
 
 TinTower4FEscapeRope:
 	itemball EXPERT_BELT

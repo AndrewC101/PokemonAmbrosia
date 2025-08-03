@@ -2238,6 +2238,7 @@ BattleAnim_Haze:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_PoisonGas:
 BattleAnim_Mist:
 	anim_obp0 $54
 	anim_1gfx ANIM_GFX_HAZE
@@ -2257,16 +2258,6 @@ BattleAnim_Smog:
 	anim_wait 8
 	anim_loop 10, .loop
 	anim_wait 96
-	anim_ret
-
-BattleAnim_PoisonGas:
-	anim_1gfx ANIM_GFX_HAZE
-	anim_sound 16, 2, SFX_BUBBLEBEAM
-.loop
-	anim_obj ANIM_OBJ_POISON_GAS, 44, 80, $2
-	anim_wait 8
-	anim_loop 10, .loop
-	anim_wait 128
 	anim_ret
 
 BattleAnim_HornAttack:

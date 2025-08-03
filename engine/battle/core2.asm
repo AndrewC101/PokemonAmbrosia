@@ -179,6 +179,32 @@ DefogSwitch:
     callfar BattleCommand_Defog
 	ret
 
+ScreenBreakSwitch:
+    ld de, POISON_GAS
+    farcall SwitchTurnCore
+    call PlayAnimationIfNotFirstTurn
+    farcall SwitchTurnCore
+
+    ld hl, ShatteredScreensText
+    call PrintText
+
+	ld hl, wEnemySafeguardCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .playersTurn
+    ld hl, wPlayerSafeguardCount
+.playersTurn
+    ld a, 1
+    ld [hli], a
+    ld [hli], a
+    ld [hl], a
+	ret
+
+ShatteredScreensText:
+    text "Screens were"
+    line "shattered!"
+    prompt
+
 SpecialAttackUpSwitch:
     call PlayBoostAnimation
     callfar BattleCommand_SpecialAttackUp

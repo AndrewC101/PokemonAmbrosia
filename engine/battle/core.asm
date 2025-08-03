@@ -4659,6 +4659,11 @@ SwitchInEffects:
     cp MR__MIME
     jp z, .bothScreens
 
+    cp MEWTWO
+    jp z, .screenBreak
+    cp DEOXYS
+    jp z, .screenBreak
+
     cp ARTICUNO
     jp z, .reflect
     cp GALLADE
@@ -4726,6 +4731,9 @@ SwitchInEffects:
 .bothScreens
     farcall ReflectSwitch
     farcall LightScreenSwitch
+    ret
+.screenBreak
+    farcall ScreenBreakSwitch
     ret
 .reflect
     farcall ReflectSwitch

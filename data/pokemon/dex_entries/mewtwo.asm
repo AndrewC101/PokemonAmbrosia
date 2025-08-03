@@ -6,5 +6,5 @@
 	next "mortal limits."
 
 	page "Gets crits"
-	next "often. Has double"
-	next "RECOVER PP.@"
+	next "often. Breaks"
+	next "enemy screens.@"

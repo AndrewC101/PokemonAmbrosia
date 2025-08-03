@@ -172,7 +172,6 @@ ClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
-    db DEOXYS
     db DUNSPARCE
     db VAPOREON
     db WOBBUFFET

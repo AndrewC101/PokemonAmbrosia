@@ -122,8 +122,9 @@ AI_ClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
-    db DEOXYS
     db VAPOREON
+    db WOBBUFFET
+    db KYOGRE
     db $FF
 
 AI_UberImmunePokemon:
@@ -1726,7 +1727,7 @@ AI_Smart_Fly:
 	ret z
 
 	call DoesAIOutSpeedPlayer
-	ret nc
+	jr nc, .discourage
 
 	dec [hl]
 	dec [hl]

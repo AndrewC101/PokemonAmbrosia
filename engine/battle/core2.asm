@@ -180,6 +180,24 @@ DefogSwitch:
 	ret
 
 ScreenBreakSwitch:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .playersTurn
+    ld hl, wPlayerSafeguardCount
+	ld a, [wPlayerScreens]
+	jr .checkScreens
+.playersTurn
+    ld hl, wEnemySafeguardCount
+	ld a, [wEnemyScreens]
+.checkScreens
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .effect
+	bit SCREENS_LIGHT_SCREEN, a
+	jr nz, .effect
+	bit SCREENS_REFLECT, a
+	ret z
+.effect
+    push hl
     ld de, POISON_GAS
     farcall SwitchTurnCore
     call PlayAnimationIfNotFirstTurn
@@ -187,13 +205,8 @@ ScreenBreakSwitch:
 
     ld hl, ShatteredScreensText
     call PrintText
+    pop hl
 
-	ld hl, wEnemySafeguardCount
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .playersTurn
-    ld hl, wPlayerSafeguardCount
-.playersTurn
     ld a, 1
     ld [hli], a
     ld [hli], a

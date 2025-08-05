@@ -11,7 +11,6 @@ SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 SilverCavePokecenter1FBobRossScript:
-    loadmem wReachedHallOfOrigin, 1
 	jumptextfaceplayer SilverCavePokecenter1FBobRossText
 
 SilverCavePokecenter1FBobRossText:

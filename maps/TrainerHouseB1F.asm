@@ -3379,14 +3379,14 @@ TrainerHouseB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3, 15, BATTLE_TOWER_OUTSIDE, 5
-	warp_event  4, 15, BATTLE_TOWER_OUTSIDE, 6
-	warp_event 17, 15, BATTLE_TOWER_OUTSIDE, 7
-	warp_event 18, 15, BATTLE_TOWER_OUTSIDE, 8
-	warp_event 31, 15, BATTLE_TOWER_OUTSIDE, 9
-	warp_event 32, 15, BATTLE_TOWER_OUTSIDE, 10
-	warp_event 45, 15, BATTLE_TOWER_OUTSIDE, 11
-	warp_event 46, 15, BATTLE_TOWER_OUTSIDE, 12
+	warp_event  3, 15, BATTLE_TOWER_OUTSIDE, 6
+	warp_event  4, 15, BATTLE_TOWER_OUTSIDE, 7
+	warp_event 17, 15, BATTLE_TOWER_OUTSIDE, 8
+	warp_event 18, 15, BATTLE_TOWER_OUTSIDE, 9
+	warp_event 31, 15, BATTLE_TOWER_OUTSIDE, 10
+	warp_event 32, 15, BATTLE_TOWER_OUTSIDE, 11
+	warp_event 45, 15, BATTLE_TOWER_OUTSIDE, 12
+	warp_event 46, 15, BATTLE_TOWER_OUTSIDE, 13
 
 	def_coord_events
 

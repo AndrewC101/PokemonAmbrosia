@@ -194,8 +194,8 @@ Route28_MapEvents:
 	def_warp_events
 	warp_event  0,  0, ROUTE_28_STEEL_WING_HOUSE, 1
 	warp_event 33, 11, VICTORY_ROAD_GATE, 7
-	warp_event 8, 6, MANOR_OUTSIDE, 1
-	warp_event 9, 6, MANOR_OUTSIDE, 2
+	warp_event 8, 6, MANOR_OUTSIDE, 2
+	warp_event 9, 6, MANOR_OUTSIDE, 3
 
 	def_coord_events
 

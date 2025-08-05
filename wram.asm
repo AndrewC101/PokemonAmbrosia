@@ -3027,7 +3027,8 @@ wBattleMusicOverride:: ds 2
 wShinyOverride:: db
 wRunningShoesOn:: db
 wNoRematch:: db
-	ds 7
+wReachedHallOfOrigin::db
+	ds 6
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

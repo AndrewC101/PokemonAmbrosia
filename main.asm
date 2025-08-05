@@ -50,16 +50,11 @@ INCLUDE "engine/overworld/time.asm"
 INCLUDE "engine/items/tmhm2.asm"
 INCLUDE "engine/menus/naming_screen.asm"
 INCLUDE "engine/events/misc_scripts.asm"
-INCLUDE "engine/events/heal_machine_anim.asm"
 INCLUDE "engine/events/whiteout.asm"
 INCLUDE "engine/events/forced_movement.asm"
-INCLUDE "engine/events/itemfinder.asm"
 INCLUDE "engine/menus/start_menu.asm"
 INCLUDE "engine/pokemon/mon_menu.asm"
 INCLUDE "engine/overworld/select_menu.asm"
-INCLUDE "engine/events/elevator.asm"
-INCLUDE "engine/events/bug_contest/contest.asm"
-INCLUDE "engine/events/repel.asm"
 INCLUDE "engine/events/hidden_item.asm"
 INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
@@ -634,6 +629,14 @@ INCLUDE "gfx/weather_images.asm"
 SECTION "overflow", ROMX
 
 INCLUDE "engine/pokemon/knows_move.asm"
+INCLUDE "engine/events/itemfinder.asm"
+INCLUDE "engine/events/elevator.asm"
+INCLUDE "engine/events/bug_contest/contest.asm"
+INCLUDE "engine/events/repel.asm"
+
+SECTION "Start Menu", ROMX
+
+INCLUDE "engine/events/heal_machine_anim.asm"
 
 
 ;SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]

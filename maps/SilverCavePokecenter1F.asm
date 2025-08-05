@@ -11,7 +11,6 @@ SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 SilverCavePokecenter1FBobRossScript:
-    loadmem wLevelCap, 100
 	jumptextfaceplayer SilverCavePokecenter1FBobRossText
 
 SilverCavePokecenter1FBobRossText:

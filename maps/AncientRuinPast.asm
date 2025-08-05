@@ -463,7 +463,7 @@ AncientRuinPast_MapEvents:
 	def_warp_events
 	warp_event   5, 5, ANCIENT_RUIN_PRESENT, 3
 	warp_event  33, 5, ANCIENT_RUIN_PRESENT, 3
-	warp_event  19, 3, RUINS_OF_ALPH_OUTSIDE, 5
+	warp_event  19, 3, RUINS_OF_ALPH_OUTSIDE, 1
 
 	def_coord_events
 

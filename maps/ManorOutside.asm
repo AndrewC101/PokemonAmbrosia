@@ -7,9 +7,9 @@ ManorOutside_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  6,  15, MANOR_INSIDE, 1
 	warp_event  6,  25, ROUTE_28, 3
 	warp_event  7,  25, ROUTE_28, 4
-    warp_event  6,  15, MANOR_INSIDE, 1
 
 	def_coord_events
 

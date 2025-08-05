@@ -85,8 +85,10 @@ Oak:
 	writetext OakOpenMtSilverText
 	promptbutton
 	writetext OakGiveWarpDeviceText
-	waitbutton
-	verbosegiveitem WARP_DEVICE
+	playsound SFX_GET_BADGE
+	waitsfx
+	;verbosegiveitem WARP_DEVICE
+	setflag ENGINE_WARP
 	setevent EVENT_OPENED_MT_SILVER
 	loadmem wExpShareUpgrade, 1
 	sjump .CheckPokedex
@@ -317,6 +319,10 @@ OakGiveWarpDeviceText:
 
     para "I use it all"
     line "the time."
+
+    para "WARP option was"
+    line "added to start"
+    cont "menu."
     done
 
 OakNoKantoBadgesText:

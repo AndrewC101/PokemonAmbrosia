@@ -482,6 +482,7 @@ BattleTowerOutside_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  8, 16, BATTLE_TOWER_OUTSIDE, 1
 	warp_event  8, 29, ROUTE_40_BATTLE_TOWER_GATE, 3
 	warp_event  9, 29, ROUTE_40_BATTLE_TOWER_GATE, 4
 	warp_event  8,  9, BATTLE_TOWER_1F, 1

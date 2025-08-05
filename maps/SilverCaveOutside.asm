@@ -1560,8 +1560,8 @@ SilverCaveOutside_MapEvents:
 	def_warp_events
 	warp_event 23, 19, SILVER_CAVE_POKECENTER_1F, 1
 	warp_event 18,  9, SILVER_CAVE_ROOM_1, 1
-	warp_event 31, 6, DESTINY_FRONTIER, 1
-	warp_event 32, 6, DESTINY_FRONTIER, 2
+	warp_event 31, 6, DESTINY_FRONTIER, 2
+	warp_event 32, 6, DESTINY_FRONTIER, 3
 	warp_event 8, 19, ANCIENT_TEMPLE, 1
 
 	def_coord_events

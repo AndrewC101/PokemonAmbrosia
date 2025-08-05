@@ -1747,6 +1747,7 @@ InvaderMasterPatches:
 
 	setmapscene ORIGIN_ROAD, SCENE_FINISHED
 	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
+	loadmem wReachedHallOfOrigin, 1
 
 	checkevent EVENT_BEAT_MASTER_PATCHES
 	iftrue .finish
@@ -2043,9 +2044,9 @@ HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  11, 21, HALL_OF_ORIGIN, 1
 
-	def_coord_events
-
+    def_coord_events
 	coord_event 10, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 11, 45, SCENE_ALWAYS, ReloadMapScript
 	coord_event 12, 45, SCENE_ALWAYS, ReloadMapScript

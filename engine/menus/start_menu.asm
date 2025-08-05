@@ -9,6 +9,7 @@
 	const STARTMENUITEM_EXIT     ; 6
 	const STARTMENUITEM_POKEGEAR ; 7
 	const STARTMENUITEM_QUIT     ; 8
+	const STARTMENUITEM_WARP     ; 9
 
 StartMenu::
 	call ClearWindowData
@@ -185,6 +186,7 @@ StartMenu::
 	dw StartMenu_Exit,     .ExitString,     .EmptyDesc
 	dw StartMenu_Pokegear, .PokegearString, .EmptyDesc
 	dw StartMenu_Quit,     .QuitString,     .EmptyDesc
+	dw StartMenu_Warp,     .WarpString,     .EmptyDesc
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
@@ -195,6 +197,7 @@ StartMenu::
 .ExitString:     db "EXIT@"
 .PokegearString: db "<POKE>GEAR@"
 .QuitString:     db "QUIT@"
+.WarpString:     db "WARP@"
 
 .EmptyDesc:
 	db   "@"
@@ -339,8 +342,24 @@ endr
 
 	ld a, STARTMENUITEM_OPTION
 	call .AppendMenuList
+
+	; Bug Catching contest must always have the Exit Option
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	jr nz, .bug_contest_or_fast_travel_not_obtained
+
+	; check if end game fast travel has been obtained
+	ld hl, wPokegearFlags
+	bit POKEGEAR_WARP_F, [hl]
+	jr z, .bug_contest_or_fast_travel_not_obtained
+	ld a, STARTMENUITEM_WARP
+	call .AppendMenuList
+	jr .next
+
+.bug_contest_or_fast_travel_not_obtained
 	ld a, STARTMENUITEM_EXIT
 	call .AppendMenuList
+.next
 	ld a, c
 	ld [wMenuItemsList], a
 	ret
@@ -399,6 +418,14 @@ endr
 	farcall StartMenu_PrintBugContestStatus
 	ret
 
+StartMenu_Warp:
+    ld a, [wReachedHallOfOrigin]
+    and a
+    jr nz, .hallOfOriginWarp
+	call DefaultWarp
+	jr StartMenu_Exit
+.hallOfOriginWarp
+    call HallOfOriginWarp
 StartMenu_Exit:
 ; Exit the menu.
 
@@ -489,6 +516,278 @@ StartMenu_Pack:
 	call ExitAllMenus
 	ld a, 4
 	ret
+
+HallOfOriginWarpLocations:
+	table_width 2
+	map_id NEW_BARK_TOWN
+	map_id RUINS_OF_ALPH_OUTSIDE
+	map_id GOLDENROD_CITY
+	map_id BLACKTHORN_CITY
+	map_id ROUTE_23
+	map_id PALLET_TOWN
+	map_id SAFFRON_CITY
+	map_id CELADON_CITY
+	map_id BATTLE_TOWER_OUTSIDE
+	map_id SILVER_CAVE_OUTSIDE
+	map_id DESTINY_FRONTIER
+	map_id HALL_OF_ORIGIN
+	map_id MANOR_OUTSIDE
+DEF NUM_FAST_TRAVEL_HALL_OF_ORIGIN EQU (@ - {CURRENT_TABLE_START}) / CURRENT_TABLE_WIDTH
+
+DefaultWarpLocations:
+	table_width 2
+	map_id NEW_BARK_TOWN
+	map_id RUINS_OF_ALPH_OUTSIDE
+	map_id GOLDENROD_CITY
+	map_id BLACKTHORN_CITY
+	map_id ROUTE_23
+	map_id PALLET_TOWN
+	map_id SAFFRON_CITY
+	map_id CELADON_CITY
+	map_id BATTLE_TOWER_OUTSIDE
+	map_id SILVER_CAVE_OUTSIDE
+DEF NUM_FAST_TRAVEL_DEFAULT EQU (@ - {CURRENT_TABLE_START}) / CURRENT_TABLE_WIDTH
+
+HallOfOriginWarp::
+	xor a
+	ld [wMenuScrollPosition], a
+	ld a, $1
+	ld [wMenuSelection], a
+	call SetUpTextbox
+.loop
+	ld hl, .WhereToText
+	call PrintText
+	call DelayFrame
+	call UpdateSprites
+	call HallOfOriginWarpLocationMenu
+	ret z
+	ld hl, HallOfOriginWarpLocations
+	ld bc, 2
+	dec a
+	call AddNTimes
+	push hl
+	pop hl
+; Default warp number
+; change if your maps use 0-based or a different default
+	ld a, 1
+	ld [wNextWarp], a
+	ld a, [hli]
+	ld [wNextMapGroup], a
+	ld a, [hli]
+	ld [wNextMapNumber], a
+	ld a, MAPSETUP_DOOR
+	ldh [hMapEntryMethod], a
+	ld a, MAPSTATUS_ENTER
+	call LoadMapStatus
+; play warping sound effect
+    call WaitSFX
+    ld de, SFX_WARP_TO
+    call PlaySFX
+	ret
+.WhereToText
+	text "Where would you"
+	line "like to go?"
+	done
+
+HallOfOriginWarpLocationMenu:
+	ld hl, .HallOfOriginMenuHeader
+	call CopyMenuHeader
+	ld a, [wMenuSelection]
+	ld [wMenuCursorPosition], a
+	xor a
+	ld [wWhichIndexSet], a
+	ldh [hBGMapMode], a
+	call InitScrollingMenu
+	call UpdateSprites
+	call ScrollingMenu
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .cancel
+	ld a, [wMenuSelection]
+	cp -1
+	jr nz, .done
+.cancel
+	xor a
+	ret
+.done
+	ret
+
+.HallOfOriginMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 1, 18, 10
+	dw .HallOfOriginMenuData
+	db 1 ; default option
+	db 0
+.HallOfOriginMenuData:
+	db SCROLLINGMENU_DISPLAY_ARROWS ; flags
+	; if "columns" is > 0, a second menu function is expected,
+	; and the game will crash if it does not exist!
+	db 5, 0 ; rows, columns
+	db SCROLLINGMENU_ITEMS_NORMAL ; item format
+	dba .HallOfOriginMaps
+	dba .PrintHallOfOriginMapNames
+	dba NULL
+	dba NULL
+
+.HallOfOriginMaps:
+	db NUM_FAST_TRAVEL_HALL_OF_ORIGIN
+for x, NUM_FAST_TRAVEL_HALL_OF_ORIGIN
+	db x + 1
+endr
+	db -1
+
+.PrintHallOfOriginMapNames:
+	push de
+	ld a, [wMenuSelection]
+	call HallOfOriginGetName
+	pop hl
+	call FarPlaceString
+	ret
+HallOfOriginGetName:
+	ld hl, HallOfOriginWarpStrings
+	ld bc, 3
+	dec a
+	call AddNTimes
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ret
+HallOfOriginWarpStrings:
+	table_width 3
+	dba NewBarkTownName
+	dba RuinsOfAlphName
+	dba GoldenrodCityName
+	dba BlackthornCityName
+	dba IndigoPlateauName
+	dba PalletTownName
+	dba SaffronCityName
+	dba CeladonCityName
+	dba BattleTowerName
+	dba SilverCaveName
+	dba DestinyTowerName
+	dba HallOfOriginName
+	dba ManorName
+
+DefaultWarp::
+	xor a
+	ld [wMenuScrollPosition], a
+	ld a, $1
+	ld [wMenuSelection], a
+	call SetUpTextbox
+.loop
+	ld hl, .WhereToText
+	call PrintText
+	call DelayFrame
+	call UpdateSprites
+	call DefaultWarpLocationMenu
+	ret z
+	ld hl, DefaultWarpLocations
+	ld bc, 2
+	dec a
+	call AddNTimes
+	push hl
+	pop hl
+; Default warp number
+; change if your maps use 0-based or a different default
+	ld a, 1
+	ld [wNextWarp], a
+	ld a, [hli]
+	ld [wNextMapGroup], a
+	ld a, [hli]
+	ld [wNextMapNumber], a
+	ld a, MAPSETUP_DOOR
+	ldh [hMapEntryMethod], a
+	ld a, MAPSTATUS_ENTER
+	call LoadMapStatus
+; play warping sound effect
+    call WaitSFX
+    ld de, SFX_WARP_TO
+    call PlaySFX
+	ret
+.WhereToText
+	text "Where would you"
+	line "like to go?"
+	done
+
+DefaultWarpLocationMenu:
+	ld hl, .DefaultMenuHeader
+	call CopyMenuHeader
+	ld a, [wMenuSelection]
+	ld [wMenuCursorPosition], a
+	xor a
+	ld [wWhichIndexSet], a
+	ldh [hBGMapMode], a
+	call InitScrollingMenu
+	call UpdateSprites
+	call ScrollingMenu
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .cancel
+	ld a, [wMenuSelection]
+	cp -1
+	jr nz, .done
+.cancel
+	xor a
+	ret
+.done
+	ret
+
+.DefaultMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 1, 18, 10
+	dw .DefaultMenuData
+	db 1 ; default option
+	db 0
+.DefaultMenuData:
+	db SCROLLINGMENU_DISPLAY_ARROWS ; flags
+	; if "columns" is > 0, a second menu function is expected,
+	; and the game will crash if it does not exist!
+	db 5, 0 ; rows, columns
+	db SCROLLINGMENU_ITEMS_NORMAL ; item format
+	dba .DefaultMaps
+	dba .PrintDefaultMapNames
+	dba NULL
+	dba NULL
+
+.DefaultMaps:
+	db NUM_FAST_TRAVEL_DEFAULT
+for x, NUM_FAST_TRAVEL_DEFAULT
+	db x + 1
+endr
+	db -1
+
+.PrintDefaultMapNames:
+	push de
+	ld a, [wMenuSelection]
+	call DefaultGetName
+	pop hl
+	call FarPlaceString
+	ret
+DefaultGetName:
+	ld hl, DefaultWarpStrings
+	ld bc, 3
+	dec a
+	call AddNTimes
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	ret
+DefaultWarpStrings:
+	table_width 3
+	dba NewBarkTownName
+	dba RuinsOfAlphName
+	dba GoldenrodCityName
+	dba BlackthornCityName
+	dba IndigoPlateauName
+	dba PalletTownName
+	dba SaffronCityName
+	dba CeladonCityName
+	dba BattleTowerName
+	dba SilverCaveName
 
 StartMenu_Pokemon:
 	ld a, [wPartyCount]

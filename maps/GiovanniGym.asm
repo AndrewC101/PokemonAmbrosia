@@ -280,8 +280,8 @@ GiovanniGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  16, 17, SAFFRON_CITY, 1
-	warp_event  17, 17, SAFFRON_CITY, 1
+	warp_event  16, 17, SAFFRON_CITY, 2
+	warp_event  17, 17, SAFFRON_CITY, 2
 
 	def_coord_events
 

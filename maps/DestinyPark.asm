@@ -1362,22 +1362,22 @@ DestinyPark_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 15, DESTINY_FRONTIER, 3
-	warp_event  5, 15, DESTINY_FRONTIER, 3
-	warp_event  18, 15, DESTINY_FRONTIER, 4
-	warp_event  19, 15, DESTINY_FRONTIER, 4
-	warp_event  32, 15, DESTINY_FRONTIER, 5
-	warp_event  33, 15, DESTINY_FRONTIER, 5
-	warp_event  4, 35, DESTINY_FRONTIER, 6
-	warp_event  5, 35, DESTINY_FRONTIER, 6
-	warp_event  18, 35, DESTINY_FRONTIER, 7
-	warp_event  19, 35, DESTINY_FRONTIER, 7
-	warp_event  32, 35, DESTINY_FRONTIER, 8
-	warp_event  33, 35, DESTINY_FRONTIER, 8
-	warp_event  4, 55, DESTINY_FRONTIER, 9
-	warp_event  5, 55, DESTINY_FRONTIER, 9
-	warp_event  18, 55, DESTINY_FRONTIER, 10
-	warp_event  19, 55, DESTINY_FRONTIER, 10
+	warp_event  4, 15, DESTINY_FRONTIER, 4
+	warp_event  5, 15, DESTINY_FRONTIER, 4
+	warp_event  18, 15, DESTINY_FRONTIER, 5
+	warp_event  19, 15, DESTINY_FRONTIER, 5
+	warp_event  32, 15, DESTINY_FRONTIER, 6
+	warp_event  33, 15, DESTINY_FRONTIER, 6
+	warp_event  4, 35, DESTINY_FRONTIER, 7
+	warp_event  5, 35, DESTINY_FRONTIER, 7
+	warp_event  18, 35, DESTINY_FRONTIER, 8
+	warp_event  19, 35, DESTINY_FRONTIER, 8
+	warp_event  32, 35, DESTINY_FRONTIER, 9
+	warp_event  33, 35, DESTINY_FRONTIER, 9
+	warp_event  4, 55, DESTINY_FRONTIER, 10
+	warp_event  5, 55, DESTINY_FRONTIER, 10
+	warp_event  18, 55, DESTINY_FRONTIER, 11
+	warp_event  19, 55, DESTINY_FRONTIER, 11
 
 	def_coord_events
 

@@ -435,8 +435,8 @@ DestinyEliteFour_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 17, DESTINY_FRONTIER, 15
-	warp_event  5, 17, DESTINY_FRONTIER, 16
+	warp_event  4, 17, DESTINY_FRONTIER, 16
+	warp_event  5, 17, DESTINY_FRONTIER, 17
 
 	warp_event  4, 2, DESTINY_ELITE_FOUR, 5
 	warp_event  5, 2, DESTINY_ELITE_FOUR, 6

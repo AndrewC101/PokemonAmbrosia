@@ -1236,6 +1236,7 @@ DestinyFrontier_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  30, 44, DESTINY_FRONTIER, 1
 	warp_event  30, 59, SILVER_CAVE_OUTSIDE, 3
 	warp_event  31, 59, SILVER_CAVE_OUTSIDE, 4
 	warp_event 42, 53, DESTINY_PARK, 1
@@ -1247,11 +1248,11 @@ DestinyFrontier_MapEvents:
 	warp_event  36, 13, DESTINY_PARK, 13
 	warp_event  8,  5, DESTINY_PARK, 15
 
-	warp_event 26,  0, DESTINY_FRONTIER, 13
-	warp_event 27,  0, DESTINY_FRONTIER, 14
+	warp_event 26,  0, DESTINY_FRONTIER, 14
+	warp_event 27,  0, DESTINY_FRONTIER, 15
 
-	warp_event 52, 23, DESTINY_FRONTIER, 11
-	warp_event 53, 23, DESTINY_FRONTIER, 12
+	warp_event 52, 23, DESTINY_FRONTIER, 12
+	warp_event 53, 23, DESTINY_FRONTIER, 13
 
 	warp_event 52, 11, DESTINY_ELITE_FOUR, 1
 	warp_event 53, 11, DESTINY_ELITE_FOUR, 2

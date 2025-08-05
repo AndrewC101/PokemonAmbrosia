@@ -828,6 +828,7 @@ GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1
 	warp_event 24,  7, GOLDENROD_GYM, 1
 	warp_event 29, 29, GOLDENROD_BIKE_SHOP, 1
 	warp_event 31, 21, GOLDENROD_HAPPINESS_RATER, 1
@@ -842,7 +843,6 @@ GoldenrodCity_MapEvents:
 	warp_event 19,  1, ROUTE_35_GOLDENROD_GATE, 3
 	warp_event  9,  5, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 8
 	warp_event 11, 29, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 5
-	warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1
 
 	def_coord_events
     coord_event 5, 16, SCENE_CUSTOM_1, GoldenrodCitySelfScript

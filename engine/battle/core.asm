@@ -4917,8 +4917,31 @@ HandleHealingItems:
 HandleHPHealingItem:
 	callfar GetOpponentItem
 	ld a, b
+	cp HELD_GOLD_BERRY
+	jr z, .goldBerry
 	cp HELD_BERRY
-	ret nz
+	jr z, .proceed
+	ret
+
+.goldBerry
+	ld a, [hBattleTurn]
+	and a
+	push bc
+	jr z, .swapZeroToOne2
+.swapOneToZero
+	call SetPlayerTurn
+	call GetQuarterMaxHP ; This will set the value of "c" to 1/4th of the max HP of the mon
+	call SetEnemyTurn
+	jr .preproceed
+.swapZeroToOne2
+	call SetEnemyTurn
+	call GetQuarterMaxHP ; This will set the value of "c" to 1/4th of the max HP of the mon
+	call SetPlayerTurn
+.preproceed
+	ld a, c
+	pop bc ;Restore b's value while keeping c
+	ld c, a
+.proceed
 	ld de, wEnemyMonHP + 1
 	ld hl, wEnemyMonMaxHP
 	ldh a, [hBattleTurn]

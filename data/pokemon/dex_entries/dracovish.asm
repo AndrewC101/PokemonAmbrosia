@@ -5,5 +5,5 @@
 	next "predator with"
 	next "a lethal move."
 
-	page "ATTACK boost on"
+	page "Attack boost on"
 	next "defeating foe.@"

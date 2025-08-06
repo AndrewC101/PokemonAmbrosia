@@ -5,5 +5,5 @@
 	next "and bite its"
 	next "foe asunder."
 
-	page "Boosted SPEED"
+	page "Boosted Speed"
 	next "and ACCURACY.@"

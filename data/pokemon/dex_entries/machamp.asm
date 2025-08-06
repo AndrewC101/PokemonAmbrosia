@@ -6,5 +6,5 @@
 	next "can be seen."
 
 	page "Status boosts"
-	next "ATTACK. DYNAMIC"
+	next "Attack. DYNAMIC"
 	next "PUNCH hits.@"

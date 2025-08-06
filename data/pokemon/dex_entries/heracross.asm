@@ -5,6 +5,6 @@
 	next "powers, it can"
 	next "lift anything."
 
-	page "ATTACK boost on"
-	next "status. ATTACK"
+	page "Attack boost on"
+	next "status. Attack"
 	next "boost on KO.@"

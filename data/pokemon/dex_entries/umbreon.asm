@@ -5,6 +5,6 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "SPECIAL DEFENSE"
+	page "Special Defense"
 	next "increases upon"
 	next "entering battle.@"

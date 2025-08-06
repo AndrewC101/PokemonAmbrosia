@@ -5,5 +5,5 @@
 	next "ground, this"
 	next "#MON eats dirt."
 
-	page "ATTACK boost on"
+	page "Attack boost on"
 	next "defeating foe.@"

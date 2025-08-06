@@ -5,6 +5,6 @@
 	next "guardian of the"
 	next "forest."
 
-	page "SPECIAL DEFENSE"
+	page "Special Defense"
 	next "boost and heals"
 	next "status on switch.@"

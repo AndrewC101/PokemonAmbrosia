@@ -7,4 +7,4 @@
 
 	page "Boosted effect"
 	next "chance. Lowers"
-	next "foes SP ATTACK.@"
+	next "foes SP Attack.@"

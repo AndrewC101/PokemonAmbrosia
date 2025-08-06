@@ -601,7 +601,7 @@ LoadOrangePage:
 	ret
 
 AbilityText:
-    db "ABILITY:@"
+    db "Ability:@"
 
 LoadPinkPage:
 	hlcoord 0, 9
@@ -727,20 +727,20 @@ LoadPinkPage:
 	ret
 
 .Status_Type:
-	db   "STATUS/"
-	next "TYPE/@"
+	db   "Status/"
+	next "Type/@"
 
 .OK_str:
 	db "OK @"
 
 .ExpPointStr:
-	db "EXP POINTS@"
+	db "EXP Points@"
 
 .LevelUpStr:
-	db "LEVEL UP@"
+	db "Level Up@"
 
 .ToStr:
-	db "TO@"
+	db "To@"
 
 .PkrsStr:
 	db "#RUS@"
@@ -782,13 +782,13 @@ LoadGreenPage:
 	ret
 
 .Item:
-	db "ITEM@"
+	db "Item@"
 
 .ThreeDashes:
 	db "---@"
 
 .Move:
-	db "MOVE@"
+	db "Move@"
 
 LoadBluePage:
 	call .PlaceOTInfo

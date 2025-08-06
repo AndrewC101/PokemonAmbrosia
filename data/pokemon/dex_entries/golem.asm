@@ -5,6 +5,6 @@
 	next "even dynamite"
 	next "wont scratch it."
 
-	page "SPEED"
+	page "Speed"
 	next "increases in"
 	next "a sandstorm.@"

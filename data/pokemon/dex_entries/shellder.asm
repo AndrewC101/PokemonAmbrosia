@@ -5,6 +5,6 @@
 	next "opponent reveals"
 	next "its weak parts."
 
-	page "DEFENSE"
+	page "Defense"
 	next "increases upon"
 	next "entering battle.@"

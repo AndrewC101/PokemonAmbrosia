@@ -5,5 +5,5 @@
 	next "still, even while"
 	next "it's a pupa."
 
-	page "ATTACK boost on"
+	page "Attack boost on"
 	next "defeating foe.@"

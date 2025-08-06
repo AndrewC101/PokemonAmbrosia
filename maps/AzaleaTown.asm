@@ -527,9 +527,9 @@ YuGiOhRolePlayScript:
 	dba .YuGiOhCharacterText
 	dbw BANK(@), NULL
 .YuGiOhCharacterText:
-	db "HENSHIN@"
-	db "SETO@"
-	db "ATEM@"
+	db "Henshin@"
+	db "Seto@"
+	db "Atem@"
 
 .Henshin
     opentext

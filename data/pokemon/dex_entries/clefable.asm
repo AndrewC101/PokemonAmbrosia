@@ -5,6 +5,6 @@
 	next "quiet, remote"
 	next "mountains."
 
-	page "SP.DEF boost on"
+	page "SP.Def boost on"
 	next "switch. Immune to"
 	next "passive damage.@"

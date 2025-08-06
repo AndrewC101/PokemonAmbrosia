@@ -5,6 +5,6 @@
 	next "well-developed"
 	next "arms and legs."
 
-	page "SPEED boost in"
+	page "Speed boost in"
 	next "rain. Immune to"
 	next "WATER moves.@"

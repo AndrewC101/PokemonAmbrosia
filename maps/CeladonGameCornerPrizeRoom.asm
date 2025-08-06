@@ -130,7 +130,7 @@ CeladonPrizeRoom_TMMenuHeader:
 	db "TM42    {d:CELADONGAMECORNERPRIZEROOM_TM32_COINS}@"
 	db "TM20    {d:CELADONGAMECORNERPRIZEROOM_TM29_COINS}@"
 	db "TM21    {d:CELADONGAMECORNERPRIZEROOM_TM15_COINS}@"
-	db "CANCEL@"
+	db "Cancel@"
 
 CeladonGameCornerPrizeRoomPokemonVendor:
 	faceplayer
@@ -213,10 +213,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "WOBBUFFET {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
-	db "CHANSEY   {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
-	db "DITTO     {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
-	db "CANCEL@"
+	db "Wobbuffet {d:CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS}@"
+	db "Chansey   {d:CELADONGAMECORNERPRIZEROOM_PORYGON_COINS}@"
+	db "Ditto     {d:CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS}@"
+	db "Cancel@"
 
 CeladonGameCornerPrizeRoomGentlemanText:
 	text "I want the DITTO"

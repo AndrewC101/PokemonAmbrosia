@@ -5,6 +5,6 @@
 	next "by sleeping at"
 	next "underwater depths"
 
-	page "SPEED boost in"
-	next "rain. SP.ATK"
+	page "Speed boost in"
+	next "rain. SP.Atk"
 	next "boost on KO.@"

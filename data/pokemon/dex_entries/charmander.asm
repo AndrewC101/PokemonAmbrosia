@@ -5,5 +5,5 @@
 	next "the flame on its"
 	next "tail blazes."
 
-	page "SP.ATK boost on"
+	page "SP.Atk boost on"
 	next "defeating foe.@"

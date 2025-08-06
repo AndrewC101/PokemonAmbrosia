@@ -6,5 +6,5 @@
 	next "cross rivers."
 
 	page "Status boosts"
-	next "ATTACK. Resists"
+	next "Attack. Resists"
 	next "FIRE and ICE.@"

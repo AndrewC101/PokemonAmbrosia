@@ -658,7 +658,7 @@ BankOfMom_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "GET@"
-	db "SAVE@"
-	db "CHANGE@"
-	db "CANCEL@"
+	db "Get@"
+	db "Save@"
+	db "Change@"
+	db "Cancel@"

@@ -5,5 +5,5 @@
 	next "of the most"
 	next "skilled BISHARP."
 
-	page "Boosts ATTACK"
+	page "Boosts Attack"
 	next "and weak moves.@"

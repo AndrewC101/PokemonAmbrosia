@@ -5,6 +5,6 @@
 	next "the life force"
 	next "of others"
 
-	page "ATTACK"
+	page "Attack"
 	next "increases upon"
 	next "entering battle.@"

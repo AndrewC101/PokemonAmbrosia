@@ -713,8 +713,8 @@ HoenWarRolePlayScript:
 	dba .HoenWarHeroOrVillainText
 	dbw BANK(@), NULL
 .HoenWarHeroOrVillainText:
-	db "HEROES@"
-	db "VILLAINS@"
+	db "Heroes@"
+	db "Villains@"
 
 .Hero
     opentext
@@ -779,9 +779,9 @@ HoenWarRolePlayScript:
 	dba .HoenWarActionMenuText
 	dbw BANK(@), NULL
 .HoenWarActionMenuText:
-	db "TALK@"
-	db "FIGHT@"
-	db "PRAY@"
+	db "Talk@"
+	db "Fight@"
+	db "Pray@"
 
 .Beg
     opentext
@@ -873,8 +873,8 @@ HoenWarRolePlayScript:
 	dba .HoenWarMercyMenuText
 	dbw BANK(@), NULL
 .HoenWarMercyMenuText:
-	db "KILL@"
-	db "SPARE@"
+	db "Kill@"
+	db "Spare@"
 
 .Kill
     opentext

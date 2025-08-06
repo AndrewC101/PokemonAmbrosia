@@ -6,5 +6,5 @@
 	next "to fight."
 
 	page "Status boosts"
-	next "ATTACK. DYNAMIC"
+	next "Attack. DYNAMIC"
 	next "PUNCH hits.@"

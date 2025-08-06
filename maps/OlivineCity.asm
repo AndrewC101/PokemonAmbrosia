@@ -595,8 +595,8 @@ DBZRolePlayScript:
 	dba .DBZHeroOrVillainText
 	dbw BANK(@), NULL
 .DBZHeroOrVillainText:
-	db "HEROES@"
-	db "VILLAINS@"
+	db "Heroes@"
+	db "Villains@"
 
 .Hero
     opentext
@@ -1038,8 +1038,8 @@ DBZRolePlayScript:
 	dba .DBZGokuOrVegetaText
 	dbw BANK(@), NULL
 .DBZGokuOrVegetaText:
-	db "GOKU@"
-	db "VEGETA@"
+	db "Goku@"
+	db "Vegeta@"
 
 RolePlay3PrizeText:
     text "We finished a"

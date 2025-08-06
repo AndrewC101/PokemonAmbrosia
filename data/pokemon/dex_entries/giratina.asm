@@ -6,5 +6,5 @@
 	next "violent power."
 
 	page "Prevents enemy"
-	next "switching. SP.ATK"
+	next "switching. SP.Atk"
 	next "boost on KO.@"

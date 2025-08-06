@@ -4,6 +4,6 @@
 	db   "It is a world"
 	next "class jumper."
 
-	page "SPEED"
+	page "Speed"
 	next "increases upon"
 	next "entering battle.@"

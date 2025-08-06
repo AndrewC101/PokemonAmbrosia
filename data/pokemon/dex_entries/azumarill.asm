@@ -6,5 +6,5 @@
 	next "under water."
 
 	page "Has double"
-	next "ATTACK in"
+	next "Attack in"
 	next "battle.@"

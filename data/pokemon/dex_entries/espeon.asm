@@ -5,6 +5,6 @@
 	next "its forked tail"
 	next "quivers."
 
-	page "SPECIAL ATTACK"
+	page "Special Attack"
 	next "increases upon"
 	next "entering battle.@"

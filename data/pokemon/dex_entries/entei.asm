@@ -5,6 +5,6 @@
 	next "#MON courses"
 	next "around the earth."
 
-	page "ATTACK"
+	page "Attack"
 	next "increases upon"
 	next "entering battle.@"

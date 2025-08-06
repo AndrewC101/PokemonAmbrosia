@@ -1035,8 +1035,8 @@ StarWarsRolePlayScript:
 	dba .StarWarsHeroOrVillainText
 	dbw BANK(@), NULL
 .StarWarsHeroOrVillainText:
-	db "HEROES@"
-	db "VILLAINS@"
+	db "Heroes@"
+	db "Villains@"
 
 .Hero
     opentext

@@ -190,14 +190,14 @@ StartMenu::
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
-.PackString:     db "PACK@"
+.PackString:     db "Pack@"
 .StatusString:   db "<PLAYER>@"
-.SaveString:     db "SAVE@"
-.OptionString:   db "OPTION@"
-.ExitString:     db "EXIT@"
+.SaveString:     db "Save@"
+.OptionString:   db "Option@"
+.ExitString:     db "Exit@"
 .PokegearString: db "<POKE>GEAR@"
-.QuitString:     db "QUIT@"
-.WarpString:     db "WARP@"
+.QuitString:     db "Quit@"
+.WarpString:     db "Warp@"
 
 .EmptyDesc:
 	db   "@"
@@ -272,10 +272,10 @@ StartMenu::
 	dw .Sunny
 	dw .Sandy
 
-.ClearSkies:   db "CLEAR@"
-.Raining:      db "RAINING@"
-.Sunny:        db "SUNNY DAY@"
-.Sandy:        db "SANDSTORM@"
+.ClearSkies:   db "Clear@"
+.Raining:      db "Raining@"
+.Sunny:        db "Sunny Day@"
+.Sandy:        db "Sandstorm@"
 
 .GetMenuEmptyTextPointer:
 	ld e, a

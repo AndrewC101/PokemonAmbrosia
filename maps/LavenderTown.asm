@@ -179,9 +179,9 @@ MerlinRolePlayScript:
 	dba .MerlinCharacterText
 	dbw BANK(@), NULL
 .MerlinCharacterText:
-	db "MORGANA@"
-	db "ARTHUR@"
-	db "MERLIN@"
+	db "Morgana@"
+	db "Arthur@"
+	db "Merlin@"
 
 .Morgana
     opentext

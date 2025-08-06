@@ -561,7 +561,7 @@ MailboxPC:
 .SubMenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "READ MAIL@"
-	db "PUT IN PACK@"
-	db "ATTACH MAIL@"
-	db "CANCEL@"
+	db "Read Mail@"
+	db "Put In Pack@"
+	db "Attach Mail@"
+	db "Cancel@"

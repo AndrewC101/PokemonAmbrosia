@@ -270,10 +270,10 @@ BattleMonMenu:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
 	db 4 ; items
-	db "SWITCH@"
-	db "STATS@"
-	db "MOVES@"
-	db "CANCEL@"
+	db "Switch@"
+	db "Stats@"
+	db "Moves@"
+	db "Cancel@"
 
 CheckMonCanLearn_TM_HM:
 ; Check if wCurPartySpecies can learn move in 'a'

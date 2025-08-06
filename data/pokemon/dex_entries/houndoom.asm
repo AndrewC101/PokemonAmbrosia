@@ -5,6 +5,6 @@
 	next "cause eternal"
 	next "pain."
 
-	page "Boosted SPECIAL"
-	next "ATTACK. Immune"
+	page "Boosted Special"
+	next "Attack. Immune"
 	next "to FIRE.@"

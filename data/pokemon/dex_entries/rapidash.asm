@@ -5,6 +5,6 @@
 	next "gallop and run at"
 	next "blistering speed."
 
-	page "SPEED"
+	page "Speed"
 	next "increases upon"
 	next "entering battle.@"

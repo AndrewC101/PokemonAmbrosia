@@ -5,6 +5,6 @@
 	next "feathers make no"
 	next "sound in flight."
 
-	page "DEFENSE boost on"
+	page "Defense boost on"
 	next "switch. Boosted"
 	next "accuracy.@"

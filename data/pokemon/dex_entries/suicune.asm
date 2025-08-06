@@ -5,6 +5,6 @@
 	next "#MON blows"
 	next "around the world."
 
-	page "DEFENSE"
+	page "Defense"
 	next "increases upon"
 	next "entering battle.@"

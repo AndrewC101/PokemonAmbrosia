@@ -12,13 +12,13 @@ NUM_MONMENUVALUES EQU const_value - 1
 MonMenuOptionStrings:
 ; entries correspond to MONMENUVALUE_* constants
 	list_start MonMenuOptionStrings
-	li "STATS"
-	li "SWITCH"
-	li "ITEM"
-	li "CANCEL"
-	li "MOVE"
-	li "MAIL"
-	li "ERROR!"
+	li "Stats"
+	li "Switch"
+	li "Item"
+	li "Cancel"
+	li "Move"
+	li "Mail"
+	li "Error!"
 	assert_list_length NUM_MONMENUVALUES
 
 MonMenuOptions:

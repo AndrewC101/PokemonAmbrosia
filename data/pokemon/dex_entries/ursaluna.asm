@@ -5,6 +5,6 @@
 	next "ferociously"
 	next "strong beast."
 
-	page "ATTACK boost on"
+	page "Attack boost on"
 	next "status. Immune"
 	next "to recoil.@"

@@ -234,10 +234,10 @@ BillsPCDepositMenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "DEPOSIT@"
-	db "STATS@"
-	db "RELEASE@"
-	db "CANCEL@"
+	db "Deposit@"
+	db "Stats@"
+	db "Release@"
+	db "Cancel@"
 
 BillsPCClearThreeBoxes: ; unreferenced
 	hlcoord 0, 0
@@ -487,10 +487,10 @@ BillsPC_Withdraw:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "WITHDRAW@"
-	db "STATS@"
-	db "RELEASE@"
-	db "CANCEL@"
+	db "Withdraw@"
+	db "Stats@"
+	db "Release@"
+	db "Cancel@"
 
 _MovePKMNWithoutMail:
 	ld hl, wOptions
@@ -697,9 +697,9 @@ _MovePKMNWithoutMail:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "MOVE@"
-	db "STATS@"
-	db "CANCEL@"
+	db "Move@"
+	db "Stats@"
+	db "Cancel@"
 
 .PrepInsertCursor:
 	xor a
@@ -2483,10 +2483,10 @@ BillsPC_ChangeBoxSubmenu:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "SWITCH@"
-	db "NAME@"
-	db "PRINT@"
-	db "QUIT@"
+	db "Switch@"
+	db "Name@"
+	db "Print@"
+	db "Quit@"
 
 BillsPC_PlaceChooseABoxString:
 	ld de, .ChooseABox

@@ -5,6 +5,6 @@
 	next "directions"
 	next "without moving."
 
-	page "SPEED"
+	page "Speed"
 	next "increases upon"
 	next "entering battle.@"

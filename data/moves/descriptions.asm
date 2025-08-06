@@ -321,7 +321,7 @@ SkyCleaveDescription:
 
 SwordsDanceDescription:
 	db   "A dance that in-"
-	line "creases ATTACK.@"
+	line "creases Attack.@"
 
 CutDescription:
 	db   "Cuts using claws,"
@@ -369,7 +369,7 @@ AquaJetDescription:
 
 MoonBlastDescription:
 	db   "An attack that may"
-	line "lower SPCL.ATK.@"
+	line "lower Spcl.Atk.@"
 
 BigRecoverDescription:
 	db   "Restores HP by 1/2"
@@ -422,7 +422,7 @@ DoubleEdgeDescription:
 
 TailWhipDescription:
 	db   "Lowers the foe's"
-	line "DEFENSE.@"
+	line "Defense.@"
 
 PoisonJabDescription:
 PoisonStingDescription:
@@ -439,7 +439,7 @@ ScaldDescription:
 
 LeerDescription:
 	db   "Reduces the foe's"
-	line "DEFENSE.@"
+	line "Defense.@"
 
 BiteDescription:
 	db   "An attack that may"
@@ -447,7 +447,7 @@ BiteDescription:
 
 GrowlDescription:
 	db   "Reduces the foe's"
-	line "ATTACK.@"
+	line "Attack.@"
 
 RoarDescription:
 	db   "Scares wild foes"
@@ -479,7 +479,7 @@ DisableDescription:
 
 AcidDescription:
 	db   "An attack that may"
-	line "lower DEFENSE.@"
+	line "lower Defense.@"
 
 EmberDescription:
 	db   "An attack that may"
@@ -519,11 +519,11 @@ PsybeamDescription:
 
 BubblebeamDescription:
 	db   "An attack that may"
-	line "lower SPEED.@"
+	line "lower Speed.@"
 
 AuroraBeamDescription:
 	db   "An attack that may"
-	line "lower ATTACK.@"
+	line "lower Attack.@"
 
 HyperBeamDescription:
 	db   "1st turn: Attack"
@@ -570,8 +570,8 @@ LeechSeedDescription:
 	line "in level range.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
-	line "ATK rating.@"
+	db   "Raises the Spcl."
+	line "Atk rating.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -660,11 +660,11 @@ HypnosisDescription:
 
 MeditateDescription:
 	db   "Raises the user's"
-	line "ATTACK.@"
+	line "Attack.@"
 
 AgilityDescription:
 	db   "Sharply increases"
-	line "the user's SPEED.@"
+	line "the user's Speed.@"
 
 QuickAttackDescription:
 	db   "Lets the user get"
@@ -688,7 +688,7 @@ MimicDescription:
 
 ScreechDescription:
 	db   "Sharply reduces"
-	line "the foe's DEFENSE.@"
+	line "the foe's Defense.@"
 
 DoubleTeamDescription:
 	db   "Heightens evasive-"
@@ -700,7 +700,7 @@ RecoverDescription:
 
 HardenDescription:
 	db   "Raises the user's"
-	line "DEFENSE.@"
+	line "Defense.@"
 
 DarkVoidDescription:
 	db   "May put the foe to"
@@ -716,18 +716,18 @@ ConfuseRayDescription:
 
 WithdrawDescription:
 	db   "Heightens the"
-	line "user's DEFENSE.@"
+	line "user's Defense.@"
 
 DefenseCurlDescription:
 	db   "Heightens the"
-	line "user's DEFENSE.@"
+	line "user's Defense.@"
 
 BarrierDescription:
 	db   "Sharply increases"
-	line "user's DEFENSE.@"
+	line "user's Defense.@"
 
 LightScreenDescription:
-	db   "Ups SPCL.DEF with"
+	db   "Ups Spcl.Def with"
 	line "a wall of light.@"
 
 HazeDescription:
@@ -735,7 +735,7 @@ HazeDescription:
 	line "stat changes.@"
 
 ReflectDescription:
-	db   "Raises DEFENSE"
+	db   "Raises Defense"
 	line "with a barrier.@"
 
 FocusEnergyDescription:
@@ -803,12 +803,12 @@ DischargeDescription:
 	line "cause paralysis.@"
 
 DragonDanceDescription:
-	db   "Increases ATK"
-	line "and SPEED.@"
+	db   "Increases Atk"
+	line "and Speed.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
-	line "user's SPCL.DEF.@"
+	line "user's Spcl.Def.@"
 
 KinesisDescription:
 	db   "Reduces the foe's"
@@ -880,7 +880,7 @@ SplashDescription:
 
 AcidArmorDescription:
 	db   "Sharply raises the"
-	line "user's DEFENSE.@"
+	line "user's Defense.@"
 
 DrainKissDescription:
 	db   "Steals 1/2 of the"
@@ -896,7 +896,7 @@ FurySwipesDescription:
 
 PlayRoughDescription:
 	db   "An attack that may"
-	line "lower ATTACK.@"
+	line "lower Attack.@"
 
 RestDescription:
 	db   "Sleep for 2 turns"
@@ -943,12 +943,12 @@ SketchDescription:
 	line "move permanently.@"
 
 QuiverDanceDescription:
-	db   "raises SPCL"
-	line "stats and SPEED.@"
+	db   "raises Spcl"
+	line "stats and Speed.@"
 
 BugBuzzDescription:
 	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	line "lower Spcl.Def.@"
 
 SavageRendDescription:
 	db   "Jaws of death"
@@ -1012,7 +1012,7 @@ MachPunchDescription:
 
 ScaryFaceDescription:
 	db   "Sharply reduces"
-	line "the foe's SPEED.@"
+	line "the foe's Speed.@"
 
 NightSlashDescription:
 	db   "Has a high criti-"
@@ -1024,7 +1024,7 @@ BoltBreakDescription:
 
 BellyDrumDescription:
 	db   "Reduces own HP to"
-	line "maximize ATTACK.@"
+	line "maximize Attack.@"
 
 SludgeBombDescription:
 	db   "An attack that may"
@@ -1056,7 +1056,7 @@ PerishSongDescription:
 
 IcyWindDescription:
 	db   "An icy attack that"
-	line "lowers SPEED.@"
+	line "lowers Speed.@"
 
 LeafBladeDescription:
 	db   "Has a high criti-"
@@ -1088,7 +1088,7 @@ DefogDescription:
 
 CharmDescription:
 	db   "Sharply lowers the"
-	line "foe's ATTACK.@"
+	line "foe's Attack.@"
 
 RolloutDescription:
 	db   "Attacks 5 turns"
@@ -1111,12 +1111,12 @@ VoltTackleDescription:
 	line "hurts the user.@"
 
 BulkUpDescription:
-	db   "Increases ATK"
-	line "and DEF.@"
+	db   "Increases Atk"
+	line "and Def.@"
 
 FlashCannonDescription:
 	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	line "lower Spcl.Def.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"
@@ -1172,7 +1172,7 @@ MegahornDescription:
 
 DragonPulseDescription:
 	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	line "lower Spcl.Def.@"
 
 BatonPassDescription:
 	db   "Switches while"
@@ -1200,11 +1200,11 @@ IronHeadDescription:
 
 MetalClawDescription:
 	db   "An attack that may"
-	line "up user's ATTACK.@"
+	line "up user's Attack.@"
 
 MeteorMashDescription:
 	db   "An attack that may"
-	line "up user's ATTACK.@"
+	line "up user's Attack.@"
 
 MorningSunDescription:
 	db   "Restores HP"
@@ -1224,7 +1224,7 @@ HiddenPowerDescription:
 
 SeedFlareDescription:
 	db   "Powerful flare,"
-	line "lowers SPCL.DEF.@"
+	line "lowers Spcl.Def.@"
 
 DracoMeteorDescription:
 	db   "The ultimate"
@@ -1240,11 +1240,11 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	line "lower DEF.@"
+	line "lower Def.@"
 
 MirrorCoatDescription:
-	db   "Counters a SPCL."
-	line "ATK move double.@"
+	db   "Counters a Spcl."
+	line "Atk move double.@"
 
 PsychUpDescription:
 	db   "Copies the foe's"
@@ -1260,7 +1260,7 @@ AncientpowerDescription:
 
 ShadowBallDescription:
 	db   "An attack that may"
-	line "lower SPCL.DEF.@"
+	line "lower Spcl.Def.@"
 
 FutureSightDescription:
 	db   "An attack that"
@@ -1268,7 +1268,7 @@ FutureSightDescription:
 
 RockSmashDescription:
 	db   "An attack that may"
-	line "lower DEFENSE.@"
+	line "lower Defense.@"
 
 WhirlpoolDescription:
 	db   "Traps the foe for"

@@ -7,4 +7,4 @@
 
 	page "Extra damage on"
 	next "males. Lowers"
-	next "foes SP ATTACK.@"
+	next "foes SP Attack.@"

@@ -7,4 +7,4 @@
 
 	page "Armoured at"
 	next "max HP. Lowers"
-	next "foes ATTACK.@"
+	next "foes Attack.@"

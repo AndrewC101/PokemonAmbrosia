@@ -6,5 +6,5 @@
 	next "prey apart."
 
 	page "Has double"
-	next "ATTACK and"
+	next "Attack and"
 	next "lowers foes.@"

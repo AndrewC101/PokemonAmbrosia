@@ -1155,9 +1155,9 @@ BattleTrialReceptionistScript:
 	dba .ImpossibleText
 	dbw BANK(@), NULL
 .ImpossibleText:
-	db "NORMAL@"
-	db "MASTER@"
-	db "IMPOSSIBLE@"
+	db "Normal@"
+	db "Mater@"
+	db "Impossible@"
 
 .MasterUnlocked:
     writetext WhatTrialText
@@ -1180,8 +1180,8 @@ BattleTrialReceptionistScript:
 	dba .MasterText
 	dbw BANK(@), NULL
 .MasterText:
-	db "NORMAL@"
-	db "MASTER@"
+	db "Normal@"
+	db "Master@"
 
 .Standard
     writetext ExplainStandardTrialText
@@ -2673,8 +2673,8 @@ WhichVariantChoice:
 	dba .WingText
 	dbw BANK(@), NULL
 .WingText:
-	db "TRAINER@"
-	db "MASTER@"
+	db "Trainer@"
+	db "Master@"
 .Trainer
     setval FALSE
     end

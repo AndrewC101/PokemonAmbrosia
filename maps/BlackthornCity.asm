@@ -393,8 +393,8 @@ LOTRRolePlayScript:
 	dba .LOTRHeroOrVillainText
 	dbw BANK(@), NULL
 .LOTRHeroOrVillainText:
-	db "HEROES@"
-	db "VILLAINS@"
+	db "Heroes@"
+	db "Villains@"
 
 .Hero
     opentext

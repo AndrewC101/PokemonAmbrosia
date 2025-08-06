@@ -1167,9 +1167,9 @@ MultiverseRolePlayScript:
 	dba .MultiverseCharacterText
 	dbw BANK(@), NULL
 .MultiverseCharacterText:
-	db "HEROES@"
-	db "VILLAINS@"
-	db "DEITIES@"
+	db "Heroes@"
+	db "Villains@"
+	db "Deities@"
 
 .Heroes
     opentext

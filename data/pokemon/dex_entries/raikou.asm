@@ -5,6 +5,6 @@
 	next "stores energy"
 	next "inside its body,"
 
-	page "SPEED boost on"
-	next "switch. SP.ATK"
+	page "Speed boost on"
+	next "switch. SP.Atk"
 	next "boost on KO.@"

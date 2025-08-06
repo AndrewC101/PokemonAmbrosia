@@ -6,5 +6,5 @@
 	next "might #MON."
 
 	page "lowers foes"
-	next "ATTACK upon"
+	next "Attack upon"
 	next "entering battle.@"

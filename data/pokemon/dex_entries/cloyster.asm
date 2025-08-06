@@ -5,6 +5,6 @@
 	next "can't break its"
 	next "strong shell."
 
-	page "DEFENSE"
+	page "Defense"
 	next "increases upon"
 	next "entering battle.@"

@@ -1037,13 +1037,13 @@ GoldDiceScript:
 	dbw BANK(@), NULL
 .FinalGoldDiceWarpText:
 	db "DBZ@"
-	db "YUGIOH@"
-	db "MERLIN@"
-	db "STAR WARS@"
+	db "YuGiOh@"
+	db "Merlin@"
+	db "Star Wars@"
 	db "LOTR@"
-	db "HOENN WAR@"
-	db "FINAL@"
-	db "EXIT@"
+	db "Hoenn War@"
+	db "Final@"
+	db "Exit@"
 
 .defaultGoldDice
 	loadmenu .GoldDiceWarpMenuHeader
@@ -1070,11 +1070,11 @@ GoldDiceScript:
 	dbw BANK(@), NULL
 .GoldDiceWarpText:
 	db "DBZ@"
-	db "YUGIOH@"
-	db "MERLIN@"
-	db "STAR WARS@"
+	db "YuGiOh@"
+	db "Merlin@"
+	db "Star Wars@"
 	db "LOTR@"
-	db "HOENN WAR@"
+	db "Hoenn War@"
 
 .starWars
 	warpfacing UP, CHERRYGROVE_CITY, 21, 5

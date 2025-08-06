@@ -5,6 +5,6 @@
 	next "SHELLDER won't let"
 	next "go."
 
-	page "SPECIAL DEFENSE"
+	page "Special Defense"
 	next "increases upon"
 	next "entering battle.@"

@@ -6,5 +6,5 @@
 	next "to seek prey."
 
 	page "lowers foes"
-	next "ATTACK upon"
+	next "Attack upon"
 	next "entering battle.@"

@@ -228,9 +228,9 @@ DragonShrineQuestion1_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "DRAGONITE@"
-	db "CHARIZARD@"
-	db "KINGDRA@"
+	db "Dragonite@"
+	db "Charizard@"
+	db "Kingdra@"
 
 DragonShrineQuestion2_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -241,9 +241,9 @@ DragonShrineQuestion2_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "DRACO METEOR@"
-	db "DRAGON PULSE@"
-	db "OUTRAGE@"
+	db "Draco Meteor@"
+	db "Dragon Pulse@"
+	db "Outrage@"
 
 DragonShrineQuestion3_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -254,9 +254,9 @@ DragonShrineQuestion3_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "DRAGONITE@"
-	db "SALAMENCE@"
-	db "GARCHOMP@"
+	db "Dragonite@"
+	db "Salamence@"
+	db "Garchomp@"
 
 DragonShrineQuestion4_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -267,9 +267,9 @@ DragonShrineQuestion4_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "DRAGONAIR@"
-	db "LATIAS@"
-	db "KINGDRA@"
+	db "Dragonair@"
+	db "Latias@"
+	db "Kingdra@"
 
 DragonShrineQuestion5_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -280,9 +280,9 @@ DragonShrineQuestion5_MenuHeader:
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	db 3 ; items
-	db "ZYGARDE@"
-	db "RAYQUAZA@"
-	db "DIALGA@"
+	db "Zygarde@"
+	db "Rayquaza@"
+	db "Dialga@"
 
 DragonShrinePlayerWalkInMovement:
 	slow_step UP
@@ -400,7 +400,7 @@ DragonShrineQuestion2Text:
 DragonShrineQuestion3Text:
 	text "Which of these"
 	line "DRAGONS has the"
-	cont "greatest ATTACK?"
+	cont "greatest Attack?"
 	done
 
 DragonShrineQuestion4Text:

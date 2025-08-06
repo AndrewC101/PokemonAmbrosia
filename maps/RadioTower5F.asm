@@ -166,8 +166,8 @@ RadioTower5FRocketBossScene:
 	dba .WingText
 	dbw BANK(@), NULL
 .WingText:
-	db "SILVER@"
-	db "RAINBOW@"
+	db "Silver@"
+	db "Rainbow@"
 
 .Silver
     writetext AreYouSure

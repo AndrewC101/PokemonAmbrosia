@@ -348,7 +348,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	db "@"
 
 .Badges:
-	db "  BADGES▶@"
+	db "  Badges▶@"
 
 .StatusTilemap:
 	db $29, $2a, $2b, $2c, $2d, -1

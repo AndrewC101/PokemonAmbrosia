@@ -6,5 +6,5 @@
 	next "tormenting all."
 
 	page "Lowers foes SP"
-	next "ATTACK on switch."
+	next "Attack on switch."
 	next "Immune to GROUND.@"

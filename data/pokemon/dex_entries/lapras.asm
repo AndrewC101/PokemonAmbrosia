@@ -5,5 +5,5 @@
 	next "caring #MON"
 
 	page "Lowers foes SP"
-	next "ATTACK and clears"
+	next "Attack and clears"
 	next "field on switch.@"

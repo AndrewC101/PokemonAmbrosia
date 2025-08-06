@@ -6,5 +6,5 @@
 	next "shake the earth."
 
 	page "Summons SANDSTORM"
-	next "on switch. ATTACK"
+	next "on switch. Attack"
 	next "boost on KO.@"

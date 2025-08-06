@@ -1131,6 +1131,10 @@ Zygarde2Script:
 	end
 	
 MultiverseRolePlayScript:
+    setflag ENGINE_POKEGEAR
+    setflag ENGINE_WARP
+    loadmem wReachedHallOfOrigin, 1
+
     faceplayer
     opentext
     writetext MultiverseIntroText

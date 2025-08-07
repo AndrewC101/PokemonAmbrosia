@@ -36,7 +36,7 @@ PlaceDiplomaOnScreen:
 	ret
 
 .Player:
-	db "PLAYER@"
+	db "Player@"
 
 .EmptyString:
 	db "@"
@@ -75,8 +75,8 @@ PrintDiplomaPage2:
 	call PrintNum
 	ret
 
-.PlayTime: db "PLAY TIME@"
-.GameFreak: db "GAME FREAK@"
+.PlayTime: db "Play Time@"
+.GameFreak: db "DrUltimaMan@"
 
 DiplomaGFX:
 INCBIN "gfx/diploma/diploma.2bpp.lz"

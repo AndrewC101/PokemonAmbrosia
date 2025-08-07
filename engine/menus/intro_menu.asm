@@ -28,16 +28,16 @@ PrintDayOfWeek:
 	ret
 
 .Days:
-	db "SUN@"
-	db "MON@"
-	db "TUES@"
-	db "WEDNES@"
-	db "THURS@"
-	db "FRI@"
-	db "SATUR@"
+	db "Sun@"
+	db "Mon@"
+	db "Tues@"
+	db "Wednes@"
+	db "Thurs@"
+	db "Fri@"
+	db "Satur@"
 
 .Day:
-	db "DAY@"
+	db "day@"
 
 NewGame_ClearTilemapEtc:
 	xor a
@@ -269,7 +269,7 @@ SetDefaultBoxNames:
 	ret
 
 .Box:
-	db "BOX@"
+	db "Box@"
 
 InitializeMagikarpHouse:
 	ld hl, wBestMagikarpLengthFeet
@@ -282,7 +282,7 @@ InitializeMagikarpHouse:
 	ret
 
 .Ralph:
-	db "RALPH@"
+	db "Ralph@"
 
 InitializeNPCNames:
 	ld hl, .Rival
@@ -306,9 +306,9 @@ InitializeNPCNames:
 	ret
 
 .Rival:  db "???@"
-.Red:    db "RED@"
-.Green:  db "GREEN@"
-.Mom:    db "MOM@"
+.Red:    db "Red@"
+.Green:  db "Green@"
+.Mom:    db "Mum@"
 
 InitializeWorld:
 	call ShrinkPlayer
@@ -874,9 +874,9 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "GOLD@@@@@@@"
+	db "Gold@@@@@@@"
 .Kris:
-	db "GOLD@@@@@@@"
+	db "Gold@@@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
 	call LoadMenuHeader

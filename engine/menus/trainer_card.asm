@@ -266,9 +266,9 @@ TrainerCard_PrintTopHalfOfCard:
 	ret
 
 .Name_Money:
-	db   "NAME/"
+	db   "Name/"
 	next ""
-	next "MONEY@"
+	next "Money@"
 
 .ID_No:
 	db $27, $28, -1 ; ID NO
@@ -338,11 +338,11 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 
 .Dex_PlayTime:
 	db   "#DEX"
-	next "PLAY TIME@"
+	next "Play Time@"
 
 .capture_cap:
-    db "TRAIN"
-    next "CATCH@"
+    db "Train"
+    next "Catch@"
 
 .Unused: ; unreferenced
 	db "@"

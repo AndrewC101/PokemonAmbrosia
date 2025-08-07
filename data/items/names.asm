@@ -25,7 +25,7 @@ ItemNames::
     li "Thunderstone"
     li "Water Stone"
     li "Pocket PC"
-    li "Hp Up"
+    li "HP Up"
     li "Protein"
     li "Iron"
     li "Carbos"

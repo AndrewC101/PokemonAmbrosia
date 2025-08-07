@@ -102,12 +102,12 @@ BattleText_TargetRecoveredWithItem:
 
 BattleText_TargetRecoveredWithLeftovers:
 	text "<TARGET>"
-	line "LEFTOVERS heal."
+	line "Leftovers heal."
 	prompt
 
 BattleText_TargetRecoveredWithHolyCrown:
 	text "<TARGET>"
-	line "HOLY CROWN heal."
+	line "Holy Crown heal."
 	prompt
 
 BattleText_TargetRegenerates:

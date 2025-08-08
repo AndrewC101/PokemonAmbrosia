@@ -299,13 +299,27 @@ JoyWaitAorB::
 	call UpdateTimeAndPals
 	jr .loop
 
+JoyWaitAorBorDown::
+.loop
+	call DelayFrame
+	call GetJoypad
+	ldh a, [hJoyPressed]
+	and A_BUTTON | B_BUTTON
+	ret nz
+	ldh a, [hJoypadDown]
+	and B_BUTTON
+	ldh [hWaitForBButtonRelease], a
+	ret nz
+	call UpdateTimeAndPals
+jr .loop
+
 WaitButton::
 	ldh a, [hOAMUpdate]
 	push af
 	ld a, 1
 	ldh [hOAMUpdate], a
 	call WaitBGMap
-	call JoyWaitAorB
+	call JoyWaitAorBorDown
 	pop af
 	ldh [hOAMUpdate], a
 	ret
@@ -411,6 +425,9 @@ PromptButton::
 .input_wait_loop
 	call .blink_cursor
 	call JoyTextDelay
+    ldh a, [hJoypadDown]
+	and B_BUTTON
+	jr nz, .received_input
 	ldh a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON
 	jr nz, .received_input

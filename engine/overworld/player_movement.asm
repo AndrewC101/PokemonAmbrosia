@@ -14,12 +14,31 @@ DoPlayerMovement::
 	ldh a, [hJoyDown]
 	ld [wCurInput], a
 
+; Closing a WaitButton with the B Button prevents from using it until released.
+	ldh a, [hWaitForBButtonRelease]
+	and a
+	jr z, .skip_down_lock ; If we are not waiting for the B button to be released, we skip its checks and move on to the cycling road check.
+
+	ld a, [wCurInput]
+	res B_BUTTON_F, a
+	ld [wCurInput], a ; We remove the B button from the input.
+
+	ldh a, [hJoyDown]
+	and B_BUTTON
+	jr nz, .skip_down_lock ; If the B button is pressed, we keep the B input removed.
+
+	xor a
+	ldh [hWaitForBButtonRelease], a ; We release the B button lock. If can be activated next frame.
+
+.skip_down_lock
+
 ; Standing downhill instead moves down.
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_DOWNHILL_F, [hl]
 	ret z
 
+    ld a, [wCurInput]
 	ld c, a
 	and D_PAD
 	ret nz

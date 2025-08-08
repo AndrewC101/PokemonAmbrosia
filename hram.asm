@@ -175,4 +175,6 @@ hDebugRoomMenuPage::
 endc
 hClockResetTrigger:: db
 
-	ds 19
+hWaitForBButtonRelease:: db
+
+	ds 18

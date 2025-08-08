@@ -1792,6 +1792,7 @@ wGBPrinterBrightness::
 	db
 wOptions2::
 ; bit 1: menu clock off/on
+; bit 2: fast battles normal/quick
 	db
 	ds 2
 wOptionsEnd::
@@ -3020,7 +3021,7 @@ wFieldWeather::
 wUndergroundSwitchPositions:: db
 wExpShareUpgrade:: db
 
-; DevNote - wram 8 free slots
+; DevNote - wram 4 free slots
 
 wHandOfGod:: db
 wBattleMusicOverride:: ds 2
@@ -3028,7 +3029,9 @@ wShinyOverride:: db
 wRunningShoesOn:: db
 wNoRematch:: db
 wReachedHallOfOrigin::db
-	ds 6
+wExpShare::db
+wExpShareText:: db
+	ds 4
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

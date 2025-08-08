@@ -2331,6 +2331,10 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 
 ApplyExperienceAfterEnemyCaught:
 ; Preserve bits of non-fainted participants
+	xor a
+	ld[wExpShare], a
+	ld[wExpShareText], a
+
 	ld a, [wBattleParticipantsNotFainted]
 	ld d, a
 	push de
@@ -2338,6 +2342,8 @@ ApplyExperienceAfterEnemyCaught:
 	pop de
 
 ; ExpShare is on, give exp to non-participants
+	ld a, 1
+	ld[wExpShare], a
 	ld a, [wExpShareToggle]
 	and a
 	ret z
@@ -2385,6 +2391,11 @@ FaintYourPokemon:
 	hlcoord 9, 7
 	lb bc, 5, 11
 	call ClearBox
+
+	; Skip player mon fainted text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	ret nz
+
 	ld hl, BattleText_MonFainted
 	jp StdBattleTextbox
 
@@ -2400,6 +2411,11 @@ FaintEnemyPokemon:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
+
+	; Skip foe mon fainted text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	ret nz
+
 	ld hl, BattleText_EnemyMonFainted
 	jp StdBattleTextbox
 
@@ -3358,7 +3374,13 @@ EnemySwitch:
 	call OfferSwitch
 	push af
 	call ClearEnemyMonBox
+
+	; Skip ShowBattleTextEnemySentOut text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip2
 	call ShowBattleTextEnemySentOut
+.skip2
+
 	call ShowSetEnemyMonAndSendOutAnimation
 	pop af
 	ret c
@@ -3383,7 +3405,13 @@ EnemySwitch_SetMode:
 	ld a, 1
 	ld [wEnemyIsSwitching], a
 	call ClearEnemyMonBox
+
+	; Skip ShowBattleTextEnemySentOut text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .send_out_animation
+
 	call ShowBattleTextEnemySentOut
+.send_out_animation:
 	jp ShowSetEnemyMonAndSendOutAnimation
 
 CheckWhetherSwitchmonIsPredetermined:
@@ -7843,11 +7871,30 @@ GiveExperiencePoints:
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
 	call GetNickname
-	ld hl, Text_MonGainedExpPoint
-	call BattleTextbox
-	ld c, 8 ; DevNote - ExpShare text delay
-	call DelayFrames
 
+	ld a, [wExpShare]
+	and a
+	jr nz, .ExpShareON
+
+	; Skip regular exp text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .ExpShareON
+	ld hl, Text_MonGainedExpPoint
+	jr .Text
+.ExpShareON
+	ld a, [wExpShareText]
+	and a
+	jr nz, .AfterText
+
+	; Skip exp share text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .AfterText
+	inc a
+	ld [wExpShareText], a
+	ld hl, Text_TeamGainedExpPoint
+.Text
+	call BattleTextbox
+.AfterText
 	ld a, [wStringBuffer2 + 1]
 	ldh [hQuotient + 3], a
 	ld a, [wStringBuffer2]
@@ -8026,14 +8073,23 @@ GiveExperiencePoints:
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 	call WaitSFX
+
+	; Skip GrewToLevel text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .next
 	ld hl, BattleText_StringBuffer1GrewToLevel
 	call StdBattleTextbox
+.next
 	call LoadTilemapToTempTilemap
 
 .skip_exp_bar_animation
 	xor a ; PARTYMON
 	ld [wMonType], a
 	predef CopyMonToTempMon
+
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip
+
 	hlcoord 9, 0
 	ld b, 10
 	ld c, 9
@@ -8041,9 +8097,11 @@ GiveExperiencePoints:
 	hlcoord 11, 1
 	ld bc, 4
 	predef PrintTempMonStats
-	ld c, 30
-	call DelayFrames
+;	ld c, 30
+;	call DelayFrames
 	call WaitPressAorB_BlinkCursor
+
+.skip
 	call SafeLoadTempTilemapToTilemap
 	xor a ; PARTYMON
 	ld [wMonType], a
@@ -8140,6 +8198,15 @@ Text_MonGainedExpPoint:
 
 	ld hl, BoostedExpPointsText
 	ret
+
+Text_TeamGainedExpPoint:
+	text_asm
+	ld hl, TeamGainedExpPointText
+	ret
+
+TeamGainedExpPointText:
+	text_far _TeamGainedExpText
+	text_end
 
 BoostedExpPointsText:
 	text_far _BoostedExpPointsText
@@ -8262,8 +8329,13 @@ AnimateExpBar:
 	call PlaySFX
 	farcall AnimateEndOfExpBar
 	call WaitSFX
+
+	; Skip GrewToLevel text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .next2
 	ld hl, BattleText_StringBuffer1GrewToLevel
 	call StdBattleTextbox
+.next2
 	pop de
 	inc e
 	ld b, $0
@@ -9211,95 +9283,8 @@ InitBattleDisplay:
 	ret
 
 .InitBackPic:
-	call GetTrainerBackpic
-	call CopyBackpic
-	ret
-
-GetTrainerBackpic:
-; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
-
-; Special exception for Dude.
-	ld b, BANK(DudeBackpic)
-	ld hl, DudeBackpic
-	ld a, [wBattleType]
-
-; What gender are we?
-	ld a, [wPlayerSpriteSetupFlags]
-	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	jr nz, .Chris
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .Chris
-
-; It's a girl.
-	farcall GetKrisBackpic
-	ret
-
-.Chris:
-; It's a boy.
-	ld b, BANK(ChrisBackpic)
-	ld hl, ChrisBackpic
-
-.Decompress:
-	ld de, vTiles2 tile $31
-	ld c, 7 * 7
-	predef DecompressGet2bpp
-	ret
-
-CopyBackpic:
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
-	ld hl, vTiles0
-	ld de, vTiles2 tile $31
-	ldh a, [hROMBank]
-	ld b, a
-	ld c, 7 * 7
-	call Get2bpp
-	pop af
-	ldh [rSVBK], a
-	call .LoadTrainerBackpicAsOAM
-	ld a, $31
-	ldh [hGraphicStartTile], a
-	hlcoord 2, 6
-	lb bc, 6, 6
-	predef PlaceGraphic
-	ret
-
-.LoadTrainerBackpicAsOAM:
-	ld hl, wVirtualOAMSprite00
-	xor a
-	ldh [hMapObjectIndex], a
-	ld b, 6
-	ld e, (SCREEN_WIDTH + 1) * TILE_WIDTH
-.outer_loop
-	ld c, 3
-	ld d, 8 * TILE_WIDTH
-.inner_loop
-	ld [hl], d ; y
-	inc hl
-	ld [hl], e ; x
-	inc hl
-	ldh a, [hMapObjectIndex]
-	ld [hli], a ; tile id
-	inc a
-	ldh [hMapObjectIndex], a
-	ld a, PAL_BATTLE_OB_PLAYER
-	ld [hli], a ; attributes
-	ld a, d
-	add 1 * TILE_WIDTH
-	ld d, a
-	dec c
-	jr nz, .inner_loop
-	ldh a, [hMapObjectIndex]
-	add $3
-	ldh [hMapObjectIndex], a
-	ld a, e
-	add 1 * TILE_WIDTH
-	ld e, a
-	dec b
-	jr nz, .outer_loop
+	farcall GetTrainerBackpic
+	farcall CopyBackpic
 	ret
 
 BattleStartMessage:
@@ -9342,6 +9327,10 @@ BattleStartMessage:
 	call PlayStereoCry
 
 .skip_cry
+	; Skip PokemonAttacked text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .PlaceBattleStartText
+
 	ld a, [wBattleType]
 	cp BATTLETYPE_FISH
 	jr nz, .NotFishing
@@ -9361,8 +9350,14 @@ BattleStartMessage:
 	push hl
 	farcall BattleStart_TrainerHuds
 	pop hl
+
+	; Skip PokemonAttacked text if fast battles is on
+	; need to do this or the game would crash
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip
 	call StdBattleTextbox
 
+.skip
 	ld a, [wLinkMode]
     cp LINK_MOBILE
 	ret nz
@@ -9543,9 +9538,15 @@ TryToRunAwayFromBattle:
 	call WaitPlaySFX
 	pop de
 	call WaitSFX
+
+	; Skip GotAwaySafely text if fast battles is on
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip
 	ld hl, BattleText_GotAwaySafely
 	call StdBattleTextbox
 	call WaitSFX
+.skip:
+
 	call LoadTilemapToTempTilemap
 	scf
 	ret

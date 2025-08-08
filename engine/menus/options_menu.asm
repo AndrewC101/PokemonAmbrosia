@@ -4,7 +4,7 @@
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
 	const OPT_SOUND        ; 3
-	const OPT_PRINT        ; 4
+	const OPT_FAST_BATTLES ; 4
 	const OPT_MENU_CLOCK   ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
@@ -83,9 +83,9 @@ StringOptions:
 	db "        :<LF>"
 	db "Sound<LF>"
 	db "        :<LF>"
-	db "Print<LF>"
+	db "Battle Speed<LF>"
 	db "        :<LF>"
-	db "Menu Clock<LF>"
+	db "Menu Data<LF>"
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
@@ -100,7 +100,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
-	dw Options_Print
+	dw Options_FasterBattles
 	dw Options_MenuClock
 	dw Options_Frame
 	dw Options_Cancel
@@ -323,107 +323,145 @@ Options_Sound:
 .Mono:   db "Mono  @"
 .Stereo: db "Stereo@"
 
-	const_def
-	const OPT_PRINT_LIGHTEST ; 0
-	const OPT_PRINT_LIGHTER  ; 1
-	const OPT_PRINT_NORMAL   ; 2
-	const OPT_PRINT_DARKER   ; 3
-	const OPT_PRINT_DARKEST  ; 4
-
-Options_Print:
-	call GetPrinterSetting
-	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
-	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
-	jr z, .NonePressed
-	ld a, c
-	cp OPT_PRINT_DARKEST
-	jr c, .Increase
-	ld c, OPT_PRINT_LIGHTEST - 1
-
-.Increase:
-	inc c
-	ld a, e
-	jr .Save
+Options_FasterBattles:
+ 	ld hl, wOptions2
+ 	ldh a, [hJoyPressed]
+ 	bit D_LEFT_F, a
+ 	jr nz, .LeftPressed
+ 	bit D_RIGHT_F, a
+ 	jr z, .NonePressed
+ 	bit FAST_BATTLES, [hl]
+ 	jr nz, .ToggleOff
+ 	jr .ToggleOn
 
 .LeftPressed:
-	ld a, c
-	and a
-	jr nz, .Decrease
-	ld c, OPT_PRINT_DARKEST + 1
-
-.Decrease:
-	dec c
-	ld a, d
-
-.Save:
-	ld b, a
-	ld [wGBPrinterBrightness], a
+ 	bit FAST_BATTLES, [hl]
+ 	jr z, .ToggleOn
+ 	jr .ToggleOff
 
 .NonePressed:
-	ld b, 0
-	ld hl, .Strings
-	add hl, bc
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
+ 	bit FAST_BATTLES, [hl]
+ 	jr nz, .ToggleOn
+
+.ToggleOff:
+ 	res FAST_BATTLES, [hl]
+ 	ld de, .Off
+ 	jr .Display
+
+.ToggleOn:
+ 	set FAST_BATTLES, [hl]
+ 	ld de, .On
+
+.Display:
 	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
 
-.Strings:
+.On:  db "Quick @"
+.Off: db "Normal@"
+
+;	const_def
+;	const OPT_PRINT_LIGHTEST ; 0
+;	const OPT_PRINT_LIGHTER  ; 1
+;	const OPT_PRINT_NORMAL   ; 2
+;	const OPT_PRINT_DARKER   ; 3
+;	const OPT_PRINT_DARKEST  ; 4
+
+;Options_Print:
+;	call GetPrinterSetting
+;	ldh a, [hJoyPressed]
+;	bit D_LEFT_F, a
+;	jr nz, .LeftPressed
+;	bit D_RIGHT_F, a
+;	jr z, .NonePressed
+;	ld a, c
+;	cp OPT_PRINT_DARKEST
+;	jr c, .Increase
+;	ld c, OPT_PRINT_LIGHTEST - 1
+
+;.Increase:
+;	inc c
+;	ld a, e
+;	jr .Save
+
+;.LeftPressed:
+;	ld a, c
+;	and a
+;	jr nz, .Decrease
+;	ld c, OPT_PRINT_DARKEST + 1
+
+;.Decrease:
+;	dec c
+;	ld a, d
+
+;.Save:
+;	ld b, a
+;	ld [wGBPrinterBrightness], a
+
+;.NonePressed:
+;	ld b, 0
+;	ld hl, .Strings
+;	add hl, bc
+;	add hl, bc
+;	ld e, [hl]
+;	inc hl
+;	ld d, [hl]
+;	hlcoord 11, 11
+;	call PlaceString
+;	and a
+;	ret
+
+;.Strings:
 ; entries correspond to OPT_PRINT_* constants
-	dw .Lightest
-	dw .Lighter
-	dw .Normal
-	dw .Darker
-	dw .Darkest
+;	dw .Lightest
+;	dw .Lighter
+;	dw .Normal
+;	dw .Darker
+;	dw .Darkest
 
-.Lightest: db "Lightest@"
-.Lighter:  db "Lighter @"
-.Normal:   db "Normal  @"
-.Darker:   db "Darker  @"
-.Darkest:  db "Darkest @"
+;.Lightest: db "Lightest@"
+;.Lighter:  db "Lighter @"
+;.Normal:   db "Normal  @"
+;.Darker:   db "Darker  @"
+;.Darkest:  db "Darkest @"
 
-GetPrinterSetting:
+;GetPrinterSetting:
 ; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,
 ; with previous/next GBPRINTER_* values in d/e
-	ld a, [wGBPrinterBrightness]
-	and a
-	jr z, .IsLightest
-	cp GBPRINTER_LIGHTER
-	jr z, .IsLight
-	cp GBPRINTER_DARKER
-	jr z, .IsDark
-	cp GBPRINTER_DARKEST
-	jr z, .IsDarkest
-	; none of the above
-	ld c, OPT_PRINT_NORMAL
-	lb de, GBPRINTER_LIGHTER, GBPRINTER_DARKER
-	ret
+;	ld a, [wGBPrinterBrightness]
+;	and a
+;	jr z, .IsLightest
+;	cp GBPRINTER_LIGHTER
+;	jr z, .IsLight
+;	cp GBPRINTER_DARKER
+;	jr z, .IsDark
+;	cp GBPRINTER_DARKEST
+;	jr z, .IsDarkest
+;	; none of the above
+;	ld c, OPT_PRINT_NORMAL
+;	lb de, GBPRINTER_LIGHTER, GBPRINTER_DARKER
+;	ret
 
-.IsLightest:
-	ld c, OPT_PRINT_LIGHTEST
-	lb de, GBPRINTER_DARKEST, GBPRINTER_LIGHTER
-	ret
+;.IsLightest:
+;	ld c, OPT_PRINT_LIGHTEST
+;	lb de, GBPRINTER_DARKEST, GBPRINTER_LIGHTER
+;	ret
 
-.IsLight:
-	ld c, OPT_PRINT_LIGHTER
-	lb de, GBPRINTER_LIGHTEST, GBPRINTER_NORMAL
-	ret
+;.IsLight:
+;	ld c, OPT_PRINT_LIGHTER
+;	lb de, GBPRINTER_LIGHTEST, GBPRINTER_NORMAL
+;	ret
 
-.IsDark:
-	ld c, OPT_PRINT_DARKER
-	lb de, GBPRINTER_NORMAL, GBPRINTER_DARKEST
-	ret
+;.IsDark:
+;	ld c, OPT_PRINT_DARKER
+;	lb de, GBPRINTER_NORMAL, GBPRINTER_DARKEST
+;	ret
 
-.IsDarkest:
-	ld c, OPT_PRINT_DARKEST
-	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
-	ret
+;.IsDarkest:
+;	ld c, OPT_PRINT_DARKEST
+;	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
+;	ret
 
 Options_MenuClock:
 	ld hl, wOptions2

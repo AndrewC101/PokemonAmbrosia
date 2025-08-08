@@ -8,9 +8,10 @@ DefaultOptions:
 ; wTextboxFlags: use text speed
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: normal
-	db GBPRINTER_NORMAL
+	;db GBPRINTER_NORMAL
 ; wOptions2: menu clock on
 	db 1 << MENU_CLOCK
+	db 0 << FAST_BATTLES
 
 	db $00
 	db $00

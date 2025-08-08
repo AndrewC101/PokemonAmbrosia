@@ -101,6 +101,11 @@ Text_Gained::
 	text " gained@"
 	text_end
 
+_TeamGainedExpText::
+	text "Remaining team got"
+	line "Exp via Exp.Share!"
+	prompt
+
 _BoostedExpPointsText::
 	text_start
 	line "@"

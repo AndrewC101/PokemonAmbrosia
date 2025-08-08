@@ -440,7 +440,7 @@ PokemaniacBrentSeenText:
 	text "Come on where"
 	line "are all the super"
 	cont "aggressive crazy"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "I want to beat"
 	line "them the same way"
@@ -658,7 +658,7 @@ Route43TrainerTipsText:
 	cont "WATER moves."
 
 	para "Sand boost ROCK"
-	line "#MON"
+	line "#mon"
 	cont "SPECIAL DEFENSE"
 	cont "and damages all"
 	cont "non ROCK, GROUND"
@@ -678,7 +678,7 @@ Route43FieldMon2Script:
     end
 
 Route43PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

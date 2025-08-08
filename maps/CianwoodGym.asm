@@ -282,11 +282,11 @@ GetStormBadgeText:
 ChuckExplainBadgeText:
     text "The STORMBADGE"
     line "lets you train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 55."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 45."
 
 	para "Here, take this"

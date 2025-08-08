@@ -112,7 +112,7 @@ ViridianCityCoffeeGrampsBelievedText:
 	text "Yes indeed!"
 
 	para "I used to enjoy"
-	line "catching #MON"
+	line "catching #mon"
 	cont "but now I enjoy"
 	cont "a nice coffee..."
 	done
@@ -140,7 +140,7 @@ ViridianCityGrampsNearGymText:
 	line "here is very"
 	cont "busy trying to"
 	cont "do the jobs the"
-	cont "#MON LEAGUE"
+	cont "#mon LEAGUE"
 	cont "should be doing!"
 
 	para "BLUE is currently"
@@ -224,7 +224,7 @@ ViridianCitySignText:
 
 ViridianGymSignText:
 	text "VIRIDIAN CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: …"
 
 	para "BLUE!"

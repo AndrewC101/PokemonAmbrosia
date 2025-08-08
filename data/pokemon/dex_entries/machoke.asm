@@ -1,7 +1,7 @@
 	db "SUPERPOWER@" ; species name
 	dw 511, 2550 ; height, weight
 
-	db   "A tough #MON"
+	db   "A tough #mon"
 	next "always ready"
 	next "to fight."
 

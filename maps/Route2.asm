@@ -63,7 +63,7 @@ Route2FieldMon2Script:
     end
 
 Route2PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -203,7 +203,7 @@ Route2HiddenRevive:
 
 BugCatcherRobSeenText:
 	text "DOUG thinks his"
-	line "#MON are the"
+	line "#mon are the"
 	cont "rulers of the"
 	cont "colony."
 	para "I have no choice"
@@ -245,7 +245,7 @@ BugCatcherEdAfterBattleText:
 	done
 
 BugCatcherDougSeenText:
-	text "My #MON rule"
+	text "My #mon rule"
 	line "the colony."
 	para "ROB shall never"
 	line "dethrone me."
@@ -257,7 +257,7 @@ BugCatcherDougBeatenText:
 	done
 
 BugCatcherDougAfterBattleText:
-	text "ROBS #MON"
+	text "ROBS #mon"
 	line "shall make fine"
 	cont "drones."
 	done

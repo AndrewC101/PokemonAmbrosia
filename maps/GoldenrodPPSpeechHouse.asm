@@ -28,10 +28,10 @@ GoldenrodPPSpeechHouseFisherText:
 
 	para "You can use it"
 	line "to heal your"
-	cont "#MON anywhere."
+	cont "#mon anywhere."
 
 	para "Like what's the"
-	line "point in #MON"
+	line "point in #mon"
 	cont "CENTERS!"
 	done
 

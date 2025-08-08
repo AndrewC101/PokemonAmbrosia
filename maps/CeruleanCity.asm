@@ -190,7 +190,7 @@ CeruleanCitySuperNerdText:
 	para "It's a horrifying"
 	line "place with"
         cont "insanely"
-	cont "strong #MON."
+	cont "strong #mon."
 
 	para "Let's explore it!"
 	done
@@ -222,7 +222,7 @@ CeruleanCityFisherText:
 	para "I know everything"
 	line "about her."
 
-	para "Her #MON."
+	para "Her #mon."
 
 	para "Her win rate."
 
@@ -256,7 +256,7 @@ CeruleanCityYoungsterText1:
 
 	para "Who knows what"
 	line "kinds of monstrous"
-	cont "#MON will"
+	cont "#mon will"
 	cont "emerge!"
 	done
 
@@ -276,7 +276,7 @@ CeruleanCitySignText:
 
 CeruleanGymSignText:
 	text "CERULEAN CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: MISTY"
 
 	para "The Tomboyish"

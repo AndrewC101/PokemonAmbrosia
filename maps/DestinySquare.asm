@@ -282,7 +282,7 @@ MasterCynthiaAfterBattleText:
 	cont "laughter."
 	para "You are now the"
 	line "beacon for all"
-	cont "young #MON"
+	cont "young #mon"
 	cont "trainers to"
 	cont "follow."
 	done
@@ -557,9 +557,9 @@ MasterStevenLoseAfterBattleText:
 
 ;MasterAlderLoseAfterBattleText:
 ;	text "Without trainers"
-;	line "would #MON"
+;	line "would #mon"
 ;	cont "still fight?"
-;	para "If #MON didn't"
+;	para "If #mon didn't"
 ;	line "fight would they"
 ;	cont "still be happy."
 ;	done
@@ -887,13 +887,13 @@ MewtwoCry:
     cont "beauty."
 
 	para "I was not born a"
-	line "#MON I was"
+	line "#mon I was"
 	cont "created and my"
 	cont "creators used and"
 	cont "betrayed me."
 	para "Behold my powers!"
 	para "I am the most"
-	line "powerful #MON"
+	line "powerful #mon"
 	cont "in the world!"
 	done
 
@@ -923,7 +923,7 @@ MewtwoLoseAfterBattleText:
 	text "As the victor, I"
 	line "now claim my"
 	cont "prize."
-	para "Your #MON!"
+	para "Your #mon!"
 	para "In another battle!"
 	done
 

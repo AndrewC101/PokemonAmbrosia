@@ -46,7 +46,7 @@ BillPhoneNotFullText:
 	line "has room for @"
 	text_ram wStringBuffer3
 	text_start
-	cont "more #MON."
+	cont "more #mon."
 
 	para "Get out there and"
 	line "fill it up!"
@@ -60,7 +60,7 @@ BillPhoneNearlyFullText:
 	line "has room for only"
 	cont "@"
 	text_ram wStringBuffer3
-	text " more #MON."
+	text " more #mon."
 
 	para "Maybe you should"
 	line "switch your BOX."
@@ -77,7 +77,7 @@ BillPhoneFullText:
 	line "switch BOXES if"
 
 	para "you want to catch"
-	line "more #MON."
+	line "more #mon."
 	done
 
 BillPhoneNewlyFullText:
@@ -87,7 +87,7 @@ BillPhoneNewlyFullText:
 	para "Thanks for using"
 	line "my STORAGE SYSTEM."
 
-	para "That last #MON"
+	para "That last #mon"
 	line "you sent filled"
 	cont "your BOX up."
 
@@ -95,7 +95,7 @@ BillPhoneNewlyFullText:
 	line "switch BOXES if"
 
 	para "you want to catch"
-	line "more #MON."
+	line "more #mon."
 
 	para "Bye now!"
 	done

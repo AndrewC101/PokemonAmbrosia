@@ -188,14 +188,14 @@ StartMenu::
 	dw StartMenu_Quit,     .QuitString,     .EmptyDesc
 	dw StartMenu_Warp,     .WarpString,     .EmptyDesc
 
-.PokedexString:  db "#DEX@"
-.PartyString:    db "#MON@"
+.PokedexString:  db "#dex@"
+.PartyString:    db "#mon@"
 .PackString:     db "Pack@"
 .StatusString:   db "<PLAYER>@"
 .SaveString:     db "Save@"
 .OptionString:   db "Option@"
 .ExitString:     db "Exit@"
-.PokegearString: db "<POKE>GEAR@"
+.PokegearString: db "<POKE>gear@"
 .QuitString:     db "Quit@"
 .WarpString:     db "Warp@"
 

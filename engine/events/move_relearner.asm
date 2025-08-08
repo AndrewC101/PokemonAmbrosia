@@ -669,7 +669,7 @@ MoveReminderIntroText:
 	text "Hi, I'm the Move"
 	line "Reminder!"
 
-	para "I can make #MON"
+	para "I can make #mon"
 	line "remember moves."
 
 	para "Are you"
@@ -679,7 +679,7 @@ MoveReminderIntroText:
 ; This is the text that displays just
 ; before the party menu opens.
 MoveReminderWhichMonText:
-	text "Which #MON"
+	text "Which #mon"
 	line "should remember"
 	cont "a move?"
 	prompt
@@ -713,7 +713,7 @@ MoveReminderNotaMonText:
 
 	para "I'm sorry, but I"
 	line "can only teach"
-	cont "moves to #MON!"
+	cont "moves to #mon!"
 	done
 
 ; This is the text that displays if the player
@@ -721,7 +721,7 @@ MoveReminderNotaMonText:
 ; has no moves that can be learned.
 MoveReminderNoMovesText:
 	text "There are no moves"
-	line "for this #MON"
+	line "for this #mon"
 	cont "to learn."
 	done
 

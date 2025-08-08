@@ -23,7 +23,7 @@ Kyle:
  violetTradeText:
  	text "Only little kids"
  	line "think DRAGON"
- 	cont "#MON are cool."
+ 	cont "#mon are cool."
  	para "What is this the"
  	line "late 90s!"
  	para "DARK types don't"
@@ -37,7 +37,7 @@ VioletKylesHousePokefanMText:
 	cont "DRAGON trainer."
 
 	para "He was given a"
-	line "DRAGON #MON."
+	line "DRAGON #mon."
 
 	para "But turns out it"
 	line "wasn't really a"

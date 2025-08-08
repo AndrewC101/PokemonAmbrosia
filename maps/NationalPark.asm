@@ -463,7 +463,7 @@ NationalParkTeacher1Text:
 	done
 
 NationalParkTeacher1Text_GotQuickClaw:
-	text "Let a #MON hold"
+	text "Let a #mon hold"
 	line "that QUICK CLAW."
 
 	para "Sometimes it will"
@@ -687,7 +687,7 @@ NationalParkFieldMon2Script:
     end
 
 NationalParkPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

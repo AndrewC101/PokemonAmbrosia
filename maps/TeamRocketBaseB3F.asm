@@ -394,7 +394,7 @@ RocketBaseRivalText:
 	para "He destroyed me."
 
 	para "With a single"
-	line "#MON."
+	line "#mon."
 
 	para "I've never been"
 	line "so decisively"
@@ -408,7 +408,7 @@ RocketBaseRivalText:
 	line "to spout the usual"
 	cont "cliche nonsense"
 	cont "about treating"
-	cont "#MON with"
+	cont "#mon with"
 	cont "respect."
 
 	para "I am disgusted"
@@ -469,7 +469,7 @@ ExecutiveM4BeatenText:
 	text "No!"
 
 	para "My useless"
-	line "#MON."
+	line "#mon."
 	done
 
 ExecutiveM4AfterText:
@@ -582,7 +582,7 @@ ScientistRossSeenText:
 	cont "severe pain is"
 	cont "quite different"
 	cont "between human and"
-	cont "#MON."
+	cont "#mon."
 
 	para "It's a fascinating"
 	line "topic."
@@ -599,7 +599,7 @@ ScientistRossBeatenText:
 ScientistRossAfterBattleText:
 	text "The pain you"
 	line "inflicted upon"
-	cont "my #MON"
+	cont "my #mon"
 	cont "is fascinating"
 	cont "to me."
 
@@ -613,7 +613,7 @@ ScientistMitchSeenText:
 	cont "severe pain is"
 	cont "quite different"
 	cont "between human and"
-	cont "#MON."
+	cont "#mon."
 
 	para "It's a fascinating"
 	line "topic."
@@ -631,7 +631,7 @@ ScientistMitchBeatenText:
 ScientistMitchAfterBattleText:
 	text "The pain you"
 	line "inflicted upon"
-	cont "my #MON"
+	cont "my #mon"
 	cont "is fascinating"
 	cont "to me."
 

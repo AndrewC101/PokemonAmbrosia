@@ -33,7 +33,7 @@ CeladonMansion2FComputerText:
 	para "It's code that"
 	line "gets the current"
 	cont "player or enemy"
-	cont "#MON"
+	cont "#mon"
 	cont "depending on whose"
 	cont "turn it is."
 	done

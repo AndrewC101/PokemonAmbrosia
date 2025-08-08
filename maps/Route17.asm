@@ -75,7 +75,7 @@ Route17FieldMon7Script:
     end
 
 Route17PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

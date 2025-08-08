@@ -107,7 +107,7 @@ DirectorIntroText:
 
 	para "The ROCKETS may"
 	line "have strong"
-	cont "#MON."
+	cont "#mon."
 
 	para "But they have weak"
 	line "self esteem."
@@ -138,7 +138,7 @@ DirectorAfterText:
 	para "They might even"
 	line "be able to"
 	cont "control"
-	cont "#MON with"
+	cont "#mon with"
 	cont "the signal."
 	done
 

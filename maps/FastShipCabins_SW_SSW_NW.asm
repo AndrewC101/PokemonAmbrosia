@@ -149,7 +149,7 @@ BugCatcherKenSeenText:
 
 	para "But there must"
 	line "be some strong"
-	cont "BUG #MON"
+	cont "BUG #mon"
 	cont "to find."
 	done
 
@@ -161,7 +161,7 @@ BugCatcherKenBeatenText:
 
 BugCatcherKenAfterBattleText:
 	text "I must save the"
-	line "BUG #MON."
+	line "BUG #mon."
 
 	para "They need someone"
 	line "to protect them!"
@@ -183,7 +183,7 @@ BeautyCassieSeenText:
 
 BeautyCassieBeatenText:
 	text "You have very"
-	line "cute #MON."
+	line "cute #mon."
 	done
 
 BeautyCassieAfterBattleText:

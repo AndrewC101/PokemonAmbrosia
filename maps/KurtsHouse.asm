@@ -461,7 +461,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	para "You must want"
 	line "some of my"
 	cont "special"
-	cont "# BALLS."
+	cont "# balls."
 
 	para "But I have more"
 	line "important business"
@@ -474,7 +474,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	para "They are a group"
 	line "from KANTO that"
 	cont "exploit and"
-	cont "traffic #MON."
+	cont "traffic #mon."
 
 	para "They are scum."
 
@@ -497,7 +497,7 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	cont "hero at the WELL."
 
 	para "I would be honored"
-	line "to make BALLS for"
+	line "to make balls for"
 
 	para "a trainer like"
 	line "you."
@@ -507,21 +507,21 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
-	text "KURT: I make BALLS"
+	text "KURT: I make balls"
 	line "from APRICORNS."
 
 	para "Collect them from"
 	line "trees and bring"
 	cont "'em to me."
 
-	para "I'll make BALLS"
+	para "I'll make balls"
 	line "out of them."
 
 	para "They have all"
 	line "sorts of special"
 	cont "effects that make"
 	cont "it easier to catch"
-	cont "certain #MON."
+	cont "certain #mon."
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
@@ -553,7 +553,7 @@ KurtsHouseKurtTurnedOutGreatText:
 	line "out great."
 
 	para "Try catching"
-	line "#MON with it."
+	line "#mon with it."
 	done
 
 KurtsHouseKurtGranddaughterHelpingWorkFasterText:
@@ -633,7 +633,7 @@ KurtsGranddaughterSlowpokeBackText:
 KurtsGranddaughterDadText:
 	text "Dad works at SILPH"
 	line "where he studies"
-	cont "# BALLS."
+	cont "# balls."
 
 	para "I have to stay"
 	line "home with Grandpa"
@@ -645,13 +645,13 @@ KurtsGranddaughterHelpText:
 	line "Grandpa now!"
 
 	para "We'll make good"
-	line "BALLS for you, so"
+	line "balls for you, so"
 	cont "please wait!"
 	done
 
 KurtsGranddaughterFunText:
 	text "It's fun to make"
-	line "BALLS!"
+	line "balls!"
 	done
 
 KurtsGranddaughterGSBallText:

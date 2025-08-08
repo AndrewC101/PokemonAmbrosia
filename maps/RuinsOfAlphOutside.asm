@@ -153,7 +153,7 @@ RuinsOfAlphOutsideScientistText:
 	cont "them."
 
 	para "Some strange"
-	line "#MON have"
+	line "#mon have"
 	cont "appeared in"
 	cont "the hall."
 
@@ -220,7 +220,7 @@ RuinsOfAlphOutsideYoungster1Text:
 	cont "years ago."
 
 	para "I wonder what"
-	line "#MON they used."
+	line "#mon they used."
 	done
 
 RuinsOfAlphOutsideYoungster2Text:
@@ -231,7 +231,7 @@ RuinsOfAlphOutsideYoungster2Text:
 	cont "once and he"
 	cont "attacked me."
 
-	para "His #MON"
+	para "His #mon"
 	line "were so crazy"
 	cont "strong!"
 

@@ -2,7 +2,7 @@
 	dw 104, 90 ; height, weight
 
 	db   "May be the origin"
-	next "of all #MON."
+	next "of all #mon."
 	next "Learns any move."
 
 	page "Regenerates HP."

@@ -25,7 +25,7 @@ CherrygroveEvolutionSpeechHouseBookshelf:
 	jumpstd MagazineBookshelfScript
 
 CherrygroveEvolutionSpeechHouseYoungsterText:
-	text "#MON gain expe-"
+	text "#mon gain expe-"
 	line "rience in battle."
 
 	para "When you REMATCH"
@@ -35,12 +35,12 @@ CherrygroveEvolutionSpeechHouseYoungsterText:
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:
-	text "When #MON"
+	text "When #mon"
 	line "gain enough EXP"
 	cont "they evolve."
 
 	para "There are ways"
-	line "#MON can"
+	line "#mon can"
 	cont "evolve."
 
 	para "By leveling up."

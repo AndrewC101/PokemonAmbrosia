@@ -38,7 +38,7 @@ MountMortarB1FFieldMon2Script:
     end
 
 MountMortarB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

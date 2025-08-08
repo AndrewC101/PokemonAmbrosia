@@ -330,7 +330,7 @@ HikerParry3SeenText:
 	text "I have spent"
 	line "my years wandering"
 	cont "in the mountains"
-	cont "with my #MON."
+	cont "with my #mon."
 
 	para "My legs have"
 	line "grown thick and"
@@ -369,7 +369,7 @@ HikerTimothySeenText:
 
 	para "Maybe I can"
 	line "beat a legendary"
-	cont "#MON."
+	cont "#mon."
 	done
 
 HikerTimothyBeatenText:
@@ -381,7 +381,7 @@ HikerTimothyAfterBattleText:
 	line "stronger!"
 
 	para "If I fought a"
-	line "legendary #MON"
+	line "legendary #mon"
 	cont "right now I"
 	cont "don't think I"
 	cont "would win."
@@ -463,7 +463,7 @@ CooltrainermRyanSeenText:
 	cont "thinks this."
 
 	para "But DRAGON"
-	line "#MON are kind"
+	line "#mon are kind"
 	cont "of overrated."
 
 	para "They all look"
@@ -473,7 +473,7 @@ CooltrainermRyanSeenText:
 
 	para "I'll show you"
 	line "some actually"
-	cont "cool #MON."
+	cont "cool #mon."
 	done
 
 CooltrainermRyanBeatenText:
@@ -482,7 +482,7 @@ CooltrainermRyanBeatenText:
 	done
 
 CooltrainermRyanAfterBattleText:
-	text "Your #MON"
+	text "Your #mon"
 	line "are cool and all."
 
 	para "I just can't"
@@ -540,7 +540,7 @@ CamperQuentinSeenText:
 	line "camp anywhere."
 
 	para "I fear no man"
-	line "nor no #MON."
+	line "nor no #mon."
 
 	para "I don't fear"
 	line "no HOENN army"
@@ -626,7 +626,7 @@ Route45FieldMon7Script:
 	end
 
 Route45PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

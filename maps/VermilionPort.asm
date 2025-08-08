@@ -292,7 +292,7 @@ VermilionPortSuperNerdText:
 	line "JOHTO?"
 
 	para "I hear many rare"
-	line "#MON live over"
+	line "#mon live over"
 	cont "there."
 
 	para "I want to"

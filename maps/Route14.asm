@@ -42,7 +42,7 @@ Route14FieldMon2Script:
     end
 
 Route14PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

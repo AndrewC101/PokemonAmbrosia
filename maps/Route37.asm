@@ -246,7 +246,7 @@ SunnyGaveGiftText:
 	para "Oh! I remember"
 	line "now!"
 
-	para "A #MON that"
+	para "A #mon that"
 	line "knows electric"
 	cont "moves should hold"
 	cont "it."
@@ -302,7 +302,7 @@ Route37FieldMon4Script:
     end
 
 Route37PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

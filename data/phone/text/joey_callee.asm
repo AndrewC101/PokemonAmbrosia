@@ -13,7 +13,7 @@ JoeyGreetNiteText:
 	done
 
 JoeyGenericText:
-	text "My #MON and I"
+	text "My #mon and I"
 	line "are destined to"
 	cont "become deities."
 	para "And all shall"

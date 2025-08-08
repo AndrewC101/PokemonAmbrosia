@@ -100,7 +100,7 @@ RockTunnelB1FFieldMon5Script:
     end
 
 RockTunnelB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

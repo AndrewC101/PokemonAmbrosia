@@ -59,7 +59,7 @@ GentlemanAlfredSeenText:
 	cont "be naive enough"
 	cont "to believe you"
 	cont "can match my"
-	cont "#MON."
+	cont "#mon."
 	done
 
 GentlemanAlfredBeatenText:

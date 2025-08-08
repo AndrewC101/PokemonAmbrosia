@@ -453,17 +453,17 @@ GuideGentIntroText:
 	done
 
 GuideGentPokecenterText:
-	text "This is a #MON"
+	text "This is a #mon"
 	line "CENTER."
 
 	para "Here you can heal"
-	line "your #MON and"
+	line "your #mon and"
 	cont "store them in"
 	cont "your PC."
 	done
 
 GuideGentMartText:
-	text "This is a #MON"
+	text "This is a #mon"
 	line "MART."
 
 	para "You can buy stuff"
@@ -473,7 +473,7 @@ GuideGentMartText:
 	line "rarely has much."
 
 	para "They don't even"
-	line "have #BALLS"
+	line "have #balls"
 	cont "right now."
 	done
 
@@ -551,12 +551,12 @@ GuideGentGiftText:
 	done
 
 GotMapCardText:
-	text "<PLAYER>'s #GEAR"
+	text "<PLAYER>'s #gear"
 	line "now has a MAP!"
 	done
 
 GuideGentPokegearText:
-	text "#GEAR becomes"
+	text "#gear becomes"
 	line "more useful as you"
 	cont "add CARDS."
 
@@ -571,7 +571,7 @@ CherrygroveRivalText_Seen:
 
 	para "How are you doing"
 	line "with your weak"
-	cont "#MON?"
+	cont "#mon?"
 
 	para "Perfectly matched"
 	line "I see."
@@ -580,7 +580,7 @@ CherrygroveRivalText_Seen:
 	line "business myself."
 
 	para "I'll show you a"
-	line "real #MON!"
+	line "real #mon!"
 	done
 
 SilverCherrygroveWinText:
@@ -598,7 +598,7 @@ CherrygroveRivalText_YouLost:
 
 	para "I'm going to be"
 	line "the world's great-"
-	cont "est #MON"
+	cont "est #mon"
 	cont "trainer."
 
 	para "You should go"
@@ -615,7 +615,7 @@ SilverCherrygroveLossText:
 	done
 
 CherrygroveTeacherText:
-    text "Some #MON"
+    text "Some #mon"
     line "appear in the"
     cont "field."
 
@@ -653,7 +653,7 @@ CherrygroveYoungsterText_NoPokedex:
 	line "up there but I'm"
 	cont "sure OAK must have"
 	cont "some strong"
-	cont "#MON."
+	cont "#mon."
 	done
 
 CherrygroveYoungsterText_HavePokedex:
@@ -863,7 +863,7 @@ JuliusSeenText:
 
     para "We can afford"
     line "all the best items"
-    cont "and #MON."
+    cont "and #mon."
 
     para "Training is for"
     line "the poor."

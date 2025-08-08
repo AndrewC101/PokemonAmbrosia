@@ -61,7 +61,7 @@ Route8FieldMon3Script:
     end
 
 Route8PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

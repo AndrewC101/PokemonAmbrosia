@@ -87,7 +87,7 @@ LavRadioTower1FReceptionistText:
 
     para "If you're looking"
     line "for some dead"
-    cont "#MON you"
+    cont "#mon you"
     cont "need to go to"
     cont "the SOUL HOUSE."
 
@@ -216,7 +216,7 @@ LavRadioTower1FDirectoryText:
 	done
 
 LavRadioTower1FPokeFluteSignText:
-	text "Perk Up #MON"
+	text "Perk Up #mon"
 	line "with Mellow Sounds"
 
 	para "of the # FLUTE"
@@ -225,7 +225,7 @@ LavRadioTower1FPokeFluteSignText:
 
 LavRadioTower1FReferenceLibraryText:
 	text "Wow! A full rack"
-	line "of #MON CDs and"
+	line "of #mon CDs and"
 	cont "videos."
 
 	para "This must be the"

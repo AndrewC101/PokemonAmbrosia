@@ -29,7 +29,7 @@ Route18FieldMon2Script:
     end
 
 Route18PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -61,7 +61,7 @@ Route18Sign:
 BirdKeeperBorisSeenText:
 	text "I don't have a"
 	line "bike so I used"
-	cont "my #MON to"
+	cont "my #mon to"
 	cont "FLY to FUCHSIA."
 
 	para "Bikes are for"
@@ -101,7 +101,7 @@ BirdKeeperBobAfterBattleText:
 	line "JOHTO!"
 
 	para "Good thing my"
-	line "#MON learnt"
+	line "#mon learnt"
 	cont "it by level up."
 	done
 

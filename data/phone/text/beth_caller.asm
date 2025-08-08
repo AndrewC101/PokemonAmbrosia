@@ -32,7 +32,7 @@ BethLostAMonText:
 	para "She must a"
 	line "subconscious fear"
 	cont "of DRAGON"
-	cont "#MON."
+	cont "#mon."
 	para "Perhaps I can use"
 	line "this to my"
 	cont "advantage."

@@ -3,7 +3,7 @@
 
 	db   "An extremely"
 	next "rare and mighty"
-	next "Dragon #MON."
+	next "Dragon #mon."
 
 	page "Armoured at"
 	next "full HP. Can use"

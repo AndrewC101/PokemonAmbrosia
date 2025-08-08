@@ -122,10 +122,10 @@ RadioTower3FPokemonMusicSign:
 
 RadioTower3FSuperNerdText:
 	text "I am working on"
-	line "my #DEX."
+	line "my #dex."
 
 	para "I've seen 200"
-	line "#MON."
+	line "#mon."
 
 	para "When I complete"
 	line "it I will sell"
@@ -252,7 +252,7 @@ RadioTower3FPersonnelSignText:
 	done
 
 RadioTower3FPokemonMusicSignText:
-	text "#MON MUSIC with"
+	text "#mon MUSIC with"
 	line "Host DJ BEN"
 	done
 

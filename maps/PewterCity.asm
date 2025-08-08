@@ -131,11 +131,11 @@ PewterCitySignText:
 
 PewterGymSignText:
 	text "PEWTER CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: BROCK"
 
 	para "The Rock Solid"
-	line "#MON Trainer"
+	line "#mon Trainer"
 	done
 
 PewterMuseumSignText:
@@ -207,9 +207,9 @@ MuseumBlockText:
     line "felt all over."
 
     para "Many people and"
-    line "#MON died."
+    line "#mon died."
 
-    para "The #MON"
+    para "The #mon"
     line "inside are very"
     cont "contagious."
 

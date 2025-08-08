@@ -2,7 +2,7 @@
 	dw 200, 720 ; height, weight
 
 	db   "This man-made"
-	next "#MON evolved"
+	next "#mon evolved"
 	next "from software."
 
 	page "Makes weaker"

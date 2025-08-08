@@ -68,7 +68,7 @@ TeamRocketBaseB1FFieldMon4Script:
      end
 
 TeamRocketBaseB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -694,7 +694,7 @@ CameraGrunt2SeenText:
 CameraGrunt2BeatenText:
 	text "We must retreat"
 	line "and heal our"
-	cont "#MON."
+	cont "#mon."
 
 	para "We shall meet"
 	line "again!"
@@ -705,7 +705,7 @@ ScientistJedSeenText:
 
 	para "Please..."
 
-	para "The #MON!"
+	para "The #mon!"
 
 	para "They have gone"
 	line "mad!"

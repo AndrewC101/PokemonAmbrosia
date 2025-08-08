@@ -324,7 +324,7 @@ SageLiFlashExplanationText:
 
 	para "You do not have"
 	line "to teach the move"
-	cont "for your #MON"
+	cont "for your #mon"
 	cont "to use it."
 
 	para "However you"
@@ -333,7 +333,7 @@ SageLiFlashExplanationText:
 	cont "BADGE."
 
 	para "Check your"
-	line "#MON when in"
+	line "#mon when in"
 	cont "a dark place to"
 	cont "see which can"
 	cont "use it."
@@ -423,7 +423,7 @@ SageNealSeenText:
 
 	para "You don't need to"
 	line "teach them to"
-	cont "#MON to be"
+	cont "#mon to be"
 	cont "able to use them."
 	done
 
@@ -433,7 +433,7 @@ SageNealBeatenText:
 	done
 
 SageNealAfterBattleText:
-	text "A #MON can"
+	text "A #mon can"
 	line "use an HM as"
 	cont "long as it is"
 	cont "able to learn it."
@@ -450,7 +450,7 @@ SproutTower3FPaintingText:
 	done
 
 SproutTower3FStatueText:
-	text "A #MON statue…"
+	text "A #mon statue…"
 
 	para "There is something"
 	line "eerie about it."

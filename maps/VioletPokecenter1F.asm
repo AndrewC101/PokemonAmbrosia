@@ -109,13 +109,13 @@ VioletPokecenter1F_BillText1:
 	cont "it better for OAK"
 	cont "to do so."
 	para "With the EXP SHARE"
-	line "all #MON who"
+	line "all #mon who"
 	cont "don't take part in"
 	cont "battle still get"
 	cont "half the full EXP."
 	para "I hope to improve"
 	line "upon this so all"
-	cont "#MON get full"
+	cont "#mon get full"
 	cont "EXP and perhaps"
 	cont "even boosted EXP"
 	cont "one day."
@@ -237,12 +237,12 @@ VioletPokecenterElmsAideFavorText:
 	line "favor to ask."
 
 	para "Would you take the"
-	line "#MON EGG?"
+	line "#mon EGG?"
 	done
 
 VioletPokecenterElmsAideGiveEggText:
 	text "If the egg is a"
-	line "FAIRY #MON"
+	line "FAIRY #mon"
 	cont "it may need to"
 	cont "form a strong bond"
 	cont "with its trainer"
@@ -283,7 +283,7 @@ VioletPokecenter1FGameboyKidText:
 	line "outside the city"
 	cont "is strong."
 
-	para "But his #MON"
+	para "But his #mon"
 	line "only knows one"
 	cont "move that only"
 	cont "has 10 PP."
@@ -316,17 +316,17 @@ VioletPokecenter1FGentlemanText:
 
 VioletPokecenter1FYoungsterText:
 	text "You can trade"
-	line "#MON with"
+	line "#mon with"
 	cont "other trainers."
 
-	para "A traded #MON"
+	para "A traded #mon"
 	line "gains more EXP"
 	cont "in battle."
 
 	para "I think there is"
 	line "someone around"
 	cont "here looking to"
-	cont "trade #MON."
+	cont "trade #mon."
 	done
 
 VioletPokecenter1F_MapEvents:

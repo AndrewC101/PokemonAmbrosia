@@ -212,11 +212,11 @@ BugsyText_HiveBadgeSpeech:
 	cont "BADGE?"
 
 	para "You can train"
-	line "#MON up to"
+	line "#mon up to"
 	cont "level 35."
 
 	para "And capture"
-	line "#MON up to"
+	line "#mon up to"
 	cont "level 25."
 
 	para "You can also"
@@ -264,7 +264,7 @@ BugCatcherBennyAfterBattleText:
 	done
 
 BugCatcherAlSeenText:
-	text "Bug #MON are"
+	text "Bug #mon are"
 	line "so cool."
 
 	para "Like just look"
@@ -302,7 +302,7 @@ BugCatcherJoshBeatenText:
 
 BugCatcherJoshAfterBattleText:
 	text "Don't anger BUGSY,"
-	line "his #MON are"
+	line "his #mon are"
 	cont "terrifying."
 	done
 
@@ -323,7 +323,7 @@ TwinsAmyandmay1BeatenText:
 
 TwinsAmyandmay1AfterBattleText:
 	text "We like BUG"
-	line "#MON!"
+	line "#mon!"
 	para "They are not icky,"
 	line "they are cool!"
 	done

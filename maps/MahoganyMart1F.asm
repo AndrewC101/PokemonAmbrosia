@@ -172,7 +172,7 @@ MahoganyMart1FBlackBeltText:
 	cont "of war and battle."
 
 	para "Soon powerful"
-	line "#MON will"
+	line "#mon will"
 	cont "become a huge"
 	cont "liability."
 

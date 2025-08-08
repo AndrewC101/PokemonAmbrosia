@@ -18,7 +18,7 @@ ChadDefeatedMonText:
 	line "glued to my"
 	cont "CHARIZARD."
 	para "You need some cool"
-	line "#MON."
+	line "#mon."
 	done
 
 ChadLostAMonText:
@@ -99,7 +99,7 @@ ChadProfOaksDreamGossipText:
 ChadKurtGossipText:
 	text "KURT is an expert"
 	line "at making"
-	cont "#BALLS."
+	cont "#balls."
 	para "I asked him to"
 	line "make me a LOVE"
 	cont "BALL once, that I"
@@ -168,7 +168,7 @@ ChadProfOakTravelingGossipText:
 ChadGoingToStudyHardText:
 	text "KURT is an expert"
 	line "at making"
-	cont "#BALLS."
+	cont "#balls."
 	para "I asked him to"
 	line "make me a LOVE"
 	cont "BALL once, that I"

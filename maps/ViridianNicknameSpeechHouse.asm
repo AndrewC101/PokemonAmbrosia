@@ -42,7 +42,7 @@ ViridianNicknameSpeechHousePokefanMText:
 
 ViridianNicknameSpeechHouseLassText:
 	text "I tried to go west"
-	line "to the #MON"
+	line "to the #mon"
 	cont "LEAGUE and I saw a"
 	cont "big firey bird."
 	para "I ran for it!"

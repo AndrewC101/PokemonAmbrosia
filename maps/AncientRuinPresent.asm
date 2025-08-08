@@ -259,7 +259,7 @@ AncientRuinsPresentFieldMon10Script:
     end
 
 AncientRuinsPresentPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

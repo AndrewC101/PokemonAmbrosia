@@ -46,12 +46,12 @@ OlivineLighthouse3FEther:
 	itemball MAX_REVIVE
 
 BirdKeeperTheoSeenText:
-	text "My #MON"
+	text "My #mon"
 	line "are predators."
 
 	para "I can't guarantee"
 	line "they wont eat"
-	cont "your #MON."
+	cont "your #mon."
 	done
 
 BirdKeeperTheoBeatenText:
@@ -61,7 +61,7 @@ BirdKeeperTheoBeatenText:
 	done
 
 BirdKeeperTheoAfterBattleText:
-	text "My #MON"
+	text "My #mon"
 	line "and I will soar"
 	cont "up the tower."
 
@@ -96,7 +96,7 @@ SailorTerrellAfterBattleText:
 	done
 
 GentlemanPrestonSeenText:
-	text "My #MON"
+	text "My #mon"
 	line "are worth more"
 	cont "than all these"
 	cont "filthy sailors"
@@ -114,7 +114,7 @@ GentlemanPrestonAfterBattleText:
 	text "I felt sure"
 	line "I could beat"
 	cont "JASMINE with my"
-	cont "FIRE #MON."
+	cont "FIRE #mon."
 
 	para "But I got put"
 	line "in my place."

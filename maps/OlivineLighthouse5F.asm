@@ -84,7 +84,7 @@ BirdKeeperDenisSeenText:
 	text "The CHAMPION"
 	line "that once trained"
 	cont "here used bird"
-	cont "#MON."
+	cont "#mon."
 
 	para "I have reached"
 	line "such heights!"
@@ -100,7 +100,7 @@ BirdKeeperDenisBeatenText:
 	done
 
 BirdKeeperDenisAfterBattleText:
-	text "My #MON learned"
+	text "My #mon learned"
 	line "how to use FLY in"
 	cont "CIANWOOD."
 

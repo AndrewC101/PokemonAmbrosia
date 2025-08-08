@@ -71,7 +71,7 @@ Route16FieldMon4Script:
     end
     
 Route16PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	

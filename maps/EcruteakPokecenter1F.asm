@@ -43,7 +43,7 @@ EcruteakPokecenter1FCooltrainerFText:
 
 	para "He has a strong"
 	line "connection to"
-	cont "GHOST #MON."
+	cont "GHOST #mon."
 	done
 
 EcruteakPokecenter1FGymGuideText:
@@ -64,7 +64,7 @@ EcruteakPokecenter1FGymGuideText:
 	line "caught."
 
 	para "And now the"
-	line "#MON there"
+	line "#mon there"
 	cont "have all gone"
 	cont "mad with anger."
 

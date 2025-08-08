@@ -72,7 +72,7 @@ Route12FieldMon2Script:
     end
 
 Route12PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -235,7 +235,7 @@ FisherStephenBeatenText:
 FisherStephenAfterBattleText:
 	text "Some say it was"
 	line "actually a"
-	cont "#MON."
+	cont "#mon."
 	para "No way, only a man"
 	line "could be so fat."
 	done
@@ -248,7 +248,7 @@ FisherBarneySeenText:
 	line "student, only bad"
 	cont "teacher."
 	para "Now show me"
-	line "#MON battle!"
+	line "#mon battle!"
 	done
 
 FisherBarneyBeatenText:

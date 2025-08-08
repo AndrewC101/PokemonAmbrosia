@@ -91,7 +91,7 @@ MasterSabrinaAfterBattleText:
 
 MasterSabrinaLoseAfterBattleText:
 	text "There is no"
-	line "perfect #MON"
+	line "perfect #mon"
 	cont "team."
 	para "Trying to create"
 	line "such a thing is"
@@ -324,7 +324,7 @@ MasterGiovanniSeenText:
 	para "I have a lot of"
 	line "experience in"
 	cont "business and in"
-	cont "raising #MON."
+	cont "raising #mon."
 	para "But I have greater"
 	line "expertise in one"
 	cont "thing than any"

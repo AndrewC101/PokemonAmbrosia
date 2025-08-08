@@ -32,7 +32,7 @@ CeruleanPokecenter1FGymGuideText:
 	text "CERULEAN CAVE is"
 	line "said to contain"
 	cont "really strong"
-	cont "#MON."
+	cont "#mon."
 
 	para "Apparently lots"
 	line "of trainers have"

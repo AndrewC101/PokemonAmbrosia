@@ -291,7 +291,7 @@ TwinsJoAndZoe1SeenText:
 	line "teaching us how"
 	cont "to battle."
 
-	para "Go #BALL!"
+	para "Go #ball!"
 	done
 
 TwinsJoAndZoe1BeatenText:

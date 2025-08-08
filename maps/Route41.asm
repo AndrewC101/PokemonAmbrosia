@@ -192,7 +192,7 @@ SwimmermGeorgeSeenText:
 	text "Hey kid."
 
 	para "That a real nice"
-	line "#MON ya"
+	line "#mon ya"
 	cont "got der."
 
 	para "Get you off"
@@ -321,7 +321,7 @@ SwimmerfKayleeSeenText:
 	line "too far."
 
 	para "I need my"
-	line "#MON to"
+	line "#mon to"
 	cont "save me."
 
 	para "Right after I"
@@ -459,7 +459,7 @@ Route41FieldMon4Script:
     end
 
 Route41PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

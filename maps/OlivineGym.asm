@@ -172,11 +172,11 @@ Jasmine_BadgeSpeech:
     text "With the"
     line "MINERALBADGE"
     cont "you can now train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 55."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 45."
 
 	para "Don't let"
@@ -264,7 +264,7 @@ OlivineGymGuidePreText:
 	cont "LIGHTHOUSE."
 
 	para "She's been tending"
-	line "to a sick #MON."
+	line "to a sick #mon."
 
 	para "A strong trainer"
 	line "has to be"

@@ -87,7 +87,7 @@ Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
 	cont "trainer."
 
 	para "I recently found"
-	line "this #MON."
+	line "this #mon."
 
 	para "I can tell"
 	line "there is something"
@@ -102,7 +102,7 @@ Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
 
 Route35GoldenrodGateRandyThanksText:
 	text "I can tell"
-	line "this #MON"
+	line "this #mon"
 	cont "has been well"
 	cont "trained."
 
@@ -131,7 +131,7 @@ Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
 
 Route35GoldenrodGateRandyCantCarryAnotherMonText:
 	text "You can't carry"
-	line "another #MON…"
+	line "another #mon…"
 	done
 
 Route35GoldenrodGateRandyOhNeverMindThenText:
@@ -167,10 +167,10 @@ Route35GoldenrodGatePokefanFText:
 Route35GoldenrodGateFisherText:
 	text "I saw the nurse"
 	line "in GOLDENROD"
-	cont "#MON CENTER"
+	cont "#mon CENTER"
 	cont "holding some"
 	cont "kind of special"
-	cont "#BALL."
+	cont "#ball."
 
 	para "She said if she"
 	line "ever meets a"

@@ -210,7 +210,7 @@ HikerBaileyMercyText:
     cont "you!"
 
     para "There are scary"
-    line "#MON in there."
+    line "#mon in there."
 
     para "Even if you get"
     line "through somehow."
@@ -325,7 +325,7 @@ PicnickerErinAfterBattleText:
 	para "What's your"
 	line "favorite..."
 
-	para "#MON?"
+	para "#mon?"
 	done
 
 Route46SignText:
@@ -405,7 +405,7 @@ Route46FieldMon6Script:
 	end
 
 Route46PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

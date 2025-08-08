@@ -160,7 +160,7 @@ BurnedTower1FEusineMovement:
 BurnedTowerSilver_BeforeText:
     text "They say a"
     line "legendary"
-    cont "#MON used"
+    cont "#mon used"
     cont "to dwell here."
 
     para "Well if it did"
@@ -168,9 +168,9 @@ BurnedTowerSilver_BeforeText:
     cont "now."
 
     para "Legendary"
-    line "#MON are the"
+    line "#mon are the"
     cont "strongest of"
-    cont "all #MON."
+    cont "all #mon."
 
     para "I will catch one"
     line "someday!"
@@ -192,7 +192,7 @@ BurnedTowerSilver_WinText:
 BurnedTowerSilver_LossText:
 	text "Seems I don't"
 	line "need legendary"
-	cont "#MON to win!"
+	cont "#mon to win!"
 	done
 
 BurnedTowerSilver_AfterText1:
@@ -207,7 +207,7 @@ BurnedTowerSilver_AfterText1:
 	para "Besides even if"
 	line "you found a"
 	cont "legendary"
-	cont "#MON you"
+	cont "#mon you"
 	cont "would never be"
 	cont "able to catch it"
 
@@ -224,7 +224,7 @@ BurnedTowerSilver_AfterText2:
 	para "Let me know if"
 	line "you find a"
 	cont "legendary"
-	cont "#MON down"
+	cont "#mon down"
 	cont "there!"
 
 	para "Heh heh heh..."
@@ -270,7 +270,7 @@ BurnedTower1FMortyText:
 	line "to investigate"
 	cont "this place for"
 	cont "legendary"
-	cont "#MON."
+	cont "#mon."
 
 	para "He is rather..."
 

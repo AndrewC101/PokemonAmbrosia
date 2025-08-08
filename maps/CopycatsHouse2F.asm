@@ -69,7 +69,7 @@ catTradeText:
 	line "a form of"
 	cont "flattery."
 	para "I'm also good at"
-	line "teaching #MON"
+	line "teaching #mon"
 	cont "to imitate others."
 	done
 
@@ -115,7 +115,7 @@ CopycatsDodrioText2:
 
 CopycatsHouse2FDollText:
 	text "This is a rare"
-	line "#MON! Huh?"
+	line "#mon! Huh?"
 
 	para "It's only a doll…"
 	done

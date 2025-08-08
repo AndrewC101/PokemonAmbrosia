@@ -92,7 +92,7 @@ DaisyOfferGroomingText:
 	cont "some?"
 
 	para "Oh I could groom"
-	line "your #MON"
+	line "your #mon"
 	cont "while you drink."
 	done
 
@@ -121,7 +121,7 @@ DaisyAllDoneText:
 	line "look nice?"
 
 	para "It's such a cute"
-	line "#MON."
+	line "#mon."
 	done
 
 DaisyAlreadyGroomedText:

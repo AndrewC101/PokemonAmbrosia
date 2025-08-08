@@ -177,7 +177,7 @@ MasterYamiWinText:
 
 MasterYamiAfterBattleText:
 	text "You are truly a"
-	line "#MON MASTER."
+	line "#mon MASTER."
 	para "Beware that man"
 	line "over there."
 	para "I sense a great"
@@ -417,7 +417,7 @@ MasterExecutiveSeenText:
 	para "He killed my"
 	line "brother."
 	para "I escaped with my"
-	line "brothers #MON"
+	line "brothers #mon"
 	cont "and we never"
 	cont "stopped fighting."
 	done
@@ -957,11 +957,11 @@ NurseScript:
 ShouldIHealText:
     text "Would you like me"
     line "to heal your"
-    cont "#MON?"
+    cont "#mon?"
     prompt
 
 HealDoneText:
-    text "Your #MON"
+    text "Your #mon"
     line "are fully healed."
     prompt
 
@@ -1148,7 +1148,7 @@ OakIntroText:
     cont "your reality."
 
     para "Every person here"
-    line "is a #MON"
+    line "is a #mon"
     cont "MASTER in their"
     cont "own right."
 

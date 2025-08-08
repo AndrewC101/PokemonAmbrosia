@@ -27,10 +27,10 @@ PewterMartYoungsterText:
 
 	para "It's not clear"
 	line "how exactly it"
-	cont "affects #MON."
+	cont "affects #mon."
 
 	para "It seems like"
-	line "the #MON of"
+	line "the #mon of"
 	cont "stronger trainers"
 	cont "are less affected."
 	done
@@ -46,7 +46,7 @@ PewterMartSuperNerdText:
 	line "that if used"
 	cont "right it can"
 	cont "actually make"
-	cont "#MON stronger."
+	cont "#mon stronger."
 
 	para "If it doesn't"
 	line "kill them that is."

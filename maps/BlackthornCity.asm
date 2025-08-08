@@ -233,7 +233,7 @@ BlackthornCooltrainerF1Text:
 
 	para "He has a brother"
 	line "who can make"
-	cont "#MON forget"
+	cont "#mon forget"
 	cont "moves."
 
 	para "They like to"
@@ -328,7 +328,7 @@ BlackthornCitySignText:
 
 BlackthornGymSignText:
 	text "BLACKTHORN CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: CLAIR"
 
 	para "The DRAGON MASTER."
@@ -347,7 +347,7 @@ DragonDensSignText:
 BlackthornCityTrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "A #MON holding"
+	para "A #mon holding"
 	line "a MIRACLEBERRY"
 
 	para "will cure itself"

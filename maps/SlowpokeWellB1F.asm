@@ -317,7 +317,7 @@ GruntF1BeatenText:
 GruntF1AfterBattleText:
 	text "Don't let it go to"
 	line "your head because"
-	cont "your #MON are"
+	cont "your #mon are"
 	cont "a teeny tiny bit"
 	cont "stronger."
 	done

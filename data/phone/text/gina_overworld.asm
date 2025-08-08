@@ -1,10 +1,10 @@
 GinaAskNumber2Text:
 GinaAskNumber1Text:
 	text "Maybe KANTO"
-	line "#MON just"
+	line "#mon just"
 	cont "aren't that"
 	cont "strong."
-	para "I want my #MON"
+	para "I want my #mon"
 	line "to be as strong as"
 	cont "they can be."
 	para "Will you help me?"
@@ -30,7 +30,7 @@ GinaPhoneFullText:
 GinaRematchText:
 	text "OK I need to make"
 	line "sure all my"
-	cont "#MON get some"
+	cont "#mon get some"
 	cont "EXP."
 	done
 

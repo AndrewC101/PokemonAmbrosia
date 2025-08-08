@@ -657,7 +657,7 @@ RadioTower2FSalesSignText:
 	done
 
 RadioTower2FOaksPKMNTalkSignText:
-	text "PROF.OAK'S #MON"
+	text "PROF.OAK'S #mon"
 	line "TALK"
 
 	para "The Hottest Show"
@@ -666,7 +666,7 @@ RadioTower2FOaksPKMNTalkSignText:
 
 RadioTower2FPokemonRadioSignText:
 	text "Anywhere, Anytime"
-	line "#MON Radio"
+	line "#mon Radio"
 	done
 
 RadioTower2F_MapEvents:

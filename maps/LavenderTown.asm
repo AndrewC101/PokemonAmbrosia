@@ -86,7 +86,7 @@ LavenderTownTeacherText:
 	done
 
 LavenderTownGrampsText:
-	text "Many #MON"
+	text "Many #mon"
 	line "rest forever"
 	cont "in here."
 
@@ -132,14 +132,14 @@ KantoRadioStationSignText:
 
 VolunteerPokemonHouseSignText:
 	text "LAVENDER VOLUNTEER"
-	line "#MON HOUSE"
+	line "#mon HOUSE"
 	done
 
 SoulHouseSignText:
 	text "SOUL HOUSE"
 
 	para "May the Souls of"
-	line "#MON Rest Easy"
+	line "#mon Rest Easy"
 	done
 	
 MerlinRolePlayScript:

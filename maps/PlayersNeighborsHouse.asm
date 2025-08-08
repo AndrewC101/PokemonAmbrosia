@@ -75,10 +75,10 @@ PlayersNeighborsDaughterText:
 	text "PROF ELM has"
 	line "conducted ground"
 	cont "breaking research"
-	cont "into #MON"
+	cont "into #mon"
 	cont "abilities."
 
-	para "Every #MON"
+	para "Every #mon"
 	line "has some special"
 	cont "abilities."
 
@@ -86,7 +86,7 @@ PlayersNeighborsDaughterText:
 	line "them on the"
 	cont "STATS page or"
 	cont "the second page"
-	cont "of the #DEX."
+	cont "of the #dex."
 
 	para "My little sister"
 	line "wants to be a"
@@ -105,7 +105,7 @@ PlayersNeighborsDaughterTextPostWallace:
 
 PlayersNeighborText:
 	text "CRYSTAL got her"
-	line "first #MON."
+	line "first #mon."
 
 	para "She loves her"
 	line "RIOLU."

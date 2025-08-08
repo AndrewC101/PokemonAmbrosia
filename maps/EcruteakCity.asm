@@ -139,7 +139,7 @@ EcruteakCityLass2Text:
 	done
 
 EcruteakCityLass2Text_ReleasedBeasts:
-	text "Three big #MON"
+	text "Three big #mon"
 	line "ran off in differ-"
 	cont "ent directions."
 	cont "What were they?"
@@ -183,11 +183,11 @@ EcruteakCityGramps3Text:
 	para "This tower burned"
 	line "in a fire. Three"
 
-	para "nameless #MON"
+	para "nameless #mon"
 	line "perished in it."
 
 	para "A rainbow-colored"
-	line "#MON descended"
+	line "#mon descended"
 
 	para "from the sky and"
 	line "resurrected them…"
@@ -223,7 +223,7 @@ TinTowerSignText:
 
 EcruteakGymSignText:
 	text "ECRUTEAK CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: MORTY"
 
 	para "The Mystic Seer of"
@@ -513,7 +513,7 @@ Aerith1SeenText:
     line "I are committed"
     cont "to protecting"
     cont "the planet and"
-    cont "#MON from"
+    cont "#mon from"
     cont "all these human"
     cont "conflicts."
 

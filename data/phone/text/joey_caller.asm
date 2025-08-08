@@ -59,7 +59,7 @@ JoeyHangUpText:
 JoeyDevisingStrategiesText:
 	text "They say the"
 	line "maximum level a"
-	cont "#MON can reach"
+	cont "#mon can reach"
 	cont "is 100."
 	para "The RAT GOD laughs"
 	line "as such mortal"

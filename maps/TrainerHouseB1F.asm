@@ -3051,7 +3051,7 @@ ExplainStandardTrialText:
     line "consists of 30"
     cont "total battles."
 
-    para "With your #MON"
+    para "With your #mon"
     line "being healed every"
     cont "3 battles."
     done
@@ -3061,7 +3061,7 @@ ExplainMasterTrialText:
     line "consists of 6"
     cont "total battles."
 
-    para "With your #MON"
+    para "With your #mon"
     line "being healed every"
     cont "3 battles."
     done
@@ -3072,7 +3072,7 @@ ExplainImpossibleTrialText:
     para "It consists of 4"
     line "total battles."
 
-    para "With your #MON"
+    para "With your #mon"
     line "healed before"
     cont "the final battle."
     done
@@ -3102,7 +3102,7 @@ AcceptPrize:
     done
 
 NowHeal:
-    text "Your #MON will"
+    text "Your #mon will"
     line "now be restored."
     done
 

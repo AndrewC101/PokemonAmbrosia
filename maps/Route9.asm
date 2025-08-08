@@ -72,7 +72,7 @@ Route9FieldMon2Script:
     end
 
 Route9PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -243,7 +243,7 @@ HikerTimBeatenText:
 
 HikerTimAfterBattleText:
 	text "The ELECTRIC"
-	line "#MON at the"
+	line "#mon at the"
 	cont "POWER PLANT will"
 	cont "be easy for me to"
 	cont "deal with."

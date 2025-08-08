@@ -284,7 +284,7 @@ BugCatcherWade1AfterText:
 
 Text_Route31SleepyMan:
 	text "I found a really"
-	line "strong #MON in"
+	line "strong #mon in"
 	cont "DARK CAVE but"
 	cont "I don't have"
 	cont "enough BADGES to"
@@ -292,7 +292,7 @@ Text_Route31SleepyMan:
 
 	para "You need BADGES"
 	line "to catch high"
-	cont "level #MON."
+	cont "level #mon."
 	done
 
 Route31YoungsterText:
@@ -361,7 +361,7 @@ GiantDadBeatenText:
 
 GiantDadWinsText:
     text "Welcome"
-    line "to #MON!"
+    line "to #mon!"
     done
 
 GiantDadAfterBattleText:
@@ -384,7 +384,7 @@ Route31FieldMon2Script:
     end
     
 Route31PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

@@ -514,6 +514,8 @@ AideScript_ReceiveTheBalls:
 	end
 
 ElmsAideScript:
+    setflag ENGINE_POKEGEAR
+
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
@@ -791,7 +793,7 @@ ElmBeatWallaceText:
 	cont "watched you grow"
 	cont "up and presented"
 	cont "you with your"
-	cont "first #MON."
+	cont "first #mon."
 	para "Never stop"
 	line "learning and"
 	cont "growing."
@@ -838,11 +840,11 @@ ElmBeatRocketsText:
 ElmStandardText:
 	text "It's a wonderful"
 	line "thing to be a"
-	cont "#MON trainer."
+	cont "#mon trainer."
 	para "But not all"
 	line "trainers are good."
 	para "Put your faith in"
-	line "your #MON and"
+	line "your #mon and"
 	cont "yourself."
 	para "You know right"
 	line "from wrong"
@@ -866,7 +868,7 @@ ElmsLabCynthiaIntroText:
     para "PROF ELM has told"
     line "me today you have"
     cont "chosen to begin"
-    cont "your #MON"
+    cont "your #mon"
     cont "training."
 
     para "I envy you."
@@ -932,7 +934,7 @@ ElmsLabCynthiaGoodluckText:
     line "adventure."
 
     para "No matter which"
-    line "#MON you choose"
+    line "#mon you choose"
     cont "it will serve you"
     cont "well and become a"
     cont "life long friend."
@@ -981,20 +983,20 @@ ElmText_ChooseAPokemon:
 	text "I want you to"
 	line "raise one of the"
 
-	para "#MON contained"
-	line "in these BALLS."
+	para "#mon contained"
+	line "in these balls."
 
 	para "You'll be that"
-	line "#MON's first"
+	line "#mon's first"
 	cont "partner, <PLAY_G>!"
 
 	para "Go on. Pick one!"
 	done
 
 ElmText_LetYourMonBattleIt:
-	text "If a wild #MON"
+	text "If a wild #mon"
 	line "appears, let your"
-	cont "#MON battle it!"
+	cont "#mon battle it!"
 	done
 
 LabWhereGoingText:
@@ -1005,19 +1007,19 @@ LabWhereGoingText:
 TakeCyndaquilText:
 	text "You'll take"
 	line "CHIMCHAR, the"
-	cont "FIRE #MON?"
+	cont "FIRE #mon?"
 	done
 
 TakeTotodileText:
 	text "Do you want"
 	line "FROAKIE, the"
-	cont "WATER #MON?"
+	cont "WATER #mon?"
 	done
 
 TakeChikoritaText:
 	text "So, you like"
 	line "TREECKO, the"
-	cont "GRASS #MON?"
+	cont "GRASS #mon?"
 	done
 
 DidntChooseStarterText:
@@ -1031,7 +1033,7 @@ DidntChooseStarterText:
 ChoseStarterText:
 	text "I think"
 	line "that's a great"
-	cont "#MON too!"
+	cont "#mon too!"
 	done
 
 ReceivedStarterText:
@@ -1053,14 +1055,14 @@ ElmDirectionsText1:
 	done
 
 ElmDirectionsText2:
-	text "If your #MON"
+	text "If your #mon"
 	line "are hurt you can"
 	cont "heal them with"
 	cont "this machine."
 	para "My aide has a"
 	line "POCKET PC you can"
 	cont "use to heal your"
-	cont "#MON anywhere."
+	cont "#mon anywhere."
 	done
 
 ElmDirectionsText3:
@@ -1085,7 +1087,7 @@ ElmDescribesMrPokemonText:
 	cont "stronger."
 
 	para "He is visiting"
-	line "MR.#MON who"
+	line "MR.#mon who"
 	cont "is a secret agent."
 
 	para "He can be a bit"
@@ -1094,7 +1096,7 @@ ElmDescribesMrPokemonText:
 
 ElmPokeBallText:
 	text "It contains a"
-	line "#MON caught by"
+	line "#mon caught by"
 	cont "PROF.ELM."
 	done
 
@@ -1105,7 +1107,7 @@ ElmsLabHealingMachineText1:
 
 ElmsLabHealingMachineText2:
 	text "Would you like to"
-	line "heal your #MON?"
+	line "heal your #mon?"
 	done
 
 ElmAfterTheftText1:
@@ -1128,7 +1130,7 @@ ElmAfterTheftText2:
 ElmAfterTheftText3:
 	text "This is"
 	line "an EGG of a"
-	cont "FAIRY #MON."
+	cont "FAIRY #mon."
 	done
 
 ElmAfterTheftText4:
@@ -1137,21 +1139,21 @@ ElmAfterTheftText4:
 	cont "and many good"
 	cont "resistances."
 
-	para "The #MON in"
+	para "The #mon in"
 	line "this EGG may be"
 	cont "useful."
 	done
 
 ElmAfterTheftText5:
 	text "PROF.OAK gave you"
-	line "a #DEX?"
+	line "a #dex?"
 
 	para "It is a vital"
 	line "tool for all"
 	cont "trainers."
 
 	para "It provides info"
-	line "on all #MON."
+	line "on all #mon."
 
 	para "Including their"
 	line "special ability"
@@ -1162,7 +1164,7 @@ ElmAfterTheftText5:
 	cont "training."
 
 	para "You need to seek"
-	line "out #MON GYMS"
+	line "out #mon GYMS"
 	cont "and defeat the"
 	cont "GYM LEADERS."
 
@@ -1239,23 +1241,23 @@ AideText_ExplainCaps:
     line "trainer is, the"
     cont "better they can"
     cont "train and catch"
-    cont "#MON."
+    cont "#mon."
 
     para "Makes sense!"
 
     para "Trainers with"
     line "more BADGES can"
-    cont "train #MON"
+    cont "train #mon"
     cont "to higher levels"
     cont "and catch"
-    cont "#MON at"
+    cont "#mon at"
     cont "higher levels."
 
     para "There is a"
     line "limit to how"
     cont "high a level"
     cont "you can train a"
-    cont "#MON to"
+    cont "#mon to"
     cont "or catch one at"
     cont "based on which"
     cont "BADGES you have."
@@ -1296,16 +1298,16 @@ ElmGiveMasterBallText2:
 	para "It's the ultimate"
 	line "BALL! It'll catch"
 
-	para "any #MON"
+	para "any #mon"
 	line "without fail."
 
 	para "At least there is"
-	line "no known #MON"
+	line "no known #mon"
 	cont "strong enough to"
 	cont "break out of it."
 
 	para "It's given only to"
-	line "recognized #MON"
+	line "recognized #mon"
 	cont "researchers."
 
 	para "I think you can"
@@ -1325,11 +1327,11 @@ ElmGiveTicketText1:
 	cont "CHAMPION!"
 
     para "You can now train"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 85."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 75."
 
 	para "I called because I"
@@ -1356,7 +1358,7 @@ ElmGiveTicketText2:
 
 	para "After all, you've"
 	line "traveled all over"
-	cont "with your #MON."
+	cont "with your #mon."
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
@@ -1390,7 +1392,7 @@ ElmKantoExplainText:
 	para "Your first"
 	line "responsibility is"
 	cont "to protect people"
-	cont "and #MON."
+	cont "and #mon."
 	para "To do this you"
 	line "must ensure the"
 	cont "KANTO GYM LEADERS"
@@ -1435,19 +1437,19 @@ AideText_TheftTestimony:
 
 	para "When we went to"
 	line "look, someone"
-	cont "stole a #MON."
+	cont "stole a #mon."
 
 	para "It's unbelievable"
 	line "that anyone would"
 	cont "do that!"
 
 	para "…sigh… That"
-	line "stolen #MON."
+	line "stolen #mon."
 
 	para "I wonder how it's"
 	line "doing."
 
-	para "They say a #MON"
+	para "They say a #mon"
 	line "raised by a bad"
 
 	para "person turns bad"
@@ -1458,21 +1460,21 @@ AideText_GiveYouBalls:
 	text "<PLAY_G>!"
 
 	para "Use these on your"
-	line "#DEX quest!"
+	line "#dex quest!"
 	done
 
 AideText_ExplainBalls:
 	text "To add to your"
-	line "#DEX, you have"
-	cont "to catch #MON."
+	line "#dex, you have"
+	cont "to catch #mon."
 
-	para "Throw # BALLS"
-	line "at wild #MON"
+	para "Throw # balls"
+	line "at wild #mon"
 	cont "to get them."
 	done
 
 ElmsLabOfficerText1:
-	text "I heard a #MON"
+	text "I heard a #mon"
 	line "was stolen here…"
 
 	para "I was just getting"
@@ -1552,7 +1554,7 @@ ElmsLabTravelTip4Text:
 
 	para "Travel Tip 4:"
 
-	para "Check your #MON"
+	para "Check your #mon"
 	line "moves. Press the"
 
 	para "A Button to switch"
@@ -1572,7 +1574,7 @@ ElmsLabPCText:
 	line "Dynamics of"
 	cont "Entangled Stat"
 	cont "Augmenting"
-	cont "#MON"
+	cont "#mon"
 	cont "Abilities."
 	done
 
@@ -1590,7 +1592,7 @@ AideText_PocketPCInfoText:
 
 	para "You can also use"
 	line "it to heal your"
-	cont "#MON anytime!"
+	cont "#mon anytime!"
 
 	para "You can use the"
 	line "SEL option in the"
@@ -1601,7 +1603,7 @@ AideText_PocketPCInfoText:
 
 	para "Then you can"
 	line "quickly heal your"
-	cont "#MON after a"
+	cont "#mon after a"
 	cont "battle."
 	done
 
@@ -1969,8 +1971,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4, 11, NEW_BARK_TOWN, 1
-	warp_event  5, 11, NEW_BARK_TOWN, 1
+	warp_event  4, 11, NEW_BARK_TOWN, 2
+	warp_event  5, 11, NEW_BARK_TOWN, 2
 
 	def_coord_events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript

@@ -253,7 +253,7 @@ AncientRuinsPastGirl1Text:
 
 AncientRuinsPastGirl2Text:
     text "We live in peace"
-    line "with #MON"
+    line "with #mon"
     cont "in this city."
 
     para "We worship the"
@@ -265,7 +265,7 @@ AncientRuinsPastGirl2Text:
 
     para "I shall bestow"
     line "our blessing upon"
-    cont "your #MON."
+    cont "your #mon."
     done
 
 YamiScript:
@@ -356,7 +356,7 @@ YamiSeenText:
     line "one last gift."
 
     para "A duel with a"
-    line "#MON MASTER!"
+    line "#mon MASTER!"
     done
 
 YamiBeatenText:

@@ -1,6 +1,6 @@
 ChadAskNumber1Text:
 	text "You're good at"
-	line "#MON, but what"
+	line "#mon, but what"
 	cont "about with the"
 	cont "opposite sex."
 	para "Give me your"
@@ -11,7 +11,7 @@ ChadAskNumber1Text:
 
 ChadAskNumber2Text:
 	text "You're good at"
-	line "#MON, but what"
+	line "#mon, but what"
 	cont "about with the"
 	cont "opposite sex."
 	para "Give me your"

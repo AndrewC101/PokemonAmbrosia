@@ -29,7 +29,7 @@ TinTower8FFieldMon2Script:
     end
 
 TinTower8FAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
  	line "attacks!"
  	done
 

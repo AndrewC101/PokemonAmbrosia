@@ -5,7 +5,7 @@ ElmPhoneHealYourMonText:
 	line "it."
 
 	para "Be sure to heal"
-	line "your #MON if"
+	line "your #mon if"
 	cont "they are hurt."
 	done
 
@@ -13,7 +13,7 @@ ElmPhoneSawMrPokemonText:
 	text "Hello, <PLAY_G>?"
 
 	para "Did you meet MR."
-	line "#MON? Great!"
+	line "#mon? Great!"
 	cont "Come back safely!"
 	done
 
@@ -21,7 +21,7 @@ ElmPhonePokemonStolenText:
 	text "<PLAY_G>? I'm very"
 	line "upset now."
 
-	para "We had a #MON"
+	para "We had a #mon"
 	line "stolen from here."
 
 	para "How could anyone"
@@ -35,7 +35,7 @@ ElmPhoneCheckingTheEggText:
 	line "EGG now. It does"
 
 	para "appear to be a"
-	line "#MON EGG."
+	line "#mon EGG."
 	done
 
 ElmPhoneAssistantText:
@@ -44,7 +44,7 @@ ElmPhoneAssistantText:
 	para "Did you see my"
 	line "assistant? He's at"
 
-	para "the #MON CENTER"
+	para "the #mon CENTER"
 	line "in VIOLET CITY."
 	done
 
@@ -64,7 +64,7 @@ ElmPhoneEggHatchedText:
 
 	para "What? It hatched?"
 	line "Wow! What kind of"
-	cont "#MON is it?"
+	cont "#mon is it?"
 
 	para "Please come show"
 	line "me now!"
@@ -90,7 +90,7 @@ ElmPhoneDiscoveredPokerusText:
 	text "<PLAYER>!"
 	para "The #CENTER"
 	line "told me your"
-	cont "#MON have"
+	cont "#mon have"
 	cont "#RUS!"
 	para "Don't panic, I"
 	line "haven't told your"
@@ -103,7 +103,7 @@ ElmPhoneDiscoveredPokerusText:
 	cont "affected, in fact"
 	cont "it may even"
 	cont "benefit them."
-	para "Your #MON"
+	para "Your #mon"
 	line "will get over it"
 	cont "shortly."
 	para "Just keep going!"

@@ -1,19 +1,19 @@
 NurseMornText:
 	text "Good morning!"
 	line "Welcome to our"
-	cont "#MON CENTER."
+	cont "#mon CENTER."
 	done
 
 NurseDayText:
 	text "Hello!"
 	line "Welcome to our"
-	cont "#MON CENTER."
+	cont "#mon CENTER."
 	done
 
 NurseEveText:
 	text "Good evening!"
 	line "Welcome to our"
-	cont "#MON CENTER."
+	cont "#mon CENTER."
 	done
 
 NurseNiteText:
@@ -21,7 +21,7 @@ NurseNiteText:
 	line "You're out late."
 
 	para "Welcome to our"
-	line "#MON CENTER."
+	line "#mon CENTER."
 	done
 
 NurseChampText:
@@ -29,7 +29,7 @@ NurseChampText:
 	line "<PLAYER> it is an"
 	cont "honor."
 	para "Please let me heal"
-	line "your #MON."
+	line "your #mon."
 	done
 
 NurseInvadeText:
@@ -38,7 +38,7 @@ NurseInvadeText:
 	line "anyone!"
 	para "I..."
 	para "I'll heal your"
-	line "#MON."
+	line "#mon."
 	done
 
 NurseLordText:
@@ -49,7 +49,7 @@ NurseLordText:
 	line "granted the"
 	cont "privilege of"
 	cont "healing your"
-	cont "#MON."
+	cont "#mon."
 	done
 
 PokeComNurseMornText:
@@ -85,23 +85,23 @@ PokeComNurseNiteText:
 
 NurseAskHealText:
 	text "We can heal your"
-	line "#MON to perfect"
+	line "#mon to perfect"
 	cont "health."
 
 	para "Shall we heal your"
-	line "#MON?"
+	line "#mon?"
 	done
 
 NurseTakePokemonText:
 	text "OK, may I see your"
-	line "#MON?"
+	line "#mon?"
 	done
 
 NurseReturnPokemonText:
 	text "Thank you for"
 	line "waiting."
 
-	para "Your #MON are"
+	para "Your #mon are"
 	line "fully healed."
 	done
 
@@ -116,31 +116,31 @@ NurseGoodbyeText:
 	done
 
 NursePokerusText:
-	text "Your #MON"
+	text "Your #mon"
 	line "appear to be"
 
 	para "infected by tiny"
 	line "life forms."
 
-	para "Your #MON are"
+	para "Your #mon are"
 	line "healthy and seem"
 	cont "to be fine."
 
 	para "But we can't tell"
 	line "you anything more"
 
-	para "at a #MON"
+	para "at a #mon"
 	line "CENTER."
 	done
 
 PokeComNursePokerusText:
-	text "Your #MON"
+	text "Your #mon"
 	line "appear to be"
 
 	para "infected by tiny"
 	line "life forms."
 
-	para "Your #MON are"
+	para "Your #mon are"
 	line "healthy and seem"
 	cont "to be fine."
 
@@ -156,7 +156,7 @@ DifficultBookshelfText:
 
 PictureBookshelfText:
 	text "A whole collection"
-	line "of #MON picture"
+	line "of #mon picture"
 	cont "books!"
 	done
 
@@ -169,13 +169,13 @@ MagazineBookshelfText:
 TeamRocketOathText:
 	text "TEAM ROCKET OATH"
 
-	para "Steal #MON for"
+	para "Steal #mon for"
 	line "profit!"
 
-	para "Exploit #MON"
+	para "Exploit #mon"
 	line "for profit!"
 
-	para "All #MON exist"
+	para "All #mon exist"
 	line "for the glory of"
 	cont "TEAM ROCKET!"
 	done
@@ -190,7 +190,7 @@ IncenseBurnerText:
 	done
 
 MerchandiseShelfText:
-	text "Lots of #MON"
+	text "Lots of #mon"
 	line "junk!"
 	done
 
@@ -209,7 +209,7 @@ TVText:
 	done
 
 HomepageText:
-	text "#MON JOURNAL"
+	text "#mon JOURNAL"
 	line "HOME PAGE…"
 
 	para "It hasn't been"
@@ -217,7 +217,7 @@ HomepageText:
 	done
 
 ; not used
-	text "#MON RADIO!"
+	text "#mon RADIO!"
 
 	para "Call in with your"
 	line "requests now!"
@@ -229,30 +229,30 @@ TrashCanText:
 	done
 
 ; not used
-	text "A #MON may be"
+	text "A #mon may be"
 	line "able to move this."
 	done
 
 ; not used
-	text "Maybe a #MON"
+	text "Maybe a #mon"
 	line "can break this."
 	done
 
 PokecenterSignText:
-	text "Heal Your #MON!"
-	line "#MON CENTER"
+	text "Heal Your #mon!"
+	line "#mon CENTER"
 	done
 
 MartSignText:
 	text "For All Your"
-	line "#MON Needs"
+	line "#mon Needs"
 
-	para "#MON MART"
+	para "#mon MART"
 	done
 
 ContestResults_ReadyToJudgeText:
 	text "We will now judge"
-	line "the #MON you've"
+	line "the #mon you've"
 	cont "caught."
 
 	para "<……>"
@@ -300,7 +300,7 @@ ContestResults_DidNotWinText:
 
 ContestResults_ReturnPartyText:
 	text "We'll return the"
-	line "#MON we kept"
+	line "#mon we kept"
 
 	para "for you."
 	line "Here you go!"
@@ -308,7 +308,7 @@ ContestResults_ReturnPartyText:
 
 ContestResults_PartyFullText:
 	text "Your party's full,"
-	line "so the #MON was"
+	line "so the #mon was"
 
 	para "sent to your BOX"
 	line "in BILL's PC."
@@ -317,7 +317,7 @@ ContestResults_PartyFullText:
 GymStatue_CityGymText:
 	text_ram wStringBuffer3
 	text_start
-	line "#MON GYM"
+	line "#mon GYM"
 	done
 
 GymStatue_WinningTrainersText:
@@ -389,12 +389,12 @@ BugContestPrizeNoRoomText:
 
 HappinessText3:
 	text "Wow! You and your"
-	line "#MON are really"
+	line "#mon are really"
 	cont "close!"
 	done
 
 HappinessText2:
-	text "#MON get more"
+	text "#mon get more"
 	line "friendly if you"
 
 	para "spend time with"
@@ -403,7 +403,7 @@ HappinessText2:
 
 HappinessText1:
 	text "You haven't tamed"
-	line "your #MON."
+	line "your #mon."
 
 	para "If you aren't"
 	line "nice, it'll pout."

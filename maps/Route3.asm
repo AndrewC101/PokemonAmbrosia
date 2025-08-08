@@ -202,7 +202,7 @@ Route3FieldMon2Script:
     end
 
 Route3PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

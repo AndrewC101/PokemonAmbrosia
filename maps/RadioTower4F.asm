@@ -145,7 +145,7 @@ RadioTower4FDJMaryText_ClearedRockets:
 
 RadioTower4FDJMaryText_GivePinkBow:
 	text "MARY: It's just"
-	line "right for #MON"
+	line "right for #mon"
 
 	para "that know fairy-"
 	line "type moves."
@@ -166,14 +166,14 @@ RadioTowerMeowthText:
 
 GruntM10SeenText:
 	text "Have you heard"
-	line "of the #MON"
+	line "of the #mon"
 
 	para "KYOGRE and"
 	line "GROUDON!"
 
 	para "They are HOENN"
 	line "legendary"
-	cont "#MON."
+	cont "#mon."
 
 	para "They will kill"
 	line "us all!"
@@ -197,7 +197,7 @@ ScientistRichSeenText:
 	line "be mine."
 
 	para "The HOENN legend"
-	line "#MON."
+	line "#mon."
 
 	para "I will learn to"
 	line "control them and"

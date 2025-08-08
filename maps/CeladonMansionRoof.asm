@@ -32,7 +32,7 @@ CeladonMansionRoofGraffitiText:
 	text "There's graffiti"
 	line "on the wall…"
 
-	para "#MON"
+	para "#mon"
 	line "AMBROSIA"
 	done
 

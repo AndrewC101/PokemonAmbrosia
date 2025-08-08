@@ -282,7 +282,7 @@ SchoolboyDudleyBeatenText:
 SchoolboyDudleyAfterBattleText:
 	text "I'm going to"
 	line "catch some super"
-	cont "strong #MON"
+	cont "strong #mon"
 	cont "in the cave."
 
 	para "Then I'll win!"
@@ -423,7 +423,7 @@ LassShannonSeenText:
 	text "I am number 1!"
 
 	para "There are many"
-	line "strong #MON"
+	line "strong #mon"
 	cont "in the cave."
 
 	para "I am the muscle"
@@ -479,7 +479,7 @@ CooltrainermKevinAfterBattleText:
 	line "battle!"
 
 	para "You and your"
-	line "#MON are truly"
+	line "#mon are truly"
 	cont "outstanding!"
 	done
 

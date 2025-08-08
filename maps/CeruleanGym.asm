@@ -296,7 +296,7 @@ MistyIntroText:
 	line "HOENN trainers"
 	cont "can unlock the"
 	cont "full potential of"
-	cont "WATER #MON."
+	cont "WATER #mon."
 
 	para "I will prove them"
 	line "all wrong."

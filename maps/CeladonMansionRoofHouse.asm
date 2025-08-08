@@ -135,7 +135,7 @@ CeladonRoofHouseTVScript:
 	end
 
 CeladonRoofHouseTVText:
-	text "#MON the First"
+	text "#mon the First"
 	line "Movie is on!"
 	para "The original one."
 	para "The good one!"

@@ -63,7 +63,7 @@ LizGenericText:
 	para "I just thought I'd"
 	line "call."
 	para "How are your"
-	line "#MON doing?"
+	line "#mon doing?"
 	para "Do you have a"
 	line "crush on anyone?"
 	para "I'm sorry that"

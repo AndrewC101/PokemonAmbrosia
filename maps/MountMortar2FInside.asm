@@ -66,7 +66,7 @@ MountMortar2FInsideFieldMon6Script:
     end
 
 MountMortar2FInsidePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -109,7 +109,7 @@ SupernerdHughSeenText:
 	line "me over the"
 	cont "waterfall."
 
-	para "My #MON"
+	para "My #mon"
 	line "saved me."
 
 	para "He tried to"
@@ -131,7 +131,7 @@ SupernerdHughAfterBattleText:
 	cont "and I'm going"
 	cont "to find MARKUS."
 
-	para "Then my #MON"
+	para "Then my #mon"
 	line "and I are going"
 	cont "to take him for"
 	cont "a little"

@@ -141,7 +141,7 @@ StaySafeText:
     prompt
 
 PokegearName:
-	db "#GEAR@"
+	db "#gear@"
 
 PlayersHouse1FReceiveItemStd:
 	jumpstd ReceiveItemScript
@@ -311,14 +311,14 @@ ElmsLookingForYouText:
 
 	para "I'm proud of you"
 	line "beginning your"
-	cont "#MON training."
+	cont "#mon training."
 
 	para "I can't believe"
 	line "you are sixteen"
 	cont "already!"
 
 	para "Oh! Don't forget"
-	line "your #GEAR."
+	line "your #gear."
 
 	para "It's back from the"
 	line "repair shop."
@@ -495,7 +495,7 @@ DadTalkText:
     cont "what I could not."
 
 	para "Now you and your"
-	line "#MON should"
+	line "#mon should"
 	cont "have a good rest."
 	done
 
@@ -519,7 +519,7 @@ DadPostWallaceText:
     line "and my hero."
 
 	para "Now you and your"
-	line "#MON should"
+	line "#mon should"
 	cont "have a good rest."
 	done
 
@@ -554,8 +554,8 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, NEW_BARK_TOWN, 2
-	warp_event  7,  7, NEW_BARK_TOWN, 2
+	warp_event  6,  7, NEW_BARK_TOWN, 1
+	warp_event  7,  7, NEW_BARK_TOWN, 1
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events

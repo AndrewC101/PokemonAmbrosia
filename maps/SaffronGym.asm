@@ -141,7 +141,7 @@ SabrinaIntroText:
 	line "world visiting"
 	cont "ruins and all the"
 	cont "while my PSYCHIC"
-	cont "#MON were"
+	cont "#mon were"
 	cont "growing powerful."
 
 	para "PROF OAK suggested"

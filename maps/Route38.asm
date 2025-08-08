@@ -399,7 +399,7 @@ Route38FruitTree:
 
 BirdKeeperTobySeenText:
 	text "I don't know"
-	line "how my #MON"
+	line "how my #mon"
 	cont "evolve."
 
 	para "I don't think"
@@ -468,7 +468,7 @@ BeautyValerieSeenText:
 	line "private"
 	cont "training area."
 
-	para "My #MON are"
+	para "My #mon are"
 	line "big and beautiful."
 	done
 
@@ -510,7 +510,7 @@ SailorHarryAfterBattleText:
 	done
 
 BeautyOliviaSeenText:
-	text "My #MON and"
+	text "My #mon and"
 	line "I drink MOO"
 	cont "MOO MILK every"
 	cont "day to stay"
@@ -538,7 +538,7 @@ Route38SignText:
 Route38TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "If a #MON is"
+	para "If a #mon is"
 	line "trying to evolve,"
 	cont "you can stop it."
 
@@ -547,7 +547,7 @@ Route38TrainerTipsText:
 	cont "evolution."
 
 	para "That startles the"
-	line "#MON and stops"
+	line "#mon and stops"
 	cont "its evolution."
 	done
 
@@ -564,7 +564,7 @@ Route38FieldMon2Script:
     end
 
 Route38PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

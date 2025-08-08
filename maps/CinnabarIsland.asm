@@ -57,7 +57,7 @@ CinnabarIslandBluePreE4Text:
 	para "This place could"
 	line "be very dangerous"
 	cont "for you and your"
-	cont "#MON."
+	cont "#mon."
 	para "They don't seem"
 	line "too strong."
 	para "You should go home"
@@ -77,7 +77,7 @@ CinnabarIslandBlueText:
 
 	para "Now it's just"
 	line "a puppet of the"
-	cont "#MON LEAGUE."
+	cont "#mon LEAGUE."
 
 	para "I was a CHAMPION"
 	line "myself for a"

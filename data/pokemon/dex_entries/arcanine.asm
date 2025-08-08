@@ -3,7 +3,7 @@
 
 	db   "Ancient people"
 	next "idolised this"
-	next "might #MON."
+	next "might #mon."
 
 	page "lowers foes"
 	next "Attack upon"

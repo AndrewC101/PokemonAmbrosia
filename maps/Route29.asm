@@ -285,7 +285,7 @@ CatchingTutorialIntroText:
 	text "I've seen you a"
 	line "couple times."
 
-	para "Are #MON"
+	para "Are #mon"
 	line "giving you trouble"
 	cont "by always popping"
 	cont "up?"
@@ -329,7 +329,7 @@ Route29YoungsterText:
 Route29TeacherText:
 	text "You can see"
 	line "details of your"
-	cont "#MON moves in"
+	cont "#mon moves in"
 	cont "the MOVES option"
 	cont "in the menu."
 	para "ATK is the moves"
@@ -457,7 +457,7 @@ Route29FieldMon3Script:
     end
     
 Route29PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	

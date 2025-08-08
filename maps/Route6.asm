@@ -56,7 +56,7 @@ Route6FieldMon2Script:
     end
 
 Route6PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -196,7 +196,7 @@ PokefanmAllanAfterBattleText:
 	line "commando elite."
 	para "Everything else..."
 	para "Is just a"
-	line "#MON."
+	line "#mon."
 	done
 
 InvaderBackstaberScript:

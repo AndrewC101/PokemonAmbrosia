@@ -40,7 +40,7 @@ AzaleaPokecenter1FGentlemanText:
 AzaleaPokecenter1FFishingGuruText:
 	text "BILL's PC can"
 	line "store up to 20"
-	cont "#MON per BOX."
+	cont "#mon per BOX."
 
 	para "I have no idea"
 	line "how it works."
@@ -61,9 +61,9 @@ AzaleaPokecenter1FPokefanFText:
 	line "special device."
 
 	para "Then you can catch"
-	line "#MON with it."
+	line "#mon with it."
 
-	para "Before # BALLS"
+	para "Before # balls"
 	line "were invented,"
 
 	para "everyone used"

@@ -52,7 +52,7 @@ CeladonDeptStore1FTeacherText:
 	line "big!"
 
 	para "I just want"
-	line "#BALLS and"
+	line "#balls and"
 	cont "potions."
 
 	para "Where can I"

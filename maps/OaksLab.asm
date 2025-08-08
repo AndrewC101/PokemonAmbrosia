@@ -158,7 +158,7 @@ OakAfterBattleText:
     line "back."
 
     para "You know, there"
-    line "are many #MON"
+    line "are many #mon"
     cont "with amazing"
     cont "abilities."
 
@@ -229,7 +229,7 @@ OakGoodLuck:
 
 OakLabDexCheckText:
 	text "How is your"
-	line "#DEX coming?"
+	line "#dex coming?"
 
 	para "Let's see…"
 	done
@@ -263,7 +263,7 @@ OakOpenMtSilverText:
 
 	para "There!"
 
-	para "Now all #MON"
+	para "Now all #mon"
 	line "gain double"
 	cont "full EXP!"
 
@@ -275,7 +275,7 @@ OakOpenMtSilverText:
 	para "MT.SILVER is a big"
 	line "mountain that is"
 	cont "home to many wild"
-	cont "#MON far"
+	cont "#mon far"
 	cont "too powerful for"
 	cont "any trainer to"
 	cont "conquer."
@@ -305,7 +305,7 @@ OakOpenMtSilverText:
 
 	para "If you beat him"
 	line "you will be a"
-	cont "#MON MASTER."
+	cont "#mon MASTER."
 	done
 
 OakGiveWarpDeviceText:
@@ -374,13 +374,13 @@ OaksAssistant1Text:
 
 OaksAssistant2Text:
 	text "Keep growing"
-	line "your #DEX."
+	line "your #dex."
 
 	para "The information"
 	line "is very valuable."
 
 	para "Seriously, a"
-	line "completed #DEX"
+	line "completed #dex"
 	cont "would sell for a"
 	cont "fortune."
 	done
@@ -389,7 +389,7 @@ OaksAssistant2Text:
 OaksAssistant3Text:
 	text "Don't tell anyone,"
 	line "but PROF.OAK'S"
-	cont "#MON TALK isn't"
+	cont "#mon TALK isn't"
 	cont "a live broadcast."
 	done
 

@@ -42,7 +42,7 @@ Route4FieldMon2Script:
     end
 
 Route4PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -128,7 +128,7 @@ BirdKeeperHankBeatenText:
 BirdKeeperHankAfterBattleText:
 	text "I've heard legends"
 	line "of huge bird"
-	cont "#MON in JOHTO."
+	cont "#mon in JOHTO."
 	para "I could make loads"
 	line "of money with"
 	cont "those!"

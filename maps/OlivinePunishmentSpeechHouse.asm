@@ -48,7 +48,7 @@ OlivinePunishmentSpeechHouseDaughterText:
 	text "Daddy is very"
 	line "strict that he"
 	cont "always has a"
-	cont "WATER #MON"
+	cont "WATER #mon"
 	cont "in his party."
 
 	para "He swims in"

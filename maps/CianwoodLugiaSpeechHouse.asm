@@ -36,7 +36,7 @@ CianwoodLugiaSpeechHouseLassText:
 	line "whirlpools around"
 	cont "the islands are"
 	cont "caused by an"
-	cont "ancient #MON"
+	cont "ancient #mon"
 	cont "within the cave."
 
 	para "I went looking"
@@ -52,7 +52,7 @@ CianwoodLugiaSpeechHouseLassText:
 	para "I think a"
 	line "special item is"
 	cont "needed to see"
-	cont "the #MON."
+	cont "the #mon."
 	done
 
 CianwoodLugiaSpeechHouseTwinText:

@@ -131,7 +131,7 @@ SproutTower1FTeacherText:
 	done
 
 SproutTower1FStatueText:
-	text "A #MON statue…"
+	text "A #mon statue…"
 
 	para "There is something"
 	line "eerie about it."

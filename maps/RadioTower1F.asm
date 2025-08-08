@@ -235,7 +235,7 @@ RadioTower1FLuckyNumberManAskToPlayText:
 
 	para "Want me to check"
 	line "the ID numbers of"
-	cont "your #MON?"
+	cont "your #mon?"
 
 	para "If you get lucky,"
 	line "you win a prize."
@@ -321,7 +321,7 @@ RadioTower1FRadioCardWomanOfferQuizText:
 	cont "win a RADIO CARD."
 
 	para "Slide it into your"
-	line "#GEAR to play"
+	line "#gear to play"
 
 	para "the radio anytime,"
 	line "anywhere."
@@ -362,10 +362,10 @@ RadioTower1FRadioCardWomanQuestion4Text:
 
 	para "The level cap"
 	line "for training"
-	cont "#MON is higher"
+	cont "#mon is higher"
 	cont "than the level"
 	cont "cap for capturing"
-	cont "#MON by"
+	cont "#mon by"
 	cont "10 levels?"
 	done
 
@@ -388,7 +388,7 @@ RadioTower1FRadioCardWomanYouWinText:
 	done
 
 RadioTower1FPokegearIsARadioText:
-	text "<PLAYER>'s #GEAR"
+	text "<PLAYER>'s #gear"
 	line "can now double as"
 	cont "a radio!"
 	done
@@ -505,10 +505,10 @@ RadioTower1FDirectoryText:
 RadioTower1FLuckyChannelSignText:
 	text "LUCKY CHANNEL!"
 
-	para "Win with #MON"
+	para "Win with #mon"
 	line "ID numbers!"
 
-	para "Trade your #MON"
+	para "Trade your #mon"
 	line "to collect differ-"
 	cont "ent ID numbers!"
 	done

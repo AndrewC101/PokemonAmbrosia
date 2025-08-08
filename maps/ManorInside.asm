@@ -863,7 +863,7 @@ ManorCheatLockedText:
 
 ManorCheatText:
 	text "Thank you for"
-	line "playing #MON"
+	line "playing #mon"
 	cont "AMBROSIA."
 	para "These cheat codes"
 	line "might make your"
@@ -886,7 +886,7 @@ ManorCheatText:
 	para "HAND OF GOD"
 	line "0132FCD0"
 	para "Make all wild"
-	line "#MON ARCEUS"
+	line "#mon ARCEUS"
 	cont "01FD0FD2"
 	done
 
@@ -900,7 +900,7 @@ ManorFact1Text:
 	para "ARCEUS has more"
 	line "code specifically"
 	cont "for it than any"
-	cont "other #MON."
+	cont "other #mon."
 	done
 
 ManorFact2Text:
@@ -913,7 +913,7 @@ ManorFact2Text:
 	line "player had to"
 	cont "deposit then"
 	cont "withdraw all their"
-	cont "#MON to heal"
+	cont "#mon to heal"
 	cont "them via the"
 	cont "POCKET PC."
 	para "Doing this all the"
@@ -926,7 +926,7 @@ ManorFact3Text:
 	cont "before it was"
 	cont "decided this hack"
 	cont "would be called"
-	cont "#MON AMBROSIA."
+	cont "#mon AMBROSIA."
 	done
 
 ManorFact4Text:
@@ -1018,7 +1018,7 @@ ManorFact10Text:
 	cont "because it's more"
 	cont "fun being able to"
 	cont "just play with"
-	cont "your #MON and"
+	cont "your #mon and"
 	cont "not having to"
 	cont "worry about"
 	cont "messing up EVs and"
@@ -1073,7 +1073,7 @@ ManorFact15Text:
 	line "know the mess"
 	cont "going on behind"
 	cont "the scenes to"
-	cont "print #MON"
+	cont "print #mon"
 	cont "abilities on the"
 	cont "stats page!"
 	done
@@ -1093,14 +1093,14 @@ ManorFact16Text:
 
 ManorFact17Text:
 	text "Aggressive field"
-	line "#MON are coded"
+	line "#mon are coded"
 	cont "as trainers with a"
 	cont "hard coded"
 	cont "trainerId."
 	para "When the game sees"
 	line "this trainerId it"
 	cont "jumps to the wild"
-	cont "#MON logic."
+	cont "#mon logic."
 	done
 
 ManorFact18Text:
@@ -1134,16 +1134,16 @@ ManorFact19Text:
 ManorFact20Text:
 	text "AMBROSIA maximises"
 	line "the DVs of a"
-	cont "#MON in"
+	cont "#mon in"
 	cont "addition to STAT"
 	cont "EXP and happiness."
 	para "Unless the"
-	line "#MON is shiny,"
+	line "#mon is shiny,"
 	cont "then AMBROSIA will"
 	cont "not alter DVs as"
 	cont "that would remove"
 	cont "the shininess."
-	para "Shiny #MON are"
+	para "Shiny #mon are"
 	line "also stronger in"
 	cont "this game with 15"
 	cont "in all DVs except"

@@ -159,7 +159,7 @@ RematchRefuseTextEusine2:
 
 CeladonPokecenter1FCooltrainerFText:
 	text "ERIKA is a master"
-	line "of grass #MON."
+	line "of grass #mon."
 
 	para "She is so pretty."
 
@@ -203,7 +203,7 @@ EusineLeavesCeladonText:
 	line "fresh rumors of a"
 
 	para "rainbow-colored"
-	line "#MON appearing"
+	line "#mon appearing"
 	cont "at TIN TOWER."
 
 	para "I've just had my"
@@ -223,7 +223,7 @@ NoBeastsText:
 	para "Have you caught"
 	line "the legendary"
 
-	para "#MON RAIKOU and"
+	para "#mon RAIKOU and"
 	line "ENTEI?"
 
 	para "<……><……><……>"

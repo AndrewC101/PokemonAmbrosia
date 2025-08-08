@@ -47,7 +47,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 	para "I fled into"
 	line "the mountains."
 
-    para "Then a #MON"
+    para "Then a #mon"
     line "bright as the"
     cont "sun appeared."
 

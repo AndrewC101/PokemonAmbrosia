@@ -60,7 +60,7 @@ GiovanniIntroText:
 
     para "True power comes"
     line "from understanding"
-    cont "your #MON."
+    cont "your #mon."
 
     para "Anyone can become"
     line "strong."
@@ -261,19 +261,19 @@ PsychicJamieSeenText:
 
 PsychicJamieBeatenText:
     text "You understand"
-    line "your #MON."
+    line "your #mon."
     done
 
 PsychicJamieAfterBattleText:
     text "Just because you"
     line "can talk to your"
-    cont "#MON doesn't"
+    cont "#mon doesn't"
     cont "mean you really"
     cont "understand them."
 
     para "The LEADER has"
     line "taught me to"
-    cont "know my #MON."
+    cont "know my #mon."
     done
 
 GiovanniGym_MapEvents:

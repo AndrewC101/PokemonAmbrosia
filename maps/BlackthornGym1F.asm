@@ -315,7 +315,7 @@ BlackthornGymClairText_League:
 
 CooltrainermPaulSeenText:
 	text "Dragons are"
-	line "mythical #MON."
+	line "mythical #mon."
 
 	para "They are hard to"
 	line "catch and raise."
@@ -349,7 +349,7 @@ CooltrainermMikeSeenText:
 	text "Dragons live for"
 	line "many decades."
 
-	para "My #MON"
+	para "My #mon"
 	line "will probably"
 	cont "out live me."
 
@@ -422,7 +422,7 @@ BlackthornGymGuideText:
 
 	para "The trainers here"
 	line "worship DRAGON"
-	cont "#MON."
+	cont "#mon."
 
 	para "DRAGONS have high"
 	line "stats, especially"

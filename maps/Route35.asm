@@ -440,12 +440,12 @@ PicnickerKimSeenText:
 	text "I tried to join"
 	line "the GOLDENROD GYM"
 	cont "but they said my"
-	cont "#MON was too"
+	cont "#mon was too"
 	cont "violent!"
 
 	para "They are mad!"
 
-	para "My #MON is"
+	para "My #mon is"
 	line "the cutest!"
 	done
 
@@ -465,7 +465,7 @@ PicnickerKimAfterBattleText:
 	done
 
 BirdKeeperBryanSeenText:
-	text "Once my #MON"
+	text "Once my #mon"
 	line "are big enough"
 	cont "they will FLY me"
 	cont "away to KALOS"
@@ -516,7 +516,7 @@ JugglerIrwinAfterBattleText:
 BugCatcherArnieSeenText:
 	text "I have been using"
 	line "my one beloved"
-	cont "#MON and"
+	cont "#mon and"
 	cont "nothing else."
 
 	para "I'll show you"
@@ -611,7 +611,7 @@ Route35FieldMon1Script:
     end
 
 Route35PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

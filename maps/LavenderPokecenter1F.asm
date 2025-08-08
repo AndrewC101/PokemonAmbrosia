@@ -59,7 +59,7 @@ LavenderPokecenter1FTeacherText:
 
 	para "It can be used"
 	line "to awaken a"
-	cont "sleeping #MON."
+	cont "sleeping #mon."
 
 	para "If only it worked"
 	line "on my teen son!"

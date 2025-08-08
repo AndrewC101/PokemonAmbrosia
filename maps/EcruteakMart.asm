@@ -40,7 +40,7 @@ EcruteakMartGrannyText:
 	cont "it caught fire."
 
 	para "I was lucky"
-	line "but my #MON"
+	line "but my #mon"
 	cont "weren't."
 
 	para "I gave up"

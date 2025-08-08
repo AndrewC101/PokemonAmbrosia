@@ -283,7 +283,7 @@ FisherArnoldAfterBattleText:
 	cont "in all the world."
 	para "You have truly"
 	line "mastered the art"
-	cont "of #MON!"
+	cont "of #mon!"
 	done
 
 Route21_MapEvents:

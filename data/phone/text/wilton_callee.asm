@@ -55,6 +55,6 @@ WiltonGreetNiteText:
 
 WiltonGenericText:
 	text "Do ever wonder"
-	line "what your #MON"
+	line "what your #mon"
 	cont "taste like?"
 	done

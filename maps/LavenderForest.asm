@@ -183,14 +183,14 @@ AgathaSeenText2:
     cont "defended our"
     cont "home."
 
-    para "Her #MON"
+    para "Her #mon"
     line "possessed the"
     cont "soldiers and"
     cont "made them attack"
     cont "each other."
 
     para "She may be gone"
-    line "but her #MON"
+    line "but her #mon"
     cont "remain with me."
 
     para "Will you help"
@@ -205,7 +205,7 @@ AgathaBeatenText:
 AgathaAfterBattleText:
     text "I grow closer"
     line "to my sisters"
-    cont "#MON each"
+    cont "#mon each"
     cont "day"
 
     para "They give me"

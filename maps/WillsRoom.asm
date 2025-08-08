@@ -99,7 +99,7 @@ WillScript_WillBeforeText:
 	line "exceeds all"
 	cont "others."
 
-	para "A #MON"
+	para "A #mon"
 	line "battle is a"
 	cont "battle of wills."
 

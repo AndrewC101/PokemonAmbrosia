@@ -86,7 +86,7 @@ BillGrampsTakeThisMewText:
 	para "Bill has found"
 	line "an extremely"
 	cont "rare and ancient"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "Apparently He"
 	line "found it in a"
@@ -111,7 +111,7 @@ BillGrampsTakeThisMewText:
 
 	para "Would you like"
 	line "to take this"
-	cont "#MON on"
+	cont "#mon on"
 	cont "your journey?"
 	done
 
@@ -124,7 +124,7 @@ BillGrampsImCountingOnYouText:
 BillGrampsMewExplain:
 	text "BILL tells me"
 	line "this is a very"
-	cont "powerful #MON."
+	cont "powerful #mon."
 
 	para "It can learn"
 	line "any move!"
@@ -143,7 +143,7 @@ BillGrampsTooBad:
     text "Aw that is"
     line "a real shame."
 
-    para "This #MON"
+    para "This #mon"
     line "is powerful"
     cont "and really seems"
     cont "to like you."

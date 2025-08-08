@@ -347,7 +347,7 @@ Text_RightThisWayToYourBattleRoom:
 Text_BattleTowerIntroduction_2:
 	text "BATTLE TOWER is"
 	line "the most popular"
-	cont "extreme #MON"
+	cont "extreme #mon"
 	cont "challenge."
 	para "You must fight"
 	line "four trainers in"
@@ -491,7 +491,7 @@ Text_BattleTower_LeftWithoutSaving:
 	done
 
 Text_YourMonWillBeHealedToFullHealth:
-	text "Your #MON will"
+	text "Your #mon will"
 	line "be healed to full"
 	cont "health."
 	done
@@ -546,10 +546,10 @@ Text_BattleTowerYoungster:
 
 	para "The final one"
 	line "uses only the"
-	cont "best #MON"
+	cont "best #mon"
 
 	para "And there is"
-	line "one #MON"
+	line "one #mon"
 	cont "that only the"
 	cont "final opponent"
 	cont "may use."
@@ -567,7 +567,7 @@ Text_BattleTowerCooltrainerF:
 	line "is MASTER."
 
 	para "MASTER has twice"
-	line "as many #MON"
+	line "as many #mon"
 	cont "available as"
 	cont "any other level."
 
@@ -583,14 +583,14 @@ Text_BattleTowerGranny:
 
 	para "He shined like"
 	line "gold and he"
-	cont "used a #MON"
+	cont "used a #mon"
 	cont "I have never"
 	cont "seen before or"
 	cont "since."
 
 	para "He defeated every"
 	line "opponent using"
-	cont "only one #MON!"
+	cont "only one #mon!"
 
 	para "I didn't think"
 	line "such things were"

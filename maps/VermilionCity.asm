@@ -242,7 +242,7 @@ VermilionCitySnorlaxSleepingText:
 	done
 
 VermilionCityRadioNearSnorlaxText:
-	text "The #GEAR was"
+	text "The #gear was"
 	line "placed near the"
 	cont "sleeping SNORLAX…"
 
@@ -308,7 +308,7 @@ VermilionCityBadgeGuyAllBadgesText:
 VermilionCityBadgeGuyBattleEdgeText:
 	text "There are many"
 	line "powerful"
-	cont "#MON around"
+	cont "#mon around"
 	cont "KANTO."
 
 	para "Looking around"
@@ -324,7 +324,7 @@ VermilionCitySignText:
 
 VermilionGymSignText:
 	text "VERMILION CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: LT.SURGE"
 
 	para "The Lightning"
@@ -332,9 +332,9 @@ VermilionGymSignText:
 	done
 
 PokemonFanClubSignText:
-	text "#MON FAN CLUB"
+	text "#mon FAN CLUB"
 
-	para "All #MON Fans"
+	para "All #mon Fans"
 	line "Welcome!"
 	done
 
@@ -471,7 +471,7 @@ Soldier7SeenText:
 	para "Our captain has"
 	line "trained to deal"
 	cont "the ELECTRIC"
-	cont "#MON."
+	cont "#mon."
 	para "Your GYM LEADER"
 	line "can't help you!"
     done

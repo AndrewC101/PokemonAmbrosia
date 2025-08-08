@@ -111,7 +111,7 @@ GoldenrodDeptStore5FPokefanMText:
 
 GoldenrodDeptStore5FDirectoryText:
 	text "Customize Your"
-	line "#MON"
+	line "#mon"
 
 	para "5F TM CORNER"
 	done

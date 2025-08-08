@@ -35,7 +35,7 @@ Route10SouthFieldMon2Script:
     end
 
 Route10SouthPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

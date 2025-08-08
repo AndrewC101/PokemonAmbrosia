@@ -198,12 +198,12 @@ MrPokemonsHouse_GotEggText:
 MrPokemonIntroText3:
 	text "I believe it may"
 	line "contain a FAIRY"
-	cont "#MON."
+	cont "#mon."
 
-	para "FAIRY #MON are"
+	para "FAIRY #mon are"
 	line "uniquely capable"
 	cont "of fighting DRAGON"
-	cont "#MON."
+	cont "#mon."
 
 	para "This makes them"
 	line "dangerous to the"
@@ -227,7 +227,7 @@ MrPokemonsHouse_MrPokemonHealText:
 	text "Are you returning"
 	line "to PROF.ELM?"
 
-	para "Here, your #MON"
+	para "Here, your #mon"
 	line "should have some"
 	cont "rest."
 	done
@@ -248,7 +248,7 @@ MrPokemonGiveRemembrallText:
     cont "I have forgotten."
 
     para "It can help"
-    line "#MON with"
+    line "#mon with"
     cont "moves they have"
     cont "forgotten too."
 
@@ -281,7 +281,7 @@ MrPokemonsHouse_OakText1:
 	text "OAK: Aha! So"
 	line "you're <PLAY_G>!"
 
-	para "I'm OAK! A #MON"
+	para "I'm OAK! A #mon"
 	line "researcher."
 
 	para "PROF ELM speaks"
@@ -295,11 +295,11 @@ MrPokemonsHouse_OakText1:
 
 	para "Here, this is the"
 	line "latest version of"
-	cont "#DEX."
+	cont "#dex."
 
 	para "It automatically"
 	line "records data on"
-	cont "#MON you've"
+	cont "#mon you've"
 	cont "seen or caught."
 
 	para "It's a hi-tech"
@@ -308,13 +308,13 @@ MrPokemonsHouse_OakText1:
 
 MrPokemonsHouse_GetDexText:
 	text "<PLAYER> received"
-	line "#DEX!"
+	line "#dex!"
 	done
 
 OakGivesExpShareText:
 	text "This will help"
 	line "you identify and"
-	cont "capture #MON."
+	cont "capture #mon."
 
 	para "But we don't have"
 	line "much time."
@@ -344,7 +344,7 @@ OakGivesExpShareText:
 
 MrPokemonsHouse_OakText2:
 	text "This will allow"
-	line "all your #MON"
+	line "all your #mon"
 	cont "to receive EXP in"
 	cont "battle, even the"
 	cont "ones that didn't"

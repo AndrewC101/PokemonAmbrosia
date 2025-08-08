@@ -97,7 +97,7 @@ Route32Pokecenter1FCooltrainerFText:
 	line "into UNION CAVE."
 
 	para "I needed a"
-	line "#MON that"
+	line "#mon that"
 	cont "can SURF."
 
 	para "I'm sure there's"

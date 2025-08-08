@@ -35,7 +35,7 @@ BillsBrotherText:
 	done
 
 BillsBrothersHouseYoungsterText:
-	text "We love #MON"
+	text "We love #mon"
 	line "in our family."
 
 	para "My older brother"

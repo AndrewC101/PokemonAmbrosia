@@ -182,7 +182,7 @@ SilverCaveOutsideBlockScript:
 SilverCaveOutsideBlockText:
     text "A voice speaks!"
 
-    para "Only #MON"
+    para "Only #mon"
     line "MASTERS may enter."
 
     para "And become the"
@@ -469,7 +469,7 @@ SilverCaveCrystalBattleText:
     cont "lesson."
 
     para "I'll heal your"
-    line "#MON first of"
+    line "#mon first of"
     cont "course."
     done
 
@@ -535,7 +535,7 @@ SilverCaveCrystalFriendshipText:
     cont "you."
 
     para "I guess once"
-    line "you're a #MON"
+    line "you're a #mon"
     cont "MASTER I wont"
     cont "see you so much"
     cont "anymore"
@@ -624,7 +624,7 @@ SilverCaveCrystalYouStoleText:
     cont "make up for"
     cont "what you done."
 
-    para "You stole #MON"
+    para "You stole #mon"
     line "from PROF.ELM."
 
     para "The least you can"
@@ -657,7 +657,7 @@ SilverCaveSilverGoodbyeText:
     cont "have fought."
 
     para "Good luck"
-    line "#MON MASTER."
+    line "#mon MASTER."
     done
 
 SilverCaveCrystalGoodbyeText:
@@ -1117,7 +1117,7 @@ HoenWarCh3HeroText:
     para "Is that WALLACE!"
 
     para "Two more giant"
-    line "#MON take their"
+    line "#mon take their"
     cont "place at his"
     cont "side."
 
@@ -1195,7 +1195,7 @@ HoenWarTalkText:
     cont "once JANINE."
 
     para "The huge red"
-    line "#MON now turns"
+    line "#mon now turns"
     cont "toward you."
 
     para "A flash of light!"
@@ -1225,7 +1225,7 @@ HoenWarAttackText:
     line "ground."
 
     para "The huge dragon"
-    line "#MON has swept"
+    line "#mon has swept"
     cont "your legs and"
     cont "tore them off."
 
@@ -1300,7 +1300,7 @@ HoenWarCh1VillainText:
     line "and kill STEVEN"
     cont "the CHAMPION."
 
-    para "Your #MON alert"
+    para "Your #mon alert"
     line "you to a presence"
     cont "that shouldn't be"
     cont "here."

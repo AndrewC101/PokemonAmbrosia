@@ -717,10 +717,10 @@ GetTimeOfDayString:
 	ld de, .eve_string
 	ret
 
-.nite_string: db "NITE@"
-.morn_string: db "MORN@"
-.day_string:  db "DAY@"
-.eve_string:  db "EVE@"
+.nite_string: db "Nite@"
+.morn_string: db "Morn@"
+.day_string:  db "Day@"
+.eve_string:  db "Eve@"
 
 AdjustHourForAMorPM:
 ; Convert the hour stored in c (0-23) to a 1-12 value

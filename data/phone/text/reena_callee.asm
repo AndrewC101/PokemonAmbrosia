@@ -21,7 +21,7 @@ ReenaGreetNiteText:
 ReenaGenericText:
 	text "Every CHAMPION has"
 	line "a super powerful"
-	cont "ace #MON."
+	cont "ace #mon."
 	para "My MILTANK will"
 	line "beat them all one"
 	cont "day."

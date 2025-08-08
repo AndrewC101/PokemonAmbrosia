@@ -89,7 +89,7 @@ IcePathB1FieldMon2Script:
     end
 
 IcePathB1PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

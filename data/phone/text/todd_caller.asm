@@ -1,7 +1,7 @@
 ToddLooksCuteLikeMeText:
 	text "Do you grind"
 	line "against wild"
-	cont "#MON?"
+	cont "#mon?"
 	para "It's so slow and I"
 	line "have to go back"
 	cont "and forth to the"
@@ -56,7 +56,7 @@ ToddDepartmentStoreBargainSaleText:
 	line "all the cheap"
 	cont "vitamins and force"
 	cont "them into my"
-	cont "#MON."
+	cont "#mon."
 	para "They will thank me"
 	line "one day."
 	done
@@ -65,7 +65,7 @@ ToddSavingUpForBargainSaleText:
 	text "I'm saving up for"
 	line "some PP UP."
 	para "I want to max out"
-	line "all my #MON"
+	line "all my #mon"
 	cont "moves."
 	para "I think it will"
 	line "give me a big"

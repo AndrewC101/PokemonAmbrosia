@@ -343,7 +343,7 @@ Route26FruitTree:
 	fruittree FRUITTREE_ROUTE_26
 
 CooltrainermJakeSeenText:
-	text "Are your #MON"
+	text "Are your #mon"
 	line "fully evolved?"
 	para "That is your"
 	line "mistake!"
@@ -464,7 +464,7 @@ CooltrainerfBeth1BeatenText:
 	done
 
 CooltrainerfBethAfterText:
-	text "#MON are not"
+	text "#mon are not"
 	line "tools of war."
 
 	para "They are the"
@@ -526,7 +526,7 @@ PsychicRichardAfterBattleText:
 Route26SignText:
 	text "ROUTE 26"
 
-	para "#MON LEAGUE"
+	para "#mon LEAGUE"
 	line "RECEPTION GATE"
 	done
 
@@ -543,7 +543,7 @@ Route26FieldMon2Script:
     end
 
 Route26PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

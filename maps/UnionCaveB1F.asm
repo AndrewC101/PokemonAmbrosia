@@ -186,7 +186,7 @@ UnionCaveB1FFieldMon3Script:
     end
     
 UnionCaveB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	

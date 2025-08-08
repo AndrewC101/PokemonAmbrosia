@@ -253,7 +253,7 @@ AshLeavesText:
 	cont "in the world."
 
 	para "You will be a"
-	line "#MON MASTER."
+	line "#mon MASTER."
 	done
 
 RematchTextAsh:
@@ -363,7 +363,7 @@ AshFightText:
     cont "powerful trainer"
     cont "in the world."
 
-    para "A #MON"
+    para "A #mon"
     line "MASTER!"
 
     para "Tell you what!"
@@ -387,13 +387,13 @@ AshBeatenText:
 
 AshFinalText:
     text "You are a"
-    line "#MON MASTER!"
+    line "#mon MASTER!"
 
     para "Well done!"
 
     para "I hear there is"
     line "a special event"
-    cont "full of #MON"
+    cont "full of #mon"
     cont "MASTERS."
 
     para "The greatest of"
@@ -423,7 +423,7 @@ PokemonMasterText:
     cont "the world."
 
     para "You are a"
-    line "#MON MASTER!"
+    line "#mon MASTER!"
 
     para "Well done!"
     done
@@ -433,7 +433,7 @@ PokemonMasterQuestText:
     line "tournament."
 
     para "Where everyone is"
-    line "a #MON MASTER."
+    line "a #mon MASTER."
 
     para "The strongest of"
     line "them is called the"

@@ -52,7 +52,7 @@ GoldenrodDeptStore4FCooltrainerMText:
 GoldenrodDeptStore4FBugCatcherText:
 	text "CARBOS increases"
 	line "the speed of"
-	cont "your #MON."
+	cont "your #mon."
 
 	para "Just one extra"
 	line "point of speed"
@@ -72,7 +72,7 @@ GoldenrodDeptStore4FGameboyKidText:
 	para "That means it"
 	line "takes 125 to"
 	cont "max all stats"
-	cont "for one #MON."
+	cont "for one #mon."
 
 	para "However the"
 	line "effects are not"
@@ -94,7 +94,7 @@ GoldenrodDeptStore4FGameboyKidText:
 
 GoldenrodDeptStore4FDirectoryText:
 	text "Let Us Pump Up"
-	line "Your #MON!"
+	line "Your #mon!"
 
 	para "4F MEDICINE BOX"
 	done

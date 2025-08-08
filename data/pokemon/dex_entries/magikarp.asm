@@ -2,7 +2,7 @@
 	dw 211, 220 ; height, weight
 
 	db   "This weak and"
-	next "pathetic #MON"
+	next "pathetic #mon"
 	next "has hidden might."
 
 	page "Uses SPLASH"

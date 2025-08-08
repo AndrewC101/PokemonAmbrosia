@@ -306,7 +306,7 @@ SaffronCityLass2Text:
 	
 	para "At least they take"
 	line "action unlike the"
-	cont "#MON LEAGUE."
+	cont "#mon LEAGUE."
 	done
 
 SaffronCitySignText:
@@ -314,12 +314,12 @@ SaffronCitySignText:
 
 	para "THE GOLDEN CITY."
 	
-	para "THE BIG #BALL."
+	para "THE BIG #ball."
 	done
 
 SaffronGymSignText:
 	text "SAFFRON CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: WILL"
 
 	para "New to the job."
@@ -434,10 +434,10 @@ SaffronSilverText:
 
 SaffronSilverPokemonFreedText:
     text "I was wrong to"
-    line "steal #MON."
+    line "steal #mon."
 
     para "I gave all my"
-    line "#MON the choice"
+    line "#mon the choice"
     cont "to stay with me.."
 
     para "They didn't all"

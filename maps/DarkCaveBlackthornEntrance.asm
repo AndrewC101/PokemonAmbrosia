@@ -254,7 +254,7 @@ DarkCaveBlackthornEntranceFieldMon3Script:
     end
 
 DarkCaveBlackthornEntrancePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	
@@ -422,7 +422,7 @@ BeGoneText:
 
 DarkraiNeededText:
     text "It will take a"
-    line "DARK #MON"
+    line "DARK #mon"
     cont "that can cross"
     cont "the dream world"
     cont "to allow passage."

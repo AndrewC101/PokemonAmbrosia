@@ -39,7 +39,7 @@ CeruleanTradeSpeechHouseGrannyText:
 	done
 
 CeruleanTradeSpeechHouseGrampsText:
-	text "Traded #MON"
+	text "Traded #mon"
 	line "level up faster."
 
 	para "It makes me so"

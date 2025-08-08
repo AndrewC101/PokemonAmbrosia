@@ -386,7 +386,7 @@ TrainerPicnickerGina1:
 
 GinaNumberAcceptedText:
 	text "Thank you!"
-	para "My #MON will"
+	para "My #mon will"
 	line "get much stronger"
 	cont "with your help."
 	done
@@ -528,7 +528,7 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	step_end
 
 YoungsterSamuelSeenText:
-	text "My #MON are"
+	text "My #mon are"
 	line "far cuter than"
 	cont "yours."
 
@@ -543,7 +543,7 @@ YoungsterSamuelBeatenText:
 	done
 
 YoungsterSamuelAfterText:
-	text "My #MON are"
+	text "My #mon are"
 	line "so cute."
 
 	para "All the girls"
@@ -612,12 +612,12 @@ PicnickerGina1SeenText:
 	done
 
 PicnickerGina1BeatenText:
-	text "JOHTO #MON"
+	text "JOHTO #mon"
 	line "are strong too."
 	done
 
 PicnickerGina1AfterText:
-	text "When my #MON"
+	text "When my #mon"
 	line "evolve you'll"
 	cont "see the full"
 	cont "power of KANTO."
@@ -802,7 +802,7 @@ DayCareSignText:
 	text "DAY-CARE"
 
 	para "LET US RAISE YOUR"
-	line "#MON FOR YOU!"
+	line "#mon FOR YOU!"
 	done
 
 Route34FieldMon3Script:
@@ -842,7 +842,7 @@ Route34JamesText:
 	line "to lose."
 	para "It is such an"
 	line "important part of"
-	cont "#MON training"
+	cont "#mon training"
 	cont "that we built our"
 	cont "entire careers on"
 	cont "it!"

@@ -134,7 +134,7 @@ CeruleanCaveFieldMon10Script:
     end
 
 CeruleanCavePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

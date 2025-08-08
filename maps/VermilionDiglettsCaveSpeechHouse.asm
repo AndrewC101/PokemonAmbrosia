@@ -12,13 +12,13 @@ VermilionDiglettsCaveSpeechHouseGentlemanScript:
 VermilionDiglettsCaveSpeechHouseGentlemanText:
 	text "DIGLETT were a"
 	line "species of"
-	cont "#MON that went"
+	cont "#mon that went"
 	cont "extinct not too"
 	cont "long ago."
 
 	para "They were small"
 	line "GROUND type"
-	cont "#MON."
+	cont "#mon."
 
 	para "They weren't"
 	line "very strong but"

@@ -29,7 +29,7 @@ BlackthornMartCooltrainerMText:
 	line "weak to ICE."
 
 	para "But CLAIR has"
-	line "some #MON"
+	line "some #mon"
 	cont "that aren't"
 	cont "DRAGON type."
 
@@ -44,18 +44,18 @@ BlackthornMartCooltrainerMText:
 
 BlackthornMartBlackBeltText:
 	text "I need more"
-	line "#MON."
+	line "#mon."
 
 	para "But should I"
 	line "buy a small"
 	cont "number of"
-	cont "ULTRA BALLS"
+	cont "ULTRA balls"
 	cont "or loads of"
-	cont "#BALLS?"
+	cont "#balls?"
 
 	para "Or maybe a"
 	line "moderate number of"
-	cont "GREAT BALLS."
+	cont "GREAT balls."
 	done
 
 BlackthornMart_MapEvents:

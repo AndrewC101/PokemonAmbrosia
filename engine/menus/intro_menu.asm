@@ -545,7 +545,7 @@ Continue_LoadMenuHeader:
 	db 4 ; items
 	db "Player@"
 	db "Badges@"
-	db "#DEX@"
+	db "#dex@"
 	db "Time@"
 
 .MenuHeader_NoDex:

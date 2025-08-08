@@ -169,7 +169,7 @@ GoldenrodDeptStoreRoofBugCatcherText:
 	line "from up here!"
 	para "Like a hawk I will"
 	line "find the BUG"
-	cont "#MON prey."
+	cont "#mon prey."
 	para "Kawww!"
 	done
 
@@ -200,7 +200,7 @@ Binoculars3Text:
 
 PokeDollVendingMachineText:
 	text "A vending machine"
-	line "for #MON dolls?"
+	line "for #mon dolls?"
 
 	para "Insert money, then"
 	line "turn the crank…"

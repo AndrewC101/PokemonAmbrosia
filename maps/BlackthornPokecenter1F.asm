@@ -22,14 +22,14 @@ BlackthornPokecenter1FCooltrainerMScript:
 	jumpstd HappinessCheckScript
 
 BlackthornPokecenter1FGentlemanText:
-	text "DRAGON #MON"
+	text "DRAGON #mon"
 	line "are very rare."
 
 	para "The CELADON"
 	line "GAME CORNER pays"
 	cont "a very handsome"
 	cont "price for any"
-	cont "DRAGON #MON"
+	cont "DRAGON #mon"
 	cont "they can get."
 
 	para "I am recruiting"

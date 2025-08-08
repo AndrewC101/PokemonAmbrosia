@@ -47,7 +47,7 @@ SproutTowerB1FFieldMon3Script:
 	end
 
 SproutTowerB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

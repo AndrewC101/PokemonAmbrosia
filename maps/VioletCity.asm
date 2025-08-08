@@ -216,7 +216,7 @@ Text_EarlAsksIfYouBeatFalkner:
 	line "seen someone move"
 	cont "like that!"
 	para "That is the sign"
-	line "of a true #MON"
+	line "of a true #mon"
 	cont "MASTER."
 	para "Have you defeated"
 	line "the GYM LEADER?"
@@ -224,7 +224,7 @@ Text_EarlAsksIfYouBeatFalkner:
 
 Text_VeryNiceIndeed:
 	text "Ah you must also"
-	line "be a true #MON"
+	line "be a true #mon"
 	cont "MASTER."
 	para "You have nothing"
 	line "to learn from me."
@@ -254,7 +254,7 @@ Text_HereTeacherIAm:
 VioletCityLassText:
 	text "SPROUT TOWER"
 	line "is full of GHOST"
-    cont "#MON."
+    cont "#mon."
 
     para "I think they"
     line "came out from"
@@ -268,7 +268,7 @@ VioletCityLassText:
 
 VioletCitySuperNerdText:
 	text "I tried being"
-	line "a #MON trainer"
+	line "a #mon trainer"
 	cont "but I couldn't"
 	cont "beat FALKNER."
 
@@ -314,7 +314,7 @@ VioletCityYoungsterText:
 	cont "there."
 
 	para "I hope HOENN"
-	line "#MON can't"
+	line "#mon can't"
 	cont "swim!"
 	done
 
@@ -327,22 +327,22 @@ VioletCitySignText:
 
 VioletGymSignText:
 	text "VIOLET CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: FALKNER"
 
 	para "The Elegant Master"
-	line "of Flying #MON"
+	line "of Flying #mon"
 	done
 
 SproutTowerSignText:
 	text "SPROUT TOWER"
 
 	para "Experience the"
-	line "Way of #MON"
+	line "Way of #mon"
 	done
 
 EarlsPokemonAcademySignText:
-	text "EARL'S #MON"
+	text "EARL'S #mon"
 	line "ACADEMY"
 	done
 

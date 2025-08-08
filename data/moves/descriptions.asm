@@ -748,7 +748,7 @@ BideDescription:
 
 MetronomeDescription:
 	db   "Randomly uses any"
-	line "#MON move.@"
+	line "#mon move.@"
 
 LavaPlumeDescription:
 	db   "An attack that"
@@ -1220,7 +1220,7 @@ MoonlightDescription:
 
 HiddenPowerDescription:
 	db   "The power varies"
-	line "with the #MON.@"
+	line "with the #mon.@"
 
 SeedFlareDescription:
 	db   "Powerful flare,"

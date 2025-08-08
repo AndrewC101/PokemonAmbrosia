@@ -215,12 +215,12 @@ ChucksWifeEasierToFlyText:
 
 	para "He is obsessed"
 	line "with FIGHTING"
-	cont "#MON..."
+	cont "#mon..."
 
 	para "and anime."
 
 	para "I like FLYING"
-	line "#MON."
+	line "#mon."
 
 	para "They are strong"
 	line "against FIGHTING."
@@ -271,13 +271,13 @@ CianwoodCityYoungsterText:
 
 	para "As long as you"
 	line "have a"
-	cont "#MON that"
+	cont "#mon that"
 	cont "is able to use"
 	cont "it."
 
 	para "I think I saw"
 	line "some bird"
-	cont "#MON up near"
+	cont "#mon up near"
 	cont "the lighthouse."
 	done
 
@@ -401,7 +401,7 @@ CianwoodCitySignText:
 
 CianwoodGymSignText:
 	text "CIANWOOD CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 
 	para "LEADER: CHUCK"
 
@@ -445,7 +445,7 @@ CianwoodCityFieldMon1Script:
     end
 
 CianwoodCityPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -691,7 +691,7 @@ CameHereToGetMedicine:
     para "You are here to"
     line "get some special"
     cont "medicine for a"
-    cont "sick #MON."
+    cont "sick #mon."
 
     para "I can tell because"
     line "I am a Psychic."

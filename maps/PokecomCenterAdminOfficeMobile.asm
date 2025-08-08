@@ -156,7 +156,7 @@ PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub:
 	text "There's a #COM"
 	line "CLUB upstairs in"
 
-	para "any #MON"
+	para "any #mon"
 	line "CENTER."
 
 	para "There, you can"
@@ -178,7 +178,7 @@ PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter:
 	text "To use the TRADE"
 	line "CORNER or read the"
 
-	para "#MON NEWS, you"
+	para "#mon NEWS, you"
 	line "need to phone the"
 	cont "MOBILE CENTER."
 
@@ -245,7 +245,7 @@ PokecomCenterAdminOfficeMobileComputer3Text:
 	para "Wireless communi-"
 	line "cation has enabled"
 
-	para "#MON trainers"
+	para "#mon trainers"
 	line "to interact across"
 
 	para "the nation. Let's"

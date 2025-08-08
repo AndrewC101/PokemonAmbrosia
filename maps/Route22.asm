@@ -32,7 +32,7 @@ Route22FieldMon1Script:
     end
 
 Route22PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -103,7 +103,7 @@ VictoryRoadEntranceSign:
 	jumptext VictoryRoadEntranceSignText
 
 VictoryRoadEntranceSignText:
-	text "#MON LEAGUE"
+	text "#mon LEAGUE"
 
 	para "VICTORY ROAD"
 	line "ENTRANCE"

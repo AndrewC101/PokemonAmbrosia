@@ -341,7 +341,7 @@ VictoryRoadFieldMon9Script:
     end
 
 VictoryRoadPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

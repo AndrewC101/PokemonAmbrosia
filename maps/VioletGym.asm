@@ -151,7 +151,7 @@ VioletGymStatue:
 
 FalknerIntroText:
 	text "I'm FALKNER, the"
-	line "VIOLET #MON GYM"
+	line "VIOLET #mon GYM"
 	cont "leader!"
 
 	para "I wrote a haiku"
@@ -184,7 +184,7 @@ FalknerIntroText2:
     para "Just like all"
     line "the rest."
 
-    para "Your #MON"
+    para "Your #mon"
     line "journey ends"
     cont "here."
     done
@@ -199,7 +199,7 @@ FalknerLossText:
 	line "Take this."
 
 	para "It's the official"
-	line "#MON LEAGUE"
+	line "#mon LEAGUE"
 	cont "ZEPHYRBADGE."
 	done
 
@@ -219,15 +219,15 @@ ReceivedZephyrBadgeText:
 FalknerZephyrBadgeText:
     text "The ZEPHYRBADGE"
     line "lets you train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 25."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 15."
 
 	para "ZEPHYRBADGE"
-	line "enables #MON"
+	line "enables #mon"
 	cont "to use FLASH."
 
 	para "Here--take this"
@@ -236,7 +236,7 @@ FalknerZephyrBadgeText:
 
 FalknerTMMudSlapText:
 	text "A TM can teach"
-	line "your #MON a"
+	line "your #mon a"
 	cont "new move."
 
 	para "You can use it"
@@ -260,7 +260,7 @@ FalknerTMMudSlapText:
 	done
 
 FalknerFightDoneText:
-	text "There are #MON"
+	text "There are #mon"
 	line "GYMS in cities and"
 	cont "towns ahead."
 
@@ -353,7 +353,7 @@ VioletGymGuideText:
 
 	para "This GYM utilizes"
 	line "FLYING type"
-	cont "#MON."
+	cont "#mon."
 
 	para "These can't do"
 	line "much damage to"
@@ -362,7 +362,7 @@ VioletGymGuideText:
 
 	para "DARK CAVE might"
 	line "have such"
-	cont "#MON."
+	cont "#mon."
 	done
 
 VioletGymGuideWinText:

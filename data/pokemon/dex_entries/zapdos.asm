@@ -2,7 +2,7 @@
 	dw 503, 1160 ; height, weight
 
 	db   "Legendary bird"
-	next "#MON that"
+	next "#mon that"
 	next "causes storms."
 
 	page "Raises LIGHT"

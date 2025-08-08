@@ -549,7 +549,7 @@ DragonShrineSignpostText:
 	text "DRAGON SHRINE"
 
 	para "A shrine honoring"
-	line "DRAGON #MON"
+	line "DRAGON #mon"
 	done
 
 CooltrainermDarinSeenText:
@@ -604,7 +604,7 @@ CooltrainerfCaraAfterBattleText:
 	para "We were both"
 	line "given a HORSEA"
 	cont "as our first"
-	cont "#MON."
+	cont "#mon."
 
 	para "But CLAIR is so"
 	line "talented."

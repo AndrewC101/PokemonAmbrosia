@@ -33,7 +33,7 @@ TohjoFallsFieldMon2Script:
     end
 
 TohjoFallsPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

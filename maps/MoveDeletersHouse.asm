@@ -38,7 +38,7 @@ RelearnerIntroText:
 	cont "you don't have"
 	cont "to!"
 	para "Would you like a"
-	line "#MON to"
+	line "#mon to"
 	cont "relearn a move?"
 	done
 

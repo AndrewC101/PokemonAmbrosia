@@ -42,22 +42,22 @@ CherrygroveMartYoungsterScript:
 
 CherrygroveMartCooltrainerMText:
 	text "They're fresh out"
-	line "of #BALLS!"
+	line "of #balls!"
 
 	para "If I have no"
 	line "balls how am"
 	cont "I meant to"
-	cont "catch #MON!"
+	cont "catch #mon!"
 	done
 
 CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
+	text "# balls are in"
 	line "stock!"
 
 	para "I am full of"
 	line "balls now!"
 
-	para "#MON better"
+	para "#mon better"
 	line "watch out!"
 	done
 

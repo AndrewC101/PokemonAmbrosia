@@ -347,7 +347,7 @@ SSAquaGrandpaHaveThisRainbowWingText:
 	cont "construction."
 
 	para "I heard that all"
-	line "sorts of #MON"
+	line "sorts of #mon"
 
 	para "lived in GOLDENROD"
 	line "in the past."
@@ -381,7 +381,7 @@ SSAquaGrandpaHaveThisSilverWingText:
     cont "and the storm just"
     cont "disappeared."
 
-    para "A huge #MON"
+    para "A huge #mon"
     line "flew over me!"
 
     para "It filled the"
@@ -567,7 +567,7 @@ PokefanmJeremySeenText:
 	text "I travel all over"
 	line "the world showing"
 	cont "off my mighty"
-	cont "#MON."
+	cont "#mon."
 
 	para "If you only knew"
 	line "the power of the"
@@ -628,7 +628,7 @@ PokefanfGeorgiaAfterBattleText:
 SupernerdShawnSeenText:
 	text "I am taking"
 	line "some APRICORN"
-	cont "BALLS to sell"
+	cont "balls to sell"
 	cont "in KANTO."
 
 	para "I'll make a"

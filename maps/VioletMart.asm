@@ -37,7 +37,7 @@ VioletMartCooltrainerMText:
 	cont "battle."
 
 	para "But some can be"
-	line "held by a #MON"
+	line "held by a #mon"
 	cont "and have passive"
 	cont "effects."
 

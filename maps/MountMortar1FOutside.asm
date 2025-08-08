@@ -27,7 +27,7 @@ MountMortar1FOutsideFieldMon1Script:
     end
 
 MountMortar1FOutsidePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

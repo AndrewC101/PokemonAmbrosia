@@ -25,7 +25,7 @@ OlivineHouseBetaBookshelf2:
 	jumpstd MagazineBookshelfScript
 
 OlivineHouseBetaTeacherText:
-	text "When my #MON"
+	text "When my #mon"
 	line "got sick, the"
 
 	para "PHARMACIST in"

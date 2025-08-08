@@ -82,7 +82,7 @@ HallOfFame_LanceText:
 	para "Upon this throne"
 	line "the greatest"
 	cont "trainers and"
-	cont "their #MON"
+	cont "their #mon"
 	cont "are accepted and"
 	cont "commemorated for"
 	cont "all eternity."
@@ -103,7 +103,7 @@ HallOfFame_LanceText:
 
 	para "I coronate you"
 	line "and accordingly"
-	cont "your #MON"
+	cont "your #mon"
 	cont "as CHAMPIONS!"
 	done
 

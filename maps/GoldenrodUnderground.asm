@@ -441,7 +441,7 @@ SupernerdEricAfterBattleText:
 	done
 
 SupernerdTeruSeenText:
-	text "The best #MON"
+	text "The best #mon"
 	line "take a long time"
 	cont "to evolve."
 
@@ -534,7 +534,7 @@ GoldenrodUndergroundBasementKeyOpenedDoorText:
 GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:
 	text "Welcome!"
 
-	para "I run the #MON"
+	para "I run the #mon"
 	line "SALON!"
 
 	para "I'm the older and"
@@ -542,7 +542,7 @@ GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:
 	cont "HAIRCUT BROTHERS."
 
 	para "I can make your"
-	line "#MON beautiful"
+	line "#mon beautiful"
 	cont "for just ¥500."
 
 	para "Would you like me"
@@ -550,7 +550,7 @@ GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:
 	done
 
 GoldenrodUndergroundOlderHaircutBrotherAskWhichMonText:
-	text "Which #MON"
+	text "Which #mon"
 	line "should I work on?"
 	done
 
@@ -581,7 +581,7 @@ GoldenrodUndergroundOlderHaircutBrotherOneHaircutADayText:
 
 GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText:
 	text "Welcome to the"
-	line "#MON SALON!"
+	line "#mon SALON!"
 
 	para "I'm the younger"
 	line "and less expen-"
@@ -589,14 +589,14 @@ GoldenrodUndergroundYoungerHaircutBrotherOfferHaircutText:
 	cont "HAIRCUT BROTHERS."
 
 	para "I'll spiff up your"
-	line "#MON for just"
+	line "#mon for just"
 	cont "¥300."
 
 	para "So? How about it?"
 	done
 
 GoldenrodUndergroundYoungerHaircutBrotherAskWhichMonText:
-	text "OK, which #MON"
+	text "OK, which #mon"
 	line "should I do?"
 	done
 

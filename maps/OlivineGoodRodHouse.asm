@@ -49,7 +49,7 @@ OfferGoodRodText:
 
 	para "A rod guaranteed"
 	line "to catch other"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "It can be yours"
 	line "today, for free!"

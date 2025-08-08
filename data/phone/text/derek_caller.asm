@@ -58,7 +58,7 @@ DerekLetsGetTogetherText:
 	line "defense against"
 	cont "it!"
 	para "Are there any ELF"
-	line "#MON?"
+	line "#mon?"
 	done
 
 DerekComePickUpText:

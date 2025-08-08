@@ -145,13 +145,13 @@ BugCatchingContestant1AText:
 
 BugCatchingContestant2AText:
 	text "ED: My BRELOOM"
-	line "puts #MON to"
+	line "puts #mon to"
 	cont "sleep with SPORE."
 	done
 
 BugCatchingContestant3AText:
 	text "NICK: I'm raising"
-	line "fast #MON for"
+	line "fast #mon for"
 	cont "battles."
 	done
 
@@ -161,7 +161,7 @@ BugCatchingContestant4AText:
 	cont "winning."
 
 	para "I'm just looking"
-	line "for rare #MON."
+	line "for rare #mon."
 	done
 
 BugCatchingContestant5AText:
@@ -174,14 +174,14 @@ BugCatchingContestant5AText:
 
 BugCatchingContestant6AText:
 	text "BARRY: You should"
-	line "weaken bug #MON"
+	line "weaken bug #mon"
 	cont "first, then throw"
 	cont "a BALL."
 	done
 
 BugCatchingContestant7AText:
 	text "CINDY: I love bug"
-	line "#MON."
+	line "#mon."
 
 	para "I guess you must"
 	line "like them too."
@@ -190,7 +190,7 @@ BugCatchingContestant7AText:
 BugCatchingContestant8AText:
 	text "JOSH: I've been"
 	line "collecting bug"
-	cont "#MON since I"
+	cont "#mon since I"
 	cont "was just a baby."
 
 	para "There's no way I'm"
@@ -201,12 +201,12 @@ BugCatchingContestant9AText:
 	text "SAMUEL: If you've"
 	line "got the time to"
 	cont "chat, go find some"
-	cont "bug #MON."
+	cont "bug #mon."
 	done
 
 BugCatchingContestant10AText:
 	text "KIPP: I've studied"
-	line "about bug #MON"
+	line "about bug #mon"
 	cont "a lot."
 
 	para "I'm going to win"

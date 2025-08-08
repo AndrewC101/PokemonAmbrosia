@@ -34,7 +34,7 @@ CeladonDeptStore4FSuperNerdText:
 	para "But they can"
 	line "let you escape"
 	cont "from aggressive"
-	cont "wild #MON."
+	cont "wild #mon."
 
 	para "It's the only"
 	line "way to escape"

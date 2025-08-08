@@ -259,7 +259,7 @@ EcruteakTinTowerEntranceWanderingSageText:
 
 EcruteakTinTowerEntranceWanderingSageText_GotClearBell:
 	text "The TIN TOWER"
-	line "shook! A #MON"
+	line "shook! A #mon"
 
 	para "must have returned"
 	line "to the top!"
@@ -267,12 +267,12 @@ EcruteakTinTowerEntranceWanderingSageText_GotClearBell:
 
 EcruteakTinTowerEntranceGrampsText:
 	text "Two towers…"
-	line "Two #MON…"
+	line "Two #mon…"
 
 	para "But when one"
 	line "burned down, both"
 
-	para "#MON flew away,"
+	para "#mon flew away,"
 	line "never to return."
 	done
 

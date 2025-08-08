@@ -113,7 +113,7 @@ WhirlIslandB1FFieldMon5Script:
     end
 
 WhirlIslandB1FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

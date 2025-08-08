@@ -36,7 +36,7 @@ VermilionPokecenter1FFishingGuruText:
 
 	para "DIGLETT is an"
 	line "extinct species"
-	cont "of #MON."
+	cont "of #mon."
 
 	para "They were meant"
 	line "to be quite weak."
@@ -62,7 +62,7 @@ InvadedVermilionPokecenter1FSailorText:
 
 	para "They got such"
 	line "strong WATER"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "Me POLIWHIRL"
 	line "didn't last"
@@ -76,9 +76,9 @@ VermilionPokecenter1FBugCatcherText:
 	cont "CAVE."
 
 	para "I got past the"
-	line "fat #MON"
+	line "fat #mon"
 	cont "but there was"
-	cont "another #MON"
+	cont "another #mon"
 	cont "blocking in"
 	cont "the cave itself!"
 	done

@@ -62,7 +62,7 @@ VermilionMartBeautyText:
 
 InvadedVermilionMartBeautyText:
 	text "Their captain has"
-	line "#MON especially"
+	line "#mon especially"
 	cont "for fighting"
 	cont "ELECTRIC types."
 

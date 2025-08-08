@@ -487,10 +487,10 @@ FloriaText1:
 	para "I'm convinced he"
 	line "is not a man at"
 	cont "all but a"
-	cont "#MON."
+	cont "#mon."
 
 	para "An evil"
-	line "#MON!"
+	line "#mon!"
 
 	para "I'm going to"
 	line "get my sister at"
@@ -501,12 +501,12 @@ FloriaText1:
 	line "HOLY WATER."
 
 	para "That should move"
-	line "that #MON."
+	line "that #mon."
 	done
 
 FloriaText2:
 	text "My sister told"
-	line "me the #MON"
+	line "me the #mon"
 	cont "disguised as an"
 	cont "old man is too"
 	cont "dangerous."
@@ -540,7 +540,7 @@ RockSmashGuyText2:
 	para "And that evil"
 	line "spirit was"
 	cont "actually a"
-	cont "#MON!"
+	cont "#mon!"
 	done
 
 Route36LassText:
@@ -562,12 +562,12 @@ PsychicMarkSeenText:
 
 	para "I tried to"
 	line "get through it"
-	cont "but my #MON"
+	cont "but my #mon"
 	cont "were too scared."
 	done
 
 PsychicMarkBeatenText:
-	text "Your #MON"
+	text "Your #mon"
 	line "are brave."
 	done
 
@@ -575,7 +575,7 @@ PsychicMarkAfterBattleText:
 	text "Fear is the"
 	line "mind killer."
 
-	para "PSYCHIC #MON"
+	para "PSYCHIC #mon"
 	line "are weak to"
 	cont "common fears"
 	cont "DARK, BUG and"
@@ -620,7 +620,7 @@ ArthurGivesGiftText:
 	done
 
 ArthurGaveGiftText:
-	text "ARTHUR: A #MON"
+	text "ARTHUR: A #mon"
 	line "that uses rock-"
 	cont "type moves should"
 	cont "hold on to that."
@@ -654,11 +654,11 @@ RuinsOfAlphNorthSignText:
 Route36TrainerTips1Text:
 	text "TRAINER TIPS"
 
-	para "On the #DEX"
+	para "On the #dex"
 	line "you can press"
 	cont "SELECT to see"
 	cont "the SHINY colour"
-	cont "of a #MON."
+	cont "of a #mon."
 	done
 
 Route36TrainerTips2Text:
@@ -671,7 +671,7 @@ Route36TrainerTips2Text:
 
 	para "It can be good"
 	line "to revisit areas"
-	cont "to find #MON"
+	cont "to find #mon"
 	cont "you are now"
 	cont "able to catch."
 	done
@@ -689,7 +689,7 @@ Route36FieldMon2Script:
     end
 
 Route36PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -778,7 +778,7 @@ Route36Movement_CrystalApproaches:
 
 Route36CrystalText_Intro:
     text "You cleared that"
-    line "GHOST #MON!"
+    line "GHOST #mon!"
 
     para "Thank you!"
 
@@ -790,7 +790,7 @@ Route36CrystalText_Intro:
 
     para "I'm actually a bit"
     line "afraid of GHOST"
-    cont "#MON."
+    cont "#mon."
 
     para "I think when I"
     line "was little I got"

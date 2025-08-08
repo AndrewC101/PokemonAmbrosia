@@ -20,7 +20,7 @@ IlexForestAzaleaGateOfficerText:
 
 IlexForestAzaleaGateGrannyText:
 	text "It is said an"
-	line "ancient #MON"
+	line "ancient #mon"
 	cont "protects the"
 	cont "forest."
 	para "Stay safe."

@@ -46,7 +46,7 @@ DiglettsCavePokefanMText_blocked:
 	text "The exit is"
 	line "blocked by a"
 	cont "big sleeping"
-	cont "#MON."
+	cont "#mon."
 
 	para "I'll never get"
 	line "out of here!"
@@ -95,7 +95,7 @@ DiglettsCaveFieldMon6Script:
 	end
 
 DiglettsCavePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

@@ -83,7 +83,7 @@ ViridianPokecenter1FBugCatcherText:
 	cont "make us angry."
 
 	para "It was the"
-	line "#MON LEAGUE"
+	line "#mon LEAGUE"
 	cont "themselves that"
 	cont "destroyed it!"
 

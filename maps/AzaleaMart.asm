@@ -27,7 +27,7 @@ AzaleaMartCooltrainerMText:
 
 	para "The FRIEND BALL."
 
-	para "It makes #MON"
+	para "It makes #mon"
 	line "like you more"
 	cont "if you catch"
 	cont "them with it."

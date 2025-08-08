@@ -94,7 +94,7 @@ Route24RocketSeenText:
 
 	para "To use the RADIO"
 	line "TOWER to control"
-	cont "HOENN #MON."
+	cont "HOENN #mon."
 
 	para "I'm sure you know"
 	line "about that."

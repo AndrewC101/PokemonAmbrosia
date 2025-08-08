@@ -56,7 +56,7 @@ GinaGreetNiteText:
 	done
 
 GinaGenericText:
-	text "Are your #MON"
+	text "Are your #mon"
 	line "still tough?"
 
 	para "I train every day"

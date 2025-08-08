@@ -3,7 +3,7 @@
 
 	db   "A wickedly fast"
 	next "and viciously"
-	next "devious #MON."
+	next "devious #mon."
 
 	page "Boosted EVASION"
 	next "and critical"

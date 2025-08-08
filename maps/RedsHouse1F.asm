@@ -49,7 +49,7 @@ RedsMomText1:
 	text "Hello there."
 
 	para "You are a"
-	line "#MON trainer."
+	line "#mon trainer."
 
 	para "My son is also"
 	line "a trainer."

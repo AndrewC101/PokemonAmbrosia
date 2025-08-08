@@ -63,7 +63,7 @@ Route15FieldMon2Script:
     end
 
 Route15PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -162,7 +162,7 @@ Route15PPUp:
 	itemball PP_MAX
 
 TeacherColetteSeenText:
-	text "Some #MON are"
+	text "Some #mon are"
 	line "immune to GROUND"
 	cont "moves."
 	para "Others can't be"
@@ -179,7 +179,7 @@ TeacherColetteBeatenText:
 
 TeacherColetteAfterBattleText:
 	text "Have you memorised"
-	line "all #MON"
+	line "all #mon"
 	cont "abilities!?"
 	done
 
@@ -210,7 +210,7 @@ TeacherHillaryAfterBattleText:
 	done
 
 SchoolboyTommySeenText:
-	text "My #MON used"
+	text "My #mon used"
 	line "to be my pets."
 	para "Then I trained"
 	line "them into fierce"
@@ -223,7 +223,7 @@ SchoolboyTommyBeatenText:
 
 SchoolboyTommyAfterBattleText:
 	text "We are learning"
-	line "about #MON"
+	line "about #mon"
 	cont "abilities in"
 	cont "class. It all"
 	cont "seems like"
@@ -232,12 +232,12 @@ SchoolboyTommyAfterBattleText:
 
 SchoolboyJohnnySeenText:
 	text "We are learning"
-	line "about #MON"
+	line "about #mon"
 	cont "abilities!"
-	para "Some #MON have"
+	para "Some #mon have"
 	line "more than one."
 	para "Do you know"
-	line "which #MON has"
+	line "which #mon has"
 	cont "the most"
 	cont "abilities?"
 	done
@@ -257,7 +257,7 @@ SchoolboyJohnnyAfterBattleText:
 	cont "damage when"
 	cont "defeated."
 	para "I doubt any"
-	line "#MON has more"
+	line "#mon has more"
 	cont "than that."
 	para "Except like,"
 	line "ARCEUS itself or"

@@ -168,7 +168,7 @@ Route40_StepUp4Movement: ; unreferenced
 
 SwimmermSimonSeenText:
 	text "I love WATER"
-	line "#MON."
+	line "#mon."
 
 	para "I love the"
 	line "sea."
@@ -224,7 +224,7 @@ SwimmerfElaineSeenText:
 	cont "the potential"
 	cont "to be the"
 	cont "strongest"
-	cont "#MON in"
+	cont "#mon in"
 	cont "the world."
 
 	para "I never lose."
@@ -355,7 +355,7 @@ MonicaGaveGiftText:
 	line "ing-type moves."
 
 	para "You should equip a"
-	line "bird #MON with"
+	line "bird #mon with"
 	cont "that item."
 	done
 
@@ -402,7 +402,7 @@ AreaFieldMon3Script:
     end
 
 AreaPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

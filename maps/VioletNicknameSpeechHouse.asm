@@ -24,13 +24,13 @@ VioletNicknameSpeechHouseBirdScript:
 	end
 
 VioletNicknameSpeechHouseTeacherText:
-	text "Some #MON have"
+	text "Some #mon have"
 	line "a different"
 	cont "colour than they"
 	cont "normally would."
 
 	para "These are shiny"
-	line "#MON."
+	line "#mon."
 
 	para "Sometimes they"
 	line "appear in the"
@@ -42,7 +42,7 @@ VioletNicknameSpeechHouseTeacherText:
 
 	para "You can see this"
 	line "alternate colour"
-	cont "in your #DEX"
+	cont "in your #dex"
 	cont "by pressing"
 	cont "SELECT."
 	done

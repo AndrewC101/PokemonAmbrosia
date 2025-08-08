@@ -2,9 +2,9 @@ WiltonAskNumber1Text:
 WiltonAskNumber2Text:
 	text "I can tell you"
 	line "know a tasty"
-	cont "#MON when you"
+	cont "#mon when you"
 	cont "see one!"
-	para "Your #MON look"
+	para "Your #mon look"
 	line "to be shaping up"
 	cont "nicely."
 	para "Give me your"

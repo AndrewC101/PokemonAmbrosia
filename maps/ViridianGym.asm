@@ -296,7 +296,7 @@ LeaderBlueEpilogueText:
 	cont "things."
 
 	para "Don't let the"
-	line "#MON LEAGUE"
+	line "#mon LEAGUE"
 	cont "or LANCE or me"
 	cont "try to tell you"
 	cont "what the right"
@@ -329,7 +329,7 @@ GreenTalkText:
 
     para "We're going to"
     line "need backup from"
-    cont "your #MON"
+    cont "your #mon"
     cont "LEAGUE friends!"
     done
 

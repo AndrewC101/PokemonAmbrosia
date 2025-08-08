@@ -1223,8 +1223,8 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
+	db   "NEW #dex MODE"
+	next "OLD #dex MODE"
 	next "A to Z MODE"
 	db   "@"
 

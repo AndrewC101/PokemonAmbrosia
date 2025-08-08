@@ -260,7 +260,7 @@ LakeOfRageLanceForcedToEvolveText:
 	line "torment heightens"
 	cont "the aggressive"
 	cont "instincts of"
-	cont "these #MON."
+	cont "these #mon."
 
 	para "The product of an"
 	line "unnatural and"
@@ -275,7 +275,7 @@ LakeOfRageLanceIntroText:
 	cont "you harbour an"
 	cont "extraordinary"
 	cont "affinity with"
-	cont "#MON."
+	cont "#mon."
 
 	para "A rare gift."
 
@@ -296,7 +296,7 @@ LakeOfRageLanceIntroText:
 LakeOfRageLanceRadioSignalText:
 	text "Our collaboration"
 	line "is ordained by"
-	cont "those #MON"
+	cont "those #mon"
 	cont "who are suffering."
 
 	para "We shall permit"
@@ -412,7 +412,7 @@ FisherAndreBeatenText:
 	done
 
 FisherAndreAfterBattleText:
-	text "My #MON are"
+	text "My #mon are"
 	line "just too weak!"
 
 	para "I don't want to"
@@ -601,7 +601,7 @@ LakeOfRageFieldMon4Script:
 	end
 
 LakeOfRagePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

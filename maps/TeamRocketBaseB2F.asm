@@ -1067,7 +1067,7 @@ RocketBaseLanceWhirlpoolText:
 	text "That is WHIRLPOOL."
 
 	para "With this a"
-	line "#MON can"
+	line "#mon can"
 	cont "plough through"
 	cont "rough waters."
 
@@ -1081,7 +1081,7 @@ RocketBaseLanceMonMasterText:
 	text "<PLAYER>."
 
 	para "The path to"
-	line "#MON MASTER"
+	line "#mon MASTER"
 	cont "is fraught with"
 	cont "peril, uncertainty"
 	cont "and sacrifice."

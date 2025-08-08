@@ -210,7 +210,7 @@ Text_ReceivedTM13: ; unreferenced
 
 FarmerFText_SnoreSpeech:
 	text "ROOST lets"
-	line "some #MON"
+	line "some #mon"
 	cont "recover their"
 	cont "health."
 

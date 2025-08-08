@@ -95,7 +95,7 @@ LatiasScript:
 LatiasNotHappyText:
     text "...."
 
-    para "#MON...."
+    para "#mon...."
 
     para "Sad...."
     done
@@ -103,7 +103,7 @@ LatiasNotHappyText:
 LatiasCry:
     text "...."
 
-    para "#MON...."
+    para "#mon...."
 
     para "Loves you!"
     done
@@ -199,7 +199,7 @@ FuchsiaCityYoungsterText_Saved:
 InvadedFuchsiaCityYoungsterText:
 	text "I saw..."
 	para "WALLACE..."
-	para "His #MON..."
+	para "His #mon..."
 	para "It's game over"
 	line "man!"
 	para "Game over!!"
@@ -248,7 +248,7 @@ InvadedFuchsiaCityPokefanMText:
 	line "was going to"
 	cont "kill her."
 
-	para "His #MON!"
+	para "His #mon!"
 
 	para "How can anyone"
 	line "withstand such"
@@ -272,7 +272,7 @@ FuchsiaCityTeacherText_Saved:
 
 	para "You beat WALLACE"
 	line "and his god like"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "You are so young."
 
@@ -310,7 +310,7 @@ InvadedFuchsiaCityTeacherText:
 	cont "a living throne."
 
 	para "His three Gods"
-	line "among #MON."
+	line "among #mon."
 
 	para "None can defeat"
 	line "him."
@@ -325,7 +325,7 @@ FuchsiaCitySignText:
 
 FuchsiaGymSignText:
 	text "FUCHSIA CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: JANINE"
 
 	para "The Poisonous"
@@ -429,7 +429,7 @@ BlockingSoldier1Text:
     cont "peoples eyes at"
     cont "the sight of"
     cont "HOENN legendary"
-    cont "#MON."
+    cont "#mon."
 
     para "We are securing"
     line "the training"
@@ -689,7 +689,7 @@ FuchsiaSelfBelieveText:
 	text "We have come a"
 	line "long way and"
 	cont "learnt a lot with"
-	cont "our #MON."
+	cont "our #mon."
 	para "All of that"
 	line "experience has"
 	cont "lead to this"

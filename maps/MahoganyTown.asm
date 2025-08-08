@@ -98,7 +98,7 @@ MahoganyTownFisherText:
 
 	para "There is some"
 	line "strange looking"
-	cont "#MON at the"
+	cont "#mon at the"
 	cont "LAKE OF RAGE."
 	cont "Everyone is"
 	cont "investigating."
@@ -117,7 +117,7 @@ MahoganyTownLassText:
 	para "If only we could"
 	line "get rid of the"
 	cont "aggressive"
-	cont "#MON we could"
+	cont "#mon we could"
 	cont "rent it out and"
 	cont "make a fortune."
 	done
@@ -131,7 +131,7 @@ MahoganyTownSignText:
 
 MahoganyGymSignText:
 	text "MAHOGANY TOWN"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: PRYCE"
 
 	para "The Teacher of"

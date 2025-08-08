@@ -58,7 +58,7 @@ GoldenrodDeptStore1FPokefanFText:
 
 	para "Not important."
 
-	para "Only #MON"
+	para "Only #mon"
 	line "matters!"
 	done
 

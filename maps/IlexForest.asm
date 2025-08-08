@@ -90,7 +90,7 @@ ApprenticeGivesCutText:
     cont "down this tree."
 
     para "But I have no"
-    line "#MON that are"
+    line "#mon that are"
     cont "able to do it."
 
     para "Here, maybe you"
@@ -99,7 +99,7 @@ ApprenticeGivesCutText:
     para "You don't need to"
     line "actually teach"
     cont "the move to a"
-    cont "#MON."
+    cont "#mon."
 
     para "As long as it"
     line "able to learn"
@@ -486,7 +486,7 @@ Text_HeadbuttIntro:
 
 	para "I am strengthening"
 	line "the skulls of my"
-	cont "#MON."
+	cont "#mon."
 
 	para "By using HEADBUTT"
 	line "on this tree."
@@ -580,7 +580,7 @@ Text_KurtCaughtCelebi:
 
 	para "I would be"
 	line "honoured to"
-	cont "make # BALLS"
+	cont "make # balls"
 	cont "for you!"
 	done
 
@@ -588,7 +588,7 @@ BugCatcherWayneSeenText:
 	text "There is a"
 	line "colony of"
 	cont "ancient BUG"
-	cont "#MON in"
+	cont "#mon in"
 	cont "here somewhere."
 
 	para "I will find it."
@@ -596,7 +596,7 @@ BugCatcherWayneSeenText:
 
 BugCatcherWayneBeatenText:
 	text "I hadn't seen that"
-	line "#MON before…"
+	line "#mon before…"
 	done
 
 BugCatcherWayneAfterBattleText:
@@ -621,7 +621,7 @@ IlexForestFieldMon2Script:
     end
 
 IlexForestPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

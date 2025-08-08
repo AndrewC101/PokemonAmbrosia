@@ -6,7 +6,7 @@ LizMonAlwaysWantsToNuzzleText:
 	cont "it hurts."
 	para "Do you hug and"
 	line "cuddle your"
-	cont "#MON?"
+	cont "#mon?"
 	para "You should."
 	done
 
@@ -33,7 +33,7 @@ LizLostAMonText:
 	line "true love, don't"
 	cont "you think."
 	para "I'm going to help"
-	line "all my #MON"
+	line "all my #mon"
 	cont "find their true"
 	cont "soul mate."
 	para "Do you believe in"
@@ -41,8 +41,8 @@ LizLostAMonText:
 	done
 
 LizBattleRematchText:
-	text "My #MON and"
-	line "your #MON"
+	text "My #mon and"
+	line "your #mon"
 	cont "should get"
 	cont "together sometime."
 	para "How about a"

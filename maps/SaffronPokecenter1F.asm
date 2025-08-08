@@ -42,7 +42,7 @@ SaffronPokecenter1FTeacherText:
 	cont "in #CENTERS."
 
 	para "Then the meddling"
-	line "#MON LEAGUE"
+	line "#mon LEAGUE"
 	cont "said it was"
 	cont "illegal."
 

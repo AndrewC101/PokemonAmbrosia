@@ -178,7 +178,7 @@ PryceText_Intro:
 	line "to die."
 
 	para "Then a huge blue"
-	line "bird #MON"
+	line "bird #mon"
 	cont "picked me up"
 	cont "and saved me."
 
@@ -213,11 +213,11 @@ PryceText_GlacierBadgeSpeech:
     text "With the"
     line "GLACIERBADGE"
     cont "you can now train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 60."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 50."
 
     para "Take this also."
@@ -373,7 +373,7 @@ MahoganyGymGuideText:
 	cont "ROCK and STEEL."
 
 	para "But PRYCE has"
-	line "strong #MON"
+	line "strong #mon"
 	cont "in spite of their"
 	cont "type."
 	done

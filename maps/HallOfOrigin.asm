@@ -122,7 +122,7 @@ OakBeatenArceusText:
     line "when you are"
     cont "ready to reach"
     cont "the heights of"
-    cont "#MON LORD."
+    cont "#mon LORD."
 
     para "Until then take"
     line "this token of my"
@@ -192,12 +192,12 @@ ArceusPokeBallScript:
 MakeRoomText:
     text "Make room in"
     line "your party for"
-    cont "this #MON."
+    cont "this #mon."
     done
 TakeArceusText:
     text "You choose"
     line "ARCEUS."
-    para "The God #MON"
+    para "The God #mon"
     done
 ReceivedArceusText:
 	text "<PLAYER> received"
@@ -248,7 +248,7 @@ TakeMewtwoText:
     text "You choose"
     line "MEWTWO."
     para "The Weapon"
-    line "#MON"
+    line "#mon"
     done
 ReceivedMewtwoText:
 	text "<PLAYER> received"
@@ -363,7 +363,7 @@ MasterOakIntroText:
     cont "a relentless quest"
     cont "for knowledge."
 
-    para "There are #MON"
+    para "There are #mon"
     line "with great powers."
 
     para "Command of time,"
@@ -388,7 +388,7 @@ MasterOakIntroText:
 
     para "None are destined"
     line "to be a"
-    cont "#MON LORD."
+    cont "#mon LORD."
 
     para "You however."
 
@@ -411,13 +411,13 @@ MasterOakVictoryText:
     cont "immortal."
 
     para "You are a"
-    line "#MON LORD."
+    line "#mon LORD."
 
     para "Your body is now"
     line "indestructible"
     cont "and immortal."
 
-    para "All your #MON"
+    para "All your #mon"
     line "shine with power"
     cont "regardless of"
     cont "their stats."
@@ -427,7 +427,7 @@ MasterOakVictoryText:
     cont "resources."
 
     para "And no aggressive"
-    line "trainer or #MON"
+    line "trainer or #mon"
     cont "will dare to"
     cont "challenge you."
     done
@@ -592,7 +592,7 @@ MasterRedSeenText:
 
 MasterRedBeatenText:
     text "You love"
-    line "#MON."
+    line "#mon."
     done
 
 MasterRedAfterBattleText:
@@ -1825,7 +1825,7 @@ InvaderMasterPatchesSeenText:
 	para "Even with my"
 	line "cheat codes!"
 
-	para "The #MON"
+	para "The #mon"
 	line "I'll be taking"
 	cont "from you."
 

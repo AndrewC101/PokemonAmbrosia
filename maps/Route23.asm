@@ -17,7 +17,7 @@ IndigoPlateauSignText:
 	para "The Ultimate Goal"
 	line "for Trainers!"
 
-	para "#MON LEAGUE HQ"
+	para "#mon LEAGUE HQ"
 	done
 	
 TobiasScript:
@@ -73,7 +73,7 @@ TobiasWinAfterBattleText:
     line "victory..."
 
     para "I guess my"
-    line "#MON are just"
+    line "#mon are just"
     cont "too strong for"
     cont "anyone to beat."
     done
@@ -84,9 +84,9 @@ TobiasSeenText:
     para "I am Tobias."
 
     para "I've won many"
-    line "#MON leagues."
+    line "#mon leagues."
 
-    para "My #MON are"
+    para "My #mon are"
     line "just too strong."
 
     para "I came here in"

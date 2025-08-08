@@ -107,7 +107,7 @@ BillTakeThisEeveeText:
 
 	para "I have an"
 	line "interesting"
-	cont "#MON for you."
+	cont "#mon for you."
 
 	para "I got it from the"
 	line "GAME CORNER."
@@ -206,7 +206,7 @@ BillsSisterStorageSystemText:
 	text "My big brother"
 	line "BILL made the PC"
 
-	para "#MON storage"
+	para "#mon storage"
 	line "system."
 
 	para "He has changed"

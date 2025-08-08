@@ -134,7 +134,7 @@ RuinsOfAlphHoOhChamberAncientReplicaText:
 	done
 
 RuinsOfAlphHoOhChamberDescriptionText:
-	text "A #MON that"
+	text "A #mon that"
 	line "flew gracefully on"
 
 	para "rainbow-colored"

@@ -304,7 +304,7 @@ Route39TrainerTipsText:
 	text "TRAINER TIPS"
 
 	para "There are three"
-	line "ways a #MON"
+	line "ways a #mon"
 	cont "can evolve."
 
 	para "Through reaching"
@@ -345,7 +345,7 @@ Route39FieldMon4Script:
     end
 
 Route39PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

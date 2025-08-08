@@ -2,7 +2,7 @@
 	dw 611, 10140 ; height, weight
 
 	db   "A huge, mighty"
-	next "#MON with a"
+	next "#mon with a"
 	next "big appetite."
 
 	page "Takes half"

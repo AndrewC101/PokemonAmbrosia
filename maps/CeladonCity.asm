@@ -224,7 +224,7 @@ CeladonCityLassText:
 	cont "became unbearable."
 
 	para "I'm training my"
-	line "#MON so I"
+	line "#mon so I"
 	cont "can beat them"
 	cont "all up."
 
@@ -243,7 +243,7 @@ CeladonCitySignText:
 
 CeladonGymSignText:
 	text "CELADON CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: ERIKA"
 
 	para "The Nature-Loving"
@@ -269,7 +269,7 @@ CeladonCityGameCornerSignText:
 CeladonCityTrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "#MON get"
+	para "#mon get"
 	line "stronger by"
 	cont "battling."
 

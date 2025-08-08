@@ -119,7 +119,7 @@ Route34IlexForestGateLassText:
 
 	para "I think that it"
 	line "must be a grass-"
-	cont "type #MON."
+	cont "type #mon."
 	done
 
 Route34IlexForestGate_MapEvents:

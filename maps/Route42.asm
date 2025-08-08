@@ -160,7 +160,7 @@ FisherTullyBeatenText:
 FisherTullyAfterBattleText:
 	text "I need to build"
 	line "a team of"
-	cont "#MON around"
+	cont "#mon around"
 	cont "my weather to"
 	cont "really get the"
 	cont "best of it."
@@ -197,12 +197,12 @@ HikerBenjaminAfterBattleText:
 	line "areas of the cave"
 	cont "you can only get"
 	cont "to with a special"
-	cont "WATER #MON"
+	cont "WATER #mon"
 	cont "move."
 	done
 
 PokemaniacShaneSeenText:
-	text "My #MON are"
+	text "My #mon are"
 	line "bros who don't"
 	cont "take no lip from"
 	cont "any fool!"
@@ -261,7 +261,7 @@ Route42FieldMon2Script:
     end
 
 Route42PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

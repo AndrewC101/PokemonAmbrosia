@@ -1,6 +1,6 @@
 IrwinHangUpText:
 	text "You catch more"
-	line "#MON, bye!"
+	line "#mon, bye!"
 	done
 
 IrwinRocketTakeoverRumorText:
@@ -83,7 +83,7 @@ IrwinSnorlaxGossipText:
 	cont "CAVE."
 	para "They say you"
 	line "pushed that fat"
-	cont "#MON out of"
+	cont "#mon out of"
 	cont "the way by"
 	cont "yourself!"
 	done
@@ -118,7 +118,7 @@ IrwinFogBadgeGossipText:
 	para "I went into the"
 	line "GYM once and a"
 	cont "bunch of GHOST"
-	cont "#MON spooked"
+	cont "#mon spooked"
 	cont "me."
 	para "Scared the"
 	line "KOFFINGS off me."

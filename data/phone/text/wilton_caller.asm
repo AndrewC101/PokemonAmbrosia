@@ -4,7 +4,7 @@ WiltonMonHasGrownText:
 	cont "FEEBAS."
 	para "It was such a"
 	line "beautiful"
-	cont "#MON."
+	cont "#mon."
 	para "I added some"
 	line "rosemary and a"
 	cont "little salt and"
@@ -36,7 +36,7 @@ WiltonLostAMonText:
 
 WiltonBattleRematchText:
 	text "I need to battle"
-	line "my #MON to"
+	line "my #mon to"
 	cont "tenderise them."
 	para "Get over here and"
 	line "let's have a"
@@ -78,7 +78,7 @@ WiltonHaventFoundAnythingText:
 	done
 
 WiltonNotBitingText:
-	text "Hey my #MON"
+	text "Hey my #mon"
 	line "aren't going to"
 	cont "tenderise"
 	cont "themselves."
@@ -88,12 +88,12 @@ WiltonNotBitingText:
 
 WiltonWantThisText:
 	text "I've eaten all"
-	line "sorts of #MON."
+	line "sorts of #mon."
 	para "MILOTIC is real"
 	line "nice but I tell"
 	cont "you kid, I tell"
 	cont "you the tastiest"
-	cont "#MON."
+	cont "#mon."
 	para "It's DUNSPARCE!"
 	para "Don't believe me,"
 	line "try it for"

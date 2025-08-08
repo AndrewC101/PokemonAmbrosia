@@ -1,7 +1,7 @@
 GinaGettingInSyncWithMonText:
 	text "I asked around for"
 	line "some strong KANTO"
-	cont "#MON."
+	cont "#mon."
 	para "People say"
 	line "GYARADOS,"
 	cont "DRAGONITE and"
@@ -30,14 +30,14 @@ GinaLostAMonText:
 	line "has a CHARIZARD!"
 	para "If the strongest"
 	line "CHAMPION has a"
-	cont "KANTO #MON it"
+	cont "KANTO #mon it"
 	cont "must be good."
 	para "I need to get one!"
 	done
 
 GinaBattleRematchText:
 	text "I need to train my"
-	line "#MON more."
+	line "#mon more."
 	para "How about a"
 	line "battle?"
 	para "I'm sure to get"
@@ -83,7 +83,7 @@ GinaHaventFoundAnythingYetText:
 	done
 
 GinaReminderText:
-	text "My #MON are"
+	text "My #mon are"
 	line "getting weaker by"
 	cont "the day."
 	para "I need you to"

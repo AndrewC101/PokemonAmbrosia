@@ -155,7 +155,7 @@ BirdKeeperVance1MercyText:
     line "to get there and"
     cont "avoid other"
     cont "trainers and"
-    cont "#MON."
+    cont "#mon."
 
     para "But it will be"
     line "difficult."
@@ -381,7 +381,7 @@ BirdKeeperVance1SeenText:
 	text "Do you have any"
 	line "idea how many"
 	cont "cool and legendary"
-	cont "#MON are FLYING"
+	cont "#mon are FLYING"
 	cont "TYPE?"
 
 	para "It is the coolest"
@@ -393,7 +393,7 @@ BirdKeeperVance1SeenText:
 BirdKeeperVance1BeatenText:
 	text "I need some"
 	line "legendary"
-	cont "#MON!"
+	cont "#mon!"
 	done
 
 BirdKeeperVanceLegendaryBirdsText:
@@ -473,7 +473,7 @@ PokemaniacZachAfterBattleText:
 	line "impossible to"
 	cont "cover every"
 	cont "threat with just"
-	cont "six #MON."
+	cont "six #mon."
 
 	para "Maybe it is"
 	line "kill or be killed."
@@ -544,7 +544,7 @@ Route44FieldMon2Script:
     end
 
 Route44PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

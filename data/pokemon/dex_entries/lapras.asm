@@ -2,7 +2,7 @@
 	dw 802, 8850 ; height, weight
 
 	db   "A gentle and"
-	next "caring #MON"
+	next "caring #mon"
 
 	page "Lowers foes SP"
 	next "Attack and clears"

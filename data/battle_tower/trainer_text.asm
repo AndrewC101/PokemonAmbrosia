@@ -47,7 +47,7 @@ _BTWinM3Text:
 	done
 
 _BTGreetingM4Text:
-	text "Heh, your #MON"
+	text "Heh, your #mon"
 	line "look pretty cool."
 	done
 
@@ -62,7 +62,7 @@ _BTWinM4Text:
 	done
 
 _BTGreetingM5Text:
-	text "#MON every day!"
+	text "#mon every day!"
 	line "I love battling!"
 	done
 
@@ -214,13 +214,13 @@ _BTGreetingM14Text:
 	done
 
 _BTLossM14Text:
-	text "Those #MON"
+	text "Those #mon"
 	line "aren't enough!"
 	done
 
 _BTWinM14Text:
 	text "I want your"
-	line "#MON. Please?"
+	line "#mon. Please?"
 	done
 
 _BTGreetingM15Text:
@@ -254,7 +254,7 @@ _BTWinM16Text:
 	done
 
 _BTGreetingM17Text:
-	text "My #MON skills"
+	text "My #mon skills"
 	line "are phenomenal!"
 	done
 
@@ -323,17 +323,17 @@ _BTGreetingM21Text:
 	text "I'm scared about"
 	line "what might happen."
 
-	para "My #MON are way"
+	para "My #mon are way"
 	line "too strong."
 	done
 
 _BTLossM21Text:
-	text "See? My #MON"
+	text "See? My #mon"
 	line "were too strong."
 	done
 
 _BTWinM21Text:
-	text "Graa! My #MON"
+	text "Graa! My #mon"
 	line "were total wimps!"
 	done
 
@@ -388,7 +388,7 @@ _BTGreetingM25Text:
 	done
 
 _BTLossM25Text:
-	text "Yeah! My #MON"
+	text "Yeah! My #mon"
 	line "rule!"
 	done
 
@@ -663,6 +663,6 @@ _BTLossF15Text:
 _BTWinF15Text:
 	text "This is what I"
 	line "mean."
-	para "Those #MON are"
+	para "Those #mon are"
 	line "centralising."
 	done

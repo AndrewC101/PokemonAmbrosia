@@ -280,15 +280,15 @@ PlayerReceivedPlainBadgeText:
 WhitneyPlainBadgeText:
     text "With the STARBADGE"
     line "you can now train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 40."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 30."
 
 	para "It also lets"
-	line "your #MON use"
+	line "your #mon use"
 
 	para "STRENGTH outside"
 	line "of battle."
@@ -303,7 +303,7 @@ WhitneyAttractText:
 	para "This move gets"
 	line "more powerful"
 	cont "the more your"
-	cont "#MON like"
+	cont "#mon like"
 	cont "you."
 
 	para "It turns their"
@@ -445,7 +445,7 @@ GoldenrodGymGuideText:
 	line "full of aspiring"
 	cont "movie stars who"
 	cont "like to use"
-	cont "FAIRY #MON."
+	cont "FAIRY #mon."
 
 	para "FAIRY types have"
 	line "few weaknesses."

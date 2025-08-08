@@ -32,7 +32,7 @@ LavenderSpeechHousePokefanFText:
 
 	para "AGATHA wasn't"
 
-	para "Her #MON"
+	para "Her #mon"
 	line "possessed the"
 	cont "poor soldiers"
 	cont "and in moments"

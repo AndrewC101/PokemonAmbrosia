@@ -272,7 +272,7 @@ AzaleaTownRivalBeforeText:
 
 AzaleaTownRivalWinText:
 	text "These useless"
-	line "#MON!"
+	line "#mon!"
 
 	para "Why aren't they"
 	line "strong enough!"
@@ -373,7 +373,7 @@ AzaleaTownGrampsTextAfter:
 
 AzaleaTownTeacherText:
 	text "There is a"
-	line "#BALL expert"
+	line "#ball expert"
 	cont "called KURT in"
 	cont "this town."
 
@@ -444,7 +444,7 @@ AzaleaTownSignText:
 	text "AZALEA TOWN"
 	line "Where People and"
 
-	para "#MON Live in"
+	para "#mon Live in"
 	line "Happy Harmony"
 	done
 
@@ -454,11 +454,11 @@ KurtsHouseSignText:
 
 AzaleaGymSignText:
 	text "AZALEA TOWN"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: BUGSY"
 
 	para "The Walking"
-	line "Bug #MON"
+	line "Bug #mon"
 	cont "Encyclopedia"
 	done
 

@@ -152,7 +152,7 @@ RuinsOfAlphKabutoChamberReceptionistText:
 	para "There are sliding"
 	line "panels that depict"
 
-	para "a #MON drawn by"
+	para "a #mon drawn by"
 	line "the ancients."
 
 	para "But they're not in"
@@ -161,7 +161,7 @@ RuinsOfAlphKabutoChamberReceptionistText:
 	para "This puzzle has"
 	line "never been solved."
 
-	para "The #MON is"
+	para "The #mon is"
 	line "extinct so who"
 	cont "knows what it"
 	cont "should look like."
@@ -235,7 +235,7 @@ RuinsOfAlphKabutoChamberAncientReplicaText:
 	done
 
 RuinsOfAlphKabutoChamberDescriptionText:
-	text "A #MON that hid"
+	text "A #mon that hid"
 	line "on the sea floor."
 
 	para "Eyes on its back"

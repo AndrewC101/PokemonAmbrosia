@@ -141,7 +141,7 @@ OlivineCrystalIntroText:
 
     para "I even caught a"
     line "real cute GHOST"
-    cont "#MON."
+    cont "#mon."
 
     para "It was all thanks"
     line "to you."
@@ -164,7 +164,7 @@ OlivineCrystalConfrontSilver:
     text "I know you."
 
     para "You stole a"
-    line "#MON from"
+    line "#mon from"
     cont "PROF.ELM!"
 
     para "You are a pathetic"
@@ -180,7 +180,7 @@ OlivineMovement_SilverConfrontsCrystal:
 
 OlivineSilverConfrontsCrystal:
     text "Yeah I took the"
-    line "#MON."
+    line "#mon."
 
     para "It longed for a"
     line "strong trainer."
@@ -218,7 +218,7 @@ OlivineCrystalChallengeSilver:
 OlivineSilverFightCrystal:
     text "How much can you"
     line "really care about"
-    cont "your #MON?"
+    cont "your #mon?"
 
     para "If you did, you"
     line "wouldn't willingly"
@@ -405,7 +405,7 @@ OlivineCitySailor2Text:
 	cont "vast cave system."
 
 	para "I bet there are"
-	line "strong #MON"
+	line "strong #mon"
 	cont "in there."
 	done
 
@@ -423,7 +423,7 @@ OlivineCityPortSignText:
 
 OlivineGymSignText:
 	text "OLIVINE CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: JASMINE"
 
 	para "The Steel-Clad"
@@ -1270,7 +1270,7 @@ DBZCh4HeroText:
     para "You need to head"
     line "to PICCOLO's home"
     cont "planet to acquire"
-    cont "DRAGON BALLS."
+    cont "DRAGON balls."
 
     para "With them, you"
     line "can revive your"
@@ -1297,7 +1297,7 @@ DBZCh4HeroText:
 
     para "He must have"
     line "heard about the"
-    cont "DRAGON BALLS."
+    cont "DRAGON balls."
 
     para "You find VEGETA."
 
@@ -1351,7 +1351,7 @@ DBZCh4VillainText:
 
     para "Then head to the"
     line "planet with these"
-    cont "DRAGON BALLS."
+    cont "DRAGON balls."
 
     para "You kill everyone!"
 
@@ -1513,7 +1513,7 @@ DBZConcText:
     text "FRIEZA was at"
     line "last defeated."
 
-    para "The DRAGON BALLS"
+    para "The DRAGON balls"
     line "were used to"
     cont "revive everyone"
     cont "who was ever"
@@ -1703,7 +1703,7 @@ GotStrengthText:
     text "That is STRENGTH."
 
     para "With it your"
-    line "#MON can move"
+    line "#mon can move"
     cont "boulders!"
 
     para "My boulder moving"

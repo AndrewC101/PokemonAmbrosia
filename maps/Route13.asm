@@ -60,7 +60,7 @@ Route13FieldMon2Script:
     end
 
 Route13PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -222,7 +222,7 @@ PokefanmJoshuaBeatenText:
 	cont "lives."
 	para "We work to better"
 	line "ourselves and all"
-	cont "#MON."
+	cont "#mon."
 	done
 
 PokefanmJoshuaAfterBattleText:

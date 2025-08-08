@@ -141,7 +141,7 @@ DarkCaveVioletEntranceFieldMon9Script:
 	end
 
 DarkCaveVioletEntrancePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

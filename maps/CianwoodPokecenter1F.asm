@@ -66,12 +66,12 @@ CianwoodGymGuideText:
 
 	para "They use"
 	line "FIGHTING"
-	cont "#MON."
+	cont "#mon."
 
 	para "You will want"
 	line "to use FLYING,"
 	cont "PSYCHIC or FAIRY"
-	cont "#MON against"
+	cont "#mon against"
 	cont "them."
 	done
 

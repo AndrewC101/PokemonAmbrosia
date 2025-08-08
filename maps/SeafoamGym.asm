@@ -125,7 +125,7 @@ ReceivedVolcanoBadgeText:
 BlaineFightDoneText:
 	text "I have all I"
 	line "need, my"
-	cont "#MON!"
+	cont "#mon!"
 
 	para "I don't need a"
 	line "GYM or a city."

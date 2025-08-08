@@ -41,7 +41,7 @@ Route30BerrySpeechHouseText:
 
 	para "But there's kid"
 	line "trainers and wild"
-	cont "#MON"
+	cont "#mon"
 	cont "everywhere!"
 
 	para "It's even more"

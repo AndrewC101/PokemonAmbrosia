@@ -313,7 +313,7 @@ SailorJeffBeatenText:
 	done
 
 SailorJeffAfterBattleText:
-	text "My #MON"
+	text "My #mon"
 	line "need to be strong"
 	cont "enough to swim me"
 	cont "to shore."
@@ -472,7 +472,7 @@ SailorKennethAfterBattleText:
 	text "Come on, you"
 	line "don't need it!"
 
-	para "Your #MON"
+	para "Your #mon"
 	line "can save you."
 	done
 

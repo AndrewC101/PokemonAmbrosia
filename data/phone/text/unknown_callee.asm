@@ -1,8 +1,8 @@
 UnknownGenericText:
 	text "How are your"
-	line "#MON doing?"
+	line "#mon doing?"
 
-	para "My #MON are a"
+	para "My #mon are a"
 	line "bit too energetic."
 
 	para "@"

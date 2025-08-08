@@ -48,7 +48,7 @@ Route19FieldMon2Script:
     end
 
 Route19PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

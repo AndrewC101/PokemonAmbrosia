@@ -2,7 +2,7 @@
 	dw 407, 1070 ; height, weight
 
 	db   "It can make most"
-	next "#MON run away"
+	next "#mon run away"
 	next "by showing fangs."
 
 	page "Deals extra"

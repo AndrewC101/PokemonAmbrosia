@@ -468,7 +468,7 @@ FisherJustinBeatenText:
 FisherJustinAfterText:
 	text "There are many"
 	line "delicious"
-	cont "#MON in the"
+	cont "#mon in the"
 	cont "sea."
 
 	para "I could fetch"
@@ -479,7 +479,7 @@ FisherJustinAfterText:
 FisherRalph1SeenText:
 	text "I'm so close."
 
-	para "Once my #MON"
+	para "Once my #mon"
 	line "evolve, I shall"
 	cont "be the envy of"
 	cont "all fishers!"
@@ -494,7 +494,7 @@ FisherRalphAfterText:
 	text "JUSTIN over there"
 	line "will have a hard"
 	cont "time eating my"
-	cont "#MON once"
+	cont "#mon once"
 	cont "they evolve."
 	done
 
@@ -565,13 +565,13 @@ CamperRolandSeenText:
 	cont "in the RUINS."
 
 	para "With secret"
-	line "#MON."
+	line "#mon."
 
 	para "But there must"
 	line "be some mistake."
 
 	para "A secret"
-	line "#MON can't"
+	line "#mon can't"
 	cont "be this weak!"
 
 	para "I must be"
@@ -688,7 +688,7 @@ FriedaGivesGiftText:
 
 FriedaGaveGiftText:
 	text "FRIEDA: Give it to"
-	line "a #MON that has"
+	line "a #mon that has"
 	cont "poison-type moves."
 
 	para "Oh!"
@@ -760,7 +760,7 @@ Route32FieldMon3Script:
     end
     
 Route32PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	
@@ -903,7 +903,7 @@ Route32CrystalText_GotBadge:
     cont "hair who really"
     cont "seemed to hate"
     cont "everyone. Even his"
-    cont "own #MON."
+    cont "own #mon."
 
     para "Still I got the"
     line "badge from the"
@@ -930,7 +930,7 @@ Route32CrystalText_YouToo:
 
     para "I haven't had"
     line "much luck catching"
-    cont "more #MON but"
+    cont "more #mon but"
     cont "the ones I have"
     cont "are pretty good!"
 

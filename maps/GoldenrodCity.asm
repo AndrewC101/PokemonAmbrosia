@@ -290,7 +290,7 @@ GoldenrodCityPokefanMText:
 
 	para "The world needs"
 	line "a show where we"
-	cont "rank #MON"
+	cont "rank #mon"
 	cont "by how attractive"
 	cont "they would be if"
 	cont "they were human."
@@ -363,7 +363,7 @@ GoldenrodCityCooltrainerF2Text:
 
 	para "They even tore"
 	line "down a grave"
-	cont "for #MON"
+	cont "for #mon"
 	cont "to do it!"
 
 	para "I can see why"
@@ -391,7 +391,7 @@ GoldenrodCityYoungster2Text:
 GoldenrodCityLassText:
 	text "The man at that"
 	line "house can rename"
-	cont "your #MON."
+	cont "your #mon."
 
 	para "He seems to hate"
 	line "any name that he"
@@ -520,7 +520,7 @@ GoldenrodCityRadioTowerSignText:
 
 GoldenrodDeptStoreSignText:
 	text "Full Selection of"
-	line "#MON Goods!"
+	line "#mon Goods!"
 
 	para "GOLDENROD CITY"
 	line "DEPT.STORE"
@@ -528,7 +528,7 @@ GoldenrodDeptStoreSignText:
 
 GoldenrodGymSignText:
 	text "GOLDENROD CITY"
-	line "#MON GYM"
+	line "#mon GYM"
 	cont "LEADER: WHITNEY"
 
 	para "The Incredibly"
@@ -558,7 +558,7 @@ GoldenrodCityGameCornerSignText:
 GoldenrodCityNameRaterSignText:
 	text "NAME RATER"
 
-	para "Get Your #MON"
+	para "Get Your #mon"
 	line "Nicknames Rated"
 	done
 
@@ -581,7 +581,7 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
     text "You are worthy!"
 
 	para "I can teach your"
-	line "#MON moves"
+	line "#mon moves"
 	cont "that win battles!"
 
     para "Do you accept?"
@@ -592,7 +592,7 @@ GoldenrodCityMoveTutorNotYetText:
 	line "to victory."
 
 	para "I can teach your"
-	line "#MON moves"
+	line "#mon moves"
 	cont "that win battles!"
 
 	para "But only to"
@@ -667,7 +667,7 @@ GoldenrodCityFieldMon1Script:
     end
 
 GoldenrodCityPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	
@@ -768,7 +768,7 @@ GoldenrodSelfText2:
     line "your life."
 
     para "For the lives"
-    line "of your #MON."
+    line "of your #mon."
 
     para "And you lost."
     done

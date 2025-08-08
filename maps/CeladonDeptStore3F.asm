@@ -49,7 +49,7 @@ CeladonDeptStore3FDirectory:
 
 CeladonDeptStore3FYoungsterText:
 	text "I can't decide"
-	line "which #MON I"
+	line "which #mon I"
 
 	para "should use this TM"
 	line "on…"
@@ -79,11 +79,11 @@ CeladonDeptStore3FGameboyKid2Text:
 	cont "we trade it can"
 	cont "somehow end up"
 	cont "cloning the"
-	cont "#MON and"
+	cont "#mon and"
 	cont "it's item."
 
 	para "But another"
-	line "#MON is lost"
+	line "#mon is lost"
 	cont "forever."
 
 	para "Equivalent"
@@ -104,7 +104,7 @@ CeladonDeptStore3FSuperNerdText:
 CeladonDeptStore3FDirectoryText:
 	text "3F: TM SHOP"
 
-	para "Make Your #MON"
+	para "Make Your #mon"
 	line "Stronger!"
 	done
 

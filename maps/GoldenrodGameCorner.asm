@@ -432,7 +432,7 @@ GoldenrodGameCornerCooltrainerFText:
 
 GoldenrodGameCornerGentlemanText:
 	text "I taught THUNDER"
-	line "to my #MON."
+	line "to my #mon."
 
 	para "It took eight"
 	line "months to get"

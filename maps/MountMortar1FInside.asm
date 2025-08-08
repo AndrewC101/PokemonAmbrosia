@@ -210,7 +210,7 @@ MountMortar1FInsideFieldMon5Script:
     end
 
 MountMortar1FInsidePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

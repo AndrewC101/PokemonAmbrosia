@@ -105,7 +105,7 @@ ElementCaveFieldMon8Script:
     end
 
 ElementCavePokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

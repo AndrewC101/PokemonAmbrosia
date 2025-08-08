@@ -85,7 +85,7 @@ VictoryRoadGateLeftBlackBeltText:
 	line "bridge between"
 	cont "worlds."
 
-	para "The #MON out"
+	para "The #mon out"
 	line "there would"
 	cont "kill a normal"
 	cont "trainer without"

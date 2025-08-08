@@ -2,7 +2,7 @@
 	dw 607, 1320 ; height, weight
 
 	db   "Legendary bird"
-	next "#MON that"
+	next "#mon that"
 	next "melts foes."
 
 	page "Immune to FIRE"

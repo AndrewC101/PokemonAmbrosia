@@ -249,11 +249,11 @@ Text_ReceivedFogBadge:
 MortyText_FogBadgeSpeech:
     text "With the FOGBADGE"
     line "you can now train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 50."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 40."
 
     para "You can also"
@@ -288,7 +288,7 @@ SageJeffreySeenText:
 	text "I have had a"
 	line "long, peaceful"
 	cont "and happy life"
-	cont "with my #MON."
+	cont "with my #mon."
 
 	para "My joy gives me"
 	line "strength."
@@ -306,7 +306,7 @@ SageJeffreyAfterBattleText:
 	done
 
 SagePingSeenText:
-	text "GHOST #MON"
+	text "GHOST #mon"
 	line "remind me to"
 	cont "be grateful"
 	cont "for every new"
@@ -348,7 +348,7 @@ MediumMarthaAfterBattleText:
 	done
 
 MediumGraceSeenText:
-	text "GHOST #MON"
+	text "GHOST #mon"
 	line "are immune to"
 	cont "NORMAL and"
 	cont "FIGHTING moves."
@@ -372,7 +372,7 @@ MediumGraceAfterBattleText:
 EcruteakGymGuideText:
 	text "The trainers"
 	line "here use GHOST"
-	cont "#MON."
+	cont "#mon."
 
 	para "They are weak"
 	line "to DARK and"

@@ -28,7 +28,7 @@ MrFujiText:
 	para "In this hallowed"
 	line "place are laid"
 	cont "to rest the souls"
-	cont "of many a #MON."
+	cont "of many a #mon."
 
 	para "They were close"
 	line "friends, and"
@@ -50,7 +50,7 @@ MrFujiText:
 
 SoulHouseTeacherText:
 	text "There are other"
-	line "graves of #MON"
+	line "graves of #mon"
 	cont "here."
 
 	para "There is a"

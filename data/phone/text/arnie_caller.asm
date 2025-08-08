@@ -9,7 +9,7 @@ ArnieMonIsSoCuteText:
 
 ArnieDefeatedMonText:
 	text "Do you think BUG"
-	line "#MON are cute?"
+	line "#mon are cute?"
 	para "Like you know"
 	line "interesting"
 	cont "looking?"
@@ -65,7 +65,7 @@ ArnieSwarmText:
 
 ArnieHaventSeenRareMonText:
 	text "I haven't seen any"
-	line "rare #MON"
+	line "rare #mon"
 	cont "lately."
 	para "I don't need them."
 	para "All I need in life"

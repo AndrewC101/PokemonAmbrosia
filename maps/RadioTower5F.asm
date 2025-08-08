@@ -307,7 +307,7 @@ RadioTower5FRocketBossLossText:
 
 Need8BadgesText:
 	text "Whatever that"
-	line "#MON is it"
+	line "#mon is it"
 	cont "will be strong."
 	para "You'll probably"
 	line "need 8 badges to"
@@ -397,7 +397,7 @@ FakeDirectorLoseText:
 
 FakeDirectorTextAfter:
 	text "The HOENN legend"
-	line "#MON are"
+	line "#mon are"
 	cont "must stronger"
 	cont "than the elemental"
 	cont "birds of KANTO."
@@ -407,7 +407,7 @@ FakeDirectorTextAfter:
 	cont "weapon that"
 	cont "could beat them."
 
-	para "A #MON designed"
+	para "A #mon designed"
 	line "only for battle."
 
 	para "But it grew too"
@@ -519,19 +519,19 @@ RadioTower5FRocketBossBeforeText:
 	para "We have developed"
 	line "an EM signal that"
 	cont "induces rage in"
-	cont "#MON."
+	cont "#mon."
 
 	para "Our only hope"
 	line "to defeat HOENN"
 	cont "is to use this"
 	cont "signal to turn"
 	cont "their legendary"
-	cont "#MON against"
+	cont "#mon against"
 	cont "them."
 
 	para "Imagine the shock"
 	line "of WALLACE when"
-	cont "his own #MON"
+	cont "his own #mon"
 	cont "destroy his army."
 
 	para "You may not agree"
@@ -588,7 +588,7 @@ RadioTower5FDirectorThankYouText:
 	para "Your courageous"
 	line "actions have saved"
 
-	para "#MON nation-"
+	para "#mon nation-"
 	line "wide."
 
 	para "I know it's not"
@@ -629,7 +629,7 @@ RainbowWingTipsText:
 	cont "construction."
 
 	para "I heard that all"
-	line "sorts of #MON"
+	line "sorts of #mon"
 
 	para "lived in GOLDENROD"
 	line "in the past."
@@ -643,7 +643,7 @@ RainbowWingTipsText:
 	line "ECRUTEAK CITY…"
 
 	para "A powerful"
-	line "#MON may live"
+	line "#mon may live"
 	cont "there."
 	done
 
@@ -667,7 +667,7 @@ SilverWingTipsText:
     cont "and the storm just"
     cont "disappeared."
 
-    para "A huge #MON"
+    para "A huge #mon"
     line "flew over me!"
 
     para "It filled the"
@@ -705,7 +705,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	cont "construction."
 
 	para "I heard that all"
-	line "sorts of #MON"
+	line "sorts of #mon"
 
 	para "lived in GOLDENROD"
 	line "in the past."
@@ -744,13 +744,13 @@ RadioTower5FDirectorText:
 	line "<PLAY_G>!"
 
 	para "You know, I love"
-	line "#MON."
+	line "#mon."
 
 	para "I built this RADIO"
 	line "TOWER so I could"
 
 	para "express my love"
-	line "of #MON."
+	line "of #mon."
 
 	para "It would be nice"
 	line "if people enjoyed"

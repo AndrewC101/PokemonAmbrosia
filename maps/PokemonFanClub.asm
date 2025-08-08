@@ -125,13 +125,13 @@ PokemonFanClubBraggingSign:
 
 PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
 	text "I'm the CHAIRMAN"
-	line "of the #MON FAN"
+	line "of the #mon FAN"
 	cont "CLUB."
 
 	para "I formally bring"
 	line "to order this"
 	cont "meeting of"
-	cont "esteemed #MON"
+	cont "esteemed #mon"
 	cont "fans."
 
 	para "Excuse me."
@@ -149,7 +149,7 @@ PokemonFanClubChairmanRapidashText:
 	cont "comprehensive and"
 	cont "explicit detail"
 	cont "my choice for"
-	cont "favorite #MON."
+	cont "favorite #mon."
 
 	para "It is of course..."
 
@@ -158,7 +158,7 @@ PokemonFanClubChairmanRapidashText:
 	para "I believe VAPOREON"
 	line "to be the most"
 	cont "human compatible"
-	cont "#MON."
+	cont "#mon."
 
 	para "It has high"
 	line "emotional"
@@ -201,11 +201,11 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 
 PokemonFanClubChairmanItsARareCandyText:
 	text "It's a RARE CANDY"
-	line "that makes #MON"
+	line "that makes #mon"
 	cont "stronger."
 
 	para "I prefer making my"
-	line "#MON stronger"
+	line "#mon stronger"
 
 	para "by training"
 	line "together with"
@@ -221,7 +221,7 @@ PokemonFanClubChairmanMoreTalesToTellText:
 	cont "my reasoning"
 	cont "behind my choice"
 	cont "of favorite"
-	cont "#MON?"
+	cont "#mon?"
 	done
 
 PokemonFanClubChairmanHowDisappointingText:
@@ -238,7 +238,7 @@ PokemonFanClubReceptionistText:
 
 	para "Passionate when"
 	line "it comes to"
-	cont "#MON."
+	cont "#mon."
 	done
 
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:

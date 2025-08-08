@@ -298,7 +298,7 @@ Movement_SCIR_Down:
 RegigigasNeededText:
     text "It will take a"
     line "titan of a"
-    cont "#MON to"
+    cont "#mon to"
     cont "unblock this."
     done
 

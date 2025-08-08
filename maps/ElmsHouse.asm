@@ -38,7 +38,7 @@ ElmsWifeText:
 ElmsSonText:
 	text "When I grow up I'm"
 	line "going to find the"
-	cont "strongest #MON"
+	cont "strongest #mon"
 	cont "and capture it!"
 	para "I'm going to beat"
 	line "the ELITE FOUR and"
@@ -75,7 +75,7 @@ ElmsHousePCPostWallaceText:
 
 ElmsHousePCText:
 	text "Secret info from"
-	line "the #MON"
+	line "the #mon"
 	cont "LEAGUE."
 
 	para "Our spies report"
@@ -87,7 +87,7 @@ ElmsHousePCText:
 	cont "may now be in"
 	cont "command of the"
 	cont "HOENN LEGENDARY"
-	cont "#MON."
+	cont "#mon."
 
 	para "If he controls the"
 	line "three forces of"

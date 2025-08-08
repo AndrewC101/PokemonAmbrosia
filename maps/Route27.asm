@@ -358,7 +358,7 @@ CooltrainerfMeganBeatenText:
 	done
 
 CooltrainerfMeganAfterBattleText:
-	text "#MON start"
+	text "#mon start"
 	line "weak but they"
 	cont "grow and get"
 	cont "stronger."
@@ -370,7 +370,7 @@ CooltrainerfMeganAfterBattleText:
 
 BirdKeeperJoseSeenText:
 	text "My beautiful"
-	line "#MON are"
+	line "#mon are"
 	cont "seasoned machines"
 	cont "designed to do"
 	cont "one thing..."
@@ -386,9 +386,9 @@ BirdKeeperJoseBeatenText:
 BirdKeeperJoseAfterBattleText:
 	text "Let HOENN come!"
 
-	para "My #MON will"
+	para "My #mon will"
 	line "feast on their"
-	cont "fish #MON!"
+	cont "fish #mon!"
 	done
 
 TohjoFallsSignText:

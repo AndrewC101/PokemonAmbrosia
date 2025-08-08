@@ -228,11 +228,11 @@ KimonoGirlMikiSeenText:
 	text "EEVEE has many"
 	line "forms."
 
-	para "#MON have"
+	para "#mon have"
 	line "many forms."
 
 	para "What kind of"
-	line "#MON are"
+	line "#mon are"
 	cont "you?"
 	done
 
@@ -256,7 +256,7 @@ SurfGuyNeverLeftAScratchText:
 
 	para "They are suited"
 	line "to battling with"
-	cont "their #MON."
+	cont "their #mon."
 	done
 
 SurfGuyLadGiftText:
@@ -290,7 +290,7 @@ SurfGuySurfExplanationText:
 	text "That's SURF."
 
 	para "It's a move that"
-	line "lets #MON swim"
+	line "lets #mon swim"
 	cont "across water."
 	done
 

@@ -289,7 +289,7 @@ GentlemanEdwardSeenText:
 	cont "war."
 
 	para "I import rare"
-	line "#MON from JOHTO"
+	line "#mon from JOHTO"
 	cont "and I do rather"
 	cont "well for myself."
 	done

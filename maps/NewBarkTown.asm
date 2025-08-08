@@ -270,11 +270,11 @@ Text_WhatDoYouThinkYoureDoing:
 Text_ItsDangerousToGoAlone:
 	text "It's dangerous to"
 	line "go out without a"
-	cont "#MON!"
+	cont "#mon!"
 	done
 
 Text_YourMonIsAdorable:
-	text "Oh! Your #MON"
+	text "Oh! Your #mon"
 	line "looks strong!"
 	cont "I wish I had one!"
 	done
@@ -293,7 +293,7 @@ Text_ElmDiscoveredNewMon:
 
 	para "I remember when"
 	line "your Dad left"
-	cont "for his #MON"
+	cont "for his #mon"
 	cont "training."
 
 	para "He was strong!"
@@ -320,7 +320,7 @@ NewBarkTownRivalNotThatOneText:
     line "was the strongest?"
 
     para "You are as useless"
-    line "as that #MON."
+    line "as that #mon."
 
     para "I'll have to do"
     line "this myself."
@@ -332,7 +332,7 @@ NewBarkTownRivalText1:
 	text "<……>"
 
 	para "Look at those"
-	line "#MON!"
+	line "#mon!"
 	done
 
 NewBarkTownRivalText2:
@@ -340,7 +340,7 @@ NewBarkTownRivalText2:
 	line "like to help me!"
 
 	para "Bring me one of"
-	line "those #MON."
+	line "those #mon."
 
 	para "Be sure to pick"
 	line "the one that looks"
@@ -362,7 +362,7 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "ELM #MON LAB"
+	text "ELM #mon LAB"
 	done
 
 NewBarkTownElmsHouseSignText:
@@ -383,7 +383,7 @@ NewBarkTownElmsHouseSignText:
 
 
 PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 
@@ -407,7 +407,7 @@ NeedToGetAPokemon2:
 
 NewBarkTownBlockText:
     text "I need to get"
-    line "a #MON from"
+    line "a #mon from"
     cont "PROF.ELM!"
     done
 
@@ -482,7 +482,7 @@ NewBarkTownRepelScript:
 	end
 
 NewBarkTownRepulsorText:
-    text "#MON are"
+    text "#mon are"
     line "friends."
 
     para "They will often"
@@ -496,7 +496,7 @@ NewBarkTownRepulsorText:
     done
 
 NewBarkTownGotRepelsText:
-    text "#MON are"
+    text "#mon are"
     line "friends."
 
     para "But some can be"
@@ -507,7 +507,7 @@ NewBarkTownGotRepelsText:
 
     para "REPULSOR will"
     line "keep weaker"
-    cont "#MON away."
+    cont "#mon away."
 
     para "You can turn it"
     line "on or off in the"
@@ -595,10 +595,10 @@ NewBarkTownMovement_CrystalApproaches:
 
 Crystal1_ChallengeText:
     text "You just got a"
-    line "#MON!"
+    line "#mon!"
 
     para "I recently got"
-    line "my first #MON"
+    line "my first #mon"
     cont "too."
 
     para "My Dad gave it"
@@ -910,8 +910,8 @@ NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6, 15, ELMS_LAB, 1
 	warp_event 13, 17, PLAYERS_HOUSE_1F, 1
+	warp_event  6, 15, ELMS_LAB, 1
 	warp_event  3, 23, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 11, 25, ELMS_HOUSE, 1
 

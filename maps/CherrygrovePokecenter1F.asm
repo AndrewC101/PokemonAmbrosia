@@ -26,7 +26,7 @@ CherrygrovePokecenter1FFisherText:
 	line "POKERUS?"
 
 	para "It's a virus your"
-	line "#MON can catch."
+	line "#mon can catch."
 
 	para "There was an"
 	line "outbreak in PEWTER"

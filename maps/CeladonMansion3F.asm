@@ -68,13 +68,13 @@ GameFreakGameDesignerText:
 	cont "for balancing."
 
 	para "If you complete"
-	line "the #DEX let"
+	line "the #dex let"
 	cont "me know!"
 	done
 
 GameFreakGameDesignerCompletedPokedexText:
 	text "You completed the"
-	line "#DEX!"
+	line "#dex!"
 
 	para "Thank you so"
 	line "much for playing."
@@ -107,7 +107,7 @@ GameFreakGraphicArtistText:
 
 	para "Finding sprites"
 	line "for all the new"
-	cont "#MON was"
+	cont "#mon was"
 	cont "difficult."
 
 	para "Some like ZYGARDE"
@@ -139,7 +139,7 @@ GameFreakProgrammerText:
 
 	para "I don't think"
 	line "any other hack"
-	cont "or #MON"
+	cont "or #mon"
 	cont "game has these"
 	cont "features."
 

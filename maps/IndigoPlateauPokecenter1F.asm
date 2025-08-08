@@ -99,7 +99,7 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	cont "between battles."
 
 	para "But don't worry"
-	line "your #MON will"
+	line "your #mon will"
 	cont "be fully healed"
 	cont "after each battle"
 	cont "if you win!"

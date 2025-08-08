@@ -260,7 +260,7 @@ WarZoneOakText:
     cont "as a trainer you"
     cont "can now train"
     cont "and capture"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "any level."
 
     para "Now you have one"
@@ -322,7 +322,7 @@ WarZoneSilverGoodbyeText:
     cont "yourself."
 
     para "There are powerful"
-    line "#MON hidden in"
+    line "#mon hidden in"
     cont "remote places"
     cont "of the world."
 
@@ -399,7 +399,7 @@ WallaceSeenText:
     cont "my rule."
 
     para "You and your"
-    line "#MON will truly"
+    line "#mon will truly"
     cont "conquer this land"
     cont "for me and for"
     cont "all HOENN."
@@ -625,7 +625,7 @@ StevenSeenText:
 
     para "It has nothing to"
     line "do with freeing"
-    cont "#MON."
+    cont "#mon."
 
     para "HOENN is mostly"
     line "sea."
@@ -751,7 +751,7 @@ CynthiaAfterBattleText:
     line "ARCEUS?"
 
     para "Legend states it"
-    line "is a #MON"
+    line "is a #mon"
     cont "that created all"
     cont "things."
 
@@ -1039,7 +1039,7 @@ Soldier3AfterBattleText:
 
     para "...."
 
-    para "A #MON as"
+    para "A #mon as"
     line "big as a building!"
 
     para "Impossible to win!"

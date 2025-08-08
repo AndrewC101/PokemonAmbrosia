@@ -170,7 +170,7 @@ AcademyEarlIntroText:
 
 AcademyEarlTeachHowToWinText:
 	text "Then listen up!"
-	para "Most #MON are"
+	para "Most #mon are"
 	line "good, catch what"
 	cont "you want, but"
 	cont "STEEL, DRAGON and"
@@ -183,10 +183,10 @@ AcademyEarlTeachHowToWinText:
 	line "tough battle and"
 	cont "experiment with"
 	cont "teaching your"
-	cont "#MON different"
+	cont "#mon different"
 	cont "moves and also"
 	cont "sending different"
-	cont "#MON out"
+	cont "#mon out"
 	cont "first."
 	para "Rematch strong"
 	line "trainers until you"
@@ -249,7 +249,7 @@ EarlsPokemonAcademyYoungster1Text:
 
 EarlsPokemonAcademyGameboyKid1Text:
 	text "What happens if I"
-	line "catch a #MON"
+	line "catch a #mon"
 	cont "and trade it to a"
 	cont "friend who trains"
 	cont "it beyond my level"
@@ -260,7 +260,7 @@ EarlsPokemonAcademyGameboyKid1Text:
 EarlsPokemonAcademyGameboyKid2Text:
 	text "As soon as this"
 	line "guy puts this"
-	cont "#MON in a PC"
+	cont "#mon in a PC"
 	cont "he is in for a"
 	cont "surprise."
 	para "It'll level down"
@@ -269,21 +269,21 @@ EarlsPokemonAcademyGameboyKid2Text:
 
 EarlsPokemonAcademyYoungster2Text:
 	text "If I give a FOCUS"
-	line "SASH to a #MON"
+	line "SASH to a #mon"
 	cont "with TELEPORT I"
 	cont "can escape from"
-	cont "wild #MON that"
+	cont "wild #mon that"
 	cont "I can't normally"
 	cont "run from."
 	para "Except those RED"
-	line "#MON who"
+	line "#mon who"
 	cont "attack, I can't"
 	cont "escape from them."
 	done
 
 AcademyBlackboardText:
 	text "The blackboard"
-	line "describes #MON"
+	line "describes #mon"
 
 	para "status changes in"
 	line "battle."
@@ -291,7 +291,7 @@ AcademyBlackboardText:
 
 AcademyPoisonText:
 	text "If poisoned, a"
-	line "#MON steadily"
+	line "#mon steadily"
 	cont "loses HP."
 
 	para "Poison lingers"
@@ -316,10 +316,10 @@ AcademyParalysisText:
 
 AcademySleepText:
 	text "If asleep, your"
-	line "#MON can't make"
+	line "#mon can't make"
 	cont "a move."
 
-	para "A sleeping #MON"
+	para "A sleeping #mon"
 	line "doesn't wake up"
 	cont "after battle."
 
@@ -342,7 +342,7 @@ AcademyBurnText:
 	done
 
 AcademyFreezeText:
-	text "If your #MON is"
+	text "If your #mon is"
 	line "frozen, it can't"
 	cont "do a thing."
 
@@ -357,8 +357,8 @@ AcademyNotebookText:
 	text "It's this kid's"
 	line "notebook…"
 
-	para "Catch #MON"
-	line "using # BALLS."
+	para "Catch #mon"
+	line "using # balls."
 
 	para "Up to six can be"
 	line "in your party."
@@ -372,7 +372,7 @@ AcademyNotebookText1:
 	cont "the target first."
 
 	para "A poisoned or"
-	line "burned #MON is"
+	line "burned #mon is"
 	cont "easier to catch."
 
 	para "Keep reading?"
@@ -383,7 +383,7 @@ AcademyNotebookText2:
 	line "cause confusion."
 
 	para "Confusion may make"
-	line "a #MON attack"
+	line "a #mon attack"
 	cont "itself."
 
 	para "Leaving battle"
@@ -395,13 +395,13 @@ AcademyNotebookText2:
 
 AcademyNotebookText3:
 	text "People who catch"
-	line "and use #MON"
+	line "and use #mon"
 
 	para "in battle are"
-	line "#MON trainers."
+	line "#mon trainers."
 
 	para "They are expected"
-	line "to visit #MON"
+	line "to visit #mon"
 
 	para "GYMS and defeat"
 	line "other trainers."

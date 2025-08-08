@@ -13,7 +13,7 @@ GavenMonGreaterThanImaginedText:
 	done
 
 GavenDefeatedMonText:
-	text "DRAGON #MON"
+	text "DRAGON #mon"
 	line "resist WATER,"
 	cont "GRASS and FIRE!"
 	para "Surly LANCE must"

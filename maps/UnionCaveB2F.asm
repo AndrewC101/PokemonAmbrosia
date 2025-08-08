@@ -164,7 +164,7 @@ CooltrainerfEmmaBeatenText:
 CooltrainerfEmmaAfterBattleText:
 	text "It would be"
 	line "easier to let"
-	cont "these #MON"
+	cont "these #mon"
 	cont "eat me."
 
 	para "Than to face her."
@@ -183,7 +183,7 @@ UnionCaveB2FFieldMon2Script:
     end
     
 UnionCaveB2FPokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 	

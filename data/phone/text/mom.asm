@@ -67,7 +67,7 @@ MomOtherAreaText:
 	text "?"
 
 	para "Good luck on your"
-	line "#MON quest!"
+	line "#mon quest!"
 
 	para "I love you."
 	done

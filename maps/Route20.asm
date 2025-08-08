@@ -81,7 +81,7 @@ Route20FieldMon6Script:
     end
 
 Route20PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

@@ -375,7 +375,7 @@ YoungsterJoey1WinText:
 YoungsterJoey1AfterText:
 	text "I will never"
 	line "catch another"
-	cont "#MON."
+	cont "#mon."
 
 	para "I don't need more!"
 
@@ -393,7 +393,7 @@ YoungsterMikeySeenText:
 
 	para "You need more"
 	line "than just one"
-	cont "#MON."
+	cont "#mon."
 
 	para "I'll show you."
 	done
@@ -411,7 +411,7 @@ YoungsterMikeyAfterText:
 	done
 
 BugCatcherDonSeenText:
-	text "BUG #MON are"
+	text "BUG #mon are"
 	line "the strongest!"
 
 	para "They EVOLVE fast"
@@ -487,7 +487,7 @@ Route30TrainerTipsText:
 
 	para "You need BADGES"
 	line "to catch higher"
-	cont "level #MON."
+	cont "level #mon."
 
 	para "With no BADGES"
 	line "the highest level"
@@ -522,7 +522,7 @@ Route30FieldMon2Script:
     end
     
 Route30PokemonAttacksText:
-	text "Wild #MON"
+	text "Wild #mon"
 	line "attacks!"
 	done
 

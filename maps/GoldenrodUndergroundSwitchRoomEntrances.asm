@@ -677,10 +677,10 @@ UndergroundSilverAfterText:
 	para "I fought him"
 	line "and was completely"
 	cont "destroyed by a"
-	cont "single #MON!"
+	cont "single #mon!"
 
 	para "He told me that"
-	line "my #MON will"
+	line "my #mon will"
 	cont "never reach their"
 	cont "full potential"
 	cont "with the way I"

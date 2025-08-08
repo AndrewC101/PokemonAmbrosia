@@ -64,7 +64,7 @@ BattleTowerOutsideBeautyText:
 	para "I can't even"
 	line "beat NOVICE"
 	cont "level with my"
-	cont "#MON."
+	cont "#mon."
 
 	para "But I do well"
 	line "in MIRROR mode."
@@ -107,7 +107,7 @@ BattleTowerOutsideBeauty2Text:
     line "is some way I"
     cont "can trick"
     cont "myself by using"
-    cont "weak #MON."
+    cont "weak #mon."
     done
 
 BattleTowerOutsideSailorText:

@@ -387,7 +387,7 @@ DragonShrineElderGreetingText:
 
 DragonShrineQuestion1Text:
 	text "Which of these"
-	line "#MON is not a"
+	line "#mon is not a"
 	cont "DRAGON?"
 	done
 
@@ -480,12 +480,12 @@ DragonShrinePlayerReceivedDratiniText:
 	done
 
 DragonShrinePartyFullText:
-	text "Hm? Your #MON"
+	text "Hm? Your #mon"
 	line "party is full."
 	done
 
 DragonShrineSymbolicDragonText:
-	text "Dragon #MON are"
+	text "Dragon #mon are"
 	line "the most sacred"
 	cont "of beings."
 
@@ -493,7 +493,7 @@ DragonShrineSymbolicDragonText:
 	line "ARCEUS itself."
 
 	para "It is said the"
-	line "first #MON"
+	line "first #mon"
 	cont "created were"
 	cont "DRAGONS."
 
@@ -656,15 +656,15 @@ DragonShrinePlayerReceivedRisingBadgeText:
 DragonShrineRisingBadgeExplanationText:
     text "The RISINGBADGE"
     line "lets you train"
-    cont "#MON up to"
+    cont "#mon up to"
     cont "level 70."
 
     para "And capture"
-    line "#MON up to"
+    line "#mon up to"
     cont "level 60."
 
 	para "It also enables"
-	line "#MON to use"
+	line "#mon to use"
 	cont "WATERFALL outside"
 	cont "of battle."
 	done

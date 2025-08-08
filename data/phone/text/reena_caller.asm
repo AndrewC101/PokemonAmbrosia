@@ -19,7 +19,7 @@ ReenaDefeatedMonText:
 ReenaLostAMonText:
 	text "ALDER doesn't have"
 	line "a powerful ace"
-	cont "#MON like"
+	cont "#mon like"
 	cont "other CHAMPIONS."
 	para "I guess that's why"
 	line "he's the least"

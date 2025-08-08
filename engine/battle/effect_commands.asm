@@ -5549,8 +5549,13 @@ BattleCommand_ForceSwitch:
 	ld [wEnemySwitchMonIndex], a
 	callfar ForceEnemySwitch
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipDraggedOutText
+
 	ld hl, DraggedOutText
 	call StdBattleTextbox
+
+.skipDraggedOutText
 
 	ld hl, SpikesDamage
 	call CallBattleCore
@@ -5652,8 +5657,13 @@ BattleCommand_ForceSwitch:
 	ld hl, SwitchPlayerMon
 	call CallBattleCore
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipDraggedOutText2
+
 	ld hl, DraggedOutText
 	call StdBattleTextbox
+
+.skipDraggedOutText2
 
 	ld hl, SpikesDamage
 	call CallBattleCore
@@ -6316,6 +6326,9 @@ BattleCommand_Recoil:
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
 	call RefreshBattleHuds
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, RecoilText
 	jp StdBattleTextbox
 
@@ -6742,11 +6755,17 @@ BattleCommand_Heal:
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
 	call RefreshBattleHuds
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, RegainedHealthText
 	jp StdBattleTextbox
 
 .hp_full
 	call AnimateFailedMove
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
 
@@ -7151,6 +7170,8 @@ BattleCommand_TimeBasedHealContinue:
 	call UpdateUserInParty
 
 ; 'regained health!'
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, RegainedHealthText
 	jp StdBattleTextbox
 
@@ -7158,6 +7179,8 @@ BattleCommand_TimeBasedHealContinue:
 	call AnimateFailedMove
 
 ; 'hp is full!'
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
 

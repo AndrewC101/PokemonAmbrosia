@@ -77,13 +77,13 @@ _Option:
 StringOptions:
 	db "Text Speed<LF>"
 	db "        :<LF>"
-	db "Battle Scene<LF>"
+	db "Battle Anim<LF>"
 	db "        :<LF>"
-	db "Battle Style<LF>"
-	db "        :<LF>"
-	db "Sound<LF>"
+	db "Battle Mode<LF>"
 	db "        :<LF>"
 	db "Battle Speed<LF>"
+	db "        :<LF>"
+	db "Sound<LF>"
 	db "        :<LF>"
 	db "Menu Data<LF>"
 	db "        :<LF>"
@@ -99,8 +99,8 @@ GetOptionPointer:
 	dw Options_TextSpeed
 	dw Options_BattleScene
 	dw Options_BattleStyle
-	dw Options_Sound
 	dw Options_FasterBattles
+	dw Options_Sound
 	dw Options_MenuClock
 	dw Options_Frame
 	dw Options_Cancel
@@ -315,7 +315,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -353,7 +353,7 @@ Options_FasterBattles:
  	ld de, .On
 
 .Display:
-	hlcoord 11, 11
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret

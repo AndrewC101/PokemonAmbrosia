@@ -436,6 +436,9 @@ RecoverLeftovers:
 	farcall GetSixteenthMaxHP
 	farcall SwitchTurnCore
 	farcall RestoreHP
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, BattleText_TargetRecoveredWithLeftovers
 	jp StdBattleTextbox
 
@@ -461,6 +464,9 @@ RecoverHolyCrown:
 	farcall GetSixteenthMaxHP
 	farcall SwitchTurnCore
 	farcall RestoreHP
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, BattleText_TargetRecoveredWithHolyCrown
 	jp StdBattleTextbox
 

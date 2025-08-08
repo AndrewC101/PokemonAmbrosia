@@ -1316,9 +1316,14 @@ ResidualDamage:
 	ld de, ANIM_BRN
 .got_anim
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipStatusText
+
 	push de
 	call StdBattleTextbox
 	pop de
+
+.skipStatusText
 
 	xor a
 	ld [wNumHits], a
@@ -1374,6 +1379,9 @@ ResidualDamage:
 	ld a, $1
 	ldh [hBGMapMode], a
 	call RestoreHP
+
+	call CheckIfFastBattlesIsOn
+	jr nz, .not_seeded
 	ld hl, LeechSeedSapsText
 	call StdBattleTextbox
 .not_seeded
@@ -1630,6 +1638,9 @@ HandleRegenerator:
 	call GetSixteenthMaxHP
 	call SwitchTurnCore
 	call RestoreHP
+
+	call CheckIfFastBattlesIsOn
+	ret nz
 	ld hl, BattleText_TargetRegenerates
 	jp StdBattleTextbox
 
@@ -1853,8 +1864,13 @@ HandleWeather:
 	dec [hl]
 	jp z, .ended
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipWeatherText
+
 	ld hl, .WeatherMessages
     call .PrintWeatherMessage
+
+.skipWeatherText
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -4315,8 +4331,12 @@ SpikesDamage:
 	push hl
 	push de
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipSpikesText
+
 	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
 	call StdBattleTextbox
+.skipSpikesText
 
 	call GetEighthMaxHP
 	call SubtractHPFromTarget
@@ -4343,8 +4363,13 @@ SpikesDamage:
 	push hl
 	push de
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipStealthRockText
+
 	ld hl, BattleText_UserHurtByStealthRock
 	call StdBattleTextbox
+
+.skipStealthRockText
 
     pop de
     ld h, d
@@ -4433,10 +4458,15 @@ SpikesDamage:
 	call Call_PlayBattleAnim
 	call RefreshBattleHuds
 
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipToxicSpikesText
+
 	ld hl, WasPoisonedText
 	call SwitchTurnCore
 	call StdBattleTextbox
 	call SwitchTurnCore
+
+.skipToxicSpikesText
 	jr .pop
 
 .AbsorbToxicSpikes:

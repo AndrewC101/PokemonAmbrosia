@@ -177,8 +177,11 @@ BattleCommand_CheckTurn:
 	jr .not_asleep
 
 .fast_asleep
+    call CheckIfFastBattlesIsOn
+    jr nz, .skipSleepingText
 	ld hl, FastAsleepText
 	call StdBattleTextbox
+.skipSleepingText
 
 	; Sleep Talk bypass sleep.
 	ld a, [wCurPlayerMove]
@@ -201,8 +204,11 @@ BattleCommand_CheckTurn:
 	cp SACRED_FIRE
 	jr z, .not_frozen
 
+    call CheckIfFastBattlesIsOn
+    jr nz, .skipFrozenText
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
+.skipFrozenText
 
 	call CantMove
 	jp EndTurn
@@ -424,8 +430,11 @@ CheckEnemyTurn:
 	and a
 	jr z, .woke_up
 
+    call CheckIfFastBattlesIsOn
+    jr nz, .skipSleepingText2
 	ld hl, FastAsleepText
 	call StdBattleTextbox
+.skipSleepingText2
 	xor a
 	ld [wNumHits], a
 	ld de, ANIM_SLP
@@ -466,8 +475,11 @@ CheckEnemyTurn:
 	cp SACRED_FIRE
 	jr z, .not_frozen
 
+    call CheckIfFastBattlesIsOn
+    jr nz, .skipFrozenText2
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
+.skipFrozenText2
 	call CantMove
 	jp EndTurn
 

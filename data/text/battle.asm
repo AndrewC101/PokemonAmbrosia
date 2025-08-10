@@ -508,9 +508,8 @@ UnleashedEnergyText:
 	prompt
 
 HungOnText:
-	text "<TARGET>"
-	line "hung on with"
-	cont "@"
+	text "Endured with"
+	line "@"
 	text_ram wStringBuffer1
 	text "!"
 	prompt
@@ -521,9 +520,8 @@ EnduredText:
 	prompt
 
 SturdyText:
-	text "<TARGET>"
-	line "held on with"
-	cont "STURDY!"
+	text "Endured with"
+	line "STURDY!"
 	prompt
 
 InLoveWithText:
@@ -1013,9 +1011,8 @@ DraggedOutText:
 	prompt
 
 ParalyzedText:
-	text "<TARGET>'s"
-	line "paralyzed! Maybe"
-	cont "it can't attack!"
+	text "<TARGET>"
+	line "was paralyzed!"
 	prompt
 
 FullyParalyzedText:

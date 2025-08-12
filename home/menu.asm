@@ -415,6 +415,10 @@ CopyNameFromMenu::
 	pop hl
 	ret
 
+NoYesBox::
+	farcall _NoYesBox
+	ret
+
 YesNoBox::
 	lb bc, SCREEN_WIDTH - 6, 7
 

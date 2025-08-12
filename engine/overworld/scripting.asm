@@ -234,6 +234,7 @@ ScriptCommandTable:
 	dw Script_getname                    ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
+	dw Script_nooryes                    ; aa
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2356,8 +2357,12 @@ Script_checksave:
 	ld [wScriptVar], a
 	ret
 
-Script_checkver_duplicate: ; unreferenced
-	ld a, [.gs_version]
+Script_nooryes:
+	call NoYesBox
+	ld a, FALSE
+	jr c, .no
+	ld a, TRUE
+.no
 	ld [wScriptVar], a
 	ret
 

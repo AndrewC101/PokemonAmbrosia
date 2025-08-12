@@ -1064,4 +1064,9 @@ checksave: MACRO
 	db checksave_command
 ENDM
 
+	const nooryes_command ; $4e
+nooryes: MACRO
+	db nooryes_command
+ENDM
+
 NUM_EVENT_COMMANDS EQU const_value

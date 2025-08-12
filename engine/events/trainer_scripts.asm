@@ -37,7 +37,7 @@ RematchScript:
     iftrue .noRematch
 	opentext
 	writetext RematchText
-	yesorno
+	nooryes
 	iffalse .refused
     loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
     loadtemptrainer

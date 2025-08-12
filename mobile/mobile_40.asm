@@ -1692,11 +1692,11 @@ popc
 Mobile_LoadBattleMenu:
 	call Function100dd8
 	ret c
-	ld hl, BattleMenuHeader
-	ld a, BANK(BattleMenuHeader)
+	ld hl, BattleMenuHeaderTrainer
+	ld a, BANK(BattleMenuHeaderTrainer)
 	ld de, LoadMenuHeader
 	call FarCall_de
-	ld a, BANK(BattleMenuHeader)
+	ld a, BANK(BattleMenuHeaderTrainer)
 	ld [wMenuData_2DMenuItemStringsBank], a
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a

@@ -38,6 +38,36 @@ PrintMonTypes:
 	ld bc, NAME_LENGTH_JAPANESE - 1
 	jp ByteFill
 
+PrintEnemyMonTypes:
+; Print one or both types of [wCurSpecies]
+; on the stats screen at hl.
+
+	push hl
+	call GetBaseData
+	pop hl
+
+	; Print first type
+	push hl
+	ld a, [wEnemyMonType1]
+	call .Print
+
+	; Single-typed monsters really
+	; have two of the same type.
+	ld a, [wEnemyMonType1]
+	ld b, a
+	ld a, [wEnemyMonType2]
+	cp b
+	pop hl
+	ret z ; no need to print the same type twice
+
+	; Print the second type is dual-typed
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+
+.Print:
+	ld b, a
+	jp PrintType
+
 PrintMoveType:
 ; Print the type of move b at hl.
 

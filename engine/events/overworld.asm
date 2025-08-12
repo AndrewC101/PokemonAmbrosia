@@ -937,11 +937,11 @@ WarpDeviceScript:
 	dba .BattleTowerWarpText
 	dbw BANK(@), NULL
 .BattleTowerWarpText:
-	db "HOME@"
-	db "GOLDENROD@"
-	db "SAFFRON@"
-	db "FRONTIER@"
-	db "SILVER@"
+	db "Home@"
+	db "Goldenrod@"
+	db "Saffron@"
+	db "Frontier@"
+	db "Silver@"
 
 .defaultWarp
 	loadmenu .HomeMenuHeader
@@ -965,10 +965,10 @@ WarpDeviceScript:
 	dba .HomeMenuText
 	dbw BANK(@), NULL
 .HomeMenuText:
-	db "HOME@"
-	db "GOLDENROD@"
-	db "SAFFRON@"
-	db "FRONTIER@"
+	db "Home@"
+	db "Goldenrod@"
+	db "Saffron@"
+	db "Frontier@"
 
 .home
 	warp PLAYERS_HOUSE_2F, 3, 3

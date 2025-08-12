@@ -1,5 +1,10 @@
 LoadBattleMenu:
-	ld hl, BattleMenuHeader
+	ld a, [wBattleMode]
+	dec a
+	ld hl, BattleMenuHeaderTrainer
+	jr nz, .trainer
+	ld hl, BattleMenuHeaderWild
+.trainer
 	call LoadMenuHeader
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
@@ -28,7 +33,7 @@ CommonBattleMenu:
 	call ExitMenu
 	ret
 
-BattleMenuHeader:
+BattleMenuHeaderWild:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 8, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
@@ -46,6 +51,25 @@ BattleMenuHeader:
 	db "<PKMN>@"
 	db "Pack@"
 	db "Run@"
+
+BattleMenuHeaderTrainer:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 8, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 2 ; rows, columns
+	db 6 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "Fight@"
+	db "<PKMN>@"
+	db "Pack@"
+	db "Inf@"
 
 SafariBattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags

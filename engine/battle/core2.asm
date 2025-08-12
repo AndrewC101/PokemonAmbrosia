@@ -880,6 +880,8 @@ PrintBattleInfo:
 	push bc
 	xor a
 	ld [wTrainerInfoPage], a
+	;call LoadFontsExtra
+	;call LoadStandardFont
 	call UpdatePageText
 	call StatChangesInfoBox
 	call WaitButtonInfoTrainer
@@ -962,7 +964,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	sub 7			; a = a - 7
 	jr .insert
 .same
-	ld a, "<"
+	ld a, " "
 	ld [de], a
 	inc de
 	xor a

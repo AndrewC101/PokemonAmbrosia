@@ -498,11 +498,17 @@ RuthlessClasses:
     db ROLE_PLAYER_SHINY
     db -1
 
-ForfeitMatch:
-    ld hl, ForfeitMatchText
+BattleInfoOrForfeit:
+    ld hl, SeeBattleInfoText
     call PrintText
     call YesNoBox
+    jr nc, .seeInfo
+
+    ld hl, ForfeitMatchText
+    call PrintText
+    call NoYesBox
     jr c, .cantEscape
+
     ld a, [wOtherTrainerClass]
     ld hl, RuthlessClasses
     ld de, 1
@@ -528,15 +534,20 @@ ForfeitMatch:
     ret
 .cantEscape
     xor a
-    ld hl, BattleText_TheresNoEscapeFromTrainerBattle
     ret
 .ruthless
     xor a
     ld hl, BattleText_DoesNotAccept
-    ret
+    jp StdBattleTextbox
+.seeInfo
+    jp PrintBattleInfo
+
+SeeBattleInfoText:
+    text "See Battle Info?"
+    done
 
 ForfeitMatchText:
-    text "Forfeit battle?"
+    text "Forfeit Battle?"
     done
 
 AllowShinyOverride:

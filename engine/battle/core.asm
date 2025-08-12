@@ -9521,9 +9521,8 @@ TryToRunAwayFromBattle:
 	jr .print_inescapable_text
 
 .cant_run_from_trainer
-    ;farcall ForfeitMatch
-	;jp c, SetEnemyTurn
-    farcall PrintBattleInfo
+    farcall BattleInfoOrForfeit
+	jp c, SetEnemyTurn
 	ret
 
 .print_inescapable_text

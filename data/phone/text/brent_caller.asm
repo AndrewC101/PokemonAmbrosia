@@ -107,7 +107,7 @@ BrentMilkGossipText:
 	cont "serial killer"
 	cont "around here."
 	para "If I see him, he"
-	line "wont be leaving in"
+	line "won't be leaving in"
 	cont "one piece."
 	done
 
@@ -117,7 +117,7 @@ BrentBattlingGossipText:
 	cont "serial killer"
 	cont "around here."
 	para "If I see him, he"
-	line "wont be leaving in"
+	line "won't be leaving in"
 	cont "one piece."
 	done
 
@@ -127,7 +127,7 @@ BrentFlowerShopGossipText:
 	cont "serial killer"
 	cont "around here."
 	para "If I see him, he"
-	line "wont be leaving in"
+	line "won't be leaving in"
 	cont "one piece."
 	done
 

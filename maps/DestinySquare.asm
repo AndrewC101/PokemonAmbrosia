@@ -712,7 +712,7 @@ MasterAdamSeenText:
 	para "So you want to be"
 	line "the best like no"
 	cont "one ever was."
-	para "I wont bore you"
+	para "I won't bore you"
 	line "with a protracted,"
 	cont "pretentious"
 	cont "speech."

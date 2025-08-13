@@ -854,7 +854,7 @@ YuGiOhHenshin2Text:
     cont "shabby looking"
     cont "cards."
 
-    para "You wont be"
+    para "You won't be"
     line "denied your"
     cont "rightful place"
     cont "in history."

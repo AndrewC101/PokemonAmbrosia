@@ -859,7 +859,7 @@ BeatOthersFirstBlueText:
     para "Then I will"
     line "test you."
 
-    para "RED wont even"
+    para "RED won't even"
     line "get the chance"
     cont "to fight you."
     done

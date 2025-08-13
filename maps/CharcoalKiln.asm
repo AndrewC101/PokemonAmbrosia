@@ -120,7 +120,7 @@ CharcoalKilnApprenticeText1:
 	line "SLOWPOKE gone?"
 
 	para "The spirits of"
-	line "the forest wont"
+	line "the forest won't"
 	cont "be happy."
 
 	para "I better go"

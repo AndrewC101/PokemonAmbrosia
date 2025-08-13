@@ -384,7 +384,7 @@ CooltrainerfLolaSeenText:
 	line "will overtake her."
 
 	para "That's why she"
-	line "wont allow me"
+	line "won't allow me"
 	cont "into DRAGONS DEN."
 
 	para "I want more."

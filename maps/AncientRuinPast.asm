@@ -199,7 +199,7 @@ AncientRuinsPastGuy1Text:
     line "any ideas of"
     cont "causing trouble."
 
-    para "It wont end well"
+    para "It won't end well"
     line "for you."
 
     para "PHARAOH ATEM is"

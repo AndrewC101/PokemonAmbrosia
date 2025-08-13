@@ -503,7 +503,7 @@ Text_HeadbuttOutro:
 	para "Who are you"
 	line "again!?"
 
-	para "This tree wont"
+	para "This tree won't"
 	line "HEADBUTT itself."
 	done
 

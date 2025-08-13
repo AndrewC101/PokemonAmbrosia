@@ -1242,7 +1242,7 @@ MasterClairWinText:
     done
 
 MasterClairAfterBattleText:
-	text "Your dreams wont"
+	text "Your dreams won't"
 	line "remain dreams for"
 	cont "long."
 	para "But when you make"

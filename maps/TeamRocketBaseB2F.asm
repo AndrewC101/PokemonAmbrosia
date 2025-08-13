@@ -274,7 +274,7 @@ YouWontGetAway:
     text "I don't care"
     line "who you are!"
 
-    para "You wont get"
+    para "You won't get"
     line "away with this!"
     done
 
@@ -484,7 +484,7 @@ RocketBaseBossDefeatedText:
 GetThemText:
     text "They are weakened!"
 
-    para "I wont let them"
+    para "I won't let them"
     line "get away!"
     done
 
@@ -946,7 +946,7 @@ RocketBaseBossWinText:
 
 	para "...."
 
-	para "LANCE wont be"
+	para "LANCE won't be"
 	line "here next time"
 	cont "we meet."
 

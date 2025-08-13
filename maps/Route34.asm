@@ -397,7 +397,7 @@ GinaRematchText:
     done
 
 GinaRematchRefuseText:
-    text "We wont disappoint"
+    text "We won't disappoint"
     line "you."
     done
 

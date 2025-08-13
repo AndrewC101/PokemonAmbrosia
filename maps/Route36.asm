@@ -522,9 +522,9 @@ FloriaText2:
 
 RockSmashGuyText1:
 	text "That old man"
-	line "wont budge."
+	line "won't budge."
 
-	para "He wont even"
+	para "He won't even"
 	line "talk to me."
 
 	para "There is something"

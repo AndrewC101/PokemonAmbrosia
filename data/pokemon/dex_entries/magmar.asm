@@ -5,6 +5,6 @@
 	next "by dipping wounds"
 	next "into lava."
 
-	page "FIRE BLAST wont"
+	page "FIRE BLAST won't"
 	next "miss. Immune"
 	next "to FIRE.@"

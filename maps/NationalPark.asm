@@ -551,7 +551,7 @@ SchoolboyJackTradeMonText:
 	para "For example..."
 
 	para "Did you know"
-	line "LEECH SEED wont"
+	line "LEECH SEED won't"
 	cont "work if the"
 	cont "enemy is more"
 	cont "than twice your"
@@ -914,7 +914,7 @@ NPLeonOfferFightTextAgain:
     line "want to fight me?"
 
     para "You know you"
-    line "wont win."
+    line "won't win."
 
     para "Though I won't"
     line "take any money"

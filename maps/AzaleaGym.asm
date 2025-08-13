@@ -355,7 +355,7 @@ AzaleaGymGuideText:
 	cont "strong moves!"
 
 	para "GRASS types"
-	line "wont be able to"
+	line "won't be able to"
 	cont "do much."
 
 	para "A ROCK or FIRE"

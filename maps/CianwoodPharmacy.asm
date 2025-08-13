@@ -68,7 +68,7 @@ PharmacistGiveSecretpotionText:
 	line "take this for"
 	cont "free."
 
-	para "It wont let you"
+	para "It won't let you"
 	line "down."
 	done
 

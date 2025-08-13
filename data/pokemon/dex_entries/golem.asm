@@ -3,7 +3,7 @@
 
 	db   "So sturdy that"
 	next "even dynamite"
-	next "wont scratch it."
+	next "won't scratch it."
 
 	page "Speed"
 	next "increases in"

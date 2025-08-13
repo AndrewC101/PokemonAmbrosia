@@ -536,7 +536,7 @@ SilverCaveCrystalFriendshipText:
 
     para "I guess once"
     line "you're a #mon"
-    cont "MASTER I wont"
+    cont "MASTER I won't"
     cont "see you so much"
     cont "anymore"
     done
@@ -661,7 +661,7 @@ SilverCaveSilverGoodbyeText:
     done
 
 SilverCaveCrystalGoodbyeText:
-    text "RED wont stand"
+    text "RED won't stand"
     line "a chance against"
     cont "you."
 
@@ -676,7 +676,7 @@ SilverCaveCrystalGoodbyeText:
     done
 
 SilverCaveCrystalForgetText:
-    text "I wont forget it."
+    text "I won't forget it."
     done
     
 HoenWarRolePlayScript:
@@ -1454,49 +1454,26 @@ HoenWarSpareText:
     done
 
 HoenWarCh4VillainText:
-    text "All the voices"
-    line "suddenly go"
-    cont "silent."
-
-    para "The crowd appears"
+    text "The crowd appears"
     line "frozen."
 
     para "You look up at"
     line "the monstrous face"
-    cont "of GEO WEAPON."
+    cont "of Geo weapon."
 
     para "It is contorted"
     line "in a way which..."
 
-    para "If you didn't"
-    line "know better..."
-
-    para "You would say"
-    line "looks like fear."
+    para "looks like fear."
 
     para "You turn to see"
     line "a light."
-
-    para "An otherworldly"
-    line "perfection."
-
-    para "Its appearance"
-    line "strikes at a"
-    cont "primal fear"
-    cont "within you."
 
     para "It draws near!"
     done
 
 HoenWarRolePlayEndText:
-    text "WALLACE collapses"
-    line "to the ground."
-
-    para "He looks up at"
-    line "ARCEUS towering"
-    cont "above him."
-
-    para "WALLACE pleas"
+    text "WALLACE pleas"
     line "for mercy."
 
     para "ARCEUS disappears."
@@ -1504,17 +1481,10 @@ HoenWarRolePlayEndText:
     para "Everything returns"
     line "to as it was."
 
-    para "ARCEUS was letting"
-    line "people know their"
-    cont "prayers had been"
-    cont "heard."
-
     para "...."
 
     para "Nearby a stranger"
     line "enters the city."
-
-    para "A CHAMPION."
 
     para "CHAMPION <PLAYER>!"
     done

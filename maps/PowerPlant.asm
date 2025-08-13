@@ -355,7 +355,7 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
-	text "I wont let anyone"
+	text "I won't let anyone"
 	line "hurt my generator!"
 	para "My BODY SLAM is"
 	line "eager to crush"

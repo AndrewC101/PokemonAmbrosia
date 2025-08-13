@@ -424,7 +424,7 @@ PokemaniacBenSeenText:
 	done
 
 PokemaniacBenBeatenText:
-	text "I wont let you!"
+	text "I won't let you!"
 	done
 
 PokemaniacBenAfterBattleText:

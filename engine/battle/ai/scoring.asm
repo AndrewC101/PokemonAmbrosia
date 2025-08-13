@@ -748,7 +748,7 @@ AI_Types:
 ;	call AIDiscourageMove
 ;	jr .checkmove
 
-; DevNote - this is commented out because it is stupid and wont be used
+; DevNote - this is commented out because it is stupid and won't be used
 AI_Offensive:
     ret
 ; Greatly discourage non-damaging moves.

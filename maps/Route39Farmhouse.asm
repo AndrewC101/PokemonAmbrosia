@@ -106,7 +106,7 @@ FarmerMText_SickCow:
 
 	para "If she doesn't"
 	line "get better soon"
-	cont "I wont be able"
+	cont "I won't be able"
 	cont "to feed my"
 	cont "family."
 

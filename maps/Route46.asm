@@ -132,7 +132,7 @@ PicnickerErinMercyText:
 
     para "You are lucky"
     line "we are nice and"
-    cont "wont crush you."
+    cont "won't crush you."
 
     para "Run along now."
     done
@@ -194,7 +194,7 @@ HikerBaileyGloatText:
     line "not ready for"
     cont "this place!"
 
-    para "But I wont"
+    para "But I won't"
     line "stop you."
     done
 

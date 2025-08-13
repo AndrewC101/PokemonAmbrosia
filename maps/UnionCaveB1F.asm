@@ -85,7 +85,7 @@ UnionCaveB1FBoulder:
 	jumpstd StrengthBoulderScript
 
 HikerPhillipSeenText:
-	text "You wont get"
+	text "You won't get"
 	line "the treasure"
 	cont "before me!"
 	done

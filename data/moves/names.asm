@@ -185,7 +185,7 @@ MoveNames::
     li "Mach Punch"
     li "Scary Face"
     li "Night Slash"
-    li "Bolt Break"
+    li "Bolt Beak"
     li "Belly Drum"
     li "Sludge Bomb"
     li "Avalanche"

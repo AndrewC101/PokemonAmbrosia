@@ -323,7 +323,7 @@ Route8LockedDoorText:
 	text "An abandoned"
 	line "building."
 
-	para "The door wont"
+	para "The door won't"
 	line "open."
 	done
 

@@ -517,7 +517,7 @@ MasterTobiasWinText:
 
 MasterTobiasAfterBattleText:
 	text "Even Legendaries"
-	line "wont cut it here."
+	line "won't cut it here."
 	para "I need to get some"
 	line "Ubers!"
 	done
@@ -574,7 +574,7 @@ MasterYunaScript:
 MasterYunaSeenText:
 	text "My pilgrimage is"
 	line "near its end."
-	para "But I wont be"
+	para "But I won't be"
 	line "another name in a"
 	cont "long tradition of"
 	cont "false hope."

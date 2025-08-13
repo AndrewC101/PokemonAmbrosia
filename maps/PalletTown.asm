@@ -355,7 +355,7 @@ PalletTownCrystalText_KeepItUp:
     line "I know you will"
     cont "defeat them."
 
-    para "I wont let you"
+    para "I won't let you"
     line "down!"
     done
 

@@ -355,7 +355,7 @@ LakeOfRageGrampsText:
 	cont "trainer from a"
 	cont "weak one."
 	para "Aye, I reckon dat"
-	line "one wont pay no"
+	line "one won't pay no"
 	cont "mind ta any"
 	cont "trainer with less"
 	cont "than 6 badges I'd"

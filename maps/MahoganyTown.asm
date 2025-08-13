@@ -237,7 +237,7 @@ MahoganySelfText2:
     done
 
 MahoganySelfText3:
-    text "You wont find"
+    text "You won't find"
     line "your Dad."
 
     para "We both know"

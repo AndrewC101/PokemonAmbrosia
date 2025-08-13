@@ -309,7 +309,7 @@ TwinsJoAndZoe1AfterBattleText:
 TwinsJoAndZoe2SeenText:
 	text "Stop!"
 
-	para "We wont let you"
+	para "We won't let you"
 	line "get to ERIKA."
 
 	para "She is sleeping."

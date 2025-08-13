@@ -536,7 +536,7 @@ VioletSelfText6:
     line "because I care"
     cont "about you."
 
-	para "I wont stop you"
+	para "I won't stop you"
 	line "this time."
 	para "I trust you to"
 	line "make the right"

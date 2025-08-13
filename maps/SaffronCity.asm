@@ -481,7 +481,7 @@ SaffronSilverAfterBattleText:
     line "in this city"
     cont "somewhere."
 
-    para "I'm sure it wont"
+    para "I'm sure it won't"
     line "be difficult to"
     cont "find him."
 

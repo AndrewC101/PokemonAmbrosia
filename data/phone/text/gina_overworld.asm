@@ -48,6 +48,6 @@ GinaPackFullText:
 	para "I'll have to hold"
 	line "on to this."
 
-	para "You wont charge"
+	para "You won't charge"
 	line "interest will you?"
 	done

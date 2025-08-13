@@ -1795,7 +1795,7 @@ DadWontLetYouText:
     cont "need to go to"
     cont "KANTO and fight."
 
-    para "I wont let that"
+    para "I won't let that"
     line "happen."
 
     para "I know this is"
@@ -1805,7 +1805,7 @@ DadWontLetYouText:
     para "But I have learnt"
     line "what is important."
 
-    para "I wont let you"
+    para "I won't let you"
     line "leave."
     done
 

@@ -73,7 +73,7 @@ JoeyReminderText:
 	cont "are destined to"
 	cont "win."
 	para "Now come face us."
-	para "We wont ask a"
+	para "We won't ask a"
 	line "third time."
 
 	para "I'm waiting on"

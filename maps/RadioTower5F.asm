@@ -508,7 +508,7 @@ Executivef1AfterBattleText:
 	line "were already"
 	cont "ruined."
 
-	para "I wont let them"
+	para "I won't let them"
 	line "get away with it."
 	done
 

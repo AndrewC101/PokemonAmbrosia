@@ -518,7 +518,7 @@ CynthiaText:
     line "need to be afraid"
     cont "anymore."
 
-    para "We wont allow"
+    para "We won't allow"
     line "this to go on!"
     done
 
@@ -1211,7 +1211,7 @@ WarZoneBlueText:
 
     para "If you lose..."
 
-    para "You wont be coming"
+    para "You won't be coming"
     line "back at the"
     cont "#CENTER."
     done

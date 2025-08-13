@@ -116,7 +116,7 @@ PlayersNeighborText:
 	para "And the world is"
 	line "a cruel place."
 
-	para "But I wont stop"
+	para "But I won't stop"
 	line "her following"
 	cont "her dreams."
 

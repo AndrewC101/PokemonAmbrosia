@@ -269,7 +269,7 @@ Route27FisherText:
 	done
 
 Route27AfterFisherText:
-	text "We wont have any"
+	text "We won't have any"
 	line "more undocumented"
 	cont "JOHTO immigrants"
 	cont "flood across our"

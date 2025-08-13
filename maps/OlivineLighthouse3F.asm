@@ -50,7 +50,7 @@ BirdKeeperTheoSeenText:
 	line "are predators."
 
 	para "I can't guarantee"
-	line "they wont eat"
+	line "they won't eat"
 	cont "your #mon."
 	done
 

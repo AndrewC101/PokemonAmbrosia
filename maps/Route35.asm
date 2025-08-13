@@ -595,7 +595,7 @@ OfficerDirkPrettyToughText:
 	text "I am keeping"
 	line "you safe."
 
-	para "I wont let any"
+	para "I won't let any"
 	line "rotten punks"
 	cont "pass."
 	done

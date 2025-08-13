@@ -171,7 +171,7 @@ FalknerHaikuText:
     done
 
 FalknerIntroText2:
-    text "I wont ask what"
+    text "I won't ask what"
     line "you think."
 
     para "For your opinion"

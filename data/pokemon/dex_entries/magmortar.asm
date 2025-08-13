@@ -5,6 +5,6 @@
 	next "balls of over"
 	next "3600 degree heat."
 
-	page "FIRE BLAST wont"
+	page "FIRE BLAST won't"
 	next "miss. Immune"
 	next "to FIRE.@"

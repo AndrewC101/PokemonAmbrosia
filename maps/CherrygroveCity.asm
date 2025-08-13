@@ -674,7 +674,7 @@ MysticWaterGuyTextBefore:
 	text "Here, you can have"
 	line "this."
 	para "Trust me..."
-	para "I wont be needing"
+	para "I won't be needing"
 	line "it."
 	done
 
@@ -983,7 +983,7 @@ PeasantHappy2:
     cont "him."
 
     para "But I know he"
-    line "wont."
+    line "won't."
     done
 TakeNuggetText:
     text "Here you can have"

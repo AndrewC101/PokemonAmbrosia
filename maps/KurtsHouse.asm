@@ -481,7 +481,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	para "I am going to"
 	line "give them a"
 	cont "whopping they"
-	cont "wont soon be"
+	cont "won't soon be"
 	cont "forgetting!"
 
 	para "Hang on, SLOWPOKE!"

@@ -277,6 +277,68 @@ DisplayAbility:
 	call PlaceFarString
 	ret
 
+DisplayFoeNameAndAbility:
+	ld a, [wTempMonSpecies]
+	ld b, a
+	call GetDexEntryPointer
+	ld a, b
+	push af
+
+; place species
+	hlcoord 1, 11
+	call PlaceFarString
+
+; clear area
+	push de
+	lb bc, 4, SCREEN_WIDTH - 2
+	hlcoord 1, 11
+	call ClearBox
+	pop de
+
+; do stuff?
+	push de
+	pop hl
+	pop bc
+	ld a, [wTempMonSpecies]
+	ld [wCurSpecies], a
+	ld a, b
+	push af
+	push de
+	pop af
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	push hl
+	dec hl
+
+; place pokedex page 1
+	pop de
+	pop af
+	hlcoord 1, 7
+	push af
+	call PlaceFarString
+
+; clear area
+	push de
+	lb bc, 5, SCREEN_WIDTH - 2
+	hlcoord 1, 7
+	call ClearBox
+	pop de
+
+; place pokedex page 2
+	inc de
+	pop af
+	hlcoord 1, 7
+	call PlaceFarString
+
+	ld a, [wCurSpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	hlcoord 2, 2
+	call PlaceFarString ; mon species
+	ret
+
 POKeString: ; unreferenced
 	db "#@"
 

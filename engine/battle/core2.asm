@@ -1153,6 +1153,7 @@ FieldInfoBox:
 	lb bc, 1, 14
 	ld de, FieldTexts.stickyWeb
 	call FieldInfoBoxStickyWeb
+	ret
 
 FieldInfoBoxReflect: ; input: bc -> coords
 	ld hl, wPlayerScreens
@@ -1298,6 +1299,91 @@ FieldInfoBoxStickyWeb: ; input: bc -> coords
 	call PlaceString
 	ret
 
+FeoDetailsPageInfoBox:
+	hlcoord 0, 0
+	ld b, 14
+	ld c, 18
+	call Textbox
+	ld b, 14
+	ld c, 18
+
+	hlcoord 0, 0
+	ld b, 3
+	ld c, 18
+	call Textbox
+
+	ld de, .FoeItemString
+	hlcoord 1, 1
+	call PlaceString
+
+	xor a
+	ldh [hBGMapMode], a
+	ld [wSwappingMove], a
+	ld [wMonType], a
+	predef CopyOTMonToTempMon
+
+	ld a, [wTempMonItem]
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	hlcoord 2, 3
+	call PlaceString
+
+	ld de, .FoeMovesString
+	hlcoord 1, 5
+	call PlaceString
+
+	ld hl, wTempMonMoves
+	ld de, wListMoves_MoveIndicesBuffer
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ld a, SCREEN_WIDTH * 2
+	ld [wListMovesLineSpacing], a
+	hlcoord 2, 7
+	predef ListMoves
+	;hlcoord 10, 7
+	;predef ListMovePP
+	call WaitBGMap
+	call SetPalettes
+	ld a, [wNumMoves]
+	inc a
+	ld [w2DMenuNumRows], a
+	ret
+
+.FoeItemString
+    db "Enemy Item:@"
+
+.FoeMovesString
+    db "Enemy Moves:@"
+
+EnemyAbilityInfoBox:
+	hlcoord 0, 0
+	ld b, 14
+	ld c, 18
+	call Textbox
+	ld b, 14
+	ld c, 18
+
+	hlcoord 0, 0
+	ld b, 2
+	ld c, 18
+	call Textbox
+
+    predef CopyOTMonToTempMon
+	farcall DisplayFoeNameAndAbility
+
+	ld de, .FoeString
+	hlcoord 1, 1
+	call PlaceString
+
+	ld de, .AbilitiesString
+	hlcoord 1, 5
+	jp PlaceString
+
+.FoeString:
+	db "Foe:@"
+.AbilitiesString:
+	db "Ability Info:@"
+
 FieldInfoBoxPlaceElement: ; input: bc -> coords, hl -> Field text, de -> Count
 	push de
 	ld d, h
@@ -1335,22 +1421,34 @@ FieldInfoBoxPlaceElement: ; input: bc -> coords, hl -> Field text, de -> Count
 
 MainText:
 .page1:
-	db "  Page 1/3 ▶@"
+	db "  Page 1/5 ▶@"
 
 .page1_content:
-	db "Stat Changes   @"
+	db " Stat Changes @"
 
 .page2:
-	db "◀ Page 2/3 ▶@"
+	db "◀ Page 2/5 ▶@"
 
 .page2_content:
-	db "Actual Stats   @"
+	db " Actual Stats @"
 
 .page3:
-	db "◀ Page 3/3  @"
+	db "◀ Page 3/5  @"
 
 .page3_content:
-	db "Field/Status   @"
+	db " Field/Status @"
+
+.page4:
+	db "◀ Page 4/5  @"
+
+.page4_content:
+	db " Enemy Details@"
+
+.page5:
+	db "◀ Page 5/5  @"
+
+.page5_content:
+	db " Foe Ability  @"
 
 .player:
 	db " Player @"
@@ -1464,49 +1562,98 @@ WaitButtonInfoTrainer:
 
 InfoBoxLeftPress:
 	ld a, [wTrainerInfoPage]
+	and a
+	ret z
 	cp 1
-	ret c					; We're on page 1, pressing left shouldn't do anything
-	jr z, .jump_to_page_1	; We're on page 2, jump to page 1
-	call DecreasePage		; We're on page 3, jump to page 2
+	jr z, .jump_to_page_1
+	cp 2
+	jr z, .jump_to_page_2
+	cp 3
+	jr z, .jump_to_page_3
+	cp 4
+	jr z, .jump_to_page_4
+	call DecreasePage
 	call UpdatePageText
-	jp StatsInfoBox
+	jp EnemyAbilityInfoBox
 .jump_to_page_1
 	call DecreasePage
 	call UpdatePageText
 	jp StatChangesInfoBox
-
-InfoBoxRightPress:
-	ld a, [wTrainerInfoPage]
-	cp 1
-	jr z, .jump_to_page_3	; We're on page 2, jump to page 3
-	ret nc					; We're on page 3, pressing right shouldn't do anything
-	call IncreasePage		; We're on page 1, jump to page 2
+.jump_to_page_2
+	call DecreasePage
 	call UpdatePageText
 	jp StatsInfoBox
 .jump_to_page_3
+	call DecreasePage
+	call UpdatePageText
+	jp FieldInfoBox
+.jump_to_page_4
+	call DecreasePage
+	call UpdatePageText
+	jp FeoDetailsPageInfoBox
+
+InfoBoxRightPress:
+	ld a, [wTrainerInfoPage]
+	and a
+	jr z, .jump_to_page_1
+	cp 1
+	jr z, .jump_to_page_2
+	cp 2
+	jr z, .jump_to_page_3
+	cp 3
+	jr z, .jump_to_page_4
+	ret
+
+.jump_to_page_1
+	call IncreasePage
+	call UpdatePageText
+	jp StatsInfoBox
+.jump_to_page_2
 	call IncreasePage
 	call UpdatePageText
 	jp FieldInfoBox
+.jump_to_page_3
+	call IncreasePage
+	call UpdatePageText
+	jp FeoDetailsPageInfoBox
+.jump_to_page_4
+	call IncreasePage
+	call UpdatePageText
+	jp EnemyAbilityInfoBox
 
 IncreasePage:
 	ld a, [wTrainerInfoPage]
 	inc a
+	cp 5
+	jr c, .store
+	xor a
+.store
 	ld [wTrainerInfoPage], a
 	ret
 
 DecreasePage:
 	ld a, [wTrainerInfoPage]
+	or a
+	jr nz, .dec
+	ld a, 5
+.dec
 	dec a
 	ld [wTrainerInfoPage], a
 	ret
 
 UpdatePageText:
 	hlcoord 4, 17
-	ld de, MainText.page1
 	ld a, [wTrainerInfoPage]
 	cp 1
 	jr z, .page_2
-	jr nc, .page_3
+    cp 2
+	jr z, .page_3
+	cp 3
+	jr z, .page_4
+	cp 4
+	jr z, .page_5
+
+    ld de, MainText.page1
 	call PlaceString
 	ld de, MainText.page1_content
 	jr .done
@@ -1519,6 +1666,16 @@ UpdatePageText:
 	ld de, MainText.page3
 	call PlaceString
 	ld de, MainText.page3_content
+	jr .done
+.page_4
+	ld de, MainText.page4
+	call PlaceString
+	ld de, MainText.page4_content
+	jr .done
+.page_5
+	ld de, MainText.page5
+	call PlaceString
+	ld de, MainText.page5_content
 .done
 	hlcoord 4, 16
 	call PlaceString

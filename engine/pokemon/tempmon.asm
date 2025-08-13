@@ -21,14 +21,44 @@ CopyMonToTempMon:
 	ld bc, BOXMON_STRUCT_LENGTH
 	callfar CopyBoxmonToTempMon
 	jr .done
-
 .copywholestruct
 	ld a, [wCurPartyMon]
 	call AddNTimes
 	ld de, wTempMon
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call CopyBytes
+.done
+	ret
 
+CopyOTMonToTempMon:
+; gets the BaseData of a mon
+; and copies the party_struct to wTempMon
+
+	ld a, [wCurOTMon]
+	ld e, a
+	call GetMonSpecies
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+
+	ld a, [wMonType]
+	ld hl, wOTPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	and a
+	jr z, .copywholestruct
+	ld hl, wPartyMon1Species
+	ld bc, PARTYMON_STRUCT_LENGTH
+	cp OTPARTYMON
+	jr z, .copywholestruct
+	ld bc, BOXMON_STRUCT_LENGTH
+	callfar CopyBoxmonToTempMon
+	jr .done
+.copywholestruct
+	ld a, [wCurOTMon]
+	call AddNTimes
+	ld de, wTempMon
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call CopyBytes
 .done
 	ret
 

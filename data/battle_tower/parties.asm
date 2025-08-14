@@ -238,7 +238,7 @@ BattleTowerMons:
 	db "NAtuSI-@@@@"
 
 	db ARCANINE
-	db ASSAULT_VEST
+	db GOLD_BERRY
 	db FIRE_BLAST, DIG, AI_RETURN, FLAME_WHEEL
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -2168,8 +2168,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db GARCHOMP
-	db LEFTOVERS
-	db SWORDS_DANCE, DRACO_IMPACT, EARTHQUAKE, STEALTH_ROCK
+	db GOLD_BERRY
+	db SWORDS_DANCE, DRAGON_CLAW, EARTHQUAKE, STEALTH_ROCK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2194,7 +2194,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db METAGROSS
-	db ASSAULT_VEST
+	db GOLD_BERRY
 	db METEOR_MASH, EARTHQUAKE, ICE_PUNCH, EXPLOSION
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -2350,7 +2350,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db CHARIZARD
-	db ASSAULT_VEST
+	db CHARCOAL
 	db FIRE_BLAST, SOLARBEAM, ANCIENTPOWER, AIR_SLASH
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -3628,8 +3628,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db GARCHOMP
-	db LEFTOVERS
-	db SWORDS_DANCE, DRACO_IMPACT, EARTHQUAKE, STEALTH_ROCK
+	db GOLD_BERRY
+	db SWORDS_DANCE, DRAGON_CLAW, EARTHQUAKE, STEALTH_ROCK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3656,7 +3656,7 @@ BattleTowerMons:
 	; ===== final trainer end - 20 mons ======
 
     db METAGROSS
-	db ASSAULT_VEST
+	db GOLD_BERRY
 	db METEOR_MASH, EARTHQUAKE, ICE_PUNCH, EXPLOSION
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -4804,8 +4804,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db GARCHOMP
-	db LEFTOVERS
-	db DRACO_IMPACT, EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE
+	db GOLD_BERRY
+	db DRAGON_CLAW, EARTHQUAKE, ROCK_SLIDE, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4934,7 +4934,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db METAGROSS
-	db ASSAULT_VEST
+	db GOLD_BERRY
 	db METEOR_MASH, EARTHQUAKE, ICE_PUNCH, EXPLOSION
 	dw 0 ; OT ID
 	dt 0 ; Exp

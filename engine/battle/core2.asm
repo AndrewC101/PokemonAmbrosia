@@ -1323,8 +1323,14 @@ FeoDetailsPageInfoBox:
 	predef CopyOTMonToTempMon
 
 	ld a, [wTempMonItem]
+	and a
+	jr nz, .hasItem
+	ld de, .NoItem
+	jr .printItemName
+.hasItem
 	ld [wNamedObjectIndex], a
 	call GetItemName
+.printItemName
 	hlcoord 2, 3
 	call PlaceString
 
@@ -1351,6 +1357,9 @@ FeoDetailsPageInfoBox:
 
 .FoeItemString
     db "Enemy Item:@"
+
+.NoItem
+    db "None@"
 
 .FoeMovesString
     db "Enemy Moves:@"
@@ -1436,19 +1445,19 @@ MainText:
 	db "◀ Page 3/5  @"
 
 .page3_content:
-	db " Field/Status @"
+	db " Enemy Details@"
 
 .page4:
 	db "◀ Page 4/5  @"
 
 .page4_content:
-	db " Enemy Details@"
+    db " Foe Ability  @"
 
 .page5:
 	db "◀ Page 5/5  @"
 
 .page5_content:
-	db " Foe Ability  @"
+	db " Field/Status @"
 
 .player:
 	db " Player @"
@@ -1574,7 +1583,7 @@ InfoBoxLeftPress:
 	jr z, .jump_to_page_4
 	call DecreasePage
 	call UpdatePageText
-	jp EnemyAbilityInfoBox
+	jp FieldInfoBox
 .jump_to_page_1
 	call DecreasePage
 	call UpdatePageText
@@ -1586,11 +1595,11 @@ InfoBoxLeftPress:
 .jump_to_page_3
 	call DecreasePage
 	call UpdatePageText
-	jp FieldInfoBox
+	jp FeoDetailsPageInfoBox
 .jump_to_page_4
 	call DecreasePage
 	call UpdatePageText
-	jp FeoDetailsPageInfoBox
+	jp EnemyAbilityInfoBox
 
 InfoBoxRightPress:
 	ld a, [wTrainerInfoPage]
@@ -1611,15 +1620,15 @@ InfoBoxRightPress:
 .jump_to_page_2
 	call IncreasePage
 	call UpdatePageText
-	jp FieldInfoBox
+	jp FeoDetailsPageInfoBox
 .jump_to_page_3
 	call IncreasePage
 	call UpdatePageText
-	jp FeoDetailsPageInfoBox
+	jp EnemyAbilityInfoBox
 .jump_to_page_4
 	call IncreasePage
 	call UpdatePageText
-	jp EnemyAbilityInfoBox
+	jp FieldInfoBox
 
 IncreasePage:
 	ld a, [wTrainerInfoPage]

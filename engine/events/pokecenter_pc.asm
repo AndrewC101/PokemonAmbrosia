@@ -288,7 +288,7 @@ PlayersPCMenuData:
 
 .WithdrawItem: db "Withdraw Item@"
 .DepositItem:  db "Deposit Item@"
-.TossItem:     db "Tiss Item@"
+.TossItem:     db "Toss Item@"
 .MailBox:      db "Mail Box@"
 .Decoration:   db "Decoration@"
 .TurnOff:      db "Turn Off@"

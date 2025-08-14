@@ -41,7 +41,7 @@ CeladonEusine:
 	opentext
 	writetext Eusine2OfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

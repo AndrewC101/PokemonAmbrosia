@@ -56,7 +56,7 @@ PryceScript_Defeat:
     closetext
 	opentext
 	writetext RematchTextPryce
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextPryce
 	waitbutton

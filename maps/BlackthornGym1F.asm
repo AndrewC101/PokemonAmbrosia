@@ -101,7 +101,7 @@ BlackthornGymClairScript:
     closetext
 	opentext
 	writetext RematchTextClair
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextClair
 	waitbutton

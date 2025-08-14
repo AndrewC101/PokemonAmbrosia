@@ -1079,7 +1079,7 @@ OakScript:
     checkevent EVENT_BEAT_MASTER_OAK
     iftrue .fightDone
     writetext OakIntroText
-    yesorno
+    nooryes
     closetext
     iffalse .refused
 .fight

@@ -460,7 +460,7 @@ Aerith1Script:
 	opentext
 	writetext Aerith1OfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

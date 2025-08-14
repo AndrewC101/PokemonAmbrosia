@@ -49,7 +49,7 @@ PewterGymBrockScript:
     closetext
 	opentext
 	writetext RematchTextBrock
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextBrock
 	waitbutton

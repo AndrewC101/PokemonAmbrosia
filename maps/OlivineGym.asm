@@ -67,7 +67,7 @@ OlivineGymJasmineScript:
     closetext
 	opentext
 	writetext RematchTextJasmine
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextJasmine
 	waitbutton

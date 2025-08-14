@@ -59,7 +59,7 @@ FuchsiaGymJanineScript:
     closetext
 	opentext
 	writetext RematchTextJanine
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextJanine
 	waitbutton

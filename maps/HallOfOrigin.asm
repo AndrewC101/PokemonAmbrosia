@@ -1955,7 +1955,7 @@ MasterJonathanScript:
 	opentext
 	writetext MasterJonathanOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .skipRequest

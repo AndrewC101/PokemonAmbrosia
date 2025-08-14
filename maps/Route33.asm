@@ -136,7 +136,7 @@ TrainerHikerAnthony:
 	opentext
 	writetext AnthonyRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext AnthonyRematchRefuseText
 	waitbutton

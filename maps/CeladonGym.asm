@@ -67,7 +67,7 @@ CeladonGymErikaScript:
     closetext
 	opentext
 	writetext RematchTextErika
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextErika
 	waitbutton

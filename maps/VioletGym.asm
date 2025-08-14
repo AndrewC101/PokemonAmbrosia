@@ -82,7 +82,7 @@ VioletGymFalknerScript:
 	closetext
 	opentext
 	writetext RematchText
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseText
 	waitbutton

@@ -66,7 +66,7 @@ VermilionGymSurgeScript:
     closetext
 	opentext
 	writetext RematchTextSurge
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextSurge
 	waitbutton

@@ -114,7 +114,7 @@ CianwoodGymChuckScript:
     closetext
 	opentext
 	writetext RematchTextChuck
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextChuck
 	waitbutton

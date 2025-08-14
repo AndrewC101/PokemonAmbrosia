@@ -87,7 +87,7 @@ GoldenrodGymWhitneyScript:
     closetext
 	opentext
 	writetext RematchTextWhitney
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextWhitney
 	waitbutton

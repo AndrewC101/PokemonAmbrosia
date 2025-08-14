@@ -136,7 +136,7 @@ Aerith2Script:
 	opentext
 	writetext Aerith2OfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

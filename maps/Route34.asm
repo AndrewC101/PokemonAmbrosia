@@ -212,7 +212,7 @@ TrainerCamperTodd1:
 	opentext
 	writetext ToddRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext ToddRematchRefuseText
 	waitbutton
@@ -357,7 +357,7 @@ TrainerPicnickerGina1:
 	opentext
 	writetext GinaRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext GinaRematchRefuseText
 	waitbutton

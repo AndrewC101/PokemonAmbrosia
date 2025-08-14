@@ -119,7 +119,7 @@ ViridianGymBlueScript:
     closetext
 	opentext
 	writetext RematchTextBlue
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextBlue
 	waitbutton

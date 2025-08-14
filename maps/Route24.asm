@@ -61,7 +61,7 @@ Route24RocketScript:
     closetext
 	opentext
 	writetext RematchTextRocket
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextRocket
 	waitbutton

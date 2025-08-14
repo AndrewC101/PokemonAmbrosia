@@ -55,7 +55,7 @@ SaffronGymSabrinaScript:
     closetext
 	opentext
 	writetext RematchTextSabrina
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextSabrina
 	waitbutton

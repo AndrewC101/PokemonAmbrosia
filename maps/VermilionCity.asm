@@ -639,7 +639,7 @@ YunaScriptVermilion:
 	opentext
 	writetext VermilionYunaOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

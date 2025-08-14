@@ -18,7 +18,7 @@ RandyScript:
 	checkevent EVENT_GOT_KENYA
 	iftrue .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText
-	yesorno
+	nooryes
 	iffalse .refused
 	writetext Route35GoldenrodGateRandyThanksText
 	promptbutton

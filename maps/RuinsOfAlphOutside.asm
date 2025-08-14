@@ -286,7 +286,7 @@ RuinsOfAlphOutsideHenshinScript:
 	opentext
 	writetext AlphHenshinOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

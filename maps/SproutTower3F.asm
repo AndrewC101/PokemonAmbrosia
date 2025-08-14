@@ -114,7 +114,7 @@ SageLiScript:
 	closetext
     opentext
 	writetext RematchTextLi
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextLi
 	waitbutton

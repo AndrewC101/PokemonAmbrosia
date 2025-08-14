@@ -34,7 +34,7 @@ TobiasScript:
 	opentext
 	writetext TobiasOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

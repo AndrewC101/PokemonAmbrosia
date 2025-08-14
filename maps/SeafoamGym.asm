@@ -72,7 +72,7 @@ SeafoamGymBlaineScript:
     closetext
 	opentext
 	writetext RematchTextBlaine
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextBlaine
 	waitbutton

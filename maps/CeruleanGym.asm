@@ -89,7 +89,7 @@ CeruleanGymMistyScript:
     closetext
 	opentext
 	writetext RematchTextMisty
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextMisty
 	waitbutton

@@ -160,7 +160,7 @@ MtMoonGreenScript:
 	opentext
 	writetext GreenOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .skipRequest

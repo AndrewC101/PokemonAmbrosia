@@ -222,7 +222,7 @@ TrainerSchoolboyJack1:
 	opentext
 	writetext JackRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext JackRematchRefuseText
 	waitbutton
@@ -345,7 +345,7 @@ TrainerPokefanfBeverly1:
 	opentext
 	writetext BeverlyRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext BeverlyRematchRefuseText
 	waitbutton
@@ -743,7 +743,7 @@ NationalParkLeonScript:
 	iffalse .notHero
 	writetext HeyHeroText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	sjump .dontAsk
 .notHero
@@ -758,11 +758,11 @@ NationalParkLeonScript:
 	opentext
 	writetext NPLeonOfferFightText
     waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	writetext NPLeonOfferFightTextAgain
     waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	writetext NPLeonPreFightText
     waitbutton

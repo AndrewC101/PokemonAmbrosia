@@ -67,7 +67,7 @@ AzaleaGymBugsyScript:
 	closetext
 	opentext
 	writetext RematchTextBugsy
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextBugsy
 	waitbutton

@@ -204,7 +204,7 @@ TrainerYoungsterJoey:
 	opentext
 	writetext JoeyRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext RematchRefuseTextJoey
 	waitbutton

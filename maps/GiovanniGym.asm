@@ -42,7 +42,7 @@ SaffronGymGiovanniScript:
     closetext
 	opentext
 	writetext RematchTextGiovanni
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextGiovanni
 	waitbutton

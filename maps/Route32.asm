@@ -244,7 +244,7 @@ TrainerPicnickerLiz1:
 	opentext
 	writetext LizRematchText
 	waitbutton
-	yesorno
+	nooryes
 	iftrue .Rematch
 	writetext LizRematchRefuseText
 	waitbutton

@@ -564,7 +564,7 @@ StevenScript:
 	opentext
 	writetext StevenOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk
@@ -677,7 +677,7 @@ CynthiaScript:
 	opentext
 	writetext CynthiaOfferFightText
     waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk
@@ -778,7 +778,7 @@ LeonScript:
 	opentext
 	writetext LeonOfferFightText
     waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk
@@ -1333,7 +1333,7 @@ JonathanScript:
 	opentext
 	writetext JonathanOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .skipRequest

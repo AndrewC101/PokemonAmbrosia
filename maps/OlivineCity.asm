@@ -455,7 +455,7 @@ YunaScript:
 	opentext
 	writetext YunaOfferFightText
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refused
 	closetext
 .dontAsk

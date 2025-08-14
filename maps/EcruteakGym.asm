@@ -79,7 +79,7 @@ EcruteakGymMortyScript:
     closetext
 	opentext
 	writetext RematchTextMorty
-	yesorno
+	nooryes
 	iftrue .rematch
 	writetext RematchRefuseTextMorty
 	waitbutton

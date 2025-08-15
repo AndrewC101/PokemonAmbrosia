@@ -2399,10 +2399,18 @@ FaintYourPokemon:
     call KOBoost
 	call StopDangerSound
 	call WaitSFX
+
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipPlayerFaintCry
+
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
 	call PlayStereoCry
+	ld de, SFX_KINESIS
+	call PlaySFX
+.skipPlayerFaintCry
+
 	call PlayerMonFaintedAnimation
 	hlcoord 9, 7
 	lb bc, 5, 11
@@ -2419,8 +2427,18 @@ FaintEnemyPokemon:
     call Aftermath
     call KOBoost
 	call WaitSFX
+
+	call CheckIfFastBattlesIsOn
+	jr nz, .skipEnemyFaintCry
+
+	ld a, $f
+	ld [wCryTracks], a
+	ld a, [wTempEnemyMonSpecies]
+	call PlayStereoCry
 	ld de, SFX_KINESIS
 	call PlaySFX
+.skipEnemyFaintCry
+
 	call EnemyMonFaintedAnimation
 	ld de, SFX_FAINT
 	call PlaySFX
@@ -3907,6 +3925,8 @@ ShowSetEnemyMonAndSendOutAnimation:
 	ld bc, wTempMonSpecies
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
+	call CheckIfFastBattlesIsOn
+	jr nz, .skip_cry
 
 	ld a, $f
 	ld [wCryTracks], a
@@ -4227,6 +4247,8 @@ SendOutPlayerMon:
 	ld c, l
 	farcall CheckFaintedFrzSlp
 	jr c, .statused
+	call CheckIfFastBattlesIsOn
+	jr nz, .statused
 	ld a, $f0
 	ld [wCryTracks], a
 	ld a, [wCurPartySpecies]
@@ -9040,211 +9062,6 @@ BattleEnd_HandleRoamMons:
 
 .update_roam_mons
 	callfar UpdateRoamMons
-	ret
-
-AddLastLinkBattleToLinkRecord:
-	ld hl, wOTPlayerID
-	ld de, wStringBuffer1
-	ld bc, 2
-	call CopyBytes
-	ld hl, wOTPlayerName
-	ld bc, NAME_LENGTH - 1
-	call CopyBytes
-	ld hl, sLinkBattleStats - (LINK_BATTLE_RECORD_LENGTH - 6)
-	call .StoreResult
-	ld hl, sLinkBattleRecord
-	ld d, NUM_LINK_BATTLE_RECORDS
-.loop
-	push hl
-	inc hl
-	inc hl
-	ld a, [hl]
-	dec hl
-	dec hl
-	and a
-	jr z, .copy
-	push de
-	ld bc, LINK_BATTLE_RECORD_LENGTH - 6
-	ld de, wStringBuffer1
-	call CompareBytesLong
-	pop de
-	pop hl
-	jr c, .done
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ld bc, -LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	push hl
-
-.copy
-	ld d, h
-	ld e, l
-	ld hl, wStringBuffer1
-	ld bc, LINK_BATTLE_RECORD_LENGTH - 6
-	call CopyBytes
-	ld b, 6
-	xor a
-.loop2
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .loop2
-	pop hl
-
-.done
-	call .StoreResult
-	call .FindOpponentAndAppendRecord
-	ret
-
-.StoreResult:
-	ld a, [wBattleResult]
-	and $f
-	cp LOSE
-	ld bc, (sLinkBattleRecord1Wins - sLinkBattleRecord1) + 1
-	jr c, .okay ; WIN
-	ld bc, (sLinkBattleRecord1Losses - sLinkBattleRecord1) + 1
-	jr z, .okay ; LOSE
-	; DRAW
-	ld bc, (sLinkBattleRecord1Draws - sLinkBattleRecord1) + 1
-.okay
-	add hl, bc
-	call .CheckOverflow
-	ret nc
-	inc [hl]
-	ret nz
-	dec hl
-	inc [hl]
-	ret
-
-.CheckOverflow:
-	dec hl
-	ld a, [hl]
-	inc hl
-	cp HIGH(MAX_LINK_RECORD)
-	ret c
-	ld a, [hl]
-	cp LOW(MAX_LINK_RECORD)
-	ret
-
-.FindOpponentAndAppendRecord:
-	ld b, NUM_LINK_BATTLE_RECORDS
-	ld hl, sLinkBattleRecord1End - 1
-	ld de, wLinkBattleRecordBuffer
-.loop3
-	push bc
-	push de
-	push hl
-	call .LoadPointer
-	pop hl
-	ld a, e
-	pop de
-	ld [de], a
-	inc de
-	ld a, b
-	ld [de], a
-	inc de
-	ld a, c
-	ld [de], a
-	inc de
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .loop3
-	ld b, $0
-	ld c, $1
-.loop4
-	ld a, b
-	add b
-	add b
-	ld e, a
-	ld d, 0
-	ld hl, wLinkBattleRecordBuffer
-	add hl, de
-	push hl
-	ld a, c
-	add c
-	add c
-	ld e, a
-	ld d, 0
-	ld hl, wLinkBattleRecordBuffer
-	add hl, de
-	ld d, h
-	ld e, l
-	pop hl
-	push bc
-	ld c, 3
-	call CompareBytes
-	pop bc
-	jr z, .equal
-	jr nc, .done2
-
-.equal
-	inc c
-	ld a, c
-	cp $5
-	jr nz, .loop4
-	inc b
-	ld c, b
-	inc c
-	ld a, b
-	cp $4
-	jr nz, .loop4
-	ret
-
-.done2
-	push bc
-	ld a, b
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	ld hl, sLinkBattleRecord
-	call AddNTimes
-	push hl
-	ld de, wLinkBattleRecordBuffer
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	call CopyBytes
-	pop hl
-	pop bc
-	push hl
-	ld a, c
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	ld hl, sLinkBattleRecord
-	call AddNTimes
-	pop de
-	push hl
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	call CopyBytes
-	ld hl, wLinkBattleRecordBuffer
-	ld bc, LINK_BATTLE_RECORD_LENGTH
-	pop de
-	call CopyBytes
-	ret
-
-.LoadPointer:
-	ld e, $0
-	ld a, [hld]
-	ld c, a
-	ld a, [hld]
-	ld b, a
-	ld a, [hld]
-	add c
-	ld c, a
-	ld a, [hld]
-	adc b
-	ld b, a
-	jr nc, .okay2
-	inc e
-
-.okay2
-	ld a, [hld]
-	add c
-	ld c, a
-	ld a, [hl]
-	adc b
-	ld b, a
-	ret nc
-	inc e
 	ret
 
 InitBattleDisplay:

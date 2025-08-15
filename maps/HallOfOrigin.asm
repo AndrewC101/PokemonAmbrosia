@@ -536,7 +536,7 @@ MasterRedScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -665,7 +665,7 @@ MasterLanceScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -748,7 +748,7 @@ MasterBlueScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -892,7 +892,7 @@ MasterGreenScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -1029,7 +1029,7 @@ MasterWallaceScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -1772,7 +1772,7 @@ InvaderMasterPatches:
     closetext
 	opentext
 	writetext RematchTextPatches
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextPatches
 	waitbutton
@@ -1892,7 +1892,7 @@ MasterJoeyScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton
@@ -1978,7 +1978,7 @@ MasterJonathanScript:
     closetext
 	opentext
 	writetext RematchTextMasterJonathan
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextMasterJonathan

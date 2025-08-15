@@ -154,7 +154,7 @@ Aerith2Script:
     closetext
 	opentext
 	writetext RematchTextAerith2
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextAerith2

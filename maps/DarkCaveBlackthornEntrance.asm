@@ -280,7 +280,7 @@ DarkCaveXehanortScript:
     closetext
 	opentext
 	writetext RematchTextDarkCaveXehanort
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextDarkCaveXehanort

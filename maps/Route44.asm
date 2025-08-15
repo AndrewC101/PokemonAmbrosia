@@ -113,7 +113,7 @@ TrainerBirdKeeperVance1:
     closetext
 	opentext
 	writetext RematchTextRoute44
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextRoute44
 	waitbutton

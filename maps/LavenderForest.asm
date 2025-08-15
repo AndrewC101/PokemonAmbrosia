@@ -144,7 +144,7 @@ AgathaSisterScript:
     closetext
 	opentext
 	writetext RematchTextAgatha
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextAgatha
 	waitbutton

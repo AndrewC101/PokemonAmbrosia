@@ -61,7 +61,7 @@ MasterChrisChanScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -139,7 +139,7 @@ MasterYamiScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -226,7 +226,7 @@ MasterSetoScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -309,7 +309,7 @@ MasterDrakeScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -393,7 +393,7 @@ MasterExecutiveFScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -480,7 +480,7 @@ MasterTobiasScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -556,7 +556,7 @@ MasterYunaScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -633,7 +633,7 @@ MasterAizenScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -716,7 +716,7 @@ MasterXehanortScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -795,7 +795,7 @@ MasterAerithScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -872,7 +872,7 @@ UltimaScript:
     closetext
 	opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton
@@ -1117,7 +1117,7 @@ OakScript:
 .offerRematch
     opentext
 	writetext RematchTextDestinyFrontier
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyFrontier
 	waitbutton

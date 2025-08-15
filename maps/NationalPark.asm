@@ -788,7 +788,7 @@ NationalParkLeonScript:
     closetext
 	opentext
 	writetext RematchTextLeon
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefusedTextLeon

@@ -146,7 +146,7 @@ Red:
     closetext
 	opentext
 	writetext RematchTextRed
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextRed
 	waitbutton
@@ -189,7 +189,7 @@ Ash:
     closetext
 	opentext
 	writetext RematchTextAsh
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextAsh
 	waitbutton

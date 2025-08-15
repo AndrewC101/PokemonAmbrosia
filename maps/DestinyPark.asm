@@ -37,7 +37,7 @@ MasterBrockScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -121,7 +121,7 @@ MasterMistyScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -205,7 +205,7 @@ MasterSurgeScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -298,7 +298,7 @@ MasterErikaScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -383,7 +383,7 @@ MasterJanineScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -462,7 +462,7 @@ MasterWillScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -542,7 +542,7 @@ MasterBlaineScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -624,7 +624,7 @@ MasterFalknerScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -703,7 +703,7 @@ MasterBugsyScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -781,7 +781,7 @@ MasterWhitneyScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -863,7 +863,7 @@ MasterMortyScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -951,7 +951,7 @@ MasterChuckScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -1033,7 +1033,7 @@ MasterJasmineScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -1116,7 +1116,7 @@ MasterPryceScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -1205,7 +1205,7 @@ MasterClairScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton
@@ -1289,7 +1289,7 @@ MasterEusineScript:
     closetext
 	opentext
 	writetext RematchTextDestinyPark
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyPark
 	waitbutton

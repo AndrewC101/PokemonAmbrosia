@@ -657,7 +657,7 @@ YunaScriptVermilion:
     closetext
 	opentext
 	writetext RematchTextVermilionYuna
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextVermilionYuna

@@ -41,7 +41,7 @@ MasterSabrinaScript:
     closetext
 	opentext
 	writetext RematchTextDestinyEliteFour
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyEliteFour
 	waitbutton
@@ -130,7 +130,7 @@ MasterBrunoScript:
     closetext
 	opentext
 	writetext RematchTextDestinyEliteFour
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyEliteFour
 	waitbutton
@@ -215,7 +215,7 @@ MasterKarenScript:
     closetext
 	opentext
 	writetext RematchTextDestinyEliteFour
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyEliteFour
 	waitbutton
@@ -303,7 +303,7 @@ MasterGiovanniScript:
     closetext
 	opentext
 	writetext RematchTextDestinyEliteFour
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinyEliteFour
 	waitbutton

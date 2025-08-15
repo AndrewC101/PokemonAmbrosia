@@ -59,7 +59,7 @@ CeladonEusine:
     closetext
 	opentext
 	writetext RematchTextEusine2
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextEusine2

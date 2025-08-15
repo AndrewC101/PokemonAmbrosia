@@ -298,7 +298,7 @@ YamiScript:
     closetext
 	opentext
 	writetext RematchTextYami
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextYami
 	waitbutton

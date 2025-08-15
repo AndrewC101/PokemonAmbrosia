@@ -671,7 +671,7 @@ FinalSilverScript:
     closetext
 	opentext
 	writetext RematchTextSilverFinal
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextSilverFinal
 	waitbutton
@@ -710,7 +710,7 @@ FinalCrystalScript:
     closetext
 	opentext
 	writetext RematchTextCrystalFinal
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextCrystalFinal
 	waitbutton

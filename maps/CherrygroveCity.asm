@@ -828,7 +828,7 @@ JuliusScript:
     closetext
 	opentext
 	writetext RematchTextJulius
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextJulius

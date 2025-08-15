@@ -583,7 +583,7 @@ StevenScript:
     closetext
 	opentext
 	writetext RematchTextWarZone
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextWarZone
@@ -696,7 +696,7 @@ CynthiaScript:
     closetext
 	opentext
 	writetext RematchTextWarZone
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextWarZone
@@ -797,7 +797,7 @@ LeonScript:
     closetext
 	opentext
 	writetext RematchTextWarZone
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextWarZone
@@ -1364,7 +1364,7 @@ JonathanScript:
     closetext
 	opentext
 	writetext RematchTextJonathan
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextJonathan

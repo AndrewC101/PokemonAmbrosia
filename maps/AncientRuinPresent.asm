@@ -101,7 +101,7 @@ HenshinScript:
     closetext
 	opentext
 	writetext RematchTextHenshin
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextHenshin
 	waitbutton

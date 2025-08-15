@@ -199,7 +199,7 @@ CeruleanCaveAizenScript:
     closetext
 	opentext
 	writetext RematchTextAizen
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextAizen
 	waitbutton

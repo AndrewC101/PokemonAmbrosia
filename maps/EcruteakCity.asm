@@ -275,7 +275,7 @@ SetoScript:
     closetext
 	opentext
 	writetext RematchTextSeto
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextSeto
 	waitbutton
@@ -478,7 +478,7 @@ Aerith1Script:
     closetext
 	opentext
 	writetext RematchTextAerith1
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextAerith1

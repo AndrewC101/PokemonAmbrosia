@@ -183,7 +183,7 @@ MtMoonGreenScript:
     closetext
 	opentext
 	writetext RematchTextGreen
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextGreen

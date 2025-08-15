@@ -52,7 +52,7 @@ TobiasScript:
     closetext
 	opentext
 	writetext RematchTextTobias
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextTobias

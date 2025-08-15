@@ -305,7 +305,7 @@ RuinsOfAlphOutsideHenshinScript:
     closetext
 	opentext
 	writetext RematchTextAlphHenshin
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextAlphHenshin

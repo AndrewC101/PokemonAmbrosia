@@ -56,7 +56,7 @@ TrainerCamperTed:
     closetext
 	opentext
 	writetext RematchTextRoute46
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextRoute46
 	waitbutton
@@ -107,7 +107,7 @@ TrainerPicnickerErin1:
     closetext
 	opentext
 	writetext RematchTextRoute46
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextRoute46
 	waitbutton
@@ -160,7 +160,7 @@ TrainerHikerBailey:
     closetext
 	opentext
 	writetext RematchTextRoute46
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextRoute46
 	waitbutton

@@ -477,7 +477,7 @@ YunaScript:
     closetext
 	opentext
 	writetext RematchTextYuna
-	yesorno
+	nooryes
 	iftrue .fight
 .refused
 	writetext RematchRefuseTextYuna

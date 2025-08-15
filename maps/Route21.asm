@@ -194,7 +194,7 @@ TrainerFisherArnold:
     closetext
 	opentext
 	writetext RematchFisherText
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseFisherText
 	waitbutton

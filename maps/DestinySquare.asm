@@ -47,7 +47,7 @@ MasterRivalScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -145,7 +145,7 @@ MasterCrystalScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -233,7 +233,7 @@ MasterCynthiaScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -325,7 +325,7 @@ MasterStevenScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -413,7 +413,7 @@ MasterStevenLoseAfterBattleText:
 ;    closetext
 ;	opentext
 ;	writetext RematchTextDestinySquare
-;	yesorno
+;	nooryes
 ;	iftrue .fight
 ;	writetext RematchRefuseTextDestinySquare
 ;	waitbutton
@@ -504,7 +504,7 @@ MasterStevenLoseAfterBattleText:
 ;    closetext
 ;	opentext
 ;	writetext RematchTextDestinySquare
-;	yesorno
+;	nooryes
 ;	iftrue .fight
 ;	writetext RematchRefuseTextDestinySquare
 ;	waitbutton
@@ -592,7 +592,7 @@ MasterLeonScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -682,7 +682,7 @@ MasterAdamScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
@@ -816,7 +816,7 @@ InvaderDLCScript:
     closetext
 	opentext
 	writetext RematchTextDestinySquare
-	yesorno
+	nooryes
 	iftrue .fight
 	writetext RematchRefuseTextDestinySquare
 	waitbutton

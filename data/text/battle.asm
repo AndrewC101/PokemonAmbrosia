@@ -1126,6 +1126,11 @@ CoveredByVeilText:
 	line "was raised."
 	prompt
 
+NaturalCureText:
+    text "Natural cure"
+    line "heals status."
+    prompt
+
 SafeguardProtectText:
 	text "<TARGET>"
 	line "is protected by"

@@ -7531,6 +7531,10 @@ BattleCommand_CheckStatusImmunity:
 .immune
     ld a, 1
     ld [wEffectFailed], a
+
+	call CheckIfFastBattlesIsOn
+	ret nz
+
 	ld hl, StatusImmunityText
 	jp StdBattleTextbox
 

@@ -171,7 +171,8 @@ NaturalCure:
     ld [hl], a
     ld de, RECOVER
     call PlayAnimationIfNotFirstTurn
-    ret
+    ld hl, NaturalCureText
+    jp StdBattleTextbox
 
 DefogSwitch:
     ld de, DEFOG

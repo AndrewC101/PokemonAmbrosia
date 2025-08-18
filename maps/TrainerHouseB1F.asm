@@ -387,7 +387,7 @@ BattleRouletteReceptionistScript:
 .Ash
     checkevent EVENT_BEAT_ASH
     iffalse .sample
-    loadtrainer RED, ASH
+    loadtrainer ASH, ASH1
     sjump .finish
 
 .Steven
@@ -539,12 +539,12 @@ BattleRouletteReceptionistScript:
 .Yami
     checkevent EVENT_BEAT_RED
     iffalse .Yami1
-    loadtrainer RED, ATEM
+    loadtrainer ASH, ATEM
     sjump .finish
 .Yami1
     checkevent EVENT_BEAT_YAMI
     iffalse .sample
-    loadtrainer RED, ATEM
+    loadtrainer ASH, ATEM
     sjump .finish
 
 .Aizen
@@ -1156,7 +1156,7 @@ BattleTrialReceptionistScript:
 	dbw BANK(@), NULL
 .ImpossibleText:
 	db "Normal@"
-	db "Mater@"
+	db "Master@"
 	db "Impossible@"
 
 .MasterUnlocked:
@@ -1621,7 +1621,7 @@ BattleTrialReceptionistScript:
 
     winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, ASH
+    loadtrainer ASH, ASH1
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -1701,7 +1701,7 @@ BattleTrialReceptionistScript:
 	special HealParty
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer RED, MASTER_ASH
+    loadtrainer ASH, MASTER_ASH
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap
@@ -2276,10 +2276,10 @@ BattleArcadeReceptionistScript:
     iffalse .ChooseEnemyCharacter
     scall WhichVariantChoice
     ifequal TRUE, .MasterAshEnemy
-	loadtrainer RED, ASH
+	loadtrainer ASH, ASH1
 	sjump .beginBattle
 .MasterAshEnemy
-	loadtrainer RED, MASTER_ASH
+	loadtrainer ASH, MASTER_ASH
 	sjump .beginBattle
 
 .AdamPlayer

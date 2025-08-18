@@ -79,4 +79,5 @@ TrainerGroups:
 	dba CalFemaleGroup
 	dba DadGroup
 	dba JonathanGroup
+	dba AshGroup
 	assert_table_length NUM_TRAINER_CLASSES

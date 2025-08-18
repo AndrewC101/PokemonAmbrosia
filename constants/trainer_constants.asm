@@ -752,10 +752,7 @@ KRIS EQU __trainer_class__
 
 	trainerclass RED ; 3f
 	const RED1
-	const ASH
 	const MASTER_RED
-	const MASTER_ASH
-	const ATEM
 	const RED_MEWTWO
 
 	trainerclass BLUE ; 40
@@ -894,5 +891,10 @@ KRIS EQU __trainer_class__
 	const JONATHAN_1
 	const JONATHAN_ARCADE
 	const MASTER_JONATHAN
+
+	trainerclass ASH
+	const ASH1
+	const MASTER_ASH
+	const ATEM
 
 NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

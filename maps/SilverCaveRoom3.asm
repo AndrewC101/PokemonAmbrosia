@@ -164,7 +164,7 @@ Ash:
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ASH
+	loadtrainer ASH, ASH1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -310,7 +310,7 @@ FightAshScript:
     closetext
     winlosstext AshWinLossText, AshWinLossText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ASH
+	loadtrainer ASH, ASH1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -465,7 +465,7 @@ SilverCaveRoom3_MapEvents:
 
 	def_object_events
 	object_event  8, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Red, -1
-	object_event 11, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_LEFT,  0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ash, -1
+	object_event 11, 10, SPRITE_RED, SPRITEMOVEDATA_STANDING_LEFT,  0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Ash, -1
 	object_event  8, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
 	object_event 11, 9, SPRITE_PIKACHU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Pikachu, -1
 	object_event 14, 11, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon1Script, EVENT_FIELD_MON_1

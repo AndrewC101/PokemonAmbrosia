@@ -269,14 +269,10 @@ PlayBattleMusic:
 
 	ld de, MUSIC_ZINNIA_BATTLE
 	cp RED
-	jp nz, .checkWallace
-    ld a, [wOtherTrainerID]
-	cp ASH
-	jp nz, .done
-	ld de, MUSIC_FINAL_BATTLE
-	jp .done
+	jp z, .done
+	cp LEON
+	jp z, .done
 
-.checkWallace
 	ld de, MUSIC_HOEN_CHAMPION
 	cp WALLACE
 	jp z, .done
@@ -335,7 +331,7 @@ PlayBattleMusic:
 	ld de, MUSIC_MEGALOVANIA
 	cp GIOVANNI
 	jr z, .done
-	cp LEON
+	cp ASH
 	jr z, .done
 
 	ld de, MUSIC_SUICUNE_BATTLE

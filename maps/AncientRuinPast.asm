@@ -281,7 +281,7 @@ YamiScript:
 	closetext
 	winlosstext YamiBeatenText, 0
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer RED, ATEM
+	loadtrainer ASH, ATEM
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -484,5 +484,5 @@ AncientRuinPast_MapEvents:
 	object_event 27, 30, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGuy2Script, -1
 	object_event 13, 33, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGirl1Script, -1
 	object_event 25, 35, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AncientRuinsPastGirl2Script, -1
-	object_event 19, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, YamiScript, -1
+	object_event 19, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YamiScript, -1
 	object_event 20, 4, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusOldStatueScript, -1

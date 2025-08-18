@@ -1,4 +1,4 @@
-	db "MOLD@" ; species name
+	db "GRATITUDE@" ; species name
 	dw 200, 450 ; height, weight
 
 	db   "A confident and"

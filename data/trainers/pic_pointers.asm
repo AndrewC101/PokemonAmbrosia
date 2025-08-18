@@ -79,4 +79,5 @@ TrainerPicPointers::
 	dba_pic CalFemalePic
 	dba_pic DadPic
 	dba_pic JonathanPic
+	dba_pic AshPic
 	assert_table_length NUM_TRAINER_CLASSES

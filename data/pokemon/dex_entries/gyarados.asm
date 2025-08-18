@@ -6,5 +6,5 @@
 	next "world conflict."
 
 	page "Attack boost"
-	next "on KO. Immune"
-	next "to recoil.@"
+	next "on defeating"
+	next "opponent.@"

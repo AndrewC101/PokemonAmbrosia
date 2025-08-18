@@ -78,4 +78,5 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; CAL_F
 	dn 15, 15, 15, 15 ; DAD
 	dn 15, 15, 15, 15 ; JONATHAN
+	dn 15, 15, 15, 15 ; ASH
 	assert_table_length NUM_TRAINER_CLASSES

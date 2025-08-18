@@ -77,4 +77,5 @@ TrainerClassNames::
     li "Self"
     li "Trainer"
     li "Prodigy"
+    li "Trainer"
 	assert_list_length NUM_TRAINER_CLASSES

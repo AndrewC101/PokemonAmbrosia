@@ -56,7 +56,7 @@ ItemNames::
     li "Coin Case"
     li "Itemfinder"
     li "Teru-Sama"
-    li "Exp.share"
+    li "Exp.Share"
     li "Old Rod"
     li "Good Rod"
     li "Silver Leaf"

@@ -69,7 +69,7 @@ BattleMenuHeaderTrainer:
 	db "Fight@"
 	db "<PKMN>@"
 	db "Pack@"
-	db "Inf@"
+	db "Dex@"
 
 SafariBattleMenuHeader:
 	db MENU_BACKUP_TILES ; flags

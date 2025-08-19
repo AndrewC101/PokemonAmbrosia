@@ -239,12 +239,23 @@ AcademyEarlNoMoreToTeachText:
 	done
 
 EarlsPokemonAcademyYoungster1Text:
-	text "I must learn EARLs"
-	line "spin to win"
-	cont "technique!"
-	para "There are just too"
-	line "many things to"
-	cont "learn!"
+	text "The Dex option in"
+	line "battle uses the"
+	cont "#dex to"
+	cont "display battle"
+	cont "info."
+	para "It shows the stat"
+	line "modifiers of each"
+	cont "#mon."
+	para "The stat values of"
+	line "each #mon."
+	para "The item and moves"
+	line "of the enemy."
+	para "The ability of the"
+	line "enemy."
+	para "And the field"
+	line "effects on both"
+	cont "sides."
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
@@ -268,17 +279,12 @@ EarlsPokemonAcademyGameboyKid2Text:
 	done
 
 EarlsPokemonAcademyYoungster2Text:
-	text "If I give a FOCUS"
-	line "SASH to a #mon"
-	cont "with TELEPORT I"
-	cont "can escape from"
-	cont "wild #mon that"
-	cont "I can't normally"
-	cont "run from."
-	para "Except those RED"
-	line "#mon who"
-	cont "attack, I can't"
-	cont "escape from them."
+	text "Do you know if you"
+	line "press SELECT"
+	cont "during battle you"
+	cont "will be shown the"
+	cont "enemies types."
+	para "I thought not."
 	done
 
 AcademyBlackboardText:

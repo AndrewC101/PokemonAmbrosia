@@ -211,7 +211,7 @@ SilverCaveRivalsScript:
 
     appear SILVERCAVEOUTSIDE_CRYSTAL
     applymovement SILVERCAVEOUTSIDE_CRYSTAL, SilverCaveOutsideMovement_CrystalApproaches
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     turnobject PLAYER, RIGHT
     opentext
     writetext SilverCaveCrystalIntroText

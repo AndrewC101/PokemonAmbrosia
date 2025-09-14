@@ -465,7 +465,7 @@ Function1161d5:
 	farcall ReloadMapPart
 	ld a, $8
 	ld [wMusicFade], a
-	ld de, MUSIC_MOBILE_ADAPTER
+	ld de, MUSIC_BATTLE_TOWER_LOBBY
 	ld a, e
 	ld [wMusicFadeID], a
 	ld a, d

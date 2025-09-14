@@ -529,7 +529,7 @@ RadioTowerCrystalScript3:
     sjump RadioTowerCrystalScript
 
 RadioTowerCrystalScript:
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     opentext
     writetext RadioTowerCrystalWaitUp
     waitbutton

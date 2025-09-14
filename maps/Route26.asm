@@ -616,7 +616,7 @@ Route26FieldMon8Script:
 Route26CrystalScript:
     showemote EMOTE_SHOCK, PLAYER, 15
     turnobject PLAYER, DOWN
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     appear ROUTE26_CRYSTAL
     applymovement ROUTE26_CRYSTAL, Route26Movement_CrystalApproaches
 

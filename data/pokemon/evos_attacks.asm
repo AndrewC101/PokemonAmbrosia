@@ -1811,7 +1811,6 @@ MrMimeEvosAttacks:
 	db 0 ; no more evolutions
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
-	db 14, MEDITATE
 	db 18, DRAIN_KISS
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT

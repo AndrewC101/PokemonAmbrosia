@@ -2,7 +2,6 @@
 ; Music indexes (see audio/music_pointers.asm)
 	const_def
 	const MUSIC_NONE                         ; 00
-	const MUSIC_TITLE                        ; 01
 	const MUSIC_ROUTE_1                      ; 02
 	const MUSIC_ROUTE_3                      ; 03
 	const MUSIC_ROUTE_12                     ; 04
@@ -15,12 +14,10 @@
 	const MUSIC_LASS_ENCOUNTER               ; 0b
 	const MUSIC_OFFICER_ENCOUNTER            ; 0c
 	const MUSIC_HEAL                         ; 0d
-	const MUSIC_LAVENDER_TOWN                ; 0e
 	const MUSIC_ROUTE_2                      ; 0f
 	const MUSIC_MT_MOON                      ; 10
 	const MUSIC_SHOW_ME_AROUND               ; 11
 	const MUSIC_GAME_CORNER                  ; 12
-	const MUSIC_BICYCLE                      ; 13
 	const MUSIC_HALL_OF_FAME                 ; 14
 	const MUSIC_VIRIDIAN_CITY                ; 15
 	const MUSIC_CELADON_CITY                 ; 16
@@ -34,10 +31,8 @@
 	const MUSIC_PROF_OAK                     ; 1e
 	const MUSIC_RIVAL_ENCOUNTER              ; 1f
 	const MUSIC_RIVAL_AFTER                  ; 20
-	const MUSIC_SURF                         ; 21
 	const MUSIC_EVOLUTION                    ; 22
 	const MUSIC_NATIONAL_PARK                ; 23
-	const MUSIC_CREDITS                      ; 24
 	const MUSIC_AZALEA_TOWN                  ; 25
 	const MUSIC_CHERRYGROVE_CITY             ; 26
 	const MUSIC_KIMONO_ENCOUNTER             ; 27
@@ -55,7 +50,6 @@
 	const MUSIC_DARK_CAVE                    ; 33
 	const MUSIC_ROUTE_29                     ; 34
 	const MUSIC_ROUTE_36                     ; 35
-	const MUSIC_SS_AQUA                      ; 36
 	const MUSIC_YOUNGSTER_ENCOUNTER          ; 37
 	const MUSIC_BEAUTY_ENCOUNTER             ; 38
 	const MUSIC_ROCKET_ENCOUNTER             ; 39
@@ -83,40 +77,29 @@
 	const MUSIC_VICTORY_ROAD                 ; 4f
 	const MUSIC_POKEMON_LULLABY              ; 50
 	const MUSIC_POKEMON_MARCH                ; 51
-	const MUSIC_GS_OPENING                   ; 52
-	const MUSIC_GS_OPENING_2                 ; 53
 	const MUSIC_MAIN_MENU                    ; 54
 	const MUSIC_RUINS_OF_ALPH_INTERIOR       ; 55
 	const MUSIC_ROCKET_OVERTURE              ; 56
 	const MUSIC_DANCING_HALL                 ; 57
 	const MUSIC_BUG_CATCHING_CONTEST_RANKING ; 58
-	const MUSIC_BUG_CATCHING_CONTEST         ; 59
 	const MUSIC_LAKE_OF_RAGE_ROCKET_RADIO    ; 5a
-	const MUSIC_PRINTER                      ; 5b
 	const MUSIC_POST_CREDITS                 ; 5c
 ; new to Crystal
 	const MUSIC_CLAIR                        ; 5d
 	const MUSIC_MOBILE_ADAPTER_MENU          ; 5e
-	const MUSIC_MOBILE_ADAPTER               ; 5f
-	const MUSIC_BUENAS_PASSWORD              ; 60
 	const MUSIC_MYSTICALMAN_ENCOUNTER        ; 61
-	const MUSIC_CRYSTAL_OPENING              ; 62
 	const MUSIC_BATTLE_TOWER_THEME           ; 63
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
-	const MUSIC_MOBILE_CENTER                ; 66
 ; new songs
 	const MUSIC_ZINNIA_BATTLE                ; 67
 	const MUSIC_XVZ                          ; 68
-	const MUSIC_ARCHIE_BATTLE                ; 69
 	const MUSIC_HOEN_CHAMPION                ; 70
 	const MUSIC_LUGIA_SONG                   ; 71
 	const MUSIC_GUILE_THEME                  ; 72
 	const MUSIC_MISTY_MOUNTAIN               ; 73
 	const MUSIC_HOEN_GRUNT                   ; 74
 	const MUSIC_MAD_WORLD                    ; 75
-	const MUSIC_CRYSTAL_ENCOUNTER            ; 76
-	const MUSIC_UNOVA_ELITE_FOUR             ; 77
 	const MUSIC_EPIC_TETRIS                  ; 78
 	const MUSIC_FINAL_BATTLE                 ; 79
 	const MUSIC_RED_INDIGO_PLATEAU           ; 80

@@ -813,7 +813,7 @@ JuliusScript:
 	iffalse .refused
 	closetext
 .skipRequest
-	setval MUSIC_SS_AQUA
+	setval MUSIC_BATTLE_TOWER_THEME
 	writemem wBattleMusicOverride
 	winlosstext JuliusBeatenText, JuliusWinsText
 	loadtrainer YOUNGSTER, JULIUS

@@ -244,7 +244,7 @@ PalletTownCrystalScript1:
     end
     
 PalletTownCrystalScript:
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     appear PALLETTOWN_CRYSTAL
     applymovement PALLETTOWN_CRYSTAL, PalletTownMovement_CrystalApproaches
 

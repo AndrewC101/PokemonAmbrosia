@@ -822,7 +822,7 @@ Route32FieldMon8Script:
 
 Route32CrystalScript:
     showemote EMOTE_SHOCK, PLAYER, 15
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     opentext
     writetext Route32CrystalText_WaitUp
     waitbutton

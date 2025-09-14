@@ -93,7 +93,7 @@ Buena:
 	iffalse .NoBlueCard
 	readvar VAR_BLUECARDBALANCE
 	ifequal BLUE_CARD_POINT_CAP, .BlueCardCapped0
-	playmusic MUSIC_BUENAS_PASSWORD
+	playmusic MUSIC_SUICUNE_BATTLE
 	writetext RadioTower2FBuenaDoYouKnowPasswordText
 	special AskRememberPassword
 	iffalse .ForgotPassword

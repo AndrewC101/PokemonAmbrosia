@@ -627,7 +627,7 @@ DBZRolePlayScript:
 	setval DBZ_CH2_HERO
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_HOEN_GRUNT
 	writemem wBattleMusicOverride
 	winlosstext DBZVictoryText, DBZDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
@@ -828,7 +828,7 @@ DBZRolePlayScript:
 	setval DBZ_CH2_VILLAIN
 	writemem wOtherTrainerID
 	special OverridePlayerParty
-	setval MUSIC_ARCHIE_BATTLE
+	setval MUSIC_HOEN_GRUNT
 	writemem wBattleMusicOverride
 	winlosstext DBZVictoryText, DBZDefeatText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER

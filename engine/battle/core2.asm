@@ -1458,7 +1458,7 @@ MainText:
 	db "◀ Page 5/5  @"
 
 .page5_content:
-	db " Field/Status @"
+	db " Field Effects@"
 
 .player:
 	db " Player @"

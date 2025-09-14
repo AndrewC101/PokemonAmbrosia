@@ -33,7 +33,6 @@ MoveGrammar:
 	db 0 ; end set
 
 ; 2: originally "[mon]の¯[move]¯した!" ("[mon]¯did¯[move]!")
-	db MEDITATE
 	db AGILITY
 	db MIMIC
 	db AFTER_IMAGE

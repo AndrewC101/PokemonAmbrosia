@@ -4,7 +4,6 @@ Music:
 ; entries correspond to MUSIC_* constants
 	table_width 3, Music
 	dba Music_Nothing
-	dba Music_TitleScreen
 	dba Music_Route1
 	dba Music_Route3
 	dba Music_Route12
@@ -17,12 +16,10 @@ Music:
 	dba Music_LookLass
 	dba Music_LookOfficer
 	dba Music_HealPokemon
-	dba Music_LavenderTown
 	dba Music_Route2
 	dba Music_MtMoon
 	dba Music_ShowMeAround
 	dba Music_GameCorner
-	dba Music_Bicycle
 	dba Music_HallOfFame
 	dba Music_ViridianCity
 	dba Music_CeladonCity
@@ -36,10 +33,8 @@ Music:
 	dba Music_ProfOak
 	dba Music_LookRival
 	dba Music_AfterTheRivalFight
-	dba Music_Surf
 	dba Music_Evolution
 	dba Music_NationalPark
-	dba Music_Credits
 	dba Music_AzaleaTown
 	dba Music_CherrygroveCity
 	dba Music_LookKimonoGirl
@@ -57,7 +52,6 @@ Music:
 	dba Music_DarkCave
 	dba Music_Route29
 	dba Music_Route36
-	dba Music_SSAqua
 	dba Music_LookYoungster
 	dba Music_LookBeauty
 	dba Music_LookRocket
@@ -85,39 +79,28 @@ Music:
 	dba Music_VictoryRoad
 	dba Music_PokemonLullaby
 	dba Music_PokemonMarch
-	dba Music_GoldSilverOpening
-	dba Music_GoldSilverOpening2
 	dba Music_MainMenu
 	dba Music_RuinsOfAlphInterior
 	dba Music_RocketTheme
 	dba Music_DancingHall
 	dba Music_ContestResults
-	dba Music_BugCatchingContest
 	dba Music_LakeOfRageRocketRadio
-	dba Music_Printer
 	dba Music_PostCredits
 ; new to Crystal
 	dba Music_Clair
 	dba Music_MobileAdapterMenu
-	dba Music_MobileAdapter
-	dba Music_BuenasPassword
 	dba Music_LookMysticalMan
-	dba Music_CrystalOpening
 	dba Music_BattleTowerTheme
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
-	dba Music_MobileCenter
 	dba Music_ZinniaBattle
 	dba Music_XVZ
-	dba Music_MaxieArchieBattle
 	dba Music_HoennChampionBattle
 	dba Music_LugiasSong
 	dba Music_Guile
 	dba Music_Mountain
 	dba Music_MAGruntBattle
 	dba Music_MadWorld
-	dba Music_MayEncounter
-	dba Music_UnovaEliteFourBattle
 	dba Music_Tetris
 	dba Music_FinalBattle
 	dba Music_RedIndigoPlateau

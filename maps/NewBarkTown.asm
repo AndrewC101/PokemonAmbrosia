@@ -527,7 +527,7 @@ CrystalScript2:
     end
 
 CrystalScript:
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     opentext
     writetext Crystal1_WaitUpText
     waitbutton

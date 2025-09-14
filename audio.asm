@@ -20,11 +20,9 @@ INCLUDE "audio/music/elmslab.asm"
 INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
-INCLUDE "audio/music/ssaqua.asm"
 INCLUDE "audio/music/newbarktown.asm"
 INCLUDE "audio/music/goldenrodcity.asm"
 INCLUDE "audio/music/vermilioncity.asm"
-INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
 INCLUDE "audio/music/lookpokemaniac.asm"
 INCLUDE "audio/music/trainervictory.asm"
@@ -45,7 +43,6 @@ INCLUDE "audio/music/route2.asm"
 INCLUDE "audio/music/mtmoon.asm"
 INCLUDE "audio/music/showmearound.asm"
 INCLUDE "audio/music/gamecorner.asm"
-INCLUDE "audio/music/bicycle.asm"
 INCLUDE "audio/music/looksage.asm"
 INCLUDE "audio/music/pokemonchannel.asm"
 INCLUDE "audio/music/lighthouse.asm"
@@ -60,7 +57,6 @@ INCLUDE "audio/music/route26.asm"
 INCLUDE "audio/music/ecruteakcity.asm"
 INCLUDE "audio/music/lakeofragerocketradio.asm"
 INCLUDE "audio/music/magnettrain.asm"
-INCLUDE "audio/music/lavendertown.asm"
 INCLUDE "audio/music/dancinghall.asm"
 INCLUDE "audio/music/contestresults.asm"
 INCLUDE "audio/music/route30.asm"
@@ -73,8 +69,6 @@ INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/evolution.asm"
-INCLUDE "audio/music/printer.asm"
-
 
 SECTION "Songs 4", ROMX
 
@@ -90,7 +84,6 @@ INCLUDE "audio/music/profoakspokemontalk.asm"
 INCLUDE "audio/music/profoak.asm"
 INCLUDE "audio/music/lookrival.asm"
 INCLUDE "audio/music/aftertherivalfight.asm"
-INCLUDE "audio/music/surf.asm"
 INCLUDE "audio/music/nationalpark.asm"
 INCLUDE "audio/music/azaleatown.asm"
 INCLUDE "audio/music/cherrygrovecity.asm"
@@ -106,32 +99,24 @@ INCLUDE "audio/music/mom.asm"
 INCLUDE "audio/music/victoryroad.asm"
 INCLUDE "audio/music/pokemonlullaby.asm"
 INCLUDE "audio/music/pokemonmarch.asm"
-INCLUDE "audio/music/goldsilveropening.asm"
-INCLUDE "audio/music/goldsilveropening2.asm"
 INCLUDE "audio/music/lookhiker.asm"
 INCLUDE "audio/music/lookrocket.asm"
 INCLUDE "audio/music/rockettheme.asm"
 INCLUDE "audio/music/mainmenu.asm"
 INCLUDE "audio/music/lookkimonogirl.asm"
 INCLUDE "audio/music/pokeflutechannel.asm"
-INCLUDE "audio/music/bugcatchingcontest.asm"
-
 
 SECTION "Songs 5", ROMX
 
 INCLUDE "audio/music/mobileadaptermenu.asm"
-INCLUDE "audio/music/buenaspassword.asm"
 INCLUDE "audio/music/lookmysticalman.asm"
-INCLUDE "audio/music/crystalopening.asm"
 INCLUDE "audio/music/battletowertheme.asm"
 INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
-INCLUDE "audio/music/mobilecenter.asm"
 
 
 SECTION "Extra Songs 1", ROMX
 
-INCLUDE "audio/music/credits.asm"
 INCLUDE "audio/music/clair.asm"
 
 SECTION "Extra Songs 2", ROMX
@@ -142,15 +127,9 @@ SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"
 
-SECTION "Extra Songs 3", ROMX
-
-INCLUDE "audio/music/mobileadapter.asm"
-
-
 SECTION "Crystal Sound Effects", ROMX
 
 INCLUDE "audio/sfx_crystal.asm"
-
 
 SECTION "Cries", ROMX
 
@@ -163,15 +142,12 @@ SECTION "New Songs", ROMX
 
 INCLUDE "audio/music/zinniabattle.asm"
 INCLUDE "audio/music/xvz.asm"
-INCLUDE "audio/music/archietheme.asm"
 INCLUDE "audio/music/hoenchampion.asm"
 INCLUDE "audio/music/lugiasong.asm"
 INCLUDE "audio/music/guiletheme.asm"
 INCLUDE "audio/music/mistymountain.asm"
 INCLUDE "audio/music/hoengruntbattle.asm"
 INCLUDE "audio/music/madworld.asm"
-INCLUDE "audio/music/maystheme.asm"
-INCLUDE "audio/music/unovaelitefour.asm"
 INCLUDE "audio/music/tetris.asm"
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/redindigoplateau.asm"

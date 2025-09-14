@@ -338,7 +338,7 @@ ParseCredits:
 
 .music
 ; Play the credits music.
-	ld de, MUSIC_CREDITS
+	ld de, MUSIC_EPIC_TETRIS
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic

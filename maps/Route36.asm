@@ -742,7 +742,7 @@ Route36CrystalScript:
     checkevent EVENT_BEAT_MORTY
     iftrue .end
     showemote EMOTE_SHOCK, PLAYER, 15
-    playmusic MUSIC_CRYSTAL_ENCOUNTER
+    playmusic MUSIC_DANCING_HALL
     appear ROUTE36_CRYSTAL
     applymovement ROUTE36_CRYSTAL, Route36Movement_CrystalApproaches
     turnobject PLAYER, LEFT

@@ -1,6 +1,7 @@
 LoadOverworldMonIcon:
 	ld a, e
 	call ReadMonMenuIcon
+	ld [wCurIcon], a
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -9,9 +10,7 @@ LoadOverworldMonIcon:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	ld b, BANK(Icons)
-	ld c, 8
-	ret
+    jp GetIconBank
 
 SetMenuMonIconColor:
 	push hl
@@ -480,11 +479,31 @@ endr
 	ld d, [hl]
 	pop hl
 
-	lb bc, BANK(Icons), 8
+	call GetIconBank
 	call GetGFXUnlessMobile
 
 	pop hl
 	ret
+
+GetIconBank:
+	ld a, [wCurIcon]
+	cp ICON_ABRA
+	jr c, .icons1
+	cp ICON_MAGIKARP
+	jr c, .icons2
+	cp ICON_YANMA
+	jr c, .icons3
+	lb bc, BANK("Mon Icons 4"), 8
+	ret
+.icons1
+    lb bc, BANK("Mon Icons 1"), 8
+    ret
+.icons2
+    lb bc, BANK("Mon Icons 2"), 8
+    ret
+.icons3
+    lb bc, BANK("Mon Icons 3"), 8
+    ret
 
 GetGFXUnlessMobile:
 	ld a, [wLinkMode]

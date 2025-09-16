@@ -490,6 +490,17 @@ SproutTower3FFieldMon3Script:
 	disappear SPROUTTOWER3F_FIELDMON_3
 	end
 
+SproutTower3BellSproutScript:
+    opentext
+    writetext BellSproutText
+    waitbutton
+    closetext
+    end
+
+BellSproutText:
+    text "Bellsprout"
+    done
+
 SproutTower3F_MapEvents:
 	db 0, 0 ; filler
 
@@ -516,5 +527,6 @@ SproutTower3F_MapEvents:
 	object_event 14,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
 	object_event 10,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER
 	object_event  8, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon1Script, EVENT_FIELD_MON_1
-	object_event  5,  1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event  5,  1, SPRITE_BELLSPROUT, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 14,  1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, SproutTower3FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  0,  0, SPRITE_BELLSPROUT, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, SproutTower3BellSproutScript, -1

@@ -239,6 +239,17 @@ RematchRefuseTextBrock:
     text "Maybe next time."
     done
 
+PewterGymTyranitarScript:
+    opentext
+    writetext TyranitarText
+    waitbutton
+    closetext
+    end
+
+TyranitarText:
+    text "Tyranitar!"
+    done
+
 PewterGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -256,3 +267,4 @@ PewterGym_MapEvents:
 	object_event  5,  1, SPRITE_BROCK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewterGymBrockScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperJerry, -1
 	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, PewterGymGuideScript, -1
+	object_event  6,  1, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, PewterGymTyranitarScript, -1

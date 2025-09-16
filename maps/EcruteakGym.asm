@@ -409,6 +409,17 @@ EcruteakGymClosedText:
 	para "Begone!"
 	done
 
+EcruteakGymGengarScript:
+    opentext
+    writetext GengarText
+    waitbutton
+    closetext
+    end
+
+GengarText:
+    text "Gengar!"
+    done
+
 EcruteakGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -461,3 +472,4 @@ EcruteakGym_MapEvents:
 	object_event  7,  9, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumGrace, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuideScript, -1
 	object_event  4, 14, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event  4,  1, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, EcruteakGymGengarScript, -1

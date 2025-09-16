@@ -352,6 +352,18 @@ RematchRefuseTextSabrina:
     text "Maybe next time."
     done
 
+SaffronGymMewScript:
+    opentext
+    writetext MewText
+    waitbutton
+    closetext
+    end
+
+MewText:
+    text "Who's that"
+    line "#mon!?"
+    done
+
 SaffronGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -401,3 +413,4 @@ SaffronGym_MapEvents:
 	object_event  3,  4, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerMediumDoris, -1
 	object_event 17,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicJared, -1
 	object_event  9, 14, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronGymGuideScript, -1
+	object_event 10,  8, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronGymMewScript, -1

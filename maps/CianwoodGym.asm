@@ -460,6 +460,17 @@ RematchRefuseTextChuck:
     text "Maybe next time."
     done
 
+CianwoodGymLucarioScript:
+    opentext
+    writetext LucarioText
+    waitbutton
+    closetext
+    end
+
+LucarioText:
+    text "Lucario!"
+    done
+
 CianwoodGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -483,3 +494,4 @@ CianwoodGym_MapEvents:
 	object_event  3,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  4,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
 	object_event  5,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymBoulder, -1
+	object_event  6,  2, SPRITE_LUCARIO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymLucarioScript, -1

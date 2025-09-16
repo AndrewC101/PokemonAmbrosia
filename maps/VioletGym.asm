@@ -386,6 +386,17 @@ RematchRefuseText:
     text "Maybe next time."
     done
 
+VioletGymNoctowlScript:
+    opentext
+    writetext NoctowlText
+    waitbutton
+    closetext
+    end
+
+NoctowlText:
+    text "Noctowl!"
+    done
+
 VioletGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -404,3 +415,4 @@ VioletGym_MapEvents:
 	object_event  7,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
 	object_event  2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuideScript, -1
+	object_event  4,  1, SPRITE_NOCTOWL, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VioletGymNoctowlScript, -1

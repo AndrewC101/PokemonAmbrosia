@@ -163,6 +163,18 @@ RematchRefuseTextBlaine:
     text "Maybe next time."
     done
 
+SeafoamGymMoltresScript:
+    opentext
+    writetext MoltresText
+    waitbutton
+    closetext
+    end
+
+MoltresText:
+    text "Who's that"
+    line "#mon!?"
+    done
+
 SeafoamGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -177,4 +189,4 @@ SeafoamGym_MapEvents:
 	object_event 15,  12, SPRITE_BLAINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SeafoamGymBlaineScript, -1
 	object_event 16,  15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuideScript, EVENT_SEAFOAM_GYM_GYM_GUIDE
 	object_event  2,   2, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ArticunoScript, EVENT_CAUGHT_ARTICUNO
-
+	object_event 14, 12, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymMoltresScript, -1

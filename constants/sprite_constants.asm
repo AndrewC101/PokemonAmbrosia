@@ -152,28 +152,58 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_ARCEUS ; a4
 	const SPRITE_MEWTWO ; a5
 	const SPRITE_VOLCARONA ; a6
-	const SPRITE_LUCARIO
-	const SPRITE_TYRANITAR
-	const SPRITE_METAGROSS
-	const SPRITE_SALAMENCE
-	const SPRITE_GARCHOMP
-	const SPRITE_ZAPDOS
-	const SPRITE_ARTICUNO
-	const SPRITE_MEW
-	const SPRITE_KYOGRE
-	const SPRITE_GROUDON
-	const SPRITE_RAYQUAZA
-	const SPRITE_DEOXYS
-	const SPRITE_LATIOS
-	const SPRITE_DIALGA
-	const SPRITE_PALKIA
-	const SPRITE_GIRATINA
-	const SPRITE_REGIGIGAS
-	const SPRITE_DARKRAI
-	const SPRITE_GENESECT
-	const SPRITE_XERNEAS
-	const SPRITE_YVELTAL
-	const SPRITE_ZYGARDE
+	const SPRITE_LUCARIO    ; a7
+	const SPRITE_TYRANITAR  ; a8
+	const SPRITE_METAGROSS  ; a9
+	const SPRITE_SALAMENCE  ; aa
+	const SPRITE_GARCHOMP   ; ab
+	const SPRITE_ZAPDOS     ; ac
+	const SPRITE_ARTICUNO   ; ad
+	const SPRITE_MEW        ; ae
+	const SPRITE_KYOGRE     ; af
+	const SPRITE_GROUDON    ; b0
+	const SPRITE_RAYQUAZA   ; b1
+	const SPRITE_DEOXYS     ; b2
+	const SPRITE_LATIOS     ; b3
+	const SPRITE_DIALGA     ; b4
+	const SPRITE_PALKIA     ; b5
+	const SPRITE_GIRATINA   ; b6
+	const SPRITE_REGIGIGAS  ; b7
+	const SPRITE_DARKRAI    ; b8
+	const SPRITE_GENESECT   ; b9
+	const SPRITE_XERNEAS    ; ba
+	const SPRITE_YVELTAL    ; bb
+	const SPRITE_ZYGARDE    ; bc
+	const SPRITE_BLISSEY    ; bd
+	const SPRITE_NOCTOWL    ; be
+	const SPRITE_HERACROSS  ; bf
+	const SPRITE_MILTANK    ; c0
+	const SPRITE_STEELIX    ; c1
+	const SPRITE_LATIAS     ; c2
+	const SPRITE_ALAKAZAM   ; c3
+	const SPRITE_MACHAMP    ; c4
+	const SPRITE_RAICHU     ; c5
+	const SPRITE_SHAYMIN    ; c6
+	const SPRITE_GRENINJA   ; c7
+	const SPRITE_PERSIAN    ; c8
+	const SPRITE_HOUNDOOM   ; c9
+	const SPRITE_CHARIZARD  ; ca
+	const SPRITE_SKARMORY   ; cb
+	const SPRITE_ARCANINE   ; cc
+	const SPRITE_POLIWRATH  ; cd
+	const SPRITE_DITTO      ; ce
+	const SPRITE_BELLSPROUT ; cf
+	const SPRITE_GIBLE      ; d0
+	const SPRITE_MAMOSWINE  ; d1
+	const SPRITE_RIOLU      ; d2
+	const SPRITE_TOGEKISS   ; d3
+	const SPRITE_MR_MIME    ; d4
+	const SPRITE_DRATINI    ; d5
+	const SPRITE_SEADRA     ; d6
+	const SPRITE_DRAGONAIR  ; d7
+	const SPRITE_MILOTIC    ; d8
+	const SPRITE_DRACOVISH  ; d9
+	const SPRITE_KINGDRA    ; da
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

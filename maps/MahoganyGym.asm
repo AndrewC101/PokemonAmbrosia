@@ -405,6 +405,18 @@ RematchRefuseTextPryce:
     text "Maybe next time."
     done
 
+MahoganyGymArticunoScript:
+    opentext
+    writetext ArticunoText
+    waitbutton
+    closetext
+    end
+
+ArticunoText:
+    text "Who's that"
+    line "#mon!?"
+    done
+
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -424,3 +436,4 @@ MahoganyGym_MapEvents:
 	object_event  5,  9, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderBrad, -1
 	object_event  2,  4, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBoarderDouglas, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuideScript, -1
+	object_event  6,  3, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGymArticunoScript, -1

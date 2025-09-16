@@ -478,6 +478,17 @@ RematchRefuseTextWhitney:
     para "How Fetch!"
     done
 
+GoldenrodGymMiltankScript:
+    opentext
+    writetext MiltankText
+    waitbutton
+    closetext
+    end
+
+MiltankText:
+    text "Moo!"
+    done
+
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -499,3 +510,5 @@ GoldenrodGym_MapEvents:
 	object_event  0,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
 	object_event 19,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
 	object_event  5, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuideScript, -1
+	object_event  9,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltankScript, -1
+

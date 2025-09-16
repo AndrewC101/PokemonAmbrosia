@@ -128,6 +128,17 @@ WillScript_WillDefeatText:
 	cont "and never give up."
 	done
 
+SabrinaAlakazam:
+    opentext
+    writetext AlakazamText
+    waitbutton
+    closetext
+    end
+
+AlakazamText:
+    text "Alakazam!"
+    done
+
 WillsRoom_MapEvents:
 	db 0, 0 ; filler
 
@@ -142,3 +153,5 @@ WillsRoom_MapEvents:
 
 	def_object_events
 	object_event  5,  7, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
+	object_event  6,  7, SPRITE_ALAKAZAM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SabrinaAlakazam, -1
+

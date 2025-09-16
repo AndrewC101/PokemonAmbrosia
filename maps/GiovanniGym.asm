@@ -276,6 +276,17 @@ PsychicJamieAfterBattleText:
     cont "know my #mon."
     done
 
+SaffronGymPersianScript:
+    opentext
+    writetext PersianText
+    waitbutton
+    closetext
+    end
+
+PersianText:
+    text "Persian..."
+    done
+
 GiovanniGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -293,3 +304,4 @@ GiovanniGym_MapEvents:
 	object_event 11,  1, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltJonny, -1
 	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicJamie, -1
 	object_event  3,  1, SPRITE_GIOVANNI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronGymGiovanniScript, -1
+	object_event  2,  1, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SaffronGymPersianScript, -1

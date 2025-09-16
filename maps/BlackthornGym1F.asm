@@ -468,6 +468,18 @@ RematchRefuseTextClair:
     text "Maybe next time."
     done
 
+BlackthornGymLatiasScript:
+    opentext
+    writetext LatiasText
+    waitbutton
+    closetext
+    end
+
+LatiasText:
+    text "Who's that"
+    line "#mon!?"
+    done
+
 BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -492,3 +504,4 @@ BlackthornGym1F_MapEvents:
 	object_event  1, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainermPaul, -1
 	object_event  9,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfLola, -1
 	object_event  7, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymGuideScript, -1
+	object_event  4,  3, SPRITE_LATIAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornGymLatiasScript, -1

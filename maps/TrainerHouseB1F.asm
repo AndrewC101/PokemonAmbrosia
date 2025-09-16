@@ -2258,7 +2258,7 @@ BattleArcadeReceptionistScript:
     writetext PlayAsAshText
     yesorno
     iffalse .ChoosePlayerCharacter
-	setval RED
+	setval ASH
 	writemem wOtherTrainerClass
     scall WhichVariantChoice
     ifequal TRUE, .MasterAshPlayer

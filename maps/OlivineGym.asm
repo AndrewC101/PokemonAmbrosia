@@ -280,6 +280,17 @@ RematchRefuseTextJasmine:
     text "Maybe next time."
     done
 
+OlivineGymSteelixScript:
+    opentext
+    writetext SteelixText
+    waitbutton
+    closetext
+    end
+
+SteelixText:
+    text "Steelix!"
+    done
+
 OlivineGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -296,3 +307,4 @@ OlivineGym_MapEvents:
 	def_object_events
 	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1
+	object_event  4,  3, SPRITE_STEELIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineGymSteelixScript, -1

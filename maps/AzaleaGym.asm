@@ -378,6 +378,17 @@ RematchRefuseTextBugsy:
     text "Maybe next time."
     done
 
+AzaleaGymHeracrossScript:
+    opentext
+    writetext HeracrossText
+    waitbutton
+    closetext
+    end
+
+HeracrossText:
+    text "Heracross!"
+    done
+
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -399,3 +410,5 @@ AzaleaGym_MapEvents:
 	object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay1, -1
 	object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsAmyandmay2, -1
 	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuideScript, -1
+	object_event  6,  7, SPRITE_HERACROSS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymHeracrossScript, -1
+

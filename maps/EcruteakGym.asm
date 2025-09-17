@@ -412,6 +412,7 @@ EcruteakGymClosedText:
 EcruteakGymGengarScript:
     opentext
     writetext GengarText
+    cry GENGAR
     waitbutton
     closetext
     end

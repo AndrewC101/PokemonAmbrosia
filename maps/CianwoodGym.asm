@@ -463,6 +463,7 @@ RematchRefuseTextChuck:
 CianwoodGymLucarioScript:
     opentext
     writetext LucarioText
+    cry LUCARIO
     waitbutton
     closetext
     end

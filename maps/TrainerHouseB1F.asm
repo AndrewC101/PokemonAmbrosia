@@ -2262,7 +2262,7 @@ BattleArcadeReceptionistScript:
 	writemem wOtherTrainerClass
     scall WhichVariantChoice
     ifequal TRUE, .MasterAshPlayer
-	setval ASH
+	setval ASH1
 	sjump .AshPlayerDone
 .MasterAshPlayer
 	setval MASTER_ASH

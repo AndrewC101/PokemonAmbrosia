@@ -481,6 +481,7 @@ RematchRefuseTextWhitney:
 GoldenrodGymMiltankScript:
     opentext
     writetext MiltankText
+    cry MILTANK
     waitbutton
     closetext
     end

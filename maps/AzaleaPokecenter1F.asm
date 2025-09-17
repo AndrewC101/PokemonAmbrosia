@@ -70,6 +70,18 @@ AzaleaPokecenter1FPokefanFText:
 	line "APRICORNS."
 	done
 
+AzaBlisseyScript:
+    opentext
+    writetext AzaBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+AzaBlisseyText:
+    text "Blissey!"
+    done
+
 AzaleaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -87,3 +99,4 @@ AzaleaPokecenter1F_MapEvents:
 	object_event  9,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FGentlemanScript, -1
 	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaBlisseyScript, -1

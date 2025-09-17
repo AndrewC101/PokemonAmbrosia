@@ -92,4 +92,7 @@ SpriteMons:
 	db MILOTIC
 	db DRACOVISH
 	db KINGDRA
+	db VENUSAUR
+	db ESPEON
+	db RALTS
 	assert_table_length NUM_POKEMON_SPRITES

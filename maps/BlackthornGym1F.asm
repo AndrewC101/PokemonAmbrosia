@@ -471,6 +471,7 @@ RematchRefuseTextClair:
 BlackthornGymLatiasScript:
     opentext
     writetext LatiasText
+    cry LATIAS
     waitbutton
     closetext
     end

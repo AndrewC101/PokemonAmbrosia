@@ -98,6 +98,18 @@ LavenderPokecenter1FYoungsterText_BeatWallace:
 	cont "my mind."
 	done
 
+LavBlisseyScript:
+    opentext
+    writetext LavBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+LavBlisseyText:
+    text "Blissey!"
+    done
+
 LavenderPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -115,3 +127,4 @@ LavenderPokecenter1F_MapEvents:
 	object_event  7,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderPokecenter1FGentlemanScript, -1
 	object_event  7,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderPokecenter1FTeacherScript, -1
 	object_event  1,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderPokecenter1FYoungsterScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavBlisseyScript, -1

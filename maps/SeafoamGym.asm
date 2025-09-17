@@ -166,6 +166,7 @@ RematchRefuseTextBlaine:
 SeafoamGymMoltresScript:
     opentext
     writetext MoltresText
+    cry MOLTRES
     waitbutton
     closetext
     end

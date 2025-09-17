@@ -56,6 +56,18 @@ MahoganyPokecenter1FCooltrainerFText:
 	cont "since then!"
 	done
 
+MahBlisseyScript:
+    opentext
+    writetext MahBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+MahBlisseyText:
+    text "Blissey!"
+    done
+
 MahoganyPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -73,3 +85,4 @@ MahoganyPokecenter1F_MapEvents:
 	object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FPokefanMScript, -1
 	object_event  1,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FYoungsterScript, -1
 	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPokecenter1FCooltrainerFScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahBlisseyScript, -1

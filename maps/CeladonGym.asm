@@ -337,16 +337,16 @@ RematchRefuseTextErika:
     text "Maybe next time."
     done
 
-CeladonGymShayminScript:
+CeladonGymVenusaurScript:
     opentext
-    writetext ShayminText
+    writetext VenusaurText
+    cry VENUSAUR
     waitbutton
     closetext
     end
 
-ShayminText:
-    text "Who's that"
-    line "#mon!?"
+VenusaurText:
+    text "Venusaur!"
     done
 
 CeladonGym_MapEvents:
@@ -369,4 +369,4 @@ CeladonGym_MapEvents:
 	object_event  3,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyJulia, -1
 	;object_event  4, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe1, -1
 	;object_event  5, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsJoAndZoe2, -1
-	object_event  6,  3, SPRITE_SHAYMIN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymShayminScript, -1
+	object_event  4,  3, SPRITE_VENUSAUR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGymVenusaurScript, -1

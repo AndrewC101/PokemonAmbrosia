@@ -104,6 +104,18 @@ CianwoodPokecenter1FSuperNerdText:
 	line "was epic though!"
 	done
 
+CianBlisseyScript:
+    opentext
+    writetext CianBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+CianBlisseyText:
+    text "Blissey!"
+    done
+
 CianwoodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -121,3 +133,4 @@ CianwoodPokecenter1F_MapEvents:
 	object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
 	object_event  7,  2, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianBlisseyScript, -1

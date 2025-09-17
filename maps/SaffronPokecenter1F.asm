@@ -104,6 +104,18 @@ SaffronPokecenter1FYoungsterText:
 	cont "outbreak."
 	done
 
+SaffBlisseyScript:
+    opentext
+    writetext SaffBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+SaffBlisseyText:
+    text "Blissey!"
+    done
+
 SaffronPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -121,3 +133,4 @@ SaffronPokecenter1F_MapEvents:
 	object_event  7,  2, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FTeacherScript, -1
 	object_event  8,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FFisherScript, -1
 	object_event  1,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FYoungsterScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffBlisseyScript, -1

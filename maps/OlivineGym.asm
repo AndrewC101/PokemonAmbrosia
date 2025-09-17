@@ -283,6 +283,7 @@ RematchRefuseTextJasmine:
 OlivineGymSteelixScript:
     opentext
     writetext SteelixText
+    cry STEELIX
     waitbutton
     closetext
     end

@@ -279,6 +279,7 @@ PsychicJamieAfterBattleText:
 SaffronGymPersianScript:
     opentext
     writetext PersianText
+    cry PERSIAN
     waitbutton
     closetext
     end

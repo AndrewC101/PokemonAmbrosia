@@ -91,6 +91,18 @@ InvadedVermilionPokecenter1FBugCatcherText:
 	line "help us!"
 	done
 
+VerBlisseyScript:
+    opentext
+    writetext VerBlisseyText
+    cry BLISSEY
+    waitbutton
+    closetext
+    end
+
+VerBlisseyText:
+    text "Blissey!"
+    done
+
 VermilionPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -108,3 +120,4 @@ VermilionPokecenter1F_MapEvents:
 	object_event  7,  2, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FFishingGuruScript, -1
 	object_event  6,  5, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FSailorScript, -1
 	object_event  1,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FBugCatcherScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VerBlisseyScript, -1

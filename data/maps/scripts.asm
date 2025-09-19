@@ -373,7 +373,6 @@ INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
-INCLUDE "maps/Route3.asm"
 
 SECTION "Map Scripts 25", ROMX
 
@@ -520,3 +519,4 @@ INCLUDE "maps/FuchsiaMart.asm"
 INCLUDE "maps/Route27SandstormHouse.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
+INCLUDE "maps/Route3.asm"

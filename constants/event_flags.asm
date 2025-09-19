@@ -436,6 +436,8 @@
     const EVENT_GOT_UNOWN_AMBROSIA
     const EVENT_BEAT_MASTER_JONATHAN
     const EVENT_BEAT_JONATHAN
+    const EVENT_BEAT_NURSE_JOY
+    const EVENT_PICKED_UP_ROUTE5_LUCKY_EGG
 
     ; ======================================
     ; DevNote - here

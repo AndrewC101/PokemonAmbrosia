@@ -159,15 +159,15 @@ LoadRandomBattleTowerMon:
 	jr .continue
 ; last trainer only uses 20 strongest mons and can pick Mewtwo
 .lastTrainerMaster
+    ;ld a, b
+    ;and a
+    ;jr nz, .notMewtwo
+    ;call Random
+    ;cp 25 percent
+    ;jr c, .resample
     ld a, b
-    and a
-    jr nz, .notMewtwo
-    call Random
-    cp 25 percent
-    jr c, .resample
-    ld a, b
-.notMewtwo
-    cp 16
+;.notMewtwo
+    cp 32
     jr nc, .resample
 
 .continue

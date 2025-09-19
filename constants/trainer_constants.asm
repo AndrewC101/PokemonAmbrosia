@@ -293,6 +293,10 @@ KRIS EQU __trainer_class__
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
+	const JOY1
+	const JOY2
+	const JOY3
+	const JOY4
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY

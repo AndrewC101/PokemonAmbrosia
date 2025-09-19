@@ -1670,10 +1670,12 @@ ChanseyEvosAttacks:
 	db 13, SOFTBOILED
 	db 22, SING
 	db 27, BODY_SLAM
+	db 30, COUNTER
     db 33, TRI_ATTACK
 	db 36, LIGHT_SCREEN
 	db 40, SOFTBOILED
-	db 45, DOUBLE_EDGE
+	db 43, SEISMIC_TOSS
+	db 46, DOUBLE_EDGE
 	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 
@@ -3616,10 +3618,12 @@ BlisseyEvosAttacks:
 	db 13, SOFTBOILED
 	db 22, SING
 	db 27, BODY_SLAM
+	db 30, COUNTER
     db 33, TRI_ATTACK
 	db 36, LIGHT_SCREEN
 	db 40, SOFTBOILED
-	db 45, DOUBLE_EDGE
+	db 43, SEISMIC_TOSS
+	db 46, DOUBLE_EDGE
 	db 50, HEAL_BELL
 	db 0 ; no more level-up moves
 

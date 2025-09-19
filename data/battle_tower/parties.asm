@@ -4593,8 +4593,6 @@ BattleTowerMons:
 	bigdw 188 ; SDef
 	db "RANTA-N@@@@"
 
-; ============ Final Trainer End - 16 mons ==============
-
     db DARKRAI
 	db LEFTOVERS
 	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
@@ -5010,6 +5008,8 @@ BattleTowerMons:
 	bigdw 398 ; SAtk
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
+
+	; =========== Last Trainer picks from top 32 Pokemon =============
 
 	db ALAKAZAM
 	db FOCUS_SASH

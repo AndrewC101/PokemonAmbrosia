@@ -15,6 +15,7 @@
     const NATIONALPARK_FIELDMON_4
     const NATIONALPARK_FIELDMON_5
     const NATIONALPARK_FIELDMON_6
+    const NATIONALPARK_CHARIZARD
 
 NationalPark_MapScripts:
 	def_scene_scripts
@@ -29,6 +30,7 @@ NationalPark_MapScripts:
 	writemem wFieldWeather
 .skipWeather
     disappear NATIONALPARK_LEON
+    disappear NATIONALPARK_CHARIZARD
     checkevent EVENT_BEAT_MORTY
     iffalse .appearLeon
 	readvar VAR_WEEKDAY
@@ -38,6 +40,7 @@ NationalPark_MapScripts:
 	setval WEATHER_NONE
 	writemem wFieldWeather
     appear NATIONALPARK_LEON
+    appear NATIONALPARK_CHARIZARD
     moveobject NATIONALPARK_TEACHER2, 16, 26
     turnobject NATIONALPARK_TEACHER2, RIGHT
     moveobject NATIONALPARK_LASS1, 20, 27
@@ -962,6 +965,19 @@ RematchRefusedTextLeon:
     line "for more."
     done
 
+NationalParkCharizardScript:
+    opentext
+    writetext NationalParkCharizardText
+    cry CHARIZARD
+    waitbutton
+    closetext
+    end
+
+NationalParkCharizardText:
+    text "A strong looking"
+    line "Charizard."
+    done
+
 NationalPark_MapEvents:
 	db 0, 0 ; filler
 
@@ -984,7 +1000,7 @@ NationalPark_MapEvents:
 	object_event 27, 40, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 15, 30, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 26, 40, SPRITE_MONSTER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event 26, 40, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
 	object_event 27, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
 	object_event  9, 14, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1
@@ -996,3 +1012,4 @@ NationalPark_MapEvents:
 	object_event 27, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 18, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 19, 27, SPRITE_CHARIZARD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkCharizardScript, EVENT_FIELD_MON_6

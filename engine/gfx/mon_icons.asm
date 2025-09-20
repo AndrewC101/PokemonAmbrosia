@@ -487,7 +487,7 @@ endr
 
 GetIconBank:
 	ld a, [wCurIcon]
-	cp ICON_ABRA
+	cp ICON_KADABRA
 	jr c, .icons1
 	cp ICON_MAGIKARP
 	jr c, .icons2

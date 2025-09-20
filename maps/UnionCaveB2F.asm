@@ -200,7 +200,7 @@ UnionCaveB2FFieldMon3Script:
 	
 UnionCaveB2FFieldMon4Script:
 	faceplayer
-	cry GIBLE
+	cry STEELIX
 	pause 15
 	loadwildmon STEELIX, 40
 	startbattle

@@ -35,6 +35,10 @@ KRIS EQU __trainer_class__
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
 	const MASTER_WHITNEY
+	const JOY1
+	const JOY2
+	const JOY3
+	const JOY4
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
@@ -293,10 +297,6 @@ KRIS EQU __trainer_class__
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
-	const JOY1
-	const JOY2
-	const JOY3
-	const JOY4
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY

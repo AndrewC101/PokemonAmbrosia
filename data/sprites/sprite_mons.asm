@@ -95,4 +95,8 @@ SpriteMons:
 	db VENUSAUR
 	db ESPEON
 	db RALTS
+	db AMPHAROS
+	db SLOWBRO
+	db SLOWKING
+	db STARAPTOR
 	assert_table_length NUM_POKEMON_SPRITES

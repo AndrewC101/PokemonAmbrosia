@@ -207,6 +207,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_VENUSAUR   ; db
 	const SPRITE_ESPEON     ; dc
 	const SPRITE_RALTS      ; dd
+	const SPRITE_AMPHAROS   ; de
+	const SPRITE_SLOWBRO    ; df
+	const SPRITE_SLOWKING   ; e0
+	const SPRITE_STARAPTOR  ; e1
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

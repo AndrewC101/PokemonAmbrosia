@@ -98,16 +98,16 @@ TrainerJoyScript:
     checkevent EVENT_BEAT_MORTY
     iftrue .joy2
 
-	loadtrainer BEAUTY, JOY1
+	loadtrainer WHITNEY, JOY1
 	sjump .begin
 .joy2
-    loadtrainer BEAUTY, JOY2
+    loadtrainer WHITNEY, JOY2
     sjump .begin
 .joy3
-    loadtrainer BEAUTY, JOY3
+    loadtrainer WHITNEY, JOY3
     sjump .begin
 .joy4
-    loadtrainer BEAUTY, JOY4
+    loadtrainer WHITNEY, JOY4
     ; fallthrough
 .begin
 	startbattle

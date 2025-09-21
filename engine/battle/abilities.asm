@@ -161,6 +161,7 @@ MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
+    db DEOXYS
     db -1
 
 ClearBodyPokemon:

@@ -1216,6 +1216,7 @@ Core_MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
+    db DEOXYS
     db -1
 
 Core_LevitatePokemon:

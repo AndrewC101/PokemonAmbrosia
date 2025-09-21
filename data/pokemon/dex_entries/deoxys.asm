@@ -5,6 +5,6 @@
 	next "of DNA mutated by"
 	next "space radiation."
 
-	page "Immune to"
-	next "SLEEP. Breaks"
-	next "enemy screens.@"
+	page "Breaks screens."
+	next "Immune to passive"
+	next "damage and SLEEP@."

@@ -31,6 +31,7 @@ AI_MagicGuardPokemon:
     db YVELTAL
     db MIMIKYU
     db LOPUNNY
+    db DEOXYS
     db $FF
 
 AI_LevitatePokemon:

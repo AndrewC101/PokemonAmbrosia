@@ -235,7 +235,8 @@ Route5Trainer2Text:
 	para "She says this"
 	line "makes us stronger."
 	para "I'm not even sure"
-	line "she's areal nurse."
+	line "she's a real"
+	cont "nurse."
 	done
 
 Route5LuckyEggScript:

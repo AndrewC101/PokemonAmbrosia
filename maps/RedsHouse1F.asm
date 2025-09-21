@@ -113,6 +113,18 @@ RedsHouse1FTVText:
 	cont "in JOHTO…"
 	done
 
+RedsHouseMrMimeScript:
+    opentext
+    writetext RedsHouseMrMimeText
+    cry MR__MIME
+    waitbutton
+    closetext
+    end
+
+RedsHouseMrMimeText:
+    text "Mr Mime!"
+    done
+
 RedsHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -130,3 +142,4 @@ RedsHouse1F_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsMom, -1
+	object_event  1,  2, SPRITE_MR_MIME, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedsHouseMrMimeScript, -1

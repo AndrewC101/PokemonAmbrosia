@@ -76,7 +76,7 @@ SpriteMons:
 	db PERSIAN
 	db HOUNDOOM
 	db CHARIZARD
-	db SKARMORY
+	db ABRA
 	db ARCANINE
 	db POLIWRATH
 	db DITTO
@@ -99,4 +99,6 @@ SpriteMons:
 	db SLOWBRO
 	db SLOWKING
 	db STARAPTOR
+	db SOLOSIS
+	db GASTLY
 	assert_table_length NUM_POKEMON_SPRITES

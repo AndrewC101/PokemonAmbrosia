@@ -383,6 +383,18 @@ MrPokemonsHouse_StrangeCoinsText:
 	line "HOENN."
 	done
 
+MrPokemonDittoScrpt:
+    opentext
+    writetext MrPokemonDittoText
+    cry DITTO
+    waitbutton
+    closetext
+    end
+
+MrPokemonDittoText:
+    text "Ditto!"
+    done
+
 MrPokemonsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -402,3 +414,4 @@ MrPokemonsHouse_MapEvents:
 	def_object_events
 	object_event  3,  5, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrPokemonsHouse_MrPokemonScript, -1
 	object_event  6,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MR_POKEMONS_HOUSE_OAK
+	object_event  3,  4, SPRITE_DITTO, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MrPokemonDittoScrpt, -1

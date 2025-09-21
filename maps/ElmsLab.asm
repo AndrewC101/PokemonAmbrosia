@@ -1967,6 +1967,19 @@ ElmsFinalWordsText:
     para "Good luck."
     done
 
+ElmsLabMrMimeScript:
+    opentext
+    writetext ElmMrMimeText
+    cry MR__MIME
+    waitbutton
+    closetext
+    end
+
+ElmMrMimeText:
+    text "Mr Mime!"
+    line "Mime! Mime!"
+    done
+
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
@@ -1983,7 +1996,7 @@ ElmsLab_MapEvents:
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POTION, AideScript_WalkPotion2
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
-    coord_event  4,  5, SCENE_CUSTOM_1, DadBattleScript1
+	coord_event  4,  5, SCENE_CUSTOM_1, DadBattleScript1
 	coord_event  5,  5, SCENE_CUSTOM_1, DadBattleScript2
 
 	def_bg_events
@@ -2015,6 +2028,4 @@ ElmsLab_MapEvents:
 	object_event  4, 11, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2
 	object_event  5,  4, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
 	object_event 4, 2, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_4
-
-
-
+	object_event  9,  8, SPRITE_MR_MIME, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ElmsLabMrMimeScript, -1

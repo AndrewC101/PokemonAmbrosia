@@ -188,6 +188,18 @@ GolBlisseyText:
     text "Blissey!"
     done
 
+GolPersianScript:
+    opentext
+    writetext GolPersianText
+    cry PERSIAN
+    waitbutton
+    closetext
+    end
+
+GolPersianText:
+    text "Persian!"
+    done
+
 GoldenrodPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -210,3 +222,4 @@ GoldenrodPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FLassScript, -1
 	object_event  7,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecenter1FPokefanF, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GolBlisseyScript, -1
+	object_event  8,  5, SPRITE_PERSIAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GolPersianScript, -1

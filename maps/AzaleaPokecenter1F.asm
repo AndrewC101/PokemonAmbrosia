@@ -82,6 +82,18 @@ AzaBlisseyText:
     text "Blissey!"
     done
 
+AzaGibleScript:
+    opentext
+    writetext AzaGibleText
+    cry GIBLE
+    waitbutton
+    closetext
+    end
+
+AzaGibleText:
+    text "Gible!"
+    done
+
 AzaleaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -100,3 +112,4 @@ AzaleaPokecenter1F_MapEvents:
 	object_event  6,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FFishingGuruScript, -1
 	object_event  1,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaPokecenter1FPokefanFScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaBlisseyScript, -1
+	object_event  7,  1, SPRITE_GIBLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaGibleScript, -1

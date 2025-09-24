@@ -341,6 +341,18 @@ VioBlisseyText:
     text "Blissey!"
     done
 
+VioDratiniScript:
+    opentext
+    writetext VioDratiniText
+    cry DRATINI
+    waitbutton
+    closetext
+    end
+
+VioDratiniText:
+    text "Dratini!"
+    done
+
 VioletPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -363,3 +375,4 @@ VioletPokecenter1F_MapEvents:
 	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletPokecenter1F_ElmsAideScript, EVENT_ELMS_AIDE_IN_VIOLET_POKEMON_CENTER
 	object_event  0,  7, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BILL_APPEARS_IN_VIOLET
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioBlisseyScript, -1
+	object_event  2,  4, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioDratiniScript, -1

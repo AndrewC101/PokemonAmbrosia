@@ -67,6 +67,18 @@ ChBlisseyText:
     text "Blissey!"
     done
 
+ChMudkipScript:
+    opentext
+    writetext ChMudkipText
+    cry MUDKIP
+    waitbutton
+    closetext
+    end
+
+ChMudkipText:
+    text "Mudkip!"
+    done
+
 CherrygrovePokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -85,3 +97,5 @@ CherrygrovePokecenter1F_MapEvents:
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
 	object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ChBlisseyScript, -1
+	object_event  1, 3, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ChMudkipScript, -1
+

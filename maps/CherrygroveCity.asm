@@ -1777,6 +1777,30 @@ CherrygroveArcanineText:
     text "Arcanine!"
     done
 
+CherrygroveMagikarpScript:
+    opentext
+    writetext CherrygroveMagikarpText
+    cry MAGIKARP
+    waitbutton
+    closetext
+    end
+
+CherrygroveMagikarpText:
+    text "Karp! Karp!"
+    done
+
+CherrygroveMagikarpDeadScript:
+    opentext
+    writetext CherrygroveMagikarpDeadText
+    waitbutton
+    closetext
+    end
+
+CherrygroveMagikarpDeadText:
+    text "...."
+    para "It's not moving."
+    done
+
 CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -1812,3 +1836,8 @@ CherrygroveCity_MapEvents:
 	object_event 21, 4, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
 	object_event 23, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CherrygroveMon1Script, EVENT_FIELD_MON_1
 	object_event 33, 22, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveArcanineScript, -1
+	object_event  7, 11, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
+	object_event  4, 11, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
+	object_event  6, 12, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
+	object_event  6, 10, SPRITE_MAGIKARP, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpDeadScript, -1
+

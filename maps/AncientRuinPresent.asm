@@ -216,11 +216,16 @@ AncientRuinsPresentFieldMon3Script:
     disappear ANCIENTRUINPRESENT_FIELDMON_3
     end
 
-AncientRuinsPresentFieldMon4Script:
-	trainer GENESECT, FIELD_MON, EVENT_FIELD_MON_4, AncientRuinsPresentPokemonAttacksText, 74, 0, .script
-.script
-    disappear ANCIENTRUINPRESENT_FIELDMON_4
-    end
+AncientRuinsPresentGenesectScript:
+	cry GENESECT
+	pause 15
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon GENESECT, 75
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear ANCIENTRUINPRESENT_FIELDMON_4
+	end
 
 AncientRuinsPresentFieldMon5Script:
 	trainer KINGAMBIT, FIELD_MON, EVENT_FIELD_MON_5, AncientRuinsPresentPokemonAttacksText, 71, 0, .script
@@ -284,7 +289,7 @@ AncientRuinPresent_MapEvents:
 	object_event 36, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 33, 17, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon2Script, EVENT_FIELD_MON_2
 	object_event  5, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 29, 36, SPRITE_GENESECT, SPRITEMOVEDATA_POKEMON, 3, 3, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, AncientRuinsPresentFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 29, 36, SPRITE_GENESECT, SPRITEMOVEDATA_POKEMON, 3, 3, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AncientRuinsPresentGenesectScript, EVENT_FIELD_MON_4
 	object_event  6, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon5Script, EVENT_FIELD_MON_5
 	object_event  3, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 34, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon7Script, EVENT_FIELD_MON_7

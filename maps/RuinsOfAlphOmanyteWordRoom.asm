@@ -35,4 +35,4 @@ RuinsOfAlphOmanyteWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 14,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OmanWordRoomFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 14,  9, SPRITE_REUNICLUS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OmanWordRoomFieldMon1Script, EVENT_FIELD_MON_1

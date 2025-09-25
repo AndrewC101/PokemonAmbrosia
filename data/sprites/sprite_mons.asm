@@ -119,4 +119,11 @@ SpriteMons:
 	db PINSIR
 	db SCYTHER
 	db AEGISLASH
+	db KOFFING
+	db ARBOK
+	db MAGMAR
+	db ELECTABUZZ
+	db POLIWHIRL
+	db NIDOKING
+	db NIDOQUEEN
 	assert_table_length NUM_POKEMON_SPRITES

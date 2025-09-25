@@ -120,10 +120,10 @@ SpriteMons:
 	db SCYTHER
 	db AEGISLASH
 	db MEOWTH
-	db MAREEP
+	db MAGMAR
 	db RIOLU
-	db MARILL
+	db ELECTABUZZ
 	db POLIWHIRL
-	db NIDOKING
-	db NIDOQUEEN
+	db PONYTA
+	db GLISCOR
 	assert_table_length NUM_POKEMON_SPRITES

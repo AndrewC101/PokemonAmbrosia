@@ -231,12 +231,12 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SCYTHER    ; e5
 	const SPRITE_AEGISLASH  ; e6
 	const SPRITE_MEOWTH     ; e7
-	const SPRITE_MAREEP     ; e8
+	const SPRITE_MAGMAR     ; e8
 	const SPRITE_RIOLU      ; e9
-	const SPRITE_MARILL     ; ea
+	const SPRITE_ELECTABUZZ ; ea
 	const SPRITE_POLIWHIRL  ; eb
-	const SPRITE_NIDOKING   ; ec
-	const SPRITE_NIDOQUEEN  ; ed
+	const SPRITE_PONYTA     ; ec
+	const SPRITE_GLISCOR    ; ed
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

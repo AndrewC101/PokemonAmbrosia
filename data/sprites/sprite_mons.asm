@@ -1,17 +1,17 @@
 SpriteMons:
 ; entries correspond to SPRITE_* constants past SPRITE_POKEMON
 	table_width 1, SpriteMons
-	db UNOWN
+	db UMBREON
 	db GEODUDE
 	db GROWLITHE
-	db HONEDGE
-	db SHELLDER
-	db PAWNIARD
+	db SCEPTILE
+	db GRENINJA
+	db INFERNAPE
 	db GENGAR
 	db ZUBAT
 	db MAGIKARP
 	db SQUIRTLE
-	db TOGEPI
+	db BAGON
 	db BUTTERFREE
 	db ARCTOZOLT
 	db POLIWAG
@@ -30,7 +30,7 @@ SpriteMons:
 	db MACHOP
 	db MAGNETON
 	db LAPRAS
-	db RHYDON
+	db RHYPERIOR
 	db MOLTRES
 	db SNORLAX
 	db GYARADOS

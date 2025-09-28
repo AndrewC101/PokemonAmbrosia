@@ -96,6 +96,18 @@ EcEspeonText:
     text "Espeon!"
     done
 
+EcScizorScript:
+    opentext
+    writetext EcScizorText
+    cry SCIZOR
+    waitbutton
+    closetext
+    end
+
+EcScizorText:
+    text "Scizor!"
+    done
+
 EcruteakPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -115,3 +127,4 @@ EcruteakPokecenter1F_MapEvents:
 	object_event  7,  1, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuideScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcBlisseyScript, -1
 	object_event  2,  4, SPRITE_ESPEON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcEspeonScript, -1
+	object_event  6,  5, SPRITE_SCIZOR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcScizorScript, -1

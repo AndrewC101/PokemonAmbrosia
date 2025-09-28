@@ -120,6 +120,43 @@ SoulHouseBlockText:
 SoulHouseWiseGlasses:
 	itemball SACRED_ASH
 
+SoulHouseGengar:
+    opentext
+    writetext SoulHouseGengarText
+    cry GENGAR
+    waitbutton
+    closetext
+    end
+
+SoulHouseGengarText:
+    text "Gen..gar!"
+    done
+
+SoulHouseMismagius:
+    opentext
+    writetext SoulHouseMismagiusText
+    cry MISMAGIUS
+    waitbutton
+    closetext
+    end
+
+SoulHouseMismagiusText:
+    text "Mis."
+    line "Magius."
+    done
+
+SoulHouseChandelure:
+    opentext
+    writetext SoulHouseChandelureText
+    cry CHANDELURE
+    waitbutton
+    closetext
+    end
+
+SoulHouseChandelureText:
+    text "Chandelure."
+    done
+
 SoulHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -143,3 +180,7 @@ SoulHouse_MapEvents:
 	object_event  2,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseLassScript, -1
 	object_event  1,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SoulHouseGrannyScript, -1
 	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SoulHouseWiseGlasses, EVENT_SOUL_HOUSE_WISE_GLASSES
+	object_event 22,  6, SPRITE_GENGAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, SoulHouseGengar, -1
+	object_event  7,  5, SPRITE_MISMAGIUS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, SoulHouseMismagius, -1
+	object_event  5,  4, SPRITE_CHANDELURE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SoulHouseChandelure, -1
+

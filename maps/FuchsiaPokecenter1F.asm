@@ -154,6 +154,30 @@ FucBlisseyText:
     text "Blissey!"
     done
 
+FucGreninjaScript:
+    opentext
+    writetext FucGreninjaText
+    cry GRENINJA
+    waitbutton
+    closetext
+    end
+
+FucGreninjaText:
+    text "Greninja!"
+    done
+
+FucExcadrillScript:
+    opentext
+    writetext FucExcadrillText
+    cry EXCADRILL
+    waitbutton
+    closetext
+    end
+
+FucExcadrillText:
+    text "Excadrill!"
+    done
+
 FuchsiaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -172,3 +196,5 @@ FuchsiaPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FCooltrainerFScript, -1
 	object_event  7,  2, SPRITE_JANINE_IMPERSONATOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FJanineImpersonatorScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FucBlisseyScript, -1
+	object_event  1,  3, SPRITE_GRENINJA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FucGreninjaScript, -1
+	object_event  8,  2, SPRITE_EXCADRILL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FucExcadrillScript, -1

@@ -103,6 +103,30 @@ BlisseyText:
     text "Blissey!"
     done
 
+VRaticateScript:
+    opentext
+    writetext VRaticateText
+    cry RATICATE
+    waitbutton
+    closetext
+    end
+
+VRaticateText:
+    text "Raticate!"
+    done
+
+VStaraptorScript:
+    opentext
+    writetext VStaraptorText
+    cry STARAPTOR
+    waitbutton
+    closetext
+    end
+
+VStaraptorText:
+    text "Staraptor!"
+    done
+
 ViridianPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -121,3 +145,5 @@ ViridianPokecenter1F_MapEvents:
 	object_event  7,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, -1
 	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlisseyScript, -1
+	object_event  1,  5, SPRITE_RATICATE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VRaticateScript, -1
+	object_event  6,  5, SPRITE_STARAPTOR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VStaraptorScript, -1

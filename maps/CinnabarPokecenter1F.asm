@@ -36,19 +36,17 @@ CinnabarPokecenter1FCooltrainerFText:
 	done
 
 CinnabarPokecenter1FFisherText:
-	text "It's been a year"
-	line "since the volcano"
-	cont "erupted."
-
-	para "There is nothing"
-	line "to rebuild on."
-
-	para "Everything is"
-	line "gone."
-
-	para "Even BLAINE now"
-	line "operates out of"
-	cont "a cave in the sea."
+	text "When the volcano"
+	line "erupted it"
+	cont "destroyed the lab"
+	cont "that used to be on"
+	cont "the island."
+	para "Then all these"
+	line "Ditto started"
+	cont "appearing."
+	para "Maybe it's for the"
+	line "best the lab is"
+	cont "gone."
 	done
 
 CinBlisseyScript:
@@ -61,6 +59,18 @@ CinBlisseyScript:
 
 CinBlisseyText:
     text "Blissey!"
+    done
+
+CinDittoScript:
+    opentext
+    writetext CinDittoText
+    cry DITTO
+    waitbutton
+    closetext
+    end
+
+CinDittoText:
+    text "Ditto!"
     done
 
 CinnabarPokecenter1F_MapEvents:
@@ -80,3 +90,7 @@ CinnabarPokecenter1F_MapEvents:
 	object_event  7,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinnabarPokecenter1FCooltrainerFScript, -1
 	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CinnabarPokecenter1FFisherScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinBlisseyScript, -1
+	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinBlisseyScript, -1
+	object_event  1,  3, SPRITE_DITTO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinDittoScript, -1
+	object_event  2,  6, SPRITE_DITTO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinDittoScript, -1
+	object_event  6,  5, SPRITE_DITTO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CinDittoScript, -1

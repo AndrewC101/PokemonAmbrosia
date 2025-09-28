@@ -116,6 +116,30 @@ SaffBlisseyText:
     text "Blissey!"
     done
 
+SaffHoundoomScript:
+    opentext
+    writetext SaffHoundoomText
+    cry HOUNDOOM
+    waitbutton
+    closetext
+    end
+
+SaffHoundoomText:
+    text "Houndoom!"
+    done
+
+SaffMachampScript:
+    opentext
+    writetext SaffMachampText
+    cry MACHAMP
+    waitbutton
+    closetext
+    end
+
+SaffMachampText:
+    text "Machamp!"
+    done
+
 SaffronPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -134,3 +158,7 @@ SaffronPokecenter1F_MapEvents:
 	object_event  8,  6, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FFisherScript, -1
 	object_event  1,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronPokecenter1FYoungsterScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffBlisseyScript, -1
+	object_event  2,  4, SPRITE_HOUNDOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffHoundoomScript, -1
+	object_event  7,  6, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffMachampScript, -1
+
+

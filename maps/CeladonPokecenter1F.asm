@@ -250,6 +250,18 @@ CelaBlisseyText:
     text "Blissey!"
     done
 
+CelaArcanineScript:
+    opentext
+    writetext CelaArcanineText
+    cry ARCANINE
+    waitbutton
+    closetext
+    end
+
+CelaArcanineText:
+    text "Arcanine!"
+    done
+
 CeladonPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -268,3 +280,4 @@ CeladonPokecenter1F_MapEvents:
 	object_event  8,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonPokecenter1FCooltrainerFScript, -1
 	object_event  4,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonEusine, EVENT_TEMP_EVENT_1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CelaBlisseyScript, -1
+	object_event  1,  3, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CelaArcanineScript, -1

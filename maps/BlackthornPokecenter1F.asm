@@ -74,6 +74,18 @@ BlackBlisseyText:
     text "Blissey!"
     done
 
+BlackDragonairScript:
+    opentext
+    writetext BlackDragonairText
+    cry DRAGONAIR
+    waitbutton
+    closetext
+    end
+
+BlackDragonairText:
+    text "Dragonair."
+    done
+
 BlackthornPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -92,3 +104,4 @@ BlackthornPokecenter1F_MapEvents:
 	object_event  1,  4, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FTwinScript, -1
 	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackthornPokecenter1FCooltrainerMScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BlackBlisseyScript, -1
+	object_event  2,  4, SPRITE_DRAGONAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackDragonairScript, -1

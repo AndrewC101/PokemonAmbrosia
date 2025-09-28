@@ -2042,6 +2042,19 @@ MasterJonathanWinAfterBattleText:
 	line "really though."
 	done
 
+RatGodScript:
+    opentext
+    writetext RatGodText
+    cry RATICATE
+    waitbutton
+    closetext
+    end
+
+RatGodText:
+    text "A magnificent"
+    line "Raticate!"
+    done
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
@@ -2064,8 +2077,8 @@ HallOfOrigin_MapEvents:
 	def_object_events
 	object_event 11,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_CAUGHT_ARCEUS
 	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_TEMP_EVENT_1
-	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-	object_event 13,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	object_event 12,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, -1
+	object_event 13,  2, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, -1
 	object_event 10, 13, SPRITE_ZYGARDE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde1Script, EVENT_FIELD_MON_1
 	object_event 13, 13, SPRITE_ZYGARDE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde2Script, EVENT_FIELD_MON_2
 	object_event 10, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1
@@ -2077,4 +2090,5 @@ HallOfOrigin_MapEvents:
 	object_event 13, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, InvaderMasterPatches, -1
 	object_event  9, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterJoeyScript, -1
 	object_event 21, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterJonathanScript, -1
+	object_event 8, 10, SPRITE_RATICATE, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, RatGodScript, -1
 

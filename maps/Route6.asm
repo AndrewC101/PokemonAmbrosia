@@ -153,29 +153,22 @@ Route6UndergroundPathSignText:
 	done
 
 PokefanmRexSeenText:
-	text "I'm not so much"
-	line "into games."
-
-	para "I'm more into"
-	line "super heroes."
-
-	para "The more over"
-	line "powered and"
-	cont "morally dubious"
-	cont "the better."
+	text "So are you a"
+	line "saloon or an SUV"
+	cont "type of person?"
 	done
 
 PokefanmRexBeatenText:
-	text "How!?"
+	text "Maybe I should try"
+	line "an Land Rover."
 	done
 
 PokefanmRexAfterBattleText:
-	text "I wish I had"
-	line "super powers."
-
-	para "Then I wouldn't"
-	line "have to pay my"
-	cont "rent!"
+	text "I am getting on in"
+	line "years."
+	para "I wish I could get"
+	line "my timing belt"
+	cont "changed."
 	done
 
 PokefanmAllanSeenText:
@@ -294,7 +287,7 @@ Route6_MapEvents:
 	object_event 18,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route6FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route6FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  1,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon3Script, EVENT_FIELD_MON_3
-	object_event  4, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  5,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  9,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route6FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 22,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderBackstaberScript, EVENT_FIELD_MON_6
-	object_event  4,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon6Script, EVENT_FIELD_MON_6
+	object_event  6, 12, SPRITE_TREECKO, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon6Script, EVENT_FIELD_MON_6

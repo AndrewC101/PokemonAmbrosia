@@ -165,7 +165,6 @@ INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
-INCLUDE "maps/Route8SaffronGate.asm"
 
 SECTION "Map Scripts 11", ROMX
 
@@ -520,3 +519,4 @@ INCLUDE "maps/Route27SandstormHouse.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/Route3.asm"
+INCLUDE "maps/Route8SaffronGate.asm"

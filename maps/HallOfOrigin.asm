@@ -25,9 +25,7 @@ HallOfOrigin_MapScripts:
 	iftrue .hasArceus
     disappear HALLOFORIGIN_OAK
     disappear HALLOFORIGIN_MEWTWO_POKEBALL
-    setevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
     disappear HALLOFORIGIN_ARCEUS_POKEBALL
-    setevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 	appear HALLOFORIGIN_ARCEUS
 	endcallback
 .hasArceus:
@@ -36,9 +34,7 @@ HallOfOrigin_MapScripts:
 	checkevent EVENT_BEAT_LORD_OAK
 	iftrue .end
     appear HALLOFORIGIN_MEWTWO_POKEBALL
-    clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
     appear HALLOFORIGIN_ARCEUS_POKEBALL
-    clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
 .end
 	endcallback
 
@@ -152,10 +148,9 @@ CaughtArceusText:
 ArceusPokeBallScript:
     checkevent EVENT_BEAT_LORD_OAK
     iffalse .MustBeatOak
-    checkevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-    iftrue .MustBeatOak
-    checkevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-    iftrue .MustBeatOak
+    checkevent EVENT_JUST_BEAT_LORD_OAK
+    iffalse .MustBeatOak
+
 	cry ARCEUS
 	opentext
 	writetext TakeArceusText
@@ -165,8 +160,7 @@ ArceusPokeBallScript:
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
 
-	disappear HALLOFORIGIN_ARCEUS_POKEBALL
-	setevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
+	clearevent EVENT_JUST_BEAT_LORD_OAK
 	waitsfx
 	getmonname STRING_BUFFER_3, ARCEUS
 	writetext ReceivedArceusText
@@ -207,10 +201,9 @@ ReceivedArceusText:
 MewtwoPokeBallScript:
     checkevent EVENT_BEAT_LORD_OAK
     iffalse .MustBeatOak
-    checkevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-    iftrue .MustBeatOak
-    checkevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-    iftrue .MustBeatOak
+    checkevent EVENT_JUST_BEAT_LORD_OAK
+    iffalse .MustBeatOak
+
 	cry MEWTWO
 	opentext
 	writetext TakeMewtwoText
@@ -220,8 +213,7 @@ MewtwoPokeBallScript:
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .NoRoom
 
-	disappear HALLOFORIGIN_MEWTWO_POKEBALL
-	setevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	clearevent EVENT_JUST_BEAT_LORD_OAK
 	waitsfx
 	getmonname STRING_BUFFER_3, MEWTWO
 	writetext ReceivedMewtwoText
@@ -265,10 +257,8 @@ MasterOakScript:
 	opentext
 	checkevent EVENT_BEAT_LORD_OAK
 	iffalse .Fight
-    checkevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
-    iftrue .FightDone
-    checkevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-    iftrue .FightDone
+    checkevent EVENT_JUST_BEAT_LORD_OAK
+    iffalse .FightDone
     writetext MasterOakOfferPrizeText
 	waitbutton
 	closetext
@@ -285,10 +275,7 @@ MasterOakScript:
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
-	appear HALLOFORIGIN_ARCEUS_POKEBALL
-	clearevent EVENT_ARCEUS_POKEBALL_NOT_PRESENT
-	appear HALLOFORIGIN_MEWTWO_POKEBALL
-	clearevent EVENT_MEWTWO_POKEBALL_NOT_PRESENT
+	setevent EVENT_JUST_BEAT_LORD_OAK
 	setval 0
 	writemem wInvading
 	setval 1
@@ -299,6 +286,7 @@ MasterOakScript:
 	opentext
 	writetext MasterOakVictoryText
 	waitbutton
+	verbosegiveitem AMBROSIA
 	checkevent EVENT_BEAT_LORD_OAK
 	iftrue .skipMarkOfGod
 	writetext MarkOfGodText
@@ -430,6 +418,9 @@ MasterOakVictoryText:
     line "trainer or #mon"
     cont "will dare to"
     cont "challenge you."
+
+    para "Take this token"
+    line "of our kinship."
     done
 
 MarkOfGodText:
@@ -2077,8 +2068,8 @@ HallOfOrigin_MapEvents:
 	def_object_events
 	object_event 11,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusScript, EVENT_CAUGHT_ARCEUS
 	object_event 11,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MasterOakScript, EVENT_TEMP_EVENT_1
-	object_event 12,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, -1
-	object_event 13,  2, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, -1
+	object_event 12,  2, SPRITE_ARCEUS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ArceusPokeBallScript, EVENT_TEMP_EVENT_1
+	object_event 10,  2, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MewtwoPokeBallScript, EVENT_TEMP_EVENT_1
 	object_event 10, 13, SPRITE_ZYGARDE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde1Script, EVENT_FIELD_MON_1
 	object_event 13, 13, SPRITE_ZYGARDE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Zygarde2Script, EVENT_FIELD_MON_2
 	object_event 10, 18, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MasterRedScript, -1

@@ -277,7 +277,7 @@ TransformSwitch:
     ret
 
 PlayBoostAnimation:
-    ld de, HOLY_ARMOUR
+    ld de, FOCUS_ENERGY
     call PlayAnimationIfNotFirstTurn
     ret
 

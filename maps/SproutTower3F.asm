@@ -20,13 +20,8 @@ SproutTower3F_MapScripts:
 
 .SproutTower3FFieldMon:
     appear SPROUTTOWER3F_FIELDMON_2
-    random 2
-    ifequal 1, .spawn
-    disappear SPROUTTOWER3F_FIELDMON_1
-    sjump .honedge
-.spawn
     appear SPROUTTOWER3F_FIELDMON_1
-.honedge
+
     random 2
     ifequal 1, .spawn1
     disappear SPROUTTOWER3F_FIELDMON_3

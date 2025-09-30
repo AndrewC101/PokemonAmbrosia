@@ -85,6 +85,7 @@ CinnabarGroupSprites:
 	db SPRITE_BULBASAUR
 	db SPRITE_SQUIRTLE
 	db SPRITE_HERACROSS
+	db SPRITE_BLUE
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
@@ -125,9 +126,15 @@ SaffronGroupSprites:
 	db SPRITE_SILVER
 
 	db SPRITE_POKE_BALL
+	db SPRITE_ALAKAZAM
 	db SPRITE_SLOWPOKE
+	db SPRITE_SQUIRTLE
+	db SPRITE_RAICHU
+	db SPRITE_PERSIAN
 	db SPRITE_NURSE
 	db SPRITE_BLISSEY
+	db SPRITE_POLIWRATH
+	db SPRITE_BLASTOISE
 	db SPRITE_BELDUM
 	db 0 ; end
 
@@ -224,7 +231,6 @@ MuseumSprites:
 ManorSprites:
 SilverGroupSprites:
 	db SPRITE_SILVER
-	;db SPRITE_DRAGON
 	db SPRITE_BIRD
 	db SPRITE_SUPER_NERD
 	db SPRITE_BEAUTY
@@ -304,6 +310,7 @@ GoldenrodGroupSprites:
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_ABRA
+	db SPRITE_MEOWTH
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -416,7 +423,7 @@ DungeonsGroupSprites:
     db SPRITE_GAMEBOY_KID
     db SPRITE_SUPER_NERD
     db SPRITE_SAGE
-	db SPRITE_GROWLITHE
+	db SPRITE_MEOWTH
 	db SPRITE_PINSIR
 	db SPRITE_SCYTHER
 	db SPRITE_POKE_BALL

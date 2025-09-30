@@ -19,7 +19,7 @@ MrFujisHouseLassScript:
 MrFujisPsyduck:
 	opentext
 	writetext MrFujisPsyduckText
-	cry RHYPERIOR
+	cry MAWILE
 	waitbutton
 	closetext
 	end
@@ -27,7 +27,7 @@ MrFujisPsyduck:
 MrFujisNidorino:
 	opentext
 	writetext MrFujisNidorinoText
-	cry NIDORINO
+	cry LITWICK
 	waitbutton
 	closetext
 	end
@@ -35,7 +35,7 @@ MrFujisNidorino:
 MrFujisPidgey:
 	opentext
 	writetext MrFujisPidgeyText
-	cry STARLY
+	cry NOCTOWL
 	waitbutton
 	closetext
 	end
@@ -64,15 +64,15 @@ MrFujisHouseLassText:
 	done
 
 MrFujisPsyduckText:
-	text "Rhyperior!"
+	text "Mawile!"
 	done
 
 MrFujisNidorinoText:
-	text "NIDORINO: Gyun!"
+	text "Litwick."
 	done
 
 MrFujisPidgeyText:
-	text "STARLY: Pijji!"
+	text "Noctowl."
 	done
 
 MrFujisHouse_MapEvents:
@@ -91,6 +91,6 @@ MrFujisHouse_MapEvents:
 	def_object_events
 	object_event  4,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MrFujisHouseSuperNerdScript, -1
 	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisHouseLassScript, -1
-	object_event  7,  4, SPRITE_RHYPERIOR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1
-	object_event  5,  5, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
-	object_event  1,  3, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisPidgey, -1
+	object_event  1,  3, SPRITE_MAWILE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisPsyduck, -1
+	object_event  5,  5, SPRITE_LITWICK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MrFujisNidorino, -1
+	object_event  7,  4, SPRITE_NOCTOWL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MrFujisPidgey, -1

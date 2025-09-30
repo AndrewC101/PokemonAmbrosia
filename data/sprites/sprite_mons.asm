@@ -3,7 +3,7 @@ SpriteMons:
 	table_width 1, SpriteMons
 	db UMBREON
 	db GEODUDE
-	db GROWLITHE
+	db MURKROW
 	db SCEPTILE
 	db GRENINJA
 	db INFERNAPE

@@ -179,6 +179,8 @@ ReadTrainerPartyPieces:
 	jr z, .fullStatExp
 	cp ADAM
 	jr z, .fullStatExp
+    cp JONATHAN
+	jr z, .fullStatExp
 	cp ROLE_PLAYER_NORMAL
 	jr z, .fullStatExp
 	cp ROLE_PLAYER_SHINY

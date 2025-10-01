@@ -2046,6 +2046,34 @@ RatGodText:
     line "Raticate!"
     done
 
+HallOfOriginWarpScript1:
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp ORIGIN_ROAD, 4, 5
+    end
+
+HallOfOriginWarpScript2:
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp ORIGIN_ROAD, 5, 5
+    end
+
+HallOfOriginWarpScript3:
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp ORIGIN_ROAD, 6, 5
+    end
+
+HallOfOriginWarpScript4:
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp ORIGIN_ROAD, 7, 5
+    end
+
 HallOfOrigin_MapEvents:
 	db 0, 0 ; filler
 
@@ -2053,10 +2081,10 @@ HallOfOrigin_MapEvents:
 	warp_event  11, 21, HALL_OF_ORIGIN, 1
 
     def_coord_events
-	coord_event 10, 45, SCENE_ALWAYS, ReloadMapScript
-	coord_event 11, 45, SCENE_ALWAYS, ReloadMapScript
-	coord_event 12, 45, SCENE_ALWAYS, ReloadMapScript
-	coord_event 13, 45, SCENE_ALWAYS, ReloadMapScript
+	coord_event 10, 45, SCENE_ALWAYS, HallOfOriginWarpScript1
+	coord_event 11, 45, SCENE_ALWAYS, HallOfOriginWarpScript2
+	coord_event 12, 45, SCENE_ALWAYS, HallOfOriginWarpScript3
+	coord_event 13, 45, SCENE_ALWAYS, HallOfOriginWarpScript4
 	coord_event 10, 29, SCENE_DEFAULT, PatchesAttacks
 	coord_event 11, 29, SCENE_DEFAULT, PatchesAttacks
 	coord_event 12, 29, SCENE_DEFAULT, PatchesAttacks

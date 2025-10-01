@@ -2,13 +2,12 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_SILVER
-	const NEWBARKTOWN_FIELDMON_4
-	const NEWBARKTOWN_FIELDMON_5
 	const NEWBARKTOWN_FIELDMON_6
 	const NEWBARKTOWN_REPEL_WOMAN
 	const NEWBARKTOWN_CRYSTAL
 	const NEWBARKTOWN_SILVER_FINAL
 	const NEWBARKTOWN_CRYSTAL_FINAL
+	const NEWBARKTOWN_PIKACHU
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -38,8 +37,6 @@ NewBarkTown_MapScripts:
     endcallback
 
 .FlyPoint:
-    appear NEWBARKTOWN_FIELDMON_4
-    appear NEWBARKTOWN_FIELDMON_5
     appear NEWBARKTOWN_FIELDMON_6
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
@@ -369,24 +366,6 @@ NewBarkTownElmsHouseSignText:
 	text "ELM'S HOUSE"
 	done
 
-;NewBarkFieldMon1Script:
-;	trainer HOUNDOUR, FIELD_MON, EVENT_FIELD_MON_1, PokemonAttacksText, 22, 0, .script
-;.script
-;    disappear NEWBARKTOWN_FIELDMON_1
-;    end
-
-;NewBarkFieldMon2Script:
-;	trainer PERSIAN, FIELD_MON, EVENT_FIELD_MON_2, PokemonAttacksText, 21, 0, .script
-;.script
-;    disappear NEWBARKTOWN_FIELDMON_2
-;    end
-
-
-PokemonAttacksText:
-	text "Wild #mon"
-	line "attacks!"
-	done
-
 NeedToGetAPokemon:
     turnobject PLAYER, DOWN
 	opentext
@@ -432,28 +411,6 @@ Movement_NewBarkTownTurnBack:
 Movement_NewBarkTownTurnLeft:
 	step LEFT
 	step_end
-
-NewBarkFieldMon4Script:
-	faceplayer
-	cry MEOWTH
-	pause 15
-	loadwildmon MEOWTH, 4
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_4
-	disappear NEWBARKTOWN_FIELDMON_4
-	end
-
-NewBarkFieldMon5Script:
-	faceplayer
-	cry CLEFAIRY
-	pause 15
-	loadwildmon CLEFAIRY, 3
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_5
-	disappear NEWBARKTOWN_FIELDMON_5
-	end
 
 NewBarkFieldMon6Script:
 	faceplayer
@@ -906,6 +863,19 @@ CrystalFinalAfterBattleText:
     cont "world!"
     done
 
+NewBarkPikachu:
+    opentext
+    writetext NewBarkPikachuText
+    cry PIKACHU
+    waitbutton
+    closetext
+    end
+
+NewBarkPikachuText:
+    text "Pika! Pika!"
+    line "Pikachu!"
+    done
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -938,12 +908,12 @@ NewBarkTown_MapEvents:
 	object_event  6, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 10, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
-	object_event 11,  4, SPRITE_MEOWTH, SPRITEMOVEDATA_STILL, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 7,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 13,  4, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
 	object_event  7, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 
 	object_event 14, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
 	object_event 12, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
+	object_event 11,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NewBarkPikachu, -1
+
 

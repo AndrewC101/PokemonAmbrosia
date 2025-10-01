@@ -200,7 +200,7 @@ NewBarkGroupSprites:
 ; Route26, Route27, Route29, NewBarkTown
 CherrygroveGroupSprites:
 ; Route30, Route31, CherrygroveCity
-	db SPRITE_BUG_CATCHER
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_BEAUTY
 	db SPRITE_COOLTRAINER_M
@@ -216,9 +216,9 @@ CherrygroveGroupSprites:
     db SPRITE_TEACHER
     db SPRITE_ARCANINE
     db SPRITE_MAGIKARP
-    db SPRITE_COOLTRAINER_F
+    db SPRITE_MUDKIP
     db SPRITE_WILL
-    db SPRITE_RIOLU
+    db SPRITE_CLEFAIRY
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end

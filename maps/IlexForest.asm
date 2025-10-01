@@ -29,31 +29,9 @@ IlexForest_MapScripts:
     appear ILEXFOREST_FIELDMON_3
     appear ILEXFOREST_FIELDMON_6
     appear ILEXFOREST_FIELDMON_7
-
-    random 2
-    ifequal 1, .spawn6
-    disappear ILEXFOREST_FIELDMON_4
-    sjump .mon7
-.spawn6
     appear ILEXFOREST_FIELDMON_4
-
-.mon7
-    random 2
-    ifequal 1, .spawn7
-    disappear ILEXFOREST_FIELDMON_5
-    sjump .mon8
-.spawn7
     appear ILEXFOREST_FIELDMON_5
-
-.mon8
-    random 5 ; shiny
-    ifequal 1, .spawn8
-    disappear ILEXFOREST_FIELDMON_8
-    sjump .end
-.spawn8
     appear ILEXFOREST_FIELDMON_8
-
-.end
 	endcallback
 
 IlexForestCharcoalApprenticeScript:
@@ -620,6 +598,12 @@ IlexForestFieldMon2Script:
     disappear ILEXFOREST_FIELDMON_2
     end
 
+IlexForestFieldMon8Script:
+	trainer EKANS, FIELD_MON, EVENT_FIELD_MON_8, IlexForestPokemonAttacksText, 17, 0, .script
+.script
+    disappear ILEXFOREST_FIELDMON_8
+    end
+
 IlexForestPokemonAttacksText:
 	text "Wild #mon"
 	line "attacks!"
@@ -680,18 +664,6 @@ IlexForestFieldMon7Script:
 	disappear ILEXFOREST_FIELDMON_7
 	end
 
-IlexForestFieldMon8Script:
-	faceplayer
-	cry SCYTHER
-	pause 15
-	loadwildmon SCYTHER, 20
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_8
-	disappear ILEXFOREST_FIELDMON_8
-	end
-
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -724,6 +696,6 @@ IlexForest_MapEvents:
 	object_event  2, 60, SPRITE_VOLCARONA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 10, 9, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 2, 18, SPRITE_PINSIR, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 12, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon6Script, EVENT_FIELD_MON_6
+	object_event  4, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 2, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 18, 20, SPRITE_SCYTHER, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 18, 20, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 0, IlexForestFieldMon8Script, EVENT_FIELD_MON_8

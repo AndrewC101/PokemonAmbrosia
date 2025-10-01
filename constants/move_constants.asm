@@ -191,7 +191,7 @@
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
 	const NIGHT_SLASH  ; b9
-	const BOLT_BREAK   ; ba
+	const BOLT_BEAK   ; ba
 	const BELLY_DRUM   ; bb
 	const SLUDGE_BOMB  ; bc
 	const AVALANCHE    ; bd

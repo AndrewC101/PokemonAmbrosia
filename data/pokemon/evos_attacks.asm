@@ -739,7 +739,7 @@ ArctozoltEvosAttacks:
 	db 40, THUNDERBOLT
 	db 42, ICE_BEAM
 	db 45, AVALANCHE
-	db 50, BOLT_BREAK
+	db 50, BOLT_BEAK
 	db 0 ; no more level-up moves
 
 DracovishEvosAttacks:
@@ -3104,7 +3104,7 @@ DunsparceEvosAttacks:
 	db 30, ROOST
 	db 40, DOUBLE_EDGE
 	db 50, DRAGON_DANCE
-	db 85, BOLT_BREAK
+	db 85, BOLT_BEAK
 	db 85, SAVAGE_REND
 	db 0 ; no more level-up moves
 

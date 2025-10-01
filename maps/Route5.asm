@@ -7,35 +7,6 @@ Route5_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	;callback MAPCALLBACK_OBJECTS, .Route5FieldMon
-
-;.Route5FieldMon:
-; Pokemon which always appear
-    ;appear ROUTE5_FIELDMON_1
-    ;appear ROUTE5_FIELDMON_2
-    ;endcallback
-
-;Route5FieldMon1Script:
-;	faceplayer
-;	cry CLEFABLE
-;	pause 15
-;	loadwildmon CLEFABLE, 38
-;	startbattle
-;	reloadmapafterbattle
-;	setevent EVENT_FIELD_MON_1
-;	disappear ROUTE5_FIELDMON_1
-;	end
-
-;Route5FieldMon2Script:
-;	faceplayer
-;	cry LOPUNNY
-;	pause 15
-;	loadwildmon LOPUNNY, 37
-;	startbattle
-;	reloadmapafterbattle
-;	setevent EVENT_FIELD_MON_2
-;	disappear ROUTE5_FIELDMON_2
-;	end
 
 Route5PokefanMScript:
 	jumptextfaceplayer Route5PokefanMText

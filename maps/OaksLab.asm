@@ -20,7 +20,7 @@ Oak:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
-	yesorno
+	nooryes
 	iftrue .warp
 	writetext OakGoodLuck
 	waitbutton
@@ -53,7 +53,7 @@ Oak:
 	opentext
 	writetext OakBattleOffer
 	waitbutton
-	yesorno
+	nooryes
 	iffalse .refuse
 	closetext
     winlosstext OakWinText, OakWinText

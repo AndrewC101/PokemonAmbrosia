@@ -315,7 +315,7 @@ MasterOakScript:
     closetext
 	opentext
 	writetext RematchTextHallOfOrigin
-	yesorno
+	nooryes
 	iftrue .Fight
 	writetext RematchRefuseTextHallOfOrigin
 	waitbutton

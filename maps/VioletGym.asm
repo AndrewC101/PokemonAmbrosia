@@ -16,7 +16,7 @@ VioletGymFalknerScript:
 	iftrue .FightDone
 	writetext FalknerIntroText
 	waitbutton
-	yesorno
+	nooryes
 	closetext
 	opentext
 	writetext FalknerHaikuText

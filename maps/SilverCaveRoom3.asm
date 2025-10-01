@@ -199,9 +199,8 @@ Ash:
 Pikachu:
     opentext
 	writetext PikachuText
+	cry PIKACHU
 	waitbutton
-    cry PIKACHU
-	pause 15
 	closetext
 	end
 
@@ -448,6 +447,8 @@ PokemonMasterQuestText:
     done
 
 SilverCaveRoom3MewtwoScript:
+    cry MEWTWO
+    waitsfx
     opentext
     writetext MewtwoText
     waitbutton
@@ -466,6 +467,7 @@ MewtwoText:
 SilverCaveRoom3HoohScript:
     opentext
     writetext HoohText
+    cry HO_OH
     waitbutton
     closetext
     end

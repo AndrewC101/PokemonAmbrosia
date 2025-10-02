@@ -26,12 +26,11 @@ EcruteakPokecenter1FPokefanMText:
 	line "is just past"
 	cont "OLIVINE."
 
-	para "It has all sorts"
-	line "of challenges for"
-	cont "trainers."
-
-	para "You could spend"
-	line "hours there."
+	para "SCIZOR and I have"
+	line "been having hours"
+	cont "of fun beating the"
+	cont "novice trainers in"
+	cont "BATTLE TOWER."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:

@@ -16,20 +16,7 @@ SaffronPokecenter1FTeacherScript:
 	jumptextfaceplayer SaffronPokecenter1FTeacherText
 
 SaffronPokecenter1FFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_WALLACE
-	iftrue .SolvedKantoPowerCrisis
-	writetext SaffronPokecenter1FFisherText
-	waitbutton
-	closetext
-	end
-
-.SolvedKantoPowerCrisis:
-	writetext SaffronPokecenter1FFisherBeatWallaceText
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer SaffronPokecenter1FFisherText
 
 SaffronPokecenter1FYoungsterScript:
 	jumptextfaceplayer SaffronPokecenter1FYoungsterText
@@ -51,57 +38,29 @@ SaffronPokecenter1FTeacherText:
 	done
 
 SaffronPokecenter1FFisherText:
-	text "The whole of"
-	line "KANTO is turned"
-	cont "upside down by"
-	cont "the threat of"
-	cont "HOENN invasion."
-	
-	para "There must be"
-	line "some way I can"
-	cont "help."
-	
-	para "I could place a"
-	line "SHORT position"
-	cont "on HOENN dollars."
-	
-	para "That would devalue"
-	line "their currency!"
-	done
-
-SaffronPokecenter1FFisherBeatWallaceText:
-	text "HOENN are gone!"
-	
-	para "Aren't you..."
-	
-	para "CHAMPION <PLAYER>!"
-	
-	para "Thank you!"
-	
-	para "The HOENN dollar"
-	line "has plummeted in"
-	cont "value thanks to"
-	cont "you."
-	
-	para "Time to buy the"
-	line "dip."
+	text "After Sabrina left"
+	line "a new gym appeared"
+	cont "and has been"
+	cont "growing in"
+	cont "popularity."
+	para "They seem to"
+	line "specialise in"
+	cont "Normal types."
+	para "I thought my"
+	line "MACHAMP would make"
+	cont "it easy, but they"
+	cont "hit pretty hard..."
 	done
 
 SaffronPokecenter1FYoungsterText:
-	text "I'm only here to"
-	line "make my fortune."
-
-	para "Then I'm heading"
-	line "somewhere cheaper"
-	cont "to live."
-
-	para "You can live dirt"
-	line "cheap in PEWTER."
-
-	para "Nobody wants to"
-	line "live there after"
-	cont "the #RUS"
-	cont "outbreak."
+	text "I thought my"
+	line "HOUNDOOM would"
+	cont "make easy work of"
+	cont "the psychic gym."
+	para "But turns out Aura"
+	line "Sphere is a thing."
+	para "Where do you even"
+	line "get that TM?"
 	done
 
 SaffBlisseyScript:

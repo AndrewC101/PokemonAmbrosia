@@ -35,20 +35,19 @@ LavenderPokecenter1FYoungsterScript:
 	end
 
 LavenderPokecenter1FGentlemanText:
-	text "The RADIO TOWER"
-	line "is doing very"
-	cont "well."
-
-	para "All you have to"
-	line "do is tell"
-	cont "people it will"
-	cont "help in the war"
-	cont "and everyone is"
-	cont "on board!"
-
-	para "Bereaved people"
-	line "are the easiest"
-	cont "to sell to."
+	text "In ancient times"
+	line "the sword and"
+	cont "shield of an"
+	cont "AEGISLASH were the"
+	cont "most sought after"
+	cont "weapons in the"
+	cont "world."
+	para "They are not the"
+	line "greatest weapons"
+	cont "today."
+	para "But they are worth"
+	line "a fortune to the"
+	cont "right buyer."
 	done
 
 LavenderPokecenter1FTeacherText:

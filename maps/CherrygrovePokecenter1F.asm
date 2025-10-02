@@ -22,27 +22,27 @@ CherrygrovePokecenter1FTeacherScript:
     jumptextfaceplayer CherrygrovePokecenter1FTeacherText
 
 CherrygrovePokecenter1FFisherText:
-	text "Have you heard of"
-	line "POKERUS?"
-
-	para "It's a virus your"
-	line "#mon can catch."
-
-	para "There was an"
-	line "outbreak in PEWTER"
-	cont "CITY a year ago."
+	text "I went to"
+	line "GOLDENROD and"
+	cont "spent 6 months of"
+	cont "savings on an"
+	cont "EVIOLITE."
+	para "Now my MUDKIP will"
+	line "always be"
+	cont "adorable."
+	para "Not to mention"
+	line "bulky."
 	done
 
 CherrygrovePokecenter1FGentlemanText:
-	text "Oh dear, poor"
-	line "child."
-
-	para "Worry not."
-
-	para "You may use the PC"
-	line "free of charge."
-
-	para "For now...."
+	text "I caught you"
+	line "admiring this"
+	cont "prime level 20"
+	cont "RATICATE."
+	para "TEAM ROCK will pay"
+	line "a pretty penny for"
+	cont "it I have no"
+	cont "doubt."
 	done
 
 CherrygrovePokecenter1FTeacherText:
@@ -50,9 +50,9 @@ CherrygrovePokecenter1FTeacherText:
 	line "CENTER upstairs"
 	cont "was just built."
 
-	para "But I really"
-	line "doubt that stuff"
-	cont "still works."
+	para "But good luck"
+	line "finding someone to"
+	cont "play with."
 	done
 
 ChBlisseyScript:

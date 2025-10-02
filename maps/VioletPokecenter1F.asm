@@ -294,24 +294,16 @@ VioletPokecenter1FGameboyKidText:
 	done
 
 VioletPokecenter1FGentlemanText:
-	text "Just SOUTH of"
-	line "here are the"
-	cont "RUINS OF ALPH."
-
-	para "I traveled here to"
-	line "visit them."
-
-	para "I went last night."
-
-	para "There was an odd"
-	line "fellow there."
-
-	para "Said he wanted"
-	line "power of DEATH."
-
-	para "I wouldn't go"
-	line "there at night"
-	cont "if I were you."
+	text "I am a patient"
+	line "man, but a bad"
+	cont "trainer."
+	para "One day my dear"
+	line "DRATINI will"
+	cont "become a mighty"
+	cont "DAGONITE."
+	para "Maybe I'll still"
+	line "be around to see"
+	cont "it."
 	done
 
 VioletPokecenter1FYoungsterText:

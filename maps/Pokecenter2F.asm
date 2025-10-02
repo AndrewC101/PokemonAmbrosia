@@ -288,88 +288,21 @@ LinkReceptionistScript_Battle:
 	setval TRUE
 	end
 
-Script_TimeCapsuleClosed:
-	faceplayer
-	opentext
-	writetext Text_TimeCapsuleClosed
-	waitbutton
-	closetext
-	end
-
 LinkReceptionistScript_TimeCapsule:
-	checkevent EVENT_MET_BILL
-	iftrue Script_TimeCapsuleClosed
-	checkflag ENGINE_TIME_CAPSULE
-	iftrue Script_TimeCapsuleClosed
-	special SetBitsForTimeCapsuleRequest
-	faceplayer
-	opentext
-	writetext Text_TimeCapsuleReceptionistIntro
-	yesorno
-	iffalse .Cancel
-	special CheckTimeCapsuleCompatibility
-	ifequal $1, .MonTooNew
-	ifequal $2, .MonMoveTooNew
-	ifequal $3, .MonHasMail
-	writetext Text_PleaseWait
-	special WaitForLinkedFriend
-	iffalse .FriendNotReady
-	writetext Text_MustSaveGame
-	yesorno
-	iffalse .DidNotSave
-	special TryQuickSave
-	iffalse .DidNotSave
-	writetext Text_PleaseWait
-	special CheckLinkTimeout_Receptionist
-	iffalse .LinkTimedOut
-	readmem wOtherPlayerLinkMode
-	iffalse .OK
-	special CheckBothSelectedSameRoom
-	writetext Text_IncompatibleRooms
-	special CloseLink
-	closetext
-	end
+	jumptextfaceplayer timeCapsuleForSaleText
 
-.OK:
-	special EnterTimeCapsule
-	writetext Text_PleaseComeIn
-	waitbutton
-	closetext
-	scall TimeCapsuleScript_CheckPlayerGender
-	warpcheck
-	end
-
-.FriendNotReady:
-	special WaitForOtherPlayerToExit
-	writetext YourFriendIsNotReadyText
-	closetext
-	end
-
-.LinkTimedOut:
-	writetext Text_LinkTimedOut
-	sjump .Cancel
-
-.DidNotSave:
-	writetext Text_PleaseComeAgain
-.Cancel:
-	special WaitForOtherPlayerToExit
-	closetext
-	end
-
-.MonTooNew:
-	writetext Text_RejectNewMon
-	closetext
-	end
-
-.MonMoveTooNew:
-	writetext Text_RejectMonWithNewMove
-	closetext
-	end
-
-.MonHasMail:
-	writetext Text_RejectMonWithMail
-	closetext
-	end
+timeCapsuleForSaleText:
+	text "The funding for"
+	line "these time"
+	cont "capsules has run"
+	cont "out."
+	para "Until someone can"
+	line "come up with a"
+	cont "good use for these"
+	cont "I'm afraid they"
+	cont "are a waste of"
+	cont "space."
+	done
 
 Script_LeftCableTradeCenter:
 	special WaitForOtherPlayerToExit

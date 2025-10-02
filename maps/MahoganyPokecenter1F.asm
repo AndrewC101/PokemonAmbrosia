@@ -47,13 +47,11 @@ MahoganyPokecenter1FYoungsterText:
 MahoganyPokecenter1FCooltrainerFText:
 	text "I'm going hiking"
 	line "in ICE PATH."
-	para "Last time I tried"
-	line "I couldn't figure"
-	cont "out the complex"
-	cont "ice fields."
-	para "I've drawn up"
-	line "detailed plans"
-	cont "since then!"
+	para "My CHANDELURE"
+	line "should be able to"
+	cont "melt any ICE"
+	cont "#mon that"
+	cont "might attack me."
 	done
 
 MahBlisseyScript:

@@ -43,17 +43,14 @@ VermilionPokecenter1FFishingGuruText:
 	done
 
 VermilionPokecenter1FSailorText:
-	text "I were born in"
-	line "this here city."
-
-	para "Anyone who"
-	line "attacks will"
-	cont "to answer to me"
-	cont "POLIWHIRL."
-
-	para "I can't imagine"
-	line "him ever losing"
-	cont "to anybody."
+	text "That kid over"
+	line "there doesn't look"
+	cont "like much but I"
+	cont "wouldn't mess with"
+	cont "him."
+	para "Look at those"
+	line "monstrous #mon"
+	cont "he's got!"
 	done
 
 InvadedVermilionPokecenter1FSailorText:

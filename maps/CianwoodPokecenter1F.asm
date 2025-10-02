@@ -87,21 +87,14 @@ CianwoodGymGuideWinText:
 	done
 
 CianwoodPokecenter1FSuperNerdText:
-	text "I mean I like"
-	line "anime as much"
-	cont "as the next guy."
-
-	para "But I'm more"
-	line "into STAR TREK."
-
-	para "It doesn't have"
-	line "super action."
-
-	para "But it has super"
-	line "ideas."
-
-	para "SPOCK vs KIRK"
-	line "was epic though!"
+	text "Fighting #mon"
+	line "are treated like"
+	cont "movie stars here."
+	para "Especially that"
+	line "MACHAMP over"
+	cont "there."
+	para "I don't even think"
+	line "it has a trainer."
 	done
 
 CianBlisseyScript:

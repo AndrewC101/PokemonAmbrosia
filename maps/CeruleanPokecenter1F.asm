@@ -42,10 +42,10 @@ CeruleanPokecenter1FGymGuideText:
 	cont "running for"
 	cont "their lives."
 
-	para "There might be"
-	line "lots of cool"
-	cont "items hidden in"
-	cont "there."
+	para "But my SWAMPERT"
+	line "knows Amnesia and"
+	cont "Curse, it's"
+	cont "unbeatable!"
 	done
 
 CerBlisseyScript:

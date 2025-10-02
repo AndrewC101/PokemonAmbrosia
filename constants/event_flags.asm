@@ -438,6 +438,8 @@
     const EVENT_BEAT_JONATHAN
     const EVENT_BEAT_NURSE_JOY
     const EVENT_PICKED_UP_ROUTE5_LUCKY_EGG
+    const EVENT_LUGIA_AMBROSIA
+    const EVENT_HOOH_AMBROSIA
 
     ; ======================================
     ; DevNote - here

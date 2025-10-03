@@ -136,7 +136,8 @@ NamingScreen:
 .genderless
 	ld bc, wTempMonDVs
 	farcall CheckShininess
-	jr nz, .not_shiny
+	jr nc, .not_shiny
+	farcall LoadStatsScreenPageTilesGFX
 	hlcoord 1, 4
 	ld [hl], "⁂"
 .not_shiny

@@ -160,4 +160,5 @@ INCLUDE "audio/music/championbattledpp.asm"
 INCLUDE "audio/music/gymleaderbattleprism.asm"
 INCLUDE "audio/music/megalovania.asm"
 INCLUDE "audio/music/hoohbattle.asm"
+INCLUDE "audio/music/lavendertown.asm"
 

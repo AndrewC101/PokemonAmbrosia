@@ -104,10 +104,11 @@ Music:
 	dba Music_Tetris
 	dba Music_FinalBattle
 	dba Music_RedIndigoPlateau
-	dba Music_RedLavender
+	dba Music_LavenderTown
 	dba Music_Red_Dungeon
 	dba Music_ChampionBattleDPPt
 	dba Music_GymLeaderBattlePrism
 	dba Music_Megalovania
 	dba Music_HoOhBattleHGSS
+    dba Music_RedLavender
 	assert_table_length NUM_MUSIC_SONGS

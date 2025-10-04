@@ -755,6 +755,7 @@ DragonsDenB1F_MapEvents:
 	def_warp_events
 	warp_event 20,  3, DRAGONS_DEN_1F, 3
 	warp_event 19, 29, DRAGON_SHRINE, 1
+	warp_event 35, 9, ABYSS, 2
 
 	def_coord_events
 	coord_event 19, 30, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene

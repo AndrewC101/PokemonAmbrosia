@@ -539,4 +539,8 @@ ENDM
 	map_const MANOR_INSIDE,                                9, 16 ; 2
 	endgroup
 
-NUM_MAP_GROUPS EQU const_value ; 30
+    newgroup ABYSS
+	map_const ABYSS,                                  45, 19 ;  1
+	endgroup
+
+NUM_MAP_GROUPS EQU const_value ; 34

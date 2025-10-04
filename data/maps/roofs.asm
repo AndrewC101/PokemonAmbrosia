@@ -44,6 +44,7 @@ MapGroupRoofs:
 	db ROOF_VIOLET    ; 31 (WarZone)
 	db ROOF_VIOLET    ; 32 (Museum)
 	db ROOF_NEW_BARK  ; 33 (Manor)
+	db ROOF_VIOLET    ; 34 (Abyss)
 	assert_table_length NUM_MAP_GROUPS + 1
 
 Roofs:

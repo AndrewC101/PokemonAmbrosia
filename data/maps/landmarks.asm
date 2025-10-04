@@ -57,6 +57,7 @@ Landmarks:
     landmark 150,  60, DestinyTowerName
 	landmark 148,  68, SilverCaveName
 	landmark  80,  80, AncientRuinName
+    landmark 132,  36, AbyssName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -223,3 +224,4 @@ DestinyTowerName:    db "Master¯Trial@"
 AncientRuinName:     db "Ancient¯Ruin@"
 WarZoneName:         db "War¯Zone@"
 MuseumName:          db "Museum@"
+AbyssName:           db "Abyss@"

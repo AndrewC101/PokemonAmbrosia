@@ -721,3 +721,4 @@ ENDM
 	map_attributes AncientHall, ANCIENT_HALL, $00, 0
 	map_attributes ManorOutside, MANOR_OUTSIDE, $05, 0
 	map_attributes ManorInside, MANOR_INSIDE, $00, 0
+	map_attributes Abyss, ABYSS, $0A, 0

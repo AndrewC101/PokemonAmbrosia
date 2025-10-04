@@ -51,6 +51,7 @@
     const LANDMARK_DESTINY_TOWER
 	const LANDMARK_SILVER_CAVE       ; 2e
 	const LANDMARK_ANCIENT_RUIN
+	const LANDMARK_ABYSS
 KANTO_LANDMARK EQU const_value
 	const LANDMARK_PALLET_TOWN       ; 2f
 	const LANDMARK_ROUTE_1           ; 30

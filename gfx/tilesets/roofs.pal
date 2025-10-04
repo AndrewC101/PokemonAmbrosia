@@ -158,7 +158,12 @@
 	RGB 13,13,13, 07,07,07 ; nite
 	RGB 08,18,22, 08,10,19 ; eve
 
-; group 31 (Manor)
+; group 32 (Manor)
 	RGB 20,31,14, 11,23,05 ; morn/day
 	RGB 09,13,08, 06,09,04 ; nite
 	RGB 17,24,10, 09,18,03 ; eve
+
+; group 33 (Ancient Ruin)
+	RGB 21,21,25, 16,16,16 ; morn/day
+	RGB 13,13,13, 07,07,07 ; nite
+	RGB 08,18,22, 08,10,19 ; eve

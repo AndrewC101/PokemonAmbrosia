@@ -51,6 +51,7 @@ OutdoorSprites:
 	dw WarZoneSprites
 	dw MuseumSprites
 	dw ManorSprites
+	dw AbyssSprites
 	assert_table_length NUM_MAP_GROUPS
 
 ; Route1 and ViridianCity are connected
@@ -229,6 +230,7 @@ AncientRuinSprites:
 WarZoneSprites:
 MuseumSprites:
 ManorSprites:
+AbyssSprites:
 SilverGroupSprites:
 	db SPRITE_SILVER
 	db SPRITE_BIRD

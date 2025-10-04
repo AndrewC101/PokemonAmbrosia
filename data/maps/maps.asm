@@ -49,6 +49,7 @@ MapGroupPointers::
 	dw MapGroup_WarZone      ; 30
 	dw MapGroup_Museum       ; 31
 	dw MapGroup_Manor        ; 32
+	dw MapGroup_Abyss        ; 33
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_Olivine:
@@ -586,4 +587,9 @@ MapGroup_Manor:
 	map ManorOutside, TILESET_BATTLE_TOWER_OUTSIDE, ROUTE, LANDMARK_MANOR, MUSIC_ECRUTEAK_CITY, TRUE, PALETTE_AUTO, FISHGROUP_NONE
 	map ManorInside, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_MANOR, MUSIC_ECRUTEAK_CITY, TRUE, PALETTE_DAY, FISHGROUP_NONE
     assert_table_length NUM_MANOR_MAPS
+
+MapGroup_Abyss:
+    table_width MAP_LENGTH, MapGroup_Abyss
+	map Abyss, TILESET_JOHTO, CAVE, LANDMARK_ABYSS, MUSIC_RED_LAVENDER, TRUE, PALETTE_NITE, FISHGROUP_DRATINI
+    assert_table_length NUM_ABYSS_MAPS
 

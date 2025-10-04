@@ -978,3 +978,6 @@ ManorOutside_Blocks:
 ManorInside_Blocks:
     INCBIN "maps/ManorInside.blk"
 
+Abyss_Blocks:
+    INCBIN "maps/Abyss.blk"
+

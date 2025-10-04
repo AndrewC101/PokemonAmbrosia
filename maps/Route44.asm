@@ -634,6 +634,7 @@ Route44_MapEvents:
 
 	def_warp_events
 	warp_event 56,  7, ICE_PATH_1F, 1
+	warp_event 7, 19, ABYSS, 1
 
 	def_coord_events
 	coord_event 56, 8, SCENE_DEFAULT, VanceEncounterScript

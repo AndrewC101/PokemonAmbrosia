@@ -2148,6 +2148,8 @@ PocketPCFunction:
 	jr z, .nope
 	cp LANDMARK_CERULEAN_CAVE
 	jr z, .nope
+	cp LANDMARK_ABYSS
+	jr z, .nope
 	xor a
 	ret
 .nope

@@ -1,5 +1,4 @@
 	object_const_def
-	const DARKCAVEBLACKTHORNENTRANCE_GIRATINA
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2
 	const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
@@ -72,15 +71,19 @@ DarkCaveXehanortSeenText:
     line "completely"
     cont "eclipsed."
 
-    para "There must be a"
-    line "balance."
+	para "There exists a"
+	line "object that can"
+	cont "grant immortality."
 
-    para "You disturb this."
+	para "The Mark of God."
 
-    para "You will help me"
-    line "tear down this"
-    cont "tyranny of light."
-    done
+	para "This golden item"
+	line "is connected to it"
+	cont "in some way."
+
+	para "It fills me with"
+	line "power!"
+	done
 DarkCaveXehanortBeatenText:
     text "Only now have I"
     line "truly won."
@@ -89,14 +92,18 @@ DarkCaveXehanortWinsText:
     text "Open your heart."
     done
 DarkCaveXehanortAfterBattleText:
-    text "All worlds begin"
-    line "in darkness."
-
-    para "And also end."
-
-    para "Your heart is"
-    line "no different."
-    done
+	text "There must be a"
+	line "balance."
+	para "Neither a tyranny"
+	line "of light or dark."
+	para "To ensure this"
+	line "balance lasts"
+	cont "forever, I must"
+	cont "live forever."
+	para "Through the Mark"
+	line "of God I shall"
+	cont "achieve this."
+	done
 RematchTextDarkCaveXehanort:
     text "Do you have more"
     line "to learn?"
@@ -187,5 +194,4 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 40,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
 	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, DarkCaveXehanortScript, -1
-	object_event 25,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceAmbrosia, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA
-
+	object_event  7,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceAmbrosia, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA

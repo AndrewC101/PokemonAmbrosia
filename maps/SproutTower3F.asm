@@ -406,8 +406,8 @@ SageTroyAfterBattleText:
 	para "He left for"
 	line "DARK CAVE."
 
-	para "We have not"
-	line "seen him since."
+	para "On a foolish quest"
+	line "for immortality."
 	done
 
 SageNealSeenText:

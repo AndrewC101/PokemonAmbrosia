@@ -732,14 +732,16 @@ MasterXehanortScript:
     end
 
 MasterXehanortSeenText:
-	text "There is a"
-	line "remarkable light"
-	cont "emanating from"
-	cont "that young man."
-	para "But not as radiant"
-	line "as yours."
-	para "Come Kingdom"
-	line "Hearts!"
+	text "I am sure I will"
+	line "find it here."
+	para "The Mark of God."
+	para "The light"
+	line "emanating from"
+	cont "this place beckons"
+	cont "me."
+	para "It is strong but"
+	line "not as radiant as"
+	cont "yours."
 	done
 
 MasterXehanortBeatenText:
@@ -751,15 +753,13 @@ MasterXehanortWinText:
     done
 
 MasterXehanortAfterBattleText:
-    text "All worlds begin"
-    line "in darkness."
-
-    para "And also end."
-
-    para "Your heart is"
-    line "no different."
-    done
-
+	text "Perhaps life"
+	line "eternal is a"
+	cont "curse."
+	para "One you alone"
+	line "shall suffer from"
+	cont "I suspect."
+	done
 
 MasterXehanortLoseAfterBattleText:
 	text "All things begin"

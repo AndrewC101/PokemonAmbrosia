@@ -296,4 +296,11 @@ JohtoWaterWildMons:
 	db 65, SLOWKING
 	end_water_wildmons
 
+	def_water_wildmons ABYSS
+	db 2 percent ; encounter rate
+	db 64, LANTURN
+	db 67, SWAMPERT
+	db 69, GRENINJA
+	end_water_wildmons
+
 	db -1 ; end

@@ -585,16 +585,25 @@ DragonShrineElder2Text:
     para "But there is an"
     line "even more ancient"
     cont "DRAGON that"
-    cont "dwells within DARK"
-    cont "CAVE."
+    cont "dwells within the"
+    cont "ABYSS."
 
     para "It seeks to bring"
     line "about chaos and"
     cont "damnation."
 
-    para "The unholy one."
+    para "The profane one."
 
     para "GIRATINA."
+
+	para "The ancestors of"
+	line "our people were"
+	cont "worshipers of"
+	cont "this most ancient"
+	cont "of dragons."
+
+	para "That is the secret"
+	line "we bury deepest."
 	done
 
 DragonShrineElder3Text:

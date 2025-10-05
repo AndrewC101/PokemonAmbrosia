@@ -1905,4 +1905,32 @@ JohtoGrassWildMons:
 	db 90, DUNSPARCE
 	end_grass_wildmons
 
+    def_grass_wildmons ABYSS
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 66, SPIRITOMB
+	db 67, CHANDELURE
+	db 68, UMBREON
+	db 68, HOUNDOOM
+	db 70, KINGAMBIT
+	db 71, AEGISLASH
+	db 73, TYRANITAR
+	; day
+	db 66, SPIRITOMB
+	db 67, CHANDELURE
+	db 68, UMBREON
+	db 68, HOUNDOOM
+	db 70, KINGAMBIT
+	db 71, AEGISLASH
+	db 73, TYRANITAR
+	; nite
+	db 66, SPIRITOMB
+	db 67, CHANDELURE
+	db 68, UMBREON
+	db 68, HOUNDOOM
+	db 70, KINGAMBIT
+	db 71, AEGISLASH
+	db 73, TYRANITAR
+	end_grass_wildmons
+
 	db -1 ; end

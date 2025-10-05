@@ -3345,6 +3345,7 @@ SpiritombEvosAttacks:
 	db 45, PAIN_SPLIT
 	db 48, TRICK_ROOM
 	db 50, NASTY_PLOT
+	db 50, DARK_PULSE
 	db 0 ; no more level-up moves
 
 LatiosEvosAttacks:

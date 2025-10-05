@@ -4,7 +4,6 @@
     const ABYSS_FIELDMON_3
     const ABYSS_FIELDMON_4
     const ABYSS_FIELDMON_5
-    const ABYSS_FIELDMON_6
     const ABYSS_FIELDMON_7
     const ABYSS_FIELDMON_8
     const ABYSS_FIELDMON_9
@@ -21,24 +20,41 @@ Abyss_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .Barriers
+    callback MAPCALLBACK_OBJECTS, .AbyssFieldMon
+	callback MAPCALLBACK_TILES, .AbyssBarriers
 
-.Barriers
+.AbyssBarriers:
     checkevent EVENT_ABYSS_BRIDGE_1
     iftrue .checkSage2
     changeblock 44, 28, $88
+    changeblock 42, 30, $0A
 .checkSage2
     checkevent EVENT_ABYSS_BRIDGE_2
     iftrue .end
     changeblock 44, 26, $88
+    changeblock 42, 30, $0A
 .end
     endcallback
 
+.AbyssFieldMon:
+    appear ABYSS_FIELDMON_1
+    appear ABYSS_FIELDMON_2
+    appear ABYSS_FIELDMON_3
+    appear ABYSS_FIELDMON_4
+    appear ABYSS_FIELDMON_5
+    appear ABYSS_FIELDMON_7
+    appear ABYSS_FIELDMON_8
+    appear ABYSS_FIELDMON_9
+    appear ABYSS_FIELDMON_10
+
+	setval WEATHER_NONE
+	writemem wFieldWeather
+    endcallback
+
 AbyssFieldMon1Script:
-	faceplayer
 	cry DRAGONITE
 	pause 15
-	loadwildmon DRAGONITE, 55
+	loadwildmon DRAGONITE, 70
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -46,10 +62,9 @@ AbyssFieldMon1Script:
 	end
 
 AbyssFieldMon2Script:
-	faceplayer
 	cry SALAMENCE
 	pause 15
-	loadwildmon SALAMENCE, 55
+	loadwildmon SALAMENCE, 70
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2
@@ -57,10 +72,9 @@ AbyssFieldMon2Script:
 	end
 
 AbyssFieldMon3Script:
-	faceplayer
 	cry GARCHOMP
 	pause 15
-	loadwildmon GARCHOMP, 55
+	loadwildmon GARCHOMP, 70
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -68,10 +82,9 @@ AbyssFieldMon3Script:
 	end
 
 AbyssFieldMon4Script:
-	faceplayer
 	cry DARKRAI
 	pause 15
-	loadwildmon DARKRAI, 55
+	loadwildmon DARKRAI, 75
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4
@@ -79,32 +92,19 @@ AbyssFieldMon4Script:
 	end
 
 AbyssFieldMon5Script:
-	faceplayer
 	cry AEGISLASH
 	pause 15
-	loadwildmon AEGISLASH, 55
+	loadwildmon AEGISLASH, 71
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5
 	disappear ABYSS_FIELDMON_5
 	end
 
-AbyssFieldMon6Script:
-	faceplayer
-	cry CHANDELURE
-	pause 15
-	loadwildmon CHANDELURE, 55
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_6
-	disappear ABYSS_FIELDMON_6
-	end
-
 AbyssFieldMon7Script:
-	faceplayer
 	cry STEELIX
 	pause 15
-	loadwildmon STEELIX, 55
+	loadwildmon STEELIX, 68
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7
@@ -112,10 +112,9 @@ AbyssFieldMon7Script:
 	end
 
 AbyssFieldMon8Script:
-	faceplayer
-	cry METAGROSS
+	cry TYRANITAR
 	pause 15
-	loadwildmon METAGROSS, 55
+	loadwildmon TYRANITAR, 73
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -123,10 +122,9 @@ AbyssFieldMon8Script:
 	end
 
 AbyssFieldMon9Script:
-	faceplayer
 	cry SWAMPERT
 	pause 15
-	loadwildmon SWAMPERT, 55
+	loadwildmon SWAMPERT, 67
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_9
@@ -134,10 +132,9 @@ AbyssFieldMon9Script:
 	end
 
 AbyssFieldMon10Script:
-	faceplayer
 	cry GRENINJA
 	pause 15
-	loadwildmon GRENINJA, 55
+	loadwildmon GRENINJA, 69
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10
@@ -284,6 +281,9 @@ AbyssSageScript1:
     writetext AbyssSageFailedText
     waitbutton
     closetext
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
     warp ABYSS, 86, 2
     end
 .pass
@@ -292,6 +292,10 @@ AbyssSageScript1:
     playsound SFX_STRENGTH
     changeblock 44, 28, $71
     setevent EVENT_ABYSS_BRIDGE_1
+    checkevent EVENT_ABYSS_BRIDGE_2
+    iffalse .reload
+    changeblock 42, 30, $01
+.reload
     reloadmap
     opentext
 .passed
@@ -395,6 +399,9 @@ AbyssSageScript2:
     writetext AbyssSageFailedText
     waitbutton
     closetext
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
     warp ABYSS, 4, 26
     end
 .pass
@@ -403,6 +410,10 @@ AbyssSageScript2:
     playsound SFX_STRENGTH
     changeblock 44, 26, $71
     setevent EVENT_ABYSS_BRIDGE_2
+    checkevent EVENT_ABYSS_BRIDGE_1
+    iffalse .reload
+    changeblock 42, 30, $01
+.reload
     reloadmap
     opentext
 .passed
@@ -486,7 +497,7 @@ GiratinaScript:
 	end
 .caught
     setevent EVENT_CAUGHT_GIRATINA
-	disappear DARKCAVEBLACKTHORNENTRANCE_GIRATINA
+	disappear ABYSS_GIRATINA
 	end
 .noRayquaza
     opentext
@@ -674,17 +685,16 @@ Abyss_MapEvents:
 	object_event 12,  5, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 23,  7, SPRITE_SALAMENCE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 75,  4, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 44, 21, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 17, 14, SPRITE_AEGISLASH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 58,  7, SPRITE_CHANDELURE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 43, 17, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 58,  7, SPRITE_AEGISLASH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 79, 18, SPRITE_STEELIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 61, 22, SPRITE_METAGROSS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 61, 22, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 12, 22, SPRITE_SWAMPERT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon9Script, EVENT_FIELD_MON_9
 	object_event 30, 23, SPRITE_GRENINJA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon10Script, EVENT_FIELD_MON_10
 	object_event 12,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, AbyssAmbrosia, EVENT_ABYSS_AMBROSIA
-	object_event 44,  8, SPRITE_GIRATINA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
-	object_event 47, 30, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssSageScript1, -1
-	object_event 42, 30, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssSageScript2, -1
+	object_event 44,  9, SPRITE_GIRATINA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, GiratinaScript, EVENT_CAUGHT_GIRATINA
+	object_event 48, 30, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssSageScript1, -1
+	object_event 41, 30, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssSageScript2, -1
 	object_event 65, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLeeroyScript, -1
 	object_event 33,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderVarreScript, -1
 	object_event 46, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderArtoriasScript, -1

@@ -240,7 +240,7 @@ InvaderArtoriasBeatenText:
 InvaderArtoriasAfterBattleText:
 	text "Brave Knight..."
 	para "I beseech thee..."
-	para " Resist..."
+	para "Resist..."
 	para "The Dark..."
 	done
 
@@ -470,7 +470,6 @@ AbyssSage2PassedText:
 	done
 
 GiratinaScript:
-    opentext
 	callasm IsArceusInParty
 	iftrue .arceus
 	callasm IsRayquazaInParty
@@ -683,9 +682,9 @@ Abyss_MapEvents:
 
 	def_object_events
 	object_event 12,  5, SPRITE_DRAGONITE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 23,  7, SPRITE_SALAMENCE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 19, 11, SPRITE_SALAMENCE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 75,  4, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 43, 17, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 39, 34, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 58,  7, SPRITE_AEGISLASH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 79, 18, SPRITE_STEELIX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 61, 22, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AbyssFieldMon8Script, EVENT_FIELD_MON_8

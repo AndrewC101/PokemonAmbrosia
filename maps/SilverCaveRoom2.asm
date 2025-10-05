@@ -12,7 +12,6 @@
     const SILVERCAVEROOM2_FIELDMON_8
     const SILVERCAVEROOM2_FIELDMON_9
     const SILVERCAVEROOM2_FIELDMON_10
-    const SILVERCAVEROOM2_INVADER
 
 SilverCaveRoom2_MapScripts:
 	def_scene_scripts
@@ -155,49 +154,6 @@ SilverCaveRoom2PPUp:
 SilverCaveRoom2HiddenMaxPotion:
 	hiddenitem AMBROSIA, EVENT_SILVER_CAVE_ROOM_2_HIDDEN_MAX_POTION
 
-InvaderMaxScript:
-	trainer INVADER, MAX, EVENT_BEAT_INVADER_MAX, InvaderMaxSeenText, InvaderMaxBeatenText, InvaderMaxVictoryText, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext InvaderMaxAfterBattleText
-	waitbutton
-	closetext
-	end
-
-InvaderMaxSeenText:
-    text "Welcome to"
-    line "MT SILVER."
-
-    para "You know what"
-    line "you being here"
-    cont "means?"
-
-    para "It means you're"
-    line "in the max level"
-    cont "tier!"
-	done
-
-InvaderMaxVictoryText:
-	text "Max SL fights"
-	line "are boring."
-	done
-
-InvaderMaxBeatenText:
-	text "What level"
-	line "are you!"
-	done
-
-InvaderMaxAfterBattleText:
-	text "If you need to"
-	line "level up fast."
-
-	para "Check out the"
-	line "BATTLE TOWER"
-	cont "CHAMP trial."
-	done
-
 SilverCaveRoom2_MapEvents:
 	db 0, 0 ; filler
 
@@ -226,6 +182,5 @@ SilverCaveRoom2_MapEvents:
 	object_event  5, 32, SPRITE_GALLADE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 10, 46, SPRITE_GARDEVOIR, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon9Script, EVENT_FIELD_MON_9
 	object_event 19, 29, SPRITE_TOGEKISS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon10Script, EVENT_FIELD_MON_10
-	;object_event 22, 52, SPRITE_GIOVANNI, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderMaxScript, -1
 
 	

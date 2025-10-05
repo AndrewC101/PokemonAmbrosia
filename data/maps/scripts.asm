@@ -520,4 +520,7 @@ INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
+
+SECTION "Map Scripts Overflow 12", ROMX
+
 INCLUDE "maps/Abyss.asm"

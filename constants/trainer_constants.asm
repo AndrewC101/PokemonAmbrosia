@@ -790,12 +790,13 @@ KRIS EQU __trainer_class__
     const LAUTREC
     const BACKSTABER
     const PATCHES
-    const CRESTFALLEN
     const LOGAN
     const SOLAIRE
     const HAVEL
     const OROBORO
-    const MAX
+    const LEEROY
+    const VARRE
+    const ARTORIAS
     const MASTER_PATCHES
     const MANUS
 

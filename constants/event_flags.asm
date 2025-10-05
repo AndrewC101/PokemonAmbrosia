@@ -440,6 +440,13 @@
     const EVENT_PICKED_UP_ROUTE5_LUCKY_EGG
     const EVENT_LUGIA_AMBROSIA
     const EVENT_HOOH_AMBROSIA
+    const EVENT_BEAT_INVADER_LEEROY
+    const EVENT_BEAT_INVADER_VARRE
+    const EVENT_BEAT_INVADER_ARTORIAS
+    const EVENT_ABYSS_BRIDGE_1
+    const EVENT_ABYSS_BRIDGE_2
+    const EVENT_ABYSS_AMBROSIA
+    const EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA
 
     ; ======================================
     ; DevNote - here

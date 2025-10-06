@@ -312,6 +312,7 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
+    opentext
 	callasm GetPartyNickname
 	writetext UseCutText
 	reloadmappart
@@ -509,6 +510,7 @@ SurfFromMenuScript:
 	special UpdateTimePals
 
 UsedSurfScript:
+    opentext
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
 	closetext
@@ -640,8 +642,8 @@ TrySurfOW::
 	ld [wSurfingPlayerState], a
 	call GetPartyNickname
 
-	ld a, BANK(AskSurfScript)
-	ld hl, AskSurfScript
+	ld a, BANK(UsedSurfScript)
+	ld hl, UsedSurfScript
 	call CallScript
 
 	scf
@@ -650,18 +652,6 @@ TrySurfOW::
 .quit
 	xor a
 	ret
-
-AskSurfScript:
-	opentext
-	writetext AskSurfText
-	yesorno
-	iftrue UsedSurfScript
-	closetext
-	end
-
-AskSurfText:
-	text_far _AskSurfText
-	text_end
 
 FlyFunction:
 	call FieldMoveJumptableReset
@@ -798,6 +788,7 @@ Script_WaterfallFromMenu:
 	special UpdateTimePals
 
 Script_UsedWaterfall:
+    opentext
 	callasm GetPartyNickname
 	writetext .UseWaterfallText
 	waitbutton
@@ -829,9 +820,6 @@ Script_UsedWaterfall:
 	text_end
 
 TryWaterfallOW::
-;	ld d, WATERFALL
-;	call CheckPartyMove
-;	jr c, .failed
 
 ; Step 1
 	ld de, ENGINE_RISINGBADGE
@@ -859,8 +847,8 @@ TryWaterfallOW::
 
 	call CheckMapCanWaterfall
 	jr c, .failed
-	ld a, BANK(Script_AskWaterfall)
-	ld hl, Script_AskWaterfall
+	ld a, BANK(Script_UsedWaterfall)
+	ld hl, Script_UsedWaterfall
 	call CallScript
 	scf
 	ret
@@ -877,18 +865,6 @@ Script_CantDoWaterfall:
 
 .HugeWaterfallText:
 	text_far _HugeWaterfallText
-	text_end
-
-Script_AskWaterfall:
-	opentext
-	writetext .AskWaterfallText
-	yesorno
-	iftrue Script_UsedWaterfall
-	closetext
-	end
-
-.AskWaterfallText:
-	text_far _AskWaterfallText
 	text_end
 
 EscapeRopeFunction:
@@ -1246,12 +1222,6 @@ TeleportFunction:
 	dw .FailTeleport
 
 .TryTeleport:
-	call GetMapEnvironment
-	call CheckOutdoorMap
-	jr z, .CheckIfSpawnPoint
-	jr .nope
-
-.CheckIfSpawnPoint:
 	ld a, [wLastSpawnMapGroup]
 	ld d, a
 	ld a, [wLastSpawnMapNumber]
@@ -1364,6 +1334,7 @@ Script_StrengthFromMenu:
 	special UpdateTimePals
 
 Script_UsedStrength:
+    opentext
 	callasm SetStrengthFlag
 	writetext .UseStrengthText
 	readmem wStrengthSpecies
@@ -1394,16 +1365,8 @@ AskStrengthScript:
 	jumptext BouldersMoveText
 
 .AskStrength:
-	opentext
-	writetext AskStrengthText
-	yesorno
-	iftrue Script_UsedStrength
-	closetext
+	sjump Script_UsedStrength
 	end
-
-AskStrengthText:
-	text_far _AskStrengthText
-	text_end
 
 BouldersMoveText:
 	text_far _BouldersMoveText
@@ -1414,9 +1377,6 @@ BouldersMayMoveText:
 	text_end
 
 TryStrengthOW:
-	;ld d, STRENGTH
-	;call CheckPartyMove
-	;jr c, .nope
 
 ; Step 1
 	ld de, ENGINE_PLAINBADGE
@@ -1543,6 +1503,7 @@ Script_WhirlpoolFromMenu:
 	special UpdateTimePals
 
 Script_UsedWhirlpool:
+    opentext
 	callasm GetPartyNickname
 	writetext UseWhirlpoolText
 	reloadmappart
@@ -1601,8 +1562,8 @@ TryWhirlpoolOW::
 
 	call TryWhirlpoolMenu
 	jr c, .failed
-	ld a, BANK(Script_AskWhirlpoolOW)
-	ld hl, Script_AskWhirlpoolOW
+	ld a, BANK(Script_UsedWhirlpool)
+	ld hl, Script_UsedWhirlpool
 	call CallScript
 	scf
 	ret
@@ -1619,18 +1580,6 @@ Script_MightyWhirlpool:
 
 .MayPassWhirlpoolText:
 	text_far _MayPassWhirlpoolText
-	text_end
-
-Script_AskWhirlpoolOW:
-	opentext
-	writetext AskWhirlpoolText
-	yesorno
-	iftrue Script_UsedWhirlpool
-	closetext
-	end
-
-AskWhirlpoolText:
-	text_far _AskWhirlpoolText
 	text_end
 
 HeadbuttFunction:
@@ -1667,6 +1616,7 @@ HeadbuttFromMenuScript:
 	special UpdateTimePals
 
 HeadbuttScript:
+    opentext
 	callasm GetPartyNickname
 	writetext UseHeadbuttText
 
@@ -1706,8 +1656,8 @@ TryHeadbuttOW::
 	jr c, .no
 
 .can_use
-	ld a, BANK(AskHeadbuttScript)
-	ld hl, AskHeadbuttScript
+	ld a, BANK(HeadbuttScript)
+	ld hl, HeadbuttScript
 	call CallScript
 	scf
 	ret
@@ -1715,18 +1665,6 @@ TryHeadbuttOW::
 .no
 	xor a
 	ret
-
-AskHeadbuttScript:
-	opentext
-	writetext AskHeadbuttText
-	yesorno
-	iftrue HeadbuttScript
-	closetext
-	end
-
-AskHeadbuttText:
-	text_far _AskHeadbuttText
-	text_end
 
 RockSmashFunction:
 	call TryRockSmashFromMenu
@@ -1778,6 +1716,7 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
+    opentext
 	callasm GetPartyNickname
 	writetext UseRockSmashText
 	closetext
@@ -1808,11 +1747,7 @@ AskRockSmashScript:
 	callasm HasRockSmash
 	ifequal 1, .no
 
-	opentext
-	writetext AskRockSmashText
-	yesorno
-	iftrue RockSmashScript
-	closetext
+    sjump RockSmashScript
 	end
 .no
 	jumptext MaySmashText
@@ -1821,15 +1756,7 @@ MaySmashText:
 	text_far _MaySmashText
 	text_end
 
-AskRockSmashText:
-	text_far _AskRockSmashText
-	text_end
-
 HasRockSmash:
-	;ld d, ROCK_SMASH
-	;call CheckPartyMove
-	;jr nc, .yes
-    ; no
 ; Step 1
 	ld a, TM_ROCK_SMASH
 	ld [wCurItem], a
@@ -2370,14 +2297,8 @@ TryCutOW::
 	ret
 
 AskCutScript:
-	opentext
-	writetext AskCutText
-	yesorno
-	iffalse .declined
 	callasm .CheckMap
 	iftrue Script_Cut
-.declined
-	closetext
 	end
 
 .CheckMap:
@@ -2388,10 +2309,6 @@ AskCutScript:
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
-
-AskCutText:
-	text_far _AskCutText
-	text_end
 
 CantCutScript:
 	jumptext CanCutText

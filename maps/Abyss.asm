@@ -124,6 +124,7 @@ AbyssFieldMon8Script:
 AbyssFieldMon9Script:
 	cry SWAMPERT
 	pause 15
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SWAMPERT, 67
 	startbattle
 	reloadmapafterbattle

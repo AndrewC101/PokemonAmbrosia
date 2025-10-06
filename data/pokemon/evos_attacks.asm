@@ -670,6 +670,7 @@ RegigigasEvosAttacks:
 ZygardeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DIG
+    db 1, ANCIENTPOWER
 	db 10, SPIKES
 	db 20, STEALTH_ROCK
 	db 30, CRUNCH

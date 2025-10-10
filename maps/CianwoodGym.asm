@@ -58,7 +58,7 @@ CianwoodGymChuckScript:
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
 .FightDone:
-	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
+	checkevent EVENT_GOT_TM01_DRAINPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
 	setevent EVENT_BEAT_BLACKBELT_LAO
@@ -74,7 +74,7 @@ CianwoodGymChuckScript:
 	promptbutton
 	verbosegiveitem TM_DRAIN_PUNCH
 	iffalse .BagFull
-	setevent EVENT_GOT_TM01_DYNAMICPUNCH
+	setevent EVENT_GOT_TM01_DRAINPUNCH
 	writetext ChuckExplainTMText
 	waitbutton
 	closetext

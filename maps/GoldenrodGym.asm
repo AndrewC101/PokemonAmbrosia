@@ -327,16 +327,16 @@ WhitneyGoodCryText:
 	done
 
 LassCarrieSeenText:
-	text "I've heard you"
-	line "are really good."
-
-	para "I even heard"
-	line "you fought off"
-	cont "TEAM ROCKET"
-	cont "at AZALEA."
-
-	para "That is soo"
-	line "Fetch!"
+	text "If you want to get"
+	line "strong really fast"
+	cont "you should take"
+	cont "the train to"
+	cont "SAFFRON and head"
+	cont "north to ROUTE 5."
+	para "There is a Nurse"
+	line "Joy who will whip"
+	cont "you into shape in"
+	cont "no time."
 	done
 
 LassCarrieBeatenText:

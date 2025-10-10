@@ -2634,6 +2634,7 @@ BattleAnim_Thrash:
 	anim_ret
 
 BattleAnim_CalmMind:
+BattleAnim_Serenity:
 	anim_1gfx ANIM_GFX_MISC
 	anim_sound 0, 1, SFX_MIND_READER
 .loop
@@ -4476,7 +4477,6 @@ BattleAnim_Whirlpool:
 	anim_ret
 
 BattleAnim_Geomancy:
-BattleAnim_Serenity:
 BattleAnim_HolyArmour:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row

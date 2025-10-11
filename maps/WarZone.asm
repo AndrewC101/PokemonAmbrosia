@@ -396,7 +396,7 @@ WallaceSeenText:
     cont "come."
 
     para "The people will"
-    line "mourn you."
+    line "remember you."
 
     para "They will see"
     line "the futility of"
@@ -405,7 +405,7 @@ WallaceSeenText:
     cont "my rule."
 
     para "You and your"
-    line "#mon will truly"
+    line "#mon will"
     cont "conquer this land"
     cont "for me and for"
     cont "all HOENN."
@@ -887,14 +887,14 @@ Soldier1SeenText:
     cont "HOENNs most elite"
     cont "soldiers."
     para "Your hubris will"
-    line "get you killed."
+    line "be your undoing."
     done
 Soldier1BeatenText:
     text "You are too late."
     done
 Soldier1WinsText:
     text "You're lucky I"
-    line "didn't kill you."
+    line "held back."
     done
 Soldier1AfterBattleText:
     text "Reinforcements"
@@ -1034,6 +1034,11 @@ Soldier3AfterBattleText:
 
     para "...."
 
+	para "You lost half your"
+	line "forces to a nurse!"
+
+    para "...."
+
     para "There are two GYMs"
 
     para "...."
@@ -1055,7 +1060,7 @@ Soldier3AfterBattleText:
     para "It matters not."
 
     para "ADMIRAL DRAKE"
-    line "will end them all."
+    line "will handle this."
 
     para "Starting with you."
     done

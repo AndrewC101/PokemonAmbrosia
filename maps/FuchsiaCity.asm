@@ -421,12 +421,10 @@ BlockingSoldier1Text:
     cont "power of HOENN."
 
     para "He took mercy on"
-    line "the child and"
-    cont "spared her life."
+    line "the child."
 
     para "I saw the fear"
-    line "and awe in the"
-    cont "peoples eyes at"
+    line "in the people at"
     cont "the sight of"
     cont "HOENN legendary"
     cont "#mon."

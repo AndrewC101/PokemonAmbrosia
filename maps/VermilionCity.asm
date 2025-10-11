@@ -425,33 +425,30 @@ TrainerSoldier6:
 	closetext
 	end
 Soldier6SeenText:
-	text "Stop you filthy"
-	line "KANTO son of a"
-	cont "DUNSPARCE scum."
-	para "Kneel and kiss my"
-	line "boots and I might"
-	cont "let you live."
+	text "OK, this is what"
+	line "I've trained for."
+	para "Hmm hmmm."
+	para "Stop you filthy"
+	line "Kanto spawn of a"
+	cont "DUNSPARCE scum!"
 	done
-    done
 Soldier6BeatenText:
     text "Avenge me"
     line "comrade!"
     done
 Soldier6WinsText:
-    text "Dirty KANTO"
-    line "filth."
-
-    para "Know your place."
-    done
+	text "I did it!"
+	para "I won!"
+	done
 Soldier6AfterBattleText:
-    text "Your country will"
-    line "fall."
-
-    para "Your children"
-    line "will burn."
-
-    para "It is inevitable."
-    done
+	text "None of us want to"
+	line "make WALLACE"
+	cont "angry."
+	para "Just let us do"
+	line "this."
+	para "It's easier on"
+	line "everyone."
+	done
 
 TrainerSoldier7:
 	trainer SOLDIER, SOLDIER_7, EVENT_BEAT_SOLDIER_7, Soldier7SeenText, Soldier7BeatenText, Soldier7WinsText, .Script
@@ -483,7 +480,7 @@ Soldier7BeatenText:
     line "can't."
     done
 Soldier7WinsText:
-    text "Off to the camps"
+    text "Off to the box"
     line "with you."
     done
 Soldier7AfterBattleText:
@@ -510,23 +507,26 @@ Soldier8SeenText:
 	line "locked down."
 	para "We are just the"
 	line "first wave."
-	para "Once we take"
-	line "SAFFRON your"
-	cont "country is ours."
+	para "SAFFRON will soon"
+	line "fall too."
+	para "Don't try to stop"
+	line "us."
+	para "For your sake."
 	done
 Soldier8BeatenText:
     text "I done my job"
     line "well."
     done
 Soldier8WinsText:
-    text "Nobody will"
-    line "mourn for you."
+    text "Just go home."
     done
 Soldier8AfterBattleText:
 	text "Once WALLACE joins"
-	line "the battle you"
-	cont "will know total"
-	cont "desperation."
+	line "the battle..."
+	para "Lives are going to"
+	line "be lost."
+	para "None of us can"
+	line "stop that."
 	done
 
 HoenCaptain:
@@ -594,7 +594,7 @@ HoenCaptainBeatenText:
 
 HoenCaptainWinsText:
     text "Just another"
-    line "corpse."
+    line "name on a list."
     done
 
 HoenCaptainAfterBattleText:

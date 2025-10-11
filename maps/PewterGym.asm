@@ -119,7 +119,7 @@ BrockIntroText:
     line "a strong, stable"
     cont "and constant"
     cont "presence in their"
-    cont "live."
+    cont "lives."
 
     para "I am their rock."
 	done

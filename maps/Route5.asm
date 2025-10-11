@@ -153,7 +153,7 @@ RematchTextNurseJoy:
 	done
 RematchRefuseTextNurseJoy:
 	text "Don't be afraid"
-	line "losing."
+	line "of losing."
 	para "Losing makes you"
 	line "stronger than"
 	cont "winning."

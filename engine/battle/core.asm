@@ -1230,6 +1230,7 @@ Core_LevitatePokemon:
     db LATIAS
     db LATIOS
     db ROTOM
+    db UNOWN
     db -1
 
 Core_SpikesImmunePokemon: ; magic guard + levitate
@@ -2508,6 +2509,8 @@ Aftermath:
     cp MAGNEZONE
     jr z, .aftermath
     cp GENGAR
+    jr z, .aftermath
+    cp SPIRITOMB
     jr z, .aftermath
     ret
 .aftermath
@@ -4640,6 +4643,8 @@ SwitchInEffects:
     jp z, .defUp
     cp CLOYSTER
     jp z, .defUp
+    cp ARCTOZOLT
+    jp z, .defUp
 
     cp RAIKOU
     jp z, .spdUp
@@ -4785,6 +4790,8 @@ SwitchInEffects:
     cp TOGEKISS
     jp z, .naturalCure
     cp MEW
+    jp z, .naturalCure
+    cp BRELOOM
     jp z, .naturalCure
     ret
 

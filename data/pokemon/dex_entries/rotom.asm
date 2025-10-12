@@ -6,5 +6,5 @@
 	next "machines."
 
 	page "Immune to"
-	next "GROUND type"
-	next "moves.@"
+	next "ELECTRIC and"
+	next "GROUND moves.@"

@@ -143,6 +143,7 @@ TechnicianPokemon:
     db IVYSAUR
     db VENUSAUR
     db MARILL
+    db AZUMARILL
     db BUTTERFREE
     db -1
 

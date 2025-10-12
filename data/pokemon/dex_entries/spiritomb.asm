@@ -6,4 +6,5 @@
 	next "their misdeeds."
 
 	page "Prevents enemy"
-	next "switching.@"
+	next "switching. Has"
+	next "a final attack.@"

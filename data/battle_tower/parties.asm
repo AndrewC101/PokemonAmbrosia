@@ -109,7 +109,7 @@ BattleTowerMons:
 
 	db AZUMARILL
 	db CHOICE_BAND
-	db PLAY_ROUGH, WATERFALL, AQUA_JET, ICE_PUNCH
+	db PLAY_ROUGH, AQUA_JET, DRAIN_PUNCH, ICE_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -119,7 +119,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 15, 20, 15 ; PP
+	db 15, 20, 15, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 24 ; Level

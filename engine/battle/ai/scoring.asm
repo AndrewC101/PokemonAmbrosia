@@ -43,6 +43,7 @@ AI_LevitatePokemon:
     db LATIAS
     db LATIOS
     db ROTOM
+    db UNOWN
     db $FF
 
 AI_WaterAbsorbPokemon:
@@ -70,6 +71,7 @@ AI_VoltAbsorbPokemon:
     db FLAAFFY
     db AMPHAROS
     db RAIKOU
+    db ROTOM
     db $FF
 
 AI_FireAbsorbPokemon:

@@ -5,6 +5,6 @@
 	next "predator with"
 	next "a lethal move."
 
-	page "Immune to"
-	next "ELECTRIC"
-	next "attacks.@"
+	page "Boosted DEFENSE."
+	next "Immune to"
+	next "ELECTRIC moves.@"

@@ -1836,6 +1836,8 @@ BattleCommand_CheckHit:
 	ret z
 	cp MAGMAR
 	ret z
+	cp VOLCARONA
+	ret z
 .notFireBlast
 
 ; DevNote - make Blizzard always hit for Jynx

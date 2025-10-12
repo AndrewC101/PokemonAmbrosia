@@ -6,5 +6,5 @@
 	next "letter."
 
 	page "HIDDEN POWER"
-	next "does double"
-	next "normal damage.@"
+	next "boosted. Immune"
+	next "to GROUND.@"

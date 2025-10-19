@@ -4,6 +4,9 @@
 ; These are functions used in effect_commands.asm
 ; they are defined here as that file is out of space
 RainSwitch:
+    ld a, [wBattleWeather]
+    cp WEATHER_RAIN
+    ret z
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
 	ld a, 255
@@ -17,6 +20,9 @@ RainSwitch:
 	jp StdBattleTextbox
 
 SunSwitch:
+    ld a, [wBattleWeather]
+    cp WEATHER_SUN
+    ret z
     ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 255
@@ -33,6 +39,9 @@ SunSwitch:
 	jp StdBattleTextbox
 
 SandSwitch:
+    ld a, [wBattleWeather]
+    cp WEATHER_SANDSTORM
+    ret z
     ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
 	ld a, 255
@@ -56,7 +65,7 @@ SpikesSwitch:
     ret nz
 	set SCREENS_SPIKES, [hl]
     ld de, SPIKES
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
 	ld hl, SpikesText
 	jp StdBattleTextbox
 
@@ -71,7 +80,7 @@ StealthRockSwitch:
     ret nz
 	set SCREENS_STEALTH_ROCK, [hl]
     ld de, STEALTH_ROCK
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
 	ld hl, StealthRockText
 	jp StdBattleTextbox
 
@@ -86,15 +95,18 @@ ToxicSpikesSwitch:
     ret nz
 	set SCREENS_TOXIC_SPIKES, [hl]
     ld de, TOXIC_SPIKES
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
 	ld hl, ToxicSpikesText
 	jp StdBattleTextbox
 
 TrickRoomSwitch:
+    ld a, [wTrickRoomCount]
+    and a
+    ret nz
     ld a, 5
     ld [wTrickRoomCount], a
     ld de, TRICK_ROOM
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
 	ld hl, TrickRoomText
 	jp StdBattleTextbox
 
@@ -107,11 +119,13 @@ ReflectSwitch:
 	ld hl, wEnemyScreens
 	ld bc, wEnemyReflectCount
 .got_screens_pointer
+    bit SCREENS_REFLECT, [hl]
+    ret nz
 	set SCREENS_REFLECT, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld de, REFLECT
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ld hl, ReflectEffectText
 	jp StdBattleTextbox
 
@@ -124,11 +138,13 @@ LightScreenSwitch:
 	ld hl, wEnemyScreens
 	ld bc, wEnemyLightScreenCount
 .got_screens_pointer
+    bit SCREENS_LIGHT_SCREEN, [hl]
+    ret nz
 	set SCREENS_LIGHT_SCREEN, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld de, LIGHT_SCREEN
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ld hl, LightScreenEffectText
 	jp StdBattleTextbox
 
@@ -141,11 +157,13 @@ SafeguardSwitch:
 	ld hl, wEnemyScreens
 	ld bc, wEnemySafeguardCount
 .got_screens_pointer
+    bit SCREENS_SAFEGUARD, [hl]
+    ret nz
 	set SCREENS_SAFEGUARD, [hl]
 	ld a, FIELD_EFFECT_DURATION
 	ld [bc], a
     ld de, SAFEGUARD
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ld hl, CoveredByVeilText
 	jp StdBattleTextbox
 
@@ -170,13 +188,13 @@ NaturalCure:
     xor a
     ld [hl], a
     ld de, RECOVER
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ld hl, NaturalCureText
     jp StdBattleTextbox
 
 DefogSwitch:
     ld de, DEFOG
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     callfar BattleCommand_Defog
 	ret
 
@@ -201,7 +219,7 @@ ScreenBreakSwitch:
     push hl
     ld de, POISON_GAS
     farcall SwitchTurnCore
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     farcall SwitchTurnCore
 
     ld hl, ShatteredScreensText
@@ -278,17 +296,58 @@ TransformSwitch:
 
 PlayBoostAnimation:
     ld de, FOCUS_ENERGY
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ret
 
+CoreClearBodyPokemon:
+    db TENTACOOL
+    db TENTACRUEL
+    db BELDUM
+    db METANG
+    db METAGROSS
+    db DIALGA
+    db ARCEUS
+    db REGIGIGAS
+    db DUNSPARCE
+    db VAPOREON
+    db WOBBUFFET
+    db KYOGRE
+    db -1
+
 PlayDropAnimation:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	ld hl, wEnemySubStatus4
+	jr z, .gotSide
+	ld a, [wBattleMonSpecies]
+	ld hl, wPlayerSubStatus4
+
+.gotSide
+    push hl
+    push de
+	push bc
+	ld hl, CoreClearBodyPokemon
+	ld de, 1
+	call IsInArray
+    pop bc
+	pop de
+	pop hl
+	ret c
+
+    ld a, [hl]
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+
+    ld de, LEER
+    call PlayAnimationIfNeeded
     ld de, ANIM_ENEMY_STAT_DOWN
-    call PlayAnimationIfNotFirstTurn
+    call PlayAnimationIfNeeded
     ret nc
     callfar BattleCommand_StatDownMessage
     ret
 
-PlayAnimationIfNotFirstTurn:
+PlayAnimationIfNeeded:
 ; assume animation in de
     call ShouldPlayAnim
     jr nc, .skipAnim
@@ -303,6 +362,9 @@ ShouldPlayAnim:
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .checkEnemyPresent
+	ld a, [wLinkMode]
+	and a
+	jr z, .yes
 	ld a, [wBattleHasJustStarted]
 	and a
 	jr nz, .no
@@ -322,7 +384,6 @@ ShouldPlayAnim:
 .no
     xor a
     ret
-
 
 HasWildBattleBegun:
     ld a, [wBattleMode]
@@ -1104,15 +1165,10 @@ FieldInfoBox:
 	cp 10
 	ld de, FieldTexts.unlimited
 	jr nc, .not_1_turn
-	ld a, [wWeatherCount]
-	add "0"
-	ld [de], a
-	ld a, TX_END
-	inc de
-	ld [de], a
-	ld de, wStringBuffer5
-	hlcoord 1, 2
-	call PlaceString
+	ld de, wWeatherCount
+	ld hl, FieldTexts.empty
+	lb bc, 1, 1
+	call FieldInfoBoxPlaceElement
 	ld a, [wWeatherCount]
 	cp 1
 	ld de, FieldTexts.turnsleft
@@ -1542,6 +1598,9 @@ FieldTexts:
 
 .turn:
 	db " turn@"
+
+.empty:
+    db "@"
 
 JoyWaitAorBorDPADInfoTrainer:
 .loop

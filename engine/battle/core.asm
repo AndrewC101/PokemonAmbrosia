@@ -42,7 +42,6 @@ DoBattle:
 	call EnemySwitch
 
 .wild
-    call SwitchInEffects
 	ld c, 40
 	call DelayFrames
 
@@ -54,10 +53,6 @@ DoBattle:
 	jp z, LostBattle
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
-;	cp BATTLETYPE_DEBUG
-;	jp z, .tutorial_debug
-;	cp BATTLETYPE_TUTORIAL
-;	jp z, .tutorial_debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -93,15 +88,19 @@ DoBattle:
 	call SendOutPlayerMon
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
+
 	call SetPlayerTurn
 	call SpikesDamage
 	call SwitchInEffects
+
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
+
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
 	jr nz, .not_linked_2
+
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
@@ -111,13 +110,19 @@ DoBattle:
 	call SetEnemyTurn
 	call SpikesDamage
 	call SwitchInEffects
+	jr .skipEffects
 
 .not_linked_2
+    ld a, [wLinkMode]
+    and a
+    jr nz, .skipEffects
+	call SetEnemyTurn
+	call SpikesDamage
+	call SwitchInEffects
+
+.skipEffects
     call FieldWeather
 	jp BattleTurn
-
-;.tutorial_debug
-;	jp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
 	call SafeLoadTempTilemapToTilemap

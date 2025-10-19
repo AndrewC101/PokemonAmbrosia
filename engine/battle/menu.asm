@@ -1,4 +1,10 @@
 LoadBattleMenu:
+    ld a, [wLinkMode]
+    and a
+    jr z, .notLinked
+    ld hl, BattleMenuHeaderWild
+    jr .trainer
+.notLinked
 	ld a, [wBattleMode]
 	dec a
 	ld hl, BattleMenuHeaderTrainer

@@ -892,7 +892,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_SHELL_SMASH,      AI_Smart_ShellSmash
     dbw EFFECT_FLINCH_HIT,       AI_Smart_Flinch
     dbw EFFECT_KINGS_SHIELD,     AI_Smart_KingsShield
-    dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage ; is this needed
+    dbw EFFECT_STATIC_DAMAGE,    AI_Smart_StaticDamage
     dbw EFFECT_DEFENSE_UP,       AI_Smart_LesserStatChange
     dbw EFFECT_FOCUS_ENERGY,     AI_Smart_LesserStatChange
     dbw EFFECT_SAFEGUARD,        AI_Smart_LesserStatChange
@@ -907,6 +907,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_STICKY_WEB,       AI_Smart_StickyWeb
     dbw EFFECT_TRICK_ROOM,       AI_Smart_TrickRoom
     dbw EFFECT_DEFOG,            AI_Smart_Defog
+    dbw EFFECT_LEVEL_DAMAGE,     AI_Smart_StaticDamage
 	db -1 ; end
 
 AI_Smart_Sleep:

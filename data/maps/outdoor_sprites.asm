@@ -89,33 +89,9 @@ CinnabarGroupSprites:
 	db SPRITE_BLUE
 	db 0 ; end
 
-; CeruleanCity and Route5 are connected
 CeruleanGroupSprites:
-; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
-	db SPRITE_YOUNGSTER
-	db SPRITE_MONSTER
-	db SPRITE_POKEFAN_M
-	db SPRITE_ROCKET
-	db SPRITE_MISTY
-
-	db SPRITE_POKE_BALL
-	db SPRITE_SLOWPOKE
-	db SPRITE_SQUIRTLE
-	db SPRITE_ALAKAZAM
-	db SPRITE_RAICHU
-	db SPRITE_PERSIAN
-	db SPRITE_NURSE
-	db SPRITE_BLISSEY
-	db SPRITE_POLIWRATH
-	db SPRITE_BLASTOISE
-	db 0 ; end
-
 SaffronGroupSprites:
-; Route5, SaffronCity
+; Route4, Route9, Route10North, Route24, Route25, CeruleanCity, Route5, SaffronCity
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F

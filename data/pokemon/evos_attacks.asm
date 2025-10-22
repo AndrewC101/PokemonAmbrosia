@@ -671,15 +671,15 @@ ZygardeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DIG
     db 1, ANCIENTPOWER
-	db 10, SPIKES
-	db 20, STEALTH_ROCK
-	db 30, CRUNCH
+	db 1, SPIKES
+	db 1, STEALTH_ROCK
+	db 20, CRUNCH
+	db 30, GLARE
+	db 35, DRAGON_CLAW
 	db 40, EARTHQUAKE
-	db 50, DRAGON_CLAW
-	db 60, GLARE
-	db 70, DRAGON_DANCE
-	db 75, DRACO_IMPACT
-	db 80, OBLITERATE
+	db 50, DRAGON_DANCE
+	db 60, DRACO_IMPACT
+	db 70, OBLITERATE
 	db 0 ; no more level-up moves
 
 HawluchaEvosAttacks:
@@ -3366,13 +3366,12 @@ PalkiaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, BUBBLEBEAM
 	db 10, ANCIENTPOWER
-	db 20, SLASH
-	db 30, SURF
-	db 40, AURA_SPHERE
-	db 50, DRAGON_CLAW
-	db 60, DRAGON_PULSE
-	db 70, HYDRO_PUMP
-	db 80, DRACO_METEOR
+	db 20, AURA_SPHERE
+	db 30, DRAGON_CLAW
+	db 40, SURF
+	db 45, DRAGON_PULSE
+	db 50, HYDRO_PUMP
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 KyogreEvosAttacks:
@@ -3514,7 +3513,7 @@ RayquazaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, FLY
 	db 1, ANCIENTPOWER
-	db 1, CRUNCH
+	db 10, CRUNCH
 	db 20, DRAGON_PULSE
 	db 30, REST
 	db 35, EXTREMESPEED
@@ -3542,13 +3541,13 @@ DialgaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, METAL_CLAW
 	db 10, ANCIENTPOWER
-	db 20, SLASH
+	db 20, AURA_SPHERE
 	db 30, FLASH_CANNON
-	db 40, AURA_SPHERE
-	db 50, DRAGON_PULSE
-	db 60, DRAGON_CLAW
-	db 70, OUTRAGE
-	db 80, METEOR_MASH
+	db 35, DRAGON_PULSE
+	db 40, IRON_HEAD
+	db 45, DRAGON_CLAW
+	db 50, OUTRAGE
+	db 70, METEOR_MASH
 	db 0 ; no more level-up moves
 
 KlefkiEvosAttacks:
@@ -3570,22 +3569,24 @@ KlefkiEvosAttacks:
 XerneasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAIN_KISS
-	db 40, CLOSE_COMBAT
-	db 50, MEGAHORN
-	db 60, PLAY_ROUGH
-	db 70, MOON_BLAST
-	db 80, GEOMANCY
+	db 30, CLOSE_COMBAT
+	db 35, MEGAHORN
+	db 40, PLAY_ROUGH
+	db 50, MOON_BLAST
+	db 70, GEOMANCY
 	db 0 ; no more level-up moves
 
 YveltalEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, AIR_SLASH
 	db 1, SUCKER_PUNCH
+	db 1, NIGHT_SHADE
 	db 1, TAUNT
-	db 50, RECOVER
-	db 60, DARK_PULSE
-	db 70, OBLIVION
-	db 80, NASTY_PLOT
+	db 30, RECOVER
+	db 35, NIGHT_SLASH
+	db 40, DARK_PULSE
+	db 50, OBLIVION
+	db 70, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 GiratinaEvosAttacks:
@@ -3593,12 +3594,12 @@ GiratinaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, SHADOW_PUNCH
 	db 1, ANCIENTPOWER
-	db 40, DRAGON_CLAW
-	db 50, WILL_O_WISP
-	db 60, SHADOW_BALL
-	db 70, RECOVER
-	db 75, DRACO_METEOR
-	db 80, SHADOW_FORCE
+	db 30, DRAGON_CLAW
+	db 35, WILL_O_WISP
+	db 40, SHADOW_BALL
+	db 50, RECOVER
+	db 70, DRACO_METEOR
+	db 70, SHADOW_FORCE
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
@@ -3731,6 +3732,7 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ANCIENTPOWER
 	db 1, FLY
+	db 30, FLAMETHROWER
 	db 40, RECOVER
 	db 50, SACRED_FIRE
 	db 65, BRAVE_BIRD
@@ -3747,7 +3749,6 @@ CelebiEvosAttacks:
 	db 35, PSYCHIC_M
 	db 55, PSYCHO_SLASH
 	db 60, LEAF_BLADE
-	db 65, SYNTHESIS
 	db 0 ; no more level-up moves
 
 MewtwoEvosAttacks:

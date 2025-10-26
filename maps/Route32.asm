@@ -189,7 +189,7 @@ TrainerPicnickerLiz1:
 	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_ECRUTEAK
+	checkevent EVENT_BEAT_WHITNEY
 	iftrue .LoadFight1
 	loadtrainer PICNICKER, LIZ1
 	startbattle

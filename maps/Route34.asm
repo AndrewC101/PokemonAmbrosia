@@ -149,9 +149,9 @@ TrainerCamperTodd1:
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
-	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	checkevent EVENT_BEAT_PRYCE
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_CIANWOOD
+	checkevent EVENT_BEAT_MORTY
 	iftrue .LoadFight1
 	loadtrainer CAMPER, TODD1
 	startbattle
@@ -291,7 +291,7 @@ TrainerPicnickerGina1:
 	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_MAHOGANY
+	checkevent EVENT_BEAT_CHUCK
 	iftrue .LoadFight1
 	loadtrainer PICNICKER, GINA1
 	startbattle

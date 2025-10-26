@@ -215,9 +215,9 @@ TrainerBugCatcherArnie:
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight3
-	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	checkevent EVENT_BEAT_PRYCE
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_MAHOGANY
+	checkevent EVENT_BEAT_CHUCK
 	iftrue .LoadFight1
 	loadtrainer BUG_CATCHER, ARNIE1
 	startbattle

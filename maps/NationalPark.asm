@@ -170,7 +170,7 @@ TrainerSchoolboyJack1:
 	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_OLIVINE
+	checkevent EVENT_BEAT_MORTY
 	iftrue .LoadFight1
 	loadtrainer SCHOOLBOY, JACK1
 	startbattle

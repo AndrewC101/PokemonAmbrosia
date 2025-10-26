@@ -91,9 +91,9 @@ TrainerBugCatcherWade1:
 	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .LoadFight3
-	checkflag ENGINE_FLYPOINT_MAHOGANY
+	checkevent EVENT_BEAT_CHUCK
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_GOLDENROD
+	checkevent EVENT_BEAT_BUGSY
 	iftrue .LoadFight1
 	loadtrainer BUG_CATCHER, WADE1
 	startbattle

@@ -193,10 +193,49 @@ NaturalCure:
     jp StdBattleTextbox
 
 DefogSwitch:
+    call AnyFieldEffectPresent
+    ret nc
     ld de, DEFOG
     call PlayAnimationIfNeeded
     callfar BattleCommand_Defog
 	ret
+
+AnyFieldEffectPresent:
+    ld a, [wBattleWeather]
+    cp WEATHER_NONE
+    jr nz, .yes
+    ld a, [wPlayerScreens]
+    call AnyScreensUp
+    jr c, .yes
+    ld a, [wEnemyScreens]
+    call AnyScreensUp
+    jr c, .yes
+    xor a
+    ret
+.yes
+    scf
+    ret
+
+AnyScreensUp:
+	bit SCREENS_SAFEGUARD, a
+	jr nz, .yes
+	bit SCREENS_LIGHT_SCREEN, a
+	jr nz, .yes
+	bit SCREENS_REFLECT, a
+	jr nz, .yes
+	bit SCREENS_SPIKES, a
+	jr nz, .yes
+	bit SCREENS_STEALTH_ROCK, a
+	jr nz, .yes
+	bit SCREENS_TOXIC_SPIKES, a
+	jr nz, .yes
+	bit SCREENS_STICKY_WEB, a
+	jr nz, .yes
+	xor a
+	ret
+.yes
+    scf
+    ret
 
 ScreenBreakSwitch:
 	ldh a, [hBattleTurn]

@@ -1224,7 +1224,7 @@ WarZoneBlueText:
 
     para "You won't be coming"
     line "back at the"
-    cont "#CENTER."
+    cont "#center."
     done
 
 WarZoneMovement_PlayerUp:

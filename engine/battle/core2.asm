@@ -201,6 +201,9 @@ DefogSwitch:
 	ret
 
 AnyFieldEffectPresent:
+    ld a, [wFieldWeather]
+    cp WEATHER_NONE
+    jr nz, .yes
     ld a, [wBattleWeather]
     cp WEATHER_NONE
     jr nz, .yes

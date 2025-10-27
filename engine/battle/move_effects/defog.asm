@@ -1,7 +1,8 @@
 BattleCommand_Defog:
 ; clear weather
-    ld a, 1
-	ld [wWeatherCount], a
+	ld a, WEATHER_NONE
+	ld [wBattleWeather], a
+	ld [wFieldWeather], a
 
 ; clear all screens
     ld a, 1

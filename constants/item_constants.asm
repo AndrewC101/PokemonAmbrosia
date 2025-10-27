@@ -38,7 +38,7 @@
 	const HOLY_CROWN   ; 1e
 	const CALCIUM      ; 1f
 	const RARE_CANDY   ; 20
-	const X_ACCURACY   ; 21
+	const X_ACCURACY   ; 21 - doesn't do anything
 	const LEAF_STONE   ; 22
 	const CHOICE_SPECS ; 23
 	const NUGGET       ; 24

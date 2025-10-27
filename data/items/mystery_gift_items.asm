@@ -9,7 +9,6 @@ MysteryGiftItems:
 	db X_ATTACK
 	db BITTER_BERRY
 	db X_SPECIAL
-	db X_ACCURACY
 	db EON_MAIL
 	db MORPH_MAIL
 	db MUSIC_MAIL

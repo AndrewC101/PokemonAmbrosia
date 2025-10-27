@@ -55,7 +55,7 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 11 ; # items
+	db 12 ; # items
 	db POKE_BALL
 	db LEVEL_BALL
 	db POTION
@@ -63,9 +63,10 @@ MartViolet:
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
 	db X_SPEED
+	db X_SPECIAL
 	db FLOWER_MAIL
 	db -1 ; end
 
@@ -125,13 +126,17 @@ MartGoldenrod3F:
 	db -1 ; end
 
 MartGoldenrod4F:
-	db 6 ; # items
+	db 10 ; # items
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
 	db HP_UP
 	db PP_MAX
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPECIAL
 	db -1 ; end
 
 MartGoldenrod5F:
@@ -194,7 +199,7 @@ MartMahogany2:
 	db -1 ; end
 
 MartBlackthorn:
-	db 11 ; # items
+	db 13 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -204,8 +209,10 @@ MartBlackthorn:
 	db ELIXER
 	db FULL_HEAL
 	db REVIVE
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPECIAL
 	db -1 ; end
 
 MartViridian:
@@ -234,14 +241,16 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 8 ; # items
+	db 10 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db MAX_ETHER
 	db FULL_HEAL
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPECIAL
 	db SURF_MAIL
 	db -1 ; end
 
@@ -307,13 +316,17 @@ MartCeladon4F:
 	db -1 ; end
 
 MartCeladon5F1:
-	db 6 ; # items
+	db 10 ; # items
 	db HP_UP
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
 	db PP_MAX
+	db X_ATTACK
+	db X_DEFEND
+	db X_SPEED
+	db X_SPECIAL
 	db -1 ; end
 
 MartCeladon5F2:
@@ -350,7 +363,7 @@ MartFuchsia:
 	db -1 ; end
 
 MartSaffron:
-	db 11 ; # items
+	db 13 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -361,6 +374,8 @@ MartSaffron:
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
+	db X_SPEED
+	db X_SPECIAL
 	db FLOWER_MAIL
 	db -1 ; end
 

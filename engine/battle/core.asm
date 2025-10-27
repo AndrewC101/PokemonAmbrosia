@@ -89,7 +89,7 @@ DoBattle:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 
-	call SetPlayerTurn
+	call SetEnemyTurn
 	call SpikesDamage
 	call SwitchInEffects
 
@@ -99,7 +99,7 @@ DoBattle:
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
-	jr nz, .not_linked_2
+	jr nz, .skipEffects
 
 	xor a
 	ld [wEnemySwitchMonIndex], a
@@ -107,16 +107,14 @@ DoBattle:
 	call ResetEnemyStatLevels
 	call BreakAttraction
 	call EnemySwitch
-	call SetEnemyTurn
+
+	call SetPlayerTurn
 	call SpikesDamage
 	call SwitchInEffects
 	jr .skipEffects
 
 .not_linked_2
-    ld a, [wLinkMode]
-    and a
-    jr nz, .skipEffects
-	call SetEnemyTurn
+	call SetPlayerTurn
 	call SpikesDamage
 	call SwitchInEffects
 

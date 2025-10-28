@@ -232,8 +232,8 @@ MahoganySelfText1:
     done
 
 MahoganySelfText2:
-    text "They will kill"
-    line "you."
+    text "They won't be"
+    line "merciful."
     done
 
 MahoganySelfText3:
@@ -249,8 +249,8 @@ MahoganySelfText4:
     text "Even if he"
     line "wasn't..."
 
-    para "You would get"
-    line "him killed."
+    para "He would lose"
+    line "you."
 
     para "That's why he"
     line "left without"

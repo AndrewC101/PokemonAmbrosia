@@ -1636,9 +1636,9 @@ _DontKillUsText::
     prompt
 
 _RayquazaKillText::
-	text "You have willingly"
-	line "forfeit your"
-	cont "lives."
+	text "You have brought"
+	line "this fate upon"
+	cont "yourselves."
 
 	para "The cost of"
 	line "treason is"
@@ -1649,17 +1649,11 @@ _RayquazaKillText::
     para "DRACO METEOR!"
     prompt
 
-_DeathText::
-    text "NOOOO! WAIT!"
-    prompt
-
 _WallaceText1::
     text "Citizens of KANTO."
 	para "Your exploitation"
 	line "of #mon ends"
 	cont "today."
-	para "Your cities shall"
-	line "burn."
 	para "HOENN shall"
 	line "liberate the land"
 	cont "you squander."

@@ -760,7 +760,7 @@ GoldenrodMovement_PlayerDown:
 
 GoldenrodSelfText1:
     text "She was going"
-    line "to kill you."
+    line "to end you."
     done
 
 GoldenrodSelfText2:
@@ -775,10 +775,7 @@ GoldenrodSelfText2:
 
 GoldenrodSelfText3:
     text "Dad begged for"
-    line "your life."
-
-    para "She would have"
-    line "killed him too."
+    line "mercy."
     done
 
 GoldenrodSelfText4:
@@ -787,8 +784,7 @@ GoldenrodSelfText4:
     cont "save you."
 
     para "You're going to"
-    line "get yourself"
-    cont "killed."
+    line "get destroyed."
     done
 
 GoldenrodSelfText5:

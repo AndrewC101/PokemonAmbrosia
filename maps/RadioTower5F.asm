@@ -396,9 +396,10 @@ FakeDirectorLoseText:
 	done
 
 FakeDirectorTextAfter:
-	text "The HOENN legend"
-	line "#mon are"
-	cont "must stronger"
+	text "The HOENN"
+	line "legendary"
+	cont "#mon are"
+	cont "much stronger"
 	cont "than the elemental"
 	cont "birds of KANTO."
 
@@ -440,8 +441,7 @@ Executivef1SeenText:
 	line "daddy?"
 
 	para "I enjoyed his"
-	line "begging for your"
-	cont "life."
+	line "begging."
 
 	para "I was hoping to"
 	line "see some more of"
@@ -473,8 +473,6 @@ Executivef1AfterBattleText:
 
 	para "Go on!"
 
-	para "Finish me!"
-
 	para "I don't deserve"
 	line "mercy."
 
@@ -491,8 +489,8 @@ Executivef1AfterBattleText:
 	line "brother finish"
 	cont "his work."
 
-	para "HOENN will kill"
-	line "everyone you"
+	para "HOENN will end"
+	line "everything you"
 	cont "love."
 
 	para "They killed our"

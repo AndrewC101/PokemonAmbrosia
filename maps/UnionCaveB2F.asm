@@ -142,7 +142,7 @@ CooltrainerfGwenAfterBattleText:
 
 	para "When I find her."
 
-	para "I will kill her."
+	para "I will kill her!"
 	done
 
 CooltrainerfEmmaSeenText:

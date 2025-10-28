@@ -609,7 +609,7 @@ FuchsiaSelfText3:
     para "WALLACE can"
     line "kill CHAMPIONS."
 
-    para "He killed STEVEN!"
+    para "Just like STEVEN!"
     done
 
 FuchsiaSelfText4:
@@ -664,7 +664,8 @@ FuchsiaSelfDefeatText2:
     text "WALLACE kills"
     line "CHAMPIONS."
 
-    para "He will kill us."
+    para "We don't stand a"
+    line "chance!"
     done
 
 FuchsiaSelfConfidenceText3:
@@ -673,7 +674,7 @@ FuchsiaSelfConfidenceText3:
 	para "It doesn't matter."
 	para "If I don't stop"
 	line "him now he will"
-	cont "kill us eventually"
+	cont "end us eventually"
 	cont "anyway."
 	para "I have to stop"
 	line "him."

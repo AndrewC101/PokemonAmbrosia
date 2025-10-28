@@ -696,8 +696,6 @@ OakSpeech:
 	call PlaySFX
 	call WaitSFX
 
-	ld hl, DeathText
-	call PrintText
 	call RotateThreePalettesRight
 	call ClearTilemap
 
@@ -811,10 +809,6 @@ DontKillUsText:
 
 RayquazaKillText:
 	text_far _RayquazaKillText
-	text_end
-
-DeathText:
-	text_far _DeathText
 	text_end
 
 WallaceText1:

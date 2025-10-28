@@ -175,8 +175,8 @@ GruntM10SeenText:
 	line "legendary"
 	cont "#mon."
 
-	para "They will kill"
-	line "us all!"
+	para "They will destroy"
+	line "KANTO!"
 	done
 
 GruntM10BeatenText:
@@ -196,8 +196,9 @@ ScientistRichSeenText:
 	para "Their power will"
 	line "be mine."
 
-	para "The HOENN legend"
-	line "#mon."
+	para "The HOENN"
+	line "legendary"
+	cont "#mon."
 
 	para "I will learn to"
 	line "control them and"

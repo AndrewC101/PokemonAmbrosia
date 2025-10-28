@@ -43,10 +43,10 @@ PlaceDiplomaOnScreen:
 
 .Certification:
 	db   "This certifies"
-	next "that you have"
-	next "completed the"
-	next "new #dex."
-	next "Congratulations!"
+	next "completion of"
+	next "the Ambrosia"
+	next "#dex. Thanks"
+	next "for playing!"
 	db   "@"
 
 PrintDiplomaPage2:

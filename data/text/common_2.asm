@@ -1629,10 +1629,11 @@ _WhitedOutToTrainerText::
 	done
 
 _DontKillUsText::
-    text "No..."
-    para "Please..."
-    para "It's him!"
-    para "Spare us!"
+    text "Please!"
+    line "Emperor Wallace!"
+	para "We only acted out"
+	line "of love for Hoenn."
+    para "Have mercy!"
     prompt
 
 _RayquazaKillText::
@@ -1641,20 +1642,20 @@ _RayquazaKillText::
 	cont "yourselves."
 
 	para "The cost of"
-	line "treason is"
-	cont "known to all."
+	line "treason is known"
+	cont "to all."
 
-    para "RAYQUAZA!"
+    para "Rayquaza!"
 
-    para "DRACO METEOR!"
+    para "Draco Meteor!"
     prompt
 
 _WallaceText1::
-    text "Citizens of KANTO."
+    text "Citizens of Kanto."
 	para "Your exploitation"
 	line "of #mon ends"
 	cont "today."
-	para "HOENN shall"
+	para "Hoenn shall"
 	line "liberate the land"
 	cont "you squander."
 	para "Those who resist"
@@ -1663,21 +1664,21 @@ _WallaceText1::
 
 _WallaceText2::
 	text "To those nobel"
-	line "denizens on JOHTO."
+	line "denizens on Johto."
 	para "You have nothing"
 	line "to fear."
 	para "No longer shall"
 	line "you suffer the"
 	cont "rampant"
 	cont "industrialization"
-	cont "of KANTO."
+	cont "of Kanto."
 	para "However, should"
 	line "you come to"
 	cont "sympathise with"
-	cont "KANTO you will"
+	cont "Kanto you will"
 	cont "not be spared."
 	para "As the ruler of"
-	line "HOENN I can"
+	line "Hoenn I can"
 	cont "personally assure"
 	cont "you of that."
 	prompt

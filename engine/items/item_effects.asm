@@ -1282,6 +1282,9 @@ AmbrosiaEffect:
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
 
+	call ShouldUseAmbrosia
+	jp nc, NoEffectMessage
+
 ; update DVs to max - unless the mon is Shiny
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1DVs
@@ -1340,6 +1343,44 @@ AmbrosiaIncreaseStat:
 	ld [hl], a
 	call UpdateStatsAfterItem
 	ret
+
+ShouldUseAmbrosia:
+    ; is happiness maxed
+	ld hl, wPartyMon1Happiness
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	call AddNTimes
+	ld a, [hl]
+	cp 255
+	jr nz, .yes
+
+	; are speed and special dvs maxed
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	inc hl
+	ld a, [hl]
+	cp $ff
+	jr nz, .yes
+
+	; is special stat exp maxed
+    ld a, CALCIUM
+    ld [wCurItem], a
+    call GetStatExpRelativePointer
+	ld a, MON_STAT_EXP
+	call GetPartyParamLocation
+	add hl, bc
+	ld a, [hl]
+	cp 255
+	jr nz, .yes
+
+	; if all are ture don't use
+	xor a
+	ret
+.yes
+    scf
+    ret
 
 NoEffectMessage:
 	ld hl, ItemWontHaveEffectText

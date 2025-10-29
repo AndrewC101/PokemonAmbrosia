@@ -1364,8 +1364,8 @@ ShouldUseAmbrosia:
 	cp $ff
 	jr nz, .yes
 
-	; is special stat exp maxed
-    ld a, CALCIUM
+	; is speed stat exp maxed
+    ld a, CARBOS
     ld [wCurItem], a
     call GetStatExpRelativePointer
 	ld a, MON_STAT_EXP

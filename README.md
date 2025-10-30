@@ -2,7 +2,7 @@
 
 A Romhack based on Pokémon Crystal with a focus on unique features, fun gameplay and extensive additional and post game content.
 
-<img src="/screenshots/PokemonAmbrosiaAdvert.png" width="600" height="450" />
+<img src="/screenshots/PokemonAmbrosiaAdvert.png" width="700" height="530" />
 
 ## Resources
 

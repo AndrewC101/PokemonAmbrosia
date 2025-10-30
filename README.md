@@ -4,6 +4,14 @@ A Romhack based on Pokémon Crystal with a focus on unique features, fun gamepla
 
 <img src="/screenshots/ambrosia.png" width="250" height="250" />
 
+## Resources
+
+- [Game Guide](https://docs.google.com/document/d/1TX-FgTMPEF9D95FFL30wFyVaUetwVCv8bmdiAYllvnc/edit?usp=drive_link)
+- [Wild Pokemon Locations](https://docs.google.com/spreadsheets/d/1nHszhyVpgRsV4mBWWPKqh38ZaDtUF_tP-c_Fg85psug/edit?usp=drive_link)
+- [Boss Enemy Parties](https://docs.google.com/spreadsheets/d/1T8kO4jzFchMNjo5G_9bYCKdsQaMXxnBK3Zjx5op2dqI/edit?usp=drive_link)
+- [Pokemon Types and Stats](https://docs.google.com/spreadsheets/d/1cVbRcLM2UbESF52egGt3Td4sjuBJVl79rXz1ky53GSw/edit?usp=drive_link)
+- [Discord](https://discord.gg/mRFyHXYK)
+
 ## Pokedex
 
 - Fully reworked Pokedex which includes fan favorite Pokémon and legendaries from the first 6 generations with 253 Pokémon in total.
@@ -55,11 +63,15 @@ Open world design is balanced by two levels caps, both of which are visible on y
 ## Quality of Life
 
 Many massively impactful quality of life changes.
+- B button is turbo by default
+- Battle Speed option which speeds up battles by removing almost all battle text  
+- Can see battle info such as enemy stats, moves anf field effects
+- Can see enemy type by pressing SELECT in battle  
 - Can rematch any trainer by talking to them, including Gym leaders. However, rematches forbid the use of items.
 - Can forfeit almost any battle via the Run option.
 - Exp share available from very early game, giving 50% exp to all Pokémon who do not participate. This is upgraded by endgame to give 200% exp to all Pokémon.
 - Sport Shoes which allows the player to run by default (rather than having to hold B) except when indoors where walking is the default (though you can still run by holding B).
-- A RemembrAll key item which acts as a portable move relearner with no cost.
+- A Remembrall key item which acts as a portable move relearner with no cost.
 - All TMs are infinitely reusable.
 - HMs can be used by any Pokémon which is able to learn them, without actually needing to know them.
 - A Pocket PC allowing access to PC anywhere except caves and dungeons for balance reasons.
@@ -68,7 +80,7 @@ Many massively impactful quality of life changes.
 - An infinitely reusable repel called a Repulsor.
 - Warp Device which lets the player instantly warp to important locations.
 
-<img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
+<img src="/screenshots/battlespeed.png" width="150" height="150" />     <img src="/screenshots/types.png" width="150" height="150" />     <img src="/screenshots/dexstats.png" width="150" height="150" />     <img src="/screenshots/dexfield.png" width="150" height="150" />     <img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
 
 ## Items and Moves
 
@@ -79,12 +91,20 @@ Many important new and existing items.
     - choice specs
     - life orb
     - focus sash (is not consumed upon use)
+    - eviolite (also stops evolution)
+    - assault vest
+    - heavy-duty boots  
     - muscle band
     - wise glasses
     - expert belt
     - type boost items give 20% boost
     - leftovers
 - Many important Pokémon moves added, including but not limited to
+    - Stealth Rock (capped at 25% damage)
+    - Sticky Web
+    - Toxic Spikes (1 layer only)  
+    - Trick Room
+    - Taunt  
     - Bulk Up
     - Calm Mind
     - Nasty Plot
@@ -182,9 +202,23 @@ Infinite Money:
 - 014241D8
 - 013F42D8
 
+Set level cap to 100
+- 0164E0D9
+
 ## Acknowledgements
 
+Ambrosia Dex Sheet and Discord
+- Maxwell
+
+Code
+- All contributors to pret/pokecrystal tutorials
+- RaJa239
+
+Wild Encounter Sheet
+-  Pepsi_Cola64
+
 Sprites
+- Eeveeee1999
 - Rosehudson
 - Rangi
 - Solo
@@ -193,14 +227,12 @@ Sprites
 - Pokekoks
 - boonzeet  
 - Proyecto
-- Axel-Comics
+- Axel-Comics 
+- BlueEmerald
+- Pokets3 
+- Fokkos92
+- Egg3ggEgg
 
 Music
 - Mmmmmm
 - ShockSlayer
-
-Code
-- All contributors to pret/pokecrystal tutorials
-
-
-    

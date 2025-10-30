@@ -80,7 +80,9 @@ Many massively impactful quality of life changes.
 - An infinitely reusable repel called a Repulsor.
 - Warp Device which lets the player instantly warp to important locations.
 
-<img src="/screenshots/battlespeed.png" width="150" height="150" />     <img src="/screenshots/types.png" width="150" height="150" />     <img src="/screenshots/dexstats.png" width="150" height="150" />     <img src="/screenshots/dexfield.png" width="150" height="150" />     <img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
+<img src="/screenshots/battlespeed.png" width="150" height="150" />     <img src="/screenshots/types.png" width="150" height="150" />     <img src="/screenshots/dexstats.png" width="150" height="150" />     <img src="/screenshots/dexfield.png" width="150" height="150" />
+
+<img src="/screenshots/rematch.png" width="150" height="150" />     <img src="/screenshots/forfeit.png" width="150" height="150" />    <img src="/screenshots/keyitems.png" width="150" height="150" />    <img src="/screenshots/tms.png" width="150" height="150" />
 
 ## Items and Moves
 

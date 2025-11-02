@@ -158,16 +158,19 @@ PlayersRadioText2:
 PlayersRadioText3:
 	text "EMPEROR WALLACE"
 	line "has taken control"
-	cont "due to the"
-	cont "assassination of"
-	cont "CHAMPION STEVEN."
+	cont "after a failed"
+	cont "coup."
+	para "Driven by the"
+	line "assassination of"
+	cont "CHAMPION STEVEN"
+	cont "6 months ago."
 	done
 
 PlayersRadioText4:
 	text "The HOENN war is"
-	line "inevitable."
+	line "inevitable now."
 
-	para "ARCEUS help us!"
+	para "ARCEUS guide us."
 	done
 
 PlayersHouse2F_MapEvents:

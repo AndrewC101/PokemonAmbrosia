@@ -127,7 +127,7 @@ NurseJoySeenText:
     done
 NurseJoyOfferFightText:
 	text "Would you like to"
-	line "suffer from your"
+	line "suffer for your"
 	cont "#mon?"
 	done
 NurseJoyBeatenText:

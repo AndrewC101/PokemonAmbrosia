@@ -75,7 +75,63 @@ BlackthornYoungsterScript:
 	jumptextfaceplayer BlackthornYoungsterText
 
 BlackthornCooltrainerF2Script:
-	jumptextfaceplayer BlackthornCooltrainerF2Text
+    faceplayer
+    opentext
+    checkevent EVENT_GOT_BLACKTHORN_SKARM
+    iftrue .normal
+    checkevent EVENT_BEAT_BUGSY
+    iffalse .giveSkarm
+.normal
+	writetext BlackthornCooltrainerF2Text
+	waitbutton
+	closetext
+	end
+.giveSkarm
+    writetext GiveSkarmText
+    waitbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+    giveegg SKARMORY, EGG_LEVEL
+    getstring STRING_BUFFER_4, .skarmeggname
+    writetext GotBlackthornEggText
+    playsound SFX_GET_EGG
+	waitsfx
+	setevent EVENT_GOT_BLACKTHORN_SKARM
+	waitbutton
+	closetext
+	end
+.PartyFull
+	writetext BlackthornPartyFullText
+	waitbutton
+	closetext
+	end
+
+.skarmeggname
+	db "EGG@"
+
+GiveSkarmText:
+	text "Wait a minute!"
+	para "You are a new"
+	line "trainer!"
+	para "And you came"
+	line "through Dark Cave!"
+	para "You will be a"
+	line "great trainer."
+	para "Here take this,"
+	line "I'm sure you will"
+	cont "help it find its"
+	cont "full potential."
+	done
+
+BlackthornPartyFullText:
+    text "You will need to"
+    line "make room in your"
+    cont "party for this."
+    done
+
+GotBlackthornEggText:
+    text "Received EGG!"
+    done
 
 SantosScript:
 	faceplayer

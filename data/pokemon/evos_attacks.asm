@@ -3406,14 +3406,15 @@ SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPIKES
 	db 1, PECK
-	db 13, SAND_ATTACK
-	db 19, SWIFT
-	db 25, STEALTH_ROCK
-	db 28, ROOST
-	db 33, IRON_HEAD
-	db 35, DRILL_PECK
-	db 40, DEFOG
-	db 42, WHIRLWIND
+	db 1, SAND_ATTACK
+	db 10, METAL_CLAW
+	db 15, SLASH
+	db 20, STEALTH_ROCK
+	db 25, ROOST
+	db 30, IRON_HEAD
+	db 33, DRILL_PECK
+	db 35, DEFOG
+	db 40, WHIRLWIND
 	db 45, BRAVE_BIRD
 	db 0 ; no more level-up moves
 

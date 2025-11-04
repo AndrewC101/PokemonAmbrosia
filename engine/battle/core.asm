@@ -1294,6 +1294,26 @@ Core_GrimPokemon:
     db CHARIZARD
     db -1
 
+Core_GutsPokemon:
+    db STARLY
+    db STARAVIA
+    db STARAPTOR
+    db RATTATA
+    db RATICATE
+    db HERACROSS
+    db MACHOP
+    db MACHOKE
+    db MACHAMP
+    db TIMBURR
+    db GURDURR
+    db CONKELDURR
+    db TEDDIURSA
+    db URSARING
+    db URSALUNA
+    db BUNEARY
+    db LOPUNNY
+    db -1
+
 ResidualDamage:
 ; Pokemon who are immune to residual damage (magic guard) take no damage
     call GetCurrentMonCore
@@ -7490,6 +7510,11 @@ ApplyBrnEffectOnAttack:
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .enemy
+
+	ld a, [wBattleMonSpecies]
+    call DoesMonHaveGuts
+    ret c
+
 	ld a, [wBattleMonStatus]
 	and 1 << BRN
 	ret z
@@ -7509,6 +7534,10 @@ ApplyBrnEffectOnAttack:
 	ret
 
 .enemy
+	ld a, [wEnemyMonSpecies]
+    call DoesMonHaveGuts
+    ret c
+
 	ld a, [wEnemyMonStatus]
 	and 1 << BRN
 	ret z
@@ -7526,6 +7555,23 @@ ApplyBrnEffectOnAttack:
 .enemy_ok
 	ld [hl], b
 	ret
+
+DoesMonHaveGuts:
+	push hl
+    push de
+	push bc
+	ld hl, Core_GutsPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	pop hl
+	jr c, .yes
+    xor a
+    ret
+.yes
+    scf
+    ret
 
 ApplyStatLevelMultiplierOnAllStats:
 ; Apply StatLevelMultipliers on all 5 Stats

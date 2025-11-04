@@ -3364,12 +3364,6 @@ BattleCommand_DamageCalc:
 .checkStatus
 	cp 0
 	jr z, .choiceBand
-	and 1 << BRN
-	jr z, .notBurn
-    ld a, 2
-	ldh [hMultiplier], a
-	call Multiply
-.notBurn
     call FiftyPercentBoost
 
 .choiceBand

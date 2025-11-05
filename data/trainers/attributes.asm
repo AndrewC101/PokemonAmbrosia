@@ -196,7 +196,7 @@ TrainerClassAttributes:
 
 ; Giovanni
 	db NO_ITEM, NO_ITEM ; items
-	db 100 ; base reward
+	db 250 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 

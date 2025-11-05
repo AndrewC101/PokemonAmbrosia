@@ -3,8 +3,6 @@
     const DESTINYSQUARE_CRYSTAL
     const DESTINYSQUARE_CYNTHIA
     const DESTINYSQUARE_STEVEN
-    ;const DESTINYSQUARE_DIANTHA
-    ;const DESTINYSQUARE_ALDER
     const DESTINYSQUARE_LEON
     const DESTINYSQUARE_ADAM
     const DESTINYSQUARE_MEWTWO
@@ -13,11 +11,6 @@ DestinySquare_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-;	callback MAPCALLBACK_OBJECTS, .Oak
-
-;.Oak
-;    disappear DESTINYSQUARE_OAK
-;    endcallback
 
 MasterRivalScript:
 	faceplayer
@@ -28,6 +21,15 @@ MasterRivalScript:
 	writetext MasterRivalSeenText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_MASTER_RIVAL
+	iftrue .skipRequest
+	opentext
+	writetext MasterRivalOfferFightText
+	waitbutton
+	nooryes
+	iffalse .refused
+	closetext
+.skipRequest
 	winlosstext MasterRivalBeatenText, MasterRivalWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, MASTER_RIVAL
@@ -49,6 +51,7 @@ MasterRivalScript:
 	writetext RematchTextDestinySquare
 	nooryes
 	iftrue .fight
+.refused
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
 	closetext
@@ -78,8 +81,11 @@ MasterRivalSeenText:
 	para "I have you to"
 	line "thank for changing"
 	cont "that."
-	para "So here is my"
-	line "thanks."
+	done
+
+MasterRivalOfferFightText:
+	text "Would you like a"
+	line "proper thanks?"
 	done
 
 MasterRivalBeatenText:
@@ -126,6 +132,15 @@ MasterCrystalScript:
 	writetext MasterCrystalSeenText
 	waitbutton
 	closetext
+	checkevent EVENT_BEAT_MASTER_CRYSTAL
+	iftrue .skipRequest
+	opentext
+	writetext MasterCrystalOfferFightText
+	waitbutton
+	nooryes
+	iffalse .refused
+	closetext
+.skipRequest
 	winlosstext MasterCrystalBeatenText, MasterCrystalWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, MASTER_CRYSTAL
@@ -147,6 +162,7 @@ MasterCrystalScript:
 	writetext RematchTextDestinySquare
 	nooryes
 	iftrue .fight
+.refused
 	writetext RematchRefuseTextDestinySquare
 	waitbutton
 	closetext
@@ -171,9 +187,12 @@ MasterCrystalSeenText:
 	cont "does it?"
 	para "You have much"
 	line "further to go."
-	para "Let me give you"
+	done
+
+MasterCrystalOfferFightText:
+	text "Let me give you"
 	line "one last bit of"
-	cont "encouragement."
+	cont "encouragement?"
 	done
 
 MasterCrystalBeatenText:
@@ -943,18 +962,10 @@ FightAdamScript:
     sjump MasterAdamScript
 
 ChampionsBlockScript:
-    checkevent EVENT_BEAT_MASTER_RIVAL
-    iffalse .block
-    checkevent EVENT_BEAT_MASTER_CRYSTAL
-    iffalse .block
     checkevent EVENT_BEAT_MASTER_STEVEN
     iffalse .block
     checkevent EVENT_BEAT_MASTER_CYNTHIA
     iffalse .block
-    ;checkevent EVENT_BEAT_MASTER_ALDER
-    ;iffalse .block
-    ;checkevent EVENT_BEAT_MASTER_DIANTHA
-    ;iffalse .block
     checkevent EVENT_BEAT_MASTER_LEON
     iffalse .block
     setmapscene DESTINY_SQUARE, SCENE_CUSTOM_1

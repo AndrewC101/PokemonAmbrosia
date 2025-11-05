@@ -888,9 +888,8 @@ KRIS EQU __trainer_class__
 
 	trainerclass DAD
 	const DAD_1
-	const CELADON_ME
+	const FINAL_ME
 	const ME
-	const ME_IMPOSSIBLE
 
 	trainerclass JONATHAN
 	const JONATHAN_1

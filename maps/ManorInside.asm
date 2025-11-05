@@ -90,7 +90,7 @@ AndrewScript:
 	writemem wBattleMusicOverride
    	winlosstext AndrewImpossibleBeatenText, AndrewImpossibleWinText
    	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-   	loadtrainer DAD, CELADON_ME
+   	loadtrainer DAD, FINAL_ME
    	startbattle
    	ifequal LOSE, .loseImpossible
    	reloadmapafterbattle

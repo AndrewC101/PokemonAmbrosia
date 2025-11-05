@@ -887,28 +887,32 @@ INCLUDE "gfx/overworld/rpg_transition.pal"
 	ret z
 .notAdam
     ld a, [wOtherTrainerClass]
-    cp RED
-    jr nz, .notRed
+    cp DAD
+    jr nz, .notDad
     ld a, [wOtherTrainerID]
-    cp CELADON_ME
+    cp FINAL_ME
     ret z
     cp ME
     ret z
-    cp ME_IMPOSSIBLE
-    ret z
-.notRed
-	cp BLUE
-	jr nz, .notBlue
+.notDad
+	cp LEON
+	jr nz, .notLeon
 	ld a, [wOtherTrainerID]
 	cp BROTHER
 	ret z
-.notBlue
-	cp LEAF
-	jr nz, .notLeaf
+.notLeon
+	cp CYNTHIA
+	jr nz, .notCynthia
 	ld a, [wOtherTrainerID]
 	cp WIFE
 	ret z
-.notLeaf
+.notCynthia
+	cp JONATHAN
+	jr nz, .notJonathan
+	ld a, [wOtherTrainerID]
+	cp MASTER_JONATHAN
+	ret z
+.notJonathan
 
     ; rockets
     ld de, TeamRocketTransition

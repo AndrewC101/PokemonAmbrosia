@@ -770,6 +770,11 @@ AlreadyAsleepText:
 	line "already asleep!"
 	prompt
 
+AlreadyFrozenText:
+	text "<TARGET>'s"
+	line "already frozen!"
+	prompt
+
 WasPoisonedText:
 	text "<TARGET>"
 	line "was poisoned!"

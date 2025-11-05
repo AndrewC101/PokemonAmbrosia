@@ -4004,6 +4004,32 @@ UpdateMoveData:
 	call GetMoveName
 	jp CopyName1
 
+CheckForStatusIfAlreadyHasAny:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	and SLP
+	ld hl, AlreadyAsleepText
+	ret nz
+
+	ld a, [de]
+	bit FRZ, a
+	ld hl, AlreadyFrozenText
+	ret nz
+
+	bit PAR, a
+	ld hl, AlreadyParalyzedText
+	ret nz
+
+	bit PSN, a
+	ld hl, AlreadyPoisonedText
+	ret nz
+
+	bit BRN, a
+	ld hl, AlreadyBurnedText
+	ret
+
 BattleCommand_SleepTarget:
 ; sleeptarget
 ; DevNote - there is no such item with HELD_PREVENT_SLEEP
@@ -4030,13 +4056,7 @@ BattleCommand_SleepTarget:
     jr .fail
 
 .gotosleep
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	ld a, [de]
-	and SLP
-	ld hl, AlreadyAsleepText
+	call CheckForStatusIfAlreadyHasAny
 	jr nz, .fail
 
 	ld a, [wAttackMissed]
@@ -4047,10 +4067,6 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-
-	ld a, [de]
-	and a
-	jr nz, .fail
 
 	call CheckSubstituteOpp
 	jr nz, .fail
@@ -4156,11 +4172,7 @@ BattleCommand_Poison:
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	ld b, a
-	ld hl, AlreadyPoisonedText
-	and 1 << PSN
+    call CheckForStatusIfAlreadyHasAny
 	jp nz, .failed
 
 ; DevNote - there is no such item
@@ -6433,18 +6445,12 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 BattleCommand_Paralyze:
 ; paralyze
 
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	bit PAR, a
+	call CheckForStatusIfAlreadyHasAny
 	jr nz, .paralyzed
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
 
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	and a
-	jr nz, .failed
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -6470,8 +6476,9 @@ BattleCommand_Paralyze:
 	jp CallBattleCore
 
 .paralyzed
+    push hl
 	call AnimateFailedMove
-	ld hl, AlreadyParalyzedText
+	pop hl
 	jp StdBattleTextbox
 
 .failed
@@ -6485,7 +6492,10 @@ BattleCommand_Burn:
 ; burn
 
 	call CheckIfTargetIsFireType
-	jp z, .failed
+	jp z, .didnt_affect
+
+	call CheckForStatusIfAlreadyHasAny
+	jr nz, .fail
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
@@ -6534,6 +6544,12 @@ BattleCommand_Burn:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
+
+.fail
+	push hl
+	call AnimateFailedMove
+	pop hl
+	jp StdBattleTextbox
 
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
@@ -6883,8 +6899,9 @@ PrintDidntAffect:
 
 PrintDidntAffect2:
 	call AnimateFailedMove
-	ld hl, DidntAffect1Text ; 'it didn't affect'
-	ld de, DidntAffect2Text ; 'it didn't affect'
+	farcall BattleMissAnim
+	ld hl, AttackMissedText
+	ld de, ProtectingItselfText
 	jp FailText_CheckOpponentProtect
 
 PrintParalyze:

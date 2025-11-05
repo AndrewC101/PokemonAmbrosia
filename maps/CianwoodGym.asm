@@ -417,8 +417,8 @@ BlackbeltNobAfterText:
 	line "again tonight."
 
 	para "I hope one day"
-	line "I become a Dad"
-	cont "so can do the"
+	line "I'll become a Dad"
+	cont "so I can do the"
 	cont "father-son"
 	cont "KAMEHAMEHA with"
 	cont "my son."

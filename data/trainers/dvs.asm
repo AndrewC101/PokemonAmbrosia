@@ -2,73 +2,73 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 2, TrainerClassDVs
 	;  atk,def,spd,spc
-	dn  15, 15, 15, 15 ; FALKNER
-	dn  15, 15, 15, 15 ; WHITNEY
-	dn  15, 15, 15, 15 ; BUGSY
-	dn  15, 15, 15, 15 ; MORTY
-	dn  15, 15, 15, 15 ; PRYCE
-	dn  15, 15, 15, 15 ; JASMINE
+	dn 15, 15, 15, 15 ; FALKNER
+	dn 15, 15, 15, 15 ; WHITNEY
+	dn 15, 15, 15, 15 ; BUGSY
+	dn 15, 15, 15, 15 ; MORTY
+	dn 15, 15, 15, 15 ; PRYCE
+	dn 15, 15, 15, 15 ; JASMINE
 	dn 15, 15, 15, 15 ; CHUCK
-	dn  15, 15, 15, 15 ; CLAIR
+	dn 15, 15, 15, 15 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 15, 15, 15, 15 ; WILL
 	dn 15, 15, 15, 15 ; CAL
 	dn 15, 15, 15, 15 ; BRUNO
-	dn  15, 15, 15, 15 ; KAREN
+	dn 15, 15, 15, 15 ; KAREN
 	dn 15, 15, 15, 15 ; ADAM
-	dn 15, 15, 15, 15 ; CHAMPION
+	dn 15, 15, 15, 14 ; CHAMPION
 	dn 15, 15, 15, 15 ; BROCK
-	dn  15, 15, 15, 15 ; MISTY
+	dn 15, 15, 15, 15 ; MISTY
 	dn 15, 15, 15, 15 ; LT_SURGE
-	dn  9,  9,  9,  9 ; SCIENTIST
-	dn  15, 15, 15, 15 ; ERIKA
-	dn  9,  9,  9,  9 ; YOUNGSTER
-	dn  9,  9,  9,  9 ; SCHOOLBOY
-	dn  9,  9,  9,  9 ; BIRD_KEEPER
-	dn  5,  7,  7,  7 ; LASS
-	dn  15, 15, 15, 15 ; JANINE
-	dn 13, 13, 13, 13 ; COOLTRAINERM
-	dn  7, 13, 13, 13 ; COOLTRAINERF
-	dn  7,  15, 15, 15 ; BEAUTY
-	dn 15, 15, 15, 15 ; POKEMANIAC
-	dn 13,  11, 11, 11 ; GRUNTM
-	dn  11,  11,  11,  11 ; GENTLEMAN
+	dn 7, 11, 9, 15 ; SCIENTIST
+	dn 15, 15, 15, 15 ; ERIKA
+	dn 11, 8, 8, 8 ; YOUNGSTER
+	dn 8, 8, 8, 11 ; SCHOOLBOY
+	dn 14, 9, 15, 9 ; BIRD_KEEPER
+	dn 11, 10, 11, 11 ; LASS
+	dn 15, 15, 15, 15 ; JANINE
+	dn 13, 13, 13, 12 ; COOLTRAINERM
+	dn 13, 12, 13, 13 ; COOLTRAINERF
+	dn 9, 8, 13, 13 ; BEAUTY
+	dn 13, 9, 8, 13 ; POKEMANIAC
+	dn 13, 11, 11, 11 ; GRUNTM
+	dn 9, 8, 9, 9 ; GENTLEMAN
 	dn 15, 15, 15, 15 ; GIOVANNI
 	dn 15, 15, 15, 15 ; CYNTHIA
-	dn  15, 15, 15, 15 ; SABRINA
-	dn  9,  9,  9,  9 ; BUG_CATCHER
-	dn  9,  9,  9,  9 ; FISHER
-	dn  9,  9,  9,  9 ; SWIMMERM
-	dn  7,  9,  9,  9 ; SWIMMERF
-	dn  9,  9,  9,  9 ; SAILOR
-	dn  9,  9,  9,  9 ; SUPER_NERD
+	dn 15, 15, 15, 15 ; SABRINA
+	dn 11, 5, 5, 8 ; BUG_CATCHER
+	dn 9, 12, 6, 11 ; FISHER
+	dn 12, 8, 9, 9 ; SWIMMERM
+	dn 8, 9, 9, 13 ; SWIMMERF
+	dn 13, 11, 8, 10 ; SAILOR
+	dn 7, 7, 9, 15 ; SUPER_NERD
 	dn 15, 15, 15, 15 ; RIVAL2
 	dn 15, 15, 15, 15 ; WALLACE
-	dn 11,  11,  11,  11 ; HIKER
-	dn  9,  5,  5,  5 ; BIKER
+	dn 11, 13, 5, 5 ; HIKER
+	dn 11, 11, 9, 6 ; BIKER
 	dn 15, 15, 15, 15 ; BLAINE
 	dn 15, 15, 15, 15 ; STEVEN
-	dn  9,  9,  9,  9 ; FIREBREATHER
-	dn  15, 15, 15, 15 ; LEON
-	dn  9,  9,  9,  9 ; BLACKBELT_T
-	dn 15, 15, 15, 15 ; EXECUTIVEM
-	dn  9,  9,  9,  9 ; PSYCHIC_T
-	dn  7, 9, 9,  9 ; PICNICKER
-	dn  9, 9, 9, 9 ; CAMPER
-	dn  15, 15, 15, 15 ; EXECUTIVEF
-	dn  11, 11, 11, 11 ; SAGE
-	dn  7,  7,  7,  7 ; MEDIUM
-	dn  13, 13, 13, 13 ; SOLDIER
-	dn  15, 13, 15, 15 ; POKEFANM
-	dn  15, 15, 15, 15 ; KIMONO_GIRL
-	dn  2, 2, 2, 2 ; TWINS
-	dn  15, 13, 15, 15 ; POKEFANF
+	dn 9, 11, 9, 14 ; FIREBREATHER
+	dn 15, 15, 15, 15 ; LEON
+	dn 13, 11, 9, 8 ; BLACKBELT_T
+	dn 15, 13, 13, 13 ; EXECUTIVEM
+	dn 8, 9, 11, 13 ; PSYCHIC_T
+	dn 6, 9, 9,  9 ; PICNICKER
+	dn 8, 9, 9, 10 ; CAMPER
+	dn 15, 13, 13, 13 ; EXECUTIVEF
+	dn 11, 11, 7, 11 ; SAGE
+	dn 8, 11, 7, 13 ; MEDIUM
+	dn 13, 13, 13, 13 ; SOLDIER
+	dn 15, 13, 15, 15 ; POKEFANM
+	dn 11, 11, 11, 15 ; KIMONO_GIRL
+	dn 2, 2, 2, 2 ; TWINS
+	dn 15, 13, 15, 15 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED
 	dn 15, 15, 15, 15 ; BLUE
-	dn  9,  9,  9,  9 ; OFFICER
-	dn  11, 13, 11,  11 ; GRUNTF
-	dn 15, 15, 15, 15 ; MYSTICALMAN
+	dn 9, 9, 9, 9 ; OFFICER - not used
+	dn 11, 13, 11, 12 ; GRUNTF
+	dn 11, 11, 11, 11 ; MYSTICALMAN
 	dn 15, 15, 15, 15 ; INVADER
     dn 15, 15, 15, 15 ; CRYSTAL
     dn 15, 15, 15, 15 ; GREEN

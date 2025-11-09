@@ -1987,6 +1987,8 @@ MasterJonathanSeenText:
 	line "made it!"
 	para "You must have"
 	line "beaten ADAM."
+	para "I'm sure he took"
+	line "it well."
 	para "It's quite nice"
 	line "here."
 	para "Though a few too"

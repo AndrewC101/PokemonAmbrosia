@@ -3599,6 +3599,7 @@ GiratinaEvosAttacks:
 	db 35, WILL_O_WISP
 	db 40, SHADOW_BALL
 	db 50, RECOVER
+	db 55, DRAGON_PULSE
 	db 70, DRACO_METEOR
 	db 70, SHADOW_FORCE
 	db 0 ; no more level-up moves

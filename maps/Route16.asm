@@ -11,20 +11,18 @@ Route16_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
+    callback MAPCALLBACK_OBJECTS, .Route16FieldMon
 
-.AlwaysOnBike:
+.Route16FieldMon:
     appear ROUTE16_FIELDMON_1
     appear ROUTE16_FIELDMON_2
     appear ROUTE16_FIELDMON_3
     appear ROUTE16_FIELDMON_4
     appear ROUTE16_FIELDMON_5
-    
-    checktime NITE
-    iffalse .bikeStuff
     appear ROUTE16_FIELDMON_6
-    disappear ROUTE16_FIELDMON_5
-    
-.bikeStuff
+    endcallback
+
+.AlwaysOnBike:
 	readvar VAR_YCOORD
 	ifless 5, .CanWalk
 	readvar VAR_XCOORD

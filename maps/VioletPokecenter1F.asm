@@ -300,7 +300,7 @@ VioletPokecenter1FGentlemanText:
 	para "One day my dear"
 	line "DRATINI will"
 	cont "become a mighty"
-	cont "DAGONITE."
+	cont "DRAGONITE."
 	para "Maybe I'll still"
 	line "be around to see"
 	cont "it."

@@ -93,7 +93,7 @@ VictoryRoadGateLeftBlackBeltText:
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "The ELITE FOUR"
+	text "The Elite Four"
 	line "are some of the"
 	cont "best trainers in"
 	cont "the world."

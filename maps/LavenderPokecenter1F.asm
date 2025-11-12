@@ -68,7 +68,7 @@ LavenderPokecenter1FYoungsterText:
 	text "We are all"
 	line "going to die!"
 
-	para "WALLACE will"
+	para "Wallace will"
 	line "invade and kill"
 	cont "us all."
 

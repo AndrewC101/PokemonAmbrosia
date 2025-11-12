@@ -77,7 +77,7 @@ CinnabarIslandBlueText:
 
 	para "Now it's just"
 	line "a puppet of the"
-	cont "#mon LEAGUE."
+	cont "#mon League."
 
 	para "I was a Champion"
 	line "myself for a"
@@ -101,7 +101,7 @@ CinnabarIslandBlueText:
 	line "with Hoenn."
 
 	para "You know what the"
-	line "LEAGUE does?"
+	line "League does?"
 
 	para "Nothing!"
 
@@ -138,7 +138,7 @@ CinnabarIslandGymSignText:
 	line "relocated to"
 	cont "SEAFOAM ISLANDS."
 
-	para "BLAINE"
+	para "Blaine"
 	done
 
 CinnabarIslandSignText:

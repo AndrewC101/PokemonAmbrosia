@@ -145,7 +145,7 @@ TrainerHouseIllegibleText:
 	cont "little tea party."
 
 	para "Sincerely,"
-	line "BLUE."
+	line "Blue."
 	done
 
 TrainerHouse1F_MapEvents:

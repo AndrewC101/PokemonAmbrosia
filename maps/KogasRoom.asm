@@ -98,7 +98,7 @@ KogaScript_KogaBeforeText:
 	line "make you a"
 	cont "Champion."
 
-	para "I am ADAM."
+	para "I am Adam."
 
 	para "They call me a"
 	line "prodigy."

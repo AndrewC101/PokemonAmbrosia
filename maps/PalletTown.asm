@@ -63,7 +63,7 @@ PalletTownTeacherText:
 
 PalletTownFisherText:
 	text "Have you met"
-	line "LANCE!?"
+	line "Lance!?"
 
 	para "Aww man, he is"
 	line "so cool!"
@@ -87,7 +87,7 @@ PalletTownFisherText_Amaze:
     para "Champion <PLAYER>!"
 
     para "The slayer of"
-    line "WALLACE!"
+    line "Wallace!"
 
     para "The saviour of"
     line "Kanto!"
@@ -110,7 +110,7 @@ PalletTownSignText:
 	done
 
 RedsHouseSignText:
-	text "RED'S HOUSE"
+	text "Red's house"
 	done
 
 OaksLabSignText:
@@ -119,7 +119,7 @@ OaksLabSignText:
 	done
 
 BluesHouseSignText:
-	text "BLUE'S HOUSE"
+	text "Blue's house"
 	done
 
 Aerith2Script:

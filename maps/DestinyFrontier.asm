@@ -326,7 +326,7 @@ MasterDrakeScript:
 
 MasterDrakeSeenText:
 	text "So you defeated"
-	line "WALLACE in your"
+	line "Wallace in your"
 	cont "world."
 	para "My world was not"
 	line "so lucky."
@@ -349,7 +349,7 @@ MasterDrakeWinText:
 MasterDrakeAfterBattleText:
 	text "Seeing that Kanto"
 	line "woman stand up to"
-	cont "WALLACE finally"
+	cont "Wallace finally"
 	cont "broke me."
 	para "I threw away"
 	line "everything and"
@@ -412,7 +412,7 @@ MasterExecutiveSeenText:
 	text "We had no heroes"
 	line "in my world."
 	para "Our plan didn't"
-	line "work and WALLACE"
+	line "work and Wallace"
 	cont "conquered Kanto."
 	para "He killed my"
 	line "brother."
@@ -435,11 +435,11 @@ MasterExecutiveWinText:
 MasterExecutiveAfterBattleText:
 	text "Eventually I led"
 	line "the assault"
-	cont "against WALLACE."
+	cont "against Wallace."
 	para "But he would have"
 	line "killed me too if"
 	cont "it wasn't for"
-	cont "DRAKE."
+	cont "Drake."
 	para "He is our hero."
 	done
 
@@ -673,7 +673,7 @@ MasterAizenAfterBattleText:
 	text "The SOUL KING"
 	line "resides in a"
 	cont "palace, in the"
-	cont "HALL OF ORIGIN."
+	cont "Hall of Origin."
 	para "A man made of gold"
 	line "they say."
 	para "How pretentious!"
@@ -1167,11 +1167,11 @@ OakIntroText:
     cont "trainers."
 
     para "Then you can face"
-    line "the ELITE FOUR"
+    line "the Elite Four"
 
     para "If you defeat them"
     line "you move onto the"
-    cont "HALL OF CHAMPIONS."
+    cont "Hall of Champions."
 
     para "Finally moving on"
     line "to the current"
@@ -1196,7 +1196,7 @@ CongratsText:
 
     para "There you can"
     line "pass onto the"
-    cont "HALL OF ORIGIN."
+    cont "Hall of Origin."
 
     para "Good luck"
     line "<PLAYER>."

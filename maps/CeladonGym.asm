@@ -287,7 +287,7 @@ BeautyJuliaAfterBattleText:
 	done
 
 TwinsJoAndZoe1SeenText:
-	text "ERIKA has been"
+	text "Erika has been"
 	line "teaching us how"
 	cont "to battle."
 
@@ -299,7 +299,7 @@ TwinsJoAndZoe1BeatenText:
 	done
 
 TwinsJoAndZoe1AfterBattleText:
-	text "ERIKA will stomp"
+	text "Erika will stomp"
 	line "you into the dirt."
 
 	para "Then plant a"
@@ -310,7 +310,7 @@ TwinsJoAndZoe2SeenText:
 	text "Stop!"
 
 	para "We won't let you"
-	line "get to ERIKA."
+	line "get to Erika."
 
 	para "She is sleeping."
 	done
@@ -321,7 +321,7 @@ TwinsJoAndZoe2BeatenText:
 
 TwinsJoAndZoe2AfterBattleText:
 	text "Don't disturb"
-	line "ERIKA when she"
+	line "Erika when she"
 	cont "is sleeping."
 
 	para "She can wake up"

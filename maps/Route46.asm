@@ -127,7 +127,7 @@ PicnickerErinMercyText:
     para "We each have 7"
     line "badges but have"
     cont "not been able to"
-    cont "beat CLAIR for"
+    cont "beat Clair for"
     cont "the 8th badge."
 
     para "You are lucky"
@@ -200,7 +200,7 @@ HikerBaileyGloatText:
 
 HikerBaileyMercyText:
     text "I got close but"
-    line "can't beat CLAIR!"
+    line "can't beat Clair!"
 
     para "Oh you should"
     line "not be here!"
@@ -241,7 +241,7 @@ HikerBaileySeenText:
 
 	para "You can help me"
 	line "train to beat"
-	cont "CLAIR."
+	cont "Clair."
 	done
 
 HikerBaileyBeatenText:

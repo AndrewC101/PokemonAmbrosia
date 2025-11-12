@@ -106,7 +106,7 @@ GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText:
 
 GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 	text "I see you have"
-	line "beaten WHITNEY."
+	line "beaten Whitney."
 
 	para "Here, you can be"
 	line "trusted with this"
@@ -141,12 +141,12 @@ GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
 	line "strong enough."
 
 	para "I haven't beat"
-	line "WHITNEY."
+	line "Whitney."
 	done
 
 GoldenrodFlowerShopFloriaYouBeatWhitneyText:
 	text "Wow, you beat"
-	line "WHITNEY?"
+	line "Whitney?"
 
 	para "You are a strong"
 	line "trainer!"

@@ -378,7 +378,7 @@ GoldenrodCityYoungster2Text:
 	line "band from"
 	cont "VERMILION."
 
-	para "LT SURGE is the"
+	para "LT Surge is the"
 	line "lead vocalist."
 
 	para "They are great!"
@@ -529,7 +529,7 @@ GoldenrodDeptStoreSignText:
 GoldenrodGymSignText:
 	text "GOLDENROD CITY"
 	line "#mon Gym"
-	cont "Leader: WHITNEY"
+	cont "Leader: Whitney"
 
 	para "The Incredibly"
 	line "Pretty Girl!"
@@ -779,7 +779,7 @@ GoldenrodSelfText3:
     done
 
 GoldenrodSelfText4:
-    text "This time LANCE"
+    text "This time Lance"
     line "isn't here to"
     cont "save you."
 

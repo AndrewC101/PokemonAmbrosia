@@ -50,7 +50,7 @@ DerekFoundItemText:
 	done
 
 DerekLetsGetTogetherText:
-	text "I am sure WALLACE"
+	text "I am sure Wallace"
 	line "will make"
 	cont "exclusive use of"
 	cont "AVADA KADRAVRA."

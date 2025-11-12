@@ -201,9 +201,9 @@ WarHasBegunText:
     line "VERMILION."
 
     para "I must contact"
-    line "the LEAGUE and"
+    line "the League and"
     cont "convince them that"
-    cont "CHAMPIONS must be"
+    cont "Champions must be"
     cont "allowed to take"
     cont "action under these"
     cont "circumstances."
@@ -211,7 +211,7 @@ WarHasBegunText:
     para "We will need their"
     line "help."
 
-    para "Unless RED decides"
+    para "Unless Red decides"
     line "to show."
 
     para "But we can't count"
@@ -230,7 +230,7 @@ LeaderBlueBeforeText:
 
 	para "Champion <PLAYER>!"
 
-	para "Slayer of WALLACE."
+	para "Slayer of Wallace."
 
 	para "The true peoples"
 	line "Champion."
@@ -271,7 +271,7 @@ LeaderBlueWinText:
 
 LeaderBlueLossText:
 	text "I should have"
-	line "taken on WALLACE!"
+	line "taken on Wallace!"
 	done
 
 Text_ReceivedEarthBadge:
@@ -296,8 +296,8 @@ LeaderBlueEpilogueText:
 	cont "things."
 
 	para "Don't let the"
-	line "#mon LEAGUE"
-	cont "or LANCE or me"
+	line "#mon League"
+	cont "or Lance or me"
 	cont "try to tell you"
 	cont "what the right"
 	cont "thing to do is."
@@ -313,29 +313,29 @@ LeaderBlueEpilogueText:
 	cont "with your talent."
 
 	para "Oh great Champion"
-	line "of CHAMPIONS and"
+	line "of Champions and"
 	cont "saviour of Kanto."
 	done
 
 GreenIntroText:
-    text "BLUE!"
+    text "Blue!"
     done
 
 GreenTalkText:
     text "It is happening!"
 
     para "They've gone"
-    line "after SURGE first."
+    line "after Surge first."
 
     para "We're going to"
     line "need backup from"
     cont "your #mon"
-    cont "LEAGUE friends!"
+    cont "League friends!"
     done
 
 GreenRedText:
     text "I wish I knew"
-    line "where RED is."
+    line "where Red is."
     done
 
 RematchTextBlue:

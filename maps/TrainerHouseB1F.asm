@@ -2707,172 +2707,172 @@ PlayAgainstBugsyText:
 
 PlayAsWhitneyText:
     text "Play as"
-    line "Leader WHITNEY?"
+    line "Leader Whitney?"
     done
 
 PlayAgainstWhitneyText:
     text "Play against"
-    line "Leader WHITNEY?"
+    line "Leader Whitney?"
     done
 
 PlayAsMortyText:
     text "Play as"
-    line "Leader MORTY?"
+    line "Leader Morty?"
     done
 
 PlayAgainstMortyText:
     text "Play against"
-    line "Leader MORTY?"
+    line "Leader Morty?"
     done
 
 PlayAsChuckText:
     text "Play as"
-    line "Leader CHUCK?"
+    line "Leader Chuck?"
     done
 
 PlayAgainstChuckText:
     text "Play against"
-    line "Leader CHUCK?"
+    line "Leader Chuck?"
     done
 
 PlayAsJasmineText:
     text "Play as"
-    line "Leader JASMINE?"
+    line "Leader Jasmine?"
     done
 
 PlayAgainstJasmineText:
     text "Play against"
-    line "Leader JASMINE?"
+    line "Leader Jasmine?"
     done
 
 PlayAsPryceText:
     text "Play as"
-    line "Leader PRYCE?"
+    line "Leader Pryce?"
     done
 
 PlayAgainstPryceText:
     text "Play against"
-    line "Leader PRYCE?"
+    line "Leader Pryce?"
     done
 
 PlayAsClairText:
     text "Play as"
-    line "Leader CLAIR?"
+    line "Leader Clair?"
     done
 
 PlayAgainstClairText:
     text "Play against"
-    line "Leader CLAIR?"
+    line "Leader Clair?"
     done
 
 PlayAsBrockText:
     text "Play as"
-    line "Leader BROCK?"
+    line "Leader Brock?"
     done
 
 PlayAgainstBrockText:
     text "Play against"
-    line "Leader BROCK?"
+    line "Leader Brock?"
     done
 
 PlayAsMistyText:
     text "Play as"
-    line "Leader MISTY?"
+    line "Leader Misty?"
     done
 
 PlayAgainstMistyText:
     text "Play against"
-    line "Leader MISTY?"
+    line "Leader Misty?"
     done
 
 PlayAsSurgeText:
     text "Play as"
-    line "Leader SURGE?"
+    line "Leader Surge?"
     done
 
 PlayAgainstSurgeText:
     text "Play against"
-    line "Leader SURGE?"
+    line "Leader Surge?"
     done
 
 PlayAsErikaText:
     text "Play as"
-    line "Leader ERIKA?"
+    line "Leader Erika?"
     done
 
 PlayAgainstErikaText:
     text "Play against"
-    line "Leader ERIKA?"
+    line "Leader Erika?"
     done
 
 PlayAsJanineText:
     text "Play as"
-    line "Leader JANINE?"
+    line "Leader Janine?"
     done
 
 PlayAgainstJanineText:
     text "Play against"
-    line "Leader JANINE?"
+    line "Leader Janine?"
     done
 
 PlayAsWillText:
     text "Play as"
-    line "Leader WILL?"
+    line "Leader Will?"
     done
 
 PlayAgainstWillText:
     text "Play against"
-    line "Leader WILL?"
+    line "Leader Will?"
     done
 
 PlayAsBlaineText:
     text "Play as"
-    line "Leader BLAINE?"
+    line "Leader Blaine?"
     done
 
 PlayAgainstBlaineText:
     text "Play against"
-    line "Leader BLAINE?"
+    line "Leader Blaine?"
     done
 
 PlayAsSabrinaText:
     text "Play as"
-    line "ELITE 4 SABRINA?"
+    line "Elite 4 Sabrina?"
     done
 
 PlayAgainstSabrinaText:
     text "Play against"
-    line "ELITE 4 SABRINA?"
+    line "Elite 4 Sabrina?"
     done
 
 PlayAsBrunoText:
     text "Play as"
-    line "ELITE 4 BRUNO?"
+    line "Elite 4 Bruno?"
     done
 
 PlayAgainstBrunoText:
     text "Play against"
-    line "ELITE 4 BRUNO?"
+    line "Elite 4 Bruno?"
     done
 
 PlayAsKarenText:
     text "Play as"
-    line "ELITE 4 KAREN?"
+    line "Elite 4 Karen?"
     done
 
 PlayAgainstKarenText:
     text "Play against"
-    line "ELITE 4 KAREN?"
+    line "Elite 4 Karen?"
     done
 
 PlayAsGiovanniText:
     text "Play as"
-    line "Leader GIOVANNI?"
+    line "Leader Giovanni?"
     done
 
 PlayAgainstGiovanniText:
     text "Play against"
-    line "Leader GIOVANNI?"
+    line "Leader Giovanni?"
     done
 
 PlayAsOakText:
@@ -2917,32 +2917,32 @@ PlayAgainstLeonText:
 
 PlayAsWallaceText:
     text "Play as"
-    line "EMPEROR WALLACE?"
+    line "Emperor Wallace?"
     done
 
 PlayAgainstWallaceText:
     text "Play against"
-    line "EMPEROR WALLACE?"
+    line "Emperor Wallace?"
     done
 
 PlayAsAdamText:
     text "Play as"
-    line "ADAM?"
+    line "Adam?"
     done
 
 PlayAgainstAdamText:
     text "Play against"
-    line "ADAM?"
+    line "Adam?"
     done
 
 PlayAsLanceText:
     text "Play as"
-    line "LANCE?"
+    line "Lance?"
     done
 
 PlayAgainstLanceText:
     text "Play against"
-    line "LANCE?"
+    line "Lance?"
     done
 
 PlayAsJonathanText:
@@ -2957,32 +2957,32 @@ PlayAgainstJonathanText:
 
 PlayAsBlueText:
     text "Play as"
-    line "BLUE?"
+    line "Blue?"
     done
 
 PlayAgainstBlueText:
     text "Play against"
-    line "BLUE?"
+    line "Blue?"
     done
 
 PlayAsRedText:
     text "Play as"
-    line "RED?"
+    line "Red?"
     done
 
 PlayAgainstRedText:
     text "Play against"
-    line "RED?"
+    line "Red?"
     done
 
 PlayAsAshText:
     text "Play as"
-    line "ASH?"
+    line "Ash?"
     done
 
 PlayAgainstAshText:
     text "Play against"
-    line "ASH?"
+    line "Ash?"
     done
 
 NeedToSaveText:

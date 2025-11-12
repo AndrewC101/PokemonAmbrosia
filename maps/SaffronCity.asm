@@ -167,7 +167,7 @@ SaffronCityPokefanMText_BeatWallace:
 
 	para "You are the"
 	line "Champion that"
-	cont "defeated WALLACE!"
+	cont "defeated Wallace!"
 
 	para "You have saved us"
 	line "all!"
@@ -252,7 +252,7 @@ SaffronCityFisherText_BeatWallace:
 	
 	para "Last time Hoenn"
 	line "invaded it was"
-	cont "LANCE saving us."
+	cont "Lance saving us."
 	
 	para "He was young then."
 	
@@ -306,7 +306,7 @@ SaffronCityLass2Text:
 	
 	para "At least they take"
 	line "action unlike the"
-	cont "#mon LEAGUE."
+	cont "#mon League."
 	done
 
 SaffronCitySignText:
@@ -320,7 +320,7 @@ SaffronCitySignText:
 SaffronGymSignText:
 	text "SAFFRON CITY"
 	line "#mon Gym"
-	cont "Leader: WILL"
+	cont "Leader: Will"
 
 	para "New to the job."
 	done

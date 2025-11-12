@@ -17,7 +17,7 @@ CeruleanGymBadgeSpeechHousePokefanMText:
 	line "are very strong."
 
 	para "The strongest by"
-	line "far is BLUE."
+	line "far is Blue."
 
 	para "He used to be a"
 	line "Champion but took"

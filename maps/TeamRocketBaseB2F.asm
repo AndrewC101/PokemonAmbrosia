@@ -471,7 +471,7 @@ RocketBaseBossDefeatedText:
     line "intruder..."
 
     para "Is Champion"
-    line "LANCE!"
+    line "Lance!"
 
     para "Why were we not"
     line "informed!"
@@ -940,13 +940,13 @@ RocketBaseBossInitialWinText:
 	done
 
 RocketBaseBossWinText:
-	text "If LANCE wasn't"
+	text "If Lance wasn't"
 	line "here to save"
 	cont "you!"
 
 	para "...."
 
-	para "LANCE won't be"
+	para "Lance won't be"
 	line "here next time"
 	cont "we meet."
 

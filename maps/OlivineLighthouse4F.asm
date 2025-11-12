@@ -58,7 +58,7 @@ SailorKentAfterBattleText:
 	done
 
 LassConnie1SeenText:
-	text "JASMINE has spent"
+	text "Jasmine has spent"
 	line "days here looking"
 	cont "after a sick"
 	cont "AMPHAROS."
@@ -81,7 +81,7 @@ LassConnie1AfterBattleText:
 	text "If I can't beat"
 	line "you then I had"
 	cont "no chance of"
-	cont "beating JASMINE."
+	cont "beating Jasmine."
 	done
 
 OlivineLighthouse4F_MapEvents:

@@ -386,7 +386,7 @@ MasterStevenWinText:
 MasterStevenAfterBattleText:
 	text "You are a great"
 	line "leader."
-	para "So was WALLACE."
+	para "So was Wallace."
 	para "He isn't here I"
 	line "notice."
 	para "Perhaps he learnt"
@@ -655,8 +655,8 @@ MasterLeonWinText:
 MasterLeonAfterBattleText:
 	text "You are a real"
 	line "Master."
-	para "I notice LANCE and"
-	line "BLUE aren't"
+	para "I notice Lance and"
+	line "Blue aren't"
 	cont "here..."
 	para "There's no way"
 	line "they too are now"
@@ -742,7 +742,7 @@ MasterAdamSeenText:
 	line "become Monarch and"
 	cont "be blessed with"
 	cont "passage to the"
-	cont "HALL OF ORIGIN."
+	cont "Hall of Origin."
 	para "You have to defeat"
 	line "me."
 	done
@@ -761,8 +761,8 @@ MasterAdamAfterBattleText:
 	line "Monarch."
 	para "Now proceed and"
 	line "claim the key to"
-	cont "the HALL OF"
-	cont "ORIGIN."
+	cont "the Hall of"
+	cont "Origin."
 	para "I can already go"
 	line "there whenever I"
 	cont "want."
@@ -995,7 +995,7 @@ ChampionsBlockScript:
 
 DefeatChampionsText:
     text "You must defeat"
-    line "all CHAMPIONS"
+    line "all Champions"
     cont "to proceed!"
     done
 

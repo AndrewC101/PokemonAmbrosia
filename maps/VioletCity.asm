@@ -275,7 +275,7 @@ VioletCitySuperNerdText:
 	para "I don't mind."
 
 	para "Everybody knows"
-	line "the LEAGUE wants"
+	line "the League wants"
 	cont "trainers so they"
 	cont "can send them"
 	cont "off to war."

@@ -23,7 +23,7 @@ Route7SaffronGuardScript:
 	end
 
 Route7SaffronGuardPowerPlantText:
-	text "WALLACE knows if"
+	text "Wallace knows if"
 	line "he takes SAFFRON"
 	cont "he takes Kanto."
 

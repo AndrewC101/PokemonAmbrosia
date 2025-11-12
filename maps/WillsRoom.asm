@@ -84,11 +84,11 @@ WillScript_WillBeforeText:
 	text "I had a vision"
 	line "of your arrival."
 
-	para "I am SABRINA."
+	para "I am Sabrina."
 
 	para "I am the newest"
 	line "member of the"
-	cont "ELITE FOUR."
+	cont "Elite Four."
 
 	para "PSYCHIC power"
 	line "is the"

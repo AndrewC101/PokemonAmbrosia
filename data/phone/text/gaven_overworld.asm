@@ -4,7 +4,7 @@ GavenAskNumber1Text:
 	line "takes to be a"
 	cont "Champion."
 	para "But you'll never"
-	line "beat LANCE."
+	line "beat Lance."
 	para "I have studied his"
 	line "style."
 	para "We must work"
@@ -33,12 +33,12 @@ GavenPhoneFullText:
 
 GavenRematchText:
 	text "Are you watching"
-	line "LANCE!?"
+	line "Lance!?"
 	para "I hope you are for"
 	line "today I will"
 	cont "defeat this"
 	cont "Champion and begin"
 	cont "my quest to become"
 	cont "Champion of"
-	cont "CHAMPIONS!"
+	cont "Champions!"
 	done

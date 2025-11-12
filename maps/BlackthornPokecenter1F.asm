@@ -37,7 +37,7 @@ BlackthornPokecenter1FGentlemanText:
 
 	para "We are going to"
 	line "break into"
-	cont "DRAGONS DEN."
+	cont "Dragons Den."
 
 	para "Keep this a"
 	line "secret!"
@@ -48,7 +48,7 @@ BlackthornPokecenter1FTwinText:
 	line "that old guy"
 	cont "talking about"
 	cont "breaking into"
-	cont "DRAGONS DEN."
+	cont "Dragons Den."
 
 	para "What an idiot!"
 
@@ -59,7 +59,7 @@ BlackthornPokecenter1FTwinText:
 	cont "Dragon Lord..."
 
 	para "or dinner for"
-	line "CLAIR."
+	line "Clair."
 	done
 
 BlackBlisseyScript:

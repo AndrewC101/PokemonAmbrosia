@@ -345,7 +345,7 @@ LassCarrieBeatenText:
 	done
 
 LassCarrieAfterBattleText:
-	text "WHITNEY is strong"
+	text "Whitney is strong"
 	line "but you are way"
 	cont "more Fetch than"
 	cont "her!"
@@ -368,7 +368,7 @@ LassBridgetBeatenText:
 	done
 
 LassBridgetAfterBattleText:
-	text "WHITNEY is"
+	text "Whitney is"
 	line "beautiful."
 
 	para "But you have"
@@ -376,7 +376,7 @@ LassBridgetAfterBattleText:
 	done
 
 BridgetWhitneyCriesText:
-	text "You beat WHITNEY!"
+	text "You beat Whitney!"
 
 	para "She takes losing"
 	line "really badly."
@@ -435,7 +435,7 @@ BeautySamanthaAfterBattleText:
 	para "It takes years"
 	line "of perseverance."
 
-	para "WHITNEY doesn't"
+	para "Whitney doesn't"
 	line "have the patience"
 	cont "to make it!"
 	done

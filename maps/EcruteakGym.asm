@@ -332,7 +332,7 @@ MediumMarthaSeenText:
     line "source of all"
     cont "fear."
 
-	para "MORTY teaches"
+	para "Morty teaches"
 	line "us to purge the"
 	cont "disease of"
 	cont "fear."
@@ -403,7 +403,7 @@ RematchRefuseTextMorty:
     done
 
 EcruteakGymClosedText:
-	text "MORTY, the Gym"
+	text "Morty, the Gym"
 	line "Leader, is absent."
 
 	para "Begone!"

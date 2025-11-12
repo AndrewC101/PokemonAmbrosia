@@ -899,7 +899,7 @@ JuliusAfterBattleText:
     para "Once I inherit my"
     line "fathers fortune I"
     cont "will simply buy"
-    cont "an ELITE FOUR"
+    cont "an Elite Four"
     cont "level team from"
     cont "TEAM ROCKET."
     done

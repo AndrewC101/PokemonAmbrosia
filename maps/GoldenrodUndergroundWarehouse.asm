@@ -95,7 +95,7 @@ GruntM24AfterBattleText:
 	done
 
 DirectorIntroText:
-	text "LANCE, is that"
+	text "Lance, is that"
 	line "you?"
 
 	para "Oh sorry, I"

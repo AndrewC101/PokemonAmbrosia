@@ -447,7 +447,7 @@ Executivef1SeenText:
 	line "see some more of"
 	cont "it."
 
-	para "This time LANCE"
+	para "This time Lance"
 	line "isn't here to"
 	cont "save you!"
 
@@ -498,7 +498,7 @@ Executivef1AfterBattleText:
 	cont "of us when we"
 	cont "were children."
 
-	para "LANCE then"
+	para "Lance then"
 	line "liberated SAFFRON"
 	cont "from Hoenn."
 
@@ -528,7 +528,7 @@ RadioTower5FRocketBossBeforeText:
 	cont "them."
 
 	para "Imagine the shock"
-	line "of WALLACE when"
+	line "of Wallace when"
 	cont "his own #mon"
 	cont "destroy his army."
 
@@ -546,7 +546,7 @@ RadioTower5FRocketBossWinText:
 	text "You think yourself"
 	line "strong?"
 	para "You have no idea"
-	line "what WALLACE will"
+	line "what Wallace will"
 	cont "do to us all."
 	done
 
@@ -565,7 +565,7 @@ RadioTower5FRocketBossAfterText:
 	cont "to fruition."
 
 	para "He is stronger"
-	line "even than LANCE."
+	line "even than Lance."
 
 	para "One day you will"
 	line "see you are the"

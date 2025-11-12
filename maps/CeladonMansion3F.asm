@@ -156,7 +156,7 @@ GameFreakCharacterDesignerText:
 	cont "by editing other"
 	cont "trainers."
 
-	para "WALLACE too."
+	para "Wallace too."
 
 	para "I think they"
 	line "turned out OK."

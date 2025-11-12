@@ -672,7 +672,7 @@ UndergroundSilverAfterText:
 	para "But they had"
 	line "already been"
 	cont "defeated by"
-	cont "that LANCE guy."
+	cont "that Lance guy."
 
 	para "I fought him"
 	line "and was completely"
@@ -703,7 +703,7 @@ UndergroundSilverAfterText:
 
 	para "I'll beat the"
 	line "ROCKETS and you"
-	cont "and even LANCE"
+	cont "and even Lance"
 	cont "one day."
 
 	para "Mark my words!"
@@ -719,7 +719,7 @@ UndergroundSilverLossText:
 	cont "and everyone"
 	cont "else."
 
-	para "I'll show LANCE"
+	para "I'll show Lance"
 	line "how effective my"
 	cont "training is!"
 	done

@@ -80,7 +80,7 @@ MasterBrockAfterBattleText:
 	cont "life."
 	para "The push and pull"
 	line "of that annoying"
-	cont "MISTY woman is a"
+	cont "Misty woman is a"
 	cont "whole different"
 	cont "issue though."
 	done
@@ -163,7 +163,7 @@ MasterMistyAfterBattleText:
 	line "attractive than"
 	cont "inner strength."
 	para "Just look at that"
-	line "guy BROCK."
+	line "guy Brock."
 	para "He's full of it."
 	done
 

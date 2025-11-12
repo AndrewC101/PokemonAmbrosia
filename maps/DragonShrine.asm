@@ -429,7 +429,7 @@ DragonShrinePassedTestText:
 	done
 
 DragonShrineMustIInformLanceText:
-	text "CLAIR!"
+	text "Clair!"
 
 	para "Accept your"
 	line "defeat with"
@@ -439,11 +439,11 @@ DragonShrineMustIInformLanceText:
 	cont "immediately!"
 
 	para "Or must I inform"
-	line "LANCE of this."
+	line "Lance of this."
 	done
 
 DragonShrineElderScoldsClairText:
-	text "CLAIR…"
+	text "Clair…"
 
 	para "Reflect upon what"
 	line "it is that you"
@@ -505,7 +505,7 @@ DragonShrineSymbolicDragonText:
 	done
 
 DragonShrineClairsGrandfatherText:
-	text "CLAIR is a"
+	text "Clair is a"
 	line "mighty trainer."
 
 	para "But her ego and"
@@ -616,7 +616,7 @@ DragonShrineElder3Text:
 	para "None know where"
 	line "it resides."
 
-	para "Even LANCE failed"
+	para "Even Lance failed"
 	line "to locate it."
 
 	para "But you can be"

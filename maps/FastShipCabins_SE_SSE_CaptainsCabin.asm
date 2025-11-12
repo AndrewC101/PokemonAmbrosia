@@ -412,7 +412,7 @@ SSAquaGrandpaTravellingText:
 	done
 
 SSAquaGranddaughterCaptainPlayWithMeText:
-	text "CAPTAIN, play with"
+	text "Captain, play with"
 	line "me, please?"
 
 	para "I'm bored! I want"
@@ -432,14 +432,14 @@ SSAquaGranddaughterHasToFindGrandpaText:
 	para "Thank you for"
 	line "answering all my"
 	cont "questions MR"
-	cont "CAPTAIN sir."
+	cont "Captain sir."
 	done
 
 SSAquaGranddaughterWasPlayingMText:
 	text "Grandpa, here I"
 	line "am! I was playing"
 
-	para "with the CAPTAIN"
+	para "with the Captain"
 	line "and this guy!"
 	done
 
@@ -447,7 +447,7 @@ SSAquaGranddaughterWasPlayingFText:
 	text "Grandpa, here I"
 	line "am! I was playing"
 
-	para "with the CAPTAIN"
+	para "with the Captain"
 	line "and this lady!"
 	done
 
@@ -455,7 +455,7 @@ SSAquaGranddaughterHadFunText:
 	text "I had lots of fun"
 	line "playing!"
 
-	para "The CAPTAIN was"
+	para "The Captain was"
 	line "most cooperative."
 
 	para "And well informed."

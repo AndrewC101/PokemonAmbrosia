@@ -267,11 +267,11 @@ CeruleanGymGruntByeText:
 CeruleanGymNote1Text:
 	text "Sorry, I'll be out"
 	line "for a while."
-	cont "MISTY, Gym Leader"
+	cont "Misty, Gym Leader"
 	done
 
 CeruleanGymNote2Text:
-	text "Since MISTY's out,"
+	text "Since Misty's out,"
 	line "we'll be away too."
 	cont "Gym TRAINERS"
 	done
@@ -286,7 +286,7 @@ MistyIntroText:
 	cont "give me an"
 	cont "exciting battle."
 
-	para "I am MISTY."
+	para "I am Misty."
 
 	para "Just like the sea"
 	line "I am deadly but"
@@ -303,7 +303,7 @@ MistyIntroText:
 	done
 
 MistyLossText:
-	text "MISTY: You really"
+	text "Misty: You really"
 	line "are good…"
 
 	para "I'll admit that"
@@ -352,7 +352,7 @@ MistyFightDoneText:
 	done
 
 SwimmerfDianaSeenText:
-	text "MISTY came back"
+	text "Misty came back"
 	line "so I rushed over"
 	cont "and made it look"
 	cont "like I never"
@@ -400,7 +400,7 @@ SwimmerfBrianaAfterBattleText:
 	line "good swimmer but"
 	cont "none of us can"
 	cont "swim nearly as"
-	cont "fast as MISTY."
+	cont "fast as Misty."
 	done
 
 SwimmermParkerSeenText:
@@ -420,7 +420,7 @@ SwimmermParkerBeatenText:
 	done
 
 SwimmermParkerAfterBattleText:
-	text "MISTY has gotten"
+	text "Misty has gotten"
 	line "much better in the"
 	cont "past few years."
 
@@ -443,7 +443,7 @@ CeruleanGymGuideText:
 
 CeruleanGymGuideWinText:
 	text "Maybe I should"
-	line "ask MISTY out."
+	line "ask Misty out."
 
 	para "Do you think a"
 	line "guy like me and"

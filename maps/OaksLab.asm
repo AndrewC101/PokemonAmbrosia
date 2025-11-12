@@ -248,7 +248,7 @@ OakOpenMtSilverText:
 	line "Kanto."
 
 	para "You have defeated"
-	line "WALLACE."
+	line "Wallace."
 
 	para "And you have"
 	line "obtained all Kanto"
@@ -287,7 +287,7 @@ OakOpenMtSilverText:
 	line "from there."
 
 	para "In MT.SILVER you"
-	line "will find RED."
+	line "will find Red."
 
 	para "He is the most"
 	line "powerful trainer"
@@ -353,7 +353,7 @@ OakYesKantoBadgesText:
 	para "Keep battling"
 	line "and eventually"
 	cont "you will face my"
-	cont "nephew BLUE."
+	cont "nephew Blue."
 
 	para "He is much more"
 	line "powerful than a"

@@ -232,7 +232,7 @@ InvadedVermilionCitySuperNerdText:
 
 	para "If we hold out"
 	line "long enough"
-	cont "LANCE will save"
+	cont "Lance will save"
 	cont "us."
 	done
 
@@ -258,7 +258,7 @@ VermilionCityBadgeGuyTrainerText:
 	cont "super strong."
 
 	para "As strong as some"
-	line "CHAMPIONS!"
+	line "Champions!"
 
 	para "If you can beat"
 	line "them all come"
@@ -285,7 +285,7 @@ VermilionCityBadgeGuyMostBadgesText:
 	para "But don't get too"
 	cont "confident."
 
-	para "BLUE used to be"
+	para "Blue used to be"
 	line "a Champion."
 
 	para "He is on a whole"
@@ -325,7 +325,7 @@ VermilionCitySignText:
 VermilionGymSignText:
 	text "VERMILION CITY"
 	line "#mon Gym"
-	cont "Leader: LT.SURGE"
+	cont "Leader: LT.Surge"
 
 	para "The Lightning"
 	line "Soldier"
@@ -442,7 +442,7 @@ Soldier6WinsText:
 	done
 Soldier6AfterBattleText:
 	text "None of us want to"
-	line "make WALLACE"
+	line "make Wallace"
 	cont "angry."
 	para "Just let us do"
 	line "this."
@@ -521,7 +521,7 @@ Soldier8WinsText:
     text "Just go home."
     done
 Soldier8AfterBattleText:
-	text "Once WALLACE joins"
+	text "Once Wallace joins"
 	line "the battle..."
 	para "Lives are going to"
 	line "be lost."
@@ -589,7 +589,7 @@ HoenCaptainSeenText:
 
 HoenCaptainBeatenText:
     text "Forgive me"
-    line "EMPEROR."
+    line "Emperor."
     done
 
 HoenCaptainWinsText:
@@ -606,16 +606,16 @@ HoenCaptainAfterBattleText:
 	line "Champion."
 	para "I've accomplished"
 	line "my mission."
-	para "WALLACE has made"
+	para "Wallace has made"
 	line "it to FUCHSIA."
 	para "Kanto is doomed."
-	para "EMPEROR WALLACE"
+	para "Emperor Wallace"
 	line "has our strongest"
 	cont "squad with him."
-	para "Three CAPTAINS and"
-	line "ADMIRAL DRAKE!"
-	para "DRAKE has beaten"
-	line "CHAMPIONS much"
+	para "Three Captains and"
+	line "Admiral Drake!"
+	para "Drake has beaten"
+	line "Champions much"
 	cont "stronger than you."
 	para "You should stay"
 	line "away from FUCHSIA"

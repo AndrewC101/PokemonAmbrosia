@@ -41,14 +41,14 @@ ElmsSonText:
 	cont "strongest #mon"
 	cont "and capture it!"
 	para "I'm going to beat"
-	line "the ELITE FOUR and"
+	line "the Elite Four and"
 	cont "take out an evil"
 	cont "organisation along"
 	cont "the way."
 	done
 
 ElmsHousePCPostWallaceText:
-    text "EMPEROR WALLACE"
+    text "Emperor Wallace"
     line "has abdicated"
     cont "and his location"
     cont "is unknown."
@@ -76,14 +76,14 @@ ElmsHousePCPostWallaceText:
 ElmsHousePCText:
 	text "Secret info from"
 	line "the #mon"
-	cont "LEAGUE."
+	cont "League."
 
 	para "Our spies report"
 	line "most disturbing"
 	cont "news."
 
 	para "It is believed"
-	line "EMPEROR WALLACE"
+	line "Emperor Wallace"
 	cont "may now be in"
 	cont "command of the"
 	cont "Hoenn LEGENDARY"
@@ -96,7 +96,7 @@ ElmsHousePCText:
 	para "There is little"
 	line "hope of stopping"
 	cont "him even if all"
-	cont "region CHAMPIONS"
+	cont "region Champions"
 	cont "are permitted to"
 	cont "fight."
 	done

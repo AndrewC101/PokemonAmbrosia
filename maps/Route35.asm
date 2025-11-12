@@ -551,7 +551,7 @@ FirebreatherWaltSeenText:
 
 	para "Now I can be"
 	line "like my hero"
-	cont "BLAINE."
+	cont "Blaine."
 	done
 
 FirebreatherWaltBeatenText:
@@ -560,7 +560,7 @@ FirebreatherWaltBeatenText:
 	done
 
 FirebreatherWaltAfterBattleText:
-	text "BLAINE is a"
+	text "Blaine is a"
 	line "mad scientist"
 	cont "FIRE Gym Leader."
 

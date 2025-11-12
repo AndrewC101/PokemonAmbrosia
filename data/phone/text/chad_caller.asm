@@ -52,7 +52,7 @@ ChadHangUpText:
 
 ChadBlueGossipText:
 	text "I aspire to be"
-	line "like BLUE."
+	line "like Blue."
 	para "He was a Champion"
 	line "but is so cool he"
 	cont "gave it up so he"
@@ -62,7 +62,7 @@ ChadBlueGossipText:
 	done
 
 ChadDaisyGossipText:
-	text "They say BLUE has"
+	text "They say Blue has"
 	line "a sister named"
 	cont "DAISEY."
 	para "She is meant to be"
@@ -115,7 +115,7 @@ ChadLeagueGossipText:
 	cont "muscles."
 	para "Do you work out?"
 	para "You know who does."
-	para "BRUNO."
+	para "Bruno."
 	para "I bet he gets all"
 	line "the girls!"
 	done
@@ -156,7 +156,7 @@ ChadDaisyTeaGossipText:
 
 ChadProfOakTravelingGossipText:
 	text "I aspire to be"
-	line "like BLUE."
+	line "like Blue."
 	para "He was a Champion"
 	line "but is so cool he"
 	cont "gave it up so he"

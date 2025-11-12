@@ -72,7 +72,7 @@ FuchsiaMartCooltrainerFText:
 	line "a Gym trainer"
 	cont "but I would"
 	cont "need to dress up"
-	cont "as JANINE."
+	cont "as Janine."
 
 	para "Such vanity!"
 	done

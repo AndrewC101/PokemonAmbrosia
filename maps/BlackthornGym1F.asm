@@ -166,7 +166,7 @@ BlackthornGymStatue:
 	jumpstd GymStatue2Script
 
 ClairIntroText:
-	text "I am CLAIR."
+	text "I am Clair."
 
 	para "Dragon warrior"
 	line "of BLACKTHORN."
@@ -175,10 +175,10 @@ ClairIntroText:
 	line "DRAGONS FANG."
 
 	para "Keeper of the"
-	line "DRAGONS DEN."
+	line "Dragons Den."
 
 	para "I am second"
-	line "only to LANCE"
+	line "only to Lance"
 	cont "himself."
 
 	para "All LEADERs you"
@@ -238,7 +238,7 @@ ClairText_GoToDragonsDen:
 	cont "prove yourself."
 
 	para "Behind the Gym is"
-	line "DRAGONS DEN."
+	line "Dragons Den."
 
 	para "A sacred place."
 
@@ -247,7 +247,7 @@ ClairText_GoToDragonsDen:
 
 	para "Go to the shrine"
 	line "deep within the"
-	cont "DEN."
+	cont "Den."
 
 	para "There your heart"
 	line "will be tested."
@@ -265,8 +265,8 @@ ClairText_TooMuchToExpect:
 	para "You must take"
 	line "what you want."
 
-	para "Now go to DRAGONS"
-	line "DEN."
+	para "Now go to Dragons"
+	line "Den."
 
 	para "And claim what you"
 	line "think you deserve!"
@@ -306,7 +306,7 @@ BlackthornGymClairText_League:
 	para "It enrages me"
 	line "how much you"
 	cont "remind me of"
-	cont "LANCE."
+	cont "Lance."
 
 	para "Now go and"
 	line "stamp your mark"
@@ -332,7 +332,7 @@ CooltrainermPaulBeatenText:
 	done
 
 CooltrainermPaulAfterBattleText:
-	text "You met LANCE!"
+	text "You met Lance!"
 
 	para "You fought beside"
 	line "him!"
@@ -374,7 +374,7 @@ CooltrainermMikeAfterBattleText:
 	done
 
 CooltrainerfLolaSeenText:
-	text "CLAIR is strong."
+	text "Clair is strong."
 
 	para "But she lacks"
 	line "the real heart"
@@ -385,7 +385,7 @@ CooltrainerfLolaSeenText:
 
 	para "That's why she"
 	line "won't allow me"
-	cont "into DRAGONS DEN."
+	cont "into Dragons Den."
 
 	para "I want more."
 
@@ -401,7 +401,7 @@ CooltrainerfLolaBeatenText:
 CooltrainerfLolaAfterBattleText:
 	text "I will continue"
 	line "to be close to"
-	cont "CLAIR."
+	cont "Clair."
 
 	para "Then when the"
 	line "time is right."
@@ -453,7 +453,7 @@ BlackthornGymGuideWinText:
 	line "<PLAYER> the"
 	cont "Dragon slayer!"
 
-	para "The ELITE FOUR"
+	para "The Elite Four"
 	line "have no idea"
 	cont "what they are"
 	cont "in for."

@@ -4,7 +4,7 @@ BethExhilaratingRideText:
 	cont "trainers than"
 	cont "female."
 	para "Unfortunately the"
-	line "first ELITE FOUR"
+	line "first Elite Four"
 	cont "member is a woman."
 	para "I am not ready"
 	line "yet, not even"
@@ -13,9 +13,9 @@ BethExhilaratingRideText:
 
 BethDefeatedMonText:
 	text "I have analysed"
-	line "each ELITE FOUR"
+	line "each Elite Four"
 	cont "member."
-	para "BRUNO has the"
+	para "Bruno has the"
 	line "lowest win rate."
 	para "My RAPIDASH has a"
 	line "good match up"
@@ -26,7 +26,7 @@ BethDefeatedMonText:
 	done
 
 BethLostAMonText:
-	text "Did you know KAREN"
+	text "Did you know Karen"
 	line "used to live in"
 	cont "BLACKTHORN!"
 	para "She must a"

@@ -133,7 +133,7 @@ FuchsiaPokecenter1FCooltrainerFText_Saved:
 	done
 
 FuchsiaPokecenter1FJanineImpersonatorText1:
-	text "I'm JANINE! Hocus-"
+	text "I'm Janine! Hocus-"
 	line "pocus… Poof!"
 	done
 

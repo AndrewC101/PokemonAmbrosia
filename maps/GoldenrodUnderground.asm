@@ -449,7 +449,7 @@ SupernerdTeruSeenText:
 	line "worth it."
 
 	para "I will be the"
-	line "next LANCE!"
+	line "next Lance!"
 	done
 
 SupernerdTeruBeatenText:

@@ -367,9 +367,9 @@ CooltrainermJakeAfterBattleText:
 	done
 
 CooltrainermGaven3SeenText:
-    text "LANCE is so cool!"
+    text "Lance is so cool!"
 
-	para "LANCE is Champion"
+	para "Lance is Champion"
 	line "of Kanto but he's"
 	cont "acting Champion"
 	cont "of Johto until"
@@ -393,7 +393,7 @@ CooltrainermGaven3BeatenText:
 CooltrainermGavenAfterText:
 	text "To become Champion"
 	line "you will have to"
-	cont "defeat LANCE."
+	cont "defeat Lance."
 
 	para "His strength is"
 	line "infamous."
@@ -436,7 +436,7 @@ CooltrainerfBeth1SeenText:
 
 	para "It is the final"
 	line "path to the"
-	cont "ELITE FOUR."
+	cont "Elite Four."
 
 	para "We all line up"
 	line "nicely to get"
@@ -475,7 +475,7 @@ CooltrainerfBethAfterText:
 
 PsychicRichardSeenText:
 	text "Have you heard of"
-	line "SABRINA?"
+	line "Sabrina?"
 
 	para "She was a Kanto"
 	line "Gym Leader but"
@@ -494,7 +494,7 @@ PsychicRichardSeenText:
 
 PsychicRichardBeatenText:
 	text "NO!"
-	para "My dear SABRINA"
+	para "My dear Sabrina"
 	line "I'm sorry!"
 
 	para "I was too weak!"
@@ -526,7 +526,7 @@ PsychicRichardAfterBattleText:
 Route26SignText:
 	text "ROUTE 26"
 
-	para "#mon LEAGUE"
+	para "#mon League"
 	line "RECEPTION GATE"
 	done
 
@@ -676,7 +676,7 @@ Route26Movement_CrystalApproaches:
 Route26CrystalText_Intro:
     text "You are going to"
     line "challenge the"
-    cont "ELITE FOUR."
+    cont "Elite Four."
 
     para "The final test."
 
@@ -762,7 +762,7 @@ Route26CrystalText_KeepItUp:
     para "Now you march in"
     line "there and wipe"
     cont "the floor with"
-    cont "the ELITE FOUR."
+    cont "the Elite Four."
 
     para "Good luck"
     line "<PLAYER>."

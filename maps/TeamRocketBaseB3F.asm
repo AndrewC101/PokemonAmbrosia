@@ -489,7 +489,7 @@ RocketBaseMurkrowText:
 	text "MURKROW: The"
 	line "password is…"
 
-	para "HAIL GIOVANNI."
+	para "Hail Giovanni."
 	done
 
 GruntF5SeenText:

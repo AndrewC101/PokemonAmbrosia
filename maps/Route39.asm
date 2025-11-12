@@ -191,7 +191,7 @@ Route39MiltankText:
 
 PokefanmDerekSeenText:
 	text "When the dark"
-	line "lord WALLACE"
+	line "lord Wallace"
 	cont "arrives I"
 	cont "shall be ready."
 
@@ -218,7 +218,7 @@ PokefanfRuthSeenText:
 
 	para "One day she"
 	line "may be able to"
-	cont "defeat WALLACE."
+	cont "defeat Wallace."
 	done
 
 PokefanfRuthBeatenText:

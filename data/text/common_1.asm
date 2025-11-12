@@ -927,7 +927,7 @@ _RocketRadioText6::
 
 _RocketRadioText7::
 	text_start
-	line "GIOVANNI! @"
+	line "Giovanni! @"
 	text_pause
 	text "Can you"
 	done

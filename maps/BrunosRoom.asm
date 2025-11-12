@@ -81,7 +81,7 @@ BrunosRoom_EnterMovement:
 	step_end
 
 BrunoScript_BrunoBeforeText:
-	text "I am BRUNO."
+	text "I am Bruno."
 
 	para "I do not care"
 	line "for the subtle"

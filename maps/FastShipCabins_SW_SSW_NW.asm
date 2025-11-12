@@ -114,7 +114,7 @@ FastShipCabinsNorthwestCabinTrashcan:
 FirebreatherLyleSeenText:
 	text "I heading to"
 	line "Kanto to find my"
-	cont "hero BLAINE."
+	cont "hero Blaine."
 
 	para "The CINNABAR Gym"
 	line "was destroyed in"
@@ -131,7 +131,7 @@ FirebreatherLyleBeatenText:
 	done
 
 FirebreatherLyleAfterBattleText:
-	text "BLAINE needs"
+	text "Blaine needs"
 	line "Gym trainers."
 
 	para "I'm going to"
@@ -206,7 +206,7 @@ GuitaristClydeSeenText:
 	para "We're called"
 	line "THE SOLENOIDS!"
 
-	para "LT SURGE himself"
+	para "LT Surge himself"
 	line "is the lead"
 	cont "singer."
 	done

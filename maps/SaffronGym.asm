@@ -131,7 +131,7 @@ SaffronGymStatue:
 	jumpstd GymStatue2Script
 
 SabrinaIntroText:
-	text "I am WILL."
+	text "I am Will."
 
 	para "I was an"
 	line "archaeologist for"
@@ -146,7 +146,7 @@ SabrinaIntroText:
 
 	para "Prof Oak suggested"
 	line "me for this post"
-	cont "after SABRINA"
+	cont "after Sabrina"
 	cont "left."
 
 	para "I've never been"
@@ -215,7 +215,7 @@ SabrinaFightDoneText:
 	done
 
 MediumRebeccaSeenText:
-	text "SABRINA would"
+	text "Sabrina would"
 	line "never have allowed"
 	cont "that lesser Gym"
 	cont "to dishonor us"
@@ -232,7 +232,7 @@ MediumRebeccaBeatenText:
 	done
 
 MediumRebeccaAfterBattleText:
-	text "WILL is not"
+	text "Will is not"
 	line "strong enough."
 
 	para "I will have to"
@@ -242,13 +242,13 @@ MediumRebeccaAfterBattleText:
 
 PsychicFranklinSeenText:
 	text "How typical of"
-	line "LEAGUE to hire"
+	line "League to hire"
 	cont "from outside"
 	cont "rather than"
 	cont "promote one of"
 	cont "us trainers."
 
-	para "WILL does not"
+	para "Will does not"
 	line "understand the"
 	cont "superiority of"
 	cont "PSYCHIC types."
@@ -339,7 +339,7 @@ SaffronGymGuideWinText:
 	text "That wasn't so"
 	line "tough."
 
-	para "SABRINA must be"
+	para "Sabrina must be"
 	line "upset by this."
 	done
 

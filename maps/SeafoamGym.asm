@@ -82,7 +82,7 @@ SeafoamGymGuideScript:
     jumptextfaceplayer SeafoamGymGuideWinText2
 
 BlaineIntroText:
-	text "I am BLAINE."
+	text "I am Blaine."
 
 	para "A Gym Leader"
 	line "without a Gym."

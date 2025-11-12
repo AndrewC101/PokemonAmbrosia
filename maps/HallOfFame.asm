@@ -104,7 +104,7 @@ HallOfFame_LanceText:
 	para "I coronate you"
 	line "and accordingly"
 	cont "your #mon"
-	cont "as CHAMPIONS!"
+	cont "as Champions!"
 	done
 
 HallOfFame_MapEvents:

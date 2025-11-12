@@ -41,7 +41,7 @@ CeruleanMart_CooltrainerMText:
 	done
 
 CeruleanMart_CooltrainerFText:
-	text "MISTY is really"
+	text "Misty is really"
 	line "strong."
 
 	para "But she can't"

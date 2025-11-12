@@ -296,7 +296,7 @@ ChuckExplainBadgeText:
 BeatJasmineText:
 	text "You done well but"
 	line "you must beat both"
-	cont "me and JASMINE in"
+	cont "me and Jasmine in"
 	cont "OLIVINE to"
 	cont "increase your"
 	cont "level caps."

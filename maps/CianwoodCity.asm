@@ -225,7 +225,7 @@ ChucksWifeEasierToFlyText:
 	para "They are strong"
 	line "against FIGHTING."
 
-	para "Please beat CHUCK."
+	para "Please beat Chuck."
 
 	para "He needs a kick in"
 	line "his ego."
@@ -234,7 +234,7 @@ ChucksWifeEasierToFlyText:
 ChucksWifeGiveHMText:
 	text "You beat CHUNK!"
 
-	para "I mean CHUCK..."
+	para "I mean Chuck..."
 
 	para "I hope that"
 	line "humbles him a"
@@ -255,7 +255,7 @@ ChucksWifeFlySpeechText:
 	done
 
 ChucksWifeChubbyText:
-	text "I love CHUCK"
+	text "I love Chuck"
 	line "but he needs to"
 	cont "be brought down"
 	cont "to earth"
@@ -291,7 +291,7 @@ CianwoodCityPokefanMText:
 	para "Though I tell"
 	line "you a secret."
 
-	para "CHUCK would"
+	para "Chuck would"
 	line "pound me for"
 	cont "saying this..."
 
@@ -403,7 +403,7 @@ CianwoodGymSignText:
 	text "CIANWOOD CITY"
 	line "#mon Gym"
 
-	para "Leader: CHUCK"
+	para "Leader: Chuck"
 
 	para "His Roaring Fists"
 	line "Do the Talking"
@@ -858,16 +858,16 @@ YesIAm:
     para "I am no meager"
     line "spy."
 
-    para "I am a CAPTAIN"
+    para "I am a Captain"
     line "of the Hoenn"
     cont "fleet."
 
     para "I report directly"
-    line "to ADMIRAL DRAKE."
+    line "to Admiral Drake."
 
     para "And he reports"
     line "directly to"
-    cont "EMPEROR WALLACE."
+    cont "Emperor Wallace."
 
     para "I am likely"
     line "the strongest"
@@ -876,7 +876,7 @@ YesIAm:
 
     para "Stronger even"
     line "than your"
-    cont "ELITE FOUR."
+    cont "Elite Four."
 
     para "Such a weak"
     line "people are not"
@@ -889,7 +889,7 @@ HoenSpyBeatenText:
 
 HoenSpyWinsText:
     text "Long live"
-    line "EMPEROR WALLACE!"
+    line "Emperor Wallace!"
     done
 
 Poliwrath:

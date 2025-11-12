@@ -75,7 +75,7 @@ BattleTowerOutsideBeautyText:
 	done
 
 BattleTowerOutsidePokefanText:
-    text "I main BROCK in"
+    text "I main Brock in"
     line "the ARCADE."
 
     para "He has all the"

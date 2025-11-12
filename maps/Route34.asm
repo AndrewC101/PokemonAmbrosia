@@ -552,7 +552,7 @@ YoungsterSamuelAfterText:
 
 YoungsterIanSeenText:
 	text "Have you heard"
-	line "of ERIKA?"
+	line "of Erika?"
 
 	para "She is a GRASS"
 	line "Gym Leader in"
@@ -660,7 +660,7 @@ OfficerKeithDaytimeText:
 
 	para "I fear nobody."
 
-	para "Not even WALLACE!"
+	para "Not even Wallace!"
 	done
 
 PokefanmBrandonSeenText:

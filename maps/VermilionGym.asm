@@ -259,7 +259,7 @@ LtSurgeFightDoneText:
 
 GentlemanGregorySeenText:
 	text "I fought with"
-	line "LT SURGE in"
+	line "LT Surge in"
 	cont "wars long ago."
 
 	para "I am the agent"
@@ -276,14 +276,14 @@ GentlemanGregorySeenText:
 	done
 
 GentlemanGregoryBeatenText:
-	text "LT SURGE."
+	text "LT Surge."
 
 	para "I failed you"
 	line "sir."
 	done
 
 GentlemanGregoryAfterBattleText:
-	text "LT SURGE saved"
+	text "LT Surge saved"
 	line "my life on the"
 	cont "battlefield."
 
@@ -308,7 +308,7 @@ GuitaristVincentBeatenText:
 	done
 
 GuitaristVincentAfterBattleText:
-	text "SURGE is the"
+	text "Surge is the"
 	line "main man."
 
 	para "But the chicks"
@@ -351,7 +351,7 @@ VermilionGymGuideText:
 	para "But this is still"
 	line "a Gym."
 
-	para "LT SURGE is a war"
+	para "LT Surge is a war"
 	line "hero."
 
 	para "He has the best"
@@ -360,7 +360,7 @@ VermilionGymGuideText:
 	para "GROUND types are"
 	line "your best bet."
 
-	para "But SURGE has"
+	para "But Surge has"
 	line "faced them many"
 	cont "times before I'm"
 	cont "sure."

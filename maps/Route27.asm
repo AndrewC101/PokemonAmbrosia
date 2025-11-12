@@ -284,7 +284,7 @@ CooltrainermBlakeSeenText:
 
 	para "Are you heading"
 	line "to battle the"
-	cont "ELITE FOUR?"
+	cont "Elite Four?"
 
 	para "You're the third"
 	line "person today"
@@ -314,7 +314,7 @@ CooltrainermBlakeAfterBattleText:
 	line "you beat me,"
 	cont "you are going"
 	cont "to get destroyed"
-	cont "by the ELITE FOUR!"
+	cont "by the Elite Four!"
 	done
 
 CooltrainerfReenaSeenText:

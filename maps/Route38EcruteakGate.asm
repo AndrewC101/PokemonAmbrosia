@@ -53,7 +53,7 @@ Route38EcruteakGateOfficerText:
 	cont "out of here."
 
 	para "Knowing my"
-	line "luck WALLACE"
+	line "luck Wallace"
 	cont "will take over"
 	cont "and I'll still"
 	cont "be working here."

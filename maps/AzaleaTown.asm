@@ -331,7 +331,7 @@ AzaleaTownRocket2Text:
 
 	para "Um..."
 
-	para "MORTY..."
+	para "Morty..."
 
 	para "No!"
 

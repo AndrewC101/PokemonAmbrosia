@@ -505,7 +505,7 @@ ClairText_WhatsTheMatterDragonDen:
 	cont "final challenge."
 
 	para "You must face the"
-	line "ELITE FOUR."
+	line "Elite Four."
 
 	para "They are some of"
 	line "the strongest"
@@ -540,7 +540,7 @@ ClairText_WhatsTheMatterDragonDen:
 	cont "for you."
 
 	para "Just as it was"
-	line "for LANCE."
+	line "for Lance."
 
 	para "Good luck!"
 	done
@@ -558,7 +558,7 @@ CooltrainermDarinSeenText:
 	cont "place."
 
 	para "In the name of"
-	line "the great LANCE."
+	line "the great Lance."
 
 	para "I shall expel you!"
 	done
@@ -570,18 +570,18 @@ CooltrainermDarinBeatenText:
 
 CooltrainermDarinAfterBattleText:
 	text "You must be the"
-	line "trainer CLAIR"
+	line "trainer Clair"
 	cont "has permitted."
 
 	para "I can tell that"
-	line "LANCE would agree"
+	line "Lance would agree"
 	cont "with her decision."
 	done
 
 CooltrainerfCaraSeenText:
 	text "Are you the one"
 	line "who defeated"
-	cont "Leader CLAIR?"
+	cont "Leader Clair?"
 
 	para "No way."
 
@@ -589,15 +589,15 @@ CooltrainerfCaraSeenText:
 	line "a nobody like"
 	cont "you to disrespect"
 	cont "the beautiful"
-	cont "CLAIR."
+	cont "Clair."
 	done
 
 CooltrainerfCaraBeatenText:
-	text "I tried, CLAIR."
+	text "I tried, Clair."
 	done
 
 CooltrainerfCaraAfterBattleText:
-	text "CLAIR and I"
+	text "Clair and I"
 	line "started training"
 	cont "at the same time."
 
@@ -606,7 +606,7 @@ CooltrainerfCaraAfterBattleText:
 	cont "as our first"
 	cont "#mon."
 
-	para "But CLAIR is so"
+	para "But Clair is so"
 	line "talented."
 
 	para "She overtook me"
@@ -625,7 +625,7 @@ TwinsLeaandpia1SeenText:
 	line "such a gift."
 
 	para "Even the master"
-	line "and CLAIR can not"
+	line "and Clair can not"
 	cont "do that."
 	done
 
@@ -666,7 +666,7 @@ TwinsLeaandpia2AfterBattleText:
 
 	para "The only other"
 	line "who can do it"
-	cont "is LANCE."
+	cont "is Lance."
 
 	para "That's why we"
 	line "are allowed in"
@@ -704,8 +704,8 @@ InvaderLoganSeenText:
     text "You seem quiet"
     line "lucid."
 
-    para "This is DRAGONS"
-    line "DEN."
+    para "This is Dragons"
+    line "Den."
 
     para "This place is a"
     line "great pool of"

@@ -199,7 +199,7 @@ FalknerLossText:
 	line "Take this."
 
 	para "It's the official"
-	line "#mon LEAGUE"
+	line "#mon League"
 	cont "ZEPHYRBADGE."
 	done
 

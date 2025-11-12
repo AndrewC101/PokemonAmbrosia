@@ -917,7 +917,7 @@ ElmsLabElmStevenText:
     para "Many in Hoenn"
     line "remain loyal to"
     cont "him rather than"
-    cont "WALLACE."
+    cont "Wallace."
 
     para "We must try to"
     line "find him."

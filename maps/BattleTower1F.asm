@@ -561,7 +561,7 @@ Text_BattleTowerYoungster:
 Text_BattleTowerCooltrainerF:
 	text "There are two"
 	line "levels only open"
-	cont "to CHAMPIONS."
+	cont "to Champions."
 
 	para "The highest level"
 	line "is Master."

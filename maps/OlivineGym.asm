@@ -137,7 +137,7 @@ Jasmine_SteelTypeIntro:
 	cont "are weak."
 
 	para "Like that"
-	line "brute CHUCK."
+	line "brute Chuck."
 
 	para "In difficult"
 	line "times,"
@@ -197,7 +197,7 @@ JasmineBeatChuckText:
 	text "You have done well"
 	line "but I'm afraid you"
 	cont "also must defeat"
-	cont "CHUCK in CIANWOOD"
+	cont "Chuck in CIANWOOD"
 	cont "to increase your"
 	cont "level caps."
 	para "It should not be"
@@ -239,7 +239,7 @@ Jasmine_GoodLuck:
 	done
 
 OlivineGymGuideText:
-	text "JASMINE uses the"
+	text "Jasmine uses the"
 	line "newly discovered"
 	cont "steel-type."
 
@@ -259,7 +259,7 @@ OlivineGymGuideWinText:
 	done
 
 OlivineGymGuidePreText:
-	text "JASMINE, the Gym"
+	text "Jasmine, the Gym"
 	line "Leader, is at the"
 	cont "LIGHTHOUSE."
 

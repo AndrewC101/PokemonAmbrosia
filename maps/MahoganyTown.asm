@@ -132,7 +132,7 @@ MahoganyTownSignText:
 MahoganyGymSignText:
 	text "MAHOGANY TOWN"
 	line "#mon Gym"
-	cont "Leader: PRYCE"
+	cont "Leader: Pryce"
 
 	para "The Teacher of"
 	line "Winter's Harshness"

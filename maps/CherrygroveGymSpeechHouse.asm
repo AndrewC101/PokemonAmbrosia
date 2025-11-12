@@ -34,7 +34,7 @@ CherrygroveGymSpeechHouseBugCatcherText:
 	cont "Gym Leader!"
 
 	para "I'm going to show"
-	line "that WALLACE not"
+	line "that Wallace not"
 	cont "to pick on my"
 	cont "family!"
 	done

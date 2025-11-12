@@ -175,7 +175,7 @@ AgathaSeenText2:
     para "She was strong."
 
     para "She was an"
-    line "ELITE FOUR"
+    line "Elite Four"
     cont "member."
 
     para "Last time Hoenn"

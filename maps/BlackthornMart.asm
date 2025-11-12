@@ -28,7 +28,7 @@ BlackthornMartCooltrainerMText:
 	para "Dragon type is"
 	line "weak to ICE."
 
-	para "But CLAIR has"
+	para "But Clair has"
 	line "some #mon"
 	cont "that aren't"
 	cont "Dragon type."

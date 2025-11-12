@@ -33,8 +33,8 @@ WardensHomeBookshelf:
 
 WardensGranddaughterText1:
 	text "My grandpa is the"
-	line "SAFARI ZONE WAR-"
-	cont "DEN."
+	line "Safari Zone War-"
+	cont "den."
 
 	para "At least he was…"
 

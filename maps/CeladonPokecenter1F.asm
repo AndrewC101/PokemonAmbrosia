@@ -158,7 +158,7 @@ RematchRefuseTextEusine2:
     done
 
 CeladonPokecenter1FCooltrainerFText:
-	text "ERIKA is a master"
+	text "Erika is a master"
 	line "of grass #mon."
 
 	para "She is so pretty."
@@ -168,7 +168,7 @@ CeladonPokecenter1FCooltrainerFText:
 	cont "pollution and"
 	cont "crime."
 
-	para "Lead us ERIKA!"
+	para "Lead us Erika!"
 	done
 
 CeladonPokecenter1FPharmacistText:

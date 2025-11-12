@@ -373,7 +373,7 @@ WifeIntroText:
 	line "live here with my"
 	cont "husband."
 	para "You have met our"
-	line "sons, ADAM and"
+	line "sons, Adam and"
 	cont "JONATHAN?"
 	para "You still have"
 	line "plenty left to do,"
@@ -387,7 +387,7 @@ WifeIntroText:
 
 WifeBeatAdamText:
 	text "You have beaten"
-	line "ADAM at his"
+	line "Adam at his"
 	cont "strongest!"
 	para "You must be one of"
 	line "his friends."
@@ -417,7 +417,7 @@ WifeWinText:
 
 WifeAfterBattleText:
 	text "My husband and I"
-	line "miss ADAM and"
+	line "miss Adam and"
 	cont "JONATHAN."
 	para "They will always"
 	line "be our wee boys."
@@ -554,7 +554,7 @@ BrotherAfterBattleText:
 	line "with my brother,"
 	cont "his wife and"
 	cont "sometimes my"
-	cont "nephews ADAM"
+	cont "nephews Adam"
 	cont "and JONATHAN."
 	para "My brother made"
 	line "this world but I'm"
@@ -1039,7 +1039,7 @@ ManorFact12Text:
 	line "to 3 turns."
 	para "Unless..."
 	para "Unless the enemy"
-	line "is WALLACE."
+	line "is Wallace."
 	para "Then sleep lasts 1"
 	line "to 2 turns."
 	para "He wasn't hard"
@@ -1081,7 +1081,7 @@ ManorFact15Text:
 
 ManorFact16Text:
 	text "If you lose to"
-	line "WALLACE or the"
+	line "Wallace or the"
 	cont "supposed MAHOGANY"
 	cont "MURDER during the"
 	cont "story it takes you"

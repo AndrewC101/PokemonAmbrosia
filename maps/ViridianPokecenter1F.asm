@@ -39,7 +39,7 @@ ViridianPokecenter1FCooltrainerMText:
 	line "our best to get"
 	cont "ready for war."
 
-	para "BLUE tells us"
+	para "Blue tells us"
 	line "we will survive."
 
 	para "But I'm scared."
@@ -49,11 +49,11 @@ ViridianPokecenter1FCooltrainerMText_BlueReturned:
 	text "You are Champion"
 	line "<PLAYER>!"
 
-	para "BLUE told us all"
+	para "Blue told us all"
 	line "about you."
 
 	para "Your battle"
-	line "with WALLACE is"
+	line "with Wallace is"
 	cont "LEGENDARY!"
 
 	para "Thank you so"
@@ -83,7 +83,7 @@ ViridianPokecenter1FBugCatcherText:
 	cont "make us angry."
 
 	para "It was the"
-	line "#mon LEAGUE"
+	line "#mon League"
 	cont "themselves that"
 	cont "destroyed it!"
 

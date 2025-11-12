@@ -289,7 +289,7 @@ FastShipB1FOnDutySailorDirectionsText:
 
 	para "The stairs at the"
 	line "end lead to the"
-	cont "CAPTAIN's cabin."
+	cont "Captain's cabin."
 
 	para "But passengers are"
 	line "prohibited from"
@@ -514,7 +514,7 @@ SchoolboyNateSeenText:
 	para "There we will"
 	line "find the power"
 	cont "to conquer the"
-	cont "ELITE FOUR."
+	cont "Elite Four."
 	done
 
 SchoolboyNateBeatenText:

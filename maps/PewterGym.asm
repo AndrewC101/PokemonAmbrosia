@@ -144,8 +144,8 @@ ReceivedBoulderBadgeText:
 	done
 
 BrockFightDoneText:
-	text "BLUE sealed off"
-	line "the MUSEUM years"
+	text "Blue sealed off"
+	line "the Museum years"
 	cont "ago."
 
 	para "Since you have"
@@ -157,7 +157,7 @@ BrockFightDoneText:
 	para "You are the first"
 	line "to be given this."
 
-	para "BLUE has been a"
+	para "Blue has been a"
 	line "huge help to me."
 
 	para "I could not have"
@@ -166,7 +166,7 @@ BrockFightDoneText:
 	done
 
 CamperJerrySeenText:
-	text "BROCK is the"
+	text "Brock is the"
 	line "strongest person"
 	cont "I know."
 
@@ -205,7 +205,7 @@ PewterGymGuideText:
 	para "You can!"
 
 	para "But you have to"
-	line "beat BROCK."
+	line "beat Brock."
 
 	para "He uses a"
 	line "SANDSTORM team."

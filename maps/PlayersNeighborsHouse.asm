@@ -65,7 +65,7 @@ WallaceBeatenRadio:
 	para "The new Champion"
 	line "<PLAYER> from"
 	cont "NEW BARK TOWN"
-	cont "defeated WALLACE"
+	cont "defeated Wallace"
 	cont "and has saved us"
 	cont "all!"
 	cont "Rejoice!"
@@ -121,7 +121,7 @@ PlayersNeighborText:
 	cont "her dreams."
 
 	para "After all"
-	line "Champion BLUE"
+	line "Champion Blue"
 	cont "came from a"
 	cont "small town too."
 	done
@@ -152,7 +152,7 @@ PlayerNeighborRadioText2:
 	done
 
 PlayerNeighborRadioText3:
-	text "EMPEROR WALLACE"
+	text "Emperor Wallace"
 	line "has taken control"
 	cont "due to the"
 	cont "assassination of"

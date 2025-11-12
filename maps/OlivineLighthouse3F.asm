@@ -113,7 +113,7 @@ GentlemanPrestonBeatenText:
 GentlemanPrestonAfterBattleText:
 	text "I felt sure"
 	line "I could beat"
-	cont "JASMINE with my"
+	cont "Jasmine with my"
 	cont "FIRE #mon."
 
 	para "But I got put"

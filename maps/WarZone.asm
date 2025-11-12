@@ -241,13 +241,13 @@ WarZoneOakText:
     text "<PLAYER>..."
 
     para "You alone have"
-    line "defeated WALLACE."
+    line "defeated Wallace."
 
     para "I saw the battle."
 
     para "You now stand"
     line "above and beyond"
-    cont "CHAMPIONS."
+    cont "Champions."
 
     para "I have only known"
     line "one other to"
@@ -259,7 +259,7 @@ WarZoneOakText:
     line "even be able to"
     cont "defeat him."
 
-    para "RED."
+    para "Red."
 
     para "In recognition"
     line "of your authority"
@@ -276,7 +276,7 @@ WarZoneOakText:
 
     para "Head to VIRIDIAN"
     line "and battle my"
-    cont "nephew BLUE."
+    cont "nephew Blue."
 
     para "If you defeat"
     line "him then I am"
@@ -297,7 +297,7 @@ WarZoneOakText:
     done
 
 WarZoneSilverText:
-    text "EMPEROR WALLACE..."
+    text "Emperor Wallace..."
 
     para "Hmph!"
 
@@ -502,7 +502,7 @@ StevenIntroText:
     done
 
 StevenText:
-    text "It's over WALLACE."
+    text "It's over Wallace."
 
     para "You have lost."
 
@@ -623,7 +623,7 @@ StevenSeenText:
     para "I tried to make"
     line "people see reason."
 
-    para "But WALLACE was"
+    para "But Wallace was"
     line "right."
 
     para "Many people"
@@ -658,7 +658,7 @@ StevenOfferFightText:
     line "battle?"
     done
 StevenAfterBattleText:
-    text "One day WALLACE"
+    text "One day Wallace"
     line "or another like"
     cont "him will decide"
     cont "to make war again."
@@ -725,18 +725,18 @@ CynthiaWinsAfterBattleText:
     done
 CynthiaSeenText:
     text "You have Champion"
-    line "BLUE to thank for"
+    line "Blue to thank for"
     cont "our arrival."
 
     para "He gave an"
     line "impassioned and"
     cont "masterful speech"
-    cont "to the LEAGUE."
+    cont "to the League."
 
     para "It made me ashamed"
     line "for not taking a"
     cont "stance against"
-    cont "WALLACE years"
+    cont "Wallace years"
     cont "ago."
     done
 CynthiaBeatenText:
@@ -836,7 +836,7 @@ LeonSeenText:
     para "I would have"
     line "enjoyed stomping"
     cont "that weakling"
-    cont "WALLACE into the"
+    cont "Wallace into the"
     cont "dirt."
 
     para "But you did"
@@ -908,7 +908,7 @@ Soldier1AfterBattleText:
     para "Yes...."
 
     para "What do you mean"
-    line "LT SURGE is free!"
+    line "LT Surge is free!"
 
     para "...."
 
@@ -983,7 +983,7 @@ Soldier2AfterBattleText:
 
     para "Damn!"
 
-    para "LANCE got here"
+    para "Lance got here"
     line "quicker than"
     cont "expected!"
     done
@@ -1004,7 +1004,7 @@ Soldier3SeenText:
 
     para "Our reinforcements"
     line "have made it past"
-    cont "SURGE and will be"
+    cont "Surge and will be"
     cont "taking SAFFRON"
     cont "shortly."
 
@@ -1059,7 +1059,7 @@ Soldier3AfterBattleText:
 
     para "It matters not."
 
-    para "ADMIRAL DRAKE"
+    para "Admiral Drake"
     line "will handle this."
 
     para "Starting with you."
@@ -1075,8 +1075,8 @@ TrainerSoldier5:
 	closetext
 	end
 Soldier5SeenText:
-    text "I am ADMIRAL"
-    line "DRAKE."
+    text "I am Admiral"
+    line "Drake."
 
     para "I have commanded"
     line "the Hoenn army"
@@ -1199,7 +1199,7 @@ WarZoneBlueScript:
 WarZoneBlueText:
     text "I've got through"
     line "to the national"
-    cont "LEAGUE."
+    cont "League."
 
     para "I will argue that"
     line "the CHAMPIONs"
@@ -1212,13 +1212,13 @@ WarZoneBlueText:
     cont "have to listen to."
 
     para "Try to keep"
-    line "WALLACE and his"
+    line "Wallace and his"
     cont "forces occupied"
     cont "for a short while."
 
     para "Prepare yourself"
     line "before fighting"
-    cont "WALLACE."
+    cont "Wallace."
 
     para "If you lose..."
 
@@ -1403,7 +1403,7 @@ JonathanSeenText:
 	done
 JonathanSeenWallaceBeatText:
 	text "So you beat"
-	line "WALLACE."
+	line "Wallace."
 	para "You are a real"
 	line "hero after all."
 	para "It's actually"
@@ -1421,7 +1421,7 @@ JonathanBeatenText:
     done
 JonathanWinsText:
     text "Better losing to"
-    next "me than WALLACE."
+    next "me than Wallace."
     done
 JonathanGiveAmbrosiaText:
     text "Here, my dad gave"

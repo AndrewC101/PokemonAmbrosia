@@ -219,12 +219,12 @@ GreenSeenText:
     para "I started my"
     line "training a few"
     cont "months before"
-    cont "RED and BLUE."
+    cont "Red and Blue."
 
-    para "BLUE was a"
+    para "Blue was a"
     line "Champion."
 
-    para "And RED..."
+    para "And Red..."
 
     para "He is beyond"
     line "any titles."
@@ -246,7 +246,7 @@ GreenWinsText:
     done
 GreenAfterBattleText:
     text "I don't know"
-    line "where RED has"
+    line "where Red has"
     cont "disappeared to."
 
     para "He is like you."
@@ -264,7 +264,7 @@ RematchTextGreen:
     line "friendly match?"
     done
 RematchRefuseTextGreen:
-    text "RED wouldn't"
+    text "Red wouldn't"
     line "refuse..."
     done
 MtMoonGreenWinAfterBattleText:

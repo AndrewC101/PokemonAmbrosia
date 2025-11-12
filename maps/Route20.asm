@@ -223,7 +223,7 @@ CinnabarGymSignText:
 	line "sign say?"
 
 	para "CINNABAR Gym"
-	line "Leader: BLAINE"
+	line "Leader: Blaine"
 	done
 	
 CinnabarGymBlockScript:

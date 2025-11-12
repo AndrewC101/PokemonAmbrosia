@@ -25,8 +25,8 @@ BlackthornDragonSpeechHouseGrannyText:
 
 	para "They reside now"
 	line "in a sacred place"
-	cont "called DRAGONS"
-	cont "DEN."
+	cont "called Dragons"
+	cont "Den."
 
 	para "There lives the"
 	line "great Dragon Lord."
@@ -53,7 +53,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	para "The pride of"
 	line "BLACKTHORN."
 
-	para "Champion LANCE."
+	para "Champion Lance."
 	done
 
 BlackthornDragonSpeechHouseDratiniText:

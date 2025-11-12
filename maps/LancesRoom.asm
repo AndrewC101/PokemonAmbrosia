@@ -263,7 +263,7 @@ LanceBattleIntroText:
 LanceBattleWinText:
 	text "It is done."
 	
-	para "I, LANCE the"
+	para "I, Lance the"
 	line "Dragon Champion."
 	
 	para "bestow upon"
@@ -314,7 +314,7 @@ LancesRoomElmText1:
 	line "it was terrifying!"
 
 	para "I've never seen"
-	line "two CHAMPIONS"
+	line "two Champions"
 	cont "battle before."
 
 	para "I am amazed at"
@@ -336,7 +336,7 @@ LancesRoomOakCongratulationsText:
 	cont "a trainer manage"
 	cont "to overcome the"
 	cont "full power of"
-	cont "Champion LANCE."
+	cont "Champion Lance."
 
 	para "But you did it"
 	line "<PLAYER>."
@@ -350,9 +350,9 @@ LancesRoomOakCongratulationsText:
 	para "I haven't seen"
 	line "one possess such"
 	cont "natural talents"
-	cont "since RED."
+	cont "since Red."
 
-	para "Well LANCE, it"
+	para "Well Lance, it"
 	line "seems you have"
 	cont "lost your title"
 	cont "as standing"
@@ -399,9 +399,9 @@ LancesRoomNoisyText:
 	line "excuse us"
 	cont "Professors."
 
-	para "Only CHAMPIONS are"
+	para "Only Champions are"
 	line "permitted to enter"
-	cont "the HALL OF FAME."
+	cont "the Hall of Fame."
 	done
 
 LancesRoomElmWellDoneText:

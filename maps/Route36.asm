@@ -517,7 +517,7 @@ FloriaText2:
 	cont "trainer that"
 	cont "has proved their"
 	cont "strength by"
-	cont "beating WHITNEY."
+	cont "beating Whitney."
 	done
 
 RockSmashGuyText1:
@@ -807,7 +807,7 @@ Route36CrystalText_Intro:
     para "I'm getting much"
     line "stronger."
 
-    para "I beat WHITNEY"
+    para "I beat Whitney"
     line "and she was tough."
 
     para "Have you got"

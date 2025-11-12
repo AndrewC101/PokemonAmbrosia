@@ -299,7 +299,7 @@ BoarderDouglasSeenText:
 	line "training and"
 	cont "meditating."
 
-	para "PRYCE would have"
+	para "Pryce would have"
 	line "frozen those"
 	cont "ROCKETS if he"
 	cont "knew."
@@ -341,7 +341,7 @@ SkierRoxanneBeatenText:
 	done
 
 SkierRoxanneAfterBattleText:
-	text "PRYCE is intense."
+	text "Pryce is intense."
 
 	para "He tells stories"
 	line "of disasters that"
@@ -355,7 +355,7 @@ SkierRoxanneAfterBattleText:
 	done
 
 MahoganyGymGuideText:
-	text "PRYCE has a lot"
+	text "Pryce has a lot"
 	line "of experience."
 
 	para "He used to climb"
@@ -372,7 +372,7 @@ MahoganyGymGuideText:
 	line "FIRE, FIGHTING"
 	cont "ROCK and STEEL."
 
-	para "But PRYCE has"
+	para "But Pryce has"
 	line "strong #mon"
 	cont "in spite of their"
 	cont "type."

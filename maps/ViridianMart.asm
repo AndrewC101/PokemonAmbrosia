@@ -21,7 +21,7 @@ ViridianMartCooltrainerMScript:
 	jumptextfaceplayer ViridianMartCooltrainerMText
 
 ViridianMartLassText:
-	text "BLUE worked very"
+	text "Blue worked very"
 	line "hard to protect us"
 	cont "during the"
 	cont "#RUS outbreak."

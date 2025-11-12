@@ -17,7 +17,7 @@ IrwinRocketTakeoverRumorText:
 
 IrwinPlainBadgeGossipText:
 	text "You defeated"
-	line "WHITNEY eh!?"
+	line "Whitney eh!?"
 	para "How'd that go?"
 	para "I tried to battle"
 	line "her but ran out of"
@@ -25,7 +25,7 @@ IrwinPlainBadgeGossipText:
 	done
 
 IrwinJasmineReturnedGossipText:
-	text "You defeated CHUCK"
+	text "You defeated Chuck"
 	line "eh!?"
 	para "How'd that go?"
 	para "I hear he's on"
@@ -46,7 +46,7 @@ IrwinRocketHideoutGossipText:
 	done
 
 IrwinRisingBadgeGossipText:
-	text "You defeated CLAIR"
+	text "You defeated Clair"
 	line "eh!?"
 	para "How'd that go?"
 	para "I met her once."
@@ -57,9 +57,9 @@ IrwinRisingBadgeGossipText:
 IrwinVermilionCityGossipText:
 IrwinEliteFourGossipText:
 	text "You defeated the"
-	line "ELITE FOUR eh!?"
+	line "Elite Four eh!?"
 	para "How'd that go?"
-	para "I heard LANCE"
+	para "I heard Lance"
 	line "cried like a baby"
 	cont "after you"
 	cont "crucified him."
@@ -90,7 +90,7 @@ IrwinSnorlaxGossipText:
 
 IrwinMtSilverGossipText:
 	text "You defeated"
-	line "WALLACE and saved"
+	line "Wallace and saved"
 	cont "the world eh!?"
 	para "How'd that go."
 	para "I heard you are"
@@ -112,7 +112,7 @@ IrwinCalledRightAwayText:
 	done
 
 IrwinFogBadgeGossipText:
-	text "You defeated MORTY"
+	text "You defeated Morty"
 	line "eh!?"
 	para "How'd that go?"
 	para "I went into the"
@@ -125,7 +125,7 @@ IrwinFogBadgeGossipText:
 	done
 
 IrwinMarshBadgeGossipText:
-	text "You defeated WILL"
+	text "You defeated Will"
 	line "eh!?"
 	para "How'd that go?"
 	para "I hear he is"

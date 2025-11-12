@@ -375,7 +375,7 @@ SilverCaveSilverIntroText:
 
     para "All of those"
     line "pretentious"
-    cont "CHAMPIONS who"
+    cont "Champions who"
     cont "did nothing to"
     cont "help."
 
@@ -394,7 +394,7 @@ SilverCaveCrystalIntroText:
     line "have saved us"
     cont "all you are here"
     cont "to fight some guy"
-    cont "called RED."
+    cont "called Red."
 
     para "To see if you are"
     line "the strongest"
@@ -579,7 +579,7 @@ SilverCaveSilverFriendshipText:
 	para "I guess I learnt"
 	line "not to be so angry"
 	cont "from you and"
-	cont "LANCE."
+	cont "Lance."
 
 	para "I certainly didn't"
 	line "learn it from"
@@ -651,7 +651,7 @@ SilverCaveSilverGoodbyeText:
     para "But not before"
     line "you waltz in there"
     cont "and crush that"
-    cont "RED the same way"
+    cont "Red the same way"
     cont "you have done with"
     cont "me everytime we"
     cont "have fought."
@@ -661,7 +661,7 @@ SilverCaveSilverGoodbyeText:
     done
 
 SilverCaveCrystalGoodbyeText:
-    text "RED won't stand"
+    text "Red won't stand"
     line "a chance against"
     cont "you."
 
@@ -956,7 +956,7 @@ RolePlay6PrizeText:
 HoenWarIntroText:
     text "You are the"
     line "Champion that"
-    cont "defeated WALLACE"
+    cont "defeated Wallace"
     cont "and saved us all."
 
     para "It is a story"
@@ -991,7 +991,7 @@ HoenWarCh1HeroText:
 
     para "Your mission is"
     line "to assassinate"
-    cont "WALLACE."
+    cont "Wallace."
 
     para "You are KOGA."
 
@@ -1034,8 +1034,8 @@ HoenWarCh3HeroText:
     text "This is no mere"
     line "soldier."
 
-    para "He is ADMIRAL"
-    line "DRAKE."
+    para "He is Admiral"
+    line "Drake."
 
     para "His LATIOS readies"
     line "a final attack."
@@ -1048,7 +1048,7 @@ HoenWarCh3HeroText:
 
     para "You cast one last"
     line "thought to your"
-    cont "daughter JANINE."
+    cont "daughter Janine."
 
     para "...."
 
@@ -1060,7 +1060,7 @@ HoenWarCh3HeroText:
 
     para "Hoenn invasion."
 
-    para "BLAINE has been"
+    para "Blaine has been"
     line "defeated."
 
     para "You will finally"
@@ -1072,7 +1072,7 @@ HoenWarCh3HeroText:
     para "You are the Gym"
     line "Leader of FUCHSIA."
 
-    para "JANINE."
+    para "Janine."
 
     para "You see something."
 
@@ -1114,7 +1114,7 @@ HoenWarCh3HeroText:
     line "its terrifying"
     cont "head."
 
-    para "Is that WALLACE!"
+    para "Is that Wallace!"
 
     para "Two more giant"
     line "#mon take their"
@@ -1139,7 +1139,7 @@ HoenWarActionText:
     done
 
 HoenWarTakeActionText:
-    text "JANINE is swatted"
+    text "Janine is swatted"
     line "down with ease."
 
     para "An old woman"
@@ -1168,7 +1168,7 @@ HoenWarTalkText:
 
     para "You kneel low"
     line "and proclaim"
-    cont "WALLACE as your"
+    cont "Wallace as your"
     cont "leader."
 
     para "And ask him please"
@@ -1176,7 +1176,7 @@ HoenWarTalkText:
     cont "your grand-"
     cont "daughter."
 
-    para "WALLACE says he"
+    para "Wallace says he"
     line "will show everyone"
     cont "how merciful he"
     cont "can be."
@@ -1192,7 +1192,7 @@ HoenWarTalkText:
     line "no more than"
     cont "scorched earth"
     cont "where there was"
-    cont "once JANINE."
+    cont "once Janine."
 
     para "The huge red"
     line "#mon now turns"
@@ -1212,13 +1212,13 @@ HoenWarTalkText:
 
 HoenWarAttackText:
     text "You rush at"
-    line "WALLACE."
+    line "Wallace."
 
     para "You reveal a"
     line "small knife you"
     cont "have concealed."
 
-    para "WALLACE sees you"
+    para "Wallace sees you"
     line "and is unafraid."
 
     para "You crash to the"
@@ -1229,10 +1229,10 @@ HoenWarAttackText:
     cont "your legs and"
     cont "tore them off."
 
-    para "JANINE rushes"
+    para "Janine rushes"
     line "to you."
 
-    para "She begs WALLACE"
+    para "She begs Wallace"
     line "to spare you."
 
     para "You see the"
@@ -1353,7 +1353,7 @@ HoenWarCh3VillainText:
     cont "power in the"
     cont "absence of Steven."
 
-    para "You are WALLACE."
+    para "You are Wallace."
 
     para "And today is the"
     line "day you attack"
@@ -1473,7 +1473,7 @@ HoenWarCh4VillainText:
     done
 
 HoenWarRolePlayEndText:
-    text "WALLACE pleas"
+    text "Wallace pleas"
     line "for mercy."
 
     para "ARCEUS disappears."

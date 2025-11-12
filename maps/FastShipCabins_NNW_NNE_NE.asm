@@ -177,11 +177,11 @@ CooltrainerfCarolAfterBattleText:
 	done
 
 PokemaniacEthanSeenText:
-	text "ERIKA."
+	text "Erika."
 
 	para "I'm going to"
 	line "CELADON to find"
-	cont "Gym Leader ERIKA."
+	cont "Gym Leader Erika."
 
 	para "I will show her"
 	line "I am the perfect"
@@ -192,7 +192,7 @@ PokemaniacEthanSeenText:
 	done
 
 PokemaniacEthanBeatenText:
-	text "ERIKA!!"
+	text "Erika!!"
 	done
 
 PokemaniacEthanAfterBattleText:
@@ -281,7 +281,7 @@ GentlemanEdwardSeenText:
 
 	para "The business is"
 	line "booming thanks to"
-	cont "dear old WALLACE."
+	cont "dear old Wallace."
 
 	para "Kanto are willing"
 	line "to take on huge"

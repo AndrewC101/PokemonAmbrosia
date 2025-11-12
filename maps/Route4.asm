@@ -152,7 +152,7 @@ PicnickerHopeBeatenText:
 
 PicnickerHopeAfterBattleText:
 	text "GREEN is friends"
-	line "with BLUE and RED!"
+	line "with Blue and Red!"
 	para "I wish she would"
 	line "be friends with me"
 	cont "too."

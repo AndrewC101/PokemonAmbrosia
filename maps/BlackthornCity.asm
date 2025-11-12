@@ -198,8 +198,8 @@ Text_ClairIsOut:
 	line "very strong."
 
 	para "The Gym Leader"
-	line "CLAIR is in the"
-	cont "DRAGONS DEN."
+	line "Clair is in the"
+	cont "Dragons Den."
 
 	para "She is a very"
 	line "busy woman."
@@ -211,7 +211,7 @@ Text_ClairIsOut:
 	done
 
 Text_ClairIsIn:
-	text "CLAIR awaits"
+	text "Clair awaits"
 	line "your challenge."
 
 	para "Not that a"
@@ -222,7 +222,7 @@ Text_ClairIsIn:
 
 Text_ClairIsBeaten:
 	text "You defeated"
-	line "CLAIR?"
+	line "Clair?"
 
 	para "How can that be!"
 
@@ -230,7 +230,7 @@ Text_ClairIsBeaten:
 	line "of her losing to"
 
 	para "anyone other than"
-	line "LANCE."
+	line "Lance."
 	done
 
 BlackthornGrampsRefusesEntryText:
@@ -249,7 +249,7 @@ BlackthornGrampsRefusesEntryText:
 	done
 
 BlackthornGrampsGrantsEntryText:
-	text "Leader CLAIR has"
+	text "Leader Clair has"
 	line "permitted your"
 	cont "entry."
 
@@ -305,7 +305,7 @@ BlackthornYoungsterText:
 	text "Once I was"
 	line "standing right"
 	cont "here and I saw"
-	cont "LANCE as he"
+	cont "Lance as he"
 	cont "was visiting."
 
 	para "He is from this"
@@ -367,13 +367,13 @@ BlackthornCooltrainerF2Text:
 	cont "dedicate our"
 	cont "lives to the"
 	cont "great Dragon Lord"
-	cont "in DRAGONS DEN."
+	cont "in Dragons Den."
 
 	para "Of course only"
 	line "a handful of"
 	cont "people are able"
 	cont "to actually enter"
-	cont "DRAGONS DEN."
+	cont "Dragons Den."
 	done
 
 BlackthornCitySignText:
@@ -385,7 +385,7 @@ BlackthornCitySignText:
 BlackthornGymSignText:
 	text "BLACKTHORN CITY"
 	line "#mon Gym"
-	cont "Leader: CLAIR"
+	cont "Leader: Clair"
 
 	para "The Dragon Master."
 	done

@@ -295,7 +295,7 @@ Route40PokefanMText:
 	cont "facility."
 	para "It has two"
 	line "difficulties that"
-	cont "only CHAMPIONS can"
+	cont "only Champions can"
 	cont "enter."
 	para "I hear the reward"
 	line "for one of them is"

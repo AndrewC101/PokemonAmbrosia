@@ -20,7 +20,7 @@ ReenaLostAMonText:
 	text "ALDER doesn't have"
 	line "a powerful ace"
 	cont "#mon like"
-	cont "other CHAMPIONS."
+	cont "other Champions."
 	para "I guess that's why"
 	line "he's the least"
 	cont "popular Champion"

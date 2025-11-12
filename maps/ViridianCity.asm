@@ -140,25 +140,25 @@ ViridianCityGrampsNearGymText:
 	line "here is very"
 	cont "busy trying to"
 	cont "do the jobs the"
-	cont "#mon LEAGUE"
+	cont "#mon League"
 	cont "should be doing!"
 
-	para "BLUE is currently"
+	para "Blue is currently"
 	line "away visiting"
 	cont "CINNABAR."
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:
-	text "Champion BLUE"
+	text "Champion Blue"
 	line "is ready to take"
 	cont "challengers again."
 
-	para "BLUE is stronger"
+	para "Blue is stronger"
 	line "than any other"
 	cont "Gym Leader."
 
 	para "Stronger even"
-	line "than CHAMPIONS."
+	line "than Champions."
 
 	para "He is the peoples"
 	line "Champion!"
@@ -227,7 +227,7 @@ ViridianGymSignText:
 	line "#mon Gym"
 	cont "Leader: …"
 
-	para "BLUE!"
+	para "Blue!"
 
 	para "THE PEOPLES"
 	line "Champion!"

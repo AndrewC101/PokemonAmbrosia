@@ -171,7 +171,7 @@ FirebreatherBillSeenText:
 	para "I will become the"
 	line "greatest ROCK"
 	cont "trainer, like"
-	cont "BROCK."
+	cont "Brock."
 	done
 
 FirebreatherBillBeatenText:

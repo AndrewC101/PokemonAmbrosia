@@ -164,7 +164,7 @@ Route41HiddenMaxEther:
 
 SwimmermCharlieSeenText:
 	text "Have you heard"
-	line "of MISTY?"
+	line "of Misty?"
 
 	para "She is probably"
 	line "the strongest"
@@ -177,7 +177,7 @@ SwimmermCharlieSeenText:
 
 SwimmermCharlieBeatenText:
 	text "Avenge me"
-	line "MISTY!"
+	line "Misty!"
 	done
 
 SwimmermCharlieAfterBattleText:
@@ -226,7 +226,7 @@ SwimmermBerkeSeenText:
 	para "Wherever here"
 	line "is..."
 
-	para "I'm CAPTAIN"
+	para "I'm Captain"
 	line "JACK SPARROW."
 
 	para "I would bet"

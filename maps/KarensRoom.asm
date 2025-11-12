@@ -81,8 +81,8 @@ KarensRoom_EnterMovement:
 	step_end
 
 KarenScript_KarenBeforeText:
-	text "I am KAREN of"
-	line "the ELITE FOUR."
+	text "I am Karen of"
+	line "the Elite Four."
 
 	para "Darkness is the"
 	line "great equaliser."

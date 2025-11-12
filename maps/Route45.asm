@@ -522,7 +522,7 @@ CooltrainerfKellyAfterBattleText:
 	cont "appeared and"
 	cont "she was fine."
 
-	para "I think KAREN"
+	para "I think Karen"
 	line "was her name."
 	done
 

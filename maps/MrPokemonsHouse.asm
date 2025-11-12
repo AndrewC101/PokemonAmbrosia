@@ -209,7 +209,7 @@ MrPokemonIntroText3:
 	line "dangerous to the"
 	cont "Hoenn admiral."
 
-	para "ADMIRAL DRAKE."
+	para "Admiral Drake."
 	done
 
 MrPokemonIntroText4:

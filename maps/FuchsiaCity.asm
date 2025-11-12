@@ -198,7 +198,7 @@ FuchsiaCityYoungsterText_Saved:
 
 InvadedFuchsiaCityYoungsterText:
 	text "I saw..."
-	para "WALLACE..."
+	para "Wallace..."
 	para "His #mon..."
 	para "It's game over"
 	line "man!"
@@ -237,10 +237,10 @@ FuchsiaCityPokefanMText_Saved:
 	done
 
 InvadedFuchsiaCityPokefanMText:
-	text "JANINE tried to"
+	text "Janine tried to"
 	line "defend us."
 
-	para "WALLACE himself"
+	para "Wallace himself"
 	line "insisted on"
 	cont "fighting her."
 
@@ -270,7 +270,7 @@ FuchsiaCityTeacherText:
 FuchsiaCityTeacherText_Saved:
 	text "You beat him!"
 
-	para "You beat WALLACE"
+	para "You beat Wallace"
 	line "and his god like"
 	cont "#mon!"
 
@@ -286,11 +286,11 @@ FuchsiaCityTeacherText_Saved:
 	para "Thank you <PLAYER>."
 
 	para "The greatest of"
-	line "CHAMPIONS!"
+	line "Champions!"
 	done
 
 InvadedFuchsiaCityTeacherText:
-	text "WALLACE is in"
+	text "Wallace is in"
 	line "the training"
 	cont "grounds with his"
 	cont "troops."
@@ -326,7 +326,7 @@ FuchsiaCitySignText:
 FuchsiaGymSignText:
 	text "FUCHSIA CITY"
 	line "#mon Gym"
-	cont "Leader: JANINE"
+	cont "Leader: Janine"
 
 	para "The Poisonous"
 	line "Ninja Master"
@@ -416,7 +416,7 @@ BlockingSoldier1Text:
 
     para "Hahaha!"
 
-    para "WALLACE himself"
+    para "Wallace himself"
     line "showed her the"
     cont "power of Hoenn."
 
@@ -436,7 +436,7 @@ BlockingSoldier1Text:
     done
 
 BlockingSoldier2Text:
-    text "I saw the EMPEROR"
+    text "I saw the Emperor"
     line "battle wielding"
     cont "the great forces"
     cont "of Hoenn."
@@ -445,7 +445,7 @@ BlockingSoldier2Text:
     line "watching the FIRE"
     cont "Gym Leader on"
     cont "his knees before"
-    cont "our EMPEROR."
+    cont "our Emperor."
 
     para "We will set up"
     line "our base in the"
@@ -606,18 +606,18 @@ FuchsiaSelfText3:
 
     para "They are killers."
 
-    para "WALLACE can"
-    line "kill CHAMPIONS."
+    para "Wallace can"
+    line "kill Champions."
 
     para "Just like Steven!"
     done
 
 FuchsiaSelfText4:
-    text "WALLACE is in"
+    text "Wallace is in"
     line "there with his"
     cont "strongest troops."
 
-    para "No other CHAMPIONS"
+    para "No other Champions"
     line "are here."
 
     para "They know it is"
@@ -661,8 +661,8 @@ FuchsiaSelfConfidenceText2:
     done
 
 FuchsiaSelfDefeatText2:
-    text "WALLACE kills"
-    line "CHAMPIONS."
+    text "Wallace kills"
+    line "Champions."
 
     para "We don't stand a"
     line "chance!"

@@ -75,7 +75,7 @@ DaisyHelloText:
 	cont "VIRIDIAN."
 
 	para "People call him"
-	line "Champion BLUE."
+	line "Champion Blue."
 
 	para "Even though he"
 	line "isn't technically"

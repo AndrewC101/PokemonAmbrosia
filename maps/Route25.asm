@@ -249,7 +249,7 @@ Route25MistyDateText:
 	para "Oh, you want a"
 	line "Gym battle."
 
-	para "Yes, I am MISTY"
+	para "Yes, I am Misty"
 	line "the Gym Leader."
 
 	para "I'll be all too"

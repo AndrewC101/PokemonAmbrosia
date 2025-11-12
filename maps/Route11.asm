@@ -267,7 +267,7 @@ PsychicFidelBeatenText:
 	done
 
 PsychicFidelAfterBattleText:
-	text "SABRINA could pick"
+	text "Sabrina could pick"
 	line "that SNORLAX up"
 	cont "and flip it around"
 	cont "like a pancake"

@@ -93,7 +93,7 @@ WallaceBeatenRadioPH:
 	para "The new Champion"
 	line "<PLAYER> from"
 	cont "NEW BARK TOWN"
-	cont "defeated WALLACE"
+	cont "defeated Wallace"
 	cont "and has saved us"
 	cont "all!"
 	cont "Rejoice!"
@@ -156,7 +156,7 @@ PlayersRadioText2:
 	done
 
 PlayersRadioText3:
-	text "EMPEROR WALLACE"
+	text "Emperor Wallace"
 	line "has taken control"
 	cont "after a failed"
 	cont "coup."

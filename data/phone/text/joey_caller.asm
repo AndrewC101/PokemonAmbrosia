@@ -17,7 +17,7 @@ JoeyDefeatedMonText:
 	cont "STARLY."
 	para "This is the first"
 	line "step!"
-	para "Soon the CHAMPIONS"
+	para "Soon the Champions"
 	line "will be in that"
 	cont "kids position,"
 	cont "beneath our feet."

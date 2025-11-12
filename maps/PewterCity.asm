@@ -69,7 +69,7 @@ PewterCityCooltrainerFText:
 	para "We have slowly"
 	line "tried to rebuild."
 
-	para "BROCK spends his"
+	para "Brock spends his"
 	line "whole Gym Leader"
 	cont "salary helping"
 	cont "everyone."
@@ -113,7 +113,7 @@ PewterCityGrampsText:
 
 	para "...."
 
-	para "BROCK comes to"
+	para "Brock comes to"
 	line "see me everyday."
 
 	para "He's such a good"
@@ -132,7 +132,7 @@ PewterCitySignText:
 PewterGymSignText:
 	text "PEWTER CITY"
 	line "#mon Gym"
-	cont "Leader: BROCK"
+	cont "Leader: Brock"
 
 	para "The Rock Solid"
 	line "#mon Trainer"
@@ -215,18 +215,18 @@ MuseumBlockText:
 
     para "This place was"
     line "sealed off by"
-    cont "Champion BLUE."
+    cont "Champion Blue."
 
     para "Only those who"
     line "have defeated"
-    cont "Gym Leader BROCK"
+    cont "Gym Leader Brock"
     cont "may enter."
     done
 
 MuseumOpenText:
 	text "Having proven your"
 	line "strength against"
-	cont "BROCK, you may"
+	cont "Brock, you may"
 	cont "pass."
 	para "There is"
 	line "something..."
@@ -234,7 +234,7 @@ MuseumOpenText:
 	line "deep in the lab."
 	para "Only trainers on"
 	line "the level of"
-	cont "Champion BLUE can"
+	cont "Champion Blue can"
 	cont "hope to conquer"
 	cont "it."
 	done

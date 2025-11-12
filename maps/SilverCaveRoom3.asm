@@ -244,7 +244,7 @@ AshWinWinText:
 
 AshLeavesText:
 	text "You go ahead"
-	line "and fight RED."
+	line "and fight Red."
 
 	para "If you beat him"
 	line "you will be the"
@@ -337,7 +337,7 @@ Movement_AshToPlayer:
      step_end
 
 AshFightText:
-    text "Hey I'm ASH"
+    text "Hey I'm Ash"
     line "from PALLET town."
 
     para "Though not the"
@@ -354,7 +354,7 @@ AshFightText:
     para "Did he send you"
     line "too?"
 
-    para "This guy RED seems"
+    para "This guy Red seems"
     line "tough."
 
     para "Whoever beats him"
@@ -369,7 +369,7 @@ AshFightText:
 
     para "How about we have"
     line "a battle and the"
-    cont "winner faces RED."
+    cont "winner faces Red."
     done
 
 AshBeatenText:
@@ -377,7 +377,7 @@ AshBeatenText:
     line "really strong!"
 
     para "Go on and fight"
-    line "RED."
+    line "Red."
 
     para "This is a battle"
     line "I can't wait to"

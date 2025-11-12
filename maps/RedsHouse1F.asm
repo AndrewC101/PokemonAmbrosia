@@ -101,7 +101,7 @@ RedsMomText2:
 	line "you can."
 
 	para "If you ever see"
-	line "my son RED."
+	line "my son Red."
 
 	para "Tell him I'm"
 	line "thinking of him."

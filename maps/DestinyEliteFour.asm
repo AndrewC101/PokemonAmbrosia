@@ -364,7 +364,7 @@ MasterGiovanniAfterBattleText:
 	para "It really is never"
 	line "too late."
 	para "Now go face the"
-	line "HALL OF CHAMPIONS."
+	line "Hall of Champions."
 	done
 
 MasterGiovanniLoseAfterBattleText:

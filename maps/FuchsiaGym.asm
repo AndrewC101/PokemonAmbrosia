@@ -331,7 +331,7 @@ JanineText_ApplyMyself:
 LassAliceBeforeText:
 	text "Fufufu!"
 
-	para "I'm JANINE, the"
+	para "I'm Janine, the"
 	line "Gym Leader!"
 
 	para "No, I'm not!"
@@ -394,7 +394,7 @@ PicnickerCindyAfterText:
 
 	para "I'm nowhere near"
 	line "as strong as"
-	cont "JANINE!"
+	cont "Janine!"
 	done
 
 CamperBarryBeforeText:
@@ -428,7 +428,7 @@ CamperBarryAfterText:
 FuchsiaGymGuideText:
 	text "This Gym is full"
 	line "of people dressed"
-	cont "as JANINE the"
+	cont "as Janine the"
 	cont "Leader."
 
 	para "You will just"

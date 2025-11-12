@@ -89,7 +89,7 @@ ComputerTwoText:
 	text "I sent my students"
 	line "to make an"
 	cont "offering of SACRED"
-	cont "ASH days ago."
+	cont "Ash days ago."
 	para "They have not"
 	line "returned."
 	para "I will go myself"

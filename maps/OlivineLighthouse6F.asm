@@ -161,7 +161,7 @@ OlivineLighthouseJasmineLeavesRightMovement:
 
 JasmineCianwoodPharmacyText:
 	text "Hello, I am"
-	line "JASMINE."
+	line "Jasmine."
 
 	para "This AMPHAROS"
 	line "always kept the"
@@ -209,7 +209,7 @@ JasmineCureAmphyText:
 PlayerHandedSecretpotionText:
 	text "<PLAYER> handed the"
 	line "SECRETPOTION to"
-	cont "JASMINE."
+	cont "Jasmine."
 	done
 
 JasmineDontBeOffendedText:

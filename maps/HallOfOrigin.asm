@@ -597,7 +597,7 @@ BeatOthersFirstText:
     text "Hello <PLAYER>."
 
     para "This is the"
-    line "HALL OF ORIGIN."
+    line "Hall of Origin."
 
     para "ARCEUS waits to"
     line "present itself"
@@ -611,7 +611,7 @@ BeatOthersFirstText:
 
     para "Then if you"
     line "can defeat"
-    cont "BLUE I will"
+    cont "Blue I will"
     cont "test you."
 
     para "Should you pass"
@@ -819,7 +819,7 @@ MasterBlueAfterBattleText:
 
     para "Smell ya later!"
 
-    para "Defeat RED!"
+    para "Defeat Red!"
 
     para "Then conquer"
     line "ARCEUS."
@@ -850,7 +850,7 @@ BeatOthersFirstBlueText:
     para "Then I will"
     line "test you."
 
-    para "RED won't even"
+    para "Red won't even"
     line "get the chance"
     cont "to fight you."
     done
@@ -900,7 +900,7 @@ MasterGreenScript:
 
 GreenWinAfterBattleText:
     text "You remind me so"
-    line "much of RED."
+    line "much of Red."
 
     para "Except I can't"
     line "beat him."
@@ -948,8 +948,8 @@ MasterGreenAfterBattleText:
 
     para "I want you to"
     line "march in there"
-    cont "and beat RED"
-    cont "and BLUE!"
+    cont "and beat Red"
+    cont "and Blue!"
 
     para "Let them know"
     line "the endless"
@@ -1986,7 +1986,7 @@ MasterJonathanSeenText:
 	text "Good to see you've"
 	line "made it!"
 	para "You must have"
-	line "beaten ADAM."
+	line "beaten Adam."
 	para "I'm sure he took"
 	line "it well."
 	para "It's quite nice"
@@ -2003,7 +2003,7 @@ MasterJonathanOfferFightText:
     done
 MasterJonathanBeatenText:
     text "I can see how"
-    line "you beat ADAM."
+    line "you beat Adam."
     done
 MasterJonathanWinsText:
     text "Don't worry about"

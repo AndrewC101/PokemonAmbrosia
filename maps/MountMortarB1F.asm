@@ -137,10 +137,10 @@ MountMortarB1FKiyoIntroText:
 	cont "down."
 
 	para "Anger toward"
-	line "SABRINA."
+	line "Sabrina."
 
 	para "Anger toward"
-	line "GIOVANNI."
+	line "Giovanni."
 
 	para "Anger toward"
 	line "myself."

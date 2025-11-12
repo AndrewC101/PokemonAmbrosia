@@ -25,7 +25,7 @@ NurseNiteText:
 	done
 
 NurseChampText:
-	text "Ah CHAMPION"
+	text "Ah Champion"
 	line "<PLAYER> it is an"
 	cont "honor."
 	para "Please let me heal"

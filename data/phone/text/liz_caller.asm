@@ -109,7 +109,7 @@ LizBugCatchingContestGossipText:
 	line "DIANTHA?"
 	para "She is a movie"
 	line "star and a"
-	cont "CHAMPION and she"
+	cont "Champion and she"
 	cont "is beautiful!"
 	para "Do you think I"
 	line "might be beautiful"

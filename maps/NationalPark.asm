@@ -484,7 +484,7 @@ NationalParkYoungster2Text:
 	line "were more people"
 	cont "like LEON"
 
-	para "CHAMPION LEON."
+	para "Champion LEON."
 
 	para "The best in the"
 	line "world!"
@@ -867,7 +867,7 @@ NPLeonWinAfterBattleText:
 NPLeonSeenText:
     text "Hey there kid!"
 
-    para "I'm CHAMPION LEON."
+    para "I'm Champion LEON."
 
     para "You may have"
     line "heard of me."
@@ -878,7 +878,7 @@ NPLeonSeenText:
 
     para "I am stronger"
     line "than any other"
-    cont "CHAMPION."
+    cont "Champion."
 
     para "That makes me"
     line "the strongest"
@@ -934,7 +934,7 @@ NPLeonPreFightText:
     para "You know what"
     line "time it is..."
 
-    para "It's CHAMPION"
+    para "It's Champion"
     line "time!"
     done
 NPLeonAfterBattleText:

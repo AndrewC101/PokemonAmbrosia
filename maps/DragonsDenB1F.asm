@@ -307,7 +307,7 @@ RayquazaWorthyText:
 	para "RRRGAAAHHH!!!"
 
 	para "Come young"
-	line "DRAGON CHAMPION."
+	line "DRAGON Champion."
 
 	para "Have at thee!"
 	done
@@ -514,7 +514,7 @@ ClairText_WhatsTheMatterDragonDen:
 
 	para "If you defeat"
 	line "them you become"
-	cont "a CHAMPION."
+	cont "a Champion."
 
 	para "To get to them"
 	line "you must travel"
@@ -522,7 +522,7 @@ ClairText_WhatsTheMatterDragonDen:
 	cont "BARK TOWN."
 
 	para "If you become"
-	line "a CHAMPION many"
+	line "a Champion many"
 	cont "things will"
 	cont "change."
 

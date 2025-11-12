@@ -358,7 +358,7 @@ Text_BattleTowerIntroduction_2:
 	cont "pick from, with"
 	cont "the top two only"
 	cont "available to"
-	cont "CHAMPION level"
+	cont "Champion level"
 	cont "trainers."
 	para "If you want a more"
 	line "rigorous test of"

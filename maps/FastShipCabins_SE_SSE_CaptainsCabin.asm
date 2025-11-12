@@ -300,7 +300,7 @@ SSAquaEntertainedGranddaughterText:
 	line "are as talented"
 	cont "as I have heard."
 
-	para "CHAMPION <PLAYER>."
+	para "Champion <PLAYER>."
 
 	para "I am in fact a"
 	line "secret agent and"
@@ -404,7 +404,7 @@ SSAquaGrandpaHaveThisSilverWingText:
 
 SSAquaGrandpaTravellingText:
 	text "Well done"
-	line "CHAMPION."
+	line "Champion."
 
 	para "I am satisfied"
 	line "the captain hasn't"
@@ -642,7 +642,7 @@ SupernerdShawnBeatenText:
 
 SupernerdShawnAfterBattleText:
 	text "I hope that new"
-	line "JOHTO CHAMPION"
+	line "JOHTO Champion"
 	cont "doesn't show up"
 	cont "to spoil my new"
 	cont "business."

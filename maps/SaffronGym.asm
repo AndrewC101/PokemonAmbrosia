@@ -154,7 +154,7 @@ SabrinaIntroText:
 
 	para "But I accepted."
 
-	para "CHAMPION <PLAYER>."
+	para "Champion <PLAYER>."
 
 	para "As SAFFRON CITY"
 	line "GYM LEADER I do"

@@ -34,7 +34,7 @@ Route7SaffronGuardPowerPlantText:
 
 Route7SaffronGuardSeriousText:
 	text "You are the HOENN"
-	line "CHAMPION that"
+	line "Champion that"
 	cont "defeated the whole"
 	cont "HOENN army!"
 

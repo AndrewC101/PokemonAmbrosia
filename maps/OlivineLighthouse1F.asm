@@ -29,7 +29,7 @@ OlivineLighthouse1FSailorText:
 
 OlivineLighthouse1FPokefanFText:
 	text "150 years ago"
-	line "the CHAMPION of"
+	line "the Champion of"
 	cont "JOHTO was from"
 	cont "OLIVINE."
 

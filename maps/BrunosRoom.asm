@@ -114,7 +114,7 @@ BrunoScript_BrunoBeatenText:
 BrunoScript_BrunoDefeatText:
 	text "You have the"
 	line "strength to be"
-	cont "a CHAMPION."
+	cont "a Champion."
 
 	para "Take that"
 	line "strength and"

@@ -222,7 +222,7 @@ GreenSeenText:
     cont "RED and BLUE."
 
     para "BLUE was a"
-    line "CHAMPION."
+    line "Champion."
 
     para "And RED..."
 

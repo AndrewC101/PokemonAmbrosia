@@ -40,7 +40,7 @@ GoldenrodPPSpeechHouseLassText:
 	line "of DIANTHA?"
 
 	para "She is a"
-	line "CHAMPION."
+	line "Champion."
 
 	para "But she is also"
 	line "a famous actress."

@@ -14,12 +14,12 @@ ReenaGreetText:
 ReenaGreetDayText:
 ReenaGreetNiteText:
 	text "Don't keep a"
-	line "future CHAMPION"
+	line "future Champion"
 	cont "waiting!"
 	done
 
 ReenaGenericText:
-	text "Every CHAMPION has"
+	text "Every Champion has"
 	line "a super powerful"
 	cont "ace #mon."
 	para "My MILTANK will"

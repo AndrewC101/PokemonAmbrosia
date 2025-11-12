@@ -124,7 +124,7 @@ BillImCountingOnYouText:
 	text "Excellent!"
 
 	para "You will be a"
-	line "true CHAMPION"
+	line "true Champion"
 	cont "one day!"
 	done
 

@@ -198,7 +198,7 @@ ClairIntroText:
 
 	para "Show me your"
 	line "hunger to be a"
-	cont "CHAMPION!"
+	cont "Champion!"
 	done
 
 ClairWinText:
@@ -228,7 +228,7 @@ ClairText_GoToDragonsDen:
 
 	para "It takes more"
 	line "than strength to"
-	cont "be a CHAMPION."
+	cont "be a Champion."
 
 	para "You are not"
 	line "ready."
@@ -300,7 +300,7 @@ BlackthornGymClairText_BagFull:
 BlackthornGymClairText_League:
 	text "You have proven"
 	line "yourself as a"
-	cont "CHAMPION and a"
+	cont "Champion and a"
 	cont "hero."
 
 	para "It enrages me"

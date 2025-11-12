@@ -397,7 +397,7 @@ AshFinalText:
 
     para "The greatest of"
     line "MASTERS is called"
-    cont "the MONARCH."
+    cont "the Monarch."
 
     para "Maybe that could"
     line "be you!"
@@ -436,7 +436,7 @@ PokemonMasterQuestText:
 
     para "The strongest of"
     line "them is called the"
-    cont "MONARCH."
+    cont "Monarch."
 
     para "It is found above"
     line "the MT SILVER"

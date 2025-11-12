@@ -395,7 +395,7 @@ BeautyVictoriaSeenText:
 
 	para "She is a beautiful"
 	line "actress and a"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "She is truly"
 	line "Fetch."

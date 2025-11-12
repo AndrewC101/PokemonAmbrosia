@@ -17,7 +17,7 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; BRUNO
 	dn 15, 15, 15, 15 ; KAREN
 	dn 15, 15, 15, 15 ; ADAM
-	dn 15, 15, 15, 14 ; CHAMPION
+	dn 15, 15, 15, 14 ; Champion
 	dn 15, 15, 15, 15 ; BROCK
 	dn 15, 15, 15, 15 ; MISTY
 	dn 15, 15, 15, 15 ; LT_SURGE

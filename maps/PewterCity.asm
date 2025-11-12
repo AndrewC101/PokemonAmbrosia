@@ -215,7 +215,7 @@ MuseumBlockText:
 
     para "This place was"
     line "sealed off by"
-    cont "CHAMPION BLUE."
+    cont "Champion BLUE."
 
     para "Only those who"
     line "have defeated"
@@ -234,7 +234,7 @@ MuseumOpenText:
 	line "deep in the lab."
 	para "Only trainers on"
 	line "the level of"
-	cont "CHAMPION BLUE can"
+	cont "Champion BLUE can"
 	cont "hope to conquer"
 	cont "it."
 	done
@@ -244,7 +244,7 @@ PewterGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done

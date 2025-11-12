@@ -134,7 +134,7 @@ KarenScript_KarenDefeatText:
 
 	para "An essential"
 	line "quality of a"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "Now march forward"
 	line "without fear."

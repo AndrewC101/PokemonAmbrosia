@@ -167,7 +167,7 @@ CeruleanCityCooltrainerMText2:
 	text "You're the hero"
 	line "that saved KANTO!"
 
-	para "CHAMPION <PLAYER>!"
+	para "Champion <PLAYER>!"
 
 	para "I've heard you"
 	line "are the strongest"
@@ -332,7 +332,7 @@ CeruleanGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done

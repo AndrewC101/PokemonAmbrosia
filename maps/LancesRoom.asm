@@ -226,7 +226,7 @@ LanceBattleIntroText:
 	
 	para "You exemplify"
 	line "the qualities of"
-	cont "CHAMPION."
+	cont "Champion."
 	
 	para "Will"
 	
@@ -246,13 +246,13 @@ LanceBattleIntroText:
 	
 	para "You must possess"
 	line "the heart of a"
-	cont "CHAMPION."
+	cont "Champion."
 	
 	para "I shall not yield"
 	line "my expectations."
 	
 	para "If you befit the"
-	line "mantle CHAMPION."
+	line "mantle Champion."
 	
 	para "You must make your"
 	line "claim decisively."
@@ -264,13 +264,13 @@ LanceBattleWinText:
 	text "It is done."
 	
 	para "I, LANCE the"
-	line "DRAGON CHAMPION."
+	line "DRAGON Champion."
 	
 	para "bestow upon"
 	line "you <PLAYER>."
 	
 	para "The title of"
-	line "JOHTO CHAMPION!"
+	line "JOHTO Champion!"
 	done
 
 LanceBattleAfterText:
@@ -285,13 +285,13 @@ LanceBattleAfterText:
 	cont "by your rightful"
 	cont "title."
 	
-	para "CHAMPION <PLAYER>."
+	para "Champion <PLAYER>."
 	
-	para "The first CHAMPION"
+	para "The first Champion"
 	line "of JOHTO."
 	
 	para "The crown of"
-	line "CHAMPION is a"
+	line "Champion is a"
 	cont "heavy one."
 	
 	para "You alone shall"
@@ -336,7 +336,7 @@ LancesRoomOakCongratulationsText:
 	cont "a trainer manage"
 	cont "to overcome the"
 	cont "full power of"
-	cont "CHAMPION LANCE."
+	cont "Champion LANCE."
 
 	para "But you did it"
 	line "<PLAYER>."
@@ -345,7 +345,7 @@ LancesRoomOakCongratulationsText:
 	line "battle it quickly"
 	cont "became clear you"
 	cont "are a true"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "I haven't seen"
 	line "one possess such"
@@ -356,7 +356,7 @@ LancesRoomOakCongratulationsText:
 	line "seems you have"
 	cont "lost your title"
 	cont "as standing"
-	cont "CHAMPION of"
+	cont "Champion of"
 	cont "JOHTO."
 	done
 

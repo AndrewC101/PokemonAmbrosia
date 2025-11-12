@@ -186,7 +186,7 @@ SilverCaveOutsideBlockText:
     line "MASTERS may enter."
 
     para "And become the"
-    line "MONARCH."
+    line "Monarch."
     done
 
 Movement_SilverCaveOutsideTurnBack:
@@ -955,7 +955,7 @@ RolePlay6PrizeText:
 
 HoenWarIntroText:
     text "You are the"
-    line "CHAMPION that"
+    line "Champion that"
     cont "defeated WALLACE"
     cont "and saved us all."
 
@@ -1298,7 +1298,7 @@ HoenWarCh1VillainText:
 
     para "You plan to ambush"
     line "and kill STEVEN"
-    cont "the CHAMPION."
+    cont "the Champion."
 
     para "Your #mon alert"
     line "you to a presence"
@@ -1486,7 +1486,7 @@ HoenWarRolePlayEndText:
     para "Nearby a stranger"
     line "enters the city."
 
-    para "CHAMPION <PLAYER>!"
+    para "Champion <PLAYER>!"
     done
 
 GoldDicePrizeText:

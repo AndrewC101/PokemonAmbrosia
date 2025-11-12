@@ -369,12 +369,12 @@ CooltrainermJakeAfterBattleText:
 CooltrainermGaven3SeenText:
     text "LANCE is so cool!"
 
-	para "LANCE is CHAMPION"
+	para "LANCE is Champion"
 	line "of KANTO but he's"
-	cont "acting CHAMPION"
+	cont "acting Champion"
 	cont "of JOHTO until"
 	cont "we can produce"
-	cont "our own CHAMPION."
+	cont "our own Champion."
 
 	para "For our national"
 	line "dignity we must"
@@ -382,7 +382,7 @@ CooltrainermGaven3SeenText:
 
 	para "I..."
 
-	para "will be CHAMPION!"
+	para "will be Champion!"
 	done
 
 CooltrainermGaven3BeatenText:
@@ -391,7 +391,7 @@ CooltrainermGaven3BeatenText:
 	done
 
 CooltrainermGavenAfterText:
-	text "To become CHAMPION"
+	text "To become Champion"
 	line "you will have to"
 	cont "defeat LANCE."
 
@@ -408,7 +408,7 @@ CooltrainerfJoyceSeenText:
 	line "going on and on"
 	cont "about JOHTO having"
 	cont "to get its own"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "All the patriotism"
 	line "makes me uneasy."
@@ -682,7 +682,7 @@ Route26CrystalText_Intro:
 
     para "If you win you"
     line "earn the title of"
-    cont "CHAMPION."
+    cont "Champion."
 
     para "Then you will"
     line "have to head to"

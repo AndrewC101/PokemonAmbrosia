@@ -20,7 +20,7 @@ CeruleanGymBadgeSpeechHousePokefanMText:
 	line "far is BLUE."
 
 	para "He used to be a"
-	line "CHAMPION but took"
+	line "Champion but took"
 	cont "a demotion to GYM"
 	cont "LEADER so he could"
 	cont "be politically"

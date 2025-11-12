@@ -53,7 +53,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	para "The pride of"
 	line "BLACKTHORN."
 
-	para "CHAMPION LANCE."
+	para "Champion LANCE."
 	done
 
 BlackthornDragonSpeechHouseDratiniText:

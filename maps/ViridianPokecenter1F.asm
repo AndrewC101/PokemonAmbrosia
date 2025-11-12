@@ -46,7 +46,7 @@ ViridianPokecenter1FCooltrainerMText:
 	done
 
 ViridianPokecenter1FCooltrainerMText_BlueReturned:
-	text "You are CHAMPION"
+	text "You are Champion"
 	line "<PLAYER>!"
 
 	para "BLUE told us all"

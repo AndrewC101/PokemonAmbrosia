@@ -166,7 +166,7 @@ SaffronCityPokefanMText_BeatWallace:
 	text "You..."
 
 	para "You are the"
-	line "CHAMPION that"
+	line "Champion that"
 	cont "defeated WALLACE!"
 
 	para "You have saved us"
@@ -186,7 +186,7 @@ SaffronCityCooltrainerMText:
 	text "I was going to"
 	line "challenge the GYM"
 	cont "but they are only"
-	cont "accepting CHAMPION"
+	cont "accepting Champion"
 	cont "level challengers."
 	
 	para "What use is that!"
@@ -246,7 +246,7 @@ SaffronCityFisherText:
 SaffronCityFisherText_BeatWallace:
 	text "You are..."
 	
-	para "CHAMPION <PLAYER>!"
+	para "Champion <PLAYER>!"
 	
 	para "You saved us all!"
 	
@@ -424,7 +424,7 @@ SaffronSilverText:
     para "I hope you don't"
     line "expect me to"
     cont "refer to you as"
-    cont "CHAMPION."
+    cont "Champion."
 
     para "Look...."
 
@@ -520,7 +520,7 @@ SaffronGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done

@@ -40,7 +40,7 @@ GavenBattleRematchText:
 	line "will be able to"
 	cont "beat LANCE is to"
 	cont "practice with"
-	cont "another CHAMPION."
+	cont "another Champion."
 	para "You must help me!"
 
 	para "I'll be waiting on"
@@ -56,7 +56,7 @@ GavenHangUpNotThursdayText:
 	done
 
 GavenReminderText:
-	text "A CHAMPION has"
+	text "A Champion has"
 	line "obligations."
 	para "You must battle"
 	line "me!"

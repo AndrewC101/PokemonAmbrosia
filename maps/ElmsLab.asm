@@ -802,7 +802,7 @@ ElmBeatWallaceText:
 ElmBeatEliteFourText:
 	text "I can not believe"
 	line "you are the first"
-	cont "CHAMPION of JOHTO."
+	cont "Champion of JOHTO."
 	para "That kind of makes"
 	line "you my boss!"
 	para "The world needs"
@@ -857,7 +857,7 @@ ElmText_ThisIsCynthia:
 
     para "This is CYNTHIA."
 
-    para "She is CHAMPION"
+    para "She is Champion"
     line "of the SINNOH"
     cont "region."
     done
@@ -1176,7 +1176,7 @@ ElmAfterTheftText5:
 	para "If you defeat"
 	line "them, you gain"
 	cont "the title of"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "The closest GYM"
 	line "would be the one"
@@ -1187,7 +1187,7 @@ ElmAfterTheftText6:
 	text "…<PLAY_G>. The"
 	line "road to being"
 
-	para "CHAMPION will"
+	para "Champion will"
 	line "be a long one."
 
 	para "Before you leave,"
@@ -1210,7 +1210,7 @@ AideText_AfterWallace:
 
 AideText_AfterDad:
 	text "I've never seen a"
-	line "CHAMPION battle"
+	line "Champion battle"
 	cont "before."
 	para "You destroyed your"
 	line "own Dad."
@@ -1317,13 +1317,13 @@ ElmGiveMasterBallText2:
 	done
 
 ElmGiveTicketText1:
-	text "CHAMPION <PLAYER>"
+	text "Champion <PLAYER>"
 	line "There you are!"
 
 	para "Congratulations"
 	line "again on becoming"
 	cont "the first JOHTO"
-	cont "CHAMPION!"
+	cont "Champion!"
 
     para "You can now train"
     line "#mon up to"
@@ -1385,7 +1385,7 @@ ClearBellTips:
 ElmKantoExplainText:
 	text "<PLAYER> now that"
 	line "you are the"
-	cont "CHAMPION of JOHTO"
+	cont "Champion of JOHTO"
 	cont "you have immense"
 	cont "responsibilities."
 	para "Your first"
@@ -1825,7 +1825,7 @@ ElmStopThisText:
     line "a child anymore."
 
     para "<PLAYER> is a"
-    line "CHAMPION!"
+    line "Champion!"
 
     para "I don't think"
     line "you realise the"
@@ -1842,7 +1842,7 @@ ElmStopThisText:
     done
 
 DadBattleBeginsText:
-    text "CHAMPION..."
+    text "Champion..."
 
     para "Hmph!"
 
@@ -1886,7 +1886,7 @@ DadAcknowledgmentText:
     text "...."
 
     para "I've never seen"
-    line "a CHAMPION in"
+    line "a Champion in"
     cont "battle before."
 
     para "...."
@@ -1903,7 +1903,7 @@ DadGoodbyeText:
     para "Unlike me..."
 
     para "Forgive me"
-    line "CHAMPION!"
+    line "Champion!"
     done
 
 ELmsLabMovement_DadLeaves:
@@ -1936,7 +1936,7 @@ MumGoodbyeText:
     cont "messes with us!"
 
     para "I love you my"
-    line "CHAMPION."
+    line "Champion."
     done
 
 ELmsLabMovement_MumLeaves:

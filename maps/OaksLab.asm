@@ -255,7 +255,7 @@ OakOpenMtSilverText:
 	cont "BADGES."
 
 	para "You are a true"
-	line "CHAMPION!"
+	line "Champion!"
 
 	para "Here, let me give"
 	line "your EXP.SHARE"

@@ -84,7 +84,7 @@ LavenderPokecenter1FYoungsterText_BeatWallace:
 	para "Wait!"
 
 	para "You are"
-	line "CHAMPION <PLAYER>!"
+	line "Champion <PLAYER>!"
 
 	para "You are my hero!"
 

@@ -158,7 +158,7 @@ Route35GoldenrodGatePokefanFText:
 	text "The NATIONAL PARK"
 	line "is up ahead."
 	para "Some days you can"
-	line "find CHAMPION LEON"
+	line "find Champion LEON"
 	cont "there."
 	para "I'd love to see"
 	line "his CHARIZARD."
@@ -174,13 +174,13 @@ Route35GoldenrodGateFisherText:
 
 	para "She said if she"
 	line "ever meets a"
-	cont "CHAMPION she"
+	cont "Champion she"
 	cont "would give it"
 	cont "as a present."
 
 	para "Now how to"
 	line "convince her I'm"
-	cont "a CHAMPION..."
+	cont "a Champion..."
 	done
 
 Route35GoldenrodGate_MapEvents:

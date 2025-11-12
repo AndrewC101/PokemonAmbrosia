@@ -320,7 +320,7 @@ CooltrainermBlakeAfterBattleText:
 CooltrainerfReenaSeenText:
 	text "Everyone here"
 	line "wants to be the"
-	cont "first CHAMPION"
+	cont "first Champion"
 	cont "of JOHTO."
 
 	para "But only I"

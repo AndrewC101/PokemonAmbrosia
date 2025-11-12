@@ -321,7 +321,7 @@ SailorJeffAfterBattleText:
 
 PicnickerDebraSeenText:
 	text "I heard JOHTO has"
-	line "a new CHAMPION!"
+	line "a new Champion!"
 
 	para "I heard they are"
 	line "young, beautiful"
@@ -341,7 +341,7 @@ PicnickerDebraBeatenText:
 
 PicnickerDebraAfterBattleText:
 	text "Are you the"
-	line "CHAMPION!?"
+	line "Champion!?"
 
 	para "Is your secret"
 	line "MOO MOO MILK!?"
@@ -479,14 +479,14 @@ SailorKennethAfterBattleText:
 TeacherShirleySeenText:
 	text "Did you hear there"
 	line "is now a JOHTO"
-	cont "CHAMPION?"
+	cont "Champion?"
 
 	para "This is awful!"
 
 	para "I was sure one of"
 	line "my students would"
 	cont "be the first to"
-	cont "become CHAMPION."
+	cont "become Champion."
 	done
 
 TeacherShirleyBeatenText:
@@ -538,7 +538,7 @@ SchoolboyRickySeenText:
 	line "them and prove it"
 	cont "should have been"
 	cont "me to become"
-	cont "CHAMPION!"
+	cont "Champion!"
 	done
 
 SchoolboyRickyBeatenText:

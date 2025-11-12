@@ -84,7 +84,7 @@ PalletTownFisherText_Amaze:
 
     para "Aren't you..."
 
-    para "CHAMPION <PLAYER>!"
+    para "Champion <PLAYER>!"
 
     para "The slayer of"
     line "WALLACE!"
@@ -286,7 +286,7 @@ PalletTownMovement_CrystalApproaches:
     step_end
 
 PalletTownCrystalText_Intro:
-    text "Hey there CHAMPION"
+    text "Hey there Champion"
     line "<PLAYER>!"
 
     para "It's been a while!"

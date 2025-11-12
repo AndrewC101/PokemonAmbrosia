@@ -62,7 +62,7 @@ PlayersNeighborsHouseRadioScript:
 
 WallaceBeatenRadio:
 	text "The war is over!"
-	para "The new CHAMPION"
+	para "The new Champion"
 	line "<PLAYER> from"
 	cont "NEW BARK TOWN"
 	cont "defeated WALLACE"
@@ -121,7 +121,7 @@ PlayersNeighborText:
 	cont "her dreams."
 
 	para "After all"
-	line "CHAMPION BLUE"
+	line "Champion BLUE"
 	cont "came from a"
 	cont "small town too."
 	done
@@ -156,7 +156,7 @@ PlayerNeighborRadioText3:
 	line "has taken control"
 	cont "due to the"
 	cont "assassination of"
-	cont "CHAMPION STEVEN."
+	cont "Champion STEVEN."
 	done
 
 PlayerNeighborRadioText4:

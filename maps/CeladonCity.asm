@@ -302,7 +302,7 @@ CeladonGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done

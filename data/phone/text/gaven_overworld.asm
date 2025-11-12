@@ -2,7 +2,7 @@ GavenAskNumber2Text:
 GavenAskNumber1Text:
 	text "You have what it"
 	line "takes to be a"
-	cont "CHAMPION."
+	cont "Champion."
 	para "But you'll never"
 	line "beat LANCE."
 	para "I have studied his"
@@ -20,7 +20,7 @@ GavenNumberAcceptedText:
 GavenNumberDeclinedText:
 	text "A coward will"
 	line "never be a"
-	cont "CHAMPION."
+	cont "Champion."
 	done
 
 GavenPhoneFullText:
@@ -37,8 +37,8 @@ GavenRematchText:
 	para "I hope you are for"
 	line "today I will"
 	cont "defeat this"
-	cont "CHAMPION and begin"
+	cont "Champion and begin"
 	cont "my quest to become"
-	cont "CHAMPION of"
+	cont "Champion of"
 	cont "CHAMPIONS!"
 	done

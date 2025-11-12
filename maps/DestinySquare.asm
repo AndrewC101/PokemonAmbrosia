@@ -376,7 +376,7 @@ MasterStevenSeenText:
 
 MasterStevenBeatenText:
     text "Thank you"
-    line "MONARCH."
+    line "Monarch."
     done
 
 MasterStevenWinText:
@@ -454,7 +454,7 @@ MasterStevenLoseAfterBattleText:
 ;	para "I wanted to be"
 ;	line "taken seriously as"
 ;	cont "a trainer."
-;	para "Even as CHAMPION I"
+;	para "Even as Champion I"
 ;	line "was still not"
 ;	cont "recognised."
 ;	para "I can tell you are"
@@ -636,7 +636,7 @@ MasterLeonSeenText:
 	line "you were able to"
 	cont "save the world."
 	para "Everyone here is a"
-	line "CHAMPION so I'll"
+	line "Champion so I'll"
 	cont "need a new"
 	cont "catchphrase for"
 	cont "this battle."
@@ -666,7 +666,7 @@ MasterLeonAfterBattleText:
 MasterLeonLoseAfterBattleText:
 	text "There can only be"
 	line "one strongest"
-	cont "CHAMPION."
+	cont "Champion."
 	para "And it's not me."
 	para "Now battle like"
 	line "you mean it."
@@ -731,7 +731,7 @@ MasterAdamSeenText:
 	line "strong."
 	para "Maybe you think"
 	line "you can become the"
-	cont "MONARCH, the"
+	cont "Monarch, the"
 	cont "master of masters."
 	para "Maybe you think"
 	line "your journey will"
@@ -739,7 +739,7 @@ MasterAdamSeenText:
 	para "The journey is"
 	line "never complete."
 	para "If you want to"
-	line "become MONARCH and"
+	line "become Monarch and"
 	cont "be blessed with"
 	cont "passage to the"
 	cont "HALL OF ORIGIN."
@@ -758,7 +758,7 @@ MasterAdamWinText:
 
 MasterAdamAfterBattleText:
 	text "You are a worthy"
-	line "MONARCH."
+	line "Monarch."
 	para "Now proceed and"
 	line "claim the key to"
 	cont "the HALL OF"

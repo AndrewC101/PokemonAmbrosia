@@ -90,7 +90,7 @@ PlayersHouseRadioScript:
 
 WallaceBeatenRadioPH:
 	text "The war is over!"
-	para "The new CHAMPION"
+	para "The new Champion"
 	line "<PLAYER> from"
 	cont "NEW BARK TOWN"
 	cont "defeated WALLACE"
@@ -162,7 +162,7 @@ PlayersRadioText3:
 	cont "coup."
 	para "Driven by the"
 	line "assassination of"
-	cont "CHAMPION STEVEN"
+	cont "Champion STEVEN"
 	cont "6 months ago."
 	done
 

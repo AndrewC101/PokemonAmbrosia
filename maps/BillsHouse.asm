@@ -70,7 +70,7 @@ BillBeatE4:
 
 	para "I'd like to meet"
 	line "somebody important"
-	cont "like a CHAMPION."
+	cont "like a Champion."
     done
 
 BillGrampsTakeThisMewText:
@@ -78,7 +78,7 @@ BillGrampsTakeThisMewText:
 	line "He's my grandson."
 
 	para "Oh you are a"
-	line "CHAMPION!"
+	line "Champion!"
 
 	para "I shouldn't tell"
 	line "you this..."

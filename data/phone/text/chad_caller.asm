@@ -53,7 +53,7 @@ ChadHangUpText:
 ChadBlueGossipText:
 	text "I aspire to be"
 	line "like BLUE."
-	para "He was a CHAMPION"
+	para "He was a Champion"
 	line "but is so cool he"
 	cont "gave it up so he"
 	cont "could be himself."
@@ -157,7 +157,7 @@ ChadDaisyTeaGossipText:
 ChadProfOakTravelingGossipText:
 	text "I aspire to be"
 	line "like BLUE."
-	para "He was a CHAMPION"
+	para "He was a Champion"
 	line "but is so cool he"
 	cont "gave it up so he"
 	cont "could be himself."

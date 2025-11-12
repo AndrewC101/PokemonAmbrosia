@@ -82,7 +82,7 @@ VermilionPokecenter1FBugCatcherText:
 
 InvadedVermilionPokecenter1FBugCatcherText:
 	text "Aren't you the"
-	line "CHAMPION of JOHTO!"
+	line "Champion of JOHTO!"
 
 	para "Please can you"
 	line "help us!"

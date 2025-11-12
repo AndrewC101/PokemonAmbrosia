@@ -373,7 +373,7 @@ VioletGymGuideWinText:
 
 	para "Stick with me"
 	line "and I'll make a"
-	cont "CHAMPION out"
+	cont "Champion out"
 	cont "of you."
 	done
 

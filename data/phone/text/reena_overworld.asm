@@ -4,7 +4,7 @@ ReenaAskNumber2Text:
 	para "How would you like"
 	line "to give the world"
 	cont "the strongest"
-	cont "CHAMPION it has"
+	cont "Champion it has"
 	cont "ever seen..."
 	para "me!"
 	para "Give me your"
@@ -31,5 +31,5 @@ ReenaPhoneFullText:
 
 ReenaRematchText:
 	text "Behold the true"
-	line "CHAMPION of JOHTO!"
+	line "Champion of JOHTO!"
 	done

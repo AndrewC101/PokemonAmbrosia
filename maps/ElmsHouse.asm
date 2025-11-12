@@ -53,7 +53,7 @@ ElmsHousePCPostWallaceText:
     cont "and his location"
     cont "is unknown."
 
-    para "CHAMPION STEVEN"
+    para "Champion STEVEN"
     line "lives and has"
     cont "assumed command"
     cont "of the HOENN army."
@@ -64,13 +64,13 @@ ElmsHousePCPostWallaceText:
     line "unknown young"
     cont "trainer."
 
-    para "The new CHAMPION"
+    para "The new Champion"
     line "of JOHTO."
 
-    para "CHAMPION <PLAYER>!"
+    para "Champion <PLAYER>!"
 
     para "Long live"
-    line "CHAMPION <PLAYER>."
+    line "Champion <PLAYER>."
     done
 
 ElmsHousePCText:

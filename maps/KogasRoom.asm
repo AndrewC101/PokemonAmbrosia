@@ -96,7 +96,7 @@ KogaScript_KogaBeforeText:
 
 	para "That alone should"
 	line "make you a"
-	cont "CHAMPION."
+	cont "Champion."
 
 	para "I am ADAM."
 
@@ -133,7 +133,7 @@ KogaScript_KogaDefeatText:
 	line "goes my little"
 	cont "speech."
 
-	para "To be a CHAMPION"
+	para "To be a Champion"
 	line "you have to"
 	cont "keep your ego"
 	cont "in check."

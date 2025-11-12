@@ -171,7 +171,7 @@ MustBeatAllGymsText:
     done
 
 FalseIntroText:
-    text "Well CHAMPION!"
+    text "Well Champion!"
 
     para "You finally ready"
     line "for a real test?"
@@ -228,12 +228,12 @@ LeaderBlueBeforeText:
 	line "the saviour of"
 	cont "KANTO!"
 
-	para "CHAMPION <PLAYER>!"
+	para "Champion <PLAYER>!"
 
 	para "Slayer of WALLACE."
 
 	para "The true peoples"
-	line "CHAMPION."
+	line "Champion."
 
 	para "You're going to"
 	line "get a lot of that"
@@ -264,7 +264,7 @@ LeaderBlueWinText:
 	line "predictable"
 	cont "ending."
 	para "Congratulations"
-	line "great CHAMPION."
+	line "great Champion."
 	para "You must go see my"
 	line "grandad PROF OAK."
 	done
@@ -312,7 +312,7 @@ LeaderBlueEpilogueText:
 	line "thing useful"
 	cont "with your talent."
 
-	para "Oh great CHAMPION"
+	para "Oh great Champion"
 	line "of CHAMPIONS and"
 	cont "saviour of KANTO."
 	done

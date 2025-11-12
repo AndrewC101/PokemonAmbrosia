@@ -286,7 +286,7 @@ VermilionCityBadgeGuyMostBadgesText:
 	cont "confident."
 
 	para "BLUE used to be"
-	line "a CHAMPION."
+	line "a Champion."
 
 	para "He is on a whole"
 	line "other level."
@@ -299,7 +299,7 @@ VermilionCityBadgeGuyAllBadgesText:
 	line "KANTO GYM BADGES."
 
 	para "You are a true"
-	line "CHAMPION!"
+	line "Champion!"
 
 	para "I've got a reward"
 	line "for your efforts."
@@ -365,7 +365,7 @@ VermilionGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done
@@ -601,9 +601,9 @@ HoenCaptainAfterBattleText:
 	text "Who are you!"
 	para "Wait..."
 	para "You are the new"
-	line "CHAMPION!"
+	line "Champion!"
 	para "You have failed"
-	line "CHAMPION."
+	line "Champion."
 	para "I've accomplished"
 	line "my mission."
 	para "WALLACE has made"

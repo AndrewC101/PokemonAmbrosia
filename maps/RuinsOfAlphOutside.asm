@@ -236,7 +236,7 @@ RuinsOfAlphOutsideYoungster2Text:
 	cont "strong!"
 
 	para "He must be a"
-	line "CHAMPION or"
+	line "Champion or"
 	cont "something."
 	done
 

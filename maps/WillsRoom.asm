@@ -117,7 +117,7 @@ WillScript_WillDefeatText:
 	line "trainer."
 
 	para "You have the will"
-	line "to be a CHAMPION."
+	line "to be a Champion."
 
 	para "I have only met"
 	line "one other trainer"

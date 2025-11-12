@@ -246,7 +246,7 @@ Text_GearIsImpressive:
 	done
 
 Text_SafeWithYou:
-	text "Hello CHAMPION"
+	text "Hello Champion"
 	line "<PLAYER>!"
 	para "You make me so"
 	line "proud to be from"
@@ -304,7 +304,7 @@ Text_ElmDiscoveredNewMon:
 
 Text_FishBeatE4:
 	text "Wow <PLAYER> you"
-	line "are the CHAMPION!"
+	line "are the Champion!"
 	para "Your dad is so"
 	line "proud."
 	para "You are way"
@@ -585,7 +585,7 @@ Crystal1_WellDoneText:
     cont "LEADERS."
 
     para "Beat all the ELITE"
-    line "FOUR and CHAMPION."
+    line "FOUR and Champion."
 
     para "Crush the HOENN"
     line "army and save all"

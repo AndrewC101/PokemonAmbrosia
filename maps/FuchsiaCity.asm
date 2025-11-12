@@ -193,7 +193,7 @@ FuchsiaCityYoungsterText_Saved:
 	line "sure is."
 
 	para "Thank you"
-	line "CHAMPION <PLAYER>."
+	line "Champion <PLAYER>."
 	done
 
 InvadedFuchsiaCityYoungsterText:
@@ -222,7 +222,7 @@ FuchsiaCityPokefanMText:
 
 FuchsiaCityPokefanMText_Saved:
 	text "Thank you"
-	line "CHAMPION!"
+	line "Champion!"
 
 	para "You saved all of"
 	line "KANTO."
@@ -377,7 +377,7 @@ FuchsiaGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done
@@ -654,7 +654,7 @@ FuchsiaSelfDefeatText1:
     done
 
 FuchsiaSelfConfidenceText2:
-    text "I am the CHAMPION"
+    text "I am the Champion"
     line "of JOHTO!"
 
     para "I must try!"

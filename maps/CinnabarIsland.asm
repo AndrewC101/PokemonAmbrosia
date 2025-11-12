@@ -68,18 +68,18 @@ CinnabarIslandBlueText:
 	text "Who are you?"
 
 	para "Ah you are the"
-	line "JOHTO CHAMPION."
+	line "JOHTO Champion."
 
 	para "There was a time"
 	line "when being a"
-	cont "CHAMPION meant"
+	cont "Champion meant"
 	cont "something."
 
 	para "Now it's just"
 	line "a puppet of the"
 	cont "#mon LEAGUE."
 
-	para "I was a CHAMPION"
+	para "I was a Champion"
 	line "myself for a"
 	cont "time."
 
@@ -111,7 +111,7 @@ CinnabarIslandBlueText:
 
 	para "That's why I"
 	line "give up my title"
-	cont "of CHAMPION."
+	cont "of Champion."
 
 	para "It means nothing."
 
@@ -127,7 +127,7 @@ CinnabarIslandBlueText:
 	line "LEADER."
 
 	para "I'll show you"
-	line "a real CHAMPION."
+	line "a real Champion."
 	done
 
 CinnabarIslandGymSignText:

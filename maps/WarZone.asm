@@ -379,11 +379,11 @@ WallaceSeenText:
     text "Ah just in time."
 
     para "You must be the"
-    line "new CHAMPION of"
+    line "new Champion of"
     cont "JOHTO."
 
     para "A young hero"
-    line "rose to CHAMPION"
+    line "rose to Champion"
     cont "to conquer evil"
     cont "and save their"
     cont "people."
@@ -536,7 +536,7 @@ LeonIntroText:
     done
 
 LeonText:
-    text "It's CHAMPION"
+    text "It's Champion"
     line "time!"
     done
 
@@ -606,7 +606,7 @@ StevenScript:
     end
 StevenWinsAfterBattleText:
     text "You are a strong"
-    line "CHAMPION."
+    line "Champion."
 
     para "You will be a"
     line "great leader"
@@ -721,10 +721,10 @@ CynthiaWinsAfterBattleText:
     text "You did well."
 
     para "You are certainly"
-    line "a worthy CHAMPION."
+    line "a worthy Champion."
     done
 CynthiaSeenText:
-    text "You have CHAMPION"
+    text "You have Champion"
     line "BLUE to thank for"
     cont "our arrival."
 
@@ -746,7 +746,7 @@ CynthiaWinsText:
     text "Good job!"
     done
 CynthiaOfferFightText:
-    text "From one CHAMPION"
+    text "From one Champion"
     line "to another."
 
     para "Would you like"
@@ -854,13 +854,13 @@ LeonOfferFightText:
     line "you would last..."
 
     para "Against the"
-    line "strongest CHAMPION"
+    line "strongest Champion"
 
     para "Let's battle?"
     done
 LeonAfterBattleText:
     text "You are a worthy"
-    line "CHAMPION."
+    line "Champion."
 
     para "Unlike DYANTHA"
     line "and ALDER."

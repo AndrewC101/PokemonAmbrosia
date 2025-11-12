@@ -273,7 +273,7 @@ PostWallaceMumText:
 	text "We are so proud of"
 	line "you <PLAYER>."
 	para "You are our child."
-	para "Our CHAMPION."
+	para "Our Champion."
 	para "Our HERO."
 	para "You will do great"
 	line "things and we will"
@@ -287,7 +287,7 @@ PostDadMumText:
 	para "But I know that is"
 	line "selfish."
 	para "You are the"
-	line "CHAMPION of JOHTO"
+	line "Champion of JOHTO"
 	cont "and people need"
 	cont "you."
 	done
@@ -488,7 +488,7 @@ DadTalkText:
     para "It's clear to me"
     line "now I never had"
     cont "a change against"
-    cont "a CHAMPION."
+    cont "a Champion."
 
     para "Go and use your"
     line "strength to do"
@@ -503,7 +503,7 @@ DadPostWallaceText:
     text "You are a hero!"
 
     para "I can't believe"
-    line "the great CHAMPION"
+    line "the great Champion"
     cont "you have become."
 
     para "...."

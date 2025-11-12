@@ -101,7 +101,7 @@ BlaineIntroText:
 
 	para "And you..."
 
-	para "CHAMPION!"
+	para "Champion!"
 
 	para "Will feel the"
 	line "fires of my"

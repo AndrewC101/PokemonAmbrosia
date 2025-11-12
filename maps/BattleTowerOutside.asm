@@ -421,7 +421,7 @@ BattleTowerIntro:
 
     para "Two of which are"
     line "only offered to"
-    cont "CHAMPION trainers."
+    cont "Champion trainers."
 
     para "The prizes are"
     line "good."

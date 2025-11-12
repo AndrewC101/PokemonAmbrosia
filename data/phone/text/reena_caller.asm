@@ -23,14 +23,14 @@ ReenaLostAMonText:
 	cont "other CHAMPIONS."
 	para "I guess that's why"
 	line "he's the least"
-	cont "popular CHAMPION"
+	cont "popular Champion"
 	cont "huh..."
 	done
 
 ReenaBattleRematchText:
 	text "Do you want to"
 	line "fight a real"
-	cont "CHAMPION!?"
+	cont "Champion!?"
 
 	para "The place shall be"
 	line "@"

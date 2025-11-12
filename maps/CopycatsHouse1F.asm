@@ -71,7 +71,7 @@ CopycatsHouse1FPokefanFText_ReturnedMachinePart:
 	text "Oh! Oh my!"
 
 	para "You are"
-	line "CHAMPION <PLAYER>."
+	line "Champion <PLAYER>."
 
 	para "The hero that"
 	line "saved us all!"

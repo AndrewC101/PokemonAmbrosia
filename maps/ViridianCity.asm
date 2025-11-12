@@ -149,7 +149,7 @@ ViridianCityGrampsNearGymText:
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:
-	text "CHAMPION BLUE"
+	text "Champion BLUE"
 	line "is ready to take"
 	cont "challengers again."
 
@@ -161,7 +161,7 @@ ViridianCityGrampsNearGymBlueReturnedText:
 	line "than CHAMPIONS."
 
 	para "He is the peoples"
-	line "CHAMPION!"
+	line "Champion!"
 	done
 
 ViridianCityDreamEaterFisherText:
@@ -230,7 +230,7 @@ ViridianGymSignText:
 	para "BLUE!"
 
 	para "THE PEOPLES"
-	line "CHAMPION!"
+	line "Champion!"
 	done
 
 ViridianCityWelcomeSignText:
@@ -271,7 +271,7 @@ ViridianGymBlockText:
     line "locked."
 
     para "This GYM is only"
-    line "accepting CHAMPION"
+    line "accepting Champion"
     cont "level challengers"
     cont "at this time."
     done

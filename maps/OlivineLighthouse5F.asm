@@ -81,7 +81,7 @@ SailorErnestAfterBattleText:
 	done
 
 BirdKeeperDenisSeenText:
-	text "The CHAMPION"
+	text "The Champion"
 	line "that once trained"
 	cont "here used bird"
 	cont "#mon."

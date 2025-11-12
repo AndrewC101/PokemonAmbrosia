@@ -29,7 +29,7 @@ GinaLostAMonText:
 	text "Do you know LEON"
 	line "has a CHARIZARD!"
 	para "If the strongest"
-	line "CHAMPION has a"
+	line "Champion has a"
 	cont "KANTO #mon it"
 	cont "must be good."
 	para "I need to get one!"

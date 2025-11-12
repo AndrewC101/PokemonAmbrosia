@@ -470,7 +470,7 @@ RocketBaseBossDefeatedText:
     para "The other"
     line "intruder..."
 
-    para "Is CHAMPION"
+    para "Is Champion"
     line "LANCE!"
 
     para "Why were we not"

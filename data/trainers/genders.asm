@@ -18,7 +18,7 @@ BTTrainerClassGenders:
 	db MALE   ; BRUNO
 	db FEMALE ; KAREN
 	db MALE   ; ADAM
-	db MALE   ; CHAMPION
+	db MALE   ; Champion
 	db MALE   ; BROCK
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE

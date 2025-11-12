@@ -307,7 +307,7 @@ RayquazaWorthyText:
 	para "RRRGAAAHHH!!!"
 
 	para "Come young"
-	line "DRAGON Champion."
+	line "Dragon Champion."
 
 	para "Have at thee!"
 	done
@@ -465,7 +465,7 @@ ClairText_GiveDragonbreathDragonDen:
 	para "It has been most"
 	line "shameful and"
 	cont "unbecoming of a"
-	cont "LEADER."
+	cont "Leader."
 
 	para "You have the heart"
 	line "of a dragon!"
@@ -481,7 +481,7 @@ Text_ReceivedTM24:
 
 ClairText_DescribeDragonbreathDragonDen:
 	text "That contains"
-	line "DRAGON PULSE."
+	line "Dragon Pulse."
 	done
 
 ClairText_NoRoom: ; impossible?
@@ -489,7 +489,7 @@ ClairText_NoRoom: ; impossible?
 	line "any room for this."
 
 	para "I'm going back to"
-	line "the GYM, so make"
+	line "the Gym, so make"
 
 	para "room, then come"
 	line "see me there."
@@ -498,7 +498,7 @@ ClairText_NoRoom: ; impossible?
 ClairText_WhatsTheMatterDragonDen:
 	text "You have obtained"
 	line "all 8 BADGES of"
-	cont "JOHTO."
+	cont "Johto."
 
 	para "Now you are"
 	line "ready for the"
@@ -546,10 +546,10 @@ ClairText_WhatsTheMatterDragonDen:
 	done
 
 DragonShrineSignpostText:
-	text "DRAGON SHRINE"
+	text "Dragon Shrine"
 
 	para "A shrine honoring"
-	line "DRAGON #mon"
+	line "Dragon #mon"
 	done
 
 CooltrainermDarinSeenText:
@@ -581,7 +581,7 @@ CooltrainermDarinAfterBattleText:
 CooltrainerfCaraSeenText:
 	text "Are you the one"
 	line "who defeated"
-	cont "LEADER CLAIR?"
+	cont "Leader CLAIR?"
 
 	para "No way."
 
@@ -636,7 +636,7 @@ TwinsLeaandpia1BeatenText:
 TwinsLeaandpia1AfterBattleText:
 	text "You should talk"
 	line "with the great"
-	cont "DRAGON LORD."
+	cont "Dragon Lord."
 
 	para "I'm too scared to"
 	line "talk to him."
@@ -648,7 +648,7 @@ TwinsLeaandpia2SeenText:
 	text "My sister keeps"
 	line "asking me to"
 	cont "talk to the"
-	cont "DRAGON LORD."
+	cont "Dragon Lord."
 
 	para "She is too"
 	line "scared of him."

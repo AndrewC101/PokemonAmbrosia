@@ -264,13 +264,13 @@ LanceBattleWinText:
 	text "It is done."
 	
 	para "I, LANCE the"
-	line "DRAGON Champion."
+	line "Dragon Champion."
 	
 	para "bestow upon"
 	line "you <PLAYER>."
 	
 	para "The title of"
-	line "JOHTO Champion!"
+	line "Johto Champion!"
 	done
 
 LanceBattleAfterText:
@@ -288,7 +288,7 @@ LanceBattleAfterText:
 	para "Champion <PLAYER>."
 	
 	para "The first Champion"
-	line "of JOHTO."
+	line "of Johto."
 	
 	para "The crown of"
 	line "Champion is a"
@@ -324,7 +324,7 @@ LancesRoomElmText1:
 	done
 
 LancesRoomElmIsntItOak:
-	text "OAK is equally"
+	text "Oak is equally"
 	line "impressed!"
 	done
 
@@ -357,7 +357,7 @@ LancesRoomOakCongratulationsText:
 	cont "lost your title"
 	cont "as standing"
 	cont "Champion of"
-	cont "JOHTO."
+	cont "Johto."
 	done
 
 LancesRoomLanceHappyText:

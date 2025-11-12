@@ -171,12 +171,12 @@ GruntM10SeenText:
 	para "KYOGRE and"
 	line "GROUDON!"
 
-	para "They are HOENN"
+	para "They are Hoenn"
 	line "legendary"
 	cont "#mon."
 
 	para "They will destroy"
-	line "KANTO!"
+	line "Kanto!"
 	done
 
 GruntM10BeatenText:
@@ -196,7 +196,7 @@ ScientistRichSeenText:
 	para "Their power will"
 	line "be mine."
 
-	para "The HOENN"
+	para "The Hoenn"
 	line "legendary"
 	cont "#mon."
 

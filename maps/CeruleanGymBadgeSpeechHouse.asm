@@ -11,9 +11,9 @@ CeruleanGymBadgeSpeechHousePokefanMScript:
 
 CeruleanGymBadgeSpeechHousePokefanMText:
 	text "Are you collecting"
-	line "KANTO GYM BADGES?"
+	line "Kanto Gym BADGES?"
 
-	para "The KANTO LEADERS"
+	para "The Kanto Leaders"
 	line "are very strong."
 
 	para "The strongest by"
@@ -21,8 +21,8 @@ CeruleanGymBadgeSpeechHousePokefanMText:
 
 	para "He used to be a"
 	line "Champion but took"
-	cont "a demotion to GYM"
-	cont "LEADER so he could"
+	cont "a demotion to Gym"
+	cont "Leader so he could"
 	cont "be politically"
 	cont "autonomous."
 	done

@@ -65,13 +65,13 @@ DaisyScript:
 
 DaisyHelloText:
 	text "Hi! Oh you are"
-	line "from JOHTO."
+	line "from Johto."
 
 	para "You may have met"
 	line "my little brother."
 
-	para "He is the GYM"
-	line "LEADER of"
+	para "He is the Gym"
+	line "Leader of"
 	cont "VIRIDIAN."
 
 	para "People call him"

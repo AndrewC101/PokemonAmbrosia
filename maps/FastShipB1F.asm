@@ -303,7 +303,7 @@ SailorJeffSeenText:
 	text "I need to train!"
 
 	para "We could run into"
-	line "a HOENN ship any"
+	line "a Hoenn ship any"
 	cont "day now."
 	done
 
@@ -320,7 +320,7 @@ SailorJeffAfterBattleText:
 	done
 
 PicnickerDebraSeenText:
-	text "I heard JOHTO has"
+	text "I heard Johto has"
 	line "a new Champion!"
 
 	para "I heard they are"
@@ -444,7 +444,7 @@ BlackbeltWaiBeatenText:
 BlackbeltWaiAfterBattleText:
 	text "I couldn't find"
 	line "the KARATE KING in"
-	cont "JOHTO."
+	cont "Johto."
 
 	para "He's supposed to"
 	line "be training in a"
@@ -478,7 +478,7 @@ SailorKennethAfterBattleText:
 
 TeacherShirleySeenText:
 	text "Did you hear there"
-	line "is now a JOHTO"
+	line "is now a Johto"
 	cont "Champion?"
 
 	para "This is awful!"
@@ -532,7 +532,7 @@ SchoolboyNateAfterBattleText:
 
 SchoolboyRickySeenText:
 	text "I want to find the"
-	line "new JOHTO CHAMP."
+	line "new Johto CHAMP."
 
 	para "I'm going to beat"
 	line "them and prove it"

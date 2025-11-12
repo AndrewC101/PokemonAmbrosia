@@ -293,7 +293,7 @@ PowerPlantGymGuide1GeneratorUpAndRunningText:
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
 	text "With the threat of"
-	line "war KANTO needs"
+	line "war Kanto needs"
 	cont "all the power we"
 	cont "can generate."
 	para "Remove the control"
@@ -325,7 +325,7 @@ PowerPlantOfficer2ManagerHasBeenCheerfulText:
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
-	text "KANTO requires a"
+	text "Kanto requires a"
 	line "lot of power."
 	para "The MAGNET TRAIN"
 	line "and RADIO TOWER"

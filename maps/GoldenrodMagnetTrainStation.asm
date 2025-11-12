@@ -114,7 +114,7 @@ GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
 
 	para "There has been"
 	line "no communication"
-    cont "from KANTO."
+    cont "from Kanto."
 
     para "Maybe the war has"
     line "begun!"
@@ -158,8 +158,8 @@ GoldenrodMagnetTrainStationGentlemanText:
 	cont "this train."
 
 	para "It really brings"
-	line "JOHTO much closer"
-	cont "to KANTO."
+	line "Johto much closer"
+	cont "to Kanto."
 
 	para "Well, SAFFRON at"
 	line "least."
@@ -167,7 +167,7 @@ GoldenrodMagnetTrainStationGentlemanText:
 	para "I don't want to"
 	line "be much closer"
 	cont "to the rest of"
-	cont "KANTO."
+	cont "Kanto."
 	done
 
 GoldenrodMagnetTrainStation_MapEvents:

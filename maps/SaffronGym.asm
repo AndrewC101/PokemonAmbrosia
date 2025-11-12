@@ -144,7 +144,7 @@ SabrinaIntroText:
 	cont "#mon were"
 	cont "growing powerful."
 
-	para "PROF OAK suggested"
+	para "Prof Oak suggested"
 	line "me for this post"
 	cont "after SABRINA"
 	cont "left."
@@ -157,7 +157,7 @@ SabrinaIntroText:
 	para "Champion <PLAYER>."
 
 	para "As SAFFRON CITY"
-	line "GYM LEADER I do"
+	line "Gym Leader I do"
 	cont "hereby accept your"
 	cont "challenge."
 	done
@@ -196,10 +196,10 @@ SabrinaFightDoneText:
 	line "first few months."
 
 	para "Second day and the"
-	line "other GYM opened"
+	line "other Gym opened"
 	cont "next door."
 
-	para "The LEADER"
+	para "The Leader"
 	line "challenged me"
 	cont "to a battle."
 
@@ -217,7 +217,7 @@ SabrinaFightDoneText:
 MediumRebeccaSeenText:
 	text "SABRINA would"
 	line "never have allowed"
-	cont "that lesser GYM"
+	cont "that lesser Gym"
 	cont "to dishonor us"
 	cont "like this!"
 
@@ -256,7 +256,7 @@ PsychicFranklinSeenText:
 
 PsychicFranklinBeatenText:
 	text "You should be"
-	line "GYM LEADER."
+	line "Gym Leader."
 	done
 
 PsychicFranklinAfterBattleText:
@@ -267,9 +267,9 @@ PsychicFranklinAfterBattleText:
 	done
 
 MediumDorisSeenText:
-	text "When the other GYM"
+	text "When the other Gym"
 	line "first arrived the"
-	cont "GYM LEADER"
+	cont "Gym Leader"
 	cont "challenged us."
 
 	para "He made quick"
@@ -299,15 +299,15 @@ MediumDorisAfterBattleText:
 
 PsychicJaredSeenText:
 	text "I've heard that"
-	line "the other GYM"
+	line "the other Gym"
 	cont "pays twice as much"
-	cont "to GYM trainers as"
+	cont "to Gym trainers as"
 	cont "we get."
 
 	para "No wonder it is"
 	line "growing so fast."
 
-	para "The LEADER must"
+	para "The Leader must"
 	line "be rich."
 	done
 
@@ -327,9 +327,9 @@ SaffronGymGuideText:
 	text "These poor"
 	line "psychics have"
 	cont "been beaten down"
-	cont "by the other GYM."
+	cont "by the other Gym."
 
-	para "The GYM LEADER"
+	para "The Gym Leader"
 	line "here is new and"
 	cont "apparently isn't"
 	cont "much of a fighter."

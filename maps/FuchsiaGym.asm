@@ -259,7 +259,7 @@ JanineText_DisappointYou:
 
 	para "After Dad was"
 	line "murdered I took"
-	cont "over the GYM."
+	cont "over the Gym."
 
 	para "I train everyday"
 	line "in honor of his"
@@ -332,7 +332,7 @@ LassAliceBeforeText:
 	text "Fufufu!"
 
 	para "I'm JANINE, the"
-	line "GYM LEADER!"
+	line "Gym Leader!"
 
 	para "No, I'm not!"
 	line "Gotcha, sucker!"
@@ -345,7 +345,7 @@ LassAliceBeatenText:
 LassAliceAfterText:
 	text "How will you dis-"
 	line "tinguish our real"
-	cont "LEADER?"
+	cont "Leader?"
 
 	para "You can't."
 
@@ -375,8 +375,8 @@ LassLindaAfterText:
 PicnickerCindyBeforeText:
 	text "Yep well done."
 
-	para "I'm the real GYM"
-	line "LEADER."
+	para "I'm the real Gym"
+	line "Leader."
 
 	para "Really!"
 
@@ -390,7 +390,7 @@ PicnickerCindyBeatenText:
 
 PicnickerCindyAfterText:
 	text "I'm not the real"
-	line "GYM LEADER."
+	line "Gym Leader."
 
 	para "I'm nowhere near"
 	line "as strong as"
@@ -426,10 +426,10 @@ CamperBarryAfterText:
 	done
 
 FuchsiaGymGuideText:
-	text "This GYM is full"
+	text "This Gym is full"
 	line "of people dressed"
 	cont "as JANINE the"
-	cont "LEADER."
+	cont "Leader."
 
 	para "You will just"
 	line "have to fight"
@@ -456,7 +456,7 @@ FuchsiaGymGuideText:
 FuchsiaGymGuideWinText:
 	text "That was a great"
 	line "battle, trainer"
-	cont "from JOHTO!"
+	cont "from Johto!"
 	done
 
 RematchTextJanine:

@@ -73,11 +73,11 @@ LavRadioTower1FReferenceLibrary: ; unreferenced
 LavTowerPreE4Text:
 	text "You need an EXPN"
 	line "CARD to tune into"
-	cont "KANTO radio."
+	cont "Kanto radio."
 	para "But we are all out"
 	line "of stock right"
 	cont "now."
-	para "HOENN ships are"
+	para "Hoenn ships are"
 	line "blockading trade"
 	cont "routes."
 	done
@@ -111,7 +111,7 @@ LavRadioTower1FOfficerText:
 LavRadioTower1FSuperNerd1Text:
 	text "We report the"
 	line "news all over"
-	cont "KANTO."
+	cont "Kanto."
 
 	para "Our charter says"
 	line "we have a duty to"

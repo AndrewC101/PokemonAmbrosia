@@ -34,7 +34,7 @@ Rattey:
 ViridianNicknameSpeechHousePokefanMText:
 	text "VIRIDIAN is the"
 	line "closest point to"
-	cont "JOHTO."
+	cont "Johto."
 	para "We collaborate"
 	line "together in the"
 	cont "war effort."

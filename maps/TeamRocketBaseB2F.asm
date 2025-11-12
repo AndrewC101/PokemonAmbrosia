@@ -1074,14 +1074,14 @@ RocketBaseLanceWhirlpoolText:
 	para "So long as one"
 	line "has the BADGE"
 	cont "of the MAHOGANY"
-	cont "GYM."
+	cont "Gym."
 	done
 
 RocketBaseLanceMonMasterText:
 	text "<PLAYER>."
 
 	para "The path to"
-	line "#mon MASTER"
+	line "#mon Master"
 	cont "is fraught with"
 	cont "peril, uncertainty"
 	cont "and sacrifice."

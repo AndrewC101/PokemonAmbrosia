@@ -22,7 +22,7 @@ SaffronMartCooltrainerFScript:
 
 SaffronMartCooltrainerMText:
 	text "Oh you are from"
-	line "JOHTO."
+	line "Johto."
 
 	para "I've always said"
 	line "the wealthy need"
@@ -38,11 +38,11 @@ SaffronMartCooltrainerMText:
 
 SaffronMartCooltrainerFText:
 	text "I tried the new"
-	line "GYM and got"
+	line "Gym and got"
 	cont "destroyed."
 
-	para "But the GYM"
-	line "LEADER himself"
+	para "But the Gym"
+	line "Leader himself"
 	cont "spoke to me and"
 	cont "give me tips."
 

@@ -546,7 +546,7 @@ GiratinaIntroText:
     cont "den of a great"
     cont "hieratic!"
 
-    para "The DRAGON LORD"
+    para "The Dragon Lord"
     line "they call him."
 
     para "If those poor"

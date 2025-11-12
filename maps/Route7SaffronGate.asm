@@ -25,7 +25,7 @@ Route7SaffronGuardScript:
 Route7SaffronGuardPowerPlantText:
 	text "WALLACE knows if"
 	line "he takes SAFFRON"
-	cont "he takes KANTO."
+	cont "he takes Kanto."
 
 	para "It is up to me"
 	line "to defend this"
@@ -33,10 +33,10 @@ Route7SaffronGuardPowerPlantText:
 	done
 
 Route7SaffronGuardSeriousText:
-	text "You are the HOENN"
+	text "You are the Hoenn"
 	line "Champion that"
 	cont "defeated the whole"
-	cont "HOENN army!"
+	cont "Hoenn army!"
 
 	para "I was just about"
 	line "to make my move"

@@ -323,7 +323,7 @@ BoarderDouglasAfterBattleText:
 SkierRoxanneSeenText:
 	text "Life is fragile."
 
-	para "But in this GYM"
+	para "But in this Gym"
 	line "we are family."
 
 	para "Together we will"

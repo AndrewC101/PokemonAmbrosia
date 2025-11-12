@@ -349,7 +349,7 @@ VermilionGymGuideText:
 	line "form a band."
 
 	para "But this is still"
-	line "a GYM."
+	line "a Gym."
 
 	para "LT SURGE is a war"
 	line "hero."

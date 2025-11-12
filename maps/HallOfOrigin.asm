@@ -118,7 +118,7 @@ OakBeatenArceusText:
     line "when you are"
     cont "ready to reach"
     cont "the heights of"
-    cont "#mon LORD."
+    cont "#mon Lord."
 
     para "Until then take"
     line "this token of my"
@@ -249,7 +249,7 @@ ReceivedMewtwoText:
 
 MustBeatOakText:
     text "I must defeat"
-    line "LORD OAK!"
+    line "Lord Oak!"
     done
 
 MasterOakScript:
@@ -338,7 +338,7 @@ MasterOakIntroText:
     line "occupied a"
     cont "configuration you"
     cont "would know as"
-    cont "PROF OAK."
+    cont "Prof Oak."
 
     para "Alas I have seen"
     line "the birth and"
@@ -376,7 +376,7 @@ MasterOakIntroText:
 
     para "None are destined"
     line "to be a"
-    cont "#mon LORD."
+    cont "#mon Lord."
 
     para "You however."
 
@@ -399,7 +399,7 @@ MasterOakVictoryText:
     cont "immortal."
 
     para "You are a"
-    line "#mon LORD."
+    line "#mon Lord."
 
     para "Your body is now"
     line "indestructible"
@@ -702,7 +702,7 @@ MasterLanceAfterBattleText:
 	text "You <PLAYER> have"
 	line "transcended all"
 	cont "that besets you."
-	para "You are DRAGON"
+	para "You are Dragon"
 	line "incarnate."
 	para "Destined to peirce"
 	line "the heavens and"
@@ -1048,20 +1048,20 @@ MasterWallaceSeenText:
     para "I will show the"
     line "world that the"
     cont "power and beauty"
-    cont "of HOENN is enough"
+    cont "of Hoenn is enough"
     cont "to conquer all."
     done
 
 MasterWallaceWinText:
     text "Do you now see"
     line "the beauty of"
-    cont "HOENN?"
+    cont "Hoenn?"
     done
 
 MasterWallaceLoseText:
     text "I will never"
     line "stop fighting"
-    cont "for HOENN."
+    cont "for Hoenn."
     done
 
 MasterWallaceAfterBattleText:
@@ -1085,7 +1085,7 @@ MasterWallaceAfterBattleText:
     para "I'll dedicate the"
     line "rest of my"
     cont "life to make"
-    cont "HOENN the defender"
+    cont "Hoenn the defender"
     cont "of the world."
     done
 
@@ -1093,7 +1093,7 @@ LoseAfterBattleTextMasterWallace:
     text "Do not fear"
     line "your defeat."
 
-    para "HOENN shall defend"
+    para "Hoenn shall defend"
     line "you and everyone."
     done
 

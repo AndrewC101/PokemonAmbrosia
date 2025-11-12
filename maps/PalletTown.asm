@@ -68,8 +68,8 @@ PalletTownFisherText:
 	para "Aww man, he is"
 	line "so cool!"
 
-	para "LEON is cool too"
-	line "and CYNTHIA too!"
+	para "Leon is cool too"
+	line "and Cynthia too!"
 
 	para "People like that"
 	line "will never visit"
@@ -90,7 +90,7 @@ PalletTownFisherText_Amaze:
     line "WALLACE!"
 
     para "The saviour of"
-    line "KANTO!"
+    line "Kanto!"
 
     para "You are the"
     line "COOLEST!"
@@ -114,7 +114,7 @@ RedsHouseSignText:
 	done
 
 OaksLabSignText:
-	text "OAK #mon"
+	text "Oak #mon"
 	line "RESEARCH LAB"
 	done
 
@@ -292,10 +292,10 @@ PalletTownCrystalText_Intro:
     para "It's been a while!"
 
     para "You know, I always"
-    line "thought KANTO was"
+    line "thought Kanto was"
     cont "much more urban"
     cont "and polluted than"
-    cont "JOHTO."
+    cont "Johto."
 
     para "But this place is"
     line "nice."
@@ -309,7 +309,7 @@ PalletTownCrystalText_Intro:
     para "...."
 
     para "I have heard that"
-    line "HOENN may invade"
+    line "Hoenn may invade"
     cont "any day now."
 
     para "I bet you have"
@@ -351,7 +351,7 @@ PalletTownCrystalText_KeepItUp:
     line "anyone beating"
     cont "you!"
 
-    para "When HOENN invade"
+    para "When Hoenn invade"
     line "I know you will"
     cont "defeat them."
 

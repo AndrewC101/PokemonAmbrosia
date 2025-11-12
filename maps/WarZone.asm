@@ -342,7 +342,7 @@ WarZoneCrystalGoodbyeText:
     text "You did it!"
 
     para "You beat the whole"
-    line "HOENN army!"
+    line "Hoenn army!"
 
     para "You saved us!"
 
@@ -380,7 +380,7 @@ WallaceSeenText:
 
     para "You must be the"
     line "new Champion of"
-    cont "JOHTO."
+    cont "Johto."
 
     para "A young hero"
     line "rose to Champion"
@@ -408,7 +408,7 @@ WallaceSeenText:
     line "#mon will"
     cont "conquer this land"
     cont "for me and for"
-    cont "all HOENN."
+    cont "all Hoenn."
 
     para "Now let me help"
     line "you complete your"
@@ -446,12 +446,12 @@ WallaceAfterBattleText1:
     done
 
 WallaceAfterBattleText2:
-    text "STEVEN..."
+    text "Steven..."
 
     para "Traitor!"
 
     para "The people of"
-    line "HOENN have"
+    line "Hoenn have"
     cont "rejected your"
     cont "brand of weak"
     cont "passivism."
@@ -459,7 +459,7 @@ WallaceAfterBattleText2:
     para "They believe in"
     line "my vision of a"
     cont "great and strong"
-    cont "HOENN."
+    cont "Hoenn."
 
     para "A jewel taking"
     line "its rightful place"
@@ -492,7 +492,7 @@ WallaceFinalText:
     done
 
 StevenIntroText:
-    text "STEVEN: They"
+    text "Steven: They"
     line "are no longer"
     cont "under your"
     cont "command."
@@ -509,12 +509,12 @@ StevenText:
     para "Hatred has lost."
 
     para "You will never"
-    line "drag HOENN into"
+    line "drag Hoenn into"
     cont "war again."
     done
 
 CynthiaIntroText:
-    text "CYNTHIA: They"
+    text "Cynthia: They"
     line "follow you out"
     cont "of fear."
     done
@@ -529,7 +529,7 @@ CynthiaText:
     done
 
 LeonIntroText:
-    text "LEON: Well well..."
+    text "Leon: Well well..."
 
     para "Would you look at"
     line "the clock."
@@ -618,7 +618,7 @@ StevenSeenText:
     para "So very sorry."
 
     para "For all the pain"
-    line "HOENN has caused."
+    line "Hoenn has caused."
 
     para "I tried to make"
     line "people see reason."
@@ -633,7 +633,7 @@ StevenSeenText:
     line "do with freeing"
     cont "#mon."
 
-    para "HOENN is mostly"
+    para "Hoenn is mostly"
     line "sea."
 
     para "People want more"
@@ -998,7 +998,7 @@ TrainerSoldier3:
 	closetext
 	end
 Soldier3SeenText:
-    text "KANTO will burn!"
+    text "Kanto will burn!"
 
     para "It is too late."
 
@@ -1079,7 +1079,7 @@ Soldier5SeenText:
     line "DRAKE."
 
     para "I have commanded"
-    line "the HOENN army"
+    line "the Hoenn army"
     cont "since before you"
     cont "were born."
 

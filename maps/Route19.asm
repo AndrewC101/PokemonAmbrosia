@@ -150,13 +150,13 @@ SwimmermHaroldSeenText:
 	line "fascist!"
 	para "I shall be the"
 	line "first to welcome"
-	cont "our HOENN brothers"
+	cont "our Hoenn brothers"
 	cont "and sisters across"
 	cont "the boarder."
 	done
 
 SwimmermHaroldBeatenText:
-	text "Welcome HOENN!"
+	text "Welcome Hoenn!"
 	done
 
 SwimmermHaroldAfterBattleText:
@@ -241,7 +241,7 @@ Route19Fisher2Text_RocksCleared:
 	line "kind fo small"
 	cont "earthquake and it"
 	cont "shifted the rocks!"
-	para "It was HOENN!"
+	para "It was Hoenn!"
 	para "I'll have to thank"
 	line "them when they get"
 	cont "here eh!"

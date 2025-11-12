@@ -223,7 +223,7 @@ RuinsOfAlphResearchCenterScientist1Text:
 	cont "powerful trainer"
 	cont "to ever exist."
 
-	para "The MASTER of"
+	para "The Master of"
 	line "MASTERS."
 
 	para "However he was not"

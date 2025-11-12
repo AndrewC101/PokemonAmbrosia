@@ -93,7 +93,7 @@ CooltrainermCodyAfterBattleText:
 	para "can use dragon"
 	line "#mon only after"
 
-	para "our MASTER allows"
+	para "our Master allows"
 	line "it."
 	done
 

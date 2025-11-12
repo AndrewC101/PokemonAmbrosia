@@ -2687,152 +2687,152 @@ WhichVariantText:
 
 PlayAsFalknerText:
     text "Play as"
-    line "LEADER FALKNER?"
+    line "Leader Falkner?"
     done
 
 PlayAgainstFalknerText:
     text "Play against"
-    line "LEADER FALKNER?"
+    line "Leader Falkner?"
     done
 
 PlayAsBugsyText:
     text "Play as"
-    line "LEADER BUGSY?"
+    line "Leader Bugsy?"
     done
 
 PlayAgainstBugsyText:
     text "Play against"
-    line "LEADER BUGSY?"
+    line "Leader Bugsy?"
     done
 
 PlayAsWhitneyText:
     text "Play as"
-    line "LEADER WHITNEY?"
+    line "Leader WHITNEY?"
     done
 
 PlayAgainstWhitneyText:
     text "Play against"
-    line "LEADER WHITNEY?"
+    line "Leader WHITNEY?"
     done
 
 PlayAsMortyText:
     text "Play as"
-    line "LEADER MORTY?"
+    line "Leader MORTY?"
     done
 
 PlayAgainstMortyText:
     text "Play against"
-    line "LEADER MORTY?"
+    line "Leader MORTY?"
     done
 
 PlayAsChuckText:
     text "Play as"
-    line "LEADER CHUCK?"
+    line "Leader CHUCK?"
     done
 
 PlayAgainstChuckText:
     text "Play against"
-    line "LEADER CHUCK?"
+    line "Leader CHUCK?"
     done
 
 PlayAsJasmineText:
     text "Play as"
-    line "LEADER JASMINE?"
+    line "Leader JASMINE?"
     done
 
 PlayAgainstJasmineText:
     text "Play against"
-    line "LEADER JASMINE?"
+    line "Leader JASMINE?"
     done
 
 PlayAsPryceText:
     text "Play as"
-    line "LEADER PRYCE?"
+    line "Leader PRYCE?"
     done
 
 PlayAgainstPryceText:
     text "Play against"
-    line "LEADER PRYCE?"
+    line "Leader PRYCE?"
     done
 
 PlayAsClairText:
     text "Play as"
-    line "LEADER CLAIR?"
+    line "Leader CLAIR?"
     done
 
 PlayAgainstClairText:
     text "Play against"
-    line "LEADER CLAIR?"
+    line "Leader CLAIR?"
     done
 
 PlayAsBrockText:
     text "Play as"
-    line "LEADER BROCK?"
+    line "Leader BROCK?"
     done
 
 PlayAgainstBrockText:
     text "Play against"
-    line "LEADER BROCK?"
+    line "Leader BROCK?"
     done
 
 PlayAsMistyText:
     text "Play as"
-    line "LEADER MISTY?"
+    line "Leader MISTY?"
     done
 
 PlayAgainstMistyText:
     text "Play against"
-    line "LEADER MISTY?"
+    line "Leader MISTY?"
     done
 
 PlayAsSurgeText:
     text "Play as"
-    line "LEADER SURGE?"
+    line "Leader SURGE?"
     done
 
 PlayAgainstSurgeText:
     text "Play against"
-    line "LEADER SURGE?"
+    line "Leader SURGE?"
     done
 
 PlayAsErikaText:
     text "Play as"
-    line "LEADER ERIKA?"
+    line "Leader ERIKA?"
     done
 
 PlayAgainstErikaText:
     text "Play against"
-    line "LEADER ERIKA?"
+    line "Leader ERIKA?"
     done
 
 PlayAsJanineText:
     text "Play as"
-    line "LEADER JANINE?"
+    line "Leader JANINE?"
     done
 
 PlayAgainstJanineText:
     text "Play against"
-    line "LEADER JANINE?"
+    line "Leader JANINE?"
     done
 
 PlayAsWillText:
     text "Play as"
-    line "LEADER WILL?"
+    line "Leader WILL?"
     done
 
 PlayAgainstWillText:
     text "Play against"
-    line "LEADER WILL?"
+    line "Leader WILL?"
     done
 
 PlayAsBlaineText:
     text "Play as"
-    line "LEADER BLAINE?"
+    line "Leader BLAINE?"
     done
 
 PlayAgainstBlaineText:
     text "Play against"
-    line "LEADER BLAINE?"
+    line "Leader BLAINE?"
     done
 
 PlayAsSabrinaText:
@@ -2867,22 +2867,22 @@ PlayAgainstKarenText:
 
 PlayAsGiovanniText:
     text "Play as"
-    line "LEADER GIOVANNI?"
+    line "Leader GIOVANNI?"
     done
 
 PlayAgainstGiovanniText:
     text "Play against"
-    line "LEADER GIOVANNI?"
+    line "Leader GIOVANNI?"
     done
 
 PlayAsOakText:
     text "Play as"
-    line "PROF OAK?"
+    line "Prof OAK?"
     done
 
 PlayAgainstOakText:
     text "Play against"
-    line "PROF OAK?"
+    line "Prof OAK?"
     done
 
 PlayAsStevenText:
@@ -3057,7 +3057,7 @@ ExplainStandardTrialText:
     done
 
 ExplainMasterTrialText:
-    text "The MASTER TRIAL"
+    text "The Master TRIAL"
     line "consists of 6"
     cont "total battles."
 
@@ -3227,7 +3227,7 @@ TrialUnlockMasterText:
 
     para "You have now"
     line "unlocked the"
-    cont "MASTER TRIAL!"
+    cont "Master TRIAL!"
 
     para "A more difficult"
     line "trial with a"

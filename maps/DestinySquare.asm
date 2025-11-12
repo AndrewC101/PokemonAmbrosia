@@ -269,7 +269,7 @@ MasterCynthiaScript:
 
 MasterCynthiaSeenText:
 	text "Ah <PLAYER>, hero"
-	line "of KANTO."
+	line "of Kanto."
 	para "I remember when"
 	line "you walked into"
 	cont "ELMs lab."
@@ -640,11 +640,11 @@ MasterLeonSeenText:
 	cont "need a new"
 	cont "catchphrase for"
 	cont "this battle."
-	para "It's MASTER time!"
+	para "It's Master time!"
 	done
 
 MasterLeonBeatenText:
-    text "MASTER indeed."
+    text "Master indeed."
     done
 
 MasterLeonWinText:
@@ -654,7 +654,7 @@ MasterLeonWinText:
 
 MasterLeonAfterBattleText:
 	text "You are a real"
-	line "MASTER."
+	line "Master."
 	para "I notice LANCE and"
 	line "BLUE aren't"
 	cont "here..."

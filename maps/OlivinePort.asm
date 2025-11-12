@@ -347,7 +347,7 @@ OlivinePortFridayShipText:
 OlivinePortFishingGuru1Text:
 	text "The Ship travels"
 	line "to VERMILION in"
-	cont "KANTO."
+	cont "Kanto."
 
 	para "You need a ticket"
 	line "though."
@@ -374,7 +374,7 @@ OlivinePortYoungsterText:
 
 OlivinePortCooltrainerFText:
 	text "There are lots of"
-	line "#mon in KANTO."
+	line "#mon in Kanto."
 
 	para "I wish I could go…"
 
@@ -387,7 +387,7 @@ OlivinePortSailorBeforeHOFText:
 	text "It is very risky"
 	line "to travel by sea."
 
-	para "HOENN subs may be"
+	para "Hoenn subs may be"
 	line "out there."
 	done
 

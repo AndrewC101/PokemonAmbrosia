@@ -72,7 +72,7 @@ WallaceBeatenRadio:
 	done
 
 PlayersNeighborsDaughterText:
-	text "PROF ELM has"
+	text "Prof Elm has"
 	line "conducted ground"
 	cont "breaking research"
 	cont "into #mon"
@@ -98,13 +98,13 @@ PlayersNeighborsDaughterTextPostWallace:
 	para "Our local hero!"
 	para "Thank you for"
 	line "saving us all."
-	para "I'm sure CRYSTAL"
+	para "I'm sure Crytal"
 	line "is much stronger"
 	cont "too thanks to you."
 	done
 
 PlayersNeighborText:
-	text "CRYSTAL got her"
+	text "Crytal got her"
 	line "first #mon."
 
 	para "She loves her"
@@ -140,14 +140,14 @@ PlayersNeighborTextPostWallace:
 PlayerNeighborRadioText1:
 	text "Breaking news!"
 
-	para "The HOENN fleet"
+	para "The Hoenn fleet"
 	line "have been seen"
 	cont "mobilising near"
 	cont "the coast."
 	done
 
 PlayerNeighborRadioText2:
-	text "Invasion of KANTO"
+	text "Invasion of Kanto"
 	line "seems imminent."
 	done
 
@@ -156,11 +156,11 @@ PlayerNeighborRadioText3:
 	line "has taken control"
 	cont "due to the"
 	cont "assassination of"
-	cont "Champion STEVEN."
+	cont "Champion Steven."
 	done
 
 PlayerNeighborRadioText4:
-	text "The HOENN war is"
+	text "The Hoenn war is"
 	line "inevitable."
 
 	para "ARCEUS help us!"

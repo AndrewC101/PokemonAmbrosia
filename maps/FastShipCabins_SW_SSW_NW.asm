@@ -113,12 +113,12 @@ FastShipCabinsNorthwestCabinTrashcan:
 
 FirebreatherLyleSeenText:
 	text "I heading to"
-	line "KANTO to find my"
+	line "Kanto to find my"
 	cont "hero BLAINE."
 
-	para "The CINNABAR GYM"
+	para "The CINNABAR Gym"
 	line "was destroyed in"
-	cont "a HOENN attack."
+	cont "a Hoenn attack."
 
 	para "Everyone knows the"
 	line "volcano wasn't"
@@ -132,7 +132,7 @@ FirebreatherLyleBeatenText:
 
 FirebreatherLyleAfterBattleText:
 	text "BLAINE needs"
-	line "GYM trainers."
+	line "Gym trainers."
 
 	para "I'm going to"
 	line "volunteer."
@@ -188,7 +188,7 @@ BeautyCassieBeatenText:
 
 BeautyCassieAfterBattleText:
 	text "I'm starting a"
-	line "new life in KANTO."
+	line "new life in Kanto."
 
 	para "Away from the"
 	line "judgement of"

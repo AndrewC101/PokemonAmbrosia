@@ -121,7 +121,7 @@ SaffronMagnetTrainStationOfficerTrainIsntOperatingText:
 	para "We have lost our"
 	line "power supply."
 
-	para "This must be HOENN"
+	para "This must be Hoenn"
 	line "work!"
 	done
 

@@ -150,8 +150,8 @@ VioletGymStatue:
 	jumpstd GymStatue2Script
 
 FalknerIntroText:
-	text "I'm FALKNER, the"
-	line "VIOLET #mon GYM"
+	text "I'm Falkner, the"
+	line "VIOLET #mon Gym"
 	cont "leader!"
 
 	para "I wrote a haiku"
@@ -261,7 +261,7 @@ FalknerTMMudSlapText:
 
 FalknerFightDoneText:
 	text "There are #mon"
-	line "GYMS in cities and"
+	line "Gyms in cities and"
 	cont "towns ahead."
 
 	para "You will face"
@@ -292,7 +292,7 @@ FalknerFightDoneText:
 BirdKeeperRodSeenText:
 	text "I have my"
 	line "concerns about"
-	cont "FALKNER."
+	cont "Falkner."
 
 	para "The darkness may"
 	line "have hold of"
@@ -307,7 +307,7 @@ BirdKeeperRodBeatenText:
 BirdKeeperRodAfterBattleText:
 	text "Even in his"
 	line "current state"
-	cont "FALKNER is far"
+	cont "Falkner is far"
 	cont "stronger than I."
 
 	para "But I wish I"
@@ -351,7 +351,7 @@ VioletGymGuideText:
 	line "er but I can give"
 	cont "some advice!"
 
-	para "This GYM utilizes"
+	para "This Gym utilizes"
 	line "FLYING type"
 	cont "#mon."
 

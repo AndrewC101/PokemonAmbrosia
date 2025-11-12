@@ -164,10 +164,10 @@ ViridianGymStatue:
 MustBeatAllGymsText:
     text "Prove yourself"
     line "by beating all"
-    cont "the KANTO GYMs."
+    cont "the Kanto GYMs."
 
     para "Then I will fight"
-    line "you JOHTO CHAMP!"
+    line "you Johto CHAMP!"
     done
 
 FalseIntroText:
@@ -185,7 +185,7 @@ FalseIntroText:
 WarHasBegunText:
     text "War has begun..."
 
-    para "The HOENN invasion"
+    para "The Hoenn invasion"
     line "forces have"
     cont "established a"
     cont "bridgehead at"
@@ -195,7 +195,7 @@ WarHasBegunText:
 
     para "You are one of"
     line "the strongest"
-    cont "trainers in KANTO."
+    cont "trainers in Kanto."
 
     para "You must go to"
     line "VERMILION."
@@ -226,7 +226,7 @@ WarHasBegunText:
 LeaderBlueBeforeText:
 	text "Well if it isn't"
 	line "the saviour of"
-	cont "KANTO!"
+	cont "Kanto!"
 
 	para "Champion <PLAYER>!"
 
@@ -250,7 +250,7 @@ LeaderBlueBeforeText:
 	line "now."
 
 	para "You are not the"
-	line "hero of KANTO."
+	line "hero of Kanto."
 
 	para "You are just"
 	line "another trainer."
@@ -266,7 +266,7 @@ LeaderBlueWinText:
 	para "Congratulations"
 	line "great Champion."
 	para "You must go see my"
-	line "grandad PROF OAK."
+	line "grandad Prof Oak."
 	done
 
 LeaderBlueLossText:
@@ -282,9 +282,9 @@ Text_ReceivedEarthBadge:
 AllKantoBadgesText:
 	text "By winning here"
 	line "you have conquered"
-	cont "all KANTO GYMS."
+	cont "all Kanto Gyms."
 	para "You have to go see"
-	line "my uncle PROF OAK."
+	line "my uncle Prof Oak."
 	para "He will have made"
 	line "arrangements for"
 	cont "you."
@@ -314,7 +314,7 @@ LeaderBlueEpilogueText:
 
 	para "Oh great Champion"
 	line "of CHAMPIONS and"
-	cont "saviour of KANTO."
+	cont "saviour of Kanto."
 	done
 
 GreenIntroText:

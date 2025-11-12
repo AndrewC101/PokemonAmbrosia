@@ -169,7 +169,7 @@ MrPokemonsHouse_OakExits:
 MrPokemonIntroText1:
 	text "Who are you!?"
 
-	para "A HOENN spy!?"
+	para "A Hoenn spy!?"
 
 	para "A double agent!?"
 
@@ -177,7 +177,7 @@ MrPokemonIntroText1:
 
 	para "Sorry, I've just"
 	line "spent six months"
-	cont "in HOENN as a"
+	cont "in Hoenn as a"
 	cont "spy."
 
 	para "It's hard to"
@@ -187,7 +187,7 @@ MrPokemonIntroText1:
 
 MrPokemonIntroText2:
 	text "Here, I smuggled"
-	line "this out of HOENN."
+	line "this out of Hoenn."
 	done
 
 MrPokemonsHouse_GotEggText:
@@ -202,12 +202,12 @@ MrPokemonIntroText3:
 
 	para "FAIRY #mon are"
 	line "uniquely capable"
-	cont "of fighting DRAGON"
+	cont "of fighting Dragon"
 	cont "#mon."
 
 	para "This makes them"
 	line "dangerous to the"
-	cont "HOENN admiral."
+	cont "Hoenn admiral."
 
 	para "ADMIRAL DRAKE."
 	done
@@ -218,14 +218,14 @@ MrPokemonIntroText4:
 	done
 
 MrPokemonIntroText5:
-	text "PROF OAK has"
+	text "Prof Oak has"
 	line "been expecting"
 	cont "you."
 	done
 
 MrPokemonsHouse_MrPokemonHealText:
 	text "Are you returning"
-	line "to PROF.ELM?"
+	line "to Prof.Elm?"
 
 	para "Here, your #mon"
 	line "should have some"
@@ -266,7 +266,7 @@ MrPokemonText_AlwaysNewDiscoveries:
 	line "like me for"
 	cont "saying this."
 
-	para "But HOENN really"
+	para "But Hoenn really"
 	line "is a beautiful"
 	cont "place."
 
@@ -278,13 +278,13 @@ MrPokemonText_AlwaysNewDiscoveries:
 	done
 
 MrPokemonsHouse_OakText1:
-	text "OAK: Aha! So"
+	text "Oak: Aha! So"
 	line "you're <PLAY_G>!"
 
-	para "I'm OAK! A #mon"
+	para "I'm Oak! A #mon"
 	line "researcher."
 
-	para "PROF ELM speaks"
+	para "Prof Elm speaks"
 	line "very highly of"
 	cont "you."
 
@@ -366,7 +366,7 @@ MrPokemonsHouse_ForeignMagazinesText:
 	line "foreign magazines."
 
 	para "They must be"
-	line "from HOENN."
+	line "from Hoenn."
 	done
 
 MrPokemonsHouse_BrokenComputerText:
@@ -380,7 +380,7 @@ MrPokemonsHouse_StrangeCoinsText:
 	line "strange coins!"
 
 	para "Maybe they're from"
-	line "HOENN."
+	line "Hoenn."
 	done
 
 MrPokemonDittoScrpt:

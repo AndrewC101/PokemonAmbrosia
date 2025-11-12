@@ -43,7 +43,7 @@ NurseInvadeText:
 
 NurseLordText:
 	text "My..."
-	para "My LORD, I am not"
+	para "My Lord, I am not"
 	line "worthy."
 	para "I am moved to be"
 	line "granted the"
@@ -317,11 +317,11 @@ ContestResults_PartyFullText:
 GymStatue_CityGymText:
 	text_ram wStringBuffer3
 	text_start
-	line "#mon GYM"
+	line "#mon Gym"
 	done
 
 GymStatue_WinningTrainersText:
-	text "LEADER: @"
+	text "Leader: @"
 	text_ram wStringBuffer4
 	text_start
 	para "WINNING TRAINERS:"

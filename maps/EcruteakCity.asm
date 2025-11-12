@@ -89,7 +89,7 @@ EcruteakCityGramps1Text:
 	para "I lost him 15"
 	line "years ago in"
 	cont "the last war"
-	cont "with HOENN."
+	cont "with Hoenn."
 
 	para "I pray for"
 	line "him everyday."
@@ -151,7 +151,7 @@ EcruteakCityLass2Text_ReleasedBeasts:
 EcruteakCityFisherText:
 	text "This was the"
 	line "first major city"
-	cont "built in JOHTO."
+	cont "built in Johto."
 
 	para "Right in the"
 	line "middle of the"
@@ -169,10 +169,10 @@ EcruteakCityYoungsterText:
 	para "The TIN TOWER"
 	line "is the tallest"
 	cont "building in"
-	cont "JOHTO."
+	cont "Johto."
 
 	para "But the SILPH CO"
-	line "building in KANTO"
+	line "building in Kanto"
 	cont "is taller still."
 	done
 
@@ -196,12 +196,12 @@ EcruteakCityGramps3Text:
 	line "has been passed"
 
 	para "down by ECRUTEAK"
-	line "GYM LEADERS."
+	line "Gym Leaders."
 
 	para "Me?"
 
-	para "I was the GYM"
-	line "LEADER long ago."
+	para "I was the Gym"
+	line "Leader long ago."
 	cont "Hohoho!"
 	done
 
@@ -223,8 +223,8 @@ TinTowerSignText:
 
 EcruteakGymSignText:
 	text "ECRUTEAK CITY"
-	line "#mon GYM"
-	cont "LEADER: MORTY"
+	line "#mon Gym"
+	cont "Leader: MORTY"
 
 	para "The Mystic Seer of"
 	line "the Future"

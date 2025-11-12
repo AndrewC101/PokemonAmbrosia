@@ -92,7 +92,7 @@ BattleTowerOutsidePokefanText:
     line "36 characters!"
 
     para "I hear you can"
-    line "unlock CYNTHIA."
+    line "unlock Cynthia."
 
     para "I'd main her"
     line "for sure..."
@@ -315,8 +315,8 @@ BattleArcadeIntro:
     line "characters at"
     cont "first."
 
-    para "All the GYM"
-    line "LEADERS."
+    para "All the Gym"
+    line "Leaders."
 
     para "You can unlock"
     line "more in batches"
@@ -363,7 +363,7 @@ BattleTrialIntro:
     para "If you make it"
     line "through the normal"
     cont "trial you unlock"
-    cont "the MASTER TRIAL."
+    cont "the Master TRIAL."
 
     para "I hear there is"
     line "even another level"

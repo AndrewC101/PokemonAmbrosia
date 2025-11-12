@@ -247,17 +247,17 @@ Route25MistyDateText:
 	para "...."
 
 	para "Oh, you want a"
-	line "GYM battle."
+	line "Gym battle."
 
 	para "Yes, I am MISTY"
-	line "the GYM LEADER."
+	line "the Gym Leader."
 
 	para "I'll be all too"
 	line "happy to crush"
 	cont "you in a battle."
 
 	para "Meet me at the"
-	line "GYM if you are"
+	line "Gym if you are"
 	cont "brave enough."
 	done
 

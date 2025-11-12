@@ -255,7 +255,7 @@ TrainerGruntM1WhenTalkText:
 
 	para "We are looking"
 	line "for ways to win"
-	cont "the HOENN war."
+	cont "the Hoenn war."
 
 	para "Our scientists are"
 	line "interested in"

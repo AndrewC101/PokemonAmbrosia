@@ -112,10 +112,10 @@ Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 
 BirdKeeperHankSeenText:
-	text "When HOENN attacks"
+	text "When Hoenn attacks"
 	line "I'll use my birds"
 	cont "to FLY people to"
-	cont "JOHTO."
+	cont "Johto."
 	para "At a small fee of"
 	line "course."
 	done
@@ -128,7 +128,7 @@ BirdKeeperHankBeatenText:
 BirdKeeperHankAfterBattleText:
 	text "I've heard legends"
 	line "of huge bird"
-	cont "#mon in JOHTO."
+	cont "#mon in Johto."
 	para "I could make loads"
 	line "of money with"
 	cont "those!"

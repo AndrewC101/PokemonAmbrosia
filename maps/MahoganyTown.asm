@@ -93,7 +93,7 @@ MahoganyTownGrampsText_ClearedRocketHideout:
 	done
 
 MahoganyTownFisherText:
-	text "The GYM is closed"
+	text "The Gym is closed"
 	line "right now."
 
 	para "There is some"
@@ -131,8 +131,8 @@ MahoganyTownSignText:
 
 MahoganyGymSignText:
 	text "MAHOGANY TOWN"
-	line "#mon GYM"
-	cont "LEADER: PRYCE"
+	line "#mon Gym"
+	cont "Leader: PRYCE"
 
 	para "The Teacher of"
 	line "Winter's Harshness"

@@ -194,7 +194,7 @@ BikerDwayneBeatenText:
 BikerDwayneAfterBattleText:
 	text "We are the most"
 	line "feared biker gang"
-	cont "in all KANTO."
+	cont "in all Kanto."
 
 	para "We keep the"
 	line "CYCLE ROAD gangs"
@@ -259,7 +259,7 @@ BikerZekeBeatenText:
 BikerZekeAfterBattleText:
 	text "We were the most"
 	line "badass gang in"
-	cont "all KANTO."
+	cont "all Kanto."
 
 	para "Then..."
 

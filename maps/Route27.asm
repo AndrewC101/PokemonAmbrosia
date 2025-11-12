@@ -246,13 +246,13 @@ Route27FisherHeyText:
 
 Route27FisherText:
 	text "I am a member"
-	line "of KANTO border"
+	line "of Kanto border"
 	cont "patrol."
 
 	para "The country is"
 	line "in lockdown due"
 	cont "to the threat of"
-	cont "the HOENN war."
+	cont "the Hoenn war."
 
 	para "Let me see your"
 	line "trainer card!"
@@ -265,13 +265,13 @@ Route27FisherText:
 	para "You may go"
 	line "ahead."
 
-	para "Welcome to KANTO."
+	para "Welcome to Kanto."
 	done
 
 Route27AfterFisherText:
 	text "We won't have any"
 	line "more undocumented"
-	cont "JOHTO immigrants"
+	cont "Johto immigrants"
 	cont "flood across our"
 	cont "undefended western"
 	cont "boarder."
@@ -321,7 +321,7 @@ CooltrainerfReenaSeenText:
 	text "Everyone here"
 	line "wants to be the"
 	cont "first Champion"
-	cont "of JOHTO."
+	cont "of Johto."
 
 	para "But only I"
 	line "will succeed."
@@ -384,7 +384,7 @@ BirdKeeperJoseBeatenText:
 	done
 
 BirdKeeperJoseAfterBattleText:
-	text "Let HOENN come!"
+	text "Let Hoenn come!"
 
 	para "My #mon will"
 	line "feast on their"
@@ -395,7 +395,7 @@ TohjoFallsSignText:
 	text "TOHJO FALLS"
 
 	para "THE LINK BETWEEN"
-	line "KANTO AND JOHTO"
+	line "Kanto AND Johto"
 	done
 
 Route27_MapEvents:

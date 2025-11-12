@@ -29,7 +29,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	cont "DEN."
 
 	para "There lives the"
-	line "great DRAGON LORD."
+	line "great Dragon Lord."
 
 	para "An ancient and"
 	line "supreme species"
@@ -37,7 +37,7 @@ BlackthornDragonSpeechHouseGrannyText:
 
 	para "A RAYQUAZA."
 
-	para "The DRAGON LORD"
+	para "The Dragon Lord"
 	line "is centuries old."
 
 	para "He alone bestows"

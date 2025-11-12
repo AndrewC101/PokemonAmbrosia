@@ -193,7 +193,7 @@ OakWelcomeKantoText:
 	text "Good to see you"
 	line "<PLAYER>."
 
-	para "KANTO is still"
+	para "Kanto is still"
 	line "in a war ready"
 	cont "state."
 
@@ -201,7 +201,7 @@ OakWelcomeKantoText:
 	line "all very strong."
 
 	para "Especially the"
-	line "GYM LEADERS."
+	line "Gym Leaders."
 
 	para "It may not be"
 	line "a friendly place"
@@ -212,7 +212,7 @@ OakWelcomeKantoText:
 	line "from SAFFRON."
 	para "It might be"
 	line "difficult to get"
-	cont "back to JOHTO from"
+	cont "back to Johto from"
 	cont "here."
 	para "I can warp you"
 	line "back to SAFFRON"
@@ -245,13 +245,13 @@ OakOpenMtSilverText:
 	line "incredibly well."
 
 	para "You have saved"
-	line "KANTO."
+	line "Kanto."
 
 	para "You have defeated"
 	line "WALLACE."
 
 	para "And you have"
-	line "obtained all KANTO"
+	line "obtained all Kanto"
 	cont "BADGES."
 
 	para "You are a true"
@@ -305,7 +305,7 @@ OakOpenMtSilverText:
 
 	para "If you beat him"
 	line "you will be a"
-	cont "#mon MASTER."
+	cont "#mon Master."
 	done
 
 OakGiveWarpDeviceText:
@@ -328,7 +328,7 @@ OakGiveWarpDeviceText:
 OakNoKantoBadgesText:
     text "Hello <PLAYER>."
 
-	para "The KANTO GYMS"
+	para "The Kanto Gyms"
 	line "are very tough."
 
 	para "I sense you are"
@@ -346,7 +346,7 @@ OakYesKantoBadgesText:
     text "Hello <PLAYER>."
 
 	para "Ah you have some"
-	line "KANTO BADGES."
+	line "Kanto BADGES."
 
 	para "Very good!"
 
@@ -357,8 +357,8 @@ OakYesKantoBadgesText:
 
 	para "He is much more"
 	line "powerful than a"
-	cont "typical GYM"
-	cont "LEADER!"
+	cont "typical Gym"
+	cont "Leader!"
 
 	para "If you ever beat"
 	line "him, you must"
@@ -388,7 +388,7 @@ OaksAssistant2Text:
 
 OaksAssistant3Text:
 	text "Don't tell anyone,"
-	line "but PROF.OAK'S"
+	line "but Prof.Oak'S"
 	cont "#mon TALK isn't"
 	cont "a live broadcast."
 	done
@@ -417,7 +417,7 @@ OaksLabPCText:
 
 	para "…"
 
-	para "PROF.OAK, how is"
+	para "Prof.Oak, how is"
 	line "your research"
 	cont "coming along?"
 
@@ -433,7 +433,7 @@ OaksLabPCText:
 	para "I'm delighted to"
 	line "hear that."
 
-	para "ELM in NEW BARK"
+	para "Elm in NEW BARK"
 	line "TOWN 8-)"
 	done
 

@@ -275,7 +275,7 @@ SSAquaCaptainHowDoYouLikeText:
 	cont "luxurious ship?"
 
 	para "We hold the BLUE"
-	line "RIBAND for KANTO"
+	line "RIBAND for Kanto"
 	cont "crossing."
 	done
 
@@ -318,7 +318,7 @@ SSAquaEntertainedGranddaughterText:
 
 	para "The captain is"
 	line "not selling"
-	cont "secrets to HOENN."
+	cont "secrets to Hoenn."
 
 	para "Here, I have been"
 	line "authorized to give"
@@ -538,7 +538,7 @@ TwinsMegandpeg2AfterBattleText:
 PsychicRodneySeenText:
 	text "Have you heard"
 	line "SAFFRON has a"
-	cont "second GYM?"
+	cont "second Gym?"
 
 	para "They showed up"
 	line "and beat up the"
@@ -629,7 +629,7 @@ SupernerdShawnSeenText:
 	text "I am taking"
 	line "some APRICORN"
 	cont "balls to sell"
-	cont "in KANTO."
+	cont "in Kanto."
 
 	para "I'll make a"
 	line "killing!"
@@ -642,7 +642,7 @@ SupernerdShawnBeatenText:
 
 SupernerdShawnAfterBattleText:
 	text "I hope that new"
-	line "JOHTO Champion"
+	line "Johto Champion"
 	cont "doesn't show up"
 	cont "to spoil my new"
 	cont "business."

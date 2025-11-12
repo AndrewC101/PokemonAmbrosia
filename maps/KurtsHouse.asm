@@ -472,7 +472,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	cont "SLOWPOKE WELL."
 
 	para "They are a group"
-	line "from KANTO that"
+	line "from Kanto that"
 	cont "exploit and"
 	cont "traffic #mon."
 
@@ -529,7 +529,7 @@ KurtsHouseKurtAskYouHaveAnApricornText:
 	line "APRICORN for me?"
 
 	para "Fine! I'll turn it"
-	line "into a BALL."
+	line "into a Ball."
 	done
 
 KurtsHouseKurtThatsALetdownText:
@@ -545,7 +545,7 @@ KurtsHouseKurtDontBotherMeText:
 KurtsHouseKurtJustFinishedYourBallText:
 	text "KURT: Ah, <PLAYER>!"
 	line "I just finished"
-	cont "your BALL. Here!"
+	cont "your Ball. Here!"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
@@ -571,7 +571,7 @@ KurtsHouseKurtWhatIsThatText:
 	line "one before."
 
 	para "It looks a lot"
-	line "like a # BALL,"
+	line "like a # Ball,"
 
 	para "but it appears to"
 	line "be something else."
@@ -593,7 +593,7 @@ KurtsHouseKurtAhHaISeeText:
 KurtsHouseKurtThisBallStartedToShakeText:
 	text "<PLAYER>!"
 
-	para "This BALL started"
+	para "This Ball started"
 	line "to shake while I"
 	cont "was checking it."
 
@@ -608,7 +608,7 @@ KurtsGranddaughterSlowpokeGoneText:
 	para "taken away by bad"
 	line "people?"
 
-	para "BUGSY will make"
+	para "Falkner will make"
 	line "them suffer."
 	done
 
@@ -656,7 +656,7 @@ KurtsGranddaughterFunText:
 
 KurtsGranddaughterGSBallText:
 	text "Grandpa's checking"
-	line "a BALL right now."
+	line "a Ball right now."
 
 	para "So I'm waiting"
 	line "till he's done."
@@ -668,8 +668,8 @@ KurtsHouseSlowpokeText:
 	done
 
 KurtsHouseOakPhotoText:
-	text "…A young PROF."
-	line "OAK?"
+	text "…A young Prof."
+	line "Oak?"
 	done
 
 KurtsHouseCelebiStatueText:

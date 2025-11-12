@@ -51,7 +51,7 @@ SaffronGymGiovanniScript:
 
 GiovanniIntroText:
     text "Welcome to the"
-    line "true SAFFRON GYM."
+    line "true SAFFRON Gym."
 
     para "You don't need"
     line "special powers"
@@ -139,7 +139,7 @@ LassEveSeenText:
     text "We accept all"
     line "challengers!"
 
-    para "Our LEADER showed"
+    para "Our Leader showed"
     line "us we don't need"
     cont "special powers."
 
@@ -156,7 +156,7 @@ LassEveAfterBattleText:
     line "I could become"
     cont "this strong."
 
-    para "Our LEADER is a"
+    para "Our Leader is a"
     line "great trainer"
     cont "and teacher."
     done
@@ -172,16 +172,16 @@ TrainerBeautyRachael:
 	end
 
 BeautyRachaelSeenText:
-    text "The PSYCHIC GYM"
+    text "The PSYCHIC Gym"
     line "next door breeds"
     cont "arrogance."
 
     para "They looked down"
     line "on people like us."
 
-    para "Until the LEADER"
+    para "Until the Leader"
     line "took out the"
-    cont "whole GYM by"
+    cont "whole Gym by"
     cont "himself."
     done
 
@@ -190,12 +190,12 @@ BeautyRachaelBeatenText:
     done
 
 BeautyRachaelAfterBattleText:
-    text "The LEADER is"
+    text "The Leader is"
     line "so strong and"
     cont "intense."
 
     para "I am proud to"
-    line "belong to his GYM."
+    line "belong to his Gym."
     done
 
 TrainerBlackbeltJonny:
@@ -210,7 +210,7 @@ TrainerBlackbeltJonny:
 
 BlackbeltJonnySeenText:
     text "There used to be"
-    line "a FIGHTING GYM"
+    line "a FIGHTING Gym"
     cont "here."
 
     para "Then the Psychics"
@@ -223,7 +223,7 @@ BlackbeltJonnyBeatenText:
     done
 
 BlackbeltJonnyAfterBattleText:
-    text "The LEADER crushed"
+    text "The Leader crushed"
     line "those Psychics."
 
     para "Now we will take"
@@ -246,7 +246,7 @@ TrainerPsychicJamie:
 
 PsychicJamieSeenText:
     text "I used to be a"
-    line "member of the GYM"
+    line "member of the Gym"
     cont "next door."
 
     para "I came here"
@@ -255,7 +255,7 @@ PsychicJamieSeenText:
     cont "defeat these"
     cont "weaklings."
 
-    para "The LEADER"
+    para "The Leader"
     line "crushed me."
     done
 
@@ -271,7 +271,7 @@ PsychicJamieAfterBattleText:
     cont "mean you really"
     cont "understand them."
 
-    para "The LEADER has"
+    para "The Leader has"
     line "taught me to"
     cont "know my #mon."
     done

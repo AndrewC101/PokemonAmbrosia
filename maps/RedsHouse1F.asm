@@ -110,7 +110,7 @@ RedsMomText2:
 RedsHouse1FTVText:
 	text "They have programs"
 	line "that aren't shown"
-	cont "in JOHTO…"
+	cont "in Johto…"
 	done
 
 RedsHouseMrMimeScript:

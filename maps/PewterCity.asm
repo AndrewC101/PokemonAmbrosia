@@ -70,7 +70,7 @@ PewterCityCooltrainerFText:
 	line "tried to rebuild."
 
 	para "BROCK spends his"
-	line "whole GYM LEADER"
+	line "whole Gym Leader"
 	cont "salary helping"
 	cont "everyone."
 	done
@@ -131,8 +131,8 @@ PewterCitySignText:
 
 PewterGymSignText:
 	text "PEWTER CITY"
-	line "#mon GYM"
-	cont "LEADER: BROCK"
+	line "#mon Gym"
+	cont "Leader: BROCK"
 
 	para "The Rock Solid"
 	line "#mon Trainer"
@@ -219,7 +219,7 @@ MuseumBlockText:
 
     para "Only those who"
     line "have defeated"
-    cont "GYM LEADER BROCK"
+    cont "Gym Leader BROCK"
     cont "may enter."
     done
 
@@ -243,7 +243,7 @@ PewterGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

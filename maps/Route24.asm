@@ -83,7 +83,7 @@ Route24RocketSeenText:
 
 	para "I have lost all"
 	line "contact with the"
-	cont "JOHTO ROCKETS."
+	cont "Johto ROCKETS."
 
 	para "They were weak"
 	line "and deserved what"
@@ -94,7 +94,7 @@ Route24RocketSeenText:
 
 	para "To use the RADIO"
 	line "TOWER to control"
-	cont "HOENN #mon."
+	cont "Hoenn #mon."
 
 	para "I'm sure you know"
 	line "about that."
@@ -120,7 +120,7 @@ Route24RocketSeenText:
     cont "in the square"
     cont "pool in the"
     cont "centre of the"
-    cont "CERULEAN GYM."
+    cont "CERULEAN Gym."
 
     para "But before you"
     line "depart..."
@@ -144,7 +144,7 @@ Route24RocketAfterBattleText:
 
 	para "I know he is"
 	line "alive and lives"
-	cont "in KANTO."
+	cont "in Kanto."
 
 	para "I had hoped to"
 	line "to find him and"

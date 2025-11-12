@@ -441,7 +441,7 @@ BeautySamanthaAfterBattleText:
 	done
 
 GoldenrodGymGuideText:
-	text "This GYM is"
+	text "This Gym is"
 	line "full of aspiring"
 	cont "movie stars who"
 	cont "like to use"

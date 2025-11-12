@@ -366,14 +366,14 @@ DragonShrineElderGreetingText:
 
 	para "Dwarfed by the"
 	line "storming tempest"
-	cont "of a DRAGON life."
+	cont "of a Dragon life."
 
 	para "Your skin shall"
 	line "wrinkle and your"
 	cont "body decay."
 
 	para "While the splendor"
-	line "of the DRAGON"
+	line "of the Dragon"
 	cont "goes untarnished."
 
 	para "To be worthy to"
@@ -388,12 +388,12 @@ DragonShrineElderGreetingText:
 DragonShrineQuestion1Text:
 	text "Which of these"
 	line "#mon is not a"
-	cont "DRAGON?"
+	cont "Dragon?"
 	done
 
 DragonShrineQuestion2Text:
 	text "What is the most"
-	line "powerful DRAGON"
+	line "powerful Dragon"
 	cont "attack?"
 	done
 
@@ -419,7 +419,7 @@ DragonShrinePassedTestText:
 	text "You understand"
 	line "the beauty and"
 	cont "mystery of the"
-	cont "DRAGON."
+	cont "Dragon."
 
 	para "You are more"
 	line "worthy of the"
@@ -454,7 +454,7 @@ DragonShrineElderScoldsClairText:
 
 DragonShrineComeAgainText:
 	text "The spirit of"
-	line "the DRAGON will"
+	line "the Dragon will"
 	cont "always blaze"
 	cont "within you."
 	done
@@ -529,7 +529,7 @@ Question1CorrectText:
     text "Indeed CHARIZARD"
     line "is an abomination"
     cont "unworthy of the"
-    cont "name of DRAGON."
+    cont "name of Dragon."
 
     para "Now we move onto"
     line "question 2."
@@ -538,7 +538,7 @@ Question1CorrectText:
 Question2CorrectText:
     text "Yes, DRACO METEOR"
     line "is the strongest"
-    cont "and purest DRAGON"
+    cont "and purest Dragon"
     cont "attack."
 
     para "Now we move onto"
@@ -557,7 +557,7 @@ Question3CorrectText:
 Question4CorrectText:
     text "Yes, KINGDRA has"
     line "2 weaknesses to"
-    cont "DRAGON and FAIRY."
+    cont "Dragon and FAIRY."
 
     para "However it also"
     line "has only 2 resists"
@@ -578,13 +578,13 @@ Question5CorrectText:
     prompt
 
 DragonShrineElder2Text:
-    text "The great DRAGON"
-    line "LORD is wise and"
+    text "The great Dragon"
+    line "Lord is wise and"
     cont "merciful."
 
     para "But there is an"
     line "even more ancient"
-    cont "DRAGON that"
+    cont "Dragon that"
     cont "dwells within the"
     cont "ABYSS."
 
@@ -608,7 +608,7 @@ DragonShrineElder2Text:
 
 DragonShrineElder3Text:
 	text "The most ancient"
-	line "DRAGON LORD is"
+	line "Dragon Lord is"
 	cont "lost to time."
 
 	para "ZYGARDE."

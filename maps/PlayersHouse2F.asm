@@ -144,14 +144,14 @@ PlayersHousePCScript:
 PlayersRadioText1:
 	text "Breaking news!"
 
-	para "The HOENN fleet"
+	para "The Hoenn fleet"
 	line "have been seen"
 	cont "mobilising near"
 	cont "the coast."
 	done
 
 PlayersRadioText2:
-	text "Invasion of KANTO"
+	text "Invasion of Kanto"
 	line "seems imminent."
 	done
 
@@ -162,12 +162,12 @@ PlayersRadioText3:
 	cont "coup."
 	para "Driven by the"
 	line "assassination of"
-	cont "Champion STEVEN"
+	cont "Champion Steven"
 	cont "6 months ago."
 	done
 
 PlayersRadioText4:
-	text "The HOENN war is"
+	text "The Hoenn war is"
 	line "inevitable now."
 
 	para "ARCEUS guide us."

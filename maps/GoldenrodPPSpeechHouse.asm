@@ -48,7 +48,7 @@ GoldenrodPPSpeechHouseLassText:
 	para "She is beautiful"
 	line "and powerful."
 
-	para "The GYM here is"
+	para "The Gym here is"
 	line "basically her"
 	cont "fan club."
 	done

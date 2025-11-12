@@ -81,7 +81,7 @@ BirdKeeperBorisAfterBattleText:
 
 BirdKeeperBobSeenText:
 	text "I've looked all"
-	line "over KANTO."
+	line "over Kanto."
 
 	para "Every little nook"
 	line "and cave."
@@ -98,7 +98,7 @@ BirdKeeperBobBeatenText:
 
 BirdKeeperBobAfterBattleText:
 	text "Wait, so it's in"
-	line "JOHTO!"
+	line "Johto!"
 
 	para "Good thing my"
 	line "#mon learnt"

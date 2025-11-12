@@ -11,7 +11,7 @@ OlivinePortPassagePokefanMScript:
 
 OlivinePortPassagePokefanMText:
 	text "FAST SHIP S.S.AQUA"
-	line "sails to KANTO on"
+	line "sails to Kanto on"
 
 	para "Mondays and Fri-"
 	line "days."

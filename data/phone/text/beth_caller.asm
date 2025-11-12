@@ -31,7 +31,7 @@ BethLostAMonText:
 	cont "BLACKTHORN!"
 	para "She must a"
 	line "subconscious fear"
-	cont "of DRAGON"
+	cont "of Dragon"
 	cont "#mon."
 	para "Perhaps I can use"
 	line "this to my"

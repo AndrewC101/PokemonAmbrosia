@@ -289,7 +289,7 @@ VermilionPortSailSundayText:
 
 VermilionPortSuperNerdText:
 	text "You came from"
-	line "JOHTO?"
+	line "Johto?"
 
 	para "I hear many rare"
 	line "#mon live over"

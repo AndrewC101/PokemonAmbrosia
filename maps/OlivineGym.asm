@@ -124,7 +124,7 @@ OlivineGymStatue:
 
 Jasmine_SteelTypeIntro:
 	text "Welcome to"
-	line "OLIVINE GYM."
+	line "OLIVINE Gym."
 
 	para "You have a quiet"
 	line "strength that"
@@ -259,8 +259,8 @@ OlivineGymGuideWinText:
 	done
 
 OlivineGymGuidePreText:
-	text "JASMINE, the GYM"
-	line "LEADER, is at the"
+	text "JASMINE, the Gym"
+	line "Leader, is at the"
 	cont "LIGHTHOUSE."
 
 	para "She's been tending"

@@ -32,7 +32,7 @@ ViridianMartCooltrainerMText:
 	text "I think even the"
 	line "#RUS outbreak"
 	cont "was an attack by"
-	cont "HOENN."
+	cont "Hoenn."
 	para "It must be some"
 	line "kind of bioweapon!"
 	done

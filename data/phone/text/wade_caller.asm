@@ -20,11 +20,11 @@ WadeDefeatedMonText:
 	done
 
 WadeLostAMonText:
-	text "BUGSY is an"
+	text "Bugsy is an"
 	line "arrogant larva"
 	cont "compared to me."
 	para "One day I will"
-	line "march into his GYM"
+	line "march into his Gym"
 	cont "and murder his"
 	cont "queen!"
 	done

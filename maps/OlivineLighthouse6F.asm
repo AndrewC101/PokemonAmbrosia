@@ -238,10 +238,10 @@ JasmineThankYouText:
 	para "I will reward"
 	line "you in the only"
 	cont "way fitting of"
-	cont "a GYM LEADER."
+	cont "a Gym Leader."
 
 	para "I will return"
-	line "to my GYM and"
+	line "to my Gym and"
 	cont "welcome your"
 	cont "challenge."
 	done

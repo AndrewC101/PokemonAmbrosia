@@ -273,7 +273,7 @@ RadioTower1FLuckyNumberManPerfectMatchText:
 	line "prize winner!"
 
 	para "You have won a"
-	line "MASTER BALL!"
+	line "Master Ball!"
 	done
 
 RadioTower1FLuckyNumberManOkayMatchText:
@@ -333,7 +333,7 @@ RadioTower1FRadioCardWomanOfferQuizText:
 RadioTower1FRadioCardWomanQuestion1Text:
 	text "Question 1:"
 
-	para "DRAGON attacks are"
+	para "Dragon attacks are"
 	line "resisted only by"
 	cont "STEEL, FAIRY"
 	cont "and ICE types?"
@@ -597,7 +597,7 @@ RadioTowerMovement_CrystalApproaches:
 
 RadioTowerCrystalIntroText:
     text "I got a call from"
-    line "PROF.ELM."
+    line "Prof.Elm."
 
     para "You're going to"
     line "take on TEAM"

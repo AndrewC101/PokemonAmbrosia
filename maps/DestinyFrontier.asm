@@ -177,7 +177,7 @@ MasterYamiWinText:
 
 MasterYamiAfterBattleText:
 	text "You are truly a"
-	line "#mon MASTER."
+	line "#mon Master."
 	para "Beware that man"
 	line "over there."
 	para "I sense a great"
@@ -347,7 +347,7 @@ MasterDrakeWinText:
 	done
 
 MasterDrakeAfterBattleText:
-	text "Seeing that KANTO"
+	text "Seeing that Kanto"
 	line "woman stand up to"
 	cont "WALLACE finally"
 	cont "broke me."
@@ -413,7 +413,7 @@ MasterExecutiveSeenText:
 	line "in my world."
 	para "Our plan didn't"
 	line "work and WALLACE"
-	cont "conquered KANTO."
+	cont "conquered Kanto."
 	para "He killed my"
 	line "brother."
 	para "I escaped with my"
@@ -1032,7 +1032,7 @@ Guard1BlockScript:
 Guard1BlockText:
     text "Only challengers"
     line "who have conquered"
-    cont "4 GYMS may pass."
+    cont "4 Gyms may pass."
     done
 
 Guard2BlockScript:
@@ -1066,7 +1066,7 @@ Guard2BlockScript:
 Guard2BlockText:
     text "Only challengers"
     line "who have conquered"
-    cont "8 GYMS may pass."
+    cont "8 Gyms may pass."
     done
 
 OakScript:
@@ -1149,7 +1149,7 @@ OakIntroText:
 
     para "Every person here"
     line "is a #mon"
-    cont "MASTER in their"
+    cont "Master in their"
     cont "own right."
 
     para "Even me if you"
@@ -1160,9 +1160,9 @@ OakIntroText:
     cont "Monarch."
 
     para "You will have to"
-    line "beat eight GYMS."
+    line "beat eight Gyms."
 
-    para "The GYMS have two"
+    para "The Gyms have two"
     line "leaders but no"
     cont "trainers."
 

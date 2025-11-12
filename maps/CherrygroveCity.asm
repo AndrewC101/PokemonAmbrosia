@@ -644,14 +644,14 @@ CherrygroveTeacherGiveDollText:
     done
 
 CherrygroveYoungsterText_NoPokedex:
-	text "I saw PROF OAK"
+	text "I saw Prof Oak"
 	line "come by earlier."
 
 	para "He went up NORTH."
 
 	para "There are trainers"
 	line "up there but I'm"
-	cont "sure OAK must have"
+	cont "sure Oak must have"
 	cont "some strong"
 	cont "#mon."
 	done

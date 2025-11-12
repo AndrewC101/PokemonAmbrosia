@@ -50,7 +50,7 @@ CianwoodPokecenter1FLassText:
 	para "I want a real"
 	line "man."
 
-	para "Like those DRAGON"
+	para "Like those Dragon"
 	line "trainers in"
 	cont "BLACKTHORN CITY."
 	done
@@ -60,7 +60,7 @@ CianwoodGymGuideText:
 
 	para "I was too scared"
 	line "to go into the"
-	cont "GYM with all"
+	cont "Gym with all"
 	cont "those intense"
 	cont "muscled nerds."
 

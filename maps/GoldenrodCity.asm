@@ -367,7 +367,7 @@ GoldenrodCityCooltrainerF2Text:
 	cont "to do it!"
 
 	para "I can see why"
-	line "people hate KANTO."
+	line "people hate Kanto."
 	done
 
 GoldenrodCityYoungster2Text:
@@ -407,7 +407,7 @@ GoldenrodCityGrampsText:
 	cont "grow this city."
 
 	para "And along with it"
-	line "the GDP of JOHTO."
+	line "the GDP of Johto."
 
 	para "Of course I"
 	line "have investments"
@@ -428,7 +428,7 @@ GoldenrodCityRocketScoutText1:
 
 	para "This tower shall"
 	line "be our salvation"
-	cont "against the HOENN"
+	cont "against the Hoenn"
 	cont "onslaught."
 	done
 
@@ -464,7 +464,7 @@ GoldenrodCityRocket3Text:
 
 	para "We will protect"
 	line "everyone from"
-	cont "HOENN!"
+	cont "Hoenn!"
 
 	para "If we get rich"
 	line "while doing it"
@@ -528,8 +528,8 @@ GoldenrodDeptStoreSignText:
 
 GoldenrodGymSignText:
 	text "GOLDENROD CITY"
-	line "#mon GYM"
-	cont "LEADER: WHITNEY"
+	line "#mon Gym"
+	cont "Leader: WHITNEY"
 
 	para "The Incredibly"
 	line "Pretty Girl!"

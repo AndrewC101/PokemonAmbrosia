@@ -132,7 +132,7 @@ FastShipLazySailorLeavesMovement2:
 	step_end
 
 CooltrainermSeanSeenText:
-	text "KANTO is in war"
+	text "Kanto is in war"
 	line "time."
 
 	para "All the trainers"
@@ -150,12 +150,12 @@ CooltrainermSeanBeatenText:
 CooltrainermSeanAfterBattleText:
 	text "I won't stand a"
 	line "chance against the"
-	cont "KANTO GYM LEADERS."
+	cont "Kanto Gym Leaders."
 	done
 
 CooltrainerfCarolSeenText:
 	text "I will hunt down"
-	line "the KANTO"
+	line "the Kanto"
 	cont "COOLTRAINERS"
 	cont "one by one."
 
@@ -181,7 +181,7 @@ PokemaniacEthanSeenText:
 
 	para "I'm going to"
 	line "CELADON to find"
-	cont "GYM LEADER ERIKA."
+	cont "Gym Leader ERIKA."
 
 	para "I will show her"
 	line "I am the perfect"
@@ -209,7 +209,7 @@ PokemaniacEthanAfterBattleText:
 HikerNolandSeenText:
 	text "I have conquered"
 	line "every cave in"
-	cont "JOHTO."
+	cont "Johto."
 
 	para "But the real"
 	line "hard core hikers"
@@ -283,13 +283,13 @@ GentlemanEdwardSeenText:
 	line "booming thanks to"
 	cont "dear old WALLACE."
 
-	para "KANTO are willing"
+	para "Kanto are willing"
 	line "to take on huge"
 	cont "debt to fund their"
 	cont "war."
 
 	para "I import rare"
-	line "#mon from JOHTO"
+	line "#mon from Johto"
 	cont "and I do rather"
 	cont "well for myself."
 	done

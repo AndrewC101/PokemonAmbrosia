@@ -371,7 +371,7 @@ SilverCaveSilverIntroText:
     para "Everyone's talking"
     line "about the saviour"
     cont "who defeated the"
-    cont "HOENN army."
+    cont "Hoenn army."
 
     para "All of those"
     line "pretentious"
@@ -382,7 +382,7 @@ SilverCaveSilverIntroText:
     para "You made them all"
     line "look like cowards."
 
-    para "OAK told us you"
+    para "Oak told us you"
     line "would be coming"
     cont "here."
     done
@@ -536,7 +536,7 @@ SilverCaveCrystalFriendshipText:
 
     para "I guess once"
     line "you're a #mon"
-    cont "MASTER I won't"
+    cont "Master I won't"
     cont "see you so much"
     cont "anymore"
     done
@@ -551,7 +551,7 @@ SilverCaveSilverFriendshipText:
 
     para "I nearly got"
     line "thrashed by"
-    cont "CRYSTAL because"
+    cont "Crytal because"
     cont "I didn't want"
     cont "to invoke her"
     cont "wrath by easily"
@@ -583,7 +583,7 @@ SilverCaveSilverFriendshipText:
 
 	para "I certainly didn't"
 	line "learn it from"
-	cont "CRYSTAL."
+	cont "Crytal."
 	done
 
 SilverCaveCrystalShouldGoText:
@@ -625,7 +625,7 @@ SilverCaveCrystalYouStoleText:
     cont "what you done."
 
     para "You stole #mon"
-    line "from PROF.ELM."
+    line "from Prof.Elm."
 
     para "The least you can"
     line "do is apologise."
@@ -657,7 +657,7 @@ SilverCaveSilverGoodbyeText:
     cont "have fought."
 
     para "Good luck"
-    line "#mon MASTER."
+    line "#mon Master."
     done
 
 SilverCaveCrystalGoodbyeText:
@@ -985,7 +985,7 @@ HoenWarCh1HeroText:
     line "across unnoticed."
 
     para "You alone know"
-    line "that STEVEN is"
+    line "that Steven is"
     cont "about to be"
     cont "overthrown."
 
@@ -1043,7 +1043,7 @@ HoenWarCh3HeroText:
     para "But your CROBAT"
     line "has escaped and"
     cont "through your bond"
-    cont "you know STEVEN"
+    cont "you know Steven"
     cont "has been warned."
 
     para "You cast one last"
@@ -1058,7 +1058,7 @@ HoenWarCh3HeroText:
     line "you always knew"
     cont "would come."
 
-    para "HOENN invasion."
+    para "Hoenn invasion."
 
     para "BLAINE has been"
     line "defeated."
@@ -1069,8 +1069,8 @@ HoenWarCh3HeroText:
     cont "took your father"
     cont "from you."
 
-    para "You are the GYM"
-    line "LEADER of FUCHSIA."
+    para "You are the Gym"
+    line "Leader of FUCHSIA."
 
     para "JANINE."
 
@@ -1291,13 +1291,13 @@ HoenWarCh1VillainText:
     cont "deep."
 
     para "You are ADMIRAL of"
-    line "the HOENN army."
+    line "the Hoenn army."
 
     para "Tonight you do"
     line "the unthinkable."
 
     para "You plan to ambush"
-    line "and kill STEVEN"
+    line "and kill Steven"
     cont "the Champion."
 
     para "Your #mon alert"
@@ -1351,13 +1351,13 @@ HoenWarCh3VillainText:
     para "You were free"
     line "to move into"
     cont "power in the"
-    cont "absence of STEVEN."
+    cont "absence of Steven."
 
     para "You are WALLACE."
 
     para "And today is the"
     line "day you attack"
-    cont "KANTO."
+    cont "Kanto."
 
     para "You fly atop"
     line "AIR WEAPON."
@@ -1366,7 +1366,7 @@ HoenWarCh3VillainText:
     line "approach the"
     cont "shore."
 
-    para "A GYM LEADER"
+    para "A Gym Leader"
     line "of FIRE tries to"
     cont "impede you."
 
@@ -1393,12 +1393,12 @@ HoenWarCh3VillainText:
     line "to you."
 
     para "You see she is"
-    line "in fact the GYM"
-    cont "LEADER of the"
+    line "in fact the Gym"
+    cont "Leader of the"
     cont "city."
 
-    para "Let KANTO see the"
-    line "beauty of HOENN."
+    para "Let Kanto see the"
+    line "beauty of Hoenn."
 
     para "Let this girl be"
     line "an example."

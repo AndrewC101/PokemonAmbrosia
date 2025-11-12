@@ -64,7 +64,7 @@ LavenderTownPokefanMText:
 	para "When it was"
 	line "marketed that it"
 	cont "would help in the"
-	cont "war with HOENN,"
+	cont "war with Hoenn,"
 	cont "peoples opinions"
 	cont "quickly changed."
 	done
@@ -122,7 +122,7 @@ LavenderTownSignText:
 	done
 
 KantoRadioStationSignText:
-	text "KANTO RADIO"
+	text "Kanto RADIO"
 	line "STATION"
 
 	para "Your Favorite"

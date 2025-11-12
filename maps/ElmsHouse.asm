@@ -25,7 +25,7 @@ ElmsHouseBookshelf:
 
 ElmsWifeText:
 	text "Hello <PLAYER>!"
-	para "ELM is at the lab"
+	para "Elm is at the lab"
 	line "like he always is."
 
 	para "He doesn't believe"
@@ -53,10 +53,10 @@ ElmsHousePCPostWallaceText:
     cont "and his location"
     cont "is unknown."
 
-    para "Champion STEVEN"
+    para "Champion Steven"
     line "lives and has"
     cont "assumed command"
-    cont "of the HOENN army."
+    cont "of the Hoenn army."
 
     para "The war is over."
 
@@ -65,7 +65,7 @@ ElmsHousePCPostWallaceText:
     cont "trainer."
 
     para "The new Champion"
-    line "of JOHTO."
+    line "of Johto."
 
     para "Champion <PLAYER>!"
 
@@ -86,7 +86,7 @@ ElmsHousePCText:
 	line "EMPEROR WALLACE"
 	cont "may now be in"
 	cont "command of the"
-	cont "HOENN LEGENDARY"
+	cont "Hoenn LEGENDARY"
 	cont "#mon."
 
 	para "If he controls the"

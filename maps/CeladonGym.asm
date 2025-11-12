@@ -157,7 +157,7 @@ ErikaBeforeBattleText:
 
 	para "But I never will."
 
-	para "This GYM will"
+	para "This Gym will"
 	line "stand always as a"
 	cont "shrine to nature."
 
@@ -219,7 +219,7 @@ ErikaAfterBattleText:
 LassMichelleSeenText:
 	text "I think this"
 	line "is the only"
-	cont "girls only GYM."
+	cont "girls only Gym."
 
 	para "Except GOLDENROD."
 
@@ -233,7 +233,7 @@ LassMichelleBeatenText:
 
 LassMichelleAfterBattleText:
 	text "I guess a girl"
-	line "only GYM isn't"
+	line "only Gym isn't"
 	cont "such a novel"
 	cont "concept."
 	done

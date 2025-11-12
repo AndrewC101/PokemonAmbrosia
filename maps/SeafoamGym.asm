@@ -84,8 +84,8 @@ SeafoamGymGuideScript:
 BlaineIntroText:
 	text "I am BLAINE."
 
-	para "A GYM LEADER"
-	line "without a GYM."
+	para "A Gym Leader"
+	line "without a Gym."
 
 	para "Without a city."
 
@@ -96,8 +96,8 @@ BlaineIntroText:
     line "that from me."
 
 	para "I am the second"
-	line "strongest GYM"
-	cont "LEADER in KANTO."
+	line "strongest Gym"
+	cont "Leader in Kanto."
 
 	para "And you..."
 
@@ -127,9 +127,9 @@ BlaineFightDoneText:
 	cont "#mon!"
 
 	para "I don't need a"
-	line "GYM or a city."
+	line "Gym or a city."
 
-	para "All of KANTO"
+	para "All of Kanto"
 	line "is my city."
 
 	para "Here on these"

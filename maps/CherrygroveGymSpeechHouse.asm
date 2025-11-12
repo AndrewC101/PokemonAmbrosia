@@ -18,7 +18,7 @@ CherrygroveGymSpeechHouseBookshelf:
 
 CherrygroveGymSpeechHousePokefanMText:
 	text "You're looking"
-	line "for GYMS to"
+	line "for Gyms to"
 	cont "challenge."
 
 	para "War is coming."
@@ -31,7 +31,7 @@ CherrygroveGymSpeechHousePokefanMText:
 CherrygroveGymSpeechHouseBugCatcherText:
 	text "When I get older,"
 	line "I'm going to be a"
-	cont "GYM LEADER!"
+	cont "Gym Leader!"
 
 	para "I'm going to show"
 	line "that WALLACE not"

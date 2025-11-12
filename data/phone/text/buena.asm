@@ -188,8 +188,8 @@ BuenaPhoneStressedFromWorkText:
 	done
 
 BuenaPhoneProfessorOakText:
-	text "Yesterday, PROF."
-	line "OAK was in the"
+	text "Yesterday, Prof."
+	line "Oak was in the"
 
 	para "studio to tape his"
 	line "show."
@@ -201,7 +201,7 @@ BuenaPhoneProfessorOakText:
 	line "in to my program!"
 
 	para "Oh! Here comes"
-	line "PROF.OAK again!"
+	line "Prof.Oak again!"
 
 	para "I'm going to chat"
 	line "him up again!"

@@ -1043,7 +1043,7 @@ BattleTowerMons:
     bigdw 46
 	db "BURAtuKI-@@"
 
-; LEADER level
+; Leader level
 
     db SNORLAX
 	db LEFTOVERS
@@ -4175,7 +4175,7 @@ BattleTowerMons:
 	bigdw 195 ; SDef
 	db "RANTA-N@@@@"
 
-; MASTER level
+; Master level
 
 	db MEWTWO
 	db BERSERK_GENE

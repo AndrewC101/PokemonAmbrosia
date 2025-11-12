@@ -165,7 +165,7 @@ OlivineCrystalConfrontSilver:
 
     para "You stole a"
     line "#mon from"
-    cont "PROF.ELM!"
+    cont "Prof.Elm!"
 
     para "You are a pathetic"
     line "person. You don't"
@@ -342,12 +342,12 @@ OlivineCityRivalText:
 	line "too busy to battle"
 	cont "you right now."
 
-	para "The GYM LEADER"
+	para "The Gym Leader"
 	line "isn't here."
 
 	para "She has one job!"
 
-	para "Sit in the GYM"
+	para "Sit in the Gym"
 	line "and battle any"
 	cont "challengers."
 
@@ -387,7 +387,7 @@ OlivineCityStandingYoungsterPokegearText:
 
 	para "I heard a"
 	line "rumour there"
-	cont "is a HOENN"
+	cont "is a Hoenn"
 	cont "spy there."
 	done
 
@@ -423,8 +423,8 @@ OlivineCityPortSignText:
 
 OlivineGymSignText:
 	text "OLIVINE CITY"
-	line "#mon GYM"
-	cont "LEADER: JASMINE"
+	line "#mon Gym"
+	cont "Leader: JASMINE"
 
 	para "The Steel-Clad"
 	line "Defense Girl"
@@ -1054,7 +1054,7 @@ DBZIntroText:
     line "CIANWOOD?"
 
     para "Apparently the"
-    line "GYM LEADER is a"
+    line "Gym Leader is a"
     cont "huge DBZ fan."
 
     para "Would you like to"
@@ -1270,7 +1270,7 @@ DBZCh4HeroText:
     para "You need to head"
     line "to PICCOLO's home"
     cont "planet to acquire"
-    cont "DRAGON balls."
+    cont "Dragon balls."
 
     para "With them, you"
     line "can revive your"
@@ -1297,12 +1297,12 @@ DBZCh4HeroText:
 
     para "He must have"
     line "heard about the"
-    cont "DRAGON balls."
+    cont "Dragon balls."
 
     para "You find VEGETA."
 
     para "He has stolen"
-    line "a DRAGON BALL so"
+    line "a Dragon Ball so"
     cont "FRIEZA can't make"
     cont "his wish."
 
@@ -1351,7 +1351,7 @@ DBZCh4VillainText:
 
     para "Then head to the"
     line "planet with these"
-    cont "DRAGON balls."
+    cont "Dragon balls."
 
     para "You kill everyone!"
 
@@ -1513,7 +1513,7 @@ DBZConcText:
     text "FRIEZA was at"
     line "last defeated."
 
-    para "The DRAGON balls"
+    para "The Dragon balls"
     line "were used to"
     cont "revive everyone"
     cont "who was ever"

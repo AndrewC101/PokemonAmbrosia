@@ -26,7 +26,7 @@ FightingDojoBlackBeltText:
 	line "FIGHTING DOJO's"
 
 	para "master, is in a"
-	line "cave in JOHTO for"
+	line "cave in Johto for"
 	cont "training."
 	done
 

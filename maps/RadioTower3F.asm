@@ -137,7 +137,7 @@ RadioTower3FGymGuideText_Rockets:
 	text "TEAM ROCKET say"
 	line "they are fighting"
 	cont "to save us from"
-	cont "HOENN."
+	cont "Hoenn."
 
 	para "Don't believe a"
 	line "word of it!"
@@ -182,7 +182,7 @@ RadioTower3FCooltrainerFYoureMyHeroText:
 	line "of TEAM ROCKET!"
 
 	para "I heard a hero"
-	line "from KANTO did"
+	line "from Kanto did"
 	cont "that 5 years ago."
 	done
 
@@ -234,7 +234,7 @@ GruntM9AfterBattleText:
 
 	para "You would see"
 	line "us all slaves"
-	cont "of HOENN."
+	cont "of Hoenn."
 	done
 
 RadioTower3FCardKeySlotText:

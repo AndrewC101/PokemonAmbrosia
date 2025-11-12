@@ -359,11 +359,11 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "ELM #mon LAB"
+	text "Elm #mon LAB"
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "ELM'S HOUSE"
+	text "Elm'S HOUSE"
 	done
 
 NeedToGetAPokemon:
@@ -387,7 +387,7 @@ NeedToGetAPokemon2:
 NewBarkTownBlockText:
     text "I need to get"
     line "a #mon from"
-    cont "PROF.ELM!"
+    cont "Prof.Elm!"
     done
 
 ElmsMission:
@@ -401,7 +401,7 @@ ElmsMission:
 
 ElmsMissionText:
     text "I better see"
-    line "PROF.ELM!"
+    line "Prof.Elm!"
     done
 
 Movement_NewBarkTownTurnBack:
@@ -581,15 +581,15 @@ Crystal1_WellDoneText:
     text "That was fun!"
 
     para "Now we have to"
-    line "beat all GYM"
-    cont "LEADERS."
+    line "beat all Gym"
+    cont "Leaders."
 
     para "Beat all the ELITE"
     line "FOUR and Champion."
 
-    para "Crush the HOENN"
+    para "Crush the Hoenn"
     line "army and save all"
-    cont "JOHTO and KANTO!"
+    cont "Johto and Kanto!"
 
     para "Race you!"
     done
@@ -709,7 +709,7 @@ SilverFinalGeneralText:
     para "Like I used to"
     line "be."
 
-    para "I'm glad CRYSTAL"
+    para "I'm glad Crytal"
     line "insisted I come"
     cont "here and stay a"
     cont "while."
@@ -765,7 +765,7 @@ SilverFinalAfterBattleText:
     cont "what I have"
     cont "achieved."
 
-    para "Losing to CRYSTAL"
+    para "Losing to Crytal"
     line "however..."
 
     para "That would be"

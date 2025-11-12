@@ -1185,7 +1185,7 @@ _PokecenterPlayersPCText::
 	prompt
 
 _PokecenterOaksPCText::
-	text "PROF.OAK's PC"
+	text "Prof.Oak's PC"
 	line "accessed."
 
 	para "#dex Rating"
@@ -1214,7 +1214,7 @@ _OakPCText3::
 	text_ram wStringBuffer4
 	text " #mon owned"
 
-	para "PROF.OAK's"
+	para "Prof.Oak's"
 	line "Rating:"
 	done
 
@@ -1358,8 +1358,8 @@ _OakRating19::
 	done
 
 _OakPCText4::
-	text "The link to PROF."
-	line "OAK's PC closed."
+	text "The link to Prof."
+	line "Oak's PC closed."
 	done
 
 _TrainerRankingExplanationText:: ; unreferenced
@@ -1548,10 +1548,10 @@ _OakText1::
 	para "Welcome to the"
 	line "world of #mon!"
 
-	para "My name is OAK."
+	para "My name is Oak."
 
 	para "People call me the"
-	line "#mon PROF."
+	line "#mon Prof."
 	prompt
 
 _OakText2::

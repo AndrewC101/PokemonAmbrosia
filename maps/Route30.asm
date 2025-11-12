@@ -434,7 +434,7 @@ BugCatcherDonAfterText:
 	done
 
 Route30YoungsterText_DirectionsToMrPokemonsHouse:
-	text "I saw PROF OAK"
+	text "I saw Prof Oak"
 	line "entering a house"
 	cont "further up ahead."
 	done

@@ -217,15 +217,15 @@ Text_EarlAsksIfYouBeatFalkner:
 	cont "like that!"
 	para "That is the sign"
 	line "of a true #mon"
-	cont "MASTER."
+	cont "Master."
 	para "Have you defeated"
-	line "the GYM LEADER?"
+	line "the Gym Leader?"
 	done
 
 Text_VeryNiceIndeed:
 	text "Ah you must also"
 	line "be a true #mon"
-	cont "MASTER."
+	cont "Master."
 	para "You have nothing"
 	line "to learn from me."
 	done
@@ -245,7 +245,7 @@ Text_HereTeacherIAm:
 	line "of shock and awe,"
 	cont "I can tell."
 	para "This is my school!"
-	para "I taught FALKNER"
+	para "I taught Falkner"
 	line "everything he"
 	cont "knows and now..."
 	para "I shall teach you."
@@ -270,7 +270,7 @@ VioletCitySuperNerdText:
 	text "I tried being"
 	line "a #mon trainer"
 	cont "but I couldn't"
-	cont "beat FALKNER."
+	cont "beat Falkner."
 
 	para "I don't mind."
 
@@ -303,17 +303,17 @@ VioletCityYoungsterText:
 	text "My friends have"
 	line "a secret hiding"
 	cont "place behind the"
-	cont "GYM."
+	cont "Gym."
 
 	para "You need SURF"
 	line "to get there."
 
-	para "When the HOENN"
+	para "When the Hoenn"
 	line "army comes for"
 	cont "us I'll hide"
 	cont "there."
 
-	para "I hope HOENN"
+	para "I hope Hoenn"
 	line "#mon can't"
 	cont "swim!"
 	done
@@ -327,8 +327,8 @@ VioletCitySignText:
 
 VioletGymSignText:
 	text "VIOLET CITY"
-	line "#mon GYM"
-	cont "LEADER: FALKNER"
+	line "#mon Gym"
+	cont "Leader: Falkner"
 
 	para "The Elegant Master"
 	line "of Flying #mon"
@@ -495,7 +495,7 @@ VioletSelfText1:
     done
 
 VioletSelfText2:
-    text "ELM was counting"
+    text "Elm was counting"
     line "on you."
 
     para "But you were too"

@@ -356,7 +356,7 @@ YamiSeenText:
     line "one last gift."
 
     para "A duel with a"
-    line "#mon MASTER!"
+    line "#mon Master!"
     done
 
 YamiBeatenText:

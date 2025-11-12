@@ -73,7 +73,7 @@ ChadDaisyGossipText:
 
 ChadProfElmGossipText:
 	text "You don't want to"
-	line "be like ELM, he"
+	line "be like Elm, he"
 	cont "sits in his lab"
 	cont "all day."
 	para "There's nothing"
@@ -87,7 +87,7 @@ ChadProfElmGossipText:
 
 ChadProfOaksDreamGossipText:
 	text "I've heard that"
-	line "OAK was a ladies"
+	line "Oak was a ladies"
 	cont "man when he was"
 	cont "young."
 	para "Apparently has has"
@@ -102,7 +102,7 @@ ChadKurtGossipText:
 	cont "#balls."
 	para "I asked him to"
 	line "make me a LOVE"
-	cont "BALL once, that I"
+	cont "Ball once, that I"
 	cont "could use on"
 	cont "girls."
 	para "But he said it was"
@@ -134,7 +134,7 @@ ChadPokemonTalkGossipText:
 
 ChadProfOakTrainerGossipText:
 	text "I've heard that"
-	line "OAK was a ladies"
+	line "Oak was a ladies"
 	cont "man when he was"
 	cont "young."
 	para "Apparently has has"
@@ -171,7 +171,7 @@ ChadGoingToStudyHardText:
 	cont "#balls."
 	para "I asked him to"
 	line "make me a LOVE"
-	cont "BALL once, that I"
+	cont "Ball once, that I"
 	cont "could use on"
 	cont "girls."
 	para "But he said it was"

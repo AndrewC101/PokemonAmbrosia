@@ -211,7 +211,7 @@ CianwoodCityEusineDepartMovement:
 
 ChucksWifeEasierToFlyText:
 	text "My husband is"
-	line "the GYM LEADER."
+	line "the Gym Leader."
 
 	para "He is obsessed"
 	line "with FIGHTING"
@@ -401,9 +401,9 @@ CianwoodCitySignText:
 
 CianwoodGymSignText:
 	text "CIANWOOD CITY"
-	line "#mon GYM"
+	line "#mon Gym"
 
-	para "LEADER: CHUCK"
+	para "Leader: CHUCK"
 
 	para "His Roaring Fists"
 	line "Do the Talking"
@@ -710,7 +710,7 @@ CameHereToGetMedicine:
     para "But a man showed"
     line "up here a few days"
     cont "ago and I am sure"
-    cont "he is a HOENN spy."
+    cont "he is a Hoenn spy."
 
     para "I can read his"
     line "mind and I'm"
@@ -735,7 +735,7 @@ HoenSpyBelieve:
 
 SeeYouAtBeach:
     text "Together we will"
-    line "take this HOENN"
+    line "take this Hoenn"
     cont "spy down!"
 
     para "Meet me at the"
@@ -801,7 +801,7 @@ HeIsOverThere:
 
     para "I'm sure he plans"
     line "to use it to guide"
-    cont "the HOENN forces."
+    cont "the Hoenn forces."
 
     para "Hang on..."
 
@@ -859,7 +859,7 @@ YesIAm:
     line "spy."
 
     para "I am a CAPTAIN"
-    line "of the HOENN"
+    line "of the Hoenn"
     cont "fleet."
 
     para "I report directly"
@@ -872,7 +872,7 @@ YesIAm:
     para "I am likely"
     line "the strongest"
     cont "trainer in all"
-    cont "of JOHTO."
+    cont "of Johto."
 
     para "Stronger even"
     line "than your"
@@ -986,7 +986,7 @@ ByeBye:
     line "be the last"
     cont "time you save"
     cont "people from the"
-    cont "forces of HOENN."
+    cont "forces of Hoenn."
 
     para "Good luck,"
     line "<PLAYER>."

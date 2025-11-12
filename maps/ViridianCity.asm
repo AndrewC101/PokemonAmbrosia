@@ -136,7 +136,7 @@ ViridianCityCoffeeGrampsDoubtedText:
 	done
 
 ViridianCityGrampsNearGymText:
-	text "The GYM LEADER"
+	text "The Gym Leader"
 	line "here is very"
 	cont "busy trying to"
 	cont "do the jobs the"
@@ -155,7 +155,7 @@ ViridianCityGrampsNearGymBlueReturnedText:
 
 	para "BLUE is stronger"
 	line "than any other"
-	cont "GYM LEADER."
+	cont "Gym Leader."
 
 	para "Stronger even"
 	line "than CHAMPIONS."
@@ -224,8 +224,8 @@ ViridianCitySignText:
 
 ViridianGymSignText:
 	text "VIRIDIAN CITY"
-	line "#mon GYM"
-	cont "LEADER: …"
+	line "#mon Gym"
+	cont "Leader: …"
 
 	para "BLUE!"
 
@@ -242,7 +242,7 @@ ViridianCityWelcomeSignText:
 	done
 
 TrainerHouseSignText:
-	text "KANTO WAR ROOM"
+	text "Kanto WAR ROOM"
 
 	para "The hub for"
 	line "military strategy."
@@ -270,7 +270,7 @@ ViridianGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

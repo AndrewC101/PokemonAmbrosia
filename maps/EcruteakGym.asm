@@ -265,7 +265,7 @@ MortyText_FogBadgeSpeech:
 	done
 
 MortyText_ShadowBallSpeech:
-	text "It is SHADOW BALL."
+	text "It is Shadow Ball."
 
     para "It concentrates"
     line "fear into an"
@@ -403,8 +403,8 @@ RematchRefuseTextMorty:
     done
 
 EcruteakGymClosedText:
-	text "MORTY, the GYM"
-	line "LEADER, is absent."
+	text "MORTY, the Gym"
+	line "Leader, is absent."
 
 	para "Begone!"
 	done

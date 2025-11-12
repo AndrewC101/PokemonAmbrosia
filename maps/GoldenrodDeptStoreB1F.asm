@@ -102,7 +102,7 @@ GoldenrodDeptStoreB1FBlackBelt3Text:
 	line "trainer!"
 	para "I used to be a"
 	line "trainer at CHUCKs"
-	cont "GYM in CIANWOOD."
+	cont "Gym in CIANWOOD."
 	para "I couldn't stand"
 	line "it!"
 	para "All they ever"

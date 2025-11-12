@@ -197,7 +197,7 @@ Text_ClairIsOut:
 	para "You don't look"
 	line "very strong."
 
-	para "The GYM LEADER"
+	para "The Gym Leader"
 	line "CLAIR is in the"
 	cont "DRAGONS DEN."
 
@@ -249,7 +249,7 @@ BlackthornGrampsRefusesEntryText:
 	done
 
 BlackthornGrampsGrantsEntryText:
-	text "LEADER CLAIR has"
+	text "Leader CLAIR has"
 	line "permitted your"
 	cont "entry."
 
@@ -366,7 +366,7 @@ BlackthornCooltrainerF2Text:
 	line "trainers who"
 	cont "dedicate our"
 	cont "lives to the"
-	cont "great DRAGON LORD"
+	cont "great Dragon Lord"
 	cont "in DRAGONS DEN."
 
 	para "Of course only"
@@ -379,25 +379,25 @@ BlackthornCooltrainerF2Text:
 BlackthornCitySignText:
 	text "BLACKTHORN CITY"
 
-	para "The DRAGON SANCTUM"
+	para "The Dragon SANCTUM"
 	done
 
 BlackthornGymSignText:
 	text "BLACKTHORN CITY"
-	line "#mon GYM"
-	cont "LEADER: CLAIR"
+	line "#mon Gym"
+	cont "Leader: CLAIR"
 
-	para "The DRAGON MASTER."
+	para "The Dragon Master."
 	done
 
 MoveDeletersHouseSignText:
-	text "MOVE RELEARNER"
-	line "and DELETER."
+	text "Move Relearner"
+	line "and Deleter."
 	done
 
 DragonDensSignText:
-	text "DRAGON'S DEN"
-	line "AHEAD"
+	text "Dragon's Den"
+	line "Ahead"
 	done
 
 BlackthornCityTrainerTipsText:
@@ -790,7 +790,7 @@ LOTRIntroText:
 
     para "Puts me in the"
     line "mood for a"
-    cont "LORD OF THE RINGS"
+    cont "Lord Of The Rings"
     cont "roleplay."
 
     para "Would you like to"

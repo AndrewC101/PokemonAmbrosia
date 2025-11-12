@@ -438,7 +438,7 @@ PicnickerBrookeAfterBattleText:
 
 PicnickerKimSeenText:
 	text "I tried to join"
-	line "the GOLDENROD GYM"
+	line "the GOLDENROD Gym"
 	cont "but they said my"
 	cont "#mon was too"
 	cont "violent!"
@@ -456,7 +456,7 @@ PicnickerKimBeatenText:
 
 PicnickerKimAfterBattleText:
 	text "I'm going to beat"
-	line "all those GYM"
+	line "all those Gym"
 	cont "trainers!"
 
 	para "That'll show"
@@ -478,10 +478,10 @@ BirdKeeperBryanBeatenText:
 
 BirdKeeperBryanAfterBattleText:
 	text "You know, I"
-	line "think KANTO have"
+	line "think Kanto have"
 	cont "it coming."
 
-	para "But when JOHTO"
+	para "But when Johto"
 	line "gets pulled in"
 	cont "I'll be ready"
 	cont "to get right"
@@ -562,7 +562,7 @@ FirebreatherWaltBeatenText:
 FirebreatherWaltAfterBattleText:
 	text "BLAINE is a"
 	line "mad scientist"
-	cont "FIRE GYM LEADER."
+	cont "FIRE Gym Leader."
 
 	para "He will roast"
 	line "those HOENITES!"
@@ -581,7 +581,7 @@ OfficerDirkBeatenText:
 
 OfficerDirkAfterBattleText:
 	text "I used to work"
-	line "in KANTO and"
+	line "in Kanto and"
 	cont "all the BIKER"
 	cont "gangs hardened"
 	cont "me."

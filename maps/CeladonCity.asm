@@ -87,7 +87,7 @@ CeladonCityFisherText:
 
 	para "He loves PROTEIN!"
 
-	para "If any HOENN thugs"
+	para "If any Hoenn thugs"
 	line "come to this city"
 	cont "they are going to"
 	cont "get their skulls"
@@ -149,7 +149,7 @@ CeladonCityGramps2Text:
 	cont "gets bigger and"
 	cont "bigger."
 
-	para "This GYM stays"
+	para "This Gym stays"
 	line "the same."
 
 	para "An oasis of life"
@@ -198,7 +198,7 @@ CeladonCityTeacher2Text:
 	text "CELADON DEPT.STORE"
 	line "is the largest"
 	cont "center of commerce"
-	cont "in KANTO."
+	cont "in Kanto."
 
 	para "I hear GOLDENROD"
 	line "has a similar"
@@ -206,7 +206,7 @@ CeladonCityTeacher2Text:
 
 	para "Given the economic"
 	line "condition of"
-	cont "JOHTO I bet there"
+	cont "Johto I bet there"
 	cont "is potential for"
 	cont "arbitrage between"
 	cont "the two stores."
@@ -243,8 +243,8 @@ CeladonCitySignText:
 
 CeladonGymSignText:
 	text "CELADON CITY"
-	line "#mon GYM"
-	cont "LEADER: ERIKA"
+	line "#mon Gym"
+	cont "Leader: ERIKA"
 
 	para "The Nature-Loving"
 	line "Princess"
@@ -301,7 +301,7 @@ CeladonGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

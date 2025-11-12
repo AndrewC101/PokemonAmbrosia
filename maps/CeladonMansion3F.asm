@@ -151,7 +151,7 @@ GameFreakCharacterDesignerText:
 	text "I'm the CHARACTER"
 	line "DESIGNER."
 
-	para "CYNTHIA and LEON"
+	para "Cynthia and Leon"
 	line "had to be made"
 	cont "by editing other"
 	cont "trainers."

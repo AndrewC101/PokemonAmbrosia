@@ -172,7 +172,7 @@ HikerBenjaminSeenText:
 
 	para "This is the"
 	line "largest cave in"
-	cont "all of JOHTO."
+	cont "all of Johto."
 
 	para "It is easy to"
 	line "get lost in"

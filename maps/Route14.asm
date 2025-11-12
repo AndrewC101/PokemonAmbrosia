@@ -130,7 +130,7 @@ BirdKeeperRoySeenText:
 	line "of Napalm in the"
 	cont "morning!"
 	para "We will rain hell"
-	line "down on any HOENN"
+	line "down on any Hoenn"
 	cont "scum!"
 	done
 

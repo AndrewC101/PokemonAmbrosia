@@ -148,7 +148,7 @@ RuinsOfAlphOutsideScientistText:
 	line "puzzle!"
 
 	para "Even the greatest"
-	line "minds in JOHTO"
+	line "minds in Johto"
 	cont "could not solve"
 	cont "them."
 

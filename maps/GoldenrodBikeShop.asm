@@ -92,7 +92,7 @@ GoldenrodBikeShopClerkFirstRateBikesText:
 
 	para "You know, there is"
 	line "a big road in"
-	cont "KANTO where you"
+	cont "Kanto where you"
 	cont "need to ride a"
 	cont "bike to enter."
 

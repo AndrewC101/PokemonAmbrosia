@@ -145,7 +145,7 @@ BikerRileySeenText:
 	text "Hey there kid."
 
 	para "Ah another"
-	line "JOHTO tourist!"
+	line "Johto tourist!"
 
 	para "You have to pay"
 	line "a fee to continue."
@@ -244,7 +244,7 @@ BikerCharlesSeenText:
 	para "Now I am the"
 	line "undisputed most"
 	cont "powerful biker"
-	cont "in all KANTO!"
+	cont "in all Kanto!"
 	done
 
 BikerCharlesBeatenText:

@@ -87,7 +87,7 @@ ApprenticeGivesCutText:
 
     para "You will need"
     line "to have the"
-    cont "AZALEA GYM"
+    cont "AZALEA Gym"
     cont "BADGE though."
     done
 
@@ -530,16 +530,16 @@ Text_ShrineCelebiEvent:
 	para "It's a hole."
 	line "It looks like the"
 
-	para "GS BALL would fit"
+	para "GS Ball would fit"
 	line "inside it."
 
 	para "Want to put the GS"
-	line "BALL here?"
+	line "Ball here?"
 	done
 
 Text_InsertGSBall:
 	text "<PLAYER> put in the"
-	line "GS BALL."
+	line "GS Ball."
 	done
 
 Text_KurtCaughtCelebi:

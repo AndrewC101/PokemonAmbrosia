@@ -155,7 +155,7 @@ EcruteakTinTowerEntranceSageText:
 	line "limits to anyone"
 
 	para "without ECRUTEAK"
-	line "GYM's BADGE."
+	line "Gym's BADGE."
 
 	para "Sorry, but you'll"
 	line "have to leave."
@@ -166,11 +166,11 @@ EcruteakTinTowerEntranceSageText_GotFogBadge:
 	line "limits to anyone"
 
 	para "without ECRUTEAK"
-	line "GYM's BADGE."
+	line "Gym's BADGE."
 
 	para "Ah!"
 
-	para "ECRUTEAK's GYM"
+	para "ECRUTEAK's Gym"
 	line "BADGE! Please, go"
 	cont "right through."
 	done

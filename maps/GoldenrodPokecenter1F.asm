@@ -152,7 +152,7 @@ GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText:
 	para "Congratulations!"
 
 	para "As a special deal,"
-	line "a GS BALL has been"
+	line "a GS Ball has been"
 	cont "sent just for you!"
 
 	para "Please accept it!"

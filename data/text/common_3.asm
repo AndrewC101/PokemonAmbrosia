@@ -1179,7 +1179,7 @@ _YouCantTakeAnEggText::
 
 _BallDodgedText::
 	text "It dodged the"
-	line "thrown BALL!"
+	line "thrown Ball!"
 
 	para "This #mon"
 	line "can't be caught!"
@@ -1398,7 +1398,7 @@ _ItemWontHaveEffectText::
 
 _BallBlockedText::
 	text "The trainer"
-	line "blocked the BALL!"
+	line "blocked the Ball!"
 	prompt
 
 _BallDontBeAThiefText::

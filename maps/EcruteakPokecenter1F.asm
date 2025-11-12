@@ -34,8 +34,8 @@ EcruteakPokecenter1FPokefanMText:
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
-	text "MORTY the GYM"
-	line "LEADER spent"
+	text "MORTY the Gym"
+	line "Leader spent"
 	cont "weeks in the"
 	cont "haunted forest"
 	cont "as a child."

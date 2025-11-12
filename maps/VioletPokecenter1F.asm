@@ -98,7 +98,7 @@ VioletPokecenter1F_BillText1:
 	line "creator of the PC."
 	para "You must be"
 	line "<PLAYER>."
-	para "Did PROF OAK give"
+	para "Did Prof Oak give"
 	line "you the secret"
 	cont "item..."
 	para "The EXP SHARE?"
@@ -106,7 +106,7 @@ VioletPokecenter1F_BillText1:
 	para "I was originally"
 	line "going to give it"
 	cont "to you but thought"
-	cont "it better for OAK"
+	cont "it better for Oak"
 	cont "to do so."
 	para "With the EXP SHARE"
 	line "all #mon who"
@@ -230,7 +230,7 @@ VioletPokecenterElmsAideFavorText:
 	text "<PLAY_G>, long"
 	line "time, no see."
 
-	para "PROF.ELM asked me"
+	para "Prof.Elm asked me"
 	line "to find you."
 
 	para "He has another"

@@ -324,7 +324,7 @@ SageLiFlashExplanationText:
 
 	para "However you"
 	line "will need the"
-	cont "VIOLET GYM"
+	cont "VIOLET Gym"
 	cont "BADGE."
 
 	para "Check your"

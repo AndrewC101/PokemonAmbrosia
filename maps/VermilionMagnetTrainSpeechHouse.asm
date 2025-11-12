@@ -30,7 +30,7 @@ VermilionMagnetTrainSpeechHousePokefanFText:
 	line "MAGNET TRAIN."
 
 	para "Now you can get"
-	line "KANTO much faster"
+	line "Kanto much faster"
 	cont "and free of"
 	cont "charge."
 

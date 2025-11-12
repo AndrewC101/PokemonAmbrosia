@@ -28,12 +28,12 @@ VermilionDiglettsCaveSpeechHouseGentlemanText:
 	cont "cave."
 
 	para "It is rumoured"
-	line "the ELECTRIC GYM"
+	line "the ELECTRIC Gym"
 	cont "trainers got rid"
 	cont "of the DIGLETT"
 	cont "so challengers"
 	cont "couldn't use them"
-	cont "against the GYM."
+	cont "against the Gym."
 	done
 
 VermilionDiglettsCaveSpeechHouse_MapEvents:

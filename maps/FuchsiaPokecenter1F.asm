@@ -104,7 +104,7 @@ FuchsiaPokecenter1FCooltrainerMText_Saved:
 
 FuchsiaPokecenter1FCooltrainerFText:
 	text "Everyone at the"
-	line "GYM is in some"
+	line "Gym is in some"
 	cont "kind of disguise."
 
 	para "It's annoying!"

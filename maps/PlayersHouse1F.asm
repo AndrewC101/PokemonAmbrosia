@@ -287,7 +287,7 @@ PostDadMumText:
 	para "But I know that is"
 	line "selfish."
 	para "You are the"
-	line "Champion of JOHTO"
+	line "Champion of Johto"
 	cont "and people need"
 	cont "you."
 	done
@@ -378,7 +378,7 @@ InstructionsNextText:
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is"
+	text "Prof.Elm is"
 	line "waiting for you."
 
 	para "Good luck my"
@@ -390,11 +390,11 @@ HurryUpElmIsWaitingText:
 SoWhatWasProfElmsErrandText:
 	text "So your first"
 	line "task is to meet"
-	cont "PROF OAK."
+	cont "Prof Oak."
 
-	para "OAK is very well"
+	para "Oak is very well"
 	line "respected in"
-	cont "KANTO."
+	cont "Kanto."
 
 	para "He also used to"
 	line "be a trainer."

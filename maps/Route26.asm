@@ -370,9 +370,9 @@ CooltrainermGaven3SeenText:
     text "LANCE is so cool!"
 
 	para "LANCE is Champion"
-	line "of KANTO but he's"
+	line "of Kanto but he's"
 	cont "acting Champion"
-	cont "of JOHTO until"
+	cont "of Johto until"
 	cont "we can produce"
 	cont "our own Champion."
 
@@ -406,7 +406,7 @@ CooltrainermGavenAfterText:
 CooltrainerfJoyceSeenText:
 	text "Everyone here is"
 	line "going on and on"
-	cont "about JOHTO having"
+	cont "about Johto having"
 	cont "to get its own"
 	cont "Champion."
 
@@ -416,11 +416,11 @@ CooltrainerfJoyceSeenText:
 	para "Don't tell anyone."
 
 	para "But I'm actually"
-	line "from KANTO!"
+	line "from Kanto!"
 	done
 
 CooltrainerfJoyceBeatenText:
-	text "Glory to KANTO!"
+	text "Glory to Kanto!"
 	done
 
 CooltrainerfJoyceAfterBattleText:
@@ -477,8 +477,8 @@ PsychicRichardSeenText:
 	text "Have you heard of"
 	line "SABRINA?"
 
-	para "She was a KANTO"
-	line "GYM LEADER but"
+	para "She was a Kanto"
+	line "Gym Leader but"
 	cont "is now an ELITE"
 	cont "FOUR member."
 
@@ -686,7 +686,7 @@ Route26CrystalText_Intro:
 
     para "Then you will"
     line "have to head to"
-    cont "KANTO to fight"
+    cont "Kanto to fight"
     cont "in the war..."
     done
 
@@ -709,7 +709,7 @@ Route26CrystalText_Serious:
     para "I don't want to"
     line "be on the front"
     cont "line against"
-    cont "the HOENN army."
+    cont "the Hoenn army."
 
     para "I want us to"
     line "just have fun"

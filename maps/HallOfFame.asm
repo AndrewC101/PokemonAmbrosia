@@ -76,7 +76,7 @@ HallOfFame_LanceText:
 	cont "see this room."
 
 	para "And the first"
-	line "JOHTO trainer to"
+	line "Johto trainer to"
 	cont "have such honour."
 
 	para "Upon this throne"

@@ -147,7 +147,7 @@ CinnabarGymSign:
 
 SwimmerfNicoleSeenText:
 	text "I thought the fire"
-	line "GYM LEADER would"
+	line "Gym Leader would"
 	cont "be weakened by"
 	cont "living in a sea"
 	cont "cave."
@@ -177,7 +177,7 @@ SwimmerfLoriSeenText:
 	cont "I belong."
 	para "Everybody dislikes"
 	line "me because I'm"
-	cont "from HOENN."
+	cont "from Hoenn."
 	done
 
 SwimmerfLoriBeatenText:
@@ -187,7 +187,7 @@ SwimmerfLoriBeatenText:
 
 SwimmerfLoriAfterBattleText:
 	text "I actually really"
-	line "miss HOENN."
+	line "miss Hoenn."
 	para "It's a beautiful"
 	line "place."
 	para "Just ruled by"
@@ -215,15 +215,15 @@ SwimmermCameronAfterBattleText:
 	para "Cough cough..."
 	para "I'm going to swim"
 	line "all the way to"
-	cont "JOHTO!"
+	cont "Johto!"
 	done
 
 CinnabarGymSignText:
 	text "What does this"
 	line "sign say?"
 
-	para "CINNABAR GYM"
-	line "LEADER: BLAINE"
+	para "CINNABAR Gym"
+	line "Leader: BLAINE"
 	done
 	
 CinnabarGymBlockScript:
@@ -243,7 +243,7 @@ CinnabarGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

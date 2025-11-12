@@ -164,7 +164,7 @@ FarmerFText_InTrouble:
     cont "nutrients."
 
 	para "Our milk even goes"
-	line "out to KANTO."
+	line "out to Kanto."
 
 	para "With MILTANK"
 	line "sick we are in"

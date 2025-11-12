@@ -162,7 +162,7 @@ HikerDanielAfterBattleText:
 	text "I am training in"
 	line "cave exploring so"
 	cont "I can explore ROCK"
-	cont "TUNNEL in KANTO."
+	cont "TUNNEL in Kanto."
 	done
 
 FirebreatherBillSeenText:

@@ -452,7 +452,7 @@ _MobileTradeCameBackText::
 
 _OPT_IntroText1::
 	text_start
-	line "MARY: PROF.OAK'S"
+	line "MARY: Prof.Oak'S"
 	done
 
 _OPT_IntroText2::
@@ -467,7 +467,7 @@ _OPT_IntroText3::
 
 _OPT_OakText1::
 	text_start
-	line "OAK: @"
+	line "Oak: @"
 	text_ram wMonOrItemNameBuffer
 	text_end
 

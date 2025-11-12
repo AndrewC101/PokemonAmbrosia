@@ -39,7 +39,7 @@ VermilionMartSuperNerdText:
 
 InvadedVermilionMartSuperNerdText:
 	text "Of course an"
-	line "ELECTRIC GYM on"
+	line "ELECTRIC Gym on"
 	cont "the coast would"
 	cont "be a priority"
 	cont "target!"

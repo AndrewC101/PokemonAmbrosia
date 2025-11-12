@@ -47,7 +47,7 @@ CinnabarIslandBlueTeleport:
 	step_end
 
 CinnabarIslandBluePreE4Text:
-	text "Well well, a JOHTO"
+	text "Well well, a Johto"
 	line "trainer!"
 	para "What are you doing"
 	line "all the way out"
@@ -61,14 +61,14 @@ CinnabarIslandBluePreE4Text:
 	para "They don't seem"
 	line "too strong."
 	para "You should go home"
-	line "JOHTO trainer."
+	line "Johto trainer."
 	done
 
 CinnabarIslandBlueText:
 	text "Who are you?"
 
 	para "Ah you are the"
-	line "JOHTO Champion."
+	line "Johto Champion."
 
 	para "There was a time"
 	line "when being a"
@@ -98,7 +98,7 @@ CinnabarIslandBlueText:
 	line "#RUS outbreak."
 
 	para "And now the war"
-	line "with HOENN."
+	line "with Hoenn."
 
 	para "You know what the"
 	line "LEAGUE does?"
@@ -116,15 +116,15 @@ CinnabarIslandBlueText:
 	para "It means nothing."
 
 	para "If you get seven"
-	line "KANTO GYM BADGES"
+	line "Kanto Gym BADGES"
 	cont "and manage to fix"
 	cont "the issues at the"
 	cont "POWER PLANT then"
 	cont "come see me in"
 	cont "VIRIDIAN."
 
-	para "I'm the GYM"
-	line "LEADER."
+	para "I'm the Gym"
+	line "Leader."
 
 	para "I'll show you"
 	line "a real Champion."
@@ -134,7 +134,7 @@ CinnabarIslandGymSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "CINNABAR GYM has"
+	para "CINNABAR Gym has"
 	line "relocated to"
 	cont "SEAFOAM ISLANDS."
 

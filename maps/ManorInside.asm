@@ -237,9 +237,9 @@ AndrewExplainHandText:
 	cont "players team."
 	para "Note though it"
 	line "doesn't work on"
-	cont "me, my WIFE, my"
-	cont "BROTHER or LORD"
-	cont "OAK but does on"
+	cont "me, my Wife, my"
+	cont "Brother or Lord"
+	cont "Oak but does on"
 	cont "anybody else!"
 	done
 
@@ -879,7 +879,7 @@ ManorCheatText:
 	line "0120FCD0"
 	para "AMBROSIA"
 	line "018BFCD0"
-	para "MASTER BALL"
+	para "Master Ball"
 	line "0101FCD0"
 	para "MARK OF GOD"
 	line "012DFCD0"

@@ -23,9 +23,9 @@ AzaleaMartBugCatcherScript:
 AzaleaMartCooltrainerMText:
 	text "This MART sells"
 	line "a special KURT"
-	cont "BALL."
+	cont "Ball."
 
-	para "The FRIEND BALL."
+	para "The FRIEND Ball."
 
 	para "It makes #mon"
 	line "like you more"
@@ -43,7 +43,7 @@ AzaleaMartBugCatcherText:
 	text "One day I'm"
 	line "going to be a"
 	cont "trainer at"
-	cont "the GYM."
+	cont "the Gym."
 
 	para "I don't know"
 	line "why I bother"

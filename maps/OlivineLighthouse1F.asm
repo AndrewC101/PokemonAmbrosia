@@ -30,7 +30,7 @@ OlivineLighthouse1FSailorText:
 OlivineLighthouse1FPokefanFText:
 	text "150 years ago"
 	line "the Champion of"
-	cont "JOHTO was from"
+	cont "Johto was from"
 	cont "OLIVINE."
 
 	para "She trained at"

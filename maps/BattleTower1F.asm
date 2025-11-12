@@ -564,9 +564,9 @@ Text_BattleTowerCooltrainerF:
 	cont "to CHAMPIONS."
 
 	para "The highest level"
-	line "is MASTER."
+	line "is Master."
 
-	para "MASTER has twice"
+	para "Master has twice"
 	line "as many #mon"
 	cont "available as"
 	cont "any other level."
@@ -579,7 +579,7 @@ Text_BattleTowerCooltrainerF:
 Text_BattleTowerGranny:
 	text "Years ago I"
 	line "saw a man take"
-	cont "on MASTER level."
+	cont "on Master level."
 
 	para "He shined like"
 	line "gold and he"

@@ -169,10 +169,10 @@ FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY
 
 FuchsiaCityYoungsterText:
-	text "The previous GYM"
-	line "LEADER here was"
+	text "The previous Gym"
+	line "Leader here was"
 	cont "killed battling"
-	cont "HOENN."
+	cont "Hoenn."
 
 	para "We will never"
 	line "forget you, KOGA."
@@ -209,7 +209,7 @@ FuchsiaCityPokefanMText:
 	text "KOGA's daughter"
 	line "succeeded him as"
 
-	para "the GYM LEADER"
+	para "the Gym Leader"
 	line "after he fell"
 	cont "in battle."
 
@@ -225,7 +225,7 @@ FuchsiaCityPokefanMText_Saved:
 	line "Champion!"
 
 	para "You saved all of"
-	line "KANTO."
+	line "Kanto."
 
 	para "We should build"
 	line "a statue in your"
@@ -325,8 +325,8 @@ FuchsiaCitySignText:
 
 FuchsiaGymSignText:
 	text "FUCHSIA CITY"
-	line "#mon GYM"
-	cont "LEADER: JANINE"
+	line "#mon Gym"
+	cont "Leader: JANINE"
 
 	para "The Poisonous"
 	line "Ninja Master"
@@ -376,7 +376,7 @@ FuchsiaGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."
@@ -411,14 +411,14 @@ BlockingSoldier2:
     jumptextfaceplayer BlockingSoldier2Text
 
 BlockingSoldier1Text:
-    text "The LEADER tried"
+    text "The Leader tried"
     line "to stop us."
 
     para "Hahaha!"
 
     para "WALLACE himself"
     line "showed her the"
-    cont "power of HOENN."
+    cont "power of Hoenn."
 
     para "He took mercy on"
     line "the child."
@@ -426,7 +426,7 @@ BlockingSoldier1Text:
     para "I saw the fear"
     line "in the people at"
     cont "the sight of"
-    cont "HOENN legendary"
+    cont "Hoenn legendary"
     cont "#mon."
 
     para "We are securing"
@@ -439,11 +439,11 @@ BlockingSoldier2Text:
     text "I saw the EMPEROR"
     line "battle wielding"
     cont "the great forces"
-    cont "of HOENN."
+    cont "of Hoenn."
 
     para "It was beautiful"
     line "watching the FIRE"
-    cont "GYM LEADER on"
+    cont "Gym Leader on"
     cont "his knees before"
     cont "our EMPEROR."
 
@@ -600,7 +600,7 @@ FuchsiaSelfText2:
     done
 
 FuchsiaSelfText3:
-    text "The HOENN army"
+    text "The Hoenn army"
     line "are not like"
     cont "TEAM ROCKET."
 
@@ -609,7 +609,7 @@ FuchsiaSelfText3:
     para "WALLACE can"
     line "kill CHAMPIONS."
 
-    para "Just like STEVEN!"
+    para "Just like Steven!"
     done
 
 FuchsiaSelfText4:
@@ -634,7 +634,7 @@ FuchsiaSelfText5:
     para "She will never"
     line "forgive you!"
 
-    para "ELM is sending"
+    para "Elm is sending"
     line "you to your"
     cont "death!"
     done
@@ -655,7 +655,7 @@ FuchsiaSelfDefeatText1:
 
 FuchsiaSelfConfidenceText2:
     text "I am the Champion"
-    line "of JOHTO!"
+    line "of Johto!"
 
     para "I must try!"
     done

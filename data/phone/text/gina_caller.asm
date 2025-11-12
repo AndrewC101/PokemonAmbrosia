@@ -1,6 +1,6 @@
 GinaGettingInSyncWithMonText:
 	text "I asked around for"
-	line "some strong KANTO"
+	line "some strong Kanto"
 	cont "#mon."
 	para "People say"
 	line "GYARADOS,"
@@ -26,11 +26,11 @@ GinaDefeatedMonText:
 	done
 
 GinaLostAMonText:
-	text "Do you know LEON"
+	text "Do you know Leon"
 	line "has a CHARIZARD!"
 	para "If the strongest"
 	line "Champion has a"
-	cont "KANTO #mon it"
+	cont "Kanto #mon it"
 	cont "must be good."
 	para "I need to get one!"
 	done

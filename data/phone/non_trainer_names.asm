@@ -10,8 +10,8 @@ NonTrainerCallerNames:
 	assert_table_length NUM_NONTRAINER_PHONECONTACTS + 1
 
 .none:     db "----------@"
-.mom:      db "MUM:@"
+.mom:      db "Mum:@"
 .bill:     db "BILL:@"
-.elm:      db "PROF.ELM:@"
+.elm:      db "Prof.Elm:@"
 .bikeshop: db "BIKE SHOP:@"
 .buena:    db "BUENA:<LF>   DISC JOCKEY@"

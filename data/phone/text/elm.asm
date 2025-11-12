@@ -143,7 +143,7 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	cont "is under siege."
 	para "I can't imagine"
 	line "what they would be"
-	cont "doing in JOHTO but"
+	cont "doing in Johto but"
 	cont "it must be bad."
 	para "You are the"
 	line "strongest trainer"
@@ -160,7 +160,7 @@ ElmExpShareGiftText:
 	text "<PLAYER>!"
 
 	para "You have obtained"
-	line "all JOHTO badges!"
+	line "all Johto badges!"
 
 	para "Well done!"
 

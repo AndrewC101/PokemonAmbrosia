@@ -422,7 +422,7 @@ NationalParkLassText:
 	cont "Saturday."
 
 	para "On Saturday"
-	line "LEON always"
+	line "Leon always"
 	cont "visits here!"
 
 	para "He is the most"
@@ -434,7 +434,7 @@ NationalParkLassLeonText:
 	text "I always feel so"
 	line "privileged when"
 	cont "I'm this close"
-	cont "to LEON!"
+	cont "to Leon!"
 
 	para "The strongest"
 	line "trainer!"
@@ -482,9 +482,9 @@ NationalParkTeacher1Text_GotQuickClaw:
 NationalParkYoungster2Text:
 	text "I wish there"
 	line "were more people"
-	cont "like LEON"
+	cont "like Leon"
 
-	para "Champion LEON."
+	para "Champion Leon."
 
 	para "The best in the"
 	line "world!"
@@ -498,7 +498,7 @@ NationalParkYoungster2LeonText:
 	text "Today is a big"
 	line "day!"
 
-	para "LEON is here"
+	para "Leon is here"
 	line "visiting his fans."
 
 	para "He is the best"
@@ -513,18 +513,18 @@ NationalParkTeacher2Text:
 	line "that give them"
 	cont "hope."
 
-	para "LEON is my hero."
+	para "Leon is my hero."
 	done
 
 NationalParkTeacher2LeonText:
-	text "LEON!"
+	text "Leon!"
 	para "I love you!!"
 
 	para "I feel safe"
-	line "with LEON here."
+	line "with Leon here."
 
 	para "He could take on"
-	line "the HOENN army by"
+	line "the Hoenn army by"
 	cont "himself."
 	done
 
@@ -580,7 +580,7 @@ PokefanfBeverly1BeatenText:
 
 PokefanBeverlyCuteMonText:
 	text "When war comes"
-	line "and HOENN invades"
+	line "and Hoenn invades"
 	cont "we will be"
 	cont "ready..."
 
@@ -867,7 +867,7 @@ NPLeonWinAfterBattleText:
 NPLeonSeenText:
     text "Hey there kid!"
 
-    para "I'm Champion LEON."
+    para "I'm Champion Leon."
 
     para "You may have"
     line "heard of me."

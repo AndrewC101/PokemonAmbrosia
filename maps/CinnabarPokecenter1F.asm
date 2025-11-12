@@ -20,7 +20,7 @@ CinnabarPokecenter1FFisherScript:
 CinnabarPokecenter1FCooltrainerFText:
 	text "They say the"
 	line "volcano was the"
-	cont "doing of HOENN."
+	cont "doing of Hoenn."
 
 	para "No!"
 

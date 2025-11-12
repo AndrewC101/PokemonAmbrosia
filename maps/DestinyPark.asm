@@ -62,7 +62,7 @@ MasterBrockSeenText:
 	para "Only those with"
 	line "the strength to"
 	cont "endure can be a"
-	cont "MASTER."
+	cont "Master."
 	done
 
 MasterBrockBeatenText:
@@ -137,7 +137,7 @@ MasterMistyScript:
     end
 
 MasterMistySeenText:
-	text "This GYM tests the"
+	text "This Gym tests the"
 	line "perseverance of"
 	cont "trainers."
 	para "You have to be"
@@ -404,7 +404,7 @@ MasterJanineSeenText:
 	cont "ultimate fear."
 	para "The fear of death."
 	para "It is inevitable."
-	para "Only a true MASTER"
+	para "Only a true Master"
 	line "can conquer this"
 	cont "final fear."
 	done
@@ -564,7 +564,7 @@ MasterBlaineSeenText:
 	cont "and despair."
 	para "Real strength lies"
 	line "in between."
-	para "A MASTER must be"
+	para "A Master must be"
 	line "able to catch this"
 	cont "pendulum."
 	para "Can you?"
@@ -642,8 +642,8 @@ MasterFalknerScript:
 MasterFalknerSeenText:
 	text "Everyone is trying"
 	line "to be something, a"
-	cont "GYM LEADER, a"
-	cont "MASTER, a winner."
+	cont "Gym Leader, a"
+	cont "Master, a winner."
 	para "People forget who"
 	line "they really are."
 	para "Show me who you"
@@ -724,7 +724,7 @@ MasterBugsySeenText:
 	cont "they can't see the"
 	cont "ground they were"
 	cont "born on."
-	para "This GYM will drag"
+	para "This Gym will drag"
 	line "these people back"
 	cont "down to reality."
 	done

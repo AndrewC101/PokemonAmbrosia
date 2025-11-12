@@ -1,5 +1,5 @@
 ReenaMonsIsAPerfectMatchText:
-	text "CYNTHIA doesn't"
+	text "Cynthia doesn't"
 	line "specialise in a"
 	cont "single type."
 	para "I wonder if that"

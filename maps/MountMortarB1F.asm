@@ -191,7 +191,7 @@ MountMortarB1FKiyoGotLucarioText:
 	cont "or love."
 
 	para "I am the KARATE"
-	line "MASTER."
+	line "Master."
 
 	para "And it's time"
 	line "of my return."

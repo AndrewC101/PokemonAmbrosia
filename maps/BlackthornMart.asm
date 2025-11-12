@@ -23,21 +23,21 @@ BlackthornMartBlackBeltScript:
 BlackthornMartCooltrainerMText:
 	text "I wish I could"
 	line "use MAX POTION in"
-	cont "GYM battles!"
+	cont "Gym battles!"
 
-	para "DRAGON type is"
+	para "Dragon type is"
 	line "weak to ICE."
 
 	para "But CLAIR has"
 	line "some #mon"
 	cont "that aren't"
-	cont "DRAGON type."
+	cont "Dragon type."
 
 	para "She is so smart!"
 
 	para "DRAGONS are"
 	line "also weak to"
-	cont "FAIRY and DRAGON"
+	cont "FAIRY and Dragon"
 	cont "but I don't have"
 	cont "any of those."
 	done

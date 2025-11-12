@@ -168,7 +168,7 @@ BlackthornGymStatue:
 ClairIntroText:
 	text "I am CLAIR."
 
-	para "DRAGON warrior"
+	para "Dragon warrior"
 	line "of BLACKTHORN."
 
 	para "Defender of the"
@@ -186,7 +186,7 @@ ClairIntroText:
 	cont "are weak."
 
 	para "The blood of the"
-	line "DRAGON courses my"
+	line "Dragon courses my"
 	cont "veins."
 
 	para "Let war come!"
@@ -237,7 +237,7 @@ ClairText_GoToDragonsDen:
 	line "you a chance to"
 	cont "prove yourself."
 
-	para "Behind the GYM is"
+	para "Behind the Gym is"
 	line "DRAGONS DEN."
 
 	para "A sacred place."
@@ -281,12 +281,12 @@ BlackthornGymClairText_YouKeptMeWaiting:
 
 BlackthornGymText_ReceivedTM24:
 	text "<PLAYER> received"
-	line "TM24 DRAGON PULSE."
+	line "TM24 Dragon Pulse."
 	done
 
 BlackthornGymClairText_DescribeTM24:
 	text "That contains"
-	line "DRAGON PULSE."
+	line "Dragon Pulse."
 
 	para "May it serve you"
 	line "well."
@@ -365,7 +365,7 @@ CooltrainermMikeBeatenText:
 	done
 
 CooltrainermMikeAfterBattleText:
-	text "The DRAGON LORD"
+	text "The Dragon Lord"
 	line "is centuries old."
 
 	para "It terrifies me"
@@ -378,7 +378,7 @@ CooltrainerfLolaSeenText:
 
 	para "But she lacks"
 	line "the real heart"
-	cont "of a DRAGON."
+	cont "of a Dragon."
 
 	para "She senses I"
 	line "will overtake her."
@@ -409,7 +409,7 @@ CooltrainerfLolaAfterBattleText:
 	para "I will claim my"
 	line "birthright."
 
-	para "The DRAGON LORD"
+	para "The Dragon Lord"
 	line "will see I am"
 	cont "more worthy than"
 	cont "her!"
@@ -417,11 +417,11 @@ CooltrainerfLolaAfterBattleText:
 
 BlackthornGymGuideText:
 	text "This is it, the"
-	line "final GYM in"
-	cont "JOHTO!"
+	line "final Gym in"
+	cont "Johto!"
 
 	para "The trainers here"
-	line "worship DRAGON"
+	line "worship Dragon"
 	cont "#mon."
 
 	para "DRAGONS have high"
@@ -451,7 +451,7 @@ BlackthornGymGuideWinText:
 
 	para "All hail"
 	line "<PLAYER> the"
-	cont "DRAGON slayer!"
+	cont "Dragon slayer!"
 
 	para "The ELITE FOUR"
 	line "have no idea"

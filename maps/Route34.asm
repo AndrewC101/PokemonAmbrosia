@@ -555,13 +555,13 @@ YoungsterIanSeenText:
 	line "of ERIKA?"
 
 	para "She is a GRASS"
-	line "GYM LEADER in"
-	cont "KANTO."
+	line "Gym Leader in"
+	cont "Kanto."
 
 	para "I'm going to be"
 	line "the first GRASS"
-	cont "GYM LEADER in"
-	cont "JOHTO!"
+	cont "Gym Leader in"
+	cont "Johto!"
 	done
 
 YoungsterIanBeatenText:
@@ -602,17 +602,17 @@ CamperToddSaleText:
 	done
 
 PicnickerGina1SeenText:
-	text "I'm from KANTO."
+	text "I'm from Kanto."
 
 	para "I came here to"
 	line "escape the war."
 
 	para "We have different"
-	line "starters in KANTO."
+	line "starters in Kanto."
 	done
 
 PicnickerGina1BeatenText:
-	text "JOHTO #mon"
+	text "Johto #mon"
 	line "are strong too."
 	done
 
@@ -620,7 +620,7 @@ PicnickerGina1AfterText:
 	text "When my #mon"
 	line "evolve you'll"
 	cont "see the full"
-	cont "power of KANTO."
+	cont "power of Kanto."
 	done
 
 OfficerKeithSeenText:

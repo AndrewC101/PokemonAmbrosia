@@ -69,7 +69,7 @@ FuchsiaMartFisherText_Saved:
 
 FuchsiaMartCooltrainerFText:
 	text "I wanted to be"
-	line "a GYM trainer"
+	line "a Gym trainer"
 	cont "but I would"
 	cont "need to dress up"
 	cont "as JANINE."

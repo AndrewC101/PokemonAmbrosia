@@ -23,11 +23,11 @@ MahoganyPokecenter1FCooltrainerFScript:
 
 MahoganyPokecenter1FPokefanMText:
 	text "I thought the ICE"
-	line "GYM LEADER would"
+	line "Gym Leader would"
 	cont "be a cool woman"
 	cont "like LORELEI."
 	para "I came all the way"
-	line "here from KANTO."
+	line "here from Kanto."
 	para "I was..."
 	para "wrong."
 	done

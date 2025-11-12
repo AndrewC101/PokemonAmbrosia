@@ -1,6 +1,6 @@
 GinaAskNumber2Text:
 GinaAskNumber1Text:
-	text "Maybe KANTO"
+	text "Maybe Kanto"
 	line "#mon just"
 	cont "aren't that"
 	cont "strong."

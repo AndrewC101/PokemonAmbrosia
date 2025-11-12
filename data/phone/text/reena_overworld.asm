@@ -31,5 +31,5 @@ ReenaPhoneFullText:
 
 ReenaRematchText:
 	text "Behold the true"
-	line "Champion of JOHTO!"
+	line "Champion of Johto!"
 	done

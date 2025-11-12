@@ -260,11 +260,11 @@ ItemDescriptions:
 	assert_table_length $ff
 
 MasterBallDesc:
-	db   "The best BALL. It"
+	db   "The best Ball. It"
 	next "never misses.@"
 
 UltraBallDesc:
-	db   "A BALL with a high"
+	db   "A Ball with a high"
 	next "rate of success.@"
 
 BrightpowderDesc:
@@ -272,7 +272,7 @@ BrightpowderDesc:
 	next "accuracy. (HOLD)@"
 
 GreatBallDesc:
-	db   "A BALL with a de-"
+	db   "A Ball with a de-"
 	next "cent success rate.@"
 
 PokeBallDesc:
@@ -710,7 +710,7 @@ RageCandyBarDesc:
 
 GSBallDesc:
 	db   "The mysterious"
-	next "BALL.@"
+	next "Ball.@"
 
 BlueCardDesc:
 	db   "Card to save"
@@ -867,7 +867,7 @@ SacredAshDesc:
 	next "fainted #mon.@"
 
 HeavyBallDesc:
-	db   "A BALL for catch-"
+	db   "A Ball for catch-"
 	next "ing heavy #mon.@"
 
 FlowerMailDesc:
@@ -875,15 +875,15 @@ FlowerMailDesc:
 	next "(HOLD)@"
 
 LevelBallDesc:
-	db   "A BALL for lower-"
+	db   "A Ball for lower-"
 	next "level #mon.@"
 
 LureBallDesc:
-	db   "A BALL for #mon"
+	db   "A Ball for #mon"
 	next "hooked by a ROD.@"
 
 FastBallDesc:
-	db   "A BALL for catch-"
+	db   "A Ball for catch-"
 	next "ing fast #mon.@"
 
 TeruSama21Desc:
@@ -894,11 +894,11 @@ LightBallDesc:
 	next "for PIKACHU.@"
 
 FriendBallDesc:
-	db   "A BALL that makes"
+	db   "A Ball that makes"
 	next "#mon friendly.@"
 
 MoonBallDesc:
-	db   "A BALL for MOON"
+	db   "A Ball for MOON"
 	next "STONE evolvers.@"
 
 LoveBallDesc:
@@ -945,7 +945,7 @@ TeruSama23Desc:
 
 ParkBallDesc:
 	db   "The Bug-Catching"
-	next "Contest BALL.@"
+	next "Contest Ball.@"
 
 RainbowWingDesc:
 	db   "A mystical feather"

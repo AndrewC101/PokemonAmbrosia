@@ -3875,21 +3875,21 @@ String_119d07:
 
 ; DevNote - BT level menu strings
 Strings_L10ToL100:
-    db "NOVICE@@"
-    db "LEADER@@"
-    db "ELITE @@"
-    db "CHAMP @@"
-    db "MASTER@@"
-	db "CANCEL@@"
+    db "Novice@@"
+    db "Leader@@"
+    db "Elite @@"
+    db "Champ @@"
+    db "Master@@"
+	db "Cancel@@"
 
 Strings_Ll0ToL40:
-    db "NOVICE@@"
-    db "LEADER@@"
-    db "ELITE @@"
-	db "CANCEL@@"
+    db "Novice@@"
+    db "Leader@@"
+    db "Elite @@"
+	db "Cancel@@"
 
 BattleTowerCancelString: ; unreferenced
-	db "CANCEL@"
+	db "Cancel@"
 
 BattleTower_LevelCheck:
 ; DevNote - BT level check is skipped after 16 badges
@@ -5487,7 +5487,7 @@ Text_CancelBattleRoomChallenge:
 	done
 
 Text_ExitGymLeaderHonorRoll:
-	text "Exit GYM LEADER"
+	text "Exit Gym Leader"
 	line "HONOR ROLL?"
 	done
 

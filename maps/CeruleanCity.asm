@@ -165,7 +165,7 @@ CeruleanCityCooltrainerMText1:
 
 CeruleanCityCooltrainerMText2:
 	text "You're the hero"
-	line "that saved KANTO!"
+	line "that saved Kanto!"
 
 	para "Champion <PLAYER>!"
 
@@ -216,7 +216,7 @@ CeruleanCityCooltrainerFText3:
 
 CeruleanCityFisherText:
 	text "I'm a huge fan of"
-	line "CERULEAN GYM's"
+	line "CERULEAN Gym's"
 	cont "MISTY."
 
 	para "I know everything"
@@ -276,8 +276,8 @@ CeruleanCitySignText:
 
 CeruleanGymSignText:
 	text "CERULEAN CITY"
-	line "#mon GYM"
-	cont "LEADER: MISTY"
+	line "#mon Gym"
+	cont "Leader: MISTY"
 
 	para "The Tomboyish"
 	line "Mermaid"
@@ -331,7 +331,7 @@ CeruleanGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

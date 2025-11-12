@@ -158,7 +158,7 @@ Route35GoldenrodGatePokefanFText:
 	text "The NATIONAL PARK"
 	line "is up ahead."
 	para "Some days you can"
-	line "find Champion LEON"
+	line "find Champion Leon"
 	cont "there."
 	para "I'd love to see"
 	line "his CHARIZARD."

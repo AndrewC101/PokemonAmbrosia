@@ -85,7 +85,7 @@ SailorTerrellBeatenText:
 	done
 
 SailorTerrellAfterBattleText:
-	text "The GYM LEADER"
+	text "The Gym Leader"
 	line "of CIANWOOD is"
 	cont "a real strong"
 	cont "man."

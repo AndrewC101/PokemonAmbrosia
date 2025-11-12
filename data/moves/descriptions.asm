@@ -1228,7 +1228,7 @@ SeedFlareDescription:
 
 DracoMeteorDescription:
 	db   "The ultimate"
-	line "DRAGON attack.@"
+	line "Dragon attack.@"
 
 RainDanceDescription:
 	db   "Boosts water-type"

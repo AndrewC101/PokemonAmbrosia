@@ -1743,7 +1743,7 @@ NoRadioName:
 	call Textbox
 	ret
 
-OaksPKMNTalkName:     db "OAK's <PK><MN> Talk@"
+OaksPKMNTalkName:     db "Oak's <PK><MN> Talk@"
 PokedexShowName:      db "#dex Show@"
 PokemonMusicName:     db "#mon Music@"
 LuckyChannelName:     db "Lucky Channel@"

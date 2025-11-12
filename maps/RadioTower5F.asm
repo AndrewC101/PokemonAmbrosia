@@ -342,7 +342,7 @@ RadioTower5CrystalText:
     line "head to"
     cont "BLACKTHORN."
 
-    para "The GYM LEADER"
+    para "The Gym Leader"
     line "will be back."
 
     para "Our race is still"
@@ -396,12 +396,12 @@ FakeDirectorLoseText:
 	done
 
 FakeDirectorTextAfter:
-	text "The HOENN"
+	text "The Hoenn"
 	line "legendary"
 	cont "#mon are"
 	cont "much stronger"
 	cont "than the elemental"
-	cont "birds of KANTO."
+	cont "birds of Kanto."
 
 	para "We did at one"
 	line "time have a"
@@ -456,7 +456,7 @@ Executivef1SeenText:
 	cont "the same."
 
 	para "Your time has come"
-	line "HOENN sympathiser!"
+	line "Hoenn sympathiser!"
 	done
 
 Executivef1BeatenText:
@@ -480,7 +480,7 @@ Executivef1AfterBattleText:
 	line "to show you any."
 
 	para "But if you care"
-	line "about JOHTO."
+	line "about Johto."
 
 	para "If you care about"
 	line "your family."
@@ -489,7 +489,7 @@ Executivef1AfterBattleText:
 	line "brother finish"
 	cont "his work."
 
-	para "HOENN will end"
+	para "Hoenn will end"
 	line "everything you"
 	cont "love."
 
@@ -500,7 +500,7 @@ Executivef1AfterBattleText:
 
 	para "LANCE then"
 	line "liberated SAFFRON"
-	cont "from HOENN."
+	cont "from Hoenn."
 
 	para "But our lives"
 	line "were already"
@@ -520,7 +520,7 @@ RadioTower5FRocketBossBeforeText:
 	cont "#mon."
 
 	para "Our only hope"
-	line "to defeat HOENN"
+	line "to defeat Hoenn"
 	cont "is to use this"
 	cont "signal to turn"
 	cont "their legendary"

@@ -802,7 +802,7 @@ ElmBeatWallaceText:
 ElmBeatEliteFourText:
 	text "I can not believe"
 	line "you are the first"
-	cont "Champion of JOHTO."
+	cont "Champion of Johto."
 	para "That kind of makes"
 	line "you my boss!"
 	para "The world needs"
@@ -823,8 +823,8 @@ ElmBeatRocketsText:
 	cont "around would have"
 	cont "been strong"
 	cont "enough."
-	para "Not even GYM"
-	line "LEADERS."
+	para "Not even Gym"
+	line "Leaders."
 	para "You are a"
 	line "remarkable"
 	cont "trainer."
@@ -855,7 +855,7 @@ ElmText_ThisIsCynthia:
     text "Let me introduce"
     line "you."
 
-    para "This is CYNTHIA."
+    para "This is Cynthia."
 
     para "She is Champion"
     line "of the SINNOH"
@@ -865,7 +865,7 @@ ElmText_ThisIsCynthia:
 ElmsLabCynthiaIntroText:
     text "Hello <PLAYER>."
 
-    para "PROF ELM has told"
+    para "Prof Elm has told"
     line "me today you have"
     cont "chosen to begin"
     cont "your #mon"
@@ -898,7 +898,7 @@ ElmsLabCynthiaByeElmText:
     line "to be done."
 
     para "Thank you for"
-    line "your help PROF."
+    line "your help Prof."
 
     para "There may be"
     line "hope yet."
@@ -911,10 +911,10 @@ ElmsLabElmStevenText:
     para "The evidence is"
     line "clear."
 
-    para "STEVEN may still"
+    para "Steven may still"
     line "be alive."
 
-    para "Many in HOENN"
+    para "Many in Hoenn"
     line "remain loyal to"
     cont "him rather than"
     cont "WALLACE."
@@ -966,7 +966,7 @@ ElmText_ResearchAmbitions:
 	para "I'm sorry about"
 	line "your father."
 
-	para "But CYNTHIA is"
+	para "But Cynthia is"
 	line "right!"
 
 	para "You are about to"
@@ -1044,7 +1044,7 @@ ReceivedStarterText:
 	done
 
 ElmDirectionsText1:
-	text "PROF OAK is"
+	text "Prof Oak is"
 	line "visiting a friend"
 	cont "just NORTH of"
 	cont "CHERRYGROVE."
@@ -1071,14 +1071,14 @@ ElmDirectionsText3:
 	done
 
 GotElmsNumberText:
-	text "<PLAYER> got ELM's"
+	text "<PLAYER> got Elm's"
 	line "phone number."
 	done
 
 ElmDescribesMrPokemonText:
-	text "PROF OAK is a"
+	text "Prof Oak is a"
 	line "famous Professor"
-	cont "from KANTO."
+	cont "from Kanto."
 
 	para "He used to be a"
 	line "trainer and is"
@@ -1096,7 +1096,7 @@ ElmDescribesMrPokemonText:
 
 ElmPokeBallText:
 	text "A #mon"
-	line "caught by ELM."
+	line "caught by Elm."
 	done
 
 ElmsLabHealingMachineText1:
@@ -1123,7 +1123,7 @@ ElmAfterTheftText1:
 ElmAfterTheftText2:
 	text "<PLAYER> handed"
 	line "the MYSTERY EGG to"
-	cont "PROF.ELM."
+	cont "Prof.Elm."
 	done
 
 ElmAfterTheftText3:
@@ -1144,7 +1144,7 @@ ElmAfterTheftText4:
 	done
 
 ElmAfterTheftText5:
-	text "PROF.OAK gave you"
+	text "Prof.Oak gave you"
 	line "a #dex?"
 
 	para "It is a vital"
@@ -1163,13 +1163,13 @@ ElmAfterTheftText5:
 	cont "training."
 
 	para "You need to seek"
-	line "out #mon GYMS"
+	line "out #mon Gyms"
 	cont "and defeat the"
-	cont "GYM LEADERS."
+	cont "Gym Leaders."
 
 	para "When you have"
 	line "beaten all 8"
-	cont "GYMS, you can"
+	cont "Gyms, you can"
 	cont "take on the ELITE"
 	cont "FOUR."
 
@@ -1178,7 +1178,7 @@ ElmAfterTheftText5:
 	cont "the title of"
 	cont "Champion."
 
-	para "The closest GYM"
+	para "The closest Gym"
 	line "would be the one"
 	cont "in VIOLET CITY."
 	done
@@ -1202,7 +1202,7 @@ AideText_AfterWallace:
 	cont "broken through!"
 	para "All it took was"
 	line "for you to destroy"
-	cont "the whole HOENN"
+	cont "the whole Hoenn"
 	cont "army by yourself"
 	cont "and save the"
 	cont "world."
@@ -1291,11 +1291,11 @@ ElmGiveMasterBallText1:
 	done
 
 ElmGiveMasterBallText2:
-	text "The MASTER BALL is"
+	text "The Master Ball is"
 	line "the best!"
 
 	para "It's the ultimate"
-	line "BALL! It'll catch"
+	line "Ball! It'll catch"
 
 	para "any #mon"
 	line "without fail."
@@ -1322,7 +1322,7 @@ ElmGiveTicketText1:
 
 	para "Congratulations"
 	line "again on becoming"
-	cont "the first JOHTO"
+	cont "the first Johto"
 	cont "Champion!"
 
     para "You can now train"
@@ -1341,7 +1341,7 @@ ElmGiveTicketText1:
 	line "S.S.TICKET."
 
 	para "The boat heads"
-	line "for KANTO."
+	line "for Kanto."
 
 	para "There is a secret"
 	line "agent onboard"
@@ -1360,7 +1360,7 @@ ElmGiveTicketText2:
 	cont "with your #mon."
 
 	para "Give my regards to"
-	line "PROF.OAK in KANTO!"
+	line "Prof.Oak in Kanto!"
 
 	para "I have one more"
 	line "thing for you!"
@@ -1385,7 +1385,7 @@ ClearBellTips:
 ElmKantoExplainText:
 	text "<PLAYER> now that"
 	line "you are the"
-	cont "Champion of JOHTO"
+	cont "Champion of Johto"
 	cont "you have immense"
 	cont "responsibilities."
 	para "Your first"
@@ -1394,13 +1394,13 @@ ElmKantoExplainText:
 	cont "and #mon."
 	para "To do this you"
 	line "must ensure the"
-	cont "KANTO GYM LEADERS"
+	cont "Kanto Gym Leaders"
 	cont "are ready for war."
-	para "Go to KANTO and"
+	para "Go to Kanto and"
 	line "challenge the"
-	cont "GYMS."
+	cont "Gyms."
 	para "To help you in"
-	line "this, PROF OAK has"
+	line "this, Prof Oak has"
 	cont "worked with BILL"
 	cont "and upgraded your"
 	cont "EXP SHARE."
@@ -1426,7 +1426,7 @@ AideText_AlwaysBusy:
 	line "some secret"
 	cont "weapon that can"
 	cont "win a war,"
-	cont "PROF OAK will find"
+	cont "Prof Oak will find"
 	cont "it."
 	done
 
@@ -1478,7 +1478,7 @@ ElmsLabOfficerText1:
 
 	para "I was just getting"
 	line "some information"
-	cont "from PROF.ELM."
+	cont "from Prof.Elm."
 
 	para "Apparently, it was"
 	line "a young male with"
@@ -1567,7 +1567,7 @@ ElmsLabTrashcanText:
 	done
 
 ElmsLabPCText:
-	text "ELM is working on"
+	text "Elm is working on"
 	line "a paper."
 	para "Non-Markovian"
 	line "Dynamics of"
@@ -1792,7 +1792,7 @@ DadWontLetYouText:
     text "<PLAYER> you are"
     line "being told you"
     cont "need to go to"
-    cont "KANTO and fight."
+    cont "Kanto and fight."
 
     para "I won't let that"
     line "happen."
@@ -1932,7 +1932,7 @@ MumGoodbyeText:
     cont "father."
 
     para "Now go and show"
-    line "HOENN that nobody"
+    line "Hoenn that nobody"
     cont "messes with us!"
 
     para "I love you my"

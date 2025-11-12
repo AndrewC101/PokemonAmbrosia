@@ -252,7 +252,7 @@ AshLeavesText:
 	cont "in the world."
 
 	para "You will be a"
-	line "#mon MASTER."
+	line "#mon Master."
 	done
 
 RematchTextAsh:
@@ -344,7 +344,7 @@ AshFightText:
     line "same PALLET town"
     cont "you know."
 
-    para "PROF OAK sent me"
+    para "Prof Oak sent me"
     line "here."
 
     para "He said a trainer"
@@ -363,7 +363,7 @@ AshFightText:
     cont "in the world."
 
     para "A #mon"
-    line "MASTER!"
+    line "Master!"
 
     para "Tell you what!"
 
@@ -386,7 +386,7 @@ AshBeatenText:
 
 AshFinalText:
     text "You are a"
-    line "#mon MASTER!"
+    line "#mon Master!"
 
     para "Well done!"
 
@@ -422,7 +422,7 @@ PokemonMasterText:
     cont "the world."
 
     para "You are a"
-    line "#mon MASTER!"
+    line "#mon Master!"
 
     para "Well done!"
     done
@@ -432,7 +432,7 @@ PokemonMasterQuestText:
     line "tournament."
 
     para "Where everyone is"
-    line "a #mon MASTER."
+    line "a #mon Master."
 
     para "The strongest of"
     line "them is called the"

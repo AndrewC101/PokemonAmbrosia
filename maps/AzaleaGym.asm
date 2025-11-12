@@ -285,7 +285,7 @@ BugCatcherJoshSeenText:
 	text "We were locked"
 	line "in here."
 
-	para "BUGSY could have"
+	para "Bugsy could have"
 	line "sliced the door"
 	cont "down and killed"
 	cont "those ROCKETS."
@@ -301,7 +301,7 @@ BugCatcherJoshBeatenText:
 	done
 
 BugCatcherJoshAfterBattleText:
-	text "Don't anger BUGSY,"
+	text "Don't anger Bugsy,"
 	line "his #mon are"
 	cont "terrifying."
 	done
@@ -350,7 +350,7 @@ TwinsAmyandmay2AfterBattleText:
 	done
 
 AzaleaGymGuideText:
-	text "BUGSY has"
+	text "Bugsy has"
 	line "some really"
 	cont "strong moves!"
 

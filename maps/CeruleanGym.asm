@@ -231,7 +231,7 @@ CeruleanGymGruntBigMistakeText:
 
 	para "You dismantled"
 	line "TEAM ROCKET in"
-	cont "JOHTO."
+	cont "Johto."
 
 	para "I would very much"
 	line "like to drown you"
@@ -243,10 +243,10 @@ CeruleanGymGruntBigMistakeText:
 
 CeruleanGymGruntByeText:
 	text "I will not"
-	line "allow HOENN to"
+	line "allow Hoenn to"
 	cont "get away with"
 	cont "their disrespect"
-	cont "of KANTO."
+	cont "of Kanto."
 
 	para "I must complete"
 	line "my mission."
@@ -267,13 +267,13 @@ CeruleanGymGruntByeText:
 CeruleanGymNote1Text:
 	text "Sorry, I'll be out"
 	line "for a while."
-	cont "MISTY, GYM LEADER"
+	cont "MISTY, Gym Leader"
 	done
 
 CeruleanGymNote2Text:
 	text "Since MISTY's out,"
 	line "we'll be away too."
-	cont "GYM TRAINERS"
+	cont "Gym TRAINERS"
 	done
 
 MistyIntroText:
@@ -293,7 +293,7 @@ MistyIntroText:
 	cont "beautiful."
 
 	para "It is said that"
-	line "HOENN trainers"
+	line "Hoenn trainers"
 	cont "can unlock the"
 	cont "full potential of"
 	cont "WATER #mon."
@@ -409,7 +409,7 @@ SwimmermParkerSeenText:
 	cont "an extra respons-"
 	cont "ibility to do my"
 	cont "part to fight"
-	cont "against HOENN."
+	cont "against Hoenn."
 
 	para "I need to train!"
 	done
@@ -435,7 +435,7 @@ CeruleanGymGuideText:
 	para "You know the"
 	line "drill by now."
 
-	para "WATER GYM."
+	para "WATER Gym."
 
 	para "Use ELECTRIC or"
 	line "GRASS attacks."

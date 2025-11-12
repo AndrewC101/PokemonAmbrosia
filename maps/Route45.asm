@@ -363,7 +363,7 @@ HikerTimothySeenText:
 	line "the volcano that"
 	cont "destroyed CINNABAR"
 	cont "was the doing of"
-	cont "HOENN."
+	cont "Hoenn."
 
 	para "We must train!"
 
@@ -416,7 +416,7 @@ BlackbeltKenjiBeatenText:
 
 BlackbeltKenjiAfterBattleText:
 	text "My master KIYO"
-	line "moved to JOHTO."
+	line "moved to Johto."
 
 	para "I am searching"
 	line "for him."
@@ -462,7 +462,7 @@ CooltrainermRyanSeenText:
 	cont "person who"
 	cont "thinks this."
 
-	para "But DRAGON"
+	para "But Dragon"
 	line "#mon are kind"
 	cont "of overrated."
 
@@ -487,7 +487,7 @@ CooltrainermRyanAfterBattleText:
 
 	para "I just can't"
 	line "stand all the"
-	cont "DRAGON simps"
+	cont "Dragon simps"
 	cont "around here."
 	done
 
@@ -543,7 +543,7 @@ CamperQuentinSeenText:
 	line "nor no #mon."
 
 	para "I don't fear"
-	line "no HOENN army"
+	line "no Hoenn army"
 	cont "nor no soldier."
 
 	para "My girlfriend"

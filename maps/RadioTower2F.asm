@@ -333,7 +333,7 @@ RadioTower2FSuperNerdText:
 	done
 
 RadioTower2FTeacherText:
-	text "KANTO has their"
+	text "Kanto has their"
 	line "own radio"
 	cont "channels."
 
@@ -346,7 +346,7 @@ RadioTower2FTeacherText:
 	para "Of course you"
 	line "need a special"
 	cont "add-on to tune"
-	cont "into KANTO radio."
+	cont "into Kanto radio."
 	done
 
 RadioTower2FTeacherText_Rockets:
@@ -395,8 +395,8 @@ GruntM4SeenText:
 	text "Anyone who tries"
 	line "to stop us is"
 	cont "only helping"
-	cont "HOENN to invade"
-	cont "KANTO."
+	cont "Hoenn to invade"
+	cont "Kanto."
 	done
 
 GruntM4BeatenText:
@@ -406,7 +406,7 @@ GruntM4BeatenText:
 
 GruntM4AfterBattleText:
 	text "You are a"
-	line "HOENN sympathiser."
+	line "Hoenn sympathiser."
 	done
 
 GruntF2SeenText:
@@ -425,7 +425,7 @@ GruntF2AfterBattleText:
 	line "but TEAM ROCKET"
 	cont "is strong!"
 
-	para "KANTO is strong!"
+	para "Kanto is strong!"
 	done
 
 RadioTower2FBuenaShowIntroductionText:
@@ -657,7 +657,7 @@ RadioTower2FSalesSignText:
 	done
 
 RadioTower2FOaksPKMNTalkSignText:
-	text "PROF.OAK'S #mon"
+	text "Prof.Oak'S #mon"
 	line "TALK"
 
 	para "The Hottest Show"

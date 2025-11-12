@@ -412,11 +412,11 @@ Route32CooltrainerMText_VioletGym:
 
 	para "If only he"
 	line "had trained to"
-	cont "beat FALKNER!"
+	cont "beat Falkner!"
 
 	para "I will only let"
 	line "those who have"
-	cont "beaten FALKNER"
+	cont "beaten Falkner"
 	cont "pass."
 	done
 
@@ -424,7 +424,7 @@ Route32CooltrainerMText_HaveThisSeed:
 	text "You have done it!"
 
 	para "You have beaten"
-	line "FALKNER."
+	line "Falkner."
 
 	para "Take this!"
 
@@ -907,7 +907,7 @@ Route32CrystalText_GotBadge:
 
     para "Still I got the"
     line "badge from the"
-    cont "GYM."
+    cont "Gym."
 
     para "Though it was"
     line "really tough!"

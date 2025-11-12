@@ -171,7 +171,7 @@ SwimmermCharlieSeenText:
 	cont "WATER trainer."
 
 	para "One day I hope"
-	line "to be a GYM"
+	line "to be a Gym"
 	cont "trainer for her."
 	done
 

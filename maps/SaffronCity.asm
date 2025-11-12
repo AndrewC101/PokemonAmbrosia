@@ -153,13 +153,13 @@ SaffronCityLass1Text:
 SaffronCityPokefanMText:
 	text "Everybody here"
 	line "knows that when"
-	cont "HOENN invades they"
+	cont "Hoenn invades they"
 	cont "will be cutting a"
 	cont "path straight to"
 	cont "SAFFRON!"
 
 	para "If SAFFRON falls"
-	line "KANTO is done for!"
+	line "Kanto is done for!"
 	done
 
 SaffronCityPokefanMText_BeatWallace:
@@ -184,17 +184,17 @@ SaffronCityPokefanMText_BeatWallace:
 
 SaffronCityCooltrainerMText:
 	text "I was going to"
-	line "challenge the GYM"
+	line "challenge the Gym"
 	cont "but they are only"
 	cont "accepting Champion"
 	cont "level challengers."
 	
 	para "What use is that!"
 	
-	para "But the other GYM"
+	para "But the other Gym"
 	line "accepts anyone."
 
-	para "The LEADER even"
+	para "The Leader even"
 	line "spoke to me and"
 	cont "helped me out."
 
@@ -206,7 +206,7 @@ SaffronCityCooltrainerMText:
 	cont "disagreeable."
 	
 	para "I hope this new"
-	line "GYM becomes the"
+	line "Gym becomes the"
 	cont "official one."
 	done
 
@@ -218,17 +218,17 @@ SaffronCityCooltrainerFText:
 	
 	para "They are the"
 	line "largest employer"
-	cont "in KANTO."
+	cont "in Kanto."
 	
 	para "This is reflected"
 	line "in their building."
 	
 	para "The tallest in"
-	line "KANTO."
+	line "Kanto."
 	done
 
 SaffronCityFisherText:
-	text "Last time HOENN"
+	text "Last time Hoenn"
 	line "invaded they made"
 	cont "it to SAFFRON."
 	
@@ -240,7 +240,7 @@ SaffronCityFisherText:
 	para "I need to get"
 	line "out of here."
 	
-	para "Is JOHTO nice?"
+	para "Is Johto nice?"
 	done
 
 SaffronCityFisherText_BeatWallace:
@@ -250,7 +250,7 @@ SaffronCityFisherText_BeatWallace:
 	
 	para "You saved us all!"
 	
-	para "Last time HOENN"
+	para "Last time Hoenn"
 	line "invaded it was"
 	cont "LANCE saving us."
 	
@@ -260,7 +260,7 @@ SaffronCityFisherText_BeatWallace:
 	line "igniting and a"
 	cont "storm of DRAGONS"
 	cont "taking out the"
-	cont "HOENN forces."
+	cont "Hoenn forces."
 	
 	para "But I hear you"
 	line "were even more"
@@ -268,22 +268,22 @@ SaffronCityFisherText_BeatWallace:
 	done
 
 SaffronCityYoungster2Text:
-	text "Oh another JOHTO"
+	text "Oh another Johto"
 	line "immigrant."
 
 	para "This is SAFFRON!"
 
 	para "The economic hub"
-	line "of KANTO."
+	line "of Kanto."
 
 	para "SAFFRON alone"
 	line "contributes 63"
 	cont "percent of the"
-	cont "KANTO GDP."
+	cont "Kanto GDP."
 
 	para "I pay more in"
 	line "taxes than the"
-	cont "average JOHTO"
+	cont "average Johto"
 	cont "employee salary."
 	done
 
@@ -302,7 +302,7 @@ SaffronCityLass2Text:
 	para "I support them!"
 	
 	para "They fight for"
-	line "KANTO!"
+	line "Kanto!"
 	
 	para "At least they take"
 	line "action unlike the"
@@ -319,8 +319,8 @@ SaffronCitySignText:
 
 SaffronGymSignText:
 	text "SAFFRON CITY"
-	line "#mon GYM"
-	cont "LEADER: WILL"
+	line "#mon Gym"
+	cont "Leader: WILL"
 
 	para "New to the job."
 	done
@@ -328,7 +328,7 @@ SaffronGymSignText:
 FightingDojoSignText:
 	text "Everyone Welcome!"
 	line "The true"
-	cont "SAFFRON GYM!"
+	cont "SAFFRON Gym!"
 	done
 
 SilphCoSignText:
@@ -419,7 +419,7 @@ SaffronSilverText:
 
     para "So you are going"
     line "to challenge the"
-    cont "KANTO GYMS too."
+    cont "Kanto Gyms too."
 
     para "I hope you don't"
     line "expect me to"
@@ -519,7 +519,7 @@ SaffronGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."

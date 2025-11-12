@@ -54,7 +54,7 @@ VermilionPokecenter1FSailorText:
 	done
 
 InvadedVermilionPokecenter1FSailorText:
-	text "Damn those HOENN"
+	text "Damn those Hoenn"
 	line "soldiers!"
 
 	para "They got such"
@@ -82,7 +82,7 @@ VermilionPokecenter1FBugCatcherText:
 
 InvadedVermilionPokecenter1FBugCatcherText:
 	text "Aren't you the"
-	line "Champion of JOHTO!"
+	line "Champion of Johto!"
 
 	para "Please can you"
 	line "help us!"

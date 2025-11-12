@@ -68,8 +68,8 @@ LizHangUpText:
 
 LizRuinsOfAlphGossipText:
 LizFalknerGossipText:
-	text "Did you know PROF"
-	line "OAK used to go out"
+	text "Did you know Prof"
+	line "Oak used to go out"
 	cont "with AGATHA."
 	para "She was an ELITE"
 	line "FOUR member but"
@@ -81,7 +81,7 @@ LizFalknerGossipText:
 LizEarlGossipText:
 LizSurfPikachuGossipText:
 	text "Did you beat"
-	line "FALKNER."
+	line "Falkner."
 	para "When I first"
 	line "battled him I"
 	cont "thought there was"

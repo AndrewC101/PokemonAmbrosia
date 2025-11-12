@@ -212,7 +212,7 @@ InvadedVermilionMachopOwnerText:
 
 VermilionCitySuperNerdText:
 	text "The trainers in"
-	line "VERMILION GYM"
+	line "VERMILION Gym"
 	cont "are a rock band"
 	cont "known as"
 	cont "THE SOLENOIDS!"
@@ -224,7 +224,7 @@ VermilionCitySuperNerdText:
 InvadedVermilionCitySuperNerdText:
     text "They have locked"
     line "the trainers in"
-    cont "the GYM!"
+    cont "the Gym!"
 
 	para "Just do as they"
 	line "say and keep"
@@ -252,9 +252,9 @@ VermilionCityRadioNearSnorlaxText:
 	done
 
 VermilionCityBadgeGuyTrainerText:
-	text "With KANTO getting"
+	text "With Kanto getting"
 	line "ready for war the"
-	cont "GYM LEADERS are"
+	cont "Gym Leaders are"
 	cont "super strong."
 
 	para "As strong as some"
@@ -267,7 +267,7 @@ VermilionCityBadgeGuyTrainerText:
 
 VermilionCityBadgeGuySomeBadgesText:
 	text "You've started to"
-	line "collect KANTO GYM"
+	line "collect Kanto Gym"
 	cont "BADGES?"
 
 	para "It's tough isn't"
@@ -280,7 +280,7 @@ VermilionCityBadgeGuySomeBadgesText:
 
 VermilionCityBadgeGuyMostBadgesText:
 	text "You've got lots"
-	line "of KANTO BADGES."
+	line "of Kanto BADGES."
 
 	para "But don't get too"
 	cont "confident."
@@ -296,7 +296,7 @@ VermilionCityBadgeGuyAllBadgesText:
 	text "Congratulations!"
 
 	para "You got all the"
-	line "KANTO GYM BADGES."
+	line "Kanto Gym BADGES."
 
 	para "You are a true"
 	line "Champion!"
@@ -309,7 +309,7 @@ VermilionCityBadgeGuyBattleEdgeText:
 	text "There are many"
 	line "powerful"
 	cont "#mon around"
-	cont "KANTO."
+	cont "Kanto."
 
 	para "Looking around"
 	line "might help you."
@@ -324,8 +324,8 @@ VermilionCitySignText:
 
 VermilionGymSignText:
 	text "VERMILION CITY"
-	line "#mon GYM"
-	cont "LEADER: LT.SURGE"
+	line "#mon Gym"
+	cont "Leader: LT.SURGE"
 
 	para "The Lightning"
 	line "Soldier"
@@ -364,7 +364,7 @@ VermilionGymBlockText:
     text "The door is"
     line "locked."
 
-    para "This GYM is only"
+    para "This Gym is only"
     line "accepting Champion"
     cont "level challengers"
     cont "at this time."
@@ -462,14 +462,14 @@ TrainerSoldier7:
 	end
 Soldier7SeenText:
 	text "Placing an"
-	line "ELECTRIC GYM on"
+	line "ELECTRIC Gym on"
 	cont "the coast was an"
 	cont "obvious move."
 	para "Our captain has"
 	line "trained to deal"
 	cont "the ELECTRIC"
 	cont "#mon."
-	para "Your GYM LEADER"
+	para "Your Gym Leader"
 	line "can't help you!"
     done
 Soldier7BeatenText:
@@ -575,16 +575,16 @@ GoAwayText:
 
 HoenCaptainSeenText:
 	text "You have"
-	line "disrespected HOENN"
+	line "disrespected Hoenn"
 	cont "for your first and"
 	cont "last time!"
 	para "I have been"
 	line "tasked with"
 	cont "containing the"
-	cont "ELECTRIC GYM."
-	para "HOENN will"
+	cont "ELECTRIC Gym."
+	para "Hoenn will"
 	line "liberate all of"
-	cont "KANTO!"
+	cont "Kanto!"
 	done
 
 HoenCaptainBeatenText:
@@ -608,7 +608,7 @@ HoenCaptainAfterBattleText:
 	line "my mission."
 	para "WALLACE has made"
 	line "it to FUCHSIA."
-	para "KANTO is doomed."
+	para "Kanto is doomed."
 	para "EMPEROR WALLACE"
 	line "has our strongest"
 	cont "squad with him."

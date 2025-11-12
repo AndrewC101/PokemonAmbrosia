@@ -321,10 +321,10 @@ AzaleaTownRocket1Text:
 	done
 
 AzaleaTownRocket2Text:
-	text "The GYM is"
+	text "The Gym is"
 	line "closed for now."
 
-	para "The GYM LEADER"
+	para "The Gym Leader"
 	line "asked me to"
 	cont "make sure nobody"
 	cont "can enter."
@@ -335,7 +335,7 @@ AzaleaTownRocket2Text:
 
 	para "No!"
 
-	para "BUGSY!"
+	para "Bugsy!"
 
 	para "Yes that's his"
 	line "name."
@@ -380,7 +380,7 @@ AzaleaTownTeacherText:
 	para "He makes them from"
 	line "APRICORN and"
 	cont "supplies them"
-	cont "across JOHTO."
+	cont "across Johto."
 	para "Each mart has"
 	line "exclusivity on a"
 	cont "particular ball."
@@ -431,7 +431,7 @@ AzaleaTownKurtText1:
 
 AzaleaTownKurtText2:
 	text "<PLAYER>, here's"
-	line "your GS BALL back!"
+	line "your GS Ball back!"
 	done
 
 AzaleaTownKurtText3:
@@ -454,8 +454,8 @@ KurtsHouseSignText:
 
 AzaleaGymSignText:
 	text "AZALEA TOWN"
-	line "#mon GYM"
-	cont "LEADER: BUGSY"
+	line "#mon Gym"
+	cont "Leader: Bugsy"
 
 	para "The Walking"
 	line "Bug #mon"

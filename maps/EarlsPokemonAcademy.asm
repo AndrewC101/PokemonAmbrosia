@@ -173,7 +173,7 @@ AcademyEarlTeachHowToWinText:
 	para "Most #mon are"
 	line "good, catch what"
 	cont "you want, but"
-	cont "STEEL, DRAGON and"
+	cont "STEEL, Dragon and"
 	cont "FAIRY types are"
 	cont "particularly good."
 	para "Explore and obtain"
@@ -374,7 +374,7 @@ AcademyNotebookText:
 
 AcademyNotebookText1:
 	text "Before throwing a"
-	line "# BALL, weaken"
+	line "# Ball, weaken"
 	cont "the target first."
 
 	para "A poisoned or"
@@ -409,7 +409,7 @@ AcademyNotebookText3:
 	para "They are expected"
 	line "to visit #mon"
 
-	para "GYMS and defeat"
+	para "Gyms and defeat"
 	line "other trainers."
 
 	para "The next page"

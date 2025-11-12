@@ -176,7 +176,7 @@ BugCatchingContestant6AText:
 	text "BARRY: You should"
 	line "weaken bug #mon"
 	cont "first, then throw"
-	cont "a BALL."
+	cont "a Ball."
 	done
 
 BugCatchingContestant7AText:

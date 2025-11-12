@@ -411,7 +411,7 @@ YoungsterMikeyAfterText:
 	done
 
 BugCatcherDonSeenText:
-	text "BUG #mon are"
+	text "Bug #mon are"
 	line "the strongest!"
 
 	para "They EVOLVE fast"

@@ -206,8 +206,8 @@ CeruleanCityCooltrainerFText1:
 	done
 
 CeruleanCityCooltrainerFText2:
-	text "SLOWBRO, show me"
-	line "your PSYCHIC!"
+	text "Slowbro, show me"
+	line "your Psychic!"
 	done
 
 CeruleanCityCooltrainerFText3:

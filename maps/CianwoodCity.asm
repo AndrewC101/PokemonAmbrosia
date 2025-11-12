@@ -214,16 +214,16 @@ ChucksWifeEasierToFlyText:
 	line "the Gym Leader."
 
 	para "He is obsessed"
-	line "with FIGHTING"
+	line "with Fighting"
 	cont "#mon..."
 
 	para "and anime."
 
-	para "I like FLYING"
+	para "I like Flying"
 	line "#mon."
 
 	para "They are strong"
-	line "against FIGHTING."
+	line "against Fighting."
 
 	para "Please beat Chuck."
 

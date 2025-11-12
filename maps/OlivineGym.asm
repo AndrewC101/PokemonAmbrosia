@@ -149,7 +149,7 @@ Jasmine_SteelTypeIntro:
 
 	para "You must have"
 	line "a heart made of"
-	cont "STEEL."
+	cont "Steel."
 	done
 
 Jasmine_BetterTrainer:

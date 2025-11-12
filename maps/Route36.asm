@@ -458,12 +458,12 @@ UseSquirtbottleText:
 	text "It's a strange"
 	line "old man."
 
-	para "Use HOLY WATER?"
+	para "Use Holy Water?"
 	done
 
 UsedSquirtbottleText:
 	text "<PLAYER> used the"
-	line "HOLY WATER."
+	line "Holy Water."
 	done
 
 SudowoodoAttackedText:
@@ -512,8 +512,8 @@ FloriaText2:
 	cont "dangerous."
 
 	para "She will only"
-	line "give the HOLY"
-	cont "WATER to a"
+	line "give the Holy"
+	cont "Water to a"
 	cont "trainer that"
 	cont "has proved their"
 	cont "strength by"
@@ -575,11 +575,11 @@ PsychicMarkAfterBattleText:
 	text "Fear is the"
 	line "mind killer."
 
-	para "PSYCHIC #mon"
+	para "Psychic #mon"
 	line "are weak to"
 	cont "common fears"
-	cont "DARK, BUG and"
-	cont "GHOST."
+	cont "Dark, Bug and"
+	cont "Ghost."
 	done
 
 SchoolboyAlan1SeenText:
@@ -778,7 +778,7 @@ Route36Movement_CrystalApproaches:
 
 Route36CrystalText_Intro:
     text "You cleared that"
-    line "GHOST #mon!"
+    line "Ghost #mon!"
 
     para "Thank you!"
 
@@ -789,7 +789,7 @@ Route36CrystalText_Intro:
     line "secret."
 
     para "I'm actually a bit"
-    line "afraid of GHOST"
+    line "afraid of Ghost"
     cont "#mon."
 
     para "I think when I"

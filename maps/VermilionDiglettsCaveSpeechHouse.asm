@@ -17,7 +17,7 @@ VermilionDiglettsCaveSpeechHouseGentlemanText:
 	cont "long ago."
 
 	para "They were small"
-	line "GROUND type"
+	line "Ground type"
 	cont "#mon."
 
 	para "They weren't"
@@ -28,7 +28,7 @@ VermilionDiglettsCaveSpeechHouseGentlemanText:
 	cont "cave."
 
 	para "It is rumoured"
-	line "the ELECTRIC Gym"
+	line "the Electric Gym"
 	cont "trainers got rid"
 	cont "of the DIGLETT"
 	cont "so challengers"

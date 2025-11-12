@@ -207,7 +207,7 @@ ViridianCityYoungsterText:
 	line "is a husk of"
 	cont "what it once was."
 
-	para "The #RUS"
+	para "The #rus"
 	line "outbreak really"
 	cont "ravaged it."
 

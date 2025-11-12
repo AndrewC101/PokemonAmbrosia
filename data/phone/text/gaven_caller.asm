@@ -14,8 +14,8 @@ GavenMonGreaterThanImaginedText:
 
 GavenDefeatedMonText:
 	text "Dragon #mon"
-	line "resist WATER,"
-	cont "GRASS and FIRE!"
+	line "resist Water,"
+	cont "Grass and Fire!"
 	para "Surly Lance must"
 	line "be unbeatable!"
 	para "I will find a"
@@ -25,7 +25,7 @@ GavenDefeatedMonText:
 GavenLostAMonText:
 	text "I've got it!"
 	para "How to beat Lance!"
-	para "I'll spam ICE BEAM"
+	para "I'll spam Ice Beam"
 	line "with MILOTIC and"
 	cont "hope to get a"
 	cont "freeze on each"

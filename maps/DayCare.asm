@@ -113,13 +113,13 @@ DayCareManText_GiveOddEgg:
 	cont "wife, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible is"
 	line "that?"
 
 	para "Well, wouldn't you"
-	line "like this EGG?"
+	line "like this Egg?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
@@ -131,7 +131,7 @@ DayCareText_ComeAgain: ; unreferenced
 
 DayCareText_GotOddEgg:
 	text "<PLAYER> received"
-	line "ODD EGG!"
+	line "Odd Egg!"
 	done
 
 DayCareText_DescribeOddEgg:
@@ -144,7 +144,7 @@ DayCareText_DescribeOddEgg:
 	para "But the trainer"
 	line "didn't want the"
 
-	para "EGG, so I'd kept"
+	para "Egg, so I'd kept"
 	line "it around."
 	done
 

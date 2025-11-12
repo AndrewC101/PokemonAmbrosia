@@ -307,8 +307,8 @@ BattleArcadeIntro:
     para "All characters are"
     line "super powered!"
 
-	para "You get GOLD"
-	line "BERRIES for"
+	para "You get Gold"
+	line "Berries for"
 	cont "winning."
 
     para "There are 15"
@@ -363,7 +363,7 @@ BattleTrialIntro:
     para "If you make it"
     line "through the normal"
     cont "trial you unlock"
-    cont "the Master TRIAL."
+    cont "the Master Trial."
 
     para "I hear there is"
     line "even another level"

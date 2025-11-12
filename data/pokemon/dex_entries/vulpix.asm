@@ -6,4 +6,4 @@
 	next "become beautiful."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "Fire attacks.@"

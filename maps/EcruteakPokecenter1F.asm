@@ -42,7 +42,7 @@ EcruteakPokecenter1FCooltrainerFText:
 
 	para "He has a strong"
 	line "connection to"
-	cont "GHOST #mon."
+	cont "Ghost #mon."
 	done
 
 EcruteakPokecenter1FGymGuideText:

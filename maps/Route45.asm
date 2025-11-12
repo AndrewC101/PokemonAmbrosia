@@ -563,8 +563,8 @@ CamperQuentinBeatenText:
 	done
 
 CamperQuentinAfterBattleText:
-	text "I fear that DARK"
-	line "CAVE though."
+	text "I fear that Dark"
+	line "Cave though."
 
 	para "And Route 37"
 	line "I fear there."

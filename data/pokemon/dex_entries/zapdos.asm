@@ -7,4 +7,4 @@
 
 	page "Raises LIGHT"
 	next "SCREEN and immune"
-	next "to ELECTRIC.@"
+	next "to Electric.@"

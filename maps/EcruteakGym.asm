@@ -306,7 +306,7 @@ SageJeffreyAfterBattleText:
 	done
 
 SagePingSeenText:
-	text "GHOST #mon"
+	text "Ghost #mon"
 	line "remind me to"
 	cont "be grateful"
 	cont "for every new"
@@ -348,10 +348,10 @@ MediumMarthaAfterBattleText:
 	done
 
 MediumGraceSeenText:
-	text "GHOST #mon"
+	text "Ghost #mon"
 	line "are immune to"
-	cont "NORMAL and"
-	cont "FIGHTING moves."
+	cont "Normal and"
+	cont "Fighting moves."
 
 	para "As I am immune"
 	line "to fear and"
@@ -371,12 +371,12 @@ MediumGraceAfterBattleText:
 
 EcruteakGymGuideText:
 	text "The trainers"
-	line "here use GHOST"
+	line "here use Ghost"
 	cont "#mon."
 
 	para "They are weak"
-	line "to DARK and"
-	cont "GHOST."
+	line "to Dark and"
+	cont "Ghost."
 
 	para "They are generally"
 	line "weak to physical"

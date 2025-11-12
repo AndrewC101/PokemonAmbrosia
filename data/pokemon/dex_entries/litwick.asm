@@ -6,4 +6,4 @@
 	next "nearby people."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "Fire attacks.@"

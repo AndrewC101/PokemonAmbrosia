@@ -155,7 +155,7 @@ MasterMistyBeatenText:
 MasterMistyWinText:
 	text "It's ok."
 	para "I am the greatest"
-	line "WATER trainer!"
+	line "Water trainer!"
 	done
 
 MasterMistyAfterBattleText:
@@ -1132,7 +1132,7 @@ MasterPryceScript:
     end
 
 MasterPryceSeenText:
-	text "ICE is the"
+	text "Ice is the"
 	line "physical"
 	cont "representation of"
 	cont "despair."

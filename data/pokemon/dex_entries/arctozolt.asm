@@ -7,4 +7,4 @@
 
 	page "Boosted DEFENSE."
 	next "Immune to"
-	next "ELECTRIC moves.@"
+	next "Electric moves.@"

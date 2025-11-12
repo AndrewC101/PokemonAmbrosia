@@ -242,7 +242,7 @@ HikerTimBeatenText:
 	done
 
 HikerTimAfterBattleText:
-	text "The ELECTRIC"
+	text "The Electric"
 	line "#mon at the"
 	cont "Power Plant will"
 	cont "be easy for me to"

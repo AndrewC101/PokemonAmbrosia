@@ -5,6 +5,6 @@
 	next "over aspects"
 	next "of space."
 
-	page "Resists FIRE/"
-	next "ICE and raises"
+	page "Resists Fire/"
+	next "Ice and raises"
 	next "SAFEGUARD.@"

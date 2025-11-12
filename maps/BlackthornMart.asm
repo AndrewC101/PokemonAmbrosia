@@ -26,7 +26,7 @@ BlackthornMartCooltrainerMText:
 	cont "Gym battles!"
 
 	para "Dragon type is"
-	line "weak to ICE."
+	line "weak to Ice."
 
 	para "But Clair has"
 	line "some #mon"
@@ -37,7 +37,7 @@ BlackthornMartCooltrainerMText:
 
 	para "Dragons are"
 	line "also weak to"
-	cont "FAIRY and Dragon"
+	cont "Fairy and Dragon"
 	cont "but I don't have"
 	cont "any of those."
 	done

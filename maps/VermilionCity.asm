@@ -462,12 +462,12 @@ TrainerSoldier7:
 	end
 Soldier7SeenText:
 	text "Placing an"
-	line "ELECTRIC Gym on"
+	line "Electric Gym on"
 	cont "the coast was an"
 	cont "obvious move."
 	para "Our captain has"
 	line "trained to deal"
-	cont "the ELECTRIC"
+	cont "the Electric"
 	cont "#mon."
 	para "Your Gym Leader"
 	line "can't help you!"
@@ -581,7 +581,7 @@ HoenCaptainSeenText:
 	para "I have been"
 	line "tasked with"
 	cont "containing the"
-	cont "ELECTRIC Gym."
+	cont "Electric Gym."
 	para "Hoenn will"
 	line "liberate all of"
 	cont "Kanto!"

@@ -6,4 +6,4 @@
 	next "to steal souls."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "Fire attacks.@"

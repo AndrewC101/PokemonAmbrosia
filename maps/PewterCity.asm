@@ -195,7 +195,7 @@ MuseumBlockText:
     line "the Pewter Museum."
 
     para "Two years ago a"
-    line "#RUS outbreak"
+    line "#rus outbreak"
     cont "occurred here."
 
     para "It was believed"

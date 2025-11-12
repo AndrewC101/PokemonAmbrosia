@@ -555,13 +555,13 @@ Question3CorrectText:
     prompt
 
 Question4CorrectText:
-    text "Yes, KINGDRA has"
+    text "Yes, Kingdra has"
     line "2 weaknesses to"
-    cont "Dragon and FAIRY."
+    cont "Dragon and Fairy."
 
     para "However it also"
     line "has only 2 resists"
-    cont "in FIRE and WATER."
+    cont "in Fire and Water."
 
     para "Now we move onto"
     line "question 5."

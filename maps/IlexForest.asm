@@ -565,7 +565,7 @@ Text_KurtCaughtCelebi:
 BugCatcherWayneSeenText:
 	text "There is a"
 	line "colony of"
-	cont "ancient BUG"
+	cont "ancient Bug"
 	cont "#mon in"
 	cont "here somewhere."
 

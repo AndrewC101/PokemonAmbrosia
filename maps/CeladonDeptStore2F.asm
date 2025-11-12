@@ -55,8 +55,8 @@ CeladonDeptStore2FYoungsterText:
 	cont "stuff for him"
 	cont "to learn."
 
-	para "Yes GROUND is"
-	line "weak to WATER!"
+	para "Yes Ground is"
+	line "weak to Water!"
 
 	para "Why is that so"
 	line "confusing."

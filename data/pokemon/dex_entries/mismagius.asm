@@ -7,4 +7,4 @@
 
 	page "Lowers foes SP"
 	next "Attack on switch."
-	next "Immune to GROUND.@"
+	next "Immune to Ground.@"

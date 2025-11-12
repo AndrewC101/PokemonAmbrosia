@@ -7,4 +7,4 @@
 
 	page "S.Atk boost upon"
 	next "switch. Immune"
-	next "to ELECTRIC.@"
+	next "to Electric.@"

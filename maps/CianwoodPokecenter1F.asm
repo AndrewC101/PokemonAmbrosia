@@ -65,12 +65,12 @@ CianwoodGymGuideText:
 	cont "muscled nerds."
 
 	para "They use"
-	line "FIGHTING"
+	line "Fighting"
 	cont "#mon."
 
 	para "You will want"
-	line "to use FLYING,"
-	cont "PSYCHIC or FAIRY"
+	line "to use Flying,"
+	cont "Psychic or Fairy"
 	cont "#mon against"
 	cont "them."
 	done

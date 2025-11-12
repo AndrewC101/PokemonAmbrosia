@@ -521,7 +521,7 @@ BugCatcherArnieSeenText:
 
 	para "I'll show you"
 	line "what a well"
-	cont "trained BUG"
+	cont "trained Bug"
 	cont "can do."
 	done
 
@@ -547,7 +547,7 @@ BugCatcherArnieYanmaText:
 
 FirebreatherWaltSeenText:
 	text "I finally got"
-	line "my FIRE STONES."
+	line "my Fire Stones."
 
 	para "Now I can be"
 	line "like my hero"
@@ -562,10 +562,10 @@ FirebreatherWaltBeatenText:
 FirebreatherWaltAfterBattleText:
 	text "Blaine is a"
 	line "mad scientist"
-	cont "FIRE Gym Leader."
+	cont "Fire Gym Leader."
 
 	para "He will roast"
-	line "those HOENITES!"
+	line "those Hoennites!"
 	done
 
 OfficerDirkSeenText:

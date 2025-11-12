@@ -144,7 +144,7 @@ DaisyCantGroomEggText:
 	text "Oh, sorry."
 
 	para "I honestly can't"
-	cont "groom an EGG."
+	cont "groom an Egg."
 	done
 
 BluesHouse_MapEvents:

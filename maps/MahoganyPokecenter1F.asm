@@ -22,10 +22,10 @@ MahoganyPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer MahoganyPokecenter1FCooltrainerFText
 
 MahoganyPokecenter1FPokefanMText:
-	text "I thought the ICE"
+	text "I thought the Ice"
 	line "Gym Leader would"
 	cont "be a cool woman"
-	cont "like LORELEI."
+	cont "like Lorelei."
 	para "I came all the way"
 	line "here from Kanto."
 	para "I was..."
@@ -49,7 +49,7 @@ MahoganyPokecenter1FCooltrainerFText:
 	line "in Ice Path."
 	para "My Chandelure"
 	line "should be able to"
-	cont "melt any ICE"
+	cont "melt any Ice"
 	cont "#mon that"
 	cont "might attack me."
 	done

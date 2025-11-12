@@ -89,7 +89,7 @@ TrainerHouse1FYoungsterText:
 	cont "the shore line."
 
 	para "We have lots of"
-	line "FLYING #mon"
+	line "Flying #mon"
 	cont "we could train"
 	cont "to drop bombs"
 	cont "on the enemy"

@@ -6,5 +6,5 @@
 	next "fur to stay cool."
 
 	page "Immune to"
-	next "ELECTRIC"
+	next "Electric"
 	next "attacks.@"

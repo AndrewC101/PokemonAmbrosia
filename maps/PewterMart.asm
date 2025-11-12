@@ -23,7 +23,7 @@ PewterMartSuperNerdScript:
 PewterMartYoungsterText:
 	text "There is no"
 	line "cure for"
-	cont "#RUS."
+	cont "#rus."
 
 	para "It's not clear"
 	line "how exactly it"
@@ -37,7 +37,7 @@ PewterMartYoungsterText:
 
 PewterMartSuperNerdText:
 	text "I want to get"
-	line "#RUS."
+	line "#rus."
 
 	para "I think it is"
 	line "misunderstood."

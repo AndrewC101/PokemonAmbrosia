@@ -176,7 +176,7 @@ VioletPokecenter1F_ElmsAideScript:
 	end
 
 .eggname
-	db "EGG@"
+	db "Egg@"
 
 .AideGivesEgg:
 	jumpstd ReceiveTogepiEggScript
@@ -237,12 +237,12 @@ VioletPokecenterElmsAideFavorText:
 	line "favor to ask."
 
 	para "Would you take the"
-	line "#mon EGG?"
+	line "#mon Egg?"
 	done
 
 VioletPokecenterElmsAideGiveEggText:
 	text "If the egg is a"
-	line "FAIRY #mon"
+	line "Fairy #mon"
 	cont "it may need to"
 	cont "form a strong bond"
 	cont "with its trainer"
@@ -260,12 +260,12 @@ VioletCityElmsAideFullPartyText:
 
 	para "I'll wait here"
 	line "while you make"
-	cont "room for the EGG."
+	cont "room for the Egg."
 	done
 
 VioletPokecenterElmsAideRefuseText:
 	text "Look if I go"
-	line "with this EGG"
+	line "with this Egg"
 	cont "it's not going"
 	cont "to look good for"
 	cont "me."
@@ -275,7 +275,7 @@ VioletPokecenterElmsAideRefuseText:
 
 VioletPokecenterElmsAideAskEggText:
 	text "<PLAY_G>, will you"
-	line "take the EGG?"
+	line "take the Egg?"
 	done
 
 VioletPokecenter1FGameboyKidText:

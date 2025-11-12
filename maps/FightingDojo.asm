@@ -22,8 +22,8 @@ FightingDojoFocusBand:
 FightingDojoBlackBeltText:
 	text "Hello!"
 
-	para "KARATE KING, the"
-	line "FIGHTING DOJO's"
+	para "Karate King, the"
+	line "Fighting Dojo's"
 
 	para "master, is in a"
 	line "cave in Johto for"

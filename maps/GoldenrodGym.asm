@@ -445,13 +445,13 @@ GoldenrodGymGuideText:
 	line "full of aspiring"
 	cont "movie stars who"
 	cont "like to use"
-	cont "FAIRY #mon."
+	cont "Fairy #mon."
 
-	para "FAIRY types have"
+	para "Fairy types have"
 	line "few weaknesses."
 
-	para "Only STEEL and"
-	line "POISON."
+	para "Only Steel and"
+	line "Poison."
 
 	para "But they generally"
 	line "have trouble with"

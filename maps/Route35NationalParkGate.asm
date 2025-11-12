@@ -357,7 +357,7 @@ Route35NationalParkGateOfficer1MakeRoomText:
 
 Route35NationalParkGateOfficer1EggAsFirstMonText:
 	text "Uh-oh…"
-	line "You have an EGG as"
+	line "You have an Egg as"
 
 	para "the first #mon"
 	line "in your party."

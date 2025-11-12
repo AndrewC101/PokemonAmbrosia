@@ -7,4 +7,4 @@
 
 	page "Summons"
 	next "Sun and resists"
-	next "WATER.@"
+	next "Water.@"

@@ -169,7 +169,7 @@ FirebreatherBillSeenText:
 	text "I am becoming one"
 	line "with the rocks."
 	para "I will become the"
-	line "greatest ROCK"
+	line "greatest Rock"
 	cont "trainer, like"
 	cont "Brock."
 	done

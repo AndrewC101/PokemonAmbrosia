@@ -197,7 +197,7 @@ HikerBenjaminAfterBattleText:
 	line "areas of the cave"
 	cont "you can only get"
 	cont "to with a special"
-	cont "WATER #mon"
+	cont "Water #mon"
 	cont "move."
 	done
 

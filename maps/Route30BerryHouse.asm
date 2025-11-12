@@ -50,7 +50,7 @@ Route30BerrySpeechHouseText:
 	para "But I've found"
 	line "I forget all that"
 	cont "if I eat enough"
-	cont "BERRIES!"
+	cont "Berries!"
 	done
 
 Route30BerrySpeechHouseTakeBerryText:

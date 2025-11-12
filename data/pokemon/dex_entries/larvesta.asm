@@ -5,4 +5,4 @@
 	next "cacoon of fire."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "Fire attacks.@"

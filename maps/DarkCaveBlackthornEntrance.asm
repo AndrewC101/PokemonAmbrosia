@@ -161,7 +161,7 @@ BeGoneText:
 
 DarkraiNeededText:
     text "It will take a"
-    line "DARK #mon"
+    line "Dark #mon"
     cont "that can cross"
     cont "the dream world"
     cont "to allow passage."

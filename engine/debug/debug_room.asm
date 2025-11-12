@@ -1348,7 +1348,7 @@ DebugRoom_BoxStructStrings:
 .PP3:       db "PP 3@"
 .PP4:       db "PP 4@"
 .Friend:    db "FRIEND@"
-.Pokerus:   db "#RUS@"
+.Pokerus:   db "#rus@"
 .NoUse0:    db "NO USE[0]@"
 .NoUse1:    db "NO USE[1]@"
 .Level:     db "LEVEL@"

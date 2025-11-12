@@ -364,7 +364,7 @@ _SeerNoLocationText::
 _SeerEggText::
 	text "Hey!"
 
-	para "That's an EGG!"
+	para "That's an Egg!"
 
 	para "You can't say that"
 	line "you've met it yet…"
@@ -1137,7 +1137,7 @@ _NeedAtLeastThreeMonText::
 	done
 
 _EggDoesNotQualifyText::
-	text "Sorry, an EGG"
+	text "Sorry, an Egg"
 	line "doesn't qualify."
 
 	para ""
@@ -1172,7 +1172,7 @@ _TheMonMustNotHoldTheSameItemsText::
 
 _YouCantTakeAnEggText::
 	text "You can't take an"
-	line "EGG!"
+	line "Egg!"
 
 	para ""
 	done
@@ -1378,7 +1378,7 @@ _ItemLooksBitterText::
 
 _ItemCantUseOnEggText::
 	text "That can't be used"
-	line "on an EGG."
+	line "on an Egg."
 	prompt
 
 _ItemOakWarningText::
@@ -1515,7 +1515,7 @@ _DeleterForgotMoveText::
 	done
 
 _DeleterEggText::
-	text "An EGG doesn't"
+	text "An Egg doesn't"
 	line "know any moves!"
 	done
 

@@ -135,7 +135,7 @@ CharcoalKilnApprenticeText2:
 	cont "take this!"
 
 	para "CHARCOAL will"
-	line "make FIRE moves"
+	line "make Fire moves"
 	cont "much stronger."
 	done
 

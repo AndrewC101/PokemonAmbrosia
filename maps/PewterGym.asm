@@ -212,7 +212,7 @@ PewterGymGuideText:
 
 	para "Changing the"
 	line "weather to rain"
-	cont "and throwing WATER"
+	cont "and throwing Water"
 	cont "attacks at him"
 	cont "should soften"
 	cont "him up."

@@ -11,7 +11,7 @@ WadeAreYourMonGrowingText:
 WadeDefeatedMonText:
 	text "Have you"
 	line "considered"
-	cont "catching some BUG"
+	cont "catching some Bug"
 	cont "#mon?"
 	para "I would highly"
 	line "recommend them."
@@ -32,7 +32,7 @@ WadeLostAMonText:
 WadeBattleRematchText:
 	text "Do you even"
 	line "understand the"
-	cont "superiority of BUG"
+	cont "superiority of Bug"
 	cont "#mon?"
 	para "I must educate"
 	line "you."
@@ -49,7 +49,7 @@ WadeHangUpText:
 	done
 
 WadeBugCatchingContestText:
-	text "The BUG-catching"
+	text "The Bug-catching"
 	line "contest is on"
 	cont "today at the"
 	cont "National Park."
@@ -63,7 +63,7 @@ WadeBugCatchingContestText:
 WadeFoundItemText:
 	text "My bugs love to"
 	line "eat berries, and"
-	cont "other BUG"
+	cont "other Bug"
 	cont "#mon."
 	para "I have a lot of"
 	line "left over berries."
@@ -80,7 +80,7 @@ WadeNoBerriesText:
 	text "I've been beating"
 	line "lots of new"
 	cont "trainers lately."
-	para "BUG #mon do"
+	para "Bug #mon do"
 	line "not hold back."
 	para "Every battle is to"
 	line "the death!"

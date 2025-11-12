@@ -958,7 +958,7 @@ TrademonStats_Egg:
 	ret
 
 .EggData:
-	db   "EGG"
+	db   "Egg"
 	next "OT/?????"
 	next "<ID>№.?????@"
 

@@ -6,4 +6,4 @@
 	next "it can walk."
 
 	page "Immune to"
-	next "WATER attacks.@"
+	next "Water attacks.@"

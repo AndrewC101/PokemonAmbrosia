@@ -381,8 +381,8 @@ BirdKeeperVance1SeenText:
 	text "Do you have any"
 	line "idea how many"
 	cont "cool and legendary"
-	cont "#mon are FLYING"
-	cont "TYPE?"
+	cont "#mon are Flying"
+	cont "type?"
 
 	para "It is the coolest"
 	line "type."
@@ -425,7 +425,7 @@ PsychicPhilSeenText:
     line "control my anger."
 
 	para "I'm heading to"
-	line "ICE CAVE to"
+	line "Ice Cave to"
 	cont "meditate and"
 	cont "heighten my"
 	cont "psychic powers."

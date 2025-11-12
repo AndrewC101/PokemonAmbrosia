@@ -98,7 +98,7 @@ GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText:
 	text "Do you want to"
 	line "borrow some"
-	cont "HOLY WATER?"
+	cont "Holy Water?"
 
 	para "It may come in"
 	line "useful."
@@ -110,7 +110,7 @@ GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 
 	para "Here, you can be"
 	line "trusted with this"
-	cont "HOLY WATER."
+	cont "Holy Water."
 	done
 
 GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
@@ -133,8 +133,8 @@ GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
 	cont "Route 36 may"
 	cont "be an evil spirit."
 
-	para "Maybe some HOLY"
-	line "WATER might"
+	para "Maybe some Holy"
+	line "Water might"
 	cont "remove it."
 
 	para "But I'm not"

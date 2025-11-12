@@ -173,8 +173,8 @@ AcademyEarlTeachHowToWinText:
 	para "Most #mon are"
 	line "good, catch what"
 	cont "you want, but"
-	cont "STEEL, Dragon and"
-	cont "FAIRY types are"
+	cont "Steel, Dragon and"
+	cont "Fairy types are"
 	cont "particularly good."
 	para "Explore and obtain"
 	line "as many TMs as"
@@ -356,7 +356,7 @@ AcademyFreezeText:
 	line "after battle."
 
 	para "Thaw it out with"
-	line "an ICE HEAL."
+	line "an Ice Heal."
 	done
 
 AcademyNotebookText:

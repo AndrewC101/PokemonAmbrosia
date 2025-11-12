@@ -1367,7 +1367,7 @@ HoenWarCh3VillainText:
     cont "shore."
 
     para "A Gym Leader"
-    line "of FIRE tries to"
+    line "of Fire tries to"
     cont "impede you."
 
     para "SEA WEAPON makes"

@@ -175,7 +175,7 @@ PicnickerSharonBeatenText:
 
 PicnickerSharonAfterBattleText:
 	text "I think I dropped"
-	line "my LUCKY EGG in"
+	line "my Lucky Egg in"
 	cont "there somewhere!"
 	done
 

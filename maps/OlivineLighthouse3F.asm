@@ -114,7 +114,7 @@ GentlemanPrestonAfterBattleText:
 	text "I felt sure"
 	line "I could beat"
 	cont "Jasmine with my"
-	cont "FIRE #mon."
+	cont "Fire #mon."
 
 	para "But I got put"
 	line "in my place."

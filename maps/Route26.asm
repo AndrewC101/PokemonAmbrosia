@@ -483,7 +483,7 @@ PsychicRichardSeenText:
 	cont "FOUR member."
 
 	para "She is a powerful"
-	line "PSYCHIC trainer."
+	line "Psychic trainer."
 
 	para "I have to meet"
 	line "her!"

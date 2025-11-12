@@ -24,13 +24,13 @@ ViridianMartLassText:
 	text "Blue worked very"
 	line "hard to protect us"
 	cont "during the"
-	cont "#RUS outbreak."
+	cont "#rus outbreak."
 	para "He is a real hero."
 	done
 
 ViridianMartCooltrainerMText:
 	text "I think even the"
-	line "#RUS outbreak"
+	line "#rus outbreak"
 	cont "was an attack by"
 	cont "Hoenn."
 	para "It must be some"

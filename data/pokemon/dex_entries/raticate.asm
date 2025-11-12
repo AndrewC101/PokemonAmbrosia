@@ -7,4 +7,4 @@
 
 	page "Status boosts"
 	next "Attack. Resists"
-	next "FIRE and ICE.@"
+	next "Fire and Ice.@"

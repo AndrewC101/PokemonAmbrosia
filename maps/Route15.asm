@@ -163,7 +163,7 @@ Route15PPUp:
 
 TeacherColetteSeenText:
 	text "Some #mon are"
-	line "immune to GROUND"
+	line "immune to Ground"
 	cont "moves."
 	para "Others can't be"
 	line "knocked out in a"

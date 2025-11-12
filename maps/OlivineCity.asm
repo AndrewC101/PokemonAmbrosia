@@ -137,10 +137,10 @@ OlivineCrystalIntroText:
     line "doing?"
 
     para "I got over my"
-    line "GHOST fear!"
+    line "Ghost fear!"
 
     para "I even caught a"
-    line "real cute GHOST"
+    line "real cute Ghost"
     cont "#mon."
 
     para "It was all thanks"

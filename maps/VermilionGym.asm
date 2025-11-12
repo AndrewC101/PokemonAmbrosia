@@ -150,7 +150,7 @@ LtSurgeIntroText:
 	para "I have traveled"
 	line "the world and"
 	cont "caught the best"
-	cont "ELECTRIC #mon."
+	cont "Electric #mon."
 
 	para "Recently I have"
 	line "learnt to relax."
@@ -158,11 +158,11 @@ LtSurgeIntroText:
 	para "Rather than"
 	line "zapping my enemies"
 	cont "with my mighty"
-	cont "ELECTRIC #mon."
+	cont "Electric #mon."
 
 	para "I'm zapping my"
 	line "fans with my"
-	cont "mighty ELECTRIC"
+	cont "mighty Electric"
 	cont "voice."
 
 	para "Want to hear?"
@@ -355,9 +355,9 @@ VermilionGymGuideText:
 	line "hero."
 
 	para "He has the best"
-	line "ELECTRIC #mon."
+	line "Electric #mon."
 
-	para "GROUND types are"
+	para "Ground types are"
 	line "your best bet."
 
 	para "But Surge has"

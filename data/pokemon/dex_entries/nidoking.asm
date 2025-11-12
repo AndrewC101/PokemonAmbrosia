@@ -7,4 +7,4 @@
 
 	page "Extra damage on"
 	next "females. Lays"
-	next "STEALTH ROCK.@"
+	next "Stealth Rock.@"

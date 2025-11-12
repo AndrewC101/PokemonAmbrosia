@@ -420,7 +420,7 @@ PokemaniacBenSeenText:
 	para "BEN!"
 
 	para "The greatest"
-	line "WATER TRAINER!"
+	line "Water trainer!"
 	done
 
 PokemaniacBenBeatenText:
@@ -649,20 +649,20 @@ Route43Sign2Text:
 Route43TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "Rain boosts WATER"
+	para "Rain boosts Water"
 	line "moves and nerfs"
-	cont "FIRE moves."
+	cont "Fire moves."
 
-	para "Sun boosts FIRE"
+	para "Sun boosts Fire"
 	line "moves and nerfs"
-	cont "WATER moves."
+	cont "Water moves."
 
-	para "Sand boost ROCK"
+	para "Sand boost Rock"
 	line "#mon"
 	cont "SPECIAL DEFENSE"
 	cont "and damages all"
-	cont "non ROCK, GROUND"
-	cont "or STEEL types."
+	cont "non Rock, Ground"
+	cont "or Steel types."
 	done
 
 Route43FieldMon1Script:

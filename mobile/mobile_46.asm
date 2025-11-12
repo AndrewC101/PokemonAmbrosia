@@ -5453,7 +5453,7 @@ Text_CanceledSendingSaveFile: ; unreferenced
 	done
 
 Text_ReceivedOddEgg: ; unreferenced
-	text "ODD EGG"
+	text "Odd Egg"
 	line "was received!"
 	done
 

@@ -530,7 +530,7 @@ SSTicketDesc:
 	next "S.S.AQUA.@"
 
 MysteryEggDesc:
-	db   "An EGG obtained"
+	db   "An Egg obtained"
 	next "from MR.#mon.@"
 
 ClearBellDesc:

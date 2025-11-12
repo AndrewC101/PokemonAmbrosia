@@ -107,7 +107,7 @@ BlackthornCooltrainerF2Script:
 	end
 
 .skarmeggname
-	db "EGG@"
+	db "Egg@"
 
 GiveSkarmText:
 	text "Wait a minute!"
@@ -130,7 +130,7 @@ BlackthornPartyFullText:
     done
 
 GotBlackthornEggText:
-    text "Received EGG!"
+    text "Received Egg!"
     done
 
 SantosScript:

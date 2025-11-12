@@ -40,7 +40,7 @@ ArnieNumberAcceptedText:
 
 ArnieNumberDeclinedText:
 	text "But I can give you"
-	line "warning of the BUG"
+	line "warning of the Bug"
 	cont "invasion!"
 	done
 
@@ -53,6 +53,6 @@ ArniePhoneFullText:
 	done
 
 ArnieRematchText:
-	text "The day of the BUG"
+	text "The day of the Bug"
 	line "begins now."
 	done

@@ -4,7 +4,7 @@ _NoPhotoText::
 	done
 
 _EggPhotoText::
-	text "An EGG? My talent"
+	text "An Egg? My talent"
 	line "is worth more…"
 	done
 
@@ -75,7 +75,7 @@ _NameRaterEggText::
 	text "Are you sick!"
 
 	para "You can't name"
-	line "an EGG!"
+	line "an Egg!"
 	done
 
 _NameRaterSameNameText::
@@ -468,7 +468,7 @@ _AskHeadbuttText::
 _UseRockSmashText::
 	text_ram wStringBuffer2
 	text " used"
-	line "ROCK SMASH!"
+	line "Rock Smash!"
 	prompt
 
 _MaySmashText::
@@ -480,8 +480,8 @@ _AskRockSmashText::
 	text "This rock looks"
 	line "breakable."
 
-	para "Want to use ROCK"
-	line "SMASH?"
+	para "Want to use Rock"
+	line "Smash?"
 	done
 
 _RodBiteText::
@@ -601,7 +601,7 @@ _UseSacredAshText::
 	done
 
 _AnEggCantHoldAnItemText::
-	text "An EGG can't hold"
+	text "An Egg can't hold"
 	line "an item."
 	prompt
 
@@ -806,7 +806,7 @@ _BreedClearboxText::
 _BreedEggHatchText::
 	text_ram wStringBuffer1
 	text " came"
-	line "out of its EGG!@"
+	line "out of its Egg!@"
 	sound_caught_mon
 	text_promptbutton
 	text_end
@@ -894,7 +894,7 @@ _MailAlreadyHoldingItemText::
 	prompt
 
 _MailEggText::
-	text "An EGG can't hold"
+	text "An Egg can't hold"
 	line "any MAIL."
 	prompt
 

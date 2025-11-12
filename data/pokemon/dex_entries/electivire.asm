@@ -6,5 +6,5 @@
 	next "wild power."
 
 	page "Immune to"
-	next "ELECTRIC and"
+	next "Electric and"
 	next "recoil.@"

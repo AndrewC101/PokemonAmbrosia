@@ -337,8 +337,8 @@ SilphCoSignText:
 	done
 
 MrPsychicsHouseSignText:
-	text "MR.PSYCHIC'S"
-	line "HOUSE"
+	text "Mr.Psychic's"
+	line "house"
 	done
 
 SaffronCityMagnetTrainStationSignText:

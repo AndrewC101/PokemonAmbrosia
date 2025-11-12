@@ -5,6 +5,6 @@
 	next "incandescent"
 	next "embodiment of sun"
 
-	page "FIRE BLAST won't"
+	page "Fire Blast won't"
 	next "miss. Immune"
-	next "to FIRE.@"
+	next "to Fire.@"

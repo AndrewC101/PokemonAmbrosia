@@ -3,7 +3,7 @@
 
 	db   "Calm and"
 	next "beautiful"
-	next "WATER spirit."
+	next "Water spirit."
 
 	page "Gains armour"
 	next "when at full HP.@"

@@ -6,5 +6,5 @@
 	next "for each tail."
 
 	page "Immune to"
-	next "FIRE and raises"
+	next "Fire and raises"
 	next "SAFEGUARD.@"

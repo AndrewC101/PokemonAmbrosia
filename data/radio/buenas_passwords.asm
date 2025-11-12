@@ -21,7 +21,7 @@ BuenasPasswordTable:
 .Pokemon1:      db BUENA_MON,    10, PIKACHU, RATTATA, GEODUDE
 .Pokemon2:      db BUENA_MON,    10, HOOTHOOT, JOLTIK, URSALUNA
 .JohtoTowns:    db BUENA_STRING, 16, "New Bark Town@", "Cherrygrove City@", "Azalea Town@"
-.Types:         db BUENA_STRING,  6, "FLYING@", "BUG@", "GRASS@"
+.Types:         db BUENA_STRING,  6, "Flying@", "BUG@", "Grass@"
 .Moves:         db BUENA_MOVE,   12, TACKLE, GROWL, MAGNITUDE
 .XItems:        db BUENA_ITEM,   12, X_ATTACK, X_DEFEND, X_SPEED
 .RadioStations: db BUENA_STRING, 13, "#mon Talk@", "#mon Music@", "Lucky Channel@"

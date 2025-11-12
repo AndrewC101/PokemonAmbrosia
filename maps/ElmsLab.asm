@@ -1007,19 +1007,19 @@ LabWhereGoingText:
 TakeCyndaquilText:
 	text "You'll take"
 	line "CHIMCHAR, the"
-	cont "FIRE #mon?"
+	cont "Fire #mon?"
 	done
 
 TakeTotodileText:
 	text "Do you want"
 	line "FROAKIE, the"
-	cont "WATER #mon?"
+	cont "Water #mon?"
 	done
 
 TakeChikoritaText:
 	text "So, you like"
 	line "TREECKO, the"
-	cont "GRASS #mon?"
+	cont "Grass #mon?"
 	done
 
 DidntChooseStarterText:
@@ -1122,24 +1122,24 @@ ElmAfterTheftText1:
 
 ElmAfterTheftText2:
 	text "<PLAYER> handed"
-	line "the MYSTERY EGG to"
+	line "the Mystery Egg to"
 	cont "Prof.Elm."
 	done
 
 ElmAfterTheftText3:
 	text "This is"
-	line "an EGG of a"
-	cont "FAIRY #mon."
+	line "an Egg of a"
+	cont "Fairy #mon."
 	done
 
 ElmAfterTheftText4:
-	text "FAIRY types have"
+	text "Fairy types have"
 	line "few weaknesses"
 	cont "and many good"
 	cont "resistances."
 
 	para "The #mon in"
-	line "this EGG may be"
+	line "this Egg may be"
 	cont "useful."
 	done
 

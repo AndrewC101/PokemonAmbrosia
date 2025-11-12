@@ -6,5 +6,5 @@
 	next "take ones life."
 
 	page "Immune to"
-	next "GROUND type"
+	next "Ground type"
 	next "moves.@"

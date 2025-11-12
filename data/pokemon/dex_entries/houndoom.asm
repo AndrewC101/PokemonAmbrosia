@@ -7,4 +7,4 @@
 
 	page "Boosted Special"
 	next "Attack. Immune"
-	next "to FIRE.@"
+	next "to Fire.@"

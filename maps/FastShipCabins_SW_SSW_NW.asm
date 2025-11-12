@@ -144,12 +144,12 @@ BugCatcherKenSeenText:
 	cont "Viridian."
 
 	para "It was ravaged"
-	line "during the #RUS"
+	line "during the #rus"
 	cont "outbreak."
 
 	para "But there must"
 	line "be some strong"
-	cont "BUG #mon"
+	cont "Bug #mon"
 	cont "to find."
 	done
 
@@ -161,7 +161,7 @@ BugCatcherKenBeatenText:
 
 BugCatcherKenAfterBattleText:
 	text "I must save the"
-	line "BUG #mon."
+	line "Bug #mon."
 
 	para "They need someone"
 	line "to protect them!"

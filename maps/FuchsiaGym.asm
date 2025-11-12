@@ -438,13 +438,13 @@ FuchsiaGymGuideText:
 	para "This gym has no"
 	line "single type but"
 	cont "seems to favor"
-	cont "POISON."
+	cont "Poison."
 
-	para "POISON isn't a"
+	para "Poison isn't a"
 	line "very good type."
 
-	para "A strong PSYCHIC"
-	line "TYPE should make"
+	para "A strong Psychic"
+	line "Type should make"
 	cont "easy work of this."
 
 	para "But what do I"

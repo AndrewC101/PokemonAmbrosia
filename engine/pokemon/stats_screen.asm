@@ -743,7 +743,7 @@ LoadPinkPage:
 	db "To@"
 
 .PkrsStr:
-	db "#RUS@"
+	db "#rus@"
 
 LoadGreenPage:
 	ld de, .Item
@@ -1076,7 +1076,7 @@ endc
 	ret
 
 EggString:
-	db "EGG@"
+	db "Egg@"
 
 FiveQMarkString:
 	db "?????@"
@@ -1098,7 +1098,7 @@ EggMoreTimeString:
 	next "more time, though.@"
 
 EggALotMoreTimeString:
-	db   "This EGG needs a"
+	db   "This Egg needs a"
 	next "lot more time to"
 	next "hatch.@"
 

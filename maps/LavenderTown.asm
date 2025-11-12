@@ -76,7 +76,7 @@ LavenderTownTeacherText:
 
 	para "It got very busy"
 	line "last year during"
-	cont "the #RUS"
+	cont "the #rus"
 	cont "outbreak."
 
 	para "There is a big"

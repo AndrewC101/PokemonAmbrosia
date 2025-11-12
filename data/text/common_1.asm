@@ -1501,7 +1501,7 @@ _DayCareManIntroEggText::
 	cont "wife, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible is"
 	line "that?"
@@ -1528,7 +1528,7 @@ _DayCareLadyIntroEggText::
 	cont "#mon, you see."
 
 	para "We were shocked to"
-	line "find an EGG!"
+	line "find an Egg!"
 
 	para "How incredible"
 	line "could that be?"
@@ -1549,7 +1549,7 @@ _OnlyOneMonText::
 
 _CantAcceptEggText::
 	text "Sorry, but I can't"
-	line "accept an EGG."
+	line "accept an Egg."
 	prompt
 
 _RemoveMailText::
@@ -1658,7 +1658,7 @@ _FoundAnEggText::
 	line "we surprised!"
 
 	para "Your #mon had"
-	line "an EGG!"
+	line "an Egg!"
 
 	para "We don't know how"
 	line "it got there, but"
@@ -1669,7 +1669,7 @@ _FoundAnEggText::
 
 _ReceivedEggText::
 	text "<PLAYER> received"
-	line "the EGG!"
+	line "the Egg!"
 	done
 
 _TakeGoodCareOfEggText::

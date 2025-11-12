@@ -6,5 +6,5 @@
 	next "for food."
 
 	page "Takes half"
-	next "damage from FIRE"
-	next "and ICE moves.@"
+	next "damage from Fire"
+	next "and Ice moves.@"

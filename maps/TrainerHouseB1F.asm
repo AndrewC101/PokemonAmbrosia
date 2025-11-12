@@ -3047,7 +3047,7 @@ BattleTrialIntroText:
     done
 
 ExplainStandardTrialText:
-    text "The STANDARD TRIAL"
+    text "The Standard Trial"
     line "consists of 30"
     cont "total battles."
 
@@ -3057,7 +3057,7 @@ ExplainStandardTrialText:
     done
 
 ExplainMasterTrialText:
-    text "The Master TRIAL"
+    text "The Master Trial"
     line "consists of 6"
     cont "total battles."
 
@@ -3067,7 +3067,7 @@ ExplainMasterTrialText:
     done
 
 ExplainImpossibleTrialText:
-    text "IMPOSSIBLE TRIAL!"
+    text "Impossible Trial!"
 
     para "It consists of 4"
     line "total battles."
@@ -3227,7 +3227,7 @@ TrialUnlockMasterText:
 
     para "You have now"
     line "unlocked the"
-    cont "Master TRIAL!"
+    cont "Master Trial!"
 
     para "A more difficult"
     line "trial with a"
@@ -3240,7 +3240,7 @@ TrialUnlockImpossibleText:
 
     para "You have now"
     line "unlocked the"
-    cont "IMPOSSIBLE TRIAL!"
+    cont "Impossible Trial!"
 
     para "An insane trial"
     line "with 4 brutal"

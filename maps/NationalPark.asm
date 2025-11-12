@@ -537,7 +537,7 @@ SchoolboyJack1SeenText:
 	line "my class."
 
 	para "I got a 91"
-	line "on our TYPE"
+	line "on our type"
 	cont "matchup test!"
 	done
 

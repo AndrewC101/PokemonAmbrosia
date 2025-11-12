@@ -442,7 +442,7 @@ BlockingSoldier2Text:
     cont "of Hoenn."
 
     para "It was beautiful"
-    line "watching the FIRE"
+    line "watching the Fire"
     cont "Gym Leader on"
     cont "his knees before"
     cont "our Emperor."

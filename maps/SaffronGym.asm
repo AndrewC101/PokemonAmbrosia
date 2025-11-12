@@ -140,7 +140,7 @@ SabrinaIntroText:
 	para "I traveled the"
 	line "world visiting"
 	cont "ruins and all the"
-	cont "while my PSYCHIC"
+	cont "while my Psychic"
 	cont "#mon were"
 	cont "growing powerful."
 
@@ -251,7 +251,7 @@ PsychicFranklinSeenText:
 	para "Will does not"
 	line "understand the"
 	cont "superiority of"
-	cont "PSYCHIC types."
+	cont "Psychic types."
 	done
 
 PsychicFranklinBeatenText:

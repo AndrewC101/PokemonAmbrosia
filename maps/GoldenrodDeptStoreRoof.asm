@@ -168,7 +168,7 @@ GoldenrodDeptStoreRoofBugCatcherText:
 	text "I can see so much"
 	line "from up here!"
 	para "Like a hawk I will"
-	line "find the BUG"
+	line "find the Bug"
 	cont "#mon prey."
 	para "Kawww!"
 	done

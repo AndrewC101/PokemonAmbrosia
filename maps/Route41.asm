@@ -168,7 +168,7 @@ SwimmermCharlieSeenText:
 
 	para "She is probably"
 	line "the strongest"
-	cont "WATER trainer."
+	cont "Water trainer."
 
 	para "One day I hope"
 	line "to be a Gym"

@@ -39,7 +39,7 @@ VermilionMartSuperNerdText:
 
 InvadedVermilionMartSuperNerdText:
 	text "Of course an"
-	line "ELECTRIC Gym on"
+	line "Electric Gym on"
 	cont "the coast would"
 	cont "be a priority"
 	cont "target!"
@@ -64,7 +64,7 @@ InvadedVermilionMartBeautyText:
 	text "Their captain has"
 	line "#mon especially"
 	cont "for fighting"
-	cont "ELECTRIC types."
+	cont "Electric types."
 
 	para "We are done for!"
 	done

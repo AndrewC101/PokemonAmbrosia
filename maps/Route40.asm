@@ -167,7 +167,7 @@ Route40_StepUp4Movement: ; unreferenced
 	step_end
 
 SwimmermSimonSeenText:
-	text "I love WATER"
+	text "I love Water"
 	line "#mon."
 
 	para "I love the"

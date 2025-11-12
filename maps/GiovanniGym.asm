@@ -172,7 +172,7 @@ TrainerBeautyRachael:
 	end
 
 BeautyRachaelSeenText:
-    text "The PSYCHIC Gym"
+    text "The Psychic Gym"
     line "next door breeds"
     cont "arrogance."
 
@@ -210,7 +210,7 @@ TrainerBlackbeltJonny:
 
 BlackbeltJonnySeenText:
     text "There used to be"
-    line "a FIGHTING Gym"
+    line "a Fighting Gym"
     cont "here."
 
     para "Then the Psychics"

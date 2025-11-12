@@ -26,7 +26,7 @@ Kyle:
  	cont "#mon are cool."
  	para "What is this the"
  	line "late 90s!"
- 	para "DARK types don't"
+ 	para "Dark types don't"
  	line "conform, they are"
  	cont "truly cool."
  	done
@@ -46,7 +46,7 @@ VioletKylesHousePokefanMText:
 	para "Now since moving"
 	line "here he has become"
 	cont "infatuated by"
-	cont "DARK types."
+	cont "Dark types."
 
 	para "I hope this is"
 	line "just a phase."

@@ -6,5 +6,5 @@
 	next "electricity."
 
 	page "Immune to"
-	next "ELECTRIC"
+	next "Electric"
 	next "attacks.@"

@@ -174,7 +174,7 @@ JasmineCianwoodPharmacyText:
 	para "I think it"
 	line "may have"
 	cont "contracted"
-	cont "#RUS."
+	cont "#rus."
 
 	para "If left untreated"
 	line "it may die."

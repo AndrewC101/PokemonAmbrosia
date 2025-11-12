@@ -58,7 +58,7 @@ InvadedVermilionPokecenter1FSailorText:
 	line "soldiers!"
 
 	para "They got such"
-	line "strong WATER"
+	line "strong Water"
 	cont "#mon!"
 
 	para "Me POLIWHIRL"

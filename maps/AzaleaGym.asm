@@ -246,7 +246,7 @@ BugsyText_BugMonsAreDeep:
 	done
 
 BugCatcherBennySeenText:
-	text "It's a BUG eat BUG"
+	text "It's a Bug eat Bug"
 	line "world out there!"
 	para "Let the feast"
 	line "begin!"
@@ -322,7 +322,7 @@ TwinsAmyandmay1BeatenText:
 	done
 
 TwinsAmyandmay1AfterBattleText:
-	text "We like BUG"
+	text "We like Bug"
 	line "#mon!"
 	para "They are not icky,"
 	line "they are cool!"
@@ -354,17 +354,17 @@ AzaleaGymGuideText:
 	line "some really"
 	cont "strong moves!"
 
-	para "GRASS types"
+	para "Grass types"
 	line "won't be able to"
 	cont "do much."
 
-	para "A ROCK or FIRE"
+	para "A Rock or Fire"
 	line "type would work."
 	done
 
 AzaleaGymGuideWinText:
-	text "I guess it's a BUG"
-	line "eat BUG world out"
+	text "I guess it's a Bug"
+	line "eat Bug world out"
 	cont "there, eh?"
 	done
 	done

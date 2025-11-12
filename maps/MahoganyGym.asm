@@ -362,15 +362,15 @@ MahoganyGymGuideText:
 	line "mountains so he"
 	cont "never gives up."
 
-	para "He uses ICE"
+	para "He uses Ice"
 	line "types."
 
 	para "Which isn't a"
 	line "very good type..."
 
 	para "They are weak to"
-	line "FIRE, FIGHTING"
-	cont "ROCK and STEEL."
+	line "Fire, Fighting"
+	cont "Rock and Steel."
 
 	para "But Pryce has"
 	line "strong #mon"

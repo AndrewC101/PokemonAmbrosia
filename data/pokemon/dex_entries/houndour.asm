@@ -6,4 +6,4 @@
 	next "echoes all over."
 
 	page "Immune to"
-	next "FIRE attacks.@"
+	next "Fire attacks.@"

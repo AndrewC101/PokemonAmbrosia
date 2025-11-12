@@ -6,4 +6,4 @@
 	next "powerful."
 
 	page "Immune to"
-	next "WATER attacks.@"
+	next "Water attacks.@"

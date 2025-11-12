@@ -282,8 +282,8 @@ RadioTower1FLuckyNumberManOkayMatchText:
 	cont "three numbers!"
 
 	para "You've won second"
-	line "prize, a LUCKY"
-	cont "EGG!"
+	line "prize, a Lucky"
+	cont "Egg!"
 	done
 
 RadioTower1FLuckyNumberManWeakMatchText:
@@ -335,8 +335,8 @@ RadioTower1FRadioCardWomanQuestion1Text:
 
 	para "Dragon attacks are"
 	line "resisted only by"
-	cont "STEEL, FAIRY"
-	cont "and ICE types?"
+	cont "Steel, Fairy"
+	cont "and Ice types?"
 	done
 
 RadioTower1FRadioCardWomanQuestion2Text:
@@ -352,7 +352,7 @@ RadioTower1FRadioCardWomanQuestion3Text:
 	text "Bull's-eye!"
 	line "Question 3:"
 
-	para "FIRE BLAST has"
+	para "Fire Blast has"
 	line "110 base power?"
 	done
 

@@ -46,7 +46,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db FROAKIE
 	db NO_ITEM
@@ -72,7 +72,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db TREECKO
 	db NO_ITEM
@@ -98,7 +98,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db CHARMANDER
 	db NO_ITEM
@@ -124,7 +124,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db SQUIRTLE
 	db NO_ITEM
@@ -150,7 +150,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db BULBASAUR
 	db NO_ITEM
@@ -176,7 +176,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	db MUDKIP
 	db NO_ITEM
@@ -202,6 +202,6 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "EGG@@@@@@@@"
+	db "Egg@@@@@@@@"
 
 	assert_table_length NUM_ODD_EGGS

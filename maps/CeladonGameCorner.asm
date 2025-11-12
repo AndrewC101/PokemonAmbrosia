@@ -179,7 +179,7 @@ CeladonGameCornerFishingGuruText:
 
 CeladonGameCornerFisherText1:
 	text "I ate a whole"
-	line "LUCKY EGG this"
+	line "Lucky Egg this"
 	cont "morning!"
 
 	para "I have increased"

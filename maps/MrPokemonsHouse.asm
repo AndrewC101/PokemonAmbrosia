@@ -192,15 +192,15 @@ MrPokemonIntroText2:
 
 MrPokemonsHouse_GotEggText:
 	text "<PLAYER> received"
-	line "MYSTERY EGG."
+	line "Mystery Egg."
 	done
 
 MrPokemonIntroText3:
 	text "I believe it may"
-	line "contain a FAIRY"
+	line "contain a Fairy"
 	cont "#mon."
 
-	para "FAIRY #mon are"
+	para "Fairy #mon are"
 	line "uniquely capable"
 	cont "of fighting Dragon"
 	cont "#mon."

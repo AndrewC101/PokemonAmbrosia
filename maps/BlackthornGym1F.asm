@@ -435,9 +435,9 @@ BlackthornGymGuideText:
 	para "However they"
 	line "often have a"
 	cont "severe weakness"
-	cont "to ICE moves."
+	cont "to Ice moves."
 
-	para "If you have ICE"
+	para "If you have Ice"
 	line "moves, now is"
 	cont "the time to use"
 	cont "them."

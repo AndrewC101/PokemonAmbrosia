@@ -1,6 +1,6 @@
 WadeAskNumber1Text:
 WadeAskNumber2Text:
-	text "BUG #mon start"
+	text "Bug #mon start"
 	line "off small and weak"
 	cont "but they grow fast"
 	cont "and become"
@@ -33,7 +33,7 @@ WadePhoneFullText:
 WadeRematchText:
 	text "Behold my"
 	line "perfectly ultimate"
-	cont "BUG #mon!"
+	cont "Bug #mon!"
 	done
 
 WadeGiftText:

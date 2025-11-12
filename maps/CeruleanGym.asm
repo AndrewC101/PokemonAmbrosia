@@ -296,7 +296,7 @@ MistyIntroText:
 	line "Hoenn trainers"
 	cont "can unlock the"
 	cont "full potential of"
-	cont "WATER #mon."
+	cont "Water #mon."
 
 	para "I will prove them"
 	line "all wrong."
@@ -404,7 +404,7 @@ SwimmerfBrianaAfterBattleText:
 	done
 
 SwimmermParkerSeenText:
-	text "As a WATER"
+	text "As a Water"
 	line "trainer I feel"
 	cont "an extra respons-"
 	cont "ibility to do my"
@@ -435,10 +435,10 @@ CeruleanGymGuideText:
 	para "You know the"
 	line "drill by now."
 
-	para "WATER Gym."
+	para "Water Gym."
 
-	para "Use ELECTRIC or"
-	line "GRASS attacks."
+	para "Use Electric or"
+	line "Grass attacks."
 	done
 
 CeruleanGymGuideWinText:

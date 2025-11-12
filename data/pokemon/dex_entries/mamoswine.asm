@@ -6,5 +6,5 @@
 	next "from the past."
 
 	page "Takes half"
-	next "damage from FIRE"
+	next "damage from Fire"
 	next "and ICE moves.@"

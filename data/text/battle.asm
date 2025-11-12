@@ -265,7 +265,7 @@ BattleText_TheresNoWillToBattle:
 	prompt
 
 BattleText_AnEGGCantBattle:
-	text "An EGG can't"
+	text "An Egg can't"
 	line "battle!"
 	prompt
 

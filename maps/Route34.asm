@@ -554,34 +554,34 @@ YoungsterIanSeenText:
 	text "Have you heard"
 	line "of Erika?"
 
-	para "She is a GRASS"
+	para "She is a Grass"
 	line "Gym Leader in"
 	cont "Kanto."
 
 	para "I'm going to be"
-	line "the first GRASS"
+	line "the first Grass"
 	cont "Gym Leader in"
 	cont "Johto!"
 	done
 
 YoungsterIanBeatenText:
 	text "It's hard using"
-	line "just one TYPE."
+	line "just one type."
 	done
 
 YoungsterIanAfterText:
-	text "GRASS has a"
+	text "Grass has a"
 	line "lot of weaknesses."
 	done
 
 CamperTodd1SeenText:
 	text "It is important"
-	line "to have TYPE"
+	line "to have type"
 	cont "coverage."
 
 	para "Every team needs"
-	line "a WATER, GRASS,"
-	cont "FIRE core."
+	line "a Water, Grass,"
+	cont "Fire core."
 	done
 
 CamperTodd1BeatenText:
@@ -789,13 +789,13 @@ Route34SignText:
 Route34TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "BERRY trees grow"
-	line "new BERRIES"
+	para "Berry trees grow"
+	line "new Berries"
 	cont "every day."
 
 	para "Make a note of"
 	line "which trees bear"
-	cont "which BERRIES."
+	cont "which Berries."
 	done
 
 DayCareSignText:

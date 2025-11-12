@@ -16,8 +16,8 @@ WiltonMonHasGrownText:
 WiltonDefeatedMonText:
 	text "I fished the"
 	line "strangest thing"
-	cont "today, a LUCKY"
-	cont "EGG."
+	cont "today, a Lucky"
+	cont "Egg."
 	para "I tossed back in"
 	line "and it floated"
 	cont "over to the"

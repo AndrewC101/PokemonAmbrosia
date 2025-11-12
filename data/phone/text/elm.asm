@@ -32,10 +32,10 @@ ElmPhoneCheckingTheEggText:
 	text "Hello, <PLAY_G>?"
 
 	para "We're checking the"
-	line "EGG now. It does"
+	line "Egg now. It does"
 
 	para "appear to be a"
-	line "#mon EGG."
+	line "#mon Egg."
 	done
 
 ElmPhoneAssistantText:
@@ -51,7 +51,7 @@ ElmPhoneAssistantText:
 ElmPhoneHowIsTheEggText:
 	text "Hello, <PLAY_G>?"
 
-	para "How's the EGG? Has"
+	para "How's the Egg? Has"
 	line "anything changed?"
 
 	para "If anything hap-"
@@ -60,7 +60,7 @@ ElmPhoneHowIsTheEggText:
 
 ElmPhoneEggHatchedText:
 	text "Hello, <PLAY_G>?"
-	line "How is the EGG?"
+	line "How is the Egg?"
 
 	para "What? It hatched?"
 	line "Wow! What kind of"
@@ -91,7 +91,7 @@ ElmPhoneDiscoveredPokerusText:
 	para "The #center"
 	line "told me your"
 	cont "#mon have"
-	cont "#RUS!"
+	cont "#rus!"
 	para "Don't panic, I"
 	line "haven't told your"
 	cont "Mum."

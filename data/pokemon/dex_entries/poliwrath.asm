@@ -7,4 +7,4 @@
 
 	page "Speed boost in"
 	next "rain. Immune to"
-	next "WATER moves.@"
+	next "Water moves.@"

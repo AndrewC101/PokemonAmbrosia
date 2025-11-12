@@ -90,12 +90,12 @@ WillScript_WillBeforeText:
 	line "member of the"
 	cont "Elite Four."
 
-	para "PSYCHIC power"
+	para "Psychic power"
 	line "is the"
 	cont "manifestation of"
 	cont "ones will to win."
 
-	para "My PSYCHIC power"
+	para "My Psychic power"
 	line "exceeds all"
 	cont "others."
 

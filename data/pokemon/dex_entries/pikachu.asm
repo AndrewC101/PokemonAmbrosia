@@ -6,5 +6,5 @@
 	next "its cheeks"
 
 	page "Immune to"
-	next "ELECTRIC"
+	next "Electric"
 	next "attacks.@"

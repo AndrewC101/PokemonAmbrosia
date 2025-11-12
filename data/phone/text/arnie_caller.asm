@@ -8,7 +8,7 @@ ArnieMonIsSoCuteText:
 	done
 
 ArnieDefeatedMonText:
-	text "Do you think BUG"
+	text "Do you think Bug"
 	line "#mon are cute?"
 	para "Like you know"
 	line "interesting"
@@ -19,7 +19,7 @@ ArnieDefeatedMonText:
 
 ArnieLostAMonText:
 	text "Are you ready for"
-	line "the BUG invasion?"
+	line "the Bug invasion?"
 	para "If it happened"
 	line "right now would"
 	cont "you be ready?"
@@ -47,9 +47,9 @@ ArnieHangUpText:
 	done
 
 ArnieSwarmText:
-	text "The BUGS are"
+	text "The Bugs are"
 	line "everywhere, this"
-	cont "is a BUG CATCHERS"
+	cont "is a Bug catchers"
 	cont "dream."
 
 	para "A whole bunch of"
@@ -99,6 +99,6 @@ ArnieHurryText:
 	line "BUGS are making"
 	cont "their move against"
 	cont "the humans!"
-	para "Go my BUG"
+	para "Go my Bug"
 	line "brethren!"
 	done

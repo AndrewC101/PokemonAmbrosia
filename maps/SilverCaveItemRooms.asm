@@ -310,7 +310,7 @@ RegigigasUnblocksText:
 DeoxysNeededText:
     text "It will take an"
     line "otherworldly"
-    cont "PSYCHIC power"
+    cont "Psychic power"
     cont "to unblock this."
     done
 

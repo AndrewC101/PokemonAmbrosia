@@ -6,5 +6,5 @@
 	next "gas-like body."
 
 	page "Immune to"
-	next "GROUND type"
+	next "Ground type"
 	next "moves.@"

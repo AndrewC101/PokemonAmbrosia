@@ -7,4 +7,4 @@
 
 	page "Immune to"
 	next "stat drops and"
-	next "WATER attacks.@"
+	next "Water attacks.@"

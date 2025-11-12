@@ -253,7 +253,7 @@ Text_HereTeacherIAm:
 
 VioletCityLassText:
 	text "Sprout Tower"
-	line "is full of GHOST"
+	line "is full of Ghost"
     cont "#mon."
 
     para "I think they"
@@ -289,8 +289,8 @@ VioletCityGrampsText:
 	cont "darkness."
 
 	para "But I saw one"
-	line "of them at DARK"
-	cont "CAVE."
+	line "of them at Dark"
+	cont "Cave."
 
 	para "I think they are"
 	line "nurturing the"

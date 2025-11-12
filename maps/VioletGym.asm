@@ -352,13 +352,13 @@ VioletGymGuideText:
 	cont "some advice!"
 
 	para "This Gym utilizes"
-	line "FLYING type"
+	line "Flying type"
 	cont "#mon."
 
 	para "These can't do"
 	line "much damage to"
-	cont "a good ROCK or"
-	cont "STEEL type."
+	cont "a good Rock or"
+	cont "Steel type."
 
 	para "Dark Cave might"
 	line "have such"

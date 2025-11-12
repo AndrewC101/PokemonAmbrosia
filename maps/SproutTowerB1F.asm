@@ -91,7 +91,7 @@ SageWarningText:
     cont "to the other"
     cont "side."
 
-    para "It makes GHOST"
+    para "It makes Ghost"
     line "moves stronger."
 
     para "The darkness"

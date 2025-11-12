@@ -6,4 +6,4 @@
 	next "in the mud."
 
 	page "Immune to"
-	next "WATER attacks.@"
+	next "Water attacks.@"

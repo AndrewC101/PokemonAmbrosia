@@ -117,11 +117,11 @@ IrwinFogBadgeGossipText:
 	para "How'd that go?"
 	para "I went into the"
 	line "Gym once and a"
-	cont "bunch of GHOST"
+	cont "bunch of Ghost"
 	cont "#mon spooked"
 	cont "me."
 	para "Scared the"
-	line "KOFFINGS off me."
+	line "Koffings off me."
 	done
 
 IrwinMarshBadgeGossipText:

@@ -7,7 +7,7 @@ IrwinRocketTakeoverRumorText:
 	text "<PLAYER>!"
 	para "The rockets have"
 	line "taken over"
-	cont "GOLDENROD."
+	cont "Goldenrod."
 	para "Don't worry I got"
 	line "this."
 	para "I'm going to"
@@ -36,7 +36,7 @@ IrwinJasmineReturnedGossipText:
 IrwinRadioTowerGossipText:
 IrwinRocketHideoutGossipText:
 	text "I heard you found"
-	line "TEAM ROCKET"
+	line "Team Rocket"
 	cont "hideout and took"
 	cont "them all out."
 	para "I heard out"
@@ -165,7 +165,7 @@ IrwinSoMuchToChatAboutText:
 
 	para "Where are you?"
 
-	para "How many BADGES do"
+	para "How many Badges do"
 	line "you have now?"
 
 	para "How much money"

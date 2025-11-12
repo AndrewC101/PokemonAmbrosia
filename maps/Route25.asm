@@ -263,8 +263,8 @@ Route25MistyDateText:
 
 SchoolboyDudleySeenText:
 	text "We 6 are about"
-	line "to enter CERULEAN"
-	cont "CAVE."
+	line "to enter Cerulean"
+	cont "Cave."
 
 	para "We have been in"
 	line "training just"

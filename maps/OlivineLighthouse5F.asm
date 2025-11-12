@@ -102,7 +102,7 @@ BirdKeeperDenisBeatenText:
 BirdKeeperDenisAfterBattleText:
 	text "My #mon learned"
 	line "how to use FLY in"
-	cont "CIANWOOD."
+	cont "Cianwood."
 
 	para "I can go"
 	line "anywhere in no"

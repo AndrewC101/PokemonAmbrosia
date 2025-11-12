@@ -154,8 +154,8 @@ CeruleanCityHiddenBerserkGene:
 	hiddenitem BRIGHTPOWDER, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
 CeruleanCityCooltrainerMText1:
-	text "There is a POWER"
-	line "PLANT to the east"
+	text "There is a Power"
+	line "Plant to the east"
 	cont "of here."
 
 	para "The guy in charge"
@@ -216,7 +216,7 @@ CeruleanCityCooltrainerFText3:
 
 CeruleanCityFisherText:
 	text "I'm a huge fan of"
-	line "CERULEAN Gym's"
+	line "Cerulean Gym's"
 	cont "Misty."
 
 	para "I know everything"
@@ -233,8 +233,8 @@ CeruleanCityFisherText:
 
 CeruleanCityFisherRocketTipText:
 	text "I saw a guy head"
-	line "toward CERULEAN"
-	cont "CAVE."
+	line "toward Cerulean"
+	cont "Cave."
 
 	para "He was wearing"
 	line "glasses but he"
@@ -268,14 +268,14 @@ CeruleanCityYoungsterText2:
 	done
 
 CeruleanCitySignText:
-	text "CERULEAN CITY"
+	text "Cerulean City"
 
 	para "A Mysterious Blue"
 	line "Aura Surrounds It"
 	done
 
 CeruleanGymSignText:
-	text "CERULEAN CITY"
+	text "Cerulean City"
 	line "#mon Gym"
 	cont "Leader: Misty"
 
@@ -302,12 +302,12 @@ CeruleanPoliceSignText:
 	cont "and severe"
 	cont "retribution."
 
-	para "CERULEAN POLICE"
+	para "Cerulean Police"
 	done
 
 CeruleanCapeSignText:
-	text "CERULEAN CAPE"
-	line "AHEAD"
+	text "Cerulean Cape"
+	line "ahead"
 	done
 
 CeruleanLockedDoorText:

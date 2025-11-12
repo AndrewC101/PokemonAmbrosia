@@ -323,10 +323,10 @@ GoldenrodCityYoungster1Text:
 GoldenrodCityCooltrainerF1Text:
 	text "It's..."
 
-	para "TEAM ROCKET!"
+	para "Team Rocket!"
 
 	para "Well shares in"
-	line "the RADIO TOWER"
+	line "the Radio Tower"
 	cont "are about to"
 	cont "plummet."
 
@@ -338,13 +338,13 @@ GoldenrodCityCooltrainerF1Text:
 GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
 	text "You were the"
 	line "one to stop the"
-	cont "ROCKETS!"
+	cont "Rockets!"
 
 	para "Couldn't you have"
 	line "waited another"
 	cont "day or two?"
 
-	para "The RADIO TOWER"
+	para "The Radio Tower"
 	line "share price could"
 	cont "have fallen more"
 	cont "and I'd have made"
@@ -352,12 +352,12 @@ GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
 	done
 
 GoldenrodCityCooltrainerF2Text:
-	text "GOLDENROD was"
+	text "Goldenrod was"
 	line "the first city"
-	cont "to have a RADIO"
-	cont "TOWER."
+	cont "to have a Radio"
+	cont "Tower."
 
-	para "Then LAVENDER"
+	para "Then Lavender"
 	line "TOWN had to go"
 	cont "and copy us!"
 
@@ -376,7 +376,7 @@ GoldenrodCityYoungster2Text:
 
 	para "They are a metal"
 	line "band from"
-	cont "VERMILION."
+	cont "Vermilion."
 
 	para "LT Surge is the"
 	line "lead vocalist."
@@ -411,10 +411,10 @@ GoldenrodCityGrampsText:
 
 	para "Of course I"
 	line "have investments"
-	cont "in the RADIO"
-	cont "TOWER here and"
-	cont "SILPH CO from"
-	cont "SAFFRON."
+	cont "in the Radio"
+	cont "Tower here and"
+	cont "Silph Co from"
+	cont "Saffron."
 
 	para "So my portfolio"
 	line "will grow no"
@@ -447,7 +447,7 @@ GoldenrodCityRocket1Text:
 
 GoldenrodCityRocket2Text:
 	text "Take over the"
-	line "RADIO TOWER…"
+	line "Radio Tower…"
 
 	para "What gave you"
 	line "that idea!"
@@ -504,30 +504,30 @@ GoldenrodCityRocket6Text:
 	para "Never fear, dear"
 	line "citizen."
 
-	para "TEAM ROCKET"
+	para "Team Rocket"
 	line "are here!"
 	done
 
 GoldenrodCityStationSignText:
-	text "GOLDENROD CITY"
-	line "STATION"
+	text "Goldenrod City"
+	line "Station"
 	done
 
 GoldenrodCityRadioTowerSignText:
-	text "GOLDENROD CITY"
-	line "RADIO TOWER"
+	text "Goldenrod City"
+	line "Radio Tower"
 	done
 
 GoldenrodDeptStoreSignText:
 	text "Full Selection of"
 	line "#mon Goods!"
 
-	para "GOLDENROD CITY"
-	line "DEPT.STORE"
+	para "Goldenrod City"
+	line "Dept.Store"
 	done
 
 GoldenrodGymSignText:
-	text "GOLDENROD CITY"
+	text "Goldenrod City"
 	line "#mon Gym"
 	cont "Leader: Whitney"
 
@@ -536,7 +536,7 @@ GoldenrodGymSignText:
 	done
 
 GoldenrodCitySignText:
-	text "GOLDENROD CITY"
+	text "Goldenrod City"
 
 	para "The Festive City"
 	line "of Opulent Charm"
@@ -551,25 +551,25 @@ GoldenrodCityBikeShopSignText:
 GoldenrodCityGameCornerSignText:
 	text "Your Playground!"
 
-	para "GOLDENROD CITY"
-	line "GAME CORNER"
+	para "Goldenrod City"
+	line "Game Corner"
 	done
 
 GoldenrodCityNameRaterSignText:
-	text "NAME RATER"
+	text "Name Rater"
 
 	para "Get Your #mon"
 	line "Nicknames Rated"
 	done
 
 GoldenrodCityUndergroundSignNorthText:
-	text "UNDERGROUND"
-	line "ENTRANCE"
+	text "Underground"
+	line "Entrance"
 	done
 
 GoldenrodCityUndergroundSignSouthText:
-	text "UNDERGROUND"
-	line "ENTRANCE"
+	text "Underground"
+	line "Entrance"
 	done
 
 GoldenrodCityFlowerShopSignText:

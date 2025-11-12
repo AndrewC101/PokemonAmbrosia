@@ -13,7 +13,7 @@ LavenderSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 LavenderSpeechHousePokefanFText:
-	text "LAVENDER has"
+	text "Lavender has"
 	line "changed a lot"
 	cont "in recent years."
 
@@ -44,7 +44,7 @@ LavenderSpeechHousePokefanFText:
 
 	para "She never got to"
 	line "see the new"
-	cont "RADIO TOWER."
+	cont "Radio Tower."
 
 	para "I'm glad of that."
 	done

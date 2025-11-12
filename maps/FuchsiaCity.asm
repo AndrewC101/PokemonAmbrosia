@@ -317,14 +317,14 @@ InvadedFuchsiaCityTeacherText:
 	done
 
 FuchsiaCitySignText:
-	text "FUCHSIA CITY"
+	text "Fuchsia City"
 
 	para "Behold! It's"
 	line "Passion Pink!"
 	done
 
 FuchsiaGymSignText:
-	text "FUCHSIA CITY"
+	text "Fuchsia City"
 	line "#mon Gym"
 	cont "Leader: Janine"
 
@@ -602,7 +602,7 @@ FuchsiaSelfText2:
 FuchsiaSelfText3:
     text "The Hoenn army"
     line "are not like"
-    cont "TEAM ROCKET."
+    cont "Team Rocket."
 
     para "They are killers."
 

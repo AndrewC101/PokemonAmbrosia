@@ -318,7 +318,7 @@ RadioTower5CrystalText:
     text "You did it!"
 
     para "You really showed"
-    line "TEAM ROCKET who's"
+    line "Team Rocket who's"
     cont "boss."
 
     para "Though that exec"
@@ -340,7 +340,7 @@ RadioTower5CrystalText:
 
     para "Now we should"
     line "head to"
-    cont "BLACKTHORN."
+    cont "Blackthorn."
 
     para "The Gym Leader"
     line "will be back."
@@ -431,7 +431,7 @@ FakeDirectorTextAfter:
 
 	para "He is stashed"
 	line "away in the"
-	cont "UNDERGROUND."
+	cont "Underground."
 	done
 
 Executivef1SeenText:
@@ -499,7 +499,7 @@ Executivef1AfterBattleText:
 	cont "were children."
 
 	para "Lance then"
-	line "liberated SAFFRON"
+	line "liberated Saffron"
 	cont "from Hoenn."
 
 	para "But our lives"
@@ -613,14 +613,14 @@ WhichWingDoYouWantText:
 RainbowWingTipsText:
     text "There used to be a"
 	line "tower right here"
-	cont "in GOLDENROD CITY."
+	cont "in Goldenrod City."
 
 	para "But it was old and"
 	line "creaky."
 
 	para "So we replaced it"
-	line "with our RADIO"
-	cont "TOWER."
+	line "with our Radio"
+	cont "Tower."
 
 	para "We dug up that"
 	line "wing during"
@@ -629,7 +629,7 @@ RainbowWingTipsText:
 	para "I heard that all"
 	line "sorts of #mon"
 
-	para "lived in GOLDENROD"
+	para "lived in Goldenrod"
 	line "in the past."
 
 	para "Perhaps…"
@@ -637,8 +637,8 @@ RainbowWingTipsText:
 	para "That wing has some"
 	line "connection to the"
 
-	para "TIN TOWER in"
-	line "ECRUTEAK CITY…"
+	para "Tin Tower in"
+	line "Ecruteak City…"
 
 	para "A powerful"
 	line "#mon may live"
@@ -648,7 +648,7 @@ RainbowWingTipsText:
 SilverWingTipsText:
     text "I found that when"
     line "traveling the sea"
-    cont "near OLIVINE."
+    cont "near Olivine."
 
     para "There was a storm"
     line "that day."
@@ -675,8 +675,8 @@ SilverWingTipsText:
     line "have saved us."
 
     para "I followed it out"
-    line "to the WHIRL"
-    cont "ISLANDS."
+    line "to the Whirl"
+    cont "Islands."
 
     para "But all I found"
     line "was this feather."
@@ -689,14 +689,14 @@ SilverWingTipsText:
 RadioTower5FDirectorDescribeClearBellText:
 	text "There used to be a"
 	line "tower right here"
-	cont "in GOLDENROD CITY."
+	cont "in Goldenrod City."
 
 	para "But it was old and"
 	line "creaky."
 
 	para "So we replaced it"
-	line "with our RADIO"
-	cont "TOWER."
+	line "with our Radio"
+	cont "Tower."
 
 	para "We dug up that"
 	line "bell during"
@@ -705,7 +705,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	para "I heard that all"
 	line "sorts of #mon"
 
-	para "lived in GOLDENROD"
+	para "lived in Goldenrod"
 	line "in the past."
 
 	para "Perhaps…"
@@ -713,19 +713,19 @@ RadioTower5FDirectorDescribeClearBellText:
 	para "That bell has some"
 	line "connection to the"
 
-	para "TIN TOWER in"
-	line "ECRUTEAK CITY…"
+	para "Tin Tower in"
+	line "Ecruteak City…"
 
 	para "Ah!"
 
 	para "That reminds me…"
 
-	para "I overheard TEAM"
-	line "ROCKET whispering."
+	para "I overheard Team"
+	line "Rocket whispering."
 
 	para "Apparently, some-"
 	line "thing is going on"
-	cont "at the TIN TOWER."
+	cont "at the Tin Tower."
 
 	para "I have no idea"
 	line "what is happening,"
@@ -744,8 +744,8 @@ RadioTower5FDirectorText:
 	para "You know, I love"
 	line "#mon."
 
-	para "I built this RADIO"
-	line "TOWER so I could"
+	para "I built this Radio"
+	line "Tower so I could"
 
 	para "express my love"
 	line "of #mon."

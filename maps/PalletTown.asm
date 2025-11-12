@@ -103,7 +103,7 @@ PalletTownFisherText_Amaze:
     done
 
 PalletTownSignText:
-	text "PALLET TOWN"
+	text "Pallet Town"
 
 	para "A Tranquil Setting"
 	line "of Peace & Purity"

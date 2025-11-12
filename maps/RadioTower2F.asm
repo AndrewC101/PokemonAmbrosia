@@ -356,7 +356,7 @@ RadioTower2FTeacherText_Rockets:
 
 	para "I wonder what"
 	line "kind of music"
-	cont "TEAM ROCKET"
+	cont "Team Rocket"
 	cont "are into."
 	done
 
@@ -422,7 +422,7 @@ GruntF2BeatenText:
 
 GruntF2AfterBattleText:
 	text "I may be weak"
-	line "but TEAM ROCKET"
+	line "but Team Rocket"
 	cont "is strong!"
 
 	para "Kanto is strong!"

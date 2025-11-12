@@ -52,7 +52,7 @@ WadeBugCatchingContestText:
 	text "The BUG-catching"
 	line "contest is on"
 	cont "today at the"
-	cont "NATIONAL PARK."
+	cont "National Park."
 	para "It's disgusting"
 	line "catching bugs for"
 	cont "sport."

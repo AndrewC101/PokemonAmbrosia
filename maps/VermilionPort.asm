@@ -278,12 +278,12 @@ VermilionPortNoTicketText:
 	done
 
 VermilionPortSailMondayText:
-	text "The FAST SHIP will"
+	text "The Fast Ship will"
 	line "sail on Wednesday."
 	done
 
 VermilionPortSailSundayText:
-	text "The FAST SHIP will"
+	text "The Fast Ship will"
 	line "sail next Sunday."
 	done
 

@@ -385,7 +385,7 @@ endr
 	ret
 
 .BadgesTilemap:
-	db $79, $7a, $7b, $7c, $7d, -1 ; "BADGES"
+	db $79, $7a, $7b, $7c, $7d, -1 ; "Badges"
 
 TrainerCardSetup_PlaceTilemapString:
 .loop

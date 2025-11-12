@@ -140,16 +140,16 @@ Route6PokefanMText:
 
 	para "There must be a"
 	line "problem at the"
-	cont "POWER PLANT."
+	cont "Power Plant."
 
 	para "It must be Hoenn."
 	done
 
 Route6UndergroundPathSignText:
-	text "UNDERGROUND PATH"
+	text "Underground Path"
 
-	para "CERULEAN CITY -"
-	line "VERMILION CITY"
+	para "Cerulean City -"
+	line "Vermilion City"
 	done
 
 PokefanmRexSeenText:
@@ -224,7 +224,7 @@ InvaderBackstabberBeatenText:
 InvaderBackstabberAfterBattleText:
 	text "And I spent so"
 	line "much time grinding"
-	cont "coins in CELADON"
+	cont "coins in Celadon"
 	cont "to get these"
 	cont "weapons!"
 	done

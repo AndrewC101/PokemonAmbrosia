@@ -560,7 +560,7 @@ CamperSpencerSeenText:
 
 	para "I'm investigating"
 	line "the case of the"
-	cont "MAHOGANY murderer."
+	cont "Mahogany murderer."
 
 	para "A serial killer"
 	line "some believe is"
@@ -635,15 +635,15 @@ PicnickerTiffanyClefairyText:
 Route43Sign1Text:
 	text "ROUTE 43"
 
-	para "LAKE OF RAGE -"
-	line "MAHOGANY TOWN"
+	para "Lake of Rage -"
+	line "Mahogany Town"
 	done
 
 Route43Sign2Text:
 	text "ROUTE 43"
 
-	para "LAKE OF RAGE -"
-	line "MAHOGANY TOWN"
+	para "Lake of Rage -"
+	line "Mahogany Town"
 	done
 
 Route43TrainerTipsText:

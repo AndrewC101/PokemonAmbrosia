@@ -2993,7 +2993,7 @@ NeedToSaveText:
 
 BattleArcadeIntroText:
     text "Welcome to the"
-    line "BATTLE ARCADE."
+    line "Battle Arcade."
 
 	para "Here you can fight"
 	line "using super"
@@ -3028,7 +3028,7 @@ PickYourEnemyText:
 
 BattleTrialIntroText:
     text "Welcome to the"
-    line "BATTLE TRIAL."
+    line "Battle Trial."
 
     para "Here you can"
     line "fight consecutive"
@@ -3084,7 +3084,7 @@ WhatTrialText:
 
 BattleMirrorIntroText:
     text "Welcome to the"
-    line "BATTLE MIRROR."
+    line "Battle Mirror."
 
     para "Here you can"
     line "fight a simulation"
@@ -3255,7 +3255,7 @@ TrialLeaderText:
     para "Now you shall"
     line "face the elusive"
     cont "master of the"
-    cont "BATTLE TRIAL."
+    cont "Battle Trial."
 
     para "Let the final"
     line "ultimate trial"
@@ -3320,7 +3320,7 @@ BattleWinNoPrizeText:
 
 BattleRouletteIntroText:
 	text "Welcome to the"
-	line "BATTLE ROULETTE."
+	line "Battle Roulette."
 
 	para "Here you can"
 	line "battle a random"

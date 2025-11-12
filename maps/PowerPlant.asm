@@ -231,7 +231,7 @@ PowerPlantOfficer1ReturnToPostMovement:
 	step_end
 
 PowerPlantOfficer1AThiefBrokeInText:
-	text "This POWER PLANT"
+	text "This Power Plant"
 	line "has ultra high"
 	cont "security."
 	para "You better be well"
@@ -244,8 +244,8 @@ PowerPlantOfficer1CeruleanShadyCharacterText:
 	text "Everyone!"
 	para "I just received"
 	line "word from"
-	cont "CERULEAN, a TEAM"
-	cont "ROCKET member has"
+	cont "Cerulean, a Team"
+	cont "Rocket member has"
 	cont "been spotted."
 	para "He must be the one"
 	line "who stole the"
@@ -327,12 +327,12 @@ PowerPlantOfficer2ManagerHasBeenCheerfulText:
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
 	text "Kanto requires a"
 	line "lot of power."
-	para "The MAGNET TRAIN"
-	line "and RADIO TOWER"
+	para "The Magnet Train"
+	line "and Radio Tower"
 	cont "draw a lot but it's"
 	cont "nothing compared"
 	cont "to one of LT"
-	cont "SURGES rock"
+	cont "Surges rock"
 	cont "concerts!"
 	done
 

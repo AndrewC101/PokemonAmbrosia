@@ -180,7 +180,7 @@ PokemaniacEthanSeenText:
 	text "Erika."
 
 	para "I'm going to"
-	line "CELADON to find"
+	line "Celadon to find"
 	cont "Gym Leader Erika."
 
 	para "I will show her"
@@ -325,12 +325,12 @@ BurglarCoreySeenText:
 
 BurglarCoreyBeatenText:
 	text "I got your"
-	line "BADGES!"
+	line "Badges!"
 	done
 
 BurglarCoreyAfterBattleText:
 	text "I didn't actually"
-	line "steal your BADGES."
+	line "steal your Badges."
 
 	para "But you better"
 	line "believe I want"

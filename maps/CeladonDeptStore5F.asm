@@ -85,7 +85,7 @@ CeladonDeptStore5FTeacherText:
 	done
 
 CeladonDeptStore5FDirectoryText:
-	text "5F: DRUG STORE"
+	text "5F: DRUG Store"
 	done
 
 CeladonDeptStore5F_MapEvents:

@@ -391,7 +391,7 @@ GoldenrodGameCornerPokefanM1Text:
 	line "new slot machine."
 
 	para "The ones in"
-	line "CELADON are all"
+	line "Celadon are all"
 	cont "rigged."
 
 	para "At least for me."
@@ -449,8 +449,8 @@ GoldenrodGameCornerPokefanM2Text:
 	para "I got so furious!"
 
 	para "I threw away my"
-	line "COIN CASE in the"
-	cont "UNDERGROUND."
+	line "Coin Case in the"
+	cont "Underground."
 
 	para "But here I am"
 	line "still."

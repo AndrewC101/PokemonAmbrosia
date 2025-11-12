@@ -289,7 +289,7 @@ CatchingTutorialIntroText:
 	cont "away for good."
 
 	para "There is a woman"
-	line "in NEW BARK TOWN"
+	line "in New Bark Town"
 	cont "who has one."
 	done
 
@@ -309,14 +309,14 @@ CatchingTutorialDebriefText:
 
 Route29YoungsterText:
 	text "You should check"
-	line "out your OPTIONS"
+	line "out your Options"
 	cont "in the menu."
-	para "BATTLE ANIM makes"
+	para "Battle Anim makes"
 	line "battles more epic"
 	cont "but they take"
 	cont "longer."
-	para "BATTLE SPEED set"
-	line "to QUICK makes"
+	para "Battle Speed set"
+	line "to Quick makes"
 	cont "battles way faster"
 	cont "but it's only for"
 	cont "people who really"
@@ -431,15 +431,15 @@ TuscanyNotTuesdayText:
 Route29Sign1Text:
 	text "ROUTE 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "Cherrygrove City -"
+	line "New Bark Town"
 	done
 
 Route29Sign2Text:
 	text "ROUTE 29"
 
-	para "CHERRYGROVE CITY -"
-	line "NEW BARK TOWN"
+	para "Cherrygrove City -"
+	line "New Bark Town"
 	done
 	
 Route29FieldMon1Script:

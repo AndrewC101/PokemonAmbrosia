@@ -64,7 +64,7 @@ RandyScript:
 
 ;GiftSpearowMail:
 ;	db FLOWER_MAIL
-;	db   "DARK CAVE leads"
+;	db   "Dark Cave leads"
 ;	next "to another road@"
 
 GiftSpearowName:
@@ -155,7 +155,7 @@ Route35GoldenrodGateRandyOhNeverMindThenText:
 ;	done
 
 Route35GoldenrodGatePokefanFText:
-	text "The NATIONAL PARK"
+	text "The National Park"
 	line "is up ahead."
 	para "Some days you can"
 	line "find Champion Leon"
@@ -166,8 +166,8 @@ Route35GoldenrodGatePokefanFText:
 
 Route35GoldenrodGateFisherText:
 	text "I saw the nurse"
-	line "in GOLDENROD"
-	cont "#mon CENTER"
+	line "in Goldenrod"
+	cont "#mon centre"
 	cont "holding some"
 	cont "kind of special"
 	cont "#ball."

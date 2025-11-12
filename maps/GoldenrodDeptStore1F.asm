@@ -29,7 +29,7 @@ GoldenrodDeptStore1FElevatorButton:
 
 GoldenrodDeptStore1FReceptionistText:
 	text "Welcome to GOLDEN-"
-	line "ROD DEPT.STORE."
+	line "ROD Dept.Store."
 	done
 
 GoldenrodDeptStore1FGentlemanText:

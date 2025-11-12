@@ -35,7 +35,7 @@ Route10Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText
 
 Route10Pokecenter1FGentlemanText:
-	text "This #CENTER"
+	text "This #center"
 	line "doesn't do very"
 	cont "good business."
 	para "I am offering to"
@@ -49,8 +49,8 @@ Route10Pokecenter1FGentlemanText:
 
 Route10Pokecenter1FGymGuideText:
 	text "Hey there hero!"
-	para "There is a POWER"
-	line "PLANT down stream"
+	para "There is a Power"
+	line "Plant down stream"
 	cont "from here."
 	para "You should visit,"
 	line "it might be"
@@ -60,7 +60,7 @@ Route10Pokecenter1FGymGuideText:
 Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
 	text "Well done on"
 	line "helping out the"
-	cont "POWER PLANT"
+	cont "Power Plant"
 	cont "manager."
 	para "I thought he was"
 	line "going to have a"

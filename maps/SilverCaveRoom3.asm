@@ -338,10 +338,10 @@ Movement_AshToPlayer:
 
 AshFightText:
     text "Hey I'm Ash"
-    line "from PALLET town."
+    line "from Pallet town."
 
     para "Though not the"
-    line "same PALLET town"
+    line "same Pallet town"
     cont "you know."
 
     para "Prof Oak sent me"
@@ -439,8 +439,8 @@ PokemonMasterQuestText:
     cont "Monarch."
 
     para "It is found above"
-    line "the MT SILVER"
-    cont "#CENTER."
+    line "the Mt Silver"
+    cont "#center."
 
     para "That should be"
     line "your next goal."

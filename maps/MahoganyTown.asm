@@ -99,7 +99,7 @@ MahoganyTownFisherText:
 	para "There is some"
 	line "strange looking"
 	cont "#mon at the"
-	cont "LAKE OF RAGE."
+	cont "Lake of Rage."
 	cont "Everyone is"
 	cont "investigating."
 	done
@@ -108,7 +108,7 @@ MahoganyTownLassText:
 	text "Thank you so"
 	line "much for getting"
 	cont "rid of those"
-	cont "awful ROCKETS."
+	cont "awful Rockets."
 
 	para "Now grandmas shop"
 	line "has a massive"
@@ -123,14 +123,14 @@ MahoganyTownLassText:
 	done
 
 MahoganyTownSignText:
-	text "MAHOGANY TOWN"
+	text "Mahogany Town"
 
 	para "The Town of Icy"
 	line "tranquility."
 	done
 
 MahoganyGymSignText:
-	text "MAHOGANY TOWN"
+	text "Mahogany Town"
 	line "#mon Gym"
 	cont "Leader: Pryce"
 
@@ -226,7 +226,7 @@ MahoganyMovement_PlayerDown:
 
 MahoganySelfText1:
     text "You can't fight"
-    line "TEAM ROCKET."
+    line "Team Rocket."
 
     para "If you do..."
     done

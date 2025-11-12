@@ -196,8 +196,8 @@ _WouldYouLikeToSaveTheGameText::
 	done
 
 _SavingDontTurnOffThePowerText::
-	text "SAVING… DON'T TURN"
-	line "OFF THE POWER."
+	text "Saving Don't turn"
+	line "off the Power."
 	done
 
 _SavedTheGameText::
@@ -1531,7 +1531,7 @@ _DeleterAskWhichMoveText::
 
 _DeleterIntroText::
 	text "Um… Oh, yes, I'm"
-	line "the MOVE DELETER."
+	line "the Move Deleter."
 
 	para "I can make #mon"
 	line "forget moves."

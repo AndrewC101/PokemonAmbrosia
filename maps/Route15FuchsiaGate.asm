@@ -11,11 +11,11 @@ Route15FuchsiaGateOfficerScript:
 
 Route15FuchsiaGateOfficerText:
 	text "Welcome to"
-	line "FUCHSIA CITY."
+	line "Fuchsia City."
 
 	para "I keep forgetting"
 	line "how to spell"
-	cont "FUCHSIA."
+	cont "Fuchsia."
 
 	para "It's surprisingly"
 	line "unintuitive!"

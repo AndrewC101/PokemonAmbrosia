@@ -23,9 +23,9 @@ ParryLostAMonText:
 	text "Today I attached a"
 	line "rope to my STEELIX"
 	cont "and dragged it up"
-	cont "to BLACKTHORN."
+	cont "to Blackthorn."
 	para "I should compete"
-	line "in JOHTOS"
+	line "in Johtos"
 	cont "strongest man!"
 	done
 

@@ -228,7 +228,7 @@ BugCatcherEdSeenText:
 	para "One day nobody"
 	line "will remember how"
 	cont "magnificent"
-	cont "VIRIDIAN FOREST"
+	cont "Viridian Forest"
 	cont "used to be."
 	done
 
@@ -265,12 +265,12 @@ BugCatcherDougAfterBattleText:
 Route2SignText:
 	text "ROUTE 2"
 
-	para "VIRIDIAN CITY -"
-	line "PEWTER CITY"
+	para "Viridian City -"
+	line "Pewter City"
 	done
 
 Route2DiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
+	text "Digletts's Cave"
 	done
 
 Route2_MapEvents:

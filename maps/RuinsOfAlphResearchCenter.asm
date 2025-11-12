@@ -216,7 +216,7 @@ RuinsOfAlphResearchCenterScientist1Text:
 	line "that the ruler"
 	cont "of the ancient"
 	cont "city was a man"
-	cont "named ATEM."
+	cont "named Atem."
 
 	para "It is believed he"
 	line "was the most"
@@ -303,7 +303,7 @@ RuinsOfAlphResearchCenterScientist2Text_GiveAmbrosia:
 	done
 
 RuinsOfAlphResearchCenterComputerText:
-	text "RUINS OF ALPH"
+	text "Ruins of Alph"
 
 	para "Exploration"
 	line "Year 10"

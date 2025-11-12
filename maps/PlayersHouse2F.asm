@@ -92,7 +92,7 @@ WallaceBeatenRadioPH:
 	text "The war is over!"
 	para "The new Champion"
 	line "<PLAYER> from"
-	cont "NEW BARK TOWN"
+	cont "New Bark Town"
 	cont "defeated Wallace"
 	cont "and has saved us"
 	cont "all!"

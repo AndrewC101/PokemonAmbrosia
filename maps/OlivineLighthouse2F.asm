@@ -36,8 +36,8 @@ SailorHueySeenText:
 	para "But I'll never"
 	line "give up."
 
-	para "This is the BATTLE"
-	line "TOWER, right?"
+	para "This is the Battle"
+	line "Tower, right?"
 	done
 	done
 
@@ -47,7 +47,7 @@ SailorHueyBeatenText:
 
 SailorHueyAfterBattleText:
 	text "Wait, this isn't"
-	line "the BATTLE TOWER!"
+	line "the Battle Tower!"
 	para "I'm not going to"
 	line "get a prize for"
 	cont "all this crap!?"

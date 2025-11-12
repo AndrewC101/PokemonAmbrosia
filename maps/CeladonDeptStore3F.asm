@@ -98,7 +98,7 @@ CeladonDeptStore3FSuperNerdText:
 	para "Oh wait..."
 
 	para "I'm meant to be"
-	line "in GOLDENROD!"
+	line "in Goldenrod!"
 	done
 
 CeladonDeptStore3FDirectoryText:

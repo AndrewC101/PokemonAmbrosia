@@ -69,7 +69,7 @@ DayOfWeekSiblingsHousePokedexText3:
 	line "ROUTE 29"
 
 	para "Wednesday, WESLEY"
-	line "LAKE OF RAGE"
+	line "Lake of Rage"
 
 	para "Thursday, ARTHUR"
 	line "ROUTE 36"
@@ -78,7 +78,7 @@ DayOfWeekSiblingsHousePokedexText3:
 	line "ROUTE 32"
 
 	para "Saturday, SANTOS"
-	line "BLACKTHORN CITY"
+	line "Blackthorn City"
 
 	para "Sunday, SUNNY"
 	line "ROUTE 37"

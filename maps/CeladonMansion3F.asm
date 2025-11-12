@@ -134,7 +134,7 @@ GameFreakProgrammerText:
 	line "breakthrough was"
 	cont "overriding the"
 	cont "player team for"
-	cont "BATTLE ARCADE or"
+	cont "Battle Arcade or"
 	cont "the RPG minigames."
 
 	para "I don't think"

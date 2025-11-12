@@ -876,7 +876,7 @@ Text_TradeRoomClosed:
 
 Text_BattleRoomClosed:
 	text "I'm sorry--the"
-	line "BATTLE MACHINE is"
+	line "Battle Machine is"
 	cont "being adjusted."
 	done
 

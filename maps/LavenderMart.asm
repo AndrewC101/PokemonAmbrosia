@@ -46,9 +46,9 @@ LavenderMartRockerText:
 
 	para "I'm going to"
 	line "hijack the"
-	cont "RADIO TOWER and"
+	cont "Radio Tower and"
 	cont "play my latest"
-	cont "SOLENOIDS album"
+	cont "Solenoids album"
 	cont "on full blast!"
 
 	para "I'll crank it up"

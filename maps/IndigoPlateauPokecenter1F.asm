@@ -105,8 +105,8 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	cont "if you win!"
 
 	para "You should check"
-	line "out the MOVE TUTOR"
-	cont "in GOLDENROD!"
+	line "out the Move Tutor"
+	cont "in Goldenrod!"
 
 	para "He has some moves"
 	line "that will help."

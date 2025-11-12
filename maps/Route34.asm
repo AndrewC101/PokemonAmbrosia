@@ -772,18 +772,18 @@ CooltrainerfKateAfterText:
 	done
 
 Route34IlexForestSignText:
-	text "ILEX FOREST"
+	text "Ilex Forest"
 	line "THROUGH THE GATE"
 	done
 
 Route34SignText:
 	text "ROUTE 34"
 
-	para "GOLDENROD CITY -"
-	line "AZALEA TOWN"
+	para "Goldenrod City -"
+	line "Azalea Town"
 
-	para "ILEX FOREST"
-	line "SOMEWHERE BETWEEN"
+	para "Ilex Forest"
+	line "somewhere between"
 	done
 
 Route34TrainerTipsText:

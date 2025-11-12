@@ -59,7 +59,7 @@ VictoryRoadGateOfficerText:
 
 VictoryRoadGateNotEnoughBadgesText:
 	text "You don't have all"
-	line "the Gym BADGES of"
+	line "the Gym Badges of"
 	cont "Johto."
 
 	para "I'm sorry, but I"
@@ -69,14 +69,14 @@ VictoryRoadGateNotEnoughBadgesText:
 
 VictoryRoadGateEightBadgesText:
 	text "Oh! The eight"
-	line "BADGES of Johto!"
+	line "Badges of Johto!"
 
 	para "You are worthy!"
 	done
 
 VictoryRoadGateLeftBlackBeltText:
 	text "This way leads to"
-	line "MT.SILVER."
+	line "Mt.Silver."
 
 	para "An ancient and"
 	line "forbidden place."

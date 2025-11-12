@@ -242,7 +242,7 @@ OfficerText_FoundTM:
 
 OfficerText_AvoidGrass:
 	text "You heading to"
-	line "the LAKE OF RAGE?"
+	line "the Lake of Rage?"
 
 	para "It is a beautiful"
 	line "place but it can"

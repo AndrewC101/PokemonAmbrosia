@@ -23,7 +23,7 @@ SaffronPokecenter1FYoungsterScript:
 
 SaffronPokecenter1FTeacherText:
 	text "For a long time"
-	line "SAFFRON tried to"
+	line "Saffron tried to"
 	cont "innovate by"
 	cont "charging money"
 	cont "in #CENTERS."

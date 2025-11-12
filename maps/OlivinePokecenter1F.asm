@@ -24,10 +24,10 @@ OlivinePokecenter1FTeacherScript:
 OlivinePokecenter1FFisherText:
 	text "I'm devising"
 	line "strategies for"
-	cont "BATTLE FRONTIER."
+	cont "Battle Frontier."
 
 	para "I tried the"
-	line "BATTLE TRIAL"
+	line "Battle Trial"
 	cont "but didn't get"
 	cont "very far."
 	done

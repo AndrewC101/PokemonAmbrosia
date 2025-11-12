@@ -138,7 +138,7 @@ PicnickerHopeSeenText:
 	text "Did you come from"
 	line "MT MOON?"
 	para "Did you see that"
-	line "girl GREEN."
+	line "girl Green."
 	para "She is really"
 	line "strong and pretty!"
 	para "I am her biggest"
@@ -151,7 +151,7 @@ PicnickerHopeBeatenText:
 	done
 
 PicnickerHopeAfterBattleText:
-	text "GREEN is friends"
+	text "Green is friends"
 	line "with Blue and Red!"
 	para "I wish she would"
 	line "be friends with me"
@@ -180,7 +180,7 @@ PicnickerSharonAfterBattleText:
 	done
 
 MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."

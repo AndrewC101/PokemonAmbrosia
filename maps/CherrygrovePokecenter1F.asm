@@ -23,11 +23,11 @@ CherrygrovePokecenter1FTeacherScript:
 
 CherrygrovePokecenter1FFisherText:
 	text "I went to"
-	line "GOLDENROD and"
+	line "Goldenrod and"
 	cont "spent 6 months of"
 	cont "savings on an"
-	cont "EVIOLITE."
-	para "Now my MUDKIP will"
+	cont "Eviolite."
+	para "Now my Mudkip will"
 	line "always be"
 	cont "adorable."
 	para "Not to mention"
@@ -39,7 +39,7 @@ CherrygrovePokecenter1FGentlemanText:
 	line "admiring this"
 	cont "prime level 20"
 	cont "RATICATE."
-	para "TEAM ROCK will pay"
+	para "Rockets will pay"
 	line "a pretty penny for"
 	cont "it I have no"
 	cont "doubt."

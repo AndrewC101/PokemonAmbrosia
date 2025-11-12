@@ -221,10 +221,10 @@ LassMichelleSeenText:
 	line "is the only"
 	cont "girls only Gym."
 
-	para "Except GOLDENROD."
+	para "Except Goldenrod."
 
 	para "And I guess maybe"
-	line "OLIVINE."
+	line "Olivine."
 	done
 
 LassMichelleBeatenText:

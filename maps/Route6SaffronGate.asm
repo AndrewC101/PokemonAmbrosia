@@ -14,8 +14,8 @@ Route6SaffronGuardScript:
     jumptextfaceplayer Route6SaffronGuardWelcomeText
 
 Route6SaffronGuardWelcomeText:
-	text "Welcome to SAFFRON"
-	line "CITY."
+	text "Welcome to Saffron"
+	line "City."
 
 	para "The largest and"
 	line "most brilliant"

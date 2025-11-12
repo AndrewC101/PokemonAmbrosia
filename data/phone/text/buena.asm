@@ -87,7 +87,7 @@ BuenaPhoneRocketText:
 	para "be cracking silly"
 	line "gag greetings!"
 
-	para "The RADIO TOWER is"
+	para "The Radio Tower is"
 	line "in deep trouble!"
 
 	para "<PLAY_G>, you'd"
@@ -120,7 +120,7 @@ BuenaPhoneWentOutWithBenText:
 BuenaPhoneReceptionistText:
 	text "You know the"
 	line "receptionist at"
-	cont "the RADIO TOWER?"
+	cont "the Radio Tower?"
 
 	para "'Welcome,' is all"
 	line "she ever says."
@@ -129,7 +129,7 @@ BuenaPhoneReceptionistText:
 	line "the chattiest"
 
 	para "person at the"
-	line "RADIO TOWER."
+	line "Radio Tower."
 
 	para "So she must be"
 	line "holding back."
@@ -231,9 +231,9 @@ BuenaPhoneGotAColdText:
 
 BuenaPhoneRadioCardQuestionsText:
 	text "Hey, <PLAY_G>."
-	line "You won that RADIO"
+	line "You won that Radio"
 
-	para "CARD by beating"
+	para "Card by beating"
 	line "the quiz at the"
 
 	para "reception desk,"
@@ -285,9 +285,9 @@ BuenaPhonePikachuFanClubText:
 
 BuenaPhoneRadioTowerDirectorText:
 	text "Guess what?"
-	line "The RADIO TOWER's"
+	line "The Radio Tower's"
 
-	para "DIRECTOR is a big"
+	para "Director is a big"
 	line "fan of TV!"
 
 	para "A while ago, a"
@@ -389,19 +389,19 @@ BuenaPhoneStarterPokemonText:
 
 BuenaPhoneCompanyVacationText:
 	text "Guess what? All of"
-	line "us from the RADIO"
+	line "us from the Radio"
 
-	para "TOWER are going on"
+	para "Tower are going on"
 	line "a company vacation"
 
-	para "to the RADIO TOWER"
-	line "in LAVENDER."
+	para "to the Radio Tower"
+	line "in Lavender."
 
 	para "We're wasting our"
 	line "vacation on a trip"
 
-	para "to another RADIO"
-	line "TOWER?"
+	para "to another Radio"
+	line "Tower?"
 
 	para "I'd much rather go"
 	line "to the beach!"
@@ -451,9 +451,9 @@ BuenaPhoneGoingShoppingText:
 	cont "soon."
 
 	para "It'll be great if"
-	line "GOLDENROD DEPT."
+	line "Goldenrod Dept."
 
-	para "STORE has a sale"
+	para "Store has a sale"
 	line "on when we go…"
 
 	para "<PLAY_G>, maybe we"
@@ -517,9 +517,9 @@ BuenaPhoneCoopedUpInRadioTowerAnswerText:
 	line "outside today?"
 
 	para "When you're cooped"
-	line "up in the RADIO"
+	line "up in the Radio"
 
-	para "TOWER as much as I"
+	para "Tower as much as I"
 	line "am, you lose touch"
 
 	para "with the outside."

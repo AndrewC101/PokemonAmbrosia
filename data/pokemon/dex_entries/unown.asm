@@ -5,6 +5,6 @@
 	next "represents a"
 	next "letter."
 
-	page "HIDDEN POWER"
+	page "Hidden Power"
 	next "boosted. Immune"
-	next "to GROUND.@"
+	next "to Ground.@"

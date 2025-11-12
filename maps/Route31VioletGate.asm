@@ -14,7 +14,7 @@ Route31VioletGateCooltrainerFScript:
 	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
 Route31VioletGateOfficerText:
-	text "Welcome to VIOLET"
+	text "Welcome to Violet"
 	line "CITY."
 
 	para "This used to be a"
@@ -27,7 +27,7 @@ Route31VioletGateOfficerText:
 
 Route31VioletGateCooltrainerFText:
 	text "Be careful in"
-	line "SPROUT TOWER."
+	line "Sprout Tower."
 
 	para "They recently"
 	line "discovered it"

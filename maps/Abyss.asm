@@ -306,7 +306,7 @@ AbyssSageScript1:
     end
 
 AbyssSage1IntroText:
-	text "The people of ALPH"
+	text "The people of Alph"
 	line "worship ARCEUS."
 	para "But we believed"
 	line "ARCEUS was the"
@@ -463,7 +463,7 @@ AbyssSage2PassedText:
 	cont "curse and"
 	cont "destroyed the"
 	cont "world."
-	para "But ATEM the great"
+	para "But Atem the great"
 	line "Pharaoh put an end"
 	cont "to it."
 	para "Perhaps you can do"

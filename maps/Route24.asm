@@ -83,7 +83,7 @@ Route24RocketSeenText:
 
 	para "I have lost all"
 	line "contact with the"
-	cont "Johto ROCKETS."
+	cont "Johto Rockets."
 
 	para "They were weak"
 	line "and deserved what"
@@ -92,8 +92,8 @@ Route24RocketSeenText:
 	para "I will carry out"
 	line "my mission."
 
-	para "To use the RADIO"
-	line "TOWER to control"
+	para "To use the Radio"
+	line "Tower to control"
 	cont "Hoenn #mon."
 
 	para "I'm sure you know"
@@ -108,7 +108,7 @@ Route24RocketSeenText:
 	para "MEWTWO."
 
 	para "It used to dwell"
-    line "in CERULEAN CAVE."
+    line "in Cerulean Cave."
 
     para "I will find it."
 
@@ -120,23 +120,23 @@ Route24RocketSeenText:
     cont "in the square"
     cont "pool in the"
     cont "centre of the"
-    cont "CERULEAN Gym."
+    cont "Cerulean Gym."
 
     para "But before you"
     line "depart..."
 
-    para "The ROCKETS send"
+    para "The Rockets send"
     line "their regards."
 	done
 
 Route24RocketBeatenText:
 	text "I can see why"
-	line "the ROCKETS"
+	line "the Rockets"
 	cont "lost to you."
 	done
 
 Route24RocketAfterBattleText:
-	text "TEAM ROCKET used"
+	text "Team Rocket used"
 	line "to have a true"
 	cont "leader."
 
@@ -152,7 +152,7 @@ Route24RocketAfterBattleText:
 
 	para "Together we"
 	line "would reinvent"
-	cont "TEAM ROCKET."
+	cont "Team Rocket."
 
 	para "But alas the"
 	line "world has moved"

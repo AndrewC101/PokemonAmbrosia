@@ -51,7 +51,7 @@ SaffronGymGiovanniScript:
 
 GiovanniIntroText:
     text "Welcome to the"
-    line "true SAFFRON Gym."
+    line "true Saffron Gym."
 
     para "You don't need"
     line "special powers"
@@ -231,7 +231,7 @@ BlackbeltJonnyAfterBattleText:
 
     para "That's how things"
     line "are done here in"
-    cont "SAFFRON."
+    cont "Saffron."
     done
 
 TrainerPsychicJamie:

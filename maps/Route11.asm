@@ -248,7 +248,7 @@ PsychicHermanBeatenText:
 PsychicHermanAfterBattleText:
 	text "I need to get that"
 	line "money back or that"
-	cont "new SAFFRON Gym"
+	cont "new Saffron Gym"
 	cont "Leader will come"
 	cont "looking for me!"
 	done

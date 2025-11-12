@@ -78,11 +78,11 @@ Route34IlexForestGateTeacherReturnsMovement:
 	step_end
 
 Route34IlexForestGateTeacherText:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "an ancient and"
 	cont "sacred place."
 
-	para "GOLDENROD CITY"
+	para "Goldenrod City"
 	line "keeps expanding"
 	cont "but we will never"
 	cont "let them damage"
@@ -91,7 +91,7 @@ Route34IlexForestGateTeacherText:
 
 Route34IlexForestGateTeacher_ForestIsRestless:
 	text "Something's wrong"
-	line "in ILEX FOREST…"
+	line "in Ilex Forest…"
 
 	para "The protector is"
 	line "angry!"

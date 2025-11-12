@@ -163,7 +163,7 @@ SlowpokeWellB1FKurtText:
 	para "I'll be fine."
 
 	para "But I can't fight"
-	line "the ROCKETS like"
+	line "the Rockets like"
 	cont "this."
 
 	para "You must do it."
@@ -183,7 +183,7 @@ KurtLeaveSlowpokeWellText:
 	text "You did it!"
 
 	para "I seen the"
-	line "ROCKETS run"
+	line "Rockets run"
 	cont "away with fear"
 	cont "in their eyes."
 

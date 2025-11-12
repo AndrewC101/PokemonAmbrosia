@@ -216,10 +216,10 @@ Route19Fisher1Text:
 	cont "construction."
 
 	para "If you want to get"
-	line "to CINNABAR, you'd"
+	line "to Cinnabar, you'd"
 
 	para "better go south"
-	line "from PALLET TOWN."
+	line "from Pallet Town."
 	done
 
 Route19Fisher1Text_RocksCleared:
@@ -250,17 +250,17 @@ Route19Fisher2Text_RocksCleared:
 Route19SignText:
 	text "ROUTE 19"
 
-	para "FUCHSIA CITY -"
-	line "SEAFOAM ISLANDS"
+	para "Fuchsia City -"
+	line "Seafoam Islands"
 	done
 
 CarefulSwimmingSignText:
 	text "Please be careful"
 	line "if you are swim-"
-	cont "ming to SEAFOAM"
-	cont "ISLANDS."
+	cont "ming to Seafoam"
+	cont "Islands."
 
-	para "FUCHSIA POLICE"
+	para "Fuchsia Police"
 	done
 
 Route19_MapEvents:

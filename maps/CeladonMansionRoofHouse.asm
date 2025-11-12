@@ -102,7 +102,7 @@ CeladonAndrewFinalText:
     cont "enjoying the game."
 
     para "I have a house at"
-    line "MT SILVER."
+    line "Mt Silver."
 
     para "Come visit when"
     line "you get there."

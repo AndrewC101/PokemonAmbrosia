@@ -159,7 +159,7 @@ AcademyEarlSpinMovement:
 	step_end
 
 AcademyEarlIntroText:
-	text "I am EARL but you"
+	text "I am Earl but you"
 	line "will call me"
 	cont "SENSEI."
 	para "Now tell me, do"

@@ -467,7 +467,7 @@ PokemaniacIssacSeenText:
 	text "After a month"
 	line "working as a"
 	cont "cleaner in the"
-	cont "DEPT.STORE I"
+	cont "Dept.Store I"
 	cont "was finally able"
 	cont "to buy a"
 	cont "SUN STONE."

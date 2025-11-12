@@ -22,7 +22,7 @@ CeruleanMart_CooltrainerF:
 
 CeruleanMart_CooltrainerMText:
 	text "I went into"
-	line "CERULEAN CAVE"
+	line "Cerulean Cave"
 	cont "last month."
 
 	para "I've not been"

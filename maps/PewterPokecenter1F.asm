@@ -48,7 +48,7 @@ PewterPokecenter1FTeacherText:
 	cont "back in those"
 	cont "space rocks."
 
-	para "The MUSEUM is"
+	para "The Museum is"
 	line "sealed off so"
 	cont "we will never"
 	cont "know."
@@ -61,7 +61,7 @@ PewterMawileText:
 
 PewterPokecenter1FBugCatcherText:
 	text "The remains of"
-	line "VIRIDIAN FOREST"
+	line "Viridian Forest"
 	cont "are south of here."
 
 	para "It used to be"

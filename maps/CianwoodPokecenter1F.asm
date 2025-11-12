@@ -52,7 +52,7 @@ CianwoodPokecenter1FLassText:
 
 	para "Like those Dragon"
 	line "trainers in"
-	cont "BLACKTHORN CITY."
+	cont "Blackthorn City."
 	done
 
 CianwoodGymGuideText:

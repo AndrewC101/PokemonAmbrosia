@@ -18,7 +18,7 @@ Route42EcruteakGateOfficerText:
 	cont "people."
 	para "Like you, hello!"
 	para "Did you like"
-	line "ECRUTEAK?"
+	line "Ecruteak?"
 	para "It's a beautiful"
 	line "place."
 	para "I wake up every"

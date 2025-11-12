@@ -94,7 +94,7 @@ Route32Pokecenter1FFishingGuruText_After:
 
 Route32Pokecenter1FCooltrainerFText:
 	text "I went too deep"
-	line "into UNION CAVE."
+	line "into Union Cave."
 
 	para "I needed a"
 	line "#mon that"

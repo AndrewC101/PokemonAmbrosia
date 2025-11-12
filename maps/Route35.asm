@@ -438,7 +438,7 @@ PicnickerBrookeAfterBattleText:
 
 PicnickerKimSeenText:
 	text "I tried to join"
-	line "the GOLDENROD Gym"
+	line "the Goldenrod Gym"
 	cont "but they said my"
 	cont "#mon was too"
 	cont "violent!"

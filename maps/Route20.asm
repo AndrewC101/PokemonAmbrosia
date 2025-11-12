@@ -222,7 +222,7 @@ CinnabarGymSignText:
 	text "What does this"
 	line "sign say?"
 
-	para "CINNABAR Gym"
+	para "Cinnabar Gym"
 	line "Leader: Blaine"
 	done
 	

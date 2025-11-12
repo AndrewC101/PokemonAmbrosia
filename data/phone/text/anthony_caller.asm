@@ -1,6 +1,6 @@
 AnthonyMonAteSomeBerriesText:
 	text "A trainer came out"
-	line "from UNION CAVE"
+	line "from Union Cave"
 	cont "the other day."
 	para "He was huge, a"
 	line "real man!"
@@ -81,7 +81,7 @@ AnthonySwarmText:
 
 AnthonyWasntPayingAttentionText:
 	text "I thought I saw a"
-	line "ROCKET again the"
+	line "Rocket again the"
 	cont "other day."
 	para "I stared him down."
 	para "Then I tore of my"
@@ -116,7 +116,7 @@ AnthonyHurryText:
 	text "This is it!"
 	para "DUNSPARCE are"
 	line "swarming all over"
-	cont "DARK CAVE."
+	cont "Dark Cave."
 	para "So much quality"
 	line "protein going for"
 	cont "free!"

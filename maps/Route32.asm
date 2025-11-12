@@ -556,7 +556,7 @@ YoungsterGordonAfterText:
 	line "looking for"
 	cont "strong gear"
 	cont "at the"
-	cont "RUINS OF ALPH."
+	cont "Ruins of Alph."
 	done
 
 CamperRolandSeenText:
@@ -595,7 +595,7 @@ CamperRolandAfterText:
 PicnickerLiz1SeenText:
 	text "I only wanted"
 	line "to visit the"
-	cont "RUINS OF ALPH."
+	cont "Ruins of Alph."
 
 	para "But I took a"
 	line "wrong turn and"
@@ -727,17 +727,17 @@ FriedaNotFridayText:
 Route32SignText:
 	text "ROUTE 32"
 
-	para "VIOLET CITY -"
-	line "AZALEA TOWN"
+	para "Violet City -"
+	line "Azalea Town"
 	done
 
 Route32RuinsSignText:
-	text "RUINS OF ALPH"
+	text "Ruins of Alph"
 	line "EAST ENTRANCE"
 	done
 
 Route32UnionCaveSignText:
-	text "UNION CAVE"
+	text "Union Cave"
 	line "AHEAD"
 	done
 	
@@ -882,15 +882,15 @@ Route32CrystalText_GotBadge:
 
     para "I found something"
     line "unsettling about"
-    cont "VIOLET."
+    cont "Violet."
 
-    para "It has DARK CAVE"
+    para "It has Dark Cave"
     line "to the east,"
-    cont "RUINS of ALPH"
+    cont "Ruins of Alph"
     cont "to the west and"
     cont "there is a dark"
     cont "underground to"
-    cont "the SPROUT TOWER."
+    cont "the Sprout Tower."
 
     para "It's like it's"
     line "surrounded by"
@@ -956,9 +956,9 @@ Route32CrystalText_KeepItUp:
     cont "different!"
 
     para "I tried exploring"
-    line "NORTH of NEW BARK"
-    cont "town in the"
-    cont "DARK CAVE. But it"
+    line "north of New Bark"
+    cont "Town in the"
+    cont "Dark Cave. But it"
     cont "was too scary!"
 
     para "I'm sure there is"
@@ -972,8 +972,8 @@ Route32CrystalText_KeepItUp:
     cont "strong."
 
     para "Oh and don't go"
-    line "to RUINS OF"
-    cont "ALPH at night."
+    line "to Ruins of"
+    cont "Alph at night."
 
     para "There is a"
     line "scary guy there"

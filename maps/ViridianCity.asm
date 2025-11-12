@@ -145,7 +145,7 @@ ViridianCityGrampsNearGymText:
 
 	para "Blue is currently"
 	line "away visiting"
-	cont "CINNABAR."
+	cont "Cinnabar."
 	done
 
 ViridianCityGrampsNearGymBlueReturnedText:
@@ -203,7 +203,7 @@ ViridianCityDreamEaterFisherGotDreamEaterText:
 	done
 
 ViridianCityYoungsterText:
-	text "VIRIDIAN FOREST"
+	text "Viridian Forest"
 	line "is a husk of"
 	cont "what it once was."
 
@@ -216,14 +216,14 @@ ViridianCityYoungsterText:
 	done
 
 ViridianCitySignText:
-	text "VIRIDIAN CITY"
+	text "Viridian City"
 
 	para "The Eternally"
 	line "Green Paradise"
 	done
 
 ViridianGymSignText:
-	text "VIRIDIAN CITY"
+	text "Viridian City"
 	line "#mon Gym"
 	cont "Leader: …"
 
@@ -234,15 +234,15 @@ ViridianGymSignText:
 	done
 
 ViridianCityWelcomeSignText:
-	text "WELCOME TO"
-	line "VIRIDIAN CITY,"
+	text "Welcome to"
+	line "Viridian City,"
 
-	para "THE GATEWAY TO"
-	line "INDIGO PLATEAU"
+	para "The gateway to the"
+	line "Indigo Plateau"
 	done
 
 TrainerHouseSignText:
-	text "Kanto WAR ROOM"
+	text "Kanto War Room"
 
 	para "The hub for"
 	line "military strategy."

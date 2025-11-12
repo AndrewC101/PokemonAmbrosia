@@ -62,7 +62,7 @@ BirdKeeperBorisSeenText:
 	text "I don't have a"
 	line "bike so I used"
 	cont "my #mon to"
-	cont "FLY to FUCHSIA."
+	cont "Fly to Fuchsia."
 
 	para "Bikes are for"
 	line "the poor."
@@ -108,8 +108,8 @@ BirdKeeperBobAfterBattleText:
 Route18SignText:
 	text "ROUTE 18"
 
-	para "CELADON CITY -"
-	line "FUCHSIA CITY"
+	para "Celadon City -"
+	line "Fuchsia City"
 	done
 
 Route18_MapEvents:

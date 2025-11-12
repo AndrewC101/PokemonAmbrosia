@@ -15,9 +15,9 @@ Route29Route46GateYoungsterScript:
 
 Route29Route46GateOfficerText:
 	text "This way leads"
-	line "through DARK CAVE"
-	cont "to BLACKTHORN"
-	cont "CITY."
+	line "through Dark Cave"
+	cont "to Blackthorn"
+	cont "City."
 	para "There are very"
 	line "powerful trainers"
 	cont "that direction."

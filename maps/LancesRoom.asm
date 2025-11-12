@@ -405,7 +405,7 @@ LancesRoomNoisyText:
 	done
 
 LancesRoomElmWellDoneText:
-    text "WELL DONE"
+    text "Well done"
     line "<PLAYER>!"
     done
 

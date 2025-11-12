@@ -758,11 +758,11 @@ LuckyEggDesc:
 
 CardKeyDesc:
 	db   "Opens shutters in"
-	next "the RADIO TOWER.@"
+	next "the Radio Tower.@"
 
 MachinePartDesc:
 	db   "A machine part for"
-	next "the POWER PLANT.@"
+	next "the Power Plant.@"
 
 EggTicketDesc:
 	db   "May use at Golden-"

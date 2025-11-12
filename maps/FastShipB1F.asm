@@ -496,7 +496,7 @@ TeacherShirleyBeatenText:
 TeacherShirleyAfterBattleText:
 	text "We're on a field"
 	line "trip to the RUINS"
-	cont "outside VIOLET."
+	cont "outside Violet."
 
 	para "There we will find"
 	line "some great power."
@@ -506,7 +506,7 @@ TeacherShirleyAfterBattleText:
 
 SchoolboyNateSeenText:
 	text "Do you know the"
-	line "RUINS OF ALPH?"
+	line "Ruins of Alph?"
 
 	para "We are going"
 	line "there."

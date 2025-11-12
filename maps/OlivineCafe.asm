@@ -36,7 +36,7 @@ OlivineCafeStrengthSailorText_GotStrength:
 	cont "STRENGTH."
 
 	para "You need to visit"
-	line "BATTLE FRONTIER!"
+	line "Battle Frontier!"
 
 	para "It is all I"
 	line "need in life."

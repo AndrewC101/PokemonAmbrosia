@@ -124,7 +124,7 @@ OlivineGymStatue:
 
 Jasmine_SteelTypeIntro:
 	text "Welcome to"
-	line "OLIVINE Gym."
+	line "Olivine Gym."
 
 	para "You have a quiet"
 	line "strength that"
@@ -160,7 +160,7 @@ Jasmine_BetterTrainer:
 	line "than me."
 
 	para "I confer upon"
-	line "you this BADGE."
+	line "you this Badge."
 	done
 
 Text_ReceivedMineralBadge:
@@ -197,7 +197,7 @@ JasmineBeatChuckText:
 	text "You have done well"
 	line "but I'm afraid you"
 	cont "also must defeat"
-	cont "Chuck in CIANWOOD"
+	cont "Chuck in Cianwood"
 	cont "to increase your"
 	cont "level caps."
 	para "It should not be"
@@ -261,7 +261,7 @@ OlivineGymGuideWinText:
 OlivineGymGuidePreText:
 	text "Jasmine, the Gym"
 	line "Leader, is at the"
-	cont "LIGHTHOUSE."
+	cont "Lighthouse."
 
 	para "She's been tending"
 	line "to a sick #mon."

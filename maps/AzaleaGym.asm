@@ -209,7 +209,7 @@ Text_ReceivedHiveBadge:
 BugsyText_HiveBadgeSpeech:
 	text "Do you know the"
 	line "benefits of HIVE-"
-	cont "BADGE?"
+	cont "Badge?"
 
 	para "You can train"
 	line "#mon up to"
@@ -288,7 +288,7 @@ BugCatcherJoshSeenText:
 	para "Bugsy could have"
 	line "sliced the door"
 	cont "down and killed"
-	cont "those ROCKETS."
+	cont "those Rockets."
 
 	para "But he was"
 	line "asleep and I"

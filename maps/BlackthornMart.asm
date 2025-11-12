@@ -35,7 +35,7 @@ BlackthornMartCooltrainerMText:
 
 	para "She is so smart!"
 
-	para "DRAGONS are"
+	para "Dragons are"
 	line "also weak to"
 	cont "FAIRY and Dragon"
 	cont "but I don't have"

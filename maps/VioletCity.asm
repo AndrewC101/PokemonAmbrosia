@@ -252,7 +252,7 @@ Text_HereTeacherIAm:
 	done
 
 VioletCityLassText:
-	text "SPROUT TOWER"
+	text "Sprout Tower"
 	line "is full of GHOST"
     cont "#mon."
 
@@ -283,7 +283,7 @@ VioletCitySuperNerdText:
 
 VioletCityGrampsText:
 	text "The SAGES at"
-	line "SPROUT TOWER"
+	line "Sprout Tower"
 	cont "always talk of"
 	cont "fighting the"
 	cont "darkness."
@@ -319,14 +319,14 @@ VioletCityYoungsterText:
 	done
 
 VioletCitySignText:
-	text "VIOLET CITY"
+	text "Violet City"
 
 	para "The City of"
 	line "Nostalgic Scents"
 	done
 
 VioletGymSignText:
-	text "VIOLET CITY"
+	text "Violet City"
 	line "#mon Gym"
 	cont "Leader: Falkner"
 
@@ -335,15 +335,15 @@ VioletGymSignText:
 	done
 
 SproutTowerSignText:
-	text "SPROUT TOWER"
+	text "Sprout Tower"
 
 	para "Experience the"
 	line "Way of #mon"
 	done
 
 EarlsPokemonAcademySignText:
-	text "EARL'S #mon"
-	line "ACADEMY"
+	text "Earl's #mon"
+	line "Academy"
 	done
 
 VioletCityFieldMon1Script:

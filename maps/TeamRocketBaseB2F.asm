@@ -1072,8 +1072,8 @@ RocketBaseLanceWhirlpoolText:
 	cont "rough waters."
 
 	para "So long as one"
-	line "has the BADGE"
-	cont "of the MAHOGANY"
+	line "has the Badge"
+	cont "of the Mahogany"
 	cont "Gym."
 	done
 
@@ -1151,8 +1151,8 @@ GruntM19AfterBattleText:
 	cont "younger."
 
 	para "One day I ran"
-	line "into some TEAM"
-	cont "ROCKET members."
+	line "into some Team"
+	cont "Rocket members."
 
 	para "The rest is"
 	line "history."

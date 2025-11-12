@@ -29,7 +29,7 @@ OlivineHouseBetaTeacherText:
 	line "got sick, the"
 
 	para "PHARMACIST in"
-	line "ECRUTEAK made some"
+	line "Ecruteak made some"
 	cont "medicine for me."
 	done
 

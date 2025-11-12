@@ -142,7 +142,7 @@ ClefairyFleeMovement:
 	step_end
 
 DontLitterSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 	line "DON'T LITTER"
 	done
 	
@@ -211,10 +211,10 @@ GreenSeenText:
     line "trainer for 5"
     cont "years."
 
-    para "I'm from PALLET"
-    line "TOWN."
+    para "I'm from Pallet"
+    line "Town."
 
-    para "My name is GREEN."
+    para "My name is Green."
 
     para "I started my"
     line "training a few"

@@ -120,16 +120,16 @@ Script_ChooseChallenge:
 	dba .MirrorText
 	dbw BANK(@), NULL
 .MirrorText:
-	db "NORMAL@"
-	db "MIRROR@"
+	db "Normal@"
+	db "Mirror@"
 
 MirrorBattlesText:
     text "Which kind of"
     line "battles do you"
     cont "want."
 
-    para "NORMAL battles"
-    line "or MIRROR battles?"
+    para "Normal battles"
+    line "or Mirror battles?"
     prompt
 
 Script_ResumeBattleTowerChallenge:
@@ -327,25 +327,25 @@ MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent:
 	step_end
 
 Text_BattleTowerWelcomesYou:
-	text "BATTLE TOWER"
+	text "Battle Tower"
 	line "welcomes you!"
 
 	para "I could show you"
-	line "to a BATTLE ROOM."
+	line "to a Battle Room."
 	done
 
 Text_WantToGoIntoABattleRoom:
 	text "Want to go into a"
-	line "BATTLE ROOM?"
+	line "Battle Room?"
 	done
 
 Text_RightThisWayToYourBattleRoom:
 	text "Right this way to"
-	line "your BATTLE ROOM."
+	line "your Battle Room."
 	done
 
 Text_BattleTowerIntroduction_2:
-	text "BATTLE TOWER is"
+	text "Battle Tower is"
 	line "the most popular"
 	cont "extreme #mon"
 	cont "challenge."
@@ -364,7 +364,7 @@ Text_BattleTowerIntroduction_2:
 	line "rigorous test of"
 	cont "your knowledge and"
 	cont "skill you can"
-	cont "select MIRROR mode"
+	cont "select Mirror mode"
 	cont "where you and your"
 	cont "enemy always have"
 	cont "the same team, you"
@@ -447,11 +447,11 @@ Text_PleaseStepThisWay:
 Text_WouldYouLikeToHearAboutTheBattleTower:
 	text "Would you like to"
 	line "hear about the"
-	cont "BATTLE TOWER?"
+	cont "Battle Tower?"
 	done
 
 Text_ReadBattleTowerRules:
-	text "BATTLE TOWER rules"
+	text "Battle Tower rules"
 	line "are written here."
 
 	para "Read the rules?"
@@ -464,11 +464,11 @@ Text_BattleTowerRules:
 	para "You must win"
 	line "four full battles."
 
-	para "NORMAL battles"
+	para "Normal battles"
 	line "use your own"
 	cont "party."
 
-	para "MIRROR battles"
+	para "Mirror battles"
 	line "use a copy of"
 	cont "the enemy party."
 
@@ -481,7 +481,7 @@ Text_BattleTower_LeftWithoutSaving:
 	line "You didn't SAVE"
 
 	para "before exiting"
-	line "the BATTLE ROOM."
+	line "the Battle Room."
 
 	para "I'm awfully sorry,"
 	line "but your challenge"
@@ -505,7 +505,7 @@ Text_NextUpOpponentNo:
 
 Text_SaveBeforeEnteringBattleRoom:
 	text "Before entering"
-	line "the BATTLE ROOM,"
+	line "the Battle Room,"
 
 	para "your progress will"
 	line "be saved."
@@ -525,15 +525,15 @@ Text_SaveBeforeReentry:
 	done
 
 Text_CancelYourBattleRoomChallenge:
-	text "Cancel your BATTLE"
-	line "ROOM challenge?"
+	text "Cancel your Battle"
+	line "Room challenge?"
 	done
 
 Text_WeveBeenWaitingForYou:
 	text "We've been waiting"
 	line "for you. This way"
 
-	para "to a BATTLE ROOM,"
+	para "to a Battle Room,"
 	line "please."
 	done
 
@@ -602,7 +602,7 @@ Text_BattleTowerGranny:
 
 Text_BattleTowerBugCatcher:
 	text "I only play on"
-	line "MIRROR mode."
+	line "Mirror mode."
 
 	para "With my keen"
 	line "intellectual"

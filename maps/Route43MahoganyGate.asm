@@ -24,14 +24,14 @@ Route43MahoganyGateOfficer:
 
 Route43MahoganyGateOfficerText:
 	text "If you are heading"
-	line "to LAKE OF RAGE"
+	line "to Lake of Rage"
 	cont "you should be"
 	cont "careful."
 
 	para "The GYARADOS are"
 	line "violent and I"
 	cont "swear I have"
-	cont "seen ROCKETS"
+	cont "seen Rockets"
 	cont "about the place."
 
 	para "These things"
@@ -39,10 +39,10 @@ Route43MahoganyGateOfficerText:
 	done
 
 Route43MahoganyGateOfficerRocketsClearedText:
-	text "The LAKE OF RAGE"
+	text "The Lake of Rage"
 	line "is back to"
 	cont "normal and the"
-	cont "ROCKETS are gone."
+	cont "Rockets are gone."
 
 	para "Things are safe"
 	line "again."

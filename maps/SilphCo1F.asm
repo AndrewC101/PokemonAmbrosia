@@ -29,7 +29,7 @@ SilphCoOfficerScript:
 
 SilphCoReceptionistText:
 	text "Welcome. This is"
-	line "SILPH CO.'s HEAD"
+	line "Silph Co.'s HEAD"
 	cont "OFFICE BUILDING."
 	done
 
@@ -40,7 +40,7 @@ SilphCoOfficerText:
 
 	para "We have stepped"
 	line "up security since"
-	cont "the ROCKET attack"
+	cont "the Rocket attack"
 	cont "five years ago."
 
 	para "But since you"

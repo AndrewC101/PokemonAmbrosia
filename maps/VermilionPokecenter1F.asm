@@ -68,7 +68,7 @@ InvadedVermilionPokecenter1FSailorText:
 
 VermilionPokecenter1FBugCatcherText:
 	text "I was going to"
-	line "visit VIRIDIAN"
+	line "visit Viridian"
 	cont "through DIGLETT'S"
 	cont "CAVE."
 

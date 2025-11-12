@@ -368,7 +368,7 @@ James:
     done
 
 BlastOffAtThe:
-	text "Team ROCKET blast"
+	text "Team Rocket blast"
 	line "off at the speed"
 	cont "of light."
 	done
@@ -431,8 +431,8 @@ MeowthWin:
     done
 
 BlastingOffAgain:
-	text "Looks like TEAM"
-	line "ROCKETS blasting"
+	text "Looks like Team"
+	line "Rocket's blasting"
 	cont "off again..."
 	done
 

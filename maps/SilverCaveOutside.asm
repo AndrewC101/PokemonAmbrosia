@@ -163,7 +163,7 @@ SilverCaveOutsideHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
 
 MtSilverSignText:
-	text "MT.SILVER"
+	text "Mt.Silver"
 	done
 
 SilverCaveOutsideBlockScript:
@@ -513,7 +513,7 @@ SilverCaveCrystalFriendshipText:
     line "time all three of"
     cont "us met?"
 
-    para "It was at OLIVINE."
+    para "It was at Olivine."
 
     para "<RIVAL> was"
     line "expressing his"
@@ -606,7 +606,7 @@ SilverCaveSilverWhatYouMeanText:
     text "Why would I"
     line "go!"
 
-    para "NEW BARK town"
+    para "New Bark Town"
     line "isn't my home."
 
     para "Would you miss"
@@ -1070,7 +1070,7 @@ HoenWarCh3HeroText:
     cont "from you."
 
     para "You are the Gym"
-    line "Leader of FUCHSIA."
+    line "Leader of Fuchsia."
 
     para "Janine."
 

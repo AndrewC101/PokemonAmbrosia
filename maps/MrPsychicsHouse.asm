@@ -27,7 +27,7 @@ MrPsychicText1:
 
 	para "So I sent my"
 	line "daughter to"
-	cont "CIANWOOD to"
+	cont "Cianwood to"
 	cont "live peacefully."
 
 	para "She is very"

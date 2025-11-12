@@ -158,29 +158,29 @@ CeladonCityGramps2Text:
 
 CeladonCityYoungster1Text:
 	text "People from"
-	line "SAFFRON are always"
+	line "Saffron are always"
 	cont "talking about"
-	cont "how SAFFRON is"
+	cont "how Saffron is"
 	cont "the biggest and"
 	cont "most wealthy city."
 
 	para "I'm pretty sure"
-	line "CELADON is"
+	line "Celadon is"
 	cont "bigger."
 
 	para "And there's lots"
 	line "of money floating"
 	cont "around the GAME"
-	cont "CORNER and DEPT"
-	cont "STORE."
+	cont "CORNER and Dept"
+	cont "Store."
 
 	para "We are the best!"
 	done
 
 CeladonCityYoungster2Text:
-	text "TEAM ROCKET used"
+	text "Team Rocket used"
 	line "to operate in"
-	cont "the GAME CORNER."
+	cont "the Game Corner."
 
 	para "There was a guy"
 	line "who would hide"
@@ -190,19 +190,19 @@ CeladonCityYoungster2Text:
 
 	para "Nobody really"
 	line "believes that"
-	cont "TEAM ROCKET are"
+	cont "Team Rocket are"
 	cont "fully gone."
 	done
 
 CeladonCityTeacher2Text:
-	text "CELADON DEPT.STORE"
+	text "Celadon Dept.Store"
 	line "is the largest"
 	cont "center of commerce"
 	cont "in Kanto."
 
-	para "I hear GOLDENROD"
+	para "I hear Goldenrod"
 	line "has a similar"
-	cont "STORE."
+	cont "store."
 
 	para "Given the economic"
 	line "condition of"
@@ -217,8 +217,8 @@ CeladonCityTeacher2Text:
 
 CeladonCityLassText:
 	text "I used to go"
-	line "on the CYCLING"
-	cont "ROAD but all the"
+	line "on the Cycling"
+	cont "Road but all the"
 	cont "biker gangs cat"
 	cont "calling me has"
 	cont "became unbearable."
@@ -235,14 +235,14 @@ CeladonCityLassText:
 	done
 
 CeladonCitySignText:
-	text "CELADON CITY"
+	text "Celadon City"
 
 	para "The City of"
 	line "Rainbow Dreams"
 	done
 
 CeladonGymSignText:
-	text "CELADON CITY"
+	text "Celadon City"
 	line "#mon Gym"
 	cont "Leader: Erika"
 
@@ -252,18 +252,18 @@ CeladonGymSignText:
 
 CeladonCityDeptStoreSignText:
 	text "Find What You"
-	line "Need at CELADON"
-	cont "DEPT.STORE!"
+	line "Need at Celadon"
+	cont "Dept.Store!"
 	done
 
 CeladonCityMansionSignText:
-	text "CELADON MANSION"
+	text "Celadon Mansion"
 	done
 
 CeladonCityGameCornerSignText:
 	text "The Game Area for"
-	line "Grown-ups--CELADON"
-	cont "GAME CORNER"
+	line "Grown-ups--Celadon"
+	cont "Game Corner"
 	done
 
 CeladonCityTrainerTipsText:

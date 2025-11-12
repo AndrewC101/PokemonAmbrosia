@@ -269,7 +269,7 @@ WhitneyWhatDoYouWantText:
 	para "So are you."
 
 	para "You have earned"
-	line "this BADGE!"
+	line "this Badge!"
 	done
 
 PlayerReceivedPlainBadgeText:
@@ -331,7 +331,7 @@ LassCarrieSeenText:
 	line "strong really fast"
 	cont "you should take"
 	cont "the train to"
-	cont "SAFFRON and head"
+	cont "Saffron and head"
 	cont "north to ROUTE 5."
 	para "There is a Nurse"
 	line "Joy who will whip"

@@ -183,16 +183,16 @@ RuinsOfAlphOutsideMysteryChamberSignText:
 	done
 
 RuinsOfAlphSignText:
-	text "RUINS OF ALPH"
+	text "Ruins of Alph"
 	line "VISITORS WELCOME"
 	done
 
 RuinsOfAlphResearchCenterSignText:
-	text "RUINS OF ALPH"
-	line "RESEARCH CENTER"
+	text "Ruins of Alph"
+	line "research center"
 
-	para "THE AUTHORITY ON"
-	line "THE RUINS OF ALPH"
+	para "The authority on"
+	line "the Ruins of Alph"
 	done
 
 RuinsOfAlphOutsideFisherText1:
@@ -331,10 +331,10 @@ AlphHenshinSeenText:
     para "The power of"
     line "death will at"
     cont "last belong to"
-    cont "HENSHIN!"
+    cont "Henshin!"
 
-    para "Then SETO and"
-    line "ATEM will kneel"
+    para "Then Seto and"
+    line "Atem will kneel"
     cont "before me!"
     done
 AlphHenshinBeatenText:

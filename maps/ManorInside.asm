@@ -931,8 +931,8 @@ ManorFact3Text:
 
 ManorFact4Text:
 	text "There used to be a"
-	line "bug in the BATTLE"
-	cont "ARCADE where you"
+	line "bug in the Battle"
+	cont "Arcade where you"
 	cont "could keep the"
 	cont "player team by"
 	cont "canceling at the"
@@ -941,7 +941,7 @@ ManorFact4Text:
 	done
 
 ManorFact5Text:
-	text "BATTLE ARCADE and"
+	text "Battle Arcade and"
 	line "RPG works by"
 	cont "loading the chosen"
 	cont "character as the"
@@ -1007,8 +1007,8 @@ ManorFact9Text:
 	line "created by"
 	cont "accident when"
 	cont "trying to"
-	cont "implement BATTLE"
-	cont "ARCADE."
+	cont "implement Battle"
+	cont "Arcade."
 	para "It was too cool to"
 	line "remove."
 	done
@@ -1027,7 +1027,7 @@ ManorFact10Text:
 	done
 
 ManorFact11Text:
-	text "BATTLE TRIAL was"
+	text "Battle Trial was"
 	line "inspired by trail"
 	cont "mode from Final"
 	cont "Fantasy 12 Zodiac"
@@ -1082,8 +1082,8 @@ ManorFact15Text:
 ManorFact16Text:
 	text "If you lose to"
 	line "Wallace or the"
-	cont "supposed MAHOGANY"
-	cont "MURDER during the"
+	cont "Mahogany murderer"
+	cont "during the"
 	cont "story it takes you"
 	cont "back to the title"
 	cont "screen."
@@ -1106,10 +1106,10 @@ ManorFact17Text:
 
 ManorFact18Text:
 	text "After clearing the"
-	line "RADIO TOWER of"
-	cont "ROCKETS you can"
-	cont "find JESSIE, JAMES"
-	cont "and MEOWTH on an"
+	line "Radio Tower of"
+	cont "Rockets you can"
+	cont "find Jessie, James"
+	cont "and Meowth on an"
 	cont "island west of"
 	cont "Route 34."
 	para "They are happy"

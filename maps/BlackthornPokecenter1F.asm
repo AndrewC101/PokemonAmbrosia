@@ -25,8 +25,8 @@ BlackthornPokecenter1FGentlemanText:
 	text "Dragon #mon"
 	line "are very rare."
 
-	para "The CELADON"
-	line "GAME CORNER pays"
+	para "The Celadon"
+	line "Game Corner pays"
 	cont "a very handsome"
 	cont "price for any"
 	cont "Dragon #mon"

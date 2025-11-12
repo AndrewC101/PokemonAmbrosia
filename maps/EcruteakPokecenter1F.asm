@@ -22,15 +22,15 @@ EcruteakPokecenter1FGymGuideScript:
 	jumptextfaceplayer EcruteakPokecenter1FGymGuideText
 
 EcruteakPokecenter1FPokefanMText:
-	text "BATTLE FRONTIER"
+	text "Battle Frontier"
 	line "is just past"
-	cont "OLIVINE."
+	cont "Olivine."
 
 	para "SCIZOR and I have"
 	line "been having hours"
 	cont "of fun beating the"
 	cont "novice trainers in"
-	cont "BATTLE TOWER."
+	cont "Battle Tower."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
@@ -48,7 +48,7 @@ EcruteakPokecenter1FCooltrainerFText:
 EcruteakPokecenter1FGymGuideText:
 	text "Far to the"
 	line "NORTH EAST is"
-	cont "LAKE OF RAGE."
+	cont "Lake of Rage."
 
 	para "Years ago a lot"
 	line "of people went"
@@ -56,7 +56,7 @@ EcruteakPokecenter1FGymGuideText:
 
 	para "They say it was"
 	line "a serial killer"
-	cont "the MAHOGANY"
+	cont "the Mahogany"
 	cont "murderer."
 
 	para "He was never"

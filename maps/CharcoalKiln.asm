@@ -96,7 +96,7 @@ CharcoalKilnBossText2:
 
 	para "But my APPRENTICE"
 	line "hasn't come back"
-	cont "from ILEX FOREST."
+	cont "from Ilex Forest."
 
 	para "He must have"
 	line "been sacrificed"
@@ -106,7 +106,7 @@ CharcoalKilnBossText2:
 
 CharcoalKilnBossText3:
 	text "You defeated"
-	line "TEAM ROCKET!"
+	line "Team Rocket!"
 
 	para "And you freed"
 	line "the SLOWPOKE."

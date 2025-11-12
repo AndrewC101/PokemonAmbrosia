@@ -169,10 +169,10 @@ ClairIntroText:
 	text "I am Clair."
 
 	para "Dragon warrior"
-	line "of BLACKTHORN."
+	line "of Blackthorn."
 
 	para "Defender of the"
-	line "DRAGONS FANG."
+	line "Dragons Fang."
 
 	para "Keeper of the"
 	line "Dragons Den."
@@ -424,7 +424,7 @@ BlackthornGymGuideText:
 	line "worship Dragon"
 	cont "#mon."
 
-	para "DRAGONS have high"
+	para "Dragons have high"
 	line "stats, especially"
 	cont "attacking stats."
 

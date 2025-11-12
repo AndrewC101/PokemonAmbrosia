@@ -134,7 +134,7 @@ RadioTower3FSuperNerdText:
 	done
 
 RadioTower3FGymGuideText_Rockets:
-	text "TEAM ROCKET say"
+	text "Team Rocket say"
 	line "they are fighting"
 	cont "to save us from"
 	cont "Hoenn."
@@ -158,14 +158,14 @@ RadioTower3FGymGuideText:
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:
-	text "TEAM ROCKET have"
+	text "Team Rocket have"
 	line "taken the DIRECTOR"
 	cont "hostage!"
 
 	para "He is locked on"
 	line "the fifth floor."
 
-	para "ROCKET executives"
+	para "Rocket executives"
 	line "are there."
 
 	para "They are really"
@@ -179,7 +179,7 @@ RadioTower3FCooltrainerFIsDirectorSafeText:
 
 RadioTower3FCooltrainerFYoureMyHeroText:
 	text "You defeated all"
-	line "of TEAM ROCKET!"
+	line "of Team Rocket!"
 
 	para "I heard a hero"
 	line "from Kanto did"

@@ -340,11 +340,11 @@ Route13SignText:
 	done
 
 Route13DirectionsSignText:
-	text "NORTH TO LAVENDER"
-	line "TOWN"
+	text "North TO Lavender"
+	line "Town"
 
-	para "WEST TO FUCHSIA"
-	line "CITY"
+	para "West to Fuchsia"
+	line "City"
 	done
 
 Route13_MapEvents:

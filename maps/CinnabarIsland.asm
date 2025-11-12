@@ -94,8 +94,8 @@ CinnabarIslandBlueText:
 	line "only place to"
 	cont "have problems."
 
-	para "PEWTER had a"
-	line "#RUS outbreak."
+	para "Pewter had a"
+	line "#rus outbreak."
 
 	para "And now the war"
 	line "with Hoenn."
@@ -116,12 +116,12 @@ CinnabarIslandBlueText:
 	para "It means nothing."
 
 	para "If you get seven"
-	line "Kanto Gym BADGES"
+	line "Kanto Gym Badges"
 	cont "and manage to fix"
 	cont "the issues at the"
-	cont "POWER PLANT then"
+	cont "Power Plant then"
 	cont "come see me in"
-	cont "VIRIDIAN."
+	cont "Viridian."
 
 	para "I'm the Gym"
 	line "Leader."
@@ -134,15 +134,15 @@ CinnabarIslandGymSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "CINNABAR Gym has"
+	para "Cinnabar Gym has"
 	line "relocated to"
-	cont "SEAFOAM ISLANDS."
+	cont "Seafoam Islands."
 
 	para "Blaine"
 	done
 
 CinnabarIslandSignText:
-	text "CINNABAR ISLAND"
+	text "Cinnabar Island"
 
 	para "The Fiery Town of"
 	line "Burning Desire"

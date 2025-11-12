@@ -22,11 +22,11 @@ VioletMartCooltrainerMScript:
 
 VioletMartGrannyText:
 	text "My son died in"
-	line "the POKERUS"
+	line "the #rus"
 	cont "outbreak at"
-	cont "PEWTER."
+	cont "Pewter."
 
-	para "The MUSEUM it"
+	para "The Museum it"
 	line "started in is"
 	cont "blocked up now."
 	done

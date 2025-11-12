@@ -209,18 +209,18 @@ OakWelcomeKantoText:
 	cont "now."
 
 	para "You're a long way"
-	line "from SAFFRON."
+	line "from Saffron."
 	para "It might be"
 	line "difficult to get"
 	cont "back to Johto from"
 	cont "here."
 	para "I can warp you"
-	line "back to SAFFRON"
+	line "back to Saffron"
 	cont "with a device I"
 	cont "have."
 	para "Would you like me"
 	line "to warp you to"
-	cont "SAFFRON?"
+	cont "Saffron?"
 	done
 
 OakGoodLuck:
@@ -252,7 +252,7 @@ OakOpenMtSilverText:
 
 	para "And you have"
 	line "obtained all Kanto"
-	cont "BADGES."
+	cont "Badges."
 
 	para "You are a true"
 	line "Champion!"
@@ -270,9 +270,9 @@ OakOpenMtSilverText:
     para "I have also made"
 	line "arrangements so"
 	cont "that you can go to"
-	cont "MT.SILVER."
+	cont "Mt.Silver."
 
-	para "MT.SILVER is a big"
+	para "Mt.Silver is a big"
 	line "mountain that is"
 	cont "home to many wild"
 	cont "#mon far"
@@ -281,12 +281,12 @@ OakOpenMtSilverText:
 	cont "conquer."
 
 	para "Head west from"
-	line "VIRIDIAN."
+	line "Viridian."
 
-	para "Reach MT.SILVER"
+	para "Reach Mt.Silver"
 	line "from there."
 
-	para "In MT.SILVER you"
+	para "In Mt.Silver you"
 	line "will find Red."
 
 	para "He is the most"
@@ -346,7 +346,7 @@ OakYesKantoBadgesText:
     text "Hello <PLAYER>."
 
 	para "Ah you have some"
-	line "Kanto BADGES."
+	line "Kanto Badges."
 
 	para "Very good!"
 
@@ -433,8 +433,8 @@ OaksLabPCText:
 	para "I'm delighted to"
 	line "hear that."
 
-	para "Elm in NEW BARK"
-	line "TOWN 8-)"
+	para "Elm in New Bark"
+	line "Town 8-)"
 	done
 
 OaksLab_MapEvents:

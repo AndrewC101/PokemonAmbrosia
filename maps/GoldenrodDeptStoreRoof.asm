@@ -109,7 +109,7 @@ GoldenrodDeptStoreRoofFisherText:
 	cont "out of #DOLLS!"
 	para "They will need a"
 	line "new shipment from"
-	cont "CELADON."
+	cont "Celadon."
 	done
 
 GoldenrodDeptStoreRoofTwinText:

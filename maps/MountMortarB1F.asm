@@ -145,7 +145,7 @@ MountMortarB1FKiyoIntroText:
 	para "Anger toward"
 	line "myself."
 
-	para "Love of SAFFRON."
+	para "Love of Saffron."
 
 	para "Love of myself."
 

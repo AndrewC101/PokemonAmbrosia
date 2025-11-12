@@ -333,14 +333,14 @@ SSAquaGrandpaHaveThisText:
 SSAquaGrandpaHaveThisRainbowWingText:
     text "There used to be a"
 	line "tower in"
-	cont "GOLDENROD CITY."
+	cont "Goldenrod City."
 
 	para "But it was old and"
 	line "creaky."
 
 	para "So it was replaced"
-	line "with the RADIO"
-	cont "TOWER."
+	line "with the Radio"
+	cont "Tower."
 
 	para "I dug up that"
 	line "wing during"
@@ -349,7 +349,7 @@ SSAquaGrandpaHaveThisRainbowWingText:
 	para "I heard that all"
 	line "sorts of #mon"
 
-	para "lived in GOLDENROD"
+	para "lived in Goldenrod"
 	line "in the past."
 
 	para "Perhaps…"
@@ -357,14 +357,14 @@ SSAquaGrandpaHaveThisRainbowWingText:
 	para "That wing has some"
 	line "connection to the"
 
-	para "TIN TOWER in"
-	line "ECRUTEAK CITY…"
+	para "Tin Tower in"
+	line "Ecruteak City…"
 	done
 
 SSAquaGrandpaHaveThisSilverWingText:
     text "I found that when"
     line "traveling the sea"
-    cont "near OLIVINE."
+    cont "near Olivine."
 
     para "There was a storm"
     line "that day."
@@ -391,8 +391,8 @@ SSAquaGrandpaHaveThisSilverWingText:
     line "have saved us."
 
     para "I followed it out"
-    line "to the WHIRL"
-    cont "ISLANDS."
+    line "to the Whirl"
+    cont "Islands."
 
     para "But all I found"
     line "was this feather."
@@ -537,7 +537,7 @@ TwinsMegandpeg2AfterBattleText:
 
 PsychicRodneySeenText:
 	text "Have you heard"
-	line "SAFFRON has a"
+	line "Saffron has a"
 	cont "second Gym?"
 
 	para "They showed up"
@@ -556,7 +556,7 @@ PsychicRodneyBeatenText:
 
 PsychicRodneyAfterBattleText:
 	text "I'm going to"
-	line "SAFFRON to do"
+	line "Saffron to do"
 	cont "my part in"
 	cont "defending the"
 	cont "honor of the"
@@ -602,7 +602,7 @@ PokefanfGeorgiaSeenText:
 	line "the conventions."
 
 	para "There should be"
-	line "one in SAFFRON."
+	line "one in Saffron."
 
 	para "I like to spread"
 	line "my girl power"
@@ -649,9 +649,9 @@ SupernerdShawnAfterBattleText:
 	done
 
 SSAquaHasArrivedVermilionText:
-	text "FAST SHIP S.S.AQUA"
+	text "Fast Ship SS.Aqua"
 	line "has arrived in"
-	cont "VERMILION CITY."
+	cont "Vermilion City."
 	done
 
 FastShipCabins_SE_SSE_CaptainsCabin_MapEvents:

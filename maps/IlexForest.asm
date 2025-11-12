@@ -87,8 +87,8 @@ ApprenticeGivesCutText:
 
     para "You will need"
     line "to have the"
-    cont "AZALEA Gym"
-    cont "BADGE though."
+    cont "Azalea Gym"
+    cont "Badge though."
     done
 
 AlreadyGotCutText:
@@ -498,7 +498,7 @@ Text_IlexForestLass:
 	done
 
 IlexForestSignpostText:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "said to be over"
 	cont "1000 years old."
 
@@ -509,7 +509,7 @@ IlexForestSignpostText:
 	done
 
 Text_IlexForestShrine:
-	text "ILEX FOREST"
+	text "Ilex Forest"
 	line "SHRINE…"
 
 	para "It's in honor of"
@@ -518,7 +518,7 @@ Text_IlexForestShrine:
 	done
 
 Text_ShrineCelebiEvent:
-	text "ILEX FOREST"
+	text "Ilex Forest"
 	line "SHRINE…"
 
 	para "It's in honor of"

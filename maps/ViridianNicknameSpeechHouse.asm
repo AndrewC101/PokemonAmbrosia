@@ -32,7 +32,7 @@ Rattey:
 	end
 
 ViridianNicknameSpeechHousePokefanMText:
-	text "VIRIDIAN is the"
+	text "Viridian is the"
 	line "closest point to"
 	cont "Johto."
 	para "We collaborate"

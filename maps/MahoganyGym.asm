@@ -196,7 +196,7 @@ PryceText_Impressed:
 	line "strength."
 
 	para "You deserve"
-	line "this BADGE."
+	line "this Badge."
 	done
 
 PryceWinText:
@@ -290,7 +290,7 @@ BoarderBradAfterBattleText:
 
 BoarderDouglasSeenText:
 	text "I hear there"
-	line "where some ROCKETS"
+	line "where some Rockets"
 	cont "in town recently."
 
 	para "I didn't notice."
@@ -301,7 +301,7 @@ BoarderDouglasSeenText:
 
 	para "Pryce would have"
 	line "frozen those"
-	cont "ROCKETS if he"
+	cont "Rockets if he"
 	cont "knew."
 	done
 
@@ -311,7 +311,7 @@ BoarderDouglasBeatenText:
 
 BoarderDouglasAfterBattleText:
 	text "So you took care"
-	line "of the ROCKETS."
+	line "of the Rockets."
 
 	para "Well then..."
 

@@ -110,7 +110,7 @@ BillTakeThisEeveeText:
 	cont "#mon for you."
 
 	para "I got it from the"
-	line "GAME CORNER."
+	line "Game Corner."
 
 	para "But I'll give it"
 	line "to you for free!"
@@ -172,7 +172,7 @@ BillsMomText:
 
 	para "But my husband"
 	line "spends all day in"
-	cont "the GAME CORNER."
+	cont "the Game Corner."
 	done
 
 BillsSisterUsefulNumberText:

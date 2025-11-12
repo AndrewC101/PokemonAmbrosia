@@ -306,8 +306,8 @@ LakeOfRageLanceRadioSignalText:
 	para "The signal that"
 	line "torments our"
 	cont "kin originates"
-	cont "from MAHOGANY"
-	cont "TOWN."
+	cont "from Mahogany"
+	cont "Town."
 
 	para "Some there guard"
 	line "their secrets"
@@ -554,9 +554,9 @@ WesleyNotWednesdayText:
 	done
 
 LakeOfRageSignText:
-	text "LAKE OF RAGE,"
+	text "Lake of Rage,"
 	line "also known as"
-	cont "GYARADOS LAKE."
+	cont "Gyarados Lake."
 	done
 
 FishingGurusHouseSignText:

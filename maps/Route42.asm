@@ -223,29 +223,29 @@ PokemaniacShaneAfterBattleText:
 Route42Sign1Text:
 	text "ROUTE 42"
 
-	para "ECRUTEAK CITY -"
-	line "MAHOGANY TOWN"
+	para "Ecruteak City -"
+	line "Mahogany Town"
 	done
 
 MtMortarSign1Text:
-	text "MT.MORTAR"
+	text "Mt.Mortar"
 
-	para "WATERFALL CAVE"
-	line "INSIDE"
+	para "Waterfall Cave"
+	line "inside"
 	done
 
 MtMortarSign2Text:
-	text "MT.MORTAR"
+	text "Mt.Mortar"
 
-	para "WATERFALL CAVE"
-	line "INSIDE"
+	para "Waterfall Cave"
+	line "inside"
 	done
 
 Route42Sign2Text:
 	text "ROUTE 42"
 
-	para "ECRUTEAK CITY -"
-	line "MAHOGANY TOWN"
+	para "Ecruteak City -"
+	line "Mahogany Town"
 	done
 
 Route42FieldMon1Script:

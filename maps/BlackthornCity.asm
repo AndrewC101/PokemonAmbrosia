@@ -360,7 +360,7 @@ SantosNotSaturdayText:
 
 BlackthornCooltrainerF2Text:
 	text "Welcome to"
-	line "BLACKTHORN."
+	line "Blackthorn."
 
 	para "We are serious"
 	line "trainers who"
@@ -377,13 +377,13 @@ BlackthornCooltrainerF2Text:
 	done
 
 BlackthornCitySignText:
-	text "BLACKTHORN CITY"
+	text "Blackthorn City"
 
 	para "The Dragon SANCTUM"
 	done
 
 BlackthornGymSignText:
-	text "BLACKTHORN CITY"
+	text "Blackthorn City"
 	line "#mon Gym"
 	cont "Leader: Clair"
 

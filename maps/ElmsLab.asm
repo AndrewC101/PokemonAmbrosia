@@ -817,7 +817,7 @@ ElmBeatRocketsText:
 	text "Thank ARCEUS you"
 	line "were available to"
 	cont "deal with those"
-	cont "ROCKETS."
+	cont "Rockets."
 	para "I don't think any"
 	line "other trainers"
 	cont "around would have"
@@ -829,8 +829,8 @@ ElmBeatRocketsText:
 	line "remarkable"
 	cont "trainer."
 	para "You should go"
-	line "see the MOVE TUTOR"
-	cont "in GOLDENROD if"
+	line "see the Move Tutor"
+	cont "in Goldenrod if"
 	cont "you have 8 badges."
 	para "His moves will"
 	line "help you I am"
@@ -1046,8 +1046,8 @@ ReceivedStarterText:
 ElmDirectionsText1:
 	text "Prof Oak is"
 	line "visiting a friend"
-	cont "just NORTH of"
-	cont "CHERRYGROVE."
+	cont "just north of"
+	cont "Cherrygrove."
 
 	para "He has sensitive"
 	line "information just"
@@ -1180,7 +1180,7 @@ ElmAfterTheftText5:
 
 	para "The closest Gym"
 	line "would be the one"
-	cont "in VIOLET CITY."
+	cont "in Violet City."
 	done
 
 ElmAfterTheftText6:
@@ -1220,9 +1220,9 @@ AideText_AfterDad:
 	done
 
 AideText_AfterRockets:
-	text "You defeated TEAM"
-	line "ROCKET!"
-	para "ROCKET executives"
+	text "You defeated Team"
+	line "Rocket!"
+	para "Rocket executives"
 	line "are some seriously"
 	cont "dangerous"
 	cont "trainers."
@@ -1245,7 +1245,7 @@ AideText_ExplainCaps:
     para "Makes sense!"
 
     para "Trainers with"
-    line "more BADGES can"
+    line "more Badges can"
     cont "train #mon"
     cont "to higher levels"
     cont "and catch"
@@ -1259,7 +1259,7 @@ AideText_ExplainCaps:
     cont "#mon to"
     cont "or catch one at"
     cont "based on which"
-    cont "BADGES you have."
+    cont "Badges you have."
 
     para "You can see"
     line "these on your"
@@ -1350,7 +1350,7 @@ ElmGiveTicketText1:
 
 ElmGiveTicketText2:
 	text "The ship departs"
-	line "from OLIVINE CITY."
+	line "from Olivine City."
 
 	para "But you knew that"
 	line "already, <PLAY_G>."
@@ -1374,8 +1374,8 @@ ElmGiveTicketText2:
 ClearBellTips:
     text "It is in some"
     line "way connected to"
-    cont "the TIN TOWER in"
-    cont "ECRUTEAK CITY."
+    cont "the Tin Tower in"
+    cont "Ecruteak City."
 
     para "You should go"
     line "there and check"
@@ -1485,7 +1485,7 @@ ElmsLabOfficerText1:
 	cont "long, red hair…"
 
 	para "It is believed his"
-	line "name is SILVER."
+	line "name is Silver."
 
 	para "What?"
 
@@ -1958,7 +1958,7 @@ ElmsFinalWordsText:
     cont "everyone else."
 
     para "Now head to"
-    line "OLIVINE."
+    line "Olivine."
 
     para "The ship is"
     line "waiting."

@@ -771,7 +771,7 @@ _LC_Text10::
 
 _LC_Text11::
 	text_start
-	line "the RADIO TOWER!"
+	line "the Radio Tower!"
 	done
 
 _LC_DragText1::
@@ -902,7 +902,7 @@ _RocketRadioText1::
 
 _RocketRadioText2::
 	text_start
-	line "TEAM ROCKET!"
+	line "Team Rocket!"
 	done
 
 _RocketRadioText3::
@@ -982,12 +982,12 @@ _BuenaRadioText5::
 
 _BuenaRadioText6::
 	text_start
-	line "I'm in GOLDENROD's"
+	line "I'm in Goldenrod's"
 	done
 
 _BuenaRadioText7::
 	text_start
-	line "RADIO TOWER!"
+	line "Radio Tower!"
 	done
 
 _BuenaRadioMidnightText1::

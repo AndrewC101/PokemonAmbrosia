@@ -93,7 +93,7 @@ PewterGymStatue:
 
 BrockIntroText:
 	text "Welcome to"
-	line "PEWTER CITY."
+	line "Pewter City."
 
 	para "I'm sure you"
 	line "have noticed the"
@@ -187,7 +187,7 @@ CamperJerryBeatenText:
 CamperJerryAfterBattleText:
 	text "We will never"
 	line "stop fighting"
-	cont "to restore PEWTER"
+	cont "to restore Pewter"
 	cont "and its people."
 
 	para "To make both"
@@ -222,7 +222,7 @@ PewterGymGuideWinText:
 	text "You did it!"
 
 	para "Now you can enter"
-	line "the MUSEUM and"
+	line "the Museum and"
 	cont "find the source"
 	cont "of the virus."
 

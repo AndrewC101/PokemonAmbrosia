@@ -172,11 +172,11 @@ CeladonPokecenter1FCooltrainerFText:
 	done
 
 CeladonPokecenter1FPharmacistText:
-	text "TEAM ROCKET's"
+	text "Team Rocket's"
 	line "hideout is in the"
 
 	para "basement of the"
-	line "GAME CORNER."
+	line "Game Corner."
 
 	para "It was closed up."
 
@@ -204,13 +204,13 @@ EusineLeavesCeladonText:
 
 	para "rainbow-colored"
 	line "#mon appearing"
-	cont "at TIN TOWER."
+	cont "at Tin Tower."
 
 	para "I've just had my"
 	line "party healed, so"
 
 	para "now I'm headed to"
-	line "ECRUTEAK."
+	line "Ecruteak."
 
 	para "I'll be seeing"
 	line "you, <PLAYER>!"

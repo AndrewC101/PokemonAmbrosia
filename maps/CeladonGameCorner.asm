@@ -188,7 +188,7 @@ CeladonGameCornerFisherText1:
 	done
 
 CeladonGameCornerFisherText2:
-	text "TEAM ROCKET used"
+	text "Team Rocket used"
 	line "to run this place."
 
 	para "Everybody knows"

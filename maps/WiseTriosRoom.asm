@@ -142,7 +142,7 @@ WiseTriosRoomSage1Text:
 
 WiseTriosRoomSage2Text:
 	text "We train at the"
-	line "BURNED TOWER, but"
+	line "Burned Tower, but"
 
 	para "we've never heard"
 	line "of a hole opening"
@@ -155,11 +155,11 @@ WiseTriosRoomSage2Text:
 	done
 
 WiseTriosRoomSage3BlocksExitText:
-	text "TIN TOWER may be"
+	text "Tin Tower may be"
 	line "entered by those"
 
-	para "bearing ECRUTEAK's"
-	line "Gym BADGE."
+	para "bearing Ecruteak's"
+	line "Gym Badge."
 
 	para "However, now that"
 	line "SUICUNE, RAIKOU"
@@ -192,8 +192,8 @@ SageGakuSeenText:
 	para "will come forth to"
 	line "put that trainer"
 
-	para "to test at the TIN"
-	line "TOWER."
+	para "to test at the Tin"
+	line "Tower."
 
 	para "The legend has"
 	line "come true!"
@@ -251,7 +251,7 @@ SageMasaAfterBattleText:
 	line "which was said to"
 
 	para "awaken #mon,"
-	line "and the TIN TOWER,"
+	line "and the Tin Tower,"
 
 	para "where #mon were"
 	line "said to rest."
@@ -288,7 +288,7 @@ SageMasaAfterBattleText:
 	cont "the blaze."
 
 	para "And that is how"
-	line "the BURNED TOWER"
+	line "the Burned Tower"
 	cont "came to be."
 	done
 
@@ -329,8 +329,8 @@ SageKojiAfterBattleSpeechText:
 	line "and soul of truth."
 
 	para "Please, do go on"
-	line "and enter the TIN"
-	cont "TOWER ahead."
+	line "and enter the Tin"
+	cont "Tower ahead."
 
 	para "SUICUNE will put"
 	line "you to the test."

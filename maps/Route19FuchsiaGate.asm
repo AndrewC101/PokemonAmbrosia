@@ -27,7 +27,7 @@ Route19FuchsiaGateOfficerText:
 	line "blocked by rocks"
 	cont "at this time."
 
-	para "CINNABAR's volcano"
+	para "Cinnabar's volcano"
 	line "erupted some time"
 	cont "ago and we are"
 	cont "still clearing"
@@ -37,7 +37,7 @@ Route19FuchsiaGateOfficerText:
 Route19FuchsiaGateOfficerText_RocksCleared:
     text "The road is clear."
 
-    para "CINNABAR's volcano"
+    para "Cinnabar's volcano"
 	line "erupted."
 
 	para "Some say it was"

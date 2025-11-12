@@ -343,7 +343,7 @@ TinTower1FEusineSuicuneText:
 
 	para "I think I'm"
 	line "going to head back"
-	cont "home to CELADON"
+	cont "home to Celadon"
 	cont "and take a rest."
 
 	para "I need a new"
@@ -422,8 +422,8 @@ TinTower1FSage4Text1:
 	text "HO-OH appears to"
 	line "have descended"
 
-	para "upon this, the TIN"
-	line "TOWER!"
+	para "upon this, the Tin"
+	line "Tower!"
 	done
 
 TinTower1FSage5Text1:

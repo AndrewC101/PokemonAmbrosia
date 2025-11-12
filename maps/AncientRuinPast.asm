@@ -202,7 +202,7 @@ AncientRuinsPastGuy1Text:
     para "It won't end well"
     line "for you."
 
-    para "PHARAOH ATEM is"
+    para "Pharaoh Atem is"
     line "unbeatable."
     done
 
@@ -214,7 +214,7 @@ AncientRuinsPastGuy2Text:
     line "cultures."
 
     para "In a recent trip"
-    line "to ALPH I found"
+    line "to Alph I found"
     cont "an ancient text"
     cont "that described a"
     cont "god like being."
@@ -240,13 +240,13 @@ AncientRuinsPastGirl1Text:
     cont "sure he will"
     cont "help you."
 
-    para "SETO tried to"
-    line "overthrow ATEM"
+    para "Seto tried to"
+    line "overthrow Atem"
     cont "years ago and"
     cont "was soundly"
     cont "defeated."
 
-    para "But ATEM showed"
+    para "But Atem showed"
     line "mercy and"
     cont "forgave him."
     done
@@ -345,7 +345,7 @@ YamiSeenText:
 
     para "Here I am the"
     line "great Pharaoh"
-    cont "ATEM."
+    cont "Atem."
 
     para "In your time I"
     line "just another"
@@ -391,7 +391,7 @@ YamiAfterBattleText:
     cont "within a cave."
 
     para "A cave sitting"
-    line "below a SILVER"
+    line "below a Silver"
     cont "mountain."
 
     para "Return now to"
@@ -405,9 +405,9 @@ CatchXerneasFirstText:
     text "You are not"
     line "from this time."
 
-    para "I am ATEM."
+    para "I am Atem."
 
-    para "The great PHARAOH"
+    para "The great Pharaoh"
 
     para "I know what you"
     line "are here for."

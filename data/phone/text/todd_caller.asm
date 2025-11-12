@@ -5,7 +5,7 @@ ToddLooksCuteLikeMeText:
 	para "It's so slow and I"
 	line "have to go back"
 	cont "and forth to the"
-	cont "#CENTER."
+	cont "#center."
 	para "It's awful."
 	done
 
@@ -50,7 +50,7 @@ ToddHangUpText:
 	done
 
 ToddDepartmentStoreBargainSaleText:
-	text "The GOLDENROD DEPT"
+	text "The Goldenrod Dept"
 	line "is having a sale."
 	para "I'm going to get"
 	line "all the cheap"
@@ -93,7 +93,7 @@ ToddLookingForwardToBattleText:
 ToddHaveYouGoneToDepartmentStoreText:
 	text "You might want to"
 	line "get here soon, the"
-	cont "GOLDENROD DEPT is"
+	cont "Goldenrod Dept is"
 	cont "having a sale and"
 	cont "things are going."
 	para "Some guy on the"

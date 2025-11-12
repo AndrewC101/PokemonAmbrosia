@@ -381,7 +381,7 @@ PicnickerCindyBeforeText:
 	para "Really!"
 
 	para "Beat me and get"
-	line "a BADGE."
+	line "a Badge."
 	done
 
 PicnickerCindyBeatenText:

@@ -189,16 +189,16 @@ WarHasBegunText:
     line "forces have"
     cont "established a"
     cont "bridgehead at"
-    cont "VERMILION and more"
+    cont "Vermilion and more"
     cont "will land at"
-    cont "FUCHSIA soon."
+    cont "Fuchsia soon."
 
     para "You are one of"
     line "the strongest"
     cont "trainers in Kanto."
 
     para "You must go to"
-    line "VERMILION."
+    line "Vermilion."
 
     para "I must contact"
     line "the League and"
@@ -218,7 +218,7 @@ WarHasBegunText:
     line "on that."
 
     para "Head now to"
-    line "VERMILION."
+    line "Vermilion."
 
     para "Good luck."
     done

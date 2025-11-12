@@ -11,7 +11,7 @@ Route5SaffronGateOfficerScript:
 
 Route5SaffronGateOfficerText:
 	text "Heading to"
-	line "SAFFRON?"
+	line "Saffron?"
 
 	para "Be careful of"
 	line "all the psychics."

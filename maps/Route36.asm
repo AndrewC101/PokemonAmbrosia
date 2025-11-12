@@ -494,11 +494,11 @@ FloriaText1:
 
 	para "I'm going to"
 	line "get my sister at"
-	cont "the GOLDENROD"
-	cont "FLOWER SHOP."
+	cont "the Goldenrod"
+	cont "Flower Shop."
 
 	para "She has some"
-	line "HOLY WATER."
+	line "Holy Water."
 
 	para "That should move"
 	line "that #mon."
@@ -647,7 +647,7 @@ Route36SignText:
 	done
 
 RuinsOfAlphNorthSignText:
-	text "RUINS OF ALPH"
+	text "Ruins of Alph"
 	line "NORTH ENTRANCE"
 	done
 
@@ -665,7 +665,7 @@ Route36TrainerTips2Text:
 	text "TRAINER TIPS"
 
 	para "When obtaining a"
-	line "new BADGE your"
+	line "new Badge your"
 	cont "level caps"
 	cont "increase."
 

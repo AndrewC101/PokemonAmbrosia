@@ -33,15 +33,15 @@ BeverlyHangUpText:
 
 BeverlyFoundItemText:
 	text "We stopped a crime"
-	line "in GOLDENROD the"
+	line "in Goldenrod the"
 	cont "other day."
 	para "People were so"
 	line "grateful they gave"
-	cont "us some NUGGETS."
+	cont "us some Nuggets."
 	para "Come see me and"
 	line "I'll give you one!"
-	para "I'm in NATIONAL"
-	line "PARK."
+	para "I'm in National"
+	line "Park."
 	done
 
 BeverlyLetsChatAboutMonAgainText:

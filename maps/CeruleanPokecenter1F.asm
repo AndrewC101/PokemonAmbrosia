@@ -29,7 +29,7 @@ CeruleanPokecenter1FSuperNerdText:
 	done
 
 CeruleanPokecenter1FGymGuideText:
-	text "CERULEAN CAVE is"
+	text "Cerulean Cave is"
 	line "said to contain"
 	cont "really strong"
 	cont "#mon."

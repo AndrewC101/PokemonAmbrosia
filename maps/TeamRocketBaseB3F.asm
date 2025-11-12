@@ -325,7 +325,7 @@ LanceGetPasswordText:
 
 	para "These passwords"
 	line "are known to few"
-	cont "ROCKETS."
+	cont "Rockets."
 
 	para "We may have to"
 	line "encourage their"
@@ -377,7 +377,7 @@ RocketBaseRivalText:
 	cont "help but be"
 	cont "drawn to it."
 
-	para "These ROCKETS are"
+	para "These Rockets are"
 	line "far weaker than"
 	cont "I thought they"
 	cont "would be."
@@ -420,7 +420,7 @@ RocketBaseRivalText:
 	cont "with him."
 
 	para "I'm not done with"
-	line "these ROCKETS."
+	line "these Rockets."
 
 	para "They will give"
 	line "me the information"
@@ -436,8 +436,8 @@ ExecutiveM4BeforeText:
 	para "You don't"
 	line "remember me?"
 
-	para "We met at SLOWPOKE"
-	line "WELL."
+	para "We met at Slowpoke"
+	line "Well."
 
 	para "You interfered"
 	line "with us then but"

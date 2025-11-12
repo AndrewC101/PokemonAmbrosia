@@ -285,12 +285,12 @@ BugCatcherWade1AfterText:
 Text_Route31SleepyMan:
 	text "I found a really"
 	line "strong #mon in"
-	cont "DARK CAVE but"
+	cont "Dark Cave but"
 	cont "I don't have"
-	cont "enough BADGES to"
+	cont "enough Badges to"
 	cont "catch it!"
 
-	para "You need BADGES"
+	para "You need Badges"
 	line "to catch high"
 	cont "level #mon."
 	done
@@ -298,7 +298,7 @@ Text_Route31SleepyMan:
 Route31YoungsterText:
 	text "I think Invaders"
 	line "have some link"
-	cont "to DARK CAVE."
+	cont "to Dark Cave."
 
 	para "There is something"
 	line "deep within that"
@@ -310,12 +310,12 @@ Route31YoungsterText:
 Route31SignText:
 	text "ROUTE 31"
 
-	para "VIOLET CITY -"
-	line "CHERRYGROVE CITY"
+	para "Violet City -"
+	line "Cherrygrove City"
 	done
 
 DarkCaveSignText:
-	text "DARK CAVE"
+	text "Dark Cave"
 	done
 
 InvaderGiantDad:

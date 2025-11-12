@@ -55,8 +55,8 @@ VermilionMartBeautyText:
 	cont "like this."
 
 	para "But the rent in"
-	line "SAFFRON or"
-	cont "CELADON is way"
+	line "Saffron or"
+	cont "Celadon is way"
 	cont "too high."
 	done
 

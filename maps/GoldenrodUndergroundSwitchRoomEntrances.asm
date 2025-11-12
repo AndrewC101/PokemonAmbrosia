@@ -627,7 +627,7 @@ UndergroundSilverBeforeText:
 
     para "I have had some"
     line "past experience"
-    cont "with TEAM ROCKET."
+    cont "with Team Rocket."
 
     para "I know how they"
     line "operate."
@@ -639,7 +639,7 @@ UndergroundSilverBeforeText:
     para "I'm looking for"
     line "someone."
 
-    para "TEAM ROCKET must"
+    para "Team Rocket must"
     line "know where he is."
 
     para "You are just going"
@@ -666,8 +666,8 @@ UndergroundSilverAfterText:
 	text "I keep losing!"
 
 	para "I fought the"
-	line "ROCKETS at"
-	cont "MAHOGANY."
+	line "Rockets at"
+	cont "Mahogany."
 
 	para "But they had"
 	line "already been"
@@ -702,7 +702,7 @@ UndergroundSilverAfterText:
 	cont "way."
 
 	para "I'll beat the"
-	line "ROCKETS and you"
+	line "Rockets and you"
 	cont "and even Lance"
 	cont "one day."
 
@@ -715,7 +715,7 @@ UndergroundSilverLossText:
 	cont "hurt."
 
 	para "I will crush"
-	line "these ROCKETS"
+	line "these Rockets"
 	cont "and everyone"
 	cont "else."
 
@@ -755,8 +755,8 @@ BurglarEddieSeenText:
 
 	para "There must be"
 	line "some super"
-	cont "secret TEAM"
-	cont "ROCKET loot!"
+	cont "secret Team"
+	cont "Rocket loot!"
 	done
 
 BurglarEddieBeatenText:
@@ -766,8 +766,8 @@ BurglarEddieBeatenText:
 	done
 
 BurglarEddieAfterBattleText:
-	text "UNDERGROUND WARE-"
-	line "HOUSE?"
+	text "Underground Ware-"
+	line "house?"
 
 	para "What do you want"
 	line "to go there for?"

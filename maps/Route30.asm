@@ -469,8 +469,8 @@ Route30CooltrainerFText:
 Route30SignText:
 	text "ROUTE 30"
 
-	para "VIOLET CITY -"
-	line "CHERRYGROVE CITY"
+	para "Violet City -"
+	line "Cherrygrove City"
 	done
 
 MrPokemonsHouseDirectionsSignText:
@@ -485,11 +485,11 @@ MrPokemonsHouseSignText:
 Route30TrainerTipsText:
 	text "TRAINER TIPS"
 
-	para "You need BADGES"
+	para "You need Badges"
 	line "to catch higher"
 	cont "level #mon."
 
-	para "With no BADGES"
+	para "With no Badges"
 	line "the highest level"
 	cont "you can catch is"
 	cont "20."

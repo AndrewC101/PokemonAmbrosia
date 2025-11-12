@@ -133,9 +133,9 @@ BrentFlowerShopGossipText:
 
 BrentKimonoGirlGossipText:
 	text "Did you know the"
-	line "GOLDENROD TUTOR"
-	cont "can teach NASTY"
-	cont "PLOT!?"
+	line "Goldenrod Tutor"
+	cont "can teach Nasty"
+	cont "Plot!?"
 	para "But only to those"
 	line "with 8 badges!"
 	para "What a con!"
@@ -143,9 +143,9 @@ BrentKimonoGirlGossipText:
 
 BrentSorryImTooBusyText:
 	text "Did you know the"
-	line "GOLDENROD TUTOR"
-	cont "can teach NASTY"
-	cont "PLOT!?"
+	line "Goldenrod Tutor"
+	cont "can teach Nasty"
+	cont "Plot!?"
 	para "But only to those"
 	line "with 8 badges!"
 	para "What a con!"

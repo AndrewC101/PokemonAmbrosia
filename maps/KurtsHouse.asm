@@ -467,9 +467,9 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	line "important business"
 	cont "right now."
 
-	para "TEAM ROCKET have"
+	para "Team Rocket have"
 	line "taken over the"
-	cont "SLOWPOKE WELL."
+	cont "Slowpoke Well."
 
 	para "They are a group"
 	line "from Kanto that"
@@ -494,7 +494,7 @@ KurtsHouseKurtHonoredToMakeBallsText:
 
 	para "You handled your-"
 	line "self like a real"
-	cont "hero at the WELL."
+	cont "hero at the well."
 
 	para "I would be honored"
 	line "to make balls for"
@@ -631,7 +631,7 @@ KurtsGranddaughterSlowpokeBackText:
 	done
 
 KurtsGranddaughterDadText:
-	text "Dad works at SILPH"
+	text "Dad works at Silph"
 	line "where he studies"
 	cont "# balls."
 

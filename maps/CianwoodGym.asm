@@ -297,7 +297,7 @@ BeatJasmineText:
 	text "You done well but"
 	line "you must beat both"
 	cont "me and Jasmine in"
-	cont "OLIVINE to"
+	cont "Olivine to"
 	cont "increase your"
 	cont "level caps."
 	para "Hey, I don't make"

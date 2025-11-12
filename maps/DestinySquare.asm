@@ -947,7 +947,7 @@ MewtwoAfterText:
     para "Now go!"
 
     para "Upon the peak of"
-    line "MT SILVER..."
+    line "Mt Silver..."
 
     para "Your destiny"
     line "awaits."

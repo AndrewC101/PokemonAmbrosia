@@ -297,7 +297,7 @@ _NameCardLinkCommErrorText::
 	prompt
 
 _BadgeRequiredText::
-	text "Sorry! A new BADGE"
+	text "Sorry! A new Badge"
 	line "is required."
 	prompt
 
@@ -548,7 +548,7 @@ _WhitedOutText::
 
 	para "<PLAYER> scurried"
 	line "back to the"
-	cont "#CENTER"
+	cont "#center"
 	done
 
 _ItemfinderItemNearbyText::
@@ -1607,7 +1607,7 @@ _WhitedOutToWildMonText::
 
 	para "<PLAYER> scurried"
 	line "back to the"
-	cont "#CENTER"
+	cont "#center"
 	done
 
 _WhitedOutToTrainerText::
@@ -1625,7 +1625,7 @@ _WhitedOutToTrainerText::
 
 	para "<PLAYER> scurried"
 	line "back to the"
-	cont "#CENTER"
+	cont "#center"
 	done
 
 _DontKillUsText::

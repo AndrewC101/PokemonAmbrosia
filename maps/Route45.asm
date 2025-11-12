@@ -361,7 +361,7 @@ HikerParryAfterBattleText:
 HikerTimothySeenText:
 	text "Everyone knows"
 	line "the volcano that"
-	cont "destroyed CINNABAR"
+	cont "destroyed Cinnabar"
 	cont "was the doing of"
 	cont "Hoenn."
 
@@ -396,10 +396,10 @@ HikerParryGivesIronText:
 BlackbeltKenjiSeenText:
 	text "I used to be"
 	line "part of a dojo"
-	cont "in SAFFRON."
+	cont "in Saffron."
 
 	para "I moved to the"
-	line "CIANWOOD dojo"
+	line "Cianwood dojo"
 	cont "but they were"
 	cont "too soft."
 
@@ -494,7 +494,7 @@ CooltrainermRyanAfterBattleText:
 CooltrainerfKellySeenText:
 	text "Everyone keeps"
 	line "talking about how"
-	cont "DARK CAVE contains"
+	cont "Dark Cave contains"
 	cont "pure evil."
 
 	para "I'm going to"
@@ -513,7 +513,7 @@ CooltrainerfKellyBeatenText:
 CooltrainerfKellyAfterBattleText:
 	text "I heard a girl"
 	line "got lost in"
-	cont "DARK CAVE for"
+	cont "Dark Cave for"
 	cont "days."
 
 	para "Everyone knew"
@@ -569,7 +569,7 @@ CamperQuentinAfterBattleText:
 	para "And Route 37"
 	line "I fear there."
 
-	para "And BATTLE TOWER"
+	para "And Battle Tower"
 	line "I fear that too."
 	done
 

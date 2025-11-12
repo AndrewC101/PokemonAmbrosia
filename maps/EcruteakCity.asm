@@ -124,7 +124,7 @@ EcruteakCityLass2Text:
 	line "me that long"
 	cont "ago this tower"
 	cont "was as big as"
-	cont "the TIN TOWER."
+	cont "the Tin Tower."
 
 	para "But it burned"
 	line "down."
@@ -162,16 +162,16 @@ EcruteakCityFisherText:
 
 EcruteakCityYoungsterText:
 	text "I came here"
-	line "from PEWTER after"
-	cont "the #RUS"
+	line "from Pewter after"
+	cont "the #rus"
 	cont "outbreak."
 
-	para "The TIN TOWER"
+	para "The Tin Tower"
 	line "is the tallest"
 	cont "building in"
 	cont "Johto."
 
-	para "But the SILPH CO"
+	para "But the Silph Co"
 	line "building in Kanto"
 	cont "is taller still."
 	done
@@ -195,7 +195,7 @@ EcruteakCityGramps3Text:
 	para "It's a legend that"
 	line "has been passed"
 
-	para "down by ECRUTEAK"
+	para "down by Ecruteak"
 	line "Gym Leaders."
 
 	para "Me?"
@@ -206,7 +206,7 @@ EcruteakCityGramps3Text:
 	done
 
 EcruteakCitySignText:
-	text "ECRUTEAK CITY"
+	text "Ecruteak City"
 	line "A Historical City"
 
 	para "Where the Past"
@@ -214,7 +214,7 @@ EcruteakCitySignText:
 	done
 
 TinTowerSignText:
-	text "TIN TOWER"
+	text "Tin Tower"
 
 	para "A legendary #-"
 	line "MON is said to"
@@ -222,7 +222,7 @@ TinTowerSignText:
 	done
 
 EcruteakGymSignText:
-	text "ECRUTEAK CITY"
+	text "Ecruteak City"
 	line "#mon Gym"
 	cont "Leader: Morty"
 
@@ -231,12 +231,12 @@ EcruteakGymSignText:
 	done
 
 EcruteakDanceTheaterSignText:
-	text "ECRUTEAK DANCE"
-	line "THEATER"
+	text "Ecruteak Dance"
+	line "Theater"
 	done
 
 BurnedTowerSignText:
-	text "BURNED TOWER"
+	text "Burned Tower"
 
 	para "It was destroyed"
 	line "by a mysterious"
@@ -290,7 +290,7 @@ SetoScript:
 
 SetoSeenText:
     text "You defeated that"
-    line "old fool HENSHIN!"
+    line "old fool Henshin!"
 
     para "Where was he?"
 
@@ -303,7 +303,7 @@ SetoSeenText:
     para "Then I will"
     line "return and"
     cont "finally beat"
-    cont "you ATEM!"
+    cont "you Atem!"
 
     para "For your reward"
     line "I will give you"
@@ -327,18 +327,18 @@ SetoAfterBattleText:
     cont "live to be"
     cont "my pets."
 
-    para "And ATEM will"
+    para "And Atem will"
     line "kneel before me!"
     done
 
 BeatHenshinFirstText:
-    text "I am SETO!"
+    text "I am Seto!"
     line "I am from a"
     cont "different time."
 
     para "I came here with"
     line "an old man named"
-    cont "HENSHIN."
+    cont "Henshin."
 
     para "But I've lost him."
 
@@ -387,7 +387,7 @@ EcruteakTeleportGuyScript:
 
 EcruteakTeleportGuyWelcomeText:
     text "Welcome to"
-    line "ECRUTEAK."
+    line "Ecruteak."
 
     para "You must be quite"
     line "the trainer to"

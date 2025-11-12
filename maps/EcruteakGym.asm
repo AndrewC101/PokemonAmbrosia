@@ -199,7 +199,7 @@ EcruteakGymGrampsSlowStepDownMovement:
 	step_end
 
 MortyIntroText:
-	text "ECRUTEAK is an"
+	text "Ecruteak is an"
 	line "ancient city."
 
 	para "With a history of"
@@ -229,7 +229,7 @@ MortyLossText:
 	text "You have"
 	line "broken free."
 
-	para "This BADGE is"
+	para "This Badge is"
 	line "yours."
 	done
 

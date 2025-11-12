@@ -73,7 +73,7 @@ EcruteakLugiaSpeechHouseGrampsText:
     para "I dedicated the"
     line "rest of my life"
     cont "to protecting"
-    cont "the TIN TOWER."
+    cont "the Tin Tower."
 	done
 
 EcruteakLugiaSpeechHouseYoungsterText:

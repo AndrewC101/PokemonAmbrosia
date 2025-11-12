@@ -156,7 +156,7 @@ SabrinaIntroText:
 
 	para "Champion <PLAYER>."
 
-	para "As SAFFRON CITY"
+	para "As Saffron City"
 	line "Gym Leader I do"
 	cont "hereby accept your"
 	cont "challenge."

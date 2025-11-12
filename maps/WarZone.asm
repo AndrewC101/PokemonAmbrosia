@@ -274,7 +274,7 @@ WarZoneOakText:
     cont "obtain do you"
     cont "not?"
 
-    para "Head to VIRIDIAN"
+    para "Head to Viridian"
     line "and battle my"
     cont "nephew Blue."
 
@@ -442,7 +442,7 @@ WallaceAfterBattleText1:
     para "To kill on sight."
 
     para "Starting with"
-    line "NEW BARK TOWN."
+    line "New Bark Town."
     done
 
 WallaceAfterBattleText2:
@@ -938,7 +938,7 @@ TrainerSoldier2:
 Soldier2SeenText:
     text "So you caused the"
     line "trouble in"
-    cont "VERMILION."
+    cont "Vermilion."
 
     para "We have been"
     line "preparing this"
@@ -975,7 +975,7 @@ Soldier2AfterBattleText:
 
     para "Too fast to see!"
 
-    para "DRAGONS"
+    para "Dragons"
 
     para "...."
 
@@ -1005,7 +1005,7 @@ Soldier3SeenText:
     para "Our reinforcements"
     line "have made it past"
     cont "Surge and will be"
-    cont "taking SAFFRON"
+    cont "taking Saffron"
     cont "shortly."
 
     para "You have failed."
@@ -1023,14 +1023,14 @@ Soldier3AfterBattleText:
     text "It's over!"
 
     para "Our forces have"
-    line "taken SAFFRON."
+    line "taken Saffron."
 
     para "Listen yourself."
 
     para "...."
 
     para "Yes Captain, have"
-    line "you taken SAFFRON?"
+    line "you taken Saffron?"
 
     para "...."
 

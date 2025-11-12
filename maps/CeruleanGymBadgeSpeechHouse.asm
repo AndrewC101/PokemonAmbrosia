@@ -11,7 +11,7 @@ CeruleanGymBadgeSpeechHousePokefanMScript:
 
 CeruleanGymBadgeSpeechHousePokefanMText:
 	text "Are you collecting"
-	line "Kanto Gym BADGES?"
+	line "Kanto Gym Badges?"
 
 	para "The Kanto Leaders"
 	line "are very strong."

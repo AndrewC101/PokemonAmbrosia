@@ -35,7 +35,7 @@ MahoganyPokecenter1FPokefanMText:
 MahoganyPokecenter1FYoungsterText:
 	text "You need to be"
 	line "careful around the"
-	cont "LAKE OF RAGE."
+	cont "Lake of Rage."
 	para "People can go"
 	line "missing."
 	para "My friend went"
@@ -46,8 +46,8 @@ MahoganyPokecenter1FYoungsterText:
 
 MahoganyPokecenter1FCooltrainerFText:
 	text "I'm going hiking"
-	line "in ICE PATH."
-	para "My CHANDELURE"
+	line "in Ice Path."
+	para "My Chandelure"
 	line "should be able to"
 	cont "melt any ICE"
 	cont "#mon that"

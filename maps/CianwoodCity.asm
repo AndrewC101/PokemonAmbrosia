@@ -266,7 +266,7 @@ CianwoodCityYoungsterText:
 	text "If you use FLY,"
 	line "you can get back"
 
-	para "to OLIVINE"
+	para "to Olivine"
 	line "instantly."
 
 	para "As long as you"
@@ -393,14 +393,14 @@ EusineAfterText:
 	done
 
 CianwoodCitySignText:
-	text "CIANWOOD CITY"
+	text "Cianwood City"
 
 	para "A Port Surrounded"
 	line "by Rough Seas"
 	done
 
 CianwoodGymSignText:
-	text "CIANWOOD CITY"
+	text "Cianwood City"
 	line "#mon Gym"
 
 	para "Leader: Chuck"
@@ -413,7 +413,7 @@ CianwoodPharmacySignText:
 	text "500 Years of"
 	line "Tradition"
 
-	para "CIANWOOD CITY"
+	para "Cianwood City"
 	line "PHARMACY"
 
 	para "We Await Your"
@@ -421,7 +421,7 @@ CianwoodPharmacySignText:
 	done
 
 CianwoodPhotoStudioSignText:
-	text "CIANWOOD CITY"
+	text "Cianwood City"
 	line "PHOTO STUDIO"
 
 	para "Take a Snapshot as"
@@ -434,8 +434,8 @@ CianwoodPokeSeerSignText:
 	done
 
 CianwoodBeachSignText:
-	text "CIANWOOD"
-	line "BEACH"
+	text "Cianwood"
+	line "Beach"
 	done
 
 CianwoodCityFieldMon1Script:
@@ -699,7 +699,7 @@ CameHereToGetMedicine:
     para "That's how I"
     line "know your name."
 
-    para "I'm from SAFFRON"
+    para "I'm from Saffron"
     line "which is full of"
     cont "Psychics."
 

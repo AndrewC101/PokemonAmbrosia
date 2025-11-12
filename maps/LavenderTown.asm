@@ -115,15 +115,15 @@ LavenderTownYoungsterText:
 	done
 
 LavenderTownSignText:
-	text "LAVENDER TOWN"
+	text "Lavender Town"
 
 	para "The Noble Purple"
 	line "Town"
 	done
 
 KantoRadioStationSignText:
-	text "Kanto RADIO"
-	line "STATION"
+	text "Kanto Radio"
+	line "Station"
 
 	para "Your Favorite"
 	line "Programs On-Air"
@@ -131,12 +131,12 @@ KantoRadioStationSignText:
 	done
 
 VolunteerPokemonHouseSignText:
-	text "LAVENDER VOLUNTEER"
-	line "#mon HOUSE"
+	text "Lavender Volunteer"
+	line "#mon House"
 	done
 
 SoulHouseSignText:
-	text "SOUL HOUSE"
+	text "Soul House."
 
 	para "May the Souls of"
 	line "#mon Rest Easy"

@@ -60,9 +60,9 @@ PewterCityFruitTree2:
 	fruittree FRUITTREE_PEWTER_CITY_2
 
 PewterCityCooltrainerFText:
-	text "The #RUS"
+	text "The #rus"
 	line "outbreak put"
-	cont "PEWTER on the map"
+	cont "Pewter on the map"
 	cont "in all the wrong"
 	cont "ways."
 
@@ -96,7 +96,7 @@ PewterCityGrampsText:
 	para "I invested in"
 	line "a new promising"
 	cont "venture in"
-	cont "VERMILION."
+	cont "Vermilion."
 
 	para "But it was a"
 	line "con and collapsed"
@@ -130,7 +130,7 @@ PewterCitySignText:
 	done
 
 PewterGymSignText:
-	text "PEWTER CITY"
+	text "Pewter City"
 	line "#mon Gym"
 	cont "Leader: Brock"
 
@@ -142,21 +142,21 @@ PewterMuseumSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "PEWTER MUSEUM OF"
-	line "SCIENCE is sealed."
+	para "Pewter Museum of"
+	line "science is sealed."
 	done
 
 PewterCityMtMoonGiftShopSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "MT.MOON GIFT SHOP"
-	line "NOW OPEN!"
+	para "Mt.Moon gift shop"
+	line "now open!"
 	done
 
 PewterCityWelcomeSignText:
-	text "WELCOME TO"
-	line "PEW..."
+	text "Welcome to"
+	line "Pew..."
 
 	para "The rest is"
 	line "worn away."
@@ -192,7 +192,7 @@ MuseumBlockScript:
 
 MuseumBlockText:
     text "This used to be"
-    line "the PEWTER MUSEUM."
+    line "the Pewter Museum."
 
     para "Two years ago a"
     line "#RUS outbreak"

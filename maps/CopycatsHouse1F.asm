@@ -39,7 +39,7 @@ CopycatsHouse1FPokefanMText:
 	text "I invested a lot"
 	line "of money in some"
 	cont "old con man from"
-	cont "VERMILION running"
+	cont "Vermilion running"
 	cont "a pyramid scheme."
 
 	para "I was an early"
@@ -48,7 +48,7 @@ CopycatsHouse1FPokefanMText:
 	cont "money from it."
 
 	para "Some poor folk"
-	line "from PEWTER lost"
+	line "from Pewter lost"
 	cont "everything they"
 	cont "had though."
 

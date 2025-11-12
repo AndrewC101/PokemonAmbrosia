@@ -148,8 +148,8 @@ OlivineCrystalIntroText:
 
     para "Hey!"
 
-    para "I hear TEAM"
-    line "ROCKET have been"
+    para "I hear Team"
+    line "Rocket have been"
     cont "sighted about.."
 
     para "Hang on!"
@@ -187,7 +187,7 @@ OlivineSilverConfrontsCrystal:
 
     para "It certainly would"
     line "not have found one"
-    cont "in NEW BARK TOWN."
+    cont "in New Bark Town."
 
     para "You two are proof"
     line "of that."
@@ -377,11 +377,11 @@ OlivineCitySailor1Text:
 
 OlivineCityStandingYoungsterPokegearText:
 	text "I can't get"
-	line "to CIANWOOD and"
+	line "to Cianwood and"
 	cont "relax on the"
 	cont "beach."
 
-	para "Maybe CIANWOOD"
+	para "Maybe Cianwood"
 	line "isn't the best"
 	cont "place to go."
 
@@ -395,7 +395,7 @@ OlivineCitySailor2Text:
 	text "There are several"
 	line "islands in the"
 	cont "sea between here"
-	cont "and CIANWOOD."
+	cont "and Cianwood."
 
 	para "They are protected"
 	line "by fierce waters."
@@ -410,19 +410,19 @@ OlivineCitySailor2Text:
 	done
 
 OlivineCitySignText:
-	text "OLIVINE CITY"
+	text "Olivine City"
 
 	para "The Port Closest"
 	line "to Foreign Lands"
 	done
 
 OlivineCityPortSignText:
-	text "OLIVINE PORT"
-	line "FAST SHIP PIER"
+	text "Olivine Port"
+	line "Fast Ship Pier"
 	done
 
 OlivineGymSignText:
-	text "OLIVINE CITY"
+	text "Olivine City"
 	line "#mon Gym"
 	cont "Leader: Jasmine"
 
@@ -431,13 +431,13 @@ OlivineGymSignText:
 	done
 
 OlivineLighthouseSignText:
-	text "OLIVINE LIGHTHOUSE"
+	text "Olivine Lighthouse"
 	line "Also known as the"
-	cont "GLITTER LIGHTHOUSE"
+	cont "Glitter Lighthouse"
 	done
 
 OlivineCityBattleTowerSignText:
-	text "BATTLE TOWER AHEAD"
+	text "Battle Tower ahead"
 	line "Opening Now!"
 	done
 	
@@ -1051,7 +1051,7 @@ RolePlay3PrizeText:
 
 DBZIntroText:
     text "Are you going to"
-    line "CIANWOOD?"
+    line "Cianwood?"
 
     para "Apparently the"
     line "Gym Leader is a"
@@ -1684,7 +1684,7 @@ StrengthText:
     para "Have you been"
     line "to the"
 
-    para "BATTLE FRONTIER."
+    para "Battle Frontier."
 
     para "I'm having so"
     line "much fun I've"

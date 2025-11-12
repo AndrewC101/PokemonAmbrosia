@@ -20,8 +20,8 @@ Route40BattleTowerGateTwinScript:
 
 Route40BattleTowerGateRockerText:
 	text "Are you going to"
-	line "the BATTLE"
-	cont "FRONTIER?"
+	line "the Battle"
+	cont "Frontier?"
 	para "There are five"
 	line "different battle"
 	cont "areas with"

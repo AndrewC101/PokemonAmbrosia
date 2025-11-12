@@ -230,7 +230,7 @@ SwimmermBerkeSeenText:
 	line "JACK SPARROW."
 
 	para "I would bet"
-	line "all me ALPH"
+	line "all me Alph"
 	cont "gold that you"
 	cont "have the heart"
 	cont "of a pirate."
@@ -294,7 +294,7 @@ SwimmermMathewSeenText:
 
 	para "But it will"
 	line "only appear to"
-	cont "a true SILVER"
+	cont "a true Silver"
 	cont "knight."
 	done
 
@@ -317,7 +317,7 @@ SwimmermMathewAfterBattleText:
 SwimmerfKayleeSeenText:
 	text "I can't go on."
 
-	para "CIANWOOD is"
+	para "Cianwood is"
 	line "too far."
 
 	para "I need my"
@@ -410,7 +410,7 @@ SwimmerfKaraAfterBattleText:
 SwimmerfWendySeenText:
 	text "I've had it"
 	line "living in"
-	cont "CIANWOOD!"
+	cont "Cianwood!"
 
 	para "I'm swimming to"
 	line "the mainland."
@@ -427,7 +427,7 @@ SwimmerfWendyBeatenText:
 SwimmerfWendyAfterBattleText:
 	text "It's just so"
 	line "boring in"
-	cont "CIANWOOD."
+	cont "Cianwood."
 
 	para "And that little"
 	line "psychic girl"

@@ -28,7 +28,7 @@ CianwoodLugiaSpeechHouseTeacherText:
 	line "will never make it"
 	cont "past the rough"
 	cont "waters of the"
-	cont "WHIRL ISLANDS."
+	cont "Whirl Islands."
 	done
 
 CianwoodLugiaSpeechHouseLassText:

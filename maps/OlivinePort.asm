@@ -335,18 +335,18 @@ OlivinePortNoTicketText:
 	done
 
 OlivinePortMondayShipText:
-	text "The FAST SHIP will"
+	text "The Fast Ship will"
 	line "sail next Monday."
 	done
 
 OlivinePortFridayShipText:
-	text "The FAST SHIP will"
+	text "The Fast Ship will"
 	line "sail next Friday."
 	done
 
 OlivinePortFishingGuru1Text:
 	text "The Ship travels"
-	line "to VERMILION in"
+	line "to Vermilion in"
 	cont "Kanto."
 
 	para "You need a ticket"

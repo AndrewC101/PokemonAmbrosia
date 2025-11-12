@@ -182,7 +182,7 @@ JasmineCianwoodPharmacyText:
 	para "There is a"
 	line "special"
 	cont "pharmacy in"
-	cont "CIANWOOD across"
+	cont "Cianwood across"
 	cont "the sea."
 
 	para "They have a new"

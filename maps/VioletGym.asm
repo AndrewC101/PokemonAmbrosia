@@ -151,7 +151,7 @@ VioletGymStatue:
 
 FalknerIntroText:
 	text "I'm Falkner, the"
-	line "VIOLET #mon Gym"
+	line "Violet #mon Gym"
 	cont "leader!"
 
 	para "I wrote a haiku"
@@ -360,7 +360,7 @@ VioletGymGuideText:
 	cont "a good ROCK or"
 	cont "STEEL type."
 
-	para "DARK CAVE might"
+	para "Dark Cave might"
 	line "have such"
 	cont "#mon."
 	done

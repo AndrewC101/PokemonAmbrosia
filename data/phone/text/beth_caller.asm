@@ -28,7 +28,7 @@ BethDefeatedMonText:
 BethLostAMonText:
 	text "Did you know Karen"
 	line "used to live in"
-	cont "BLACKTHORN!"
+	cont "Blackthorn!"
 	para "She must a"
 	line "subconscious fear"
 	cont "of Dragon"

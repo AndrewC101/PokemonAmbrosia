@@ -131,7 +131,7 @@ BirdKeeperVance1MercyText:
     cont "be here!"
 
     para "You came through"
-    line "from BLACKTHORN."
+    line "from Blackthorn."
 
     para "Oh I don't think"
     line "you will be able"
@@ -142,10 +142,10 @@ BirdKeeperVance1MercyText:
     line "the pickle."
 
     para "West of here is"
-    line "MAHOGANY town."
+    line "Mahogany town."
 
     para "West of that is"
-    line "ECRUTEAK."
+    line "Ecruteak."
 
     para "There is a man"
     line "there who can"
@@ -521,14 +521,14 @@ CooltrainerfCybilAfterBattleText:
 
 Route44Sign1Text:
 	text "ROUTE 44"
-	line "ICE PATH AHEAD"
+	line "Ice Path ahead"
 	done
 
 Route44Sign2Text:
 	text "ROUTE 44"
 
-	para "MAHOGANY TOWN -"
-	line "BLACKTHORN CITY"
+	para "Mahogany Town -"
+	line "Blackthorn City"
 	done
 
 Route44FieldMon1Script:

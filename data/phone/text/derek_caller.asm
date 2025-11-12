@@ -5,8 +5,8 @@ DerekCheekPinchingText:
 	cont "opened!"
 	para "The entrance is"
 	line "said to somewhere"
-	cont "in the RUINS OF"
-	cont "ALPH."
+	cont "in the Ruins of"
+	cont "Alph."
 	para "A great evil"
 	line "dwells down there."
 	done

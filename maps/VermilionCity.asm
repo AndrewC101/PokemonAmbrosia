@@ -212,7 +212,7 @@ InvadedVermilionMachopOwnerText:
 
 VermilionCitySuperNerdText:
 	text "The trainers in"
-	line "VERMILION Gym"
+	line "Vermilion Gym"
 	cont "are a rock band"
 	cont "known as"
 	cont "THE SOLENOIDS!"
@@ -268,7 +268,7 @@ VermilionCityBadgeGuyTrainerText:
 VermilionCityBadgeGuySomeBadgesText:
 	text "You've started to"
 	line "collect Kanto Gym"
-	cont "BADGES?"
+	cont "Badges?"
 
 	para "It's tough isn't"
 	line "it."
@@ -280,7 +280,7 @@ VermilionCityBadgeGuySomeBadgesText:
 
 VermilionCityBadgeGuyMostBadgesText:
 	text "You've got lots"
-	line "of Kanto BADGES."
+	line "of Kanto Badges."
 
 	para "But don't get too"
 	cont "confident."
@@ -296,7 +296,7 @@ VermilionCityBadgeGuyAllBadgesText:
 	text "Congratulations!"
 
 	para "You got all the"
-	line "Kanto Gym BADGES."
+	line "Kanto Gym Badges."
 
 	para "You are a true"
 	line "Champion!"
@@ -316,14 +316,14 @@ VermilionCityBadgeGuyBattleEdgeText:
 	done
 
 VermilionCitySignText:
-	text "VERMILION CITY"
+	text "Vermilion City"
 
 	para "The Port of"
 	line "Exquisite Sunsets"
 	done
 
 VermilionGymSignText:
-	text "VERMILION CITY"
+	text "Vermilion City"
 	line "#mon Gym"
 	cont "Leader: LT.Surge"
 
@@ -339,12 +339,12 @@ PokemonFanClubSignText:
 	done
 
 VermilionCityDiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
+	text "Diglett's Cave"
 	done
 
 VermilionCityPortSignText:
-	text "VERMILION PORT"
-	line "ENTRANCE"
+	text "Vermilion Port"
+	line "Entrance"
 	done
 	
 VermilionGymBlockScript:
@@ -485,7 +485,7 @@ Soldier7WinsText:
     done
 Soldier7AfterBattleText:
     text "We have taken"
-    line "VERMILION with"
+    line "Vermilion with"
     cont "ease."
 
     para "Resistance is"
@@ -507,7 +507,7 @@ Soldier8SeenText:
 	line "locked down."
 	para "We are just the"
 	line "first wave."
-	para "SAFFRON will soon"
+	para "Saffron will soon"
 	line "fall too."
 	para "Don't try to stop"
 	line "us."
@@ -607,7 +607,7 @@ HoenCaptainAfterBattleText:
 	para "I've accomplished"
 	line "my mission."
 	para "Wallace has made"
-	line "it to FUCHSIA."
+	line "it to Fuchsia."
 	para "Kanto is doomed."
 	para "Emperor Wallace"
 	line "has our strongest"
@@ -618,7 +618,7 @@ HoenCaptainAfterBattleText:
 	line "Champions much"
 	cont "stronger than you."
 	para "You should stay"
-	line "away from FUCHSIA"
+	line "away from Fuchsia"
 	cont "if you value your"
 	cont "life."
     done
@@ -704,7 +704,7 @@ VermilionYunaSeenText:
 
     para "Thank you for"
     line "training with me"
-    cont "in OLIVINE."
+    cont "in Olivine."
 
     para "I've become much"
     line "stronger."

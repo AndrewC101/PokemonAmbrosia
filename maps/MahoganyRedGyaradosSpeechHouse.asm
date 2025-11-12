@@ -39,7 +39,7 @@ MahoganyRedGyaradosSpeechHouseTeacherText:
 	cont "last year."
 
 	para "I think it was"
-	line "the MAHOGANY"
+	line "the Mahogany"
 	cont "murderer."
 
 	para "A serial killer"

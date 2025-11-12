@@ -116,7 +116,7 @@ FirebreatherLyleSeenText:
 	line "Kanto to find my"
 	cont "hero Blaine."
 
-	para "The CINNABAR Gym"
+	para "The Cinnabar Gym"
 	line "was destroyed in"
 	cont "a Hoenn attack."
 
@@ -141,7 +141,7 @@ FirebreatherLyleAfterBattleText:
 BugCatcherKenSeenText:
 	text "There used to be"
 	line "a big forest in"
-	cont "VIRIDIAN."
+	cont "Viridian."
 
 	para "It was ravaged"
 	line "during the #RUS"
@@ -201,7 +201,7 @@ GuitaristClydeSeenText:
 	cont "my groupies."
 
 	para "We have a band"
-	line "in VERMILION."
+	line "in Vermilion."
 
 	para "We're called"
 	line "THE SOLENOIDS!"
@@ -243,15 +243,15 @@ FastShipBedText2:
 	done
 
 FastShipArrivedOlivineText:
-	text "FAST SHIP S.S.AQUA"
+	text "Fast Ship SS.Aqua"
 	line "has arrived in"
-	cont "OLIVINE CITY."
+	cont "Olivine City."
 	done
 
 FastShipArrivedVermilionText:
-	text "FAST SHIP S.S.AQUA"
+	text "Fast Ship SS.Aqua"
 	line "has arrived in"
-	cont "VERMILION CITY."
+	cont "Vermilion City."
 	done
 
 FastShipCabins_SW_SSW_NW_MapEvents:

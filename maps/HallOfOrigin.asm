@@ -932,10 +932,10 @@ MasterGreenSeenText:
     para "I will never be"
     line "anyone else."
 
-    para "I am GREEN."
+    para "I am Green."
 
     para "A trainer from"
-    line "PALLET TOWN."
+    line "Pallet Town."
     done
 
 MasterGreenBeatenText:

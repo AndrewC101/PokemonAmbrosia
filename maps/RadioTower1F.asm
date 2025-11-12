@@ -164,7 +164,7 @@ RadioTower1FRadioCardWomanScript:
 	end
 
 .RadioCardText:
-	db "RADIO CARD@"
+	db "Radio Card@"
 
 .ReceiveItem:
 	jumpstd ReceiveItemScript
@@ -318,7 +318,7 @@ RadioTower1FRadioCardWomanOfferQuizText:
 
 	para "Answer five ques-"
 	line "tions correctly to"
-	cont "win a RADIO CARD."
+	cont "win a Radio Card."
 
 	para "Slide it into your"
 	line "#gear to play"
@@ -384,7 +384,7 @@ RadioTower1FRadioCardWomanYouWinText:
 	line "Congratulations!"
 
 	para "Here's your prize,"
-	line "a RADIO CARD!"
+	line "a Radio Card!"
 	done
 
 RadioTower1FPokegearIsARadioText:
@@ -600,8 +600,8 @@ RadioTowerCrystalIntroText:
     line "Prof.Elm."
 
     para "You're going to"
-    line "take on TEAM"
-    cont "ROCKET!"
+    line "take on Team"
+    cont "Rocket!"
 
     para "We should work"
     line "together."
@@ -623,7 +623,7 @@ RadioTowerCrystalIntroText:
     line "it was sarcasm."
 
     para "Have you fought"
-    line "TEAM ROCKET"
+    line "Team Rocket"
     cont "before?"
     done
 

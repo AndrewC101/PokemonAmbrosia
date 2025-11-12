@@ -245,7 +245,7 @@ AzaleaTownPlayerLeavesKurtsHouseMovement:
 
 AzaleaTownRivalBeforeText:
 	text "I came when I"
-	line "heard TEAM ROCKET"
+	line "heard Team Rocket"
 	cont "were here."
 
 	para "But they have"
@@ -253,8 +253,8 @@ AzaleaTownRivalBeforeText:
 	cont "back under their"
 	cont "rock."
 
-	para "I despise TEAM"
-	line "ROCKET."
+	para "I despise Team"
+	line "Rocket."
 
 	para "An organisation"
 	line "full of slow"
@@ -282,7 +282,7 @@ AzaleaTownRivalLossText:
 	text "That's exactly"
 	line "what I would"
 	cont "have done to"
-	cont "TEAM ROCKET!"
+	cont "Team Rocket!"
 	done
 
 AzaleaTownRivalAfterText:
@@ -389,7 +389,7 @@ AzaleaTownTeacherText:
 AzaleaTownYoungsterText:
 	text "Through the"
 	line "forest you'll"
-	cont "find GOLDENROD"
+	cont "find Goldenrod"
 	cont "CITY."
 
 	para "It's a big and"
@@ -423,7 +423,7 @@ WoosterText:
 	done
 
 AzaleaTownKurtText1:
-	text "ILEX FOREST is"
+	text "Ilex Forest is"
 	line "restless!"
 
 	para "What is going on?"
@@ -436,12 +436,12 @@ AzaleaTownKurtText2:
 
 AzaleaTownKurtText3:
 	text "Could you go see"
-	line "why ILEX FOREST is"
+	line "why Ilex Forest is"
 	cont "so restless?"
 	done
 
 AzaleaTownSignText:
-	text "AZALEA TOWN"
+	text "Azalea Town"
 	line "Where People and"
 
 	para "#mon Live in"
@@ -453,7 +453,7 @@ KurtsHouseSignText:
 	done
 
 AzaleaGymSignText:
-	text "AZALEA TOWN"
+	text "Azalea Town"
 	line "#mon Gym"
 	cont "Leader: Bugsy"
 
@@ -463,10 +463,10 @@ AzaleaGymSignText:
 	done
 
 SlowpokeWellSignText:
-	text "SLOWPOKE WELL"
+	text "Slowpoke Well"
 
 	para "Also known as the"
-	line "RAINMAKER WELL."
+	line "Rainmaker Well."
 
 	para "Locals believe"
 	line "that a SLOWPOKE's"
@@ -484,7 +484,7 @@ CharcoalKilnSignText:
 	done
 
 AzaleaTownIlexForestSignText:
-	text "ILEX FOREST"
+	text "Ilex Forest"
 
 	para "Enter through the"
 	line "gate."
@@ -762,7 +762,7 @@ YuGiOhIntroText:
     text "Hey!"
 
     para "Did you visit"
-    line "the RUINS OF ALPH?"
+    line "the Ruins of Alph?"
 
     para "I did and it got"
     line "me in the mind"
@@ -799,12 +799,12 @@ YuGiOhHenshin1Text:
     cont "own destiny."
 
     para "You corner your"
-    line "master SETO and"
+    line "master Seto and"
     cont "tell him he shall"
     cont "control you no"
     cont "longer."
 
-    para "SETO shakes with"
+    para "Seto shakes with"
     line "rage."
 
     para "He grabs his"
@@ -824,31 +824,31 @@ YuGiOhHenshin2Text:
     cont "palace."
 
     para "You watch as"
-    line "SETO marches into"
+    line "Seto marches into"
     cont "the throne room."
 
     para "He challenges the"
-    line "Pharaoh ATEM."
+    line "Pharaoh Atem."
 
     para "You are horrified"
     line "by the immense"
-    cont "power of ATEM's"
+    cont "power of Atem's"
     cont "cards."
 
-    para "SETO lies on"
+    para "Seto lies on"
     line "the floor."
 
     para "This is your"
     line "chance!"
 
     para "You jump out"
-    line "and stab ATEM"
+    line "and stab Atem"
     cont "in the back."
 
     para "He drops his"
     line "godly cards."
 
-    para "But ATEM brings"
+    para "But Atem brings"
     line "from his robe"
     cont "some old and"
     cont "shabby looking"
@@ -865,16 +865,16 @@ YuGiOhHenshin3Text:
     line "battle of life"
     cont "and death."
 
-    para "ATEM triumphs."
+    para "Atem triumphs."
 
-    para "ATEM's monsters"
-    line "banish HENSHIN"
+    para "Atem's monsters"
+    line "banish Henshin"
     cont "to the shadow"
     cont "realm."
 
     para "Years pass."
 
-    para "ATEM and SETO"
+    para "Atem and Seto"
     line "protect the"
     cont "kingdom from"
     cont "many foes."
@@ -892,8 +892,8 @@ YuGiOhHenshin3Text:
     cont "entity consumes"
     cont "their souls."
 
-    para "You pull ATEM"
-    line "and SETO into"
+    para "You pull Atem"
+    line "and Seto into"
     cont "your realm."
 
     para "You are NIGHTMARE."
@@ -917,7 +917,7 @@ YuGiOhSeto1Text:
     cont "are powerful."
 
     para "Your high priest"
-    line "HENSHIN has asked"
+    line "Henshin has asked"
     cont "to speak with you."
 
     para "He says he shall"
@@ -933,7 +933,7 @@ YuGiOhSeto1Text:
     done
 
 YuGiOhSeto2Text:
-    text "HENSHIN is"
+    text "Henshin is"
     line "defeated."
 
     para "None can defeat"
@@ -945,7 +945,7 @@ YuGiOhSeto2Text:
     cont "the kingdom as"
     cont "your own."
 
-    para "ATEM looks at you"
+    para "Atem looks at you"
     line "and through you."
 
     para "He takes from"
@@ -966,10 +966,10 @@ YuGiOhSeto3Text:
     para "As your vision"
     line "fades you see..."
 
-    para "HENSHIN jumps"
+    para "Henshin jumps"
     line "from the shadows."
 
-    para "He stabs ATEM in"
+    para "He stabs Atem in"
     line "the back."
 
     para "You lose your"
@@ -980,7 +980,7 @@ YuGiOhSeto3Text:
 YuGiOhYami1Text:
     text "You are the"
     line "great and mighty"
-    cont "Pharaoh ATEM."
+    cont "Pharaoh Atem."
 
     para "You rule your"
     line "kingdom with"
@@ -997,7 +997,7 @@ YuGiOhYami1Text:
     para "None can challenge"
     line "you."
 
-    para "You know SETO will"
+    para "You know Seto will"
     line "try to overthrow"
     cont "you."
 
@@ -1006,7 +1006,7 @@ YuGiOhYami1Text:
 
     para "Here he comes."
 
-    para "SETO marches in"
+    para "Seto marches in"
     line "and predictably"
     cont "proclaims the"
     cont "throne his own."
@@ -1020,7 +1020,7 @@ YuGiOhYami1Text:
     done
 
 YuGiOhYami2Text:
-    text "SETO falls to"
+    text "Seto falls to"
     line "the floor."
 
     para "Utterly defeated"
@@ -1039,7 +1039,7 @@ YuGiOhYami2Text:
     line "the God cards."
 
     para "Standing over you"
-    line "is HENSHIN."
+    line "is Henshin."
 
     para "The high priest"
     line "of SETOs house."
@@ -1063,37 +1063,37 @@ YuGiOhRolePlayYamiSetoText:
     line "battle of life"
     cont "and death."
 
-    para "ATEM triumphs."
+    para "Atem triumphs."
 
-    para "ATEM's monsters"
-    line "banish HENSHIN"
+    para "Atem's monsters"
+    line "banish Henshin"
     cont "to the shadow"
     cont "realm."
 
-    para "SETO awakens and"
+    para "Seto awakens and"
     line "sees the broken"
-    cont "ATEM."
+    cont "Atem."
 
     para "It would be"
     line "trivial to end"
     cont "him is this"
     cont "state."
 
-    para "SETO retrieves"
-    line "ATEM's God cards."
+    para "Seto retrieves"
+    line "Atem's God cards."
 
     para "And uses their"
     line "power to heal"
-    cont "ATEM."
+    cont "Atem."
 
-    para "ATEM in his"
+    para "Atem in his"
     line "wisdom appoints"
-    cont "SETO as his"
+    cont "Seto as his"
     cont "right HAND."
     done
 
 YuGiOhYami3Text:
-    text "ATEM and SETO"
+    text "Atem and Seto"
     line "protect the"
     cont "kingdom and fight"
     cont "many foes."
@@ -1134,7 +1134,7 @@ YuGiOhRolePlayFinalText:
     para "NIGHTMARE was"
     line "vanquished!"
 
-    para "ATEM and SETO"
+    para "Atem and Seto"
     line "return home."
 
     para "They rule"

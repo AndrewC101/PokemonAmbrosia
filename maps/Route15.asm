@@ -267,8 +267,8 @@ SchoolboyJohnnyAfterBattleText:
 Route15SignText:
 	text "ROUTE 15"
 
-	para "FUCHSIA CITY -"
-	line "LAVENDER TOWN"
+	para "Fuchsia City -"
+	line "Lavender Town"
 	done
 
 Route15_MapEvents:

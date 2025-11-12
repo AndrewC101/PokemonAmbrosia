@@ -72,7 +72,7 @@ DaisyHelloText:
 
 	para "He is the Gym"
 	line "Leader of"
-	cont "VIRIDIAN."
+	cont "Viridian."
 
 	para "People call him"
 	line "Champion Blue."

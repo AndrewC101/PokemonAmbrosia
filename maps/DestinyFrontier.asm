@@ -246,7 +246,7 @@ MasterSetoScript:
 	line "known I'd find you"
 	cont "here!"
 	para "I am trying to"
-	line "find ATEM, but I"
+	line "find Atem, but I"
 	cont "can spare a moment"
 	cont "to crush you!"
 	done
@@ -264,12 +264,12 @@ MasterSetoScript:
  MasterSetoAfterBattleText:
 	text "I don't have time"
 	line "for you."
-	para "I saw ATEM earlier"
+	para "I saw Atem earlier"
 	line "following someone"
 	cont "who looked like"
-	cont "HENSHIN, but it"
+	cont "Henshin, but it"
 	cont "couldn't be"
-	cont "HENSHIN."
+	cont "Henshin."
 	done
 
  MasterSetoLoseAfterBattleText:
@@ -278,7 +278,7 @@ MasterSetoScript:
 	cont "other way."
 	para "Now run along kid."
 	para "I need to find"
-	line "ATEM."
+	line "Atem."
 	done
 
 MasterDrakeScript:
@@ -1192,7 +1192,7 @@ CongratsText:
 
     para "You must go now"
     line "to the summit of"
-    cont "MT.SILVER."
+    cont "Mt.Silver."
 
     para "There you can"
     line "pass onto the"

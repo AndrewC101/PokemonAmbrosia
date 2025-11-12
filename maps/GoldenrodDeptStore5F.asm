@@ -53,7 +53,7 @@ Mike:
     jumptextfaceplayer MikeText
 
 MikeText:
-	text "The CELADON DEPT"
+	text "The Celadon Dept"
 	line "has way more TMs"
 	cont "than this!"
 	para "This place doesn't"
@@ -100,7 +100,7 @@ GoldenrodDeptStore5FPokefanMText:
 
 	para "But there are"
 	line "better TMs at"
-	cont "the GAME CORNER."
+	cont "the Game Corner."
 
 	para "Then there is"
 	line "the MOVE TUTOR"

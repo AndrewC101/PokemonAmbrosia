@@ -215,7 +215,7 @@ BugCatchingContestant10AText:
 
 NationalParkBugContestRelaxationSquareText:
 	text "RELAXATION SQUARE"
-	line "NATIONAL PARK"
+	line "National Park"
 	done
 
 NationalParkBugContestBattleNoticeText:
@@ -225,7 +225,7 @@ NationalParkBugContestBattleNoticeText:
 	para "Please battle only"
 	line "in the grass."
 
-	para "NATIONAL PARK"
+	para "National Park"
 	line "WARDEN'S OFFICE"
 	done
 

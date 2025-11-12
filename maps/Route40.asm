@@ -269,7 +269,7 @@ SwimmerfPaulaAfterBattleText:
 	done
 
 Route40Lass1Text:
-	text "CIANWOOD is"
+	text "Cianwood is"
 	line "across the sea."
 
 	para "I used to go"
@@ -286,10 +286,10 @@ Route40Lass1Text:
 
 Route40PokefanMText:
 	text "Up ahead is the"
-	line "BATTLE FRONTIER!"
+	line "Battle Frontier!"
 	para "There is so"
 	line "much to do there!"
-	para "The BATTLE TOWER"
+	para "The Battle Tower"
 	line "is the most"
 	cont "prestigious"
 	cont "facility."
@@ -311,10 +311,10 @@ Route40PokefanMText:
 Route40Lass2Text:
 	text "I've been winning"
 	line "prizes in the"
-	cont "BATTLE FRONTIER."
+	cont "Battle Frontier."
 
 	para "I like the"
-	line "BATTLE MIRROR."
+	line "Battle Mirror."
 
 	para "I get to fight"
 	line "my beautiful self."
@@ -379,8 +379,8 @@ MonicaNotMondayText:
 Route40SignText:
 	text "ROUTE 40"
 
-	para "CIANWOOD CITY -"
-	line "OLIVINE CITY"
+	para "Cianwood City -"
+	line "Olivine City"
 	done
 
 AreaFieldMon1Script:

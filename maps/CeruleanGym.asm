@@ -230,7 +230,7 @@ CeruleanGymGruntBigMistakeText:
 	text "I recognize you!"
 
 	para "You dismantled"
-	line "TEAM ROCKET in"
+	line "Team Rocket in"
 	cont "Johto."
 
 	para "I would very much"
@@ -259,7 +259,7 @@ CeruleanGymGruntByeText:
 	para "I am the PRIMERA"
 
 	para "The strongest of"
-	line "all ROCKETS."
+	line "all Rockets."
 
 	para "Now be gone!"
 	done

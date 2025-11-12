@@ -74,7 +74,7 @@ GoldenrodUndergroundWarehouseUltraBall:
 	itemball FULL_RESTORE
 
 GruntM24SeenText:
-	text "I may be a ROCKET"
+	text "I may be a Rocket"
 	line "but I have"
 	cont "feelings."
 	para "That old man keeps"
@@ -105,7 +105,7 @@ DirectorIntroText:
 
 	para "You saved me!"
 
-	para "The ROCKETS may"
+	para "The Rockets may"
 	line "have strong"
 	cont "#mon."
 
@@ -129,7 +129,7 @@ DirectorAfterText:
 	text "You are our"
 	line "only hope."
 
-	para "If TEAM ROCKET"
+	para "If Team Rocket"
 	line "control the"
 	cont "transmitter, they"
 	cont "could do terrible"

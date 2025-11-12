@@ -50,9 +50,9 @@ GinaHangUpText:
 	done
 
 GinaRocketTakeoverRumorText:
-	text "<PLAYER>, TEAM"
-	line "ROCKET have taken"
-	cont "over GOLDENROD."
+	text "<PLAYER>, Team"
+	line "Rocket have taken"
+	cont "over Goldenrod."
 	para "I'm afraid!"
 	para "You are the"
 	line "strongest trainer"

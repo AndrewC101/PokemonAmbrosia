@@ -18,7 +18,7 @@ Route32RuinsOfAlphGateYoungsterScript:
 	jumptextfaceplayer Route32RuinsOfAlphGateYoungsterText
 
 Route32RuinsOfAlphGateOfficerText:
-	text "RUINS OF ALPH"
+	text "Ruins of Alph"
 
 	para "You are free to"
 	line "explore as you"

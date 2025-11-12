@@ -324,8 +324,8 @@ SageLiFlashExplanationText:
 
 	para "However you"
 	line "will need the"
-	cont "VIOLET Gym"
-	cont "BADGE."
+	cont "Violet Gym"
+	cont "Badge."
 
 	para "Check your"
 	line "#mon when in"
@@ -404,7 +404,7 @@ SageTroyAfterBattleText:
 	cont "that balance."
 
 	para "He left for"
-	line "DARK CAVE."
+	line "Dark Cave."
 
 	para "On a foolish quest"
 	line "for immortality."

@@ -167,17 +167,15 @@ MagazineBookshelfText:
 	done
 
 TeamRocketOathText:
-	text "TEAM ROCKET OATH"
+	text "Team Rocket Oath"
 
-	para "Steal #mon for"
-	line "profit!"
+	para "Steal"
 
-	para "Exploit #mon"
-	line "for profit!"
+	para "Exploit"
 
-	para "All #mon exist"
-	line "for the glory of"
-	cont "TEAM ROCKET!"
+	para "???"
+
+	para "Profit!"
 	done
 
 IncenseBurnerText:
@@ -217,7 +215,7 @@ HomepageText:
 	done
 
 ; not used
-	text "#mon RADIO!"
+	text "#mon Radio!"
 
 	para "Call in with your"
 	line "requests now!"
@@ -330,7 +328,7 @@ GymStatue_WinningTrainersText:
 
 CoinVendor_WelcomeText:
 	text "Welcome to the"
-	line "GAME CORNER."
+	line "Game Corner."
 	done
 
 CoinVendor_NoCoinCaseText:

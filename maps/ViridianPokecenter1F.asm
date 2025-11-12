@@ -68,13 +68,13 @@ ViridianPokecenter1FCooltrainerFText:
 	para "It is the obvious"
 	line "truth!"
 
-	para "CINNABAR was"
+	para "Cinnabar was"
 	line "destroyed by a"
 	cont "new Hoenn weapon."
 	done
 
 ViridianPokecenter1FBugCatcherText:
-	text "CINNABAR was"
+	text "Cinnabar was"
 	line "not destroyed by"
 	cont "a Hoenn weapon."
 

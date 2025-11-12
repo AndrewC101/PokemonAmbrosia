@@ -209,7 +209,7 @@ PicnickerHeidiSeenText:
 	para "It's a nice place"
 	line "for a picnic."
 	para "There's even a"
-	line "#CENTER"
+	line "#center"
 	cont "nearby."
 	done
 
@@ -227,8 +227,8 @@ PicnickerHeidiAfterBattleText:
 	done
 
 HikerTimSeenText:
-	text "There is a POWER"
-	line "PLANT around here"
+	text "There is a Power"
+	line "Plant around here"
 	cont "somewhere."
 	para "I'm going to find"
 	line "it an get me some"
@@ -244,7 +244,7 @@ HikerTimBeatenText:
 HikerTimAfterBattleText:
 	text "The ELECTRIC"
 	line "#mon at the"
-	cont "POWER PLANT will"
+	cont "Power Plant will"
 	cont "be easy for me to"
 	cont "deal with."
 	done
@@ -252,7 +252,7 @@ HikerTimAfterBattleText:
 Route9SignText:
 	text "ROUTE 9"
 
-	para "CERULEAN CITY -"
+	para "Cerulean City -"
 	line "ROCK TUNNEL"
 	done
 

@@ -214,7 +214,7 @@ PokefanfRuthSeenText:
 	text "There is a"
 	line "young summoner"
 	cont "named YUNA in"
-	cont "OLIVINE."
+	cont "Olivine."
 
 	para "One day she"
 	line "may be able to"
@@ -289,12 +289,12 @@ PokefanfJaimeAfterBattleText:
 Route39SignText:
 	text "ROUTE 39"
 
-	para "OLIVINE CITY -"
-	line "ECRUTEAK CITY"
+	para "Olivine City -"
+	line "Ecruteak City"
 	done
 
 MoomooFarmSignText:
-	text "MOOMOO FARM"
+	text "Moomoo Farm"
 
 	para "Enjoy Our Fresh"
 	line "and Tasty Milk"

@@ -157,7 +157,7 @@ ElementCaveName:     db "Element¯Cave@"
 MtMoonName:          db "MT.Moon@"
 RockTunnelName:      db "Rock Tunnel@"
 LavRadioTowerName:   db "Lav¯Radio Tower@"
-SilphCoName:         db "SILPH CO.@" ; unreferenced
+SilphCoName:         db "Silph Co.@" ; unreferenced
 SafariZoneName:      db "Safari Zone@" ; unreferenced
 SeafoamIslandsName:  db "Seafoam¯Islands@"
 PokemonMansionName:  db "#mon¯Mansion@" ; unreferenced
@@ -209,7 +209,7 @@ Route43Name:         db "Route 43@"
 Route44Name:         db "Route 44@"
 Route45Name:         db "Route 45@"
 Route46Name:         db "Route 46@"
-DarkCaveName:        db "DARK CAVE@"
+DarkCaveName:        db "Dark Cave@"
 IlexForestName:      db "Ilex¯Forest@"
 BurnedTowerName:     db "Burned¯Tower@"
 FastShipName:        db "Fast Ship@"

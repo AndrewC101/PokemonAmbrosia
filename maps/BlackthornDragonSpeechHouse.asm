@@ -51,7 +51,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	cont "worthy thus far."
 
 	para "The pride of"
-	line "BLACKTHORN."
+	line "Blackthorn."
 
 	para "Champion Lance."
 	done

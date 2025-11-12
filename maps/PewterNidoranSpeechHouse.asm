@@ -26,7 +26,7 @@ PewterNidoranSpeechHouseSuperNerdText:
 	para "He lost all his"
 	line "money to some"
 	cont "pyramid scheme"
-	cont "in VERMILION."
+	cont "in Vermilion."
 
 	para "Then one by one"
 	line "we lost our whole"

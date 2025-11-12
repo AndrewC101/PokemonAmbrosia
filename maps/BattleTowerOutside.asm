@@ -44,7 +44,7 @@ BattleTowerOutsideYoungsterText:
 	text "I'm addicted!"
 
 	para "I keep playing"
-	line "BATTLE ROULETT."
+	line "Battle Roulette."
 
 	para "You never know"
 	line "who you will"
@@ -58,7 +58,7 @@ BattleTowerOutsideYoungsterText:
 	done
 
 BattleTowerOutsideBeautyText:
-	text "BATTLE TOWER"
+	text "Battle Tower"
 	line "is so tough."
 
 	para "I can't even"
@@ -67,7 +67,7 @@ BattleTowerOutsideBeautyText:
 	cont "#mon."
 
 	para "But I do well"
-	line "in MIRROR mode."
+	line "in Mirror mode."
 
 	para "I even won once"
 	line "and I got an"
@@ -124,7 +124,7 @@ BattleTowerOutsideSailorText:
 	done
 
 BattleTowerOutsideSignText:
-	text "BATTLE TOWER"
+	text "Battle Tower"
 
 	para "Take the Ultimate"
 	line "Trainer Challenge!"
@@ -198,7 +198,7 @@ WelcomeToBattleTower:
     text "Hello trainer!"
 
     para "Welcome to the"
-    line "BATTLE FRONTIER."
+    line "Battle Frontier."
 
     para "Here you can"
     line "fully test your"
@@ -228,7 +228,7 @@ Movement_GoToBattleMirror:
 
 BattleMirrorIntro:
     text "This is the"
-    line "BATTLE MIRROR."
+    line "Battle Mirror."
 
     para "Here you can"
     line "battle against an"
@@ -259,7 +259,7 @@ Movement_GoToBattleRoulette:
 
 BattleRouletteIntro:
     text "This is the"
-    line "BATTLE ROULETTE."
+    line "Battle Roulette."
 
     para "Here you can fight"
     line "a random memorable"
@@ -291,7 +291,7 @@ Movement_GoToBattleArcade:
 
 BattleArcadeIntro:
     text "This is the"
-    line "BATTLE ARCADE."
+    line "Battle Arcade."
 
     para "This is my"
     line "favorite!"
@@ -345,7 +345,7 @@ Movement_GoToBattleTrial:
 
 BattleTrialIntro:
     text "This is the"
-    line "BATTLE TRIAL."
+    line "Battle Trial."
 
     para "Here you fight"
     line "consecutive fights"
@@ -400,7 +400,7 @@ BattleTowerIntro:
     para "This is the"
     line "main event."
 
-    para "The BATTLE TOWER!"
+    para "The Battle Tower!"
 
     para "Here you can have"
     line "a series of fights"
@@ -430,7 +430,7 @@ BattleTowerIntro:
     line "the top levels."
 
     para "There is also a"
-    line "MIRROR battle"
+    line "Mirror battle"
     cont "mode."
 
     para "This means you"

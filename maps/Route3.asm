@@ -114,13 +114,13 @@ FirebreatherOtisAfterBattleText:
 	line "appreciated the"
 	cont "show."
 	para "Those troglodytes"
-	line "in PEWTER are too"
+	line "in Pewter are too"
 	cont "dim to do so."
 	done
 
 YoungsterWarrenSeenText:
 	text "I need to get out"
-	line "of PEWTER."
+	line "of Pewter."
 	para "I have no future"
 	line "here."
 	para "Where is a nice"
@@ -135,14 +135,14 @@ YoungsterWarrenBeatenText:
 
 YoungsterWarrenAfterBattleText:
 	text "Maybe I'll go to"
-	line "CINNABAR."
+	line "Cinnabar."
 	para "It should be nice"
 	line "and peaceful."
 	done
 
 YoungsterJimmySeenText:
 	text "I managed to break"
-	line "into the MUSEUM"
+	line "into the Museum"
 	cont "last week."
 	para "I haven't been"
 	line "able to sleep"
@@ -156,7 +156,7 @@ YoungsterJimmyBeatenText:
 YoungsterJimmyAfterBattleText:
 	text "I lost my lucky"
 	line "shorts in the"
-	cont "MUSEUM."
+	cont "Museum."
 	para "They were comfy"
 	line "and easy to wear."
 	done
@@ -165,8 +165,8 @@ FirebreatherBurtSeenText:
 	text "I want to put on a"
 	line "show to cheer up"
 	cont "the people of"
-	cont "PEWTER."
-	para "But that damn OTIS"
+	cont "Pewter."
+	para "But that damn Otis"
 	line "is here first."
 	done
 
@@ -183,7 +183,7 @@ FirebreatherBurtAfterBattleText:
 	done
 
 Route3MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
+	text "Mt.Moon Square"
 
 	para "Just go up the"
 	line "stairs."
@@ -265,7 +265,7 @@ InvaderHavelSeenText:
 
     para "Us against the"
     line "dragons of"
-    cont "BLACKTHORN."
+    cont "Blackthorn."
 
     para "Victory is not"
     line "important."

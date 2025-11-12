@@ -143,11 +143,11 @@ SaffronCityLass1Text:
 	para "I have another"
 	line "client call to"
 	cont "get to at the"
-	cont "SILPH building!"
+	cont "Silph building!"
 
-	para "The SILPH SCOPE"
+	para "The Silph Scope"
 	line "is really taking"
-	cont "off in LAVENDER."
+	cont "off in Lavender."
 	done
 
 SaffronCityPokefanMText:
@@ -156,9 +156,9 @@ SaffronCityPokefanMText:
 	cont "Hoenn invades they"
 	cont "will be cutting a"
 	cont "path straight to"
-	cont "SAFFRON!"
+	cont "Saffron!"
 
-	para "If SAFFRON falls"
+	para "If Saffron falls"
 	line "Kanto is done for!"
 	done
 
@@ -211,7 +211,7 @@ SaffronCityCooltrainerMText:
 	done
 
 SaffronCityCooltrainerFText:
-	text "This is SILPH CO."
+	text "This is Silph Co."
 	
 	para "They make cutting"
 	line "edge tech."
@@ -230,7 +230,7 @@ SaffronCityCooltrainerFText:
 SaffronCityFisherText:
 	text "Last time Hoenn"
 	line "invaded they made"
-	cont "it to SAFFRON."
+	cont "it to Saffron."
 	
 	para "I was a kid."
 	
@@ -258,7 +258,7 @@ SaffronCityFisherText_BeatWallace:
 	
 	para "I remember the sky"
 	line "igniting and a"
-	cont "storm of DRAGONS"
+	cont "storm of Dragons"
 	cont "taking out the"
 	cont "Hoenn forces."
 	
@@ -271,12 +271,12 @@ SaffronCityYoungster2Text:
 	text "Oh another Johto"
 	line "immigrant."
 
-	para "This is SAFFRON!"
+	para "This is Saffron!"
 
 	para "The economic hub"
 	line "of Kanto."
 
-	para "SAFFRON alone"
+	para "Saffron alone"
 	line "contributes 63"
 	cont "percent of the"
 	cont "Kanto GDP."
@@ -288,7 +288,7 @@ SaffronCityYoungster2Text:
 	done
 
 SaffronCityLass2Text:
-	text "TEAM ROCKET used"
+	text "Team Rocket used"
 	line "to operate in"
 	cont "this city."
 	
@@ -310,7 +310,7 @@ SaffronCityLass2Text:
 	done
 
 SaffronCitySignText:
-	text "SAFFRON CITY"
+	text "Saffron City"
 
 	para "THE GOLDEN CITY."
 	
@@ -318,7 +318,7 @@ SaffronCitySignText:
 	done
 
 SaffronGymSignText:
-	text "SAFFRON CITY"
+	text "Saffron City"
 	line "#mon Gym"
 	cont "Leader: Will"
 
@@ -328,11 +328,11 @@ SaffronGymSignText:
 FightingDojoSignText:
 	text "Everyone Welcome!"
 	line "The true"
-	cont "SAFFRON Gym!"
+	cont "Saffron Gym!"
 	done
 
 SilphCoSignText:
-	text "SILPH CO."
+	text "Silph Co."
 	line "OFFICE BUILDING"
 	done
 
@@ -342,7 +342,7 @@ MrPsychicsHouseSignText:
 	done
 
 SaffronCityMagnetTrainStationSignText:
-	text "SAFFRON CITY"
+	text "Saffron City"
 	line "MAGNET TRAIN"
 	cont "STATION"
 	done
@@ -553,7 +553,7 @@ murdochText:
 	line "for hours, it's"
 	cont "always night here."
 	para "Do you know the"
-	line "way to OLIVINE"
+	line "way to Olivine"
 	cont "beach?"
 	para "Nobody remembers"
 	line "that!"

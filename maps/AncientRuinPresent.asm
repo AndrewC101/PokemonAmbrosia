@@ -114,7 +114,7 @@ HenshinSeenText:
     para "The power of"
     line "death shall"
     cont "belong to"
-    cont "HENSHIN!"
+    cont "Henshin!"
     done
 
 HenshinBeatenText:

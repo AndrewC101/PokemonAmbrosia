@@ -399,19 +399,19 @@ DragonShrineQuestion2Text:
 
 DragonShrineQuestion3Text:
 	text "Which of these"
-	line "DRAGONS has the"
+	line "Dragons has the"
 	cont "greatest Attack?"
 	done
 
 DragonShrineQuestion4Text:
 	text "Which of these"
-	line "DRAGONS has the"
+	line "Dragons has the"
 	cont "least weaknesses?"
 	done
 
 DragonShrineQuestion5Text:
 	text "Which of these"
-	line "DRAGONS has the"
+	line "Dragons has the"
 	cont "most HP?"
 	done
 
@@ -423,7 +423,7 @@ DragonShrinePassedTestText:
 
 	para "You are more"
 	line "worthy of the"
-	cont "RISING BADGE"
+	cont "RISING Badge"
 	cont "than any trainer"
 	cont "I have ever met."
 	done
@@ -435,7 +435,7 @@ DragonShrineMustIInformLanceText:
 	line "defeat with"
 	cont "honour and"
 	cont "confer the"
-	cont "RISING BADGE"
+	cont "RISING Badge"
 	cont "immediately!"
 
 	para "Or must I inform"
@@ -465,7 +465,7 @@ DragonShrineTakeThisDratiniText:
 	cont "can have, to be"
 	cont "the guiding force"
 	cont "at the beginning"
-	cont "of a DRAGONS"
+	cont "of a Dragons"
 	cont "eternal life."
 
 	para "You are worth of"
@@ -495,7 +495,7 @@ DragonShrineSymbolicDragonText:
 	para "It is said the"
 	line "first #mon"
 	cont "created were"
-	cont "DRAGONS."
+	cont "Dragons."
 
 	para "You have shown"
 	line "that you can be"
@@ -586,7 +586,7 @@ DragonShrineElder2Text:
     line "even more ancient"
     cont "Dragon that"
     cont "dwells within the"
-    cont "ABYSS."
+    cont "Abyss."
 
     para "It seeks to bring"
     line "about chaos and"

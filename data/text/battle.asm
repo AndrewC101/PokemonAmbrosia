@@ -1049,7 +1049,7 @@ CantSleepText:
 	prompt
 
 MirrorMoveFailedText:
-	text "The MIRROR MOVE"
+	text "The Mirror Move"
 	next "failed!"
 	prompt
 

@@ -102,8 +102,8 @@ UnionCave1FUnusedSign: ; unreferenced
 HikerRussellSeenText:
 	text "I am sure there"
 	line "is treasure in"
-	cont "the RUINS OF"
-	cont "ALPH."
+	cont "the Ruins of"
+	cont "Alph."
 
 	para "DRILBUR and I"
 	line "are going to dig"
@@ -126,7 +126,7 @@ PokemaniacLarrySeenText:
 	text "I lost it!"
 	para "I lost my inner"
 	line "strength, my"
-	cont "HIDDEN POWER!"
+	cont "Hidden Power!"
 	done
 
 PokemaniacLarryBeatenText:
@@ -208,7 +208,7 @@ FirebreatherRayAfterBattleText:
 	done
 
 UnionCave1FUnusedSignText:
-	text "UNION CAVE"
+	text "Union Cave"
 	done
 	
 UnionCave1FFieldMon1Script:

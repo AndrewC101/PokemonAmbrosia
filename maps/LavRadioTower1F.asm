@@ -101,7 +101,7 @@ LavRadioTower1FOfficerText:
 	text "We've implemented"
 	line "security measures"
 	cont "similar to the"
-	cont "SILPH BUILDING."
+	cont "Silph Building."
 
 	para "Non employees are"
 	line "only permitted on"
@@ -139,7 +139,7 @@ LavRadioTower1FGentlemanText:
 	cont "loans to get this"
 	cont "off the ground."
 
-	para "The POWER PLANT"
+	para "The Power Plant"
 	line "better get their"
 	cont "act together!"
 	done

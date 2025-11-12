@@ -15,7 +15,7 @@ Route36RuinsOfAlphGateGrampsScript:
 
 Route36RuinsOfAlphGateOfficerText:
 	text "Welcome to the"
-	line "RUINS OF ALPH."
+	line "Ruins of Alph."
 	para "There used to be"
 	line "an ancient city"
 	cont "here, nobody knows"

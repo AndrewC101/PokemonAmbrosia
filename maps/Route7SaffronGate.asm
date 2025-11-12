@@ -24,7 +24,7 @@ Route7SaffronGuardScript:
 
 Route7SaffronGuardPowerPlantText:
 	text "Wallace knows if"
-	line "he takes SAFFRON"
+	line "he takes Saffron"
 	cont "he takes Kanto."
 
 	para "It is up to me"

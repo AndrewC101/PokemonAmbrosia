@@ -250,7 +250,7 @@ Text_SafeWithYou:
 	line "<PLAYER>!"
 	para "You make me so"
 	line "proud to be from"
-	cont "NEW BARK TOWN."
+	cont "New Bark Town."
 	para "I feel safe with"
 	line "you here."
 	done
@@ -347,7 +347,7 @@ NewBarkTownRivalText2:
 	done
 
 NewBarkTownSignText:
-	text "NEW BARK TOWN"
+	text "New Bark Town"
 
 	para "The Town Where the"
 	line "Winds of a New"

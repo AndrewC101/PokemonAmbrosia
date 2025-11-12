@@ -497,7 +497,7 @@ ClairText_NoRoom: ; impossible?
 
 ClairText_WhatsTheMatterDragonDen:
 	text "You have obtained"
-	line "all 8 BADGES of"
+	line "all 8 Badges of"
 	cont "Johto."
 
 	para "Now you are"
@@ -518,8 +518,8 @@ ClairText_WhatsTheMatterDragonDen:
 
 	para "To get to them"
 	line "you must travel"
-	cont "east from NEW"
-	cont "BARK TOWN."
+	cont "east from New"
+	cont "Bark Town."
 
 	para "If you become"
 	line "a Champion many"
@@ -736,7 +736,7 @@ InvaderLoganAfterBattleText:
 	line "demands sacrifice."
 
 	para "Far away in"
-	line "PEWTER CITY"
+	line "Pewter City"
 	cont "there is a"
 	cont "knight named"
 	cont "HAVEL."

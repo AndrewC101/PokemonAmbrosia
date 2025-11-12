@@ -693,8 +693,8 @@ Route26CrystalText_Intro:
 Route26CrystalText_Serious:
     text "It seems so long"
     line "ago we were"
-    cont "leaving NEW"
-    cont "BARK together."
+    cont "leaving New"
+    cont "Bark together."
 
     para "I didn't think"
     line "it would get this"

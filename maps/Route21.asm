@@ -213,7 +213,7 @@ RematchRefuseFisherText:
 
 SwimmermSethSeenText:
 	text "I used to live in"
-	line "CINNABAR, then the"
+	line "Cinnabar, then the"
 	cont "volcano blew the"
 	cont "whole place up."
 	para "But even with the"

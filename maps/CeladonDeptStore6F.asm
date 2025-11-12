@@ -144,9 +144,9 @@ CeladonDeptStore6FYoungsterText:
 	line "from this floor."
 
 	para "I can see the"
-	line "SILPH building"
-	cont "and the RADIO"
-	cont "TOWER!"
+	line "Silph building"
+	cont "and the Radio"
+	cont "Tower!"
 
 	para "See they are"
 	line "right over there."

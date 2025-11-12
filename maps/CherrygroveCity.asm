@@ -493,14 +493,14 @@ GuideGentRolePlayText:
 
 GuideGentExitText:
 	text "This path leads"
-	line "to VIOLET city."
+	line "to Violet city."
 
 	para "You will find"
 	line "other trainers"
 	cont "up there."
 
 	para "Watch out for"
-	line "DARK CAVE."
+	line "Dark Cave."
 
 	para "It is a place"
 	line "of infectious"
@@ -690,7 +690,7 @@ MysticWaterGuyTextAfter:
 	done
 
 CherrygroveCitySignText:
-	text "CHERRYGROVE CITY"
+	text "Cherrygrove City"
 
 	para "The City of Cute,"
 	line "Fragrant Flowers"
@@ -859,7 +859,7 @@ JuliusSeenText:
 
     para "My papa is a"
     line "wealthy business"
-    cont "man in SAFFRON."
+    cont "man in Saffron."
 
     para "We can afford"
     line "all the best items"
@@ -901,7 +901,7 @@ JuliusAfterBattleText:
     cont "will simply buy"
     cont "an Elite Four"
     cont "level team from"
-    cont "TEAM ROCKET."
+    cont "Team Rocket."
     done
 RematchTextJulius:
     text "Might you be"

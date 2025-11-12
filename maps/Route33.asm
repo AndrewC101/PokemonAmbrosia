@@ -178,7 +178,7 @@ Route33FruitTree:
 
 HikerAnthony2SeenText:
 	text "I came through"
-	line "UNION CAVE."
+	line "Union Cave."
 
 	para "I am tough!"
 
@@ -194,7 +194,7 @@ HikerAnthony2BeatenText:
 
 HikerAnthony2AfterText:
 	text "I thought I saw"
-	line "some TEAM ROCKET"
+	line "some Team Rocket"
 	cont "members around"
 	cont "here."
 

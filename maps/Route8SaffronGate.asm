@@ -11,7 +11,7 @@ Route8SaffronGateOfficerScript:
 
 Route8SaffronGateOfficerText:
 	text "You heading to"
-	line "LAVENDER TOWN?"
+	line "Lavender Town?"
 
 	para "Be careful!"
 
@@ -21,7 +21,7 @@ Route8SaffronGateOfficerText:
 	cont "here."
 
 	para "Hoping to get"
-	line "some rich SAFFRON"
+	line "some rich Saffron"
 	cont "aristocrat."
 	done
 

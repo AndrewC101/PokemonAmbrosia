@@ -34,7 +34,7 @@ Route17Route18GateCannotPassMovement:
 	step_end
 
 Route17Route18GateOfficerText:
-	text "CYCLING ROAD"
+	text "Cycling Road"
 	line "Uphill Starts Here"
 
 	para "You'll need some"
@@ -45,7 +45,7 @@ Route17Route18GateCannotPassText:
 	text "Hang on! Don't you"
 	line "have a BICYCLE?"
 
-	para "The CYCLING ROAD"
+	para "The Cycling Road"
 	line "is beyond here."
 
 	para "You have to have a"

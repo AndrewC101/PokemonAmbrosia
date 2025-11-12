@@ -45,7 +45,7 @@ ElmPhoneAssistantText:
 	line "assistant? He's at"
 
 	para "the #mon CENTER"
-	line "in VIOLET CITY."
+	line "in Violet City."
 	done
 
 ElmPhoneHowIsTheEggText:
@@ -88,7 +88,7 @@ ElmPhoneInvestigatingEggMovesText:
 
 ElmPhoneDiscoveredPokerusText:
 	text "<PLAYER>!"
-	para "The #CENTER"
+	para "The #center"
 	line "told me your"
 	cont "#mon have"
 	cont "#RUS!"
@@ -123,8 +123,8 @@ ElmPhoneDisasterText:
 ElmPhoneEggAssistantText:
 	text "Hey <PLAYER>."
 	para "My assistant is in"
-	line "the VIOLET"
-	cont "#CENTER, he"
+	line "the Violet"
+	cont "#center, he"
 	cont "has a gift for"
 	cont "you."
 	para "He is quite taken"
@@ -137,9 +137,9 @@ ElmPhoneEggAssistantText:
 ElmPhoneRadioTowerRocketTakeoverText:
 	text "<PLAYER>!"
 	para "I just got word!"
-	para "Apparently TEAM"
-	line "ROCKET are back"
-	cont "and GOLDENROD"
+	para "Apparently Team"
+	line "Rocket are back"
+	cont "and Goldenrod"
 	cont "is under siege."
 	para "I can't imagine"
 	line "what they would be"
@@ -153,7 +153,7 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	cont "have to ask if you"
 	cont "can help the"
 	cont "people of"
-	cont "GOLDENROD."
+	cont "Goldenrod."
 	done
 
 ElmExpShareGiftText:

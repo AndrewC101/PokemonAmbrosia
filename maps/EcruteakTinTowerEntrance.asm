@@ -151,27 +151,27 @@ EcruteakTinTowerEntranceSageBlocksRightMovement:
 	step_end
 
 EcruteakTinTowerEntranceSageText:
-	text "TIN TOWER is off"
+	text "Tin Tower is off"
 	line "limits to anyone"
 
-	para "without ECRUTEAK"
-	line "Gym's BADGE."
+	para "without Ecruteak"
+	line "Gym's Badge."
 
 	para "Sorry, but you'll"
 	line "have to leave."
 	done
 
 EcruteakTinTowerEntranceSageText_GotFogBadge:
-	text "TIN TOWER is off"
+	text "Tin Tower is off"
 	line "limits to anyone"
 
-	para "without ECRUTEAK"
-	line "Gym's BADGE."
+	para "without Ecruteak"
+	line "Gym's Badge."
 
 	para "Ah!"
 
-	para "ECRUTEAK's Gym"
-	line "BADGE! Please, go"
+	para "Ecruteak's Gym"
+	line "Badge! Please, go"
 	cont "right through."
 	done
 
@@ -222,7 +222,7 @@ EcruteakTinTowerEntranceSageText_HearsClearBell:
 
 	para "You may be able to"
 	line "make it through"
-	cont "TIN TOWER."
+	cont "Tin Tower."
 
 	para "Please, do go on."
 	done
@@ -240,13 +240,13 @@ EcruteakTinTowerEntranceSageText_HeardClearBell:
 
 	para "You may be able to"
 	line "make it through"
-	cont "TIN TOWER."
+	cont "Tin Tower."
 
 	para "Please, do go on."
 	done
 
 EcruteakTinTowerEntranceWanderingSageText:
-	text "The TIN TOWER"
+	text "The Tin Tower"
 	line "ahead is a nine-"
 
 	para "tier tower of"
@@ -258,7 +258,7 @@ EcruteakTinTowerEntranceWanderingSageText:
 	done
 
 EcruteakTinTowerEntranceWanderingSageText_GotClearBell:
-	text "The TIN TOWER"
+	text "The Tin Tower"
 	line "shook! A #mon"
 
 	para "must have returned"

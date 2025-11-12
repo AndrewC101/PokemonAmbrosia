@@ -487,10 +487,10 @@ BeautyValerieAfterBattleText:
 
 SailorHarrySeenText:
 	text "I'm on leave"
-	line "from OLIVINE."
+	line "from Olivine."
 
 	para "I'm heading to"
-	line "ECRUTEAK to"
+	line "Ecruteak to"
 	cont "see some nice"
 	cont "dancing girls."
 	done
@@ -531,8 +531,8 @@ BeautyOliviaAfterBattleText:
 Route38SignText:
 	text "ROUTE 38"
 
-	para "OLIVINE CITY -"
-	line "ECRUTEAK CITY"
+	para "Olivine City -"
+	line "Ecruteak City"
 	done
 
 Route38TrainerTipsText:

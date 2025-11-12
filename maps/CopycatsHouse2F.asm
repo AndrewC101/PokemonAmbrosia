@@ -106,11 +106,11 @@ CopycatsDodrioText1:
 	done
 
 CopycatsDodrioText2:
-	text "MIRROR, MIRROR ON"
-	line "THE WALL, WHO'S"
+	text "Mirror, Mirror on"
+	line "the wall, who's"
 
-	para "THE FAIREST ONE OF"
-	line "ALL?"
+	para "the fairest one of"
+	line "all?"
 	done
 
 CopycatsHouse2FDollText:

@@ -35,7 +35,7 @@ atemStatueText:
 	para "There is an"
 	line "inscription."
 	para "May ARCEUS guide"
-	line "and protect ATEM."
+	line "and protect Atem."
 	para "The Master of"
 	line "MASTERS."
 	done

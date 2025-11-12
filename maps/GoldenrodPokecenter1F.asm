@@ -173,7 +173,7 @@ GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText:
 
 	para "I gave it to"
 	line "the guard of"
-	cont "GATE to ROUTE 35."
+	cont "gate to Route 35."
 	done
 
 GolBlisseyScript:

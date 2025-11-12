@@ -248,7 +248,7 @@ Route19Fisher2Text_RocksCleared:
 	done
 
 Route19SignText:
-	text "ROUTE 19"
+	text "Route 19"
 
 	para "Fuchsia City -"
 	line "Seafoam Islands"

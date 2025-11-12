@@ -574,7 +574,7 @@ CamperQuentinAfterBattleText:
 	done
 
 Route45SignText:
-	text "ROUTE 45"
+	text "Route 45"
 	line "MOUNTAIN RD. AHEAD"
 	done
 

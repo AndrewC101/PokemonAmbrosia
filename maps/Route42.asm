@@ -221,7 +221,7 @@ PokemaniacShaneAfterBattleText:
 	done
 
 Route42Sign1Text:
-	text "ROUTE 42"
+	text "Route 42"
 
 	para "Ecruteak City -"
 	line "Mahogany Town"
@@ -242,7 +242,7 @@ MtMortarSign2Text:
 	done
 
 Route42Sign2Text:
-	text "ROUTE 42"
+	text "Route 42"
 
 	para "Ecruteak City -"
 	line "Mahogany Town"

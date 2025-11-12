@@ -332,7 +332,7 @@ LassCarrieSeenText:
 	cont "you should take"
 	cont "the train to"
 	cont "Saffron and head"
-	cont "north to ROUTE 5."
+	cont "north to Route 5."
 	para "There is a Nurse"
 	line "Joy who will whip"
 	cont "you into shape in"

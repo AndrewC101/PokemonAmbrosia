@@ -184,7 +184,7 @@ RuinsOfAlphOutsideMysteryChamberSignText:
 
 RuinsOfAlphSignText:
 	text "Ruins of Alph"
-	line "VISITORS WELCOME"
+	line "visitors welcome"
 	done
 
 RuinsOfAlphResearchCenterSignText:

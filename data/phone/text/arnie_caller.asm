@@ -93,7 +93,7 @@ ArnieReminderText:
 ArnieHurryText:
 	text "You must hurry,"
 	line "there is a swarm"
-	cont "of YANMA on ROUTE"
+	cont "of YANMA on Route"
 	cont "35."
 	para "This is it, the"
 	line "BUGS are making"

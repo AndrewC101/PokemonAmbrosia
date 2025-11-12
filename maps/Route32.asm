@@ -725,7 +725,7 @@ FriedaNotFridayText:
 	done
 
 Route32SignText:
-	text "ROUTE 32"
+	text "Route 32"
 
 	para "Violet City -"
 	line "Azalea Town"

@@ -308,7 +308,7 @@ Route31YoungsterText:
 	done
 
 Route31SignText:
-	text "ROUTE 31"
+	text "Route 31"
 
 	para "Violet City -"
 	line "Cherrygrove City"

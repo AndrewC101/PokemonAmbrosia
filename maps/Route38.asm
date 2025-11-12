@@ -529,7 +529,7 @@ BeautyOliviaAfterBattleText:
 	done
 
 Route38SignText:
-	text "ROUTE 38"
+	text "Route 38"
 
 	para "Olivine City -"
 	line "Ecruteak City"

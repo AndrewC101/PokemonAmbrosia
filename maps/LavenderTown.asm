@@ -101,7 +101,7 @@ LavenderTownGrampsText:
 
 LavenderTownYoungsterText:
 	text "Have you been"
-	line "to ROCK TUNNEL?"
+	line "to Rock Tunnel?"
 
 	para "There is something"
 	line "evil in that"

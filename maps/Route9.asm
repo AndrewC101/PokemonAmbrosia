@@ -195,7 +195,7 @@ CamperDeanBeatenText:
 
 CamperDeanAfterBattleText:
 	text "Ahead of here is"
-	line "ROCK TUNNEL."
+	line "Rock Tunnel."
 	para "It was made by"
 	line "those who are"
 	cont "dead."
@@ -250,10 +250,10 @@ HikerTimAfterBattleText:
 	done
 
 Route9SignText:
-	text "ROUTE 9"
+	text "Route 9"
 
 	para "Cerulean City -"
-	line "ROCK TUNNEL"
+	line "Rock Tunnel"
 	done
 
 Route9_MapEvents:

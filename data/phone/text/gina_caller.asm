@@ -89,7 +89,7 @@ GinaReminderText:
 	para "I need you to"
 	line "battle me now!"
 	para "Please?"
-	para "I'm on ROUTE 34."
+	para "I'm on Route 34."
 	done
 
 GinaComePickUpText:

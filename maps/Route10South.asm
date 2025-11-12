@@ -101,7 +101,7 @@ HikerJimSeenText:
 	text "I'm not afraid!"
 
 	para "I'm going into"
-	line "ROCK TUNNEL."
+	line "Rock Tunnel."
 
 	para "I have salt,"
 	line "garlic and holy"
@@ -149,7 +149,7 @@ PokefanmRobertAfterBattleText:
 	done
 
 Route10SignText:
-	text "ROUTE 10"
+	text "Route 10"
 
 	para "Cerulean City -"
 	line "Lavender Town"

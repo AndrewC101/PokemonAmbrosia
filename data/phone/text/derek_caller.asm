@@ -45,7 +45,7 @@ DerekFoundItemText:
 	text "I may have found a"
 	line "horcrux."
 	para "Come on over to"
-	line "ROUTE 39 and I'll"
+	line "Route 39 and I'll"
 	cont "give it to you."
 	done
 

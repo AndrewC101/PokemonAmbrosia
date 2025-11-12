@@ -143,8 +143,8 @@ PokemaniacLarryAfterBattleText:
 	done
 
 HikerDanielSeenText:
-	text "I went to ROCK"
-	line "TUNNEL with my Dad"
+	text "I went to Rock"
+	line "Tunnel with my Dad"
 	cont "years ago, I got"
 	cont "lost and made it"
 	cont "out but never"
@@ -161,8 +161,8 @@ HikerDanielBeatenText:
 HikerDanielAfterBattleText:
 	text "I am training in"
 	line "cave exploring so"
-	cont "I can explore ROCK"
-	cont "TUNNEL in Kanto."
+	cont "I can explore Rock"
+	cont "Tunnel in Kanto."
 	done
 
 FirebreatherBillSeenText:

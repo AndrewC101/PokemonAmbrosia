@@ -377,7 +377,7 @@ MonicaNotMondayText:
 	done
 
 Route40SignText:
-	text "ROUTE 40"
+	text "Route 40"
 
 	para "Cianwood City -"
 	line "Olivine City"

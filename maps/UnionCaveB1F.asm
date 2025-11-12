@@ -105,7 +105,7 @@ HikerPhillipAfterBattleText:
 
 HikerLeonardSeenText:
 	text "My brother went"
-	line "into ROCK TUNNEL"
+	line "into Rock Tunnel"
 	cont "in Kanto."
 
 	para "He never came"

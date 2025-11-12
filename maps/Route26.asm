@@ -524,10 +524,10 @@ PsychicRichardAfterBattleText:
 	done
 
 Route26SignText:
-	text "ROUTE 26"
+	text "Route 26"
 
 	para "#mon League"
-	line "RECEPTION GATE"
+	line "reception Gate"
 	done
 
 Route26FieldMon1Script:

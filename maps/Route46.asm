@@ -329,8 +329,8 @@ PicnickerErinAfterBattleText:
 	done
 
 Route46SignText:
-	text "ROUTE 46"
-	line "MOUNTAIN RD. AHEAD"
+	text "Route 46"
+	line "Mountain Rd. Ahead"
 	done
 
 RematchTextRoute46:

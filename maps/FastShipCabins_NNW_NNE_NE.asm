@@ -213,8 +213,8 @@ HikerNolandSeenText:
 
 	para "But the real"
 	line "hard core hikers"
-	cont "head to ROCK"
-	cont "TUNNEL."
+	cont "head to Rock"
+	cont "Tunnel."
 
 	para "I will be the"
 	line "first to complete"
@@ -230,7 +230,7 @@ HikerNolandBeatenText:
 HikerNolandAfterBattleText:
 	text "Many have never"
 	line "returned from"
-	cont "ROCK TUNNEL."
+	cont "Rock Tunnel."
 
 	para "It is said they"
 	line "fall into a"

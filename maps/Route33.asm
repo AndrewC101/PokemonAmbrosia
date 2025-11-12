@@ -229,7 +229,7 @@ Route33LassText:
 	done
 
 Route33SignText:
-	text "ROUTE 33"
+	text "Route 33"
 	done
 	
 Route33FieldMon3Script:

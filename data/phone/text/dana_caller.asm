@@ -39,7 +39,7 @@ DanaBattleRematchText:
 	line "get together and"
 	cont "have a fight"
 	cont "again."
-	para "Stop by ROUTE 38"
+	para "Stop by Route 38"
 	line "sometime."
 	para "I'm all yours..."
 	done
@@ -55,7 +55,7 @@ DanaFoundItemText:
 	cont "gift."
 	para "Yuck I don't want"
 	line "it."
-	para "Stop by ROUTE 38"
+	para "Stop by Route 38"
 	line "and it's all"
 	cont "yours."
 	done

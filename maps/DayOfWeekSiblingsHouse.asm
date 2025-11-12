@@ -62,26 +62,26 @@ DayOfWeekSiblingsHousePokedexText3:
 
     para "Join us."
 
-	para "Monday, MONICA"
-	line "ROUTE 40"
+	para "Monday, Monica"
+	line "Route 40"
 
-	para "Tuesday, TUSCANY"
-	line "ROUTE 29"
+	para "Tuesday, Tuscany"
+	line "Route 29"
 
-	para "Wednesday, WESLEY"
+	para "Wednesday, Wesley"
 	line "Lake of Rage"
 
-	para "Thursday, ARTHUR"
-	line "ROUTE 36"
+	para "Thursday, Arthur"
+	line "Route 36"
 
-	para "Friday, FRIEDA"
-	line "ROUTE 32"
+	para "Friday, Frieda"
+	line "Route 32"
 
-	para "Saturday, SANTOS"
+	para "Saturday, Santos"
 	line "Blackthorn City"
 
-	para "Sunday, SUNNY"
-	line "ROUTE 37"
+	para "Sunday, Sunny"
+	line "Route 37"
 	done
 
 DayOfWeekSiblingsHouse_MapEvents:

@@ -82,7 +82,7 @@ GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
 	text "Have you seen that"
 	line "strange old man"
 	cont "who is blocking"
-	cont "ROUTE 36?"
+	cont "Route 36?"
 
 	para "My little sister"
 	line "doesn't think"
@@ -130,7 +130,7 @@ GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
 	text "I think that"
 	line "old man on"
-	cont "ROUTE 36 may"
+	cont "Route 36 may"
 	cont "be an evil spirit."
 
 	para "Maybe some HOLY"

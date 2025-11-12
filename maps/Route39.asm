@@ -287,7 +287,7 @@ PokefanfJaimeAfterBattleText:
 	done
 
 Route39SignText:
-	text "ROUTE 39"
+	text "Route 39"
 
 	para "Olivine City -"
 	line "Ecruteak City"

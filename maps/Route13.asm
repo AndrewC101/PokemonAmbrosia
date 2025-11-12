@@ -333,7 +333,7 @@ Route13TrainerTipsText:
 	done
 
 Route13SignText:
-	text "ROUTE 13"
+	text "Route 13"
 
 	para "NORTH TO SILENCE"
 	line "BRIDGE"

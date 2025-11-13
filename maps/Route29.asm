@@ -328,12 +328,12 @@ Route29TeacherText:
 	text "You can see"
 	line "details of your"
 	cont "#mon moves in"
-	cont "the MOVES option"
+	cont "the Moves option"
 	cont "in the menu."
-	para "ATK is the moves"
+	para "Atk is the moves"
 	line "power, ACC is its"
 	cont "percent accuracy"
-	cont "and EFF is the"
+	cont "and Eff is the"
 	cont "percent chance of"
 	cont "its effect"
 	cont "occurring."
@@ -345,10 +345,10 @@ Route29FisherText:
 
 	para "You can change"
 	line "text speed in the"
-	cont "OPTIONS menu."
+	cont "Options menu."
 
 	para "There is a new"
-	line "OPTION for instant"
+	line "Option for instant"
 	cont "text called INST."
 
 	para "Great when you're"
@@ -377,7 +377,7 @@ Route29CooltrainerMText_WaitingForMorning:
 	done
 
 MeetTuscanyText:
-	text "TUSCANY: I do"
+	text "Tuscany: I do"
 	line "believe that this"
 
 	para "is the first time"
@@ -386,7 +386,7 @@ MeetTuscanyText:
 	para "Please allow me to"
 	line "introduce myself."
 
-	para "I am TUSCANY of"
+	para "I am Tuscany of"
 	line "Tuesday."
 	done
 
@@ -395,11 +395,11 @@ TuscanyGivesGiftText:
 	line "duction, please"
 
 	para "accept this gift,"
-	line "a PINK BOW."
+	line "a Pink Bow."
 	done
 
 TuscanyGaveGiftText:
-	text "TUSCANY: Wouldn't"
+	text "Tuscany: Wouldn't"
 	line "you agree that it"
 	cont "is most adorable?"
 
@@ -411,19 +411,19 @@ TuscanyGaveGiftText:
 	done
 
 TuscanyTuesdayText:
-	text "TUSCANY: Have you"
-	line "met MONICA, my"
+	text "Tuscany: Have you"
+	line "met Monica, my"
 	cont "older sister?"
 
 	para "Or my younger"
-	line "brother, WESLEY?"
+	line "brother, Wesley?"
 
 	para "I am the second of"
 	line "seven children."
 	done
 
 TuscanyNotTuesdayText:
-	text "TUSCANY: Today is"
+	text "Tuscany: Today is"
 	line "not Tuesday. That"
 	cont "is unfortunate…"
 	done
@@ -571,4 +571,3 @@ Route29_MapEvents:
 	object_event 53,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 32, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FieldMon9Script, EVENT_FIELD_MON_9
 	object_event 47, 15, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon10Script, EVENT_FIELD_MON_10
-

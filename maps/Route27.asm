@@ -333,8 +333,8 @@ CooltrainerfReenaBeatenText:
 
 CooltrainerfReenaAfterBattleText:
 	text "You are strong"
-	line "but the ELITE"
-	cont "FOUR will put"
+	line "but the Elite"
+	cont "Four will put"
 	cont "you in your"
 	cont "place."
 	done

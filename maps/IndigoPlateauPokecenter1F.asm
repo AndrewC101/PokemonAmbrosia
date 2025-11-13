@@ -85,8 +85,8 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	text "This is it!"
 
 	para "We're going to"
-	line "face the ELITE"
-	cont "FOUR."
+	line "face the Elite"
+	cont "Four."
 
 	para "We have to battle"
 	line "five consecutive"
@@ -114,9 +114,9 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 
 TeleportGuyText1:
 	text "Ah! You're chal-"
-	line "lenging the ELITE"
+	line "lenging the Elite"
 
-	para "FOUR? Are you sure"
+	para "Four? Are you sure"
 	line "you're ready?"
 
 	para "If you need to"

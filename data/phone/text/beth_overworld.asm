@@ -1,7 +1,7 @@
 BethAskNumber1Text:
 	text "I am going to"
-	line "battle the ELITE"
-	cont "FOUR!"
+	line "battle the Elite"
+	cont "Four!"
 	para "But I'm not ready"
 	line "yet."
 	para "I must analyse"
@@ -16,8 +16,8 @@ BethAskNumber1Text:
 
 BethAskNumber2Text:
 	text "I am going to"
-	line "battle the ELITE"
-	cont "FOUR!"
+	line "battle the Elite"
+	cont "Four!"
 	para "But I'm not ready"
 	line "yet."
 	para "I must analyse"

@@ -231,7 +231,7 @@ Text_GearIsImpressive:
 	line "trainer once."
 
 	para "But I ran into"
-	line "a huge RATICATE"
+	line "a huge Raticate"
 	cont "out there."
 
 	para "I ran for it!"
@@ -584,8 +584,8 @@ Crystal1_WellDoneText:
     line "beat all Gym"
     cont "Leaders."
 
-    para "Beat all the ELITE"
-    line "FOUR and Champion."
+    para "Beat all the Elite"
+    line "Four and Champion."
 
     para "Crush the Hoenn"
     line "army and save all"
@@ -915,5 +915,3 @@ NewBarkTown_MapEvents:
 	object_event 14, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
 	object_event 12, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
 	object_event 11,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NewBarkPikachu, -1
-
-

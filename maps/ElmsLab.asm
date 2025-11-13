@@ -1170,8 +1170,8 @@ ElmAfterTheftText5:
 	para "When you have"
 	line "beaten all 8"
 	cont "Gyms, you can"
-	cont "take on the ELITE"
-	cont "FOUR."
+	cont "take on the Elite"
+	cont "Four."
 
 	para "If you defeat"
 	line "them, you gain"

@@ -70,9 +70,9 @@ LizRuinsOfAlphGossipText:
 LizFalknerGossipText:
 	text "Did you know Prof"
 	line "Oak used to go out"
-	cont "with AGATHA."
-	para "She was an ELITE"
-	line "FOUR member but"
+	cont "with Agatha."
+	para "She was an Elite"
+	line "Four member but"
 	cont "shes dead now."
 	para "When I think about"
 	line "it I start to cry."

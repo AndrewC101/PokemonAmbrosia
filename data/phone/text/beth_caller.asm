@@ -46,8 +46,8 @@ BethBattleRematchText:
 	cont "again."
 	para "Will you help me"
 	line "build the courage"
-	cont "to face the ELITE"
-	cont "FOUR?"
+	cont "to face the Elite"
+	cont "Four?"
 	done
 
 BethHangUpText:
@@ -61,8 +61,8 @@ BethLetsBattleAgainSometimeText:
 
 BethReminderText:
 	text "I was about to"
-	line "face the ELITE"
-	cont "FOUR but I"
+	line "face the Elite"
+	cont "Four but I"
 	cont "remembered I asked"
 	cont "you for a battle."
 	para "I'll be waiting"

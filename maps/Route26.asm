@@ -479,8 +479,8 @@ PsychicRichardSeenText:
 
 	para "She was a Kanto"
 	line "Gym Leader but"
-	cont "is now an ELITE"
-	cont "FOUR member."
+	cont "is now an Elite"
+	cont "Four member."
 
 	para "She is a powerful"
 	line "Psychic trainer."

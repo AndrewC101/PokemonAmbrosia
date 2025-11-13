@@ -913,13 +913,13 @@ Soldier1AfterBattleText:
     para "...."
 
     para "Raining down"
-    line "THUNDER on our"
+    line "Thunder on our"
     cont "ships."
 
     para "...."
 
     para "While singing"
-    line "about ELECTRODES!"
+    line "about Electrodes!"
 
     para "...."
 

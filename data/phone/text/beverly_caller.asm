@@ -5,7 +5,7 @@ BeverlyMadeMonEvenCuterText:
 	cont "told me chemical X"
 	cont "is actually"
 	cont "something called"
-	cont "AMBROSIA."
+	cont "Ambrosia."
 	para "What does he know!"
 	done
 

@@ -402,7 +402,7 @@ EcruteakTeleportGuyText1:
 	para "It is dangerous"
 	line "around here."
 
-	para "I can TELEPORT"
+	para "I can Teleport"
 	line "you home."
 
 	para "Would you like to"

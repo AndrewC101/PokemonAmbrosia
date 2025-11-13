@@ -33,7 +33,7 @@ CeladonMansionRoofGraffitiText:
 	line "on the wall…"
 
 	para "#mon"
-	line "AMBROSIA"
+	line "Ambrosia"
 	done
 
 CeladonMansionRoof_MapEvents:

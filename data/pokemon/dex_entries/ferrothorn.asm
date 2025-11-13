@@ -5,6 +5,6 @@
 	next "spikes around it"
 	next "for protection."
 
-	page "Lays SPIKES"
+	page "Lays Spikes"
 	next "and can't be"
 	next "KOd at full HP.@"

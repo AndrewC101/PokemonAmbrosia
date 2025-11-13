@@ -5,6 +5,6 @@
 	next "its light can be"
 	next "seen for miles."
 
-	page "Raises LIGHT"
-	next "SCREEN and immune"
+	page "Raises Light"
+	next "Screen and immune"
 	next "to Electric.@"

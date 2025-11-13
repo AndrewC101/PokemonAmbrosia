@@ -5,6 +5,6 @@
 	next "as one mighty"
 	next "psychic unit."
 
-	page "Sets TRICK ROOM."
+	page "Sets Trick Room."
 	next "Immune to passive"
 	next "damage@."

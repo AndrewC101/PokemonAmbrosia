@@ -305,8 +305,8 @@ BeatJasmineText:
 	done
 
 ChuckExplainTMText:
-	text "That is DRAIN"
-	line "PUNCH."
+	text "That is Drain"
+	line "Punch."
 
 	para "It drains the"
 	line "enemies KI"

@@ -6,5 +6,5 @@
 	next "teapots."
 
 	page "Raises"
-	next "SAFEGUARD upon"
+	next "Safeguard upon"
 	next "entering battle.@"

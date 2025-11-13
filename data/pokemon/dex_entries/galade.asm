@@ -6,5 +6,5 @@
 	next "of its trainer."
 
 	page "Raises"
-	next "REFLECT upon"
+	next "Reflect upon"
 	next "entering battle.@"

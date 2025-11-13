@@ -370,7 +370,7 @@ _UseDigText::
 
 _UseEscapeRopeText::
 	text "<PLAYER> used"
-	line "ESCAPE POD."
+	line "Escape Pod."
 	done
 
 _CantUseDigText::

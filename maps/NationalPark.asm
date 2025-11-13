@@ -467,7 +467,7 @@ NationalParkTeacher1Text:
 
 NationalParkTeacher1Text_GotQuickClaw:
 	text "Let a #mon hold"
-	line "that QUICK CLAW."
+	line "that Quick Claw."
 
 	para "Sometimes it will"
 	line "strike first"

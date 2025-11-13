@@ -6,4 +6,4 @@
 	next "by itself."
 
 	page "Regens HP. Lays"
-	next "TOXIC SPIKES.@"
+	next "Toxic Spikes.@"

@@ -5,6 +5,6 @@
 	next "#mon that"
 	next "causes hailstorms."
 
-	page "BLIZZARD always"
+	page "Blizzard always"
 	next "hits. On switch"
-	next "raises REFLECT.@"
+	next "raises Reflect.@"

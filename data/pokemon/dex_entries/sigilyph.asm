@@ -7,4 +7,4 @@
 
 	page "Ignore passive"
 	next "damage and raise"
-	next "SAFEGUARD.@"
+	next "Safeguard.@"

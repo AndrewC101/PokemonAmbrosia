@@ -148,7 +148,7 @@ AndrewIntroText:
 	line "more to do!"
 	para "Come back when you"
 	line "have achieved the"
-	cont "MARK OF GOD."
+	cont "Mark Of God."
 	para "Good luck!"
 	done
 
@@ -211,7 +211,7 @@ AndrewGiveHandText:
 	done
 
 AndrewExplainHandText:
-	text "The HAND OF GOD is"
+	text "The Hand Of God is"
 	line "a key item which"
 	cont "when turned on"
 	cont "will cause your"
@@ -856,7 +856,7 @@ ManorFact18:
 
 ManorCheatLockedText:
 	text "Only those with"
-	line "the HAND OF GOD"
+	line "the Hand Of God"
 	cont "may read this"
 	cont "secret text."
 	done
@@ -864,7 +864,7 @@ ManorCheatLockedText:
 ManorCheatText:
 	text "Thank you for"
 	line "playing #mon"
-	cont "AMBROSIA."
+	cont "Ambrosia."
 	para "These cheat codes"
 	line "might make your"
 	cont "next play through"
@@ -877,13 +877,13 @@ ManorCheatText:
 	line "in marts."
 	para "RARE CANDY"
 	line "0120FCD0"
-	para "AMBROSIA"
+	para "Ambrosia"
 	line "018BFCD0"
 	para "Master Ball"
 	line "0101FCD0"
-	para "MARK OF GOD"
+	para "Mark Of God"
 	line "012DFCD0"
-	para "HAND OF GOD"
+	para "Hand Of God"
 	line "0132FCD0"
 	para "Make all wild"
 	line "#mon Arceus"
@@ -921,12 +921,12 @@ ManorFact2Text:
 	done
 
 ManorFact3Text:
-	text "The AMBROSIA item"
+	text "The Ambrosia item"
 	line "was created long"
 	cont "before it was"
 	cont "decided this hack"
 	cont "would be called"
-	cont "#mon AMBROSIA."
+	cont "#mon Ambrosia."
 	done
 
 ManorFact4Text:
@@ -1003,7 +1003,7 @@ ManorFact8Text:
 	done
 
 ManorFact9Text:
-	text "HAND OF GOD was"
+	text "Hand Of God was"
 	line "created by"
 	cont "accident when"
 	cont "trying to"
@@ -1133,14 +1133,14 @@ ManorFact19Text:
 	done
 
 ManorFact20Text:
-	text "AMBROSIA maximises"
+	text "Ambrosia maximises"
 	line "the DVs of a"
 	cont "#mon in"
 	cont "addition to STAT"
 	cont "EXP and happiness."
 	para "Unless the"
 	line "#mon is shiny,"
-	cont "then AMBROSIA will"
+	cont "then Ambrosia will"
 	cont "not alter DVs as"
 	cont "that would remove"
 	cont "the shininess."

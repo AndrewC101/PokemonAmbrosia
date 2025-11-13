@@ -454,7 +454,7 @@ arceusOldStatueText:
 	para "A gift from"
 	line "Arceus."
 	para "The gift of"
-	line "AMBROSIA."
+	line "Ambrosia."
 	done
 
 AncientRuinPast_MapEvents:

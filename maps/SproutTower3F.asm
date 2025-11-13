@@ -249,7 +249,7 @@ SproutTowerRivalOnlyCareAboutStrongText:
 
 SproutTowerRivalUsedEscapeRopeText:
 	text "<RIVAL> used"
-	line "ESCAPE POD!"
+	line "Escape Pod!"
 	done
 
 SageLiSeenText:

@@ -5,5 +5,5 @@
 	next "covered summits"
 	next "in the spring."
 
-	page "BLIZZARD will"
+	page "Blizzard will"
 	next "always hit.@"

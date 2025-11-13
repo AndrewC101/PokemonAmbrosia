@@ -32,7 +32,7 @@ HouseForSaleBookshelf:
 
 Route5CleanseTagHouseGrannyText1:
 	text "Arceus is not"
-	line "the one true GOD."
+	line "the one true God."
 
 	para "There is another!"
 
@@ -46,7 +46,7 @@ Route5CleanseTagHouseGrannyText1:
 
 Route5CleanseTagHouseGrannyText2:
 	text "Arceus is not"
-	line "the one true GOD."
+	line "the one true God."
 
 	para "There is another!"
 	done

@@ -1274,11 +1274,11 @@ _AmbrosiaText::
     prompt
 
 _RepulsorTurnOffText::
-	text "REPULSOR is off."
+	text "Repulsor is off."
 	prompt
 
 _RepulsorTurnOnText::
-	text "REPULSOR is on."
+	text "Repulsor is on."
 	prompt
 
 _ItemCantUseOnMonText::
@@ -1451,12 +1451,12 @@ _RunningShoesOff::
 	prompt
 
 _HandOfGodOn::
-	text "Hand of God"
+	text "Hand Of God"
 	line "is at work."
 	prompt
 
 _HandOfGodOff::
-	text "Hand of God"
+	text "Hand Of God"
 	line "is at rest."
 	prompt
 

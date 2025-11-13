@@ -284,7 +284,7 @@ CatchingTutorialIntroText:
 	cont "by always popping"
 	cont "up?"
 
-	para "A REPULSOR will"
+	para "A Repulsor will"
 	line "keep weak ones"
 	cont "away for good."
 

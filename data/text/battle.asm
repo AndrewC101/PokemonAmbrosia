@@ -131,19 +131,19 @@ BattleText_TargetWasHitByFutureSight:
 
 BattleText_SafeguardFaded:
 	text "<USER>'s"
-	line "SAFEGUARD faded!"
+	line "Safeguard faded!"
 	prompt
 
 BattleText_MonsLightScreenFell:
 	text_ram wStringBuffer1
 	text " #mon's"
-	line "LIGHT SCREEN fell!"
+	line "Light Screen fell!"
 	prompt
 
 BattleText_MonsReflectFaded:
 	text_ram wStringBuffer1
 	text " #mon's"
-	line "REFLECT faded!"
+	line "Reflect faded!"
 	prompt
 
 BattleText_RainContinuesToFall:
@@ -300,7 +300,7 @@ BattleText_CantEscape:
 
 BattleText_UserHurtBySpikes:
 	text "<USER>'s"
-	line "hurt by SPIKES!"
+	line "hurt by Spikes!"
 	prompt
 
 BattleText_UserHurtByStealthRock:
@@ -958,12 +958,12 @@ TransformedText:
 	prompt
 
 LightScreenEffectText:
-	text "A LIGHT SCREEN"
+	text "A Light Screen"
 	line "was raised."
 	prompt
 
 ReflectEffectText:
-	text "A REFLECT"
+	text "A Reflect"
 	line "was raised."
 	prompt
 
@@ -1096,7 +1096,7 @@ ProtectingItselfText:
 	done
 
 SpikesText:
-	text "SPIKES scattered"
+	text "Spikes scattered"
 	line "all around"
 	prompt
 
@@ -1127,7 +1127,7 @@ FellInLoveText:
 	prompt
 
 CoveredByVeilText:
-	text "A SAFEGUARD"
+	text "A Safeguard"
 	line "was raised."
 	prompt
 
@@ -1139,7 +1139,7 @@ NaturalCureText:
 SafeguardProtectText:
 	text "<TARGET>"
 	line "is protected by"
-	cont "SAFEGUARD!"
+	cont "Safeguard!"
 	prompt
 
 MagnitudeText:
@@ -1170,14 +1170,14 @@ ClearFieldText:
 	prompt
 
 ToxicSpikesText:
-	text "TOXIC SPIKES scat-"
+	text "Toxic Spikes scat-"
 	line "tered all around."
 	prompt
 
 AbsorbedToxicSpikesText:
 	text "<USER>"
 	line "absorbed the"
-	cont "TOXIC SPIKES!"
+	cont "Toxic Spikes!"
 	prompt
 
 StealthRockText:

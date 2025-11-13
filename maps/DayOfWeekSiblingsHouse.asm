@@ -49,7 +49,7 @@ DayOfWeekSiblingsHousePokedexText2:
 	para "So that we might"
 	line "make a divine"
 	cont "offering to the"
-	cont "one true GOD."
+	cont "one true God."
 
 	para "Hail Giratina."
 

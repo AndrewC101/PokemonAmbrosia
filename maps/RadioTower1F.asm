@@ -343,9 +343,9 @@ RadioTower1FRadioCardWomanQuestion2Text:
 	text "Correct!"
 	line "Question 2:"
 
-	para "HYDRO PUMP is more"
+	para "Hydro Pump is more"
 	line "accurate than"
-	cont "THUNDER?"
+	cont "Thunder?"
 	done
 
 RadioTower1FRadioCardWomanQuestion3Text:

@@ -6,5 +6,5 @@
 	next "melts foes."
 
 	page "Immune to Fire"
-	next "and RECOIL. Sets"
-	next "SAFEGUARD.@"
+	next "and Recoil. Sets"
+	next "Safeguard.@"

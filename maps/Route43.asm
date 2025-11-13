@@ -570,7 +570,7 @@ CamperSpencerSeenText:
 	para "He drugged his"
 	line "victims with"
 	cont "drinks laced with"
-	cont "SLEEP POWDER."
+	cont "Sleep Powder."
 
 	para "Oh that's right"
 	line "I'm a trainer."

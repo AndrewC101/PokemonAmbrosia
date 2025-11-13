@@ -547,7 +547,7 @@ Route36LassText:
 	text "I went into one of"
 	line "those puzzle"
 	cont "chambers and used"
-	cont "my ESCAPE POD to"
+	cont "my Escape Pod to"
 	cont "leave and then I"
 	cont "heard all these"
 	cont "spooky noises"

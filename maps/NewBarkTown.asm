@@ -240,7 +240,7 @@ Text_GearIsImpressive:
 	line "holding B."
 
 	para "Unless you have"
-	line "SPORT SHOES, then"
+	line "Sport Shoes, then"
 	cont "you can run by"
 	cont "default."
 	done
@@ -462,7 +462,7 @@ NewBarkTownGotRepelsText:
     para "You should always"
     line "be prepared."
 
-    para "REPULSOR will"
+    para "Repulsor will"
     line "keep weaker"
     cont "#mon away."
 

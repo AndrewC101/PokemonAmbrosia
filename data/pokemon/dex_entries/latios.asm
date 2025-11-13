@@ -7,4 +7,4 @@
 
 	page "Immune to"
 	next "Ground and sets"
-	next "REFLECT.@"
+	next "Reflect.@"

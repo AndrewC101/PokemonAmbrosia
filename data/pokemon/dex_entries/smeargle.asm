@@ -7,4 +7,4 @@
 
 	page "Random stat"
 	next "boosts. Raises"
-	next "SAFEGUARD.@"
+	next "Safeguard.@"

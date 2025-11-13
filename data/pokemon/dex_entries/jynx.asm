@@ -5,6 +5,6 @@
 	next "different cry"
 	next "patterns."
 
-	page "BLIZZARD always"
+	page "Blizzard always"
 	next "hits. Causes"
 	next "nightmares.@"

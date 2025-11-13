@@ -85,7 +85,7 @@ GoldenrodDeptStore4FGameboyKidText:
 	cont "benefits."
 
 	para "Legends speak"
-	line "of AMBROSIA."
+	line "of Ambrosia."
 
 	para "A single divine"
 	line "food that will"

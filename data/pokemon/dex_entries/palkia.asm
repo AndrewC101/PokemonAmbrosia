@@ -7,4 +7,4 @@
 
 	page "Resists Fire/"
 	next "Ice and raises"
-	next "SAFEGUARD.@"
+	next "Safeguard.@"

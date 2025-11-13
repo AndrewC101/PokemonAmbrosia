@@ -280,7 +280,7 @@ BlackBeltText_WeirdRadio:
 
 BlackthornCooltrainerF1Text:
 	text "I lost my"
-	line "REMEMBRALL."
+	line "Remembrall."
 
 	para "Luckily the guy"
 	line "who invented it"

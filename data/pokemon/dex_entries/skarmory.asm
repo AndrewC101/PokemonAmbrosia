@@ -5,6 +5,6 @@
 	next "it sheds can be"
 	next "used as swords."
 
-	page "Lays SPIKES"
+	page "Lays Spikes"
 	next "and can't be"
 	next "KOd at full HP.@"

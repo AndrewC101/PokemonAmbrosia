@@ -356,7 +356,7 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 PowerPlantManagerIWontForgiveCulpritText:
 	text "I won't let anyone"
 	line "hurt my generator!"
-	para "My BODY SLAM is"
+	para "My Body Slam is"
 	line "eager to crush"
 	cont "anyone who would"
 	cont "dare."
@@ -383,7 +383,7 @@ PowerPlantManagerTakeThisTMText:
 	done
 
 PowerPlantManagerTM07IsZapCannonText:
-	text "BODY SLAM is a"
+	text "Body Slam is a"
 	line "strong and"
 	cont "reliable move that"
 	cont "can paralyse your"

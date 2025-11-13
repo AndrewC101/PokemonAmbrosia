@@ -75,7 +75,7 @@ DarkCaveXehanortSeenText:
 	line "object that can"
 	cont "grant immortality."
 
-	para "The Mark of God."
+	para "The Mark Of God."
 
 	para "This golden item"
 	line "is connected to it"

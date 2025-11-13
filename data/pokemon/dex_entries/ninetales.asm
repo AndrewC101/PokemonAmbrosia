@@ -7,4 +7,4 @@
 
 	page "Immune to"
 	next "Fire and raises"
-	next "SAFEGUARD.@"
+	next "Safeguard.@"

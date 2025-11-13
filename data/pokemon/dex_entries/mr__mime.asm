@@ -5,6 +5,6 @@
 	next "mysterious power"
 	next "in its fingers."
 
-	page "Raises REFLECT"
-	next "and LIGHT SCREEN"
+	page "Raises Reflect"
+	next "and Light Screen"
 	next "upon switch in.@"

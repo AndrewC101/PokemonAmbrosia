@@ -6,5 +6,5 @@
 	next "It sees danger."
 
 	page "Raises"
-	next "LIGHT SCREEN on"
+	next "Light Screen on"
 	next "entering battle.@"

@@ -6,5 +6,5 @@
 	next "angered."
 
 	page "Clears field."
-	next "BLIZZARD won't"
+	next "Blizzard won't"
 	next "miss.@"

@@ -5,5 +5,5 @@
 	next "electricity then"
 	next "slowly eats them."
 
-	page "THUNDER will"
+	page "Thunder will"
 	next "always hit.@"

@@ -122,7 +122,7 @@ CeladonAndrewFinalText:
     para "If you complete"
     line "the game I'll"
     cont "give you the"
-    cont "HAND OF GOD."
+    cont "Hand Of God."
 
     para "Now go have fun!"
     done

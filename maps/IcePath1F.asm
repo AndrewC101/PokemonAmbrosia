@@ -96,7 +96,7 @@ ComputerTwoText:
 	line "and offer my most"
 	cont "prized artifact, a"
 	cont "nugget of"
-	cont "AMBROSIA."
+	cont "Ambrosia."
 	para "Zygarde will be"
 	line "mine!"
 	done

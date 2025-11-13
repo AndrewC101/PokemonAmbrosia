@@ -276,7 +276,7 @@ AbyssSageScript1:
 	dbw BANK(@), NULL
 .AbyssSage1MenuText:
 	db "Spell Tag@"
-	db "Mark of God@"
+	db "Mark Of God@"
 	db "Red Eye Orb@"
 .fail
     writetext AbyssSageFailedText

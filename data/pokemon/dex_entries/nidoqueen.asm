@@ -7,4 +7,4 @@
 
 	page "Extra damage on"
 	next "males. Lays"
-	next "TOXIC SPIKES.@"
+	next "Toxic Spikes.@"

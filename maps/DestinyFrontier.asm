@@ -734,7 +734,7 @@ MasterXehanortScript:
 MasterXehanortSeenText:
 	text "I am sure I will"
 	line "find it here."
-	para "The Mark of God."
+	para "The Mark Of God."
 	para "The light"
 	line "emanating from"
 	cont "this place beckons"

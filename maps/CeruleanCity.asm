@@ -287,10 +287,10 @@ CeruleanBikeShopSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "The BIKE SHOP is"
+	para "The Bike Shop is"
 	line "closed due to"
 	cont "everyone using"
-	cont "SPORT SHOES."
+	cont "Sport Shoes."
 	done
 
 CeruleanPoliceSignText:

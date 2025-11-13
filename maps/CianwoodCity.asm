@@ -806,7 +806,7 @@ HeIsOverThere:
     para "Hang on..."
 
     para "My Abra can"
-    line "TELEPORT us"
+    line "Teleport us"
     cont "over."
     done
 
@@ -971,7 +971,7 @@ ThanksHereIsTm:
 MoveUsBack:
     text "Hang on..."
 
-    para "Abra can TELEPORT"
+    para "Abra can Teleport"
     line "us back if we"
     cont "concentrate..."
     done

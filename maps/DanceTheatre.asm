@@ -225,7 +225,7 @@ KimonoGirlKuniAfterBattleText:
 	done
 
 KimonoGirlMikiSeenText:
-	text "EEVEE has many"
+	text "Eevee has many"
 	line "forms."
 
 	para "#mon have"

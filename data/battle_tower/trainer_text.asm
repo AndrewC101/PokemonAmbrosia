@@ -641,7 +641,7 @@ _BTLossF14Text:
 	done
 
 _BTWinF14Text:
-	text "Thank ARCEUS for"
+	text "Thank Arceus for"
 	line "that!"
 	para "I feel really bad"
 	line "for you."

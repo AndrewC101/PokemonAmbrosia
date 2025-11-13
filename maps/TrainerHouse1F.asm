@@ -50,7 +50,7 @@ TrainerHouse1FCooltrainerMText:
 	line "fight to them!"
 
 	para "Release a hoard"
-	line "of TENTACOOL into"
+	line "of Tentacool into"
 	cont "their water supply"
 	cont "and slowly poison"
 	cont "their population."

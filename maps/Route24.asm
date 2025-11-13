@@ -105,7 +105,7 @@ Route24RocketSeenText:
 	para "We used to have"
 	line "a secret weapon."
 
-	para "MEWTWO."
+	para "Mewtwo."
 
 	para "It used to dwell"
     line "in Cerulean Cave."
@@ -148,7 +148,7 @@ Route24RocketAfterBattleText:
 
 	para "I had hoped to"
 	line "to find him and"
-	cont "find MEWTWO."
+	cont "find Mewtwo."
 
 	para "Together we"
 	line "would reinvent"

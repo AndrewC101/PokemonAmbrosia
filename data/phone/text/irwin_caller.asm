@@ -21,7 +21,7 @@ IrwinPlainBadgeGossipText:
 	para "How'd that go?"
 	para "I tried to battle"
 	line "her but ran out of"
-	cont "KOFFINGS."
+	cont "Koffings."
 	done
 
 IrwinJasmineReturnedGossipText:
@@ -51,7 +51,7 @@ IrwinRisingBadgeGossipText:
 	para "How'd that go?"
 	para "I met her once."
 	para "She crushed my"
-	line "KOFFINGS."
+	line "Koffings."
 	done
 
 IrwinVermilionCityGossipText:
@@ -99,7 +99,7 @@ IrwinMtSilverGossipText:
 	cont "the world."
 	para "Just thinking"
 	line "about it makes my"
-	cont "KOFFINGS quiver"
+	cont "Koffings quiver"
 	cont "with admiration!"
 	done
 

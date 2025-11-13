@@ -178,8 +178,8 @@ PsychicNathanAfterBattleText:
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
-	text "MYSTERY STONE"
-	line "PANEL CHAMBER"
+	text "Mystery Stone"
+	line "Panel Chamber"
 	done
 
 RuinsOfAlphSignText:

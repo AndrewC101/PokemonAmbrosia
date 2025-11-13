@@ -473,7 +473,7 @@ SilverCaveRoom3HoohScript:
     end
 
 HoohText:
-    text "HO OH!"
+    text "Ho oh!"
     done
 
 SilverCaveRoom3_MapEvents:

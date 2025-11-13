@@ -3,9 +3,9 @@ GinaGettingInSyncWithMonText:
 	line "some strong Kanto"
 	cont "#mon."
 	para "People say"
-	line "GYARADOS,"
-	cont "DRAGONITE and"
-	cont "SNORLAX are"
+	line "Gyarados,"
+	cont "Dragonite and"
+	cont "Snorlax are"
 	cont "strong."
 	para "I don't know where"
 	line "to find any of"
@@ -27,7 +27,7 @@ GinaDefeatedMonText:
 
 GinaLostAMonText:
 	text "Do you know Leon"
-	line "has a CHARIZARD!"
+	line "has a Charizard!"
 	para "If the strongest"
 	line "Champion has a"
 	cont "Kanto #mon it"

@@ -41,7 +41,7 @@ GoodRodHouseBookshelf: ; unreferenced
 OfferGoodRodText:
 	text "Are you sick of"
 	line "only catching"
-	cont "MAGIKARP when"
+	cont "Magikarp when"
 	cont "you fish!?"
 
 	para "Then you need a"
@@ -65,8 +65,8 @@ GiveGoodRodText:
 
 GaveGoodRodText:
 	text "You'll catch many"
-	line "good POLIWAG and"
-	cont "TENTACOOL with"
+	line "good Poliwag and"
+	cont "Tentacool with"
 	cont "that."
 	done
 

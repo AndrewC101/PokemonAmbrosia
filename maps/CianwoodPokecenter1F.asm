@@ -91,7 +91,7 @@ CianwoodPokecenter1FSuperNerdText:
 	line "are treated like"
 	cont "movie stars here."
 	para "Especially that"
-	line "MACHAMP over"
+	line "Machamp over"
 	cont "there."
 	para "I don't even think"
 	line "it has a trainer."

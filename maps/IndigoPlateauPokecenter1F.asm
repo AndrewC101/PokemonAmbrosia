@@ -122,10 +122,10 @@ TeleportGuyText1:
 	para "If you need to"
 	line "train some more,"
 
-	para "my ALAKAZAM can"
+	para "my Alakazam can"
 	line "help you."
 
-	para "It can TELEPORT"
+	para "It can Teleport"
 	line "you home."
 
 	para "Would you like to"

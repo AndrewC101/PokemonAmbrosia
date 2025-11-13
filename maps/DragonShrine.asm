@@ -476,7 +476,7 @@ DragonShrineTakeThisDratiniText:
 
 DragonShrinePlayerReceivedDratiniText:
 	text "<PLAYER> received"
-	line "DRATINI!"
+	line "Dratini!"
 	done
 
 DragonShrinePartyFullText:
@@ -490,7 +490,7 @@ DragonShrineSymbolicDragonText:
 	cont "of beings."
 
 	para "The closest to"
-	line "ARCEUS itself."
+	line "Arceus itself."
 
 	para "It is said the"
 	line "first #mon"
@@ -526,7 +526,7 @@ WrongAnswerText:
     prompt
 
 Question1CorrectText:
-    text "Indeed CHARIZARD"
+    text "Indeed Charizard"
     line "is an abomination"
     cont "unworthy of the"
     cont "name of Dragon."
@@ -546,8 +546,8 @@ Question2CorrectText:
     prompt
 
 Question3CorrectText:
-    text "Indeed SALAMENCE"
-    line "has base ATTACK"
+    text "Indeed Salamence"
+    line "has base Attack"
     cont "of 135."
 
     para "Now we move onto"
@@ -570,11 +570,11 @@ Question4CorrectText:
 Question5CorrectText:
     text "Well done child."
 
-    para "ZYGARDE has a"
+    para "Zygarde has a"
     line "base HP of 216."
 
     para "Second only to"
-    line "BLISSEY."
+    line "Blissey."
     prompt
 
 DragonShrineElder2Text:
@@ -594,7 +594,7 @@ DragonShrineElder2Text:
 
     para "The profane one."
 
-    para "GIRATINA."
+    para "Giratina."
 
 	para "The ancestors of"
 	line "our people were"
@@ -611,7 +611,7 @@ DragonShrineElder3Text:
 	line "Dragon Lord is"
 	cont "lost to time."
 
-	para "ZYGARDE."
+	para "Zygarde."
 
 	para "None know where"
 	line "it resides."
@@ -621,7 +621,7 @@ DragonShrineElder3Text:
 
 	para "But you can be"
 	line "sure the great"
-	cont "ZYGARDE lives."
+	cont "Zygarde lives."
 	done
 
 DragonShrineClairYouPassedText:

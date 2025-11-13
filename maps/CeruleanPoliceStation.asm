@@ -55,7 +55,7 @@ CeruleanPoliceStationPokefanFText:
 	done
 
 CeruleanDiglettText:
-	text "DRILBUR: Drill!"
+	text "Drilbur: Drill!"
 	done
 
 CeruleanPoliceStation_MapEvents:

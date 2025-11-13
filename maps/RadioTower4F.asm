@@ -130,7 +130,7 @@ RadioTower4FDJMaryText:
 	cont "to me!"
 
 	para "But please save"
-	line "my MEOWTH!"
+	line "my Meowth!"
 	done
 
 RadioTower4FDJMaryText_ClearedRockets:
@@ -161,15 +161,15 @@ RadioTower4FDJMaryText_After:
 	done
 
 RadioTowerMeowthText:
-	text "MEOWTH: Meowth…"
+	text "Meowth: Meowth…"
 	done
 
 GruntM10SeenText:
 	text "Have you heard"
 	line "of the #mon"
 
-	para "KYOGRE and"
-	line "GROUDON!"
+	para "Kyogre and"
+	line "Groudon!"
 
 	para "They are Hoenn"
 	line "legendary"
@@ -426,7 +426,7 @@ MeowthLose:
 	done
 
 MeowthWin:
-    text "MEOWTH,"
+    text "Meowth,"
     line "that's right!"
     done
 

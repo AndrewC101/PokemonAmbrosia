@@ -47,14 +47,14 @@ SaffronPokecenter1FFisherText:
 	line "specialise in"
 	cont "Normal types."
 	para "I thought my"
-	line "MACHAMP would make"
+	line "Machamp would make"
 	cont "it easy, but they"
 	cont "hit pretty hard..."
 	done
 
 SaffronPokecenter1FYoungsterText:
 	text "I thought my"
-	line "HOUNDOOM would"
+	line "Houndoom would"
 	cont "make easy work of"
 	cont "the psychic gym."
 	para "But turns out Aura"

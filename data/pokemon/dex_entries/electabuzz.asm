@@ -2,7 +2,7 @@
 	dw 307, 660 ; height, weight
 
 	db   "When two"
-	next "ELECTABUZZ touch,"
+	next "Electabuzz touch,"
 	next "a current flows."
 
 	page "Immune to"

@@ -52,7 +52,7 @@ SlowpokeWellB2FGymGuideText:
 	text "I'm observing"
 	line "the complex social"
 	cont "structure of the"
-	cont "SLOWPOKE."
+	cont "Slowpoke."
 
 	para "...."
 

@@ -170,7 +170,7 @@ PlayersRadioText4:
 	text "The Hoenn war is"
 	line "inevitable now."
 
-	para "ARCEUS guide us."
+	para "Arceus guide us."
 	done
 
 PlayersHouse2F_MapEvents:

@@ -196,11 +196,11 @@ CeruleanCitySuperNerdText:
 	done
 
 CeruleanCitySlowbroText:
-	text "SLOWBRO: Yarah?"
+	text "Slowbro: Yarah?"
 	done
 
 CeruleanCityCooltrainerFText1:
-	text "My SLOWBRO is"
+	text "My Slowbro is"
 	line "the strongest in"
 	cont "all the world."
 	done

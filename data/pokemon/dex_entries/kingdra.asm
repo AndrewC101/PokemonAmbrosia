@@ -6,5 +6,5 @@
 	next "underwater depths"
 
 	page "Speed boost in"
-	next "rain. SP.Atk"
+	next "rain. Sp.Atk"
 	next "boost on KO.@"

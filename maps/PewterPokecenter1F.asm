@@ -55,7 +55,7 @@ PewterPokecenter1FTeacherText:
 	done
 
 PewterMawileText:
-	text "CLEFAIRY: Puu"
+	text "Clefairy: Puu"
 	line "pupuu."
 	done
 

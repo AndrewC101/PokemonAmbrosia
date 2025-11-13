@@ -110,8 +110,8 @@ GameFreakGraphicArtistText:
 	cont "#mon was"
 	cont "difficult."
 
-	para "Some like ZYGARDE"
-	line "and GENESECT"
+	para "Some like Zygarde"
+	line "and Genesect"
 	cont "didn't have back"
 	cont "sprites."
 

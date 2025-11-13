@@ -220,7 +220,7 @@ SwimmermRandallAfterBattleText:
 
 SwimmerfElaineSeenText:
 	text "I believe my"
-	line "STARMIE has"
+	line "Starmie has"
 	cont "the potential"
 	cont "to be the"
 	cont "strongest"
@@ -326,10 +326,10 @@ Route40StandingYoungsterText:
 
 	para "You need to"
 	line "watch out for"
-	cont "TENTACRUEL."
+	cont "Tentacruel."
 
 	para "They are weak to"
-	line "DIG. Which still"
+	line "Dig. Which still"
 	cont "works in water"
 	cont "somehow..."
 	done

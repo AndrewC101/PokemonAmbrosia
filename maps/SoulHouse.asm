@@ -66,13 +66,13 @@ SoulHouseLassText:
 	cont "she comes here."
 
 	para "I don't remember"
-	line "BLISSEY but granny"
+	line "Blissey but granny"
 	cont "always talks about"
 	cont "her."
 	done
 
 SoulHouseGrannyText:
-	text "BLISSEY was"
+	text "Blissey was"
 	line "with me since"
 	cont "I was a girl."
 

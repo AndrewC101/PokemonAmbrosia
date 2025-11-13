@@ -76,7 +76,7 @@ CharcoalKilnRadio:
 	jumpstd Radio2Script
 
 CharcoalKilnBossText1:
-	text "All the SLOWPOKE"
+	text "All the Slowpoke"
 	line "have disappeared"
 	cont "from the town."
 
@@ -91,7 +91,7 @@ CharcoalKilnBossText1:
 	done
 
 CharcoalKilnBossText2:
-	text "The SLOWPOKE have"
+	text "The Slowpoke have"
 	line "returned…"
 
 	para "But my APPRENTICE"
@@ -101,7 +101,7 @@ CharcoalKilnBossText2:
 	para "He must have"
 	line "been sacrificed"
 	cont "to appease the"
-	cont "protector CELEBI."
+	cont "protector Celebi."
 	done
 
 CharcoalKilnBossText3:
@@ -109,7 +109,7 @@ CharcoalKilnBossText3:
 	line "Team Rocket!"
 
 	para "And you freed"
-	line "the SLOWPOKE."
+	line "the Slowpoke."
 
 	para "You are a hero"
 	line "in this town!"
@@ -117,7 +117,7 @@ CharcoalKilnBossText3:
 
 CharcoalKilnApprenticeText1:
 	text "Where have all the"
-	line "SLOWPOKE gone?"
+	line "Slowpoke gone?"
 
 	para "The spirits of"
 	line "the forest won't"
@@ -140,7 +140,7 @@ CharcoalKilnApprenticeText2:
 	done
 
 CharcoalKilnApprenticeText3:
-	text "With the SLOWPOKE"
+	text "With the Slowpoke"
 	line "back we have"
 	cont "plenty of"
 	cont "sacrifices for"
@@ -148,7 +148,7 @@ CharcoalKilnApprenticeText3:
 	done
 
 FarfetchdText:
-	text "MURKROW!"
+	text "Murkrow!"
 	done
 
 CharcoalKiln_MapEvents:

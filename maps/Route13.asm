@@ -325,7 +325,7 @@ HikerKennyAfterBattleText:
 	done
 
 Route13TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Look! Right there,"
 	line "at the left side"

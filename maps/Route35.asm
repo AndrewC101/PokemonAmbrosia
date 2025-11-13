@@ -451,7 +451,7 @@ PicnickerKimSeenText:
 
 PicnickerKimBeatenText:
 	text "Devour them"
-	line "MAWILE!!"
+	line "Mawile!!"
 	done
 
 PicnickerKimAfterBattleText:
@@ -461,7 +461,7 @@ PicnickerKimAfterBattleText:
 
 	para "That'll show"
 	line "them how cute"
-	cont "my MAWILE is."
+	cont "my Mawile is."
 	done
 
 BirdKeeperBryanSeenText:
@@ -527,18 +527,18 @@ BugCatcherArnieSeenText:
 
 BugCatcherArnieBeatenText:
 	text "You did well"
-	line "BUTTERFREE."
+	line "Butterfree."
 	done
 
 BugCatcherArnieAfterBattleText:
 	text "I know my"
-	line "BUTTERFREE can"
+	line "Butterfree can"
 	cont "get even stronger!"
 	done
 
 BugCatcherArnieYanmaText:
 	text "There are a lot"
-	line "of YANMA out"
+	line "of Yanma out"
 	cont "there."
 
 	para "But I'm not"

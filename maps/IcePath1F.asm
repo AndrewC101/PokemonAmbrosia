@@ -81,7 +81,7 @@ ComputerOneText:
 	cont "place."
 	para "I am sure the"
 	line "original dragon"
-	cont "lord, ZYGARDE"
+	cont "lord, Zygarde"
 	cont "resides there."
 	done
 
@@ -97,7 +97,7 @@ ComputerTwoText:
 	cont "prized artifact, a"
 	cont "nugget of"
 	cont "AMBROSIA."
-	para "ZYGARDE will be"
+	para "Zygarde will be"
 	line "mine!"
 	done
 

@@ -108,7 +108,7 @@ PlayersNeighborText:
 	line "first #mon."
 
 	para "She loves her"
-	line "RIOLU."
+	line "Riolu."
 
 	para "She is a sweet"
 	line "girl."
@@ -163,7 +163,7 @@ PlayerNeighborRadioText4:
 	text "The Hoenn war is"
 	line "inevitable."
 
-	para "ARCEUS help us!"
+	para "Arceus help us!"
 	done
 
 PlayersNeighborsHouse_MapEvents:

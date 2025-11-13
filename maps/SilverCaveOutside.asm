@@ -1037,10 +1037,10 @@ HoenWarCh3HeroText:
     para "He is Admiral"
     line "Drake."
 
-    para "His LATIOS readies"
+    para "His Latios readies"
     line "a final attack."
 
-    para "But your CROBAT"
+    para "But your Crobat"
     line "has escaped and"
     cont "through your bond"
     cont "you know Steven"
@@ -1328,12 +1328,12 @@ HoenWarCh1VillainText:
 
 HoenWarCh3VillainText:
     text "With one last"
-    line "blast LATIOS"
+    line "blast Latios"
     cont "removes the"
     cont "intruder."
 
     para "You make your"
-    line "way to STEVENS"
+    line "way to Stevens"
     cont "chamber."
 
     para "The room is"
@@ -1476,7 +1476,7 @@ HoenWarRolePlayEndText:
     text "Wallace pleas"
     line "for mercy."
 
-    para "ARCEUS disappears."
+    para "Arceus disappears."
 
     para "Everything returns"
     line "to as it was."

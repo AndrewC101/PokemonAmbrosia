@@ -193,7 +193,7 @@ RuinsOfAlphKabutoChamberScientistHoleText:
 
 RuinsOfAlphResearchCenterScientist1Text_GotAllUnown:
 	text "You caught all the"
-	line "UNOWN!"
+	line "Unown!"
 	para "Slow down or"
 	line "you'll put us all"
 	cont "out of a job!"
@@ -215,7 +215,7 @@ RuinsOfAlphKabutoChamberWallPatternLeftText:
 	done
 
 RuinsOfAlphKabutoChamberUnownText: ; unreferenced
-	text "It's UNOWN text!"
+	text "It's Unown text!"
 	done
 
 RuinsOfAlphKabutoChamberWallPatternRightText:

@@ -3,7 +3,7 @@
 
 	db   "The final form"
 	next "of the most"
-	next "skilled BISHARP."
+	next "skilled Bisharp."
 
 	page "Boosts Attack"
 	next "and weak moves.@"

@@ -1,7 +1,7 @@
 WiltonMonHasGrownText:
 	text "Yesterday I caught"
 	line "the most amazing"
-	cont "FEEBAS."
+	cont "Feebas."
 	para "It was such a"
 	line "beautiful"
 	cont "#mon."
@@ -26,7 +26,7 @@ WiltonDefeatedMonText:
 
 WiltonLostAMonText:
 	text "I've been eying up"
-	line "this TOGEKISS"
+	line "this Togekiss"
 	cont "nesting nearby."
 	para "I've heard legends"
 	line "of their tender"
@@ -89,12 +89,12 @@ WiltonNotBitingText:
 WiltonWantThisText:
 	text "I've eaten all"
 	line "sorts of #mon."
-	para "MILOTIC is real"
+	para "Milotic is real"
 	line "nice but I tell"
 	cont "you kid, I tell"
 	cont "you the tastiest"
 	cont "#mon."
-	para "It's DUNSPARCE!"
+	para "It's Dunsparce!"
 	para "Don't believe me,"
 	line "try it for"
 	cont "yourself."

@@ -190,12 +190,12 @@ MakeRoomText:
     done
 TakeArceusText:
     text "You choose"
-    line "ARCEUS."
+    line "Arceus."
     para "The God #mon"
     done
 ReceivedArceusText:
 	text "<PLAYER> received"
-	line "ARCEUS."
+	line "Arceus."
 	done
 
 MewtwoPokeBallScript:
@@ -238,13 +238,13 @@ MewtwoPokeBallScript:
 	end
 TakeMewtwoText:
     text "You choose"
-    line "MEWTWO."
+    line "Mewtwo."
     para "The Weapon"
     line "#mon"
     done
 ReceivedMewtwoText:
 	text "<PLAYER> received"
-	line "MEWTWO."
+	line "Mewtwo."
 	done
 
 MustBeatOakText:
@@ -599,7 +599,7 @@ BeatOthersFirstText:
     para "This is the"
     line "Hall of Origin."
 
-    para "ARCEUS waits to"
+    para "Arceus waits to"
     line "present itself"
     cont "to whichever"
     cont "one of you is"
@@ -617,10 +617,10 @@ BeatOthersFirstText:
     para "Should you pass"
     line "you are worthy"
     cont "to speak with"
-    cont "ARCEUS."
+    cont "Arceus."
 
     para "If you conquer"
-    line "ARCEUS..."
+    line "Arceus..."
 
     para "The great one"
     line "will no doubt"
@@ -822,7 +822,7 @@ MasterBlueAfterBattleText:
     para "Defeat Red!"
 
     para "Then conquer"
-    line "ARCEUS."
+    line "Arceus."
 
     para "Then he will"
     line "appear."
@@ -841,7 +841,7 @@ BeatOthersFirstBlueText:
     para "So you think you"
     line "are worthy to"
     cont "have an audience"
-    cont "with ARCEUS."
+    cont "with Arceus."
 
     para "You must prove"
     line "yourself the"
@@ -1520,7 +1520,7 @@ MultiverseVillains2Text:
     para "A light engulfs"
     line "all!"
 
-    para "ARCEUS is too"
+    para "Arceus is too"
     line "strong."
 
     para "JIREN intercepts"
@@ -1598,7 +1598,7 @@ MultiverseDeities1Text:
 
     para "God."
 
-    para "ARCEUS takes its"
+    para "Arceus takes its"
     line "place above the"
     cont "group."
 
@@ -1632,7 +1632,7 @@ MultiverseDeities2Text:
 
     para "It burns!"
 
-    para "ARCEUS dispenses"
+    para "Arceus dispenses"
     line "judgement."
 
     para "SAURON falls."
@@ -1655,10 +1655,10 @@ MultiverseDeities2Text:
     cont "JIRENs power up."
 
     para "Just long enough"
-    line "for ARCEUS to"
+    line "for Arceus to"
     cont "finish the group."
 
-    para "ARCEUS heals"
+    para "Arceus heals"
     line "everyone."
 
     para "Some time passes."

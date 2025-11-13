@@ -342,7 +342,7 @@ AzaleaTownRocket2Text:
 	done
 
 AzaleaTownGrampsTextBefore:
-	text "The SLOWPOKE have"
+	text "The Slowpoke have"
 	line "disappeared from"
 	cont "town."
 
@@ -358,7 +358,7 @@ AzaleaTownGrampsTextBefore:
 	done
 
 AzaleaTownGrampsTextAfter:
-	text "The SLOWPOKE have"
+	text "The Slowpoke have"
 	line "returned."
 
 	para "Look at them."
@@ -409,7 +409,7 @@ AzaleaTownYoungsterText:
 	done
 
 AzaleaTownSlowpokeText1:
-	text "SLOWPOKE: …"
+	text "Slowpoke: …"
 
 	para "<……> <……> <……>"
 	done
@@ -469,11 +469,11 @@ SlowpokeWellSignText:
 	line "Rainmaker Well."
 
 	para "Locals believe"
-	line "that a SLOWPOKE's"
+	line "that a Slowpoke's"
 	cont "yawn summons rain."
 
 	para "Records show that"
-	line "a SLOWPOKE's yawn"
+	line "a Slowpoke's yawn"
 
 	para "ended a drought"
 	line "400 years ago."

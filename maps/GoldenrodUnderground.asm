@@ -421,10 +421,10 @@ GoldenrodUndergroundHiddenAntidote:
 	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
 
 SupernerdEricSeenText:
-	text "MOON STONE!"
+	text "Moon Stone!"
 
 	para "I must have a"
-	line "MOON STONE."
+	line "Moon Stone."
 	done
 
 SupernerdEricBeatenText:
@@ -470,7 +470,7 @@ PokemaniacIssacSeenText:
 	cont "Dept.Store I"
 	cont "was finally able"
 	cont "to buy a"
-	cont "SUN STONE."
+	cont "Sun Stone."
 
 	para "Now I am way"
 	line "stronger!"

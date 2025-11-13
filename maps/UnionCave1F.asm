@@ -105,7 +105,7 @@ HikerRussellSeenText:
 	cont "the Ruins of"
 	cont "Alph."
 
-	para "DRILBUR and I"
+	para "Drilbur and I"
 	line "are going to dig"
 	cont "underneath the"
 	cont "ruins to find it!"
@@ -136,7 +136,7 @@ PokemaniacLarryBeatenText:
 
 PokemaniacLarryAfterBattleText:
 	text "There is a super"
-	line "strong GOLEM down"
+	line "strong Golem down"
 	cont "there."
 	para "I got out of"
 	line "there!"

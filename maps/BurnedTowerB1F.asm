@@ -201,11 +201,11 @@ BurnedTowerB1FEusineText:
 
 	para "...."
 
-	para "I saw SUICUNE."
+	para "I saw Suicune."
 
-	para "I saw SUICUNE."
+	para "I saw Suicune."
 
-	para "I saw SUICUNE!!!!"
+	para "I saw Suicune!!!!"
 
 	para "All thanks to"
 	line "you <PLAYER>!"
@@ -214,10 +214,10 @@ BurnedTowerB1FEusineText:
 	line "dept for the rest"
 	cont "of my life."
 
-	para "SUICUNE fled with"
+	para "Suicune fled with"
 	line "the others."
 
-	para "RAIKOU and ENTEI."
+	para "Raikou and Entei."
 
 	para "Destiny calls."
 

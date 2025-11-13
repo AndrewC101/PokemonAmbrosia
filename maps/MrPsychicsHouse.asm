@@ -38,7 +38,7 @@ MrPsychicText1:
 	cont "gang."
 
 	para "They even had a"
-	line "TYRANITAR."
+	line "Tyranitar."
 
 	para "No idea how she"
 	line "did it!"

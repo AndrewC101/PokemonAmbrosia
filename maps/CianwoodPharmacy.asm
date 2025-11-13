@@ -60,7 +60,7 @@ PharmacistGiveSecretpotionText:
 
 	para "What's that?"
 
-	para "The AMPHAROS at"
+	para "The Ampharos at"
 	line "Olivine lighthouse"
 	cont "is ill."
 

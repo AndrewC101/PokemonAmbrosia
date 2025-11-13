@@ -219,7 +219,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	db "Cancel@"
 
 CeladonGameCornerPrizeRoomGentlemanText:
-	text "I want the DITTO"
+	text "I want the Ditto"
 	line "but it's so"
 	cont "expensive!"
 	done

@@ -31,7 +31,7 @@ HouseForSaleBookshelf:
 	jumpstd DifficultBookshelfScript
 
 Route5CleanseTagHouseGrannyText1:
-	text "ARCEUS is not"
+	text "Arceus is not"
 	line "the one true GOD."
 
 	para "There is another!"
@@ -45,7 +45,7 @@ Route5CleanseTagHouseGrannyText1:
 	done
 
 Route5CleanseTagHouseGrannyText2:
-	text "ARCEUS is not"
+	text "Arceus is not"
 	line "the one true GOD."
 
 	para "There is another!"

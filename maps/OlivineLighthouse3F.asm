@@ -71,7 +71,7 @@ BirdKeeperTheoAfterBattleText:
 	done
 
 SailorTerrellSeenText:
-	text "My POLIWRATH"
+	text "My Poliwrath"
 	line "and I work out"
 	cont "everyday."
 

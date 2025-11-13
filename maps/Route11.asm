@@ -255,7 +255,7 @@ PsychicHermanAfterBattleText:
 
 PsychicFidelSeenText:
 	text "I was trying to"
-	line "move that SNORLAX"
+	line "move that Snorlax"
 	cont "with my mind."
 	para "I swear I made it"
 	line "roll over once."
@@ -268,7 +268,7 @@ PsychicFidelBeatenText:
 
 PsychicFidelAfterBattleText:
 	text "Sabrina could pick"
-	line "that SNORLAX up"
+	line "that Snorlax up"
 	cont "and flip it around"
 	cont "like a pancake"
 	cont "with her mind."

@@ -104,7 +104,7 @@ Eusine2SeenText:
     para "Then I got up"
     line "and decided I"
     cont "had to see"
-    cont "SUICUNE one"
+    cont "Suicune one"
     cont "more time."
 
     para "For the first"
@@ -115,7 +115,7 @@ Eusine2SeenText:
     para "Only to say"
     line "goodbye."
 
-    para "SUICUNE didn't"
+    para "Suicune didn't"
     line "run."
 
     para "Now let us battle"
@@ -134,7 +134,7 @@ Eusine2OfferFightText:
     done
 Eusine2AfterBattleText:
     text "I am one with"
-    line "SUICUNE."
+    line "Suicune."
 
     para "I can not explain"
     line "the peace I feel."
@@ -223,8 +223,8 @@ NoBeastsText:
 	para "Have you caught"
 	line "the legendary"
 
-	para "#mon RAIKOU and"
-	line "ENTEI?"
+	para "#mon Raikou and"
+	line "Entei?"
 
 	para "<……><……><……>"
 

@@ -102,7 +102,7 @@ ZygardeScript:
 	end
 
 ZygardeCry:
-    text "ZYGARDE!"
+    text "Zygarde!"
     done
 
 AncientHall_MapEvents:

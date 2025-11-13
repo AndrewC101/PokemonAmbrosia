@@ -123,7 +123,7 @@ RedGyarados:
     end
 
 NotInterestedText:
-    text "GYARADOS seems"
+    text "Gyarados seems"
     line "uninterested."
     done
 
@@ -270,7 +270,7 @@ LakeOfRageLanceForcedToEvolveText:
 LakeOfRageLanceIntroText:
 	text "Having witnessed"
 	line "your interaction"
-	cont "with the GYARADOS"
+	cont "with the Gyarados"
 	cont "I am convinced"
 	cont "you harbour an"
 	cont "extraordinary"
@@ -341,7 +341,7 @@ LakeOfRageLanceAskHelpText:
 	done
 
 LakeOfRageGyaradosCryText:
-	text "GYARADOS: Gyashaa!"
+	text "Gyarados: Gyashaa!"
 	done
 
 LakeOfRageGrampsText:
@@ -374,12 +374,12 @@ LakeOfRageGrampsText_ClearedRocketHideout:
 	done
 
 LakeOfRageCooltrainerFText:
-	text "GYARADOS has base"
+	text "Gyarados has base"
 	line "81 speed."
 
 	para "That's exactly 1"
 	line "point higher than"
-	cont "DRAGONITE."
+	cont "Dragonite."
 
 	para "I'm sure I can"
 	line "use this to my"
@@ -390,8 +390,8 @@ LakeOfRageCooltrainerFText:
 	done
 
 FisherAndreSeenText:
-	text "I saw a RED"
-	line "GYARADOS!"
+	text "I saw a Red"
+	line "Gyarados!"
 
 	para "I must have it!"
 
@@ -400,12 +400,12 @@ FisherAndreSeenText:
 	cont "right?"
 
 	para "I'm kicking my"
-	line "current GYARADOS"
+	line "current Gyarados"
 	cont "out of my team!"
 	done
 
 FisherAndreBeatenText:
-	text "Damn it GYARADOS!"
+	text "Damn it Gyarados!"
 
 	para "This is all"
 	line "your fault!"
@@ -427,7 +427,7 @@ FisherRaymondSeenText:
 	text "Blimey!"
 
 	para "Dat der RED"
-	line "GYARADOS outta"
+	line "Gyarados outta"
 	cont "be worth a few"
 	cont "bob eh?"
 
@@ -441,8 +441,8 @@ FisherRaymondBeatenText:
 
 FisherRaymondAfterBattleText:
 	text "If I paint a"
-	line "regular GYARADOS"
-	cont "RED...."
+	line "regular Gyarados"
+	cont "Red...."
 
 	para "That outta do it!"
 	done
@@ -497,11 +497,11 @@ CooltrainerfLoisText:
 	cont "went missing here."
 
 	para "He said he had"
-	line "ate a DITTO and"
-	cont "could TRANSFORM."
+	line "ate a Ditto and"
+	cont "could Transform."
 
 	para "He said he would"
-	line "TRANSFORM into a"
+	line "Transform into a"
 	cont "dragon."
 
 	para "All I remember"

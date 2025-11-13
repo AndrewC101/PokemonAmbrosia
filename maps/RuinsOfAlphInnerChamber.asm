@@ -131,7 +131,7 @@ ArceusStatueScript:
 arceusStatueText:
 	text "An ancient and"
 	line "worn statue of"
-	cont "ARCEUS the"
+	cont "Arceus the"
 	cont "creator."
 	para "Words are too"
 	line "weathered to read."

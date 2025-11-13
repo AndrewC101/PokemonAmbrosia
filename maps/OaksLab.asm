@@ -167,7 +167,7 @@ OakAfterBattleText:
     cont "that could travel"
     cont "through time."
 
-    para "CELEBI it was"
+    para "Celebi it was"
     line "called."
 
     para "I think I want"

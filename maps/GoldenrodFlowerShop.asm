@@ -124,7 +124,7 @@ GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
 	cont "is to bless the"
 	cont "water."
 
-	para "ARCEUS be praised."
+	para "Arceus be praised."
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
@@ -157,7 +157,7 @@ GoldenrodFlowerShopFloriaItReallyWasAMonText:
 	line "#mon!"
 	para "Let us offer"
 	line "prayer together."
-	para "Oh mighty ARCEUS"
+	para "Oh mighty Arceus"
 	line "may you guide all"
 	cont "wayward souls into"
 	cont "your loving"

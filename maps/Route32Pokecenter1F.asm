@@ -70,7 +70,7 @@ Route32Pokecenter1FFishingGuruText_GiveOldRod:
 
 	para "You can catch"
 	line "all sorts of"
-	cont "great MAGIKARP"
+	cont "great Magikarp"
 	cont "with this!"
 	done
 
@@ -88,7 +88,7 @@ Route32Pokecenter1FFishingGuruText_After:
 
 	para "You can catch"
 	line "all sorts of"
-	cont "great MAGIKARP"
+	cont "great Magikarp"
 	cont "with it!"
 	done
 

@@ -390,7 +390,7 @@ Route32CooltrainerMText_AideIsWaiting:
     cont "stopping you."
 
     para "I feel like a"
-    line "right DUNSPARCE."
+    line "right Dunsparce."
 	done
 
 
@@ -408,7 +408,7 @@ Route32CooltrainerMText_VioletGym:
 	para "I am sure he was"
 	line "attacked by a"
 	cont "band of rabid"
-	cont "MUDKIP!"
+	cont "Mudkip!"
 
 	para "If only he"
 	line "had trained to"
@@ -430,21 +430,21 @@ Route32CooltrainerMText_HaveThisSeed:
 
 	para "It will protect"
 	line "you from the"
-	cont "MUDKIPS."
+	cont "Mudkips."
 	done
 
 Route32CooltrainerMText_ExperiencesShouldBeUseful:
 	text "If only my old"
 	line "friend had not"
 	cont "of been such a"
-	cont "DUNSPARCE."
+	cont "Dunsparce."
 
 	para "He left one day"
 	line "and never came"
 	cont "back!"
 
 	para "Damn those rapid"
-	line "MUDKIP!"
+	line "Mudkip!"
 	done
 
 FisherJustinSeenText:
@@ -453,7 +453,7 @@ FisherJustinSeenText:
 	para "Hey kid, you made"
 	line "me lose that"
 	cont "delicious"
-	cont "MAGIKARP!"
+	cont "Magikarp!"
 
 	para "How will I"
 	line "feed my family"
@@ -473,7 +473,7 @@ FisherJustinAfterText:
 
 	para "I could fetch"
 	line "a fortune for"
-	cont "a FEEBAS."
+	cont "a Feebas."
 	done
 
 FisherRalph1SeenText:
@@ -505,7 +505,7 @@ FisherHenrySeenText:
 	cont "affinity for"
 	cont "MUDKIPs."
 	para "I am something of"
-	line "a MUDKIP fan"
+	line "a Mudkip fan"
 	cont "myself."
 	done
 
@@ -516,7 +516,7 @@ FisherHenryBeatenText:
 FisherHenryAfterText:
 	text "No other Pokemon"
 	line "is worth catching"
-	cont "except MUDKIP!"
+	cont "except Mudkip!"
 	para "Don't you agree?"
 	done
 

@@ -484,7 +484,7 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	cont "won't soon be"
 	cont "forgetting!"
 
-	para "Hang on, SLOWPOKE!"
+	para "Hang on, Slowpoke!"
 	line "Old KURT is on his"
 	cont "way!"
 	done
@@ -602,7 +602,7 @@ KurtsHouseKurtThisBallStartedToShakeText:
 	done
 
 KurtsGranddaughterSlowpokeGoneText:
-	text "The SLOWPOKE are"
+	text "The Slowpoke are"
 	line "gone…"
 
 	para "taken away by bad"
@@ -620,7 +620,7 @@ KurtsGranddaughterLonelyText:
 	done
 
 KurtsGranddaughterSlowpokeBackText:
-	text "The SLOWPOKE my"
+	text "The Slowpoke my"
 	line "Dad gave me came"
 	cont "back!"
 
@@ -637,7 +637,7 @@ KurtsGranddaughterDadText:
 
 	para "I have to stay"
 	line "home with Grandpa"
-	cont "and SLOWPOKE."
+	cont "and Slowpoke."
 	done
 
 KurtsGranddaughterHelpText:
@@ -663,7 +663,7 @@ KurtsGranddaughterGSBallText:
 	done
 
 KurtsHouseSlowpokeText:
-	text "SLOWPOKE: …"
+	text "Slowpoke: …"
 	line "Yawn?"
 	done
 

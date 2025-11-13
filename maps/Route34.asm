@@ -647,7 +647,7 @@ OfficerKeithAfterText:
 	line "the night"
 	cont "stalker..."
 
-	para "HAUNTER."
+	para "Haunter."
 	done
 
 OfficerKeithDaytimeText:
@@ -787,7 +787,7 @@ Route34SignText:
 	done
 
 Route34TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Berry trees grow"
 	line "new Berries"

@@ -126,7 +126,7 @@ PewterCitySignText:
 	cont "those who have"
 	cont "left us."
 	para "Safe in the arms"
-	line "of ARCEUS."
+	line "of Arceus."
 	done
 
 PewterGymSignText:

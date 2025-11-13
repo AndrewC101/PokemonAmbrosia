@@ -29,7 +29,7 @@ BrentDefeatedMonText:
 
 BrentLostAMonText:
 	text "I fought a guy"
-	line "with a BLISSEY the"
+	line "with a Blissey the"
 	cont "other day."
 	para "It took my HYPER"
 	line "BEAM, it barley"

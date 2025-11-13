@@ -88,7 +88,7 @@ CopycatsHouse1FPokefanFText_ReturnedMachinePart:
 	done
 
 CopycatsHouse1FBlisseyText:
-	text "BLISSEY: Bliisii!"
+	text "Blissey: Bliisii!"
 	done
 
 CopycatsHouse1F_MapEvents:

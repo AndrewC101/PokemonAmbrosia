@@ -1,7 +1,7 @@
 ParryNothingCanMatchText:
 	text "Today I beat my"
 	line "old record and"
-	cont "lifted my GOLEM 10"
+	cont "lifted my Golem 10"
 	cont "times in a row."
 	para "My legs are"
 	line "swollen with"
@@ -21,7 +21,7 @@ ParryDefeatedMonText:
 
 ParryLostAMonText:
 	text "Today I attached a"
-	line "rope to my STEELIX"
+	line "rope to my Steelix"
 	cont "and dragged it up"
 	cont "to Blackthorn."
 	para "I should compete"

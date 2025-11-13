@@ -51,7 +51,7 @@ DayOfWeekSiblingsHousePokedexText2:
 	cont "offering to the"
 	cont "one true GOD."
 
-	para "Hail GIRATINA."
+	para "Hail Giratina."
 
 	para "Keep reading?"
 	done

@@ -310,7 +310,7 @@ GoldenrodCityYoungster1Text:
 	line "the night"
 	cont "stalker."
 
-	para "A HAUNTER that"
+	para "A Haunter that"
 	line "roams the street"
 	cont "at night."
 

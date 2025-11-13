@@ -111,8 +111,8 @@ GoldenrodDeptStoreB1FBlackBelt3Text:
 	done
 
 GoldenrodDeptStoreB1FMachokeText:
-	text "MACHAMP!"
-	line "CHAMP!"
+	text "Machamp!"
+	line "Champ!"
 	done
 
 GoldenrodDeptStoreB1F_MapEvents:

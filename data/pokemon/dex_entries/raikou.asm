@@ -6,5 +6,5 @@
 	next "inside its body,"
 
 	page "Speed boost on"
-	next "switch. SP.Atk"
+	next "switch. Sp.Atk"
 	next "boost on KO.@"

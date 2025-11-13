@@ -22,7 +22,7 @@ ReenaGenericText:
 	text "Every Champion has"
 	line "a super powerful"
 	cont "ace #mon."
-	para "My MILTANK will"
+	para "My Miltank will"
 	line "beat them all one"
 	cont "day."
 	done

@@ -486,7 +486,7 @@ ExecutiveM4AfterText:
 	done
 
 RocketBaseMurkrowText:
-	text "MURKROW: The"
+	text "Murkrow: The"
 	line "password is…"
 
 	para "Hail Giovanni."
@@ -550,7 +550,7 @@ GruntM28SeenText:
 
 	para "I have the will"
 	line "of a concrete"
-	cont "MAMOSWINE."
+	cont "Mamoswine."
 
 	para "It is futile."
 
@@ -565,15 +565,15 @@ GruntM28SeenText:
 	done
 
 GruntM28BeatenText:
-	text "RATICATE TAIL!"
+	text "Raticate Tail!"
 	done
 
 GruntM28AfterBattleText:
-	text "It's RATICATE"
-	line "TAIL!"
+	text "It's Raticate"
+	line "Tail!"
 
 	para "The password is"
-	line "RATICATE TAIL!"
+	line "Raticate Tail!"
 	done
 
 ScientistRossSeenText:

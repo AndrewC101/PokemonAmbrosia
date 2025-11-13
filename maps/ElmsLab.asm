@@ -814,7 +814,7 @@ ElmBeatEliteFourText:
 	done
 
 ElmBeatRocketsText:
-	text "Thank ARCEUS you"
+	text "Thank Arceus you"
 	line "were available to"
 	cont "deal with those"
 	cont "Rockets."
@@ -1006,19 +1006,19 @@ LabWhereGoingText:
 
 TakeCyndaquilText:
 	text "You'll take"
-	line "CHIMCHAR, the"
+	line "Chimchar, the"
 	cont "Fire #mon?"
 	done
 
 TakeTotodileText:
 	text "Do you want"
-	line "FROAKIE, the"
+	line "Froakie, the"
 	cont "Water #mon?"
 	done
 
 TakeChikoritaText:
 	text "So, you like"
-	line "TREECKO, the"
+	line "Treecko, the"
 	cont "Grass #mon?"
 	done
 
@@ -1562,8 +1562,8 @@ ElmsLabTravelTip4Text:
 
 ElmsLabTrashcanText:
 	text "It's full of empty"
-	line "cans of RED"
-	cont "TAUROS."
+	line "cans of Red"
+	cont "Tauros."
 	done
 
 ElmsLabPCText:

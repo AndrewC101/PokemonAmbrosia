@@ -63,9 +63,9 @@ GoldenrodDeptStore1FPokefanFText:
 	done
 
 GoldenrodDeptStore1FBugCatcherText:
-	text "I need a LEAF"
-	line "STONE for my"
-	cont "EXEGGCUTE."
+	text "I need a Leaf"
+	line "Stone for my"
+	cont "Exeggcute."
 
 	para "It isn't cheap!"
 

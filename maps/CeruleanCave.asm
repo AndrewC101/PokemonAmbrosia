@@ -214,7 +214,7 @@ AizenSeenText:
     line "that was once here"
     cont "is now gone."
 
-    para "But one day MEWTWO"
+    para "But one day Mewtwo"
     line "shall kneel to me."
 
     para "You can not sense"

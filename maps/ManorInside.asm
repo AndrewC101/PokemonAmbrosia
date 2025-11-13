@@ -510,7 +510,7 @@ BrotherIntroText:
 	line "you're real strong"
 	cont "but you're not."
 	para "You don't even"
-	line "have a MEWTWO."
+	line "have a Mewtwo."
 	para "Come back when"
 	line "you're worth my"
 	cont "time."
@@ -886,18 +886,18 @@ ManorCheatText:
 	para "HAND OF GOD"
 	line "0132FCD0"
 	para "Make all wild"
-	line "#mon ARCEUS"
+	line "#mon Arceus"
 	cont "01FD0FD2"
 	done
 
 ManorFact1Text:
 	text "The first thing"
 	line "created for this"
-	cont "romhack was ARCEUS"
+	cont "romhack was Arceus"
 	cont "and its unique"
 	cont "mechanics."
 
-	para "ARCEUS has more"
+	para "Arceus has more"
 	line "code specifically"
 	cont "for it than any"
 	cont "other #mon."
@@ -986,14 +986,14 @@ ManorFact7Text:
 	done
 
 ManorFact8Text:
-	text "GIRATINA has"
+	text "Giratina has"
 	line "unique dialog if"
 	cont "the player has"
-	cont "ARCEUS in their"
+	cont "Arceus in their"
 	cont "party."
-	para "ARCEUS can also"
+	para "Arceus can also"
 	line "reveal the path to"
-	cont "GIRATINA."
+	cont "Giratina."
 	para "This is inspired"
 	line "by Final Fantasy 9"
 	cont "where Hades has"

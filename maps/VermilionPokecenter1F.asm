@@ -61,7 +61,7 @@ InvadedVermilionPokecenter1FSailorText:
 	line "strong Water"
 	cont "#mon!"
 
-	para "Me POLIWHIRL"
+	para "Me Poliwhirl"
 	line "didn't last"
 	cont "one turn!"
 	done

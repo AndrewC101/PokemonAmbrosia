@@ -358,7 +358,7 @@ SageLiAfterBattleText:
 SageJinSeenText:
 	text "I see it in my"
 	line "dreams."
-	para "A BELLSPROUT that"
+	para "A Bellsprout that"
 	line "has reached the"
 	cont "impossible"
 	cont "pinnacle of power."
@@ -370,7 +370,7 @@ SageJinBeatenText:
 	done
 
 SageJinAfterBattleText:
-	text "A BELLSPROUT that"
+	text "A Bellsprout that"
 	line "can fell the very"
 	cont "gods with a single"
 	cont "stroke of its"
@@ -441,7 +441,7 @@ SageNealAfterBattleText:
 SproutTower3FPaintingText:
 	text "It's a powerful"
 	line "painting of a"
-	cont "BELLSPROUT."
+	cont "Bellsprout."
 	done
 
 SproutTower3FStatueText:

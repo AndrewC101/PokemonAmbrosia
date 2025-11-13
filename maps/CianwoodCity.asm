@@ -322,9 +322,9 @@ CianwoodCityLassText:
 EusineSuicuneText:
 	text "<PLAYER>!"
 
-	para "That was SUICUNE!"
+	para "That was Suicune!"
 
-	para "SUICUNE seems"
+	para "Suicune seems"
 	line "taken with you."
 
 	para "It must be that"
@@ -344,7 +344,7 @@ EusineSuicuneText:
 	para "She is mine!"
 
 	para "I will prove"
-	line "to SUICUNE I"
+	line "to Suicune I"
 	cont "am worthy."
 	done
 
@@ -359,14 +359,14 @@ EusineBeatenText:
 
 EusineWinsText:
 	text "Did you see"
-	line "this SUICUNE!"
+	line "this Suicune!"
 
 	para "Accept me!!"
 	done
 
 EusineAfterText:
 	text "It is clear what"
-	line "SUICUNE sees in"
+	line "Suicune sees in"
 	cont "you."
 
 	para "I can never"
@@ -378,7 +378,7 @@ EusineAfterText:
 	line "give up."
 
 	para "My heart is"
-	line "bound to SUICUNE"
+	line "bound to Suicune"
 	cont "with chains I"
 	cont "can never break."
 
@@ -805,7 +805,7 @@ HeIsOverThere:
 
     para "Hang on..."
 
-    para "My ABRA can"
+    para "My Abra can"
     line "TELEPORT us"
     cont "over."
     done
@@ -905,7 +905,7 @@ Poliwrath:
     line "claimed two more"
     cont "young victims."
 
-    para "POLIWRATH!"
+    para "Poliwrath!"
     done
 
 DrownThem:
@@ -971,7 +971,7 @@ ThanksHereIsTm:
 MoveUsBack:
     text "Hang on..."
 
-    para "ABRA can TELEPORT"
+    para "Abra can TELEPORT"
     line "us back if we"
     cont "concentrate..."
     done

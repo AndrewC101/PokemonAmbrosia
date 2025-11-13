@@ -43,11 +43,11 @@ SailorKentSeenText:
 
 SailorKentBeatenText:
 	text "You did well"
-	line "SWAMPERT."
+	line "Swampert."
 	done
 
 SailorKentAfterBattleText:
-	text "An AMPHAROS"
+	text "An Ampharos"
 	line "produces the"
 	cont "light for the"
 	cont "lighthouse."
@@ -61,7 +61,7 @@ LassConnie1SeenText:
 	text "Jasmine has spent"
 	line "days here looking"
 	cont "after a sick"
-	cont "AMPHAROS."
+	cont "Ampharos."
 
 	para "I'm worried"
 	line "about her."

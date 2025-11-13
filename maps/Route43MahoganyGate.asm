@@ -28,7 +28,7 @@ Route43MahoganyGateOfficerText:
 	cont "you should be"
 	cont "careful."
 
-	para "The GYARADOS are"
+	para "The Gyarados are"
 	line "violent and I"
 	cont "swear I have"
 	cont "seen Rockets"

@@ -59,7 +59,7 @@ OlivineCafeFishingGuruText:
 	para "None of that"
 	line "vegan muck here!"
 
-	para "TAUROS burgers"
+	para "Tauros burgers"
 	line "are what ye need!"
 	done
 

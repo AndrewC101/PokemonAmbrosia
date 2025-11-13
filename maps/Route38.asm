@@ -523,7 +523,7 @@ BeautyOliviaBeatenText:
 
 BeautyOliviaAfterBattleText:
 	text "I need to get"
-	line "a MILTANK for"
+	line "a Miltank for"
 	cont "the freshest"
 	cont "milk!"
 	done
@@ -536,7 +536,7 @@ Route38SignText:
 	done
 
 Route38TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "If a #mon is"
 	line "trying to evolve,"

@@ -651,7 +651,7 @@ MasterAizenScript:
 MasterAizenSeenText:
 	text "I have tracked the"
 	line "spiritual pressure"
-	cont "of MEWTWO to this"
+	cont "of Mewtwo to this"
 	cont "place."
 	para "Once I bend him to"
 	line "my will I shall"
@@ -890,7 +890,7 @@ UltimaScript:
 UltimaSeenText:
 	text "The best meta is"
 	line "clearly DPP OU pre"
-	cont "LATIAS ban!"
+	cont "Latias ban!"
 	para "I have a balanced"
 	line "team."
 	para "A lead."

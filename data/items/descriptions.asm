@@ -363,23 +363,23 @@ HPUpDesc:
 	next "one #mon.@"
 
 ProteinDesc:
-	db   "Raises ATTACK of"
+	db   "Raises Attack of"
 	next "one #mon.@"
 
 IronDesc:
-	db   "Raises DEFENSE of"
+	db   "Raises Defense of"
 	next "one #mon.@"
 
 CarbosDesc:
-	db   "Raises SPEED of"
+	db   "Raises Speed of"
 	next "one #mon.@"
 
 HolyCrownDesc:
 	db   "Eternal HP and PP"
-	next "for ARCEUS.@"
+	next "for Arceus.@"
 
 CalciumDesc:
-	db   "Ups SPECIAL stats"
+	db   "Ups Special stats"
 	next "of one #mon.@"
 
 RareCandyDesc:
@@ -419,7 +419,7 @@ MaxReviveDesc:
 	next "fainted #mon.@"
 
 AssaultVestDesc:
-	db   "Boost SP.DEF but"
+	db   "Boost Sp.Def but"
 	next "forces attacks.@"
 
 GoldDiceDesc:
@@ -451,7 +451,7 @@ LemonadeDesc:
 	next "HP by 80.@"
 
 XAttackDesc:
-	db   "Raises ATTACK."
+	db   "Raises Attack."
 	next "(1 BTL)@"
 
 HandOfGodDesc:
@@ -459,16 +459,16 @@ HandOfGodDesc:
 	next "enemy teams.@"
 
 XDefendDesc:
-	db   "Raises DEFENSE."
+	db   "Raises Defense."
 	next "(1 BTL)@"
 
 XSpeedDesc:
-	db   "Raises SPEED."
+	db   "Raises Speed."
 	next "(1 BTL)@"
 
 XSpecialDesc:
-	db   "Raises SPECIAL"
-	next "ATTACK. (1 BTL)@"
+	db   "Raises Special"
+	next "Attack. (1 BTL)@"
 
 CoinCaseDesc:
 	db   "Holds up to 9,999"
@@ -851,7 +851,7 @@ DragonScaleDesc:
 
 BerserkGeneDesc:
 	db   "Boosts critical"
-	next "damage for MEWTWO.@"
+	next "damage for Mewtwo.@"
 
 TeruSama18Desc:
 	db   "?@"
@@ -891,7 +891,7 @@ TeruSama21Desc:
 
 LightBallDesc:
 	db   "Doubles damage"
-	next "for PIKACHU.@"
+	next "for Pikachu.@"
 
 FriendBallDesc:
 	db   "A Ball that makes"
@@ -899,7 +899,7 @@ FriendBallDesc:
 
 MoonBallDesc:
 	db   "A Ball for MOON"
-	next "STONE evolvers.@"
+	next "Stone evolvers.@"
 
 LoveBallDesc:
 	db   "For catching the"

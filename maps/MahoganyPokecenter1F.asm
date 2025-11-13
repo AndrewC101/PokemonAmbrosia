@@ -40,7 +40,7 @@ MahoganyPokecenter1FYoungsterText:
 	line "missing."
 	para "My friend went"
 	line "there with his"
-	cont "DITTO one day and"
+	cont "Ditto one day and"
 	cont "never came back."
 	done
 

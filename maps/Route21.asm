@@ -208,7 +208,7 @@ RematchFisherText:
 RematchRefuseFisherText:
     text "You are not yet"
     line "ready, young"
-    cont "LARVESTA."
+    cont "Larvesta."
     done
 
 SwimmermSethSeenText:

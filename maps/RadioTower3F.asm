@@ -154,7 +154,7 @@ RadioTower3FGymGuideText:
 	cont "it."
 
 	para "I call it"
-	line "GASTLY tunes!"
+	line "Gastly tunes!"
 	done
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:

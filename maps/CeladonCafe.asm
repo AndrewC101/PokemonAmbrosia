@@ -175,11 +175,11 @@ TeacherText_NoCoinCase:
 EatathonContestPosterText:
 	text "Menu:"
 
-	para "TAUROS burger"
+	para "Tauros burger"
 
-	para "grilled FEEBAS"
+	para "grilled Feebas"
 
-	para "roast MAREEP"
+	para "roast Mareep"
 
 	para "all served with"
 	line "chips or mash."

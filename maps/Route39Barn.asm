@@ -121,7 +121,7 @@ Route39BarnTwinWereFeedingMoomooText:
 	done
 
 MoomooWeakMooText:
-	text "MILTANK: …Moo…"
+	text "Miltank: …Moo…"
 	done
 
 Route39BarnItsCryIsWeakText:
@@ -129,22 +129,22 @@ Route39BarnItsCryIsWeakText:
 	done
 
 MoomooHappyMooText:
-	text "MILTANK: Mooo!"
+	text "Miltank: Mooo!"
 	done
 
 Route39BarnAskGiveBerryText:
 	text "Give GOLD BERRY"
-	line "to MILTANK?"
+	line "to Miltank?"
 	done
 
 Route39BarnGaveBerryText:
 	text "<PLAYER> gave a"
 	line "GOLD BERRY to"
-	cont "MILTANK."
+	cont "Miltank."
 	done
 
 Route39BarnTotallyHealthyText:
-	text "MILTANK became"
+	text "Miltank became"
 	line "totally healthy!"
 	done
 
@@ -157,7 +157,7 @@ Route39BarnRefusedBerryText:
 	text "<PLAYER> wouldn't"
 	line "give a BERRY."
 
-	para "MILTANK looks sad."
+	para "Miltank looks sad."
 	done
 
 BarnMoonStone:

@@ -160,7 +160,7 @@ PicnickerHopeAfterBattleText:
 
 PicnickerSharonSeenText:
 	text "Oh..."
-	para "Oh thank ARCEUS..."
+	para "Oh thank Arceus..."
 	para "I went into the"
 	line "cave ahead and"
 	cont "nearly got lost."

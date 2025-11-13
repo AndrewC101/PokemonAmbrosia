@@ -370,7 +370,7 @@ JugglerFritzAfterBattleText:
 	para "At the canteen."
 
 	para "Don't eat the"
-	line "FEEBAS!"
+	line "Feebas!"
 	done
 
 SailorGarrettSeenText:
@@ -396,14 +396,14 @@ SailorGarrettAfterBattleText:
 
 FisherJonahSeenText:
 	text "I need to catch"
-	line "more FEEBAS."
+	line "more Feebas."
 
 	para "They are where I"
 	line "get all my money"
 	cont "from."
 
 	para "Nobody wants"
-	line "MAGIKARP!"
+	line "Magikarp!"
 	done
 
 FisherJonahBeatenText:

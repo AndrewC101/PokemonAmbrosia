@@ -449,7 +449,7 @@ PrintAttackUpMessage:
     ld hl, WildAttackUpText
     jp BattleTextbox
 WildAttackUpText:
-    text "Enemy ATTACK"
+    text "Enemy Attack"
     line "went up!"
     prompt
 
@@ -462,7 +462,7 @@ PrintDefenseUpMessage:
     ld hl, WildDefenseUpText
     jp BattleTextbox
 WildDefenseUpText:
-    text "Enemy DEFENSE"
+    text "Enemy Defense"
     line "went up!"
     prompt
 
@@ -475,7 +475,7 @@ PrintSpeedUpMessage:
     ld hl, WildSpeedUpText
     jp BattleTextbox
 WildSpeedUpText:
-    text "Enemy SPEED"
+    text "Enemy Speed"
     line "went up!"
     prompt
 

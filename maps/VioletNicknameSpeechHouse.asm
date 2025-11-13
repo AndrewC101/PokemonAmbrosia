@@ -49,7 +49,7 @@ VioletNicknameSpeechHouseTeacherText:
 	done
 
 VioletNicknameSpeechHouseLassText:
-	text "My STARLY is"
+	text "My Starly is"
 	line "special."
 	done
 

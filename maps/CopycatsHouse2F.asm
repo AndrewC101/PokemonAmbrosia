@@ -102,7 +102,7 @@ CopycatSpinAroundMovementData:
 	step_end
 
 CopycatsDodrioText1:
-	text "STARAPTOR: Giii!"
+	text "Staraptor: Giii!"
 	done
 
 CopycatsDodrioText2:

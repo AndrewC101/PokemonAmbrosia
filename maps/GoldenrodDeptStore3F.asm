@@ -32,30 +32,30 @@ GoldenrodDeptStore3FSuperNerdText:
 
 	para "CAN'T DECIDE!"
 
-	para "My KIRLIA can"
+	para "My Kirlia can"
 	line "become a cool"
 	cont "sword master"
-	cont "via SUN STONE."
+	cont "via Sun Stone."
 
 	para "Or a beautiful"
 	line "mystic sorceress"
-	cont "via MOON STONE."
+	cont "via Moon Stone."
 
 	para "Which do I pick!?"
 
 	para "And don't get me"
 	line "started on my"
-	cont "EEVEE."
+	cont "Eevee."
 	done
 
 GoldenrodDeptStore3FRockerText:
-	text "My URSARING can"
+	text "My Ursaring can"
 	line "evolve in two ways"
-	cont "with a SUN STONE"
-	cont "or MOON STONE."
+	cont "with a Sun Stone"
+	cont "or Moon Stone."
 
 	para "Or I could give it"
-	line "an EVIOLITE which"
+	line "an Eviolite which"
 	cont "would boost its"
 	cont "defenses but"
 	cont "prevent it from"

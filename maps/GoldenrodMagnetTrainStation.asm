@@ -119,7 +119,7 @@ GoldenrodMagnetTrainStationOfficerTheTrainHasntComeInText:
     para "Maybe the war has"
     line "begun!"
 
-    para "ARCEUS help us"
+    para "Arceus help us"
     line "all."
 	done
 

@@ -29,7 +29,7 @@ AzaleaPokecenter1FGentlemanText:
 	text "There must be a"
 	line "way to make some"
 	cont "money from all"
-	cont "these SLOWPOKE."
+	cont "these Slowpoke."
 
 	para "Perhaps I can"
 	line "refine some sort"

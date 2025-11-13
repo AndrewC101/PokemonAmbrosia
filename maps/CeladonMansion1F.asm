@@ -54,17 +54,17 @@ CeladonMansionManagerText:
 	cont "help build this"
 	cont "world."
 
-	para "Don't we MEOWTH"
+	para "Don't we Meowth"
 	line "you're a good"
 	cont "kitty!"
 	done
 
 CeladonMansion1FMeowthText:
-	text "MEOWTH: Meow!"
+	text "Meowth: Meow!"
 	done
 
 CeladonMansion1FClefairyText:
-	text "CLEFAIRY: Clef"
+	text "Clefairy: Clef"
 	line "cleff!"
 	done
 

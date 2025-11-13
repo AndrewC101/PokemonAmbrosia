@@ -278,7 +278,7 @@ FisherKyleBeatenText:
 FisherKyleAfterBattleText:
 	text "Liberati tutemet"
 	line "ex Inferis."
-	para "Praise GIRATINA."
+	para "Praise Giratina."
 	done
 
 Route12SignText:

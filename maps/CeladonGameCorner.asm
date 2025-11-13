@@ -230,7 +230,7 @@ CeladonGymGuideText:
 
 CeladonGameCornerGrampsText:
 	text "I used to keep"
-	line "an ABRA in my"
+	line "an Abra in my"
 	cont "coat to help with"
 	cont "the odds."
 
@@ -238,7 +238,7 @@ CeladonGameCornerGrampsText:
 	line "to learn the error"
 	cont "of my ways."
 
-	para "SOLOSIS is way"
+	para "Solosis is way"
 	line "smaller."
 
 	para "I can fit several"

@@ -33,9 +33,9 @@ AzaleaMartCooltrainerMText:
 	cont "them with it."
 
 	para "I'm going to"
-	line "catch a RALTS"
+	line "catch a Ralts"
 	cont "so I can have"
-	cont "a GARDEVOIR"
+	cont "a Gardevoir"
 	cont "that loves me."
 	done
 

@@ -40,7 +40,7 @@ BeverlyNumberDeclinedText:
 	text "Oh… That's"
 	line "disappointing…"
 
-	para "Goodbye, MARILL…"
+	para "Goodbye, Marill…"
 	done
 
 BeverlyPhoneFullText:

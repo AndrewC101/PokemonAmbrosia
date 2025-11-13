@@ -23,7 +23,7 @@ MagikarpManText:
     cont "ROD."
 
     para "Nobody can catch"
-    line "MAGIKARP like me!"
+    line "Magikarp like me!"
 
     para "Be warned though"
     line "a demon prowls"

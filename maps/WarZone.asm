@@ -487,8 +487,8 @@ WallaceFinalText:
     cont "virtue of my"
     cont "actions."
 
-    para "RAYQUAZA!"
-    line "FLY!"
+    para "Rayquaza!"
+    line "Fly!"
     done
 
 StevenIntroText:
@@ -754,7 +754,7 @@ CynthiaOfferFightText:
     done
 CynthiaAfterBattleText:
     text "Have you heard of"
-    line "ARCEUS?"
+    line "Arceus?"
 
     para "Legend states it"
     line "is a #mon"

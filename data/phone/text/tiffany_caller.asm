@@ -5,7 +5,7 @@ TiffanyMonIsAdorableText:
 	para "I thought it was"
 	line "going to be"
 	cont "attacked!"
-	para "MAWILE reacted"
+	para "Mawile reacted"
 	line "on instinct and"
 	cont "ate the attacker."
 	para "Don't sneak up on"
@@ -36,7 +36,7 @@ TiffanyLostAMonText:
 	cont "then he attacked"
 	cont "me."
 	para "Such an amateur."
-	para "MAWILE and I"
+	para "Mawile and I"
 	line "showed him true"
 	cont "horror."
 	para "You look after"
@@ -53,7 +53,7 @@ TiffanyBattleRematchText:
 	done
 
 	para "I'll be waiting"
-	line "with MAWILE on"
+	line "with Mawile on"
 	cont "@"
 	text_ram wStringBuffer5
 	text "."
@@ -94,7 +94,7 @@ TiffanyFoundItemText:
 	done
 
 TiffanyNoItemText:
-	text "MAWILE and I"
+	text "Mawile and I"
 	line "love greeting new"
 	cont "trainers."
 	para "Everyone needs a"
@@ -104,7 +104,7 @@ TiffanyNoItemText:
 
 TiffanyAsleepText:
 TiffanyHurryText:
-	text "MAWILE and I"
+	text "Mawile and I"
 	line "haven't seen you"
 	cont "in a while."
 	para "I think I'm being"

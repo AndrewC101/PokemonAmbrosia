@@ -204,7 +204,7 @@ HikerAnthony2AfterText:
 
 HikerAnthonyDunsparceText:
 	text "Hey, did you get a"
-	line "DUNSPARCE?"
+	line "Dunsparce?"
 
 	para "I caught one too."
 

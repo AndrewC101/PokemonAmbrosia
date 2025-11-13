@@ -174,7 +174,7 @@ SlowpokeWellB1FKurtText:
 	line "hate..."
 
 	para "Free the dear"
-	line "SLOWPOKE."
+	line "Slowpoke."
 
 	para "For me..."
 	done
@@ -259,7 +259,7 @@ TrainerGruntM1WhenTalkText:
 
 	para "Our scientists are"
 	line "interested in"
-	cont "SLOWPOKE."
+	cont "Slowpoke."
 
 	para "Something about"
 	line "their brain"
@@ -324,7 +324,7 @@ GruntF1AfterBattleText:
 	done
 
 SlowpokeWellB1FSlowpokeWithMailText:
-	text "A SLOWPOKE seems"
+	text "A Slowpoke seems"
 	line "concerned."
 
 	para "Huh? It has MAIL."

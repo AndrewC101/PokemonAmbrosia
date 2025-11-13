@@ -221,11 +221,11 @@ AncientRuinsPastGuy2Text:
 
     para "A man made of"
     line "gold who wields"
-    cont "ARCEUS itself."
+    cont "Arceus itself."
 
     para "He notion that"
     line "a trainer could"
-    cont "command ARCEUS"
+    cont "command Arceus"
     cont "is heresy."
     done
 
@@ -258,10 +258,10 @@ AncientRuinsPastGirl2Text:
 
     para "We worship the"
     line "great merciful"
-    cont "XERNEAS."
+    cont "Xerneas."
 
     para "We revile the"
-    line "evil YVELTAL."
+    line "evil Yveltal."
 
     para "I shall bestow"
     line "our blessing upon"
@@ -326,7 +326,7 @@ AtemWinAfterBattleText:
 	done
 
 YamiSeenText:
-    text "XERNEAS has chosen"
+    text "Xerneas has chosen"
     line "you!"
 
     para "It gives me hope"
@@ -335,7 +335,7 @@ YamiSeenText:
     cont "future can have"
     cont "such virtue."
 
-    para "XERNEAS offered"
+    para "Xerneas offered"
     line "to me the great"
     cont "gift of life"
     cont "unending."
@@ -365,10 +365,10 @@ YamiBeatenText:
     done
 
 YamiAfterBattleText:
-    text "XERNEAS brings"
+    text "Xerneas brings"
     line "life."
 
-    para "YVELTAL brings"
+    para "Yveltal brings"
     line "death."
 
     para "But one is not"
@@ -383,10 +383,10 @@ YamiAfterBattleText:
     para "There must be"
     line "balance."
 
-    para "ZYGARDE brings"
+    para "Zygarde brings"
     line "balance."
 
-    para "ZYGARDE can be"
+    para "Zygarde can be"
     line "found deep"
     cont "within a cave."
 
@@ -412,7 +412,7 @@ CatchXerneasFirstText:
     para "I know what you"
     line "are here for."
 
-    para "XERNEAS"
+    para "Xerneas"
 
     para "The power to live"
     line "forever."
@@ -420,7 +420,7 @@ CatchXerneasFirstText:
     para "Many have sought"
     line "such a blessing."
 
-    para "XERNEAS shall"
+    para "Xerneas shall"
     line "judge you."
     done
 
@@ -443,7 +443,7 @@ ArceusOldStatueScript:
 
 arceusOldStatueText:
 	text "A golden statue of"
-	line "ARCEUS the"
+	line "Arceus the"
 	cont "creator."
 	para "There is an"
 	line "inscription."
@@ -452,7 +452,7 @@ arceusOldStatueText:
 	cont "singularity of"
 	cont "perfection."
 	para "A gift from"
-	line "ARCEUS."
+	line "Arceus."
 	para "The gift of"
 	line "AMBROSIA."
 	done

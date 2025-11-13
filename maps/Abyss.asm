@@ -307,11 +307,11 @@ AbyssSageScript1:
 
 AbyssSage1IntroText:
 	text "The people of Alph"
-	line "worship ARCEUS."
+	line "worship Arceus."
 	para "But we believed"
-	line "ARCEUS was the"
+	line "Arceus was the"
 	cont "deciever and"
-	cont "GIRATINA the true"
+	cont "Giratina the true"
 	cont "saviour."
 	para "We separated and"
 	line "formed our own"
@@ -337,7 +337,7 @@ AbyssSage1IntroText:
 
 AbyssSage1Question:
 	text "What bestows the"
-	line "curse of GIRATINA?"
+	line "curse of Giratina?"
 	done
 
 AbyssSageFailedText:
@@ -351,7 +351,7 @@ AbyssSagePassText:
     done
 
 AbyssSage1PassedText:
-	text "GIRATINA is the"
+	text "Giratina is the"
 	line "bringer of the"
 	cont "curse."
 	para "The red glow that"
@@ -431,7 +431,7 @@ AbyssSage2IntroText:
 	line "took on the red"
 	cont "glow."
 	para "The curse of"
-	line "GIRATINA."
+	line "Giratina."
 	para "We thought they"
 	line "were sick and they"
 	cont "played along."
@@ -442,7 +442,7 @@ AbyssSage2IntroText:
 	para "ARTORIAS."
 	para "Even he succumb."
 	para "Only the blessing"
-	line "of ARCEUS can"
+	line "of Arceus can"
 	cont "purge the curse."
 	para "I must question"
 	line "you and if you"
@@ -454,11 +454,11 @@ AbyssSage2IntroText:
 AbyssSage2Question:
 	text "What bestows the"
 	line "blessing of"
-	cont "ARCEUS?"
+	cont "Arceus?"
 	done
 
 AbyssSage2PassedText:
-	text "GIRATINA would"
+	text "Giratina would"
 	line "have spread the"
 	cont "curse and"
 	cont "destroyed the"
@@ -568,14 +568,14 @@ GiratinaIntroText:
     cont "to me."
 
     para "Bring me"
-    line "RAYQUAZA!"
+    line "Rayquaza!"
     done
 
 GiratinaPlayerHasArceusText:
 	text "Impossible!"
 	para "Salvation preserve"
 	line "me!"
-	para "ARCEUS!"
+	para "Arceus!"
 	para "Thine light doth"
 	line "wither my petty"
 	cont "temptations."
@@ -592,7 +592,7 @@ GiratinaPlayerHasRayquazaText:
     para "My dear, dear"
     line "disciple."
 
-    para "ARCEUS!"
+    para "Arceus!"
 
     para "Watch and"
     line "mark you well."
@@ -602,7 +602,7 @@ GiratinaPlayerHasRayquazaText:
     cont "love."
 
 	para "I shall murder"
-	line "your dear RAYQUAZA"
+	line "your dear Rayquaza"
 	cont "and spare him the"
 	cont "torment I"
 	cont "eternally endure."

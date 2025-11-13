@@ -303,7 +303,7 @@ RegigigasNeededText:
     done
 
 RegigigasUnblocksText:
-    text "REGIGIGAS crushes"
+    text "Regigigas crushes"
     line "the boulders!"
     done
 
@@ -315,7 +315,7 @@ DeoxysNeededText:
     done
 
 DeoxysUnblocksText:
-    text "DEOXYS dispels"
+    text "Deoxys dispels"
     line "the barrier!"
     done
 

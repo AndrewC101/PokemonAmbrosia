@@ -14,7 +14,7 @@ DerekCheekPinchingText:
 DerekDefeatedMonText:
 	text "Did you know that"
 	line "drinking the blood"
-	cont "of a BLISSEY will"
+	cont "of a Blissey will"
 	cont "keep you alive"
 	cont "even if you are an"
 	cont "inch from death!"

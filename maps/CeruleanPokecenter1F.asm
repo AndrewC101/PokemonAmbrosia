@@ -42,7 +42,7 @@ CeruleanPokecenter1FGymGuideText:
 	cont "running for"
 	cont "their lives."
 
-	para "But my SWAMPERT"
+	para "But my Swampert"
 	line "knows Amnesia and"
 	cont "Curse, it's"
 	cont "unbeatable!"

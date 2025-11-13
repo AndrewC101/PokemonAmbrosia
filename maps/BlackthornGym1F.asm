@@ -338,7 +338,7 @@ CooltrainermPaulAfterBattleText:
 	line "him!"
 
 	para "You commanded his"
-	line "DRAGONITE!!!"
+	line "Dragonite!!!"
 
 	para "Okay now I know"
 	line "you are making"

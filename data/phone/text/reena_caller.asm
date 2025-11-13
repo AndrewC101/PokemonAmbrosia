@@ -9,7 +9,7 @@ ReenaMonsIsAPerfectMatchText:
 
 ReenaDefeatedMonText:
 	text "DIANTHA has a"
-	line "BLISSEY, it's"
+	line "Blissey, it's"
 	cont "surprisingly"
 	cont "strong for a pink"
 	cont "blob."

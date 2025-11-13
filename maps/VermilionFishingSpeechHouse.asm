@@ -27,7 +27,7 @@ FishingDudeText:
 	cont "bay bittin."
 
 	para "Nout bu fuppin"
-	line "MAGIKARP."
+	line "Magikarp."
 
 	para "Deh gud fer notin."
 

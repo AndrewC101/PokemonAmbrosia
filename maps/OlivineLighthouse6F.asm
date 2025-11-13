@@ -163,7 +163,7 @@ JasmineCianwoodPharmacyText:
 	text "Hello, I am"
 	line "Jasmine."
 
-	para "This AMPHAROS"
+	para "This Ampharos"
 	line "always kept the"
 	cont "lighthouse lit"
 	cont "on dark nights."
@@ -188,7 +188,7 @@ JasmineCianwoodPharmacyText:
 	para "They have a new"
 	line "medicine that"
 	cont "may help"
-	cont "AMPHAROS."
+	cont "Ampharos."
 
 	para "You must be a"
 	line "strong trainer."
@@ -203,7 +203,7 @@ JasmineGetSomeMedicineText:
 JasmineCureAmphyText:
 	text "I sincerely hope"
 	line "that medicine can"
-	cont "help AMPHAROS?"
+	cont "help Ampharos?"
 	done
 
 PlayerHandedSecretpotionText:
@@ -216,13 +216,13 @@ JasmineDontBeOffendedText:
 	text "Please don't be"
 	line "offended…"
 
-	para "AMPHAROS will not"
+	para "Ampharos will not"
 	line "take anything from"
 	cont "anyone but me…"
 	done
 
 JasmineAmphyHowAreYouFeelingText:
-	text "AMPHAROS, how are"
+	text "Ampharos, how are"
 	line "you feeling?"
 	done
 

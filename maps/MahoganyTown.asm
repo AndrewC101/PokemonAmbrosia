@@ -59,7 +59,7 @@ MahoganyTownPokecenterSign:
 	jumpstd PokecenterSignScript
 
 MahoganyTownGrampsText:
-	text "The GYARADOS at"
+	text "The Gyarados at"
 	line "the lake have all"
 	cont "become violent."
 
@@ -78,7 +78,7 @@ MahoganyTownGrampsText:
 	done
 
 MahoganyTownGrampsText_ClearedRocketHideout:
-	text "The GYARADOS at"
+	text "The Gyarados at"
 	line "the lake have all"
 	cont "settled down."
 

@@ -300,7 +300,7 @@ SwimmermMathewSeenText:
 
 SwimmermMathewBeatenText:
 	text "Forgive me great"
-	line "LUGIA."
+	line "Lugia."
 	done
 
 SwimmermMathewAfterBattleText:

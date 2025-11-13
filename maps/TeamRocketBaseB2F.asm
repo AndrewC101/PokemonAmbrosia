@@ -450,7 +450,7 @@ WhoIsThatText:
     done
 
 DragoniteAttackText:
-    text "DRAGONITE!"
+    text "Dragonite!"
 
     para "OUTRAGE!"
     done
@@ -974,7 +974,7 @@ RocketBaseLancePostBattleText:
 	line "witnessed such"
 	cont "a thing."
 
-	para "DRAGONITE took"
+	para "Dragonite took"
 	line "heed of your"
 	cont "command as he"
 	cont "would mine."
@@ -1009,7 +1009,7 @@ RockerBaseLanceElectrodeFaintText:
 	para "I fear the only"
 	line "means to stop it"
 	cont "is to disconnect"
-	cont "the MAGNETON."
+	cont "the Magneton."
 
 	para "The only way to"
 	line "do this is through"

@@ -63,7 +63,7 @@ DarkraiScript:
     end
 
 DarkraiCry:
-    text "DARKRAI!"
+    text "Darkrai!"
     done
 
 RockTunnelB1FHiddenMaxPotion:

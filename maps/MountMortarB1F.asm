@@ -180,7 +180,7 @@ MountMortarB1FLucarioRewardText:
 
 MountMortarB1FReceiveMonText:
 	text "<PLAYER> received"
-	line "LUCARIO."
+	line "Lucario."
 	done
 
 MountMortarB1FKiyoGotLucarioText:

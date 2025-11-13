@@ -83,7 +83,7 @@ CeladonCityHiddenPpUp:
 
 CeladonCityFisherText:
 	text "My buddy here is"
-	line "POLIWRATH."
+	line "Poliwrath."
 
 	para "He loves PROTEIN!"
 
@@ -94,7 +94,7 @@ CeladonCityFisherText:
 	cont "crushed."
 
 	para "Isn't that right"
-	line "POLIWRATH."
+	line "Poliwrath."
 	done
 
 CeladonCityPoliwrathText:
@@ -137,7 +137,7 @@ CeladonCityGramps1Text:
 	line "polluted."
 
 	para "There are"
-	line "TENTACOOL in"
+	line "Tentacool in"
 	cont "this pond!"
 	done
 
@@ -184,7 +184,7 @@ CeladonCityYoungster2Text:
 
 	para "There was a guy"
 	line "who would hide"
-	cont "ABRA in his coat"
+	cont "Abra in his coat"
 	cont "and use its powers"
 	cont "to always win."
 
@@ -267,7 +267,7 @@ CeladonCityGameCornerSignText:
 	done
 
 CeladonCityTrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "#mon get"
 	line "stronger by"

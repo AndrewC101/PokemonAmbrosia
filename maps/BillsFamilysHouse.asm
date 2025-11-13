@@ -130,11 +130,11 @@ BillImCountingOnYouText:
 
 ReceivedEeveeText:
 	text "<PLAYER> received"
-	line "EEVEE!"
+	line "Eevee!"
 	done
 
 BillEeveeMayEvolveText:
-	text "EEVEE can evolve"
+	text "Eevee can evolve"
 	line "in may ways."
 
 	para "Every evolution"
@@ -144,7 +144,7 @@ BillEeveeMayEvolveText:
 	line "from the store."
 
 	para "If you don't"
-	line "use a stone EEVEE"
+	line "use a stone Eevee"
 	cont "will still evolve"
 	cont "eventually if you"
 	cont "are kind to it."

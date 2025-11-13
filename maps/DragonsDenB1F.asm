@@ -246,7 +246,7 @@ RayquazaNotWorthyText:
 	cont "be written on"
 	cont "thine heart."
 
-	para "I am RAYQUAZA."
+	para "I am Rayquaza."
 
 	para "Upon throne"
 	line "immortal I sit."
@@ -274,11 +274,11 @@ RayquazaNotWorthyText:
 	line "flame with those"
 	cont "of mine kin."
 
-	para "DRAGONITE."
+	para "Dragonite."
 
-	para "SALAMENCE."
+	para "Salamence."
 
-	para "GARCHOMP."
+	para "Garchomp."
 
 	para "Present them to"
 	line "me and thou shalt"
@@ -602,7 +602,7 @@ CooltrainerfCaraAfterBattleText:
 	cont "at the same time."
 
 	para "We were both"
-	line "given a HORSEA"
+	line "given a Horsea"
 	cont "as our first"
 	cont "#mon."
 

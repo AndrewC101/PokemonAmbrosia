@@ -77,7 +77,7 @@ CeladonAndrewBeatenText:
     para "Yeah I know"
     line "what you are"
     cont "doing with"
-    cont "that DITTO."
+    cont "that Ditto."
 
     para "I applaud your"
     line "initiative."

@@ -357,10 +357,10 @@ CooltrainermJakeBeatenText:
 	done
 
 CooltrainermJakeAfterBattleText:
-	text "I hear CHANSEY and"
-	line "PORYGON2 are the"
+	text "I hear Chansey and"
+	line "Porygon2 are the"
 	cont "best users of"
-	cont "EVIOLITE."
+	cont "Eviolite."
 	para "But I don't know"
 	line "how to find either"
 	cont "of them."

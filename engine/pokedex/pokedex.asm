@@ -1215,16 +1215,16 @@ Pokedex_DrawOptionScreenBG:
 	ret
 
 .Title:
-	db $3b, " OPTION ", $3c, -1
+	db $3b, " Option ", $3c, -1
 
 .Modes:
-	db   "NEW #dex MODE"
-	next "OLD #dex MODE"
-	next "A to Z MODE"
+	db   "New #dex Mode"
+	next "Old #dex Mode"
+	next "A to Z Mode"
 	db   "@"
 
 .UnownMode:
-	db "UNOWN MODE@"
+	db "Unown Mode@"
 
 Pokedex_DrawSearchScreenBG:
 	call Pokedex_FillBackgroundColor2
@@ -1746,7 +1746,7 @@ Pokedex_DisplayModeDescription:
 	next "alphabetically.@"
 
 .UnownMode:
-	db   "UNOWN are listed"
+	db   "Unown are listed"
 	next "in catching order.@"
 
 Pokedex_DisplayChangingModesMessage:

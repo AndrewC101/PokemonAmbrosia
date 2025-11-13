@@ -410,7 +410,7 @@ Route43MaxEther:
 PokemaniacBenSeenText:
 	text "You are trying"
 	line "to catch the"
-	cont "GYARADOS before"
+	cont "Gyarados before"
 	cont "I can!"
 
 	para "It is my"
@@ -429,11 +429,11 @@ PokemaniacBenBeatenText:
 
 PokemaniacBenAfterBattleText:
 	text "Fine you can"
-	line "have the GYARADOS."
+	line "have the Gyarados."
 
-	para "I'll find a FEEBAS"
+	para "I'll find a Feebas"
 	line "and get myself a"
-	cont "MILOTIC."
+	cont "Milotic."
 	done
 
 PokemaniacBrentSeenText:
@@ -605,7 +605,7 @@ PicnickerTiffanySeenText:
 	line "alone."
 
 	para "I'm with my best"
-	line "friend MAWILE."
+	line "friend Mawile."
 
 	para "I'll show you"
 	line "we can look"
@@ -614,7 +614,7 @@ PicnickerTiffanySeenText:
 
 PicnickerTiffanyBeatenText:
 	text "You did great"
-	line "MAWILE!"
+	line "Mawile!"
 	done
 
 PicnickerTiffanyWantsPicnicText:
@@ -627,7 +627,7 @@ PicnickerTiffanyWantsPicnicText:
 	done
 
 PicnickerTiffanyClefairyText:
-	text "Isn't my MAWILE"
+	text "Isn't my Mawile"
 	line "adorable and"
 	cont "strong?"
 	done
@@ -647,7 +647,7 @@ Route43Sign2Text:
 	done
 
 Route43TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Rain boosts Water"
 	line "moves and nerfs"
@@ -659,7 +659,7 @@ Route43TrainerTipsText:
 
 	para "Sand boost Rock"
 	line "#mon"
-	cont "SPECIAL DEFENSE"
+	cont "Special Defense"
 	cont "and damages all"
 	cont "non Rock, Ground"
 	cont "or Steel types."

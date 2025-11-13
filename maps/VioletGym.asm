@@ -324,7 +324,7 @@ BirdKeeperAbeSeenText:
 	line "problems of our"
 	cont "lives."
 
-	para "I am the STARAPTOR"
+	para "I am the Staraptor"
 	line "and there is"
 	cont "blood on my"
 	cont "feathers!"

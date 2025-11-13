@@ -18,10 +18,10 @@ Route16FuchsiaSpeechHouseBookshelf:
 Route16FuchsiaSpeechHouseAVGNText:
 	text "I'd rather eat a"
 	line "steaming pile of"
-	cont "fresh SNORLAX"
+	cont "fresh Snorlax"
 	cont "excrement and wash"
 	cont "it down with some"
-	cont "vintage TAUROS"
+	cont "vintage Tauros"
 	cont "urine than subject"
 	cont "myself to another"
 	cont "moment of this"

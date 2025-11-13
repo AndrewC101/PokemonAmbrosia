@@ -116,7 +116,7 @@ HikerJimAfterBattleText:
 	text "Say a prayer"
 	line "with me."
 
-	para "Dear ARCEUS"
+	para "Dear Arceus"
 	line "watch over me"
 	cont "and my expensive"
 	cont "equipment!"
@@ -144,7 +144,7 @@ PokefanmRobertAfterBattleText:
 	text "What a friend we"
 	line "have in time."
 
-	para "Thank ARCEUS I'm"
+	para "Thank Arceus I'm"
 	line "a country boy!"
 	done
 

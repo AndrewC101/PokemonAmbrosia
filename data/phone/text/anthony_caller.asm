@@ -15,7 +15,7 @@ AnthonyMonAteSomeBerriesText:
 
 AnthonyDefeatedMonText:
 	text "There is this"
-	line "annoying GOLBAT"
+	line "annoying Golbat"
 	cont "hanging out near"
 	cont "me."
 	para "It fluttered over"
@@ -114,7 +114,7 @@ AnthonyReminderText:
 
 AnthonyHurryText:
 	text "This is it!"
-	para "DUNSPARCE are"
+	para "Dunsparce are"
 	line "swarming all over"
 	cont "Dark Cave."
 	para "So much quality"

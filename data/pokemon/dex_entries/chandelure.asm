@@ -6,5 +6,5 @@
 	next "its flames."
 
 	page "Blocks switching."
-	next "SP.Atk boost on"
+	next "Sp.Atk boost on"
 	next "KO.@"

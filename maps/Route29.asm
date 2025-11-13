@@ -358,7 +358,7 @@ Route29FisherText:
 Route29CooltrainerMText_WaitingForNight:
 	text "Watch out!"
 	para "There is a rabid"
-	line "RATICATE out"
+	line "Raticate out"
 	cont "there, it nearly"
 	cont "got me."
 	para "I'm too afraid to"
@@ -368,7 +368,7 @@ Route29CooltrainerMText_WaitingForNight:
 Route29CooltrainerMText_WaitingForMorning:
 	text "Get down!"
 	para "There is a huge"
-	line "violent URSARING"
+	line "violent Ursaring"
 	cont "around here at"
 	cont "night."
 	para "Don't bother"

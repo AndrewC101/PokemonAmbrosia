@@ -21,7 +21,7 @@ MountMoonGiftShopLassScript:
 
 MountMoonGiftShopLassText:
 	text "When the sun goes"
-	line "down, CLEFAIRY"
+	line "down, Clefairy"
 	cont "come out to play."
 	done
 

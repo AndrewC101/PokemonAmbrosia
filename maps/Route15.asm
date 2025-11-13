@@ -248,9 +248,9 @@ SchoolboyJohnnyBeatenText:
 	done
 
 SchoolboyJohnnyAfterBattleText:
-	text "MAGNEZONE has"
+	text "Magnezone has"
 	line "three abilities."
-	para "ZAP CANNON never"
+	para "Zap Cannon never"
 	line "misses."
 	para "Can't be KOed in"
 	line "one hit and deals"
@@ -260,7 +260,7 @@ SchoolboyJohnnyAfterBattleText:
 	line "#mon has more"
 	cont "than that."
 	para "Except like,"
-	line "ARCEUS itself or"
+	line "Arceus itself or"
 	cont "something."
 	done
 

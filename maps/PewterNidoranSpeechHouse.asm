@@ -35,7 +35,7 @@ PewterNidoranSpeechHouseSuperNerdText:
 	para "But life goes"
 	line "on."
 
-	para "This MUDKIP was"
+	para "This Mudkip was"
 	line "just hatched."
 
 	para "It knows nothing"

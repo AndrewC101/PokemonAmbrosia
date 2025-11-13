@@ -16,14 +16,14 @@ ChadDefeatedMonText:
 	cont "other day."
 	para "Their eyes were"
 	line "glued to my"
-	cont "CHARIZARD."
+	cont "Charizard."
 	para "You need some cool"
 	line "#mon."
 	done
 
 ChadLostAMonText:
 	text "I thought about"
-	line "catching a TAUROS"
+	line "catching a Tauros"
 	cont "for its rugged and"
 	cont "tough image."
 	para "But I don't want"
@@ -91,7 +91,7 @@ ChadProfOaksDreamGossipText:
 	cont "man when he was"
 	cont "young."
 	para "Apparently has has"
-	line "a huge DRAGONITE."
+	line "a huge Dragonite."
 	para "Take note my"
 	line "pupil."
 	done
@@ -138,7 +138,7 @@ ChadProfOakTrainerGossipText:
 	cont "man when he was"
 	cont "young."
 	para "Apparently has has"
-	line "a huge DRAGONITE."
+	line "a huge Dragonite."
 	para "Take note my"
 	line "pupil."
 	done

@@ -153,7 +153,7 @@ RuinsOfAlphResearchCenterModifiedDexText:
 	para "I added an"
 	line "optional #dex"
 
-	para "to store UNOWN"
+	para "to store Unown"
 	line "data."
 
 	para "It records them in"
@@ -167,7 +167,7 @@ RuinsOfAlphResearchCenterDexUpgradedText:
 	done
 
 RuinsOfAlphResearchCenterScientist3Text:
-	text "The UNOWN you"
+	text "The Unown you"
 	line "catch will all be"
 	cont "recorded."
 
@@ -180,7 +180,7 @@ RuinsOfAlphResearchCenterScientist3Text:
 
 RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	text "You caught all the"
-	line "UNOWN variations?"
+	line "Unown variations?"
 
 	para "That's amazing"
 
@@ -238,7 +238,7 @@ RuinsOfAlphResearchCenterScientist1Text:
 	cont "with A and is 6"
 	cont "characters long."
 
-	para "It must be ARCEUS."
+	para "It must be Arceus."
 	done
 
 RuinsOfAlphResearchCenterScientist2Text:
@@ -296,7 +296,7 @@ RuinsOfAlphResearchCenterScientist2Text_GiveAmbrosia:
 	line "have this."
 	para "I found it"
 	line "embedded in the"
-	cont "old ARCEUS statue,"
+	cont "old Arceus statue,"
 	cont "I don't know what"
 	cont "it is but I think"
 	cont "it might help you."
@@ -311,7 +311,7 @@ RuinsOfAlphResearchCenterComputerText:
 
 RuinsOfAlphResearchCenterComputerText_GotAllUnown:
 	text "Mystery #mon"
-	line "Name: UNOWN"
+	line "Name: Unown"
 
 	para "A total of {d:NUM_UNOWN}"
 	line "kinds found."

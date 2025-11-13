@@ -186,7 +186,7 @@ Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
 
 Route39MiltankText:
-	text "MILTANK: Mooo!"
+	text "Miltank: Mooo!"
 	done
 
 PokefanmDerekSeenText:
@@ -238,7 +238,7 @@ PsychicNormanSeenText:
 	text "Do you smell that?"
 	para "Ahhhhh."
 	para "That my friend..."
-	para "Is pure MILTANK"
+	para "Is pure Miltank"
 	line "manure."
 	para "It heightens my"
 	line "psychic power."
@@ -301,7 +301,7 @@ MoomooFarmSignText:
 	done
 
 Route39TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "There are three"
 	line "ways a #mon"

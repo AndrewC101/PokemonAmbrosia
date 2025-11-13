@@ -52,6 +52,6 @@ BrentRematchText:
 	text "Finally!"
 	para "Oh I've been"
 	line "waiting for this."
-	para "PORYGONZ, ready"
-	line "your HYPER BEAM!"
+	para "PorygonZ, ready"
+	line "your Hyper Beam!"
 	done

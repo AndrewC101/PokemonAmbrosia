@@ -44,7 +44,7 @@ HoohLugiaBlockText:
     cont "fire and wind."
 
     para "HO-OH and"
-    line "LUGIA"
+    line "Lugia"
 
     para "May pass."
     done
@@ -72,8 +72,8 @@ GroudonKyogreBlockText:
     cont "the powers of"
     cont "earth and water."
 
-    para "GROUDON and"
-    line "KYOGRE"
+    para "Groudon and"
+    line "Kyogre"
 
     para "May pass."
     done
@@ -101,8 +101,8 @@ PalkiaDialgaBlockText:
     cont "the powers of"
     cont "space and time."
 
-    para "PALKIA and"
-    line "DIALGA"
+    para "Palkia and"
+    line "Dialga"
 
     para "May pass."
     done
@@ -130,8 +130,8 @@ RayquazaGiratinaBlockText:
     cont "the powers of"
     cont "good and evil."
 
-    para "RAYQUAZA and"
-    line "GIRATINA"
+    para "Rayquaza and"
+    line "Giratina"
 
     para "May pass."
     done
@@ -159,8 +159,8 @@ XerneasYveltalBlockText:
     cont "the powers of"
     cont "life and death."
 
-    para "XERNEAS and"
-    line "YVELTAL"
+    para "Xerneas and"
+    line "Yveltal"
 
     para "May pass."
     done

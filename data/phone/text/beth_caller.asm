@@ -17,10 +17,10 @@ BethDefeatedMonText:
 	cont "member."
 	para "Bruno has the"
 	line "lowest win rate."
-	para "My RAPIDASH has a"
+	para "My Rapidash has a"
 	line "good match up"
 	cont "against his lead"
-	cont "LUCARIO."
+	cont "Lucario."
 	para "But I'm not ready"
 	line "yet."
 	done

@@ -652,7 +652,7 @@ RuinsOfAlphNorthSignText:
 	done
 
 Route36TrainerTips1Text:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "On the #dex"
 	line "you can press"
@@ -662,7 +662,7 @@ Route36TrainerTips1Text:
 	done
 
 Route36TrainerTips2Text:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "When obtaining a"
 	line "new Badge your"
@@ -795,7 +795,7 @@ Route36CrystalText_Intro:
     para "I think when I"
     line "was little I got"
     cont "burned by a"
-    cont "LITWICK."
+    cont "Litwick."
 
     para "I still have a"
     line "scar on my arm."

@@ -305,7 +305,7 @@ HikerMichaelSeenText:
 	line "a TM."
 
 	para "Then a huge and"
-	line "rapid GARCHOMP"
+	line "rapid Garchomp"
 	cont "attacked me."
 
 	para "I barely"
@@ -321,7 +321,7 @@ HikerMichaelAfterBattleText:
 	text "Watch out down"
 	line "there kid."
 
-	para "That GARCHOMP"
+	para "That Garchomp"
 	line "isn't messing"
 	cont "around."
 	done

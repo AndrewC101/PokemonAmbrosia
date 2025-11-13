@@ -343,12 +343,12 @@ Route44HiddenAmbrosia:
 FisherWilton1SeenText:
 	text "AACK! I was"
 	line "just about to"
-	cont "catch a FEEBAS"
+	cont "catch a Feebas"
 	cont "but you made"
 	cont "let it get away!"
 
 	para "Have you ever"
-	line "eaten a FEEBAS?"
+	line "eaten a Feebas?"
 
 	para "Nothing compares."
 
@@ -365,16 +365,16 @@ FisherWilton1BeatenText:
 
 FisherWiltonHugePoliwagText:
 	text "If you look"
-	line "after your FEEBAS"
+	line "after your Feebas"
 	cont "and love it, it"
 	cont "will evolve into"
-	cont "a MILOTIC."
+	cont "a Milotic."
 
 	para "But there isn't a"
 	line "man alive who can"
 	cont "resist the allure"
 	cont "of a delicious"
-	cont "FEEBAS."
+	cont "Feebas."
 	done
 
 BirdKeeperVance1SeenText:
@@ -399,17 +399,17 @@ BirdKeeperVance1BeatenText:
 BirdKeeperVanceLegendaryBirdsText:
 	text "My perfect team..."
 
-	para "ARTICUNO"
+	para "Articuno"
 
-	para "ZAPDOS"
+	para "Zapdos"
 
-	para "MOLTRES"
+	para "Moltres"
 
-	para "HO-OH"
+	para "Ho-oh"
 
-	para "LUGIA"
+	para "Lugia"
 
-	para "YVELTAL"
+	para "Yveltal"
 
 	para "Perfect!"
 	done
@@ -505,7 +505,7 @@ CooltrainerfCybilBeatenText:
 	done
 
 CooltrainerfCybilAfterBattleText:
-	text "EEVEE has many"
+	text "Eevee has many"
 	line "forms."
 
 	para "We too have many"

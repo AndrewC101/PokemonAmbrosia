@@ -165,7 +165,7 @@ GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText:
 
 GoldenrodPokecenter1FPokefanFDaughterWillBeDelightedText:
 	text "I found a"
-	line "PIKACHU the"
+	line "Pikachu the"
 	cont "other day."
 
 	para "A strangely"

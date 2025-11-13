@@ -445,7 +445,7 @@ NationalParkLassLeonText:
 	done
 
 NationalParkTeacher1Text:
-	text "SPEED is very"
+	text "Speed is very"
 	line "important in"
 	cont "battle."
 
@@ -529,7 +529,7 @@ NationalParkTeacher2LeonText:
 	done
 
 NationalParkPersianText:
-	text "PERSIAN: Fufushaa!"
+	text "Persian: Fufushaa!"
 	done
 
 SchoolboyJack1SeenText:
@@ -670,7 +670,7 @@ NationalParkBattleNoticeText:
 	done
 
 NationalParkTrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "Print out MAIL by"
 	line "opening it then"

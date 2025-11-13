@@ -296,7 +296,7 @@ Text_ElmDiscoveredNewMon:
 	para "He was strong!"
 
 	para "He caught a"
-	line "raging URSARING."
+	line "raging Ursaring."
 
 	para "He can take care"
 	line "of himself."
@@ -569,7 +569,7 @@ Crystal1_ChallengeText:
 
 Crystal1LosesText:
     text "Aww you did"
-    line "well RIOLU."
+    line "well Riolu."
     done
 
 Crystal1WinsText:

@@ -177,7 +177,7 @@ DialgaBlockText:
     text "Only the power of"
     line "the master of time"
 
-    para "DIALGA!"
+    para "Dialga!"
 
     para "Can activate this"
     line "doorway."

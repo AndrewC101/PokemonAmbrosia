@@ -26,7 +26,7 @@ EcruteakPokecenter1FPokefanMText:
 	line "is just past"
 	cont "Olivine."
 
-	para "SCIZOR and I have"
+	para "Scizor and I have"
 	line "been having hours"
 	cont "of fun beating the"
 	cont "novice trainers in"

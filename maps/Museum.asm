@@ -49,7 +49,7 @@ DeoxysScript:
 	end
 
 DeoxysCry:
-    text "DEOXYS!"
+    text "Deoxys!"
     done
     
 MuseumFieldMon1Script:

@@ -300,7 +300,7 @@ LassEllenSeenText:
 	cont "drinks."
 
 	para "Here, have some"
-	line "RED TAUROS!"
+	line "Red Tauros!"
 	done
 
 LassEllenBeatenText:
@@ -383,7 +383,7 @@ LassLauraAfterBattleText:
 	cont "energy drinks."
 
 	para "Especially that"
-	line "RED TAUROS."
+	line "Red Tauros."
 	done
 
 CamperLloydSeenText:

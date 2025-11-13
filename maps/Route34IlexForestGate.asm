@@ -100,12 +100,12 @@ Route34IlexForestGateTeacher_ForestIsRestless:
 	line "my life to protect"
 	cont "the forest."
 
-	para "CELEBI, have mercy"
+	para "Celebi, have mercy"
 	line "on me!"
 	done
 
 Route34IlexForestGateButterfreeText:
-	text "BUTTERFREE: Freeh!"
+	text "Butterfree: Freeh!"
 	done
 
 Route34IlexForestGateLassText:

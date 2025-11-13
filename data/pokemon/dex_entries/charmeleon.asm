@@ -5,5 +5,5 @@
 	next "agitated it spits"
 	next "intense flames."
 
-	page "SP.Atk boost on"
+	page "Sp.Atk boost on"
 	next "defeating foe.@"

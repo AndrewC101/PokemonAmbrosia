@@ -259,7 +259,7 @@ BugCatcherBennyBeatenText:
 BugCatcherBennyAfterBattleText:
 	text "You are on top of"
 	line "the food chain."
-	para "Like a SNORLAX!"
+	para "Like a Snorlax!"
 	done
 	done
 
@@ -277,7 +277,7 @@ BugCatcherAlBeatenText:
 
 BugCatcherAlAfterBattleText:
 	text "I want to be"
-	line "a HERACROSS"
+	line "a Heracross"
 	cont "when I grow up!"
 	done
 

@@ -237,18 +237,18 @@ InvadedVermilionCitySuperNerdText:
 	done
 
 VermilionCitySnorlaxSleepingText:
-	text "SNORLAX is snoring"
+	text "Snorlax is snoring"
 	line "peacefully…"
 	done
 
 VermilionCityRadioNearSnorlaxText:
 	text "The #gear was"
 	line "placed near the"
-	cont "sleeping SNORLAX…"
+	cont "sleeping Snorlax…"
 
 	para "…"
 
-	para "SNORLAX woke up!"
+	para "Snorlax woke up!"
 	done
 
 VermilionCityBadgeGuyTrainerText:
@@ -430,7 +430,7 @@ Soldier6SeenText:
 	para "Hmm hmmm."
 	para "Stop you filthy"
 	line "Kanto spawn of a"
-	cont "DUNSPARCE scum!"
+	cont "Dunsparce scum!"
 	done
 Soldier6BeatenText:
     text "Avenge me"

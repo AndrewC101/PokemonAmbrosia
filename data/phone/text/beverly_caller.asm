@@ -20,7 +20,7 @@ BeverlyDefeatedMonText:
 	done
 
 BeverlyLostAMonText:
-	text "I fought a SCIZOR"
+	text "I fought a Scizor"
 	line "the other day."
 	para "I think it may"
 	line "have been HIM..."

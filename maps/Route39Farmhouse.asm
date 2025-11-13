@@ -94,7 +94,7 @@ FarmhouseBookshelf:
 	jumpstd PictureBookshelfScript
 
 FarmerMText_SickCow:
-	text "My prized MILTANK"
+	text "My prized Miltank"
 	line "is terribly sick."
 
 	para "Her Milk is my"
@@ -166,7 +166,7 @@ FarmerFText_InTrouble:
 	para "Our milk even goes"
 	line "out to Kanto."
 
-	para "With MILTANK"
+	para "With Miltank"
 	line "sick we are in"
 	cont "trouble."
 

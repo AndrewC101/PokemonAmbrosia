@@ -113,7 +113,7 @@ Route35GoldenrodGateRandyThanksText:
 
 Route35GoldenrodGatePlayerReceivedAMonWithMailText:
 	text "<PLAYER> received a"
-	line "PIKACHU."
+	line "Pikachu."
 	done
 
 Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
@@ -161,7 +161,7 @@ Route35GoldenrodGatePokefanFText:
 	line "find Champion Leon"
 	cont "there."
 	para "I'd love to see"
-	line "his CHARIZARD."
+	line "his Charizard."
 	done
 
 Route35GoldenrodGateFisherText:

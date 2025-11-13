@@ -374,7 +374,7 @@ RadioTower1FRadioCardWomanQuestion5Text:
 	line "Here's the final"
 	cont "question:"
 
-	para "GASTLY is immune"
+	para "Gastly is immune"
 	line "to 2 types of"
 	cont "attacks?"
 	done

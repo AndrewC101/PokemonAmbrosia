@@ -1,6 +1,6 @@
 ArnieMonIsSoCuteText:
 	text "I'm always with my"
-	line "BUTTERFREE."
+	line "Butterfree."
 
 	para "He is my oldest"
 	line "and dearest"
@@ -70,7 +70,7 @@ ArnieHaventSeenRareMonText:
 	para "I don't need them."
 	para "All I need in life"
 	line "is my one and only"
-	cont "friend BUTTERFREE."
+	cont "friend Butterfree."
 	para "I need nothing"
 	line "else!"
 	done
@@ -93,7 +93,7 @@ ArnieReminderText:
 ArnieHurryText:
 	text "You must hurry,"
 	line "there is a swarm"
-	cont "of YANMA on Route"
+	cont "of Yanma on Route"
 	cont "35."
 	para "This is it, the"
 	line "BUGS are making"

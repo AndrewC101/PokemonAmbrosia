@@ -327,9 +327,9 @@ Route30_MikeysRattataAttacksMovement:
 	step_end
 
 Text_ThisIsABigBattle:
-	text "Go, RATTATA!"
+	text "Go, Rattata!"
 
-	para "TACKLE!"
+	para "Tackle!"
 	done
 
 Text_UseTackle:
@@ -340,8 +340,8 @@ Text_UseTackle:
 
 	para "My destiny!"
 
-	para "RATTATA max"
-	line "power TACKLE!"
+	para "Rattata max"
+	line "power Tackle!"
 	done
 
 YoungsterJoey1SeenText:
@@ -358,7 +358,7 @@ YoungsterJoey1SeenText:
 	para "Come now!"
 
 	para "Face my ultimate"
-	line "RATTATA!!"
+	line "Rattata!!"
 	done
 
 YoungsterJoey1BeatenText:
@@ -379,17 +379,17 @@ YoungsterJoey1AfterText:
 
 	para "I don't need more!"
 
-	para "One day my RATTATA"
+	para "One day my Rattata"
 	line "shall become..."
 
-	para "A RAT GOD!"
+	para "A Rat God!"
 	done
 
 YoungsterMikeySeenText:
 	text "That last guy"
 	line "never shuts up"
 	cont "about his weak"
-	cont "RATTATA."
+	cont "Rattata."
 
 	para "You need more"
 	line "than just one"
@@ -483,7 +483,7 @@ MrPokemonsHouseSignText:
 	done
 
 Route30TrainerTipsText:
-	text "TRAINER TIPS"
+	text "Trainer Tips"
 
 	para "You need Badges"
 	line "to catch higher"

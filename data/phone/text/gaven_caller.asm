@@ -26,7 +26,7 @@ GavenLostAMonText:
 	text "I've got it!"
 	para "How to beat Lance!"
 	para "I'll spam Ice Beam"
-	line "with MILOTIC and"
+	line "with Milotic and"
 	cont "hope to get a"
 	cont "freeze on each"
 	cont "one."

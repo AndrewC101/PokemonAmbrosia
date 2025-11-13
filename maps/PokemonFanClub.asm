@@ -153,9 +153,9 @@ PokemonFanClubChairmanRapidashText:
 
 	para "It is of course..."
 
-	para "VAPOREON."
+	para "Vaporeon."
 
-	para "I believe VAPOREON"
+	para "I believe Vaporeon"
 	line "to be the most"
 	cont "human compatible"
 	cont "#mon."
@@ -172,8 +172,8 @@ PokemonFanClubChairmanRapidashText:
 	line "slippery."
 
 	para "Has huge HP and"
-	line "DEFENSE with"
-	cont "ACID ARMOUR for"
+	line "Defense with"
+	cont "Acid Armour for"
 	cont "more defense."
 
 	para "Is fully immune"
@@ -243,7 +243,7 @@ PokemonFanClubReceptionistText:
 
 PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
 	text "I love the way"
-	line "CLEFAIRY waggles"
+	line "Clefairy waggles"
 
 	para "its finger when"
 	line "it's trying to use"
@@ -253,7 +253,7 @@ PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
 	done
 
 PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
-	text "I love CLEFAIRY,"
+	text "I love Clefairy,"
 	line "but I could never"
 	cont "catch one. So I'm"
 	cont "making do with a"
@@ -272,7 +272,7 @@ PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	cont "little girl?"
 
 	para "I'll befriend a"
-	line "real CLEFAIRY."
+	line "real Clefairy."
 
 	para "Off to MT MOON!"
 	done
@@ -287,7 +287,7 @@ PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	line "expedition to"
 	cont "MT MOON to find"
 	cont "a real, honest"
-	cont "and true CLEFAIRY."
+	cont "and true Clefairy."
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:
@@ -297,7 +297,7 @@ PokemonFanClubClefairyGuyPackIsJammedFullText:
 
 PokemonFanClubTeacherText:
 	text "Look at my darling"
-	line "GROVYLE!"
+	line "Grovyle!"
 
 	para "It's so cool."
 
@@ -311,11 +311,11 @@ PokemonFanClubTeacherText:
 	done
 
 PokemonFanClubClefairyDollText:
-	text "It's a CLEFAIRY!"
+	text "It's a Clefairy!"
 	line "Huh?"
 
 	para "Oh, right."
-	line "It's a CLEFAIRY"
+	line "It's a Clefairy"
 	cont "# DOLL."
 	done
 

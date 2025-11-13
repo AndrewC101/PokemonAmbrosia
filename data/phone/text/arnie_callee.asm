@@ -56,7 +56,7 @@ ArnieGreetNiteText:
 	done
 
 ArnieGenericText:
-	text "My BUTTERFREE is"
+	text "My Butterfree is"
 	line "my best and only"
 	cont "friend."
 	para "I love him more"

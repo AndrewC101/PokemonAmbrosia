@@ -49,12 +49,12 @@ CeruleanTradeSpeechHouseGrampsText:
 	done
 
 CeruleanTradeSpeechHouseRhydonText:
-	text "RHYPERIOR: Garu"
+	text "Rhyperior: Garu"
 	line "garuu."
 	done
 
 CeruleanTradeSpeechHouseZubatText:
-	text "CROBAT: Crooow!."
+	text "Crobat: Crooow!."
 	done
 
 CeruleanTradeSpeechHouse_MapEvents:

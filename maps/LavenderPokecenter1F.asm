@@ -38,7 +38,7 @@ LavenderPokecenter1FGentlemanText:
 	text "In ancient times"
 	line "the sword and"
 	cont "shield of an"
-	cont "AEGISLASH were the"
+	cont "Aegislash were the"
 	cont "most sought after"
 	cont "weapons in the"
 	cont "world."

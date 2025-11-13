@@ -35,7 +35,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	line "supreme species"
 	cont "of dragon."
 
-	para "A RAYQUAZA."
+	para "A Rayquaza."
 
 	para "The Dragon Lord"
 	line "is centuries old."
@@ -57,7 +57,7 @@ BlackthornDragonSpeechHouseGrannyText:
 	done
 
 BlackthornDragonSpeechHouseDratiniText:
-	text "DRATINI: Draa!"
+	text "Dratini: Draa!"
 	done
 
 BlackthornDragonSpeechHouse_MapEvents:

@@ -133,7 +133,7 @@ BillGrampsMewExplain:
 BillGrampsGotMew:
 	text "I know BILL will"
 	line "understand that"
-	cont "MEW will only"
+	cont "Mew will only"
 	cont "reach its full"
 	cont "potential with"
 	cont "you."
@@ -157,7 +157,7 @@ BillGrampsNoRoom:
 
 ReceivedMewText:
 	text "<PLAYER> received"
-	line "MEW!"
+	line "Mew!"
 	done
 
 BillsHouse_MapEvents:

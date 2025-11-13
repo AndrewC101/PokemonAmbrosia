@@ -84,7 +84,7 @@ FuchsiaPokecenter1FCooltrainerMText:
 	done
 
 FuchsiaPokecenter1FCooltrainerMText_Invaded:
-	text "Oh my ARCEUS."
+	text "Oh my Arceus."
 
 	para "This is it."
 

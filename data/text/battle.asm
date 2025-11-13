@@ -65,28 +65,28 @@ HurtByBurnText:
 	prompt
 
 LeechSeedSapsText:
-	text "LEECH SEED saps"
+	text "Leech Seed saps"
 	line "<USER>!"
 	prompt
 
 HasANightmareText:
 	text "<USER>"
-	line "has a NIGHTMARE!"
+	line "has a Nightmare!"
 	prompt
 
 HurtByCurseText:
 	text "<USER>'s"
-	line "hurt by the CURSE!"
+	line "hurt by the Curse!"
 	prompt
 
 SandstormHitsText:
-	text "The SANDSTORM hits"
+	text "The Sandstorm hits"
 	line "<USER>!"
 	prompt
 
 PerishCountText:
 	text "<USER>'s"
-	line "PERISH count is @"
+	line "Perish count is @"
 	text_decimal wTextDecimalByte, 1, 1
 	text "!"
 	prompt
@@ -125,8 +125,8 @@ BattleText_UserRecoveredPPUsing:
 
 BattleText_TargetWasHitByFutureSight:
 	text "<TARGET>"
-	line "was hit by FUTURE"
-	cont "SIGHT!"
+	line "was hit by Future"
+	cont "Sight!"
 	prompt
 
 BattleText_SafeguardFaded:
@@ -157,7 +157,7 @@ BattleText_TheSunlightIsStrong:
 	prompt
 
 BattleText_TheSandstormRages:
-	text "The SANDSTORM"
+	text "The Sandstorm"
 	line "rages."
 	prompt
 
@@ -171,7 +171,7 @@ BattleText_TheSunlightFaded:
 	prompt
 
 BattleText_TheSandstormSubsided:
-	text "The SANDSTORM"
+	text "The Sandstorm"
 	line "subsided."
 	prompt
 
@@ -348,7 +348,7 @@ BattleText_TheresNoPPLeftForThisMove:
 
 BattleText_TheMoveIsDisabled:
 	text "The move is"
-	line "BLOCKED!"
+	line "Blocked!"
 	prompt
 
 BattleText_MonHasNoMovesLeft:
@@ -359,7 +359,7 @@ BattleText_MonHasNoMovesLeft:
 
 BattleText_TargetsEncoreEnded:
 	text "<TARGET>'s"
-	line "ENCORE ended!"
+	line "Encore ended!"
 	prompt
 
 BattleText_StringBuffer1GrewToLevel:
@@ -417,7 +417,7 @@ DisabledNoMoreText:
 
 TauntedNoMoreText:
 	text "<USER>'s"
-	line "TAUNT wore off!"
+	line "Taunt wore off!"
 	prompt
 
 IsConfusedText:
@@ -471,7 +471,7 @@ BattleText_UserWasReleasedFromStringBuffer1:
 
 UsedBindText:
 	text "<USER>"
-	line "used BIND on"
+	line "used Bind on"
 	cont "<TARGET>!"
 	prompt
 
@@ -487,13 +487,13 @@ FireSpinTrapText:
 
 WrappedByText:
 	text "<TARGET>"
-	line "was WRAPPED by"
+	line "was Wrapped by"
 	cont "<USER>!"
 	prompt
 
 ClampedByText:
 	text "<TARGET>"
-	line "was CLAMPED by"
+	line "was Clamped by"
 	cont "<USER>!"
 	prompt
 
@@ -516,12 +516,12 @@ HungOnText:
 
 EnduredText:
 	text "<TARGET>"
-	line "ENDURED the hit!"
+	line "Endured the hit!"
 	prompt
 
 SturdyText:
 	text "Endured with"
-	line "STURDY!"
+	line "Sturdy!"
 	prompt
 
 InLoveWithText:
@@ -541,7 +541,7 @@ DisabledMoveText:
 	line "@"
 	text_ram wStringBuffer1
 	text " is"
-	cont "BLOCKED!"
+	cont "Blocked!"
 	prompt
 
 LoafingAroundText:
@@ -678,7 +678,7 @@ AttackModeText:
     prompt
 
 FlameOrbText:
-    text "FLAME ORB"
+    text "Flame Orb"
     line "ignites!"
     prompt
 
@@ -708,17 +708,17 @@ TookDownWithItText:
 
 RageBuildingText:
 	text "<USER>'s"
-	line "RAGE is building!"
+	line "Rage is building!"
 	prompt
 
 GotAnEncoreText:
 	text "<TARGET>"
-	line "got an ENCORE!"
+	line "got an Encore!"
 	prompt
 
 GotTauntedText:
 	text "<TARGET>"
-	line "received a TAUNT!"
+	line "received a Taunt!"
 	prompt
 
 SharedPainText:
@@ -733,7 +733,7 @@ TookAimText:
 
 SketchedText:
 	text "<USER>"
-	line "SKETCHED"
+	line "Sketched"
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"
@@ -881,28 +881,28 @@ RecoilText:
 
 MadeSubstituteText:
 	text "<USER>"
-	line "made a SUBSTITUTE!"
+	line "made a Substitute!"
 	prompt
 
 HasSubstituteText:
 	text "<USER>"
-	line "has a SUBSTITUTE!"
+	line "has a Substitute!"
 	prompt
 
 TooWeakSubText:
 	text "Too weak to make"
-	line "a SUBSTITUTE!"
+	line "a Substitute!"
 	prompt
 
 SubTookDamageText:
-	text "The SUBSTITUTE"
+	text "The Substitute"
 	line "took damage for"
 	cont "<TARGET>!"
 	prompt
 
 SubFadedText:
 	text "<TARGET>'s"
-	line "SUBSTITUTE faded!"
+	line "Substitute faded!"
 	prompt
 
 MimicLearnedMoveText:
@@ -928,7 +928,7 @@ WasDisabledText:
 	line "@"
 	text_ram wStringBuffer1
 	text " was"
-	cont "BLOCKED!"
+	cont "Blocked!"
 	prompt
 
 CoinsScatteredText:
@@ -951,7 +951,7 @@ EliminatedStatsText:
 
 TransformedText:
 	text "<USER>"
-	line "TRANSFORMED into"
+	line "Transformed into"
 	cont "@"
 	text_ram wStringBuffer1
 	text "!"
@@ -1045,7 +1045,7 @@ ProtectedByText:
 
 CantSleepText:
 	text "<TARGET>"
-	line "can not SLEEP."
+	line "can not Sleep."
 	prompt
 
 MirrorMoveFailedText:
@@ -1069,7 +1069,7 @@ CantEscapeNowText:
 StartedNightmareText:
 	text "<TARGET>"
 	line "started to have a"
-	cont "NIGHTMARE!"
+	cont "Nightmare!"
 	prompt
 
 WasDefrostedText:
@@ -1081,18 +1081,18 @@ PutACurseText:
 	text "<USER>"
 	line "cut its own HP and"
 
-	para "put a CURSE on"
+	para "put a Curse on"
 	line "<TARGET>!"
 	prompt
 
 ProtectedItselfText:
 	text "<USER>"
-	line "PROTECTED itself!"
+	line "Protected itself!"
 	prompt
 
 ProtectingItselfText:
 	text "<TARGET>'s"
-	line "PROTECTING itself!"
+	line "Protecting itself!"
 	done
 
 SpikesText:
@@ -1112,7 +1112,7 @@ StartPerishText:
 	prompt
 
 SandstormBrewedText:
-	text "A SANDSTORM"
+	text "A Sandstorm"
 	line "brewed!"
 	prompt
 
@@ -1156,7 +1156,7 @@ ReleasedByText:
 
 ShedLeechSeedText:
 	text "<USER>"
-	line "shed LEECH SEED!"
+	line "shed Leech Seed!"
 	prompt
 
 BlewSpikesText:
@@ -1186,7 +1186,7 @@ StealthRockText:
 	prompt
 
 StickyWebText:
-	text "A STICKY WEB has"
+	text "A Sticky Web has"
 	line "been laid."
 	prompt
 

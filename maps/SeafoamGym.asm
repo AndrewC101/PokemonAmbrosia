@@ -113,12 +113,12 @@ BlaineWinLossText:
 	line "yourself."
 
 	para "You've earned"
-	line "VOLCANOBADGE!"
+	line "Volcanobadge!"
 	done
 
 ReceivedVolcanoBadgeText:
 	text "<PLAYER> received"
-	line "VOLCANOBADGE."
+	line "Volcanobadge."
 	done
 
 BlaineFightDoneText:

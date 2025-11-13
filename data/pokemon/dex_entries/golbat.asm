@@ -5,6 +5,6 @@
 	next "It evolves when"
 	next "happy."
 
-	page "EVASION"
+	page "Evasion"
 	next "increases upon"
 	next "entering battle.@"

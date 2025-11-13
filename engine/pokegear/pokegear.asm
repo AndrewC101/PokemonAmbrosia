@@ -1610,7 +1610,7 @@ LoadStation_BuenasPassword:
 	ld de, BuenasPasswordName
 	ret
 
-BuenasPasswordName:    db "BUENA'S PASSWORD@"
+BuenasPasswordName:    db "Buena's Password@"
 NotBuenasPasswordName: db "@"
 
 LoadStation_UnownRadio:
@@ -1751,7 +1751,7 @@ UnownStationName:     db "?????@"
 
 PlacesAndPeopleName:  db "Places & People@"
 LetsAllSingName:      db "Let's All Sing!@"
-PokeFluteStationName: db "# FLUTE@"
+PokeFluteStationName: db "# Flute@"
 
 _TownMap:
 	ld hl, wOptions

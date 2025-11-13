@@ -66,7 +66,7 @@ SandstormHouseWomanLoyalText:
 
 SandstormHouseSandstormDescription:
 	text "TM37 happens to be"
-	line "SANDSTORM."
+	line "Sandstorm."
 
 	para "It's a move that"
 	line "inflicts damage on"

@@ -828,7 +828,7 @@ UnusedBugCatchingContestExplanationText:
 	done
 
 Route36NationalParkGateOfficer1WellHoldPrizeText:
-	text "Uh-oh… Your PACK"
+	text "Uh-oh… Your Pack"
 	line "is full."
 
 	para "We'll hold on to"

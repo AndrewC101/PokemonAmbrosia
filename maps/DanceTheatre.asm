@@ -287,7 +287,7 @@ SurfGuyLikeADanceText:
 	done
 
 SurfGuySurfExplanationText:
-	text "That's SURF."
+	text "That's Surf."
 
 	para "It's a move that"
 	line "lets #mon swim"

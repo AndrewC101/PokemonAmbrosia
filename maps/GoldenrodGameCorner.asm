@@ -375,7 +375,7 @@ GoldenrodGameCornerPrizeVendorQuitText:
 
 GoldenrodGameCornerPrizeVendorNoCoinCaseText:
 	text "Oh? You don't have"
-	line "a COIN CASE."
+	line "a Coin Case."
 	done
 
 GoldenrodGameCornerPharmacistText:

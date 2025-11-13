@@ -60,20 +60,20 @@ CeladonDeptStore1FTeacherText:
 	done
 
 CeladonDeptStore1FDirectoryText:
-	text "1F: SERVICE"
-	line "    COUNTER"
+	text "1F: Service"
+	line "    Counter"
 
-	para "2F: TRAINER'S"
-	line "    MARKET"
+	para "2F: Trainer's"
+	line "    Market"
 
-	para "3F: TM SHOP"
+	para "3F: TM Shop"
 
-	para "4F: WISEMAN GIFTS"
+	para "4F: Wise Gifts"
 
-	para "5F: DRUG Store"
+	para "5F: Drug Store"
 
-	para "6F: ROOFTOP"
-	line "    SQUARE"
+	para "6F: Rooftop"
+	line "    Square"
 	done
 
 CeladonDeptStore1F_MapEvents:

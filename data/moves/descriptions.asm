@@ -376,7 +376,7 @@ BigRecoverDescription:
 	line "the max HP.@"
 
 SandAttackDescription:
-	db   "Reduces ACCURACY"
+	db   "Reduces Accuracy"
 	line "by throwing sand.@"
 
 ZenHeadbuttDescription:
@@ -708,7 +708,7 @@ DarkVoidDescription:
 
 SmokescreenDescription:
 	db   "Lowers the foe's"
-	line "ACCURACY.@"
+	line "Accuracy.@"
 
 ConfuseRayDescription:
 	db   "A move that causes"
@@ -812,7 +812,7 @@ AmnesiaDescription:
 
 KinesisDescription:
 	db   "Reduces the foe's"
-	line "ACCURACY.@"
+	line "Accuracy.@"
 
 SoftboiledDescription:
 	db   "Restores HP by 1/2"
@@ -868,7 +868,7 @@ SporeDescription:
 
 FlashDescription:
 	db   "Blinds the foe to"
-	line "reduce ACCURACY.@"
+	line "reduce Accuracy.@"
 
 PsyblastDescription:
 	db   "A powerful"
@@ -1143,7 +1143,7 @@ AirSlashDescription:
 	line "cause flinching.@"
 
 AiReturnDescription:
-	db   "Max power RETURN"
+	db   "Max power Return"
 	line "used by AI.@"
 
 SafeguardDescription:

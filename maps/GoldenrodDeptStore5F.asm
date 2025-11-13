@@ -57,8 +57,8 @@ MikeText:
 	line "has way more TMs"
 	cont "than this!"
 	para "This place doesn't"
-	line "even have HYPER"
-	cont "BEAM."
+	line "even have Hyper"
+	cont "Beam."
 	done
 
 GoldenrodDeptStore5FPokefanMScript:
@@ -71,15 +71,19 @@ GoldenrodDeptStore5FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore5FCarrieMysteryGiftExplanationText:
-	text "MYSTERY GIFT."
+	text "Mystery Gift."
 
 	para "With just a"
 	line "little beep, you"
 	cont "get a gift."
+
+	para "Or you would"
+	line "if this was the"
+	cont "year 2000!"
 	done
 
 GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText:
-	text "The MYSTERY GIFT"
+	text "The Mystery Gift"
 	line "option requires a"
 	cont "Game Boy Color."
 	done
@@ -113,7 +117,7 @@ GoldenrodDeptStore5FDirectoryText:
 	text "Customize Your"
 	line "#mon"
 
-	para "5F TM CORNER"
+	para "5F TM Corner"
 	done
 
 GoldenrodDeptStore5F_MapEvents:

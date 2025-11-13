@@ -474,12 +474,12 @@ Route30SignText:
 	done
 
 MrPokemonsHouseDirectionsSignText:
-	text "AGENT HOUSE"
-	line "STRAIGHT AHEAD!"
+	text "Agent House"
+	line "Straight Ahead!"
 	done
 
 MrPokemonsHouseSignText:
-	text "AGENT HOUSE"
+	text "Agent House"
 	done
 
 Route30TrainerTipsText:

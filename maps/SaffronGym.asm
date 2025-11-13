@@ -166,7 +166,7 @@ SabrinaLossText:
 	text "Well done!"
 
 	para "I confer the"
-	line "MARSHBADGE."
+	line "Marshbadge."
 	done
 
 SabrinaWinText:
@@ -177,11 +177,11 @@ SabrinaWinText:
 
 ReceivedMarshBadgeText:
 	text "<PLAYER> received"
-	line "MARSHBADGE."
+	line "Marshbadge."
 	done
 
 SabrinaMarshBadgeText:
-	text "The MARSHBADGE"
+	text "The Marshbadge"
 	line "signifies your"
 	cont "indomitable soul."
 

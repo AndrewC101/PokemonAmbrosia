@@ -5,6 +5,6 @@
 	next "speeds equal to"
 	next "a jet plane."
 
-	page "Boosted EVASION"
-	next "in SANDSTORM and"
+	page "Boosted Evasion"
+	next "in Sandstorm and"
 	next "boosted crits.@"

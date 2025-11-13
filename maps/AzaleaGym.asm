@@ -203,7 +203,7 @@ BugsyText_ResearchIncomplete:
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HIVEBADGE."
+	line "Hivebadge."
 	done
 
 BugsyText_HiveBadgeSpeech:
@@ -220,13 +220,13 @@ BugsyText_HiveBadgeSpeech:
 	cont "level 25."
 
 	para "You can also"
-	line "use CUT outside"
+	line "use Cut outside"
 	cont "of battle."
 	done
 
 BugsyText_FuryCutterSpeech:
 	text "TM49 contains"
-	line "X SCISSOR."
+	line "X Scissor."
 
 	para "It is a vicious"
 	line "and powerful"

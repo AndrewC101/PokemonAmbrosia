@@ -54,7 +54,7 @@ LavenderPokecenter1FTeacherText:
 	text "There is a"
 	line "radio channel that"
 	cont "plays the"
-	cont "#FLUTE."
+	cont "#Flute."
 
 	para "It can be used"
 	line "to awaken a"

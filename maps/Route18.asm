@@ -74,7 +74,7 @@ BirdKeeperBorisBeatenText:
 
 BirdKeeperBorisAfterBattleText:
 	text "Once you are"
-	line "able to FLY the"
+	line "able to fly the"
 	cont "world becomes"
 	cont "small."
 	done
@@ -87,7 +87,7 @@ BirdKeeperBobSeenText:
 	line "and cave."
 
 	para "I can't find the"
-	line "FLY TM."
+	line "fly TM."
 
 	para "Where is it!?"
 	done

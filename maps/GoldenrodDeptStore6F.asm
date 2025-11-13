@@ -146,7 +146,7 @@ GoldenrodDeptStore6FDirectoryText:
 	text "Take a Break from"
 	line "Shopping!"
 
-	para "6F TRANQUIL SQUARE"
+	para "6F Tranquil Square"
 	done
 
 GoldenrodDeptStore6F_MapEvents:

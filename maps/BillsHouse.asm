@@ -59,7 +59,7 @@ BillsGrandpa:
     end
 
 BillBeatE4:
-	text "Hm? You know BILL?"
+	text "Hm? You know Bill?"
 	line "He's my grandson."
 
 	para "He is always out"
@@ -74,7 +74,7 @@ BillBeatE4:
     done
 
 BillGrampsTakeThisMewText:
-	text "Hm? You know BILL?"
+	text "Hm? You know Bill?"
 	line "He's my grandson."
 
 	para "Oh you are a"
@@ -122,7 +122,7 @@ BillGrampsImCountingOnYouText:
 	done
 
 BillGrampsMewExplain:
-	text "BILL tells me"
+	text "Bill tells me"
 	line "this is a very"
 	cont "powerful #mon."
 
@@ -131,7 +131,7 @@ BillGrampsMewExplain:
 	done
 
 BillGrampsGotMew:
-	text "I know BILL will"
+	text "I know Bill will"
 	line "understand that"
 	cont "Mew will only"
 	cont "reach its full"

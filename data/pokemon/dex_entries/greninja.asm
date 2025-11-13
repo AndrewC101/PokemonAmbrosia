@@ -6,4 +6,4 @@
 	next "defeated foes."
 
 	page "Has increased"
-	next "ACCURACY.@"
+	next "Accuracy.@"

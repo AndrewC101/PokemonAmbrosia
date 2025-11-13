@@ -761,12 +761,12 @@ BenText:
 	done
 
 RadioTower5FDirectorsOfficeSignText:
-	text "5F DIRECTOR'S"
-	line "   OFFICE"
+	text "5F Director's"
+	line "   Office"
 	done
 
 RadioTower5FStudio1SignText:
-	text "5F STUDIO 1"
+	text "5F Studio 1"
 	done
 
 RadioTower5F_MapEvents:

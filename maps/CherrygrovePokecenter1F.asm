@@ -46,8 +46,8 @@ CherrygrovePokecenter1FGentlemanText:
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
+	text "The communication"
+	line "Center upstairs"
 	cont "was just built."
 
 	para "But good luck"

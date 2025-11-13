@@ -452,7 +452,7 @@ WhoIsThatText:
 DragoniteAttackText:
     text "Dragonite!"
 
-    para "OUTRAGE!"
+    para "Outrage!"
     done
 
 RocketBaseRocketsDefeatedText:
@@ -1064,7 +1064,7 @@ RocketBaseReceivedHM06Text: ; unreferenced
 	done
 
 RocketBaseLanceWhirlpoolText:
-	text "That is WHIRLPOOL."
+	text "That is Whirlpool."
 
 	para "With this a"
 	line "#mon can"

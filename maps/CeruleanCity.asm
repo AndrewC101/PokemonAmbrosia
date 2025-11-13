@@ -263,7 +263,7 @@ CeruleanCityYoungsterText1:
 CeruleanCityYoungsterText2:
 	text "Ayuh?"
 
-	para "My ITEMFINDER is"
+	para "My Itemfinder is"
 	line "responding…"
 	done
 

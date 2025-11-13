@@ -514,7 +514,7 @@ PrintEvasionUpMessage:
     ld hl, WildEvasionUpText
     jp BattleTextbox
 WildEvasionUpText:
-    text "Enemy EVASION"
+    text "Enemy Evasion"
     line "went up!"
     prompt
 

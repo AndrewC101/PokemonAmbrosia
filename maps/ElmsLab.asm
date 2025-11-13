@@ -1263,9 +1263,9 @@ AideText_ExplainCaps:
 
     para "You can see"
     line "these on your"
-    cont "TRAINER CARD"
-    cont "under TRAIN"
-    cont "and CATCH."
+    cont "Trainer Card"
+    cont "under Train"
+    cont "and Catch."
 
     para "Becoming a"
     line "better trainer"
@@ -1338,7 +1338,7 @@ ElmGiveTicketText1:
 	cont "you."
 
 	para "See? It's an"
-	line "S.S.TICKET."
+	line "S.S.Ticket."
 
 	para "The boat heads"
 	line "for Kanto."
@@ -1401,9 +1401,9 @@ ElmKantoExplainText:
 	cont "Gyms."
 	para "To help you in"
 	line "this, Prof Oak has"
-	cont "worked with BILL"
+	cont "worked with Bill"
 	cont "and upgraded your"
-	cont "EXP SHARE."
+	cont "Exp Share."
 	para "It will now give"
 	line "full EXP to your"
 	cont "whole party!"
@@ -1542,7 +1542,7 @@ ElmsLabTravelTip3Text:
 
 	para "Travel Tip 3:"
 
-	para "Open your PACK and"
+	para "Open your Pack and"
 	line "press SELECT to"
 	cont "move items."
 	done

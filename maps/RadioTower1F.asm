@@ -292,7 +292,7 @@ RadioTower1FLuckyNumberManWeakMatchText:
 	cont "two numbers."
 
 	para "You've won third"
-	line "prize, a PP UP."
+	line "prize, a PP Max."
 	done
 
 RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText:
@@ -492,14 +492,14 @@ GruntM3AfterBattleText:
 	done
 
 RadioTower1FDirectoryText:
-	text "1F RECEPTION"
-	line "2F SALES"
+	text "1F Reception"
+	line "2F Sales"
 
-	para "3F PERSONNEL"
-	line "4F PRODUCTION"
+	para "3F Personnel"
+	line "4F Production"
 
-	para "5F DIRECTOR'S"
-	line "   OFFICE"
+	para "5F Director's"
+	line "   Office"
 	done
 
 RadioTower1FLuckyChannelSignText:

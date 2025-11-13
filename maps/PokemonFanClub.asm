@@ -200,7 +200,7 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
+	text "It's a Rare Candy"
 	line "that makes #mon"
 	cont "stronger."
 
@@ -291,7 +291,7 @@ PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	done
 
 PokemonFanClubClefairyGuyPackIsJammedFullText:
-	text "Your PACK is"
+	text "Your Pack is"
 	line "jammed full."
 	done
 

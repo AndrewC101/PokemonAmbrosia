@@ -102,7 +102,7 @@ ViridianCityCoffeeGrampsQuestionText:
 	cont "off shores!"
 
 	para "I'm just an"
-	line "OLD MAN who"
+	line "OLD Man who"
 	cont "like coffee..."
 
 	para "Isn't that right?"

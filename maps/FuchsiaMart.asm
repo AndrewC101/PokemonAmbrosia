@@ -38,7 +38,7 @@ FuchsiaMartCooltrainerFScript:
 
 FuchsiaMartFisherText:
 	text "Aw cool, I can"
-	line "buy MAX REVIVE"
+	line "buy Max Revive"
 	cont "here!"
 
 	para "It's very rare"
@@ -49,7 +49,7 @@ FuchsiaMartFisherText_Invaded:
 	text "Clerk!"
 
 	para "I need all the"
-	line "MAX REVIVE you"
+	line "Max Revive you"
 	cont "got in stock."
 
 	para "I'm getting out"
@@ -64,7 +64,7 @@ FuchsiaMartFisherText_Saved:
 
 	para "Please allow me"
 	line "to buy you some"
-	cont "MAX REVIVE!"
+	cont "Max Revive!"
 	done
 
 FuchsiaMartCooltrainerFText:

@@ -276,7 +276,7 @@ LeaderBlueLossText:
 
 Text_ReceivedEarthBadge:
 	text "<PLAYER> received"
-	line "EARTHBADGE."
+	line "Earthbadge."
 	done
 
 AllKantoBadgesText:

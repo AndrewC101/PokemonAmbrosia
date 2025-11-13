@@ -247,7 +247,7 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
-    text "With the FOGBADGE"
+    text "With the Fogbadge"
     line "you can now train"
     cont "#mon up to"
     cont "level 50."
@@ -257,7 +257,7 @@ MortyText_FogBadgeSpeech:
     cont "level 40."
 
     para "You can also"
-    line "use SURF outside"
+    line "use Surf outside"
     cont "of battle."
 
     para "I want you to"

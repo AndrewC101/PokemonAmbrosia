@@ -38,19 +38,19 @@ GoldenrodDeptStore4FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore4FCooltrainerMText:
-	text "PROTEIN!"
+	text "Protein!"
 
 	para "I NEED!"
 
 	para "MORE!"
 
-	para "PROTEIN..."
+	para "Protein..."
 
 	para "RAWARRRRUH!!"
 	done
 
 GoldenrodDeptStore4FBugCatcherText:
-	text "CARBOS increases"
+	text "Carbos increases"
 	line "the speed of"
 	cont "your #mon."
 
@@ -96,7 +96,7 @@ GoldenrodDeptStore4FDirectoryText:
 	text "Let Us Pump Up"
 	line "Your #mon!"
 
-	para "4F MEDICINE BOX"
+	para "4F Medicine Box"
 	done
 
 GoldenrodDeptStore4F_MapEvents:

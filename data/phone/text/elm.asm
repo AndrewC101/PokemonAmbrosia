@@ -44,7 +44,7 @@ ElmPhoneAssistantText:
 	para "Did you see my"
 	line "assistant? He's at"
 
-	para "the #mon CENTER"
+	para "the #mon Center"
 	line "in Violet City."
 	done
 

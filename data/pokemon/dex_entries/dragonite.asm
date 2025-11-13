@@ -7,4 +7,4 @@
 
 	page "Armoured at"
 	next "full HP. Can use"
-	next "OUTRAGE freely.@"
+	next "Outrage freely.@"

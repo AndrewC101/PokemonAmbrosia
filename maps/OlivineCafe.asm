@@ -33,7 +33,7 @@ OlivineCafeStrengthSailorText_GotStrength:
 	text "I see you've"
 	line "gotten more buff"
 	cont "since I gave you"
-	cont "STRENGTH."
+	cont "Strength."
 
 	para "You need to visit"
 	line "Battle Frontier!"
@@ -47,7 +47,7 @@ OlivineCafeStrengthSailorText_NoStrength:
 	line "back breaking work"
 	cont "are tough."
 	para "Good thing I have"
-	line "STRENGTH."
+	line "Strength."
 	done
 
 OlivineCafeFishingGuruText:
@@ -65,7 +65,7 @@ OlivineCafeFishingGuruText:
 
 OlivineCafeSailorText:
 	text "Aww man, I need"
-	line "more PROTEIN."
+	line "more Protein."
 
 	para "This is the"
 	line "best place for"

@@ -1500,7 +1500,7 @@ GoldDicePrizeText:
 
 HoenWarRolePlayFinalText:
     text "You can use the"
-    line "GOLD DICE to"
+    line "Gold Dice to"
     cont "meet up with and"
     cont "play games with"
     cont "me anytime."

@@ -1700,7 +1700,7 @@ StrengthText:
     done
 
 GotStrengthText:
-    text "That is STRENGTH."
+    text "That is Strength."
 
     para "With it your"
     line "#mon can move"

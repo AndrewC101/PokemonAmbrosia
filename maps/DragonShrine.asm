@@ -654,16 +654,16 @@ DragonShrineIUnderstandText:
 
 DragonShrineHereRisingBadgeText:
 	text "Here, this is the"
-	line "RISINGBADGE…"
+	line "Risingbadge…"
 	done
 
 DragonShrinePlayerReceivedRisingBadgeText:
 	text "<PLAYER> received"
-	line "RISINGBADGE."
+	line "Risingbadge."
 	done
 
 DragonShrineRisingBadgeExplanationText:
-    text "The RISINGBADGE"
+    text "The Risingbadge"
     line "lets you train"
     cont "#mon up to"
     cont "level 70."
@@ -674,7 +674,7 @@ DragonShrineRisingBadgeExplanationText:
 
 	para "It also enables"
 	line "#mon to use"
-	cont "WATERFALL outside"
+	cont "Waterfall outside"
 	cont "of battle."
 	done
 

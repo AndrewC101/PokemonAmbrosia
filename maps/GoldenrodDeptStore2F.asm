@@ -76,8 +76,8 @@ GoldenrodDeptStore2FDirectoryText:
 	text "Your Travel"
 	line "Companion"
 
-	para "2F TRAINER'S"
-	line "   MARKET"
+	para "2F Trainer's"
+	line "   Market"
 	done
 
 GoldenrodDeptStore2F_MapEvents:

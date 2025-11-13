@@ -39,7 +39,7 @@ Route16GateOfficerText:
 
 	para "It's all downhill"
 	line "and you need a"
-	cont "BICYCLE."
+	cont "Bicycle."
 
 	para "But be on the"
 	line "lookout for"

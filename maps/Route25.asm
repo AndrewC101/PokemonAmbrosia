@@ -484,12 +484,12 @@ CooltrainermKevinAfterBattleText:
 	done
 
 BillsHouseSignText:
-	text "SEA COTTAGE"
-	line "BILL'S HOUSE"
+	text "Sea Cottage"
+	line "Bill's House"
 	done
 
 UnusedBillsHouseSignText: ; unreferenced
-	text "BILL'S HOUSE"
+	text "Bill's House"
 	done
 
 Route25FieldMon1Script:

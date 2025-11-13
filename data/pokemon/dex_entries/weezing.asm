@@ -6,5 +6,5 @@
 	next "kill all around."
 
 	page "Lowers foes"
-	next "ACCURACY. Has"
+	next "Accuracy. Has"
 	next "a final attack.@"

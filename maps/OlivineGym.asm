@@ -165,12 +165,12 @@ Jasmine_BetterTrainer:
 
 Text_ReceivedMineralBadge:
 	text "<PLAYER> received"
-	line "MINERALBADGE."
+	line "Mineralbadge."
 	done
 
 Jasmine_BadgeSpeech:
     text "With the"
-    line "MINERALBADGE"
+    line "Mineralbadge"
     cont "you can now train"
     cont "#mon up to"
     cont "level 55."
@@ -219,7 +219,7 @@ JasmineBeatChuckText:
 
 Jasmine_IronTailSpeech:
 	text "That TM teaches"
-	line "IRON HEAD."
+	line "Iron Head."
 
 	para "It can cause"
 	line "the enemy to"

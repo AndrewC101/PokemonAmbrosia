@@ -105,8 +105,8 @@ PokecomCenterAdminOfficeMobileComputer3:
 	jumptext PokecomCenterAdminOfficeMobileComputer3Text
 
 PokecomCenterAdminOfficeMobileScientist1Text:
-	text "#COM CENTER and"
-	line "MOBILE CENTER were"
+	text "#COM Center and"
+	line "MOBILE Center were"
 
 	para "built to satisfy"
 	line "demands for trades"
@@ -157,7 +157,7 @@ PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub:
 	line "CLUB upstairs in"
 
 	para "any #mon"
-	line "CENTER."
+	line "Center."
 
 	para "There, you can"
 	line "battle or trade"
@@ -175,17 +175,17 @@ PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub:
 	done
 
 PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter:
-	text "To use the TRADE"
-	line "CORNER or read the"
+	text "To use the Trade"
+	line "Corner or read the"
 
-	para "#mon NEWS, you"
+	para "#mon News, you"
 	line "need to phone the"
-	cont "MOBILE CENTER."
+	cont "Mobile Center."
 
 	para "You must register"
-	line "at the MOBILE"
+	line "at the Mobile"
 
-	para "CENTER before"
+	para "Center before"
 	line "connecting there."
 	done
 
@@ -239,8 +239,8 @@ PokecomCenterAdminOfficeMobileComputer3Text:
 
 	para "<……> <……> <……>"
 
-	para "To the #COM"
-	line "CENTER staff…"
+	para "To the #com"
+	line "Center staff…"
 
 	para "Wireless communi-"
 	line "cation has enabled"

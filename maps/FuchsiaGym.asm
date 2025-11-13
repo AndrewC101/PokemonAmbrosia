@@ -278,13 +278,13 @@ JanineText_ToughOne:
 	para "Our battle helped"
 	line "me get stronger."
 
-	para "Here's SOULBADGE."
+	para "Here's Soulbadge."
 	line "Take it."
 	done
 
 Text_ReceivedSoulBadge:
 	text "<PLAYER> received"
-	line "SOULBADGE."
+	line "Soulbadge."
 	done
 
 JanineText_ToxicSpeech:

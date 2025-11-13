@@ -305,7 +305,7 @@ VioletCityYoungsterText:
 	cont "place behind the"
 	cont "Gym."
 
-	para "You need SURF"
+	para "You need Surf"
 	line "to get there."
 
 	para "When the Hoenn"

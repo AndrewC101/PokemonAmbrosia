@@ -54,7 +54,7 @@ CeladonDeptStore4FDirectoryText:
 	text "Express Yourself"
 	line "With Gifts!"
 
-	para "4F: WISEMAN GIFTS"
+	para "4F: Wise Gifts"
 	done
 
 CeladonDeptStore4F_MapEvents:

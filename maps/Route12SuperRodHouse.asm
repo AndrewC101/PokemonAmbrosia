@@ -65,7 +65,7 @@ GiveSuperRodText:
 
 GaveSuperRodText:
 	text "With the power of"
-	line "the SUPER ROD you"
+	line "the Super Rod you"
 	cont "shall swim freely"
 	cont "in a cosmic sea of"
 	cont "dreams and"

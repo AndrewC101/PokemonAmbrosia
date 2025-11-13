@@ -206,12 +206,12 @@ PryceWinText:
 
 Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
-	line "GLACIERBADGE."
+	line "Glacierbadge."
 	done
 
 PryceText_GlacierBadgeSpeech:
     text "With the"
-    line "GLACIERBADGE"
+    line "Glacierbadge"
     cont "you can now train"
     cont "#mon up to"
     cont "level 60."
@@ -225,7 +225,7 @@ PryceText_GlacierBadgeSpeech:
 
 PryceText_IcyWindSpeech:
 	text "That TM contains"
-	line "ICY WIND."
+	line "Icy Wind."
 
 	para "It always reminds"
 	line "me of how fragile"

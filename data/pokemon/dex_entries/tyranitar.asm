@@ -5,6 +5,6 @@
 	next "mighty hands can"
 	next "shake the earth."
 
-	page "Summons SANDSTORM"
+	page "Summons Sandstorm"
 	next "on switch. Attack"
 	next "boost on KO.@"

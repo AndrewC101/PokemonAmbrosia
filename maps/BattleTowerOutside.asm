@@ -52,7 +52,7 @@ BattleTowerOutsideYoungsterText:
 	cont "you will win."
 
 	para "Once I even"
-	line "won a LEFTOVERS."
+	line "won a Leftovers."
 
 	para "It's all random."
 	done

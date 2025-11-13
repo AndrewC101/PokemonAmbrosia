@@ -13,7 +13,7 @@ ToddDefeatedMonText:
 	text "I've heard people"
 	line "talking about some"
 	cont "super secret item,"
-	cont "an EXP SHARE."
+	cont "an Exp Share."
 	para "Have you ever"
 	line "heard of this?"
 	para "I think I need"
@@ -63,7 +63,7 @@ ToddDepartmentStoreBargainSaleText:
 
 ToddSavingUpForBargainSaleText:
 	text "I'm saving up for"
-	line "some PP UP."
+	line "some PP Max."
 	para "I want to max out"
 	line "all my #mon"
 	cont "moves."

@@ -554,7 +554,7 @@ SchoolboyJackTradeMonText:
 	para "For example..."
 
 	para "Did you know"
-	line "LEECH SEED won't"
+	line "Leech Seed won't"
 	cont "work if the"
 	cont "enemy is more"
 	cont "than twice your"
@@ -672,9 +672,9 @@ NationalParkBattleNoticeText:
 NationalParkTrainerTipsText:
 	text "Trainer Tips"
 
-	para "Print out MAIL by"
+	para "Print out Mail by"
 	line "opening it then"
-	cont "pressing START."
+	cont "pressing Start."
 	done
 
 NationalParkFieldMon1Script:

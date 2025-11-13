@@ -47,5 +47,5 @@ TiffanyGiftText:
 
 TiffanyPackFullText:
 	text "There is no room"
-	line "in your PACK."
+	line "in your Pack."
 	done

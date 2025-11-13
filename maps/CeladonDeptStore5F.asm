@@ -45,7 +45,7 @@ CeladonDeptStore5FGentlemanText:
 	cont "to make my money"
 	cont "work for me."
 
-	para "CALCIUM raises"
+	para "Calcium raises"
 	line "two stats instead"
 	cont "of one."
 
@@ -56,7 +56,7 @@ CeladonDeptStore5FGentlemanText:
 CeladonDeptStore5FSailorText:
 	text "I need more!"
 
-	para "More PROTEIN!!!"
+	para "More Protein!!!"
 
 	para "It's time for my"
 	line "pre workout!"
@@ -85,7 +85,7 @@ CeladonDeptStore5FTeacherText:
 	done
 
 CeladonDeptStore5FDirectoryText:
-	text "5F: DRUG Store"
+	text "5F: Drug Store"
 	done
 
 CeladonDeptStore5F_MapEvents:

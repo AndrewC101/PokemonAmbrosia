@@ -4937,7 +4937,7 @@ Unknown_112089:
 Unknown_11209e:
 	db "HELO ", 0
 Unknown_1120a4:
-	db "MAIL FROM:<", 0
+	db "Mail From:<", 0
 Unknown_1120b0:
 	db "RCPT TO:<", 0
 Unknown_1120ba:

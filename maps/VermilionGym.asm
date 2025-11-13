@@ -229,12 +229,12 @@ LtSurgeWinText:
 
 ReceivedThunderBadgeText:
 	text "<PLAYER> received"
-	line "THUNDERBADGE."
+	line "Thunderbadge."
 	done
 
 LtSurgeThunderBadgeText:
 	text "Wear the"
-	line "THUNDERBADGE"
+	line "Thunderbadge"
 	cont "with pride."
 
 	para "It proves your"

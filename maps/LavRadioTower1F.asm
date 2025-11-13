@@ -56,7 +56,7 @@ LavRadioTower1FGentlemanScript:
 	end
 
 .expncardname
-	db "EXPN CARD@"
+	db "Expn Card@"
 
 LavRadioTower1FSuperNerd2Script:
     jumptextfaceplayer LavRadioTower1FSuperNerd2Text
@@ -71,8 +71,8 @@ LavRadioTower1FReferenceLibrary: ; unreferenced
 	jumptext LavRadioTower1FReferenceLibraryText
 
 LavTowerPreE4Text:
-	text "You need an EXPN"
-	line "CARD to tune into"
+	text "You need an Expn"
+	line "Card to tune into"
 	cont "Kanto radio."
 	para "But we are all out"
 	line "of stock right"
@@ -89,7 +89,7 @@ LavRadioTower1FReceptionistText:
     line "for some dead"
     cont "#mon you"
     cont "need to go to"
-    cont "the SOUL HOUSE."
+    cont "the Soul House."
 
     para "If you're looking"
     line "for some good"
@@ -205,21 +205,21 @@ LavRadioTower1FSuperNerd2Text:
 	done
 
 LavRadioTower1FDirectoryText:
-	text "1F RECEPTION"
-	line "2F SALES"
+	text "1F Reception"
+	line "2F Sales"
 
-	para "3F PERSONNEL"
-	line "4F PRODUCTION"
+	para "3F Personnel"
+	line "4F Production"
 
-	para "5F DIRECTOR'S"
-	line "   OFFICE"
+	para "5F Director's"
+	line "   Office"
 	done
 
 LavRadioTower1FPokeFluteSignText:
 	text "Perk Up #mon"
 	line "with Mellow Sounds"
 
-	para "of the # FLUTE"
+	para "of the # Flute"
 	line "on CHANNEL 20"
 	done
 

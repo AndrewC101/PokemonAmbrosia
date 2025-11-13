@@ -51,12 +51,12 @@ Route32Pokecenter1FFishingGuruText_Question:
 	line "fishing? How"
 	cont "about you?"
 
-	para "My ROD may be"
+	para "My Rod may be"
 	line "old but it works"
 	cont "perfectly well!"
 
 	para "Do you like my"
-	line "ROD?"
+	line "Rod?"
 	done
 
 Route32Pokecenter1FFishingGuruText_Yes:
@@ -84,7 +84,7 @@ Route32Pokecenter1FFishingGuruText_No:
 Route32Pokecenter1FFishingGuruText_After:
 	text "Are you getting"
 	line "enjoyment from"
-	cont "my OLD ROD?"
+	cont "my Old Rod?"
 
 	para "You can catch"
 	line "all sorts of"
@@ -98,7 +98,7 @@ Route32Pokecenter1FCooltrainerFText:
 
 	para "I needed a"
 	line "#mon that"
-	cont "can SURF."
+	cont "can Surf."
 
 	para "I'm sure there's"
 	line "some secret path"

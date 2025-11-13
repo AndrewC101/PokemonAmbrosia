@@ -310,7 +310,7 @@ MistyLossText:
 	line "you are skilled…"
 
 	para "Here you go. It's"
-	line "CASCADEBADGE."
+	line "Cascadebadge."
 	done
 
 MistyWinText:
@@ -321,12 +321,12 @@ MistyWinText:
 	line "to admit it."
 
 	para "Here you go. It's"
-	line "CASCADEBADGE."
+	line "Cascadebadge."
 	done
 
 ReceivedCascadeBadgeText:
 	text "<PLAYER> received"
-	line "CASCADEBADGE."
+	line "Cascadebadge."
 	done
 
 MistyFightDoneText:

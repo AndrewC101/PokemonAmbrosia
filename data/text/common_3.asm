@@ -530,7 +530,7 @@ _HerbalLadyThanksText::
 	done
 
 _HerbalLadyPackFullText::
-	text "Oh? Your PACK is"
+	text "Oh? Your Pack is"
 	line "full, dear."
 	done
 
@@ -568,7 +568,7 @@ _BargainShopThanksText::
 	done
 
 _BargainShopPackFullText::
-	text "Uh-oh, your PACK"
+	text "Uh-oh, your Pack"
 	line "is chock-full."
 	done
 
@@ -723,10 +723,10 @@ _SlotsDarnText::
 
 _MobileStadiumEntryText::
 	text "Data for use in"
-	line "the MOBILE STADIUM"
+	line "the Mobile Stadium"
 
 	para "of the N64 #mon"
-	line "STADIUM 2 can be"
+	line "Stadium 2 can be"
 	cont "read here."
 
 	para "Read the data?"
@@ -737,10 +737,10 @@ _MobileStadiumSuccessText::
 	line "complete."
 
 	para "We hope you enjoy"
-	line "MOBILE STADIUM"
+	line "Mobile Stadium"
 
 	para "battles in the N64"
-	line "#mon STADIUM 2."
+	line "#mon Stadium 2."
 
 	para ""
 	done
@@ -751,12 +751,12 @@ _MainMenuTimeUnknownText::
 
 _DeleteSavedLoginPasswordText::
 	text "Delete the saved"
-	line "LOG-IN PASSWORD?"
+	line "Login Password?"
 	done
 
 _DeletedTheLoginPasswordText::
-	text "Deleted the LOG-IN"
-	line "PASSWORD."
+	text "Deleted the Login"
+	line "Password."
 	done
 
 _MobilePickThreeMonForBattleText::
@@ -783,13 +783,13 @@ _MobileOnlyThreeMonMayEnterText::
 	prompt
 
 _MobileCardFolderIntro1Text::
-	text "The CARD FOLDER"
+	text "The Card Folder"
 	line "stores your and"
 
 	para "your friends'"
-	line "CARDS."
+	line "Cards."
 
-	para "A CARD contains"
+	para "A Card contains"
 	line "information like"
 
 	para "the person's name,"
@@ -800,13 +800,13 @@ _MobileCardFolderIntro1Text::
 	done
 
 _MobileCardFolderIntro2Text::
-	text "This is your CARD."
+	text "This is your Card."
 
 	para "Once you've"
 	line "entered your phone"
 
 	para "number, you can"
-	line "trade CARDS with"
+	line "trade Cards with"
 	cont "your friends."
 
 	para ""
@@ -814,14 +814,14 @@ _MobileCardFolderIntro2Text::
 
 _MobileCardFolderIntro3Text::
 	text "If you have your"
-	line "friend's CARD, you"
+	line "friend's Card, you"
 
 	para "can use it to make"
 	line "a call from a"
 
 	para "mobile phone on"
 	line "the 2nd floor of a"
-	cont "#mon CENTER."
+	cont "#mon Center."
 
 	para ""
 	done
@@ -830,27 +830,27 @@ _MobileCardFolderIntro4Text::
 	text "To safely store"
 	line "your collection of"
 
-	para "CARDS, you must"
-	line "set a PASSCODE for"
-	cont "your CARD FOLDER."
+	para "Cards, you must"
+	line "set a Passcode for"
+	cont "your Card Folder."
 
 	para ""
 	done
 
 _MobileCardFolderAskDeleteText::
-	text "If the CARD FOLDER"
+	text "If the Card Folder"
 	line "is deleted, all"
 
-	para "its CARDS and the"
-	line "PASSCODE will also"
+	para "its cards and the"
+	line "Passcode will also"
 	cont "be deleted."
 
 	para "Beware--a deleted"
-	line "CARD FOLDER can't"
+	line "Card Folder can't"
 	cont "be restored."
 
 	para "Want to delete"
-	line "your CARD FOLDER?"
+	line "your Card Folder?"
 	done
 
 _MobileCardFolderDeleteAreYouSureText::
@@ -859,7 +859,7 @@ _MobileCardFolderDeleteAreYouSureText::
 	done
 
 _MobileCardFolderDeletedText::
-	text "The CARD FOLDER"
+	text "The Card Folder"
 	line "has been deleted."
 
 	para ""
@@ -867,7 +867,7 @@ _MobileCardFolderDeletedText::
 
 _MobileCardFolderAskOpenOldText::
 	text "There is an older"
-	line "CARD FOLDER from a"
+	line "Card Folder from a"
 	cont "previous journey."
 
 	para "Do you want to"
@@ -876,12 +876,12 @@ _MobileCardFolderAskOpenOldText::
 
 _MobileCardFolderAskDeleteOldText::
 	text "Delete the old"
-	line "CARD FOLDER?"
+	line "Card Folder?"
 	done
 
 _MobileCardFolderFinishRegisteringCardsText::
 	text "Finish registering"
-	line "CARDS?"
+	line "Cards?"
 	done
 
 _PhoneWrongNumberText::
@@ -916,7 +916,7 @@ _SpaceSpaceColonText:: ; unreferenced
 	done
 
 _PasswordAskResetText::
-	text "Select CONTINUE &"
+	text "Select Continue &"
 	line "reset settings."
 	prompt
 
@@ -1239,7 +1239,7 @@ _WaitButtonText::
 _BallSentToPCText::
 	text_ram wMonOrItemNameBuffer
 	text " was"
-	line "sent to BILL's PC."
+	line "sent to Bill's PC."
 	prompt
 
 _NewDexDataText::
@@ -1287,14 +1287,14 @@ _ItemCantUseOnMonText::
 	prompt
 
 _RepelUsedEarlierIsStillInEffectText::
-	text "The REPEL used"
+	text "The Repel used"
 	line "earlier is still"
 	cont "in effect."
 	prompt
 
 _PlayedFluteText::
 	text "Played the #"
-	line "FLUTE."
+	line "Flute."
 
 	para "Now, that's a"
 	line "catchy tune!"
@@ -1307,7 +1307,7 @@ _FluteWakeUpText::
 
 Text_PlayedPokeFlute::
 	text "<PLAYER> played the"
-	line "# FLUTE.@"
+	line "# Flute.@"
 	text_promptbutton
 	text_end
 
@@ -1418,7 +1418,7 @@ _ItemCantGetOnText::
 	prompt
 
 _BallBoxFullText::
-	text "The #mon BOX"
+	text "The #mon Box"
 	line "is full. That"
 	cont "can't be used now."
 	prompt
@@ -1431,22 +1431,22 @@ _ItemUsedText::
 	done
 
 _ExpShareToggleOn::
-	text "The EXP.SHARE was"
+	text "The Exp Share was"
 	line "turned on."
 	prompt
 
 _ExpShareToggleOff::
-	text "The EXP.SHARE was"
+	text "The Exp Share was"
 	line "turned off."
 	prompt
 
 _RunningShoesOn::
-	text "RUNNING SHOES"
+	text "Running Shoes"
 	line "are put on."
 	prompt
 
 _RunningShoesOff::
-	text "RUNNING SHOES"
+	text "Running Shoes"
 	line "are taken off."
 	prompt
 

@@ -1414,7 +1414,7 @@ MultiverseHeroes2Text:
     para "You then fight"
     line "together and"
     cont "take out"
-    cont "NIGHTMARE."
+    cont "Nightmare."
 
     para "At his full"
     line "power MERLIN"

@@ -5,6 +5,6 @@
 	next "it fly faster,"
 	next "yet more silent."
 
-	page "EVASION boost"
+	page "Evasion boost"
 	next "on switch. Has"
 	next "boosted crits.@"

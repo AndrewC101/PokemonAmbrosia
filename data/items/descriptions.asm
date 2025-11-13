@@ -490,7 +490,7 @@ OldRodDesc:
 	next "fish for #mon.@"
 
 GoodRodDesc:
-	db   "A good ROD for"
+	db   "A Good Rod for"
 	next "catching #mon.@"
 
 SilverLeafDesc:
@@ -498,7 +498,7 @@ SilverLeafDesc:
 	next "colored leaf.@"
 
 SuperRodDesc:
-	db   "The best ROD for"
+	db   "The best Rod for"
 	next "catching #mon.@"
 
 PPMaxDesc:
@@ -594,7 +594,7 @@ MintBerryDesc:
 	next "for sleep. (HOLD)@"
 
 RedApricornDesc:
-	db   "A red APRICORN.@"
+	db   "A red Apricorn.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"
@@ -609,7 +609,7 @@ SilverPowderDesc:
 	next "moves. (HOLD)@"
 
 BluApricornDesc:
-	db   "A blue APRICORN.@"
+	db   "A blue Apricorn.@"
 
 FlameOrbDesc:
 	db   "Inflicts BRN on"
@@ -620,10 +620,10 @@ AmuletCoinDesc:
 	next "earnings. (HOLD)@"
 
 YlwApricornDesc:
-	db   "A yellow APRICORN.@"
+	db   "A yellow Apricorn.@"
 
 GrnApricornDesc:
-	db   "A green APRICORN.@"
+	db   "A green Apricorn.@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"
@@ -638,14 +638,14 @@ TwistedSpoonDesc:
 	next "type moves. (HOLD)@"
 
 WhtApricornDesc:
-	db   "A white APRICORN.@"
+	db   "A white Apricorn.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (HOLD)@"
 
 BlkApricornDesc:
-	db   "A black APRICORN."
+	db   "A black Apricorn."
 	next "@"
 
 HeavyBootsDesc:
@@ -653,7 +653,7 @@ HeavyBootsDesc:
 	next "to field hazards.@"
 
 PnkApricornDesc:
-	db   "A pink APRICORN."
+	db   "A pink Apricorn."
 	next "@"
 
 BlackGlassesDesc:
@@ -871,7 +871,7 @@ HeavyBallDesc:
 	next "ing heavy #mon.@"
 
 FlowerMailDesc:
-	db   "Flower-print MAIL."
+	db   "Flower-print Mail."
 	next "(HOLD)@"
 
 LevelBallDesc:
@@ -880,7 +880,7 @@ LevelBallDesc:
 
 LureBallDesc:
 	db   "A Ball for #mon"
-	next "hooked by a ROD.@"
+	next "hooked by a Rod.@"
 
 FastBallDesc:
 	db   "A Ball for catch-"
@@ -959,39 +959,39 @@ BrickPieceDesc:
 	next "tile.@"
 
 SurfMailDesc:
-	db   "LAPRAS-print MAIL."
+	db   "LAPRAS-print Mail."
 	next "(HOLD)@"
 
 LiteBlueMailDesc:
-	db   "DRATINI-print"
-	next "MAIL. (HOLD)@"
+	db   "Dratini-print"
+	next "Mail. (HOLD)@"
 
 PortraitMailDesc:
-	db   "MAIL featuring the"
+	db   "Mail featuring the"
 	next "holder's likeness.@"
 
 LovelyMailDesc:
-	db   "Heart-print MAIL."
+	db   "Heart-print Mail."
 	next "(HOLD)@"
 
 EonMailDesc:
-	db   "EEVEE-print MAIL."
+	db   "Eevee-print Mail."
 	next "(HOLD)@"
 
 MorphMailDesc:
-	db   "DITTO-print MAIL."
+	db   "Ditto-print Mail."
 	next "(HOLD)@"
 
 BlueSkyMailDesc:
-	db   "Sky-print MAIL."
+	db   "Sky-print Mail."
 	next "(HOLD)@"
 
 MusicMailDesc:
-	db   "NATU-print MAIL."
+	db   "Natu-print Mail."
 	next "(HOLD)@"
 
 MirageMailDesc:
-	db   "MEW-print MAIL."
+	db   "Mew-print Mail."
 	next "(HOLD)@"
 
 TeruSama25Desc:

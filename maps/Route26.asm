@@ -347,7 +347,7 @@ CooltrainermJakeSeenText:
 	line "fully evolved?"
 	para "That is your"
 	line "mistake!"
-	para "EVIOLITE is my"
+	para "Eviolite is my"
 	line "secret to victory."
 	done
 

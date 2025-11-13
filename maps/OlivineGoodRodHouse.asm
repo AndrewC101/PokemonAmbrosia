@@ -45,7 +45,7 @@ OfferGoodRodText:
 	cont "you fish!?"
 
 	para "Then you need a"
-	line "GOOD ROD!"
+	line "Good Rod!"
 
 	para "A rod guaranteed"
 	line "to catch other"
@@ -55,7 +55,7 @@ OfferGoodRodText:
 	line "today, for free!"
 
 	para "Would you like a"
-	line "GOOD ROD?"
+	line "Good Rod?"
 	done
 
 GiveGoodRodText:
@@ -78,7 +78,7 @@ DontWantGoodRodText:
 
 HaveGoodRodText:
 	text "If you enjoy the"
-	line "GOOD ROD please"
+	line "Good Rod please"
 	cont "leave a review."
 	done
 

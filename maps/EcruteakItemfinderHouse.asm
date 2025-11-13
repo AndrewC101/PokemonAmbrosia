@@ -90,7 +90,7 @@ ItemfinderExplanationText:
 	para "that aren't ob-"
 	line "vious."
 
-	para "Use ITEMFINDER to"
+	para "Use Itemfinder to"
 	line "check if there is"
 
 	para "an item on the"

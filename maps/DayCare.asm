@@ -79,8 +79,8 @@ Text_GrampsLookingForYou:
 	done
 
 Text_DayCareManTalksAboutEggTicket: ; unreferenced
-	text "I'm the DAY-CARE"
-	line "MAN."
+	text "I'm the Day-Care"
+	line "Man."
 
 	para "There's something"
 	line "new in Goldenrod"
@@ -102,11 +102,11 @@ Text_DayCareManTalksAboutEggTicket: ; unreferenced
 	done
 
 DayCareManText_GiveOddEgg:
-	text "I'm the DAY-CARE"
-	line "MAN."
+	text "I'm the Day-Care"
+	line "Man."
 
 	para "Do you know about"
-	line "EGGS?"
+	line "Eggs?"
 
 	para "I was raising"
 	line "#mon with my"

@@ -5,6 +5,6 @@
 	next "hunter with"
 	next "primal power."
 
-	page "HYPER BEAM"
+	page "Hyper Beam"
 	next "does not need"
 	next "to recharge.@"

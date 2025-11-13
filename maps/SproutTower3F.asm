@@ -306,7 +306,7 @@ SageLiTakeThisFlashText:
 	done
 
 SageLiFlashExplanationText:
-	text "FLASH is the"
+	text "Flash is the"
 	line "manifestation of"
 	cont "ones will to"
 	cont "reject the"
@@ -423,7 +423,7 @@ SageNealSeenText:
 	done
 
 SageNealBeatenText:
-	text "FLASH shall no"
+	text "Flash shall no"
 	line "doubt be yours."
 	done
 

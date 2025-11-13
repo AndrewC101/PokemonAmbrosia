@@ -248,7 +248,7 @@ ChucksWifeGiveHMText:
 	done
 
 ChucksWifeFlySpeechText:
-	text "With FLY you can"
+	text "With fly you can"
 	line "instantly return"
 	cont "to any place you"
 	cont "have been before."
@@ -263,7 +263,7 @@ ChucksWifeChubbyText:
 	done
 
 CianwoodCityYoungsterText:
-	text "If you use FLY,"
+	text "If you use fly,"
 	line "you can get back"
 
 	para "to Olivine"

@@ -247,7 +247,7 @@ VermilionPortAskBoardingText:
 
 VermilionPortAskTicketText:
 	text "May I see your"
-	line "S.S.TICKET?"
+	line "S.S.Ticket?"
 	done
 
 VermilionPortComeAgainText:
@@ -257,7 +257,7 @@ VermilionPortComeAgainText:
 
 VermilionPortSSTicketText:
 	text "<PLAYER> flashed"
-	line "the S.S.TICKET."
+	line "the S.S.Ticket."
 
 	para "That's it."
 	line "Thank you!"
@@ -266,15 +266,15 @@ VermilionPortSSTicketText:
 VermilionPortNoTicketText:
 	text "<PLAYER> tried to"
 	line "show the S.S."
-	cont "TICKET…"
+	cont "Ticket…"
 
-	para "…But no TICKET!"
+	para "…But no Ticket!"
 
 	para "Sorry!"
 	line "You may board only"
 
 	para "if you have an"
-	line "S.S.TICKET."
+	line "S.S.Ticket."
 	done
 
 VermilionPortSailMondayText:

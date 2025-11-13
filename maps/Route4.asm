@@ -114,7 +114,7 @@ Route4HiddenUltraBall:
 BirdKeeperHankSeenText:
 	text "When Hoenn attacks"
 	line "I'll use my birds"
-	cont "to FLY people to"
+	cont "to fly people to"
 	cont "Johto."
 	para "At a small fee of"
 	line "course."

@@ -1,5 +1,5 @@
 BuenaPhoneMorningAnswerText:
-	text "Hi, this is BUENA…"
+	text "Hi, this is Buena…"
 
 	para "Oh! Good morning,"
 	line "<PLAY_G>!"
@@ -9,15 +9,15 @@ BuenaPhoneMorningAnswerText:
 	done
 
 BuenaPhoneDayAnswerText:
-	text "Hi, this is BUENA…"
+	text "Hi, this is Buena…"
 	line "Oh! Hi, <PLAY_G>!"
 
 	para "Do you tune into"
-	line "BUENA's show?"
+	line "Buena's show?"
 	done
 
 BuenaPhoneMidnightAnswerText:
-	text "This is BUENA."
+	text "This is Buena."
 	line "I can't come to"
 
 	para "the phone right"
@@ -26,7 +26,7 @@ BuenaPhoneMidnightAnswerText:
 	para "If you want to"
 	line "chat, tune into"
 
-	para "BUENA's PASSWORD"
+	para "Buena's Password"
 	line "on the radio and"
 
 	para "give me a call"
@@ -34,7 +34,7 @@ BuenaPhoneMidnightAnswerText:
 	done
 
 BuenaPhoneNiteAnswerText:
-	text "Hi, this is BUENA…"
+	text "Hi, this is Buena…"
 	line "Oh! Hi, <PLAY_G>!"
 
 	para "I just got off"
@@ -46,7 +46,7 @@ BuenaPhoneNiteAnswerText:
 
 BuenaPhoneMorningText:
 	text "<PLAY_G>!"
-	line "Hi, it's BUENA!"
+	line "Hi, it's Buena!"
 
 	para "I got up early, so"
 	line "I decided to call!"
@@ -54,7 +54,7 @@ BuenaPhoneMorningText:
 
 BuenaPhoneDayText:
 	text "<PLAY_G>!"
-	line "Hi, it's BUENA!"
+	line "Hi, it's Buena!"
 
 	para "I needed someone"
 	line "to chat with!"
@@ -62,7 +62,7 @@ BuenaPhoneDayText:
 
 BuenaPhoneMidnightText:
 	text "<PLAY_G>!"
-	line "Hi, it's BUENA!"
+	line "Hi, it's Buena!"
 
 	para "I'm just on my"
 	line "break."
@@ -70,7 +70,7 @@ BuenaPhoneMidnightText:
 
 BuenaPhoneNiteText:
 	text "<PLAY_G>!"
-	line "Hi, it's BUENA!"
+	line "Hi, it's Buena!"
 
 	para "I couldn't sleep,"
 	line "so I called you."
@@ -167,7 +167,7 @@ BuenaPhoneStressedFromWorkText:
 	para "ate a ton of junk"
 	line "food!"
 
-	para "MARY and I have"
+	para "Mary and I have"
 	line "this deal about"
 	cont "losing weight…"
 
@@ -179,9 +179,9 @@ BuenaPhoneStressedFromWorkText:
 	para "This has to be a"
 	line "total secret!"
 
-	para "MARY weighs…"
+	para "Mary weighs…"
 
-	para "Aiyee! M-MARY!"
+	para "Aiyee! M-Mary!"
 
 	para "Uh… Um… I… Sorry,"
 	line "wrong number!"
@@ -226,7 +226,7 @@ BuenaPhoneGotAColdText:
 
 	para "I'll catch you on"
 	line "the fly. This has"
-	cont "been BUENA!"
+	cont "been Buena!"
 	done
 
 BuenaPhoneRadioCardQuestionsText:
@@ -254,7 +254,7 @@ BuenaPhonePikachuFanClubText:
 	line "more people are"
 
 	para "taking part in my"
-	line "PASSWORD show."
+	line "Password show."
 
 	para "But when Pikachu"
 	line "was the password,"
@@ -447,7 +447,7 @@ BuenaPhoneBenAndFernText:
 
 BuenaPhoneGoingShoppingText:
 	text "I'm going shopping"
-	line "with MARY and LILY"
+	line "with Mary and Lily"
 	cont "soon."
 
 	para "It'll be great if"

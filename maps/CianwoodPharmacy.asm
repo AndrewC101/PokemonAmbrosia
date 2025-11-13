@@ -74,11 +74,11 @@ PharmacistGiveSecretpotionText:
 
 ReceivedSecretpotionText:
 	text "<PLAYER> received"
-	line "SECRETPOTION."
+	line "Secretpotion."
 	done
 
 PharmacistDescribeSecretpotionText:
-	text "My SECRETPOTION is"
+	text "My Secretpotion is"
 	line "a miracle wonder"
 	cont "cure all."
 

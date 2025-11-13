@@ -6,5 +6,5 @@
 	next "collecting honey."
 
 	page "Has increased"
-	next "ACCURACY. Weak"
+	next "Accuracy. Weak"
 	next "moves boosted.@"

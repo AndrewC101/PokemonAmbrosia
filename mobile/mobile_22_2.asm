@@ -526,7 +526,7 @@ IncorrectPasscodeText:
 	text_end
 
 UnknownText_0x8b64c:
-	; CARD FOLDER open.@ @
+	; Card Folder open.@ @
 	text_far _CardFolderOpenText
 	text_asm
 	ld de, SFX_TWINKLE

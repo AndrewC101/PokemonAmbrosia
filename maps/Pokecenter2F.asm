@@ -757,8 +757,8 @@ Text_BattleReceptionistIntro:
 	done
 
 Text_TradeReceptionistIntro:
-	text "Welcome to CABLE"
-	line "TRADE CENTER."
+	text "Welcome to cable"
+	line "trade Center."
 
 	para "You may trade your"
 	line "#mon here with"
@@ -859,7 +859,7 @@ Text_RejectMonWithMail:
 	line "@"
 	text_ram wStringBuffer1
 	text " that"
-	cont "has MAIL with you."
+	cont "has Mail with you."
 	prompt
 
 Text_TimeCapsuleClosed:
@@ -870,7 +870,7 @@ Text_TimeCapsuleClosed:
 
 Text_TradeRoomClosed:
 	text "I'm sorry--the"
-	line "TRADE MACHINE is"
+	line "Trade Machine is"
 	cont "being adjusted."
 	done
 
@@ -902,7 +902,7 @@ Text_MysteryGiftDeliveryGuy_NoRoom:
 	line "space for this."
 
 	para "Stop in at any"
-	line "#mon CENTER"
+	line "#mon Center"
 
 	para "across the country"
 	line "to pick it up."
@@ -934,7 +934,7 @@ Text_BrokeStadiumRules:
 	line "please bring six"
 
 	para "different #mon,"
-	line "excluding EGGS."
+	line "excluding Eggs."
 
 	para "The six #mon"
 	line "must be different."

@@ -378,7 +378,7 @@ AzaleaTownTeacherText:
 	cont "this town."
 
 	para "He makes them from"
-	line "APRICORN and"
+	line "Apricorn and"
 	cont "supplies them"
 	cont "across Johto."
 	para "Each mart has"
@@ -449,7 +449,7 @@ AzaleaTownSignText:
 	done
 
 KurtsHouseSignText:
-	text "KURT'S HOUSE"
+	text "Kurt's house"
 	done
 
 AzaleaGymSignText:
@@ -896,7 +896,7 @@ YuGiOhHenshin3Text:
     line "and Seto into"
     cont "your realm."
 
-    para "You are NIGHTMARE."
+    para "You are Nightmare."
 
     para "The greatest"
     line "duelist."
@@ -1111,7 +1111,7 @@ YuGiOhYami3Text:
     cont "entity consumes"
     cont "their souls."
 
-    para "NIGHTMARE is born!"
+    para "Nightmare is born!"
 
     para "He pulls you both"
     line "into the shadow"
@@ -1131,7 +1131,7 @@ YuGiOhRolePlayFinalText:
 
     para "In the end..."
 
-    para "NIGHTMARE was"
+    para "Nightmare was"
     line "vanquished!"
 
     para "Atem and Seto"

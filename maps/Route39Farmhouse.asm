@@ -111,7 +111,7 @@ FarmerMText_SickCow:
 	cont "family."
 
 	para "She needs a"
-	line "GOLD BERRY!"
+	line "Gold Berry!"
 
 	para "But they are"
 	line "real rare."
@@ -145,7 +145,7 @@ FarmerMText_NoMoney:
 
 FarmerMText_NoRoom:
 	text "I reckon yer"
-	line "PACK's full."
+	line "Pack's full."
 	done
 
 FarmerMText_NoSale:
@@ -180,7 +180,7 @@ FarmerFText_InTrouble:
 
 FarmerFText_HealedMiltank:
 	text "You gave a rare"
-	line "GOLD BERRY to"
+	line "Gold Berry to"
 	cont "help us!"
 
 	para "You are a real"

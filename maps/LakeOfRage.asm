@@ -506,7 +506,7 @@ CooltrainerfLoisText:
 
 	para "All I remember"
 	line "are the colourful"
-	cont "CHOICE SPECS he"
+	cont "Choice Specs he"
 	cont "was wearing when"
 	cont "he left."
 
@@ -560,8 +560,8 @@ LakeOfRageSignText:
 	done
 
 FishingGurusHouseSignText:
-	text "FISHING GURU'S"
-	line "HOUSE"
+	text "Fishing Guru's"
+	line "House"
 	done
 
 LakeOfRageFieldMon1Script:

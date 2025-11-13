@@ -258,7 +258,7 @@ OakOpenMtSilverText:
 	line "Champion!"
 
 	para "Here, let me give"
-	line "your EXP.SHARE"
+	line "your Exp Share"
 	cont "my final upgrade."
 
 	para "There!"
@@ -367,9 +367,9 @@ OakYesKantoBadgesText:
 
 OaksAssistant1Text:
 	text "We are working"
-	line "closely with BILL"
+	line "closely with Bill"
 	cont "on adjustments"
-	cont "to the EXP SHARE."
+	cont "to the Exp Share."
 	done
 
 OaksAssistant2Text:

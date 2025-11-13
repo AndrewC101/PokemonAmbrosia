@@ -76,12 +76,12 @@ GoldenrodBikeShopClerkAgreedText:
 	line "and phone number,"
 
 	para "and here is your"
-	line "BICYCLE."
+	line "Bicycle."
 	done
 
 BorrowedABicycleText:
 	text "<PLAYER> received a"
-	line "BICYCLE."
+	line "Bicycle."
 	done
 
 GoldenrodBikeShopClerkFirstRateBikesText:
@@ -111,7 +111,7 @@ GoldenrodBikeShopClerkRefusedText:
 
 GoldenrodBikeShopBicycleText:
 	text "It's a shiny new"
-	line "BICYCLE!"
+	line "Bicycle!"
 	done
 
 GoldenrodBikeShop_MapEvents:

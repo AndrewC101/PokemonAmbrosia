@@ -6,4 +6,4 @@
 	next "foe asunder."
 
 	page "Boosted Speed"
-	next "and ACCURACY.@"
+	next "and Accuracy.@"

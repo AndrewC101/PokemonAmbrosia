@@ -175,12 +175,12 @@ ErikaBeatenText:
 	text "Well done."
 
 	para "I shall give you"
-	line "RAINBOWBADGE…"
+	line "Rainbowbadge…"
 	done
 
 PlayerReceivedRainbowBadgeText:
 	text "<PLAYER> received"
-	line "RAINBOWBADGE."
+	line "Rainbowbadge."
 	done
 
 ErikaExplainTMText:

@@ -136,7 +136,7 @@ BirdKeeperVance1MercyText:
     para "Oh I don't think"
     line "you will be able"
     cont "to get back"
-    cont "without STRENGTH."
+    cont "without Strength."
 
     para "You're in quite"
     line "the pickle."

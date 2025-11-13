@@ -526,7 +526,7 @@ KurtsHouseKurtBallsFromApricornsText:
 
 KurtsHouseKurtAskYouHaveAnApricornText:
 	text "KURT: You have an"
-	line "APRICORN for me?"
+	line "Apricorn for me?"
 
 	para "Fine! I'll turn it"
 	line "into a Ball."

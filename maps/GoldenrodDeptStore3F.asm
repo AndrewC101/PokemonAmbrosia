@@ -68,8 +68,8 @@ GoldenrodDeptStore3FDirectoryText:
 	text "Unlock your"
 	line "potential."
 
-	para "3F EVOLUTION"
-	line "   STONES"
+	para "3F Evolution"
+	line "   Stones"
 	done
 
 GoldenrodDeptStore3F_MapEvents:

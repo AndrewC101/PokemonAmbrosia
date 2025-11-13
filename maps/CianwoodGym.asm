@@ -265,7 +265,7 @@ ChuckLossText:
 	line "good fight!"
 
 	para "You have earned"
-	line "the STORMBADGE!"
+	line "the Stormbadge!"
 	done
 
 ChuckWinText:
@@ -276,11 +276,11 @@ ChuckWinText:
 
 GetStormBadgeText:
 	text "<PLAYER> received"
-	line "STORMBADGE."
+	line "Stormbadge."
 	done
 
 ChuckExplainBadgeText:
-    text "The STORMBADGE"
+    text "The Stormbadge"
     line "lets you train"
     cont "#mon up to"
     cont "level 55."

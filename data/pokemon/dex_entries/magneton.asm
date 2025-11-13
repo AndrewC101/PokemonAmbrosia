@@ -5,6 +5,6 @@
 	next "work together to"
 	next "pull down planes."
 
-	page "ZAP CANNON"
+	page "Zap Cannon"
 	next "hits. Immune"
 	next "to OHKO.@"

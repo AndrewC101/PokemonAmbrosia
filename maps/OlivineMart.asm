@@ -21,7 +21,7 @@ OlivineMartLassScript:
 	jumptextfaceplayer OlivineMartLassText
 
 OlivineMartCooltrainerFText:
-	text "Do you have SURF?"
+	text "Do you have Surf?"
 
 	para "Some old man"
 	line "wanted me to"
@@ -33,8 +33,8 @@ OlivineMartCooltrainerFText:
 
 OlivineMartLassText:
 	text "I can buy"
-	line "MAX ETHER and"
-	cont "HYPER POTION"
+	line "Max Ether and"
+	cont "Hyper Potion"
 	cont "from here."
 
 	para "I have a bag"

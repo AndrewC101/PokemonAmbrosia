@@ -5,6 +5,6 @@
 	next "to travel alien"
 	next "dimensions."
 
-	page "HYPER BEAM"
+	page "Hyper Beam"
 	next "does not need"
 	next "to recharge.@"

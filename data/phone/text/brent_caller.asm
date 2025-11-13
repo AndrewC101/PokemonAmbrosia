@@ -1,6 +1,6 @@
 BrentRareTradeText:
 	text "People tell me"
-	line "HYPER BEAM is a"
+	line "Hyper Beam is a"
 	cont "bad move because"
 	cont "it takes two"
 	cont "turns."
@@ -21,7 +21,7 @@ BrentDefeatedMonText:
 	line "mood."
 	para "I looked at it."
 	para "Then decided to"
-	line "HYPER BEAM it"
+	line "Hyper Beam it"
 	cont "right in the face."
 	para "It felt good."
 	para "Am I a bad person?"
@@ -31,8 +31,8 @@ BrentLostAMonText:
 	text "I fought a guy"
 	line "with a Blissey the"
 	cont "other day."
-	para "It took my HYPER"
-	line "BEAM, it barley"
+	para "It took my Hyper"
+	line "Beam, it barley"
 	cont "did any damage!"
 	para "I..."
 	para "I just don't"
@@ -46,7 +46,7 @@ BrentBattleRematchText:
 	para "I mean battle you!"
 	para "I need to..."
 	para "Come over here and"
-	line "eat my HYPER BEAM!"
+	line "eat my Hyper Beam!"
 	done
 
 BrentHangUpText:
@@ -54,24 +54,24 @@ BrentHangUpText:
 	done
 
 BrentFatherGossipText:
-	text "Apparently CHOICE"
-	line "SPECS boost"
+	text "Apparently Choice"
+	line "Specs boost"
 	cont "special attacks by"
 	cont "50 percent!"
 	para "I need a pair!"
 	done
 
 BrentGrandpaGossipText:
-	text "Apparently CHOICE"
-	line "SPECS boost"
+	text "Apparently Choice"
+	line "Specs boost"
 	cont "special attacks by"
 	cont "50 percent!"
 	para "I need a pair!"
 	done
 
 BrentGoldenrodGossipText:
-	text "Apparently CHOICE"
-	line "SPECS boost"
+	text "Apparently Choice"
+	line "Specs boost"
 	cont "special attacks by"
 	cont "50 percent!"
 	para "I need a pair!"
@@ -154,7 +154,7 @@ BrentSorryImTooBusyText:
 BrentReminderText:
 	text "Are you scared?"
 	para "I'm still waiting"
-	line "to HYPER BEAM you."
+	line "to Hyper Beam you."
 
 	para "Hurry over to"
 	line "@"

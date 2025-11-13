@@ -101,7 +101,7 @@ BirdKeeperDenisBeatenText:
 
 BirdKeeperDenisAfterBattleText:
 	text "My #mon learned"
-	line "how to use FLY in"
+	line "how to use fly in"
 	cont "Cianwood."
 
 	para "I can go"

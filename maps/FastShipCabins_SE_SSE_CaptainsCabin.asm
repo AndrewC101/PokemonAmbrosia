@@ -627,7 +627,7 @@ PokefanfGeorgiaAfterBattleText:
 
 SupernerdShawnSeenText:
 	text "I am taking"
-	line "some APRICORN"
+	line "some Apricorn"
 	cont "balls to sell"
 	cont "in Kanto."
 

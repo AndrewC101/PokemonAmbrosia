@@ -259,7 +259,7 @@ Route31CooltrainerMText:
 
 	para "Don't go in there"
 	line "unless you have"
-	cont "FLASH."
+	cont "Flash."
 	done
 
 BugCatcherWade1SeenText:

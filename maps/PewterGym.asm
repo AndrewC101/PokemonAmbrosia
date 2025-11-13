@@ -129,7 +129,7 @@ BrockLossText:
 	line "shatter easily."
 
 	para "Here, take the"
-	line "BOULDERBADGE."
+	line "Boulderbadge."
 	done
 
 BrockWinText:
@@ -140,7 +140,7 @@ BrockWinText:
 
 ReceivedBoulderBadgeText:
 	text "<PLAYER> received"
-	line "BOULDERBADGE."
+	line "Boulderbadge."
 	done
 
 BrockFightDoneText:
@@ -208,7 +208,7 @@ PewterGymGuideText:
 	line "beat Brock."
 
 	para "He uses a"
-	line "SANDSTORM team."
+	line "Sandstorm team."
 
 	para "Changing the"
 	line "weather to rain"

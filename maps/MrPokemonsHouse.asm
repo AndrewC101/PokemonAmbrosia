@@ -333,13 +333,13 @@ OakGivesExpShareText:
 	cont "progression."
 
 	para "I have developed"
-	line "it with BILL."
+	line "it with Bill."
 
 	para "The inventor of"
 	line "the PC system."
 
 	para "We call it the"
-	line "EXP SHARE."
+	line "Exp Share."
 	done
 
 MrPokemonsHouse_OakText2:

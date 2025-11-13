@@ -200,7 +200,7 @@ FalknerLossText:
 
 	para "It's the official"
 	line "#mon League"
-	cont "ZEPHYRBADGE."
+	cont "Zephyrbadge."
 	done
 
 FalknerWinText:
@@ -213,11 +213,11 @@ FalknerWinText:
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZEPHYRBADGE."
+	line "Zephyrbadge."
 	done
 
 FalknerZephyrBadgeText:
-    text "The ZEPHYRBADGE"
+    text "The Zephyrbadge"
     line "lets you train"
     cont "#mon up to"
     cont "level 25."
@@ -226,9 +226,9 @@ FalknerZephyrBadgeText:
     line "#mon up to"
     cont "level 15."
 
-	para "ZEPHYRBADGE"
+	para "Zephyrbadge"
 	line "enables #mon"
-	cont "to use FLASH."
+	cont "to use Flash."
 
 	para "Here--take this"
 	line "too."
@@ -248,9 +248,9 @@ FalknerTMMudSlapText:
 	cont "delete for it."
 
 	para "This TM teaches"
-	line "SWIFT."
+	line "Swift."
 
-	para "SWIFT is a move"
+	para "Swift is a move"
 	line "which can never"
 	cont "miss."
 
@@ -331,7 +331,7 @@ BirdKeeperAbeSeenText:
 	done
 
 BirdKeeperAbeBeatenText:
-	text "I must FLY!"
+	text "I must fly!"
 	done
 
 BirdKeeperAbeAfterBattleText:
@@ -343,7 +343,7 @@ BirdKeeperAbeAfterBattleText:
 
 	para "Share in the"
 	line "freedom I feel"
-	cont "when I FLY!"
+	cont "when I fly!"
 	done
 
 VioletGymGuideText:

@@ -5,6 +5,6 @@
 	next "soundless. Its"
 	next "fangs are wicked."
 
-	page "SANDSTORM upon"
+	page "Sandstorm upon"
 	next "switch in. Boost"
-	next "EVASION in sand.@"
+	next "Evasion in sand.@"

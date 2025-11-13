@@ -5493,7 +5493,7 @@ Text_ExitGymLeaderHonorRoll:
 
 Text_LinkingWithCenter: ; unreferenced
 	text "Linking with the"
-	line "CENTER…"
+	line "Center…"
 	done
 
 Text_WhatLevelDoYouWantToChallenge:

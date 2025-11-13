@@ -527,7 +527,7 @@ GruntF5AfterBattleText:
 
 	para "The password is."
 
-	para "SLOWPOKETAIL."
+	para "Slowpoketail."
 	done
 
 GruntM28SeenText:

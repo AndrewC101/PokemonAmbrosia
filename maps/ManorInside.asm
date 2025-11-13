@@ -162,7 +162,7 @@ AndrewBeatOakText:
 	para "You haven't beat"
 	line "me yet."
 	para "Bear in mind"
-	line "JUDGEMENT OHKO"
+	line "Judgement OHKO"
 	cont "effect doesn't"
 	cont "work in this"
 	cont "house."
@@ -526,7 +526,7 @@ BrotherBeatAdamText:
 	line "though, hax don't"
 	cont "work in this"
 	cont "house."
-	para "No JUDGEMENT OHKO"
+	para "No Judgement OHKO"
 	line "here!"
 	done
 
@@ -875,7 +875,7 @@ ManorCheatText:
 	cont "013F42D8"
 	para "Change first item"
 	line "in marts."
-	para "RARE CANDY"
+	para "Rare Candy"
 	line "0120FCD0"
 	para "Ambrosia"
 	line "018BFCD0"
@@ -1047,7 +1047,7 @@ ManorFact12Text:
 	done
 
 ManorFact13Text:
-	text "EXP SHARE used to"
+	text "Exp Share used to"
 	line "give a quarter EXP"
 	cont "until obtaining 8"
 	cont "badges."
@@ -1064,7 +1064,7 @@ ManorFact14Text:
 	line "led to a bug where"
 	cont "all music would"
 	cont "stop after using"
-	cont "FLY."
+	cont "fly."
 	para "That took days to"
 	line "fix."
 	done

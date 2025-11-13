@@ -172,7 +172,7 @@ WiseTriosRoomSage3BlocksExitText:
 	done
 
 WiseTriosRoomSage3Text:
-	text "We, the WISE TRIO,"
+	text "We, the Wise Trio,"
 	line "are the protectors"
 
 	para "of the legendary"
@@ -202,7 +202,7 @@ SageGakuSeenText:
 	line "#mon Suicune"
 	cont "has arrived!"
 
-	para "We, the WISE TRIO,"
+	para "We, the Wise Trio,"
 	line "shall test your"
 
 	para "worthiness to go"
@@ -313,7 +313,7 @@ SageKojiAfterBattleQuestionText:
 SageKojiAfterBattleSpeechText:
 	text "I see…"
 
-	para "We, the WISE TRIO,"
+	para "We, the Wise Trio,"
 	line "have been given"
 
 	para "the responsibility"

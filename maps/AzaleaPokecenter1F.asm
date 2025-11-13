@@ -38,7 +38,7 @@ AzaleaPokecenter1FGentlemanText:
 	done
 
 AzaleaPokecenter1FFishingGuruText:
-	text "BILL's PC can"
+	text "Bill's PC can"
 	line "store up to 20"
 	cont "#mon per BOX."
 

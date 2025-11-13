@@ -290,7 +290,7 @@ WhitneyPlainBadgeText:
 	para "It also lets"
 	line "your #mon use"
 
-	para "STRENGTH outside"
+	para "Strength outside"
 	line "of battle."
 
 	para "Oh, you can have"
@@ -298,7 +298,7 @@ WhitneyPlainBadgeText:
 	done
 
 WhitneyAttractText:
-	text "It's RETURN."
+	text "It's Return."
 
 	para "This move gets"
 	line "more powerful"

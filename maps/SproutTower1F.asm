@@ -102,7 +102,7 @@ SproutTower1FSage4Text:
 	para "Master LI has"
 	line "forbidden entry."
 
-	para "Only with FLASH"
+	para "Only with Flash"
 	line "can one see"
 	cont "down there."
 

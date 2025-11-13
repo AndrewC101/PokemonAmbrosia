@@ -466,7 +466,7 @@ Text_HeadbuttIntro:
 	line "the skulls of my"
 	cont "#mon."
 
-	para "By using HEADBUTT"
+	para "By using Headbutt"
 	line "on this tree."
 
 	para "It's an ancient"
@@ -482,7 +482,7 @@ Text_HeadbuttOutro:
 	line "again!?"
 
 	para "This tree won't"
-	line "HEADBUTT itself."
+	line "Headbutt itself."
 	done
 
 Text_IlexForestLass:

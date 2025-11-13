@@ -117,7 +117,7 @@ CherrygroveCityGuideGent:
 	end
 
 .mapcardname
-	db "MAP CARD@"
+	db "Map Card@"
 
 GuideGentRunningShoesText:
     text "Here, these will"
@@ -454,7 +454,7 @@ GuideGentIntroText:
 
 GuideGentPokecenterText:
 	text "This is a #mon"
-	line "CENTER."
+	line "Center."
 
 	para "Here you can heal"
 	line "your #mon and"
@@ -552,13 +552,13 @@ GuideGentGiftText:
 
 GotMapCardText:
 	text "<PLAYER>'s #gear"
-	line "now has a MAP!"
+	line "now has a Map!"
 	done
 
 GuideGentPokegearText:
 	text "#gear becomes"
 	line "more useful as you"
-	cont "add CARDS."
+	cont "add Cards."
 
 	para "I wish you luck on"
 	line "your journey!"
@@ -697,7 +697,7 @@ CherrygroveCitySignText:
 	done
 
 GuideGentsHouseSignText:
-	text "GUIDE GENT'S HOUSE"
+	text "Guide Gent's House"
 	done
 
 EvilOldManScript:
@@ -755,7 +755,7 @@ GoGetRedEyeOrbText:
     para "In this cave it"
     line "rests."
 
-    para "The RED EYE ORB."
+    para "The Red Eye Orb."
 
     para "If you could"
     line "bring it to me."
@@ -771,7 +771,7 @@ GotRedEyeOrbText:
     text "You have done it!"
 
     para "That's it, the"
-    line "RED EYE ORB!"
+    line "Red Eye Orb!"
 
     para "Using it makes"
     line "one an invader."

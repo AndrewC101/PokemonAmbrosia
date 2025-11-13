@@ -1,6 +1,6 @@
 JoeyMonLookingSharperText:
-	text "Do you know LIFE"
-	line "ORB increase all"
+	text "Do you know Life"
+	line "Orb increase all"
 	cont "damage by 30"
 	cont "percent but drains"
 	cont "your HP with every"

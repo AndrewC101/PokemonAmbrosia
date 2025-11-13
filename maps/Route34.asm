@@ -799,7 +799,7 @@ Route34TrainerTipsText:
 	done
 
 DayCareSignText:
-	text "DAY-CARE"
+	text "Day-Care"
 
 	para "LET US RAISE YOUR"
 	line "#mon FOR YOU!"

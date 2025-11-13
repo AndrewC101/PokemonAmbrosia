@@ -144,7 +144,7 @@ RadioTower4FDJMaryText_ClearedRockets:
 	done
 
 RadioTower4FDJMaryText_GivePinkBow:
-	text "MARY: It's just"
+	text "Mary: It's just"
 	line "right for #mon"
 
 	para "that know fairy-"
@@ -221,11 +221,11 @@ ScientistRichAfterBattleText:
 	done
 
 RadioTower4FProductionSignText:
-	text "4F PRODUCTION"
+	text "4F Production"
 	done
 
 RadioTower4FStudio2SignText:
-	text "4F STUDIO 2"
+	text "4F Studio 2"
 	done
 
 JessieAndJamesScene:

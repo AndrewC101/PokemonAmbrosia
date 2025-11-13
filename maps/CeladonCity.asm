@@ -85,7 +85,7 @@ CeladonCityFisherText:
 	text "My buddy here is"
 	line "Poliwrath."
 
-	para "He loves PROTEIN!"
+	para "He loves Protein!"
 
 	para "If any Hoenn thugs"
 	line "come to this city"

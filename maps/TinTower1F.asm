@@ -415,7 +415,7 @@ TinTower1FSage3Text:
 	line "will present"
 	cont "themselves to a"
 	cont "trainer with a"
-	cont "RAINBOW WING."
+	cont "Rainbow Wing."
 	done
 
 TinTower1FSage4Text1:

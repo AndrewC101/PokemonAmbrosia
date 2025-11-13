@@ -238,22 +238,22 @@ GruntM9AfterBattleText:
 	done
 
 RadioTower3FCardKeySlotText:
-	text "It's the CARD KEY"
+	text "It's the Card Key"
 	line "slot."
 	done
 
 InsertedTheCardKeyText:
 	text "<PLAYER> inserted"
-	line "the CARD KEY."
+	line "the Card Key."
 	done
 
 RadioTower3FPersonnelSignText:
-	text "3F PERSONNEL"
+	text "3F Personnel"
 	done
 
 RadioTower3FPokemonMusicSignText:
-	text "#mon MUSIC with"
-	line "Host DJ BEN"
+	text "#mon music with"
+	line "Host DJ Ben"
 	done
 
 RadioTower3F_MapEvents:

@@ -100,10 +100,10 @@ BillPartyFullText:
     done
 
 BillTakeThisEeveeText:
-	text "BILL: Hi, <PLAYER>!"
+	text "Bill: Hi, <PLAYER>!"
 
-	para "How is the EXP"
-	line "SHARE doing?"
+	para "How is the Exp"
+	line "Share doing?"
 
 	para "I have an"
 	line "interesting"
@@ -185,7 +185,7 @@ BillsSisterUsefulNumberText:
 
 RecordedBillsNumberText:
 	text "<PLAYER> recorded"
-	line "BILL's number."
+	line "Bill's number."
 	done
 
 BillsSisterRefusedNumberText:
@@ -204,7 +204,7 @@ BillsSisterPhoneFullText:
 
 BillsSisterStorageSystemText:
 	text "My big brother"
-	line "BILL made the PC"
+	line "Bill made the PC"
 
 	para "#mon storage"
 	line "system."

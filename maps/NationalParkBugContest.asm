@@ -232,9 +232,9 @@ NationalParkBugContestBattleNoticeText:
 NationalParkBugContestTrainerTipsText:
 	text "Trainer Tips"
 
-	para "Print out MAIL by"
+	para "Print out Mail by"
 	line "opening it then"
-	cont "pressing START."
+	cont "pressing Start."
 	done
 
 NationalParkBugContestFieldMon1Script:

@@ -193,7 +193,7 @@ SwimmermSimonAfterBattleText:
 
 SwimmermRandallSeenText:
 	text "I don't have"
-	line "SURF."
+	line "Surf."
 
 	para "I don't need it."
 
@@ -299,7 +299,7 @@ Route40PokefanMText:
 	cont "enter."
 	para "I hear the reward"
 	line "for one of them is"
-	cont "99 RARE CANDY."
+	cont "99 Rare Candy."
 	para "And that's not"
 	line "even the highest"
 	cont "difficulty."

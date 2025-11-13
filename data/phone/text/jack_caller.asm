@@ -98,14 +98,14 @@ JackStompTriviaText:
 JackGustTriviaText:
 	text "What item gives a"
 	line "bigger attack"
-	cont "boost MUSCLE BAND"
-	cont "or CHOICE BAND?"
+	cont "boost Muscle Band"
+	cont "or Choice Band?"
 	para "..."
-	para "CHOICE BAND!"
+	para "Choice Band!"
 	para "It gives a 50"
 	line "percent boost"
 	cont "while locking"
-	cont "moves, MUSCLE BAND"
+	cont "moves, Muscle Band"
 	cont "gives a mere 10"
 	cont "percent boost."
 	done
@@ -122,7 +122,7 @@ JackTwisterTriviaText:
 	cont "hazards such as"
 	cont "spikes and finally"
 	cont "effects such as"
-	cont "LEECH SEED and"
+	cont "Leech Seed and"
 	cont "NIGHTMARE."
 	done
 
@@ -219,7 +219,7 @@ JackHeardSomeGreatTipsText:
 	cont "Speed and #mon"
 	cont "like Garchomp and"
 	cont "Gliscor have"
-	cont "boosted EVASION."
+	cont "boosted Evasion."
 	done
 
 JackReminderText:

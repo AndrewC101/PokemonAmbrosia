@@ -33,7 +33,7 @@ CeruleanMart_CooltrainerMText:
 	line "in there."
 
 	para "I lost my"
-	line "LEFTOVERS in"
+	line "Leftovers in"
 	cont "there too."
 
 	para "In a maze of"

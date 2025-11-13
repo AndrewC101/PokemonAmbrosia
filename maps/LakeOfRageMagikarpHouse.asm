@@ -18,9 +18,9 @@ MagikarpManText:
     line "here my entire"
     cont "life."
 
-    para "To me the OLD"
-    line "ROD is the only"
-    cont "ROD."
+    para "To me the Old"
+    line "Rod is the only"
+    cont "Rod."
 
     para "Nobody can catch"
     line "Magikarp like me!"

@@ -153,8 +153,8 @@ CeladonDeptStore6FYoungsterText:
 	done
 
 CeladonDeptStore6FDirectoryText:
-	text "6F: ROOFTOP SQUARE"
-	line "VENDING MACHINES"
+	text "6F: Rooftop Square"
+	line "Vending Machines"
 	done
 
 CeladonDeptStore6F_MapEvents:

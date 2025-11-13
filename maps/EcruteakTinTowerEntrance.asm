@@ -186,7 +186,7 @@ EcruteakTinTowerEntranceSageText_NoClearBell:
 	para "…What soothes the"
 	line "soul…"
 
-	para "The WISE TRIO say"
+	para "The Wise Trio say"
 	line "things that are so"
 
 	para "very difficult to"
@@ -206,7 +206,7 @@ EcruteakTinTowerEntranceSageText_HearsClearBell:
 	para "Ah!"
 
 	para "The sound of that"
-	line "CLEAR BELL!"
+	line "Clear Bell!"
 
 	para "It… It's sublime!"
 

@@ -327,7 +327,7 @@ SlowpokeWellB1FSlowpokeWithMailText:
 	text "A Slowpoke seems"
 	line "concerned."
 
-	para "Huh? It has MAIL."
+	para "Huh? It has Mail."
 	line "Read it?"
 	done
 

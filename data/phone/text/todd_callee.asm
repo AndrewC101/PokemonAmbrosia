@@ -63,7 +63,7 @@ ToddGenericText:
 	line "of things, like"
 
 	para "leaving them in"
-	line "DAY-CARE and"
+	line "Day-Care and"
 
 	para "toughening them up"
 	line "with items."

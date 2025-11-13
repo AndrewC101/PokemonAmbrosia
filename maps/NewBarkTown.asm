@@ -363,7 +363,7 @@ NewBarkTownElmsLabSignText:
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "Elm'S HOUSE"
+	text "Elm's House"
 	done
 
 NeedToGetAPokemon:

@@ -42,7 +42,7 @@ GinaGiftText:
 	done
 
 GinaPackFullText:
-	text "Your PACK looks"
+	text "Your Pack looks"
 	line "completely full."
 
 	para "I'll have to hold"

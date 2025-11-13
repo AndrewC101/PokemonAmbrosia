@@ -6,4 +6,4 @@
 	next "every day."
 
 	page "Has increased"
-	next "ACCURACY.@"
+	next "Accuracy.@"

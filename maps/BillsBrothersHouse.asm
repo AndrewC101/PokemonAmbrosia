@@ -15,10 +15,10 @@ BillsBrothersHouseYoungsterScript:
 
 BillsBrotherText:
 	text "My grandpa is at "
-	line "my brother BILL's"
+	line "my brother Bill's"
 	cont "on Cerulean Cape."
 
-	para "BILL has all the"
+	para "Bill has all the"
 	line "money and fame."
 
 	para "We all know he"
@@ -26,7 +26,7 @@ BillsBrotherText:
 
 	para "Every holiday we"
 	line "get together and"
-	cont "it's just BILL"
+	cont "it's just Bill"
 	cont "talking non stop"
 	cont "about himself."
 
@@ -39,7 +39,7 @@ BillsBrothersHouseYoungsterText:
 	line "in our family."
 
 	para "My older brother"
-	line "BILL is so smart."
+	line "Bill is so smart."
 
 	para "I wish I could"
 	line "be more like him."

@@ -194,7 +194,7 @@ MahoganyMart1FBlackBeltText_LanceEntered:
 
 MahoganyMart1FLanceDragoniteHyperBeamText:
 	text "Dragonite,"
-	line "OUTRAGE!"
+	line "Outrage!"
 	done
 
 MahoganyMart1FLanceRadioText:

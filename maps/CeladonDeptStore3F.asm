@@ -102,7 +102,7 @@ CeladonDeptStore3FSuperNerdText:
 	done
 
 CeladonDeptStore3FDirectoryText:
-	text "3F: TM SHOP"
+	text "3F: TM Shop"
 
 	para "Make Your #mon"
 	line "Stronger!"

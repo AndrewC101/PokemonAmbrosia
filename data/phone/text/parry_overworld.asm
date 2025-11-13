@@ -40,7 +40,7 @@ ParryRematchText:
 
 ParryPackFullText:
 	text "You got no room in"
-	line "your PACK!"
+	line "your Pack!"
 	done
 
 ParryRematchGiftText:

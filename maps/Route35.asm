@@ -467,13 +467,13 @@ PicnickerKimAfterBattleText:
 BirdKeeperBryanSeenText:
 	text "Once my #mon"
 	line "are big enough"
-	cont "they will FLY me"
+	cont "they will fly me"
 	cont "away to KALOS"
 	cont "to escape the war."
 	done
 
 BirdKeeperBryanBeatenText:
-	text "FLY you fools."
+	text "fly you fools."
 	done
 
 BirdKeeperBryanAfterBattleText:

@@ -284,7 +284,7 @@ CeladonPrizeRoom_ComeAgainText:
 
 CeladonPrizeRoom_NoCoinCaseText:
 	text "Oh? You don't have"
-	line "a COIN CASE."
+	line "a Coin Case."
 	done
 
 CeladonGameCornerPrizeRoom_MapEvents:

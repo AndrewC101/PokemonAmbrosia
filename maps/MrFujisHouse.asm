@@ -49,7 +49,7 @@ MrFujisHouseSuperNerdText:
 	cont "home now."
 
 	para "He should be at"
-	line "the SOUL HOUSE."
+	line "the Soul House."
 	done
 
 MrFujisHouseLassText:

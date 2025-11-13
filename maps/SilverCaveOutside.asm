@@ -183,7 +183,7 @@ SilverCaveOutsideBlockText:
     text "A voice speaks!"
 
     para "Only #mon"
-    line "MASTERS may enter."
+    line "Masters may enter."
 
     para "And become the"
     line "Monarch."
@@ -551,7 +551,7 @@ SilverCaveSilverFriendshipText:
 
     para "I nearly got"
     line "thrashed by"
-    cont "Crytal because"
+    cont "Crystal because"
     cont "I didn't want"
     cont "to invoke her"
     cont "wrath by easily"
@@ -583,7 +583,7 @@ SilverCaveSilverFriendshipText:
 
 	para "I certainly didn't"
 	line "learn it from"
-	cont "Crytal."
+	cont "Crystal."
 	done
 
 SilverCaveCrystalShouldGoText:
@@ -993,7 +993,7 @@ HoenWarCh1HeroText:
     line "to assassinate"
     cont "Wallace."
 
-    para "You are KOGA."
+    para "You are Koga."
 
     para "Like a frozen"
     line "breeze on a still"
@@ -1438,7 +1438,7 @@ HoenWarKillText:
     cont "making it fast."
 
     para "A blast of fire"
-    line "from GEO WEAPON"
+    line "from Geo Weapon"
     cont "will do it."
     done
 

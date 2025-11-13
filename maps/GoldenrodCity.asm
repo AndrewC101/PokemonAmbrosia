@@ -372,7 +372,7 @@ GoldenrodCityCooltrainerF2Text:
 
 GoldenrodCityYoungster2Text:
 	text "Have you heard"
-	line "of the SOLENOIDS?"
+	line "of the Solenoids?"
 
 	para "They are a metal"
 	line "band from"

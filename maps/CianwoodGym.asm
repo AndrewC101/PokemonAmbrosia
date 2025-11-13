@@ -204,7 +204,7 @@ ChuckIntroText1:
 	cont "matters in this"
 	cont "world."
 
-	para "Like VEGETA I"
+	para "Like Vegeta I"
 	line "train everyday."
 
 	para "I train to claim"
@@ -364,7 +364,7 @@ BlackbeltLaoSeenText:
 	text "The best villain"
 	line "is clearly CELL."
 
-	para "FRIEZA is over"
+	para "Frieza is over"
 	line "hyped and not"
 	cont "cool anymore."
 
@@ -385,8 +385,8 @@ BlackbeltLaoAfterText:
 	cont "the strongest"
 	cont "character!"
 
-	para "Anything GOKU,"
-	line "VEGETA or FRIEZA"
+	para "Anything Goku,"
+	line "Vegeta or Frieza"
 	cont "can do, CELL can"
 	cont "do better!"
 	done

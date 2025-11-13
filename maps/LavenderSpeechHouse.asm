@@ -27,7 +27,7 @@ LavenderSpeechHousePokefanFText:
 	para "All those poor"
 	line "young soldiers."
 
-	para "MR FUJI is a"
+	para "Mr Fuji is a"
 	line "pacifist but..."
 
 	para "AGATHA wasn't"

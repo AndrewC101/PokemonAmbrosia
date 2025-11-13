@@ -393,10 +393,10 @@ AshFinalText:
     para "I hear there is"
     line "a special event"
     cont "full of #mon"
-    cont "MASTERS."
+    cont "Masters."
 
     para "The greatest of"
-    line "MASTERS is called"
+    line "Masters is called"
     cont "the Monarch."
 
     para "Maybe that could"

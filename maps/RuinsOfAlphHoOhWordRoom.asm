@@ -37,7 +37,7 @@ atemStatueText:
 	para "May Arceus guide"
 	line "and protect Atem."
 	para "The Master of"
-	line "MASTERS."
+	line "Masters."
 	done
 
 RuinsOfAlphHoOhWordRoom_MapEvents:

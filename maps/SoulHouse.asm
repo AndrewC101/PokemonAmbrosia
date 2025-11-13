@@ -55,7 +55,7 @@ SoulHouseTeacherText:
 
 	para "There is a"
 	line "large graveyard"
-	cont "only FUJI can"
+	cont "only Fuji can"
 	cont "grant access to."
 	done
 
@@ -109,7 +109,7 @@ Movement_SoulHouseLeft:
     step_end
 
 SoulHouseBlockText:
-    text "MR FUJI: Excuse"
+    text "Mr Fuji: Excuse"
     line "me."
 
     para "That area is off"

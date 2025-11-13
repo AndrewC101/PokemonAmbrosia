@@ -95,7 +95,7 @@ SageEdmondAfterBattleText:
 	text "A former brother"
 	line "of ours."
 
-	para "XEHANORT."
+	para "Xehanort."
 
 	para "He did not see"
 	line "things as we do."

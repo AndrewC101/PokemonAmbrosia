@@ -709,7 +709,7 @@ SilverFinalGeneralText:
     para "Like I used to"
     line "be."
 
-    para "I'm glad Crytal"
+    para "I'm glad Crystal"
     line "insisted I come"
     cont "here and stay a"
     cont "while."
@@ -765,7 +765,7 @@ SilverFinalAfterBattleText:
     cont "what I have"
     cont "achieved."
 
-    para "Losing to Crytal"
+    para "Losing to Crystal"
     line "however..."
 
     para "That would be"

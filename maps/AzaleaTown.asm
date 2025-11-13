@@ -480,7 +480,7 @@ SlowpokeWellSignText:
 	done
 
 CharcoalKilnSignText:
-	text "CHARCOAL KILN"
+	text "Charcoal Kiln"
 	done
 
 AzaleaTownIlexForestSignText:
@@ -766,7 +766,7 @@ YuGiOhIntroText:
 
     para "I did and it got"
     line "me in the mind"
-    cont "for a YUGIOH"
+    cont "for a YuGiOh"
     cont "roleplay."
 
     para "Would you like"
@@ -879,13 +879,13 @@ YuGiOhHenshin3Text:
     cont "kingdom from"
     cont "many foes."
 
-    para "PEGASUS."
+    para "Pegasus."
 
-    para "MARIK."
+    para "Marik."
 
-    para "DARTZ."
+    para "Dartz."
 
-    para "BAKURA."
+    para "Bakura."
 
     para "In the shadow"
     line "realm an ancient"
@@ -1042,7 +1042,7 @@ YuGiOhYami2Text:
     line "is Henshin."
 
     para "The high priest"
-    line "of SETOs house."
+    line "of Setos house."
 
     para "Was this his"
     line "plan..."
@@ -1089,7 +1089,7 @@ YuGiOhRolePlayYamiSetoText:
     para "Atem in his"
     line "wisdom appoints"
     cont "Seto as his"
-    cont "right HAND."
+    cont "right Hand."
     done
 
 YuGiOhYami3Text:
@@ -1098,13 +1098,13 @@ YuGiOhYami3Text:
     cont "kingdom and fight"
     cont "many foes."
 
-    para "PEGASUS."
+    para "Pegasus."
 
-    para "MARIK."
+    para "Marik."
 
-    para "DARTZ."
+    para "Dartz."
 
-    para "BAKURA."
+    para "Bakura."
 
     para "In the shadow"
     line "realm an ancient"

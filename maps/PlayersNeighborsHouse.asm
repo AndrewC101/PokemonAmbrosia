@@ -98,13 +98,13 @@ PlayersNeighborsDaughterTextPostWallace:
 	para "Our local hero!"
 	para "Thank you for"
 	line "saving us all."
-	para "I'm sure Crytal"
+	para "I'm sure Crystal"
 	line "is much stronger"
 	cont "too thanks to you."
 	done
 
 PlayersNeighborText:
-	text "Crytal got her"
+	text "Crystal got her"
 	line "first #mon."
 
 	para "She loves her"

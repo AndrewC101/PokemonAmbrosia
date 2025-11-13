@@ -194,7 +194,7 @@ LavRadioTower1FSuperNerd2Text:
 	para "The sadder the"
 	line "better."
 
-	para "MR FUJI karaoke"
+	para "Mr Fuji karaoke"
 	line "is particularly"
 	cont "popular."
 

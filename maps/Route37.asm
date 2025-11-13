@@ -257,11 +257,11 @@ SunnyGaveGiftText:
 	done
 
 SunnySundayText:
-	text "SUNNY: My sisters"
+	text "Sunny: My sisters"
 	line "and brothers are"
-	cont "MONICA, TUSCANY,"
-	cont "WESLEY, ARTHUR,"
-	cont "FRIEDA and SANTOS."
+	cont "Monica, Tuscany,"
+	cont "Wesley, Arthur,"
+	cont "Frieda and Santos."
 
 	para "They're all older"
 	line "than me!"

@@ -98,11 +98,11 @@ EcruteakCityGramps1Text:
 EcruteakCityGramps2Text:
 	text "This theatre"
 	line "is where the"
-	cont "KIMONO girls"
+	cont "Kimono girls"
 	cont "dance."
 
 	para "My wife was a"
-	line "KIMONO girl."
+	line "Kimono girl."
 
 	para "Back when I"
 	line "was young and"
@@ -111,7 +111,7 @@ EcruteakCityGramps2Text:
 	done
 
 EcruteakCityLass1Text:
-	text "The KIMONO girls"
+	text "The Kimono girls"
 	line "are so beautiful!"
 
 	para "I am here to"
@@ -507,7 +507,7 @@ Aerith1SeenText:
     para "It's kind of"
     line "boring!"
 
-    para "I am AERITH!"
+    para "I am Aerith!"
 
     para "My friends and"
     line "I are committed"

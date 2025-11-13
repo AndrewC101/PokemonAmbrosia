@@ -224,7 +224,7 @@ RuinsOfAlphResearchCenterScientist1Text:
 	cont "to ever exist."
 
 	para "The Master of"
-	line "MASTERS."
+	line "Masters."
 
 	para "However he was not"
 	line "worshiped."

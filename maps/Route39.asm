@@ -213,7 +213,7 @@ PokefanMDerekText_NotBragging:
 PokefanfRuthSeenText:
 	text "There is a"
 	line "young summoner"
-	cont "named YUNA in"
+	cont "named Yuna in"
 	cont "Olivine."
 
 	para "One day she"

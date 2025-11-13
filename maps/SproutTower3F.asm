@@ -391,7 +391,7 @@ SageTroyBeatenText:
 	done
 
 SageTroyAfterBattleText:
-	text "XEHANORT."
+	text "Xehanort."
 
 	para "He thought that"
 	line "light and dark"

@@ -33,7 +33,7 @@ VermilionMartSuperNerdText:
 	line "POTIONS to get"
 	cont "over my hang-"
 	cont "over from the"
-	cont "last SOLENOID"
+	cont "last Solenoid"
 	cont "concert."
 	done
 

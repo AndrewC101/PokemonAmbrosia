@@ -404,7 +404,7 @@ BlackthornCityTrainerTipsText:
 	text "Trainer Tips"
 
 	para "A #mon holding"
-	line "a MIRACLEBERRY"
+	line "a Miracleberry"
 
 	para "will cure itself"
 	line "of any status"
@@ -806,11 +806,11 @@ LOTRHeroOrVillainChoiceText:
 
 LOTRCh1HeroText:
     text "You are being"
-    line "hunted by RING"
-    cont "WRAITHS."
+    line "hunted by Ring"
+    cont "Wraiths."
 
-    para "They seek the ONE"
-    line "RING."
+    para "They seek the One"
+    line "Ring."
 
     para "What was that?"
 
@@ -823,7 +823,7 @@ LOTRCh1HeroText:
 
     para "He has found us."
 
-    para "The WITCH KING!"
+    para "The Witch King!"
     done
 
 LOTRCh1VillainText:
@@ -834,15 +834,15 @@ LOTRCh1VillainText:
     line "your maker and"
     cont "master."
 
-    para "You are the ONE"
-    line "RING."
+    para "You are the One"
+    line "Ring."
 
-    para "The RING WRAITHS"
+    para "The Ring Wraiths"
     line "are near."
 
     para "You call out."
 
-    para "The WITCH KING has"
+    para "The Witch King has"
     line "found you."
 
     para "Now he will kill"
@@ -852,9 +852,9 @@ LOTRCh1VillainText:
     done
 
 LOTRCh2HeroText:
-    text "FRODO is badly"
+    text "Frodo is badly"
     line "injured by the"
-    cont "WITCH KING."
+    cont "Witch King."
 
     para "A stranger jumps"
     line "into the battle."
@@ -864,42 +864,42 @@ LOTRCh2HeroText:
 
     para "No match for the"
     line "refined weapons"
-    cont "of the WITCH KING."
+    cont "of the Witch King."
 
-    para "He works the KING"
+    para "He works the King"
     line "high and low."
 
     para "His deft strikes"
     line "finding their mark"
     cont "on every stroke."
 
-    para "The WITCH KING"
+    para "The Witch King"
     line "disappears into"
     cont "the night."
 
     para "The strangers"
-    line "name is ARAGORN."
+    line "name is Aragorn."
 
     para "You go with him"
     line "to an elven city."
 
     para "Your wizard friend"
-    line "GANDALF is there."
+    line "Gandalf is there."
 
-    para "You and SAM will"
+    para "You and Sam will"
     line "take the ring to"
-    cont "MT DOOM to destroy"
+    cont "Mt Doom to destroy"
     cont "it."
 
-    para "ARAGORN, GANDALF"
+    para "Aragorn, Gandalf"
     line "and several other"
     cont "warriors will"
     cont "fight the evil"
-    cont "forces of SAURON."
+    cont "forces of Sauron."
 
     para "They travel deep"
     line "into the mine"
-    cont "of MORIA."
+    cont "of Moria."
 
     para "You are ambushed!"
 
@@ -908,7 +908,7 @@ LOTRCh2HeroText:
     done
 
 LOTRCh2VillainText:
-    text "The WITCH KING"
+    text "The Witch King"
     line "has struck a"
     cont "mortal blow to"
     cont "this hobbit who"
@@ -918,56 +918,56 @@ LOTRCh2VillainText:
     para "A stranger has"
     line "appeared."
 
-    para "This is ARAGORN"
+    para "This is Aragorn"
     line "the true king of"
-    cont "GONDOR."
+    cont "Gondor."
 
     para "He defeats the"
-    line "WITCH KING!"
+    line "Witch King!"
 
     para "You are taken to"
     line "an elven city."
 
     para "You sense the"
     line "presence of the"
-    cont "wizard GANDALF."
+    cont "wizard Gandalf."
 
     para "And even the great"
-    line "GALADRIEL."
+    line "Galadriel."
 
     para "Such powerful"
     line "potential hosts."
 
-    para "FRODO plans to"
-    line "take you to MT"
-    cont "DOOM to destroy"
+    para "Frodo plans to"
+    line "take you to Mt"
+    cont "Doom to destroy"
     cont "you."
 
-    para "SAURON will"
+    para "Sauron will"
     line "surely find you"
-    cont "at MT DOOM."
+    cont "at Mt Doom."
 
-    para "GANDALF is going"
+    para "Gandalf is going"
     line "to the mine of"
-    cont "MORIA."
+    cont "Moria."
 
     para "They don't know"
     line "what horrors await"
     cont "them there."
 
-    para "SAURONS forces"
+    para "Saurons forces"
     line "will put an end"
     cont "to him there."
     done
 
 LOTRHeroConcText:
-    text "The BALROG is"
+    text "The Balrog is"
     line "too powerful."
 
-    para "ARAGORN and the"
+    para "Aragorn and the"
     line "party escape."
 
-    para "But GANDALF dies"
+    para "But Gandalf dies"
     line "protecting you."
 
     para "The party presses"
@@ -976,19 +976,19 @@ LOTRHeroConcText:
     done
 
 LOTRCh3HeroText:
-    text "But GANDALFs valor"
+    text "But Gandalfs valor"
     line "has not gone"
     cont "unnoticed."
 
     para "He is revived as"
-    line "GANDALF the WHITE."
+    line "Gandalf the White."
 
-    para "SARUMAN the former"
-    line "WHITE wizard is"
+    para "Saruman the former"
+    line "White wizard is"
     cont "not happy."
 
     para "There can be only"
-    line "one WHITE wizard!"
+    line "one White wizard!"
     done
 
 LOTRVillainConcText:
@@ -996,7 +996,7 @@ LOTRVillainConcText:
     line "with your sword"
     cont "of flame."
 
-    para "Only GANDALF has"
+    para "Only Gandalf has"
     line "the power to hold"
     cont "you off."
 
@@ -1006,7 +1006,7 @@ LOTRVillainConcText:
     para "One last full"
     line "power swing!"
 
-    para "Finally GANDALF"
+    para "Finally Gandalf"
     line "is dead!"
 
     para "The rest of the"
@@ -1016,47 +1016,47 @@ LOTRVillainConcText:
     done
 
 LOTRCh3VillainText:
-    text "Now to kill FRODO."
+    text "Now to kill Frodo."
 
     para "What is that."
 
     para "A distant magic."
 
-    para "GANDALF?!"
+    para "Gandalf?!"
 
     para "It can't be."
 
     para "He has returned"
-    line "as GANDALF THE"
-    cont "WHITE."
+    line "as Gandalf The"
+    cont "White."
 
     para "You are most"
     line "displeased."
 
-    para "You are SARUMAN"
-    line "THE WHITE."
+    para "You are Saruman"
+    line "The White."
 
     para "You will not allow"
     line "this insult!"
 
     para "You must kill"
-    line "GANDALF!"
+    line "Gandalf!"
 
     para "There can be only"
-    line "one WHITE wizard!"
+    line "one White wizard!"
     done
 
 LOTRCh4HeroText:
-    text "GANDALFs new"
+    text "Gandalfs new"
     line "power is more"
     cont "than enough to"
-    cont "defeat SARUMAN."
+    cont "defeat Saruman."
 
-    para "But ARAGORN faces"
+    para "But Aragorn faces"
     line "a battle he can"
     cont "not win."
 
-    para "An elf ELROND"
+    para "An elf Elrond"
     line "has a gift for"
     cont "you."
 
@@ -1083,10 +1083,10 @@ LOTRCh4HeroText:
     done
 
 LOTRCh4VillainText:
-    text "GANDALF is too"
+    text "Gandalf is too"
     line "strong!"
 
-    para "SARUMAN and his"
+    para "Saruman and his"
     line "forces are swept"
     cont "aside."
 
@@ -1096,18 +1096,18 @@ LOTRCh4VillainText:
 
     para "Your forces have"
     line "surrounded the"
-    cont "camp of ARAGORN."
+    cont "camp of Aragorn."
 
     para "He is exhausted."
 
     para "As are his men."
 
     para "You take command"
-    line "of GOTHMOG the"
+    line "of Gothmog the"
     cont "commander of the"
     cont "Orc forces."
 
-    para "There is ARAGORN."
+    para "There is Aragorn."
 
     para "Alone he walks"
     line "towards us."
@@ -1117,22 +1117,22 @@ LOTRCh4VillainText:
     cont "their limbs rain"
     cont "from the sky."
 
-    para "Did ARAGORN do"
+    para "Did Aragorn do"
     line "that!"
 
     para "Attack at will!"
     done
 
 LOTRCh5HeroText:
-    text "Between GANDALF"
-    line "and ARAGORN all"
-    cont "SAURONS forces"
+    text "Between Gandalf"
+    line "and Aragorn all"
+    cont "Saurons forces"
     cont "are defeated."
 
-    para "FRODO is at"
-    line "MT DOOM!"
+    para "Frodo is at"
+    line "Mt Doom!"
 
-    para "You take the RING."
+    para "You take the Ring."
 
     para "Finally you will"
     line "cast it into the"
@@ -1147,19 +1147,19 @@ LOTRCh5HeroText:
 
     para "But it is mine..."
 
-    para "SAM shouts for me"
+    para "Sam shouts for me"
     line "to do it."
 
-    para "The RING..."
+    para "The Ring..."
 
     para "Where is it?"
 
     para "A huge figure"
     line "appears."
 
-    para "It is SAURON!"
+    para "It is Sauron!"
 
-    para "He has the RING!"
+    para "He has the Ring!"
 
     para "Here at the end"
     line "all things."
@@ -1169,15 +1169,15 @@ LOTRCh5HeroText:
     done
 
 LOTRCh5VillainText:
-    text "Between GANDALF"
-    line "and ARAGORN all"
-    cont "SAURONS forces"
+    text "Between Gandalf"
+    line "and Aragorn all"
+    cont "Saurons forces"
     cont "are defeated."
 
-    para "FRODO means to"
+    para "Frodo means to"
     line "cast you into"
     cont "the fires of"
-    cont "MT DOOM."
+    cont "Mt Doom."
 
     para "You plead for"
     line "your life."
@@ -1188,7 +1188,7 @@ LOTRCh5VillainText:
 
     para "I am home."
 
-    para "SAURON."
+    para "Sauron."
 
     para "You awaken."
 
@@ -1236,15 +1236,15 @@ LOTRDefeatText:
     done
 
 LOTREndText:
-    text "Though SAURON"
+    text "Though Sauron"
     line "seemed unbeatable"
-    cont "FRODO and SAM"
+    cont "Frodo and Sam"
     cont "fought to the"
     cont "end."
 
-    para "SAURON fell into"
-    line "MT DOOM and the"
-    cont "RING was finally"
+    para "Sauron fell into"
+    line "Mt Doom and the"
+    cont "Ring was finally"
     cont "destroyed."
 
     para "You gave your life"
@@ -1255,13 +1255,13 @@ LOTREndText:
     para "A light from the"
     line "sky comes."
 
-    para "It is GANDALF!"
+    para "It is Gandalf!"
 
     para "He takes you away."
 
     para "You welcome your"
     line "simple life in"
-    cont "the SHIRE."
+    cont "the Shire."
 
     para "For the rest of"
     line "your days."

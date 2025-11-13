@@ -44,7 +44,7 @@ MrFujisHouseBookshelf:
 	jumpstd DifficultBookshelfScript
 
 MrFujisHouseSuperNerdText:
-	text "MR.FUJI does live"
+	text "Mr Fuji does live"
 	line "here, but he's not"
 	cont "home now."
 

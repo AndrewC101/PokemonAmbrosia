@@ -249,7 +249,7 @@ LtSurgeFightDoneText:
 	line "gut!"
 
 	para "You should go"
-	line "to a SOLENOID"
+	line "to a Solenoid"
 	cont "concert."
 
 	para "I'll blow your"
@@ -297,7 +297,7 @@ GuitaristVincentSeenText:
 
 	para "I'm the lead"
 	line "guitarist of"
-	cont "THE SOLENOIDS."
+	cont "THE Solenoids."
 
 	para "Let me show you"
 	line "this tasty rift!"

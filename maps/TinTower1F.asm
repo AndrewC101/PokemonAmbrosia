@@ -463,7 +463,7 @@ TinTower1FEusineHoOhText:
 	line "studying #mon"
 
 	para "to become a famous"
-	line "#MANIAC!"
+	line "#maniac!"
 	done
 
 TinTower1FSage4Text2:

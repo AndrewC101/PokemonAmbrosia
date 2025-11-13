@@ -505,7 +505,7 @@ YunaWinAfterBattleText:
 YunaSeenText:
     text "Hello."
 
-    para "I am YUNA."
+    para "I am Yuna."
 
     para "I've heard that"
     line "a war is coming."
@@ -1071,7 +1071,7 @@ DBZHeroOrVillainChoiceText:
     done
 
 DBZCh1HeroText:
-    text "You are GOKU."
+    text "You are Goku."
 
     para "The hero of Earth."
 
@@ -1085,7 +1085,7 @@ DBZCh1HeroText:
 
     para "And he claims to"
     line "be your brother"
-    cont "RADITZ."
+    cont "Raditz."
 
     para "He tells you to"
     line "kill 100 humans"
@@ -1101,7 +1101,7 @@ DBZCh1HeroText:
 
     para "Only by teaming up"
     line "with your old"
-    cont "enemy PICCOLO will"
+    cont "enemy Piccolo will"
     cont "you have a chance."
     done
 
@@ -1145,7 +1145,7 @@ DBZCh2HeroText:
     line "injured."
 
     para "With his last"
-    line "breath RADITZ"
+    line "breath Raditz"
     cont "gloats that his"
     cont "friends are far"
     cont "stronger than"
@@ -1189,7 +1189,7 @@ DBZCh2VillainText:
     line "fierce warriors"
     cont "head for earth."
 
-    para "You are VEGETA."
+    para "You are Vegeta."
 
     para "Prince of your"
     line "dead race."
@@ -1243,7 +1243,7 @@ DBZCh3VillainText:
     para "You feel no"
     line "pleasure."
 
-    para "Unlike NAPPA"
+    para "Unlike Nappa"
     line "you are too"
     cont "disciplined to"
     cont "allow such an"
@@ -1264,11 +1264,11 @@ DBZCh3VillainText:
     done
 
 DBZCh4HeroText:
-    text "You let VEGETA"
+    text "You let Vegeta"
     line "flee to space."
 
     para "You need to head"
-    line "to PICCOLO's home"
+    line "to Piccolo's home"
     cont "planet to acquire"
     cont "Dragon balls."
 
@@ -1287,11 +1287,11 @@ DBZCh4HeroText:
 
     para "You sense a power."
 
-    para "Not VEGETA."
+    para "Not Vegeta."
 
     para "Something evil."
 
-    para "FRIEZA, Emperor"
+    para "Frieza, Emperor"
     line "of the universe"
     cont "is here."
 
@@ -1299,11 +1299,11 @@ DBZCh4HeroText:
     line "heard about the"
     cont "Dragon balls."
 
-    para "You find VEGETA."
+    para "You find Vegeta."
 
     para "He has stolen"
     line "a Dragon Ball so"
-    cont "FRIEZA can't make"
+    cont "Frieza can't make"
     cont "his wish."
 
     para "Before you can"
@@ -1311,9 +1311,9 @@ DBZCh4HeroText:
     cont "terrifying"
     cont "presence appears."
 
-    para "FRIEZA is here."
+    para "Frieza is here."
 
-    para "You and VEGETA"
+    para "You and Vegeta"
     line "team up to stop"
     cont "him."
     done
@@ -1322,9 +1322,9 @@ DBZCh4VillainText:
     text "This fighter is"
     line "too strong!"
 
-    para "NAPPA is killed."
+    para "Nappa is killed."
 
-    para "But VEGETA is"
+    para "But Vegeta is"
     line "shown mercy."
 
     para "On a distant world"
@@ -1333,7 +1333,7 @@ DBZCh4VillainText:
     cont "wine in a glass."
 
     para "You are lord"
-    line "FRIEZA."
+    line "Frieza."
 
     para "A servant comes."
 
@@ -1361,7 +1361,7 @@ DBZCh4VillainText:
     para "You sense a life"
     line "form."
 
-    para "Ah VEGETA, and he"
+    para "Ah Vegeta, and he"
     line "has some friends"
     cont "you don't"
     cont "recognise."
@@ -1384,26 +1384,26 @@ DBZGokuOrVegetaVillainText:
     done
 
 DBZCh5GokuHeroText:
-    text "FRIEZA is far"
+    text "Frieza is far"
     line "beyond anything"
     cont "you can hope to"
     cont "survive against."
 
     para "A flash of light!"
 
-    para "VEGETA falls to"
+    para "Vegeta falls to"
     line "the ground."
 
     para "He is gone."
 
     para "Another flash."
 
-    para "No KRILLIN!"
+    para "No Krillin!"
 
-    para "FRIEZAS finger"
+    para "Friezas finger"
     line "moves..."
 
-    para "Towards GOHAN."
+    para "Towards Gohan."
     done
 
 NewWarriorText:
@@ -1417,27 +1417,27 @@ NewWarriorText:
     line "eyes as a new"
     cont "warrior."
 
-    para "A SUPER SAIYAN!"
+    para "A Super Saiyan!"
 
-    para "FRIEZA will pay!"
+    para "Frieza will pay!"
     done
 
 DBZCh5VegetaHeroText:
-    text "FRIEZA is far"
+    text "Frieza is far"
     line "beyond anything"
     cont "you can hope to"
     cont "survive against."
 
     para "A flash of light!"
 
-    para "GOKU falls to"
+    para "Goku falls to"
     line "the ground."
 
     para "He is gone."
 
-    para "FRIEZA laughs."
+    para "Frieza laughs."
 
-    para "You SAIYANS are"
+    para "You Saiyans are"
     line "too weak to"
     cont "survive."
 
@@ -1456,11 +1456,11 @@ DBZCh5VegetaVillainText:
     line "finger and with"
     cont "a flash of light."
 
-    para "GOKU falls dead."
+    para "Goku falls dead."
 
-    para "You tell VEGETA.."
+    para "You tell Vegeta.."
 
-    para "You SAIYANS are"
+    para "You Saiyans are"
     line "too weak to"
     cont "survive."
 
@@ -1494,7 +1494,7 @@ DBZCh5GokuVillainText:
     line "finger and with"
     cont "a flash of light."
 
-    para "VEGETA falls dead."
+    para "Vegeta falls dead."
 
     para "You need another."
 
@@ -1503,14 +1503,14 @@ DBZCh5GokuVillainText:
 
     para "that felt good."
 
-    para "GOKU cries out."
+    para "Goku cries out."
 
     para "Such delightful"
     line "screams!"
     done
 
 DBZConcText:
-    text "FRIEZA was at"
+    text "Frieza was at"
     line "last defeated."
 
     para "The Dragon balls"
@@ -1522,10 +1522,10 @@ DBZConcText:
     done
 
 DBZCh6Text:
-    text "GOKU and VEGETA"
+    text "Goku and Vegeta"
     line "trained together"
     cont "and both reached"
-    cont "SUPER SAIYAN."
+    cont "Super Saiyan."
 
     para "They have one"
     line "last battle to"
@@ -1534,7 +1534,7 @@ DBZCh6Text:
     done
 
 DBZRolePlayEndText:
-    text "GOKU and VEGETA"
+    text "Goku and Vegeta"
     line "became close"
     cont "rivals."
 

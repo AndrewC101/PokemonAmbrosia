@@ -482,7 +482,7 @@ PokemaniacZachAfterBattleText:
 CooltrainerfCybilSeenText:
 	text "For years I"
 	line "have studied under"
-	cont "the KIMONO GIRLS."
+	cont "the Kimono Girls."
 
 	para "Everyday I danced"
 	line "like it was my"

@@ -215,7 +215,7 @@ VermilionCitySuperNerdText:
 	line "Vermilion Gym"
 	cont "are a rock band"
 	cont "known as"
-	cont "THE SOLENOIDS!"
+	cont "THE Solenoids!"
 
 	para "They have some"
 	line "sick rifts!"

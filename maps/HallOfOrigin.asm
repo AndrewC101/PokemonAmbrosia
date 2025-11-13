@@ -1392,7 +1392,7 @@ MultiverseHeroes1Text:
     line "another group."
 
     para "You recognise"
-    line "PALPATINE."
+    line "Palpatine."
 
     para "They look to"
     line "have been in"
@@ -1402,7 +1402,7 @@ MultiverseHeroes1Text:
     done
 
 MultiverseHeroes2Text:
-    text "JIREN and GOKU"
+    text "Jiren and Goku"
     line "engage first."
 
     para "The dark magic"
@@ -1417,7 +1417,7 @@ MultiverseHeroes2Text:
     cont "Nightmare."
 
     para "At his full"
-    line "power MERLIN"
+    line "power Merlin"
     cont "brings an end"
     cont "to the fight."
 
@@ -1491,7 +1491,7 @@ MultiverseVillains1Text:
     para "One only recognise"
     line "one of them."
 
-    para "AITHUSA the royal"
+    para "Aithusa the royal"
     line "dragon."
 
     para "He would make"
@@ -1505,16 +1505,16 @@ MultiverseVillains2Text:
     text "They are too"
     line "powerful!"
 
-    para "GALADRIEL blasts"
+    para "Galadriel blasts"
     line "your team apart."
 
-    para "SAURON reaches"
+    para "Sauron reaches"
     line "full power and"
    cont "rampages."
 
     para "Then..."
 
-    para "SAURON crashes"
+    para "Sauron crashes"
     line "to the ground!"
 
     para "A light engulfs"
@@ -1523,7 +1523,7 @@ MultiverseVillains2Text:
     para "Arceus is too"
     line "strong."
 
-    para "JIREN intercepts"
+    para "Jiren intercepts"
     line "the light."
 
    para "His shirt tears"
@@ -1535,7 +1535,7 @@ MultiverseVillains2Text:
 
     para "You have won."
 
-    para "PALPATINE heals"
+    para "Palpatine heals"
     line "everyone and"
     cont "informs you of"
     cont "another group"
@@ -1545,7 +1545,7 @@ MultiverseVillains2Text:
     para "You all rush"
     line "to them."
 
-    para "You see MERLIN!"
+    para "You see Merlin!"
 
     para "You crave revenge!"
     done
@@ -1624,7 +1624,7 @@ MultiverseDeities2Text:
     para "Then a darkness"
     line "takes hold."
 
-    para "SAURON is at"
+    para "Sauron is at"
     line "full power."
 
     para "But a warmth"
@@ -1635,13 +1635,13 @@ MultiverseDeities2Text:
     para "Arceus dispenses"
     line "judgement."
 
-    para "SAURON falls."
+    para "Sauron falls."
 
     para "All foes fall."
 
     para "Except one."
 
-    para "JIREN powers up."
+    para "Jiren powers up."
 
     para "A power that can"
     line "overcome anything."
@@ -1652,7 +1652,7 @@ MultiverseDeities2Text:
     para "With the last of"
     line "your strength"
     cont "you interrupt"
-    cont "JIRENs power up."
+    cont "Jirens power up."
 
     para "Just long enough"
     line "for Arceus to"

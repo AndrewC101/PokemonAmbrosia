@@ -199,7 +199,7 @@ Route11HiddenRevive:
 
 YoungsterOwenSeenText:
 	text "Are you here for"
-	line "the SOLENOID"
+	line "the Solenoid"
 	cont "concert?"
 	para "No way man, I got"
 	line "here first!"

@@ -1375,8 +1375,8 @@ StarWarsIntroText:
 StarWarsHeroOrVillainChoiceText:
     text "Do you want to"
     line "play as the"
-    cont "HEROES or the"
-    cont "VILLAINS?"
+    cont "Heroes or the"
+    cont "Villians?"
     done
 
 StarWarsCh1HeroText:
@@ -1392,7 +1392,7 @@ StarWarsCh1HeroText:
     line "appears."
 
     para "You must defend"
-    line "ANIKAN."
+    line "Anikan."
     done
 
 StarWarsCh1VillainText:
@@ -1417,7 +1417,7 @@ StarWarsCh1VillainText:
     done
 
 StarWarsCh2HeroText:
-    text "QUI GON is struck"
+    text "Qui Gon is struck"
     line "down."
 
     para "In a rage you"
@@ -1425,7 +1425,7 @@ StarWarsCh2HeroText:
     cont "figure."
 
     para "You resolve to"
-    line "train ANIKAN."
+    line "train Anikan."
 
     para "...."
 
@@ -1435,7 +1435,7 @@ StarWarsCh2HeroText:
     line "as you watch the"
     cont "security footage."
 
-    para "ANIKAN has turned"
+    para "Anikan has turned"
     line "to the dark side."
 
     para "He is a brother"
@@ -1456,7 +1456,7 @@ StarWarsCh2VillainText:
 
     para "15 years pass."
 
-    para "ANIKAN has seen"
+    para "Anikan has seen"
     line "the evil of the"
     cont "Jedi."
 
@@ -1468,35 +1468,35 @@ StarWarsCh2VillainText:
     done
 
 StarWarsCh3HeroText:
-    text "ANIKAN was"
+    text "Anikan was"
     line "stopped but"
     cont "not killed."
 
     para "He joins the"
-    line "EMPIRE and"
+    line "Empire and"
     cont "takes the name"
-    cont "VADER."
+    cont "Vader."
 
     para "20 years pass."
 
-    para "The EMPIRE"
+    para "The Empire"
     line "grows strong."
 
 	para "They develop the"
 	line "ultimate weapon,"
-	cont "the DEATH STAR."
+	cont "the Death Star."
 
-    para "ANIKAN had a"
-    line "son, LUKE."
+    para "Anikan had a"
+    line "son, Luke."
 
     para "Over the next 20"
-    line "years LUKE grows"
+    line "years Luke grows"
     cont "into a great"
     cont "pilot."
 
     para "He leads the"
     line "final assault on"
-    cont "the EMPIRE in a"
+    cont "the Empire in a"
     cont "violent space"
     cont "battle."
 
@@ -1510,7 +1510,7 @@ StarWarsCh3VillainText:
     cont "not killed."
 
     para "You are reborn"
-    line "as VADER."
+    line "as Vader."
 
     para "20 more years"
     line "pass."
@@ -1520,7 +1520,7 @@ StarWarsCh3VillainText:
 
 	para "They develop the"
 	line "ultimate weapon,"
-	cont "the DEATH STAR."
+	cont "the Death Star."
 
     para "When the rebels"
     line "attack it is"
@@ -1531,16 +1531,16 @@ StarWarsCh3VillainText:
     done
 
 StarWarsCh4HeroText:
-    text "The DEATH STAR"
+    text "The Death Star"
     line "is destroyed."
 
-    para "LUKE learns that"
-    line "his father ANIKAN"
+    para "Luke learns that"
+    line "his father Anikan"
     cont "is not dead."
 
-    para "He is VADER."
+    para "He is Vader."
 
-    para "LUKE can sense"
+    para "Luke can sense"
     line "there is good"
     cont "in him."
 
@@ -1548,10 +1548,10 @@ StarWarsCh4HeroText:
     line "up to the Empire."
 
     para "You are taken to"
-    line "see VADER and"
+    line "see Vader and"
     cont "his master."
 
-    para "PALPATINE."
+    para "Palpatine."
 
 	para "You don't want to"
 	line "fight but it is"
@@ -1562,16 +1562,16 @@ StarWarsCh4HeroText:
 
 StarWarsCh4VillainText:
     text "The Rebels repel"
-    line "the DEATH STAR."
+    line "the Death Star."
 
-    para "VADER learns he"
+    para "Vader learns he"
     line "has a son from"
     cont "his previous"
-    cont "life as ANIKAN."
+    cont "life as Anikan."
 
-    para "His name is LUKE."
+    para "His name is Luke."
 
-    para "LUKE has given"
+    para "Luke has given"
     line "himself over to"
     cont "the Empire."
 
@@ -1583,10 +1583,10 @@ StarWarsCh4VillainText:
     para "Or destroy us."
 
     para "He is brought"
-    line "before VADER"
+    line "before Vader"
     cont "and you."
 
-    para "PALPATINE."
+    para "Palpatine."
 
     para "Ruler of the"
     line "Galaxy."
@@ -1599,7 +1599,7 @@ StarWarsCh4VillainText:
 StarWarsCh5HeroText:
     text "You are no match."
 
-    para "PALPATINE is"
+    para "Palpatine is"
     line "slowly draining"
     cont "your life."
 
@@ -1619,9 +1619,9 @@ StarWarsCh5HeroText:
     para "You open your"
     line "eyes."
 
-    para "VADER stands"
+    para "Vader stands"
     line "between you and"
-    cont "PALPATINE."
+    cont "Palpatine."
 
     para "You rise for one"
     line "last battle as"
@@ -1629,7 +1629,7 @@ StarWarsCh5HeroText:
     done
 
 StarWarsCh5VillainText:
-    text "LUKE is no"
+    text "Luke is no"
     line "match for the"
     cont "two of you."
 
@@ -1637,8 +1637,8 @@ StarWarsCh5VillainText:
     line "slowly killing"
     cont "him."
 
-    para "LUKE begs for"
-    line "VADER to save him."
+    para "Luke begs for"
+    line "Vader to save him."
 
     para "How pathetic."
 
@@ -1653,11 +1653,11 @@ StarWarsCh5VillainText:
 	para "You are knocked"
 	line "away."
 
-	para "VADER is attacking"
+	para "Vader is attacking"
 	line "you."
 
 	para "You have longed"
-	line "for the day VADER"
+	line "for the day Vader"
 	cont "would do this."
 
 	para "But to do so out"
@@ -1670,7 +1670,7 @@ StarWarsCh5VillainText:
     done
 
 StarWarsEndText:
-    text "PALPATINE was"
+    text "Palpatine was"
     line "defeated."
 
     para "The galaxy is"
@@ -1679,8 +1679,8 @@ StarWarsEndText:
     para "But the battle"
     line "was intense."
 
-    para "In LUKES arms"
-    line "ANIKANS life ends."
+    para "In Lukes arms"
+    line "Anikans life ends."
 
     para "Finally content"
     line "that he made the"

@@ -204,7 +204,7 @@ GuitaristClydeSeenText:
 	line "in Vermilion."
 
 	para "We're called"
-	line "THE SOLENOIDS!"
+	line "THE Solenoids!"
 
 	para "LT Surge himself"
 	line "is the lead"

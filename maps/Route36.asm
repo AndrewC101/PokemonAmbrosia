@@ -607,10 +607,10 @@ SchoolboyAlanBooksText:
 	done
 
 MeetArthurText:
-	text "ARTHUR: Who are"
+	text "Arthur: Who are"
 	line "you?"
 
-	para "I'm ARTHUR of"
+	para "I'm Arthur of"
 	line "Thursday."
 	done
 
@@ -620,7 +620,7 @@ ArthurGivesGiftText:
 	done
 
 ArthurGaveGiftText:
-	text "ARTHUR: A #mon"
+	text "Arthur: A #mon"
 	line "that uses rock-"
 	cont "type moves should"
 	cont "hold on to that."
@@ -630,14 +630,14 @@ ArthurGaveGiftText:
 	done
 
 ArthurThursdayText:
-	text "ARTHUR: I'm ARTHUR"
+	text "Arthur: I'm Arthur"
 	line "of Thursday. I'm"
 	cont "the second son out"
 	cont "of seven children."
 	done
 
 ArthurNotThursdayText:
-	text "ARTHUR: Today's"
+	text "Arthur: Today's"
 	line "not Thursday. How"
 	cont "disappointing."
 	done

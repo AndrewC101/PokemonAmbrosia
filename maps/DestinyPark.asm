@@ -970,11 +970,11 @@ MasterChuckSeenText:
 	text "We must never give"
 	line "into hopelessness"
 	cont "or laziness."
-	para "Did GOKU get lazy"
+	para "Did Goku get lazy"
 	line "on his way to"
 	cont "NAMEK or in the"
 	cont "time chamber!"
-	para "Did VEGETA get"
+	para "Did Vegeta get"
 	line "lazy in his"
 	cont "training, never!"
 	done

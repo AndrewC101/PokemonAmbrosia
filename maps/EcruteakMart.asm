@@ -44,7 +44,7 @@ EcruteakMartGrannyText:
 	cont "weren't."
 
 	para "I gave up"
-	line "being a KIMONO"
+	line "being a Kimono"
 	cont "girl after I"
 	cont "lost them."
 	done

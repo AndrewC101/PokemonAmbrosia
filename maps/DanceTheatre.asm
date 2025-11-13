@@ -242,7 +242,7 @@ KimonoGirlMikiBeatenText:
 
 KimonoGirlMikiAfterBattleText:
 	text "You remind me"
-	line "of SOPHIE."
+	line "of Sophie."
 
 	para "She too understood"
 	line "the meaning of"
@@ -250,7 +250,7 @@ KimonoGirlMikiAfterBattleText:
 	done
 
 SurfGuyNeverLeftAScratchText:
-	text "The KIMONO GIRLS"
+	text "The Kimono Girls"
 	line "all have distinct"
 	cont "personalities."
 
@@ -262,14 +262,14 @@ SurfGuyNeverLeftAScratchText:
 SurfGuyLadGiftText:
 	text "Young man, if"
 	line "you defeat all the"
-	cont "KIMONO GIRLS, I'll"
+	cont "Kimono Girls, I'll"
 	cont "give you a gift."
 	done
 
 SurfGuyLassieGiftText:
 	text "Young woman, if"
 	line "you defeat all the"
-	cont "KIMONO GIRLS, I'll"
+	cont "Kimono Girls, I'll"
 	cont "give you a gift."
 	done
 
@@ -297,7 +297,7 @@ SurfGuySurfExplanationText:
 SurfGuyElegantKimonoGirlsText:
 	text "If only I could"
 	line "be so elegant as"
-	cont "the KIMONO GIRLS."
+	cont "the Kimono Girls."
 	done
 
 RhydonText:
@@ -319,7 +319,7 @@ DanceTheatreCooltrainerMText:
 	done
 
 DanceTheatreGrannyText:
-	text "The KIMONO GIRLS"
+	text "The Kimono Girls"
 	line "are so beautiful…"
 
 	para "But they have to"

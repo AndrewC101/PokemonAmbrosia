@@ -175,7 +175,7 @@ FuchsiaCityYoungsterText:
 	cont "Hoenn."
 
 	para "We will never"
-	line "forget you, KOGA."
+	line "forget you, Koga."
 
 	para "You fought and"
 	line "died for us."
@@ -186,7 +186,7 @@ FuchsiaCityYoungsterText_Saved:
 	line "life on the line"
 	cont "to save us all."
 
-	para "I know KOGA would"
+	para "I know Koga would"
 	line "be proud of you."
 
 	para "Everybody else"
@@ -206,7 +206,7 @@ InvadedFuchsiaCityYoungsterText:
 	done
 
 FuchsiaCityPokefanMText:
-	text "KOGA's daughter"
+	text "Koga's daughter"
 	line "succeeded him as"
 
 	para "the Gym Leader"

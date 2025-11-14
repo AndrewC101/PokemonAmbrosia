@@ -2367,8 +2367,8 @@ FroakieEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, SMOKESCREEN
-	db 6, WATER_GUN
-	db 8, QUICK_ATTACK
+    db 6, QUICK_ATTACK
+	db 8, WATER_GUN
 	db 10, AQUA_JET
 	db 12, DISABLE
 	db 17, SWIFT

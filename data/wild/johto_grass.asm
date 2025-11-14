@@ -1271,7 +1271,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATICATE
+	db 9, RATTATA
 	; day
 	db 3, RATTATA
 	db 3, STARLY
@@ -1279,7 +1279,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATICATE
+	db 9, RATTATA
 	; nite
 	db 3, RATTATA
 	db 3, HOOTHOOT
@@ -1287,7 +1287,7 @@ JohtoGrassWildMons:
 	db 4, CLEFAIRY
 	db 5, VULPIX
 	db 5, MURKROW
-	db 9, RATICATE
+	db 9, RATTATA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
@@ -1299,7 +1299,7 @@ JohtoGrassWildMons:
 	db 5, BUNEARY
 	db 7, JOLTIK
 	db 7, PIKACHU
-	db 11, STARAVIA
+	db 11, STARLY
 	; day
 	db 3, CATERPIE
 	db 4, STARLY
@@ -1307,7 +1307,7 @@ JohtoGrassWildMons:
 	db 5, BUNEARY
 	db 7, JOLTIK
 	db 7, PIKACHU
-	db 11, STARAVIA
+	db 11, STARLY
 	; nite
 	db 4, HOOTHOOT
 	db 5, MEOWTH
@@ -1315,7 +1315,7 @@ JohtoGrassWildMons:
 	db 6, POLIWAG
 	db 7, MURKROW
 	db 7, SNEASEL
-	db 11, PERSIAN
+	db 11, MEOWTH
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_31
@@ -1343,7 +1343,7 @@ JohtoGrassWildMons:
 	db 7, VULPIX
 	db 8, CLEFAIRY
 	db 8, LITWICK
-	db 11, HAUNTER
+	db 11, HONEDGE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32

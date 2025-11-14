@@ -492,7 +492,7 @@ Route30TrainerTipsText:
 	para "With no Badges"
 	line "the highest level"
 	cont "you can catch is"
-	cont "20."
+	cont "10."
 	done
 
 YoungsterJoeyText_GiveHPUpAfterBattle:

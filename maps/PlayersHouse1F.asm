@@ -348,7 +348,7 @@ ComeHomeForDSTText:
 	line "Saving Time."
 
 	para "Did you forget"
-	line "your PHONE?"
+	line "your Phone?"
 	done
 
 KnowTheInstructionsText:

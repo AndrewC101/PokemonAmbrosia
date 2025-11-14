@@ -102,8 +102,8 @@ GameFreakGameDesignerAfterDiplomaText:
 	done
 
 GameFreakGraphicArtistText:
-	text "I'm the GRAPHIC"
-	line "ARTIST."
+	text "I'm the Graphic"
+	line "Artist."
 
 	para "Finding sprites"
 	line "for all the new"
@@ -122,12 +122,12 @@ GameFreakGraphicArtistText:
 
 GameFreakProgrammerText:
 	text "Who, me? I'm the"
-	line "PROGRAMMER."
+	line "Programmer."
 
 	para "It took a long"
 	line "time and many"
 	cont "failed attempts"
-	cont "to get the SELF"
+	cont "to get the Self"
 	cont "trainer to work."
 
 	para "But the biggest"
@@ -148,8 +148,8 @@ GameFreakProgrammerText:
 	done
 
 GameFreakCharacterDesignerText:
-	text "I'm the CHARACTER"
-	line "DESIGNER."
+	text "I'm the Character"
+	line "Designer."
 
 	para "Cynthia and Leon"
 	line "had to be made"
@@ -185,7 +185,7 @@ CeladonMansion3FReferenceMaterialText:
 	text "It's crammed with"
 	line "reference materi-"
 	cont "als. There's even"
-	cont "a # DOLL."
+	cont "a # doll."
 	done
 
 CeladonMansion3F_MapEvents:

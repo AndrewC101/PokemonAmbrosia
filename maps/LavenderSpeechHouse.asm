@@ -30,7 +30,7 @@ LavenderSpeechHousePokefanFText:
 	para "Mr Fuji is a"
 	line "pacifist but..."
 
-	para "AGATHA wasn't"
+	para "Agatha wasn't"
 
 	para "Her #mon"
 	line "possessed the"
@@ -39,7 +39,7 @@ LavenderSpeechHousePokefanFText:
 	cont "they had all"
 	cont "killed each other."
 
-	para "AGATHA passed not"
+	para "Agatha passed not"
 	line "long ago."
 
 	para "She never got to"

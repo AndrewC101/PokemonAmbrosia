@@ -121,7 +121,7 @@ GoldenrodVendingNoSpaceText:
 
 GoldenrodDeptStore6FLassText:
 	text "Do you listen to"
-	line "LUCKY CHANNEL?"
+	line "Lucky Channel?"
 
 	para "It's all a fix."
 
@@ -135,7 +135,7 @@ GoldenrodDeptStore6FLassText:
 GoldenrodDeptStore6FSuperNerdText:
 	text "I'm on my"
 	line "twenty fifth"
-	cont "LEMONADE."
+	cont "Lemonade."
 
 	para "They are so..."
 

@@ -86,7 +86,7 @@ ElmsHousePCText:
 	line "Emperor Wallace"
 	cont "may now be in"
 	cont "command of the"
-	cont "Hoenn LEGENDARY"
+	cont "Hoenn legendary"
 	cont "#mon."
 
 	para "If he controls the"

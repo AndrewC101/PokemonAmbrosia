@@ -391,7 +391,7 @@ TinTower1FSage2Text:
 
 	para "In other words…"
 
-	para "HO-OH descended"
+	para "Ho-oh descended"
 	line "from the sky and"
 
 	para "gave new life to"
@@ -419,7 +419,7 @@ TinTower1FSage3Text:
 	done
 
 TinTower1FSage4Text1:
-	text "HO-OH appears to"
+	text "Ho-oh appears to"
 	line "have descended"
 
 	para "upon this, the Tin"
@@ -509,7 +509,7 @@ TinTower1FSage6Text2:
 	line "#mon, Suicune"
 
 	para "is said to be the"
-	line "closest to HO-OH."
+	line "closest to Ho-oh."
 
 	para "I hear there may"
 	line "also be a link to"

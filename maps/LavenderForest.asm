@@ -168,7 +168,7 @@ AgathaSeenText2:
     line "say goodbye to"
     cont "someone?"
 
-    para "My sister AGATHA"
+    para "My sister Agatha"
     line "died two years"
     cont "ago."
 

@@ -99,7 +99,7 @@ SproutTower1FSage4Text:
 	para "He has not"
 	line "returned."
 
-	para "Master LI has"
+	para "Master Li has"
 	line "forbidden entry."
 
 	para "Only with Flash"

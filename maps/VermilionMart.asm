@@ -30,7 +30,7 @@ VermilionMartBeautyScript:
 
 VermilionMartSuperNerdText:
 	text "I need lots of"
-	line "POTIONS to get"
+	line "Potions to get"
 	cont "over my hang-"
 	cont "over from the"
 	cont "last Solenoid"

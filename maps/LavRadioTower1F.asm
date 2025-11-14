@@ -123,7 +123,7 @@ LavRadioTower1FSuperNerd1Text:
 	para "Now I need to"
 	line "write the script"
 	cont "for our popular"
-	cont "HOENITE CANNIBALS"
+	cont "Hoenn Cannibals"
 	cont "show."
 	done
 
@@ -173,7 +173,7 @@ LavRadioTower1FGentlemanText_GotExpnCard:
 
 	para "It also entitles"
 	line "you to a single"
-	cont "OPTION of our"
+	cont "Option of our"
 	cont "stock."
 
 	para "Just three years"
@@ -184,7 +184,7 @@ LavRadioTower1FSuperNerd2Text:
 	text "Hey there!"
 
 	para "I am the super"
-	line "MUSIC DIRECTOR!"
+	line "Music Director!"
 
 	para "People around"
 	line "here are rather"
@@ -220,7 +220,7 @@ LavRadioTower1FPokeFluteSignText:
 	line "with Mellow Sounds"
 
 	para "of the # Flute"
-	line "on CHANNEL 20"
+	line "on Channel 20"
 	done
 
 LavRadioTower1FReferenceLibraryText:

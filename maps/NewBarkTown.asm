@@ -359,7 +359,7 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "Elm #mon LAB"
+	text "Elm #mon lab"
 	done
 
 NewBarkTownElmsHouseSignText:

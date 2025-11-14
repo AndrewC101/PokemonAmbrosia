@@ -300,7 +300,7 @@ BuenaPhoneRadioTowerDirectorText:
 	line "are black suits."
 
 	para "But it's a secret"
-	line "that our DIRECTOR"
+	line "that our Director"
 
 	para "is a TV fan, so if"
 	line "you see him, don't"

@@ -634,7 +634,7 @@ UndergroundSilverBeforeText:
 
     para "No doubt they"
     line "are hiding the"
-    cont "DIRECTOR in here."
+    cont "Director in here."
 
     para "I'm looking for"
     line "someone."
@@ -778,7 +778,7 @@ BurglarEddieAfterBattleText:
 
 SwitchRoomText_Switch1:
 	text "It's labeled"
-	line "SWITCH 1."
+	line "Switch 1."
 	done
 
 GruntF3SeenText:
@@ -814,27 +814,27 @@ GruntF3AfterBattleText:
 	para "Oh I don't care."
 
 	para "Go rescue the"
-	line "DIRECTOR."
+	line "Director."
 	done
 
 SwitchRoomText_OffTurnOn:
-	text "It's OFF."
-	line "Turn it ON?"
+	text "It's off."
+	line "Turn it on?"
 	done
 
 SwitchRoomText_OnTurnOff:
-	text "It's ON."
-	line "Turn it OFF?"
+	text "It's on."
+	line "Turn it off?"
 	done
 
 SwitchRoomText_Switch2:
 	text "It's labeled"
-	line "SWITCH 2."
+	line "Switch 2."
 	done
 
 SwitchRoomText_Switch3:
 	text "It's labeled"
-	line "SWITCH 3."
+	line "Switch 3."
 	done
 
 SwitchRoomText_Emergency:

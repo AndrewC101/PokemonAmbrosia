@@ -365,12 +365,12 @@ FakeDirectorTextBefore2:
 
 	para "I have assumed"
 	line "the likeness of"
-	cont "the good DIRECTOR"
+	cont "the good Director"
 	cont "to help guide"
 	cont "people to our"
 	cont "cause."
 
-	para "The real DIRECTOR"
+	para "The real Director"
 	line "is quite safe."
 
 	para "He would get in"
@@ -427,7 +427,7 @@ FakeDirectorTextAfter:
 	cont "nuance of this."
 
 	para "Fine, go rescue"
-	line "your DIRECTOR."
+	line "your Director."
 
 	para "He is stashed"
 	line "away in the"
@@ -580,7 +580,7 @@ RadioTower5FRocketBossAfterText:
 	done
 
 RadioTower5FDirectorThankYouText:
-	text "DIRECTOR: <PLAY_G>,"
+	text "Director: <PLAY_G>,"
 	line "thank you!"
 
 	para "Your courageous"
@@ -738,7 +738,7 @@ RadioTower5FDirectorDescribeClearBellText:
 	done
 
 RadioTower5FDirectorText:
-	text "DIRECTOR: Hello,"
+	text "Director: Hello,"
 	line "<PLAY_G>!"
 
 	para "You know, I love"

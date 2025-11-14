@@ -22,7 +22,7 @@ VermilionDiglettsCaveSpeechHouseGentlemanText:
 
 	para "They weren't"
 	line "very strong but"
-	cont "high level DUGTRIO"
+	cont "high level Dugtrio"
 	cont "were also known"
 	cont "to inhabit the"
 	cont "cave."

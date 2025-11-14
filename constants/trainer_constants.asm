@@ -326,32 +326,32 @@ KRIS EQU __trainer_class__
 	const GRUNTM_2
 	const GRUNTM_3
 	const GRUNTM_4
-	const GRUNTM_5
-	const GRUNTM_6
-	const GRUNTM_7
+	const GRUNTM_5 ; unused
+	const GRUNTM_6 ; unused
+	const GRUNTM_7 ; unused
 	const GRUNTM_8
 	const GRUNTM_9
 	const GRUNTM_10
-	const GRUNTM_11
+	const GRUNTM_11 ; unused
 	const GRUNTM_12 ; unused
-	const GRUNTM_13
-	const GRUNTM_14
-	const GRUNTM_15
-	const GRUNTM_16
-	const GRUNTM_17
-	const GRUNTM_18
+	const GRUNTM_13 ; unused
+	const GRUNTM_14 ; unused
+	const GRUNTM_15 ; unused
+	const GRUNTM_16 ; unused
+	const GRUNTM_17 ; unused
+	const GRUNTM_18 ; unused
 	const GRUNTM_19
 	const GRUNTM_20
 	const GRUNTM_21
 	const GRUNTM_22 ; unused
 	const GRUNTM_23 ; unused
 	const GRUNTM_24
-	const GRUNTM_25
+	const GRUNTM_25 ; unused
 	const GRUNTM_26 ; unused
 	const GRUNTM_27 ; unused
 	const GRUNTM_28
 	const GRUNTM_29
-	const GRUNTM_30
+	const GRUNTM_30 ; unused
 	const GRUNTM_31
 
 	trainerclass GENTLEMAN ; 20 ; Remove?

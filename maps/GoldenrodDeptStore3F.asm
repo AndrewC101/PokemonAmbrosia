@@ -30,7 +30,7 @@ GoldenrodDeptStore3FElevatorButton:
 GoldenrodDeptStore3FSuperNerdText:
 	text "I just..."
 
-	para "CAN'T DECIDE!"
+	para "can't decide!"
 
 	para "My Kirlia can"
 	line "become a cool"

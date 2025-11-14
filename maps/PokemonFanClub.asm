@@ -124,9 +124,9 @@ PokemonFanClubBraggingSign:
 	jumptext PokemonFanClubBraggingSignText
 
 PokemonFanClubChairmanDidYouVisitToHearAboutMyMonText:
-	text "I'm the CHAIRMAN"
-	line "of the #mon FAN"
-	cont "CLUB."
+	text "I'm the Chairman"
+	line "of the #mon Fan"
+	cont "Club."
 
 	para "I formally bring"
 	line "to order this"
@@ -191,7 +191,7 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	para "Thank you for"
 	line "listening to me."
 
-	para "Surely now you must"
+	para "Surely you must"
 	line "agree with my"
 	cont "assessment."
 
@@ -201,7 +201,7 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 
 PokemonFanClubChairmanItsARareCandyText:
 	text "It's a Rare Candy"
-	line "that makes #mon"
+	line "it makes #mon"
 	cont "stronger."
 
 	para "I prefer making my"
@@ -233,7 +233,7 @@ PokemonFanClubChairmanHowDisappointingText:
 	done
 
 PokemonFanClubReceptionistText:
-	text "Our CHAIRMAN is"
+	text "Our Chairman is"
 	line "very..."
 
 	para "Passionate when"
@@ -257,17 +257,17 @@ PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
 	line "but I could never"
 	cont "catch one. So I'm"
 	cont "making do with a"
-	cont "# DOLL that I"
+	cont "# doll that I"
 	cont "found."
 	done
 
 PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	text "Oh, I see now. The"
 	line "girl who lost this"
-	cont "# DOLL is sad…"
+	cont "# doll is sad…"
 
 	para "OK. Could you take"
-	line "this # DOLL"
+	line "this # doll"
 	cont "back to that poor"
 	cont "little girl?"
 
@@ -279,7 +279,7 @@ PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 
 PokemonFanClubPlayerReceivedDollText:
 	text "<PLAYER> received"
-	line "# DOLL."
+	line "# doll."
 	done
 
 PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
@@ -316,7 +316,7 @@ PokemonFanClubClefairyDollText:
 
 	para "Oh, right."
 	line "It's a Clefairy"
-	cont "# DOLL."
+	cont "# doll."
 	done
 
 PokemonFanClubBayleefText:

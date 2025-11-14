@@ -161,9 +161,9 @@ PictureBookshelfText:
 	done
 
 MagazineBookshelfText:
-	text "Lots of dumb"
+	text "Lots of vapid"
 	line "colourful"
-	cont "clickbait books."
+	cont "#mon books."
 	done
 
 TeamRocketOathText:

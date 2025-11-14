@@ -307,7 +307,7 @@ BugCatcherJoshAfterBattleText:
 	done
 
 TwinsAmyandmay1SeenText:
-	text "AMY: The door"
+	text "Amy: The door"
 	line "is open again!"
 
 	para "I was going to"

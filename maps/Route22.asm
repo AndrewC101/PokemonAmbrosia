@@ -105,7 +105,7 @@ VictoryRoadEntranceSignText:
 	text "#mon League"
 
 	para "Victory Road"
-	line "ENTRANCE"
+	line "Entrance"
 	done
 
 Route22HoenInvadedBlockScript:

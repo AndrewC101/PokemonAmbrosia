@@ -371,7 +371,7 @@ RadioTower2FBlackBelt1Text:
 	cont "beyond this point."
 
 	para "By order of the"
-	line "DIRECTOR!"
+	line "Director!"
 
 	para "He didn't use"
 	line "to be like"
@@ -386,7 +386,7 @@ RadioTower2FBlackBelt2Text:
 	text "Feel free to look"
 	line "around anywhere."
 
-	para "The DIRECTOR is"
+	para "The Director is"
 	line "back to his old"
 	cont "self."
 	done
@@ -459,7 +459,7 @@ RadioTower2FBuenaShowIntroductionText:
 
 RadioTower2FBuenaTuneInToMyShowText:
 	text "Buena: Tune in to"
-	line "my Password SHOW!"
+	line "my Password show!"
 	done
 
 RadioTower2FBuenaDoYouKnowPasswordText:

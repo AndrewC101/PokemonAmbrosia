@@ -230,8 +230,8 @@ RadioTower1FReceptionistNoToursText:
 
 RadioTower1FLuckyNumberManAskToPlayText:
 	text "Hi, are you here"
-	line "for the LUCKY"
-	cont "NUMBER SHOW?"
+	line "for the Lucky"
+	cont "Number Show?"
 
 	para "Want me to check"
 	line "the ID numbers of"
@@ -261,7 +261,7 @@ RadioTower1FLuckyNumberManDotDotDotText:
 RadioTower1FLuckyNumberManComeAgainText:
 	text "Please come back"
 	line "next week for the"
-	cont "next LUCKY NUMBER."
+	cont "next Lucky Number."
 	done
 
 RadioTower1FLuckyNumberManPerfectMatchText:
@@ -312,7 +312,7 @@ RadioTower1FRadioCardWomanOfferQuizText:
 	text "It's your lucky"
 	line "day!"
 
-	para "We have a QUIZ"
+	para "We have a quiz"
 	line "and you can enter"
 	cont "for free."
 
@@ -503,7 +503,7 @@ RadioTower1FDirectoryText:
 	done
 
 RadioTower1FLuckyChannelSignText:
-	text "LUCKY CHANNEL!"
+	text "Lucky Channel!"
 
 	para "Win with #mon"
 	line "ID numbers!"

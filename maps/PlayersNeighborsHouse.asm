@@ -84,7 +84,7 @@ PlayersNeighborsDaughterText:
 
 	para "You can see"
 	line "them on the"
-	cont "STATS page or"
+	cont "Stats page or"
 	cont "the second page"
 	cont "of the #dex."
 

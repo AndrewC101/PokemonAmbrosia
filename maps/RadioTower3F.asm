@@ -159,7 +159,7 @@ RadioTower3FGymGuideText:
 
 RadioTower3FCooltrainerFPleaseSaveDirectorText:
 	text "Team Rocket have"
-	line "taken the DIRECTOR"
+	line "taken the Director"
 	cont "hostage!"
 
 	para "He is locked on"
@@ -173,7 +173,7 @@ RadioTower3FCooltrainerFPleaseSaveDirectorText:
 	done
 
 RadioTower3FCooltrainerFIsDirectorSafeText:
-	text "Is the DIRECTOR"
+	text "Is the Director"
 	line "safe?"
 	done
 

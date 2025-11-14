@@ -80,7 +80,7 @@ FuchsiaMartCooltrainerFText:
 FuchsiaMartCooltrainerFText_Invaded:
 	text "I saw it!"
 
-	para "A GROUDON!"
+	para "A Groudon!"
 
 	para "I thought it was"
 	line "going to eat me."
@@ -94,7 +94,7 @@ FuchsiaMartCooltrainerFText_Saved:
 
 	para "I'm not going to"
 	line "end up as a"
-	cont "GROUDON snack."
+	cont "Groudon snack."
 
 	para "I don't know how"
 	line "I can thank you!"

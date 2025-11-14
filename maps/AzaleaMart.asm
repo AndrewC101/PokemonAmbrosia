@@ -25,7 +25,7 @@ AzaleaMartCooltrainerMText:
 	line "a special Kurt"
 	cont "Ball."
 
-	para "The FRIEND Ball."
+	para "The Friend Ball."
 
 	para "It makes #mon"
 	line "like you more"
@@ -47,7 +47,7 @@ AzaleaMartBugCatcherText:
 
 	para "I don't know"
 	line "why I bother"
-	cont "buying POTIONS."
+	cont "buying Potions."
 
 	para "I can't use"
 	line "them in any"

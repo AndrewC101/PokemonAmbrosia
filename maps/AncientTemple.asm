@@ -43,7 +43,7 @@ HoohLugiaBlockText:
     cont "the powers of"
     cont "fire and wind."
 
-    para "HO-OH and"
+    para "Ho-oh and"
     line "Lugia"
 
     para "May pass."

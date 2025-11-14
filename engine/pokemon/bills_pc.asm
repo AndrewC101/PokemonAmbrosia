@@ -1967,7 +1967,7 @@ MovePKMNWitoutMail_InsertMon:
 	ret
 
 .Saving_LeaveOn:
-	db "Saving… Leave ON!@"
+	db "Saving… Leave On!@"
 
 .Jumptable:
 	dw .BoxToBox

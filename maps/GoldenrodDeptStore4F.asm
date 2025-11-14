@@ -40,9 +40,9 @@ GoldenrodDeptStore4FElevatorButton:
 GoldenrodDeptStore4FCooltrainerMText:
 	text "Protein!"
 
-	para "I NEED!"
+	para "I need!"
 
-	para "MORE!"
+	para "More!"
 
 	para "Protein..."
 

@@ -48,8 +48,8 @@ GoldenrodDeptStore1FGentlemanText:
 	done
 
 GoldenrodDeptStore1FPokefanFText:
-	text "I am a TRUE"
-	line "POKEFAN!"
+	text "I am a true"
+	line "#fan!"
 
 	para "I spend all my"
 	line "money here."

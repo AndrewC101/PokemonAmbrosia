@@ -33,7 +33,7 @@ Route31VioletGateCooltrainerFText:
 	line "discovered it"
 	cont "has a basement."
 
-	para "A SAGE has been"
+	para "A Sage has been"
 	line "missing for days"
 	cont "down there."
 	done

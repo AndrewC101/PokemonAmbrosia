@@ -153,8 +153,8 @@ PokecomCenterAdminOfficeMobileComputer1Text:
 	done
 
 PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub:
-	text "There's a #COM"
-	line "CLUB upstairs in"
+	text "There's a #com"
+	line "club upstairs in"
 
 	para "any #mon"
 	line "Center."

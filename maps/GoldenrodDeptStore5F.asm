@@ -107,7 +107,7 @@ GoldenrodDeptStore5FPokefanMText:
 	cont "the Game Corner."
 
 	para "Then there is"
-	line "the MOVE TUTOR"
+	line "the Move Tutor"
 	cont "who claims he"
 	cont "has the strongest"
 	cont "moves available."

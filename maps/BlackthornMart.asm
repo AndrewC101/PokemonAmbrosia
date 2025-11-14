@@ -49,13 +49,13 @@ BlackthornMartBlackBeltText:
 	para "But should I"
 	line "buy a small"
 	cont "number of"
-	cont "ULTRA balls"
+	cont "Ultra balls"
 	cont "or loads of"
 	cont "#balls?"
 
 	para "Or maybe a"
 	line "moderate number of"
-	cont "GREAT balls."
+	cont "Great balls."
 	done
 
 BlackthornMart_MapEvents:

@@ -330,7 +330,7 @@ RuinsOfAlphResearchCenterAcademicBooksText:
 
 	para "In the back..."
 
-	para "A DIGIMON book!"
+	para "A Digimon book!"
 	done
 
 RuinsOfAlphResearchCenter_MapEvents:

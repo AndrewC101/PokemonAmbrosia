@@ -965,7 +965,7 @@ Route32CrystalText_KeepItUp:
     line "good stuff there."
 
     para "Watch out for"
-    line "INVADERS!"
+    line "Invaders!"
 
     para "They are bright"
     line "red and are really"

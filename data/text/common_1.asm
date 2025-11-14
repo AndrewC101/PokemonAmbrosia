@@ -743,7 +743,7 @@ _LC_Text5::
 
 _LC_Text6::
 	text_start
-	line "LUCKY NUMBER SHOW!"
+	line "Lucky Number Show!"
 	done
 
 _LC_Text7::

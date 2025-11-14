@@ -725,7 +725,7 @@ BugCatchingContestant5BStillCompetingText:
 
 BugCatchingContestant6BText:
 	text "Barry: That #-"
-	line "MON you caught…"
+	line "mon you caught…"
 	cont "it's awesome!"
 	done
 

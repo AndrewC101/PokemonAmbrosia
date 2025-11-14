@@ -474,13 +474,13 @@ DebugRoom_PrintTelDebug:
 	ret
 
 .TelString:
-	db "TEL:@"
+	db "Tel:@"
 .OffString:
-	db " OFF@"
+	db " Off@"
 .BusyString:
-	db "BUSY@"
+	db "Busy@"
 .HardString:
-	db "HARD@"
+	db "Hard@"
 
 DebugRoomMenu_RAMFlagClr:
 	call YesNoBox

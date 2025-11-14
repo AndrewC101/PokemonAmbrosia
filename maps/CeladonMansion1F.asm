@@ -73,7 +73,7 @@ CeladonMansion1FNidoranFText:
 	done
 
 CeladonMansionManagersSuiteSignText:
-	text "Celadon City Mansion"
+	text "Celadon Mansion"
 	line "Manager's Suite"
 	done
 

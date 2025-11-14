@@ -96,7 +96,7 @@ ArnieHurryText:
 	cont "of Yanma on Route"
 	cont "35."
 	para "This is it, the"
-	line "BUGS are making"
+	line "Bugs are making"
 	cont "their move against"
 	cont "the humans!"
 	para "Go my Bug"

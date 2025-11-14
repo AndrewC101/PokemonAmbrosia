@@ -64,7 +64,7 @@ ChadBlueGossipText:
 ChadDaisyGossipText:
 	text "They say Blue has"
 	line "a sister named"
-	cont "DAISEY."
+	cont "Daisey."
 	para "She is meant to be"
 	line "truly beautiful."
 	para "No woman is out of"
@@ -97,11 +97,11 @@ ChadProfOaksDreamGossipText:
 	done
 
 ChadKurtGossipText:
-	text "KURT is an expert"
+	text "Kurt is an expert"
 	line "at making"
 	cont "#balls."
 	para "I asked him to"
-	line "make me a LOVE"
+	line "make me a Love"
 	cont "Ball once, that I"
 	cont "could use on"
 	cont "girls."
@@ -121,8 +121,8 @@ ChadLeagueGossipText:
 	done
 
 ChadPokemonTalkGossipText:
-	text "There is this LASS"
-	line "DANA nearby and I"
+	text "There is this Lass"
+	line "Dana nearby and I"
 	cont "think she is"
 	cont "really into me."
 	para "She looks away"
@@ -144,8 +144,8 @@ ChadProfOakTrainerGossipText:
 	done
 
 ChadDaisyTeaGossipText:
-	text "There is this LASS"
-	line "DANA nearby and I"
+	text "There is this Lass"
+	line "Dana nearby and I"
 	cont "think she is"
 	cont "really into me."
 	para "She looks away"
@@ -166,11 +166,11 @@ ChadProfOakTravelingGossipText:
 	done
 
 ChadGoingToStudyHardText:
-	text "KURT is an expert"
+	text "Kurt is an expert"
 	line "at making"
 	cont "#balls."
 	para "I asked him to"
-	line "make me a LOVE"
+	line "make me a Love"
 	cont "Ball once, that I"
 	cont "could use on"
 	cont "girls."
@@ -188,6 +188,6 @@ ChadReminderText:
 	text "."
 
 	para "Hurry over."
-	para "DANA will be"
+	para "Dana will be"
 	line "watching."
 	done

@@ -102,7 +102,7 @@ ViridianCityCoffeeGrampsQuestionText:
 	cont "off shores!"
 
 	para "I'm just an"
-	line "OLD Man who"
+	line "Old Man who"
 	cont "like coffee..."
 
 	para "Isn't that right?"
@@ -229,7 +229,7 @@ ViridianGymSignText:
 
 	para "Blue!"
 
-	para "THE PEOPLES"
+	para "The Peoples"
 	line "Champion!"
 	done
 

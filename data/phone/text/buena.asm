@@ -98,7 +98,7 @@ BuenaPhoneWentOutWithBenText:
 	text "The other day, I"
 	line "went out to eat"
 
-	para "with DJ BEN!"
+	para "with DJ Ben!"
 	line "Isn't it great?"
 
 	para "Not only that, he"
@@ -145,9 +145,9 @@ BuenaPhoneLuckyNumberShowText:
 	line "Have you ever won"
 
 	para "a prize on the"
-	line "LUCKY NUMBER SHOW?"
+	line "Lucky Number Show"
 
-	para "REED moans that"
+	para "Reed moans that"
 	line "he's never won, so"
 
 	para "he vows to keep"
@@ -262,7 +262,7 @@ BuenaPhonePikachuFanClubText:
 	para "it was uh… whew…"
 	line "overwhelming."
 
-	para "FAN CLUB people"
+	para "Fan Club people"
 	line "came in out in"
 
 	para "droves, shouting"
@@ -308,7 +308,7 @@ BuenaPhoneRadioTowerDirectorText:
 	para "you dare mention"
 	line "it!"
 
-	para "Oh! The DIRECTOR"
+	para "Oh! The Director"
 	line "will be here soon!"
 
 	para "Later! Tune into"
@@ -418,7 +418,7 @@ BuenaPhoneCompanyVacationText:
 BuenaPhoneBenAndFernText:
 	text "Did you know…?"
 
-	para "BEN and FERN talk"
+	para "Ben and Fern talk"
 	line "on the phone for"
 
 	para "hours about what"
@@ -428,14 +428,14 @@ BuenaPhoneBenAndFernText:
 	line "different days of"
 	cont "the week."
 
-	para "One time, FERN's"
+	para "One time, Fern's"
 	line "rapping style kind"
 
 	para "of rubbed off on"
-	line "BEN weirdly."
+	line "Ben weirdly."
 
 	para "So we ended up"
-	line "enduring BEN's"
+	line "enduring Ben's"
 
 	para "silly, chilly, a"
 	line "willy-nilly jive-"
@@ -464,9 +464,9 @@ BuenaPhoneGoingShoppingText:
 
 BuenaPhoneFavoriteSlotMachineAnswerText:
 	text "I'm thinking of"
-	line "going to the GAME"
+	line "going to the Game"
 
-	para "CORNER tomorrow."
+	para "Corner tomorrow."
 	line "It's been a while."
 
 if DEF(_CRYSTAL_AU)

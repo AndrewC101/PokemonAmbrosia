@@ -664,7 +664,7 @@ _PokedexShowText::
 
 _BenIntroText1::
 	text_start
-	line "BEN: #mon Music"
+	line "Ben: #mon Music"
 	done
 
 _BenIntroText2::

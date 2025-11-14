@@ -384,7 +384,7 @@ GoldenrodCityYoungster2Text:
 	para "They are great!"
 
 	para "I've listened to"
-	line "RAGING ELECTRODE"
+	line "Raging Electrode"
 	cont "like fifty times!"
 	done
 
@@ -545,7 +545,7 @@ GoldenrodCitySignText:
 GoldenrodCityBikeShopSignText:
 	text "The World is a"
 	line "Cycle Path!"
-	cont "BIKE SHOP"
+	cont "Bike Shop"
 	done
 
 GoldenrodCityGameCornerSignText:
@@ -574,7 +574,7 @@ GoldenrodCityUndergroundSignSouthText:
 
 GoldenrodCityFlowerShopSignText:
 	text "Blooming Beautiful"
-	line "FLOWER SHOP"
+	line "Flower Shop"
 	done
 
 GoldenrodCityMoveTutorAskTeachAMoveText:

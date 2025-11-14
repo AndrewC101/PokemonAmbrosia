@@ -726,17 +726,17 @@ Pokecenter2FMovementData_ReceptionistStepsRightLooksLeft_2:
 
 Text_BattleReceptionistMobile:
 	text "Would you like to"
-	line "battle over a GAME"
+	line "battle over a Game"
 
-	para "LINK cable or by"
+	para "link cable or by"
 	line "mobile phone?"
 	done
 
 Text_TradeReceptionistMobile:
 	text "Would you like to"
-	line "trade over a GAME"
+	line "trade over a Game"
 
-	para "LINK cable or by"
+	para "link cable or by"
 	line "mobile phone?"
 	done
 

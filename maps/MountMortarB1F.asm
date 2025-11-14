@@ -190,11 +190,11 @@ MountMortarB1FKiyoGotLucarioText:
 	line "pride, or anger"
 	cont "or love."
 
-	para "I am the KARATE"
-	line "Master."
+	para "I am the Karate"
+	line "King."
 
 	para "And it's time"
-	line "of my return."
+	line "for my return."
 
 	para "Thank you."
 

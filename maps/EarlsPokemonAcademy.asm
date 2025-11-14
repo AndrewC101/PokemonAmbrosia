@@ -161,7 +161,7 @@ AcademyEarlSpinMovement:
 AcademyEarlIntroText:
 	text "I am Earl but you"
 	line "will call me"
-	cont "SENSEI."
+	cont "Sensei."
 	para "Now tell me, do"
 	line "you want to be the"
 	cont "very best, like no"
@@ -179,7 +179,7 @@ AcademyEarlTeachHowToWinText:
 	para "Explore and obtain"
 	line "as many TMs as"
 	cont "possible."
-	para "SAVE before a"
+	para "Save before a"
 	line "tough battle and"
 	cont "experiment with"
 	cont "teaching your"
@@ -280,7 +280,7 @@ EarlsPokemonAcademyGameboyKid2Text:
 
 EarlsPokemonAcademyYoungster2Text:
 	text "Do you know if you"
-	line "press SELECT"
+	line "press Select"
 	cont "during battle you"
 	cont "will be shown the"
 	cont "enemies types."
@@ -307,7 +307,7 @@ AcademyPoisonText:
 	line "you walk."
 
 	para "To cure it, use an"
-	line "ANTIDOTE."
+	line "Antidote."
 	done
 
 AcademyParalysisText:
@@ -317,7 +317,7 @@ AcademyParalysisText:
 
 	para "It remains after"
 	line "battle, so use"
-	cont "a PARLYZ HEAL."
+	cont "a Parlyz Heal."
 	done
 
 AcademySleepText:
@@ -330,7 +330,7 @@ AcademySleepText:
 	cont "after battle."
 
 	para "Wake it up with"
-	line "an AWAKENING."
+	line "an Awakening."
 	done
 
 AcademyBurnText:
@@ -343,7 +343,7 @@ AcademyBurnText:
 	para "A burn lingers"
 	line "after battle."
 
-	para "Use a BURN HEAL as"
+	para "Use a Burn Heal as"
 	line "the cure."
 	done
 

@@ -140,7 +140,7 @@ Script_ChallengeCanceled: ; unreferenced
 
 Text_ReturnedAfterSave_Mobile: ; unreferenced
 	text "You'll be returned"
-	line "after you SAVE."
+	line "after you Save."
 	done
 
 BattleTowerBattleRoom_MapEvents:

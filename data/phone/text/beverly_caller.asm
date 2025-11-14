@@ -11,11 +11,11 @@ BeverlyMadeMonEvenCuterText:
 
 BeverlyDefeatedMonText:
 	text "I barely managed"
-	line "to beat some STAR"
-	cont "TREK obsessed guy"
+	line "to beat some Star"
+	cont "Trek obsessed guy"
 	cont "the other day."
 	para "I'll never beat"
-	line "MOJOJOJO like"
+	line "Mojojojo like"
 	cont "this."
 	done
 
@@ -54,7 +54,7 @@ BeverlyLetsChatAboutMonAgainText:
 
 BeverlyComePickUpText:
 	text "Pardon?"
-	line "Oh, the NUGGET?"
+	line "Oh, the Nugget?"
 
 	para "There's no need to"
 	line "hurry. Come see me"

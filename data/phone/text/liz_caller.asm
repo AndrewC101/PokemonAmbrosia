@@ -1,5 +1,5 @@
 LizMonAlwaysWantsToNuzzleText:
-	text "My NIDOQUEEN"
+	text "My Nidoqueen"
 	line "cuddles up to me"
 	cont "every night and"
 	cont "hugs me so tight"
@@ -106,7 +106,7 @@ LizSalonGossipText:
 LizWhitneyGossipText:
 LizBugCatchingContestGossipText:
 	text "Have you heard of"
-	line "DIANTHA?"
+	line "Diantha?"
 	para "She is a movie"
 	line "star and a"
 	cont "Champion and she"

@@ -648,7 +648,7 @@ Route36SignText:
 
 RuinsOfAlphNorthSignText:
 	text "Ruins of Alph"
-	line "NORTH ENTRANCE"
+	line "North entrance"
 	done
 
 Route36TrainerTips1Text:
@@ -656,7 +656,7 @@ Route36TrainerTips1Text:
 
 	para "On the #dex"
 	line "you can press"
-	cont "SELECT to see"
+	cont "Select to see"
 	cont "the SHINY colour"
 	cont "of a #mon."
 	done

@@ -204,7 +204,7 @@ ErikaAfterBattleText:
 	para "All of these"
 	line "great cities will"
 	cont "one day be in"
-	cont "RUINS."
+	cont "Ruins."
 
 	para "One day humanity"
 	line "will be no more."

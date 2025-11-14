@@ -505,4 +505,3 @@ SilverCaveRoom3_MapEvents:
 	object_event  8, 32, SPRITE_GENESECT, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon6Script, EVENT_FIELD_MON_6
 	object_event  7, 10, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3MewtwoScript, -1
 	object_event 12, 10, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3HoohScript, -1
-

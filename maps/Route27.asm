@@ -392,10 +392,10 @@ BirdKeeperJoseAfterBattleText:
 	done
 
 TohjoFallsSignText:
-	text "TOHJO FALLS"
+	text "Tohjo Falls"
 
-	para "THE LINK BETWEEN"
-	line "Kanto AND Johto"
+	para "The link between"
+	line "Kanto and Johto"
 	done
 
 Route27_MapEvents:
@@ -424,4 +424,3 @@ Route27_MapEvents:
 	object_event 21, 12, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, Route27FisherScript, -1
 	object_event 29, 10, SPRITE_HERACROSS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route27FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 70,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, Route27FieldMon2Script, EVENT_FIELD_MON_2
-	

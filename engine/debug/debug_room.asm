@@ -1221,11 +1221,11 @@ DebugRoom_SavePokemon:
 	db "DEBUG▶<PK><MN>@"
 
 .CompletedText:
-	text "COMPLETED!"
+	text "Completed!"
 	done
 
 .BoxIsFullText:
-	text "BOX IS FULL!"
+	text "Box is full!"
 	done
 
 DebugRoom_PrintPokemonName:
@@ -1349,10 +1349,10 @@ DebugRoom_BoxStructStrings:
 .PP4:       db "PP 4@"
 .Friend:    db "FRIEND@"
 .Pokerus:   db "#rus@"
-.NoUse0:    db "NO USE[0]@"
-.NoUse1:    db "NO USE[1]@"
-.Level:     db "LEVEL@"
-.SendBox:   db "SEND BOX@"
+.NoUse0:    db "No Use[0]@"
+.NoUse1:    db "No Use[1]@"
+.Level:     db "Level@"
+.SendBox:   db "Send Box@"
 
 DebugRoom_BoxAddresses:
 	table_width 3, DebugRoom_BoxAddresses

@@ -275,7 +275,7 @@ TrainerGruntM1WhenTalkText:
 	done
 
 GruntM2SeenText:
-	text "You beat JESSIE!"
+	text "You beat Jessie!"
 	para "She may be nasty"
 	line "and mean but I"
 	cont "will make you pay"

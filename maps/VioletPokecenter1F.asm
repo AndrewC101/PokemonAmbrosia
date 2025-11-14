@@ -112,12 +112,12 @@ VioletPokecenter1F_BillText1:
 	line "all #mon who"
 	cont "don't take part in"
 	cont "battle still get"
-	cont "half the full EXP."
+	cont "half the full Exp."
 	para "I hope to improve"
 	line "upon this so all"
 	cont "#mon get full"
-	cont "EXP and perhaps"
-	cont "even boosted EXP"
+	cont "Exp and perhaps"
+	cont "even boosted Exp"
 	cont "one day."
 	para "Until then I have"
 	line "another rare gift"
@@ -279,7 +279,7 @@ VioletPokecenterElmsAideAskEggText:
 	done
 
 VioletPokecenter1FGameboyKidText:
-	text "The INVADER"
+	text "The Invader"
 	line "outside the city"
 	cont "is strong."
 
@@ -312,7 +312,7 @@ VioletPokecenter1FYoungsterText:
 	cont "other trainers."
 
 	para "A traded #mon"
-	line "gains more EXP"
+	line "gains more Exp"
 	cont "in battle."
 
 	para "I think there is"

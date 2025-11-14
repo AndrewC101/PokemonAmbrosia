@@ -106,7 +106,7 @@ GoldenrodDeptStoreRoofPokefanFText:
 GoldenrodDeptStoreRoofFisherText:
 	text "No! My precious"
 	line "dolls, they are"
-	cont "out of #DOLLS!"
+	cont "out of #dolls!"
 	para "They will need a"
 	line "new shipment from"
 	cont "Celadon."
@@ -123,9 +123,9 @@ GoldenrodDeptStoreRoofTwinText:
 
 GoldenrodDeptStoreRoofSuperNerdOhWowText:
 	text "Hey baby, yeah, I"
-	line "got the POTIONS."
+	line "got the Potions."
 	para "You are the only"
-	line "POTION I need,"
+	line "Potion I need,"
 	cont "baby."
 	para "Hang on a moment,"
 	line "darling."
@@ -146,8 +146,8 @@ GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
 
 GoldenrodDeptStoreRoofPokefanMText:
 	text "I'm in huge dept"
-	line "to the GAME"
-	cont "CORNER."
+	line "to the Game"
+	cont "Corner."
 	para "They are coming to"
 	line "get me."
 	para "It would be better"
@@ -174,14 +174,14 @@ GoldenrodDeptStoreRoofBugCatcherText:
 	done
 
 Binoculars1Text:
-	text "To the NORTH there"
+	text "To the North there"
 	line "is a giant tower"
 	cont "beyond a dark"
 	cont "forest."
 	done
 
 Binoculars2Text:
-	text "To the EAST a huge"
+	text "To the East a huge"
 	line "silver mountain"
 	cont "dominates the"
 	cont "skyline."
@@ -189,7 +189,7 @@ Binoculars2Text:
 	done
 
 Binoculars3Text:
-	text "To the SOUTH the"
+	text "To the South the"
 	line "security guard has"
 	cont "his binoculars"
 	cont "out..."

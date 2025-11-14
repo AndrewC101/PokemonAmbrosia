@@ -104,7 +104,7 @@ VictoryRoadEntranceSign:
 VictoryRoadEntranceSignText:
 	text "#mon League"
 
-	para "VICTORY ROAD"
+	para "Victory Road"
 	line "ENTRANCE"
 	done
 

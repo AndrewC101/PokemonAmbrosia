@@ -30,7 +30,7 @@ SilphCoOfficerScript:
 SilphCoReceptionistText:
 	text "Welcome. This is"
 	line "Silph Co.'s HEAD"
-	cont "OFFICE BUILDING."
+	cont "Office Building."
 	done
 
 SilphCoOfficerText:

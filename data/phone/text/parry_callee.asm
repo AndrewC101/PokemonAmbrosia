@@ -12,7 +12,7 @@ ParryGreetDayText:
 
 ParryAnswerPhoneNiteText:
 	text "Hello."
-	line "It's PARRY!"
+	line "It's Parry!"
 
 	para "I'm just setting"
 	line "up camp."
@@ -21,7 +21,7 @@ ParryAnswerPhoneNiteText:
 ParryGreetText:
 ParryGreetNiteText:
 	text "Hello."
-	line "It's PARRY!"
+	line "It's Parry!"
 
 	para "I'm just setting"
 	line "up camp."

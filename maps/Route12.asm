@@ -284,7 +284,7 @@ FisherKyleAfterBattleText:
 Route12SignText:
 	text "Route 12"
 
-	para "North TO Lavender"
+	para "North to Lavender"
 	line "Town"
 	done
 

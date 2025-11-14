@@ -15,9 +15,9 @@ GinaGettingInSyncWithMonText:
 GinaDefeatedMonText:
 	text "They say there is"
 	line "a beach with"
-	cont "CLOYSTER around"
+	cont "Cloyster around"
 	cont "here somewhere."
-	para "CLOYSTER is meant"
+	para "Cloyster is meant"
 	line "to have some"
 	cont "secret powerful"
 	cont "move."
@@ -41,7 +41,7 @@ GinaBattleRematchText:
 	para "How about a"
 	line "battle?"
 	para "I'm sure to get"
-	line "some EXP right?"
+	line "some Exp right?"
 	done
 
 GinaHangUpText:

@@ -374,7 +374,7 @@ AzaleaTownGrampsTextAfter:
 AzaleaTownTeacherText:
 	text "There is a"
 	line "#ball expert"
-	cont "called KURT in"
+	cont "called Kurt in"
 	cont "this town."
 
 	para "He makes them from"
@@ -390,7 +390,7 @@ AzaleaTownYoungsterText:
 	text "Through the"
 	line "forest you'll"
 	cont "find Goldenrod"
-	cont "CITY."
+	cont "City."
 
 	para "It's a big and"
 	line "busy place."
@@ -419,7 +419,7 @@ AzaleaTownSlowpokeText2:
 	done
 
 WoosterText:
-	text "WOOSTER: Gugyoo…"
+	text "Wooster: Gugyoo…"
 	done
 
 AzaleaTownKurtText1:

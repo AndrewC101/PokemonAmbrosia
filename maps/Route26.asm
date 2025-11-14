@@ -432,7 +432,7 @@ CooltrainerfJoyceAfterBattleText:
 
 CooltrainerfBeth1SeenText:
 	text "Beyond here is"
-	line "VICTORY ROAD."
+	line "Victory Road."
 
 	para "It is the final"
 	line "path to the"
@@ -824,5 +824,3 @@ Route26_MapEvents:
 	object_event 13, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26FieldMon8Script, EVENT_FIELD_MON_8
 
 	object_event 13,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-
-	

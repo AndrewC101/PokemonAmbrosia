@@ -5426,17 +5426,17 @@ Function11a9f4: ; unreferenced
 	ret
 
 Text_SaveFileWillBeSent:
-	text "SAVE FILE will be"
+	text "Save File will be"
 	line "sent."
 	done
 
 Text_SentSaveFileReadingNews:
-	text "Sent SAVE FILE."
-	line "Reading NEWS…"
+	text "Sent Save File."
+	line "Reading News…"
 	done
 
 Text_ReadingNews:
-	text "Reading NEWS…"
+	text "Reading News…"
 	done
 
 Text_ReceivedNews:
@@ -5449,7 +5449,7 @@ Text_QuitReadingNews:
 
 Text_CanceledSendingSaveFile: ; unreferenced
 	text "Canceled sending"
-	line "SAVE FILE."
+	line "Save File."
 	done
 
 Text_ReceivedOddEgg: ; unreferenced

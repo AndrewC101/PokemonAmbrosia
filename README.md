@@ -66,7 +66,7 @@ Many massively impactful quality of life changes.
 - B button is turbo by default
 - Battle Speed option which speeds up battles by removing almost all battle text  
 - Can see battle info such as enemy stats, moves anf field effects
-- Can see enemy type by pressing SELECT in battle  
+- Can see enemy type by pressing Select in battle  
 - Can rematch any trainer by talking to them, including Gym leaders. However, rematches forbid the use of items.
 - Can forfeit almost any battle via the Run option.
 - Exp share available from very early game, giving 50% exp to all Pokémon who do not participate. This is upgraded by endgame to give 200% exp to all Pokémon.

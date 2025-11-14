@@ -232,7 +232,7 @@ ChucksWifeEasierToFlyText:
 	done
 
 ChucksWifeGiveHMText:
-	text "You beat CHUNK!"
+	text "You beat Chunk!"
 
 	para "I mean Chuck..."
 
@@ -301,22 +301,17 @@ CianwoodCityPokefanMText:
 	done
 
 CianwoodCityLassText:
-	text "Everyone here"
-	line "is wrong."
-
-	para "The best anime is"
-	line "Death Note."
-
-	para "You actually get"
-	line "to think rather"
-	cont "than just punch"
-	cont "people."
-
-	para "I wish I had a"
-	line "Death Note!"
-
-	para "The names I"
-	line "would put in it."
+	text "Up ahead is the"
+	line "#seer."
+	para "She can tell lots"
+	line "of things about"
+	cont "your #mon."
+	para "But she can only"
+	line "count to 64!"
+	para "Any number higher"
+	line "than that she just"
+	cont "starts over from"
+	cont "0."
 	done
 
 EusineSuicuneText:
@@ -414,7 +409,7 @@ CianwoodPharmacySignText:
 	line "Tradition"
 
 	para "Cianwood City"
-	line "PHARMACY"
+	line "Pharmacy"
 
 	para "We Await Your"
 	line "Medicinal Queries"
@@ -422,15 +417,15 @@ CianwoodPharmacySignText:
 
 CianwoodPhotoStudioSignText:
 	text "Cianwood City"
-	line "PHOTO STUDIO"
+	line "Photo Studio"
 
 	para "Take a Snapshot as"
 	line "a Keepsake!"
 	done
 
 CianwoodPokeSeerSignText:
-	text "THE # SEER"
-	line "AHEAD"
+	text "The # Seer"
+	line "Ahead"
 	done
 
 CianwoodBeachSignText:
@@ -726,7 +721,7 @@ HoenSpyBelieve:
 
     para "Just like they"
     line "don't believe in"
-    cont "KITTY my invisible"
+    cont "Kitty my invisible"
     cont "friend."
 
     para "But you believe"
@@ -918,7 +913,7 @@ DrownThem:
 KittyHelp:
     text "Ahhhhh!"
 
-    para "KITTY, HELP!"
+    para "Kitty, HELP!"
     done
 
 HoenSpyBegs:
@@ -933,7 +928,7 @@ HoenSpyBegs:
 
 ThankYouKitty:
     text "Thank you"
-    line "KITTY."
+    line "Kitty."
 
     para "I knew you"
     line "would come."
@@ -953,11 +948,11 @@ ThanksHereIsTm:
 
     para "I think that"
     line "is what really"
-    cont "called KITTY"
+    cont "called Kitty"
     cont "here."
 
     para "Don't worry,"
-    line "KITTY's trainer"
+    line "Kitty's trainer"
     cont "doesn't mind."
 
     para "You might have"

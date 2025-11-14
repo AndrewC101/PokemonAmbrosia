@@ -227,7 +227,7 @@ SwimmermBerkeSeenText:
 	line "is..."
 
 	para "I'm Captain"
-	line "JACK SPARROW."
+	line "Jack Sparrow."
 
 	para "I would bet"
 	line "all me Alph"
@@ -404,7 +404,7 @@ SwimmerfKaraBeatenText:
 SwimmerfKaraAfterBattleText:
 	text "I heard roars from"
 	line "deep inside the"
-	cont "ISLANDS."
+	cont "Islands."
 	done
 
 SwimmerfWendySeenText:

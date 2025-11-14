@@ -110,14 +110,14 @@ _BoostedExpPointsText::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 5
-	text " boosted EXP!"
+	text " boosted Exp!"
 	done
 
 _ExpPointsText::
 	text_start
 	line "@"
 	text_decimal wStringBuffer2, 2, 5
-	text " EXP. Points!"
+	text " Exp. Points!"
 	done
 
 _GoMonText::
@@ -1091,7 +1091,7 @@ _LuckyNumberMatchPCText::
 	para "of @"
 	text_ram wStringBuffer1
 	text " in"
-	line "your PC BOX."
+	line "your PC Box."
 	prompt
 
 _CaughtAskNicknameText::
@@ -1366,7 +1366,7 @@ _TrainerRankingExplanationText:: ; unreferenced
 	text "Triple-theme"
 	line "trainer ranking!"
 
-	para "The SAVE file you"
+	para "The Save file you"
 	line "just sent might"
 	cont "make the rankings!"
 

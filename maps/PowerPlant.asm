@@ -310,7 +310,7 @@ PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
 	para "If you damage the"
 	line "generator you'll"
 	cont "be getting his"
-	cont "BODY SLAM!"
+	cont "Body Slam!"
 	done
 
 PowerPlantOfficer2ManagerHasBeenCheerfulText:
@@ -321,7 +321,7 @@ PowerPlantOfficer2ManagerHasBeenCheerfulText:
 	para "The Manager was"
 	line "going take turns"
 	cont "giving us all a"
-	cont "BODY SLAM!"
+	cont "Body Slam!"
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
@@ -349,7 +349,7 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	cont "this..."
 	para "I'm going to lift"
 	line "them above my head"
-	cont "and BODY SLAM"
+	cont "and Body Slam"
 	cont "them to death!"
 	done
 
@@ -368,8 +368,8 @@ PowerPlantManagerIWontForgiveCulpritText:
 PowerPlantManagerThatsThePartText:
 	text "You..."
 	para "That's..."
-	para "That's the FLUX"
-	line "CAPACITOR!!"
+	para "That's the Flux"
+	line "Capacitor!!"
 	para "I need it!"
 	para "Give it to me now!"
 	done

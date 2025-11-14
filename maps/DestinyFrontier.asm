@@ -655,8 +655,8 @@ MasterAizenSeenText:
 	cont "place."
 	para "Once I bend him to"
 	line "my will I shall"
-	cont "destroy the SOUL"
-	cont "KING!"
+	cont "destroy the Soul"
+	cont "King!"
 	done
 
 MasterAizenBeatenText:
@@ -670,7 +670,7 @@ MasterAizenWinText:
 	done
 
 MasterAizenAfterBattleText:
-	text "The SOUL KING"
+	text "The Soul King"
 	line "resides in a"
 	cont "palace, in the"
 	cont "Hall of Origin."

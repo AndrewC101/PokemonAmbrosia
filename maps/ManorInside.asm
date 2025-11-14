@@ -153,7 +153,7 @@ AndrewIntroText:
 	done
 
 AndrewBeatOakText:
-	text "You have the MARK!"
+	text "You have the Mark!"
 	para "I am very proud of"
 	line "you."
 	para "You are the master"
@@ -374,7 +374,7 @@ WifeIntroText:
 	cont "husband."
 	para "You have met our"
 	line "sons, Adam and"
-	cont "JONATHAN?"
+	cont "Jonathan?"
 	para "You still have"
 	line "plenty left to do,"
 	cont "come see us when"
@@ -418,7 +418,7 @@ WifeWinText:
 WifeAfterBattleText:
 	text "My husband and I"
 	line "miss Adam and"
-	cont "JONATHAN."
+	cont "Jonathan."
 	para "They will always"
 	line "be our wee boys."
 	para "Instead I have to"
@@ -555,7 +555,7 @@ BrotherAfterBattleText:
 	cont "his wife and"
 	cont "sometimes my"
 	cont "nephews Adam"
-	cont "and JONATHAN."
+	cont "and Jonathan."
 	para "My brother made"
 	line "this world but I'm"
 	cont "far more"
@@ -904,7 +904,7 @@ ManorFact1Text:
 	done
 
 ManorFact2Text:
-	text "The HEAL PARTY"
+	text "The Heal Party"
 	line "option on the PC"
 	cont "was a last minute"
 	cont "addition to the"
@@ -915,7 +915,7 @@ ManorFact2Text:
 	cont "withdraw all their"
 	cont "#mon to heal"
 	cont "them via the"
-	cont "POCKET PC."
+	cont "Pocket PC."
 	para "Doing this all the"
 	line "time got old fast!"
 	done
@@ -972,7 +972,7 @@ ManorFact6Text:
 ManorFact7Text:
 	text "This romhack took"
 	line "almost 4 years and"
-	cont "over 1000 commits"
+	cont "over 1150 commits"
 	cont "to create."
 	para "I got married,"
 	line "moved house,"
@@ -1035,20 +1035,22 @@ ManorFact11Text:
 	done
 
 ManorFact12Text:
-	text "Sleep lasts for 1"
-	line "to 3 turns."
-	para "Unless..."
-	para "Unless the enemy"
-	line "is Wallace."
-	para "Then sleep lasts 1"
-	line "to 2 turns."
-	para "He wasn't hard"
-	line "enough!"
+	text "The last change"
+	line "made to this"
+	cont "romhack was to"
+	cont "decapitalise all"
+	cont "the text."
+	para "This took a long"
+	line "time."
+	para "There is a lot of"
+	line "text in this game!"
+	para "I still may have"
+	line "MISSED some."
 	done
 
 ManorFact13Text:
 	text "Exp Share used to"
-	line "give a quarter EXP"
+	line "give a quarter Exp"
 	cont "until obtaining 8"
 	cont "badges."
 	para "This was fixed"
@@ -1057,7 +1059,7 @@ ManorFact13Text:
 	done
 
 ManorFact14Text:
-	text "Getting on a BIKE"
+	text "Getting on a Bike"
 	line "does not play any"
 	cont "special music."
 	para "This small change"
@@ -1136,8 +1138,8 @@ ManorFact20Text:
 	text "Ambrosia maximises"
 	line "the DVs of a"
 	cont "#mon in"
-	cont "addition to STAT"
-	cont "EXP and happiness."
+	cont "addition to Stat"
+	cont "Exp and happiness."
 	para "Unless the"
 	line "#mon is shiny,"
 	cont "then Ambrosia will"

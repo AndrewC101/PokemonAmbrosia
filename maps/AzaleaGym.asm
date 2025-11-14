@@ -208,7 +208,7 @@ Text_ReceivedHiveBadge:
 
 BugsyText_HiveBadgeSpeech:
 	text "Do you know the"
-	line "benefits of HIVE-"
+	line "benefits of Hive-"
 	cont "Badge?"
 
 	para "You can train"
@@ -317,7 +317,7 @@ TwinsAmyandmay1SeenText:
 	done
 
 TwinsAmyandmay1BeatenText:
-	text "AMY & MAY: Oh,"
+	text "Amy & May: Oh,"
 	line "double trouble!"
 	done
 
@@ -329,7 +329,7 @@ TwinsAmyandmay1AfterBattleText:
 	done
 
 TwinsAmyandmay2SeenText:
-	text "MAY: I was"
+	text "May: I was"
 	line "going to bust"
 	cont "that door down!"
 
@@ -338,7 +338,7 @@ TwinsAmyandmay2SeenText:
 	done
 
 TwinsAmyandmay2BeatenText:
-	text "AMY & MAY: Oh,"
+	text "Amy & May: Oh,"
 	line "double goodness!"
 	done
 

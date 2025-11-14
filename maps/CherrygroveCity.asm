@@ -464,7 +464,7 @@ GuideGentPokecenterText:
 
 GuideGentMartText:
 	text "This is a #mon"
-	line "MART."
+	line "Mart."
 
 	para "You can buy stuff"
 	line "from here."
@@ -508,7 +508,7 @@ GuideGentExitText:
 	done
 
 GuideGentSeaText:
-	text "This is BILLY"
+	text "This is Billy"
 
 	para "He never stops"
 	line "fishing."
@@ -521,7 +521,7 @@ GuideGentSeaText:
 	done
 
 GuideGentCrestText:
-	text "Old CREST sits"
+	text "Old Crest sits"
 	line "down here."
 
 	para "He has become"
@@ -629,7 +629,7 @@ CherrygroveTeacherText:
     para "It's hard to"
     line "escape from them"
     cont "unless you use a"
-    cont "#DOLL."
+    cont "#doll."
 
     para "I have no idea"
     line "where you can buy"
@@ -647,7 +647,7 @@ CherrygroveYoungsterText_NoPokedex:
 	text "I saw Prof Oak"
 	line "come by earlier."
 
-	para "He went up NORTH."
+	para "He went up North."
 
 	para "There are trainers"
 	line "up there but I'm"
@@ -666,8 +666,8 @@ CherrygroveYoungsterText_HavePokedex:
 
 	para "So rather than sit"
 	line "through the fight"
-	cont "I FORFEITED using"
-	cont "the RUN option."
+	cont "I Forfeited using"
+	cont "the Dex option."
 	done
 
 MysticWaterGuyTextBefore:
@@ -682,7 +682,7 @@ MysticWaterGuyTextAfter:
 	text "Listen, I have"
 	line "already filled my"
 	cont "PC with nothing"
-	cont "but MAGIKARP but I"
+	cont "but Magikarp but I"
 	cont "just can't stop!"
 	para "I need help, I'm"
 	line "hoarding these"

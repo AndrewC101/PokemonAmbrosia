@@ -95,7 +95,7 @@ IndigoPlateauPokecenter1FCooltrainerMText:
 	para "You can't use"
 	line "items in the"
 	cont "battles or the"
-	cont "POCKET PC"
+	cont "Pocket PC"
 	cont "between battles."
 
 	para "But don't worry"
@@ -180,4 +180,3 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  0,  9, SPRITE_ALAKAZAM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
 	object_event  4,  7, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IndigoPlateauBlisseyScript, -1
-

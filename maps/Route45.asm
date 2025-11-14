@@ -575,7 +575,7 @@ CamperQuentinAfterBattleText:
 
 Route45SignText:
 	text "Route 45"
-	line "MOUNTAIN RD. AHEAD"
+	line "Mountain Rd Ahead"
 	done
 
 Route45FieldMon1Script:

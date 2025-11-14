@@ -329,7 +329,7 @@ SkierRoxanneSeenText:
 	para "Together we will"
 	line "overcome anything."
 
-	para "Except BRADs"
+	para "Except Brads"
 	line "awful jokes."
 
 	para "I'll never"

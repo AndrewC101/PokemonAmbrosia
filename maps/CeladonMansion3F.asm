@@ -55,8 +55,8 @@ CeladonMansion3FReferenceMaterial:
 	jumptext CeladonMansion3FReferenceMaterialText
 
 GameFreakGameDesignerText:
-	text "I am the GAME"
-	line "DESIGNER."
+	text "I am the Game"
+	line "Designer."
 
 	para "The creator went"
 	line "back and forth on"
@@ -163,8 +163,8 @@ GameFreakCharacterDesignerText:
 	done
 
 CeladonMansion3FDevRoomSignText:
-	text "GAME FREAK"
-	line "DEVELOPMENT ROOM"
+	text "Game Freak"
+	line "Development Room"
 	done
 
 CeladonMansion3FDrawingText:

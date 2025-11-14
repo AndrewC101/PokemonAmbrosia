@@ -215,7 +215,7 @@ VermilionCitySuperNerdText:
 	line "Vermilion Gym"
 	cont "are a rock band"
 	cont "known as"
-	cont "THE Solenoids!"
+	cont "The Solenoids!"
 
 	para "They have some"
 	line "sick rifts!"
@@ -332,7 +332,7 @@ VermilionGymSignText:
 	done
 
 PokemonFanClubSignText:
-	text "#mon FAN CLUB"
+	text "#mon Fan Club"
 
 	para "All #mon Fans"
 	line "Welcome!"

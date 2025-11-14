@@ -7,4 +7,4 @@
 
 	page "Breaks screens."
 	next "Immune to passive"
-	next "damage and SLEEP@."
+	next "damage and Sleep@."

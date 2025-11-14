@@ -40,8 +40,8 @@ CyclingRoadSign:
 CyclingRoadSignText:
 	text "Cycling Road"
 
-	para "DOWNHILL COASTING"
-	line "ALL THE WAY!"
+	para "Downhill coasting"
+	line "all the way!"
 	done
 	
 Route16FieldMon1Script:

@@ -224,7 +224,7 @@ _SaveFileCorruptedText::
 
 _ChangeBoxSaveText::
 	text "When you change a"
-	line "#mon BOX, data"
+	line "#mon Box, data"
 	cont "will be saved. OK?"
 	done
 

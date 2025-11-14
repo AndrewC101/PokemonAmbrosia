@@ -214,7 +214,7 @@ WhitneyBeforeText:
 	cont "on the big screen!"
 
 	para "Just like our"
-	line "hero DIANTHA!"
+	line "hero Diantha!"
 
 	para "She is so pretty"
 	line "and so talented."
@@ -391,7 +391,7 @@ BeautyVictoriaSeenText:
 	line "little trainer! "
 
 	para "Have you heard"
-	line "of DIANTHA?"
+	line "of Diantha?"
 
 	para "She is a beautiful"
 	line "actress and a"
@@ -415,7 +415,7 @@ BeautyVictoriaAfterBattleText:
 
 BeautySamanthaSeenText:
 	text "I dream that"
-	line "one day DIANTHA"
+	line "one day Diantha"
 	cont "will visit us."
 
 	para "If that happened"
@@ -512,4 +512,3 @@ GoldenrodGym_MapEvents:
 	object_event 19,  5, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
 	object_event  5, 15, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuideScript, -1
 	object_event  9,  3, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymMiltankScript, -1
-

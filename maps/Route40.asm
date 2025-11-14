@@ -335,10 +335,10 @@ Route40StandingYoungsterText:
 	done
 
 MeetMonicaText:
-	text "MONICA: Glad to"
+	text "Monica: Glad to"
 	line "meet you. I'm"
 
-	para "MONICA of Monday."
+	para "Monica of Monday."
 	done
 
 MonicaGivesGiftText:
@@ -348,7 +348,7 @@ MonicaGivesGiftText:
 	done
 
 MonicaGaveGiftText:
-	text "MONICA: It's an"
+	text "Monica: It's an"
 	line "item that raises"
 
 	para "the power of fly-"
@@ -360,7 +360,7 @@ MonicaGaveGiftText:
 	done
 
 MonicaMondayText:
-	text "MONICA: My broth-"
+	text "Monica: My broth-"
 	line "ers and sisters"
 
 	para "are all over the"
@@ -371,7 +371,7 @@ MonicaMondayText:
 	done
 
 MonicaNotMondayText:
-	text "MONICA: I don't"
+	text "Monica: I don't"
 	line "think today is"
 	cont "Monday. How sad…"
 	done

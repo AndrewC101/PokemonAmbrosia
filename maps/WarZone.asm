@@ -862,8 +862,8 @@ LeonAfterBattleText:
     text "You are a worthy"
     line "Champion."
 
-    para "Unlike DYANTHA"
-    line "and ALDER."
+    para "Unlike Diantha"
+    line "and Alder."
 
     para "Both too busy"
     line "to make it here."
@@ -884,7 +884,7 @@ Soldier1SeenText:
     cont "single child like"
     cont "you stands a"
     cont "chance against"
-    cont "HOENNs most elite"
+    cont "Hoenns most elite"
     cont "soldiers."
     para "Your hubris will"
     line "be your undoing."
@@ -1039,7 +1039,7 @@ Soldier3AfterBattleText:
 
     para "...."
 
-    para "There are two GYMs"
+    para "There are two Gyms"
 
     para "...."
 
@@ -1202,7 +1202,7 @@ WarZoneBlueText:
     cont "League."
 
     para "I will argue that"
-    line "the CHAMPIONs"
+    line "the Champions"
     cont "should be exempt"
     cont "from political"
     cont "neutrality."
@@ -1395,10 +1395,10 @@ JonathanSeenText:
 	para "You're a bit late."
 	para "I'm here to deal"
 	line "with this."
-	para "I'm JONATHAN by"
+	para "I'm Jonathan by"
 	line "the way."
 	para "You've beaten my"
-	line "brother ADAM."
+	line "brother Adam."
 	para "Well done on that."
 	done
 JonathanSeenWallaceBeatText:
@@ -1490,4 +1490,3 @@ WarZone_MapEvents:
 	object_event 19,  4, SPRITE_KYOGRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_WALLACE
 	object_event 21,  4, SPRITE_GROUDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_WALLACE
 	object_event 20,  3, SPRITE_RAYQUAZA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_WALLACE
-

@@ -319,11 +319,11 @@ BlackthornYoungsterText:
 	done
 
 MeetSantosText:
-	text "SANTOS: …"
+	text "Santos: …"
 
 	para "It's Saturday…"
 
-	para "I'm SANTOS of"
+	para "I'm Santos of"
 	line "Saturday…"
 	done
 
@@ -332,9 +332,9 @@ SantosGivesGiftText:
 	done
 
 SantosGaveGiftText:
-	text "SANTOS: …"
+	text "Santos: …"
 
-	para "SPELL TAG…"
+	para "Spell Tag…"
 
 	para "Ghost-type moves"
 	line "get stronger…"
@@ -344,7 +344,7 @@ SantosGaveGiftText:
 	done
 
 SantosSaturdayText:
-	text "SANTOS: …"
+	text "Santos: …"
 
 	para "See you again on"
 	line "another Saturday…"
@@ -354,7 +354,7 @@ SantosSaturdayText:
 	done
 
 SantosNotSaturdayText:
-	text "SANTOS: Today's"
+	text "Santos: Today's"
 	line "not Saturday…"
 	done
 
@@ -379,7 +379,7 @@ BlackthornCooltrainerF2Text:
 BlackthornCitySignText:
 	text "Blackthorn City"
 
-	para "The Dragon SANCTUM"
+	para "The Dragon Sanctum"
 	done
 
 BlackthornGymSignText:

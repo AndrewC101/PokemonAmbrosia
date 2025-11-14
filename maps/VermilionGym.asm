@@ -297,7 +297,7 @@ GuitaristVincentSeenText:
 
 	para "I'm the lead"
 	line "guitarist of"
-	cont "THE Solenoids."
+	cont "The Solenoids."
 
 	para "Let me show you"
 	line "this tasty rift!"

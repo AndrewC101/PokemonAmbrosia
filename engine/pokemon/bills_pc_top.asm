@@ -97,7 +97,7 @@ _BillsPC:
 	db 5 ; # items
 	db 0 ; WITHDRAW
 	db 1 ; DEPOSIT
-	db 2 ; CHANGE BOX
+	db 2 ; CHANGE Box
 	db 3 ; MOVE PKMN
 	db 4 ; SEE YA!
 	db -1

@@ -207,7 +207,7 @@ PokefanMDerekText_NotBragging:
 	text "I need to"
 	line "learn a defense"
 	cont "against"
-	cont "AVADA KEDAVRA."
+	cont "Avada Kedavra!"
 	done
 
 PokefanfRuthSeenText:

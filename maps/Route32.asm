@@ -491,7 +491,7 @@ FisherRalph1BeatenText:
 	done
 
 FisherRalphAfterText:
-	text "JUSTIN over there"
+	text "Justin over there"
 	line "will have a hard"
 	cont "time eating my"
 	cont "#mon once"
@@ -503,7 +503,7 @@ FisherHenrySeenText:
 	line "authority that you"
 	cont "possess an"
 	cont "affinity for"
-	cont "MUDKIPs."
+	cont "Mudkips."
 	para "I am something of"
 	line "a Mudkip fan"
 	cont "myself."
@@ -524,7 +524,7 @@ YoungsterGordonSeenText:
 	text "Be careful!"
 
 	para "There is an"
-	line "INVADER down"
+	line "Invader down"
 	cont "there."
 
 	para "He seems like"
@@ -562,7 +562,7 @@ YoungsterGordonAfterText:
 CamperRolandSeenText:
 	text "I found a"
 	line "secret chamber"
-	cont "in the RUINS."
+	cont "in the Ruins."
 
 	para "With secret"
 	line "#mon."
@@ -664,7 +664,7 @@ InvaderSiegmeyerAfterText:
 	done
 
 MeetFriedaText:
-	text "FRIEDA: TGIF!"
+	text "Frieda: TGIF!"
 
 	para "It's Friday!"
 
@@ -672,7 +672,7 @@ MeetFriedaText:
 	line "four day weeks"
 	cont "over here."
 
-	para "I'm FRIEDA of"
+	para "I'm Frieda of"
 	line "Friday!"
 
 	para "Nice to meet you!"
@@ -687,7 +687,7 @@ FriedaGivesGiftText:
 	done
 
 FriedaGaveGiftText:
-	text "FRIEDA: Give it to"
+	text "Frieda: Give it to"
 	line "a #mon that has"
 	cont "poison-type moves."
 
@@ -701,7 +701,7 @@ FriedaGaveGiftText:
 	done
 
 FriedaFridayText:
-	text "FRIEDA: Hiya! What"
+	text "Frieda: Hiya! What"
 	line "day do you like?"
 
 	para "I love Friday."
@@ -717,7 +717,7 @@ FriedaFridayText:
 	done
 
 FriedaNotFridayText:
-	text "FRIEDA: Isn't it"
+	text "Frieda: Isn't it"
 	line "Friday today?"
 
 	para "It's so awful"
@@ -733,12 +733,12 @@ Route32SignText:
 
 Route32RuinsSignText:
 	text "Ruins of Alph"
-	line "EAST ENTRANCE"
+	line "East entrance"
 	done
 
 Route32UnionCaveSignText:
 	text "Union Cave"
-	line "AHEAD"
+	line "Ahead"
 	done
 	
 Route32FieldMon1Script:

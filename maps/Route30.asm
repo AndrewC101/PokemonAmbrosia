@@ -382,7 +382,7 @@ YoungsterJoey1AfterText:
 	para "One day my Rattata"
 	line "shall become..."
 
-	para "A Rat God!"
+	para "A RAT GOD!"
 	done
 
 YoungsterMikeySeenText:
@@ -414,13 +414,13 @@ BugCatcherDonSeenText:
 	text "Bug #mon are"
 	line "the strongest!"
 
-	para "They EVOLVE fast"
+	para "They Evolve fast"
 	line "and swarm their"
 	cont "enemies."
 	done
 
 BugCatcherDonBeatenText:
-	text "I need more BUGS!"
+	text "I need more Bugs!"
 	done
 
 BugCatcherDonAfterText:
@@ -453,7 +453,7 @@ Route30YoungsterText_EveryoneIsBattling:
 Route30CooltrainerFText:
 	text "There is a dark"
 	line "and scary cave"
-	cont "to the NORTH."
+	cont "to the North."
 
 	para "This is important"
 

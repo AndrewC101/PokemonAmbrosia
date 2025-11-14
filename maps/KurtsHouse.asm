@@ -485,12 +485,12 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	cont "forgetting!"
 
 	para "Hang on, Slowpoke!"
-	line "Old KURT is on his"
+	line "Old Kurt is on his"
 	cont "way!"
 	done
 
 KurtsHouseKurtHonoredToMakeBallsText:
-	text "KURT: Hi, <PLAYER>!"
+	text "Kurt: Hi, <PLAYER>!"
 
 	para "You handled your-"
 	line "self like a real"
@@ -507,8 +507,8 @@ KurtsHouseKurtHonoredToMakeBallsText:
 	done
 
 KurtsHouseKurtBallsFromApricornsText:
-	text "KURT: I make balls"
-	line "from APRICORNS."
+	text "Kurt: I make balls"
+	line "from Apricorns."
 
 	para "Collect them from"
 	line "trees and bring"
@@ -525,7 +525,7 @@ KurtsHouseKurtBallsFromApricornsText:
 	done
 
 KurtsHouseKurtAskYouHaveAnApricornText:
-	text "KURT: You have an"
+	text "Kurt: You have an"
 	line "Apricorn for me?"
 
 	para "Fine! I'll turn it"
@@ -533,23 +533,23 @@ KurtsHouseKurtAskYouHaveAnApricornText:
 	done
 
 KurtsHouseKurtThatsALetdownText:
-	text "KURT: Oh…"
+	text "Kurt: Oh…"
 	line "That's a letdown."
 	done
 
 KurtsHouseKurtDontBotherMeText:
-	text "KURT: I'm working!"
+	text "Kurt: I'm working!"
 	line "Don't bother me!"
 	done
 
 KurtsHouseKurtJustFinishedYourBallText:
-	text "KURT: Ah, <PLAYER>!"
+	text "Kurt: Ah, <PLAYER>!"
 	line "I just finished"
 	cont "your Ball. Here!"
 	done
 
 KurtsHouseKurtTurnedOutGreatText:
-	text "KURT: That turned"
+	text "Kurt: That turned"
 	line "out great."
 
 	para "Try catching"
@@ -557,7 +557,7 @@ KurtsHouseKurtTurnedOutGreatText:
 	done
 
 KurtsHouseKurtGranddaughterHelpingWorkFasterText:
-	text "KURT: Now that my"
+	text "Kurt: Now that my"
 	line "granddaughter is"
 
 	para "helping me, I can"

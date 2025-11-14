@@ -197,7 +197,7 @@ BikerDwayneAfterBattleText:
 	cont "in all Kanto."
 
 	para "We keep the"
-	line "CYCLE ROAD gangs"
+	line "Cycle Road gangs"
 	cont "in check."
 	done
 
@@ -205,7 +205,7 @@ BikerHarrisSeenText:
 	text "Stop right there!"
 
 	para "Are you with the"
-	line "CYCLE ROAD gangs?"
+	line "Cycle Road gangs?"
 
 	para "This is our turf!"
 

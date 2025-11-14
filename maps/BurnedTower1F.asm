@@ -247,7 +247,7 @@ BurnedTower1FEusineIntroText:
 	line "Suicune shall I"
 	cont "find true joy."
 
-	para "I am EUSINE"
+	para "I am Eusine"
 	line "by the way."
 	done
 
@@ -261,7 +261,7 @@ BurnedTower1FEusineText:
 	done
 
 BurnedTower1FMortyText:
-	text "This guy EUSINE"
+	text "This guy Eusine"
 	line "is a very..."
 
 	para "Dedicated fellow."

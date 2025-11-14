@@ -115,7 +115,7 @@ SaffronMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 
 SaffronMagnetTrainStationOfficerTrainIsntOperatingText:
 	text "I'm sorry, but the"
-	line "MAGNET TRAIN isn't"
+	line "Magnet Train isn't"
 	cont "operating now."
 
 	para "We have lost our"
@@ -178,8 +178,8 @@ SaffronMagnetTrainStationTeacherText:
 	done
 
 SaffronMagnetTrainStationLassText:
-	text "I knew the MAGNET"
-	line "TRAIN would be a"
+	text "I knew the Magnet"
+	line "Train would be a"
 	cont "huge success."
 
 	para "I bought cheap"

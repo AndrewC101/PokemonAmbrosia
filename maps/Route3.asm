@@ -95,14 +95,14 @@ Route3MtMoonSquareSign:
 
 FirebreatherOtisSeenText:
 	text "I am the great"
-	line "OTIS, fire"
+	line "Otis, fire"
 	cont "breather"
 	cont "extraordinaire!"
 	para "No other fire"
 	line "breather can match"
 	cont "my style."
 	para "Certainly not that"
-	line "brutish BURT."
+	line "brutish Burt."
 	done
 
 FirebreatherOtisBeatenText:
@@ -175,7 +175,7 @@ FirebreatherBurtBeatenText:
 	done
 
 FirebreatherBurtAfterBattleText:
-	text "OTIS only cares"
+	text "Otis only cares"
 	line "about himself."
 	para "I want to make"
 	line "people warm and"

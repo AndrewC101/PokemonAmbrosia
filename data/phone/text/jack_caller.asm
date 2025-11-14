@@ -21,7 +21,7 @@ JackLostAMonText:
 	line "the biggest stat"
 	cont "boost?"
 	para "..."
-	para "GEOMANCY!"
+	para "Geomancy!"
 	para "It gives plus 2"
 	line "stages to three"
 	cont "stats but takes"
@@ -75,7 +75,7 @@ JackRolloutTriviaText:
 
 JackSolarbeamTriviaText:
 	text "How long does"
-	line "SLEEP last?"
+	line "Sleep last?"
 	para "..."
 	para "1 to 3 turns."
 	para "You always get at"
@@ -123,7 +123,7 @@ JackTwisterTriviaText:
 	cont "spikes and finally"
 	cont "effects such as"
 	cont "Leech Seed and"
-	cont "NIGHTMARE."
+	cont "Nightmare."
 	done
 
 JackEarthquakeTriviaText:
@@ -131,8 +131,8 @@ JackEarthquakeTriviaText:
 	line "powerful possible"
 	cont "move?"
 	para "..."
-	para "SELFDESTRUCT from"
-	line "a CHOICE BAND"
+	para "Selfdestruct from"
+	line "a Choice Band"
 	cont "Snorlax!"
 	para "That has an"
 	line "effective 675 base"
@@ -143,7 +143,7 @@ JackMagnitudeTriviaText:
 	text "What #mon can"
 	line "learn any move?"
 	para "..."
-	para "SMEARGLE!"
+	para "Smeargle!"
 	para "It's signature"
 	line "move sketch can"
 	cont "copy any move."

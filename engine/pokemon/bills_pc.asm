@@ -2224,7 +2224,7 @@ PCString_Bye: db "Bye,@"
 PCString_Stored: db "Stored @"
 PCString_Got: db "Got @"
 PCString_Non: db "Non.@" ; unreferenced
-PCString_BoxFull: db "The BOX is full.@"
+PCString_BoxFull: db "The Box is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
 
@@ -2493,7 +2493,7 @@ BillsPC_PlaceChooseABoxString:
 	jr BillsPC_PlaceChangeBoxString
 
 .ChooseABox:
-	db "Choose a BOX.@"
+	db "Choose a Box.@"
 
 BillsPC_PlaceWhatsUpString:
 	ld de, .WhatsUp

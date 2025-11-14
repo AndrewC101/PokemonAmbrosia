@@ -510,7 +510,7 @@ IlexForestSignpostText:
 
 Text_IlexForestShrine:
 	text "Ilex Forest"
-	line "SHRINE…"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -519,7 +519,7 @@ Text_IlexForestShrine:
 
 Text_ShrineCelebiEvent:
 	text "Ilex Forest"
-	line "SHRINE…"
+	line "Shrine…"
 
 	para "It's in honor of"
 	line "the forest's"
@@ -580,7 +580,7 @@ BugCatcherWayneBeatenText:
 BugCatcherWayneAfterBattleText:
 	text "They must be"
 	line "much further"
-	cont "SOUTH."
+	cont "South."
 
 	para "The hunt"
 	line "continues."

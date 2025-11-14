@@ -29,7 +29,7 @@ EcruteakLugiaSpeechHouseGrampsText:
 
 	para "I was the one"
 	line "who burnt down"
-	cont "the BRASS TOWER."
+	cont "the Brass Tower."
 
 	para "I was a boy and"
 	line "it was an"

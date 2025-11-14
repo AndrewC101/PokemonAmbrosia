@@ -28,7 +28,7 @@ CeladonDeptStore4FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 CeladonDeptStore4FSuperNerdText:
-	text "#DOLLS are"
+	text "#dolls are"
 	line "expensive."
 
 	para "But they can"

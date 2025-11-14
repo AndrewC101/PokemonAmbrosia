@@ -128,7 +128,7 @@ FarmerMText_BuyMilk:
 
 	para "Here, you can"
 	line "have some lovely"
-	cont "MOOMOO MILK at"
+	cont "Moo Moo Milk at"
 	cont "a discounted price"
 	cont "of ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
 	done
@@ -159,7 +159,7 @@ FarmerMText_Milking:
 	done
 
 FarmerFText_InTrouble:
-    text "MOOMOO MILK is"
+    text "Moo Moo Milk is"
     line "packed with"
     cont "nutrients."
 
@@ -205,11 +205,11 @@ FarmerFText_HealedMiltank:
 
 Text_ReceivedTM13: ; unreferenced
 	text "<PLAYER> received"
-	line "TM09 ROOST."
+	line "TM09 Roost."
 	done
 
 FarmerFText_SnoreSpeech:
-	text "ROOST lets"
+	text "Roost lets"
 	line "some #mon"
 	cont "recover their"
 	cont "health."

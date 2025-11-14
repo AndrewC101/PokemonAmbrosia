@@ -79,7 +79,7 @@ DaisyHelloText:
 
 	para "Even though he"
 	line "isn't technically"
-	cont "a CHAMP anymore."
+	cont "a Champ anymore."
 	done
 
 DaisyOfferGroomingText:

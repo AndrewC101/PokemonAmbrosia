@@ -272,7 +272,7 @@ MasterCynthiaSeenText:
 	line "of Kanto."
 	para "I remember when"
 	line "you walked into"
-	cont "ELMs lab."
+	cont "Elms lab."
 	para "Your aura was"
 	line "overwhelming, like"
 	cont "a star pulling"
@@ -449,7 +449,7 @@ MasterStevenLoseAfterBattleText:
 
 ;MasterDianthaSeenText:
 ;	text "Everyone saw"
-;	line "DIANTHA the movie"
+;	line "Diantha the movie"
 ;	cont "star."
 ;	para "I wanted to be"
 ;	line "taken seriously as"
@@ -770,7 +770,7 @@ MasterAdamAfterBattleText:
 	line "being the son of"
 	cont "the creator."
 	para "If you see"
-	line "JONATHAN there"
+	line "Jonathan there"
 	cont "tell him he's not"
 	cont "allowed."
 	done

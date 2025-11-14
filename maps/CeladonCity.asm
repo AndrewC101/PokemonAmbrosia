@@ -170,8 +170,8 @@ CeladonCityYoungster1Text:
 
 	para "And there's lots"
 	line "of money floating"
-	cont "around the GAME"
-	cont "CORNER and Dept"
+	cont "around the Game"
+	cont "Corner and Dept"
 	cont "Store."
 
 	para "We are the best!"

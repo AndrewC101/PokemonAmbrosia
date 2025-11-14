@@ -136,7 +136,7 @@ BirdKeeperHankAfterBattleText:
 
 PicnickerHopeSeenText:
 	text "Did you come from"
-	line "MT MOON?"
+	line "Mt Moon?"
 	para "Did you see that"
 	line "girl Green."
 	para "She is really"

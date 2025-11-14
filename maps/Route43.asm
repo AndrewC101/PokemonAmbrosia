@@ -417,7 +417,7 @@ PokemaniacBenSeenText:
 	line "destiny to"
 	cont "become..."
 
-	para "BEN!"
+	para "Ben!"
 
 	para "The greatest"
 	line "Water trainer!"

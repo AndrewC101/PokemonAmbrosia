@@ -282,7 +282,7 @@ VioletCitySuperNerdText:
 	done
 
 VioletCityGrampsText:
-	text "The SAGES at"
+	text "The Sages at"
 	line "Sprout Tower"
 	cont "always talk of"
 	cont "fighting the"

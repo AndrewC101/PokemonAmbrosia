@@ -32,9 +32,9 @@ VermilionPokecenter1FBugCatcherScript:
 VermilionPokecenter1FFishingGuruText:
 	text "There is a cave"
 	line "near here called"
-	cont "DIGLETT'S CAVE."
+	cont "Diglett's Cave."
 
-	para "DIGLETT is an"
+	para "Diglett is an"
 	line "extinct species"
 	cont "of #mon."
 
@@ -69,8 +69,8 @@ InvadedVermilionPokecenter1FSailorText:
 VermilionPokecenter1FBugCatcherText:
 	text "I was going to"
 	line "visit Viridian"
-	cont "through DIGLETT'S"
-	cont "CAVE."
+	cont "through Diglett's"
+	cont "Cave."
 
 	para "I got past the"
 	line "fat #mon"

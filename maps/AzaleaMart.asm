@@ -21,8 +21,8 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "This MART sells"
-	line "a special KURT"
+	text "This Mart sells"
+	line "a special Kurt"
 	cont "Ball."
 
 	para "The FRIEND Ball."

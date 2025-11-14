@@ -258,7 +258,7 @@ InvadedFuchsiaCityPokefanMText:
 	done
 
 FuchsiaCityTeacherText:
-	text "The SAFARI ZONE is"
+	text "The Safari Zone is"
 	line "now used as"
 	cont "military training"
 	cont "grounds."
@@ -336,19 +336,19 @@ SafariZoneOfficeSignText:
 	text "There's a notice"
 	line "here…"
 
-	para "SAFARI ZONE OFFICE"
+	para "Safari Zone Office"
 	line "is closed until"
 	cont "further notice."
 	done
 
 WardensHomeSignText:
-	text "SAFARI ZONE"
-	line "WARDEN'S HOME"
+	text "Safari Zone"
+	line "Warden's Home"
 	done
 
 SafariZoneClosedSignText:
 	text "The position of"
-	line "WARDEN is no"
+	line "Warden is no"
 	cont "longer required."
 	done
 
@@ -449,7 +449,7 @@ BlockingSoldier2Text:
 
     para "We will set up"
     line "our base in the"
-    cont "old SAFARI ZONE."
+    cont "old Safari Zone."
     done
 
     

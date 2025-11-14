@@ -691,27 +691,27 @@ PokefanmBrandonAfterText:
 	cont "daylight."
 
 	para "I am the"
-	line "BATMAN!"
+	line "Batman!"
 	done
 
 CooltrainerfIreneSeenText:
-	text "IRENE: Kyaaah!"
+	text "Irene: Kyaaah!"
 	line "Someone found us!"
 	done
 
 CooltrainerfIreneBeatenText:
-	text "IRENE: Ohhh!"
+	text "Irene: Ohhh!"
 	line "Too strong!"
 	done
 
 CooltrainerfIreneAfterText1:
-	text "IRENE: My sister"
-	line "KATE will get you"
+	text "Irene: My sister"
+	line "Kate will get you"
 	cont "for this!"
 	done
 
 CooltrainerfIreneAfterText2:
-	text "IRENE: Isn't this"
+	text "Irene: Isn't this"
 	line "beach great?"
 
 	para "It's our secret"
@@ -719,41 +719,41 @@ CooltrainerfIreneAfterText2:
 	done
 
 CooltrainerfJennSeenText:
-	text "JENN: You can't"
-	line "beat IRENE and go"
+	text "Jenn: You can't"
+	line "beat Irene and go"
 	cont "unpunished!"
 	done
 
 CooltrainerfJennBeatenText:
-	text "JENN: So sorry,"
-	line "IRENE! Sis!"
+	text "Jenn: So sorry,"
+	line "Irene! Sis!"
 	done
 
 CooltrainerfJennAfterText1:
-	text "JENN: Don't get"
+	text "Jenn: Don't get"
 	line "cocky! My sister"
-	cont "KATE is tough!"
+	cont "Kate is tough!"
 	done
 
 CooltrainerfJennAfterText2:
-	text "JENN: Sunlight"
+	text "Jenn: Sunlight"
 	line "makes your body"
 	cont "stronger."
 	done
 
 CooltrainerfKateSeenText:
-	text "KATE: You sure"
+	text "Kate: You sure"
 	line "were mean to my"
 	cont "little sisters!"
 	done
 
 CooltrainerfKateBeatenText:
-	text "KATE: No! I can't"
+	text "Kate: No! I can't"
 	line "believe I lost."
 	done
 
 CooltrainerfKateOfferSoftSandText:
-	text "KATE: You're too"
+	text "Kate: You're too"
 	line "strong. I didn't"
 	cont "stand a chance."
 
@@ -762,7 +762,7 @@ CooltrainerfKateOfferSoftSandText:
 	done
 
 CooltrainerfKateAfterText:
-	text "KATE: I'm sorry we"
+	text "Kate: I'm sorry we"
 	line "jumped you."
 
 	para "We never expected"
@@ -801,8 +801,8 @@ Route34TrainerTipsText:
 DayCareSignText:
 	text "Day-Care"
 
-	para "LET US RAISE YOUR"
-	line "#mon FOR YOU!"
+	para "Let us raise your"
+	line "#mon for you!"
 	done
 
 Route34FieldMon3Script:
@@ -847,7 +847,7 @@ Route34JamesText:
 	cont "entire careers on"
 	cont "it!"
 	para "Isn't that right"
-	line "JESSIE?"
+	line "Jessie?"
 	done
 
 Route34JessieText:
@@ -907,4 +907,3 @@ Route34_MapEvents:
 	object_event 4, 23, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Jessie, EVENT_TEMP_EVENT_2
 	object_event 5, 20, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34Meowth, EVENT_TEMP_EVENT_3
 	object_event 19,  4, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route34FieldMon4Script, EVENT_FIELD_MON_4
-

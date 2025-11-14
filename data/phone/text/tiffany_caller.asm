@@ -76,7 +76,7 @@ TiffanyHangUpText:
 	done
 
 TiffanyFoundItemText:
-	text "I found a PINK BOW"
+	text "I found a Pink Bow"
 	line "yesterday."
 	para "It must have been"
 	line "dropped by a"
@@ -85,7 +85,7 @@ TiffanyFoundItemText:
 	cont "lots of people get"
 	cont "lost around here."
 	para "I need to get rid"
-	line "of this BOW."
+	line "of this Bow."
 
 	para "Come collect it on"
 	line "@"

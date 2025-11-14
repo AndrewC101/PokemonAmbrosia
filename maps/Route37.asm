@@ -215,9 +215,9 @@ PsychicGregAfterBattleText:
 	done
 
 MeetSunnyText:
-	text "SUNNY: Hi!"
+	text "Sunny: Hi!"
 
-	para "I'm SUNNY of"
+	para "I'm Sunny of"
 	line "Sunday, meaning"
 	cont "it's Sunday today!"
 	done
@@ -235,7 +235,7 @@ SunnyGivesGiftText2:
 	done
 
 SunnyGaveGiftText:
-	text "SUNNY: That thing…"
+	text "Sunny: That thing…"
 
 	para "Um…"
 
@@ -251,7 +251,7 @@ SunnyGaveGiftText:
 	cont "moves should hold"
 	cont "it."
 
-	para "My sis MONICA said"
+	para "My sis Monica said"
 	line "it powers up"
 	cont "electric moves!"
 	done
@@ -268,7 +268,7 @@ SunnySundayText:
 	done
 
 SunnyNotSundayText:
-	text "SUNNY: Isn't today"
+	text "Sunny: Isn't today"
 	line "Sunday?"
 	cont "Um… I forgot!"
 	done

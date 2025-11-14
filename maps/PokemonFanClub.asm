@@ -274,7 +274,7 @@ PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
 	para "I'll befriend a"
 	line "real Clefairy."
 
-	para "Off to MT MOON!"
+	para "Off to Mt Moon!"
 	done
 
 PokemonFanClubPlayerReceivedDollText:
@@ -285,7 +285,7 @@ PokemonFanClubPlayerReceivedDollText:
 PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
 	text "I'm planning my"
 	line "expedition to"
-	cont "MT MOON to find"
+	cont "Mt Moon to find"
 	cont "a real, honest"
 	cont "and true Clefairy."
 	done

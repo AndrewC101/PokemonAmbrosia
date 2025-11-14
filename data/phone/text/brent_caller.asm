@@ -79,7 +79,7 @@ BrentGoldenrodGossipText:
 
 BrentRoute25GossipText:
 	text "Do you know the"
-	line "move NASTY_PLOT?"
+	line "move Nasty Plot?"
 	para "It can double"
 	line "special attack!"
 	para "I must have it!"
@@ -87,7 +87,7 @@ BrentRoute25GossipText:
 
 BrentAbraGossipText:
 	text "Do you know the"
-	line "move NASTY_PLOT?"
+	line "move Nasty Plot?"
 	para "It can double"
 	line "special attack!"
 	para "I must have it!"
@@ -95,7 +95,7 @@ BrentAbraGossipText:
 
 BrentSisterGossipText:
 	text "Do you know the"
-	line "move NASTY_PLOT?"
+	line "move Nasty Plot?"
 	para "It can double"
 	line "special attack!"
 	para "I must have it!"

@@ -1,5 +1,5 @@
 DanaTakingPhotosText:
-	text "All these FISHER"
+	text "All these Fisher"
 	line "men keep telling"
 	cont "me I'm pretty."
 	para "Like, I know, duh."
@@ -22,7 +22,7 @@ DanaDefeatedMonText:
 
 DanaLostAMonText:
 	text "This boy called"
-	line "CHAD keeps"
+	line "Chad keeps"
 	cont "strutting around"
 	cont "with his"
 	cont "Charizard."
@@ -50,7 +50,7 @@ DanaHangUpText:
 
 DanaFoundItemText:
 	text "One of these"
-	line "SAILORS gave me"
+	line "Sailors gave me"
 	cont "something as a"
 	cont "gift."
 	para "Yuck I don't want"
@@ -61,9 +61,9 @@ DanaFoundItemText:
 	done
 
 DanaCanYouWaitABitLongerText:
-	text "That guy CHAD"
+	text "That guy Chad"
 	line "totally stomped"
-	cont "some SAILORS that"
+	cont "some Sailors that"
 	cont "were hassling me."
 	para "His Charizard is"
 	line "pretty strong."

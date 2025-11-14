@@ -275,7 +275,7 @@ TrainerBugCatcherArnie:
 
 ArnieNumberAcceptedText:
 	text "When the day comes"
-	line "and the BUGS swarm"
+	line "and the Bugs swarm"
 	cont "these lands, I'll"
 	cont "let you know."
 	done
@@ -372,7 +372,7 @@ InvaderLautrecVictoryText:
 
 InvaderLautrecAfterBattleText:
 	text "Beware the one"
-	line "known as PATCHES."
+	line "known as Patches."
 
 	para "He might seen"
 	line "an unassuming"
@@ -386,11 +386,11 @@ CamperElliotSeenText:
 	text "Stay back babe!"
 
 	para "I'll protect you"
-	line "from that INVADER."
+	line "from that Invader."
 
 	para "Oh... look..."
 
-	para "The INVADER has"
+	para "The Invader has"
 	line "an apprentice."
 
 	para "I'll protect you!"
@@ -468,7 +468,7 @@ BirdKeeperBryanSeenText:
 	text "Once my #mon"
 	line "are big enough"
 	cont "they will fly me"
-	cont "away to KALOS"
+	cont "away to Kalos"
 	cont "to escape the war."
 	done
 
@@ -582,7 +582,7 @@ OfficerDirkBeatenText:
 OfficerDirkAfterBattleText:
 	text "I used to work"
 	line "in Kanto and"
-	cont "all the BIKER"
+	cont "all the Biker"
 	cont "gangs hardened"
 	cont "me."
 

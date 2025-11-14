@@ -131,7 +131,7 @@ EcruteakCityLass2Text:
 
 	para "It used to be"
 	line "called the"
-	cont "BRASS TOWER."
+	cont "Brass Tower."
 
 	para "Nobody knows"
 	line "how the fire"

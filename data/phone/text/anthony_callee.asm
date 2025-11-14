@@ -2,7 +2,7 @@ AnthonyAnswerPhoneText:
 	text "Yeah, @"
 	text_ram wStringBuffer3
 	text " the"
-	line "HIKER here."
+	line "Hiker here."
 
 	para "Ah, <PLAYER>!"
 	done
@@ -11,7 +11,7 @@ AnthonyAnswerPhoneDayText:
 	text "Yeah, @"
 	text_ram wStringBuffer3
 	text " the"
-	line "HIKER here."
+	line "Hiker here."
 
 	para "Ah, <PLAYER>,"
 	line "right?"
@@ -21,7 +21,7 @@ AnthonyAnswerPhoneNiteText:
 	text "Yeah, @"
 	text_ram wStringBuffer3
 	text " the"
-	line "HIKER here."
+	line "Hiker here."
 
 	para "Ah, <PLAYER>, isn't"
 	line "it?"
@@ -33,7 +33,7 @@ AnthonyGreetText:
 	para "This is @"
 	text_ram wStringBuffer3
 	text_start
-	line "the HIKER!"
+	line "the Hiker!"
 	done
 
 AnthonyGreetDayText:
@@ -43,7 +43,7 @@ AnthonyGreetDayText:
 	para "This is @"
 	text_ram wStringBuffer3
 	text_start
-	line "the HIKER!"
+	line "the Hiker!"
 	done
 
 AnthonyGreetNiteText:
@@ -53,7 +53,7 @@ AnthonyGreetNiteText:
 	para "This is @"
 	text_ram wStringBuffer3
 	text_start
-	line "the HIKER!"
+	line "the Hiker!"
 	done
 
 AnthonyGenericText:

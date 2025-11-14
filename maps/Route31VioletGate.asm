@@ -15,7 +15,7 @@ Route31VioletGateCooltrainerFScript:
 
 Route31VioletGateOfficerText:
 	text "Welcome to Violet"
-	line "CITY."
+	line "City."
 
 	para "This used to be a"
 	line "happy place to"

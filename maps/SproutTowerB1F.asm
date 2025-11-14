@@ -85,7 +85,7 @@ GiveSpellTagText:
     prompt
 
 SageWarningText:
-    text "SPELL TAG"
+    text "Spell Tag"
     line "strengthens"
     cont "ones connection"
     cont "to the other"

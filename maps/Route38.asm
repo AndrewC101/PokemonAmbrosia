@@ -417,7 +417,7 @@ BirdKeeperTobyAfterBattleText:
 	done
 
 SchoolboyChad1SeenText:
-	text "I am CHAD."
+	text "I am Chad."
 
 	para "All girls are"
 	line "my girlfriend."
@@ -434,12 +434,12 @@ SchoolboyChad1BeatenText:
 SchoolboyChadSoManyTestsText:
 	text "It's a full"
 	line "time job being"
-	cont "a CHAD."
+	cont "a Chad."
 	done
 
 LassDana1SeenText:
 	text "This kid called"
-	line "CHAD thinks I'm"
+	line "Chad thinks I'm"
 	cont "his girlfriend."
 
 	para "Lots of boys"
@@ -479,7 +479,7 @@ BeautyValerieBeatenText:
 BeautyValerieAfterBattleText:
 	text "The secret of"
 	line "my beauty is"
-	cont "MOO MOO MILK."
+	cont "Moo Moo Milk"
 
 	para "But it must be"
 	line "fresh!"
@@ -511,8 +511,8 @@ SailorHarryAfterBattleText:
 
 BeautyOliviaSeenText:
 	text "My #mon and"
-	line "I drink MOO"
-	cont "MOO MILK every"
+	line "I drink Moo"
+	cont "Moo Milk every"
 	cont "day to stay"
 	cont "beautiful."
 	done

@@ -2947,12 +2947,12 @@ PlayAgainstLanceText:
 
 PlayAsJonathanText:
     text "Play as"
-    line "JONATHAN?"
+    line "Jonathan?"
     done
 
 PlayAgainstJonathanText:
     text "Play against"
-    line "JONATHAN?"
+    line "Jonathan?"
     done
 
 PlayAsBlueText:

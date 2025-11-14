@@ -22,7 +22,7 @@ BlackthornMartBlackBeltScript:
 
 BlackthornMartCooltrainerMText:
 	text "I wish I could"
-	line "use MAX POTION in"
+	line "use Max Potion in"
 	cont "Gym battles!"
 
 	para "Dragon type is"

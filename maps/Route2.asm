@@ -202,7 +202,7 @@ Route2HiddenRevive:
 	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
 
 BugCatcherRobSeenText:
-	text "DOUG thinks his"
+	text "Doug thinks his"
 	line "#mon are the"
 	cont "rulers of the"
 	cont "colony."
@@ -219,7 +219,7 @@ BugCatcherRobBeatenText:
 BugCatcherRobAfterBattleText:
 	text "This is just one"
 	line "battle."
-	para "Among BUGS the"
+	para "Among Bugs the"
 	line "wars never end."
 	done
 
@@ -240,14 +240,14 @@ BugCatcherEdAfterBattleText:
 	text "Maybe one day the"
 	line "forest will grow"
 	cont "back."
-	para "BUGS always find a"
+	para "Bugs always find a"
 	line "way."
 	done
 
 BugCatcherDougSeenText:
 	text "My #mon rule"
 	line "the colony."
-	para "ROB shall never"
+	para "Rob shall never"
 	line "dethrone me."
 	para "Nor shall you!"
 	done
@@ -257,7 +257,7 @@ BugCatcherDougBeatenText:
 	done
 
 BugCatcherDougAfterBattleText:
-	text "ROBS #mon"
+	text "Robs #mon"
 	line "shall make fine"
 	cont "drones."
 	done

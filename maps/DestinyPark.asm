@@ -972,7 +972,7 @@ MasterChuckSeenText:
 	cont "or laziness."
 	para "Did Goku get lazy"
 	line "on his way to"
-	cont "NAMEK or in the"
+	cont "Namek or in the"
 	cont "time chamber!"
 	para "Did Vegeta get"
 	line "lazy in his"
@@ -980,12 +980,12 @@ MasterChuckSeenText:
 	done
 
 MasterChuckBeatenText:
-	text "You're a SUPER"
-	line "SAIYAN!"
+	text "You're a Super"
+	line "Saiyan!"
 	done
 
 MasterChuckWinText:
-    text "Have a SENZU."
+    text "Have a Senzu."
     done
 
 MasterChuckAfterBattleText:
@@ -1400,4 +1400,3 @@ DestinyPark_MapEvents:
 	object_event  4, 42, SPRITE_PRYCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterPryceScript, -1
 	object_event 18, 42, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterClairScript, -1
 	object_event 19, 42, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterEusineScript, -1
-

@@ -68,7 +68,7 @@ IrwinEliteFourGossipText:
 
 IrwinTrainPassGossipText:
 	text "I heard you fixed"
-	line "the MAGNET TRAIN."
+	line "the Magnet Train."
 	para "They say you"
 	line "pushed it from"
 	cont "Johto to Kanto by"
@@ -79,8 +79,8 @@ IrwinTrainPassGossipText:
 
 IrwinSnorlaxGossipText:
 	text "I heard you"
-	line "unblocked DIGLETTS"
-	cont "CAVE."
+	line "unblocked Digletts"
+	cont "Cave."
 	para "They say you"
 	line "pushed that fat"
 	cont "#mon out of"

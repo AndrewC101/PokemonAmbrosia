@@ -482,7 +482,7 @@ TeruSama5Desc:
 	db   "?@"
 
 ExpShareDesc:
-	db   "Shares battle EXP."
+	db   "Shares battle Exp."
 	next "Points.@"
 
 OldRodDesc:
@@ -753,7 +753,7 @@ HardStoneDesc:
 	next "type moves. (HOLD)@"
 
 LuckyEggDesc:
-	db   "Earns extra EXP."
+	db   "Earns extra Exp."
 	next "points. (HOLD)@"
 
 CardKeyDesc:
@@ -785,7 +785,7 @@ BasementKeyDesc:
 
 PassDesc:
 	db   "A ticket for the"
-	next "MAGNET TRAIN.@"
+	next "Magnet Train.@"
 
 ExpertBeltDesc:
 	db   "Powers up super"

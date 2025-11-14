@@ -24,7 +24,7 @@ GoldenrodPPSpeechHouseRadio:
 
 GoldenrodPPSpeechHouseFisherText:
 	text "You have a"
-	line "POCKET PC."
+	line "Pocket PC."
 
 	para "You can use it"
 	line "to heal your"
@@ -32,12 +32,12 @@ GoldenrodPPSpeechHouseFisherText:
 
 	para "Like what's the"
 	line "point in #mon"
-	cont "CENTERS!"
+	cont "centers!"
 	done
 
 GoldenrodPPSpeechHouseLassText:
 	text "Have you heard"
-	line "of DIANTHA?"
+	line "of Diantha?"
 
 	para "She is a"
 	line "Champion."

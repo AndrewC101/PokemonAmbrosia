@@ -345,7 +345,7 @@ OakGivesExpShareText:
 MrPokemonsHouse_OakText2:
 	text "This will allow"
 	line "all your #mon"
-	cont "to receive EXP in"
+	cont "to receive Exp in"
 	cont "battle, even the"
 	cont "ones that didn't"
 	cont "fight."

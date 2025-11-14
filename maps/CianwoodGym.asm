@@ -222,7 +222,7 @@ ChuckIntroText1:
 	para "WHAAAH!"
 
 	para "This is a"
-	line "SUPER TRAINER."
+	line "Super Trainer."
 
 	para "And this..."
 
@@ -252,7 +252,7 @@ ChuckIntroText2:
 
 ChuckIntroText3:
 	text "This is called"
-	line "SUPER TRAINER 3!"
+	line "Super Trainer 3!"
 
 	para "I'm gonna blow"
 	line "you to bits!"
@@ -318,7 +318,7 @@ ChuckExplainTMText:
 ChuckAfterText:
 	text "I powered all"
 	line "the way up to"
-	cont "SUPER TRAINER 3!"
+	cont "Super Trainer 3!"
 
 	para "But your power"
 	line "level was still"
@@ -347,7 +347,7 @@ BlackbeltYoshiSeenText:
 BlackbeltYoshiBeatenText:
 	text "Where did I"
 	line "put that"
-	cont "SENZU BEAN!"
+	cont "Senzu Bean!"
 	done
 
 BlackbeltYoshiAfterText:
@@ -362,16 +362,16 @@ BlackbeltYoshiAfterText:
 
 BlackbeltLaoSeenText:
 	text "The best villain"
-	line "is clearly CELL."
+	line "is clearly Cell."
 
 	para "Frieza is over"
 	line "hyped and not"
 	cont "cool anymore."
 
-	para "And BUU is"
+	para "And Buu is"
 	line "just stupid."
 
-	para "CELL is perfect!"
+	para "Cell is perfect!"
 	done
 
 BlackbeltLaoBeatenText:
@@ -434,7 +434,7 @@ BlackbeltLungSeenText:
 	para "KAMEHAMEHA..."
 
 	para "I'm more of a"
-	line "BLEACH guy."
+	line "Bleach guy."
 	done
 
 BlackbeltLungBeatenText:
@@ -445,7 +445,7 @@ BlackbeltLungBeatenText:
 BlackbeltLungAfterText:
 	text "Don't tell the"
 	line "others I prefer"
-	cont "BLEACH."
+	cont "Bleach."
 
 	para "They'll want to"
 	line "debate me over it."

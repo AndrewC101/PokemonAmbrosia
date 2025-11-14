@@ -218,8 +218,8 @@ YoungsterOwenAfterBattleText:
 YoungsterJasonSeenText:
 	text "There is something"
 	line "big, long and hard"
-	cont "inside DIGLETTS"
-	cont "CAVE."
+	cont "inside Digletts"
+	cont "Cave."
 	done
 
 YoungsterJasonBeatenText:

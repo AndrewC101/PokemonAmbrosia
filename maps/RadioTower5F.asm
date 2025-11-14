@@ -557,7 +557,7 @@ RadioTower5FRocketBossAfterText:
 	line "only radio tower."
 
 	para "We have dispatched"
-	line "the PRIMERA."
+	line "the Primera."
 
 	para "Our top operative"
 	line "is entrusted to"
@@ -756,7 +756,7 @@ RadioTower5FDirectorText:
 	done
 
 BenText:
-	text "BEN: Do you listen"
+	text "Ben: Do you listen"
 	line "to our music?"
 	done
 

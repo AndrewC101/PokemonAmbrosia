@@ -478,7 +478,7 @@ Text_BattleTowerRules:
 
 Text_BattleTower_LeftWithoutSaving:
 	text "Excuse me!"
-	line "You didn't SAVE"
+	line "You didn't Save"
 
 	para "before exiting"
 	line "the Battle Room."
@@ -512,7 +512,7 @@ Text_SaveBeforeEnteringBattleRoom:
 	done
 
 Text_SaveAndEndTheSession:
-	text "SAVE and end the"
+	text "Save and end the"
 	line "session?"
 	done
 

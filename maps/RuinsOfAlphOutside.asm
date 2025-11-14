@@ -321,7 +321,7 @@ AlphHenshinSeenText:
     para "I am sure the"
     line "entrance to the"
     cont "ancient city of"
-    cont "MENZOBERRANZAN"
+    cont "Menzoberranzan"
     cont "is around here."
 
     para "It must have some"

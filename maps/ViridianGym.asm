@@ -164,10 +164,10 @@ ViridianGymStatue:
 MustBeatAllGymsText:
     text "Prove yourself"
     line "by beating all"
-    cont "the Kanto GYMs."
+    cont "the Kanto Gyms."
 
     para "Then I will fight"
-    line "you Johto CHAMP!"
+    line "you Johto Champ!"
     done
 
 FalseIntroText:

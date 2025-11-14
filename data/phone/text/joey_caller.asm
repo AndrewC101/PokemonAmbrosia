@@ -14,7 +14,7 @@ JoeyDefeatedMonText:
 	text "Yesterday we"
 	line "defeated some new"
 	cont "trainer with a"
-	cont "STARLY."
+	cont "Starly."
 	para "This is the first"
 	line "step!"
 	para "Soon the Champions"
@@ -25,11 +25,11 @@ JoeyDefeatedMonText:
 
 JoeyLostAMonText:
 	text "Did you know"
-	line "RATICATE has a"
+	line "Raticate has a"
 	cont "secret ultimate"
-	cont "move, FINAL FANG?"
+	cont "move, Final Fang?"
 	para "Only the strongest"
-	line "RATICATE can"
+	line "Raticate can"
 	cont "obtain it."
 	para "It shall be childs"
 	line "play for us."

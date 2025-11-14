@@ -312,9 +312,10 @@ SaffronCityLass2Text:
 SaffronCitySignText:
 	text "Saffron City"
 
-	para "THE GOLDEN CITY."
+	para "The Golden City."
 	
-	para "THE BIG #ball."
+	para "The Big"
+	line "#ball."
 	done
 
 SaffronGymSignText:
@@ -333,7 +334,7 @@ FightingDojoSignText:
 
 SilphCoSignText:
 	text "Silph Co."
-	line "OFFICE BUILDING"
+	line "Office Building"
 	done
 
 MrPsychicsHouseSignText:
@@ -343,8 +344,8 @@ MrPsychicsHouseSignText:
 
 SaffronCityMagnetTrainStationSignText:
 	text "Saffron City"
-	line "MAGNET TRAIN"
-	cont "STATION"
+	line "Magnet Train"
+	cont "Station"
 	done
 
 SaffronGymBlockScript:

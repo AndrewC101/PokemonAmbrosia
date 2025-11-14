@@ -25,7 +25,7 @@ Route16FuchsiaSpeechHouseAVGNText:
 	cont "urine than subject"
 	cont "myself to another"
 	cont "moment of this"
-	cont "wretched GAME!!!"
+	cont "wretched Game!!!"
 	done
 
 Route16FuchsiaSpeechHouseMusicianText:

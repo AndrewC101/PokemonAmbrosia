@@ -514,13 +514,13 @@ CooltrainerfLoisText:
 	done
 
 MeetWesleyText:
-	text "WESLEY: Well, how"
+	text "Wesley: Well, how"
 	line "do you do?"
 
 	para "Seeing as how it's"
 	line "Wednesday today,"
 
-	para "I'm WESLEY of"
+	para "I'm Wesley of"
 	line "Wednesday."
 	done
 
@@ -531,13 +531,13 @@ WesleyGivesGiftText:
 	done
 
 WesleyGaveGiftText:
-	text "WESLEY: BLACKBELT"
+	text "Wesley: BLACKBELT"
 	line "beefs up the power"
 	cont "of fighting moves."
 	done
 
 WesleyWednesdayText:
-	text "WESLEY: Since you"
+	text "Wesley: Since you"
 	line "found me, you must"
 
 	para "have met my broth-"
@@ -548,7 +548,7 @@ WesleyWednesdayText:
 	done
 
 WesleyNotWednesdayText:
-	text "WESLEY: Today's"
+	text "Wesley: Today's"
 	line "not Wednesday."
 	cont "That's too bad."
 	done

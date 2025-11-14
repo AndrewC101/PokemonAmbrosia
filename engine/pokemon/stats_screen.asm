@@ -734,7 +734,7 @@ LoadPinkPage:
 	db "OK @"
 
 .ExpPointStr:
-	db "EXP Points@"
+	db "Exp Points@"
 
 .LevelUpStr:
 	db "Level Up@"

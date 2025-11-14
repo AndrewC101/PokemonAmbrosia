@@ -327,7 +327,7 @@ PicnickerDebraSeenText:
 	line "young, beautiful"
 	cont "and get their"
 	cont "strength from"
-	cont "MOO MOO MILK."
+	cont "Moo Moo Milk."
 	done
 
 PicnickerDebraBeatenText:
@@ -344,7 +344,7 @@ PicnickerDebraAfterBattleText:
 	line "Champion!?"
 
 	para "Is your secret"
-	line "MOO MOO MILK!?"
+	line "Moo Moo Milk!?"
 	done
 
 JugglerFritzSeenText:
@@ -443,7 +443,7 @@ BlackbeltWaiBeatenText:
 
 BlackbeltWaiAfterBattleText:
 	text "I couldn't find"
-	line "the KARATE KING in"
+	line "the Karate King in"
 	cont "Johto."
 
 	para "He's supposed to"
@@ -495,7 +495,7 @@ TeacherShirleyBeatenText:
 
 TeacherShirleyAfterBattleText:
 	text "We're on a field"
-	line "trip to the RUINS"
+	line "trip to the Ruins"
 	cont "outside Violet."
 
 	para "There we will find"
@@ -524,7 +524,7 @@ SchoolboyNateBeatenText:
 SchoolboyNateAfterBattleText:
 	text "Radios pick up"
 	line "strange signals"
-	cont "inside the RUINS."
+	cont "inside the Ruins."
 
 	para "It must be the"
 	line "secret power!"
@@ -532,7 +532,7 @@ SchoolboyNateAfterBattleText:
 
 SchoolboyRickySeenText:
 	text "I want to find the"
-	line "new Johto CHAMP."
+	line "new Johto Champ."
 
 	para "I'm going to beat"
 	line "them and prove it"
@@ -552,7 +552,7 @@ SchoolboyRickyAfterBattleText:
 
 	para "I thought I was"
 	line "strong enough"
-	cont "to be the CHAMP."
+	cont "to be the Champ."
 
 	para "But it's clear I"
 	line "am nowhere near."

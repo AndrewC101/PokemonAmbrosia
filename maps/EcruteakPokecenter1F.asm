@@ -47,7 +47,7 @@ EcruteakPokecenter1FCooltrainerFText:
 
 EcruteakPokecenter1FGymGuideText:
 	text "Far to the"
-	line "NORTH EAST is"
+	line "North East is"
 	cont "Lake of Rage."
 
 	para "Years ago a lot"

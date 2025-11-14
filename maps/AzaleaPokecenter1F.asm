@@ -40,7 +40,7 @@ AzaleaPokecenter1FGentlemanText:
 AzaleaPokecenter1FFishingGuruText:
 	text "Bill's PC can"
 	line "store up to 20"
-	cont "#mon per BOX."
+	cont "#mon per Box."
 
 	para "I have no idea"
 	line "how it works."
@@ -52,7 +52,7 @@ AzaleaPokecenter1FFishingGuruText:
 
 AzaleaPokecenter1FPokefanFText:
 	text "Do you know about"
-	line "APRICORNS?"
+	line "Apricorns?"
 
 	para "Crack one open,"
 	line "hollow it out and"
@@ -67,7 +67,7 @@ AzaleaPokecenter1FPokefanFText:
 	line "were invented,"
 
 	para "everyone used"
-	line "APRICORNS."
+	line "Apricorns."
 	done
 
 AzaBlisseyScript:

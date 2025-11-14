@@ -204,13 +204,13 @@ RuinsOfAlphResearchCenterScientist3_PrinterAvailable:
 	done
 
 RuinsOfAlphResearchCenterScientist1Text:
-	text "The RUINS are"
+	text "The Ruins are"
 	line "about 1500 years"
 	cont "old."
 
 	para "Buried underground"
 	line "is the city of"
-	cont "MENZOBERRANZAN."
+	cont "Menzoberranzan."
 
 	para "It is believed"
 	line "that the ruler"

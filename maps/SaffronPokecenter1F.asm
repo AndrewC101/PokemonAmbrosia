@@ -26,7 +26,7 @@ SaffronPokecenter1FTeacherText:
 	line "Saffron tried to"
 	cont "innovate by"
 	cont "charging money"
-	cont "in #CENTERS."
+	cont "in #centers."
 
 	para "Then the meddling"
 	line "#mon League"
@@ -119,5 +119,3 @@ SaffronPokecenter1F_MapEvents:
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffBlisseyScript, -1
 	object_event  2,  4, SPRITE_HOUNDOOM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffHoundoomScript, -1
 	object_event  7,  6, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffMachampScript, -1
-
-

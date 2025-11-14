@@ -115,7 +115,7 @@ RedsHouseSignText:
 
 OaksLabSignText:
 	text "Oak #mon"
-	line "RESEARCH LAB"
+	line "Research Lab"
 	done
 
 BluesHouseSignText:

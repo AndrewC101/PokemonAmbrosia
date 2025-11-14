@@ -44,7 +44,7 @@ VioletNicknameSpeechHouseTeacherText:
 	line "alternate colour"
 	cont "in your #dex"
 	cont "by pressing"
-	cont "SELECT."
+	cont "Select."
 	done
 	done
 

@@ -1984,7 +1984,7 @@ The exact cause of this bug is unknown.
  	cont "@"
 -	text_decimal wStringBuffer2, 2, 4
 +	text_decimal wStringBuffer2, 2, 5
- 	text " EXP. Points!"
+ 	text " Exp. Points!"
  	prompt
 
  _ExpPointsText::
@@ -1992,7 +1992,7 @@ The exact cause of this bug is unknown.
  	line "@"
 -	text_decimal wStringBuffer2, 2, 4
 +	text_decimal wStringBuffer2, 2, 5
- 	text " EXP. Points!"
+ 	text " Exp. Points!"
  	prompt
 ```
 

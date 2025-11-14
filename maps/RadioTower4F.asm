@@ -118,7 +118,7 @@ RadioTower4FStudio2Sign:
 RadioTower4FFisherText:
 	text "I listened to the"
 	line "radio while I was"
-	cont "at the RUINS."
+	cont "at the Ruins."
 
 	para "I heard a strange"
 	line "broadcast there."
@@ -360,11 +360,11 @@ ExtendReach:
 	done
 
 Jessie:
-    text "JESSIE!"
+    text "Jessie!"
     done
 
 James:
-    text "JAMES!"
+    text "James!"
     done
 
 BlastOffAtThe:
@@ -400,7 +400,7 @@ CantDoThat:
 
 JessieLose:
 	text "This is all"
-	line "your fault JAMES!"
+	line "your fault James!"
 	done
 
 JessieWin:

@@ -45,7 +45,7 @@ WardensGranddaughterText1:
 	line "all by himself."
 
 	para "He quit running"
-	line "SAFARI ZONE just"
+	line "Safari Zone just"
 	cont "like that."
 	done
 
@@ -53,7 +53,7 @@ WardensGranddaughterText2:
 	text "Many people were"
 	line "disappointed that"
 
-	para "SAFARI ZONE closed"
+	para "Safari Zone closed"
 	line "down, but Grandpa"
 	cont "is so stubborn…"
 	done

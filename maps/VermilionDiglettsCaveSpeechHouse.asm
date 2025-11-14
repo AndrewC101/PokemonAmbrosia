@@ -10,7 +10,7 @@ VermilionDiglettsCaveSpeechHouseGentlemanScript:
 	jumptextfaceplayer VermilionDiglettsCaveSpeechHouseGentlemanText
 
 VermilionDiglettsCaveSpeechHouseGentlemanText:
-	text "DIGLETT were a"
+	text "Diglett were a"
 	line "species of"
 	cont "#mon that went"
 	cont "extinct not too"
@@ -30,7 +30,7 @@ VermilionDiglettsCaveSpeechHouseGentlemanText:
 	para "It is rumoured"
 	line "the Electric Gym"
 	cont "trainers got rid"
-	cont "of the DIGLETT"
+	cont "of the Diglett"
 	cont "so challengers"
 	cont "couldn't use them"
 	cont "against the Gym."

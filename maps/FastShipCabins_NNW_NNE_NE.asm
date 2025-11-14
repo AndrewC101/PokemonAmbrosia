@@ -156,7 +156,7 @@ CooltrainermSeanAfterBattleText:
 CooltrainerfCarolSeenText:
 	text "I will hunt down"
 	line "the Kanto"
-	cont "COOLTRAINERS"
+	cont "Ace trainers"
 	cont "one by one."
 
 	para "I will defeat"
@@ -173,7 +173,7 @@ CooltrainerfCarolBeatenText:
 
 CooltrainerfCarolAfterBattleText:
 	text "There can be only"
-	line "one COOLTRAINER!"
+	line "one Ace trainer!"
 	done
 
 PokemaniacEthanSeenText:

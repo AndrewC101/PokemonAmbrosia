@@ -53,11 +53,11 @@ DerekLetsGetTogetherText:
 	text "I am sure Wallace"
 	line "will make"
 	cont "exclusive use of"
-	cont "AVADA KADRAVRA."
+	cont "Avada Kadavra."
 	para "There must be a"
 	line "defense against"
 	cont "it!"
-	para "Are there any ELF"
+	para "Are there any Elf"
 	line "#mon?"
 	done
 

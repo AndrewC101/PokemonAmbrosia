@@ -27,7 +27,7 @@ VermilionMagnetTrainSpeechHousePokefanFText:
 	cont "living."
 
 	para "Then came the"
-	line "MAGNET TRAIN."
+	line "Magnet Train."
 
 	para "Now you can get"
 	line "Kanto much faster"
@@ -45,8 +45,8 @@ VermilionMagnetTrainSpeechHousePokefanFText:
 VermilionMagnetTrainSpeechHouseYoungsterText:
 	text "Mums always going"
 	line "on about how she"
-	cont "hates the MAGNET"
-	cont "TRAIN."
+	cont "hates the Magnet"
+	cont "Train."
 
 	para "But she uses it"
 	line "at least once"

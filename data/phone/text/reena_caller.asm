@@ -8,7 +8,7 @@ ReenaMonsIsAPerfectMatchText:
 	done
 
 ReenaDefeatedMonText:
-	text "DIANTHA has a"
+	text "Diantha has a"
 	line "Blissey, it's"
 	cont "surprisingly"
 	cont "strong for a pink"
@@ -17,7 +17,7 @@ ReenaDefeatedMonText:
 	done
 
 ReenaLostAMonText:
-	text "ALDER doesn't have"
+	text "Alder doesn't have"
 	line "a powerful ace"
 	cont "#mon like"
 	cont "other Champions."

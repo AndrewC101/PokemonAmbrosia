@@ -99,5 +99,5 @@ ToddHaveYouGoneToDepartmentStoreText:
 	para "Some guy on the"
 	line "roof is hording"
 	cont "all the"
-	cont "#DOLLS."
+	cont "#dolls."
 	done

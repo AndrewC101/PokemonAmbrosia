@@ -277,7 +277,7 @@ BugCatcherWade1BeatenText:
 
 BugCatcherWade1AfterText:
 	text "You can have a"
-	line "variety of TYPES"
+	line "variety of Types"
 	cont "while still using"
 	cont "your favorites."
 	done

@@ -256,7 +256,7 @@ CeruleanGymGruntByeText:
 	cont "follow me if you"
 	cont "value your life."
 
-	para "I am the PRIMERA"
+	para "I am the Primera"
 
 	para "The strongest of"
 	line "all Rockets."
@@ -273,7 +273,7 @@ CeruleanGymNote1Text:
 CeruleanGymNote2Text:
 	text "Since Misty's out,"
 	line "we'll be away too."
-	cont "Gym TRAINERS"
+	cont "Gym trainers"
 	done
 
 MistyIntroText:
@@ -430,7 +430,7 @@ SwimmermParkerAfterBattleText:
 	done
 
 CeruleanGymGuideText:
-	text "Hey CHAMP!"
+	text "Hey Champ!"
 
 	para "You know the"
 	line "drill by now."

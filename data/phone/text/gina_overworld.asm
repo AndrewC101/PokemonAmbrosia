@@ -31,7 +31,7 @@ GinaRematchText:
 	text "OK I need to make"
 	line "sure all my"
 	cont "#mon get some"
-	cont "EXP."
+	cont "Exp."
 	done
 
 GinaGiftText:

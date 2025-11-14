@@ -247,7 +247,7 @@ SageMasaAfterBattleText:
 	line "were two nine-tier"
 	cont "towers here."
 
-	para "The BRASS TOWER,"
+	para "The Brass Tower,"
 	line "which was said to"
 
 	para "awaken #mon,"
@@ -269,7 +269,7 @@ SageMasaAfterBattleText:
 	line "was said to make"
 
 	para "its roost atop the"
-	line "BRASS TOWER."
+	line "Brass Tower."
 
 	para "However…"
 

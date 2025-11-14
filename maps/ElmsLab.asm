@@ -858,7 +858,7 @@ ElmText_ThisIsCynthia:
     para "This is Cynthia."
 
     para "She is Champion"
-    line "of the SINNOH"
+    line "of the Sinnoh"
     cont "region."
     done
 
@@ -1060,7 +1060,7 @@ ElmDirectionsText2:
 	cont "heal them with"
 	cont "this machine."
 	para "My aide has a"
-	line "POCKET PC you can"
+	line "Pocket PC you can"
 	cont "use to heal your"
 	cont "#mon anywhere."
 	done
@@ -1114,7 +1114,7 @@ ElmAfterTheftText1:
 	line "is terrible…"
 
 	para "So you met the"
-	line "secret AGENT."
+	line "secret Agent."
 
 	para "Did he give you"
 	line "anything?"
@@ -1269,7 +1269,7 @@ AideText_ExplainCaps:
 
     para "Becoming a"
     line "better trainer"
-    cont "by beating GYMs"
+    cont "by beating Gyms"
     cont "will increase"
     cont "these limits."
 
@@ -1405,7 +1405,7 @@ ElmKantoExplainText:
 	cont "and upgraded your"
 	cont "Exp Share."
 	para "It will now give"
-	line "full EXP to your"
+	line "full Exp to your"
 	cont "whole party!"
 	para "We must all work"
 	line "together and be"
@@ -1522,8 +1522,8 @@ ElmsLabTravelTip1Text:
 
 	para "Travel Tip 1:"
 
-	para "Press START to"
-	line "open the MENU."
+	para "Press Start to"
+	line "open the Menu."
 	done
 
 ElmsLabTravelTip2Text:
@@ -1533,7 +1533,7 @@ ElmsLabTravelTip2Text:
 	para "Travel Tip 2:"
 
 	para "Record your trip"
-	line "with SAVE!"
+	line "with Save!"
 	done
 
 ElmsLabTravelTip3Text:
@@ -1543,7 +1543,7 @@ ElmsLabTravelTip3Text:
 	para "Travel Tip 3:"
 
 	para "Open your Pack and"
-	line "press SELECT to"
+	line "press Select to"
 	cont "move items."
 	done
 
@@ -1581,7 +1581,7 @@ AideText_GetPocketPCText:
 	text "Oh, I have this"
 	line "for you too."
 
-	para "It's a POCKET PC!"
+	para "It's a Pocket PC!"
 	done
 
 AideText_PocketPCInfoText:
@@ -1595,10 +1595,10 @@ AideText_PocketPCInfoText:
 
 	para "You can use the"
 	line "SEL option in the"
-	cont "KEY ITEMS menu to"
+	cont "Key Items menu to"
 	cont "quick select the"
-	cont "POCKET PC using"
-	cont "the SELECT button."
+	cont "Pocket PC using"
+	cont "the Select button."
 
 	para "Then you can"
 	line "quickly heal your"

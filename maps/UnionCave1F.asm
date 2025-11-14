@@ -118,8 +118,8 @@ HikerRussellBeatenText:
 
 HikerRussellAfterBattleText:
 	text "Alright back to"
-	line "operation UNION"
-	cont "STORM!"
+	line "operation Union"
+	cont "Storm!"
 	done
 
 PokemaniacLarrySeenText:
@@ -179,7 +179,7 @@ FirebreatherBillBeatenText:
 	done
 
 FirebreatherBillAfterBattleText:
-	text "ROCKS are eternal,"
+	text "Rocks are eternal,"
 	line "like my"
 	cont "determination."
 	done

@@ -199,7 +199,7 @@ SproutTower3FRivalLeavesElderMovement:
 	step_end
 
 SproutTowerElderLecturesRivalText:
-	text "ELDER: You are"
+	text "Elder: You are"
 	line "powerful."
 
 	para "And though you"
@@ -219,7 +219,7 @@ SproutTowerRivalOnlyCareAboutStrongText:
 	text "…"
 	line "…Humph!"
 
-    para "The ELDER speaks"
+    para "The Elder speaks"
     line "of light and"
     cont "dark like a child."
 

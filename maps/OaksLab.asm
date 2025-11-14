@@ -265,7 +265,7 @@ OakOpenMtSilverText:
 
 	para "Now all #mon"
 	line "gain double"
-	cont "full EXP!"
+	cont "full Exp!"
 
     para "I have also made"
 	line "arrangements so"
@@ -389,18 +389,18 @@ OaksAssistant2Text:
 OaksAssistant3Text:
 	text "Don't tell anyone,"
 	line "but Prof.Oak'S"
-	cont "#mon TALK isn't"
+	cont "#mon Talk isn't"
 	cont "a live broadcast."
 	done
 
 OaksLabPoster1Text:
-	text "Press START to"
-	line "open the MENU."
+	text "Press Start to"
+	line "open the Menu."
 	done
 
 OaksLabPoster2Text:
-	text "The SAVE option is"
-	line "on the MENU."
+	text "The Save option is"
+	line "on the Menu."
 
 	para "Use it in a timely"
 	line "manner."

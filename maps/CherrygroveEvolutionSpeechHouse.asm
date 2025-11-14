@@ -28,15 +28,14 @@ CherrygroveEvolutionSpeechHouseYoungsterText:
 	text "#mon gain expe-"
 	line "rience in battle."
 
-	para "When you REMATCH"
-	line "someone though"
-	cont "you don't get"
-	cont "as much EXP."
+	para "You can rematch"
+	line "to get as much"
+	cont "Exp as you want!"
 	done
 
 CherrygroveEvolutionSpeechHouseLassText:
 	text "When #mon"
-	line "gain enough EXP"
+	line "gain enough Exp"
 	cont "they evolve."
 
 	para "There are ways"

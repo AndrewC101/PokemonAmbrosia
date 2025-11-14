@@ -335,12 +335,12 @@ Route13TrainerTipsText:
 Route13SignText:
 	text "Route 13"
 
-	para "NORTH TO SILENCE"
-	line "BRIDGE"
+	para "North to Silence"
+	line "Bridge"
 	done
 
 Route13DirectionsSignText:
-	text "North TO Lavender"
+	text "North to Lavender"
 	line "Town"
 
 	para "West to Fuchsia"

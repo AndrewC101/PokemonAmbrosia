@@ -20,10 +20,10 @@ CeruleanPokecenter1FGymGuideScript:
 CeruleanPokecenter1FSuperNerdText:
 	text "There are a lot"
 	line "of trainers to"
-	cont "the NORTH."
+	cont "the North."
 
 	para "I wanted to visit"
-	line "BILLS Dad but I"
+	line "Bills Dad but I"
 	cont "can't get past"
 	cont "them all!"
 	done

@@ -274,11 +274,11 @@ WhitneyWhatDoYouWantText:
 
 PlayerReceivedPlainBadgeText:
 	text "<PLAYER> received"
-	line "STARBADGE."
+	line "Starbadge."
 	done
 
 WhitneyPlainBadgeText:
-    text "With the STARBADGE"
+    text "With the Starbadge"
     line "you can now train"
     cont "#mon up to"
     cont "level 40."

@@ -220,7 +220,7 @@ endr
 	ld c, SPDSPCDV_SHINY_1 ; $FE
 	jr .initializeDVs
 .shiny_2
-	ld b, ATKDEFDV_SHINY_2 ; $FE
+	ld b, ATKDEFDV_SHINY_2 ; $FC
 	ld c, SPDSPCDV_SHINY_2 ; $FF
 	jr .initializeDVs
 

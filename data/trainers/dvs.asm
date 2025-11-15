@@ -3,26 +3,26 @@ TrainerClassDVs:
 	table_width 2, TrainerClassDVs
 	;  atk,def,spd,spc
 	dn 15, 15, 15, 15 ; FALKNER
-	dn 15, 15, 15, 15 ; WHITNEY
+	dn 15, 14, 15, 15 ; WHITNEY
 	dn 15, 15, 15, 15 ; BUGSY
 	dn 15, 15, 15, 15 ; MORTY
 	dn 15, 15, 15, 15 ; PRYCE
-	dn 15, 15, 15, 15 ; JASMINE
-	dn 15, 15, 15, 15 ; CHUCK
-	dn 15, 15, 15, 15 ; CLAIR
+	dn 15, 14, 15, 15 ; JASMINE
+	dn 15, 15, 15, 14 ; CHUCK
+	dn 15, 14, 15, 15 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 15, 15, 15, 15 ; POKEMON_PROF
 	dn 15, 15, 15, 15 ; WILL
 	dn 15, 15, 15, 15 ; CAL
-	dn 15, 15, 15, 15 ; BRUNO
+	dn 15, 15, 15, 14 ; BRUNO
 	dn 15, 15, 15, 15 ; KAREN
 	dn 15, 15, 15, 15 ; ADAM
-	dn 15, 15, 15, 14 ; Champion
+	dn 15, 15, 15, 14 ; CHAMPION
 	dn 15, 15, 15, 15 ; BROCK
 	dn 15, 15, 15, 15 ; MISTY
-	dn 15, 15, 15, 15 ; LT_SURGE
+	dn 15, 15, 15, 14 ; LT_SURGE
 	dn 7, 11, 9, 15 ; SCIENTIST
-	dn 15, 15, 15, 15 ; ERIKA
+	dn 15, 14, 15, 15 ; ERIKA
 	dn 11, 8, 8, 8 ; YOUNGSTER
 	dn 8, 8, 8, 11 ; SCHOOLBOY
 	dn 14, 9, 15, 9 ; BIRD_KEEPER
@@ -63,7 +63,7 @@ TrainerClassDVs:
 	dn 15, 13, 15, 15 ; POKEFANM
 	dn 11, 11, 11, 15 ; KIMONO_GIRL
 	dn 2, 2, 2, 2 ; TWINS
-	dn 15, 13, 15, 15 ; POKEFANF
+	dn 15, 12, 15, 15 ; POKEFANF
 	dn 15, 15, 15, 15 ; RED
 	dn 15, 15, 15, 15 ; BLUE
 	dn 9, 9, 9, 9 ; OFFICER - not used

@@ -1285,7 +1285,7 @@ AmbrosiaEffect:
 	call ShouldUseAmbrosia
 	jp nc, NoEffectMessage
 
-; update DVs to max - unless the mon is Shiny
+; update DVs to max while retaining gender and shininess
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -1295,12 +1295,38 @@ AmbrosiaEffect:
 	push hl
 	callfar CheckShininess
 	pop hl
-	jr c, .skipDVs
-	ld a, %11111111
+	jr c, .doneDVs
+
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jr c, .genderless
+	jr nz, .male
+
+; perfect DVs that guarantee female are - 15, 14, 15, 15
+	ld a, $fe
+	ld [hli], a
+	ld a, $ff
+	ld [hl], a
+	jr .doneDVs
+
+.male
+; perfect DVs that guarantee male are - 15, 15, 15, 14
+	ld a, $ff
+	ld [hli], a
+	ld a, $fe
+	ld [hl], a
+	jr .doneDVs
+
+.genderless
+; perfect genderless DVs - 15, 15, 15, 15
+	ld a, $ff
 	ld [hli], a
 	ld [hl], a
 
-.skipDVs
+.doneDVs
 	call RareCandy_StatBooster_GetParameters
 
     ld a, HP_UP
@@ -1354,16 +1380,6 @@ ShouldUseAmbrosia:
 	cp 255
 	jr nz, .yes
 
-	; are speed and special dvs maxed
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1DVs
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	inc hl
-	ld a, [hl]
-	cp $ff
-	jr nz, .yes
-
 	; is speed stat exp maxed
     ld a, CARBOS
     ld [wCurItem], a
@@ -1374,6 +1390,16 @@ ShouldUseAmbrosia:
 	ld a, [hl]
 	cp 255
 	jr nz, .yes
+
+	; is speed dv 15 and special dv 14 or 15
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	inc hl
+	ld a, [hl]
+	cp $fe
+	jr c, .yes
 
 	; if all are ture don't use
 	xor a

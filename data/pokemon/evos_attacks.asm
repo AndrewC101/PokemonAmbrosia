@@ -502,6 +502,7 @@ NidokingEvosAttacks:
 	db 33, LOVELY_KISS
 	db 35, CROSS_POISON
 	db 40, EARTHQUAKE
+	db 45, MEGAHORN
 	db 0 ; no more level-up moves
 
 ClefairyEvosAttacks:

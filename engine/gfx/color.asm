@@ -1,9 +1,9 @@
 INCLUDE "engine/gfx/sgb_layouts.asm"
 
 SHINY_ATK_BIT EQU 5
-SHINY_DEF_VAL EQU 13
+SHINY_DEF_VAL_1 EQU 13
+SHINY_DEF_VAL_2 EQU 14
 SHINY_SPD_VAL EQU 15
-SHINY_SPC_VAL EQU 15
 
 CheckShininess:
     ld a, [wShinyOverride]
@@ -23,20 +23,19 @@ CheckShininess:
 ; Defense
 	ld a, [hli]
 	and $f
-	cp  SHINY_DEF_VAL
+	cp  SHINY_DEF_VAL_1
+	jr z, .cont
+	cp  SHINY_DEF_VAL_2
 	jr nz, .not_shiny
 
+.cont
 ; Speed
 	ld a, [hl]
 	and $f0
 	cp  SHINY_SPD_VAL << 4
 	jr nz, .not_shiny
 
-; Special
-	ld a, [hl]
-	and $f
-	cp  SHINY_SPC_VAL
-	jr nz, .not_shiny
+; Special not considered
 
 ; shiny
 	scf

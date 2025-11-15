@@ -213,8 +213,15 @@ endr
     jr .normal
 
 .GenerateShinyDVs
-	ld b, ATKDEFDV_SHINY ; $FD
-	ld c, SPDSPCDV_SHINY ; $FF
+    call BattleRandom
+    cp 50 percent
+    jr c, .shiny_2
+	ld b, ATKDEFDV_SHINY_1 ; $FD
+	ld c, SPDSPCDV_SHINY_1 ; $FE
+	jr .initializeDVs
+.shiny_2
+	ld b, ATKDEFDV_SHINY_2 ; $FE
+	ld c, SPDSPCDV_SHINY_2 ; $FF
 	jr .initializeDVs
 
 .normal

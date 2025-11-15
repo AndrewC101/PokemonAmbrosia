@@ -512,7 +512,7 @@ Executivef1AfterBattleText:
 
 RadioTower5FRocketBossBeforeText:
     text "Don't trouble"
-    line "yourself CASSIDY."
+    line "yourself Cassidy."
 
 	para "We have developed"
 	line "an EM signal that"

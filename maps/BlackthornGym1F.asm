@@ -181,7 +181,7 @@ ClairIntroText:
 	line "only to Lance"
 	cont "himself."
 
-	para "All LEADERs you"
+	para "All Leaders you"
 	line "have fought before"
 	cont "are weak."
 

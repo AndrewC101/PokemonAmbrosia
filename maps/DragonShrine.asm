@@ -536,7 +536,7 @@ Question1CorrectText:
     prompt
 
 Question2CorrectText:
-    text "Yes, DRACO METEOR"
+    text "Yes, Draco Meteor"
     line "is the strongest"
     cont "and purest Dragon"
     cont "attack."

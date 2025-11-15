@@ -263,7 +263,7 @@ BikerZekeAfterBattleText:
 
 	para "Then..."
 
-	para "AMBER..."
+	para "Amber..."
 
 	para "The monster with"
 	line "the glowing"

@@ -423,7 +423,7 @@ DragonShrinePassedTestText:
 
 	para "You are more"
 	line "worthy of the"
-	cont "RISING Badge"
+	cont "Rising Badge"
 	cont "than any trainer"
 	cont "I have ever met."
 	done
@@ -435,7 +435,7 @@ DragonShrineMustIInformLanceText:
 	line "defeat with"
 	cont "honour and"
 	cont "confer the"
-	cont "RISING Badge"
+	cont "Rising Badge"
 	cont "immediately!"
 
 	para "Or must I inform"

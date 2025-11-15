@@ -527,7 +527,7 @@ GoldenrodUndergroundTheDoorIsOpenText:
 	done
 
 GoldenrodUndergroundBasementKeyOpenedDoorText:
-	text "The BASEMENT KEY"
+	text "The Basement Key"
 	line "opened the door."
 	done
 
@@ -652,8 +652,8 @@ GoldenrodUndergroundWeAreNotOpenTodayText:
 	done
 
 GoldenrodUndergroundNoEntryText:
-	text "NO ENTRY BEYOND"
-	line "THIS POINT"
+	text "No entry beyond"
+	line "this point!"
 	done
 
 UndergroundMon1Script:

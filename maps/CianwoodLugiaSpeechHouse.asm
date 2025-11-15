@@ -66,7 +66,7 @@ CianwoodLugiaSpeechHouseTwinText:
 	para "I think he is"
 	line "hiding something."
 
-	para "My friend AMBER"
+	para "My friend Amber"
 	line "thinks so too."
 
 	para "She lives with"

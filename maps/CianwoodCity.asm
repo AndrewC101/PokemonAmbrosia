@@ -678,7 +678,7 @@ PsychicGirlTalkScript:
 CameHereToGetMedicine:
     text "Hey <PLAYER>!"
 
-    para "I'm AMBER."
+    para "I'm Amber."
 
     para "Hang on, don't"
     line "tell me..."

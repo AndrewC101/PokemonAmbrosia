@@ -295,8 +295,8 @@ OlivinePortCantBoardText:
 	done
 
 OlivinePortAskBoardText:
-	text "Welcome to FAST"
-	line "SHIP S.S.AQUA."
+	text "Welcome to Fast"
+	line "Ship S.S.Aqua."
 
 	para "Will you be board-"
 	line "ing today?"

@@ -361,19 +361,21 @@ SantosNotSaturdayText:
 BlackthornCooltrainerF2Text:
 	text "Welcome to"
 	line "Blackthorn."
-
-	para "We are serious"
-	line "trainers who"
-	cont "dedicate our"
-	cont "lives to the"
-	cont "great Dragon Lord"
-	cont "in Dragons Den."
-
-	para "Of course only"
-	line "a handful of"
-	cont "people are able"
-	cont "to actually enter"
-	cont "Dragons Den."
+	para "Only the strongest"
+	line "trainers can make"
+	cont "it here."
+	para "You must be a"
+	line "strong trainer."
+	para "It might be"
+	line "possible for a"
+	cont "trainer with only"
+	cont "one badge to get"
+	cont "here if they have"
+	cont "the talent."
+	para "I would need to"
+	line "see such a thing"
+	cont "to believe it"
+	cont "though."
 	done
 
 BlackthornCitySignText:

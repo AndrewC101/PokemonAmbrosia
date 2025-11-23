@@ -1944,18 +1944,18 @@ GyaradosEvosAttacks:
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFOG
-	db 1, WATER_GUN
 	db 1, POWDER_SNOW
 	db 1, SING
+    db 1, SURF
 	db 15, BODY_SLAM
-	db 22, CONFUSE_RAY
-	db 28, RAIN_DANCE
-	db 32, PERISH_SONG
-	db 36, ICE_BEAM
+	db 20, AURORA_BEAM
+	db 30, PERISH_SONG
+	db 35, ICE_BEAM
 	db 40, AVALANCHE
 	db 45, WATERFALL
 	db 50, DRAGON_DANCE
 	db 55, HYDRO_PUMP
+	db 60, CALM_MIND
 	db 65, RECOVER
 	db 0 ; no more level-up moves
 

@@ -62,7 +62,7 @@ BattleTowerOutsideBeautyText:
 	line "is so tough."
 
 	para "I can't even"
-	line "beat NOVICE"
+	line "beat Novice"
 	cont "level with my"
 	cont "#mon."
 
@@ -76,7 +76,7 @@ BattleTowerOutsideBeautyText:
 
 BattleTowerOutsidePokefanText:
     text "I main Brock in"
-    line "the ARCADE."
+    line "the Arcade."
 
     para "He has all the"
     line "right tools!"

@@ -341,7 +341,7 @@ PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	para "Look at how they"
 	line "massacred my"
 	cont "generator!"
-	para "The FLUX CAPACITOR"
+	para "The Flux Capacitor"
 	line "has been stolen!"
 	para "AAARRRR!"
 	para "When I find the"

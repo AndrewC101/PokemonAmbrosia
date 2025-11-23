@@ -1525,8 +1525,9 @@ ExeggutorEvosAttacks:
 	db 31, GIGA_DRAIN
 	db 37, SLEEP_POWDER
 	db 40, PSYCHIC_M
-	db 43, SOLARBEAM
-	db 48, SUNNY_DAY
+	db 43, SUNNY_DAY
+	db 46, SOLARBEAM
+	db 48, TRICK_ROOM
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:

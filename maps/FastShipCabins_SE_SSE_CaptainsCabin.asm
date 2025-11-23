@@ -486,7 +486,7 @@ PokefanmColinAfterBattleText:
 	line "searching for"
 	cont "our home."
 
-	para "For GORGON."
+	para "For Gorgon."
 	done
 
 TwinsMegandpeg1SeenText:

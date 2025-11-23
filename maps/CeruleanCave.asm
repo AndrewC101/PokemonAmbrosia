@@ -139,7 +139,6 @@ CeruleanCavePokemonAttacksText:
 	done
 
 GenesectScript:
-	faceplayer
 	cry GENESECT
 	pause 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT

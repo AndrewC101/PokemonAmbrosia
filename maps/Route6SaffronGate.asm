@@ -22,7 +22,7 @@ Route6SaffronGuardWelcomeText:
 	cont "city in all the"
 	cont "world."
 
-	para "The BIG #ball!"
+	para "The Big #ball!"
 
 	para "Land of great"
 	line "opportunity."

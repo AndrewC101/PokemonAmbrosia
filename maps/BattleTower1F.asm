@@ -573,7 +573,7 @@ Text_BattleTowerCooltrainerF:
 
 	para "But I can't"
 	line "even get past"
-	cont "NOVICE level."
+	cont "Novice level."
 	done
 
 Text_BattleTowerGranny:

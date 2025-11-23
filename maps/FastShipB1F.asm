@@ -202,7 +202,16 @@ TrainerSchoolboyRicky:
 	end
 
 FastShipB1FTrashcan:
-	jumpstd TrashCanScript
+	opentext
+	writetext YuckText
+	waitbutton
+	closetext
+	end
+
+YuckText:
+    text "There is something"
+    line "in there alright!"
+    done
 
 FastShipB1FSailorBlocksRightMovement:
 	fix_facing

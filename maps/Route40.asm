@@ -85,7 +85,54 @@ TrainerSwimmermRandall:
 	end
 
 Route40Lass1Script:
+    checkevent EVENT_GOT_ROUTE40_LAPRAS
+    iftrue .gotLapras
+    faceplayer
+    opentext
+    writetext GetLaprasText
+    waitbutton
+    readvar VAR_PARTYCOUNT
+    ifequal PARTY_LENGTH, .partyfull
+    writetext GotLaprasText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+    givepoke LAPRAS, 20, GOLD_BERRY
+    closetext
+    setevent EVENT_GOT_ROUTE40_LAPRAS
+    end
+.gotLapras
 	jumptextfaceplayer Route40Lass1Text
+.partyfull
+    writetext MakeRoomForLaprasText
+    waitbutton
+    closetext
+    end
+
+GetLaprasText:
+	text "The water is"
+	line "beautiful but hard"
+	cont "to cross."
+	para "You'll need a"
+	line "Pokemon that can"
+	cont "learn Surf."
+	para "I have a good"
+	line "surfing #mon."
+	para "You look like a"
+	line "strong trainer."
+	para "Here you can have"
+	line "this #mon."
+	done
+
+GotLaprasText:
+    text "Received Lapras!"
+    done
+
+MakeRoomForLaprasText:
+    text "You'll need to get"
+    line "room in your party"
+    cont "for this #mon."
+    done
 
 Route40PokefanMScript:
 	jumptextfaceplayer Route40PokefanMText
@@ -272,16 +319,9 @@ Route40Lass1Text:
 	text "Cianwood is"
 	line "across the sea."
 
-	para "I used to go"
-	line "there but then"
-	cont "a new little"
-	cont "psychic girl"
-	cont "started talking"
-	cont "to me all the"
-	cont "time."
-
-	para "She is very"
-	line "annoying!"
+	para "But there are many"
+	line "dangers along the"
+	cont "way."
 	done
 
 Route40PokefanMText:

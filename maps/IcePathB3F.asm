@@ -34,7 +34,7 @@ IcePathB3FFieldMon2Script:
 	faceplayer
 	cry ARCTOZOLT
 	pause 15
-	loadwildmon ARCTOZOLT, 41
+	loadwildmon ARCTOZOLT, 30
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_2

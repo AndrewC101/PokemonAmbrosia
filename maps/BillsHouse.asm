@@ -29,7 +29,7 @@ BillsGrandpa:
     givepoke MEW, 80, LUCKY_EGG
     sjump .given
 .midLevel
-    givepoke MEW, 60
+    givepoke MEW, 60, LUCKY_EGG
 .given
     setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     writetext BillGrampsMewExplain

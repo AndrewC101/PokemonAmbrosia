@@ -449,6 +449,8 @@
     const EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA
     const EVENT_GOT_TM01_DRAINPUNCH
     const EVENT_GOT_BLACKTHORN_SKARM
+    const EVENT_GOT_ROUTE40_LAPRAS
+    const EVENT_ROUTE_6_AMBROSIA
 
     ; ======================================
     ; DevNote - here

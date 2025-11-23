@@ -222,11 +222,11 @@ InvaderBackstabberBeatenText:
 	done
 
 InvaderBackstabberAfterBattleText:
-	text "And I spent so"
-	line "much time grinding"
-	cont "coins in Celadon"
-	cont "to get these"
-	cont "weapons!"
+	text "You survived my"
+	line "backstab!"
+	para "You must be"
+	line "wearing Turtle or"
+	cont "Jester armour."
 	done
 
 InvaderBackstaberScene:
@@ -252,12 +252,10 @@ InvaderBackstaberScene:
 BackstabberApproaches:
     big_step DOWN
     big_step DOWN
-    big_step DOWN
     step_end
 
 BackstabberLeaves:
     fix_facing
-    slow_step UP
     slow_step UP
     slow_step UP
     remove_fixed_facing
@@ -267,6 +265,9 @@ BackstabText:
     text "BACKSTAB!"
     done
 
+Route6Ambrosia:
+	itemball AMBROSIA
+
 Route6_MapEvents:
 	db 0, 0 ; filler
 
@@ -275,7 +276,7 @@ Route6_MapEvents:
 	warp_event  6,  1, ROUTE_6_SAFFRON_GATE, 3
 
 	def_coord_events
-	coord_event  22, 7, SCENE_ALWAYS, InvaderBackstaberScene
+	coord_event  22, 6, SCENE_ALWAYS, InvaderBackstaberScene
 
 	def_bg_events
 	bg_event 19,  5, BGEVENT_READ, Route6UndergroundPathSign
@@ -291,3 +292,4 @@ Route6_MapEvents:
 	object_event  9,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route6FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 22,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderBackstaberScript, EVENT_FIELD_MON_7
 	object_event  6, 12, SPRITE_TREECKO, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route6FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 22, 7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, Route6Ambrosia, EVENT_ROUTE_6_AMBROSIA

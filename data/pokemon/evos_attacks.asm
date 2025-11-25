@@ -2251,15 +2251,18 @@ DarkraiEvosAttacks:
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, ANCIENTPOWER
 	db 10, TRANSFORM
+	db 20, WILL_O_WISP
 	db 30, RECOVER
-	db 35, WILL_O_WISP
 	db 40, PSYCHO_SLASH
-	db 45, SHADOW_PUNCH
-	db 50, PSYCHIC_M
+	db 40, PSYCHIC_M
+	db 50, CALM_MIND
+	db 50, BULK_UP
+	db 55, NASTY_PLOT
+	db 55, SWORDS_DANCE
 	db 60, BATON_PASS
-	db 85, PSYBLAST
+	db 80, PSYBLAST
 	db 0 ; no more level-up moves
 
 TreeckoEvosAttacks:

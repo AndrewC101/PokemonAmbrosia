@@ -8,11 +8,16 @@ BillsHouse_MapScripts:
 
 BillsGrandpa:
 	faceplayer
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .notBeatE4
     opentext
     checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     iftrue .gotMew
+    writetext BillGrampsExplainsText
+    waitbutton
+	readvar VAR_DEXCAUGHT
+	ifgreater 99, .giveMew
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .dontGiveMew
+.giveMew
     writetext BillGrampsTakeThisMewText
     yesorno
     iffalse .refused
@@ -24,12 +29,27 @@ BillsGrandpa:
     writetext ReceivedMewText
     playsound SFX_CAUGHT_MON
     waitsfx
-    checkevent EVENT_BEAT_WALLACE
-    iffalse .midLevel
-    givepoke MEW, 80, LUCKY_EGG
+	checkevent EVENT_BEAT_MORTY
+	iffalse .tinyLevel
+	checkevent EVENT_BEAT_PRYCE
+	iffalse .smallLevel
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
+    givepoke MEW, 80, LUCKY_EGG, GetMewName, GetMewOTName
+    sjump .given
+.tinyLevel
+    givepoke MEW, 30, LUCKY_EGG, GetMewName, GetMewOTName
+    sjump .given
+.smallLevel
+    givepoke MEW, 40, LUCKY_EGG, GetMewName, GetMewOTName
+    sjump .given
+.lowerLevel
+    givepoke MEW, 50, LUCKY_EGG, GetMewName, GetMewOTName
     sjump .given
 .midLevel
-    givepoke MEW, 60, LUCKY_EGG
+    givepoke MEW, 60, LUCKY_EGG, GetMewName, GetMewOTName
 .given
     setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
     writetext BillGrampsMewExplain
@@ -51,63 +71,59 @@ BillsGrandpa:
     waitbutton
     closetext
     end
-.notBeatE4
+.dontGiveMew
     opentext
     writetext BillBeatE4
     waitbutton
     closetext
     end
 
+GetMewName:
+    db "Mew@"
+
+GetMewOTName:
+    db "Bill@"
+
+BillGrampsExplainsText:
+	text "Oh hello young"
+	line "trainer."
+	para "Do you know Bill?"
+	para "He is my grandson."
+	para "Yes I am very old!"
+	para "Bill has left a"
+	line "#mon with me."
+	para "It is very rare he"
+	line "says."
+	para "It is wasted with"
+	line "me."
+	para "I want to give it"
+	line "to a deserving"
+	cont "trainer."
+	para "If I could find a"
+	line "trainer that has"
+	cont "caught 100"
+	cont "different"
+	cont "#mon."
+	para "Or maybe a strong"
+	line "trainer like a"
+	cont "Champion."
+	para "Yes someone like"
+	line "that would do."
+	done
+
 BillBeatE4:
-	text "Hm? You know Bill?"
-	line "He's my grandson."
-
-	para "He is always out"
-	line "doing interesting"
-	cont "things and talking"
-	cont "with important"
-	cont "people."
-
-	para "I'd like to meet"
-	line "somebody important"
-	cont "like a Champion."
-    done
+	text "You seem like a"
+	line "talented trainer"
+	cont "but you aren't"
+	cont "quite ready yet."
+	done
 
 BillGrampsTakeThisMewText:
-	text "Hm? You know Bill?"
-	line "He's my grandson."
-
-	para "Oh you are a"
-	line "Champion!"
-
-	para "I shouldn't tell"
-	line "you this..."
-
-	para "Bill has found"
-	line "an extremely"
-	cont "rare and ancient"
-	cont "#mon!"
-
-	para "Apparently He"
-	line "found it in a"
-	cont "truck at the"
-	cont "harbour."
-
-	para "He has entrusted"
-	line "it to me..."
-
-	para "Oh my..."
-
-	para "It seems to"
-	line "like you."
-
-	para "Hmmm..."
-
-	para "Yes I can see"
-	line "why."
-
-	para "You are a"
-	line "special trainer."
+	text "Oh my!"
+	para "Why you are"
+	line "exactly the type"
+	cont "of trainer I'm"
+	cont "looking for!"
 
 	para "Would you like"
 	line "to take this"

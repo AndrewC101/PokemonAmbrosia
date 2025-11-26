@@ -3222,7 +3222,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
+	dn 15, 13, 15, 15 ; DVs
 	db 24, 32, 24, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
@@ -6079,7 +6079,7 @@ BattleTowerMons:
 
 	db MEW
 	db LEFTOVERS
-	db PSYBLAST, TAUNT, NASTY_PLOT, RECOVER
+	db PSYBLAST, WILL_O_WISP, CALM_MIND, RECOVER
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -6088,8 +6088,8 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 32, 32, 32, 10 ; PP
+	dn 15, 13, 15, 15 ; DVs
+	db 32, 24, 24, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

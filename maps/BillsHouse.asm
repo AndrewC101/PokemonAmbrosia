@@ -14,7 +14,7 @@ BillsGrandpa:
     writetext BillGrampsExplainsText
     waitbutton
 	readvar VAR_DEXCAUGHT
-	ifgreater 99, .giveMew
+	ifgreater 79, .giveMew
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .dontGiveMew
 .giveMew
@@ -101,7 +101,7 @@ BillGrampsExplainsText:
 	cont "trainer."
 	para "If I could find a"
 	line "trainer that has"
-	cont "caught 100"
+	cont "caught 80"
 	cont "different"
 	cont "#mon."
 	para "Or maybe a strong"

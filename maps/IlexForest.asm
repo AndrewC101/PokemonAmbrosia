@@ -15,6 +15,7 @@
     const ILEXFOREST_FIELDMON_6
     const ILEXFOREST_FIELDMON_7
     const ILEXFOREST_FIELDMON_8
+    const ILEXFOREST_FIELDMON_9
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -664,6 +665,17 @@ IlexForestFieldMon7Script:
 	disappear ILEXFOREST_FIELDMON_7
 	end
 
+IlexForestFieldMon9Script:
+	faceplayer
+	cry HERACROSS
+	pause 15
+	loadwildmon HERACROSS, 20
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_9
+	disappear ILEXFOREST_FIELDMON_9
+	end
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -699,3 +711,4 @@ IlexForest_MapEvents:
 	object_event  4, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 2, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 18, 20, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 0, IlexForestFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 26, 34, SPRITE_HERACROSS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon9Script, EVENT_FIELD_MON_9

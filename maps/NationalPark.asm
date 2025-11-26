@@ -718,9 +718,9 @@ NationalParkFieldMon4Script:
 
 NationalParkFieldMon5Script:
 	faceplayer
-	cry HERACROSS
+	cry IVYSAUR
 	pause 15
-	loadwildmon HERACROSS, 25
+	loadwildmon IVYSAUR, 25
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

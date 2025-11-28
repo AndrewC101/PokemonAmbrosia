@@ -82,6 +82,12 @@ ReleaseTheBeasts:
 	setscene SCENE_FINISHED
 	setevent EVENT_RELEASED_THE_BEASTS
 	special InitRoamMons
+	setval RAIKOU
+	special UnusedSetSeenMon
+	setval ENTEI
+	special UnusedSetSeenMon
+	setval SUICUNE
+	special UnusedSetSeenMon
 	setmapscene ECRUTEAK_GYM, SCENE_FINISHED
 	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY

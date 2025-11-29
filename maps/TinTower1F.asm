@@ -375,8 +375,8 @@ TinTower1FSage1Text:
 	done
 
 TinTower1FSage2Text:
-	text "When the BRASS"
-	line "TOWER burned down,"
+	text "When the Brass"
+	line "Tower burned down,"
 
 	para "three nameless"
 	line "#mon were said"

@@ -3003,7 +3003,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, DRAIN_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3013,7 +3013,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 30, 30, 15, 10 ; PP
+	db 30, 30, 15, 15 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
@@ -3734,7 +3734,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db BLASTOISE
-	db MYSTIC_WATER
+	db HEAVY_BOOTS
 	db SHELL_SMASH, HYDRO_PUMP, ICE_BEAM, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -4985,7 +4985,7 @@ BattleTowerMons:
 
 	db AEGISLASH
 	db LEFTOVERS
-	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, CLOSE_COMBAT
+	db KINGS_SHIELD, SWORDS_DANCE, SHADOW_PUNCH, DRAIN_PUNCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4995,7 +4995,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 48, 32, 24, 16 ; PP
+	db 48, 32, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
@@ -5688,7 +5688,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db MAGNEZONE
-	db ASSAULT_VEST
+	db HEAVY_BOOTS
 	db ZAP_CANNON, FLASH_CANNON, SHADOW_BALL, EXPLOSION
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -6234,7 +6234,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db BLASTOISE
-	db MYSTIC_WATER
+	db HEAVY_BOOTS
 	db SHELL_SMASH, HYDRO_PUMP, ICE_BEAM, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 0 ; Exp

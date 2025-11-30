@@ -2877,42 +2877,42 @@ PlayAgainstGiovanniText:
 
 PlayAsOakText:
     text "Play as"
-    line "Prof OAK?"
+    line "Prof Oak?"
     done
 
 PlayAgainstOakText:
     text "Play against"
-    line "Prof OAK?"
+    line "Prof Oak?"
     done
 
 PlayAsStevenText:
     text "Play as"
-    line "CHAMPION STEVEN?"
+    line "Champion Steven?"
     done
 
 PlayAgainstStevenText:
     text "Play against"
-    line "CHAMPION STEVEN?"
+    line "Champion Steven?"
     done
 
 PlayAsCynthiaText:
     text "Play as"
-    line "CHAMPION CYNTHIA?"
+    line "Champion Cynthia?"
     done
 
 PlayAgainstCynthiaText:
     text "Play against"
-    line "CHAMPION CYNTHIA?"
+    line "Champion Cynthia?"
     done
 
 PlayAsLeonText:
     text "Play as"
-    line "CHAMPION LEON?"
+    line "Champion Leon?"
     done
 
 PlayAgainstLeonText:
     text "Play against"
-    line "CHAMPION LEON?"
+    line "Champion Leon?"
     done
 
 PlayAsWallaceText:

@@ -499,7 +499,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db GOLD_BERRY
-	db FLY, IRON_HEAD, TOXIC, ROOST
+	db FLY, IRON_HEAD, CURSE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1229,7 +1229,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db LEFTOVERS
-	db FLY, STEALTH_ROCK, WHIRLWIND, ROOST
+	db FLY, STEALTH_ROCK, SWORDS_DANCE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3369,7 +3369,7 @@ BattleTowerMons:
 
 	db SKARMORY
 	db LEFTOVERS
-	db FLY, STEALTH_ROCK, WHIRLWIND, ROOST
+	db FLY, STEALTH_ROCK, CURSE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3379,7 +3379,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 32, 32, 10 ; PP
+	db 24, 32, 16, 10 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 83 ; Level

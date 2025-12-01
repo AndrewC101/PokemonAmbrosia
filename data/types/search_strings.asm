@@ -5,7 +5,7 @@ PokedexTypeSearchStrings:
 	db " Normal @"
 	db "  Fire  @"
 	db " Water  @"
-	db " GRASS  @"
+	db " Grass  @"
 	db "Electric@"
 	db "  Ice   @"
 	db "Fighting@"

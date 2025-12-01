@@ -1249,19 +1249,19 @@ Pokedex_DrawSearchScreenBG:
 	ret
 
 .Title:
-	db $3b, " SEARCH ", $3c, -1
+	db $3b, " Search ", $3c, -1
 
 .TypeLeftRightArrows:
 	db $3d, "        ", $3e, -1
 
 .Types:
-	db   "TYPE1"
-	next "TYPE2"
+	db   "Type1"
+	next "Type2"
 	db   "@"
 
 .Menu:
-	db   "BEGIN SEARCH!!"
-	next "CANCEL"
+	db   "Begin Search"
+	next "Cancel"
 	db   "@"
 
 Pokedex_DrawSearchResultsScreenBG:
@@ -1295,9 +1295,9 @@ Pokedex_DrawSearchResultsScreenBG:
 	ret
 
 .BottomWindowText:
-	db   "SEARCH RESULTS"
-	next "  TYPE"
-	next "    FOUND!"
+	db   "Search Results"
+	next "  Type"
+	next "    Found"
 	db   "@"
 
 Pokedex_PlaceSearchResultsTypeStrings:

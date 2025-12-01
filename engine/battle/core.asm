@@ -1312,6 +1312,7 @@ Core_GutsPokemon:
     db URSALUNA
     db BUNEARY
     db LOPUNNY
+    db POLIWRATH
     db -1
 
 ResidualDamage:
@@ -4630,7 +4631,7 @@ SwitchInEffects:
     cp KYOGRE
     jp z, .rain
     cp POLITOED
-    jp z, .rain
+    jp z, .politoed
 
     cp GROUDON
     jp z, .sun
@@ -4818,6 +4819,9 @@ SwitchInEffects:
     jp z, .naturalCure
     ret
 
+.politoed
+    farcall SpecialDefenseUpSwitch
+    ; fallthrough
 .rain
     farcall RainSwitch
     ret

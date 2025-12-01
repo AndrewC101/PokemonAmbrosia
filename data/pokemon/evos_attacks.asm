@@ -1944,19 +1944,18 @@ GyaradosEvosAttacks:
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFOG
-	db 1, POWDER_SNOW
 	db 1, SING
     db 1, SURF
 	db 15, BODY_SLAM
 	db 20, AURORA_BEAM
 	db 30, PERISH_SONG
-	db 35, ICE_BEAM
-	db 40, AVALANCHE
-	db 45, WATERFALL
-	db 50, DRAGON_DANCE
-	db 55, HYDRO_PUMP
-	db 60, CALM_MIND
-	db 65, RECOVER
+	db 35, WATERFALL
+	db 40, ICE_BEAM
+	db 45, HYDRO_PUMP
+	db 50, AVALANCHE
+	db 55, CALM_MIND
+	db 55, DRAGON_DANCE
+	db 60, RECOVER
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:
@@ -2805,13 +2804,13 @@ GenesectEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, RAIN_DANCE
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
 	db 10, AQUA_JET
 	db 10, WATER_GUN
 	db 13, DOUBLESLAP
 	db 20, BUBBLEBEAM
-	db 25, RAIN_DANCE
 	db 30, BODY_SLAM
 	db 35, PERISH_SONG
 	db 40, SCALD

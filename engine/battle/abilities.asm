@@ -95,6 +95,7 @@ GutsPokemon:
     db URSALUNA
     db BUNEARY
     db LOPUNNY
+    db POLIWRATH
     db -1
 
 RivalryPokemon:

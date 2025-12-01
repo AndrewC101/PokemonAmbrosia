@@ -54,6 +54,7 @@ AI_WaterAbsorbPokemon:
     db POLIWAG
     db POLIWHIRL
     db POLIWRATH
+    db POLITOED
     db LAPRAS
     db $FF
 

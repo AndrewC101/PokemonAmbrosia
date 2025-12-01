@@ -3394,7 +3394,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
 	db POLITOED
-	db WISE_GLASSES
+	db ASSAULT_VEST
 	db HYDRO_PUMP, THUNDER, ICE_BEAM, SURF
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -5116,8 +5116,8 @@ BattleTowerMons:
 ;	db "RANTA-N@@@@"
 
 	db POLITOED
-	db WISE_GLASSES
-	db HYDRO_PUMP, THUNDER, ICE_BEAM, SURF
+	db ASSAULT_VEST
+	db HYDRO_PUMP, THUNDER, ICE_BEAM, SCALD
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp

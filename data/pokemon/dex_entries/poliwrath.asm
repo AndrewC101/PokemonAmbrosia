@@ -6,5 +6,5 @@
 	next "arms and legs."
 
 	page "Speed boost in"
-	next "rain. Immune to"
-	next "Water moves.@"
+	next "rain. Attack"
+	next "boost on status.@"

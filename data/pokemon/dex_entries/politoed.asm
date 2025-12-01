@@ -5,6 +5,6 @@
 	next "throat to croak"
 	next "out a tune."
 
-	page "Summons a"
-	next "rain storm upon"
-	next "entering battle.@"
+	page "Summons rain"
+	next "and Sp.Def boost"
+	next "on switch.@"

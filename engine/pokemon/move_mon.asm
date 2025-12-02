@@ -1558,6 +1558,9 @@ CalcMonStatC:
 .Defense:
 	ld a, [hl]
 	and $f
+	cp 12
+	jr c, .GotDV
+	ld a, 15
 	jr .GotDV
 
 .Speed:
@@ -1571,6 +1574,9 @@ CalcMonStatC:
 	inc hl
 	ld a, [hl]
 	and $f
+	cp 14
+	jr c, .GotDV
+	ld a, 15
 
 .GotDV:
 	ld d, 0

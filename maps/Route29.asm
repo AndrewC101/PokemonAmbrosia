@@ -39,6 +39,7 @@ Route29_MapScripts:
     appear ROUTE29_FIELDMON_6
     appear ROUTE29_FIELDMON_7
     appear ROUTE29_FIELDMON_9
+    appear ROUTE29_FIELDMON_10
 
 ; Pokemon that sometimes appear
     random 5

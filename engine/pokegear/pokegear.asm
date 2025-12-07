@@ -2486,7 +2486,7 @@ Pokedex_GetArea:
 	ret
 
 .String_SNest:
-	db "'S NEST@"
+	db "'s Nest@"
 
 .GetAndPlaceNest:
 	ld [wTownMapCursorLandmark], a

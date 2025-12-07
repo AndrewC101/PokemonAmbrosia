@@ -3813,7 +3813,7 @@ BattleTowerMons:
 
     db SCIZOR
 	db LEFTOVERS
-	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROCK_SMASH
+	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4854,8 +4854,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db SCIZOR
-	db METAL_COAT
-	db BULLET_PUNCH, LEECH_LIFE, SWORDS_DANCE, ROOST
+	db LEFTOVERS
+	db BULLET_PUNCH, LEECH_LIFE, DRAIN_PUNCH, SWORDS_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4865,7 +4865,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 32, 24, 32, 10 ; PP
+	db 32, 24, 24, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

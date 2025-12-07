@@ -203,14 +203,14 @@ UnownDexDoWhatString:
 	db "Do what?@"
 
 UnownDexMenuString:
-	db   UNOWNSTAMP_BOLD_A, " PRINT"
-	next UNOWNSTAMP_BOLD_B, " CANCEL"
+	db   UNOWNSTAMP_BOLD_A, " Print"
+	next UNOWNSTAMP_BOLD_B, " Cancel"
 	next "← PREVIOUS"
 	next "→ NEXT"
 	db   "@"
 
 UnownDexVacantString:
-	db "VACANT@"
+	db "Vacant@"
 
 UnownDexATile:
 INCBIN "gfx/printer/bold_a.1bpp"

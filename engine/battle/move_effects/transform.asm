@@ -136,9 +136,13 @@ BattleCommand_Transform:
 	;ld a, SUBSTITUTE
 	;call nz, LoadAnim
 
+    ld a, [wInBattleTowerBattle]
+    and a
+    jr nz, .playAnim
     ldh a, [hBattleTurn]
 	and a
 	jr nz, .skipAnim
+.playAnim
     ld a, TRANSFORM
 	call LoadAnim
 .skipAnim

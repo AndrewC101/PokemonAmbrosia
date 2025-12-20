@@ -388,22 +388,82 @@ endr
 	jr ._DrawMenuClockTextBox
 
 .PrintMenuClock:
-	call .IsMenuClockOn
+    call .IsMenuClockOn
 	ret z
-    call ._DrawMenuClockTextBox
-	jp .MenuClockText
+	call .DrawMenuClockTextBox
+	bccoord 1, 13
+	call TextCommand_DAY
+	ld a, [hHours]
+	ld b, a
+	ld a, [hMinutes]
+	ld c, a
+	decoord 1, 14
+	farcall PrintHoursMins
 
-._DrawMenuClockTextBox:
-	call .IsMenuClockOn
-	ret z
-    hlcoord 0, 12
-	lb bc, 4, 9
-	jp Textbox
+	ld a, [wFieldWeather]
+	cp WEATHER_RAIN
+	jr z, .PrintRaining
+
+	cp WEATHER_SUN
+	jr z, .PrintSunny
+
+	cp WEATHER_SANDSTORM
+	jr z, .PrintSandstorm
+
+    cp WEATHER_NONE
+	jr z, .PrintClearSkies
+	ret
+
+.PrintRaining:
+	hlcoord 1, 16
+	ld de, .RainingStr
+	call PlaceString
+	ret
+
+.PrintSunny:
+	hlcoord 1, 16
+	ld de, .SunnyStr
+	call PlaceString
+	ret
+
+.PrintSandstorm:
+	hlcoord 1, 16
+	ld de, .SandstormStr
+	call PlaceString
+	ret
+
+.PrintClearSkies:
+	hlcoord 1, 16
+	ld de, .ClearStr
+	call PlaceString
+	ret
+
+.RainingStr:
+ 	db "Raining@"
+.SunnyStr:
+ 	db "Sunny@"
+.SandstormStr:
+ 	db "Sandstorm@"
+.ClearStr:
+	db "Clear@"
 
 .IsMenuClockOn:
 	ld a, [wOptions2]
 	and 1 << MENU_CLOCK
 	ret
+
+._DrawMenuClockTextBox
+	call .IsMenuClockOn
+	ret z
+	; place white box
+	hlcoord 0, 12
+	lb bc, 6, 11
+	call ClearBox
+
+	; text box
+	hlcoord 0, 12
+	lb bc, 4, 9
+	jp Textbox
 
 .DrawBugContestStatusBox:
 	ld hl, wStatusFlags2

@@ -189,6 +189,7 @@ ButterfreeEvosAttacks:
 	db 32, AIR_SLASH
 	db 36, BUG_BUZZ
 	db 40, QUIVER_DANCE
+	db 45, HURRICANE
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 

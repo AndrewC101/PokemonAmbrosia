@@ -54,8 +54,8 @@ ElmPhoneHowIsTheEggText:
 	para "How's the Egg? Has"
 	line "anything changed?"
 
-	para "If anything hap-"
-	line "pens, please call."
+	para "I'm sure it will"
+	line "be of help."
 	done
 
 ElmPhoneEggHatchedText:
@@ -63,11 +63,14 @@ ElmPhoneEggHatchedText:
 	line "How is the Egg?"
 
 	para "What? It hatched?"
-	line "Wow! What kind of"
-	cont "#mon is it?"
 
-	para "Please come show"
-	line "me now!"
+	para "It might seem"
+	line "weak now. But it"
+	cont "will get much"
+	cont "stronger."
+
+	para "Don't give up on"
+	line "it!"
 	done
 
 ElmPhoneDiscoveredHatchTimeText:

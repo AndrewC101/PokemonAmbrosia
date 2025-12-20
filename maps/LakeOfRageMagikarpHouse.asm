@@ -7,6 +7,7 @@ LakeOfRageMagikarpHouse_MapScripts:
 	def_callbacks
 
 MagikarpLengthRaterScript:
+    faceplayer
     opentext
     writetext MagikarpManText
     waitbutton

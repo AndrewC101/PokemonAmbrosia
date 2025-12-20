@@ -80,7 +80,7 @@ Route36SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
 	playsound SFX_WARP_FROM
-	turnobject PLAYER, UP
+	;turnobject PLAYER, UP
 	applymovement ROUTE36_SUICUNE, Route36SuicuneMovement
 	disappear ROUTE36_SUICUNE
 	turnobject PLAYER, DOWN
@@ -875,6 +875,11 @@ Route36_MapEvents:
 	def_coord_events
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 20,  6, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 22,  6, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 20,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+    coord_event 21,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 22,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 35,  9, SCENE_DEFAULT, Route36CrystalScript
 
 	def_bg_events

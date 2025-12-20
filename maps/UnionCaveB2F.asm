@@ -44,7 +44,7 @@ UnionCaveB2F_MapScripts:
 UnionCaveLapras:
 	faceplayer
 	cry DRACOVISH
-	loadwildmon DRACOVISH, 30
+	loadwildmon DRACOVISH, 40
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS
 	setflag ENGINE_UNION_CAVE_LAPRAS

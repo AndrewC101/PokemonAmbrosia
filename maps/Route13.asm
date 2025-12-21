@@ -66,7 +66,7 @@ Route13PokemonAttacksText:
 
 Route13FieldMon3Script:
 	faceplayer
-	cry NINETALES
+	cry FERROTHORN
 	pause 15
 	loadwildmon FERROTHORN, 44
 	startbattle

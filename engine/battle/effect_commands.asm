@@ -825,13 +825,13 @@ BattleCommand_CheckObedience:
 	call BattleRandom
 	and %11
 
-	ld hl, LoafingAroundText
-	and a ; 0
-	jr z, .Print
+	;ld hl, LoafingAroundText
+	;and a ; 0
+	;jr z, .Print
 
-	ld hl, WontObeyText
-	dec a ; 1
-	jr z, .Print
+	;ld hl, WontObeyText
+	;dec a ; 1
+	;jr z, .Print
 
 	ld hl, TurnedAwayText
 	dec a ; 2

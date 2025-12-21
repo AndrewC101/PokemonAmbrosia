@@ -136,6 +136,9 @@ BattleCommand_Transform:
 	;ld a, SUBSTITUTE
 	;call nz, LoadAnim
 
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .playAnim
     ld a, [wInBattleTowerBattle]
     and a
     jr nz, .playAnim

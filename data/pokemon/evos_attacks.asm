@@ -381,31 +381,31 @@ PikachuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
-	db 8, THUNDER_WAVE
-	db 11, QUICK_ATTACK
-	db 20, BODY_SLAM
-	db 26, DISCHARGE
-	db 30, AGILITY
-	db 33, CRUNCH
-	db 36, THUNDERBOLT
-	db 40, EXTREMESPEED
-	db 45, THUNDER
-	db 50, VOLT_TACKLE
-	db 85, PIKA_THUNDER
+	db 5, THUNDER_WAVE
+	db 8, QUICK_ATTACK
+	db 15, BODY_SLAM
+	db 21, DISCHARGE
+	db 24, AGILITY
+	db 27, CRUNCH
+	db 30, THUNDERBOLT
+	db 33, EXTREMESPEED
+	db 36, THUNDER
+	db 40, VOLT_TACKLE
+	db 70, PIKA_THUNDER
 	db 0 ; no more level-up moves
 
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
-	db 8, THUNDER_WAVE
-	db 11, QUICK_ATTACK
-	db 20, BODY_SLAM
-	db 26, DISCHARGE
-	db 33, CRUNCH
-	db 36, THUNDERBOLT
-	db 40, EXTREMESPEED
-	db 45, THUNDER
-	db 50, VOLT_TACKLE
+	db 5, THUNDER_WAVE
+	db 8, QUICK_ATTACK
+	db 15, BODY_SLAM
+	db 21, DISCHARGE
+	db 27, CRUNCH
+	db 30, THUNDERBOLT
+	db 33, EXTREMESPEED
+	db 36, THUNDER
+	db 40, VOLT_TACKLE
 	db 0 ; no more level-up moves
 
 RotomEvosAttacks:

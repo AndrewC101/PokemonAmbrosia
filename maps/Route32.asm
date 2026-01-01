@@ -812,7 +812,7 @@ Route32FieldMon8Script:
 	faceplayer
 	cry MUDKIP
 	pause 15
-	loadwildmon MUDKIP, 14
+	loadwildmon SOLOSIS, 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

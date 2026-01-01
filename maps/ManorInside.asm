@@ -972,7 +972,7 @@ ManorFact6Text:
 ManorFact7Text:
 	text "This romhack took"
 	line "almost 4 years and"
-	cont "over 1150 commits"
+	cont "over 1200 commits"
 	cont "to create."
 	para "I got married,"
 	line "moved house,"

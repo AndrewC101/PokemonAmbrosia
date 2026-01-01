@@ -873,28 +873,28 @@ KantoGrassWildMons:
 	def_grass_wildmons CERULEAN_CAVE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 60, RAICHU
-	db 61, TAUROS
-	db 62, RHYPERIOR
-	db 63, CLEFABLE
-	db 64, ALAKAZAM
-	db 66, CHANSEY
+	db 70, RAICHU
+	db 71, TAUROS
+	db 72, RHYPERIOR
+	db 73, MAGNEZONE
+	db 74, ALAKAZAM
+	db 76, GENGAR
 	db 77, DITTO
 	; day
-	db 60, RAICHU
-	db 61, TAUROS
-	db 62, RHYPERIOR
-	db 63, CLEFABLE
-	db 64, ALAKAZAM
-	db 66, CHANSEY
+	db 70, RAICHU
+	db 71, TAUROS
+	db 72, RHYPERIOR
+	db 73, MAGNEZONE
+	db 74, ALAKAZAM
+	db 76, GENGAR
 	db 77, DITTO
 	; nite
-	db 60, RAICHU
-	db 61, TAUROS
-	db 62, RHYPERIOR
-	db 63, CLEFABLE
-	db 64, ALAKAZAM
-	db 66, CHANSEY
+	db 70, RAICHU
+	db 71, TAUROS
+	db 72, RHYPERIOR
+	db 73, MAGNEZONE
+	db 74, ALAKAZAM
+	db 76, GENGAR
 	db 77, DITTO
 	end_grass_wildmons
 

@@ -5,6 +5,6 @@
 	next "guardian of the"
 	next "forest."
 
-	page "Special Defense"
-	next "boost and heals"
-	next "status on switch.@"
+	page "Uses Leech Seed"
+	next "and heals status"
+	next "on switch.@"

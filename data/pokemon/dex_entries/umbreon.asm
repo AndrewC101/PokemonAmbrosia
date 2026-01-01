@@ -5,6 +5,6 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "Special Defense"
-	next "increases upon"
-	next "entering battle.@"
+	page "Taunts foe and"
+	next "boosts Sp.Def"
+	next "on switch.@"

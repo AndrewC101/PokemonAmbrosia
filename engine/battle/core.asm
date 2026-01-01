@@ -595,8 +595,6 @@ DetermineMoveOrder:
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
     jr z, .continue
-    cp VICTREEBEL
-    jr z, .continue
     cp EXEGGCUTE
     jr z, .continue
     cp EXEGGUTOR
@@ -1260,6 +1258,7 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db LATIOS
     db ROTOM
     db MEW
+    db DEOXYS
     db -1
 
 Core_RegeneratorPokemon:
@@ -4650,6 +4649,13 @@ SwitchInEffects:
     cp LAPRAS
     jp z, .lapras
 
+    cp DARKRAI
+    jp z, .taunt
+    cp UMBREON
+    jp z, .umbreon
+    cp MISMAGIUS
+    jp z, .taunt
+
     cp GENESECT
     jp z, .spAtkUp
     cp ESPEON
@@ -4708,13 +4714,16 @@ SwitchInEffects:
 
     cp FLAREON
     jp z, .spAtkDown
-    cp MISMAGIUS
+    cp JYNX
     jp z, .spAtkDown
     cp MILTANK
     jp z, .spAtkDown
 
     cp AEGISLASH
     jp z, .defenseMode
+
+    cp WHIMSICOTT
+    jp z, .leechSeed
 
     cp CELEBI
     jp z, .celebi
@@ -4865,14 +4874,23 @@ SwitchInEffects:
 .clearField
 	farcall DefogSwitch
 	ret
+.umbreon
+    farcall SpecialDefenseUpSwitch
+    ; fallthrough
+.taunt
+    farcall TauntSwitch
+    ret
 .spAtkUp
     farcall SpecialAttackUpSwitch
 	ret
 .naturalCure
     farcall NaturalCureSwitch
     ret
+.leechSeed
+    farcall LeechSeedSwitch
+    ret
 .celebi
-    farcall NaturalCureSwitch
+    farcall LeechSeedSwitch
     ; fallthrough
 .spDefUp
     farcall SpecialDefenseUpSwitch

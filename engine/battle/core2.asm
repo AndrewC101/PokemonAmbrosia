@@ -200,6 +200,18 @@ DefogSwitch:
     callfar BattleCommand_Defog
 	ret
 
+TauntSwitch:
+    ld de, TAUNT
+    call PlayAnimationIfNeeded
+    callfar BattleCommand_Taunt
+	ret
+
+LeechSeedSwitch:
+    ld de, LEECH_SEED
+    call PlayAnimationIfNeeded
+    callfar BattleCommand_LeechSeed
+	ret
+
 AnyFieldEffectPresent:
     ld a, [wFieldWeather]
     cp WEATHER_NONE

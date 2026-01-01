@@ -5,6 +5,6 @@
 	next "like incantations"
 	next "tormenting all."
 
-	page "Lowers foes SP"
-	next "Attack on switch."
-	next "Immune to Ground.@"
+	page "Taunts foe on"
+	next "switch in. Immune"
+	next "to Ground moves.@"

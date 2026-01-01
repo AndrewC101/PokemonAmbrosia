@@ -201,6 +201,10 @@ DefogSwitch:
 	ret
 
 TauntSwitch:
+    callfar BattleCommand_CheckDeathImmunity
+    ld a, [wEffectFailed]
+    and a
+    ret nz
     ld de, TAUNT
     call PlayAnimationIfNeeded
     callfar BattleCommand_Taunt

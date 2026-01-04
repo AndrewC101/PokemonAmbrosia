@@ -4,6 +4,6 @@
 	db   "It builds nests"
 	next "on a steep cliff."
 
-	page "Becomes more"
-	next "evasive when in"
-	next "a sandstorm.@"
+	page "Regenerates HP"
+	next "when in a"
+	next "sandstorm.@"

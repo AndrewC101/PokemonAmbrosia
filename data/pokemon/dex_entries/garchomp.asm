@@ -5,6 +5,6 @@
 	next "speeds equal to"
 	next "a jet plane."
 
-	page "Boosted Evasion"
+	page "Regenerates HP"
 	next "in Sandstorm and"
 	next "boosted crits.@"

@@ -1637,11 +1637,27 @@ HandleRegenerator:
 	call SetPlayerTurn
 	ld a, [wBattleMonSpecies]
 .do_it
+    push af
 	ld hl, Core_RegeneratorPokemon
 	ld de, 1
 	call IsInArray
-	ret nc
+	pop af
+	jr c, .doRegen
 
+    push af
+    ld a, [wBattleWeather]
+    cp WEATHER_SANDSTORM
+    jr nz, .doneSandBody
+    pop af
+
+    cp GARCHOMP
+    jr z, .doRegen
+    cp GLIGAR
+    jr z, .doRegen
+    cp GLISCOR
+    ret nz
+
+.doRegen
     ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1668,6 +1684,9 @@ HandleRegenerator:
 	ret nz
 	ld hl, BattleText_TargetRegenerates
 	jp StdBattleTextbox
+.doneSandBody
+    pop af
+    ret
 
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]

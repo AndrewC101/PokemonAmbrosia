@@ -6,5 +6,5 @@
 	next "fangs are wicked."
 
 	page "Sandstorm upon"
-	next "switch in. Boost"
-	next "Evasion in sand.@"
+	next "switch in. Regen"
+	next "HP in sand.@"

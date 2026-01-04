@@ -1915,12 +1915,6 @@ BattleCommand_CheckHit:
 	ld a, [wEnemyEvaLevel]
     ld c, a
 
-    ld a, [wBattleWeather]
-    cp WEATHER_SANDSTORM
-    jr nz, .doneEnemySandVeil
-    ld a, [wEnemyMonSpecies]
-    call Sandveil
-.doneEnemySandVeil
     ld a, [wBattleMonSpecies]
     call CompoundEyes
 
@@ -1934,12 +1928,6 @@ BattleCommand_CheckHit:
 	ld a, [wPlayerEvaLevel]
 	ld c, a
 
-    ld a, [wBattleWeather]
-    cp WEATHER_SANDSTORM
-    jr nz, .donePlayerSandVeil
-    ld a, [wBattleMonSpecies]
-    call Sandveil
-.donePlayerSandVeil
     ld a, [wEnemyMonSpecies]
     call CompoundEyes
 
@@ -7550,18 +7538,6 @@ BattleCommand_CheckStatusImmunity:
 
 	ld hl, StatusImmunityText
 	jp StdBattleTextbox
-
-; ===========================
-; ======= Sand Veil =========
-; ===========================
-Sandveil:
-    cp GARCHOMP
-    call z, IncrementC
-    cp GLIGAR
-    call z, IncrementC
-    cp GLISCOR
-    call z, IncrementC
-    ret
 
 ; ================================
 ; ======= Compound Eyes ==========

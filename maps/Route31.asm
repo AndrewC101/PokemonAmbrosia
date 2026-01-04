@@ -247,7 +247,7 @@ Route31PokeBall:
 	itemball REVIVE
 
 Route31CooltrainerMText:
-	text "I just barley"
+	text "I just barely"
 	line "managed to escape."
 
 	para "There is something"

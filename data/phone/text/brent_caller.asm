@@ -32,7 +32,7 @@ BrentLostAMonText:
 	line "with a Blissey the"
 	cont "other day."
 	para "It took my Hyper"
-	line "Beam, it barley"
+	line "Beam, it barely"
 	cont "did any damage!"
 	para "I..."
 	para "I just don't"

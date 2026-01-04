@@ -2704,6 +2704,7 @@ SigilyphEvosAttacks:
 	db 20, PSYBEAM
 	db 25, DREAM_EATER
 	db 30, AIR_SLASH
+	db 35, DEFOG
 	db 36, PSYCHIC_M
 	db 40, RECOVER
 	db 50, CALM_MIND

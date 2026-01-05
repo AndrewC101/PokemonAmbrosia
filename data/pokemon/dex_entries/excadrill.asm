@@ -5,6 +5,6 @@
 	next "head can drill"
 	next "through anything."
 
-	page "Speed"
-	next "increases in"
-	next "a sandstorm.@"
+	page "Boosts weaker"
+	next "moves. Speed"
+	next "boost in sand.@"

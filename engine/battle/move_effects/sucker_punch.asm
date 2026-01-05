@@ -12,6 +12,6 @@ BattleCommand_SuckerPunch:
 	and a
 	ret nz
 .failed
-	call AnimateFailedMove
-	call TryPrintButItFailed
-	jp EndMoveEffect
+    ld a, 1
+    ld [wHalfDamage], a
+    ret

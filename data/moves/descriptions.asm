@@ -995,8 +995,8 @@ ReversalDescription:
 	line "user's HP is low.@"
 
 SuckerPunchDescription:
-	db   "Intercept an"
-	line "attacking foe.@"
+	db   "Weaker on non-"
+	line "aggressive foe.@"
 
 PowderSnowDescription:
 	db   "An attack that may"

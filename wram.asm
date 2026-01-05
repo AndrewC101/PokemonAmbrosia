@@ -3038,7 +3038,8 @@ wNoRematch:: db
 wReachedHallOfOrigin::db
 wExpShare::db
 wExpShareText:: db
-	ds 4
+wHalfDamage:: db
+	ds 3
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

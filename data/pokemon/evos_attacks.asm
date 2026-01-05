@@ -1082,9 +1082,9 @@ GeodudeEvosAttacks:
 	db EVOLVE_LEVEL, 25, GRAVELER
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, RAPID_SPIN
 	db 6, DEFENSE_CURL
 	db 11, ROCK_THROW
+	db 13, RAPID_SPIN
 	db 16, MAGNITUDE
 	db 20, SELFDESTRUCT
 	db 26, ROCK_SLIDE
@@ -1098,9 +1098,9 @@ GeodudeEvosAttacks:
 GravelerEvosAttacks:
 	db EVOLVE_LEVEL, 40, GOLEM
 	db 0 ; no more evolutions
-	db 1, RAPID_SPIN
 	db 6, DEFENSE_CURL
 	db 11, ROCK_THROW
+	db 13, RAPID_SPIN
 	db 16, MAGNITUDE
 	db 20, SELFDESTRUCT
 	db 25, ROCK_SLIDE
@@ -1114,9 +1114,9 @@ GravelerEvosAttacks:
 
 GolemEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, RAPID_SPIN
 	db 6, DEFENSE_CURL
 	db 11, ROCK_THROW
+	db 13, RAPID_SPIN
 	db 16, MAGNITUDE
 	db 21, SELFDESTRUCT
 	db 25, ROCK_SLIDE
@@ -1295,10 +1295,10 @@ FerroseedEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
-	db 1, RAPID_SPIN
 	db 5, METAL_CLAW
 	db 10, LEECH_LIFE
 	db 15, LEECH_SEED
+    db 18, RAPID_SPIN
 	db 20, RAZOR_LEAF
 	db 25, IRON_HEAD
 	db 31, LEAF_BLADE
@@ -1309,10 +1309,10 @@ FerroseedEvosAttacks:
 FerrothornEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPIKES
-	db 1, RAPID_SPIN
 	db 5, METAL_CLAW
 	db 10, LEECH_LIFE
 	db 15, LEECH_SEED
+	db 18, RAPID_SPIN
 	db 20, RAZOR_LEAF
 	db 25, IRON_HEAD
 	db 30, LEAF_BLADE
@@ -2490,8 +2490,8 @@ DrilburEvosAttacks:
 	db EVOLVE_LEVEL, 31, EXCADRILL
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, RAPID_SPIN
 	db 8, MAGNITUDE
+	db 10, RAPID_SPIN
 	db 12, FALSE_SWIPE
 	db 15, METAL_CLAW
 	db 19, DIG
@@ -2504,8 +2504,8 @@ DrilburEvosAttacks:
 
 ExcadrillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, RAPID_SPIN
 	db 8, MAGNITUDE
+	db 10, RAPID_SPIN
 	db 12, FALSE_SWIPE
 	db 15, METAL_CLAW
 	db 19, DIG

@@ -1641,10 +1641,8 @@ HandleRegenerator:
 	ld hl, Core_RegeneratorPokemon
 	ld de, 1
 	call IsInArray
-	pop af
 	jr c, .doRegen
 
-    push af
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
     jr nz, .doneSandBody

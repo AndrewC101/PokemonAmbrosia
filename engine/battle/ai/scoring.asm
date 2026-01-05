@@ -1292,6 +1292,13 @@ AI_Smart_Spikes:
 	bit SCREENS_SPIKES, a
 	jp nz, StandardDiscourage
 
+; Don't use if enemy has rapid spin or defog
+    ld a, [wLastPlayerMove]
+    cp RAPID_SPIN
+    jp z, StandardDiscourage
+    cp DEFOG
+    jp z, StandardDiscourage
+
 ; don't use if player has only one pokemon left
 	push hl
 	call AICheckLastPlayerMon
@@ -1306,6 +1313,13 @@ AI_Smart_StealthRock:
 	ld a, [wPlayerScreens]
 	bit SCREENS_STEALTH_ROCK, a
 	jp nz, StandardDiscourage
+
+; Don't use if enemy has rapid spin or defog
+    ld a, [wLastPlayerMove]
+    cp RAPID_SPIN
+    jp z, StandardDiscourage
+    cp DEFOG
+    jp z, StandardDiscourage
 
 ; don't use if player has only one pokemon left
 	push hl
@@ -1322,6 +1336,13 @@ AI_Smart_ToxicSpikes:
 	bit SCREENS_TOXIC_SPIKES, a
 	jp nz, StandardDiscourage
 
+; Don't use if enemy has rapid spin or defog
+    ld a, [wLastPlayerMove]
+    cp RAPID_SPIN
+    jp z, StandardDiscourage
+    cp DEFOG
+    jp z, StandardDiscourage
+
 ; don't use if player has only one pokemon left
 	push hl
 	call AICheckLastPlayerMon
@@ -1336,6 +1357,13 @@ AI_Smart_StickyWeb:
 	ld a, [wPlayerScreens]
 	bit SCREENS_STICKY_WEB, a
 	jp nz, StandardDiscourage
+
+; Don't use if enemy has rapid spin or defog
+    ld a, [wLastPlayerMove]
+    cp RAPID_SPIN
+    jp z, StandardDiscourage
+    cp DEFOG
+    jp z, StandardDiscourage
 
 ; don't use if player has only one pokemon left
 	push hl

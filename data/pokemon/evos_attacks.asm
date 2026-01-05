@@ -2492,7 +2492,7 @@ DrilburEvosAttacks:
 	db 1, SCRATCH
 	db 1, RAPID_SPIN
 	db 8, MAGNITUDE
-	db 12, FURY_SWIPES
+	db 12, FALSE_SWIPE
 	db 15, METAL_CLAW
 	db 19, DIG
 	db 26, SLASH
@@ -2506,7 +2506,7 @@ ExcadrillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAPID_SPIN
 	db 8, MAGNITUDE
-	db 12, FURY_SWIPES
+	db 12, FALSE_SWIPE
 	db 15, METAL_CLAW
 	db 19, DIG
 	db 26, SLASH

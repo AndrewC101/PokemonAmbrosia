@@ -508,7 +508,7 @@ GuideGentExitText:
 	done
 
 GuideGentSeaText:
-	text "This is Billy"
+	text "This is Billy."
 
 	para "He never stops"
 	line "fishing."

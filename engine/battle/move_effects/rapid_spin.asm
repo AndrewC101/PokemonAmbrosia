@@ -1,4 +1,9 @@
 BattleCommand_ClearHazards:
+
+    call ResetMiss
+	call BattleCommand_SpeedUp
+	call BattleCommand_StatUpMessage
+
 ; clearhazards
 
 	ld a, BATTLE_VARS_SUBSTATUS4

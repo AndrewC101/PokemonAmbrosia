@@ -2529,11 +2529,29 @@ KOBoost:
 
     ret
 .grim
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerSAtkLevel]
+	jr z, .gotGrimLevel
+	ld a, [wEnemySAtkLevel]
+.gotGrimLevel
+	cp BASE_STAT_LEVEL + 3
+    ret nc
+
     call ClearFailures
     ld [wNumHits], a
     farcall SpecialAttackUpSwitch
     ret
 .moxie
+    ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerAtkLevel]
+	jr z, .gotMoxieLevel
+	ld a, [wEnemyAtkLevel]
+.gotMoxieLevel
+	cp BASE_STAT_LEVEL + 3
+    ret nc
+
     call ClearFailures
     ld [wNumHits], a
     farcall AttackUpSwitch

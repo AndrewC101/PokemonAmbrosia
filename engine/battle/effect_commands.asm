@@ -3313,6 +3313,15 @@ BattleCommand_DamageCalc:
 	call Divide
 
 .DoneItem:
+; ===== half damage - used for Sucker Punch =====
+    ld a, [wHalfDamage]
+    and a
+    jr z, .lifeOrb
+    call HalfDamage
+    xor a
+    ld [wHalfDamage], a
+
+.lifeOrb
 ; =====================
 ; ==== Life Orb =======
 ; =====================

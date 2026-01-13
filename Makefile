@@ -69,6 +69,8 @@ compare: $(roms)
 tools:
 	$(MAKE) -C tools/
 
+all:
+	tools/free_space.awk BANK=all pokecrystal.map
 
 RGBASMFLAGS = -L -Weverything -Wnumeric-string=2 -Wtruncation=1
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`

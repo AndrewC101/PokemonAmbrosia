@@ -195,20 +195,9 @@ _WouldYouLikeToSaveTheGameText::
 	line "save the game?"
 	done
 
-_SavingDontTurnOffThePowerText::
-	text "Saving Don't turn"
-	line "off the Power."
-	done
-
 _SavedTheGameText::
 	text "<PLAYER> saved"
 	line "the game."
-	done
-
-_AlreadyASaveFileText::
-	text "There is already a"
-	line "save file. Is it"
-	cont "OK to overwrite?"
 	done
 
 _AnotherSaveFileText::

@@ -2465,8 +2465,6 @@ TryQuickSave:
 	xor a ; FALSE
 .return_result
 	ld [wScriptVar], a
-	ld c, 30
-	call DelayFrames
 	pop af
 	ld [wChosenCableClubRoom], a
 	ret

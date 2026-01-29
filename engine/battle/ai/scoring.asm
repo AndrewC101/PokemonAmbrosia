@@ -5254,7 +5254,7 @@ AI_Aggressive:
     jp c, .checkmove
 
 .fireAbsorb
-    cp ELECTRIC
+    cp FIRE
 	jr nz, .continue
 	ld a, [wBattleMonSpecies]
     call DoesPokemonHaveFireAbsorb

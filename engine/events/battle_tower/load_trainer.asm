@@ -148,26 +148,19 @@ LoadRandomBattleTowerMon:
 ; mon 0 is Mewtwo, since we are not the last trainer we try again if we get it
     and a
     jr z, .resample ; only the last trainer can have mewtwo
-; The first 12 mons are Uber - if we have one 60% chance to try again, don't want too many Ubers
+; The first 12 mons are Uber - if we have one 75% chance to try again, don't want too many Ubers
     ld a, b
     cp 11
     jr nc, .continue
 	call Random
-	cp 60 percent
+	cp 75 percent
 	jr c, .resample
 	ld a, b
 	jr .continue
-; last trainer only uses 20 strongest mons and can pick Mewtwo
+; last trainer only uses 40 strongest mons and can pick Mewtwo
 .lastTrainerMaster
-    ;ld a, b
-    ;and a
-    ;jr nz, .notMewtwo
-    ;call Random
-    ;cp 25 percent
-    ;jr c, .resample
     ld a, b
-;.notMewtwo
-    cp 32
+    cp 40
     jr nc, .resample
 
 .continue

@@ -5009,8 +5009,6 @@ BattleTowerMons:
 	bigdw 198 ; SDef
 	db "RANTA-N@@@@"
 
-	; =========== Last Trainer picks from top 32 Pokemon =============
-
 	db ALAKAZAM
 	db FOCUS_SASH
 	db PSYCHIC_M, SHADOW_BALL, AURA_SPHERE, NASTY_PLOT
@@ -5088,6 +5086,138 @@ BattleTowerMons:
 	bigdw 338 ; SAtk
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
+
+	db LATIAS
+	db LEFTOVERS
+	db DRACO_METEOR, CALM_MIND, THUNDER_WAVE, RECOVER
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 32, 10 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 363 ; HP
+	bigdw 363 ; Max HP
+	bigdw 258 ; Atk
+	bigdw 278 ; Def
+	bigdw 318 ; Spd
+	bigdw 318 ; SAtk
+	bigdw 358 ; SDef
+	db "RANTA-N@@@@"
+
+    db TYRANITAR
+	db LEFTOVERS
+	db STONE_EDGE, CRUNCH, STEALTH_ROCK, DRAGON_DANCE
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 24, 32, 32 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 403 ; HP
+	bigdw 403 ; Max HP
+	bigdw 366 ; Atk
+	bigdw 318 ; Def
+	bigdw 220 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 298 ; SDef
+	db "RANTA-N@@@@"
+
+	db KINGDRA
+	db MYSTIC_WATER
+	db RAIN_DANCE, HYDRO_PUMP, DRACO_METEOR, ICE_BEAM
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 16, 16, 16, 24 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 353 ; HP
+	bigdw 353 ; Max HP
+	bigdw 288 ; Atk
+	bigdw 288 ; Def
+	bigdw 268 ; Spd
+	bigdw 288 ; SAtk
+	bigdw 288 ; SDef
+	db "RANTA-N@@@@"
+
+	db GYARADOS
+	db LEFTOVERS
+	db WATERFALL, FLY, TAUNT, DRAGON_DANCE
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 24, 32, 32 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 393 ; HP
+	bigdw 393 ; Max HP
+	bigdw 348 ; Atk
+	bigdw 256 ; Def
+	bigdw 260 ; Spd
+	bigdw 218 ; SAtk
+	bigdw 298 ; SDef
+	db "RANTA-N@@@@"
+
+	db DRAGONITE
+	db LEFTOVERS
+	db OUTRAGE, FIRE_PUNCH, DRAGON_DANCE, ROOST
+	dw 0 ; OT ID
+	dt 0 ; Exp
+	; Stat exp
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	bigdw 65500
+	dn 15, 15, 15, 15 ; DVs
+	db 24, 24, 32, 10 ; PP
+	db 255 ; Happiness
+	db 0, 0, 0 ; Pokerus, Caught data
+	db 100 ; Level
+	db 0, 0 ; Status
+	bigdw 385 ; HP
+	bigdw 385 ; Max HP
+	bigdw 366 ; Atk
+	bigdw 288 ; Def
+	bigdw 258 ; Spd
+	bigdw 298 ; SAtk
+	bigdw 298 ; SDef
+	db "RANTA-N@@@@"
+
+; =========== Last Trainer picks from top 40 Pokemon =============
 
 ;	db CELEBI
 ;	db LEFTOVERS
@@ -5167,58 +5297,6 @@ BattleTowerMons:
 	bigdw 288 ; SDef
 	db "RANTA-N@@@@"
 
-	db LATIAS
-	db LEFTOVERS
-	db DRACO_METEOR, CALM_MIND, THUNDER_WAVE, RECOVER
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 32, 10 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 363 ; HP
-	bigdw 363 ; Max HP
-	bigdw 258 ; Atk
-	bigdw 278 ; Def
-	bigdw 318 ; Spd
-	bigdw 318 ; SAtk
-	bigdw 358 ; SDef
-	db "RANTA-N@@@@"
-
-    db TYRANITAR
-	db LEFTOVERS
-	db STONE_EDGE, CRUNCH, STEALTH_ROCK, DRAGON_DANCE
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 32, 32 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 403 ; HP
-	bigdw 403 ; Max HP
-	bigdw 366 ; Atk
-	bigdw 318 ; Def
-	bigdw 220 ; Spd
-	bigdw 288 ; SAtk
-	bigdw 298 ; SDef
-	db "RANTA-N@@@@"
-
 	db HAWLUCHA
 	db FOCUS_SASH
 	db BRAVE_BIRD, HI_JUMP_KICK, TAUNT, SWORDS_DANCE
@@ -5271,32 +5349,6 @@ BattleTowerMons:
 	bigdw 248 ; SDef
 	db "RANTA-N@@@@"
 
-	db DRAGONITE
-	db LEFTOVERS
-	db OUTRAGE, FIRE_PUNCH, DRAGON_DANCE, ROOST
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 32, 10 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 385 ; HP
-	bigdw 385 ; Max HP
-	bigdw 366 ; Atk
-	bigdw 288 ; Def
-	bigdw 258 ; Spd
-	bigdw 298 ; SAtk
-	bigdw 298 ; SDef
-	db "RANTA-N@@@@"
-
 	db LUCARIO
 	db FOCUS_SASH
 	db METEOR_MASH, CLOSE_COMBAT, CRUNCH, EXTREMESPEED
@@ -5347,58 +5399,6 @@ BattleTowerMons:
 	bigdw 318 ; Spd
 	bigdw 358 ; SAtk
 	bigdw 248 ; SDef
-	db "RANTA-N@@@@"
-
-	db KINGDRA
-	db MYSTIC_WATER
-	db RAIN_DANCE, HYDRO_PUMP, DRACO_METEOR, ICE_BEAM
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 16, 16, 16, 24 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 353 ; HP
-	bigdw 353 ; Max HP
-	bigdw 288 ; Atk
-	bigdw 288 ; Def
-	bigdw 268 ; Spd
-	bigdw 288 ; SAtk
-	bigdw 288 ; SDef
-	db "RANTA-N@@@@"
-
-	db GYARADOS
-	db LEFTOVERS
-	db WATERFALL, FLY, TAUNT, DRAGON_DANCE
-	dw 0 ; OT ID
-	dt 0 ; Exp
-	; Stat exp
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	bigdw 65500
-	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 32, 32 ; PP
-	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 100 ; Level
-	db 0, 0 ; Status
-	bigdw 393 ; HP
-	bigdw 393 ; Max HP
-	bigdw 348 ; Atk
-	bigdw 256 ; Def
-	bigdw 260 ; Spd
-	bigdw 218 ; SAtk
-	bigdw 298 ; SDef
 	db "RANTA-N@@@@"
 
 	db VENUSAUR

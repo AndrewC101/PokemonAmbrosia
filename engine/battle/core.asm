@@ -1641,7 +1641,7 @@ HandleRegenerator:
 	ld hl, Core_RegeneratorPokemon
 	ld de, 1
 	call IsInArray
-	jr c, .doRegen
+	jr c, .doWithPop
 
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
@@ -1653,8 +1653,11 @@ HandleRegenerator:
     cp GLIGAR
     jr z, .doRegen
     cp GLISCOR
-    ret nz
+    jr z, .doRegen
+    ret
 
+.doWithPop
+    pop af
 .doRegen
     ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]

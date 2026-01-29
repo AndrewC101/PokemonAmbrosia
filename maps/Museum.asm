@@ -35,8 +35,16 @@ DeoxysScript:
 	cry DEOXYS
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon DEOXYS, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DEOXYS, 70
+.begin
+
 	startbattle
 	reloadmapafterbattle
     setval DEOXYS
@@ -116,6 +124,86 @@ MuseumPokemonAttacksText:
 	text "Can't escape!"
 	done
 
+LuthorScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_LUTHOR
+	iftrue .FightDone
+.fight
+	writetext LuthorSeenText
+	waitbutton
+	closetext
+	winlosstext LuthorBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SCIENTIST, LUTHOR
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_LUTHOR
+	setmapscene MUSEUM, SCENE_FINISHED
+	special HealParty
+	end
+.FightDone:
+	writetext LuthorAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextLuthor
+	nooryes
+	iftrue .fight
+	writetext RematchRefuseTextLuthor
+	waitbutton
+	closetext
+	end
+
+LuthorSeenText:
+	text "So you have come"
+	line "to discover the"
+	cont "folly of our"
+	cont "research?"
+	para "You will be"
+	line "disappointed."
+	para "The specimen"
+	line "represents the"
+	cont "apex of biological"
+	cont "perfection."
+	para "You would never"
+	line "understand."
+	para "None of them do!"
+	done
+
+LuthorBeatenText:
+    text "I am imperfect."
+    done
+
+LuthorAfterBattleText:
+	text "#rus is merely"
+	line "natures way of"
+	cont "culling the"
+	cont "inferior genetics"
+	cont "from her codebase."
+	para "As you will soon"
+	line "discover for"
+	cont "yourself..."
+	done
+
+RematchTextLuthor:
+    text "You want another"
+    line "experiment?"
+    done
+
+RematchRefuseTextLuthor:
+    text "Such a common"
+    line "intellect."
+    done
+
+FightLuthorScript:
+    checkevent EVENT_BEAT_LUTHOR
+    iffalse .do
+    end
+.do
+    turnobject PLAYER, UP
+    sjump LuthorScript
+
 Museum_MapEvents:
 	db 0, 0 ; filler
 
@@ -133,6 +221,7 @@ Museum_MapEvents:
 	warp_event 0, 27, MUSEUM, 7
 
 	def_coord_events
+	coord_event 15, 28, SCENE_ALWAYS, FightLuthorScript
 
 	def_bg_events
 
@@ -148,3 +237,4 @@ Museum_MapEvents:
 	object_event 12, 27, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MuseumFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 16, 29, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MuseumFieldMon9Script, EVENT_FIELD_MON_9
 	object_event 16, 27, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, MuseumFieldMon10Script, EVENT_FIELD_MON_10
+	object_event 15, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 2, LuthorScript, -1

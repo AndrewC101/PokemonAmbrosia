@@ -153,8 +153,16 @@ RegigigasScript:
 	cry REGIGIGAS
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon REGIGIGAS, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon REGIGIGAS, 70
+.begin
+
 	startbattle
 	reloadmapafterbattle
     setval REGIGIGAS

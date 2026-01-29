@@ -38,8 +38,16 @@ YveltalScript:
 	cry YVELTAL
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon YVELTAL, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon YVELTAL, 70
+.begin
+
 	startbattle
 	reloadmapafterbattle
     setval YVELTAL

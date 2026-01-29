@@ -392,7 +392,6 @@ INCLUDE "maps/DarkCaveVioletEntrance.asm"
 
 SECTION "Map Scripts Overflow 2", ROMX
 
-INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
 INCLUDE "maps/Museum.asm"
@@ -524,3 +523,4 @@ INCLUDE "maps/Route8SaffronGate.asm"
 SECTION "Map Scripts Overflow 12", ROMX
 
 INCLUDE "maps/Abyss.asm"
+INCLUDE "maps/CeruleanCave.asm"

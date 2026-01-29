@@ -129,6 +129,7 @@ KRIS EQU __trainer_class__
 	const JED
 	const MARC
 	const RICH
+	const LUTHOR
 
 	trainerclass ERIKA ; 15
 	const ERIKA1

@@ -451,6 +451,7 @@
     const EVENT_GOT_BLACKTHORN_SKARM
     const EVENT_GOT_ROUTE40_LAPRAS
     const EVENT_ROUTE_6_AMBROSIA
+    const EVENT_BEAT_LUTHOR
 
     ; ======================================
     ; DevNote - here

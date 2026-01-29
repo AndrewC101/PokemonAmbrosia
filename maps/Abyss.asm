@@ -216,12 +216,31 @@ InvaderVarreAfterBattleText:
 	done
 
 InvaderArtoriasScript:
-	trainer INVADER, ARTORIAS, EVENT_BEAT_INVADER_ARTORIAS, InvaderArtoriasSeenText, InvaderArtoriasBeatenText, InvaderArtoriasVictoryText, .Script
-
-.Script:
-	endifjustbattled
+	faceplayer
 	opentext
+	checkevent EVENT_BEAT_INVADER_ARTORIAS
+	iftrue .FightDone
+.fight
+	writetext InvaderArtoriasSeenText
+	waitbutton
+	closetext
+	winlosstext InvaderArtoriasBeatenText, 0
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer INVADER, ARTORIAS
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_INVADER_ARTORIAS
+	special HealParty
+	end
+.FightDone:
 	writetext InvaderArtoriasAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextInvaderArtorias
+	nooryes
+	iftrue .fight
+	writetext RematchRefuseTextInvaderArtorias
 	waitbutton
 	closetext
 	end
@@ -244,6 +263,22 @@ InvaderArtoriasAfterBattleText:
 	para "Resist..."
 	para "The Dark..."
 	done
+
+RematchTextInvaderArtorias:
+    text "Again...?"
+    done
+
+RematchRefuseTextInvaderArtorias:
+    text "...."
+    done
+
+FightArtoriasScript:
+    checkevent EVENT_BEAT_INVADER_ARTORIAS
+    iffalse .do
+    end
+.do
+    turnobject PLAYER, RIGHT
+    sjump InvaderArtoriasScript
 
 AbyssSageScript1:
     faceplayer
@@ -487,8 +522,17 @@ GiratinaScript:
 	cry GIRATINA
 	pause 15
 	closetext
+
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GIRATINA, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon GIRATINA, 70
+.begin
+
 	startbattle
 	reloadmapafterbattle
     setval GIRATINA
@@ -678,6 +722,8 @@ Abyss_MapEvents:
 	warp_event  86, 1, DRAGONS_DEN_B1F, 3
 
 	def_coord_events
+	coord_event 44, 14, SCENE_ALWAYS, FightArtoriasScript
+	coord_event 45, 14, SCENE_ALWAYS, FightArtoriasScript
 
 	def_bg_events
 
@@ -697,4 +743,4 @@ Abyss_MapEvents:
 	object_event 41, 30, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AbyssSageScript2, -1
 	object_event 65, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderLeeroyScript, -1
 	object_event 33,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderVarreScript, -1
-	object_event 46, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderArtoriasScript, -1
+	object_event 46, 14, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 4, InvaderArtoriasScript, -1

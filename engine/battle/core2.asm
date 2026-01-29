@@ -205,6 +205,10 @@ TauntSwitch:
     ld a, [wEffectFailed]
     and a
     ret nz
+    callfar BattleCommand_CheckSafeguard
+    ld a, [wAttackMissed]
+    and a
+    ret nz
     ld de, TAUNT
     call PlayAnimationIfNeeded
     callfar BattleCommand_Taunt

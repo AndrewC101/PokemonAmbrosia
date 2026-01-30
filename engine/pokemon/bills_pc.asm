@@ -1255,7 +1255,7 @@ BillsPC_RefreshTextboxes:
 	ret
 
 .CancelString:
-	db "CANCEL@"
+	db "Cancel@"
 
 .PlaceNickname:
 	ld a, [de]

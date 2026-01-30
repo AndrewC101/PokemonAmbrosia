@@ -269,7 +269,7 @@ UltraBallDesc:
 
 BrightpowderDesc:
 	db   "Lowers the foe's"
-	next "accuracy. (HOLD)@"
+	next "accuracy. (Hold)@"
 
 GreatBallDesc:
 	db   "A Ball with a de-"
@@ -547,11 +547,11 @@ MoomooMilkDesc:
 
 QuickClawDesc:
 	db   "Raises 1st strike"
-	next "ratio. (HOLD)@"
+	next "ratio. (Hold)@"
 
 PsnCureBerryDesc:
 	db   "A self-cure for"
-	next "poison. (HOLD)@"
+	next "poison. (Hold)@"
 
 GoldLeafDesc:
 	db   "A strange, gold-"
@@ -559,39 +559,39 @@ GoldLeafDesc:
 
 SoftSandDesc:
 	db   "Powers up ground-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 SharpBeakDesc:
 	db   "Powers up flying-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 PrzCureBerryDesc:
 	db   "A self-cure for"
-	next "paralysis. (HOLD)@"
+	next "paralysis. (Hold)@"
 
 BurntBerryDesc:
 	db   "A self-cure for"
-	next "freezing. (HOLD)@"
+	next "freezing. (Hold)@"
 
 IceBerryDesc:
 	db   "A self-heal for a"
-	next "burn. (HOLD)@"
+	next "burn. (Hold)@"
 
 PoisonBarbDesc:
 	db   "Powers up poison-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 KingsRockDesc:
 	db   "May make the foe"
-	next "flinch. (HOLD)@"
+	next "flinch. (Hold)@"
 
 BitterBerryDesc:
 	db   "A self-cure for"
-	next "confusion. (HOLD)@"
+	next "confusion. (Hold)@"
 
 MintBerryDesc:
 	db   "A self-awakening"
-	next "for sleep. (HOLD)@"
+	next "for sleep. (Hold)@"
 
 RedApricornDesc:
 	db   "A red Apricorn.@"
@@ -606,7 +606,7 @@ BigMushroomDesc:
 
 SilverPowderDesc:
 	db   "Powers up bug-type"
-	next "moves. (HOLD)@"
+	next "moves. (Hold)@"
 
 BluApricornDesc:
 	db   "A blue Apricorn.@"
@@ -617,7 +617,7 @@ FlameOrbDesc:
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
-	next "earnings. (HOLD)@"
+	next "earnings. (Hold)@"
 
 YlwApricornDesc:
 	db   "A yellow Apricorn.@"
@@ -627,22 +627,22 @@ GrnApricornDesc:
 
 CleanseTagDesc:
 	db   "Helps repel wild"
-	next "#mon. (HOLD)@"
+	next "#mon. (Hold)@"
 
 MysticWaterDesc:
 	db   "Powers up water-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 TwistedSpoonDesc:
 	db   "Powers up psychic-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 WhtApricornDesc:
 	db   "A white Apricorn.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 BlkApricornDesc:
 	db   "A black Apricorn."
@@ -658,7 +658,7 @@ PnkApricornDesc:
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 SlowpokeTailDesc:
 	db   "Very tasty. Sell"
@@ -666,7 +666,7 @@ SlowpokeTailDesc:
 
 PinkBowDesc:
 	db   "Powers up normal-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 MuscleBandDesc:
 	db   "Slightly boosts"
@@ -678,15 +678,15 @@ RedEyeOrbDesc:
 
 NeverMeltIceDesc:
 	db   "Powers up ice-type"
-	next "moves. (HOLD)@"
+	next "moves. (Hold)@"
 
 MagnetDesc:
 	db   "Boosts electric-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 MiracleBerryDesc:
 	db   "Cures all status"
-	next "problems. (HOLD)@"
+	next "problems. (Hold)@"
 
 PearlDesc:
 	db   "A beautiful pearl."
@@ -702,7 +702,7 @@ EvioliteDesc:
 
 SpellTagDesc:
 	db   "Powers up ghost-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 RageCandyBarDesc:
 	db   "Restores #mon"
@@ -718,7 +718,7 @@ BlueCardDesc:
 
 MiracleSeedDesc:
 	db   "Powers up grass-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 ThickClubDesc:
 	db   "A bone of some"
@@ -750,11 +750,11 @@ RevivalHerbDesc:
 
 HardStoneDesc:
 	db   "Powers up rock-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 LuckyEggDesc:
 	db   "Earns extra Exp."
-	next "points. (HOLD)@"
+	next "points. (Hold)@"
 
 CardKeyDesc:
 	db   "Opens shutters in"
@@ -801,7 +801,7 @@ ChoiceBandDesc:
 
 CharcoalDesc:
 	db   "Powers up fire-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 AmbrosiaDesc:
 	db   "Max stats and"
@@ -809,7 +809,7 @@ AmbrosiaDesc:
 
 ScopeLensDesc:
 	db   "Raises critical"
-	next "hit ratio. (HOLD)@"
+	next "hit ratio. (Hold)@"
 
 TeruSama12Desc:
 	db   "?@"
@@ -819,18 +819,18 @@ TeruSama13Desc:
 
 MetalCoatDesc:
 	db   "Powers up steel-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 DragonFangDesc:
 	db   "Powers up dragon-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 TeruSama14Desc:
 	db   "?@"
 
 LeftoversDesc:
 	db   "Restores HP during"
-	next "battle. (HOLD)@"
+	next "battle. (Hold)@"
 
 TeruSama15Desc:
 	db   "?@"
@@ -843,11 +843,11 @@ TeruSama17Desc:
 
 MysteryBerryDesc:
 	db   "A self-restore"
-	next "for PP. (HOLD)@"
+	next "for PP. (Hold)@"
 
 DragonScaleDesc:
 	db   "Powers up dragon-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 BerserkGeneDesc:
 	db   "Boosts critical"
@@ -872,7 +872,7 @@ HeavyBallDesc:
 
 FlowerMailDesc:
 	db   "Flower-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 LevelBallDesc:
 	db   "A Ball for lower-"
@@ -919,7 +919,7 @@ SunStoneDesc:
 
 PolkadotBowDesc:
 	db   "Powers up fairy-"
-	next "type moves. (HOLD)@"
+	next "type moves. (Hold)@"
 
 TeruSama22Desc:
 	db   "?@"
@@ -960,11 +960,11 @@ BrickPieceDesc:
 
 SurfMailDesc:
 	db   "LAPRAS-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 LiteBlueMailDesc:
 	db   "Dratini-print"
-	next "Mail. (HOLD)@"
+	next "Mail. (Hold)@"
 
 PortraitMailDesc:
 	db   "Mail featuring the"
@@ -972,27 +972,27 @@ PortraitMailDesc:
 
 LovelyMailDesc:
 	db   "Heart-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 EonMailDesc:
 	db   "Eevee-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 MorphMailDesc:
 	db   "Ditto-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 BlueSkyMailDesc:
 	db   "Sky-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 MusicMailDesc:
 	db   "Natu-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 MirageMailDesc:
 	db   "Mew-print Mail."
-	next "(HOLD)@"
+	next "(Hold)@"
 
 TeruSama25Desc:
 	db   "?@"

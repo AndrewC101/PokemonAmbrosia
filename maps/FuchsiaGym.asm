@@ -43,17 +43,6 @@ FuchsiaGymJanineScript:
 	waitsfx
 	setflag ENGINE_SOULBADGE
 .FightDone:
-	checkevent EVENT_GOT_TM06_TOXIC
-	iftrue .AfterTM
-	writetext JanineText_ToxicSpeech
-	promptbutton
-	verbosegiveitem TM_TOXIC
-	setevent EVENT_GOT_TM06_TOXIC
-	writetext JanineText_ApplyMyself
-	waitbutton
-    closetext
-    end
-.AfterTM:
 	writetext JanineText_ApplyMyself
 	waitbutton
     closetext

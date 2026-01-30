@@ -7,6 +7,7 @@
 	const POWERPLANT_MANAGER
 	const POWERPLANT_FOREST
 	const POWERPLANT_ZAPDOS
+	const POWERPLANT_ITEMBALL
 
 PowerPlant_MapScripts:
 	def_scene_scripts
@@ -172,20 +173,6 @@ PowerPlantManager:
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 .ReturnedMachinePart:
-	checkevent EVENT_GOT_TM07_ZAP_CANNON
-	iftrue .GotZapCannon
-	writetext PowerPlantManagerTakeThisTMText
-	promptbutton
-	verbosegiveitem TM_BODY_SLAM
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM07_ZAP_CANNON
-	writetext PowerPlantManagerTM07IsZapCannonText
-	waitbutton
-.NoRoom:
-	closetext
-	end
-
-.GotZapCannon:
 	writetext PowerPlantManagerMyBelovedGeneratorText
 	waitbutton
 	closetext
@@ -402,6 +389,9 @@ PowerPlantManagerMyBelovedGeneratorText:
 	cont "generator."
 	done
 
+PowerPlantBodySlam:
+	itemball TM_BODY_SLAM
+
 PowerPlant_MapEvents:
 	db 0, 0 ; filler
 
@@ -425,3 +415,4 @@ PowerPlant_MapEvents:
 	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
 	object_event  5,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
 	object_event 17, 17, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ZapdosScript, EVENT_CAUGHT_ZAPDOS
+	object_event 34,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PowerPlantBodySlam, EVENT_BODY_SLAM

@@ -41,13 +41,14 @@ CeladonGymErikaScript:
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
 .FightDone:
-	checkevent EVENT_GOT_TM19_GIGA_DRAIN
-	iftrue .GotGigaDrain
-	writetext ErikaExplainTMText
-	promptbutton
-	verbosegiveitem TM_GIGA_DRAIN
-	iffalse .GotGigaDrain
-	setevent EVENT_GOT_TM19_GIGA_DRAIN
+	writetext ErikaAfterBattleText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextErika
+	nooryes
+	iftrue .rematch
+	writetext RematchRefuseTextErika
 	waitbutton
 	closetext
 	end
@@ -60,18 +61,6 @@ CeladonGymErikaScript:
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
-	end
-.GotGigaDrain:
-	writetext ErikaAfterBattleText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextErika
-	nooryes
-	iftrue .rematch
-	writetext RematchRefuseTextErika
-	waitbutton
-	closetext
 	end
 
 TrainerLassMichelle:

@@ -175,7 +175,7 @@ Route2DiglettsCaveSign:
 	jumptext Route2DiglettsCaveSignText
 
 Route2DireHit:
-	itemball RARE_CANDY
+	itemball TM_GIGA_DRAIN
 
 Route2MaxPotion:
 	itemball QUICK_CLAW

@@ -1075,6 +1075,7 @@ TentacruelEvosAttacks:
 	db 35, SLUDGE_BOMB
 	db 38, RAPID_SPIN
 	db 40, SCALD
+	db 45, RECOVER
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -2262,6 +2263,7 @@ MewEvosAttacks:
 	db 55, NASTY_PLOT
 	db 55, SWORDS_DANCE
 	db 60, BATON_PASS
+	db 70, AGILITY
 	db 80, PSYBLAST
 	db 0 ; no more level-up moves
 

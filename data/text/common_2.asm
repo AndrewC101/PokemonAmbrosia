@@ -1663,7 +1663,7 @@ _WallaceText1::
 	prompt
 
 _WallaceText2::
-	text "To those nobel"
+	text "To those noble"
 	line "denizens on Johto."
 	para "You have nothing"
 	line "to fear."

@@ -2,10 +2,10 @@
 
 AsleepTreeMonsNite:
 	db VENIPEDE
-	db METAPOD
+	db WHIRLIPEDE
 	db BUTTERFREE
 	db VENIPEDE
-	db METAPOD
+	db WHIRLIPEDE
 	db HERACROSS
 	db STARLY
 	db EKANS

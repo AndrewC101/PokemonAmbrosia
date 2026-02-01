@@ -23,8 +23,8 @@ PokemonPicPointers::
 	dba_pic BlastoiseBackpic
 	dba_pic VenipedeFrontpic
 	dba_pic VenipedeBackpic
-	dba_pic MetapodFrontpic
-	dba_pic MetapodBackpic
+	dba_pic WhirlipedeFrontpic
+	dba_pic WhirlipedeBackpic
 	dba_pic ButterfreeFrontpic
 	dba_pic ButterfreeBackpic
 	dba_pic HonedgeFrontpic

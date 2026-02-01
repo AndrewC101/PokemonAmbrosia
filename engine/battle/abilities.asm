@@ -19,7 +19,7 @@ SturdyPokemon:
     db BLASTOISE
     db FERROSEED
     db FERROTHORN
-    db METAPOD
+    db WHIRLIPEDE
     db HONEDGE
     db DOUBLADE
     db PINSIR

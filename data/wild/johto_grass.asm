@@ -371,7 +371,7 @@ JohtoGrassWildMons:
 	; morn
 	db 17, BUNEARY
 	db 18, STARAVIA
-	db 20, METAPOD
+	db 20, WHIRLIPEDE
 	db 21, TEDDIURSA
 	db 22, SCYTHER
 	db 22, HERACROSS

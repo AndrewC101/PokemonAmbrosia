@@ -29,7 +29,7 @@
 	const WARTORTLE  ; 08
 	const BLASTOISE  ; 09
 	const VENIPEDE   ; 0a
-	const METAPOD    ; 0b
+	const WHIRLIPEDE    ; 0b
 	const BUTTERFREE ; 0c
 	const HONEDGE    ; 0d
 	const DOUBLADE   ; 0e

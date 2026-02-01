@@ -164,7 +164,7 @@ BlastoiseEvosAttacks:
 	db 0 ; no more level-up moves
 
 VenipedeEvosAttacks:
-	db EVOLVE_LEVEL, 20, METAPOD
+	db EVOLVE_LEVEL, 20, WHIRLIPEDE
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 10, LEECH_LIFE
@@ -178,7 +178,7 @@ VenipedeEvosAttacks:
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
-MetapodEvosAttacks:
+WhirlipedeEvosAttacks:
 	db EVOLVE_LEVEL, 30, BUTTERFREE
 	db 0 ; no more evolutions
 	db 1, POISON_STING

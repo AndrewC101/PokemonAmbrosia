@@ -12,7 +12,7 @@ KantoMonSpecials:
 	db  65 ; WARTORTLE
 	db  85 ; BLASTOISE
 	db  20 ; VENIPEDE
-	db  25 ; METAPOD
+	db  25 ; WHIRLIPEDE
 	db  80 ; BUTTERFREE
 	db  20 ; HONEDGE
 	db  25 ; DOUBLADE

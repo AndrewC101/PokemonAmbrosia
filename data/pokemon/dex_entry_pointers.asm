@@ -11,7 +11,7 @@ PokedexDataPointerTable:
 	dw WartortlePokedexEntry
 	dw BlastoisePokedexEntry
 	dw VenipedePokedexEntry
-	dw MetapodPokedexEntry
+	dw WhirlipedePokedexEntry
 	dw ButterfreePokedexEntry
 	dw HonedgePokedexEntry
 	dw DoubladePokedexEntry

@@ -139,7 +139,7 @@ AlphabeticalPokedexOrder:
 	db MEOWTH
 	db METAGROSS
 	db METANG
-	db METAPOD
+	db WHIRLIPEDE
 	db MEW
 	db MEWTWO
 	db MILOTIC

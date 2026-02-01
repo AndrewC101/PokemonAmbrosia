@@ -37,7 +37,7 @@ NewPokedexOrder:
 	db RIOLU
 	db LUCARIO
 	db VENIPEDE
-	db METAPOD
+	db WHIRLIPEDE
 	db BUTTERFREE
 	db HONEDGE
 	db DOUBLADE

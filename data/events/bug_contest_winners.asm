@@ -21,8 +21,8 @@ BugContestantPointers:
 
 BugContestant_BugCatcherDon:
 	db BUG_CATCHER, DON
-	dbw METAPOD,     300
-	dbw METAPOD,    285
+	dbw WHIRLIPEDE,     300
+	dbw WHIRLIPEDE,    285
 	dbw VENIPEDE,   226
 
 BugContestant_BugCatcherEd:
@@ -53,19 +53,19 @@ BugContestant_CamperBarry:
 	db CAMPER, BARRY
 	dbw PINSIR,     366
 	dbw LARVESTA,    389
-	dbw METAPOD,     314
+	dbw WHIRLIPEDE,     314
 
 BugContestant_PicnickerCindy:
 	db PICNICKER, CINDY
 	dbw BUTTERFREE, 341
-	dbw METAPOD,    301
+	dbw WHIRLIPEDE,    301
 	dbw VENIPEDE,   264
 
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, JOSH
 	dbw SCYTHER,    326
 	dbw BUTTERFREE, 292
-	dbw METAPOD,    282
+	dbw WHIRLIPEDE,    282
 
 BugContestant_YoungsterSamuel:
 	db YOUNGSTER, SAMUEL
@@ -77,4 +77,4 @@ BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP
 	dbw LARVESTA,    367
 	dbw JOLTIK,      254
-	dbw METAPOD,     259
+	dbw WHIRLIPEDE,     259

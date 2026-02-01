@@ -12,7 +12,7 @@ IconPointers:
 	dw WartortleIcon
 	dw BlastoiseIcon
 	dw VenipedeIcon
-	dw MetapodIcon
+	dw WhirlipedeIcon
 	dw ButterfreeIcon
 	dw HonedgeIcon
 	dw DoubladeIcon

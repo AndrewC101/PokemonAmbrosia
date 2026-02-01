@@ -108,7 +108,7 @@ AI_SturdyPokemon:
     db BLASTOISE
     db FERROSEED
     db FERROTHORN
-    db METAPOD
+    db WHIRLIPEDE
     db LARVITAR
     db PUPITAR
     db HONEDGE

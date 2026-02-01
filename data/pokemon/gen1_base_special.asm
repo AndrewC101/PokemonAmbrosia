@@ -13,7 +13,7 @@ KantoMonSpecials:
 	db  85 ; BLASTOISE
 	db  20 ; VENIPEDE
 	db  25 ; WHIRLIPEDE
-	db  80 ; BUTTERFREE
+	db  80 ; SCOLIPEDE
 	db  20 ; HONEDGE
 	db  25 ; DOUBLADE
 	db  45 ; AEGISLASH

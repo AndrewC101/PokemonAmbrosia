@@ -12,7 +12,7 @@ PokedexDataPointerTable:
 	dw BlastoisePokedexEntry
 	dw VenipedePokedexEntry
 	dw WhirlipedePokedexEntry
-	dw ButterfreePokedexEntry
+	dw ScolipedePokedexEntry
 	dw HonedgePokedexEntry
 	dw DoubladePokedexEntry
 	dw AegislashPokedexEntry

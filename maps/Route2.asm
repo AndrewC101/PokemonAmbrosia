@@ -113,9 +113,9 @@ Route2FieldMon6Script:
 
 Route2FieldMon7Script:
 	faceplayer
-	cry BUTTERFREE
+	cry SCOLIPEDE
 	pause 15
-	loadwildmon BUTTERFREE, 60
+	loadwildmon SCOLIPEDE, 60
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

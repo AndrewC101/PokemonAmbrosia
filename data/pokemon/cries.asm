@@ -17,7 +17,7 @@ PokemonCries::
 	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
 	mon_cry CRY_CATERPIE,     80,  160 ; VENIPEDE
 	mon_cry CRY_METAPOD,    -100,  120 ; WHIRLIPEDE
-	mon_cry CRY_CATERPIE,     30,  200 ; BUTTERFREE
+	mon_cry CRY_CATERPIE,     30,  200 ; SCOLIPEDE
 	mon_cry CRY_AMPHAROS,    100,  200 ; HONEDGE
 	mon_cry CRY_AMPHAROS,      0,  200 ; DOUBLADE
 	mon_cry CRY_AMPHAROS,   -300,  250 ; AEGISLASH

@@ -179,7 +179,7 @@ VenipedeEvosAttacks:
 	db 0 ; no more level-up moves
 
 WhirlipedeEvosAttacks:
-	db EVOLVE_LEVEL, 30, BUTTERFREE
+	db EVOLVE_LEVEL, 30, SCOLIPEDE
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 10, LEECH_LIFE
@@ -193,7 +193,7 @@ WhirlipedeEvosAttacks:
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
-ButterfreeEvosAttacks:
+ScolipedeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TOXIC_SPIKES
 	db 10, LEECH_LIFE

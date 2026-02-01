@@ -4726,7 +4726,7 @@ SwitchInEffects:
     jp z, .spdUp
     cp VENIPEDE
     jp z, .spdUp
-    cp BUTTERFREE
+    cp SCOLIPEDE
     jp z, .scolipede
 
     cp ENTEI

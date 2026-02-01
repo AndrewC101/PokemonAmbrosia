@@ -1,6 +1,6 @@
 ArnieMonIsSoCuteText:
 	text "I'm always with my"
-	line "Butterfree."
+	line "Yanmega."
 
 	para "He is my oldest"
 	line "and dearest"
@@ -70,7 +70,7 @@ ArnieHaventSeenRareMonText:
 	para "I don't need them."
 	para "All I need in life"
 	line "is my one and only"
-	cont "friend Butterfree."
+	cont "friend Yanmega."
 	para "I need nothing"
 	line "else!"
 	done

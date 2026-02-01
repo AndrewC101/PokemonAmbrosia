@@ -1,4 +1,4 @@
-	db BUTTERFREE ; 012
+	db SCOLIPEDE ; 012
 
 	db  60, 100, 89, 114, 85,  69
 	;   hp  atk  def  spd  sat  sdf
@@ -11,7 +11,7 @@
 	db 100 ; unknown 1
 	db 5 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/butterfree/front.dimensions"
+	INCBIN "gfx/pokemon/scolipede/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups

@@ -13,7 +13,7 @@ IconPointers:
 	dw BlastoiseIcon
 	dw VenipedeIcon
 	dw WhirlipedeIcon
-	dw ButterfreeIcon
+	dw ScolipedeIcon
 	dw HonedgeIcon
 	dw DoubladeIcon
 	dw AegislashIcon

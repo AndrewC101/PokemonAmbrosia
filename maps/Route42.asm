@@ -278,9 +278,9 @@ Route42FieldMon3Script:
 
 Route42FieldMon4Script:
 	faceplayer
-	cry BUTTERFREE
+	cry SCOLIPEDE
 	pause 15
-	loadwildmon BUTTERFREE, 33
+	loadwildmon SCOLIPEDE, 33
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

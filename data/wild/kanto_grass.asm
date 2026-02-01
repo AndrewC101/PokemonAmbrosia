@@ -201,7 +201,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, BUTTERFREE
+	db 16, WHIRLIPEDE
 	db 16, STARAVIA
 	db 21, JOLTIK
 	db 21, BUNEARY
@@ -209,7 +209,7 @@ KantoGrassWildMons:
 	db 25, HERACROSS
 	db 36, STARAPTOR
 	; day
-	db 16, BUTTERFREE
+	db 16, WHIRLIPEDE
 	db 16, STARAVIA
 	db 21, JOLTIK
 	db 21, BUNEARY

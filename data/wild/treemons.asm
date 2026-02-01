@@ -113,7 +113,7 @@ TreeMonSet_Forest:
 	db 15, HOOTHOOT,     10
 	db 15, HOOTHOOT,     10
 	db 10, NOCTOWL,    10
-	db  5, BUTTERFREE, 10
+	db  5, WHIRLIPEDE, 10
 	db  5, HERACROSS,   10
 	db -1
 ; rare

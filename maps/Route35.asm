@@ -527,12 +527,12 @@ BugCatcherArnieSeenText:
 
 BugCatcherArnieBeatenText:
 	text "You did well"
-	line "Butterfree."
+	line "my friend."
 	done
 
 BugCatcherArnieAfterBattleText:
 	text "I know my"
-	line "Butterfree can"
+	line "#mon can"
 	cont "get even stronger!"
 	done
 

@@ -23,7 +23,7 @@ AlphabeticalPokedexOrder:
 	db BRELOOM
 	db BULBASAUR
 	db BUNEARY
-	db BUTTERFREE
+	db SCOLIPEDE
 	db VENIPEDE
 	db CELEBI
 	db CHANDELURE

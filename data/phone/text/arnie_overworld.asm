@@ -1,5 +1,5 @@
 ArnieAskNumber1Text:
-	text "This Butterfree is"
+	text "This Yanmega is"
 	line "my oldest, dearest"
 	cont "friend."
 	para "I love him more"
@@ -17,7 +17,7 @@ ArnieAskNumber1Text:
 	done
 
 ArnieAskNumber2Text:
-	text "This Butterfree is"
+	text "This Yanmega is"
 	line "my oldest, dearest"
 	cont "friend."
 	para "I love him more"

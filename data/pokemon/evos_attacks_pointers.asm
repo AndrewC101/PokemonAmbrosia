@@ -13,7 +13,7 @@ EvosAttacksPointers::
 	dw BlastoiseEvosAttacks
 	dw VenipedeEvosAttacks
 	dw WhirlipedeEvosAttacks
-	dw ButterfreeEvosAttacks
+	dw ScolipedeEvosAttacks
 	dw HonedgeEvosAttacks
 	dw DoubladeEvosAttacks
 	dw AegislashEvosAttacks

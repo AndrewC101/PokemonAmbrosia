@@ -16,7 +16,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   TEAL    ; BLASTOISE
 	icon_pals PURPLE,  RED    ; VENIPEDE
 	icon_pals PURPLE,  RED    ; WHIRLIPEDE
-	icon_pals PURPLE,  RED    ; BUTTERFREE
+	icon_pals PURPLE,  RED    ; SCOLIPEDE
 	icon_pals BLUE,   GOLD    ; HONEDGE
 	icon_pals BLUE,   GOLD    ; DOUBLADE
 	icon_pals BLUE,   GOLD    ; AEGISLASH

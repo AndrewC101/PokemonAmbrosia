@@ -30,7 +30,7 @@
 	const BLASTOISE  ; 09
 	const VENIPEDE   ; 0a
 	const WHIRLIPEDE    ; 0b
-	const BUTTERFREE ; 0c
+	const SCOLIPEDE ; 0c
 	const HONEDGE    ; 0d
 	const DOUBLADE   ; 0e
 	const AEGISLASH  ; 0f

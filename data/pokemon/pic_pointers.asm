@@ -25,8 +25,8 @@ PokemonPicPointers::
 	dba_pic VenipedeBackpic
 	dba_pic WhirlipedeFrontpic
 	dba_pic WhirlipedeBackpic
-	dba_pic ButterfreeFrontpic
-	dba_pic ButterfreeBackpic
+	dba_pic ScolipedeFrontpic
+	dba_pic ScolipedeBackpic
 	dba_pic HonedgeFrontpic
 	dba_pic HonedgeBackpic
 	dba_pic DoubladeFrontpic

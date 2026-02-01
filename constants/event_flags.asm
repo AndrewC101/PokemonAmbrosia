@@ -453,6 +453,8 @@
     const EVENT_ROUTE_6_AMBROSIA
     const EVENT_BEAT_LUTHOR
     const EVENT_BODY_SLAM
+    const EVENT_CAUGHT_RAIKOU
+    const EVENT_CAUGHT_ENTEI
 
     ; ======================================
     ; DevNote - here

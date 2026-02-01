@@ -7039,47 +7039,7 @@ LoadEnemyMon:
 
 ; Wild DVs
 ; Here's where the fun starts
-
-; Roaming monsters (Entei, Raikou) work differently
-; They have their own structs, which are shorter than normal
 	ld a, [wBattleType]
-	cp BATTLETYPE_ROAMING
-	jr nz, .NotRoaming
-
-; Grab HP
-	farcall GetRoamMonHP
-	ld a, [hl]
-; Check if the HP has been initialized
-	and a
-; We'll do something with the result in a minute
-	push af
-
-; Grab DVs
-	farcall GetRoamMonDVs
-	inc hl
-	ld a, [hld]
-	ld c, a
-	ld b, [hl]
-
-; Get back the result of our check
-	pop af
-; If the RoamMon struct has already been initialized, we're done
-	jr nz, .UpdateDVs
-
-; If it hasn't, we need to initialize the DVs
-; (HP is initialized at the end of the battle)
-	farcall GetRoamMonDVs
-	inc hl
-	call BattleRandom
-	ld [hld], a
-	ld c, a
-	call BattleRandom
-	ld [hl], a
-	ld b, a
-; We're done with DVs
-	jr .UpdateDVs
-
-.NotRoaming:
 ; Register a contains wBattleType
 
 ; Forced shiny battle type
@@ -7213,27 +7173,7 @@ LoadEnemyMon:
 	ld a, [wEnemyMonMaxHP + 1]
 	ld [hl], a
 
-; ..unless it's a RoamMon
 	ld a, [wBattleType]
-	cp BATTLETYPE_ROAMING
-	jr nz, .Moves
-
-; Grab HP
-	farcall GetRoamMonHP
-	ld a, [hl]
-; Check if it's been initialized again
-	and a
-	jr z, .InitRoamHP
-; Update from the struct if it has
-	ld a, [hl]
-	ld [wEnemyMonHP + 1], a
-	jr .Moves
-
-.InitRoamHP:
-; HP only uses the lo byte in the RoamMon struct since
-; Raikou and Entei will have < 256 hp at level 40
-	ld a, [wEnemyMonHP + 1]
-	ld [hl], a
 	jr .Moves
 
 .OpponentParty:
@@ -9116,7 +9056,6 @@ ClearFailures:
 	ret
 
 CleanUpBattleRAM:
-	call BattleEnd_HandleRoamMons
 	xor a
 	ld [wStatsScreenFlags], a
 	ld [wBattleWeather], a
@@ -9161,38 +9100,6 @@ ShowLinkBattleParticipantsAfterEnd:
 	ld [hl], a
 	call ClearTilemap
 	farcall _ShowLinkBattleParticipants
-	ret
-
-BattleEnd_HandleRoamMons:
-	ld a, [wBattleType]
-	cp BATTLETYPE_ROAMING
-	jr nz, .not_roaming
-	ld a, [wBattleResult]
-	and $f
-	jr z, .caught_or_defeated_roam_mon ; WIN
-	farcall GetRoamMonHP
-	ld a, [wEnemyMonHP + 1]
-	ld [hl], a
-	jr .update_roam_mons
-
-.caught_or_defeated_roam_mon
-	farcall GetRoamMonHP
-	ld [hl], 0
-	farcall GetRoamMonMapGroup
-	ld [hl], GROUP_N_A
-	farcall GetRoamMonMapNumber
-	ld [hl], MAP_N_A
-	farcall GetRoamMonSpecies
-	ld [hl], 0
-	ret
-
-.not_roaming
-	call BattleRandom
-	and $f
-	ret nz
-
-.update_roam_mons
-	callfar UpdateRoamMons
 	ret
 
 InitBattleDisplay:

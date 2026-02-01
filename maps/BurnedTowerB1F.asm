@@ -81,7 +81,6 @@ ReleaseTheBeasts:
 	special RestartMapMusic
 	setscene SCENE_FINISHED
 	setevent EVENT_RELEASED_THE_BEASTS
-	special InitRoamMons
 	setval RAIKOU
 	special UnusedSetSeenMon
 	setval ENTEI

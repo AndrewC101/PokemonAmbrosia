@@ -6,6 +6,8 @@
 	const RUINSOFALPHINNERCHAMBER_FIELDMON_1
 	const RUINSOFALPHINNERCHAMBER_FIELDMON_2
 	const RUINSOFALPHINNERCHAMBER_FIELDMON_3
+	const RUINSOFALPHINNERCHAMBER_ARCEUS
+	const RUINSOFALPHINNERCHAMBER_ENTEI
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -26,6 +28,22 @@ RuinsOfAlphInnerChamber_MapScripts:
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_1
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_2
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_3
+
+    disappear RUINSOFALPHINNERCHAMBER_ENTEI
+    checkevent EVENT_RELEASED_THE_BEASTS
+    iffalse .end
+    checkevent EVENT_SOLVED_AERODACTYL_PUZZLE
+    iffalse .end
+    checkevent EVENT_SOLVED_KABUTO_PUZZLE
+    iffalse .end
+    checkevent EVENT_SOLVED_OMANYTE_PUZZLE
+    iffalse .end
+    checkevent EVENT_SOLVED_HO_OH_PUZZLE
+    iffalse .end
+    checkevent EVENT_CAUGHT_ENTEI
+    iftrue .end
+    appear RUINSOFALPHINNERCHAMBER_ENTEI
+.end
     endcallback
 
 .StrangePresenceScript:
@@ -137,6 +155,35 @@ arceusStatueText:
 	line "weathered to read."
 	done
 
+EnteiScript:
+	cry ENTEI
+	pause 15
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ENTEI, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ENTEI, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ENTEI, 50
+.begin
+	startbattle
+	reloadmapafterbattle
+    setval ENTEI
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_ENTEI
+	disappear RUINSOFALPHINNERCHAMBER_ENTEI
+	end
+
 RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler
 
@@ -181,3 +228,4 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event  4, 24, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon2Script, EVENT_FIELD_MON_2
 	object_event 16,  1, SPRITE_SOLOSIS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 10, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ArceusStatueScript, -1
+	object_event 8, 11, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EnteiScript, EVENT_FIELD_MON_4

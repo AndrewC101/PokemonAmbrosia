@@ -18,12 +18,11 @@ SometimesFleeMons:
 
 OftenFleeMons:
 	db MARILL
+	db RALTS
 	db TOGEPI
 	db COTTONEE
 	db TEDDIURSA
 	db -1
 
 AlwaysFleeMons:
-	db RAIKOU
-	db ENTEI
 	db -1

@@ -191,8 +191,6 @@ PlayBattleMusic:
 	cp BATTLETYPE_SUICUNE
 	ld de, MUSIC_SUICUNE_BATTLE
 	jp z, .done
-	cp BATTLETYPE_ROAMING
-	jp z, .done
 
     ; is this kanto
 	farcall RegionCheck

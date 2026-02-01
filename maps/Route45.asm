@@ -13,7 +13,7 @@
     const ROUTE45_FIELDMON_3
     const ROUTE45_FIELDMON_4
     const ROUTE45_FIELDMON_5
-    const ROUTE45_FIELDMON_6
+    const ROUTE45_RAIKOU
     const ROUTE45_FIELDMON_7
 
 Route45_MapScripts:
@@ -32,8 +32,15 @@ Route45_MapScripts:
     appear ROUTE45_FIELDMON_3
     appear ROUTE45_FIELDMON_4
     appear ROUTE45_FIELDMON_5
-    appear ROUTE45_FIELDMON_6
     appear ROUTE45_FIELDMON_7
+
+    disappear ROUTE45_RAIKOU
+    checkevent EVENT_RELEASED_THE_BEASTS
+    iffalse .end
+    checkevent EVENT_CAUGHT_RAIKOU
+    iftrue .end
+    appear ROUTE45_RAIKOU
+.end
     endcallback
 
 TrainerBlackbeltKenji:
@@ -303,13 +310,6 @@ HikerMichaelSeenText:
 
 	para "I thought I saw"
 	line "a TM."
-
-	para "Then a huge and"
-	line "rapid Garchomp"
-	cont "attacked me."
-
-	para "I barely"
-	line "escaped."
 	done
 
 HikerMichaelBeatenText:
@@ -320,10 +320,6 @@ HikerMichaelBeatenText:
 HikerMichaelAfterBattleText:
 	text "Watch out down"
 	line "there kid."
-
-	para "That Garchomp"
-	line "isn't messing"
-	cont "around."
 	done
 
 HikerParry3SeenText:
@@ -608,11 +604,34 @@ Route45FieldMon5Script:
     disappear ROUTE45_FIELDMON_5
     end
 
-Route45FieldMon6Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_6, Route45PokemonAttacksText, 68, 0, .script
-.script
-    disappear ROUTE45_FIELDMON_6
-    end
+RaikouScript:
+	cry RAIKOU
+	pause 15
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAIKOU, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAIKOU, 60
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon RAIKOU, 50
+.begin
+	startbattle
+	reloadmapafterbattle
+    setval RAIKOU
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_RAIKOU
+	disappear ROUTE45_RAIKOU
+	end
 
 Route45FieldMon7Script:
 	faceplayer
@@ -658,5 +677,5 @@ Route45_MapEvents:
 	object_event 10, 40, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, Route45FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 12, 56, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 6,  72, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route45FieldMon5Script, EVENT_FIELD_MON_5
-	object_event 14, 82, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, Route45FieldMon6Script, EVENT_FIELD_MON_6
+	object_event 14, 82, SPRITE_RAIKOU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, RaikouScript, EVENT_FIELD_MON_6
 	object_event  8, 86, SPRITE_PONYTA, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route45FieldMon7Script, EVENT_FIELD_MON_7

@@ -14,7 +14,7 @@ MonMenuIconPals:
 	icon_pals BLUE,   TEAL    ; SQUIRTLE
 	icon_pals BLUE,   TEAL    ; WARTORTLE
 	icon_pals BLUE,   TEAL    ; BLASTOISE
-	icon_pals PURPLE,  RED    ; CATERPIE
+	icon_pals PURPLE,  RED    ; VENIPEDE
 	icon_pals PURPLE,  RED    ; METAPOD
 	icon_pals PURPLE,  RED    ; BUTTERFREE
 	icon_pals BLUE,   GOLD    ; HONEDGE

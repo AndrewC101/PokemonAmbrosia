@@ -11,7 +11,7 @@ IconPointers:
 	dw SquirtleIcon
 	dw WartortleIcon
 	dw BlastoiseIcon
-	dw CaterpieIcon
+	dw VenipedeIcon
 	dw MetapodIcon
 	dw ButterfreeIcon
 	dw HonedgeIcon

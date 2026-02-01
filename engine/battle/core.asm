@@ -4724,7 +4724,7 @@ SwitchInEffects:
     jp z, .spdUp
     cp RAPIDASH
     jp z, .spdUp
-    cp CATERPIE
+    cp VENIPEDE
     jp z, .spdUp
     cp BUTTERFREE
     jp z, .scolipede

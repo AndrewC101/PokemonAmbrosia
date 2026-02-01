@@ -11,7 +11,7 @@ KantoMonSpecials:
 	db  50 ; SQUIRTLE
 	db  65 ; WARTORTLE
 	db  85 ; BLASTOISE
-	db  20 ; CATERPIE
+	db  20 ; VENIPEDE
 	db  25 ; METAPOD
 	db  80 ; BUTTERFREE
 	db  20 ; HONEDGE

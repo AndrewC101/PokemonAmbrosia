@@ -2059,7 +2059,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (4)
 	db "Wade@", TRAINERTYPE_NORMAL
-	db  7, CATERPIE
+	db  7, VENIPEDE
 	db  9, JOLTIK
 	db  10, LARVESTA
 	db -1 ; end

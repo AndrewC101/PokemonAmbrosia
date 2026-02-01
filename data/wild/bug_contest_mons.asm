@@ -1,6 +1,6 @@
 ContestMons:
 	;   %, species,   min, max
-	db 20, CATERPIE,    7, 18
+	db 20, VENIPEDE,    7, 18
 	db 20, LARVESTA,      7, 18
 	db 10, METAPOD,     9, 18
 	db 10, METAPOD,      9, 18

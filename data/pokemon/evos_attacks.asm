@@ -163,7 +163,7 @@ BlastoiseEvosAttacks:
 	db 60, SHELL_SMASH
 	db 0 ; no more level-up moves
 
-CaterpieEvosAttacks:
+VenipedeEvosAttacks:
 	db EVOLVE_LEVEL, 20, METAPOD
 	db 0 ; no more evolutions
 	db 1, POISON_STING

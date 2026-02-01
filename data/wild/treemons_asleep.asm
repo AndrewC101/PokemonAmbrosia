@@ -1,10 +1,10 @@
 ; Used by CheckSleepingTreeMon
 
 AsleepTreeMonsNite:
-	db CATERPIE
+	db VENIPEDE
 	db METAPOD
 	db BUTTERFREE
-	db CATERPIE
+	db VENIPEDE
 	db METAPOD
 	db HERACROSS
 	db STARLY

@@ -15,7 +15,7 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,     96,  192 ; SQUIRTLE
 	mon_cry CRY_SQUIRTLE,     32,  192 ; WARTORTLE
 	mon_cry CRY_BLASTOISE,     0,  256 ; BLASTOISE
-	mon_cry CRY_CATERPIE,     80,  160 ; CATERPIE
+	mon_cry CRY_CATERPIE,     80,  160 ; VENIPEDE
 	mon_cry CRY_METAPOD,    -100,  120 ; METAPOD
 	mon_cry CRY_CATERPIE,     30,  200 ; BUTTERFREE
 	mon_cry CRY_AMPHAROS,    100,  200 ; HONEDGE

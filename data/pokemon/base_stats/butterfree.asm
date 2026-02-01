@@ -1,6 +1,6 @@
 	db BUTTERFREE ; 012
 
-	db  60, 100, 89, 112, 80,  69
+	db  60, 100, 89, 114, 85,  69
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type

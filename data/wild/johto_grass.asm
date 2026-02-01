@@ -598,7 +598,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, CATERPIE
+	db 15, VENIPEDE
 	db 15, HERACROSS
 	; day
 	db 12, SHROOMISH
@@ -606,7 +606,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, CATERPIE
+	db 15, VENIPEDE
 	db 15, SCYTHER
 	; nite
 	db 12, HOOTHOOT
@@ -614,7 +614,7 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, CATERPIE
+	db 15, VENIPEDE
 	db 15, PINSIR
 	end_grass_wildmons
 
@@ -1271,7 +1271,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, CATERPIE
+	db 9, VENIPEDE
 	; day
 	db 3, RATTATA
 	db 3, STARLY
@@ -1279,7 +1279,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, CATERPIE
+	db 9, VENIPEDE
 	; nite
 	db 3, RATTATA
 	db 3, HOOTHOOT
@@ -1287,13 +1287,13 @@ JohtoGrassWildMons:
 	db 4, CLEFAIRY
 	db 5, VULPIX
 	db 5, MURKROW
-	db 9, CATERPIE
+	db 9, VENIPEDE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, CATERPIE
+	db 3, VENIPEDE
 	db 4, STARLY
 	db 5, MEOWTH
 	db 5, BUNEARY
@@ -1301,7 +1301,7 @@ JohtoGrassWildMons:
 	db 7, PIKACHU
 	db 11, STARLY
 	; day
-	db 3, CATERPIE
+	db 3, VENIPEDE
 	db 4, STARLY
 	db 5, MEOWTH
 	db 5, BUNEARY

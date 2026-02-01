@@ -24,7 +24,7 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUNEARY
 	db BUTTERFREE
-	db CATERPIE
+	db VENIPEDE
 	db CELEBI
 	db CHANDELURE
 	db CHANSEY

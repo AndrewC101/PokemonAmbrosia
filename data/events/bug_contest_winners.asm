@@ -23,13 +23,13 @@ BugContestant_BugCatcherDon:
 	db BUG_CATCHER, DON
 	dbw METAPOD,     300
 	dbw METAPOD,    285
-	dbw CATERPIE,   226
+	dbw VENIPEDE,   226
 
 BugContestant_BugCatcherEd:
 	db BUG_CATCHER, ED
 	dbw BUTTERFREE, 286
 	dbw BUTTERFREE, 251
-	dbw CATERPIE,   237
+	dbw VENIPEDE,   237
 
 BugContestant_CooltrainerMNick:
 	db COOLTRAINERM, NICK
@@ -47,7 +47,7 @@ BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, BUG_CATCHER_BENNY
 	dbw BUTTERFREE, 318
 	dbw LARVESTA,     295
-	dbw CATERPIE,   285
+	dbw VENIPEDE,   285
 
 BugContestant_CamperBarry:
 	db CAMPER, BARRY
@@ -59,7 +59,7 @@ BugContestant_PicnickerCindy:
 	db PICNICKER, CINDY
 	dbw BUTTERFREE, 341
 	dbw METAPOD,    301
-	dbw CATERPIE,   264
+	dbw VENIPEDE,   264
 
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, JOSH
@@ -71,7 +71,7 @@ BugContestant_YoungsterSamuel:
 	db YOUNGSTER, SAMUEL
 	dbw LARVESTA,     270
 	dbw PINSIR,     282
-	dbw CATERPIE,   251
+	dbw VENIPEDE,   251
 
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP

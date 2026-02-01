@@ -36,7 +36,7 @@ NewPokedexOrder:
 	db RAICHU
 	db RIOLU
 	db LUCARIO
-	db CATERPIE
+	db VENIPEDE
 	db METAPOD
 	db BUTTERFREE
 	db HONEDGE

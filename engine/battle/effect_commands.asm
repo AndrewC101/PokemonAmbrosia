@@ -7552,10 +7552,6 @@ BattleCommand_CheckStatusImmunity:
 ; ======= Compound Eyes ==========
 ; ================================
 CompoundEyes:
-    cp CATERPIE
-    call z, IncrementB
-    cp BUTTERFREE
-    call z, IncrementB
     cp YANMEGA
     call z, IncrementB
     cp STARYU

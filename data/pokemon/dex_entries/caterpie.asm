@@ -1,9 +1,10 @@
-	db "WORM@" ; species name
-	dw 100, 60 ; height, weight
+	db "Centipede@" ; species name
+	dw 104, 117 ; height, weight
 
-	db   "It crawls into"
-	next "foliage where it"
-	next "hides itself."
+	db   "Leaps onto its"
+	next "prey with a"
+	next "venomous bite."
 
-	page "Has increased"
-	next "Accuracy.@"
+	page "Speed"
+	next "increases upon"
+	next "entering battle.@"

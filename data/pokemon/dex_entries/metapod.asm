@@ -1,5 +1,5 @@
-	db "COCOON@" ; species name
-	dw 204, 220 ; height, weight
+	db "Curlipede@" ; species name
+	dw 311, 1290 ; height, weight
 
 	db   "Inside the cocoon"
 	next "it awaits its"

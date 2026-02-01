@@ -4724,6 +4724,10 @@ SwitchInEffects:
     jp z, .spdUp
     cp RAPIDASH
     jp z, .spdUp
+    cp CATERPIE
+    jp z, .spdUp
+    cp BUTTERFREE
+    jp z, .scolipede
 
     cp ENTEI
     jp z, .atkUp
@@ -4884,6 +4888,9 @@ SwitchInEffects:
 .stealthrock
     farcall StealthRockSwitch
     ret
+.scolipede
+    farcall SpeedUpSwitch
+    ; fallthrough
 .toxicspikes
     farcall ToxicSpikesSwitch
     ret

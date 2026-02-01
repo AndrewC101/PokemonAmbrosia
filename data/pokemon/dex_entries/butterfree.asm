@@ -1,10 +1,10 @@
-	db "BUTTERFLY@" ; species name
-	dw 307, 710 ; height, weight
+	db "Megapede@" ; species name
+	dw 802, 4420 ; height, weight
 
-	db   "It flits from"
-	next "flower to flower,"
-	next "collecting honey."
+	db   "Relentlessly it"
+	next "chases its"
+	next "helpless prey."
 
-	page "Has increased"
-	next "Accuracy. Weak"
-	next "moves boosted.@"
+	page "Speed boost and"
+	next "Toxic Spikes"
+	next "on switch.@"

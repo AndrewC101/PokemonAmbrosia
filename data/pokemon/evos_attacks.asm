@@ -164,32 +164,45 @@ BlastoiseEvosAttacks:
 	db 0 ; no more level-up moves
 
 CaterpieEvosAttacks:
-	db EVOLVE_LEVEL, 7, METAPOD
+	db EVOLVE_LEVEL, 20, METAPOD
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, POISON_STING
+	db 10, LEECH_LIFE
+	db 15, BITE
+	db 21, TOXIC_SPIKES
+	db 23, CRUNCH
+	db 26, BUG_BUZZ
+	db 31, CROSS_POISON
+	db 35, SLUDGE_BOMB
+	db 40, MEGAHORN
+	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
 MetapodEvosAttacks:
-	db EVOLVE_LEVEL, 10, BUTTERFREE
+	db EVOLVE_LEVEL, 30, BUTTERFREE
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 7, HARDEN
+	db 1, POISON_STING
+	db 10, LEECH_LIFE
+	db 15, BITE
+	db 20, TOXIC_SPIKES
+	db 23, CRUNCH
+	db 26, BUG_BUZZ
+	db 31, CROSS_POISON
+	db 35, SLUDGE_BOMB
+	db 40, MEGAHORN
+	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 10, CONFUSION
-	db 12, LEECH_LIFE
-	db 15, POISONPOWDER
-	db 15, STUN_SPORE
-	db 18, SLEEP_POWDER
-	db 20, STICKY_WEB
-	db 23, PSYBEAM
-	db 32, AIR_SLASH
-	db 36, BUG_BUZZ
-	db 40, QUIVER_DANCE
-	db 45, HURRICANE
+	db 1, TOXIC_SPIKES
+	db 10, LEECH_LIFE
+	db 15, BITE
+	db 22, CRUNCH
+	db 25, BUG_BUZZ
+	db 30, CROSS_POISON
+	db 35, SLUDGE_BOMB
+	db 40, MEGAHORN
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 

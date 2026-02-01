@@ -145,7 +145,6 @@ TechnicianPokemon:
     db VENUSAUR
     db MARILL
     db AZUMARILL
-    db BUTTERFREE
     db DRILBUR
     db EXCADRILL
     db -1

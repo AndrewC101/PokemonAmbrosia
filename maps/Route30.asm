@@ -572,9 +572,9 @@ Route30FieldMon6Script:
 	
 Route30FieldMon7Script:
 	faceplayer
-	cry METAPOD
+	cry CATERPIE
 	pause 15
-	loadwildmon METAPOD, 9
+	loadwildmon CATERPIE, 9
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

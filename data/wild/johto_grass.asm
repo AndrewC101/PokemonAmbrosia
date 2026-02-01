@@ -371,7 +371,7 @@ JohtoGrassWildMons:
 	; morn
 	db 17, BUNEARY
 	db 18, STARAVIA
-	db 20, BUTTERFREE
+	db 20, METAPOD
 	db 21, TEDDIURSA
 	db 22, SCYTHER
 	db 22, HERACROSS
@@ -598,15 +598,15 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, PINSIR
-	db 15, SCYTHER
+	db 15, CATERPIE
+	db 15, HERACROSS
 	; day
 	db 12, SHROOMISH
 	db 12, JOLTIK
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
-	db 15, PINSIR
+	db 15, CATERPIE
 	db 15, SCYTHER
 	; nite
 	db 12, HOOTHOOT
@@ -614,8 +614,8 @@ JohtoGrassWildMons:
 	db 14, FERROSEED
 	db 14, YANMA
 	db 15, LARVESTA
+	db 15, CATERPIE
 	db 15, PINSIR
-	db 15, SCYTHER
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -1271,7 +1271,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATTATA
+	db 9, CATERPIE
 	; day
 	db 3, RATTATA
 	db 3, STARLY
@@ -1279,7 +1279,7 @@ JohtoGrassWildMons:
 	db 4, NIDORAN_F
 	db 5, BUNEARY
 	db 5, TEDDIURSA
-	db 9, RATTATA
+	db 9, CATERPIE
 	; nite
 	db 3, RATTATA
 	db 3, HOOTHOOT
@@ -1287,7 +1287,7 @@ JohtoGrassWildMons:
 	db 4, CLEFAIRY
 	db 5, VULPIX
 	db 5, MURKROW
-	db 9, RATTATA
+	db 9, CATERPIE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30

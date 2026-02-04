@@ -377,19 +377,16 @@ EkansEvosAttacks:
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
-    db EVOLVE_LEVEL, 30, KOFFING
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 10, FEINT_ATTACK
-	db 15, HEADBUTT
-	db 20, BITE
-	db 25, TAUNT
-	db 31, CRUNCH
-	db 35, DRAGON_CLAW
-	db 40, DARK_PULSE
-	db 45, DRAGON_PULSE
-	db 50, NASTY_PLOT
-	db 70, DRACO_METEOR
+	db 1, WRAP
+	db 1, LEER
+	db 9, POISON_STING
+	db 15, BITE
+	db 23, GLARE
+	db 28, CRUNCH
+	db 33, CROSS_POISON
+	db 40, HAZE
+	db 45, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
@@ -1622,34 +1619,34 @@ ReuniclusEvosAttacks:
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:
-	db EVOLVE_LEVEL, 50, WEEZING
+	db EVOLVE_LEVEL, 32, WEEZING
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 10, FEINT_ATTACK
-	db 15, HEADBUTT
-	db 20, BITE
-	db 25, TAUNT
-	db 30, CRUNCH
-	db 35, DRAGON_CLAW
-	db 40, DARK_PULSE
-	db 45, DRAGON_PULSE
-	db 51, NASTY_PLOT
-	db 70, DRACO_METEOR
+	db 1, ACID
+	db 1, DISABLE
+	db 1, SMOKESCREEN
+	db 17, SLUDGE
+	db 20, SELFDESTRUCT
+	db 24, WILL_O_WISP
+	db 28, HAZE
+	db 33, SLUDGE_BOMB
+	db 40, DESTINY_BOND
+	db 45, NASTY_PLOT
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
-	db 10, FEINT_ATTACK
-	db 15, HEADBUTT
-	db 20, BITE
-	db 25, TAUNT
-	db 30, CRUNCH
-	db 35, DRAGON_CLAW
-	db 40, DARK_PULSE
-	db 45, DRAGON_PULSE
-	db 50, NASTY_PLOT
-	db 50, TRI_ATTACK
-	db 70, DRACO_METEOR
+	db 1, DISABLE
+	db 1, SMOKESCREEN
+	db 17, SLUDGE
+	db 20, SELFDESTRUCT
+	db 24, WILL_O_WISP
+	db 28, HAZE
+	db 32, SLUDGE_BOMB
+	db 35, TOXIC_SPIKES
+	db 40, DESTINY_BOND
+	db 45, NASTY_PLOT
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 RhyhornEvosAttacks:

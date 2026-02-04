@@ -345,6 +345,11 @@ SpecialAttackDownSwitch:
     call PlayDropAnimation
 	ret
 
+AccuracyDownSwitch:
+    callfar BattleCommand_AccuracyDown
+    call PlayDropAnimation
+	ret
+
 TransformSwitch:
     call ShouldPlayAnim
     ret nc

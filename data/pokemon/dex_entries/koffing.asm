@@ -1,9 +1,10 @@
-	db "Hostile@" ; species name
-	dw 407, 1102 ; height, weight
+	db "POISON GAS@" ; species name
+	dw 200, 20 ; height, weight
 
-	db   "Its two heads"
-	next "disagree and"
-	next "compete for food."
+	db   "Never get close"
+	next "to it when it"
+	next "expels poison."
 
-	page "Sp.Atk boost on"
-	next "defeating foe.@"
+	page "Unleashes a"
+	next "final attack upon"
+	next "being defeated.@"

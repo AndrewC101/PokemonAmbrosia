@@ -116,6 +116,7 @@ MultiScalePokemon:
     db DRAGONITE
     db LUGIA
     db MILOTIC
+    db ARBOK
     db -1
 
 ThickFatPokemon:

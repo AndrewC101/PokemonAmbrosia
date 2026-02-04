@@ -1226,11 +1226,12 @@ Core_LevitatePokemon:
     db GENGAR
     db MISDREAVUS
     db MISMAGIUS
+    db KOFFING
+    db WEEZING
     db LATIAS
     db LATIOS
     db ROTOM
     db UNOWN
-    db WEEZING
     db -1
 
 Core_SpikesImmunePokemon: ; magic guard + levitate
@@ -1251,12 +1252,13 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db GENGAR
     db MISDREAVUS
     db MISMAGIUS
+    db KOFFING
+    db WEEZING
     db LATIAS
     db LATIOS
     db ROTOM
     db MEW
     db DEOXYS
-    db WEEZING
     db -1
 
 Core_RegeneratorPokemon:
@@ -1289,9 +1291,6 @@ Core_GrimPokemon:
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
-    db ARBOK
-    db KOFFING
-    db WEEZING
     db -1
 
 Core_GutsPokemon:
@@ -2564,6 +2563,10 @@ KOBoost:
 ; =====================
 Aftermath:
     call GetOpposingMonCore
+    cp KOFFING
+    jr z, .aftermath
+    cp WEEZING
+    jr z, .aftermath
     cp MAGNEZONE
     jr z, .aftermath
     cp GENGAR
@@ -4690,8 +4693,6 @@ SwitchInEffects:
     jp z, .umbreon
     cp MISMAGIUS
     jp z, .taunt
-    cp WEEZING
-    jp z, .taunt
 
     cp GENESECT
     jp z, .spAtkUp
@@ -4741,12 +4742,17 @@ SwitchInEffects:
     jp z, .atkDown
     cp EKANS
     jp z, .atkDown
+    cp ARBOK
+    jp z, .atkDown
     cp TAUROS
     jp z, .atkDown
     cp STARAPTOR
     jp z, .atkDown
     cp MAWILE
     jp z, .atkDown
+
+    cp WEEZING
+    jp z, .accDown
 
     cp FLAREON
     jp z, .spAtkDown
@@ -4922,15 +4928,15 @@ SwitchInEffects:
 .spAtkUp
     farcall SpecialAttackUpSwitch
 	ret
-.celebi
-    farcall LeechSeedSwitch
-    ; fallthrough
 .naturalCure
     farcall NaturalCureSwitch
     ret
 .leechSeed
     farcall LeechSeedSwitch
     ret
+.celebi
+    farcall LeechSeedSwitch
+    ; fallthrough
 .spDefUp
     farcall SpecialDefenseUpSwitch
 	ret
@@ -4972,6 +4978,9 @@ SwitchInEffects:
 	; fallthrough
 .spAtkDown
     farcall SpecialAttackDownSwitch
+	ret
+.accDown ; DevNote - only Weezing uses this, can remove it if more room needed
+    farcall AccuracyDownSwitch
 	ret
 .defenseMode
     farcall BattleCommand_DefenseUp2

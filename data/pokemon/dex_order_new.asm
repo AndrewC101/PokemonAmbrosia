@@ -59,6 +59,7 @@ NewPokedexOrder:
 	db ROTOM
 	db POLTEGEIST
 	db EKANS
+	db ARBOK
 	db DUNSPARCE
 	db MAREEP
 	db FLAAFFY
@@ -104,6 +105,8 @@ NewPokedexOrder:
 	db SCIZOR
 	db PINSIR
 	db HERACROSS
+	db KOFFING
+	db WEEZING
 	db FERROSEED
 	db FERROTHORN
 	db MAGNEMITE
@@ -224,9 +227,6 @@ NewPokedexOrder:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
-	db ARBOK
-	db KOFFING
-	db WEEZING
 	db ARTICUNO
 	db ZAPDOS
 	db MOLTRES

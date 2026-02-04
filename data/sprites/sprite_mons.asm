@@ -79,7 +79,7 @@ SpriteMons:
 	db ABRA
 	db ARCANINE
 	db POLIWRATH
-	db WEEZING
+	db DITTO
 	db BELLSPROUT
 	db GIBLE
 	db MAMOSWINE
@@ -121,7 +121,7 @@ SpriteMons:
 	db AEGISLASH
 	db MEOWTH
 	db MAGMAR
-	db ARBOK
+	db RIOLU
 	db ELECTABUZZ
 	db SWAMPERT
 	db PONYTA

@@ -1,10 +1,10 @@
-	db "Brutal@" ; species name
-	dw 511, 3527 ; height, weight
+	db "POISON GAS@" ; species name
+	dw 311, 210 ; height, weight
 
-	db   "Its three heads"
-	next "kill and eat"
-	next "all that moves."
+	db   "When it spews"
+	next "its gases it can"
+	next "kill all around."
 
-	page "Sp.Atk boost on"
-	next "KO. Taunts foe."
-	next "Ground immune.@"
+	page "Lowers foes"
+	next "Accuracy. Has"
+	next "a final attack.@"

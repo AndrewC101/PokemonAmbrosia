@@ -87,9 +87,9 @@ SilverCaveRoom3FieldMon5Script:
 
 SilverCaveRoom3FieldMon6Script:
 	faceplayer
-	cry GENESECT
+	cry WEEZING
 	pause 15
-	loadwildmon GENESECT, 80
+	loadwildmon WEEZING, 80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -502,6 +502,6 @@ SilverCaveRoom3_MapEvents:
 	object_event 11, 25, SPRITE_SALAMENCE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 25, SPRITE_METAGROSS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 11, 32, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon5Script, EVENT_FIELD_MON_5
-	object_event  8, 32, SPRITE_GENESECT, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon6Script, EVENT_FIELD_MON_6
+	object_event  8, 32, SPRITE_HYDREIGON, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3FieldMon6Script, EVENT_FIELD_MON_6
 	object_event  7, 10, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3MewtwoScript, -1
 	object_event 12, 10, SPRITE_HO_OH, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom3HoohScript, -1

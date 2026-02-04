@@ -29,7 +29,7 @@ PokemonCries::
 	mon_cry CRY_CATERPIE,    150,  150 ; BUNEARY
 	mon_cry CRY_CATERPIE,    150,  250 ; LOPUNNY
 	mon_cry CRY_EKANS,        18,  192 ; EKANS
-	mon_cry CRY_EKANS,       224,  144 ; ARBOK
+	mon_cry CRY_DEOXYS,       100,  200 ; ARBOK
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	mon_cry CRY_RAICHU,      238,  136 ; RAICHU
 	mon_cry CRY_AIPOM,      -100,  200 ; ROTOM
@@ -114,8 +114,8 @@ PokemonCries::
 	mon_cry CRY_PARAS,      -100,  200 ; SOLOSIS
 	mon_cry CRY_PARAS,      -200,  250 ; DUOSION
 	mon_cry CRY_PARAS,      -250,  300 ; REUNICLUS
-	mon_cry CRY_GOLEM,       230,  349 ; KOFFING
-	mon_cry CRY_GOLEM,       255,  383 ; WEEZING
+	mon_cry CRY_DEOXYS,       50,  200 ; KOFFING
+	mon_cry CRY_DEOXYS,       -50,  250 ; WEEZING
 	mon_cry CRY_CHARMANDER,    0,  256 ; RHYHORN
 	mon_cry CRY_RHYDON,        0,  256 ; RHYDON
 	mon_cry CRY_PIDGEOTTO,    10,  320 ; CHANSEY

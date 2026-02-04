@@ -120,9 +120,9 @@ DarkCaveVioletEntranceFieldMon7Script:
 
 DarkCaveVioletEntranceFieldMon8Script:
 	faceplayer
-	cry DUNSPARCE
+	cry ARBOK
 	pause 15
-	loadwildmon DUNSPARCE, 6
+	loadwildmon ARBOK, 8
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
@@ -171,6 +171,6 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 14, 28, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 13, 24, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 16, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 15, 18, SPRITE_DUNSPARCE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 15, 18, SPRITE_DEINO, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 15, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceBlackGlasses, EVENT_DARK_CAVE_VIOLET_ENTRANCE_BLACK_GLASSES
 	object_event 31, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveVioletEntranceFieldMon9Script, EVENT_FIELD_MON_9

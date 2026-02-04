@@ -44,6 +44,7 @@ AI_LevitatePokemon:
     db LATIOS
     db ROTOM
     db UNOWN
+    db WEEZING
     db $FF
 
 AI_WaterAbsorbPokemon:

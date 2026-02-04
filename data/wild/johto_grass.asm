@@ -1016,7 +1016,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1024,7 +1024,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1032,7 +1032,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1044,7 +1044,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1052,7 +1052,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1060,7 +1060,7 @@ JohtoGrassWildMons:
 	db 34, GABITE
 	db 34, DRAGONAIR
 	db 37, PUPITAR
-	db 37, SLOWBRO
+	db 37, KOFFING
 	db 42, ARCTOZOLT
 	db 42, DRACOVISH
 	db 52, GARCHOMP
@@ -1158,7 +1158,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, GENESECT
+	db 75, WEEZING
 	db 80, ARTICUNO
 	; day
 	db 75, TYRANITAR
@@ -1166,7 +1166,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, GENESECT
+	db 75, WEEZING
 	db 80, MOLTRES
 	; nite
 	db 75, TYRANITAR
@@ -1174,7 +1174,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, GENESECT
+	db 75, WEEZING
 	db 80, ZAPDOS
 	end_grass_wildmons
 
@@ -1210,26 +1210,26 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, ZUBAT
-	db 8, DUNSPARCE
+	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, PAWNIARD
+	db 10, ARBOK
 	db 10, LARVITAR
 	db 16, GOLBAT
 	; day
 	db 8, ZUBAT
-	db 8, DUNSPARCE
+	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, PAWNIARD
+	db 10, ARBOK
 	db 10, LARVITAR
 	db 16, GOLBAT
 	; nite
 	db 8, ZUBAT
-	db 8, DUNSPARCE
+	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, PAWNIARD
+	db 10, ARBOK
 	db 10, LARVITAR
 	db 16, GOLBAT
 	end_grass_wildmons
@@ -1238,28 +1238,28 @@ JohtoGrassWildMons:
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, GENGAR
-	db 41, HONCHKROW
 	db 41, WEAVILE
 	db 42, HOUNDOOM
 	db 44, BISHARP
 	db 46, SPIRITOMB
-	db 54, TYRANITAR
+	db 51, TYRANITAR
+	db 61, WEEZING
 	; day
 	db 41, GENGAR
-	db 41, HONCHKROW
 	db 41, WEAVILE
 	db 42, HOUNDOOM
 	db 44, BISHARP
 	db 46, SPIRITOMB
-	db 54, TYRANITAR
+	db 51, TYRANITAR
+	db 61, WEEZING
 	; nite
-	db 45, GENGAR
-	db 45, HONCHKROW
-	db 46, WEAVILE
-	db 47, HOUNDOOM
-	db 50, KINGAMBIT
-	db 51, SPIRITOMB
-	db 54, TYRANITAR
+	db 41, GENGAR
+	db 41, WEAVILE
+	db 42, HOUNDOOM
+	db 44, BISHARP
+	db 46, SPIRITOMB
+	db 51, TYRANITAR
+	db 61, WEEZING
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
@@ -1911,26 +1911,26 @@ JohtoGrassWildMons:
 	db 66, SPIRITOMB
 	db 67, CHANDELURE
 	db 68, UMBREON
-	db 68, HOUNDOOM
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
+	db 75, WEEZING
 	; day
 	db 66, SPIRITOMB
 	db 67, CHANDELURE
 	db 68, UMBREON
-	db 68, HOUNDOOM
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
+	db 75, WEEZING
 	; nite
 	db 66, SPIRITOMB
 	db 67, CHANDELURE
 	db 68, UMBREON
-	db 68, HOUNDOOM
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
+	db 75, WEEZING
 	end_grass_wildmons
 
 	db -1 ; end

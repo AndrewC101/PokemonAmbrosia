@@ -1,10 +1,9 @@
-	db "COBRA@" ; species name
-	dw 1106, 1430 ; height, weight
+	db "Irate@" ; species name
+	dw 207, 381 ; height, weight
 
-	db   "To intimidate"
-	next "foes, it spreads"
-	next "its chest wide."
+	db   "They bite to"
+	next "learn about their"
+	next "surroundings."
 
-	page "Armoured at"
-	next "max HP. Lowers"
-	next "foes Attack.@"
+	page "Sp.Atk boost on"
+	next "defeating foe.@"

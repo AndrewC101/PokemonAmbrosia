@@ -9,7 +9,7 @@ NPCTrades:
 ; entries correspond to NPCTRADE_* constants
 	table_width NPCTRADE_STRUCT_LENGTH, NPCTrades
 	npctrade TRADE_DIALOGSET_COLLECTOR, TEDDIURSA,   MAWILE,       "Arelle@@@@@", $DD, $DD, METAL_COAT, 52042,    "Maxwell@@@@", TRADE_GENDER_EITHER
-	npctrade TRADE_DIALOGSET_COLLECTOR, LARVITAR,    CHARMANDER,   "Dante@@@@@@", $DD, $DD, CHARCOAL, 01314,      "Sparda@@@@@", TRADE_GENDER_EITHER
+	npctrade TRADE_DIALOGSET_COLLECTOR, ARBOK,       CHARMANDER,   "Dante@@@@@@", $DD, $DD, CHARCOAL, 01314,      "Sparda@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_HAPPY,     ALAKAZAM,    METAGROSS,    "ED209@@@@@@", $DD, $DD, METAL_COAT,   00209,  "OCP@@@@@@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_GIRL,      KINGDRA,     SNORLAX,      "Hakuho@@@@@", $FF, $FF, LEFTOVERS,    01187,  "Miyagino@@@", TRADE_GENDER_EITHER
 	npctrade TRADE_DIALOGSET_NEWBIE,    GARDEVOIR,   LOPUNNY,      "Pamela@@@@@", $DD, $DD, AMULET_COIN,  58008,  "Hefner@@@@@", TRADE_GENDER_FEMALE

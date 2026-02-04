@@ -74,24 +74,41 @@ VermilionCitySuperNerdScript:
 
 VermilionSnorlax:
 	opentext
-	special SnorlaxAwake
-	iftrue .Awake
-	writetext VermilionCitySnorlaxSleepingText
-	waitbutton
-	closetext
-	end
-
-.Awake:
-	writetext VermilionCityRadioNearSnorlaxText
-	pause 15
+	writetext VermilionCitySnorlaxText
 	cry SNORLAX
+	pause 15
 	closetext
+	checkevent EVENT_BEAT_PRYCE
+	iffalse .smallLevel
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 80
+    sjump .begin
+.midLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 70
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 60
+	sjump .begin
+.smallLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 40
+	sjump .begin
+.begin
 	startbattle
-	disappear VERMILIONCITY_BIG_SNORLAX
-	setevent EVENT_FOUGHT_SNORLAX
 	reloadmapafterbattle
+    setval SNORLAX
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_FOUGHT_SNORLAX
+	disappear VERMILIONCITY_BIG_SNORLAX
 	end
 
 VermilionGymBadgeGuy:
@@ -241,14 +258,8 @@ VermilionCitySnorlaxSleepingText:
 	line "peacefully…"
 	done
 
-VermilionCityRadioNearSnorlaxText:
-	text "The #gear was"
-	line "placed near the"
-	cont "sleeping Snorlax…"
-
-	para "…"
-
-	para "Snorlax woke up!"
+VermilionCitySnorlaxText:
+	text "Snorlax woke up!"
 	done
 
 VermilionCityBadgeGuyTrainerText:

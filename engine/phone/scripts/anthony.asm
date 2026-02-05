@@ -49,13 +49,4 @@ AnthonyWantsBattle:
 	farsjump PhoneScript_WantsToBattle_Male
 
 AnthonyTriesDunsparceSwarm:
-	checkflag ENGINE_DUNSPARCE_SWARM
-	iftrue .Generic
-	setflag ENGINE_DUNSPARCE_SWARM
-	getmonname STRING_BUFFER_4, DUNSPARCE
-	swarm SWARM_DUNSPARCE, DARK_CAVE_VIOLET_ENTRANCE
-	getlandmarkname STRING_BUFFER_5, LANDMARK_DARK_CAVE
-	farsjump AnthonySwarmScript
-
-.Generic:
 	farsjump Phone_GenericCall_Male

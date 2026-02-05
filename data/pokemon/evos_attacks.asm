@@ -363,17 +363,19 @@ LopunnyEvosAttacks:
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
-	db EVOLVE_LEVEL, 22, ARBOK
+	db EVOLVE_LEVEL, 30, KOFFING
 	db 0 ; no more evolutions
-	db 1, WRAP
-	db 1, LEER
-	db 9, POISON_STING
-	db 15, BITE
-	db 23, GLARE
-	db 28, CRUNCH
-	db 33, CROSS_POISON
-	db 40, HAZE
-	db 45, DRAGON_DANCE
+	db 1, TACKLE
+	db 10, FEINT_ATTACK
+	db 15, HEADBUTT
+	db 20, BITE
+	db 25, TAUNT
+	db 31, CRUNCH
+	db 35, DRAGON_CLAW
+	db 40, DARK_PULSE
+	db 45, DRAGON_PULSE
+	db 50, NASTY_PLOT
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 ArbokEvosAttacks:
@@ -1619,19 +1621,19 @@ ReuniclusEvosAttacks:
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:
-	db EVOLVE_LEVEL, 32, WEEZING
+	db EVOLVE_LEVEL, 50, DUNSPARCE
 	db 0 ; no more evolutions
-	db 1, ACID
-	db 1, DISABLE
-	db 1, SMOKESCREEN
-	db 17, SLUDGE
-	db 20, SELFDESTRUCT
-	db 24, WILL_O_WISP
-	db 28, HAZE
-	db 33, SLUDGE_BOMB
-	db 40, DESTINY_BOND
-	db 45, NASTY_PLOT
-	db 50, EXPLOSION
+	db 1, TACKLE
+	db 10, FEINT_ATTACK
+	db 15, HEADBUTT
+	db 20, BITE
+	db 25, TAUNT
+	db 31, CRUNCH
+	db 35, DRAGON_CLAW
+	db 40, DARK_PULSE
+	db 45, DRAGON_PULSE
+	db 50, NASTY_PLOT
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 WeezingEvosAttacks:
@@ -3117,17 +3119,17 @@ SalamenceEvosAttacks:
 
 DunsparceEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DEFENSE_CURL
-	db 1, ROLLOUT
-	db 12, GLARE
-	db 15, ANCIENTPOWER
-	db 20, HEADBUTT
-	db 25, CRUNCH
-	db 30, ROOST
-	db 40, DOUBLE_EDGE
-	db 50, DRAGON_DANCE
-	db 85, BOLT_BEAK
-	db 85, SAVAGE_REND
+	db 1, TACKLE
+	db 10, FEINT_ATTACK
+	db 15, HEADBUTT
+	db 20, BITE
+	db 25, TAUNT
+	db 31, CRUNCH
+	db 35, DRAGON_CLAW
+	db 40, DARK_PULSE
+	db 45, DRAGON_PULSE
+	db 50, NASTY_PLOT
+	db 70, DRACO_METEOR
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:

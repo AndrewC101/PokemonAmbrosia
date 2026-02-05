@@ -38,12 +38,14 @@ AI_LevitatePokemon:
     db GASTLY
     db HAUNTER
     db GENGAR
+    db WEEZING
     db MISDREAVUS
     db MISMAGIUS
     db LATIAS
     db LATIOS
     db ROTOM
     db UNOWN
+    db DUNSPARCE
     db $FF
 
 AI_WaterAbsorbPokemon:
@@ -241,8 +243,6 @@ AI_Basic:
     cp ARCEUS
     jp z, .discourage
     cp SYLVEON
-    jp z, .discourage
-    cp DUNSPARCE
     jp z, .discourage
 
 .checkSub
@@ -933,8 +933,6 @@ AI_Smart_Sleep:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp DUNSPARCE
-    jp z, .discourage
     cp SMEARGLE
     jp z, .discourage
     cp DEOXYS
@@ -1584,8 +1582,6 @@ AI_Smart_Toxic:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp DUNSPARCE
-    jp z, .discourage
 
 ; never use against Pokemon with magic guard
     ld a, [wBattleMonSpecies]
@@ -1825,8 +1821,6 @@ AI_Smart_Paralyze:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp DUNSPARCE
-    jp z, .discourage
 
 ; encourage if enemy is slower than player.
 ; 50% chance to discourage otherwise
@@ -3789,8 +3783,6 @@ AI_Smart_Confuse:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp DUNSPARCE
-    jp z, .discourage
     ret
 
 .continue
@@ -3972,8 +3964,6 @@ AI_Smart_Burn:
     jr z, .discourage
     cp SYLVEON
     jr z, .discourage
-    cp DUNSPARCE
-    jp z, .discourage
 
 ; strongly encourage if enemy is physical
     Call IsPlayerPhysicalOrSpecial

@@ -370,7 +370,6 @@ CoreClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
-    db DUNSPARCE
     db VAPOREON
     db WOBBUFFET
     db KYOGRE
@@ -813,7 +812,7 @@ ShouldIgniteFlameOrb:
     jr z, .no
     cp SYLVEON
     jr z, .no
-    cp DUNSPARCE
+
     ld a, b
     cp FIRE
     jr z, .no

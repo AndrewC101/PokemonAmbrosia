@@ -1226,12 +1226,12 @@ Core_LevitatePokemon:
     db GENGAR
     db MISDREAVUS
     db MISMAGIUS
-    db KOFFING
     db WEEZING
     db LATIAS
     db LATIOS
     db ROTOM
     db UNOWN
+    db DUNSPARCE
     db -1
 
 Core_SpikesImmunePokemon: ; magic guard + levitate
@@ -1252,13 +1252,13 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db GENGAR
     db MISDREAVUS
     db MISMAGIUS
-    db KOFFING
     db WEEZING
     db LATIAS
     db LATIOS
     db ROTOM
     db MEW
     db DEOXYS
+    db DUNSPARCE
     db -1
 
 Core_RegeneratorPokemon:
@@ -1291,6 +1291,9 @@ Core_GrimPokemon:
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
+    db EKANS
+    db KOFFING
+    db DUNSPARCE
     db -1
 
 Core_GutsPokemon:
@@ -2563,8 +2566,6 @@ KOBoost:
 ; =====================
 Aftermath:
     call GetOpposingMonCore
-    cp KOFFING
-    jr z, .aftermath
     cp WEEZING
     jr z, .aftermath
     cp MAGNEZONE
@@ -4530,8 +4531,6 @@ SpikesDamage:
     jr z, .pop
     cp SYLVEON
     jr z, .pop
-    cp DUNSPARCE
-    jr z, .pop
 
 ; Toxic Spikes can't poison a Pokemon that already has a status condition
 	ld a, BATTLE_VARS_STATUS
@@ -4693,6 +4692,8 @@ SwitchInEffects:
     jp z, .umbreon
     cp MISMAGIUS
     jp z, .taunt
+    cp DUNSPARCE
+    jp z, .taunt
 
     cp GENESECT
     jp z, .spAtkUp
@@ -4740,8 +4741,6 @@ SwitchInEffects:
     jp z, .atkDown
     cp ARCANINE
     jp z, .atkDown
-    cp EKANS
-    jp z, .atkDown
     cp ARBOK
     jp z, .atkDown
     cp TAUROS
@@ -4788,8 +4787,6 @@ SwitchInEffects:
     jp z, .evasionUp
 
     cp EEVEE
-    jp z, .randomStatUp
-    cp DUNSPARCE
     jp z, .randomStatUp
 
     cp SMEARGLE

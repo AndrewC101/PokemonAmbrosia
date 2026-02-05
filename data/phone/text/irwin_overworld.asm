@@ -1,7 +1,7 @@
 IrwinAskNumber2Text:
 IrwinAskNumber1Text:
 	text "You crushed my"
-	line "Koffings good!"
+	line "Weezings good!"
 	para "You are one cool"
 	line "cucumber."
 	para "I need to talk to"

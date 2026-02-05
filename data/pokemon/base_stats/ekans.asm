@@ -1,21 +1,21 @@
 	db EKANS ; 023
 
-	db  35,  65,  44,  55,  40,  54
+	db  52,  65,  50,  38,  45,  50
 	;   hp  atk  def  spd  sat  sdf
 
-	db POISON, POISON ; type
-	db 255 ; catch rate
-	db 62 ; base exp
+	db DARK, DRAGON ; type
+	db 45 ; catch rate
+	db 60 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 5 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/ekans/front.dimensions"
+	INCBIN "gfx/pokemon/arbok/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_GROUND, EGG_DRAGON ; egg groups
+	db GROWTH_SLOW ; growth rate
+	dn EGG_DRAGON, EGG_DRAGON ; egg groups
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, PROTECT, GIGA_DRAIN, SUBSTITUTE, EARTHQUAKE, EARTH_POWER, RETURN, DOUBLE_EDGE, DIG, SLEEP_TALK, SLUDGE_BOMB, REST, ROCK_SLIDE, STRENGTH, IRON_HEAD, X_SCISSOR
+	tmhm CURSE, TOXIC, HIDDEN_POWER, HYPER_BEAM, PROTECT, SUBSTITUTE, THUNDER_WAVE, RETURN, DOUBLE_EDGE, SLEEP_TALK, SLUDGE_BOMB, FIRE_BLAST, REST, FLAMETHROWER, NASTY_PLOT, TAUNT, DRAGON_PULSE, DARK_PULSE, AURA_SPHERE, EARTH_POWER, ROOST, SHADOW_BALL, X_SCISSOR, IRON_HEAD, BODY_SLAM, ROCK_SLIDE, RAIN_DANCE, SUNNY_DAY, ROCK_SMASH, FLY, FLASH, CUT, STRENGTH, SURF, EARTHQUAKE, FISSURE
 	; end

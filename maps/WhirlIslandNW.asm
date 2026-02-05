@@ -15,9 +15,9 @@ WhirlIslandNW_MapScripts:
 
 WhirlIslandNWFieldMon1Script:
 	faceplayer
-	cry DUNSPARCE
+	cry DRATINI
 	pause 15
-	loadwildmon DUNSPARCE, 33
+	loadwildmon DRATINI, 26
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -49,6 +49,6 @@ WhirlIslandNW_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  5, SPRITE_DUNSPARCE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNWFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  4,  5, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNWFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  5, 14, SPRITE_SWAMPERT, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNWFieldMon2Script, EVENT_FIELD_MON_2
 

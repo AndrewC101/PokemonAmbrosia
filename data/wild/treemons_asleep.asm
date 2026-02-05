@@ -8,7 +8,7 @@ AsleepTreeMonsNite:
 	db WHIRLIPEDE
 	db HERACROSS
 	db STARLY
-	db EKANS
+	db ARBOK
 	db EXEGGCUTE
 	db STARLY
 	db BELDUM

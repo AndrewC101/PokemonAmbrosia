@@ -266,7 +266,7 @@ AncientRuinsPresentFieldMon9Script:
     end
 
 AncientRuinsPresentFieldMon10Script:
-	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 73, 0, .script
+	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_10, AncientRuinsPresentPokemonAttacksText, 73, 0, .script
 .script
     disappear ANCIENTRUINPRESENT_FIELDMON_10
     end

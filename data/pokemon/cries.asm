@@ -28,7 +28,7 @@ PokemonCries::
 	mon_cry CRY_RATTATA,      32,  383 ; RATICATE
 	mon_cry CRY_CATERPIE,    150,  150 ; BUNEARY
 	mon_cry CRY_CATERPIE,    150,  250 ; LOPUNNY
-	mon_cry CRY_EKANS,        18,  192 ; EKANS
+	mon_cry CRY_DEOXYS,       100,  200 ; EKANS
 	mon_cry CRY_EKANS,       224,  144 ; ARBOK
 	mon_cry CRY_BULBASAUR,   238,  129 ; PIKACHU
 	mon_cry CRY_RAICHU,      238,  136 ; RAICHU
@@ -114,7 +114,7 @@ PokemonCries::
 	mon_cry CRY_PARAS,      -100,  200 ; SOLOSIS
 	mon_cry CRY_PARAS,      -200,  250 ; DUOSION
 	mon_cry CRY_PARAS,      -250,  300 ; REUNICLUS
-	mon_cry CRY_GOLEM,       230,  349 ; KOFFING
+	mon_cry CRY_DEOXYS,       50,  200  ; KOFFING
 	mon_cry CRY_GOLEM,       255,  383 ; WEEZING
 	mon_cry CRY_CHARMANDER,    0,  256 ; RHYHORN
 	mon_cry CRY_RHYDON,        0,  256 ; RHYDON
@@ -211,7 +211,7 @@ PokemonCries::
 	mon_cry CRY_GIRAFARIG,  -100,  512 ; BAGON
 	mon_cry CRY_SLOWKING,    128,  256 ; SHELGON
 	mon_cry CRY_TYPHLOSION,  300,  150 ; SALAMENCE
-	mon_cry CRY_DUNSPARCE,   452,  256 ; DUNSPARCE
+	mon_cry CRY_DEOXYS,      -50,  250 ; DUNSPARCE
 	mon_cry CRY_GLIGAR,     -258,  256 ; GLIGAR
 	mon_cry CRY_TYPHLOSION,  239,  247 ; STEELIX
 	mon_cry CRY_WOOPER,     -100,  150 ; GIBLE

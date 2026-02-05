@@ -94,7 +94,7 @@ WiltonWantThisText:
 	cont "you kid, I tell"
 	cont "you the tastiest"
 	cont "#mon."
-	para "It's Dunsparce!"
+	para "It's Pikachu!"
 	para "Don't believe me,"
 	line "try it for"
 	cont "yourself."

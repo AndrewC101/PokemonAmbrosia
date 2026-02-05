@@ -390,7 +390,7 @@ Route32CooltrainerMText_AideIsWaiting:
     cont "stopping you."
 
     para "I feel like a"
-    line "right Dunsparce."
+    line "right Slowpoke."
 	done
 
 
@@ -437,7 +437,7 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 	text "If only my old"
 	line "friend had not"
 	cont "of been such a"
-	cont "Dunsparce."
+	cont "Slowpoke."
 
 	para "He left one day"
 	line "and never came"

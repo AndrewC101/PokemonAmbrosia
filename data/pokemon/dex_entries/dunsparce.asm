@@ -1,9 +1,10 @@
-	db "LAND SNAKE@" ; species name
-	dw 411, 310 ; height, weight
+	db "Brutal@" ; species name
+	dw 511, 3527 ; height, weight
 
-	db   "It hides deep"
-	next "in caves where"
-	next "no light reaches."
+	db   "Its three heads"
+	next "kill and eat"
+	next "all that moves."
 
-	page "Possesses many"
-	next "abilities.@"
+	page "Sp.Atk boost on"
+	next "KO. Taunts foe."
+	next "Ground immune.@"

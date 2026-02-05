@@ -21,7 +21,7 @@ IrwinPlainBadgeGossipText:
 	para "How'd that go?"
 	para "I tried to battle"
 	line "her but ran out of"
-	cont "Koffings."
+	cont "Weezings."
 	done
 
 IrwinJasmineReturnedGossipText:
@@ -51,7 +51,7 @@ IrwinRisingBadgeGossipText:
 	para "How'd that go?"
 	para "I met her once."
 	para "She crushed my"
-	line "Koffings."
+	line "Weezings."
 	done
 
 IrwinVermilionCityGossipText:
@@ -99,7 +99,7 @@ IrwinMtSilverGossipText:
 	cont "the world."
 	para "Just thinking"
 	line "about it makes my"
-	cont "Koffings quiver"
+	cont "Weezings quiver"
 	cont "with admiration!"
 	done
 
@@ -121,7 +121,7 @@ IrwinFogBadgeGossipText:
 	cont "#mon spooked"
 	cont "me."
 	para "Scared the"
-	line "Koffings off me."
+	line "Weezings off me."
 	done
 
 IrwinMarshBadgeGossipText:

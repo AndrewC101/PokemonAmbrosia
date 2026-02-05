@@ -600,7 +600,7 @@ IlexForestFieldMon2Script:
     end
 
 IlexForestFieldMon8Script:
-	trainer EKANS, FIELD_MON, EVENT_FIELD_MON_8, IlexForestPokemonAttacksText, 17, 0, .script
+	trainer ARBOK, FIELD_MON, EVENT_FIELD_MON_8, IlexForestPokemonAttacksText, 17, 0, .script
 .script
     disappear ILEXFOREST_FIELDMON_8
     end

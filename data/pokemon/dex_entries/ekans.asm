@@ -1,10 +1,9 @@
-	db "SNAKE@" ; species name
-	dw 607, 150 ; height, weight
+    db "Irate@" ; species name
+	dw 207, 381 ; height, weight
 
-	db   "It flutters the"
-	next "tip of its tongue"
-	next "to seek prey."
+	db   "They bite to"
+	next "learn about their"
+	next "surroundings."
 
-	page "lowers foes"
-	next "Attack upon"
-	next "entering battle.@"
+	page "Sp.Atk boost on"
+	next "defeating foe.@"

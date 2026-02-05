@@ -114,7 +114,7 @@ AnthonyReminderText:
 
 AnthonyHurryText:
 	text "This is it!"
-	para "Dunsparce are"
+	para "Meowth are"
 	line "swarming all over"
 	cont "Dark Cave."
 	para "So much quality"

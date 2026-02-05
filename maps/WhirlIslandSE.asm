@@ -15,9 +15,9 @@ WhirlIslandSE_MapScripts:
     
 WhirlIslandSEFieldMon1Script:
 	faceplayer
-	cry DUNSPARCE
+	cry GIBLE
 	pause 15
-	loadwildmon DUNSPARCE, 33
+	loadwildmon GIBLE, 26
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -47,6 +47,6 @@ WhirlIslandSE_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  4, 10, SPRITE_DUNSPARCE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandSEFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  4, 10, SPRITE_GIBLE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandSEFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 3,  2, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandSEFieldMon2Script, EVENT_FIELD_MON_2
 

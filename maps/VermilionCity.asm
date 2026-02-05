@@ -441,7 +441,7 @@ Soldier6SeenText:
 	para "Hmm hmmm."
 	para "Stop you filthy"
 	line "Kanto spawn of a"
-	cont "Dunsparce scum!"
+	cont "Houndoom scum!"
 	done
 Soldier6BeatenText:
     text "Avenge me"

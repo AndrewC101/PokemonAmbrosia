@@ -7535,8 +7535,6 @@ BattleCommand_CheckStatusImmunity:
     jr z, .immune
     cp SYLVEON
     jr z, .immune
-    cp DUNSPARCE
-    jr z, .immune
     ret
 .immune
     ld a, 1

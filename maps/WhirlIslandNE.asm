@@ -16,9 +16,9 @@ WhirlIslandNE_MapScripts:
     
 WhirlIslandNEFieldMon1Script:
 	faceplayer
-	cry DUNSPARCE
+	cry BAGON
 	pause 15
-	loadwildmon DUNSPARCE, 33
+	loadwildmon BAGON, 26
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1
@@ -53,5 +53,5 @@ WhirlIslandNE_MapEvents:
 
 	def_object_events
 	object_event 11, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandNEUltraBall, EVENT_WHIRL_ISLAND_NE_ULTRA_BALL
-	object_event  8, 10, SPRITE_DUNSPARCE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNEFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  8, 10, SPRITE_BAGON, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNEFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 17,  7, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, WhirlIslandNEFieldMon2Script, EVENT_FIELD_MON_2

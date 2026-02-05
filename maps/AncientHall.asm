@@ -52,13 +52,13 @@ AncientHallFieldMon4Script:
     end
 
 AncientHallFieldMon5Script:
-	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_5, AncientHallPokemonAttacksText, 90, 0, .script
+	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_5, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_5
     end
 
 AncientHallFieldMon6Script:
-	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_6, AncientHallPokemonAttacksText, 90, 0, .script
+	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_6, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_6
     end

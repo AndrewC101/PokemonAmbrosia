@@ -176,7 +176,6 @@ ClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
-    db DUNSPARCE
     db VAPOREON
     db WOBBUFFET
     db KYOGRE
@@ -209,7 +208,6 @@ UberImmunePokemon:
     db REGIGIGAS
     db ZYGARDE
     db WOBBUFFET
-    db DUNSPARCE
     db -1
 
 ; ======== NOT USED HERE ===========
@@ -222,6 +220,7 @@ UberImmunePokemon:
 ;    db GASTLY
 ;    db HAUNTER
 ;    db GENGAR
+;    db WEEZING
 ;    db MISDREAVUS
 ;    db MISMAGIUS
 ;    db LATIAS

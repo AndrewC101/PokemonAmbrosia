@@ -121,7 +121,7 @@ SpriteMons:
 	db AEGISLASH
 	db MEOWTH
 	db MAGMAR
-	db RIOLU
+	db EKANS
 	db ELECTABUZZ
 	db SWAMPERT
 	db PONYTA

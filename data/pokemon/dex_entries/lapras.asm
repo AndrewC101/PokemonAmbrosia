@@ -4,6 +4,6 @@
 	db   "A gentle and"
 	next "caring #mon"
 
-	page "Summons Hail"
-	next "on switch. HP"
+	page "Lowers foes"
+	next "Sp.Atk. HP"
 	next "regen in Hail.@"

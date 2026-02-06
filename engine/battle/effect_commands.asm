@@ -1851,8 +1851,6 @@ BattleCommand_CheckHit:
     call GetCurrentMon
 	cp JYNX
 	ret z
-	cp ARTICUNO
-	ret z
 .notBlizzard
 
 	call .StatModifiers

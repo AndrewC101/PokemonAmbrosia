@@ -1,6 +1,6 @@
 	db ABOMASNOW ; 055
 
-	db  90,  92,  75,  60,  92,  120
+	db  90,  92,  75,  60,  92, 85
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, ICE ; type

@@ -3912,7 +3912,7 @@ BattleTowerMons:
     bigdw 199
     bigdw 175
     bigdw 226
-    bigdw 271
+    bigdw 215
 	db "RANTA-N@@@@"
 
     db SWAMPERT

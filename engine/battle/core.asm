@@ -4783,8 +4783,8 @@ SwitchInEffects:
 
     cp ABOMASNOW
     jp z, .abomasnow
-    cp LAPRAS
-    jp z, .hail
+    cp ARCTICUNO
+    jp z, .articuno
 
     cp DARKRAI
     jp z, .taunt
@@ -4856,6 +4856,8 @@ SwitchInEffects:
     cp JYNX
     jp z, .spAtkDown
     cp MILTANK
+    jp z, .spAtkDown
+    cp LAPRAS
     jp z, .spAtkDown
 
     cp AEGISLASH
@@ -5005,6 +5007,9 @@ SwitchInEffects:
 .screenBreak
     farcall ScreenBreakSwitch
     ret
+.articuno
+    farcall HailSwitch
+    ; fallthrough
 .reflect
     farcall ReflectSwitch
     ret

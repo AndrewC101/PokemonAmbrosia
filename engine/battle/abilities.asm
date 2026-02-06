@@ -75,6 +75,7 @@ RockHeadPokemon:
     db ELECTABUZZ
     db ELECTIVIRE
     db URSALUNA
+    db ARCANINE
     db -1
 
 GutsPokemon:

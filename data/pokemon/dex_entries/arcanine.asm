@@ -5,6 +5,6 @@
 	next "idolised this"
 	next "might #mon."
 
-	page "lowers foes"
-	next "Attack upon"
-	next "entering battle.@"
+	page "Immune to recoil"
+	next "damage. Lowers"
+	next "foes Attack.@"

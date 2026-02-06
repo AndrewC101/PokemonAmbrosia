@@ -1961,19 +1961,18 @@ GyaradosEvosAttacks:
 
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HAIL
 	db 1, SING
     db 1, SURF
 	db 15, BODY_SLAM
 	db 20, AURORA_BEAM
+	db 25, HAIL
 	db 30, PERISH_SONG
 	db 35, WATERFALL
 	db 40, ICE_BEAM
 	db 45, HYDRO_PUMP
 	db 50, AVALANCHE
 	db 55, CALM_MIND
-	db 55, DRAGON_DANCE
-	db 60, RECOVER
+	db 60, DRAGON_DANCE
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:

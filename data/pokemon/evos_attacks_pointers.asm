@@ -24,7 +24,7 @@ EvosAttacksPointers::
 	dw RaticateEvosAttacks
 	dw BunearyEvosAttacks
 	dw LopunnyEvosAttacks
-	dw EkansEvosAttacks
+	dw DeinoEvosAttacks
 	dw ArbokEvosAttacks
 	dw PikachuEvosAttacks
 	dw RaichuEvosAttacks
@@ -110,7 +110,7 @@ EvosAttacksPointers::
 	dw SolosisEvosAttacks
 	dw DuosionEvosAttacks
 	dw ReuniclusEvosAttacks
-	dw KoffingEvosAttacks
+	dw ZweilousEvosAttacks
 	dw WeezingEvosAttacks
 	dw RhyhornEvosAttacks
 	dw RhydonEvosAttacks
@@ -207,7 +207,7 @@ EvosAttacksPointers::
 	dw BagonEvosAttacks
 	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks
-	dw DunsparceEvosAttacks
+	dw HydreigonEvosAttacks
 	dw GligarEvosAttacks
 	dw SteelixEvosAttacks
 	dw GibleEvosAttacks

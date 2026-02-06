@@ -58,9 +58,9 @@ NewPokedexOrder:
 	db TOGEKISS
 	db ROTOM
 	db POLTEGEIST
-	db EKANS
+	db DEINO
 	db ARBOK
-	db DUNSPARCE
+	db HYDREIGON
 	db MAREEP
 	db FLAAFFY
 	db AMPHAROS
@@ -105,7 +105,7 @@ NewPokedexOrder:
 	db SCIZOR
 	db PINSIR
 	db HERACROSS
-	db KOFFING
+	db ZWEILOUS
 	db WEEZING
 	db FERROSEED
 	db FERROTHORN

@@ -22,7 +22,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw BunearyEggMoves
 	dw NoEggMoves
-	dw EkansEggMoves
+	dw DeinoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
@@ -108,7 +108,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw KoffingEggMoves
+	dw ZweilousEggMoves
 	dw NoEggMoves
 	dw RhyhornEggMoves
 	dw NoEggMoves
@@ -205,7 +205,7 @@ EggMovePointers::
 	dw BagonEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw DunsparceEggMoves
+	dw HydreigonEggMoves
 	dw GligarEggMoves
 	dw NoEggMoves
 	dw GibleEggMoves

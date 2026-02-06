@@ -92,9 +92,9 @@ AbyssFieldMon4Script:
 	end
 
 AbyssFieldMon5Script:
-	cry DUNSPARCE
+	cry HYDREIGON
 	pause 15
-	loadwildmon DUNSPARCE, 71
+	loadwildmon HYDREIGON, 71
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

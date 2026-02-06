@@ -1158,7 +1158,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	db 80, ARTICUNO
 	; day
 	db 75, TYRANITAR
@@ -1166,7 +1166,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	db 80, MOLTRES
 	; nite
 	db 75, TYRANITAR
@@ -1174,7 +1174,7 @@ JohtoGrassWildMons:
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	db 80, ZAPDOS
 	end_grass_wildmons
 
@@ -1213,7 +1213,7 @@ JohtoGrassWildMons:
 	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, EKANS
+	db 10, DEINO
 	db 10, LARVITAR
 	db 16, GOLBAT
 	; day
@@ -1221,7 +1221,7 @@ JohtoGrassWildMons:
 	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, EKANS
+	db 10, DEINO
 	db 10, LARVITAR
 	db 16, GOLBAT
 	; nite
@@ -1229,7 +1229,7 @@ JohtoGrassWildMons:
 	db 8, PAWNIARD
 	db 9, HOUNDOUR
 	db 9, SNEASEL
-	db 10, EKANS
+	db 10, DEINO
 	db 10, LARVITAR
 	db 16, GOLBAT
 	end_grass_wildmons
@@ -1243,7 +1243,7 @@ JohtoGrassWildMons:
 	db 44, BISHARP
 	db 46, SPIRITOMB
 	db 54, TYRANITAR
-	db 61, DUNSPARCE
+	db 61, HYDREIGON
 	; day
 	db 41, GENGAR
 	db 41, WEAVILE
@@ -1251,7 +1251,7 @@ JohtoGrassWildMons:
 	db 44, BISHARP
 	db 46, SPIRITOMB
 	db 54, TYRANITAR
-	db 61, DUNSPARCE
+	db 61, HYDREIGON
 	; nite
 	db 41, GENGAR
 	db 41, WEAVILE
@@ -1259,7 +1259,7 @@ JohtoGrassWildMons:
 	db 44, BISHARP
 	db 46, SPIRITOMB
 	db 54, TYRANITAR
-	db 61, DUNSPARCE
+	db 61, HYDREIGON
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
@@ -1914,7 +1914,7 @@ JohtoGrassWildMons:
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	; day
 	db 66, SPIRITOMB
 	db 67, CHANDELURE
@@ -1922,7 +1922,7 @@ JohtoGrassWildMons:
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	; nite
 	db 66, SPIRITOMB
 	db 67, CHANDELURE
@@ -1930,7 +1930,7 @@ JohtoGrassWildMons:
 	db 70, KINGAMBIT
 	db 71, AEGISLASH
 	db 73, TYRANITAR
-	db 75, DUNSPARCE
+	db 75, HYDREIGON
 	end_grass_wildmons
 
 	db -1 ; end

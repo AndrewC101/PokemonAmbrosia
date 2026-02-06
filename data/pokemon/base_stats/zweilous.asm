@@ -1,4 +1,4 @@
-	db KOFFING ; 109
+	db ZWEILOUS ; 109
 
 	db  72,  85,  70,  58,  65,  70
 	;   hp  atk  def  spd  sat  sdf

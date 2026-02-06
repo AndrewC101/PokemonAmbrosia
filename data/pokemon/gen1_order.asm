@@ -54,7 +54,7 @@ Pokered_MonIndices:
 	db HO_OH ; MISSINGNO.
 	db ELECTABUZZ
 	db MAGNETON
-	db KOFFING
+	db ZWEILOUS
 	db SNEASEL ; MISSINGNO.
 	db SHROOMISH
 	db YANMEGA
@@ -107,7 +107,7 @@ Pokered_MonIndices:
 	db VAPOREON
 	db MACHOP
 	db ZUBAT
-	db EKANS
+	db DEINO
 	db ZYGARDE
 	db POLIWHIRL
 	db POLIWRATH
@@ -245,7 +245,7 @@ Pokered_MonIndices:
 	db BAGON
 	db SHELGON
 	db SALAMENCE
-	db DUNSPARCE
+	db HYDREIGON
 	db GLIGAR
 	db STEELIX
 	db GIBLE

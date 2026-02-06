@@ -120,9 +120,9 @@ DarkCaveVioletEntranceFieldMon7Script:
 
 DarkCaveVioletEntranceFieldMon8Script:
 	faceplayer
-	cry EKANS
+	cry DEINO
 	pause 15
-	loadwildmon EKANS, 8
+	loadwildmon DEINO, 8
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8

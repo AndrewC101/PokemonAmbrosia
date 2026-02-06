@@ -1253,7 +1253,7 @@ Core_LevitatePokemon:
     db LATIOS
     db ROTOM
     db UNOWN
-    db DUNSPARCE
+    db HYDREIGON
     db -1
 
 Core_SpikesImmunePokemon: ; magic guard + levitate
@@ -1280,7 +1280,7 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db ROTOM
     db MEW
     db DEOXYS
-    db DUNSPARCE
+    db HYDREIGON
     db -1
 
 Core_RegeneratorPokemon:
@@ -1313,9 +1313,9 @@ Core_GrimPokemon:
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
-    db EKANS
-    db KOFFING
-    db DUNSPARCE
+    db DEINO
+    db ZWEILOUS
+    db HYDREIGON
     db -1
 
 Core_GutsPokemon:
@@ -4792,7 +4792,7 @@ SwitchInEffects:
     jp z, .umbreon
     cp MISMAGIUS
     jp z, .taunt
-    cp DUNSPARCE
+    cp HYDREIGON
     jp z, .taunt
 
     cp GENESECT

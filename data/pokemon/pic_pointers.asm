@@ -47,8 +47,8 @@ PokemonPicPointers::
 	dba_pic BunearyBackpic
 	dba_pic LopunnyFrontpic
 	dba_pic LopunnyBackpic
-	dba_pic EkansFrontpic
-	dba_pic EkansBackpic
+	dba_pic DeinoFrontpic
+	dba_pic DeinoBackpic
 	dba_pic ArbokFrontpic
 	dba_pic ArbokBackpic
 	dba_pic PikachuFrontpic
@@ -219,8 +219,8 @@ PokemonPicPointers::
 	dba_pic DuosionBackpic
 	dba_pic ReuniclusFrontpic
 	dba_pic ReuniclusBackpic
-	dba_pic KoffingFrontpic
-	dba_pic KoffingBackpic
+	dba_pic ZweilousFrontpic
+	dba_pic ZweilousBackpic
 	dba_pic WeezingFrontpic
 	dba_pic WeezingBackpic
 	dba_pic RhyhornFrontpic
@@ -416,8 +416,8 @@ PokemonPicPointers::
 	dba_pic ShelgonBackpic
 	dba_pic SalamenceFrontpic
 	dba_pic SalamenceBackpic
-	dba_pic DunsparceFrontpic
-	dba_pic DunsparceBackpic
+	dba_pic HydreigonFrontpic
+	dba_pic HydreigonBackpic
 	dba_pic GligarFrontpic
 	dba_pic GligarBackpic
 	dba_pic SteelixFrontpic

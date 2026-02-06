@@ -24,7 +24,7 @@ KantoMonSpecials:
 	db  50 ; RATICATE
 	db  31 ; BUNEARY
 	db  61 ; LOPUNNY
-	db  40 ; EKANS
+	db  40 ; DEINO
 	db  65 ; ARBOK
 	db  50 ; PIKACHU
 	db  90 ; RAICHU
@@ -110,7 +110,7 @@ KantoMonSpecials:
 	db  35 ; SOLOSIS
 	db  35 ; DUOSION
 	db  60 ; REUNICLUS
-	db  60 ; KOFFING
+	db  60 ; ZWEILOUS
 	db  85 ; WEEZING
 	db  30 ; RHYHORN
 	db  45 ; RHYDON

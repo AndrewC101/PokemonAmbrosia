@@ -87,9 +87,9 @@ SilverCaveRoom3FieldMon5Script:
 
 SilverCaveRoom3FieldMon6Script:
 	faceplayer
-	cry DUNSPARCE
+	cry HYDREIGON
 	pause 15
-	loadwildmon DUNSPARCE, 80
+	loadwildmon HYDREIGON, 80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

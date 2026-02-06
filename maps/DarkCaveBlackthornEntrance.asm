@@ -39,7 +39,7 @@ DarkCaveBlackthornEntranceFieldMon2Script:
     end
 
 DarkCaveBlackthornEntranceFieldMon3Script:
-	trainer DUNSPARCE, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 64, 0, .script
+	trainer HYDREIGON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 64, 0, .script
 .script
     disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     end

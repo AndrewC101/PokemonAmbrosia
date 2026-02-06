@@ -362,8 +362,8 @@ LopunnyEvosAttacks:
 	db 50, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
-EkansEvosAttacks:
-	db EVOLVE_LEVEL, 30, KOFFING
+DeinoEvosAttacks:
+	db EVOLVE_LEVEL, 30, ZWEILOUS
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 10, FEINT_ATTACK
@@ -1621,8 +1621,8 @@ ReuniclusEvosAttacks:
 	db 50, CALM_MIND
 	db 0 ; no more level-up moves
 
-KoffingEvosAttacks:
-	db EVOLVE_LEVEL, 50, DUNSPARCE
+ZweilousEvosAttacks:
+	db EVOLVE_LEVEL, 50, HYDREIGON
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 10, FEINT_ATTACK
@@ -3115,7 +3115,7 @@ SalamenceEvosAttacks:
 	db 70, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
-DunsparceEvosAttacks:
+HydreigonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 10, FEINT_ATTACK

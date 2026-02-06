@@ -27,7 +27,7 @@ MonMenuIconPals:
 	icon_pals BROWN,  TEAL    ; RATICATE
 	icon_pals BROWN,  SILVER    ; BUNEARY
 	icon_pals BROWN,  SILVER    ; LOPUNNY
-	icon_pals PURPLE,  GREEN    ; EKANS
+	icon_pals PURPLE,  GREEN    ; DEINO
 	icon_pals PURPLE, TEAL    ; ARBOK
 	icon_pals RED,    GOLD    ; PIKACHU
 	icon_pals BROWN,  GOLD    ; RAICHU
@@ -113,7 +113,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  BLUE       ; SOLOSIS
 	icon_pals GREEN,  BLUE         ; DUOSION
 	icon_pals GREEN,  BLUE       ; REUNICLUS
-	icon_pals PURPLE,  GREEN        ; KOFFING
+	icon_pals PURPLE,  GREEN        ; ZWEILOUS
 	icon_pals PURPLE,  TEAL       ; WEEZING
 	icon_pals BROWN,  GOLD      ; RHYHORN
 	icon_pals BROWN,  GOLD     ; RHYDON
@@ -210,7 +210,7 @@ MonMenuIconPals:
 	icon_pals BLUE,  GREEN     ; BAGON
 	icon_pals BLUE,  GREEN     ; SHELGON
 	icon_pals BLUE,  GREEN      ; SALAMENCE
-	icon_pals PURPLE,  GREEN     ; DUNSPARCE
+	icon_pals PURPLE,  GREEN     ; HYDREIGON
 	icon_pals PURPLE,  BLUE      ; GLIGAR
 	icon_pals SILVER,  BROWN    ; STEELIX
 	icon_pals BLUE,  BROWN     ; GIBLE

@@ -3655,9 +3655,9 @@ BattleTowerMons:
 
 	; ===== final trainer end - 20 mons ======
 
-	db DUNSPARCE
-	db LEFTOVERS
-	db BOLT_BEAK, SAVAGE_REND, DRAGON_DANCE, ROOST
+	db RAICHU
+	db CHOICE_SPECS
+	db PIKA_THUNDER, THUNDERBOLT, SURF, AURA_SPHERE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3667,18 +3667,18 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 13, 15, 15 ; DVs
-	db 8, 8, 24, 10 ; PP
+	db 16, 24, 24, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 85 ; Level
 	db 0, 0 ; Status
-    bigdw 344
-    bigdw 344
-    bigdw 203
-    bigdw 203
-    bigdw 160
-    bigdw 194
-    bigdw 194
+    bigdw 276
+    bigdw 276
+    bigdw 237
+    bigdw 177
+    bigdw 272
+    bigdw 237
+    bigdw 220
 	db "RANTA-N@@@@"
 
     db POLTEGEIST

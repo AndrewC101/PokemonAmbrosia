@@ -16,9 +16,9 @@ WhirlIslandSW_MapScripts:
     
 WhirlIslandSWFieldMon1Script:
 	faceplayer
-	cry EKANS
+	cry DEINO
 	pause 15
-	loadwildmon EKANS, 26
+	loadwildmon DEINO, 26
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

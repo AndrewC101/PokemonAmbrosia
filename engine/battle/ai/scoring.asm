@@ -45,7 +45,7 @@ AI_LevitatePokemon:
     db LATIOS
     db ROTOM
     db UNOWN
-    db DUNSPARCE
+    db HYDREIGON
     db $FF
 
 AI_WaterAbsorbPokemon:

@@ -50,9 +50,9 @@ AlphabeticalPokedexOrder:
 	db DRATINI
 	db DRILBUR
 	db DUOSION
-	db DUNSPARCE
+	db HYDREIGON
 	db EEVEE
-	db EKANS
+	db DEINO
 	db ELECTABUZZ
 	db ELECTIVIRE
 	db ENTEI
@@ -109,7 +109,7 @@ AlphabeticalPokedexOrder:
 	db KINGDRA
 	db KIRLIA
 	db KLEFKI
-	db KOFFING
+	db ZWEILOUS
 	db KYOGRE
 	db LAMPENT
 	db LANTURN

@@ -41,7 +41,7 @@
 	const RATICATE   ; 14
 	const BUNEARY    ; 15
 	const LOPUNNY    ; 16
-	const EKANS      ; 17 *
+	const DEINO      ; 17 *
 	const ARBOK      ; 18 *
 	const PIKACHU    ; 19
 	const RAICHU     ; 1a
@@ -127,7 +127,7 @@
 	const SOLOSIS    ; 6a
 	const DUOSION    ; 6b
 	const REUNICLUS  ; 6c
-	const KOFFING    ; 6d
+	const ZWEILOUS    ; 6d
 	const WEEZING    ; 6e
 	const RHYHORN    ; 6f
 	const RHYDON     ; 70
@@ -225,7 +225,7 @@ JOHTO_POKEMON EQU const_value
 	const BAGON      ; cb
 	const SHELGON    ; cc
 	const SALAMENCE  ; cd
-	const DUNSPARCE  ; ce
+	const HYDREIGON  ; ce
 	const GLIGAR     ; cf
 	const STEELIX    ; d0
 	const GIBLE      ; d1

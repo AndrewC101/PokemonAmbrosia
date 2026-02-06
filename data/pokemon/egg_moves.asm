@@ -51,7 +51,7 @@ BunearyEggMoves:
 	db FINAL_FANG
 	db -1 ; end
 
-EkansEggMoves:
+DeinoEggMoves:
 	db FEINT_ATTACK
 	db CRUNCH
 	db -1 ; end
@@ -246,7 +246,7 @@ ReuniclusEggMoves:
 	db BODY_SLAM
 	db -1 ; end
 
-KoffingEggMoves:
+ZweilousEggMoves:
 	db SCREECH
 	db PSYBEAM
 	db DESTINY_BOND
@@ -474,7 +474,7 @@ BagonEggMoves:
 	db FLAMETHROWER
 	db -1 ; end
 
-DunsparceEggMoves:
+HydreigonEggMoves:
 	db ANCIENTPOWER
 	db ROCK_SLIDE
 	db BITE

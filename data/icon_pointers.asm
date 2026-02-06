@@ -24,7 +24,7 @@ IconPointers:
 	dw RaticateIcon
 	dw BunearyIcon
 	dw LopunnyIcon
-	dw EkansIcon
+	dw DeinoIcon
 	dw ArbokIcon
 	dw PikachuIcon
 	dw RaichuIcon
@@ -110,7 +110,7 @@ IconPointers:
 	dw SolosisIcon
 	dw DuosionIcon
 	dw ReuniclusIcon
-	dw KoffingIcon
+	dw ZweilousIcon
 	dw WeezingIcon
 	dw RhyhornIcon
 	dw RhydonIcon
@@ -207,7 +207,7 @@ IconPointers:
 	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon
-	dw DunsparceIcon
+	dw HydreigonIcon
 	dw GligarIcon
 	dw SteelixIcon
 	dw GibleIcon

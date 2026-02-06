@@ -23,7 +23,7 @@ PokedexDataPointerTable:
 	dw RaticatePokedexEntry
 	dw BunearyPokedexEntry
 	dw LopunnyPokedexEntry
-	dw EkansPokedexEntry
+	dw DeinoPokedexEntry
 	dw ArbokPokedexEntry
 	dw PikachuPokedexEntry
 	dw RaichuPokedexEntry
@@ -109,7 +109,7 @@ PokedexDataPointerTable:
 	dw SolosisPokedexEntry
 	dw DuosionPokedexEntry
 	dw ReuniclusPokedexEntry
-	dw KoffingPokedexEntry
+	dw ZweilousPokedexEntry
 	dw WeezingPokedexEntry
 	dw RhyhornPokedexEntry
 	dw RhydonPokedexEntry
@@ -206,7 +206,7 @@ PokedexDataPointerTable:
 	dw BagonPokedexEntry
 	dw ShelgonPokedexEntry
 	dw SalamencePokedexEntry
-	dw DunsparcePokedexEntry
+	dw HydreigonPokedexEntry
 	dw GligarPokedexEntry
 	dw SteelixPokedexEntry
 	dw GiblePokedexEntry

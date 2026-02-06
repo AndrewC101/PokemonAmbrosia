@@ -54,6 +54,22 @@ SandSwitch:
 	ld hl, SandstormBrewedText
 	jp StdBattleTextbox
 
+HailSwitch:
+    ld a, [wBattleWeather]
+    cp WEATHER_HAIL
+    ret z
+    ld a, WEATHER_HAIL
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+    ld a, [wBattleHasJustStarted]
+    and a
+    ret nz
+    ld de, ANIM_IN_HAIL
+	farcall Call_PlayBattleAnim
+	ld hl, ItStartedToHailText
+	jp StdBattleTextbox
+
 SpikesSwitch:
 	ld hl, wEnemyScreens
 	ldh a, [hBattleTurn]
@@ -1145,6 +1161,9 @@ FieldInfoBox:
 	cp WEATHER_SANDSTORM
 	ld de, FieldTexts.sand
 	jr z, .done
+	cp WEATHER_HAIL
+	ld de, FieldTexts.hail
+	jr z, .done
 	ld de, FieldTexts.none
 .done
 	hlcoord 1, 1
@@ -1554,6 +1573,9 @@ FieldTexts:
 
 .sand:
 	db "Sandstorm@"
+
+.hail:
+    db "Hail@"
 
 .reflect:
 	db "Reflect@"

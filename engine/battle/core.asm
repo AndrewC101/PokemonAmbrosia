@@ -552,11 +552,11 @@ DetermineMoveOrder:
 
     ld a, [wBattleMonSpecies]
     cp VENUSAUR
-    jr z, .simulatePlayerDoubleSpeed
+    jp z, .simulatePlayerDoubleSpeed
     cp EXEGGCUTE
-    jr z, .simulatePlayerDoubleSpeed
+    jp z, .simulatePlayerDoubleSpeed
     cp EXEGGUTOR
-    jr z, .simulatePlayerDoubleSpeed
+    jp z, .simulatePlayerDoubleSpeed
 
 .checkSand
 ; ==============================
@@ -564,7 +564,7 @@ DetermineMoveOrder:
 ; ==============================
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
-    jp nz, .continue
+    jp nz, .checkHail
 
     ld a, [wEnemyMonSpecies]
     cp DRILBUR
@@ -580,6 +580,23 @@ DetermineMoveOrder:
     cp EXCADRILL
     jr z, .simulatePlayerDoubleSpeed
     cp GOLEM
+    jr z, .simulatePlayerDoubleSpeed
+    jr .continue
+
+.checkHail
+; ==============================
+; ========= Slush Rush =========
+; ==============================
+    ld a, [wBattleWeather]
+    cp WEATHER_HAIL
+    jp nz, .continue
+
+    ld a, [wEnemyMonSpecies]
+    cp ARCTOZOLT
+    jr z, .checkOtherPlayerHail
+
+    ld a, [wBattleMonSpecies]
+    cp ARCTOZOLT
     jr z, .simulatePlayerDoubleSpeed
     jr .continue
 
@@ -610,6 +627,11 @@ DetermineMoveOrder:
     cp GOLEM
     jr z, .continue
     jr .simulateEnemyDoubleSpeed
+
+.checkOtherPlayerHail
+    ld a, [wBattleMonSpecies]
+    cp ARCTOZOLT
+    jr z, .continue
 
 ; enemy moves first unless enemy is paralysed or enemy is >+2 speed - in which case compare speed as normal
 .simulateEnemyDoubleSpeed
@@ -1648,7 +1670,7 @@ HandleRegenerator:
 
     ld a, [wBattleWeather]
     cp WEATHER_SANDSTORM
-    jr nz, .doneSandBody
+    jr nz, .checkIceBody
     pop af
 
     cp GARCHOMP
@@ -1656,6 +1678,18 @@ HandleRegenerator:
     cp GLIGAR
     jr z, .doRegen
     cp GLISCOR
+    jr z, .doRegen
+    ret
+
+.checkIceBody
+    ld a, [wBattleWeather]
+    cp WEATHER_HAIL
+    jr nz, .doneWithPop
+    pop af
+
+    cp LAPRAS
+    jr z, .doRegen
+    cp MAMOSWINE
     jr z, .doRegen
     ret
 
@@ -1688,7 +1722,7 @@ HandleRegenerator:
 	ret nz
 	ld hl, BattleText_TargetRegenerates
 	jp StdBattleTextbox
-.doneSandBody
+.doneWithPop
     pop af
     ret
 
@@ -1910,8 +1944,21 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jp z, .ended
+    jr nz, .continues
 
+; ended
+	ld hl, .WeatherEndedMessages
+	call .PrintWeatherMessage
+
+    farcall _CGB_BattleColors
+    ld a, 1
+	ld [hCGBPalUpdate], a
+
+	xor a
+	ld [wBattleWeather], a
+	ret
+
+.continues
 	call CheckIfFastBattlesIsOn
 	jr nz, .skipWeatherText
 
@@ -1922,7 +1969,7 @@ HandleWeather:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	ret nz
+	jr nz, .check_hail
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1988,23 +2035,65 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
-.ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
+.check_hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
 
-    farcall _CGB_BattleColors
-    ld a, 1
-	ld [hCGBPalUpdate], a
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first_hail
 
+; player first
+	call SetPlayerTurn
+	call .HailDamage
+	call SetEnemyTurn
+	jr .HailDamage
+
+.enemy_first_hail
+	call SetEnemyTurn
+	call .HailDamage
+	call SetPlayerTurn
+
+.HailDamage:
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret nz
+
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok1
+	ld hl, wEnemyMonType1
+.ok1
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+    call SwitchTurnCore
 	xor a
-	ld [wBattleWeather], a
-	ret
+	ld [wNumHits], a
+	ld de, ANIM_IN_HAIL
+	call Call_PlayBattleAnim
+	call SwitchTurnCore
+
+	call GetSixteenthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, PeltedByHailText
+	jp StdBattleTextbox
 
 .WeatherMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -2023,6 +2112,7 @@ HandleWeather:
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -4635,6 +4725,8 @@ FieldWeather:
     jr z, .sun
     cp WEATHER_SANDSTORM
     jr z, .sand
+    cp WEATHER_HAIL
+    jr z, .hail
     ret
 
 .sand
@@ -4651,6 +4743,11 @@ FieldWeather:
 	ld de, SUNNY_DAY
 	call Call_PlayBattleAnim
 	ld hl, SunGotBrightText
+	jp StdBattleTextbox
+.hail
+	ld de, HAIL
+	call Call_PlayBattleAnim
+	ld hl, ItStartedToHailText
 	jp StdBattleTextbox
 
 ; DevNote - function for Pokemon with effects on switching in
@@ -4681,10 +4778,13 @@ SwitchInEffects:
 
     cp RAYQUAZA
     jp z, .clearField
-    cp ABOMASNOW
+    cp VAPOREON
     jp z, .clearField
+
+    cp ABOMASNOW
+    jp z, .abomasnow
     cp LAPRAS
-    jp z, .lapras
+    jp z, .hail
 
     cp DARKRAI
     jp z, .taunt
@@ -4711,8 +4811,6 @@ SwitchInEffects:
     cp SHELLDER
     jp z, .defUp
     cp CLOYSTER
-    jp z, .defUp
-    cp ARCTOZOLT
     jp z, .defUp
 
     cp RAIKOU
@@ -4879,6 +4977,12 @@ SwitchInEffects:
 .sand
     farcall SandSwitch
     ret
+.abomasnow
+    farcall LeechSeedSwitch
+    ; fallthrough
+.hail
+    farcall HailSwitch
+    ret
 .spikes
     farcall SpikesSwitch
     ret
@@ -4928,12 +5032,12 @@ SwitchInEffects:
 .naturalCure
     farcall NaturalCureSwitch
     ret
+.celebi
+    farcall NaturalCureSwitch
+    ; fallthrough
 .leechSeed
     farcall LeechSeedSwitch
     ret
-.celebi
-    farcall LeechSeedSwitch
-    ; fallthrough
 .spDefUp
     farcall SpecialDefenseUpSwitch
 	ret
@@ -4970,9 +5074,6 @@ SwitchInEffects:
 .atkDown
     farcall AttackDownSwitch
 	ret
-.lapras
-	farcall DefogSwitch
-	; fallthrough
 .spAtkDown
     farcall SpecialAttackDownSwitch
 	ret

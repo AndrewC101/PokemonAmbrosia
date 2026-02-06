@@ -39,6 +39,7 @@ AI_Redundant:
 	dbw EFFECT_MORNING_SUN,  .MorningSun
 	dbw EFFECT_SYNTHESIS,    .Synthesis
 	dbw EFFECT_MOONLIGHT,    .Moonlight
+	dbw EFFECT_HAIL,         .Hail
 	db -1
 
 .LightScreen:
@@ -88,6 +89,12 @@ AI_Redundant:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_ENCORED, a
 	ret
+
+.Hail:
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .Redundant
+	jr .NotRedundant
 
 .SleepTalk:
 	ld a, [wEnemyMonStatus]

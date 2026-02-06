@@ -192,4 +192,5 @@ BattleCommandPointers:
 	dw BattleCommand_StickyWeb
 	dw BattleCommand_TrickRoom
 	dw BattleCommand_Defog
+	dw BattleCommand_StartHail
 	assert_table_length NUM_EFFECT_COMMANDS

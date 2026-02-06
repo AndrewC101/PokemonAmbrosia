@@ -247,7 +247,7 @@ MoveNames::
     li "Extremespeed"
     li "Ancientpower"
     li "Shadow Ball"
-    li "Future Sight"
+    li "Hail"
     li "Rock Smash"
     li "Whirlpool"
     li "Drain Punch"

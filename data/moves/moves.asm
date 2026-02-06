@@ -70,7 +70,7 @@ Moves: ; 41afb
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   85, 10,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,         SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 15,  10
-	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           SPECIAL,   75, 10,  10
+	move BLIZZARD,     EFFECT_BLIZZARD,        120, ICE,           SPECIAL,   75, 10,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     60, WATER,         SPECIAL,  100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    75, ICE,           SPECIAL,  100, 20,  10
@@ -259,7 +259,7 @@ Moves: ; 41afb
 	move EXTREMESPEED, EFFECT_PRIORITY_HIT,       80, NORMAL,        PHYSICAL, 100, 10,   0
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         70, ROCK,          SPECIAL,  100, 10,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
-	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0 ; not used
+	move HAIL,         EFFECT_HAIL,                0, ICE,           STATUS,   100, 10,   0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   50, FIGHTING,      PHYSICAL, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          80, FIGHTING,      PHYSICAL, 100, 15,   0

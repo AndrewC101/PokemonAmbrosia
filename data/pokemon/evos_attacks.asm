@@ -538,7 +538,6 @@ ClefairyEvosAttacks:
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
-	db 1, METRONOME
 	db 16, DRAIN_KISS
 	db 25, MOONLIGHT
 	db 30, ATTRACT
@@ -753,7 +752,7 @@ ArctozoltEvosAttacks:
 	db 21, ANCIENTPOWER
 	db 28, THUNDERPUNCH
 	db 30, ICE_PUNCH
-	db 35, DISCHARGE
+	db 35, HAIL
 	db 40, THUNDERBOLT
 	db 42, ICE_BEAM
 	db 45, AVALANCHE
@@ -815,7 +814,7 @@ SnoverEvosAttacks:
 
 AbomasnowEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DEFOG
+	db 1, HAIL
 	db 15, LEECH_SEED
 	db 20, RAZOR_LEAF
 	db 25, ICY_WIND
@@ -1242,7 +1241,7 @@ MamoswineEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 30, DIG
+	db 30, HAIL
 	db 34, STEALTH_ROCK
 	db 37, AMNESIA
 	db 42, EARTHQUAKE
@@ -1345,6 +1344,7 @@ ShellderEvosAttacks:
 	db 1, PROTECT
 	db 9, POWDER_SNOW
 	db 17, AURORA_BEAM
+	db 20, HAIL
 	db 22, BUBBLEBEAM
 	db 30, CLAMP
 	db 35, WATERFALL
@@ -1358,6 +1358,7 @@ CloysterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, AURORA_BEAM
 	db 1, PROTECT
+	db 20, HAIL
 	db 22, BUBBLEBEAM
 	db 30, CLAMP
 	db 35, WATERFALL
@@ -1868,7 +1869,7 @@ JynxEvosAttacks:
 	db 9, LOVELY_KISS
 	db 13, POWDER_SNOW
 	db 18, BODY_SLAM
-	db 22, ICE_PUNCH
+	db 22, HAIL
 	db 26, AURORA_BEAM
 	db 30, MEAN_LOOK
 	db 36, PSYCHIC_M
@@ -1960,7 +1961,7 @@ GyaradosEvosAttacks:
 
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DEFOG
+	db 1, HAIL
 	db 1, SING
     db 1, SURF
 	db 15, BODY_SLAM
@@ -2160,7 +2161,7 @@ ArticunoEvosAttacks:
 	db 1, GUST
 	db 1, POWDER_SNOW
 	db 25, AGILITY
-	db 37, MIND_READER
+	db 37, HAIL
 	db 40, AIR_SLASH
 	db 45, ROOST
 	db 50, ICE_BEAM
@@ -2662,7 +2663,6 @@ TogepiEvosAttacks:
 	db EVOLVE_LEVEL, 18, TOGETIC
 	db 0 ; no more evolutions
 	db 1, CHARM
-	db 7, METRONOME
 	db 12, ANCIENTPOWER
 	db 19, DRAIN_KISS
 	db 21, ENCORE
@@ -2679,7 +2679,6 @@ TogeticEvosAttacks:
     db EVOLVE_HAPPINESS, TR_ANYTIME, TOGEKISS
 	db 0 ; no more evolutions
 	db 1, CHARM
-	db 7, METRONOME
 	db 12, ANCIENTPOWER
 	db 18, DRAIN_KISS
 	db 21, ENCORE
@@ -2696,7 +2695,6 @@ TogeticEvosAttacks:
 TogekissEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CHARM
-	db 7, METRONOME
 	db 12, ANCIENTPOWER
 	db 18, DRAIN_KISS
 	db 21, ENCORE
@@ -3333,7 +3331,7 @@ SwinubEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 31, DIG
+	db 31, HAIL
 	db 37, AMNESIA
 	db 43, EARTHQUAKE
 	db 46, BLIZZARD
@@ -3348,7 +3346,7 @@ PiloswineEvosAttacks:
 	db 16, MAGNITUDE
 	db 20, ICY_WIND
 	db 25, BODY_SLAM
-	db 30, DIG
+	db 30, HAIL
 	db 34, STEALTH_ROCK
     db 37, AMNESIA
 	db 43, EARTHQUAKE
@@ -3577,7 +3575,6 @@ DialgaEvosAttacks:
 KlefkiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 8, METRONOME
 	db 12, SCREECH
 	db 16, REFLECT
 	db 18, LIGHT_SCREEN

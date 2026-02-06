@@ -5,6 +5,6 @@
 	next "blizzards when"
 	next "angered."
 
-	page "Clears field."
-	next "Blizzard won't"
-	next "miss.@"
+	page "Summons Hail"
+	next "and Leech Seed"
+	next "on switch.@"

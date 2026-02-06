@@ -5,6 +5,6 @@
 	next "blends with the"
 	next "water perfectly."
 
-	page "Immune to"
-	next "stat drops and"
-	next "Water attacks.@"
+	page "Clears field."
+	next "Immune to stat"
+	next "drops and Water.@"

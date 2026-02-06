@@ -1764,6 +1764,9 @@ BattleCommand_CheckHit:
 	farcall ThunderRain
 	ret z
 
+	farcall BlizzardHail
+    ret z
+
 	farcall XAccuracy
 	ret nz
 
@@ -1847,10 +1850,6 @@ BattleCommand_CheckHit:
 	jr nz, .notBlizzard
     call GetCurrentMon
 	cp JYNX
-	ret z
-	cp SNOVER
-	ret z
-	cp ABOMASNOW
 	ret z
 	cp ARTICUNO
 	ret z
@@ -2801,6 +2800,8 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	call HailDefBoost
+
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -3071,6 +3072,8 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+
+	call HailDefBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
@@ -7206,6 +7209,8 @@ INCLUDE "engine/battle/move_effects/rain_dance.asm"
 
 INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
+INCLUDE "engine/battle/move_effects/hail.asm"
+
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
@@ -7251,6 +7256,36 @@ SandstormSpDefBoost:
 	jr z, .stat_boost
 	ld a, [hl]
 	cp ROCK
+	ret nz
+
+.stat_boost
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	add hl, bc
+	ld b, h
+	ld c, l
+	ret
+
+HailDefBoost:
+; First, check if Hail is active.
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+
+; Then, check the opponent's types.
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wBattleMonType1
+.ok
+	ld a, [hli]
+	cp ICE
+	jr z, .stat_boost
+	ld a, [hl]
+	cp ICE
 	ret nz
 
 .stat_boost

@@ -253,7 +253,7 @@
 	const EXTREMESPEED ; f5
 	const ANCIENTPOWER ; f6
 	const SHADOW_BALL  ; f7
-	const FUTURE_SIGHT ; f8 - Not used
+	const HAIL         ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const DRAIN_PUNCH  ; fb
@@ -288,6 +288,7 @@ NUM_ATTACKS EQU const_value - 1
 	const ANIM_WOBBLE            ; 113
 	const ANIM_SHAKE             ; 114
 	const ANIM_HIT_CONFUSION     ; 115
+	const ANIM_IN_HAIL           ; 116
 NUM_BATTLE_ANIMS EQU const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS

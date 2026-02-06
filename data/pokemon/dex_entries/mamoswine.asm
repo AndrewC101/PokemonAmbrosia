@@ -5,6 +5,6 @@
 	next "mighty behemoth"
 	next "from the past."
 
-	page "Takes half"
-	next "damage from Fire"
-	next "and ICE moves.@"
+	page "Resists Fire"
+	next "and Ice. HP"
+	next "regen in Hail.@"

@@ -909,6 +909,7 @@ AI_Smart_EffectHandlers:
     dbw EFFECT_TRICK_ROOM,       AI_Smart_TrickRoom
     dbw EFFECT_DEFOG,            AI_Smart_Defog
     dbw EFFECT_LEVEL_DAMAGE,     AI_Smart_StaticDamage
+    dbw EFFECT_HAIL,             AI_Smart_Hail
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -3023,7 +3024,7 @@ AI_Smart_RainDance:
 
 	push hl
 	ld hl, RainDanceMoves
-	jr AI_Smart_WeatherMove
+	jp AI_Smart_WeatherMove
 .encourage
     dec [hl]
     dec [hl]
@@ -3080,6 +3081,36 @@ AI_Smart_SunnyDay:
 	push hl
 	ld hl, SunnyDayMoves
 	jp AI_Smart_WeatherMove
+.discourage
+    inc [hl]
+    inc [hl]
+    inc [hl]
+    ret
+
+AI_Smart_Hail:
+; don't use if already hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .discourage
+
+; don't boost if choice locked
+    call DoesEnemyHaveChoiceItem
+    jp c, .discourage
+
+; even if we benefit from weather, don't use if we will be koed
+    call DoesEnemyHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
+    call CanPlayerKO
+    jr c, .discourage
+.skipKOCheck
+; encourage if we are an ice type, otherwise discourage
+    ld a, [wEnemyMonType1]
+	cp ICE
+	jp z, DoIt
+
+	ld a, [wEnemyMonType1]
+	cp ICE
+	jp z, DoIt
 .discourage
     inc [hl]
     inc [hl]
@@ -5980,6 +6011,17 @@ ThunderRain:
 .checkRain
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+
+BlizzardHail:
+; Return z if the current move always hits in hail, and it is hailing.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BLIZZARD
+	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
 	ret
 
 XAccuracy:

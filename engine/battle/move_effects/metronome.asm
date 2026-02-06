@@ -1,43 +1,44 @@
 BattleCommand_Metronome:
+    ret
 ; metronome
 
-	call ClearLastMove
-	call CheckUserIsCharging
-	jr nz, .charging
+;	call ClearLastMove
+;	call CheckUserIsCharging
+;	jr nz, .charging
 
-	ld a, [wBattleAnimParam]
-	push af
-	call BattleCommand_LowerSub
-	pop af
-	ld [wBattleAnimParam], a
+;	ld a, [wBattleAnimParam]
+;	push af
+;	call BattleCommand_LowerSub
+;	pop af
+;	ld [wBattleAnimParam], a
 
-.charging
-	call LoadMoveAnim
+;.charging
+;	call LoadMoveAnim
 
-.GetMove:
-	call BattleRandom
+;.GetMove:
+;	call BattleRandom
 
 ; No invalid moves.
-	cp NUM_ATTACKS + 1
-	jr nc, .GetMove
+;	cp NUM_ATTACKS + 1
+;	jr nc, .GetMove
 
 ; None of the moves in MetronomeExcepts.
-	push af
-	ld de, 1
-	ld hl, MetronomeExcepts
-	call IsInArray
-	pop bc
-	jr c, .GetMove
+;	push af
+;	ld de, 1
+;	ld hl, MetronomeExcepts
+;	call IsInArray
+;	pop bc
+;	jr c, .GetMove
 
 ; No moves the user already has.
-	ld a, b
-	call CheckUserMove
-	jr z, .GetMove
+;	ld a, b
+;	call CheckUserMove
+;	jr z, .GetMove
 
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVarAddr
-	ld [hl], b
-	call UpdateMoveData
-	jp ResetTurn
+;	ld a, BATTLE_VARS_MOVE
+;	call GetBattleVarAddr
+;	ld [hl], b
+;	call UpdateMoveData
+;	jp ResetTurn
 
-INCLUDE "data/moves/metronome_exception_moves.asm"
+;INCLUDE "data/moves/metronome_exception_moves.asm"

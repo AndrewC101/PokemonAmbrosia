@@ -2185,3 +2185,10 @@ Defog:
 	doturn
 	defog
 	endmove
+
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove

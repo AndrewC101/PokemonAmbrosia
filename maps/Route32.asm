@@ -777,9 +777,9 @@ Route32FieldMon4Script:
 
 Route32FieldMon5Script:
 	faceplayer
-	cry FRIGIBAX
+	cry SHELLDER
 	pause 15
-	loadwildmon FRIGIBAX, 14
+	loadwildmon SHELLDER, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

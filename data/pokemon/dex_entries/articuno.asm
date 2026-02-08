@@ -6,5 +6,4 @@
 	next "causes hailstorms."
 
 	page "Summons Hail"
-	next "and Reflect"
 	next "on switch.@"

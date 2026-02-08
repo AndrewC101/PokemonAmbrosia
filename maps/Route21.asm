@@ -87,9 +87,9 @@ Route21FieldMon3Script:
 
 Route21FieldMon4Script:
 	faceplayer
-	cry ARCTIBAX
+	cry CLOYSTER
 	pause 15
-	loadwildmon ARCTIBAX, 48
+	loadwildmon CLOYSTER, 48
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

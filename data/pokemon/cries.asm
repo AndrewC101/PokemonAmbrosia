@@ -106,7 +106,7 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      200,  400 ; FEEBAS
 	mon_cry CRY_VENONAT,     100,  150 ; MILOTIC
 	mon_cry CRY_WOOPER,      147,  175 ; MUDKIP
-	mon_cry CRY_CATERPIE,    100,  250 ; BAXCALIBUR
+	mon_cry CRY_CYNDAQUIL,     0,  400 ; BAXCALIBUR
 	mon_cry CRY_DIGLETT,       0,  256 ; EXEGGCUTE
 	mon_cry CRY_DROWZEE,       0,  256 ; EXEGGUTOR
 	mon_cry CRY_MARILL,      283,  288 ; MARILL
@@ -175,8 +175,8 @@ PokemonCries::
 	mon_cry CRY_SPINARAK,     17,  512 ; JOLTIK
 	mon_cry CRY_SPINARAK,   -174,  482 ; GALVANTULA
 	mon_cry CRY_SQUIRTLE,    -16,  320 ; CROBAT
-	mon_cry CRY_CYNDAQUIL,   969,  320 ; FRIGIBAX
-	mon_cry CRY_CYNDAQUIL,   720,  272 ; ARCTIBAX
+	mon_cry CRY_CYNDAQUIL,   400,  300 ; FRIGIBAX
+	mon_cry CRY_CYNDAQUIL,   200,  350 ; ARCTIBAX
 	mon_cry CRY_HOOTHOOT,    400,  100 ; LITWICK
 	mon_cry CRY_HOOTHOOT,    300,  150 ; LAMPENT
 	mon_cry CRY_HOOTHOOT,    100,  200 ; CHANDELURE

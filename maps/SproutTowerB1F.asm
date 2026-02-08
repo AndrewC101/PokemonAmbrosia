@@ -36,9 +36,9 @@ SproutTowerB1FFieldMon2Script:
 
 SproutTowerB1FFieldMon3Script:
 	faceplayer
-	cry BAXCALIBUR
+	cry HOUNDOUR
 	pause 15
-	loadwildmon BAXCALIBUR, 15
+	loadwildmon HOUNDOUR, 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle

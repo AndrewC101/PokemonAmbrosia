@@ -561,9 +561,9 @@ Route44FieldMon3Script:
 
 Route44FieldMon4Script:
 	faceplayer
-	cry ARCTIBAX
+	cry STARMIE
 	pause 15
-	loadwildmon ARCTIBAX, 38
+	loadwildmon STARMIE, 38
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

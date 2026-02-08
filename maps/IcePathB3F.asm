@@ -20,9 +20,9 @@ IcePathB3F_MapScripts:
 
 IcePathB3FFieldMon1Script:
 	faceplayer
-	cry MAMOSWINE
+	cry BAXCALIBUR
 	pause 15
-	loadwildmon MAMOSWINE, 67
+	loadwildmon BAXCALIBUR, 70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle
@@ -43,9 +43,9 @@ IcePathB3FFieldMon2Script:
 
 IcePathB3FFieldMon3Script:
 	faceplayer
-	cry PILOSWINE
+	cry MAMOSWINE
 	pause 15
-	loadwildmon PILOSWINE, 41
+	loadwildmon MAMOSWINE, 51
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3
@@ -73,6 +73,6 @@ IcePathB3F_MapEvents:
 	def_object_events
 	object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE
 	object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1
-	object_event  8, 12, SPRITE_MAMOSWINE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, IcePathB3FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  8, 12, SPRITE_BAXCALIBUR, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, IcePathB3FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  7, 14, SPRITE_ARCTOZOLT, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, IcePathB3FFieldMon2Script, EVENT_FIELD_MON_2
-	object_event 10, 14, SPRITE_PILOSWINE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IcePathB3FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 10, 14, SPRITE_MAMOSWINE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IcePathB3FFieldMon3Script, EVENT_FIELD_MON_3

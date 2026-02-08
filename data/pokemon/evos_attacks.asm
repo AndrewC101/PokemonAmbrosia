@@ -1510,7 +1510,7 @@ BaxcaliburEvosAttacks:
 	db 35, DRAGON_CLAW
 	db 40, CRUNCH
 	db 45, ICE_BEAM
-	db 51, AVALANCHE
+	db 50, AVALANCHE
 	db 55, DRAGON_DANCE
 	db 60, DRACO_IMPACT
 	db 0 ; no more level-up moves

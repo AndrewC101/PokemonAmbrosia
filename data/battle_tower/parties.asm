@@ -2480,7 +2480,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db CLOYSTER
-	db FOCUS_SASH
+	db NEVERMELTICE
 	db SHELL_SMASH, HYDRO_PUMP, AVALANCHE, WATERFALL
 	dw 0 ; OT ID
 	dt 0 ; Exp
@@ -4646,7 +4646,7 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db CLOYSTER
-	db FOCUS_SASH
+	db NEVERMELTICE
 	db SHELL_SMASH, HYDRO_PUMP, AVALANCHE, WATERFALL
 	dw 0 ; OT ID
 	dt 0 ; Exp

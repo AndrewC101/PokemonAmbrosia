@@ -28,13 +28,13 @@ AncientHall_MapScripts:
     endcallback
     
 AncientHallFieldMon1Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_1, AncientHallPokemonAttacksText, 80, 0, .script
+	trainer BAXCALIBUR, FIELD_MON, EVENT_FIELD_MON_1, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_1
     end
 
 AncientHallFieldMon2Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_2, AncientHallPokemonAttacksText, 80, 0, .script
+	trainer BAXCALIBUR, FIELD_MON, EVENT_FIELD_MON_2, AncientHallPokemonAttacksText, 80, 0, .script
 .script
     disappear ANCIENTHALL_FIELDMON_2
     end

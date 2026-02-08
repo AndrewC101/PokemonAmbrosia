@@ -23,6 +23,8 @@ SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
+    db SHELLDER
+    db CLOYSTER
     db -1
 
 SniperPokemon:

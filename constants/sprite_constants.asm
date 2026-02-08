@@ -214,12 +214,12 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_GASTLY     ; d4
 	const SPRITE_EEVEE      ; d5
 	const SPRITE_MUDKIP     ; d6
-	const SPRITE_ONIX       ; d7
-	const SPRITE_SIGILYPH   ; d8
+	const SPRITE_BAXCALIBUR ; d7
+	const SPRITE_SIGILYPH   ; d8  - REMOVE
 	const SPRITE_REUNICLUS  ; d9
 	const SPRITE_BLASTOISE  ; da
 	const SPRITE_SCIZOR     ; db
-	const SPRITE_DUNSPARCE  ; dc
+	const SPRITE_HYDREIGON  ; dc
 	const SPRITE_CONKELDURR ; dd
 	const SPRITE_URSALUNA_B ; de
 	const SPRITE_MISMAGIUS  ; df
@@ -235,7 +235,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_DEINO      ; e9
 	const SPRITE_ELECTABUZZ ; ea
 	const SPRITE_SWAMPERT   ; eb
-	const SPRITE_PONYTA     ; ec
+	const SPRITE_FRIGIBAX   ; ec
 	const SPRITE_SMEARGLE   ; ed
 NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 

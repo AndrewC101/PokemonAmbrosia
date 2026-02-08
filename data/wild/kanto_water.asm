@@ -32,16 +32,16 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_9
 	db 4 percent ; encounter rate
-	db 30, FRIGIBAX
+	db 30, WARTORTLE
 	db 35, STARYU
-	db 40, ARCTIBAX
+	db 40, BLASTOISE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_10_NORTH
 	db 4 percent ; encounter rate
-	db 30, FRIGIBAX
+	db 30, WARTORTLE
 	db 35, STARYU
-	db 40, ARCTIBAX
+	db 40, BLASTOISE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_12
@@ -103,7 +103,7 @@ KantoWaterWildMons:
 	def_water_wildmons ROUTE_26
 	db 6 percent ; encounter rate
 	db 40, POLITOED
-	db 40, ARCTIBAX
+	db 40, MILOTIC
 	db 40, STARMIE
 	end_water_wildmons
 
@@ -116,7 +116,7 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_28
 	db 2 percent ; encounter rate
-	db 65, ARCTIBAX
+	db 65, LAPRAS
 	db 65, CLOYSTER
 	db 65, STARMIE
 	end_water_wildmons
@@ -131,13 +131,13 @@ KantoWaterWildMons:
 	def_water_wildmons VIRIDIAN_CITY
 	db 2 percent ; encounter rate
 	db 5, POLIWHIRL
-	db 5, FRIGIBAX
+	db 5, SQUIRTLE
 	db 40, POLIWRATH
 	end_water_wildmons
 
 	def_water_wildmons CERULEAN_CITY
 	db 4 percent ; encounter rate
-	db 40, ARCTIBAX
+	db 40, LAPRAS
 	db 40, GYARADOS
 	db 40, STARMIE
 	end_water_wildmons

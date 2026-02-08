@@ -103,7 +103,7 @@ SpriteMons:
 	db GASTLY
 	db EEVEE
 	db MUDKIP
-	db ONIX
+	db BAXCALIBUR
 	db SIGILYPH
 	db REUNICLUS
 	db BLASTOISE
@@ -124,6 +124,6 @@ SpriteMons:
 	db DEINO
 	db ELECTABUZZ
 	db SWAMPERT
-	db PONYTA
+	db FRIGIBAX
 	db SMEARGLE
 	assert_table_length NUM_POKEMON_SPRITES

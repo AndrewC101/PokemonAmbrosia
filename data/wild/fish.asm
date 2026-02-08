@@ -46,12 +46,12 @@ FishGroups:
 .Ocean_Good:
 	db  35 percent,     TENTACOOL,   20
 	db  70 percent,     STARYU,  30
-	db  90 percent + 1, FRIGIBAX,   30
+	db  90 percent + 1, POLIWAG,   30
 	db 100 percent,     time_group 2
 .Ocean_Super:
 	db  40 percent,     TENTACRUEL,   50
 	db  70 percent,     time_group 3
-	db  90 percent + 1, ARCTIBAX, 50
+	db  90 percent + 1, KINGDRA, 50
 	db 100 percent,     STARMIE,    60
 
 .Lake_Old:
@@ -225,8 +225,8 @@ TimeFishGroups:
 	db MILOTIC,   40,  MILOTIC,   40 ; 13
 	db SLOWPOKE,   20,  SLOWPOKE,   20 ; 14
 	db SLOWKING,   40,  SLOWKING,   40 ; 15
-	db FRIGIBAX,    20,  FRIGIBAX,    20 ; 16
-	db ARCTIBAX,    40,  ARCTIBAX,    40 ; 17
+	db FROGADIER,    20,  FROGADIER,    20 ; 16
+	db GRENINJA,    40,  GRENINJA,    40 ; 17
 	db KINGDRA,     60,  KINGDRA,     60 ; 18
 	db DRAGONITE,     60,  DRAGONITE,     60 ; 19
 	db TENTACOOL,  20,  TENTACOOL,  20 ; 20

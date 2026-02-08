@@ -736,7 +736,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -744,7 +744,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -752,7 +752,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -764,7 +764,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -772,7 +772,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -780,7 +780,7 @@ JohtoGrassWildMons:
 	db 31, SNEASEL
 	db 31, SWINUB
 	db 32, CLOYSTER
-	db 32, PILOSWINE
+	db 32, ARCTIBAX
 	db 38, JYNX
 	db 42, ABOMASNOW
 	db 51, MAMOSWINE
@@ -1075,7 +1075,7 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 55, DRAGONITE
+	db 65, BAXCALIBUR
 	; day
 	db 40, SLOWKING
 	db 40, LAPRAS
@@ -1083,7 +1083,7 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 55, DRAGONITE
+	db 65, BAXCALIBUR
 	; nite
 	db 40, SLOWKING
 	db 40, LAPRAS
@@ -1091,7 +1091,7 @@ JohtoGrassWildMons:
 	db 43, MILOTIC
 	db 47, STARMIE
 	db 47, REUNICLUS
-	db 55, DRAGONITE
+	db 65, BAXCALIBUR
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_1
@@ -1153,29 +1153,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ROOM_3
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 75, TYRANITAR
+	db 75, BAXCALIBUR
 	db 75, DRAGONITE
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
 	db 75, HYDREIGON
-	db 80, ARTICUNO
+	db 75, TYRANITAR
 	; day
-	db 75, TYRANITAR
+	db 75, BAXCALIBUR
 	db 75, DRAGONITE
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
 	db 75, HYDREIGON
-	db 80, MOLTRES
+	db 75, TYRANITAR
 	; nite
-	db 75, TYRANITAR
+	db 75, BAXCALIBUR
 	db 75, DRAGONITE
 	db 75, SALAMENCE
 	db 75, GARCHOMP
 	db 75, METAGROSS
 	db 75, HYDREIGON
-	db 80, ZAPDOS
+	db 75, TYRANITAR
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
@@ -1379,7 +1379,7 @@ JohtoGrassWildMons:
 	; morn
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 10, FRIGIBAX
+	db 10, SNOVER
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1387,7 +1387,7 @@ JohtoGrassWildMons:
 	; day
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 10, FRIGIBAX
+	db 10, SNOVER
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1395,7 +1395,7 @@ JohtoGrassWildMons:
 	; nite
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 11, FRIGIBAX
+	db 11, SNOVER
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1494,7 +1494,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, BAXCALIBUR
+	db 24, POLTEGEIST
 	db 38, GENGAR
 	; day
 	db 20, GASTLY
@@ -1502,7 +1502,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, BAXCALIBUR
+	db 24, POLTEGEIST
 	db 38, GENGAR
 	; nite
 	db 20, GASTLY
@@ -1510,7 +1510,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, BAXCALIBUR
+	db 24, POLTEGEIST
 	db 38, GENGAR
 	end_grass_wildmons
 
@@ -1631,7 +1631,7 @@ JohtoGrassWildMons:
 	; morn
 	db 31, DRATINI
 	db 5, TOGEPI
-	db 33, ARCTIBAX
+	db 33, STARMIE
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1639,7 +1639,7 @@ JohtoGrassWildMons:
 	; day
 	db 31, DRATINI
 	db 5, TOGEPI
-	db 33, ARCTIBAX
+	db 33, STARMIE
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1647,7 +1647,7 @@ JohtoGrassWildMons:
 	; nite
 	db 31, DRATINI
 	db 27, POLIWHIRL
-	db 33, ARCTIBAX
+	db 33, STARMIE
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1689,7 +1689,7 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 8, GEODUDE
 	db 8, SWINUB
-	db 9, CLEFAIRY
+	db 9, FRIGIBAX
 	db 9, DRATINI
 	db 10, GLIGAR
 	; day
@@ -1697,7 +1697,7 @@ JohtoGrassWildMons:
 	db 6, STARLY
 	db 8, GEODUDE
 	db 8, SWINUB
-	db 9, CLEFAIRY
+	db 9, FRIGIBAX
 	db 9, DRATINI
 	db 10, GLIGAR
 	; nite
@@ -1705,7 +1705,7 @@ JohtoGrassWildMons:
 	db 6, HOOTHOOT
 	db 8, GEODUDE
 	db 8, SWINUB
-	db 9, CLEFAIRY
+	db 9, FRIGIBAX
 	db 9, DRATINI
 	db 10, GLIGAR
 	end_grass_wildmons

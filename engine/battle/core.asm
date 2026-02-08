@@ -4812,9 +4812,7 @@ SwitchInEffects:
     jp z, .defUp
     cp NOCTOWL
     jp z, .defUp
-    cp SHELLDER
-    jp z, .defUp
-    cp CLOYSTER
+    cp BLASTOISE
     jp z, .defUp
 
     cp RAIKOU
@@ -4874,8 +4872,6 @@ SwitchInEffects:
 
     cp CLEFABLE
     jp z, .spDefUp
-    cp UMBREON
-    jp z, .spDefUp
     cp SLOWBRO
     jp z, .spDefUp
     cp BAXCALIBUR
@@ -4928,8 +4924,6 @@ SwitchInEffects:
     cp DEOXYS
     jp z, .screenBreak
 
-    cp ARTICUNO
-    jp z, .reflect
     cp GALLADE
     jp z, .reflect
     cp LATIOS

@@ -5,5 +5,6 @@
 	next "naval weapons of"
 	next "war."
 
-	page "Can not be KOd"
-	next "from full HP.@"
+	page "Defense boost on"
+	next "switch. Can't be"
+	next "KOed from max HP.@"

@@ -5,6 +5,5 @@
 	next "opponent reveals"
 	next "its weak parts."
 
-	page "Defense"
-	next "increases upon"
-	next "entering battle.@"
+	page "Can not be KOd"
+	next "from full HP.@"

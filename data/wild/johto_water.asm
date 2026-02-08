@@ -216,7 +216,7 @@ JohtoWaterWildMons:
 	db 6 percent ; encounter rate
 	db 25, TENTACOOL
 	db 25, POLIWHIRL
-	db 25, FRIGIBAX
+	db 25, STARYU
 	end_water_wildmons
 
 	def_water_wildmons CHERRYGROVE_CITY
@@ -242,7 +242,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons OLIVINE_CITY
 	db 6 percent ; encounter rate
-	db 20, FRIGIBAX
+	db 20, STARYU
 	db 25, POLIWHIRL
 	db 30, TENTACRUEL
 	end_water_wildmons
@@ -250,7 +250,7 @@ JohtoWaterWildMons:
 	def_water_wildmons ECRUTEAK_CITY
 	db 2 percent ; encounter rate
 	db 20, POLIWAG
-	db 20, FRIGIBAX
+	db 20, STARYU
 	db 20, SLOWPOKE
 	end_water_wildmons
 
@@ -298,7 +298,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ABYSS
 	db 2 percent ; encounter rate
-	db 64, ARCTIBAX
+	db 64, GYARADOS
 	db 67, SWAMPERT
 	db 69, GRENINJA
 	end_water_wildmons

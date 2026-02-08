@@ -1501,7 +1501,7 @@ MudkipEvosAttacks:
 	db 50, EARTHQUAKE
 	db 0 ; no more level-up moves
 
-MimikyuEvosAttacks:
+BaxcaliburEvosAttacks:
 	db 0 ; no more evolutions
 	db 15, HAIL
 	db 20, BITE
@@ -2586,8 +2586,8 @@ CrobatEvosAttacks:
 	db 86, AFTER_IMAGE
 	db 0 ; no more level-up moves
 
-ChinchouEvosAttacks:
-	db EVOLVE_LEVEL, 30, LANTURN
+FrigibaxEvosAttacks:
+	db EVOLVE_LEVEL, 30, ARCTIBAX
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW
 	db 1, SCRATCH
@@ -2604,8 +2604,8 @@ ChinchouEvosAttacks:
 	db 60, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
-LanturnEvosAttacks:
-    db EVOLVE_LEVEL, 50, MIMIKYU
+ArctibaxEvosAttacks:
+    db EVOLVE_LEVEL, 50, BAXCALIBUR
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW
 	db 1, SCRATCH

@@ -80,7 +80,7 @@ LavenderForestFieldMon4Script:
     end
 
 LavenderForestFieldMon5Script:
-	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 64, 0, .script
+	trainer BAXCALIBUR, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 64, 0, .script
 .script
     disappear LAVENDERFOREST_FIELDMON_5
     end

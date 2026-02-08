@@ -140,7 +140,7 @@ Pokered_MonIndices:
 	db MILOTIC
 	db CLOYSTER
 	db DIALGA ; MISSINGNO.
-	db MIMIKYU
+	db BAXCALIBUR
 	db CLEFABLE
 	db WEEZING
 	db PERSIAN
@@ -209,8 +209,8 @@ Pokered_MonIndices:
 	db JOLTIK
 	db GALVANTULA
 	db CROBAT
-	db CHINCHOU
-	db LANTURN
+	db FRIGIBAX
+	db ARCTIBAX
 	db LITWICK
 	db LAMPENT
 	db CHANDELURE

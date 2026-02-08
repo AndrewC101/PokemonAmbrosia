@@ -119,7 +119,7 @@
 	const FEEBAS     ; 62
 	const MILOTIC    ; 63
 	const MUDKIP     ; 64
-	const MIMIKYU    ; 65
+	const BAXCALIBUR    ; 65
 	const EXEGGCUTE  ; 66
 	const EXEGGUTOR  ; 67
 	const MARILL     ; 68
@@ -189,8 +189,8 @@ JOHTO_POKEMON EQU const_value
 	const JOLTIK     ; a7
 	const GALVANTULA ; a8
 	const CROBAT     ; a9
-	const CHINCHOU   ; aa
-	const LANTURN    ; ab
+	const FRIGIBAX   ; aa
+	const ARCTIBAX    ; ab
 	const LITWICK    ; ac
 	const LAMPENT    ; ad
 	const CHANDELURE ; ae

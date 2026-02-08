@@ -203,8 +203,8 @@ PokemonPicPointers::
 	dba_pic MiloticBackpic
 	dba_pic MudkipFrontpic
 	dba_pic MudkipBackpic
-	dba_pic MimikyuFrontpic
-	dba_pic MimikyuBackpic
+	dba_pic BaxcaliburFrontpic
+	dba_pic BaxcaliburBackpic
 	dba_pic ExeggcuteFrontpic
 	dba_pic ExeggcuteBackpic
 	dba_pic ExeggutorFrontpic
@@ -341,10 +341,10 @@ PokemonPicPointers::
 	dba_pic GalvantulaBackpic
 	dba_pic CrobatFrontpic
 	dba_pic CrobatBackpic
-	dba_pic ChinchouFrontpic
-	dba_pic ChinchouBackpic
-	dba_pic LanturnFrontpic
-	dba_pic LanturnBackpic
+	dba_pic FrigibaxFrontpic
+	dba_pic FrigibaxBackpic
+	dba_pic ArctibaxFrontpic
+	dba_pic ArctibaxBackpic
 	dba_pic LitwickFrontpic
 	dba_pic LitwickBackpic
 	dba_pic LampentFrontpic

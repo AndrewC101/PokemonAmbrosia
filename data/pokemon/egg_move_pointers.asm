@@ -169,7 +169,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw ChinchouEggMoves
+	dw FrigibaxEggMoves
 	dw NoEggMoves
 	dw LitwickEggMoves
 	dw NoEggMoves

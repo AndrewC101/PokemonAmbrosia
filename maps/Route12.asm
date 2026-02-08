@@ -111,9 +111,9 @@ Route12FieldMon5Script:
 
 Route12FieldMon6Script:
 	faceplayer
-	cry LANTURN
+	cry ARCTIBAX
 	pause 15
-	loadwildmon LANTURN, 44
+	loadwildmon ARCTIBAX, 44
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

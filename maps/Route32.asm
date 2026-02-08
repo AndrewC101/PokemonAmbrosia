@@ -777,9 +777,9 @@ Route32FieldMon4Script:
 
 Route32FieldMon5Script:
 	faceplayer
-	cry CHINCHOU
+	cry FRIGIBAX
 	pause 15
-	loadwildmon CHINCHOU, 14
+	loadwildmon FRIGIBAX, 14
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_5

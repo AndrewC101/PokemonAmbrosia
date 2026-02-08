@@ -101,7 +101,7 @@ PokedexDataPointerTable:
 	dw FeebasPokedexEntry
 	dw MiloticPokedexEntry
 	dw MudkipPokedexEntry
-	dw MimikyuPokedexEntry
+	dw BaxcaliburPokedexEntry
 	dw ExeggcutePokedexEntry
 	dw ExeggutorPokedexEntry
 	dw MarillPokedexEntry
@@ -170,8 +170,8 @@ PokedexDataPointerTable:
 	dw JoltikPokedexEntry
 	dw GalvantulaPokedexEntry
 	dw CrobatPokedexEntry
-	dw ChinchouPokedexEntry
-	dw LanturnPokedexEntry
+	dw FrigibaxPokedexEntry
+	dw ArctibaxPokedexEntry
 	dw LitwickPokedexEntry
 	dw LampentPokedexEntry
 	dw ChandelurePokedexEntry

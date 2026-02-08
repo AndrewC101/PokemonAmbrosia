@@ -399,7 +399,7 @@ JoltikEggMoves:
 	db FEINT_ATTACK
 	db -1 ; end
 
-ChinchouEggMoves:
+FrigibaxEggMoves:
 	db SCREECH
 	db -1 ; end
 

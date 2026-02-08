@@ -32,7 +32,7 @@ AlphabeticalPokedexOrder:
 	db CHARMANDER
 	db CHARMELEON
 	db CHIMCHAR
-	db CHINCHOU
+	db FRIGIBAX
 	db CLEFABLE
 	db CLEFAIRY
 	db CLOYSTER
@@ -112,7 +112,7 @@ AlphabeticalPokedexOrder:
 	db ZWEILOUS
 	db KYOGRE
 	db LAMPENT
-	db LANTURN
+	db ARCTIBAX
 	db LAPRAS
 	db LARVESTA
 	db LARVITAR
@@ -144,7 +144,7 @@ AlphabeticalPokedexOrder:
 	db MEWTWO
 	db MILOTIC
 	db MILTANK
-	db MIMIKYU
+	db BAXCALIBUR
 	db MISDREAVUS
 	db MISMAGIUS
 	db MOLTRES

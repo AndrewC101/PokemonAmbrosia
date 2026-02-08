@@ -102,7 +102,7 @@ EvosAttacksPointers::
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
 	dw MudkipEvosAttacks
-	dw MimikyuEvosAttacks
+	dw BaxcaliburEvosAttacks
 	dw ExeggcuteEvosAttacks
 	dw ExeggutorEvosAttacks
 	dw MarillEvosAttacks
@@ -171,8 +171,8 @@ EvosAttacksPointers::
 	dw JoltikEvosAttacks
 	dw GalvantulaEvosAttacks
 	dw CrobatEvosAttacks
-	dw ChinchouEvosAttacks
-	dw LanturnEvosAttacks
+	dw FrigibaxEvosAttacks
+	dw ArctibaxEvosAttacks
 	dw LitwickEvosAttacks
 	dw LampentEvosAttacks
 	dw ChandelureEvosAttacks

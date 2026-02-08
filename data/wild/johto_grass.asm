@@ -1379,7 +1379,7 @@ JohtoGrassWildMons:
 	; morn
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 10, CHINCHOU
+	db 10, FRIGIBAX
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1387,7 +1387,7 @@ JohtoGrassWildMons:
 	; day
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 10, CHINCHOU
+	db 10, FRIGIBAX
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1395,7 +1395,7 @@ JohtoGrassWildMons:
 	; nite
 	db 9, MUDKIP
 	db 9, POLIWAG
-	db 11, CHINCHOU
+	db 11, FRIGIBAX
 	db 11, MACHOP
 	db 11, TIMBURR
 	db 12, RIOLU
@@ -1494,7 +1494,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, MIMIKYU
+	db 24, BAXCALIBUR
 	db 38, GENGAR
 	; day
 	db 20, GASTLY
@@ -1502,7 +1502,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, MIMIKYU
+	db 24, BAXCALIBUR
 	db 38, GENGAR
 	; nite
 	db 20, GASTLY
@@ -1510,7 +1510,7 @@ JohtoGrassWildMons:
 	db 23, HONEDGE
 	db 23, LITWICK
 	db 24, ROTOM
-	db 24, MIMIKYU
+	db 24, BAXCALIBUR
 	db 38, GENGAR
 	end_grass_wildmons
 
@@ -1631,7 +1631,7 @@ JohtoGrassWildMons:
 	; morn
 	db 31, DRATINI
 	db 5, TOGEPI
-	db 33, LANTURN
+	db 33, ARCTIBAX
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1639,7 +1639,7 @@ JohtoGrassWildMons:
 	; day
 	db 31, DRATINI
 	db 5, TOGEPI
-	db 33, LANTURN
+	db 33, ARCTIBAX
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED
@@ -1647,7 +1647,7 @@ JohtoGrassWildMons:
 	; nite
 	db 31, DRATINI
 	db 27, POLIWHIRL
-	db 33, LANTURN
+	db 33, ARCTIBAX
 	db 33, CHANSEY
 	db 40, TOGEKISS
 	db 40, POLITOED

@@ -102,7 +102,7 @@ IconPointers:
 	dw FeebasIcon
 	dw MiloticIcon
 	dw MudkipIcon
-	dw MimikyuIcon
+	dw BaxcaliburIcon
 	dw ExeggcuteIcon
 	dw ExeggutorIcon
 	dw MarillIcon
@@ -171,8 +171,8 @@ IconPointers:
 	dw JoltikIcon
 	dw GalvantulaIcon
 	dw CrobatIcon
-	dw ChinchouIcon
-	dw LanturnIcon
+	dw FrigibaxIcon
+	dw ArctibaxIcon
 	dw LitwickIcon
 	dw LampentIcon
 	dw ChandelureIcon

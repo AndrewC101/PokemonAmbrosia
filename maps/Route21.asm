@@ -87,9 +87,9 @@ Route21FieldMon3Script:
 
 Route21FieldMon4Script:
 	faceplayer
-	cry LANTURN
+	cry ARCTIBAX
 	pause 15
-	loadwildmon LANTURN, 48
+	loadwildmon ARCTIBAX, 48
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

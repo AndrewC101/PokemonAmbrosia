@@ -105,7 +105,7 @@ MonMenuIconPals:
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
 	icon_pals BLUE,  PURPLE     ; MUDKIP
-	icon_pals BLUE,  TEAL     ; MIMIKYU
+	icon_pals BLUE,  TEAL     ; BAXCALIBUR
 	icon_pals GREEN,  PURPLE      ; EXEGGCUTE
 	icon_pals GREEN,  PURPLE       ; EXEGGUTOR
 	icon_pals BLUE,  PURPLE     ; MARILL
@@ -174,8 +174,8 @@ MonMenuIconPals:
 	icon_pals GOLD,  BLUE          ; JOLTIK
 	icon_pals GOLD,  BLUE        ; GALVANTULA
 	icon_pals PURPLE,  PURPLE        ; CROBAT
-	icon_pals BLUE,  TEAL      ; CHINCHOU
-	icon_pals BLUE,  TEAL        ; LANTURN
+	icon_pals BLUE,  TEAL      ; FRIGIBAX
+	icon_pals BLUE,  TEAL        ; ARCTIBAX
 	icon_pals BLUE,  RED       ; LITWICK
 	icon_pals BLUE,  RED      ; LAMPENT
 	icon_pals RED,  RED       ; CHANDELURE

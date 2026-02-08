@@ -1689,11 +1689,11 @@ HandleRegenerator:
     jr z, .doRegen
     cp MAMOSWINE
     jr z, .doRegen
-    cp CHINCHOU
+    cp FRIGIBAX
     jr z, .doRegen
-    cp LANTURN
+    cp ARCTIBAX
     jr z, .doRegen
-    cp MIMIKYU
+    cp BAXCALIBUR
     jr z, .doRegen
     ret
 
@@ -4878,7 +4878,7 @@ SwitchInEffects:
     jp z, .spDefUp
     cp SLOWBRO
     jp z, .spDefUp
-    cp MIMIKYU
+    cp BAXCALIBUR
     jp z, .spDefUp
 
     cp SNEASEL

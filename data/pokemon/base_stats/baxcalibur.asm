@@ -1,4 +1,4 @@
-	db MIMIKYU ; 101
+	db BAXCALIBUR ; 101
 
 	db  115, 145, 92, 87,  75,  86
 	;   hp  atk  def  spd  sat  sdf

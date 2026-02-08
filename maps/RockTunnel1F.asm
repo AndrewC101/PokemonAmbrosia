@@ -29,7 +29,7 @@ RockTunnel1FFieldMon1Script:
     end
 
 RockTunnel1FFieldMon2Script:
-	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_2, RockTunnel1FPokemonAttacksText, 67, 0, .script
+	trainer BAXCALIBUR, FIELD_MON, EVENT_FIELD_MON_2, RockTunnel1FPokemonAttacksText, 67, 0, .script
 .script
     disappear ROCKTUNNEL1F_FIELDMON_2
     end

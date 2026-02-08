@@ -29,7 +29,6 @@ AI_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
-    db MIMIKYU
     db LOPUNNY
     db DEOXYS
     db $FF
@@ -61,8 +60,6 @@ AI_WaterAbsorbPokemon:
     db $FF
 
 AI_VoltAbsorbPokemon:
-    db CHINCHOU
-    db LANTURN
     db ELECTABUZZ
     db ELECTIVIRE
     db ZAPDOS
@@ -116,7 +113,6 @@ AI_SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
-    db MIMIKYU
     db $FF
 
 AI_ClearBodyPokemon:
@@ -3786,8 +3782,6 @@ AI_Smart_Flinch:
     cp SHAYMIN
     jr z, .encourage
     cp TOGEKISS
-    jr z, .encourage
-    cp LANTURN
     jr z, .encourage
 
     ret

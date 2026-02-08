@@ -1237,7 +1237,6 @@ Core_MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
-    db MIMIKYU
     db LOPUNNY
     db DEOXYS
     db -1
@@ -1267,7 +1266,6 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
     db DUOSION
     db REUNICLUS
     db XERNEAS
-    db MIMIKYU
     db LOPUNNY
     db GASTLY
     db HAUNTER
@@ -1690,6 +1688,12 @@ HandleRegenerator:
     cp LAPRAS
     jr z, .doRegen
     cp MAMOSWINE
+    jr z, .doRegen
+    cp CHINCHOU
+    jr z, .doRegen
+    cp LANTURN
+    jr z, .doRegen
+    cp MIMIKYU
     jr z, .doRegen
     ret
 
@@ -4783,7 +4787,7 @@ SwitchInEffects:
 
     cp ABOMASNOW
     jp z, .abomasnow
-    cp ARCTICUNO
+    cp ARTICUNO
     jp z, .articuno
 
     cp DARKRAI
@@ -4865,14 +4869,16 @@ SwitchInEffects:
 
     cp WHIMSICOTT
     jp z, .leechSeed
-
     cp CELEBI
     jp z, .celebi
+
     cp CLEFABLE
     jp z, .spDefUp
     cp UMBREON
     jp z, .spDefUp
     cp SLOWBRO
+    jp z, .spDefUp
+    cp MIMIKYU
     jp z, .spDefUp
 
     cp SNEASEL

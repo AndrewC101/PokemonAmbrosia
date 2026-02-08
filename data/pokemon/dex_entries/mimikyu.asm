@@ -1,10 +1,10 @@
-	db "DISGUISE@" ; species name
-	dw 008, 15 ; height, weight
+	db "Ice Dragon@" ; species name
+	dw 611, 4630 ; height, weight
 
-	db   "Hides its awful"
-	next "appearance under"
-	next "a lonely rag."
+	db   "Its frigid"
+	next "breath can"
+	next "freeze lava."
 
-	page "Immune to OHKO"
-	next "and passive"
-	next "damage.@"
+	page "Sp.Def boost on"
+	next "switch. Regens"
+	next "HP in Hail.@"

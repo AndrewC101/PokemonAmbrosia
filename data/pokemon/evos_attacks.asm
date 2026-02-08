@@ -1503,16 +1503,16 @@ MudkipEvosAttacks:
 
 MimikyuEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LICK
-	db 1, PAIN_SPLIT
-	db 10, MIMIC
-	db 15, DRAIN_KISS
-	db 20, CHARM
-	db 25, NIGHT_SLASH
-	db 30, SUCKER_PUNCH
-	db 35, SHADOW_PUNCH
-	db 40, PLAY_ROUGH
-	db 50, SWORDS_DANCE
+	db 15, HAIL
+	db 20, BITE
+	db 25, DRAGON_PULSE
+	db 30, ICE_PUNCH
+	db 35, DRAGON_CLAW
+	db 40, CRUNCH
+	db 45, ICE_BEAM
+	db 51, AVALANCHE
+	db 55, DRAGON_DANCE
+	db 60, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -2587,34 +2587,39 @@ CrobatEvosAttacks:
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
-	db EVOLVE_LEVEL, 27, LANTURN
+	db EVOLVE_LEVEL, 30, LANTURN
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 14, THUNDERSHOCK
-	db 18, BUBBLEBEAM
-	db 21, RAIN_DANCE
-	db 23, CONFUSE_RAY
-	db 28, THUNDER_WAVE
-	db 30, DISCHARGE
-	db 33, SCALD
-	db 36, THUNDERBOLT
-	db 45, HYDRO_PUMP
-	db 50, THUNDER
+	db 1, POWDER_SNOW
+	db 1, SCRATCH
+	db 10, ICY_WIND
+	db 15, HAIL
+	db 20, BITE
+	db 25, DRAGON_PULSE
+	db 31, ICE_PUNCH
+	db 35, DRAGON_CLAW
+	db 40, CRUNCH
+	db 45, ICE_BEAM
+	db 51, AVALANCHE
+	db 55, DRAGON_DANCE
+	db 60, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
 LanturnEvosAttacks:
+    db EVOLVE_LEVEL, 50, MIMIKYU
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 14, THUNDERSHOCK
-	db 18, BUBBLEBEAM
-	db 21, RAIN_DANCE
-	db 23, CONFUSE_RAY
-	db 27, THUNDER_WAVE
-	db 30, DISCHARGE
-	db 33, SCALD
-	db 36, THUNDERBOLT
-	db 45, HYDRO_PUMP
-	db 50, THUNDER
+	db 1, POWDER_SNOW
+	db 1, SCRATCH
+	db 10, ICY_WIND
+	db 15, HAIL
+	db 20, BITE
+	db 25, DRAGON_PULSE
+	db 30, ICE_PUNCH
+	db 35, DRAGON_CLAW
+	db 40, CRUNCH
+	db 45, ICE_BEAM
+	db 51, AVALANCHE
+	db 55, DRAGON_DANCE
+	db 60, DRACO_IMPACT
 	db 0 ; no more level-up moves
 
 LitwickEvosAttacks:

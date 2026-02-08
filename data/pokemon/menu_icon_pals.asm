@@ -105,7 +105,7 @@ MonMenuIconPals:
 	icon_pals BLUE,  PURPLE       ; FEEBAS
 	icon_pals BLUE,  PURPLE       ; MILOTIC
 	icon_pals BLUE,  PURPLE     ; MUDKIP
-	icon_pals PURPLE,  SILVER     ; MIMIKYU
+	icon_pals BLUE,  TEAL     ; MIMIKYU
 	icon_pals GREEN,  PURPLE      ; EXEGGCUTE
 	icon_pals GREEN,  PURPLE       ; EXEGGUTOR
 	icon_pals BLUE,  PURPLE     ; MARILL

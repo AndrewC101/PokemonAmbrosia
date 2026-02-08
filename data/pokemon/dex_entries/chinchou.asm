@@ -1,10 +1,8 @@
-	db "ANGLER@" ; species name
-	dw 108, 260 ; height, weight
+	db "Ice Fin@" ; species name
+	dw 108, 375 ; height, weight
 
-	db   "Its antennae, are"
-	next "charged with"
-	next "electricity."
+	db   "Absorbs heat"
+	next "through its fin."
 
-	page "Immune to"
-	next "Electric"
-	next "attacks.@"
+	page "Regenerates"
+	next "HP in Hail.@"

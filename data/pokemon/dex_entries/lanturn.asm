@@ -1,10 +1,9 @@
-	db "LIGHT@" ; species name
-	dw 311, 500 ; height, weight
+	db "Ice Fin@" ; species name
+	dw 207, 661 ; height, weight
 
-	db   "This #mon uses"
-	next "lures prey with"
-	next "its bright body."
+	db   "Protects its"
+	next "face with an"
+	next "ice mask."
 
-    page "Electric immune."
-	next "Move effects are"
-	next "more likely.@"
+	page "Regenerates"
+	next "HP in Hail.@"

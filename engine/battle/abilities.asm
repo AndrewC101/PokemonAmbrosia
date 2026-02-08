@@ -23,7 +23,6 @@ SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
-    db MIMIKYU
     db -1
 
 SniperPokemon:
@@ -57,7 +56,6 @@ SereneGracePokemon:
     db TOGETIC
     db TOGEKISS
     db SHAYMIN
-    db LANTURN
     db FLAREON
     db -1
 
@@ -163,7 +161,6 @@ MagicGuardPokemon:
     db REUNICLUS
     db XERNEAS
     db YVELTAL
-    db MIMIKYU
     db LOPUNNY
     db DEOXYS
     db -1
@@ -241,8 +238,6 @@ UberImmunePokemon:
 ;    db -1
 
 ;VoltAbsorbPokemon:
-;    db CHINCHOU
-;    db LANTURN
 ;    db ELECTABUZZ
 ;    db ELECTIVIRE
 ;    db ZAPDOS

@@ -4842,17 +4842,24 @@ DoesAIOutSpeedPlayer:
 	jr nz, .checkSand
 	ld a, [wEnemyMonSpecies]
 	cp VENUSAUR
-	jr z, .yes
+	jp z, .yes
 	cp EXEGGUTOR
-	jr z, .yes
+	jp z, .yes
 .checkSand
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	jr nz, .checkPlayer
+	jr nz, .checkHail
 	ld a, [wEnemyMonSpecies]
 	cp EXCADRILL
 	jr z, .yes
 	cp GOLEM
+	jr z, .yes
+.checkHail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr nz, .checkPlayer
+	ld a, [wEnemyMonSpecies]
+	cp ARCTOZOLT
 	jr z, .yes
 
 .checkPlayer
@@ -4888,6 +4895,13 @@ DoesAIOutSpeedPlayer:
 	cp EXCADRILL
 	jr z, .no
 	cp GOLEM
+	jr z, .no
+.checkHailPlayer
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr nz, .speedCheck
+	ld a, [wBattleMonSpecies]
+	cp ARCTOZOLT
 	jr z, .no
 
 .speedCheck

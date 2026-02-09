@@ -4788,7 +4788,7 @@ SwitchInEffects:
     cp ABOMASNOW
     jp z, .abomasnow
     cp ARTICUNO
-    jp z, .articuno
+    jp z, .hail
 
     cp DARKRAI
     jp z, .taunt
@@ -5007,9 +5007,6 @@ SwitchInEffects:
 .screenBreak
     farcall ScreenBreakSwitch
     ret
-.articuno
-    farcall HailSwitch
-    ; fallthrough
 .reflect
     farcall ReflectSwitch
     ret

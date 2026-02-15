@@ -3,7 +3,7 @@ GOLDENRODGAMECORNER_TM14_COINS EQU 4000
 GOLDENRODGAMECORNER_TM38_COINS EQU 4000
 GOLDENRODGAMECORNER_ABRA_COINS      EQU 1000 ; EEVEE
 GOLDENRODGAMECORNER_CUBONE_COINS    EQU 2000 ; PORYGON
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 4000 ; SMEARGLE
+GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000 ; WOBBUFFET
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -226,16 +226,16 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, SMEARGLE
+	getmonname STRING_BUFFER_3, WOBBUFFET
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval SMEARGLE
+	setval WOBBUFFET
 	special GameCornerPrizeMonCheckDex
-	givepoke SMEARGLE, 25
+	givepoke WOBBUFFET, 25
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 
@@ -250,7 +250,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db 4 ; items
 	db "Eevee     1000@"
 	db "Porygon   2000@"
-	db "Smeargle  4000@"
+	db "Meltan    3000@"
 	db "Cancel@"
 
 GoldenrodGameCornerPharmacistScript:

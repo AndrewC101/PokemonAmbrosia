@@ -208,14 +208,14 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_RALTS      ; ce
 	const SPRITE_AMPHAROS   ; cf
 	const SPRITE_SLOWBRO    ; d0
-	const SPRITE_SLOWKING   ; d1
+	const SPRITE_MELMETAL   ; d1
 	const SPRITE_STARAPTOR  ; d2
 	const SPRITE_SOLOSIS    ; d3
 	const SPRITE_GASTLY     ; d4
 	const SPRITE_EEVEE      ; d5
 	const SPRITE_MUDKIP     ; d6
 	const SPRITE_BAXCALIBUR ; d7
-	const SPRITE_SIGILYPH   ; d8  - REMOVE
+	const SPRITE_MELTAN     ; d8
 	const SPRITE_REUNICLUS  ; d9
 	const SPRITE_BLASTOISE  ; da
 	const SPRITE_SCIZOR     ; db

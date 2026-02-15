@@ -6,5 +6,5 @@
 	next "powerful punch."
 
 	page "Boosts weaker"
-	next "moves. Heals"
-	next "status on switch.@"
+	next "moves. Boosted"
+	next "punches.@"

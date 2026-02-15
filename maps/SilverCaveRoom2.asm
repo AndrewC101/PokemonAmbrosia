@@ -133,9 +133,9 @@ SilverCaveRoom2FieldMon9Script:
 
 SilverCaveRoom2FieldMon10Script:
 	faceplayer
-	cry TOGEKISS
+	cry SLOWKING
 	pause 15
-	loadwildmon TOGEKISS, 70
+	loadwildmon SLOWKING, 80
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10
@@ -181,6 +181,6 @@ SilverCaveRoom2_MapEvents:
 	object_event 20, 54, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon7Script, EVENT_FIELD_MON_7
 	object_event  5, 32, SPRITE_GALLADE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 10, 46, SPRITE_GARDEVOIR, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon9Script, EVENT_FIELD_MON_9
-	object_event 19, 29, SPRITE_TOGEKISS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon10Script, EVENT_FIELD_MON_10
+	object_event 10,  2, SPRITE_MELMETAL, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveRoom2FieldMon10Script, EVENT_FIELD_MON_10
 
 	

@@ -43,7 +43,6 @@ AI_LevitatePokemon:
     db LATIAS
     db LATIOS
     db ROTOM
-    db UNOWN
     db HYDREIGON
     db $FF
 
@@ -126,6 +125,7 @@ AI_ClearBodyPokemon:
     db REGIGIGAS
     db VAPOREON
     db WOBBUFFET
+    db SLOWKING
     db KYOGRE
     db $FF
 
@@ -144,7 +144,6 @@ AI_UberImmunePokemon:
     db HO_OH
     db REGIGIGAS
     db ZYGARDE
-    db WOBBUFFET
     db $FF
 
 AI_Basic:
@@ -563,7 +562,7 @@ AI_Smart_Switch:
 	pop hl
 	jr c, .switch
 	ret
-	
+
 .checkSetupAndSwitchIfWeCantKO
     call CanAIKO
     ret c
@@ -585,7 +584,7 @@ AI_Smart_Switch:
     ld a, $1
     ld [wEnemyIsSwitching], a
 	ret
-	
+
 IsAISetup:
 ; don't switch if enemy mon is already set up
     ld a, [wEnemyAtkLevel]
@@ -4322,6 +4321,7 @@ CanPlayerKO:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+	call AdjustForMelmetal
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
@@ -4372,17 +4372,10 @@ CanPlayer2HKO:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
-; double current damage
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-	add hl, hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-; continue
+	call AdjustForMelmetal
+
+    call DoubleCurrentDamage
+
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
@@ -4441,17 +4434,10 @@ CanPlayer2HKOMaxHP:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
-; double current damage
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-	add hl, hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-; continue
+	call AdjustForMelmetal
+
+    call DoubleCurrentDamage
+
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
@@ -4510,6 +4496,7 @@ CanPlayer3HKOMaxHP:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+	call AdjustForMelmetal
 ; triple current damage
 	ld hl, wCurDamage + 1
 	ld a, [hld]
@@ -4632,17 +4619,9 @@ CanAI2HKO:
 	callfar EnemyAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
-; double current damage
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-	add hl, hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-; continue
+
+    call DoubleCurrentDamage
+
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
@@ -4701,17 +4680,9 @@ CanAI2HKOMaxHP:
 	callfar EnemyAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
-; double current damage
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-	add hl, hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-; continue
+
+    call DoubleCurrentDamage
+
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
@@ -4770,6 +4741,7 @@ CanAI3HKO:
 	callfar EnemyAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+	; AdjustForMelmetal
 ; triple current damage
 	ld hl, wCurDamage + 1
 	ld a, [hld]
@@ -4818,6 +4790,32 @@ CanAI3HKO:
 .done
     xor a ; clear carry flag
     ret
+
+AdjustForMelmetal:
+    ld a, [wBattleMonSpecies]
+    cp SLOWKING
+    ret nz
+    push bc
+    ld b, EFFECT_DOUBLE_FLINCH_HIT
+	call PlayerHasMoveEffect
+	jr nc, .done
+	call DoubleCurrentDamage
+.done
+	pop bc
+	ret
+
+DoubleCurrentDamage:
+; double current damage
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
 
 DoesAIOutSpeedPlayer:
 ; lots of extra logic for the weather speed boosting abilities since they don't actually increase speed
@@ -5367,6 +5365,8 @@ AIDamageCalc:
 	ld a, 1
 	ldh [hBattleTurn], a
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_DOUBLE_FLINCH_HIT
+	jr z, .doubleDamage
 	ld de, 1
 	ld hl, ConstantDamageEffects
 	call IsInArray
@@ -5378,6 +5378,13 @@ AIDamageCalc:
 	callfar EnemyAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+	ret
+
+.doubleDamage
+	callfar EnemyAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+	call DoubleCurrentDamage
 	ret
 
 INCLUDE "data/battle/ai/constant_damage_effects.asm"
@@ -6037,4 +6044,3 @@ XAccuracy:
 	call GetBattleVar
 	bit SUBSTATUS_X_ACCURACY, a
 	ret
-

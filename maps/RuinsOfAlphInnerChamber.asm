@@ -8,6 +8,7 @@
 	const RUINSOFALPHINNERCHAMBER_FIELDMON_3
 	const RUINSOFALPHINNERCHAMBER_ARCEUS
 	const RUINSOFALPHINNERCHAMBER_ENTEI
+	const RUINSOFALPHINNERCHAMBER_FIELDMON_4
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -139,6 +140,17 @@ RuinsOfAlphInnerChamberMon3Script:
 	disappear RUINSOFALPHINNERCHAMBER_FIELDMON_3
 	end
 
+RuinsOfAlphInnerChamberMon4Script:
+	faceplayer
+	cry WOBBUFFET
+	pause 15
+	loadwildmon WOBBUFFET, 10
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear RUINSOFALPHINNERCHAMBER_FIELDMON_4
+	end
+
 ArceusStatueScript:
     opentext
     writetext arceusStatueText
@@ -229,3 +241,4 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event 16,  1, SPRITE_SOLOSIS, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 10, SPRITE_ARCEUS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ArceusStatueScript, -1
 	object_event 8, 11, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EnteiScript, EVENT_FIELD_MON_4
+	object_event 17,  6, SPRITE_MELTAN, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberMon4Script, EVENT_FIELD_MON_4

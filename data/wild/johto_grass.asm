@@ -36,7 +36,7 @@ JohtoGrassWildMons:
 	db 31, HAUNTER
 	db 31, PERSIAN
 	db 32, SOLOSIS
-	db 32, WOBBUFFET
+	db 32, KADABRA
 	db 33, LAMPENT
 	db 33, DOUBLADE
     db 41, GENGAR
@@ -44,7 +44,7 @@ JohtoGrassWildMons:
 	db 31, HAUNTER
 	db 31, PERSIAN
 	db 32, SOLOSIS
-	db 32, WOBBUFFET
+	db 32, KADABRA
 	db 33, LAMPENT
 	db 33, DOUBLADE
     db 41, GENGAR
@@ -52,7 +52,7 @@ JohtoGrassWildMons:
 	db 31, HAUNTER
 	db 31, PERSIAN
 	db 32, SOLOSIS
-	db 32, WOBBUFFET
+	db 32, KADABRA
 	db 33, LAMPENT
 	db 33, DOUBLADE
     db 41, GENGAR
@@ -397,29 +397,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 30, SIGILYPH
-	db 20, SMEARGLE
-	db 25, IVYSAUR
-	db 32, CLEFABLE
-	db 32, WOBBUFFET
-	db 32, METANG
-	db 40, ALAKAZAM
+	db 7, RALTS
+	db 8, SOLOSIS
+	db 7, ABRA
+	db 7, MAGNEMITE
+	db 8, SMEARGLE
+	db 9, WOBBUFFET
+	db 10, BELDUM
 	; day
-	db 30, SIGILYPH
-	db 20, SMEARGLE
-	db 25, CHARMELEON
-	db 32, CLEFABLE
-	db 32, WOBBUFFET
-	db 32, METANG
-	db 40, ALAKAZAM
+	db 7, RALTS
+	db 8, SOLOSIS
+	db 7, ABRA
+	db 7, MAGNEMITE
+	db 8, SMEARGLE
+	db 9, WOBBUFFET
+	db 10, BELDUM
 	; nite
-	db 30, SIGILYPH
-	db 20, SMEARGLE
-	db 25, WARTORTLE
-	db 32, CLEFABLE
-	db 32, WOBBUFFET
-	db 32, METANG
-	db 40, ALAKAZAM
+	db 7, RALTS
+	db 8, SOLOSIS
+	db 7, ABRA
+	db 7, MAGNEMITE
+	db 8, SMEARGLE
+	db 9, WOBBUFFET
+	db 10, BELDUM
 	end_grass_wildmons
 
 	def_grass_wildmons RUINS_OF_ALPH_INNER_CHAMBER
@@ -431,7 +431,7 @@ JohtoGrassWildMons:
 	db 5, UNOWN
 	db 5, UNOWN
 	db 5, UNOWN
-	db 5, UNOWN
+	db 5, BELDUM
 	; day
 	db 5, UNOWN
 	db 5, UNOWN
@@ -439,7 +439,7 @@ JohtoGrassWildMons:
 	db 5, UNOWN
 	db 5, UNOWN
 	db 5, UNOWN
-	db 5, UNOWN
+	db 5, BELDUM
 	; nite
 	db 5, UNOWN
 	db 5, UNOWN
@@ -447,7 +447,7 @@ JohtoGrassWildMons:
 	db 5, UNOWN
 	db 5, UNOWN
 	db 5, UNOWN
-	db 5, UNOWN
+	db 5, BELDUM
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_1F
@@ -571,7 +571,7 @@ JohtoGrassWildMons:
 	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	; day
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
@@ -579,7 +579,7 @@ JohtoGrassWildMons:
 	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	; nite
 	db 25, SLOWPOKE
 	db 25, AZUMARILL
@@ -587,7 +587,7 @@ JohtoGrassWildMons:
 	db 33, MARSHTOMP
 	db 35, SLOWBRO
 	db 35, STARMIE
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	end_grass_wildmons
 
 	def_grass_wildmons ILEX_FOREST
@@ -1069,7 +1069,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	db 40, LAPRAS
 	db 43, GYARADOS
 	db 43, MILOTIC
@@ -1077,7 +1077,7 @@ JohtoGrassWildMons:
 	db 47, REUNICLUS
 	db 65, BAXCALIBUR
 	; day
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	db 40, LAPRAS
 	db 43, GYARADOS
 	db 43, MILOTIC
@@ -1085,7 +1085,7 @@ JohtoGrassWildMons:
 	db 47, REUNICLUS
 	db 65, BAXCALIBUR
 	; nite
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	db 40, LAPRAS
 	db 43, GYARADOS
 	db 43, MILOTIC
@@ -1130,7 +1130,7 @@ JohtoGrassWildMons:
 	db 72, HERACROSS
 	db 72, CONKELDURR
 	db 75, KLEFKI
-	db 75, TOGEKISS
+	db 75, SLOWKING
 	db 80, SNORLAX
 	; day
 	db 70, GALLADE
@@ -1912,7 +1912,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, AEGISLASH
+	db 71, SLOWKING
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	; day
@@ -1920,7 +1920,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, AEGISLASH
+	db 71, SLOWKING
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	; nite
@@ -1928,7 +1928,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, AEGISLASH
+	db 71, SLOWKING
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	end_grass_wildmons

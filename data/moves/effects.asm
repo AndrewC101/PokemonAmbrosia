@@ -817,13 +817,14 @@ ForceSwitch:
 	forceswitch
 	endmove
 
-MultiHit:
+MultiFlinchHit:
 	checkobedience
 	usedmovetext
 	doturn
 	startloop
 	lowersub
 	checkhit
+	effectchance
 	critical
 	damagestats
 	damagecalc
@@ -841,6 +842,7 @@ MultiHit:
 	endloop
 	raisesub
 	kingsrock
+	flinchtarget
 	endmove
 
 PoisonMultiHit:

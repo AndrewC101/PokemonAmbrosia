@@ -178,6 +178,7 @@ ClearBodyPokemon:
     db REGIGIGAS
     db VAPOREON
     db WOBBUFFET
+    db SLOWKING
     db KYOGRE
     db -1
 
@@ -190,6 +191,16 @@ SolidRockPokemon:
     db METAGROSS
     db RAYQUAZA
     db EXEGGUTOR
+    db -1
+
+IronFistPokemon:
+    db WOBBUFFET
+    db SLOWKING
+    db TIMBURR
+    db GURDURR
+    db CONKELDURR
+    db POLIWRATH
+    db BRELOOM
     db -1
 
 UberImmunePokemon:
@@ -207,7 +218,6 @@ UberImmunePokemon:
     db HO_OH
     db REGIGIGAS
     db ZYGARDE
-    db WOBBUFFET
     db -1
 
 ; ======== NOT USED HERE ===========

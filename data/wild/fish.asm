@@ -169,7 +169,7 @@ FishGroups:
 	db  90 percent + 1, DRAGONAIR,     30
 	db 100 percent,     time_group 18
 .WhirlIslands_Super:
-	db  40 percent,     SLOWKING,     60
+	db  40 percent,     SLOWBRO,     60
 	db  70 percent,     time_group 19
 	db  90 percent + 1, KINGDRA,    60
 	db 100 percent,     DRAGONITE,     60
@@ -224,7 +224,7 @@ TimeFishGroups:
 	db FEEBAS,   20,  FEEBAS,   20 ; 12
 	db MILOTIC,   40,  MILOTIC,   40 ; 13
 	db SLOWPOKE,   20,  SLOWPOKE,   20 ; 14
-	db SLOWKING,   40,  SLOWKING,   40 ; 15
+	db SLOWBRO,   40,  SLOWBRO,   40 ; 15
 	db FROGADIER,    20,  FROGADIER,    20 ; 16
 	db GRENINJA,    40,  GRENINJA,    40 ; 17
 	db KINGDRA,     60,  KINGDRA,     60 ; 18

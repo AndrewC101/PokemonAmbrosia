@@ -1,9 +1,10 @@
-	db "ROYAL@" ; species name
-	dw 607, 1750 ; height, weight
+	db "Hex Nut@" ; species name
+	dw 802, 17637 ; height, weight
 
-	db   "Intelligent king"
-	next "of the slowbro"
-	next "and slowpoke."
+	db   "Has the strongest"
+	next "punches of all"
+	next "#mon."
 
-	page "Regenerates"
-	next "HP every turn.@"
+	page "Boosted punches."
+	next "Immune to stat"
+	next "drops.@"

@@ -204,10 +204,10 @@ PokemonCries::
 	mon_cry CRY_AIPOM,       162,  320 ; ESPEON
 	mon_cry CRY_VENONAT,    -233,  240 ; UMBREON
 	mon_cry CRY_MARILL,      -31,  384 ; MURKROW
-	mon_cry CRY_SLOWKING,    260,  512 ; SLOWKING
+	mon_cry CRY_SLOWKING,   -200,  600 ; SLOWKING
 	mon_cry CRY_HOOTHOOT,    304,  232 ; MISDREAVUS
-	mon_cry CRY_HOOTHOOT,    354,  256 ; UNOWN
-	mon_cry CRY_AMPHAROS,    635,  324 ; WOBBUFFET
+	mon_cry CRY_SLOWKING,    400,  400 ; UNOWN
+	mon_cry CRY_SLOWKING,    400,  400 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,  -100,  512 ; BAGON
 	mon_cry CRY_SLOWKING,    128,  256 ; SHELGON
 	mon_cry CRY_TYPHLOSION,  300,  150 ; SALAMENCE

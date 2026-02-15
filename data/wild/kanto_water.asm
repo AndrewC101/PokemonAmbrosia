@@ -6,7 +6,7 @@ KantoWaterWildMons:
 	db 4 percent ; encounter rate
 	db 40, POLIWRATH
 	db 40, SLOWBRO
-	db 40, SLOWKING
+	db 40, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT

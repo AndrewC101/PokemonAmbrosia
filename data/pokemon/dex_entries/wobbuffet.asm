@@ -1,10 +1,10 @@
-	db "PATIENT@" ; species name
-	dw 403, 630 ; height, weight
+	db "Hex Nut@" ; species name
+	dw 008, 176 ; height, weight
 
-	db   "Its tail is its"
-	next "true self. The"
-	next "rest is a decoy."
+	db   "Made of liquid"
+	next "Metal. They eat"
+	next "each other."
 
-	page "Prevents enemy"
-	next "switching."
-	next "Regens HP.@"
+	page "Boosted punches."
+	next "Immune to stat"
+	next "drops.@"

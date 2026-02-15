@@ -101,7 +101,14 @@ RuinsOfAlphResearchCenterScientist2Script:
 	iftrue .end
 	writetext RuinsOfAlphResearchCenterScientist2Text_GiveAmbrosia
 	waitbutton
-	verbosegiveitem AMBROSIA
+	checkevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+	iftrue .ambrosia
+	verbosegiveitem GS_BALL
+	iffalse .end
+	setevent EVENT_GOT_UNOWN_AMBROSIA
+	sjump .end
+.ambrosia
+	verbosegiveitem GS_BALL
 	iffalse .end
 	setevent EVENT_GOT_UNOWN_AMBROSIA
 .end

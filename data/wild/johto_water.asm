@@ -88,7 +88,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons WHIRL_ISLAND_LUGIA_CHAMBER
 	db 4 percent ; encounter rate
-	db 45, SLOWKING
+	db 45, SLOWBRO
 	db 45, CLOYSTER
 	db 45, KINGDRA
 	end_water_wildmons
@@ -104,7 +104,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 65, STARMIE
 	db 65, SLOWBRO
-	db 65, SLOWKING
+	db 65, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -286,14 +286,14 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 55, TENTACRUEL
 	db 55, GYARADOS
-	db 65, SLOWKING
+	db 65, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons ANCIENT_RUIN_PAST
 	db 2 percent ; encounter rate
 	db 55, BLASTOISE
 	db 55, MILOTIC
-	db 65, SLOWKING
+	db 65, SLOWBRO
 	end_water_wildmons
 
 	def_water_wildmons ABYSS

@@ -151,7 +151,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 50, SLOWKING
+	db 50, SLOWBRO
 	; day
 	db 35, RATICATE
 	db 36, URSARING
@@ -159,7 +159,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 50, SLOWKING
+	db 50, SLOWBRO
 	; nite
 	db 35, RATICATE
 	db 36, URSARING
@@ -167,7 +167,7 @@ KantoGrassWildMons:
 	db 38, POLIWRATH
 	db 42, GRENINJA
 	db 42, SLOWBRO
-	db 50, SLOWKING
+	db 50, SLOWBRO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_1

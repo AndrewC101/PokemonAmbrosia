@@ -5,6 +5,6 @@
 	next "logs and help"
 	next "with construction"
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Boosted punches."
+	next "Status boosts"
+	next "Attack.@"

@@ -81,7 +81,7 @@ BattleAnimations::
 	dw BattleAnim_Poisonpowder
 	dw BattleAnim_StunSpore
 	dw BattleAnim_SleepPowder
-	dw BattleAnim_Tackle
+	dw BattleAnim_IronDukes
 	dw BattleAnim_DragonClaw
 	dw BattleAnim_DragonRage
 	dw BattleAnim_FireSpin
@@ -716,6 +716,7 @@ BattleAnim_EnemyBombingSub:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_IronDukes:
 BattleAnim_MegaPunch:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0

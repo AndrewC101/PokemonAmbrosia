@@ -2143,7 +2143,7 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .alternate_anim
-	cp EFFECT_DOUBLE_HIT
+	cp EFFECT_DOUBLE_FLINCH_HIT
 	jr z, .alternate_anim
 	;cp EFFECT_POISON_MULTI_HIT
 	;jr z, .alternate_anim
@@ -2270,7 +2270,7 @@ BattleCommand_FailureText:
 
 	cp EFFECT_MULTI_HIT
 	jr z, .multihit
-	cp EFFECT_DOUBLE_HIT
+	cp EFFECT_DOUBLE_FLINCH_HIT
 	jr z, .multihit
 	;cp EFFECT_POISON_MULTI_HIT
 	;jr z, .multihit
@@ -2642,7 +2642,7 @@ BattleCommand_CheckFaint:
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
-	cp EFFECT_DOUBLE_HIT
+	cp EFFECT_DOUBLE_FLINCH_HIT
 	;jr z, .multiple_hit_raise_sub
 	;cp EFFECT_POISON_MULTI_HIT
 	jr nz, .finish
@@ -3191,6 +3191,20 @@ HitSelfInConfusion:
 	ld e, a
 	ret
 
+PunchMoves:
+    db DRAIN_PUNCH
+    db FIRE_PUNCH
+    db ICE_PUNCH
+    db THUNDERPUNCH
+    db DYNAMICPUNCH
+    db MACH_PUNCH
+    db BULLET_PUNCH
+    db SUCKER_PUNCH
+    db SHADOW_PUNCH
+    db METEOR_MASH
+    db IRON_DUKES
+    db $FF
+
 BattleCommand_DamageCalc:
 ; damagecalc
 
@@ -3444,11 +3458,36 @@ BattleCommand_DamageCalc:
 	call IsInArray
 	pop bc
 	pop de
-	jr nc, .continue
+	jr nc, .ironFist
 	call CheckOppositeGender
 	jr c, .continue
-    call TenPercentBoost
-    call TenPercentBoost
+    call TwentyPercentBoost
+
+.ironFist
+; =========================
+; ===== Iron Fist ======
+; =========================
+; DevNote - iron fist - x1.2 damage
+    call GetCurrentMon
+    push de
+	push bc
+	ld hl, IronFistPokemon
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+    jr nc, .continue
+    ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	push de
+	push bc
+	ld hl, PunchMoves
+	ld de, 1
+	call IsInArray
+	pop bc
+	pop de
+	jr nc, .continue
+	call TwentyPercentBoost
 
 .continue
 ; Critical hits
@@ -3512,7 +3551,7 @@ BattleCommand_DamageCalc:
 ; ==================================
 ; ========= Groudon ==============
 ; ==================================
-; quarter damage from water attacks
+; half damage from water attacks
     call GetOpposingMon
     cp GROUDON
 	jr nz, .finishGroudon
@@ -3521,7 +3560,6 @@ BattleCommand_DamageCalc:
 	and TYPE_MASK
 	cp WATER
     jr nz, .finishGroudon
-	call HalfDamage
 	call HalfDamage
 .finishGroudon
 
@@ -3696,6 +3734,16 @@ FifteenPercentBoost:
 	ldh [hMultiplier], a
 	call Multiply
 	ld a, 20
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+TwentyPercentBoost:
+    ld a, 6
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 5
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
@@ -3975,7 +4023,7 @@ DoSubstituteDamage:
 	call GetBattleVarAddr
 	cp EFFECT_MULTI_HIT
 	jr z, .ok
-	cp EFFECT_DOUBLE_HIT
+	cp EFFECT_DOUBLE_FLINCH_HIT
 	jr z, .ok
 	;cp EFFECT_POISON_MULTI_HIT
 	;jr z, .ok
@@ -5753,7 +5801,7 @@ BattleCommand_EndLoop:
 	ld a, [hl]
 	;cp EFFECT_POISON_MULTI_HIT
 	;jr z, .twineedle
-	cp EFFECT_DOUBLE_HIT
+	cp EFFECT_DOUBLE_FLINCH_HIT
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
@@ -6641,7 +6689,7 @@ DoubleDamage:
 .quit
 	ret
 
-INCLUDE "engine/battle/move_effects/mimic.asm"
+INCLUDE "engine/battle/move_effects/mimic.asm" ; empty
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 

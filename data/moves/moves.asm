@@ -35,7 +35,7 @@ Moves: ; 41afb
 	move OBLITERATE,   EFFECT_ALWAYS_HIT,        150, UBER,          PHYSICAL, 100, 20,   0
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         40, GRASS,         PHYSICAL, 100, 20,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,        PHYSICAL, 100, 20,  30
-	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0
+	move DOUBLE_KICK,  EFFECT_DOUBLE_FLINCH_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0
 	move AQUA_JET,     EFFECT_PRIORITY_HIT,       40, WATER,         PHYSICAL, 100, 20,   0
 	move MOON_BLAST,   EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30
 	move BIG_RECOVER,  EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 20,   0
@@ -91,7 +91,7 @@ Moves: ; 41afb
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0
 	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,         STATUS,    90, 20,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,         STATUS,    70, 15,   0
-	move PETAL_DANCE,  EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0 ; not used
+	move IRON_DUKES,   EFFECT_DOUBLE_FLINCH_HIT,  60, STEEL,         PHYSICAL, 100, 10,  30
 	move DRAGON_CLAW,  EFFECT_NORMAL_HIT,         85, DRAGON,        PHYSICAL, 100, 15,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,   70, 15,   0
@@ -113,7 +113,7 @@ Moves: ; 41afb
 	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          STATUS,    85, 15,   0
 	move TELEPORT,     EFFECT_TELEPORT,            0, PSYCHIC_TYPE,  STATUS,   100, 20,   0
 	move NIGHT_SHADE,  EFFECT_LEVEL_DAMAGE,        1, GHOST,         SPECIAL,  100, 15,   0
-	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,        STATUS,   100, 10,   0
+	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,        STATUS,   100, 10,   0 ; not used
 	move SCREECH,      EFFECT_DEFENSE_DOWN_2,      0, NORMAL,        STATUS,    85, 40,   0
 	move AFTER_IMAGE,  EFFECT_EVASION_UP_2,        0, UBER,          STATUS,   100, 15,   0
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
@@ -200,7 +200,7 @@ Moves: ; 41afb
 	move BOLT_BEAK,    EFFECT_NORMAL_HIT,        180, ELECTRIC,      PHYSICAL, 100,  5,   0
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 15,  30
-	move AVALANCHE,    EFFECT_FREEZE_HIT,        100, ICE,           PHYSICAL, 100, 10,  10
+	move AVALANCHE,    EFFECT_FREEZE_HIT,         90, ICE,           PHYSICAL, 100, 10,  10
 	move FLARE_BLITZ,  EFFECT_RECOIL_HIT,        120, FIRE,          PHYSICAL, 100, 15,   0
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0
 	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50, 10, 100

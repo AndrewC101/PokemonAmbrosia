@@ -1283,10 +1283,9 @@ Core_SpikesImmunePokemon: ; magic guard + levitate
 
 Core_RegeneratorPokemon:
     db SLOWPOKE
-    db SLOWKING
+    db SLOWBRO
     db TENTACOOL
     db TENTACRUEL
-    db WOBBUFFET
     db HO_OH
     db ZYGARDE
     db VENUSAUR
@@ -2060,6 +2059,12 @@ HandleWeather:
 	call SetPlayerTurn
 
 .HailDamage:
+    call GetCurrentMonCore
+	ld hl, Core_MagicGuardPokemon
+	ld de, 1
+	call IsInArray
+	ret c
+
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
@@ -4962,8 +4967,6 @@ SwitchInEffects:
     cp TOGEKISS
     jp z, .naturalCure
     cp MEW
-    jp z, .naturalCure
-    cp BRELOOM
     jp z, .naturalCure
     ret
 

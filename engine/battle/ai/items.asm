@@ -663,8 +663,6 @@ AI_TrySwitch:
 
 ; DevNote - switch, don't switch if trapped
 	ld a, [wBattleMonSpecies]
-	cp WOBBUFFET
-	ret z
 	cp CHANDELURE
 	ret z
 	cp SPIRITOMB

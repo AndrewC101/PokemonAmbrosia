@@ -388,6 +388,7 @@ CoreClearBodyPokemon:
     db REGIGIGAS
     db VAPOREON
     db WOBBUFFET
+    db SLOWKING
     db KYOGRE
     db -1
 
@@ -790,8 +791,6 @@ CheckAmuletCoin:
 
 ShadowTag:
 	ld a, [wEnemyMonSpecies]
-    cp WOBBUFFET
-    jr z, .trap
     cp CHANDELURE
     jr z, .trap
     cp GIRATINA

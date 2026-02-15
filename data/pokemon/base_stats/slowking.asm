@@ -1,21 +1,21 @@
 	db SLOWKING ; 199
 
-	db  95,  75,  80,  30, 100, 110
+	db  135, 143, 143, 34, 80, 65
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, PSYCHIC_TYPE ; type
-	db 70 ; catch rate
-	db 164 ; base exp
-	db NO_ITEM, KINGS_ROCK ; items
-	db GENDER_F25 ; gender ratio
+	db STEEL, STEEL ; type
+	db 45 ; catch rate
+	db 250 ; base exp
+	db NO_ITEM, NO_ITEM ; items
+	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
-	db 5 ; step cycles to hatch
+	db 10 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/slowking/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_MONSTER, EGG_WATER_1 ; egg groups
+	db GROWTH_SLOW ; growth rate
+	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm DRAIN_PUNCH, BODY_SLAM, HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, BLIZZARD, ICE_BEAM, HYPER_BEAM, ICY_WIND, PROTECT, RAIN_DANCE, SUBSTITUTE, IRON_HEAD, EARTHQUAKE, EARTH_POWER, RETURN, DOUBLE_EDGE, DIG, PSYCHIC_M, CALM_MIND, AURA_SPHERE, SHADOW_BALL, DARK_PULSE, ICE_PUNCH, SLEEP_TALK, FIRE_BLAST, SWIFT, REST, SURF, STRENGTH, FLASH, FLAMETHROWER, ICE_BEAM, CALM_MIND, FISSURE, THUNDER_WAVE, WHIRLPOOL, WATERFALL
+	tmhm HEADBUTT, BULK_UP, BODY_SLAM, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, PROTECT, SUBSTITUTE, EARTHQUAKE, ROCK_SLIDE, RETURN, DOUBLE_EDGE, SLEEP_TALK, REST, X_SCISSOR, CUT, STRENGTH, THUNDER_WAVE, THUNDERBOLT, THUNDERPUNCH, FIRE_PUNCH, ICE_PUNCH, DRAIN_PUNCH
 	; end

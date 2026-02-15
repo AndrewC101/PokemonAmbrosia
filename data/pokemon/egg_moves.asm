@@ -297,7 +297,6 @@ MagmortarEggMoves:
 
 MrMimeEggMoves:
 	db HYPNOSIS
-	db MIMIC
 	db -1 ; end
 
 ScytherEggMoves:

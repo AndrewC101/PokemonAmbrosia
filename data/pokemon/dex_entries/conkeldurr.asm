@@ -5,6 +5,6 @@
 	next "concrete pillars"
 	next "like sticks."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Boosted punches."
+	next "Status boosts"
+	next "Attack.@"

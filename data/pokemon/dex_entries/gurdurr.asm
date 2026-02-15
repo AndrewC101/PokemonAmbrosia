@@ -5,6 +5,6 @@
 	next "muscle. It wields"
 	next "steel beams."
 
-	page "Boosted damage"
-	next "when afflicted by"
-	next "a status.@"
+	page "Boosted punches."
+	next "Status boosts"
+	next "Attack.@"

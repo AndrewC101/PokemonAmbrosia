@@ -85,7 +85,7 @@
 	const POISONPOWDER ; 4d
 	const STUN_SPORE   ; 4e
 	const SLEEP_POWDER ; 4f
-	const PETAL_DANCE  ; 50 - Not Used
+	const IRON_DUKES   ; 50
 	const DRAGON_CLAW  ; 51
 	const DRAGON_RAGE  ; 52
 	const FIRE_SPIN    ; 53
@@ -107,7 +107,7 @@
 	const WILL_O_WISP  ; 63
 	const TELEPORT     ; 64
 	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66
+	const MIMIC        ; 66 - not used
 	const SCREECH      ; 67
 	const AFTER_IMAGE  ; 68
 	const RECOVER      ; 69

@@ -79,7 +79,7 @@ MoveNames::
     li "Poisonpowder"
     li "Stun Spore"
     li "Sleep Powder"
-    li "Petal Dance"
+    li "Iron Dukes"
     li "Dragon Claw"
     li "Dragon Rage"
     li "Fire Spin"

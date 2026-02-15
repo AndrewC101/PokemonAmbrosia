@@ -1176,7 +1176,6 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 32, SLOWBRO
-	db EVOLVE_ITEM, WATER_STONE, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -3027,18 +3026,15 @@ MurkrowEvosAttacks:
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CURSE
-	db 6, DISABLE
-	db 12, WATER_GUN
-	db 18, CONFUSION
-	db 22, BUBBLEBEAM
-	db 25, PSYBEAM
-	db 28, ZEN_HEADBUTT
-	db 32, RECOVER
-	db 36, PSYCHIC_M
-	db 40, TRICK_ROOM
-	db 42, SCALD
-	db 45, CALM_MIND
+db 1, HARDEN
+	db 1, HEADBUTT
+	db 8, THUNDERSHOCK
+	db 12, BULLET_PUNCH
+	db 20, THUNDER_WAVE
+	db 25, THUNDERPUNCH
+	db 30, IRON_HEAD
+	db 40, FLASH_CANNON
+	db 50, IRON_DUKES
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
@@ -3064,11 +3060,17 @@ UnownEvosAttacks:
 	db 0 ; no more level-up moves
 
 WobbuffetEvosAttacks:
+   db EVOLVE_LEVEL, 50, SLOWKING
 	db 0 ; no more evolutions
-    db 1, ENCORE
-	db 1, COUNTER
-	db 1, MIRROR_COAT
-	db 1, DESTINY_BOND
+	db 1, HARDEN
+	db 1, HEADBUTT
+	db 8, THUNDERSHOCK
+	db 12, BULLET_PUNCH
+	db 20, THUNDER_WAVE
+	db 25, DRAIN_PUNCH
+	db 30, IRON_HEAD
+	db 40, FLASH_CANNON
+	db 51, IRON_DUKES
 	db 0 ; no more level-up moves
 
 BagonEvosAttacks:

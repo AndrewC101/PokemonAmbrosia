@@ -30,7 +30,7 @@ MoveEffectsPointers:
 	dw Bide
 	dw Rampage
 	dw ForceSwitch
-	dw MultiHit
+	dw MultiFlinchHit
 	dw FlinchHit
 	dw Heal
 	dw Toxic
@@ -43,7 +43,7 @@ MoveEffectsPointers:
 	dw StaticDamage
 	dw TrapTarget
     dw Judgement
-	dw MultiHit
+	dw MultiFlinchHit
 	dw NormalHit
 	dw Geomancy
 	dw FocusEnergy

@@ -80,7 +80,7 @@ MoveDescriptions::
 	dw PoisonpowderDescription
 	dw StunSporeDescription
 	dw SleepPowderDescription
-	dw PetalDanceDescription
+	dw IronDukesDescription
 	dw DragonClawDescription
 	dw DragonRageDescription
 	dw FireSpinDescription
@@ -593,9 +593,9 @@ SleepPowderDescription:
 	db   "May cause the foe"
 	line "to fall asleep.@"
 
-PetalDanceDescription:
-	db   "Works 2-3 turns"
-	line "and confuses user.@"
+IronDukesDescription:
+	db   "Hits twice and may"
+	line "flinch target.@"
 
 DragonClawDescription:
 	db   "Has a high criti-"

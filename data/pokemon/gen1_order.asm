@@ -238,10 +238,10 @@ Pokered_MonIndices:
 	db ESPEON
 	db UMBREON
 	db MURKROW
-	db SLOWKING
+	db MELMETAL
 	db MISDREAVUS
 	db UNOWN
-	db WOBBUFFET
+	db MELTAN
 	db BAGON
 	db SHELGON
 	db SALAMENCE
@@ -251,8 +251,8 @@ Pokered_MonIndices:
 	db GIBLE
 	db GABITE
 	db GARCHOMP
-	db WOBBUFFET
-	db WOBBUFFET
+	db MELTAN
+	db MELTAN
 	db MEWTWO
 	db ARCEUS
 	assert_table_length NUM_POKEMON + 1

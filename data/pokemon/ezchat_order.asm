@@ -62,7 +62,7 @@ EZChat_SortedPokemon:
 .shi_ji:   db SEADRA, SHELLDER, VAPOREON, GLISCOR, -1
 .su_zu:    db SUICUNE, STARMIE, SCYTHER, ZUBAT, AEGISLASH, URSALUNA_B, URSALUNA, -1
 .se_ze:    db SQUIRTLE, CELEBI, -1
-.so_zo:    db WOBBUFFET, -1
+.so_zo:    db MELTAN, -1
 .ta_da:    db DRACOVISH, HORSEA, EXEGGCUTE, -1
 .chi_dhi:  db TREECKO, FRIGIBAX, -1
 .tsu_du:   db SHAYMIN, -1
@@ -83,7 +83,7 @@ EZChat_SortedPokemon:
 .mu:       db MISDREAVUS, XERNEAS, -1
 .me:       db SCEPTILE, DITTO, TENTACOOL, MAREEP, -1
 .mo:       db FLAAFFY, VOLCARONA, WEAVILE, -1
-.ya:       db SLOWKING, SLOWBRO, SLOWPOKE, MURKROW, YANMA, -1
+.ya:       db MELMETAL, SLOWBRO, SLOWPOKE, MURKROW, YANMA, -1
 .yu:       db KADABRA, -1
 .yo:       db LARVITAR, NOCTOWL, -1
 .ra:       db RAIKOU, RAICHU, CHANSEY, RATICATE, LAPRAS, REGIGIGAS, ARCTIBAX, -1

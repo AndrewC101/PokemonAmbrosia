@@ -402,7 +402,7 @@ JohtoGrassWildMons:
 	db 7, ABRA
 	db 7, MAGNEMITE
 	db 8, SMEARGLE
-	db 9, WOBBUFFET
+	db 9, MELTAN
 	db 10, BELDUM
 	; day
 	db 7, RALTS
@@ -410,7 +410,7 @@ JohtoGrassWildMons:
 	db 7, ABRA
 	db 7, MAGNEMITE
 	db 8, SMEARGLE
-	db 9, WOBBUFFET
+	db 9, MELTAN
 	db 10, BELDUM
 	; nite
 	db 7, RALTS
@@ -418,7 +418,7 @@ JohtoGrassWildMons:
 	db 7, ABRA
 	db 7, MAGNEMITE
 	db 8, SMEARGLE
-	db 9, WOBBUFFET
+	db 9, MELTAN
 	db 10, BELDUM
 	end_grass_wildmons
 
@@ -1130,7 +1130,7 @@ JohtoGrassWildMons:
 	db 72, HERACROSS
 	db 72, CONKELDURR
 	db 75, KLEFKI
-	db 75, SLOWKING
+	db 75, MELMETAL
 	db 80, SNORLAX
 	; day
 	db 70, GALLADE
@@ -1912,7 +1912,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, SLOWKING
+	db 71, MELMETAL
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	; day
@@ -1920,7 +1920,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, SLOWKING
+	db 71, MELMETAL
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	; nite
@@ -1928,7 +1928,7 @@ JohtoGrassWildMons:
 	db 67, CHANDELURE
 	db 68, UMBREON
 	db 70, KINGAMBIT
-	db 71, SLOWKING
+	db 71, MELMETAL
 	db 73, TYRANITAR
 	db 75, HYDREIGON
 	end_grass_wildmons

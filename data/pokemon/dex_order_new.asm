@@ -82,7 +82,7 @@ NewPokedexOrder:
 	db GYARADOS
 	db SLOWPOKE
 	db SLOWBRO
-	db SLOWKING
+	db MELMETAL
 	db PAWNIARD
 	db BISHARP
 	db KINGAMBIT
@@ -100,7 +100,7 @@ NewPokedexOrder:
 	db YANMEGA
 	db EXEGGCUTE
 	db EXEGGUTOR
-	db WOBBUFFET
+	db MELTAN
 	db SCYTHER
 	db SCIZOR
 	db PINSIR

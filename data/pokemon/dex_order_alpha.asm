@@ -203,7 +203,7 @@ AlphabeticalPokedexOrder:
 	db SIGILYPH
 	db SKARMORY
 	db SLOWBRO
-	db SLOWKING
+	db MELMETAL
 	db SLOWPOKE
 	db SMEARGLE
 	db SNEASEL
@@ -247,7 +247,7 @@ AlphabeticalPokedexOrder:
 	db WEEPINBELL
 	db WEEZING
 	db WHIMSICOTT
-	db WOBBUFFET
+	db MELTAN
 	db XERNEAS
 	db YANMA
 	db YANMEGA

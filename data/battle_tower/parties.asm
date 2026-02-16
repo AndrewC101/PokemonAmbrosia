@@ -315,7 +315,7 @@ BattleTowerMons:
     bigdw 65
 	db "RAPURASU@@@"
 
-	db SLOWKING
+	db MELMETAL
 	db GOLD_BERRY
 	db WATERFALL, ZEN_HEADBUTT, CURSE, REST
 	dw 0 ; OT ID

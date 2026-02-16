@@ -387,8 +387,8 @@ CoreClearBodyPokemon:
     db ARCEUS
     db REGIGIGAS
     db VAPOREON
-    db WOBBUFFET
-    db SLOWKING
+    db MELTAN
+    db MELMETAL
     db KYOGRE
     db -1
 

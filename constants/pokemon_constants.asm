@@ -218,10 +218,10 @@ JOHTO_POKEMON EQU const_value
 	const ESPEON     ; c4
 	const UMBREON    ; c5
 	const MURKROW    ; c6
-	const SLOWKING   ; c7
+	const MELMETAL   ; c7
 	const MISDREAVUS ; c8
 	const UNOWN      ; c9
-	const WOBBUFFET  ; ca
+	const MELTAN  ; ca
 	const BAGON      ; cb
 	const SHELGON    ; cc
 	const SALAMENCE  ; cd

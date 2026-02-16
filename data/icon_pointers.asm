@@ -200,10 +200,10 @@ IconPointers:
 	dw EspeonIcon
 	dw UmbreonIcon
 	dw MurkrowIcon
-	dw SlowkingIcon
+	dw MelmetalIcon
 	dw MisdreavusIcon
 	dw UnownIcon
-	dw WobbuffetIcon
+	dw MeltanIcon
 	dw BagonIcon
 	dw ShelgonIcon
 	dw SalamenceIcon

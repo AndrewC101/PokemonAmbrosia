@@ -200,10 +200,10 @@ EvosAttacksPointers::
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
 	dw MurkrowEvosAttacks
-	dw SlowkingEvosAttacks
+	dw MelmetalEvosAttacks
 	dw MisdreavusEvosAttacks
 	dw UnownEvosAttacks
-	dw WobbuffetEvosAttacks
+	dw MeltanEvosAttacks
 	dw BagonEvosAttacks
 	dw ShelgonEvosAttacks
 	dw SalamenceEvosAttacks

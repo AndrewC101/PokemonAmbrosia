@@ -399,8 +399,8 @@ PokemonPicPointers::
 	dba_pic UmbreonBackpic
 	dba_pic MurkrowFrontpic
 	dba_pic MurkrowBackpic
-	dba_pic SlowkingFrontpic
-	dba_pic SlowkingBackpic
+	dba_pic MelmetalFrontpic
+	dba_pic MelmetalBackpic
 	dba_pic MisdreavusFrontpic
 	dba_pic MisdreavusBackpic
 
@@ -408,8 +408,8 @@ PokemonPicPointers::
 	dbw -1, -1
 	dbw -1, -1
 
-	dba_pic WobbuffetFrontpic
-	dba_pic WobbuffetBackpic
+	dba_pic MeltanFrontpic
+	dba_pic MeltanBackpic
 	dba_pic BagonFrontpic
 	dba_pic BagonBackpic
 	dba_pic ShelgonFrontpic

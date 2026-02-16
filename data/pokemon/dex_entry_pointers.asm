@@ -199,10 +199,10 @@ PokedexDataPointerTable:
 	dw EspeonPokedexEntry
 	dw UmbreonPokedexEntry
 	dw MurkrowPokedexEntry
-	dw SlowkingPokedexEntry
+	dw MelmetalPokedexEntry
 	dw MisdreavusPokedexEntry
 	dw UnownPokedexEntry
-	dw WobbuffetPokedexEntry
+	dw MeltanPokedexEntry
 	dw BagonPokedexEntry
 	dw ShelgonPokedexEntry
 	dw SalamencePokedexEntry

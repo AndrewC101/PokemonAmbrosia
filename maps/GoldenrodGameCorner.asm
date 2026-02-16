@@ -3,7 +3,7 @@ GOLDENRODGAMECORNER_TM14_COINS EQU 4000
 GOLDENRODGAMECORNER_TM38_COINS EQU 4000
 GOLDENRODGAMECORNER_ABRA_COINS      EQU 1000 ; EEVEE
 GOLDENRODGAMECORNER_CUBONE_COINS    EQU 2000 ; PORYGON
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000 ; WOBBUFFET
+GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000 ; MELTAN
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -182,7 +182,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	closewindow
 	ifequal 1, .Abra
 	ifequal 2, .Cubone
-	ifequal 3, .Wobbuffet
+	ifequal 3, .Meltan
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .Abra:
@@ -221,21 +221,21 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
 	sjump .loop
 
-.Wobbuffet:
+.Meltan:
 	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, MELTAN
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval WOBBUFFET
+	setval MELTAN
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 25
+	givepoke MELTAN, 25
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 

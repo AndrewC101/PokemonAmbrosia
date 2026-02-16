@@ -124,8 +124,8 @@ AI_ClearBodyPokemon:
     db ARCEUS
     db REGIGIGAS
     db VAPOREON
-    db WOBBUFFET
-    db SLOWKING
+    db MELTAN
+    db MELMETAL
     db KYOGRE
     db $FF
 
@@ -572,7 +572,7 @@ AI_Smart_Switch:
 .switch
 ; can't switch if trapped
 	ld a, [wBattleMonSpecies]
-	cp WOBBUFFET
+	cp MELTAN
 	ret z
 	cp CHANDELURE
 	ret z
@@ -2058,8 +2058,6 @@ AI_Smart_Encore:
     jr z, .skipSpeedCheck
     cp MURKROW
     jr z, .skipSpeedCheck
-    cp WOBBUFFET
-    jr z, .skipSpeedCheck
 
 ; don't use if we are slower
 	call DoesAIOutSpeedPlayer
@@ -2107,10 +2105,6 @@ AI_Smart_Encore:
 	jr .encourage
 
 .weakmove
-; if we are wobbuffet just use encore here
-	ld a, [wEnemyMonSpecies]
-	cp WOBBUFFET
-	jr z, .encourage
 ; encore if it is an encore move, discourage otherwise
 	push hl
 	ld a, [wLastPlayerCounterMove]
@@ -2363,16 +2357,6 @@ AI_Smart_MeanLook:
 ; discourage if we will be koed
     call ShouldAIBoost
     jp nz, AIDiscourageMove
-
-; if we are Wobbuffet just encourage at this point
-	ld a, [wEnemyMonSpecies]
-	cp WOBBUFFET
-	jr nz, .notWobbuffet
-rept 5
-	dec [hl]
-endr
-	ret
-.notWobbuffet
 
 ; discourage if below half health
 	call AICheckEnemyHalfHP
@@ -4793,7 +4777,7 @@ CanAI3HKO:
 
 AdjustForMelmetal:
     ld a, [wBattleMonSpecies]
-    cp SLOWKING
+    cp MELMETAL
     ret nz
     push bc
     ld b, EFFECT_DOUBLE_FLINCH_HIT

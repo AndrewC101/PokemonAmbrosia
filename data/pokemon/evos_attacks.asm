@@ -3024,9 +3024,9 @@ MurkrowEvosAttacks:
 	db 50, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
-SlowkingEvosAttacks:
+MelmetalEvosAttacks:
 	db 0 ; no more evolutions
-db 1, HARDEN
+    db 1, HARDEN
 	db 1, HEADBUTT
 	db 8, THUNDERSHOCK
 	db 12, BULLET_PUNCH
@@ -3059,8 +3059,8 @@ UnownEvosAttacks:
 	db 1, HIDDEN_POWER
 	db 0 ; no more level-up moves
 
-WobbuffetEvosAttacks:
-   db EVOLVE_LEVEL, 50, SLOWKING
+MeltanEvosAttacks:
+   db EVOLVE_LEVEL, 50, MELMETAL
 	db 0 ; no more evolutions
 	db 1, HARDEN
 	db 1, HEADBUTT

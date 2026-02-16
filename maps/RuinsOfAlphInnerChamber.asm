@@ -142,9 +142,9 @@ RuinsOfAlphInnerChamberMon3Script:
 
 RuinsOfAlphInnerChamberMon4Script:
 	faceplayer
-	cry WOBBUFFET
+	cry MELTAN
 	pause 15
-	loadwildmon WOBBUFFET, 10
+	loadwildmon MELTAN, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

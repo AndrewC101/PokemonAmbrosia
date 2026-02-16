@@ -1,4 +1,4 @@
-	db SLOWKING ; 199
+	db MELMETAL ; 199
 
 	db  135, 143, 143, 34, 80, 65
 	;   hp  atk  def  spd  sat  sdf
@@ -11,7 +11,7 @@
 	db 100 ; unknown 1
 	db 10 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/slowking/front.dimensions"
+	INCBIN "gfx/pokemon/melmetal/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups

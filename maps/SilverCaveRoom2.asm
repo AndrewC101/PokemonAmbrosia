@@ -133,9 +133,9 @@ SilverCaveRoom2FieldMon9Script:
 
 SilverCaveRoom2FieldMon10Script:
 	faceplayer
-	cry SLOWKING
+	cry MELMETAL
 	pause 15
-	loadwildmon SLOWKING, 80
+	loadwildmon MELMETAL, 80
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

@@ -177,8 +177,8 @@ ClearBodyPokemon:
     db ARCEUS
     db REGIGIGAS
     db VAPOREON
-    db WOBBUFFET
-    db SLOWKING
+    db MELTAN
+    db MELMETAL
     db KYOGRE
     db -1
 
@@ -194,8 +194,8 @@ SolidRockPokemon:
     db -1
 
 IronFistPokemon:
-    db WOBBUFFET
-    db SLOWKING
+    db MELTAN
+    db MELMETAL
     db TIMBURR
     db GURDURR
     db CONKELDURR

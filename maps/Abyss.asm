@@ -133,9 +133,9 @@ AbyssFieldMon9Script:
 	end
 
 AbyssFieldMon10Script:
-	cry SLOWKING
+	cry MELMETAL
 	pause 15
-	loadwildmon SLOWKING, 69
+	loadwildmon MELMETAL, 69
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

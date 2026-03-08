@@ -15,24 +15,6 @@ GetPartyLocation::
 	ld bc, PARTYMON_STRUCT_LENGTH
 	jp AddNTimes
 
-GetDexNumber:: ; unreferenced
-; Probably used in gen 1 to convert index number to dex number
-; Not required in gen 2 because index number == dex number
-;	push hl
-;	ld a, b
-;	dec a
-;	ld b, 0
-;	add hl, bc
-;	ld hl, BaseData + BASE_DEX_NO
-;	ld bc, BASE_DATA_SIZE
-;	call AddNTimes
-;	ld a, BANK(BaseData)
-;	call GetFarWord
-;	ld b, l
-;	ld c, h
-;	pop hl
-;	ret
-
 UserPartyAttr::
 	push af
 	ldh a, [hBattleTurn]
@@ -163,7 +145,7 @@ FarCopyRadioText::
 	ld d, a
 	ld a, [hli]
 	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	ld [rROMB], a
 	ld a, e
 	ld l, a
 	ld a, d
@@ -173,7 +155,7 @@ FarCopyRadioText::
 	call CopyBytes
 	pop af
 	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	ld [rROMB], a
 	ret
 
 MobileTextBorder::
@@ -275,6 +257,6 @@ PushLYOverrides::
 	ld a, HIGH(wLYOverrides)
 	ld [wRequested2bppDest + 1], a
 
-	ld a, (wLYOverridesEnd - wLYOverrides) / LEN_2BPP_TILE
+	ld a, (wLYOverridesEnd - wLYOverrides) / TILE_SIZE
 	ld [wRequested2bppSize], a
 	ret

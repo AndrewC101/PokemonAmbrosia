@@ -1,5 +1,5 @@
 Pokered_MonIndices:
-	table_width 1, Pokered_MonIndices
+	table_width 1
 	db RHYDON
 	db RHYPERIOR
 	db NIDORAN_M

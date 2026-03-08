@@ -5,7 +5,7 @@
 	const SPRITE_CHRIS ; 01
 	const SPRITE_CHRIS_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
-	const SPRITE_SILVER ; 04
+	const SPRITE_RIVAL ; 04
 	const SPRITE_OAK ; 05
 	const SPRITE_RED ; 06
 	const SPRITE_BLUE ; 07
@@ -108,10 +108,10 @@
  	const SPRITE_CHRIS_RUN ; 68
  	const SPRITE_KRIS_RUN ; 69
  	const SPRITE_GIOVANNI ; 70
-NUM_OVERWORLD_SPRITES EQU const_value - 1
+DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-SPRITE_POKEMON EQU const_value
+DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UMBREON ; 71
 	const SPRITE_GEODUDE ; 72
 	const SPRITE_MURKROW ; 73
@@ -237,7 +237,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_SWAMPERT   ; eb
 	const SPRITE_FRIGIBAX   ; ec
 	const SPRITE_SMEARGLE   ; ed
-NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
+DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_next $ee
@@ -246,7 +246,7 @@ NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; wVariableSprites indexes (see wram.asm)
 	const_next $f0
-SPRITE_VARS EQU const_value
+DEF SPRITE_VARS EQU const_value
 	const SPRITE_CONSOLE ; f0
 	const SPRITE_DOLL_1 ; f1
 	const SPRITE_DOLL_2 ; f2

@@ -11,17 +11,17 @@
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU
+	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .SilverAndCrystal
 
-.DummyScene0:
+NewBarkTownNoop1Scene:
 	end
 
-.DummyScene1:
+NewBarkTownNoop2Scene:
 	end
 
 .SilverAndCrystal
@@ -149,20 +149,20 @@ NewBarkTownSilverScript:
 	writetext NewBarkTownRivalText1
 	waitbutton
 	closetext
-	turnobject NEWBARKTOWN_SILVER, LEFT
+	turnobject NEWBARKTOWN_RIVAL, LEFT
 	opentext
 	writetext NewBarkTownRivalText2
 	waitbutton
 	closetext
-	follow PLAYER, NEWBARKTOWN_SILVER
-	applymovement PLAYER, NewBarkTown_SilverPushesYouAwayMovement
+	follow PLAYER, NEWBARKTOWN_RIVAL
+	applymovement PLAYER, NewBarkTown_RivalPushesYouAwayMovement
 	stopfollow
 	pause 5
-	turnobject NEWBARKTOWN_SILVER, DOWN
+	turnobject NEWBARKTOWN_RIVAL, DOWN
 	pause 5
 	playsound SFX_TACKLE
-	applymovement PLAYER, NewBarkTown_SilverShovesYouOutMovement
-	applymovement NEWBARKTOWN_SILVER, NewBarkTown_SilverReturnsToTheShadowsMovement
+	applymovement PLAYER, NewBarkTown_RivalShovesYouOutMovement
+	applymovement NEWBARKTOWN_RIVAL, NewBarkTown_RivalReturnsToTheShadowsMovement
 	end
 
 NewBarkTownSign:
@@ -210,19 +210,19 @@ NewBarkTown_TeacherBringsYouBackMovement2:
 	turn_head LEFT
 	step_end
 
-NewBarkTown_SilverPushesYouAwayMovement:
+NewBarkTown_RivalPushesYouAwayMovement:
 	turn_head UP
 	step DOWN
 	step_end
 
-NewBarkTown_SilverShovesYouOutMovement:
+NewBarkTown_RivalShovesYouOutMovement:
 	turn_head UP
 	fix_facing
 	jump_step DOWN
 	remove_fixed_facing
 	step_end
 
-NewBarkTown_SilverReturnsToTheShadowsMovement:
+NewBarkTown_RivalReturnsToTheShadowsMovement:
 	step RIGHT
 	step_end
 
@@ -907,11 +907,11 @@ NewBarkTown_MapEvents:
 	def_object_events
 	object_event  6, 20, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 10, 20, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
-	object_event  3, 14, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event  3, 14, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event 12,  7, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NewBarkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 10,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRepelScript, -1
 	object_event  7, 21, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 
-	object_event 14, 20, SPRITE_SILVER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
+	object_event 14, 20, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
 	object_event 12, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
 	object_event 11,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NewBarkPikachu, -1

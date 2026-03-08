@@ -8,7 +8,7 @@
 	const OPT_MENU_CLOCK   ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
-NUM_OPTIONS EQU const_value    ; 8
+DEF NUM_OPTIONS EQU const_value    ; 8
 
 _Option:
     call ClearJoypad
@@ -48,12 +48,12 @@ _Option:
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and START | B_BUTTON
+	and PAD_START | PAD_B
 	jr nz, .ExitOptions
 	call OptionsControl
 	jr c, .dpad
@@ -114,9 +114,9 @@ GetOptionPointer:
 Options_TextSpeed:
 	call GetTextSpeed
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	ld a, c ; right pressed
 	cp OPT_TEXT_SPEED_NONE
@@ -204,9 +204,9 @@ GetTextSpeed:
 Options_BattleScene:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit BATTLE_SCENE, [hl]
 	jr nz, .ToggleOn
@@ -243,9 +243,9 @@ Options_BattleScene:
 Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit BATTLE_SHIFT, [hl]
 	jr nz, .ToggleShift
@@ -281,9 +281,9 @@ Options_BattleStyle:
 Options_Sound:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit STEREO, [hl]
 	jr nz, .SetMono
@@ -466,9 +466,9 @@ Options_FasterBattles:
 Options_MenuClock:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit MENU_CLOCK, [hl]
 	jr nz, .ToggleOff
@@ -504,9 +504,9 @@ Options_MenuClock:
 Options_Frame:
 	ld hl, wTextboxFrame
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .RightPressed
 	and a
 	ret
@@ -526,7 +526,7 @@ Options_Frame:
 UpdateFrame:
 	ld a, [wTextboxFrame]
 	hlcoord 16, 15 ; where on the screen the number is drawn
-	add "1"
+	add '1'
 	ld [hl], a
 	call LoadFontsExtra
 	and a
@@ -534,7 +534,7 @@ UpdateFrame:
 
 Options_Cancel:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .Exit
 	and a
 	ret
@@ -546,9 +546,9 @@ Options_Cancel:
 OptionsControl:
 	ld hl, wJumptableIndex
 	ldh a, [hJoyLast]
-	cp D_DOWN
+	cp PAD_DOWN
 	jr z, .DownPressed
-	cp D_UP
+	cp PAD_UP
 	jr z, .UpPressed
 	and a
 	ret
@@ -596,7 +596,7 @@ Options_UpdateCursorPosition:
 	ld de, SCREEN_WIDTH
 	ld c, SCREEN_HEIGHT - 2
 .loop
-	ld [hl], " "
+	ld [hl], ' '
 	add hl, de
 	dec c
 	jr nz, .loop
@@ -604,5 +604,5 @@ Options_UpdateCursorPosition:
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wJumptableIndex]
 	call AddNTimes
-	ld [hl], "▶"
+	ld [hl], '▶'
 	ret

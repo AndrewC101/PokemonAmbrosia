@@ -1,7 +1,8 @@
 LoadOverworldMonIcon:
 	ld a, e
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
+	; fallthrough
+_LoadOverworldMonIcon:
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -10,7 +11,7 @@ LoadOverworldMonIcon:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-    jp GetIconBank
+	jp GetIconBank
 
 SetMenuMonIconColor:
 	push hl
@@ -21,7 +22,7 @@ SetMenuMonIconColor:
 	ld a, [wTempIconSpecies]
 	ld [wCurPartySpecies], a
 	call GetMenuMonIconPalette
-	ld hl, wVirtualOAMSprite00Attributes
+	ld hl, wShadowOAMSprite00Attributes
 	jr _ApplyMenuMonIconColor
 
 SetMenuMonIconColor_NoShiny:
@@ -34,7 +35,7 @@ SetMenuMonIconColor_NoShiny:
 	ld [wCurPartySpecies], a
 	and a
 	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wVirtualOAMSprite00Attributes
+	ld hl, wShadowOAMSprite00Attributes
 	jr _ApplyMenuMonIconColor
 
 LoadPartyMenuMonIconColors:
@@ -61,7 +62,7 @@ LoadPartyMenuMonIconColors:
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	call GetMenuMonIconPalette
-	ld hl, wVirtualOAMSprite00Attributes
+	ld hl, wShadowOAMSprite00Attributes
 	push af
 	ld a, [wCurPartyMon]
 	swap a
@@ -105,7 +106,42 @@ _FinishMenuMonIconColor:
 	pop hl
 	ret
 
-GetMenuMonIconPalette::
+GetMonPalInBCDE:
+; Sets BCDE to mon icon palette.
+; Input: c = species, b = shininess (1=true, 0=false)
+	ld hl, MonMenuIconPals
+	dec c
+
+	; This sets z if mon is shiny.
+	dec b
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	jr z, .shiny
+	swap a
+.shiny
+	and $f
+
+	; Now we have the target color. Get the palette (+ 2 to avoid white).
+	ld hl, PartyMenuOBPals + 2
+	ld bc, 1 palettes
+	call AddNTimes
+
+	push hl
+	ld a, BANK(PartyMenuOBPals)
+	call GetFarWord
+	ld b, h
+	ld c, l
+	pop hl
+	inc hl
+	inc hl
+	ld a, BANK(PartyMenuOBPals)
+	call GetFarWord
+	ld d, h
+	ld e, l
+	ret
+
+GetMenuMonIconPalette:
 	ld c, l
 	ld b, h
 	farcall CheckShininess
@@ -206,15 +242,15 @@ Mobile_InitAnimatedMonIcon:
 	call PartyMenu_InitAnimatedMonIcon
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld a, SPRITE_ANIM_SEQ_NULL
+	ld a, SPRITE_ANIM_FUNC_NULL
 	ld [hl], a
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld a, 9 * 8
+	ld a, 9 * TILE_WIDTH
 	ld [hl], a
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
-	ld a, 9 * 8
+	ld a, 9 * TILE_WIDTH
 	ld [hl], a
 	ret
 
@@ -223,15 +259,15 @@ Mobile_InitPartyMenuBGPal71:
 	call SetPartyMonIconAnimSpeed
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld a, SPRITE_ANIM_SEQ_NULL
+	ld a, SPRITE_ANIM_FUNC_NULL
 	ld [hl], a
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld a, 3 * 8
+	ld a, 3 * TILE_WIDTH
 	ld [hl], a
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
-	ld a, 12 * 8
+	ld a, 12 * TILE_WIDTH
 	ld [hl], a
 	ld a, c
 	ld [wc608], a
@@ -274,7 +310,7 @@ PartyMenu_InitAnimatedMonIcon:
 	ret
 
 InitPartyMenuIcon:
-    call LoadPartyMenuMonIconColors
+	call LoadPartyMenuMonIconColors
 	ld a, [wCurIconTile]
 	push af
 	ldh a, [hObjectStructIndex]
@@ -283,7 +319,6 @@ InitPartyMenuIcon:
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	call GetMemIconGFX
 	ldh a, [hObjectStructIndex]
@@ -297,7 +332,7 @@ InitPartyMenuIcon:
 ; x coord
 	ld e, $10
 ; type is partymon icon
-	ld a, SPRITE_ANIM_INDEX_PARTY_MON
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
 	pop af
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
@@ -338,42 +373,39 @@ SetPartyMonIconAnimSpeed:
 	db $80 ; HP_RED
 
 NamingScreen_InitAnimatedMonIcon:
-    ld hl, wTempMonDVs
+	ld hl, wTempMonDVs
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	xor a
 	call GetIconGFX
 	depixel 4, 4, 4, 0
-	ld a, SPRITE_ANIM_INDEX_PARTY_MON
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld [hl], SPRITE_ANIM_SEQ_NULL
+	ld [hl], SPRITE_ANIM_FUNC_NULL
 	ret
 
 MoveList_InitAnimatedMonIcon:
-    ld a, MON_DVS
+	ld a, MON_DVS
 	call GetPartyParamLocation
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	xor a
 	call GetIconGFX
-	ld d, 3 * 8 + 2 ; depixel 3, 4, 2, 4
-	ld e, 4 * 8 + 4
-	ld a, SPRITE_ANIM_INDEX_PARTY_MON
+	ld d, 3 * TILE_WIDTH + 2 ; depixel 3, 4, 2, 4
+	ld e, 4 * TILE_WIDTH + 4
+	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld [hl], SPRITE_ANIM_SEQ_NULL
+	ld [hl], SPRITE_ANIM_FUNC_NULL
 	ret
 
 Trade_LoadMonIconGFX:
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	ld a, $62
 	ld [wCurIconTile], a
@@ -383,11 +415,10 @@ Trade_LoadMonIconGFX:
 GetSpeciesIcon:
 ; Load species icon into VRAM at tile a
 	push de
-    ld a, MON_DVS
+	ld a, MON_DVS
 	call GetPartyParamLocation
 	call SetMenuMonIconColor
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	pop de
 	ld a, e
@@ -397,14 +428,12 @@ GetSpeciesIcon:
 FlyFunction_GetMonIcon:
 	push de
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	pop de
 	ld a, e
 	call GetIcon_a
-; Edit the OBJ 0 palette so that the flying Pokémon has the right colors.
-	ld a, [wTempIconSpecies]
-	ld [wCurPartySpecies], a
+
+	; Edit the OBJ 0 palette so that the cursor Pokémon has the right colors.
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	call GetMenuMonIconPalette
@@ -418,7 +447,6 @@ FlyFunction_GetMonIcon:
 GetMonIconDE: ; unreferenced
 	push de
 	ld a, [wTempIconSpecies]
-	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	pop de
 	call GetIcon_de
@@ -439,8 +467,8 @@ GetIconGFX:
 	ret
 
 HeldItemIcons:
-INCBIN "gfx/icons/mail.2bpp"
-INCBIN "gfx/icons/item.2bpp"
+INCBIN "gfx/stats/mail.2bpp"
+INCBIN "gfx/stats/item.2bpp"
 
 GetIcon_de:
 ; Load icon graphics into VRAM starting from tile de.
@@ -465,8 +493,6 @@ endr
 	add hl, de
 	push hl
 
-; The icons are contiguous, in order and of the same
-; size, so the pointer table is somewhat redundant.
 	ld a, [wCurIcon]
 	push hl
 	ld l, a
@@ -511,6 +537,25 @@ GetGFXUnlessMobile:
 	jp nz, Request2bpp
 	jp Get2bppViaHDMA
 
+
+GetStorageIcon_a:
+; Load frame 1 icon graphics into VRAM starting from tile a
+	ld l, a ; no-optimize hl|bc|de = a * 16 (rept)
+	ld h, 0
+rept 4
+	add hl, hl
+endr
+	ld de, vTiles0
+	add hl, de
+	; fallthrough
+GetStorageIcon:
+	push hl
+	ld a, [wCurIcon]
+	call _LoadOverworldMonIcon
+	ld c, 4
+	pop hl
+	newfarjp BillsPC_SafeGet2bpp
+
 FreezeMonIcons:
 	ld hl, wSpriteAnimationStructs
 	ld e, PARTY_LENGTH
@@ -522,11 +567,11 @@ FreezeMonIcons:
 	jr z, .next
 	cp d
 	jr z, .loadwithtwo
-	ld a, SPRITE_ANIM_SEQ_NULL
+	ld a, SPRITE_ANIM_FUNC_NULL
 	jr .ok
 
 .loadwithtwo
-	ld a, SPRITE_ANIM_SEQ_PARTY_MON_SWITCH
+	ld a, SPRITE_ANIM_FUNC_PARTY_MON_SWITCH
 
 .ok
 	push hl
@@ -556,7 +601,7 @@ UnfreezeMonIcons:
 	ld b, h
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
-	ld [hl], SPRITE_ANIM_SEQ_PARTY_MON
+	ld [hl], SPRITE_ANIM_FUNC_PARTY_MON
 	pop hl
 .next
 	ld bc, $10
@@ -576,11 +621,11 @@ HoldSwitchmonIcon:
 	jr z, .next
 	cp d
 	jr z, .is_switchmon
-	ld a, SPRITE_ANIM_SEQ_PARTY_MON_SELECTED
+	ld a, SPRITE_ANIM_FUNC_PARTY_MON_SELECTED
 	jr .join_back
 
 .is_switchmon
-	ld a, SPRITE_ANIM_SEQ_PARTY_MON_SWITCH
+	ld a, SPRITE_ANIM_FUNC_PARTY_MON_SWITCH
 .join_back
 	push hl
 	ld c, l
@@ -596,24 +641,6 @@ HoldSwitchmonIcon:
 	jr nz, .loop
 	ret
 
-ReadMonMenuIcon:
-	cp EGG
-	jr z, .egg
-	dec a
-	ld hl, MonMenuIcons
-	ld e, a
-	ld d, 0
-	add hl, de
-	ld a, [hl]
-	ret
-.egg
-	ld a, ICON_EGG
-	ret
-
-INCLUDE "data/pokemon/menu_icons.asm"
-
 INCLUDE "data/pokemon/menu_icon_pals.asm"
 
-INCLUDE "data/icon_pointers.asm"
-
-INCLUDE "gfx/icons.asm"
+INCLUDE "data/pokemon/icon_pointers.asm"

@@ -1,14 +1,14 @@
-NUM_ODD_EGGS EQU 7
+DEF NUM_ODD_EGGS EQU 7
 
-prob: MACRO
-prob_total += \1
+MACRO prob
+DEF prob_total += \1
 	dw prob_total * $ffff / 100
 ENDM
 
 OddEggProbabilities:
 ; entries correspond to OddEggs (below)
 	table_width 2, OddEggProbabilities
-prob_total = 0
+DEF prob_total = 0
 	prob 14
 	prob 14
 	prob 14
@@ -20,7 +20,7 @@ prob_total = 0
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
 OddEggs:
-	table_width NICKNAMED_MON_STRUCT_LENGTH, OddEggs
+	table_width NICKNAMED_MON_STRUCT_LENGTH
 
 	db CHIMCHAR
 	db NO_ITEM
@@ -46,7 +46,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db FROAKIE
 	db NO_ITEM
@@ -72,7 +72,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db TREECKO
 	db NO_ITEM
@@ -98,7 +98,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db CHARMANDER
 	db NO_ITEM
@@ -124,7 +124,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db SQUIRTLE
 	db NO_ITEM
@@ -150,7 +150,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db BULBASAUR
 	db NO_ITEM
@@ -176,7 +176,7 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	db MUDKIP
 	db NO_ITEM
@@ -202,6 +202,6 @@ OddEggs:
     bigdw 6
     bigdw 6
     bigdw 6
-	db "Egg@@@@@@@@"
+	dname "Egg", MON_NAME_LENGTH
 
 	assert_table_length NUM_ODD_EGGS

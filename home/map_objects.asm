@@ -71,34 +71,34 @@ DoesSpriteHaveFacings::
 	pop de
 	ret
 
-GetPlayerStandingTile::
-	ld a, [wPlayerStandingTile]
-	call GetTileCollision
+GetPlayerTilePermission::
+	ld a, [wPlayerTileCollision]
+	call GetTilePermission
 	ld b, a
 	ret
 
 CheckOnWater::
-	ld a, [wPlayerStandingTile]
-	call GetTileCollision
+	ld a, [wPlayerTileCollision]
+	call GetTilePermission
 	sub WATER_TILE
 	ret z
 	and a
 	ret
 
-GetTileCollision::
-; Get the collision type of tile a.
+GetTilePermission::
+; Get the permission of tile collision a.
 
 	push de
 	push hl
 
-	ld hl, TileCollisionTable
+	ld hl, CollisionPermissionTable
 	ld e, a
 	ld d, 0
 	add hl, de
 
 	ldh a, [hROMBank]
 	push af
-	ld a, BANK(TileCollisionTable)
+	ld a, BANK(CollisionPermissionTable)
 	rst Bankswitch
 	ld e, [hl]
 	pop af
@@ -189,7 +189,7 @@ CheckWaterfallTile::
 	ret
 
 CheckStandingOnEntrance::
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	cp COLL_DOOR
 	ret z
 	cp COLL_DOOR_79
@@ -227,7 +227,7 @@ CheckObjectVisibility::
 	ret
 
 CheckObjectTime::
-	ld hl, MAPOBJECT_HOUR
+	ld hl, MAPOBJECT_HOUR_1
 	add hl, bc
 	ld a, [hl]
 	cp -1
@@ -265,10 +265,10 @@ CheckObjectTime::
 	db EVE
 
 .check_hour
-	ld hl, MAPOBJECT_HOUR
+	ld hl, MAPOBJECT_HOUR_1
 	add hl, bc
 	ld d, [hl]
-	ld hl, MAPOBJECT_TIMEOFDAY
+	ld hl, MAPOBJECT_HOUR_2
 	add hl, bc
 	ld e, [hl]
 	ld hl, hHours
@@ -299,12 +299,6 @@ CheckObjectTime::
 
 .no
 	scf
-	ret
-
-CopyMapObjectStruct:: ; unreferenced
-	ldh [hMapObjectIndex], a
-	call GetMapObject
-	call CopyObjectStruct
 	ret
 
 UnmaskCopyMapObjectStruct::
@@ -363,35 +357,6 @@ CopyPlayerObjectTemplate::
 	call CopyBytes
 	ret
 
-DeleteFollowerMapObject: ; unreferenced
-	call GetMapObject
-	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
-	add hl, bc
-	ld a, [hl]
-	push af
-	ld [hl], -1
-	inc hl
-	ld bc, MAPOBJECT_LENGTH - 1
-	xor a
-	call ByteFill
-	pop af
-	cp -1
-	ret z
-	cp NUM_OBJECT_STRUCTS
-	ret nc
-	ld b, a
-	ld a, [wObjectFollow_Leader]
-	cp b
-	jr nz, .ok
-	ld a, -1
-	ld [wObjectFollow_Leader], a
-
-.ok
-	ld a, b
-	call GetObjectStruct
-	farcall DeleteMapObject
-	ret
-
 LoadMovementDataPointer::
 ; Load the movement data pointer for object a.
 	ld [wMovementObject], a
@@ -405,7 +370,7 @@ LoadMovementDataPointer::
 	call CheckObjectVisibility
 	ret c
 
-	ld hl, OBJECT_MOVEMENTTYPE
+	ld hl, OBJECT_MOVEMENT_TYPE
 	add hl, bc
 	ld [hl], SPRITEMOVEDATA_SCRIPTED
 
@@ -413,8 +378,8 @@ LoadMovementDataPointer::
 	add hl, bc
 	ld [hl], STEP_TYPE_RESET
 
-	ld hl, wVramState
-	set 7, [hl]
+	ld hl, wStateFlags
+	set SCRIPTED_MOVEMENT_STATE_F, [hl]
 	and a
 	ret
 
@@ -448,7 +413,7 @@ FindFirstEmptyObjectStruct::
 	ret
 
 GetSpriteMovementFunction::
-	ld hl, OBJECT_MOVEMENTTYPE
+	ld hl, OBJECT_MOVEMENT_TYPE
 	add hl, bc
 	ld a, [hl]
 	cp NUM_SPRITEMOVEDATA
@@ -501,7 +466,7 @@ CopySpriteMovementData::
 	ret
 
 .CopyData:
-	ld hl, OBJECT_MOVEMENTTYPE
+	ld hl, OBJECT_MOVEMENT_TYPE
 	add hl, de
 	ld [hl], a
 
@@ -521,7 +486,7 @@ endr
 	rlca
 	rlca
 	maskbits NUM_DIRECTIONS, 2
-	ld hl, OBJECT_FACING
+	ld hl, OBJECT_DIRECTION
 	add hl, de
 	ld [hl], a
 
@@ -550,16 +515,16 @@ endr
 	ld [hl], a
 	ret
 
-_GetMovementByte::
+_GetMovementIndex::
 ; Switch to the movement data bank
 	ldh a, [hROMBank]
 	push af
 	ld a, [hli]
 	rst Bankswitch
-; Load the current script byte as given by OBJECT_MOVEMENT_BYTE_INDEX, and increment OBJECT_MOVEMENT_BYTE_INDEX
+; Load the current script byte as given by OBJECT_MOVEMENT_INDEX, and increment OBJECT_MOVEMENT_INDEX
 	ld a, [hli]
 	ld d, [hl]
-	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
+	ld hl, OBJECT_MOVEMENT_INDEX
 	add hl, bc
 	add [hl]
 	ld e, a
@@ -575,19 +540,9 @@ _GetMovementByte::
 	ld a, h
 	ret
 
-SetVramState_Bit0:: ; unreferenced
-	ld hl, wVramState
-	set 0, [hl]
-	ret
-
-ResetVramState_Bit0:: ; unreferenced
-	ld hl, wVramState
-	res 0, [hl]
-	ret
-
 UpdateSprites::
-	ld a, [wVramState]
-	bit 0, a
+	ld a, [wStateFlags]
+	bit SPRITE_UPDATES_DISABLED_F, a
 	ret z
 
 	farcall UpdateAllObjectsFrozen
@@ -612,7 +567,7 @@ DoesObjectHaveASprite::
 SetSpriteDirection::
 	; preserves other flags
 	push af
-	ld hl, OBJECT_FACING
+	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld a, [hl]
 	and %11110011
@@ -624,7 +579,7 @@ SetSpriteDirection::
 	ret
 
 GetSpriteDirection::
-	ld hl, OBJECT_FACING
+	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld a, [hl]
 	maskbits NUM_DIRECTIONS, 2

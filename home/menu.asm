@@ -36,10 +36,10 @@ GetMenuJoypad::
 	push bc
 	push af
 	ldh a, [hJoyLast]
-	and D_PAD
+	and PAD_CTRL_PAD
 	ld b, a
 	ldh a, [hJoyPressed]
-	and BUTTONS
+	and PAD_BUTTONS
 	or b
 	ld b, a
 	pop af
@@ -52,7 +52,7 @@ PlaceHollowCursor::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld [hl], "▷"
+	ld [hl], '▷'
 	ret
 
 HideCursor::
@@ -60,7 +60,7 @@ HideCursor::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	ld [hl], " "
+	ld [hl], ' '
 	ret
 
 PushWindow::
@@ -193,7 +193,7 @@ PlaceVerticalMenuItems::
 	jr nz, .loop
 
 	ld a, [wMenuDataFlags]
-	bit 4, a
+	bit STATICMENU_PLACE_TITLE_F, a
 	ret z
 
 	call MenuBoxCoord2Tile
@@ -218,20 +218,20 @@ GetMenuTextStartCoord::
 	ld a, [wMenuBorderLeftCoord]
 	ld c, a
 	inc c
-; bit 6: if not set, leave extra room on top
+; if not set, leave extra room on top
 	ld a, [wMenuDataFlags]
-	bit 6, a
-	jr nz, .bit_6_set
+	bit STATICMENU_NO_TOP_SPACING_F, a
+	jr nz, .no_top_spacing
 	inc b
 
-.bit_6_set
-; bit 7: if set, leave extra room on the left
+.no_top_spacing
+; if set, leave extra room on the left
 	ld a, [wMenuDataFlags]
-	bit 7, a
-	jr z, .bit_7_clear
+	bit STATICMENU_CURSOR_F, a
+	jr z, .no_cursor
 	inc c
 
-.bit_7_clear
+.no_cursor
 	ret
 
 ClearMenuBoxInterior::
@@ -331,9 +331,6 @@ MenuTextbox::
 	pop hl
 	jp PrintText
 
-Menu_DummyFunction:: ; unreferenced
-	ret
-
 LoadMenuTextbox::
 	ld hl, .MenuHeader
 	call LoadMenuHeader
@@ -374,12 +371,12 @@ VerticalMenu::
 	call ApplyTilemap
 	call CopyMenuData
 	ld a, [wMenuDataFlags]
-	bit 7, a
+	bit STATICMENU_CURSOR_F, a
 	jr z, .cancel
 	call InitVerticalMenuCursor
 	call StaticMenuJoypad
 	call MenuClickSound
-	bit 1, a
+	bit B_PAD_B, a
 	jr z, .okay
 .cancel
 	scf
@@ -415,19 +412,14 @@ CopyNameFromMenu::
 	pop hl
 	ret
 
-NoYesBox::
-	farcall _NoYesBox
-	ret
-
 YesNoBox::
 	lb bc, SCREEN_WIDTH - 6, 7
 
 PlaceYesNoBox::
 	jr _YesNoBox
 
-PlaceGenericTwoOptionBox:: ; unreferenced
-	call LoadMenuHeader
-	jr InterpretTwoOptionMenu
+NoYesBox::
+	newfarjp _NoYesBox
 
 _YesNoBox::
 ; Return nc (yes) or c (no).
@@ -529,7 +521,7 @@ SetUpMenu::
 	call MenuWriteText
 	call InitMenuCursorAndButtonPermissions
 	ld hl, w2DMenuFlags1
-	set 7, [hl]
+	set _2DMENU_DISABLE_JOYPAD_FILTER_F, [hl]
 	ret
 
 DrawVariableLengthMenuBox::
@@ -625,16 +617,16 @@ InitMenuCursorAndButtonPermissions::
 	call InitVerticalMenuCursor
 	ld hl, wMenuJoypadFilter
 	ld a, [wMenuDataFlags]
-	bit 3, a
-	jr z, .disallow_select
-	set START_F, [hl]
+	bit STATICMENU_ENABLE_START_F, a
+	jr z, .disallow_start
+	set B_PAD_START, [hl]
 
-.disallow_select
+.disallow_start
 	ld a, [wMenuDataFlags]
-	bit 2, a
+	bit STATICMENU_ENABLE_LEFT_RIGHT_F, a
 	jr z, .disallow_left_right
-	set D_LEFT_F, [hl]
-	set D_RIGHT_F, [hl]
+	set B_PAD_LEFT, [hl]
+	set B_PAD_RIGHT, [hl]
 
 .disallow_left_right
 	ret
@@ -651,32 +643,32 @@ GetStaticMenuJoypad::
 	call StaticMenuJoypad
 
 ContinueGettingMenuJoypad:
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jr nz, .a_button
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jr nz, .b_start
-	bit START_F, a
+	bit B_PAD_START, a
 	jr nz, .b_start
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .d_right
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .d_left
 	xor a
 	ld [wMenuJoypad], a
 	jr .done
 
 .d_right
-	ld a, D_RIGHT
+	ld a, PAD_RIGHT
 	ld [wMenuJoypad], a
 	jr .done
 
 .d_left
-	ld a, D_LEFT
+	ld a, PAD_LEFT
 	ld [wMenuJoypad], a
 	jr .done
 
 .a_button
-	ld a, A_BUTTON
+	ld a, PAD_A
 	ld [wMenuJoypad], a
 
 .done
@@ -693,7 +685,7 @@ ContinueGettingMenuJoypad:
 	ret
 
 .b_start
-	ld a, B_BUTTON
+	ld a, PAD_B
 	ld [wMenuJoypad], a
 	ld a, -1
 	ld [wMenuSelection], a
@@ -727,15 +719,6 @@ PlaceNthMenuStrings::
 	call PlaceString
 	ret
 
-GetNthMenuStrings:: ; unreferenced
-	call GetMenuDataPointerTableEntry
-	inc hl
-	inc hl
-	ld a, [hli]
-	ld d, [hl]
-	ld e, a
-	ret
-
 MenuJumptable::
 	ld a, [wMenuSelection]
 	call GetMenuDataPointerTableEntry
@@ -767,10 +750,10 @@ ClearWindowData::
 	ld hl, w2DMenuCursorInitY
 	call .bytefill
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wWindowStack)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	xor a
 	ld hl, wWindowStackBottom
@@ -782,7 +765,7 @@ ClearWindowData::
 	ld [wWindowStackPointer + 1], a
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .bytefill
@@ -793,10 +776,10 @@ ClearWindowData::
 
 MenuClickSound::
 	push af
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr z, .nosound
 	ld hl, wMenuFlags
-	bit 3, [hl]
+	bit MENU_NO_CLICK_SFX_F, [hl]
 	jr nz, .nosound
 	call PlayClickSFX
 .nosound

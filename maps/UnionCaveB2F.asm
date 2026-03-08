@@ -15,9 +15,9 @@ UnionCaveB2F_MapScripts:
 
 	def_callbacks
     callback MAPCALLBACK_OBJECTS, .UnionCaveB2FFieldMon
-	callback MAPCALLBACK_OBJECTS, .Lapras
+	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
 
-.Lapras:
+UnionCaveB2FLaprasCallback:
 	checkflag ENGINE_UNION_CAVE_LAPRAS
 	iffalse .Appear
 	disappear UNIONCAVEB2F_LAPRAS

@@ -29,7 +29,8 @@ LoadSGBLayoutCGB:
 	ret
 
 CGBLayoutJumptable:
-	table_width 2, CGBLayoutJumptable
+; entries correspond to SCGB_* constants (see constants/scgb_constants.asm)
+	table_width 2
 	dw _CGB_BattleGrayscale
 	dw _CGB_BattleColors
 	dw _CGB_PokegearPals
@@ -116,7 +117,7 @@ _CGB_BattleColors:
 _CGB_FinishBattleScreenLayout:
 	call InitPartyMenuBGPal7
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call ByteFill
 	hlcoord 0, 4, wAttrmap
@@ -311,16 +312,54 @@ PokedexCursorPalette:
 INCLUDE "gfx/pokedex/cursor.pal"
 
 _CGB_BillsPC:
+	newfarcall GetBoxTheme
+BillsPC_PreviewTheme:
+	; hl = BillsPC_ThemePals + a * 4 * 2
+	ld h, 0
+	ld l, a
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, BillsPC_ThemePals
+	add hl, de
+	; Load palettes
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
-	call GetPredefPal
+	push hl
+	ld c, 2 * 2
+	call LoadHLBytesIntoDE
+	pop hl
+	ld c, 2 * 2
+	call LoadHLBytesIntoDE
+	push hl
+	ld hl, wBGPals1 palette 0
+	ld c, 1 * 2
+	call LoadHLBytesIntoDE
+	pop hl
+	ld c, 2 * 2
+	call LoadHLBytesIntoDE
+	ld hl, BillsPC_WhitePalette
 	call LoadHLPaletteIntoDE
-	ld a, [wCurPartySpecies]
-	cp $ff
-	jr nz, .GetMonPalette
-	ld hl, BillsPCOrangePalette
+	ld hl, wBGPals1 palette 0
+	ld de, wBGPals1 palette 3
+	ld c, 1 * 2
+	call LoadHLBytesIntoDE
+	ld a, [wBillsPC_ApplyThemePals]
+	and a
+	jr nz, .apply_pals
+	ld de, wOBPals1 palette 1
+	ld hl, BillsPC_CursorPalette
+	push hl
 	call LoadHLPaletteIntoDE
-	jr .GotPalette
+	pop hl
+	call LoadHLPaletteIntoDE
+	ld hl, BillsPC_PackPalette
+	ld de, wOBPals1 palette 4
+	call LoadHLPaletteIntoDE
+	ld hl, BillsPC_WhitePalette
+	ld de, wOBPals1 palette 6
+	jp LoadHLPaletteIntoDE
+.apply_pals
+	newfarjp BillsPC_SetPals
 
 .GetMonPalette:
 	ld bc, wTempMonDVs
@@ -528,6 +567,7 @@ _CGB_BetaPoker:
 _CGB_Diploma:
 	ld hl, DiplomaPalettes
 	ld de, wBGPals1
+	assert DiplomaPalettes + 8 palettes == PartyMenuOBPals
 	ld bc, 16 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
@@ -619,17 +659,17 @@ _CGB_UnownPuzzle:
 	ld a, PREDEFPAL_UNOWN_PUZZLE
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wOBPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ld hl, wOBPals1
 	ld a, LOW(palred 31 + palgreen 0 + palblue 0)
 	ld [hli], a
 	ld a, HIGH(palred 31 + palgreen 0 + palblue 0)
 	ld [hl], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	call WipeAttrmap
 	call ApplyAttrmap
 	ret
@@ -670,7 +710,7 @@ _CGB_TrainerCard:
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	ld a, [wPlayerGender]
 	and a
 	ld a, $1 ; kris
@@ -911,7 +951,7 @@ _CGB_PackPals:
 
 .got_gender
 	ld de, wBGPals1
-	ld bc, 8 palettes ; 6 palettes?
+	ld bc, 6 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrmap

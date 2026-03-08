@@ -164,20 +164,20 @@ SwitchPartyMons:
 	ld a, PARTYMENUACTION_MOVE
 	ld [wPartyMenuActionText], a
 	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuText
+	farcall PlacePartyMenuText
 
 	hlcoord 0, 1
 	ld bc, SCREEN_WIDTH * 2
 	ld a, [wSwitchMon]
 	dec a
 	call AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 
 	farcall PartyMenuSelect
-	bit 1, b
+	bit B_PAD_B, b
 	jr c, .DontSwitch
 
 	farcall _SwitchPartyMons
@@ -238,14 +238,24 @@ GiveTakePartyMonItem:
 	ret
 
 .GiveItem:
-	farcall DepositSellInitPackBuffers
+	call GetItemToGive
+	ret z
+	jp TryGiveItemToPartymon
 
+.quit
+	ret
+
+GetItemToGive:
+; Returns nz if we got an item to give.
+	farcall DepositSellInitPackBuffers
+	; fallthrough
+_GetItemToGive:
 .loop
 	farcall DepositSellPack
 
 	ld a, [wPackUsedItem]
 	and a
-	jr z, .quit
+	ret z
 
 	ld a, [wCurPocket]
 	cp KEY_ITEM_POCKET
@@ -256,16 +266,64 @@ GiveTakePartyMonItem:
 	and a
 	jr nz, .next
 
-	call TryGiveItemToPartymon
-	jr .quit
+	or 1
+	ret
 
 .next
 	ld hl, ItemCantHeldText
 	call MenuTextboxBackup
 	jr .loop
 
-.quit
-	ret
+PCGiveItem:
+	call DepositSellInitPackBuffers
+.loop
+	call _GetItemToGive
+	ret z
+
+	; Ensure that we aren't trying to give Mail to a Pokémon in storage.
+	ld a, [wCurItem]
+	ld d, a
+	newfarcall ItemIsMail
+	jr nc, .item_ok
+
+	ld a, [wBufferMonBox]
+	and a
+	jr z, .item_ok
+
+	ld hl, CantPlaceMailInStorageText
+	call MenuTextboxBackup
+	jr .loop
+
+.item_ok
+	call PartyMonItemName
+	call GiveItemToPokemon
+
+	ld hl, wBufferMonNickname
+	ld de, wMonOrItemNameBuffer
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+
+	ld hl, PokemonHoldItemText
+	call MenuTextboxBackup
+
+	; Now, actually give the item.
+	ld a, [wBufferMonSpecies]
+	ld [wCurPartySpecies], a
+	ld de, wCurItem
+	ld a, [de]
+	ld [wBufferMonItem], a
+	newfarcall UpdateStorageBoxMonFromTemp
+
+	; We know that if we're dealing with Mail, then we're giving to a partymon.
+	; Thus, there's no harm in using party-specific code.
+	ld a, [wBufferMonSlot]
+	dec a
+	ld [wCurPartyMon], a
+	ld a, [wCurItem]
+	ld d, a
+	newfarcall ItemIsMail
+	ret nc
+	jp ComposeMailMessage
 
 TryGiveItemToPartymon:
 	call SpeechTextbox
@@ -418,6 +476,10 @@ ItemCantHeldText:
 	text_far _ItemCantHeldText
 	text_end
 
+CantPlaceMailInStorageText:
+	text_far _CantPlaceMailInStorageText
+	text_end
+
 GetPartyItemLocation:
 	push af
 	ld a, MON_ITEM
@@ -488,20 +550,35 @@ MonMailAction:
 	call ExitMenu
 
 ; Interpret the menu.
-	jp c, .done
+	ld a, $3
+	ret c
 	ld a, [wMenuCursorY]
 	cp $1
 	jr z, .read
 	cp $2
-	jr z, .take
-	jp .done
+	jr z, TakeMail
+	ld a, $3
+	ret
 
 .read
 	farcall ReadPartyMonMail
-	ld a, $0
+	xor a
 	ret
 
-.take
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 12, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "READ@"
+	db "TAKE@"
+	db "QUIT@"
+
+TakeMail:
 	ld hl, .MailAskSendToPCText
 	call StartMenuYesNo
 	jr c, .RemoveMailToBag
@@ -511,17 +588,17 @@ MonMailAction:
 	jr c, .MailboxFull
 	ld hl, .MailSentToPCText
 	call MenuTextboxBackup
-	jr .done
+	jr .TookMail
 
 .MailboxFull:
 	ld hl, .MailboxFullText
 	call MenuTextboxBackup
-	jr .done
+	jr .KeptMail
 
 .RemoveMailToBag:
 	ld hl, .MailLoseMessageText
 	call StartMenuYesNo
-	jr c, .done
+	jr c, .KeptMail
 	call GetPartyItemLocation
 	ld a, [hl]
 	ld [wCurItem], a
@@ -532,13 +609,17 @@ MonMailAction:
 	call GetCurNickname
 	ld hl, .MailDetachedText
 	call MenuTextboxBackup
+	; fallthrough
+.TookMail:
+	scf
 	jr .done
 
 .BagIsFull:
 	ld hl, .MailNoSpaceText
 	call MenuTextboxBackup
-	jr .done
-
+	; fallthrough
+.KeptMail:
+	and a
 .done
 	ld a, $3
 	ret
@@ -581,11 +662,13 @@ MonMailAction:
 	text_end
 
 OpenPartyStats:
-	call LoadStandardMenuHeader
-	call ClearSprites
 ; PartyMon
 	xor a
 	ld [wMonType], a
+	; fallthrough
+_OpenPartyStats:
+	call LoadStandardMenuHeader
+	call ClearSprites
 	call LowVolume
 	predef StatsScreenInit
 	call MaxVolume
@@ -823,14 +906,14 @@ ChooseMoveToDelete:
 	call Load2DMenuData
 	call SetUpMoveList
 	ld hl, w2DMenuFlags1
-	set 6, [hl]
+	set _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
 	jr .enter_loop
 
 .loop
 	call ScrollingMenuJoypad
-	bit B_BUTTON_F, a
+	bit B_PAD_B, a
 	jp nz, .b_button
-	bit A_BUTTON_F, a
+	bit B_PAD_A, a
 	jp nz, .a_button
 
 .enter_loop
@@ -850,7 +933,7 @@ ChooseMoveToDelete:
 	xor a
 	ld [wSwitchMon], a
 	ld hl, w2DMenuFlags1
-	res 6, [hl]
+	res _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
 	call ClearSprites
 	call ClearTilemap
 	pop af
@@ -859,9 +942,10 @@ ChooseMoveToDelete:
 DeleteMoveScreen2DMenuData:
 	db 3, 1 ; cursor start y, x
 	db 3, 1 ; rows, columns
-	db $40, $00 ; flags
+	db _2DMENU_ENABLE_SPRITE_ANIMS ; flags 1
+	db 0 ; flags 2
 	dn 2, 0 ; cursor offset
-	db D_UP | D_DOWN | A_BUTTON | B_BUTTON ; accepted buttons
+	db PAD_UP | PAD_DOWN | PAD_A | PAD_B ; accepted buttons
 
 ManagePokemonMoves:
 	ld a, [wCurPartySpecies]
@@ -891,18 +975,18 @@ MoveScreenLoop:
 .loop
 	call SetUpMoveList
 	ld hl, w2DMenuFlags1
-	set 6, [hl]
+	set _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
 	jr .skip_joy
 
 .joy_loop
 	call ScrollingMenuJoypad
-	bit 1, a
+	bit B_PAD_B, a
 	jp nz, .b_button
-	bit 0, a
+	bit B_PAD_A, a
 	jp nz, .a_button
-	bit 4, a
+	bit B_PAD_RIGHT, a
 	jp nz, .d_right
-	bit 5, a
+	bit B_PAD_LEFT, a
 	jp nz, .d_left
 
 .skip_joy
@@ -914,7 +998,7 @@ MoveScreenLoop:
 	jp .joy_loop
 
 .moving_move
-	ld a, " "
+	ld a, ' '
 	hlcoord 1, 11
 	ld bc, 8
 	call ByteFill
@@ -1088,16 +1172,17 @@ MoveScreenLoop:
 	xor a
 	ld [wSwappingMove], a
 	ld hl, w2DMenuFlags1
-	res 6, [hl]
+	res _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
 	call ClearSprites
 	jp ClearTilemap
 
 MoveScreen2DMenuData:
 	db 3, 1 ; cursor start y, x
 	db 3, 1 ; rows, columns
-	db $40, $00 ; flags
+	db _2DMENU_ENABLE_SPRITE_ANIMS ; flags 1
+	db 0 ; flags 2
 	dn 2, 0 ; cursor offsets
-	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
+	db PAD_CTRL_PAD | PAD_A | PAD_B ; accepted buttons
 
 String_MoveWhere:
 	db "Select a move<NEXT>to swap places.@"
@@ -1166,7 +1251,7 @@ SetUpMoveList:
 	hlcoord 10, 4
 	predef ListMovePP
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a
@@ -1395,7 +1480,7 @@ PlaceMoveScreenLeftArrow:
 
 .legal
 	hlcoord 16, 0
-	ld [hl], "◀"
+	ld [hl], '◀'
 	ret
 
 PlaceMoveScreenRightArrow:
@@ -1426,5 +1511,5 @@ PlaceMoveScreenRightArrow:
 
 .legal
 	hlcoord 18, 0
-	ld [hl], "▶"
+	ld [hl], '▶'
 	ret

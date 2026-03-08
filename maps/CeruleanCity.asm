@@ -12,9 +12,9 @@ CeruleanCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .CeruleanFieldMon
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
-.FlyPoint:
+CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 

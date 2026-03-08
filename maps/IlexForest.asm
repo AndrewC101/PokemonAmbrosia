@@ -21,9 +21,9 @@ IlexForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .FarfetchdCallback
+	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback
 
-.FarfetchdCallback:
+IlexForestFarfetchdCallback:
 ; Pokemon which always appear
     appear ILEXFOREST_FIELDMON_1
     appear ILEXFOREST_FIELDMON_2

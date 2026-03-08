@@ -19,9 +19,9 @@ VioletCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .VioletCityFieldMon
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback
 
-.FlyPoint:
+VioletCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIOLET
 	endcallback
 

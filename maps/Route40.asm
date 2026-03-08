@@ -21,7 +21,7 @@ Route40_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .MonicaCallback
+	callback MAPCALLBACK_OBJECTS, Route40MonicaCallback
 
 .MonicaCallback:
 ; Pokemon which always appear

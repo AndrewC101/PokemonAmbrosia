@@ -43,7 +43,7 @@ XerneasScript:
     setevent EVENT_CAUGHT_XERNEAS
 	disappear ANCIENTRUINPAST_XERNEAS
 	pause 15
-	special FadeInQuickly
+	special FadeInFromBlack
 	pause 30
 	special HealParty
 	refreshscreen

@@ -316,12 +316,12 @@ JessieAndJamesScene:
     waitbutton
     closetext
 
-	special FadeOutPalettes
+	special FadeOutToWhite
     disappear RADIOTOWER4F_ROCKET2
     disappear RADIOTOWER4F_ROCKET_GIRL
     disappear RADIOTOWER4F_MEOWTH
 	pause 10
-	special FadeInPalettes
+	special FadeInFromWhite
 
 .end
     end

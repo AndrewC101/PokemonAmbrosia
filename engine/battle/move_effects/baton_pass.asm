@@ -31,7 +31,7 @@ BattleCommand_BatonPass:
 	call ClearBox
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call BatonPass_LinkPlayerSwitch
 
 ; Mobile link battles handle entrances differently

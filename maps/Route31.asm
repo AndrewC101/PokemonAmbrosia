@@ -17,9 +17,9 @@ Route31_MapScripts:
 
 	def_callbacks
     callback MAPCALLBACK_OBJECTS, .Route31FieldMon
-	callback MAPCALLBACK_NEWMAP, .CheckMomCall
+	callback MAPCALLBACK_NEWMAP, Route31CheckMomCallCallback
 
-.CheckMomCall:
+Route31CheckMomCallCallback:
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	iffalse .DoMomCall
 	endcallback

@@ -49,7 +49,7 @@ ShayminScript:
     setevent EVENT_CAUGHT_SHAYMIN
 	disappear LAVENDERFOREST_SHAYMIN
 	pause 15
-	special FadeInQuickly
+	special FadeInFromBlack
 	pause 30
 	special HealParty
 	refreshscreen

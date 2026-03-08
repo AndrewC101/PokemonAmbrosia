@@ -217,7 +217,7 @@ _PlayersHousePC:
 	call _PlayersPC
 	and a
 	jr nz, .changed_deco_tiles
-	call OverworldTextModeSwitch
+	call LoadOverworldTilemapAndAttrmapPals
 	call ApplyTilemap
 	call UpdateSprites
 	call PC_PlayShutdownSound
@@ -324,6 +324,26 @@ PC_DisplayTextWaitMenu:
 	call MenuTextbox
 	pop af
 	ld [wOptions], a
+	ret
+
+ClearPCItemScreen:
+	call DisableSpriteUpdates
+	xor a
+	ldh [hBGMapMode], a
+	call ClearBGPalettes
+	call ClearSprites
+	hlcoord 0, 0
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld a, ' '
+	call ByteFill
+	hlcoord 0, 0
+	lb bc, 10, 18
+	call Textbox
+	hlcoord 0, 12
+	lb bc, 4, 18
+	call Textbox
+	call WaitBGMap2
+	call SetDefaultBGPAndOBP ; load regular palettes?
 	ret
 
 PlayersPCAskWhatDoText:
@@ -599,21 +619,21 @@ PCItemsJoypad:
 	and a
 	jr nz, .moving_stuff_around
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp PAD_B
 	jr z, .b_1
-	cp A_BUTTON
+	cp PAD_A
 	jr z, .a_1
-	cp SELECT
+	cp PAD_SELECT
 	jr z, .select_1
 	jr .next
 
 .moving_stuff_around
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp PAD_B
 	jr z, .b_2
-	cp A_BUTTON
+	cp PAD_A
 	jr z, .a_select_2
-	cp SELECT
+	cp PAD_SELECT
 	jr z, .a_select_2
 	jr .next
 

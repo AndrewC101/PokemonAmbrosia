@@ -742,7 +742,7 @@ GetWeatherImage:
 	ld hl, vTiles0
 	call Request2bpp
 	pop bc
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	ld de, .WeatherImageOAMData
 .loop
 	ld a, [de]
@@ -902,7 +902,7 @@ CopyBackpic:
 	ret
 
 .LoadTrainerBackpicAsOAM:
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	xor a
 	ldh [hMapObjectIndex], a
 	ld b, 6
@@ -1069,7 +1069,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	ld b, h
 	ld c, l
 	pop hl
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	pop bc
 	pop hl
 	pop de
@@ -1424,7 +1424,7 @@ FeoDetailsPageInfoBox:
 	;hlcoord 10, 7
 	;predef ListMovePP
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a

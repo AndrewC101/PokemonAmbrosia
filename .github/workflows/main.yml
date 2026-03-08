@@ -16,12 +16,13 @@ jobs:
         uses: actions/checkout@master
         with:
           path: rgbds
-          ref: v0.5.2
+          ref: v1.0.0
           repository: gbdev/rgbds
 
       - name: Install rgbds
         working-directory: rgbds
         run: |
+          sudo apt-get install -yq libpng-dev
           sudo make install
 
       - name: Remove rgbds
@@ -66,12 +67,12 @@ jobs:
         if: ${{ github.event_name == 'push' && github.repository_owner == 'pret' }}
         run: |
           cp -v *.sym symbols/
+          cp -v *.map symbols/
 
       - name: Update symbols
         if: ${{ github.event_name == 'push' && github.repository_owner == 'pret' }}
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
-          branch: symbols
           cwd: "./symbols"
-          add: "*.sym"
+          add: "*.sym *.map"
           message: ${{ github.event.commits[0].message }}

@@ -9,10 +9,10 @@ PalletTown_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
 	callback MAPCALLBACK_OBJECTS, .Aerith
 
-.FlyPoint:
+PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
 

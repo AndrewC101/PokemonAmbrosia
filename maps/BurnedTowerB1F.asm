@@ -11,19 +11,19 @@
 
 BurnedTowerB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script BurnedTowerB1FNoop1Scene, SCENE_BURNEDTOWERB1F_RELEASE_THE_BEASTS
+	scene_script BurnedTowerB1FNoop2Scene, SCENE_BURNEDTOWERB1F_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .LadderCallback
+	callback MAPCALLBACK_TILES, BurnedTowerB1FLadderCallback
 
-.DummyScene0:
+BurnedTowerB1FNoop1Scene:
 	end
 
-.DummyScene1:
+BurnedTowerB1FNoop2Scene:
 	end
 
-.LadderCallback:
+BurnedTowerB1FLadderCallback:
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iftrue .HideLadder
 	changeblock 6, 14, $02 ; floor
@@ -79,7 +79,7 @@ ReleaseTheBeasts:
 	disappear BURNEDTOWERB1F_SUICUNE1
 	waitsfx
 	special RestartMapMusic
-	setscene SCENE_FINISHED
+	setscene SCENE_BURNEDTOWERB1F_NOOP
 	setevent EVENT_RELEASED_THE_BEASTS
 	setval RAIKOU
 	special UnusedSetSeenMon
@@ -87,7 +87,7 @@ ReleaseTheBeasts:
 	special UnusedSetSeenMon
 	setval SUICUNE
 	special UnusedSetSeenMon
-	setmapscene ECRUTEAK_GYM, SCENE_FINISHED
+	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_NOOP
 	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	setevent EVENT_ECRUTEAK_GYM_GRAMPS
@@ -95,11 +95,11 @@ ReleaseTheBeasts:
 	setevent EVENT_BURNED_TOWER_MORTY
 	setevent EVENT_BURNED_TOWER_1F_EUSINE
 	appear BURNEDTOWERB1F_EUSINE
-	refreshscreen
+	reanchormap
 	changeblock 6, 14, $1b ; ladder
-	reloadmappart
+	refreshmap
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_BURNEDTOWERB1F_NOOP
 	end
 
 BurnedTowerB1FEusine:
@@ -246,7 +246,7 @@ BurnedTowerB1F_MapEvents:
 	warp_event  7, 15, BURNED_TOWER_1F, 14
 
 	def_coord_events
-	coord_event 10,  6, SCENE_DEFAULT, ReleaseTheBeasts
+	coord_event 10,  6, SCENE_BURNEDTOWERB1F_RELEASE_THE_BEASTS, ReleaseTheBeasts
 
 	def_bg_events
 

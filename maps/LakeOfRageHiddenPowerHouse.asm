@@ -56,7 +56,7 @@ MurderScript1:
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat1
 	end
 .lose
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special Reset
 	end
 

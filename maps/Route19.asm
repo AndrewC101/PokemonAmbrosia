@@ -13,10 +13,10 @@ Route19_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .ClearRocks
+	callback MAPCALLBACK_TILES, Route19ClearRocksCallback
 	callback MAPCALLBACK_OBJECTS, .FieldMon
 
-.ClearRocks:
+Route19ClearRocksCallback:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .Done
 	changeblock  6,  6, $7a ; rock

@@ -40,7 +40,7 @@ DoPlayerMovement::
 
     ld a, [wCurInput]
 	ld c, a
-	and D_PAD
+	and PAD_CTRL_PAD
 	ret nz
 
     ld a, c
@@ -48,7 +48,7 @@ DoPlayerMovement::
     ret nz
 
 	ld a, c
-	or D_DOWN
+	or PAD_DOWN
 	ld [wCurInput], a
 	ret
 
@@ -137,7 +137,7 @@ DoPlayerMovement::
 ; Tiles such as waterfalls and warps move the player
 ; in a given direction, overriding input.
 
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	ld c, a
 	call CheckWhirlpoolTile
 	jr c, .not_whirlpool
@@ -293,7 +293,7 @@ DoPlayerMovement::
 	cp 2
 	jr z, .bump
 
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	call CheckIceTile
 	jr nc, .ice
 
@@ -410,7 +410,7 @@ DoPlayerMovement::
 	ret
 
 .TryJump:
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	ld e, a
 	and $f0
 	cp HI_NYBBLE_LEDGES
@@ -427,14 +427,14 @@ DoPlayerMovement::
 	jr z, .DontJump
 
 ; d = x coordinate of tile across the ledge
-	ld a, [wPlayerStandingMapX]
+	ld a, [wPlayerMapX]
 	ld d, a
 	ld a, [wWalkingX]
 	add a
 	add d
 	ld d, a
 ; e = y coordinate of tile across the ledge
-	ld a, [wPlayerStandingMapY]
+	ld a, [wPlayerMapY]
 	ld e, a
 	ld a, [wWalkingY]
 	add a
@@ -442,8 +442,8 @@ DoPlayerMovement::
 	ld e, a
 ; make sure the tile across the ledge is walkable
 	push de
-	call GetCoordTile
-	call .CheckWalkable
+	call GetCoordTileCollision
+    call .CheckWalkable
 	pop de
 	jr c, .DontJump
 ; make sure there's no NPC across the ledge
@@ -475,10 +475,7 @@ DoPlayerMovement::
 	db FACE_UP | FACE_LEFT    ; COLL_HOP_UP_LEFT
 
 .CheckWarp:
-; Bug: Since no case is made for STANDING here, it will check
-; [.EdgeWarps + $ff]. This resolves to $3e.
-; This causes wWalkingIntoEdgeWarp to be nonzero when standing on tile $3e,
-; making bumps silent.
+; BUG: No bump noise if standing on tile $3E (see docs/bugs_and_glitches.md)
 
 	ld a, [wWalkingDirection]
 	cp STANDING
@@ -487,7 +484,7 @@ DoPlayerMovement::
 	ld d, 0
 	ld hl, .EdgeWarps
 	add hl, de
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	cp [hl]
 	jr nz, .not_warp
 
@@ -552,7 +549,7 @@ DoPlayerMovement::
 
 .Steps:
 ; entries correspond to STEP_* constants (see constants/map_object_constants.asm)
-	table_width 2, DoPlayerMovement.Steps
+	table_width 2
 	dw .SlowStep
 	dw .NormalStep
 	dw .FastStep
@@ -636,13 +633,13 @@ DoPlayerMovement::
 	ld hl, .forced_dpad
 	add hl, de
 	ld a, [wCurInput]
-	and BUTTONS
+	and PAD_BUTTONS
 	or [hl]
 	ld [wCurInput], a
 	ret
 
 .forced_dpad
-	db D_DOWN, D_UP, D_LEFT, D_RIGHT
+	db PAD_DOWN, PAD_UP, PAD_LEFT, PAD_RIGHT
 
 .GetAction:
 ; Poll player input and update movement info.
@@ -650,13 +647,13 @@ DoPlayerMovement::
 	ld hl, .action_table
 	ld de, .action_table_1_end - .action_table_1
 	ld a, [wCurInput]
-	bit D_DOWN_F, a
+	bit B_PAD_DOWN, a
 	jr nz, .d_down
-	bit D_UP_F, a
+	bit B_PAD_UP, a
 	jr nz, .d_up
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .d_left
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .d_right
 ; Standing
 	jr .update
@@ -682,10 +679,10 @@ DoPlayerMovement::
 	ld h, [hl]
 	ld l, a
 	ld a, [hl]
-	ld [wWalkingTile], a
+	ld [wWalkingTileCollision], a
 	ret
 
-player_action: MACRO
+MACRO player_action
 ; walk direction, facing, x movement, y movement, tile collision pointer
 	db \1, \2, \3, \4
 	dw \5
@@ -693,7 +690,7 @@ ENDM
 
 .action_table:
 .action_table_1
-	player_action STANDING, FACE_CURRENT, 0,  0, wPlayerStandingTile
+	player_action STANDING, FACE_CURRENT, 0,  0, wPlayerTileCollision
 .action_table_1_end
 	player_action RIGHT,    FACE_RIGHT,   1,  0, wTileRight
 	player_action LEFT,     FACE_LEFT,   -1,  0, wTileLeft
@@ -703,17 +700,18 @@ ENDM
 .CheckNPC:
 ; Returns 0 if there is an NPC in front that you can't move
 ; Returns 1 if there is no NPC in front
-; Returns 2 if there is a movable NPC in front
+; Returns 2 if there is a movable NPC in front. The game actually treats
+; this the same as an NPC in front (bump).
 	ld a, 0
 	ldh [hMapObjectIndex], a
 ; Load the next X coordinate into d
-	ld a, [wPlayerStandingMapX]
+	ld a, [wPlayerMapX]
 	ld d, a
 	ld a, [wWalkingX]
 	add d
 	ld d, a
 ; Load the next Y coordinate into e
-	ld a, [wPlayerStandingMapY]
+	ld a, [wPlayerMapY]
 	ld e, a
 	ld a, [wWalkingY]
 	add e
@@ -721,14 +719,14 @@ ENDM
 ; Find an object struct with coordinates equal to d,e
 	ld bc, wObjectStructs ; redundant
 	farcall IsNPCAtCoord
-	jr nc, .is_npc
+	jr nc, .no_npc
 	call .CheckStrengthBoulder
 	jr c, .no_bump
 
-	xor a
+	xor a ; bump
 	ret
 
-.is_npc
+.no_npc
 	ld a, 1
 	ret
 
@@ -741,7 +739,7 @@ ENDM
 	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
 	jr z, .not_boulder
 
-	ld hl, OBJECT_DIRECTION_WALKING
+	ld hl, OBJECT_WALKING
 	add hl, bc
 	ld a, [hl]
 	cp STANDING
@@ -754,7 +752,7 @@ ENDM
 
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	set 2, [hl]
+	set BOULDER_MOVING_F, [hl]
 
 	ld a, [wWalkingDirection]
 	ld d, a
@@ -782,7 +780,7 @@ ENDM
 	and d
 	jr nz, .NotWalkable
 
-	ld a, [wWalkingTile]
+	ld a, [wWalkingTileCollision]
 	call .CheckWalkable
 	jr c, .NotWalkable
 
@@ -803,7 +801,7 @@ ENDM
 	and d
 	jr nz, .NotSurfable
 
-	ld a, [wWalkingTile]
+	ld a, [wWalkingTileCollision]
 	call .CheckSurfable
 	jr c, .NotSurfable
 
@@ -824,7 +822,7 @@ ENDM
 .CheckWalkable:
 ; Return 0 if tile a is land. Otherwise, return carry.
 
-	call GetTileCollision
+	call GetTilePermission
 	and a ; LAND_TILE
 	ret z
 	scf
@@ -834,7 +832,7 @@ ENDM
 ; Return 0 if tile a is water, or 1 if land.
 ; Otherwise, return carry.
 
-	call GetTileCollision
+	call GetTilePermission
 	cp WATER_TILE
 	jr z, .Water
 
@@ -894,7 +892,7 @@ CheckStandingOnIce::
 	jr z, .not_ice
 	cp $f0
 	jr z, .not_ice
-	ld a, [wPlayerStandingTile]
+	ld a, [wPlayerTileCollision]
 	call CheckIceTile
 	jr nc, .yep
 	ld a, [wPlayerState]

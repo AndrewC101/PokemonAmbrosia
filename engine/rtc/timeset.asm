@@ -1,5 +1,5 @@
-TIMESET_UP_ARROW   EQU "♂" ; $ef
-TIMESET_DOWN_ARROW EQU "♀" ; $f5
+DEF TIMESET_UP_ARROW   EQU '♂' ; $ef
+DEF TIMESET_DOWN_ARROW EQU '♀' ; $f5
 
 InitClock:
 ; Ask the player to set the time.
@@ -8,7 +8,7 @@ InitClock:
 	ld a, $1
 	ldh [hInMenu], a
 
-	ld a, $0
+	ld a, FALSE
 	ld [wSpriteUpdatesEnabled], a
 	ld a, $10
 	ld [wMusicFade], a
@@ -121,7 +121,7 @@ InitClock:
 	xor a
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld bc, SCREEN_AREA
 	xor a
 	call ByteFill
 	ld a, $1
@@ -130,15 +130,15 @@ InitClock:
 
 SetHour:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .Confirm
 
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .down
 	call DelayFrame
 	and a
@@ -167,7 +167,7 @@ SetHour:
 
 .okay
 	hlcoord 4, 9
-	ld a, " "
+	ld a, ' '
 	ld bc, 15
 	call ByteFill
 	hlcoord 4, 9
@@ -201,7 +201,7 @@ DisplayHoursMinutesWithMinString: ; unreferenced
 	pop de
 	inc de
 	inc de
-	ld a, ":"
+	ld a, ':'
 	ld [de], a
 	inc de
 	push de
@@ -221,14 +221,14 @@ DisplayHoursMinutesWithMinString: ; unreferenced
 
 SetMinutes:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .a_button
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a
@@ -256,7 +256,7 @@ SetMinutes:
 	ld [hl], a
 .finish_dpad
 	hlcoord 12, 9
-	ld a, " "
+	ld a, ' '
 	ld bc, 7
 	call ByteFill
 	hlcoord 12, 9
@@ -278,7 +278,7 @@ DisplayMinutesWithMinString:
 
 PrintTwoDigitNumberLeftAlign:
 	push hl
-	ld a, " "
+	ld a, ' '
 	ld [hli], a
 	ld [hl], a
 	pop hl
@@ -336,7 +336,7 @@ OakText_ResponseToSetTime:
 	ld a, [wInitHourBuffer]
 	ld c, a
 	call PrintHour
-	ld [hl], ":"
+	ld [hl], ':'
 	inc hl
 	ld de, wInitMinuteBuffer
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
@@ -443,7 +443,7 @@ SetDayOfWeek:
 
 .GetJoypadAction:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr z, .not_A
 	scf
 	ret
@@ -451,10 +451,10 @@ SetDayOfWeek:
 .not_A
 	ld hl, hJoyLast
 	ld a, [hl]
-	and D_UP
+	and PAD_UP
 	jr nz, .d_up
 	ld a, [hl]
-	and D_DOWN
+	and PAD_DOWN
 	jr nz, .d_down
 	call DelayFrame
 	and a
@@ -512,7 +512,7 @@ SetDayOfWeek:
 	ret
 
 .WeekdayStrings:
-; entries correspond to wCurDay constants (see constants/wram_constants.asm)
+; entries correspond to wCurDay constants (see constants/ram_constants.asm)
 	dw .Sunday
 	dw .Monday
 	dw .Tuesday
@@ -547,13 +547,13 @@ SetDayOfWeek:
 
 InitialSetDSTFlag:
 	ld a, [wDST]
-	set 7, a
+	set DST_F, a
 	ld [wDST], a
 	hlcoord 1, 14
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	ret
 
 .Text:
@@ -574,13 +574,13 @@ InitialSetDSTFlag:
 
 InitialClearDSTFlag:
 	ld a, [wDST]
-	res 7, a
+	res DST_F, a
 	ld [wDST], a
 	hlcoord 1, 14
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	ret
 
 .Text:
@@ -604,7 +604,7 @@ MrChrono: ; unreferenced
 	lb bc, 3, SCREEN_WIDTH - 2
 	call ClearBox
 	ld hl, .Text
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	ret
 
 .Text:
@@ -612,46 +612,46 @@ MrChrono: ; unreferenced
 	call UpdateTime
 
 	hlcoord 1, 14
-	ld [hl], "R"
+	ld [hl], 'R'
 	inc hl
-	ld [hl], "T"
+	ld [hl], 'T'
 	inc hl
-	ld [hl], " "
+	ld [hl], ' '
 	inc hl
 
 	ld de, hRTCDayLo
 	call .PrintTime
 
 	hlcoord 1, 16
-	ld [hl], "D"
+	ld [hl], 'D'
 	inc hl
-	ld [hl], "F"
+	ld [hl], 'F'
 	inc hl
-	ld [hl], " "
+	ld [hl], ' '
 	inc hl
 
 	ld de, wStartDay
 	call .PrintTime
 
-	ld [hl], " "
+	ld [hl], ' '
 	inc hl
 
 	ld a, [wDST]
-	bit 7, a
+	bit DST_F, a
 	jr z, .off
 
-	ld [hl], "O"
+	ld [hl], 'O'
 	inc hl
-	ld [hl], "N"
+	ld [hl], 'N'
 	inc hl
 	jr .done
 
 .off
-	ld [hl], "O"
+	ld [hl], 'O'
 	inc hl
-	ld [hl], "F"
+	ld [hl], 'F'
 	inc hl
-	ld [hl], "F"
+	ld [hl], 'F'
 	inc hl
 
 .done
@@ -666,12 +666,12 @@ MrChrono: ; unreferenced
 .PrintTime:
 	lb bc, 1, 3
 	call PrintNum
-	ld [hl], "."
+	ld [hl], '.'
 	inc hl
 	inc de
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
-	ld [hl], ":"
+	ld [hl], ':'
 	inc hl
 	inc de
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2

@@ -1,9 +1,9 @@
-GOLDENRODGAMECORNER_TM25_COINS EQU 4000
-GOLDENRODGAMECORNER_TM14_COINS EQU 4000
-GOLDENRODGAMECORNER_TM38_COINS EQU 4000
-GOLDENRODGAMECORNER_ABRA_COINS      EQU 1000 ; EEVEE
-GOLDENRODGAMECORNER_CUBONE_COINS    EQU 2000 ; PORYGON
-GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000 ; MELTAN
+DEF GOLDENRODGAMECORNER_TM25_COINS EQU 4000
+DEF GOLDENRODGAMECORNER_TM14_COINS EQU 4000
+DEF GOLDENRODGAMECORNER_TM38_COINS EQU 4000
+DEF GOLDENRODGAMECORNER_ABRA_COINS      EQU 1000 ; EEVEE
+DEF GOLDENRODGAMECORNER_CUBONE_COINS    EQU 2000 ; PORYGON
+DEF GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 3000 ; MELTAN
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -23,7 +23,7 @@ GoldenrodGameCorner_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .MoveTutor
+	callback MAPCALLBACK_OBJECTS, GoldenrodGameCornerMoveTutorCallback
 
 .MoveTutor:
 	;checkevent EVENT_BEAT_ELITE_FOUR
@@ -310,21 +310,21 @@ GoldenrodGameCornerLeftTheirDrinkScript:
 GoldenrodGameCornerSlotsMachineScript:
 	random 6
 	ifequal 0, GoldenrodGameCornerLuckySlotsMachineScript
-	refreshscreen
+	reanchormap
 	setval FALSE
 	special SlotMachine
 	closetext
 	end
 
 GoldenrodGameCornerLuckySlotsMachineScript:
-	refreshscreen
+	reanchormap
 	setval TRUE
 	special SlotMachine
 	closetext
 	end
 
 GoldenrodGameCornerCardFlipMachineScript:
-	refreshscreen
+	reanchormap
 	special CardFlip
 	closetext
 	end

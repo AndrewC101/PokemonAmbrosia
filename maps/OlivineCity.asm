@@ -12,20 +12,20 @@
 
 OlivineCity_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script OlivineCityNoop1Scene, SCENE_OLIVINECITY_RIVAL_ENCOUNTER
+	scene_script OlivineCityNoop2Scene, SCENE_OLIVINECITY_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback
 	callback MAPCALLBACK_OBJECTS, .Crystal
 
-.DummyScene0:
+OlivineCityNoop1Scene:
 	end
 
-.DummyScene1:
+OlivineCityNoop2Scene:
 	end
 
-.FlyPoint:
+OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
 	endcallback
 

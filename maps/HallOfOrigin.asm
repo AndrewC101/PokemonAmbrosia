@@ -2050,28 +2050,28 @@ RatGodText:
 
 HallOfOriginWarpScript1:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 4, 5
     end
 
 HallOfOriginWarpScript2:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 5, 5
     end
 
 HallOfOriginWarpScript3:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 6, 5
     end
 
 HallOfOriginWarpScript4:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 7, 5
     end

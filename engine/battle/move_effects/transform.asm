@@ -14,7 +14,7 @@ BattleCommand_Transform:
 	jp nz, BattleEffect_ButItFailed
 
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld [wFXAnimID + 1], a
 	ld a, $1
 	ld [wBattleAnimParam], a
@@ -127,7 +127,7 @@ BattleCommand_Transform:
 	call BattleCommand_RaiseSubNoAnim
 .after_anim
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld [wFXAnimID + 1], a
 	ld a, $2
 	ld [wBattleAnimParam], a

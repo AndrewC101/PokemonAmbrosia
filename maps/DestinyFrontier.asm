@@ -944,7 +944,7 @@ NurseScript:
 	iffalse .done
 	closetext
 	special HealParty
-	special FadeOutPalettes
+	special FadeOutToWhite
 	reloadmap
 	opentext
 	writetext HealDoneText

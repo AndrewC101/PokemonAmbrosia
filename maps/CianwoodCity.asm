@@ -18,17 +18,17 @@
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CIANWOODCITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP
+	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
 	callback MAPCALLBACK_OBJECTS, .CianwoodCityFieldMon
 
-.DummyScene0:
+CianwoodCityNoop1Scene:
 	end
 
-.DummyScene1:
+CianwoodCityNoop2Scene:
 	end
 
 .CianwoodCityFieldMon:
@@ -79,7 +79,7 @@ CianwoodCitySuicuneAndEusine:
 	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneDepartMovement
 	disappear CIANWOODCITY_SUICUNE
 	pause 10
-	setscene SCENE_CIANWOODCITY_NOTHING
+	setscene SCENE_CIANWOODCITY_NOOP
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42
 	setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE
 	checkevent EVENT_FOUGHT_EUSINE
@@ -597,7 +597,7 @@ PsychicGirlTalkScript:
 	waitbutton
 	closetext
 	pause 15
-	special FadeOutPalettes
+	special FadeOutToWhite
 	playsound SFX_THUNDER
 	waitsfx
 	appear CIANWOODCITY_MEWTWO
@@ -630,7 +630,7 @@ PsychicGirlTalkScript:
 	closetext
 	playsound SFX_PSYCHIC
 	waitsfx
-	special FadeOutPalettes
+	special FadeOutToWhite
 	disappear CIANWOODCITY_HOEN_SPY
 	disappear CIANWOODCITY_POLIWRATH
 	special RestartMapMusic

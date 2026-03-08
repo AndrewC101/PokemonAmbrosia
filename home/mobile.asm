@@ -1,7 +1,7 @@
-Function3e32::
+MobileAPI::
 ; Mobile
 	cp $2
-	ld [wc988], a
+	ld [wMobileAPIIndex], a
 	ld a, l
 	ld [wc986], a
 	ld a, h
@@ -22,19 +22,19 @@ Function3e32::
 	set 6, [hl]
 	ldh a, [hROMBank]
 	push af
-	ld a, BANK(Function110030)
+	ld a, BANK(_MobileAPI)
 	ld [wc981], a
 	rst Bankswitch
 
-	jp Function110030
+	jp _MobileAPI
 
-Function3e60::
-; Return from Function110030
+ReturnMobileAPI::
+; Return from _MobileAPI
 	ld [wc986], a
 	ld a, l
 	ld [wc987], a
 	ld a, h
-	ld [wc988], a
+	ld [wMobileAPIIndex], a
 
 	pop bc
 	ld a, b
@@ -80,7 +80,7 @@ MobileTimer::
 
 ; Turn off timer interrupt
 	ldh a, [rIF]
-	and 1 << VBLANK | 1 << LCD_STAT | 1 << SERIAL | 1 << JOYPAD
+	and IF_VBLANK | IF_STAT | IF_SERIAL | IF_JOYPAD
 	ldh [rIF], a
 
 	ld a, [wc86a]
@@ -92,7 +92,7 @@ MobileTimer::
 	jr nz, .skip_timer
 
 	ldh a, [rSC]
-	and 1 << rSC_ON
+	and SC_START
 	jr nz, .skip_timer
 
 	ldh a, [hROMBank]
@@ -112,7 +112,7 @@ MobileTimer::
 	ldh a, [rTMA]
 	ldh [rTIMA], a
 
-	ld a, 1 << rTAC_ON | rTAC_65536_HZ
+	ld a, TAC_START | TAC_65KHZ
 	ldh [rTAC], a
 
 .pop_ret
@@ -122,20 +122,6 @@ MobileTimer::
 	pop af
 	reti
 
-Function3ed7:: ; unreferenced
-	ld [$dc02], a
-	ldh a, [hROMBank]
-	push af
-	ld a, BANK(Function114243)
-	rst Bankswitch
-
-	call Function114243
-	pop bc
-	ld a, b
-	rst Bankswitch
-
-	ld a, [$dc02]
-	ret
 
 Function3eea::
 	push hl
@@ -150,31 +136,6 @@ Function3eea::
 	pop bc
 	pop hl
 	call MobileHome_PlaceBox
-	ret
-
-Function3efd:: ; unreferenced
-	push hl
-	hlcoord 0, 12
-	ld b, 4
-	ld c, 18
-	call .fill_attr
-	pop hl
-	call PrintTextboxText
-	ret
-
-.fill_attr
-	push hl
-	push bc
-	ld de, wAttrmap - wTilemap
-	add hl, de
-	inc b
-	inc b
-	inc c
-	inc c
-	call Function3f35
-	pop bc
-	pop hl
-	call TextboxBorder
 	ret
 
 Function3f20::

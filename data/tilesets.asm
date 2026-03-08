@@ -1,4 +1,4 @@
-tileset: MACRO
+MACRO tileset
 	dba \1GFX, \1Meta, \1Coll
 	dw \1Anim
 	dw NULL
@@ -12,7 +12,7 @@ ENDM
 
 Tilesets::
 ; entries correspond to TILESET_* constants (see constants/tileset_constants.asm)
-	table_width TILESET_LENGTH, Tilesets
+	table_width TILESET_LENGTH
 	tileset Tileset0
 	tileset TilesetJohto
 	tileset TilesetJohtoModern

@@ -68,12 +68,12 @@ AIChooseMove:
 	; so we have always the same AI, regardless of the loaded class of trainer
 	; DevNote - This is interesting, all battleTower trainers use falker ai
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
+	bit IN_BATTLE_TOWER_BATTLE_F, a
 	jr nz, .battle_tower_skip
 
 	ld a, [wTrainerClass]
 	dec a
-	ld bc, 7 ; Trainer2AI - Trainer1AI
+	ld bc, NUM_TRAINER_ATTRIBUTES
 	call AddNTimes
 
 .battle_tower_skip

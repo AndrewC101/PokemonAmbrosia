@@ -4,7 +4,7 @@ SendScreenToPrinter:
 	call CheckCancelPrint
 	jr c, .cancel
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .finished
 	call PrinterJumptableIteration
 ;	call CheckPrinterStatus
@@ -56,7 +56,7 @@ PrintDexEntry:
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_VBLANK
 	ldh [rIE], a
 
 	call Printer_StartTransmission
@@ -71,9 +71,9 @@ PrintDexEntry:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
+	ld [hl], VBLANK_SERIAL
 
-	ld a, 8 ; 16 rows
+	ld a, 16 / 2
 	ld [wPrinterQueueLength], a
 	call Printer_ResetJoypadRegisters
 	call SendScreenToPrinter
@@ -90,7 +90,7 @@ PrintDexEntry:
 	ld [wPrinterMargins], a
 	farcall PrintPage2
 	call Printer_ResetJoypadRegisters
-	ld a, 4
+	ld a, 8 / 2
 	ld [wPrinterQueueLength], a
 	call SendScreenToPrinter
 
@@ -116,94 +116,6 @@ PrintDexEntry:
 	ld [wPrinterQueueLength], a
 	ret
 
-PrintPCBox:
-	ld a, [wPrinterQueueLength]
-	push af
-	ld a, 18 / 2
-	ld [wPrinterQueueLength], a
-
-	ld a, e
-	ld [wAddrOfBoxToPrint], a
-	ld a, d
-	ld [wAddrOfBoxToPrint + 1], a
-	ld a, b
-	ld [wBankOfBoxToPrint], a
-	ld a, c
-	ld [wWhichBoxToPrint], a
-
-	xor a
-	ldh [hPrinter], a
-	ld [wFinishedPrintingBox], a
-	call Printer_PlayMusic
-
-	ldh a, [rIE]
-	push af
-	xor a
-	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
-	ldh [rIE], a
-
-	ld hl, hVBlank
-	ld a, [hl]
-	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
-
-	xor a
-	ldh [hBGMapMode], a
-	call PrintPCBox_Page1
-	ln a, 1, 0 ; to be loaded to wPrinterMargins
-	call Printer_PrepareTilemapForPrint
-	call Printer_ResetRegistersAndStartDataSend
-	jr c, .cancel
-
-	call Printer_CleanUpAfterSend
-	ld c, 12
-	call DelayFrames
-	xor a
-	ldh [hBGMapMode], a
-	call PrintPCBox_Page2
-	ln a, 0, 0 ; to be loaded to wPrinterMargins
-	call Printer_PrepareTilemapForPrint
-	call Printer_ResetRegistersAndStartDataSend
-	jr c, .cancel
-
-	call Printer_CleanUpAfterSend
-	ld c, 12
-	call DelayFrames
-
-	xor a
-	ldh [hBGMapMode], a
-	call PrintPCBox_Page3
-	ln a, 0, 0 ; to be loaded to wPrinterMargins
-	call Printer_PrepareTilemapForPrint
-	call Printer_ResetRegistersAndStartDataSend
-	jr c, .cancel
-
-	call Printer_CleanUpAfterSend
-	ld c, 12
-	call DelayFrames
-
-	xor a
-	ldh [hBGMapMode], a
-	call PrintPCBox_Page4
-	ln a, 0, 3 ; to be loaded to wPrinterMargins
-	call Printer_PrepareTilemapForPrint
-	call Printer_ResetRegistersAndStartDataSend
-.cancel
-	pop af
-	ldh [hVBlank], a
-	call Printer_CleanUpAfterSend
-
-	xor a
-	ldh [rIF], a
-	pop af
-	ldh [rIE], a
-	call Printer_ExitPrinter
-
-	pop af
-	ld [wPrinterQueueLength], a
-	ret
-
 Printer_ResetRegistersAndStartDataSend:
 	call Printer_ResetJoypadRegisters
 	call SendScreenToPrinter
@@ -221,13 +133,13 @@ PrintUnownStamp:
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_VBLANK
 	ldh [rIE], a
 
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
+	ld [hl], VBLANK_SERIAL
 
 	xor a
 	ldh [hBGMapMode], a
@@ -245,7 +157,7 @@ PrintUnownStamp:
 	call CheckCancelPrint
 	jr c, .done
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call PrinterJumptableIteration
 	ld a, [wJumptableIndex]
@@ -291,7 +203,7 @@ PrintMail:
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_VBLANK
 	ldh [rIE], a
 
 	xor a
@@ -302,7 +214,7 @@ PrintMail:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
+	ld [hl], VBLANK_SERIAL
 
 	ld a, 18 / 2
 	ld [wPrinterQueueLength], a
@@ -333,7 +245,7 @@ PrintPartymon:
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_VBLANK
 	ldh [rIE], a
 
 	xor a
@@ -345,7 +257,7 @@ PrintPartymon:
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
+	ld [hl], VBLANK_SERIAL
 
 	ld a, 16 / 2
 	ld [wPrinterQueueLength], a
@@ -397,13 +309,13 @@ _PrintDiploma:
 	push af
 	xor a
 	ldh [rIF], a
-	ld a, (1 << SERIAL) | (1 << VBLANK)
+	ld a, IE_SERIAL | IE_VBLANK
 	ldh [rIE], a
 
 	ld hl, hVBlank
 	ld a, [hl]
 	push af
-	ld [hl], 4 ; vblank mode that calls AskSerial
+	ld [hl], VBLANK_SERIAL
 
 	ln a, 1, 0 ; to be loaded to wPrinterMargins
 	call Printer_PrepareTilemapForPrint
@@ -448,7 +360,7 @@ _PrintDiploma:
 
 CheckCancelPrint:
 	ldh a, [hJoyDown]
-	and B_BUTTON
+	and PAD_B
 	jr nz, .pressed_b
 	and a
 	ret
@@ -467,9 +379,9 @@ CheckCancelPrint:
 	ld [wPrinterOpcode], a
 	ld a, $88
 	ldh [rSB], a
-	ld a, (0 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_INTERNAL
 	ldh [rSC], a
-	ld a, (1 << rSC_ON) | (1 << rSC_CLOCK)
+	ld a, SC_START | SC_INTERNAL
 	ldh [rSC], a
 .loop2
 	ld a, [wPrinterOpcode]
@@ -485,14 +397,14 @@ CheckCancelPrint:
 Printer_CopyTilemapToBuffer:
 	hlcoord 0, 0
 	ld de, wPrinterTilemapBuffer
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call CopyBytes
 	ret
 
 Printer_CopyBufferToTilemap:
 	ld hl, wPrinterTilemapBuffer
 	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call CopyBytes
 	ret
 
@@ -524,12 +436,12 @@ CheckPrinterStatus:
 	jr z, .error_2
 .printer_connected
 	ld a, [wPrinterStatusFlags]
-	and %11100000
+	and PRINTER_STATUS_ERROR_3 | PRINTER_STATUS_ERROR_4 | PRINTER_STATUS_ERROR_1
 	ret z ; no error
 
-	bit 7, a
+	bit PRINTER_STATUS_ERROR_1_F, a
 	jr nz, .error_1
-	bit 6, a
+	bit PRINTER_STATUS_ERROR_4_F, a
 	jr nz, .error_4
 	; paper error
 	ld a, PRINTER_ERROR_3
@@ -629,304 +541,3 @@ PrinterStatusStringPointers:
 	dw GBPrinterString_PrinterError2 ; error 2
 	dw GBPrinterString_PrinterError3 ; error 3
 	dw GBPrinterString_PrinterError4 ; error 4
-
-PrintPCBox_Page1:
-	xor a
-	ld [wWhichBoxMonToPrint], a
-	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, " "
-	call ByteFill
-	call Printer_PlaceEmptyBoxSlotString
-
-	hlcoord 0, 0
-	ld bc, 9 * SCREEN_WIDTH
-	ld a, " "
-	call ByteFill
-
-	call Printer_PlaceSideBorders
-	call Printer_PlaceTopBorder
-
-	hlcoord 4, 3
-	ld de, .String_PokemonList
-	call PlaceString
-
-	ld a, [wWhichBoxToPrint]
-	ld bc, BOX_NAME_LENGTH
-	ld hl, wBoxNames
-	call AddNTimes
-	ld d, h
-	ld e, l
-	hlcoord 6, 5
-	call PlaceString
-	ld a, 1
-	call Printer_GetBoxMonSpecies
-	hlcoord 2, 9
-	ld c, 3
-	call Printer_PrintBoxListSegment
-	ret
-
-.String_PokemonList:
-	db "#mon LIST@"
-
-PrintPCBox_Page2:
-	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, " "
-	call ByteFill
-	call Printer_PlaceEmptyBoxSlotString
-	call Printer_PlaceSideBorders
-	ld a, [wFinishedPrintingBox]
-	and a
-	ret nz
-	ld a, 4
-	call Printer_GetBoxMonSpecies
-	hlcoord 2, 0
-	ld c, 6
-	call Printer_PrintBoxListSegment
-	ret
-
-PrintPCBox_Page3:
-	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, " "
-	call ByteFill
-	call Printer_PlaceEmptyBoxSlotString
-	call Printer_PlaceSideBorders
-	ld a, [wFinishedPrintingBox]
-	and a
-	ret nz
-	ld a, 10
-	call Printer_GetBoxMonSpecies
-	hlcoord 2, 0
-	ld c, 6
-	call Printer_PrintBoxListSegment
-	ret
-
-PrintPCBox_Page4:
-	hlcoord 0, 0
-	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, " "
-	call ByteFill
-	call Printer_PlaceEmptyBoxSlotString
-	hlcoord 1, 15
-	lb bc, 2, 18
-	call ClearBox
-	call Printer_PlaceSideBorders
-	call Printer_PlaceBottomBorders
-	ld a, [wFinishedPrintingBox]
-	and a
-	ret nz
-	ld a, 16
-	call Printer_GetBoxMonSpecies
-	hlcoord 2, 0
-	ld c, 5
-	call Printer_PrintBoxListSegment
-	ret
-
-Printer_PrintBoxListSegment:
-	ld a, [wBankOfBoxToPrint]
-	call OpenSRAM
-.loop
-	ld a, c
-	and a
-	jp z, .max_length
-	dec c
-	ld a, [de]
-	cp $ff
-	jp z, .finish
-	ld [wNamedObjectIndex], a
-	ld [wCurPartySpecies], a
-
-	push bc
-	push hl
-	push de
-
-	push hl
-	ld bc, 16
-	ld a, " "
-	call ByteFill
-	pop hl
-
-	push hl
-	call GetBasePokemonName
-	pop hl
-
-	push hl
-	call PlaceString
-	ld a, [wCurPartySpecies]
-	cp EGG
-	pop hl
-	jr z, .ok2
-
-	ld bc, MON_NAME_LENGTH
-	add hl, bc
-	call Printer_GetMonGender
-	ld bc, SCREEN_WIDTH - MON_NAME_LENGTH
-	add hl, bc
-	ld a, "/"
-	ld [hli], a
-
-	push hl
-	ld bc, 14
-	ld a, " "
-	call ByteFill
-	pop hl
-
-	push hl
-	ld a, [wAddrOfBoxToPrint]
-	ld l, a
-	ld a, [wAddrOfBoxToPrint + 1]
-	ld h, a
-	ld bc, sBoxMonNicknames - sBox
-	add hl, bc
-	ld bc, MON_NAME_LENGTH
-	ld a, [wWhichBoxMonToPrint]
-	call AddNTimes
-	ld e, l
-	ld d, h
-	pop hl
-
-	push hl
-	call PlaceString
-	pop hl
-
-	ld bc, MON_NAME_LENGTH
-	add hl, bc
-	push hl
-	ld a, [wAddrOfBoxToPrint]
-	ld l, a
-	ld a, [wAddrOfBoxToPrint + 1]
-	ld h, a
-	ld bc, 2 + MONS_PER_BOX + MON_LEVEL
-	add hl, bc
-	ld bc, BOXMON_STRUCT_LENGTH
-	ld a, [wWhichBoxMonToPrint]
-	call AddNTimes
-	ld a, [hl]
-	pop hl
-	call PrintLevel_Force3Digits
-.ok2
-	ld hl, wWhichBoxMonToPrint
-	inc [hl]
-	pop de
-	pop hl
-	ld bc, 3 * SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	inc de
-	jp .loop
-
-.finish
-	ld a, $1
-	ld [wFinishedPrintingBox], a
-.max_length
-	call CloseSRAM
-	ret
-
-Printer_GetMonGender:
-	push hl
-	ld a, [wAddrOfBoxToPrint]
-	ld l, a
-	ld a, [wAddrOfBoxToPrint + 1]
-	ld h, a
-	ld bc, 2 + MONS_PER_BOX + MON_DVS
-	add hl, bc
-	ld bc, BOXMON_STRUCT_LENGTH
-	ld a, [wWhichBoxMonToPrint]
-	call AddNTimes
-	ld de, wTempMonDVs
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	ld a, [wWhichBoxMonToPrint]
-	ld [wCurPartyMon], a
-	ld a, TEMPMON
-	ld [wMonType], a
-	farcall GetGender
-	ld a, " "
-	jr c, .got_gender
-	ld a, "♂"
-	jr nz, .got_gender
-	ld a, "♀"
-.got_gender
-	pop hl
-	ld [hli], a
-	ret
-
-Printer_GetBoxMonSpecies:
-	push hl
-	ld e, a
-	ld d, 0
-	ld a, [wAddrOfBoxToPrint]
-	ld l, a
-	ld a, [wAddrOfBoxToPrint + 1]
-	ld h, a
-	add hl, de
-	ld e, l
-	ld d, h
-	pop hl
-	ret
-
-Printer_PlaceTopBorder:
-	hlcoord 0, 0
-	ld a, "┌"
-	ld [hli], a
-	ld a, "─"
-	ld c, SCREEN_WIDTH - 2
-.loop
-	ld [hli], a
-	dec c
-	jr nz, .loop
-	ld a, "┐"
-	ld [hl], a
-	ret
-
-Printer_PlaceSideBorders:
-	hlcoord 0, 0
-	ld de, SCREEN_WIDTH - 1
-	ld c, SCREEN_HEIGHT
-.loop
-	ld a, "│"
-	ld [hl], a
-	add hl, de
-	ld a, "│"
-	ld [hli], a
-	dec c
-	jr nz, .loop
-	ret
-
-Printer_PlaceBottomBorders:
-	hlcoord 0, 17
-	ld a, "└"
-	ld [hli], a
-	ld a, "─"
-	ld c, SCREEN_WIDTH - 2
-.loop
-	ld [hli], a
-	dec c
-	jr nz, .loop
-	ld a, "┘"
-	ld [hl], a
-	ret
-
-Printer_PlaceEmptyBoxSlotString:
-	hlcoord 2, 0
-	ld c, 6
-.loop
-	push bc
-	push hl
-	ld de, .EmptyBoxSlotString
-	call PlaceString
-	pop hl
-	ld bc, 3 * SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec c
-	jr nz, .loop
-	ret
-
-.EmptyBoxSlotString:
-	db "  ------@"

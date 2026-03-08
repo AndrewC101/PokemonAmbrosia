@@ -13,15 +13,15 @@
 
 TeamRocketBaseB1F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script TeamRocketBaseB1FNoopScene, SCENE_TEAMROCKETBASEB1F_TRAPS
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .HideSecurityGrunt
+	callback MAPCALLBACK_OBJECTS, TeamRocketBaseB1FHideSecurityGruntCallback
 
-.DummyScene:
+TeamRocketBaseB1FNoopScene:
 	end
 
-.HideSecurityGrunt:
+TeamRocketBaseB1FHideSecurityGruntCallback:
 	disappear TEAMROCKETBASEB1F_ROCKET1
     appear TEAMROCKETBASEB1F_FIELDMON_1
     appear TEAMROCKETBASEB1F_FIELDMON_2
@@ -498,9 +498,9 @@ ExplodingTrap22:
 	end
 
 VoltorbExplodingTrap:
-	special FadeOutPalettes
+	special FadeOutToWhite
 	cry MAGNETON
-	special FadeInPalettes
+	special FadeInFromWhite
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon MAGNETON, 35
@@ -508,9 +508,9 @@ VoltorbExplodingTrap:
 	end
 
 GeodudeExplodingTrap:
-	special FadeOutPalettes
+	special FadeOutToWhite
 	cry GRAVELER
-	special FadeInPalettes
+	special FadeInFromWhite
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GRAVELER, 35
@@ -518,9 +518,9 @@ GeodudeExplodingTrap:
 	end
 
 KoffingExplodingTrap:
-	special FadeOutPalettes
+	special FadeOutToWhite
 	cry WEEZING
-	special FadeInPalettes
+	special FadeInFromWhite
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon WEEZING, 35
@@ -756,14 +756,14 @@ TeamRocketBaseB1F_MapEvents:
 	def_coord_events
 	; There are five security cameras in the base.
 	; Walking in front of one triggers two Rocket Grunts.
-	coord_event 24,  2, SCENE_DEFAULT, SecurityCamera1a
-	coord_event 24,  3, SCENE_DEFAULT, SecurityCamera1b
-	coord_event  6,  2, SCENE_DEFAULT, SecurityCamera2a
-	coord_event  6,  3, SCENE_DEFAULT, SecurityCamera2b
-	coord_event 24,  6, SCENE_DEFAULT, SecurityCamera3a
-	coord_event 24,  7, SCENE_DEFAULT, SecurityCamera3b
-	coord_event 22, 16, SCENE_DEFAULT, SecurityCamera4
-	coord_event  8, 16, SCENE_DEFAULT, SecurityCamera5
+	coord_event 24,  2, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera1a
+	coord_event 24,  3, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera1b
+	coord_event  6,  2, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera2a
+	coord_event  6,  3, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera2b
+	coord_event 24,  6, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera3a
+	coord_event 24,  7, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera3b
+	coord_event 22, 16, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera4
+	coord_event  8, 16, SCENE_TEAMROCKETBASEB1F_TRAPS, SecurityCamera5
 	; There are spots on the floor that trigger a Pokémon battle.
 	; Each Pokémon (electrode, Koffing, Geodude) knows Selfdestruct.
 	coord_event  2,  7, SCENE_DEFAULT, ExplodingTrap1

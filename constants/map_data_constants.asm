@@ -1,21 +1,21 @@
-MAPGROUP_N_A  EQU -1
-GROUP_N_A     EQU -1
-MAP_N_A       EQU -1
-MAPGROUP_NONE EQU 0
-GROUP_NONE    EQU 0
-MAP_NONE      EQU 0
+DEF MAPGROUP_N_A  EQU -1
+DEF GROUP_N_A     EQU -1
+DEF MAP_N_A       EQU -1
+DEF MAPGROUP_NONE EQU 0
+DEF GROUP_NONE    EQU 0
+DEF MAP_NONE      EQU 0
 
 ; map struct members (see data/maps/maps.asm)
 rsreset
-MAP_MAPATTRIBUTES_BANK rb ; 0
-MAP_TILESET            rb ; 1
-MAP_ENVIRONMENT        rb ; 2
-MAP_MAPATTRIBUTES      rw ; 3
-MAP_LOCATION           rb ; 5
-MAP_MUSIC              rb ; 6
-MAP_PALETTE            rb ; 7
-MAP_FISHGROUP          rb ; 8
-MAP_LENGTH EQU _RS
+DEF MAP_MAPATTRIBUTES_BANK rb ; 0
+DEF MAP_TILESET            rb ; 1
+DEF MAP_ENVIRONMENT        rb ; 2
+DEF MAP_MAPATTRIBUTES      rw ; 3
+DEF MAP_LOCATION           rb ; 5
+DEF MAP_MUSIC              rb ; 6
+DEF MAP_PALETTE            rb ; 7
+DEF MAP_FISHGROUP          rb ; 8
+DEF MAP_LENGTH EQU _RS
 
 ; map environments (wEnvironment)
 ; EnvironmentColorsPointers indexes (see data/maps/environment_colors.asm)
@@ -27,19 +27,19 @@ MAP_LENGTH EQU _RS
 	const ENVIRONMENT_5
 	const GATE
 	const DUNGEON
-NUM_ENVIRONMENTS EQU const_value - 1
+DEF NUM_ENVIRONMENTS EQU const_value - 1
 
-; map palettes (wEnvironment)
+; map palettes (wMapTimeOfDay)
 	const_def
 	const PALETTE_AUTO
 	const PALETTE_DAY
 	const PALETTE_NITE
 	const PALETTE_MORN
 	const PALETTE_EVE
-NUM_MAP_PALETTES EQU const_value
+DEF NUM_MAP_PALETTES EQU const_value
 
-IN_DARKNESS_F EQU 3
-IN_DARKNESS EQU 1 << IN_DARKNESS_F ; masked with a PALETTE_* constant
+DEF IN_DARKNESS_F EQU 3
+DEF IN_DARKNESS EQU 1 << IN_DARKNESS_F ; masked with a PALETTE_* constant
 
 ; FishGroups indexes (see data/wild/fish.asm)
 	const_def
@@ -57,16 +57,10 @@ IN_DARKNESS EQU 1 << IN_DARKNESS_F ; masked with a PALETTE_* constant
 	const FISHGROUP_GARCHOMP
 	const FISHGROUP_LATIOS
 	const FISHGROUP_GARCHOMP_NO_SWARM
-NUM_FISHGROUPS EQU const_value - 1
-
-; connection directions (see data/maps/data.asm)
-	const_def
-	const EAST_F
-	const WEST_F
-	const SOUTH_F
-	const NORTH_F
+DEF NUM_FISHGROUPS EQU const_value - 1
 
 ; wMapConnections
+; connection directions (see data/maps/data.asm)
 	const_def
 	shift_const EAST
 	shift_const WEST
@@ -106,14 +100,14 @@ NUM_FISHGROUPS EQU const_value - 1
 	const SPAWN_HALL_OF_ORIGIN
 	const SPAWN_MT_SILVER
 	const SPAWN_FAST_SHIP
-NUM_SPAWNS EQU const_value
+DEF NUM_SPAWNS EQU const_value
 
-SPAWN_N_A EQU -1
+DEF SPAWN_N_A EQU -1
 
 ; Flypoints indexes (see data/maps/flypoints.asm)
 	const_def
 ; johto
-JOHTO_FLYPOINT EQU const_value
+DEF JOHTO_FLYPOINT EQU const_value
 	const FLY_NEW_BARK
 	const FLY_CHERRYGROVE
 	const FLY_VIOLET
@@ -127,7 +121,7 @@ JOHTO_FLYPOINT EQU const_value
 	const FLY_BLACKTHORN
 	const FLY_MT_SILVER
 ; kanto
-KANTO_FLYPOINT EQU const_value
+DEF KANTO_FLYPOINT EQU const_value
 	const FLY_PALLET
 	const FLY_VIRIDIAN
 	const FLY_PEWTER
@@ -140,4 +134,4 @@ KANTO_FLYPOINT EQU const_value
 	const FLY_FUCHSIA
 	const FLY_CINNABAR
 	const FLY_INDIGO
-NUM_FLYPOINTS EQU const_value
+DEF NUM_FLYPOINTS EQU const_value

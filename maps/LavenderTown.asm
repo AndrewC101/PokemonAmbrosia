@@ -10,10 +10,10 @@ LavenderTown_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, LavenderTownFlypointCallback
 	callback MAPCALLBACK_OBJECTS, .LavenderFieldMon
 
-.FlyPoint:
+LavenderTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAVENDER
 	endcallback
 

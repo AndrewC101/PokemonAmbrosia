@@ -11,15 +11,15 @@ BattleTowerOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .Callback1
-	callback MAPCALLBACK_OBJECTS, .Callback2
+	callback MAPCALLBACK_TILES, BattleTowerOutsideNoopCallback
+	callback MAPCALLBACK_OBJECTS, BattleTowerOutsideShowCiviliansCallback
 
-.Callback1:
+BattleTowerOutsideNoopCallback:
 	endcallback
 
-.Callback2:
+BattleTowerOutsideShowCiviliansCallback:
     appear BATTLETOWEROUTSIDE_GRAMPS
-	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 	endcallback
 
 BattleTowerOutsideYoungsterScript:

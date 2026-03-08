@@ -16,9 +16,9 @@ Route17_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
+	callback MAPCALLBACK_NEWMAP, Route17AlwaysOnBikeCallback
 
-.AlwaysOnBike:
+Route17AlwaysOnBikeCallback:
     appear ROUTE17_FIELDMON_1
     appear ROUTE17_FIELDMON_2
     appear ROUTE17_FIELDMON_3

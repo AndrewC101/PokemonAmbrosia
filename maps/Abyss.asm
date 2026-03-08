@@ -318,7 +318,7 @@ AbyssSageScript1:
     waitbutton
     closetext
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
     warp ABYSS, 86, 2
     end
@@ -436,7 +436,7 @@ AbyssSageScript2:
     waitbutton
     closetext
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
     warp ABYSS, 4, 26
     end

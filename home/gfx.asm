@@ -1,9 +1,9 @@
-TILES_PER_CYCLE EQU 8
-MOBILE_TILES_PER_CYCLE EQU 6
+DEF TILES_PER_CYCLE EQU 8
+DEF MOBILE_TILES_PER_CYCLE EQU 6
 
 Get2bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp z, Copy2bpp
 
 	homecall HDMATransfer2bpp
@@ -12,7 +12,7 @@ Get2bppViaHDMA::
 
 Get1bppViaHDMA::
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp z, Copy1bpp
 
 	homecall HDMATransfer1bpp
@@ -32,7 +32,8 @@ FarCopyBytesDouble_DoubleBankSwitch::
 	rst Bankswitch
 	ret
 
-SafeHDMATransfer: ; unreferenced
+SafeHDMATransfer::
+; Copy c 2bpp tiles from b:de to hl using GDMA. Assumes $00 < c <= $80.
 	dec c
 	ldh a, [hBGMapMode]
 	push af
@@ -43,53 +44,58 @@ SafeHDMATransfer: ; unreferenced
 	ld a, b
 	rst Bankswitch
 
-.loop
-; load the source and target MSB and LSB
+	; load the source and target MSB and LSB
 	ld a, d
-	ldh [rHDMA1], a ; source MSB
+	ldh [rVDMA_SRC_HIGH], a ; source MSB
 	ld a, e
-	and $f0
-	ldh [rHDMA2], a ; source LSB
+	ldh [rVDMA_SRC_LOW], a ; source LSB
 	ld a, h
-	and $1f
-	ldh [rHDMA3], a ; target MSB
+	ldh [rVDMA_DEST_HIGH], a ; target MSB
 	ld a, l
-	and $f0
-	ldh [rHDMA4], a ; target LSB
-; stop when c < TILES_PER_CYCLE
-	ld a, c
-	cp TILES_PER_CYCLE
-	jr c, .done
-; decrease c by TILES_PER_CYCLE
-	sub TILES_PER_CYCLE
-	ld c, a
-; DMA transfer state
-	ld a, $f
-	ldh [hDMATransfer], a
-	call DelayFrame
-; add $100 to hl and de
-	ld a, l
-	add LOW($100)
-	ld l, a
-	ld a, h
-	adc HIGH($100)
-	ld h, a
-	ld a, e
-	add LOW($100)
-	ld e, a
-	ld a, d
-	adc HIGH($100)
-	ld d, a
-	jr .loop
+	ldh [rVDMA_DEST_LOW], a ; target LSB
 
-.done
+	; if LCD is disabled, just run all of it
+	ldh a, [rLCDC]
+	bit B_LCDC_ENABLE, a
+	jr nz, .lcd_enabled
+
 	ld a, c
-	and $7f ; pretty silly, considering at most bits 0-2 would be set
-	ldh [hDMATransfer], a
-	call DelayFrame
+	ldh [rVDMA_LEN], a
+	jr .done
+
+.lcd_enabled
+	push de
+	di
+.loop
+	ld a, c
+	cp 3
+	ld d, c
+	jr c, .got_tilecopy
+	ld d, 2
+.got_tilecopy
+	push bc
+	lb bc, %11, LOW(rSTAT)
+.wait_hblank1
+	ldh a, [c]
+	and b
+	jr z, .wait_hblank1
+.wait_hblank2
+	ldh a, [c]
+	and b
+	jr nz, .wait_hblank2
+
+	ld a, d
+	ldh [rVDMA_LEN], a
+	pop bc
+	ld a, c
+	sub 3
+	ld c, a
+	jr nc, .loop
+	ei
+	pop de
+.done
 	pop af
 	rst Bankswitch
-
 	pop af
 	ldh [hBGMapMode], a
 	ret
@@ -111,11 +117,8 @@ LoadFontsExtra::
 	farcall _LoadFontsExtra2
 	ret
 
-LoadFontsExtra2: ; unreferenced
-	farcall _LoadFontsExtra2
-	ret
-
 DecompressRequest2bpp::
+; Load compressed 2bpp at b:hl to occupy c tiles of de.
 	push de
 	ld a, BANK(sScratch)
 	call OpenSRAM
@@ -185,8 +188,41 @@ FarCopyBytesDouble:
 	rst Bankswitch
 	ret
 
+CheckGDMA:
+; Check if we can use GDMA. Return carry if we can.
+	ldh a, [hCGB]
+	and a
+	ret z
+
+	; The 4 least significant bits must be zero.
+	ld a, e
+	or l
+	and $f
+	ret nz
+
+	; Must be a copy from non-VRAM to VRAM.
+	ld a, d
+	sub $80
+	cp $20
+	ccf
+	ret nc
+	ld a, h
+	sub $80
+	cp $20
+	ret nc
+
+	; Must not be a copy of >$80 tiles.
+	ld a, c
+	dec a
+	add a
+	ccf
+	ret
+
 Request2bpp::
 ; Load 2bpp at b:de to occupy c tiles of hl.
+	call CheckGDMA
+	jp c, SafeHDMATransfer
+
 	ldh a, [hBGMapMode]
 	push af
 	xor a
@@ -336,11 +372,14 @@ Request1bpp::
 Get2bpp::
 ; copy c 2bpp tiles from b:de to hl
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp nz, Request2bpp
 	; fallthrough
 
 Copy2bpp:
+	call CheckGDMA
+	jp c, SafeHDMATransfer
+
 	push hl
 	ld h, d
 	ld l, e
@@ -349,7 +388,7 @@ Copy2bpp:
 ; bank
 	ld a, b
 
-; bc = c * LEN_2BPP_TILE
+; bc = c * TILE_SIZE
 	push af
 	swap c
 	ld a, $f
@@ -365,7 +404,7 @@ Copy2bpp:
 Get1bpp::
 ; copy c 1bpp tiles from b:de to hl
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	jp nz, Request1bpp
 	; fallthrough
 
@@ -377,7 +416,7 @@ Copy1bpp::
 ; bank
 	ld a, b
 
-; bc = c * LEN_1BPP_TILE
+; bc = c * TILE_1BPP_SIZE
 	push af
 	ld h, 0
 	ld l, c

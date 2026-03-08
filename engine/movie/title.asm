@@ -28,7 +28,7 @@ _TitleScreen:
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
-	ld bc, 20 * BG_MAP_WIDTH
+	ld bc, 20 * TILEMAP_WIDTH
 	xor a
 	call ByteFill
 
@@ -38,7 +38,7 @@ _TitleScreen:
 
 ; line 0 (copyright)
 	hlbgcoord 0, 0, vBGMap1
-	ld bc, BG_MAP_WIDTH
+	ld bc, TILEMAP_WIDTH
 	ld a, 7 ; palette
 	call ByteFill
 
@@ -48,27 +48,27 @@ _TitleScreen:
 
 ; lines 3-4
 	hlbgcoord 0, 3
-	ld bc, 2 * BG_MAP_WIDTH
+	ld bc, 2 * TILEMAP_WIDTH
 	ld a, 2
 	call ByteFill
 ; line 5
 	hlbgcoord 0, 5
-	ld bc, BG_MAP_WIDTH
+	ld bc, TILEMAP_WIDTH
 	ld a, 3
 	call ByteFill
 ; line 6
 	hlbgcoord 0, 6
-	ld bc, BG_MAP_WIDTH
+	ld bc, TILEMAP_WIDTH
 	ld a, 4
 	call ByteFill
 ; line 7
 	hlbgcoord 0, 7
-	ld bc, BG_MAP_WIDTH
+	ld bc, TILEMAP_WIDTH
 	ld a, 5
 	call ByteFill
 ; lines 8-9
 	hlbgcoord 0, 8
-	ld bc, 2 * BG_MAP_WIDTH
+	ld bc, 2 * TILEMAP_WIDTH
 	ld a, 6
 	call ByteFill
 
@@ -80,8 +80,8 @@ _TitleScreen:
 
 ; Suicune gfx
 	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 0 | VRAM_BANK_1
+	ld bc, 6 * TILEMAP_WIDTH ; the rest of the screen
+	ld a, 0 | OAM_BANK1
 	call ByteFill
 
 ; Back to VRAM bank 0
@@ -100,8 +100,8 @@ _TitleScreen:
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
-	ld bc, 64 * BG_MAP_WIDTH
-	ld a, " "
+	ld bc, 64 * TILEMAP_WIDTH
+	ld a, ' '
 	call ByteFill
 
 ; Draw Pokemon logo
@@ -126,10 +126,10 @@ _TitleScreen:
 	call InitializeBackground
 
 ; Update palette colors
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, TitleScreenPalettes
 	ld de, wBGPals1
@@ -142,14 +142,14 @@ _TitleScreen:
 	call CopyBytes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; LY/SCX trickery starts here
 
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; Make alternating lines come in from opposite sides
 
@@ -174,11 +174,13 @@ _TitleScreen:
 	call ByteFill
 
 ; Let LCD Stat know we're messing around with SCX
+	ld a, JP_INSTRUCTION
+	ldh [hFunctionInstruction], a
 	ld a, LOW(rSCX)
 	ldh [hLCDCPointer], a
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 ; Reset audio
 	call ChannelsOff
@@ -186,7 +188,7 @@ _TitleScreen:
 
 ; Set sprite size to 8x16
 	ldh a, [rLCDC]
-	set rLCDC_SPRITE_SIZE, a
+	set B_LCDC_OBJ_SIZE, a
 	ldh [rLCDC], a
 
 	ld a, +112
@@ -302,7 +304,7 @@ DrawTitleGraphic:
 	ret
 
 InitializeBackground:
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	ld d, -$22
 	ld e, $0
 	ld c, 5
@@ -331,7 +333,7 @@ InitializeBackground:
 	ld [hli], a ; tile id
 	inc e
 	inc e
-	ld a, 0 | PRIORITY
+	ld a, 0 | OAM_PRIO
 	ld [hli], a ; attributes
 	dec c
 	jr nz, .loop2
@@ -342,7 +344,7 @@ AnimateTitleCrystal:
 
 ; Stop at y=6
 ; y is really from the bottom of the sprite, which is two tiles high
-	ld hl, wVirtualOAMSprite00YCoord
+	ld hl, wShadowOAMSprite00YCoord
 	ld a, [hl]
 	cp 6 + 2 * TILE_WIDTH
 	ret z
@@ -353,7 +355,7 @@ AnimateTitleCrystal:
 	ld a, [hl]
 	add 2
 	ld [hli], a ; y
-rept SPRITEOAMSTRUCT_LENGTH - 1
+rept OBJ_SIZE - 1
 	inc hl
 endr
 	dec c

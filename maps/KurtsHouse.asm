@@ -9,9 +9,9 @@ KurtsHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .KurtCallback
+	callback MAPCALLBACK_OBJECTS, KurtsHouseKurtCallback
 
-.KurtCallback:
+KurtsHouseKurtCallback:
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
 	iffalse .Done
 	checkevent EVENT_FOREST_IS_RESTLESS
@@ -168,7 +168,7 @@ Kurt1:
     writetext KurtsHouseKurtGetStartedText
 	waitbutton
 	closetext
-    special FadeBlackQuickly
+    special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	playsound SFX_WARP_TO
 	waitsfx

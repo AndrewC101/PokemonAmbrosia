@@ -8,19 +8,19 @@
 
 WiseTriosRoom_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script WiseTriosRoomNoop1Scene, SCENE_WISETRIOSROOM_SAGE_BLOCKS
+	scene_script WiseTriosRoomNoop2Scene, SCENE_WISETRIOSROOM_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .WiseTrioCallback
+	callback MAPCALLBACK_OBJECTS, WiseTriosRoomWiseTrioCallback
 
-.DummyScene0:
+WiseTriosRoomNoop1Scene:
 	end
 
-.DummyScene1:
+WiseTriosRoomNoop2Scene:
 	end
 
-.WiseTrioCallback:
+WiseTriosRoomWiseTrioCallback:
     sjump .NoWiseTrio
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .NoWiseTrio
@@ -104,7 +104,7 @@ TrainerSageKoji:
 	applymovement WISETRIOSROOM_SAGE6, WiseTriosRoomSageAllowsPassageMovement
 	turnobject WISETRIOSROOM_SAGE6, UP
 	setevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
-	setscene SCENE_FINISHED
+	setscene SCENE_WISETRIOSROOM_NOOP
 	end
 
 .KojiAllowsPassage:

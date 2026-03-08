@@ -1,8 +1,18 @@
-hlcoord EQUS "coord hl,"
-bccoord EQUS "coord bc,"
-decoord EQUS "coord de,"
+; Coordinate macros
 
-coord: MACRO
+MACRO? hlcoord
+	coord hl, \#
+ENDM
+
+MACRO? bccoord
+	coord bc, \#
+ENDM
+
+MACRO? decoord
+	coord de, \#
+ENDM
+
+MACRO? coord
 ; register, x, y[, origin]
 	if _NARG < 4
 	ld \1, (\3) * SCREEN_WIDTH + (\2) + wTilemap
@@ -11,28 +21,36 @@ coord: MACRO
 	endc
 ENDM
 
-hlbgcoord EQUS "bgcoord hl,"
-bcbgcoord EQUS "bgcoord bc,"
-debgcoord EQUS "bgcoord de,"
+MACRO? hlbgcoord
+	bgcoord hl, \#
+ENDM
 
-bgcoord: MACRO
+MACRO? bcbgcoord
+	bgcoord bc, \#
+ENDM
+
+MACRO? debgcoord
+	bgcoord de, \#
+ENDM
+
+MACRO? bgcoord
 ; register, x, y[, origin]
 	if _NARG < 4
-	ld \1, (\3) * BG_MAP_WIDTH + (\2) + vBGMap0
+		ld \1, (\3) * TILEMAP_WIDTH + (\2) + vBGMap0
 	else
-	ld \1, (\3) * BG_MAP_WIDTH + (\2) + \4
+		ld \1, (\3) * TILEMAP_WIDTH + (\2) + \4
 	endc
 ENDM
 
-dwcoord: MACRO
+MACRO? dwcoord
 ; x, y
-rept _NARG / 2
-	dw (\2) * SCREEN_WIDTH + (\1) + wTilemap
-	shift 2
-endr
+	rept? _NARG / 2
+		dw (\2) * SCREEN_WIDTH + (\1) + wTilemap
+		shift 2
+	endr
 ENDM
 
-ldcoord_a: MACRO
+MACRO? ldcoord_a
 ; x, y[, origin]
 	if _NARG < 3
 	ld [(\2) * SCREEN_WIDTH + (\1) + wTilemap], a
@@ -41,7 +59,7 @@ ldcoord_a: MACRO
 	endc
 ENDM
 
-lda_coord: MACRO
+MACRO? lda_coord
 ; x, y[, origin]
 	if _NARG < 3
 	ld a, [(\2) * SCREEN_WIDTH + (\1) + wTilemap]
@@ -50,7 +68,7 @@ lda_coord: MACRO
 	endc
 ENDM
 
-menu_coords: MACRO
+MACRO? menu_coords
 ; x1, y1, x2, y2
 	db \2, \1 ; start coords
 	db \4, \3 ; end coords

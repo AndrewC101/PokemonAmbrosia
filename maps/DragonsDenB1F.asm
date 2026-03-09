@@ -22,7 +22,7 @@ DragonsDenB1F_MapScripts:
 	scene_script DragonsDenB1FNoop2Scene, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .DragonsDenB1FieldMon
+	callback MAPCALLBACK_OBJECTS, DragonsDenB1FieldMon
 
 DragonsDenB1FNoop1Scene:
 	end
@@ -30,7 +30,7 @@ DragonsDenB1FNoop1Scene:
 DragonsDenB1FNoop2Scene:
 	end
 
-.DragonsDenB1FieldMon:
+DragonsDenB1FieldMon:
 ; Pokemon which always appear
     appear DRAGONSDENB1F_FIELDMON_1
     appear DRAGONSDENB1F_FIELDMON_2

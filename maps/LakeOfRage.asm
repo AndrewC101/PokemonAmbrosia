@@ -25,16 +25,6 @@ LakeOfRage_MapScripts:
 	;callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Wesley
 
-LakeOfRageNoop1Scene:
-	end
-
-LakeOfRageNoop2Scene:
-	end
-
-.FlyPoint:
-	;setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	endcallback
-
 .Wesley:
 	setval WEATHER_RAIN
 	writemem wFieldWeather
@@ -58,6 +48,16 @@ LakeOfRageNoop2Scene:
 
 .WesleyAppears:
 	appear LAKEOFRAGE_WESLEY
+	endcallback
+
+LakeOfRageNoop1Scene:
+	end
+
+LakeOfRageNoop2Scene:
+	end
+
+.FlyPoint:
+	;setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
 	endcallback
 
 LakeOfRageLanceScript:

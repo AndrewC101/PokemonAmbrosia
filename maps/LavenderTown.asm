@@ -11,13 +11,13 @@ LavenderTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, LavenderTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .LavenderFieldMon
+	callback MAPCALLBACK_OBJECTS, LavenderFieldMon
 
 LavenderTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAVENDER
 	endcallback
 
-.LavenderFieldMon:
+LavenderFieldMon:
     appear LAVENDERTOWN_FIELDMON_1
     endcallback
 

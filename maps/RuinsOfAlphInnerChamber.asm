@@ -18,14 +18,7 @@ RuinsOfAlphInnerChamber_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .RuinsOfAlphFieldMon
 
-RuinsOfAlphInnerChamberNoopScene:
-	end
-
-RuinsOfAlphInnerChamberStrangePresenceScene:
-	sdefer RuinsOfAlphInnerChamberStrangePresenceScript
-	end
-
-.RuinsOfAlphFieldMon
+.RuinsOfAlphFieldMon:
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_1
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_2
     appear RUINSOFALPHINNERCHAMBER_FIELDMON_3
@@ -48,7 +41,14 @@ RuinsOfAlphInnerChamberStrangePresenceScene:
 .end
     endcallback
 
-.StrangePresenceScript:
+RuinsOfAlphInnerChamberNoopScene:
+	end
+
+RuinsOfAlphInnerChamberStrangePresenceScene:
+	sdefer RuinsOfAlphInnerChamberStrangePresenceScript
+	end
+
+RuinsOfAlphInnerChamberStrangePresenceScript:
 	opentext
 	writetext RuinsOfAlphStrangePresenceText
 	waitbutton

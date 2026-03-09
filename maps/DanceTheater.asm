@@ -318,7 +318,7 @@ DanceTheaterCooltrainerMText:
 	cont "of this."
 	done
 
-DanceTheatreGrannyText:
+DanceTheaterGrannyText:
 	text "The Kimono Girls"
 	line "are so beautiful…"
 
@@ -360,10 +360,10 @@ SurfScriptLeft:
 	iffalse .end
 	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
 	iffalse .end
-    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfLeft_Approach
+    applymovement DANCETHEATER_GENTLEMAN, Movement_SurfLeft_Approach
     turnobject PLAYER, UP
     scall DanceTheaterSurfGuy
-    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfLeft_Leave
+    applymovement DANCETHEATER_GENTLEMAN, Movement_SurfLeft_Leave
 .end
     end
 
@@ -380,10 +380,10 @@ SurfScriptRight:
 	iffalse .end
 	checkevent EVENT_BEAT_KIMONO_GIRL_MIKI
 	iffalse .end
-    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfRight_Approach
+    applymovement DANCETHEATER_GENTLEMAN, Movement_SurfRight_Approach
     turnobject PLAYER, UP
     scall DanceTheaterSurfGuy
-    applymovement DANCETHEATRE_GENTLEMAN, Movement_SurfRight_Leave
+    applymovement DANCETHEATER_GENTLEMAN, Movement_SurfRight_Leave
 .end
     end
 
@@ -415,7 +415,7 @@ Movement_SurfRight_Leave:
     turn_head UP
     step_end
 
-DanceTheatre_MapEvents:
+DanceTheater_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
@@ -438,5 +438,5 @@ DanceTheatre_MapEvents:
 	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, -1
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYPERIOR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
-	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheatreCooltrainerMScript, -1
-	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheatreGrannyScript, -1
+	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCooltrainerMScript, -1
+	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterGrannyScript, -1

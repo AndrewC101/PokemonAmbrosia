@@ -14,7 +14,7 @@ Route19_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, Route19ClearRocksCallback
-	callback MAPCALLBACK_OBJECTS, .FieldMon
+	callback MAPCALLBACK_OBJECTS, FieldMon
 
 Route19ClearRocksCallback:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
@@ -28,7 +28,7 @@ Route19ClearRocksCallback:
 .Done:
 	endcallback
 
-.FieldMon
+FieldMon:
     appear ROUTE19_FIELDMON_1
     appear ROUTE19_FIELDMON_2
     appear ROUTE19_FIELDMON_3

@@ -17,13 +17,13 @@ SilverCaveOutside_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, SilverCaveOutsideFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .Objects
+	callback MAPCALLBACK_OBJECTS, Objects
 
 SilverCaveOutsideFlypointCallback:
 	setflag ENGINE_FLYPOINT_SILVER_CAVE
 	endcallback
 
-.Objects:
+Objects:
     checkevent EVENT_BEAT_CRYSTAL_7
     iffalse .noWeather
     random 2

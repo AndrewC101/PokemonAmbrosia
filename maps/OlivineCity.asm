@@ -17,7 +17,7 @@ OlivineCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, OlivineCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .Crystal
+	callback MAPCALLBACK_OBJECTS, Crystal
 
 OlivineCityNoop1Scene:
 	end
@@ -29,7 +29,7 @@ OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
 	endcallback
 
-.Crystal
+Crystal:
     appear OLIVINECITY_FIELDMON_1
     appear OLIVINECITY_FIELDMON_2
     disappear OLIVINECITY_SAILOR3

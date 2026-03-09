@@ -20,10 +20,10 @@ TinTower1F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, TinTower1FNPCsCallback
 	callback MAPCALLBACK_TILES, TinTower1FStairsCallback
 
-.FaceSuicune:
+TinTower1FSuicuneBattleScene:
     checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
     iffalse .end
-	sdefer .SuicuneBattle
+	sdefer SuicuneBattle
 .end
 	end
 
@@ -98,7 +98,7 @@ TinTower1FStairsCallback:
 	endcallback
 
 ; handles the beasts interaction with player
-.SuicuneBattle:
+SuicuneBattle:
 	applymovement PLAYER, TinTower1FPlayerEntersMovement
 	pause 15
 	setval RAIKOU

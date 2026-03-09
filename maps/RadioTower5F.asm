@@ -15,6 +15,10 @@ RadioTower5F_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Crystal
 
+.Crystal:
+    disappear RADIOTOWER5F_CRYSTAL
+    endcallback
+
 RadioTower5FNoop1Scene:
 	end
 
@@ -23,10 +27,6 @@ RadioTower5FNoop2Scene:
 
 RadioTower5FNoop3Scene:
 	end
-
-.Crystal:
-    disappear RADIOTOWER5F_CRYSTAL
-    endcallback
 
 FakeDirectorScript:
 	turnobject RADIOTOWER5F_DIRECTOR, UP
@@ -197,7 +197,7 @@ RadioTower5FRocketBossScene:
     writetext Need8BadgesText
 	waitbutton
 	closetext
-	setscene SCENE_RADIOTOWER5F_NOTHING
+	setscene SCENE_FINISHED
 	setevent EVENT_TEAM_ROCKET_DISBANDED
 	sjump .UselessJump
 
@@ -778,7 +778,7 @@ RadioTower5F_MapEvents:
 
 	def_coord_events
 	coord_event  0,  3, SCENE_RADIOTOWER5F_FAKE_DIRECTOR, FakeDirectorScript
-	coord_event 16,  5, SCENE_RADIOTOWER5F_ROCKET_BOSS, RadioTower5FRocketBossScript
+	coord_event 16,  5, SCENE_RADIOTOWER5F_ROCKET_BOSS, RadioTower5FRocketBossScene
 
 	def_bg_events
 	bg_event  3,  0, BGEVENT_READ, RadioTower5FDirectorsOfficeSign

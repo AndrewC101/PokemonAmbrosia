@@ -455,6 +455,7 @@
     const EVENT_BODY_SLAM
     const EVENT_CAUGHT_RAIKOU
     const EVENT_CAUGHT_ENTEI
+    const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 
     ; ======================================
     ; DevNote - here

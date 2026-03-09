@@ -32,7 +32,7 @@ GoldenrodCityFlypointAndFloriaCallback:
 .FloriaDone:
 	endcallback
 
-.MoveTutor:
+GoldenrodCityMoveTutorCallback:
     disappear GOLDENRODCITY_SELF
 
     checktime NITE

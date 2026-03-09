@@ -42,7 +42,7 @@ ElmsLabNoop4Scene:
 ElmsLabNoop5Scene:
 	end
 
-.MoveElmCallback:
+ElmsLabMoveElmCallback:
     disappear ELMSLAB_MUM
     disappear ELMSLAB_DAD
     disappear ELMSLAB_PARENTS_ELM
@@ -474,7 +474,7 @@ AideScript_GivePocketPC:
 	writetext AideText_PocketPCInfoText
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_NOTHING
+	setscene SCENE_ELMSLAB_NOOP
 	end
 
 AideScript_WalkBalls1:
@@ -506,7 +506,7 @@ AideScript_GiveYouBalls:
 	writetext AideText_ExplainCaps
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_NOTHING
+	setscene SCENE_ELMSLAB_NOOP
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	end
 
@@ -585,8 +585,8 @@ CopScript:
 	closetext
 	applymovement ELMSLAB_OFFICER, OfficerLeavesMovement
 	disappear ELMSLAB_OFFICER
-	;setscene SCENE_ELMSLAB_NOTHING
-	setflag ENGINE_MAIN_MENU_MOBILE_CHOICES
+	;setscene SCENE_ELMSLAB_NOOP
+	setflag ENGINE_MOBILE_SYSTEM
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE

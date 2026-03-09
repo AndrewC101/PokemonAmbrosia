@@ -21,7 +21,7 @@ Route25_MapScripts:
 	scene_script Route25Noop2Scene, SCENE_ROUTE25_MISTYS_DATE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route25FieldMon
+	callback MAPCALLBACK_OBJECTS, Route25FieldMon
 
 Route25Noop1Scene:
 	end
@@ -29,7 +29,7 @@ Route25Noop1Scene:
 Route25Noop2Scene:
 	end
 
-.Route25FieldMon:
+Route25FieldMon:
 ; Pokemon which always appear
     appear ROUTE25_FIELDMON_1
     appear ROUTE25_FIELDMON_2

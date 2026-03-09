@@ -11,7 +11,7 @@ MahoganyTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, MahoganyTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .Self
+	callback MAPCALLBACK_OBJECTS, Self
 
 MahoganyTownNoop1Scene:
 	end
@@ -23,7 +23,7 @@ MahoganyTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	endcallback
 
-.Self
+Self:
     disappear MAHOGANYTOWN_SELF
     endcallback
 

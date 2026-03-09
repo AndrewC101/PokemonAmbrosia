@@ -35,7 +35,7 @@ Route32Noop2Scene:
 Route32Noop3Scene:
 	end
 
-.Frieda:
+Route32FriedaCallback:
     appear ROUTE32_FIELDMON_1
     appear ROUTE32_FIELDMON_2
     appear ROUTE32_FIELDMON_4

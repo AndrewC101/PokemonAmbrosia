@@ -1,7 +1,7 @@
 	object_const_def
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
-	const NEWBARKTOWN_SILVER
+	const NEWBARKTOWN_RIVAL
 	const NEWBARKTOWN_FIELDMON_6
 	const NEWBARKTOWN_REPEL_WOMAN
 	const NEWBARKTOWN_CRYSTAL
@@ -15,8 +15,8 @@ NewBarkTown_MapScripts:
 	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .SilverAndCrystal
+	callback MAPCALLBACK_NEWMAP, FlyPoint
+	callback MAPCALLBACK_OBJECTS, SilverAndCrystal
 
 NewBarkTownNoop1Scene:
 	end
@@ -24,7 +24,7 @@ NewBarkTownNoop1Scene:
 NewBarkTownNoop2Scene:
 	end
 
-.SilverAndCrystal
+SilverAndCrystal:
     disappear NEWBARKTOWN_CRYSTAL
     disappear NEWBARKTOWN_CRYSTAL_FINAL
     disappear NEWBARKTOWN_SILVER_FINAL
@@ -36,7 +36,7 @@ NewBarkTownNoop2Scene:
 .end
     endcallback
 
-.FlyPoint:
+FlyPoint:
     appear NEWBARKTOWN_FIELDMON_6
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM

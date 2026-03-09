@@ -11,14 +11,14 @@ CeruleanCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .CeruleanFieldMon
+	callback MAPCALLBACK_OBJECTS, CeruleanFieldMon
 	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 
-.CeruleanFieldMon:
+CeruleanFieldMon:
     appear CERULEANCITY_FIELDMON_1
     endcallback
 

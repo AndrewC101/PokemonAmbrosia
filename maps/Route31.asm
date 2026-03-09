@@ -16,7 +16,7 @@ Route31_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-    callback MAPCALLBACK_OBJECTS, .Route31FieldMon
+    callback MAPCALLBACK_OBJECTS, Route31FieldMon
 	callback MAPCALLBACK_NEWMAP, Route31CheckMomCallCallback
 
 Route31CheckMomCallCallback:
@@ -28,7 +28,7 @@ Route31CheckMomCallCallback:
 	specialphonecall SPECIALCALL_WORRIED
 	endcallback
 	
-.Route31FieldMon:
+Route31FieldMon:
 ; Pokemon which always appear
     appear ROUTE31_FIELDMON_1
     appear ROUTE31_FIELDMON_3

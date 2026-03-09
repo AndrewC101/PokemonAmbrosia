@@ -14,14 +14,14 @@ CeladonCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .CeladonFieldMon
+	callback MAPCALLBACK_OBJECTS, CeladonFieldMon
 	callback MAPCALLBACK_NEWMAP, CeladonCityFlypointCallback
 
 CeladonCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CELADON
 	endcallback
 
-.CeladonFieldMon:
+CeladonFieldMon:
     appear CELADONCITY_FIELDMON_1
     endcallback
 

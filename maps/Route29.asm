@@ -31,7 +31,7 @@ Route29Noop1Scene:
 Route29Noop2Scene:
 	end
 
-.Tuscany:
+Route29TuscanyCallback:
 ; Pokemon which always appear
     appear ROUTE29_FIELDMON_1
     appear ROUTE29_FIELDMON_4
@@ -87,7 +87,7 @@ Route29Noop2Scene:
 	endcallback
 
 Route29Tutorial1:
-    setscene SCENE_ROUTE29_NOTHING
+    setscene SCENE_ROUTE29_NOOP
     checkitem REPULSOR
     iftrue .end
 	turnobject ROUTE29_COOLTRAINER_M1, UP
@@ -104,7 +104,7 @@ Route29Tutorial1:
 	end
 
 Route29Tutorial2:
-    setscene SCENE_ROUTE29_NOTHING
+    setscene SCENE_ROUTE29_NOOP
     checkitem REPULSOR
     iftrue .end
 	turnobject ROUTE29_COOLTRAINER_M1, UP

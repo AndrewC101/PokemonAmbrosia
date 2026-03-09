@@ -15,13 +15,13 @@ SaffronCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, SaffronCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .Silver
+	callback MAPCALLBACK_OBJECTS, Silver
 
 SaffronCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	endcallback
 
-.Silver:
+Silver:
     appear SAFFRONCITY_FIELDMON_1
     random 2
     ifequal 1, .keepSpawn

@@ -15,14 +15,14 @@ FuchsiaCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Invasion
+	callback MAPCALLBACK_OBJECTS, Invasion
 	callback MAPCALLBACK_NEWMAP, FuchsiaCityFlypointCallback
 
 FuchsiaCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	endcallback
 
-.Invasion:
+Invasion:
     appear FUCHSIACITY_FIELDMON_1
     appear FUCHSIACITY_FIELDMON_2
     appear FUCHSIACITY_FIELDMON_3

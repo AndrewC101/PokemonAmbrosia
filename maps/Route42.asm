@@ -21,7 +21,7 @@ Route42_MapScripts:
 	scene_script Route42Noop2Scene, SCENE_ROUTE42_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route42FieldMon
+	callback MAPCALLBACK_OBJECTS, Route42FieldMon
 
 Route42Noop1Scene:
 	end
@@ -29,7 +29,7 @@ Route42Noop1Scene:
 Route42Noop2Scene:
 	end
 
-.Route42FieldMon:
+Route42FieldMon:
 ; Pokemon which always appear
     appear ROUTE42_FIELDMON_1
     appear ROUTE42_FIELDMON_3

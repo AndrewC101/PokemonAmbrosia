@@ -22,8 +22,8 @@ CianwoodCity_MapScripts:
 	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
-	callback MAPCALLBACK_OBJECTS, .CianwoodCityFieldMon
+	callback MAPCALLBACK_NEWMAP, FlyPointAndSuicune
+	callback MAPCALLBACK_OBJECTS, CianwoodCityFieldMon
 
 CianwoodCityNoop1Scene:
 	end
@@ -31,7 +31,7 @@ CianwoodCityNoop1Scene:
 CianwoodCityNoop2Scene:
 	end
 
-.CianwoodCityFieldMon:
+CianwoodCityFieldMon:
 ; Pokemon which always appear
     disappear CIANWOODCITY_POLIWRATH
     disappear CIANWOODCITY_GIRL_1
@@ -58,7 +58,7 @@ CianwoodCityNoop2Scene:
 .end
     endcallback
 
-.FlyPointAndSuicune:
+FlyPointAndSuicune:
 	setflag ENGINE_FLYPOINT_CIANWOOD
 	setevent EVENT_EUSINE_IN_BURNED_TOWER
 	checkevent EVENT_FOUGHT_EUSINE

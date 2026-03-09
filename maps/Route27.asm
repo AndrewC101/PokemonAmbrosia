@@ -15,7 +15,7 @@ Route27_MapScripts:
 	scene_script Route27Noop2Scene, SCENE_ROUTE27_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route27FieldMon
+	callback MAPCALLBACK_OBJECTS, Route27FieldMon
 
 Route27Noop1Scene:
 	end
@@ -23,7 +23,7 @@ Route27Noop1Scene:
 Route27Noop2Scene:
 	end
 
-.Route27FieldMon:
+Route27FieldMon:
 ; Pokemon which always appear
     appear ROUTE27_FIELDMON_1
     appear ROUTE27_FIELDMON_2

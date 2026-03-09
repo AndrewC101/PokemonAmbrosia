@@ -17,7 +17,7 @@ CherrygroveCity_MapScripts:
 	scene_script CherrygroveCityNoop2Scene, SCENE_CHERRYGROVECITY_MEET_RIVAL
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .CherrygroveFieldMon
+	callback MAPCALLBACK_OBJECTS, CherrygroveFieldMon
 	callback MAPCALLBACK_NEWMAP, CherrygroveCityFlypointCallback
 
 CherrygroveCityNoop1Scene:
@@ -30,7 +30,7 @@ CherrygroveCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
 
-.CherrygroveFieldMon:
+CherrygroveFieldMon:
     appear CHERRYGROVECITY_FIELDMON_1
     endcallback
 
@@ -154,8 +154,8 @@ CherrygroveSilverSceneNorth:
 	special FadeOutMusic
 	pause 15
 	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_1
-	appear CHERRYGROVECITY_SILVER
-	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalWalksToYou
+	appear CHERRYGROVECITY_RIVAL
+	applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalWalksToYou
 	turnobject PLAYER, RIGHT
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
@@ -216,8 +216,8 @@ CherrygroveSilverSceneNorth:
 	playsound SFX_TACKLE
 	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
 	turnobject PLAYER, LEFT
-	applymovement CHERRYGROVECITY_SILVER, CherrygroveCity_RivalExitsStageLeft
-	disappear CHERRYGROVECITY_SILVER
+	applymovement CHERRYGROVECITY_RIVAL, CherrygroveCity_RivalExitsStageLeft
+	disappear CHERRYGROVECITY_RIVAL
 	setevent EVENT_BEAT_RIVAL_1
 	special HealParty
 	playmapmusic
@@ -583,7 +583,7 @@ CherrygroveRivalText_Seen:
 	line "real #mon!"
 	done
 
-SilverCherrygroveWinText:
+RivalCherrygroveWinText:
 	text "You've had a"
 	line "head start."
 
@@ -609,7 +609,7 @@ CherrygroveRivalText_YouLost:
 	cont "weak."
 	done
 
-SilverCherrygroveLossText:
+RivalCherrygroveLossText:
 	text "That was a waste"
 	line "of my time."
 	done

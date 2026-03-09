@@ -24,12 +24,6 @@ VictoryRoad_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .VictoryRoadFieldMon
 
-VictoryRoadNoop1Scene:
-	end
-
-VictoryRoadNoop2Scene:
-	end
-
 .VictoryRoadFieldMon:
 ; Pokemon which always appear
     appear VICTORYROAD_FIELDMON_1
@@ -43,6 +37,12 @@ VictoryRoadNoop2Scene:
     appear VICTORYROAD_FIELDMON_9
     endcallback
 
+VictoryRoadNoop1Scene:
+	end
+
+VictoryRoadNoop2Scene:
+	end
+
 VictoryRoadRivalLeft:
 	moveobject VICTORYROAD_RIVAL, 18, 11
 	turnobject PLAYER, DOWN
@@ -51,8 +51,8 @@ VictoryRoadRivalLeft:
 	pause 15
 	disappear VICTORYROAD_FIELDMON_1
 	disappear VICTORYROAD_FIELDMON_3
-	appear VICTORYROAD_SILVER
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement1
+	appear VICTORYROAD_RIVAL
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement1
 	scall VictoryRoadRivalNext
 	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement1
 	disappear VICTORYROAD_RIVAL
@@ -67,8 +67,8 @@ VictoryRoadRivalRight:
 	pause 15
 	disappear VICTORYROAD_FIELDMON_1
 	disappear VICTORYROAD_FIELDMON_3
-	appear VICTORYROAD_SILVER
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement2
+	appear VICTORYROAD_RIVAL
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement2
 	scall VictoryRoadRivalNext
 	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement2
 	disappear VICTORYROAD_RIVAL
@@ -89,7 +89,7 @@ VictoryRoadRivalNext:
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .GotChikorita
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
+	setlasttalked VICTORYROAD_RIVAL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
 	startbattle
@@ -99,7 +99,7 @@ VictoryRoadRivalNext:
 
 .GotTotodile:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
+	setlasttalked VICTORYROAD_RIVAL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
 	startbattle
@@ -109,7 +109,7 @@ VictoryRoadRivalNext:
 
 .GotChikorita:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
+	setlasttalked VICTORYROAD_RIVAL
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
 	startbattle

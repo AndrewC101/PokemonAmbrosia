@@ -10,13 +10,13 @@ PalletTown_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
-	callback MAPCALLBACK_OBJECTS, .Aerith
+	callback MAPCALLBACK_OBJECTS, Aerith
 
 PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
 
-.Aerith:
+Aerith:
     disappear PALLETTOWN_CRYSTAL
     disappear PALLETTOWN_AERITH
     checkevent EVENT_BEAT_ELITE_FOUR

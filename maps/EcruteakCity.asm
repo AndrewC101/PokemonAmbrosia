@@ -96,7 +96,7 @@ EcruteakCityGramps1Text:
 	done
 
 EcruteakCityGramps2Text:
-	text "This theatre"
+	text "This theater"
 	line "is where the"
 	cont "Kimono girls"
 	cont "dance."

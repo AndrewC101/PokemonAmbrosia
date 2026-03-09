@@ -74,7 +74,7 @@ BillsYoungerSisterScript:
 	end
 
 .Refused:
-	writetext BillsYoungerSisterRefusedNumberText
+	writetext BillsSisterRefusedNumberText
 	waitbutton
 	closetext
 	end

@@ -21,10 +21,10 @@ Route43_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckIfRockets
-	callback MAPCALLBACK_OBJECTS, .WeatherAndFieldMon
+	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
+	callback MAPCALLBACK_OBJECTS, WeatherAndFieldMon
 
-.WeatherAndFieldMon:
+WeatherAndFieldMon:
 	setval WEATHER_RAIN
 	writemem wFieldWeather
 

@@ -12,7 +12,7 @@ PlayersHouse1F_MapScripts:
 	scene_script PlayersHouse1FNoop2Scene, SCENE_PLAYERSHOUSE1F_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Dad
+	callback MAPCALLBACK_OBJECTS, Dad
 
 PlayersHouse1FNoop1Scene:
 	end
@@ -20,7 +20,7 @@ PlayersHouse1FNoop1Scene:
 PlayersHouse1FNoop2Scene:
 	end
 
-.Dad:
+Dad:
     disappear PLAYERSHOUSE1F_DAD
     checkevent EVENT_BEAT_DAD
     iffalse .end

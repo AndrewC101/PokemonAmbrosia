@@ -6,7 +6,7 @@ GetNextTrainerDataByte:
 
 ReadTrainerParty:
 	ld a, [wInBattleTowerBattle]
-	bit IN_BATTLE_TOWER_BATTLE_F, a
+	bit 0, a
 	ret nz
 
 	ld a, [wLinkMode]
@@ -1943,7 +1943,7 @@ ComputeTrainerReward:
 
 Battle_GetTrainerName::
 	ld a, [wInBattleTowerBattle]
-	bit IN_BATTLE_TOWER_BATTLE_F, a
+	bit 0, a
 	ld hl, wOTPlayerName
     ld a, BANK(Battle_GetTrainerName)
 	ld [wTrainerGroupBank], a
@@ -1988,8 +1988,6 @@ CopyTrainerName:
     call FarCopyBytes
 	pop de
 	ret
-
-INCLUDE "data/trainers/party_pointers.asm"
 
 SetTrainerBattleLevel:
 	ld a, 255

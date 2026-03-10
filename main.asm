@@ -643,11 +643,6 @@ SECTION "VWF", ROMX
 INCLUDE "engine/gfx/vwf.asm"
 
 
-SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
-
-INCLUDE "engine/events/heal_machine_anim.asm"
-
-
 ;SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 ; The end of the ROM is taken up by checksums of the content, apparently used
 ; by Pokémon Stadium 2 due to the checksums' "N64PS3" header. (In Japan,

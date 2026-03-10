@@ -15,6 +15,8 @@ Special::
 
 INCLUDE "data/events/special_pointers.asm"
 
+INCLUDE "engine/events/heal_machine_anim.asm"
+
 ;LoadPokemonDataSpecial:
 ;    farcall LoadPokemonData
 ;	ret

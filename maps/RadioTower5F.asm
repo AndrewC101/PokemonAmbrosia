@@ -197,7 +197,7 @@ RadioTower5FRocketBossScene:
     writetext Need8BadgesText
 	waitbutton
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_RADIOTOWER5F_NOOP
 	setevent EVENT_TEAM_ROCKET_DISBANDED
 	sjump .UselessJump
 

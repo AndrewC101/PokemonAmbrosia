@@ -159,20 +159,20 @@ TrainerCard_Page2_Joypad:
 	call TrainerCard_Page2_3_AnimateBadges
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_A
-	jr nz, .Quit
-	ld a, [hl]
 	and PAD_LEFT
-	jr nz, .d_left
+	jr nz, .left
+	ld a, [hl]
+	and PAD_RIGHT | PAD_A
+	jr nz, .right
 	ret
 
-.d_left
+.left
 	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
 	ld [wJumptableIndex], a
 	ret
 
-.Quit:
-	ld a, TRAINERCARDSTATE_QUIT
+.right
+	ld a, TRAINERCARDSTATE_PAGE3_LOADGFX
 	ld [wJumptableIndex], a
 	ret
 
@@ -203,8 +203,8 @@ TrainerCard_Page3_Joypad:
 	and PAD_LEFT
 	jr nz, .left
 	ld a, [hl]
-	and PAD_RIGHT
-	jr nz, .right
+	and PAD_A
+	jr nz, .Quit
 	ret
 
 .left
@@ -212,8 +212,8 @@ TrainerCard_Page3_Joypad:
 	ld [wJumptableIndex], a
 	ret
 
-.right
-	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
+.Quit:
+	ld a, TRAINERCARDSTATE_QUIT
 	ld [wJumptableIndex], a
 	ret
 

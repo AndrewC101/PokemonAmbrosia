@@ -75,7 +75,8 @@
 ; Actual characters (from gfx/font/font_battle_extra.png)
 
 	charmap "<LV>",      $6e
-
+	charmap "<DEX_LV>",  $5d
+	charmap "<DEX_LV_VRAM1>",$74
 	charmap "<DO>",      $70 ; hiragana small do, unused
 	charmap "◀",         $71
 	charmap "『",         $72 ; Japanese opening quote, unused
@@ -90,11 +91,21 @@
 	charmap "☎",         $62 ; gfx/font/phone_icon.2bpp
 
 	; needed for MagikarpHouseSign (see engine/events/magikarp.asm)
-	charmap "′",         $6e ; gfx/font/feet_inches.png
-	charmap "″",         $6f ; gfx/font/feet_inches.png
+	charmap "′",         $ce ; gfx/pokedex/inversed_feet_inches.1bpp
+	charmap "″",         $cf ; gfx/pokedex/inversed_feet_inches.1bpp
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
 	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
+	charmap "<DEX_⁂>",   $64 ; gfx/stats/stats_tiles.png, tile 14, VRAM0
+	charmap "<DEX_→>", 	  $eb; gfx/pokedex/inversed_rightarrow.1bpp
+	; at the moment, this arrow is in the same slot as the non-inversed right arrow, but in VRAM 1. 
+	; since people could theoretically load it wherever they choose, I am keeping this charmap
+
+	charmap ">",		 $bb
+	charmap "<",		 $bc
+	charmap "=",		 $bd
+	charmap "+",		 $be
+	charmap "<%>",		 $bf
 
 ; Actual characters (from gfx/font/font.png)
 

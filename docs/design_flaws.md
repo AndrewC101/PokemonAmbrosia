@@ -19,7 +19,7 @@ These are parts of the code that do not work *incorrectly*, like [bugs and glitc
 
 ## Pic banks are offset by `PICS_FIX`
 
-[data/pokemon/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/pic_pointers.asm), [data/pokemon/unown_pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/unown_pic_pointers.asm), and [data/trainers/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/trainers/pic_pointers.asm) all have to use `dba_pic` instead of `dba`. This is a macro in [macros/data.asm](https://github.com/pret/pokecrystal/blob/master/macros/data.asm) that offsets banks by `PICS_FIX`:
+[data/pokemon/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/pic_pointers.asm), [data/pokemon/unown_pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/pokemon/unown_pic_pointers.asm), and [data/trainers/pic_pointers.asm](https://github.com/pret/pokecrystal/blob/master/data/trainers/pic_pointers.asm) all have to use `dba` instead of `dba`. This is a macro in [macros/data.asm](https://github.com/pret/pokecrystal/blob/master/macros/data.asm) that offsets banks by `PICS_FIX`:
 
 ```asm
 dba_pic: MACRO ; dbw bank, address
@@ -54,7 +54,7 @@ EXPORT DEF PICS_FIX EQU $36
 	db BANK("Pics 24") ; BANK("Pics 1") + 23
 ```
 
-**Fix:** Delete `FixPicBank` and remove all four calls to `FixPicBank` in [engine/gfx/load_pics.asm](https://github.com/pret/pokecrystal/blob/master/engine/gfx/load_pics.asm). Then use `dba` instead of `dba_pic` everywhere.
+**Fix:** Delete `FixPicBank` and remove all four calls to `FixPicBank` in [engine/gfx/load_pics.asm](https://github.com/pret/pokecrystal/blob/master/engine/gfx/load_pics.asm). Then use `dba` instead of `dba` everywhere.
 
 
 ## `PokemonPicPointers` and `UnownPicPointers` are assumed to start at the same address
@@ -155,15 +155,15 @@ DEF footprint_bottom EQUS "2 * TILE_1BPP_SIZE, 2 * TILE_1BPP_SIZE"
 ; Entries correspond to Pokémon species, two apiece, 8 tops then 8 bottoms
 	table_width TILE_1BPP_SIZE * 4
 
-; 001-008 top halves
-INCBIN "gfx/footprints/bulbasaur.1bpp",  footprint_top
-INCBIN "gfx/footprints/ivysaur.1bpp",    footprint_top
-INCBIN "gfx/footprints/venusaur.1bpp",   footprint_top
-INCBIN "gfx/footprints/charmander.1bpp", footprint_top
-INCBIN "gfx/footprints/charmeleon.1bpp", footprint_top
-INCBIN "gfx/footprints/charizard.1bpp",  footprint_top
-INCBIN "gfx/footprints/squirtle.1bpp",   footprint_top
-INCBIN "gfx/footprints/wartortle.1bpp",  footprint_top
+; 001-008  
+INCBIN "gfx/footprints/bulbasaur.1bpp" 
+INCBIN "gfx/footprints/ivysaur.1bpp" 
+INCBIN "gfx/footprints/venusaur.1bpp" 
+INCBIN "gfx/footprints/charmander.1bpp" 
+INCBIN "gfx/footprints/charmeleon.1bpp" 
+INCBIN "gfx/footprints/charizard.1bpp" 
+INCBIN "gfx/footprints/squirtle.1bpp" 
+INCBIN "gfx/footprints/wartortle.1bpp" 
 ; 001-008 bottom halves
 INCBIN "gfx/footprints/bulbasaur.1bpp",  footprint_bottom
 INCBIN "gfx/footprints/ivysaur.1bpp",    footprint_bottom

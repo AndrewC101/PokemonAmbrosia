@@ -1,3 +1,67 @@
+	const_def
+	const DEXENTRY_LORE      ; 0 ; bit 0, $1
+	const DEXENTRY_BASESTATS ; 1 ; bit 1, $2
+	const DEXENTRY_LVLUP     ; 2 ; bit 2, $4
+	const DEXENTRY_FIELD     ; 3 ; bit 3, $8
+	const DEXENTRY_EGG		 ; 4 ; bit 4, $10, 16
+	const DEXENTRY_TMS       ; 5 ; bit 5, $20, 32
+	; const DEXENTRY_HMS       ; bit 6, $40, 64
+	const DEXENTRY_MTS       ; 6 ;bit 7, $80, 128
+	const DEXENTRY_EVO		 ; 7
+	const DEXENTRY_PICS      ; 8
+	const DEXENTRY_AREA_NONE	;  9
+	const DEXENTRY_AREA_GRASS_JOHTO   ; 10 / A
+	const DEXENTRY_AREA_GRASS_KANTO   ; 11 / B
+	const DEXENTRY_AREA_GRASS_SWARM   ; 12 / C
+	const DEXENTRY_AREA_SURF_JOHTO    ; 13 / D
+	const DEXENTRY_AREA_SURF_KANTO    ; 14 / E
+	const DEXENTRY_AREA_SURF_SWARM   ; 15 / F
+	const DEXENTRY_AREA_RODS    ; 16 / 0x10
+	const DEXENTRY_AREA_TREES_COMMON   ; 17 / 0x11
+	const DEXENTRY_AREA_TREES_RARE   ; 18 / 0x12
+	const DEXENTRY_AREA_ROCKSMASH   ; 19 / 0x13
+	const DEXENTRY_AREA_CONTEST ; 20 / 0x14
+	const DEXENTRY_AREA_ROAMING ; 21 / 0x15
+	const DEXENTRY_AREA_CASINO ; 22 / 0x16
+	const DEXENTRY_AREA_NPCTRADES ; 23 / 0x17
+	const DEXENTRY_AREA_EVENTWILDMONS ; 24 / 0x18
+	const DEXENTRY_AREA_GIFTMONS ; 25 / 0x19
+	
+EXPORT DEXENTRY_LORE
+EXPORT DEXENTRY_BASESTATS
+EXPORT DEXENTRY_LVLUP
+EXPORT DEXENTRY_FIELD
+EXPORT DEXENTRY_EGG
+EXPORT DEXENTRY_TMS
+; EXPORT DEXENTRY_HMS
+EXPORT DEXENTRY_MTS
+EXPORT DEXENTRY_EVO		 ; 7
+EXPORT DEXENTRY_PICS      ; 8
+
+EXPORT DEXENTRY_AREA_GRASS_JOHTO
+EXPORT DEXENTRY_AREA_GRASS_KANTO
+EXPORT DEXENTRY_AREA_GRASS_SWARM
+
+EXPORT DEXENTRY_AREA_SURF_JOHTO
+EXPORT DEXENTRY_AREA_SURF_KANTO
+EXPORT DEXENTRY_AREA_SURF_SWARM
+
+EXPORT DEXENTRY_AREA_RODS
+EXPORT DEXENTRY_AREA_TREES_COMMON
+EXPORT DEXENTRY_AREA_TREES_RARE
+EXPORT DEXENTRY_AREA_ROCKSMASH
+EXPORT DEXENTRY_AREA_CONTEST
+EXPORT DEXENTRY_AREA_ROAMING
+EXPORT DEXENTRY_AREA_CASINO
+EXPORT DEXENTRY_AREA_NPCTRADES
+EXPORT DEXENTRY_AREA_EVENTWILDMONS
+EXPORT DEXENTRY_AREA_GIFTMONS
+
+EXPORT DEXENTRY_AREA_NONE
+
+DEF NUM_FIELD_MOVES EQU 14 
+DEF MOVESPAGES_CONT_MASK EQU %00000011
+
 AnimateDexSearchSlowpoke:
 	ld hl, .FrameIDs
 	ld b, 25
@@ -76,143 +140,136 @@ DoDexSearchSlowpokeFrame:
 	dbsprite 11, 13, 0, 0, $22, 0
 	db -1
 
+HandlePageNumReset:
+	ld b, a
+	ld a, [wPokedexEntryType]
+	cp b
+	ret z
+	ld a, b
+	ld [wPokedexEntryType], a
+	xor a
+	ld [wPokedexEntryPageNum], a
+	ret
+
 DisplayDexEntry:
-	call GetPokemonName
-	hlcoord 9, 3
-	call PlaceString ; mon species
+	ld a, [wPokedexEntryType]
+	and a
+	jr nz, .next
+	ld a, DEXENTRY_LORE
+	call HandlePageNumReset
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], "<DEX_⁂>"
+	jr .next
+.not_shiny
+	ld [hl], " "	
+.next
+	ld a, DEXENTRY_LORE
+	call HandlePageNumReset
+; erase bottom half of page
+	hlcoord 1, 8
+	lb bc, 8, SCREEN_WIDTH - 1
+	call ClearBox
+; take away page num and A press since we're assuming we haven't seen the mon
+; will re-print if we have, later
+	hlcoord 17, 5
+	ld bc, 3 ; box 2 tiles high, 9 wide
+	ld a, $4e ; category box horizontal line
+	call ByteFill
+; skinny horizontal line halfway down page
+	hlcoord 1, 8
+	ld bc, SCREEN_WIDTH - 1
+	ld a, $55
+	call ByteFill
+
 	ld a, [wTempSpecies]
 	ld b, a
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 9, 5
-	call PlaceFarString ; dex species
+
+	push bc
+	hlcoord 9, 6
+	ld a, " "
+	ld bc, 11
+	call ByteFill
+	pop bc
+
+	pop af
+	push af
+	hlcoord 9, 6
+	call PlaceFarString ; dex species nickname
+	push bc ; bank?
+	push de ; dex entry ptr
+	hlcoord 9, 7
+	ld de, String_pokemon
+	call PlaceString
+	pop de ; dex entry ptr
+	pop bc ; bank?
 	ld h, b
 	ld l, c
-	push de
-; Print dex number
-	hlcoord 2, 8
-	ld a, $5c ; No
-	ld [hli], a
-	ld a, $5d ; .
-	ld [hli], a
-	ld de, wTempSpecies
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
-; Check to see if we caught it.  Get out of here if we haven't.
+	push de ; dex entry ptr
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
-	pop hl
-	pop bc
-	ret z
+	pop hl ; dex entry ptr
+	pop bc ; bank?
+	jp z, UncaughtMon_Info_Erase_PageNum ; ret z ; leave if we havent caught
 ; Get the height of the Pokemon.
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	inc hl
 	ld a, b
 	push af
-	push hl
-	call GetFarWord
-	ld d, l
-	ld e, h
-	pop hl
 	inc hl
 	inc hl
-	ld a, d
-	or e
-	jr z, .skip_height
-	push hl
-	push de
-; Print the height, with two of the four digits in front of the decimal point
-	ld hl, sp+0
-	ld d, h
-	ld e, l
-	hlcoord 12, 7
-	lb bc, 2, (2 << 4) | 4
-	call PrintNum
-; Replace the decimal point with a ft symbol
-	hlcoord 14, 7
-	ld [hl], $5e
-	pop af
-	pop hl
-
-.skip_height
-	pop af
-	push af
 	inc hl
 	push hl
-	dec hl
-	call GetFarWord
-	ld d, l
-	ld e, h
-	ld a, e
-	or d
-	jr z, .skip_weight
-	push de
-; Print the weight, with four of the five digits in front of the decimal point
-	ld hl, sp+0
-	ld d, h
-	ld e, l
-	hlcoord 11, 9
-	lb bc, 2, (4 << 4) | 5
-	call PrintNum
-	pop de
-
-.skip_weight
+	ld a, [wPokedexEntryPageNum]
+	and a ; check for page 2
+	jr nz, .page2
 ; Page 1
-	lb bc, 5, SCREEN_WIDTH - 2
-	hlcoord 2, 11
-	call ClearBox
-	hlcoord 1, 10
-	ld bc, SCREEN_WIDTH - 1
-	ld a, $61 ; horizontal divider
-	call ByteFill
-	; page number
-	hlcoord 1, 9
-	ld [hl], $55
-	inc hl
-	ld [hl], $55
-	hlcoord 1, 10
-	ld [hl], $56 ; P.
-	inc hl
-	ld [hl], $57 ; 1
+	call Pokedex_PrintPageNum
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 2, 10
 	push af
 	call PlaceFarString
 	pop bc
-	ld a, [wPokedexStatus]
-	or a ; check for page 2
-	ret z
-
+	call DexEntry_IncPageNum
+	ret
 ; Page 2
-	push bc
-	push de
-	lb bc, 5, SCREEN_WIDTH - 2
-	hlcoord 2, 11
-	call ClearBox
-	hlcoord 1, 10
-	ld bc, SCREEN_WIDTH - 1
-	ld a, $61
-	call ByteFill
-	; page number
-	hlcoord 1, 9
-	ld [hl], $55
-	inc hl
-	ld [hl], $55
-	hlcoord 1, 10
-	ld [hl], $56 ; P.
-	inc hl
-	ld [hl], $58 ; 2
+.page2
 	pop de
 	inc de
 	pop af
-	hlcoord 2, 11
+	hlcoord 2, 10
+	push af
 	call PlaceFarString
+	pop bc
+	push bc
+	push de
+	lb bc, 5, SCREEN_WIDTH - 1
+	hlcoord 1, 10
+	call ClearBox
+	hlcoord 1, 8
+	ld bc, 19
+	ld a, $55
+	call ByteFill
+	call Pokedex_PrintPageNum
+	pop de
+	inc de
+	pop af
+	hlcoord 2, 10
+	call PlaceFarString
+	xor a
+	ld [wPokedexEntryPageNum], a
 	ret
+String_pokemon:
+	db " #mon @"
 
 ; DevNote - Stats Page - code to display ability
 ; NOTE:
@@ -392,6 +449,7 @@ rept 4
 endr
 ; if c != 1: skip entry
 	dec c
+	and c
 	jr z, .done
 ; skip entry
 .loop2
@@ -400,11 +458,230 @@ endr
 	inc hl
 	cp '@'
 	jr nz, .loop2
-
 .done
 	ld d, h
 	ld e, l
 	pop hl
 	ret
 
+DisplayDexMonType_CustomGFX:
+	call GetBaseData
+	ld a, [wBaseType1]
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE
+; load the tiles
+	ld hl, TypeLightIconGFX
+	ld bc, 4 * LEN_2BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+
+	ld a, $1
+	ldh [rVBK], a
+	ld hl, vTiles2 tile $77
+	lb bc, BANK(TypeLightIconGFX), 4
+	call Request2bpp
+
+	hlcoord 9, 4
+	ld [hl], $77
+	inc hl
+	ld [hl], $78
+	inc hl
+	ld [hl], $79
+	inc hl
+	ld [hl], $7a
+
+	ld a, $0
+	ldh [rVBK], a
+ELSE 
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+	hlcoord 10, 4
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC
+
+; 2nd Type
+	ld a, [wBaseType1]
+	ld b, a
+	ld a, [wBaseType2]
+	cp b
+	ret z
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
+
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE	
+; load type 2 tiles
+	ld hl, TypeDarkIconGFX
+	ld bc, 4 * LEN_2BPP_TILE
+	call AddNTimes
+	ld d, h
+	ld e, l
+
+	ld a, $1
+	ldh [rVBK], a
+
+	ld hl, vTiles2 tile $7b
+	lb bc, BANK(TypeDarkIconGFX), 4
+	call Request2bpp
+	hlcoord 13, 4
+	ld [hl], $7b
+	inc hl
+	ld [hl], $7c
+	inc hl
+	ld [hl], $7d
+	inc hl
+	ld [hl], $7e
+	ld a, $0
+	ldh [rVBK], a
+ELSE
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+	hlcoord 14, 4
+	ld [hl], "/"
+	inc hl
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC	
+	ret
+
+IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+DEX_NO_CUSTOM_GFX_PrintType_Short:
+; Print type a at hl.
+
+    inc a
+
+	push hl
+	ld hl, .Types
+	ld bc, 5 ; since each entry is 4 bytes
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+	jp PlaceString
+
+.Types
+	db "Norm@"
+	db "Figt@"
+	db "Fly @"
+	db "Psn @"
+	db "Grnd@"
+	db "Rock@"
+	db "Fair@"
+	db "Bug @"
+	db "Ghst@"
+	db "Stel@"
+	db "Fire@"
+	db "Watr@"
+	db "Gras@"
+	db "Elec@"
+	db "Psy @"
+	db "Ice @"
+	db "Drgn@"
+	db "Dark@"
+	db "Uber@"
+ENDC
+
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
+INCLUDE "engine/pokedex/pokedex_evolution_page.asm"
+INCLUDE "engine/pokedex/pokedex_stats_page.asm"
+INCLUDE "engine/pokedex/pokedex_pics_page.asm"
+INCLUDE "engine/pokedex/pokedex_moves_page.asm"
+INCLUDE "engine/pokedex/pokedex_area_page.asm"
+
+Pokedex_Clearbox:
+	lb bc, 7, SCREEN_WIDTH - 1
+	hlcoord 1, 9
+	call ClearBox
+	ret
+
+DexEntry_adjusthlcoord:
+	; given: current printed lines in c
+	push af
+	push de
+	ld a, 20
+	; the num of moves already printed should still be in bc
+	call SimpleMultiply ; uses c as the other number
+	; result in a
+	ld d, 0
+	ld e, a
+	add hl, de ; allows us to print on the proper row lol
+	pop de
+	pop af
+	ret
+
+DexEntry_IncPageNum:
+	ld a, [wPokedexEntryPageNum]
+	inc a
+	ld [wPokedexEntryPageNum], a
+	ret
+
+Pokedex_PrintPageNum:
+	push hl
+; print A > indicator
+	hlcoord 19, 5
+	ld [hl], $60
+	dec hl
+	ld [hl], $6c
+; ; vertical line, right side	
+; 	hlcoord 19, 6
+; 	ld [hl], $6e	
+; print page num
+	ld a, [wPokedexEntryPageNum]
+	; a = page num, starting with 0 as page 1
+	hlcoord 18, 7
+	ld [hl], $61 ; p. vram1
+	inc hl
+	cp 10 ; if we are past nine pages
+	jr c, .checkdone
+	ld a, 9
+.checkdone
+	add $62 ; this is how we get the page num tile
+	ld [hl], a ; #
+	pop hl
+	ld a, [wPokedexEntryPageNum]
+	ret
+
+DexEntry_NextCategory:
+	ld [wPokedexEntryType], a
+	xor a
+	ld [wPokedexEntryPageNum], a
+	ld [wPokedexStatus], a
+	ret
+
+Print_Category_text:
+	; given: hl is bottom str ptr, de is top string ptr
+	; they all go at 9,6 and 9,7, all strings are 12 chars
+	push bc
+	push hl ; bottom str ptr
+	hlcoord 9, 6
+	ld a, " "
+	ld bc, 11
+	call ByteFill
+	hlcoord 9, 7
+	ld a, " "
+	ld bc, 9
+	call ByteFill	
+
+	hlcoord 9, 6
+	; de is already loaded
+	call PlaceString
+	hlcoord 9, 7
+	pop de ; bottom string ptr
+	call PlaceString
+	pop bc
+	ret
+
+UncaughtMon_Info_Erase_PageNum:
+; overwrite the A button with plain line
+; erase page num
+	hlcoord 18, 5
+	ld bc, 2
+	ld a, $4e ; category box border
+	call ByteFill
+	hlcoord 18, 7
+	ld bc, 2
+	ld a, " " ; category box border
+	call ByteFill	
+	ret

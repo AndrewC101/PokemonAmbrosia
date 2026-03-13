@@ -1,5 +1,4 @@
 ; Coordinate macros
-
 MACRO? hlcoord
 	coord hl, \#
 ENDM

@@ -91,6 +91,8 @@ GetFarWord::
 	rst Bankswitch
 	ret
 
+FarCopyColorWRAM::
+	ld a, BANK("GBC Video")
 FarCopyWRAM::
 ; copy bc bytes from hl to a:de
 	ldh [hTempBank], a

@@ -67,6 +67,7 @@ INCLUDE "constants/trainer_constants.asm"
 INCLUDE "constants/trainer_data_constants.asm"
 INCLUDE "constants/type_constants.asm"
 INCLUDE "constants/battle_tower_constants.asm"
+INCLUDE "pokedex_options.asm"
 
 if DEF(_CRYSTAL11_VC)
 INCLUDE "vc/pokecrystal11.constants.asm"

@@ -434,7 +434,7 @@ wBattleScriptBufferAddress:: dw
 
 wTurnEnded:: db
 
-	ds 1
+wIsConfusionDamage:: db
 
 wPlayerStats::
 wPlayerAttack::  dw
@@ -755,12 +755,14 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
+if DEF(_CRYSTAL11)
 wPokedexStatus:: db
 wPokedexDataEnd::
-wPokedexShinyToggle::
-; bit 0: set if displaying shiny palettes
-	db
+else
+wPokedexDataEnd::
 	ds 1
+endc
+	ds 2
 
 NEXTU
 ; pokegear
@@ -1594,7 +1596,14 @@ wCreditsLYOverride:: db
 NEXTU
 ; pokedex
 wPrevDexEntryJumptableIndex:: db
+if DEF(_CRYSTAL11)
 wPrevDexEntryBackup:: db
+else
+; BUG: Crystal 1.0 reused the same byte in WRAM for
+; wPokedexStatus and wPrevDexEntryBackup.
+wPokedexStatus::
+wPrevDexEntryBackup:: db
+endc
 wUnusedPokedexByte:: db
 
 NEXTU
@@ -2962,7 +2971,10 @@ wStartSecond:: db
 
 wRTC:: ds 4
 
-	ds 4
+wPokedexEntryType::     db
+wPokedexEntryPageNum::  db
+wPokedexEvoStage2::		db
+wPokedexEvoStage3::     db
 
 wDST::
 ; bit 7: dst
@@ -2979,7 +2991,9 @@ wGameTimeFrames::  db
 
 wCurDay:: db
 
-	ds 1
+wPokedexShinyToggle::
+; bit 0: set if displaying shiny palettes
+	db
 
 wObjectFollow_Leader:: db
 wObjectFollow_Follower:: db
@@ -3117,7 +3131,9 @@ wReachedHallOfOrigin::db
 wExpShare::db
 wExpShareText:: db
 wHalfDamage:: db
-	ds 3
+wLastDexMode:: db
+wCurPokedexColor:: db ; current dex color
+	db
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

@@ -404,6 +404,10 @@ PlacePartyMonEvoStoneCompatibility:
 	ld a, [hli]
 	and a
 	jr z, .nope
+	cp EVOLVE_STAT
+	jr nz, .not_four_bytes
+	inc hl
+.not_four_bytes	
 	inc hl
 	inc hl
 	cp EVOLVE_ITEM

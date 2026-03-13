@@ -1,4 +1,4 @@
-ContestMons:
+ContestMons::
 	;   %, species,   min, max
 	db 20, VENIPEDE,    7, 18
 	db 20, LARVESTA,      7, 18

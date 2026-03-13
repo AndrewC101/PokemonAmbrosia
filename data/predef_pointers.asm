@@ -77,4 +77,5 @@ PredefPointers::
 	add_predef PlaceStatusString
 	add_predef PrintEnemyMonTypes
 	add_predef CopyOTMonToTempMon
+	add_predef GetMonTypeIndex
 	dbw -1, DummyEndPredef ; pointless

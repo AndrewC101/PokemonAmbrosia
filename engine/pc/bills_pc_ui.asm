@@ -92,6 +92,7 @@ _BillsPC:
 	text_end
 
 BillsPC_LoadUI:
+    call ClearVBank1
 	call LoadFontsExtra
 
 	; Load relevant parts from the battle font

@@ -92,7 +92,6 @@ _BillsPC:
 	text_end
 
 BillsPC_LoadUI:
-    call ClearVBank1
 	call LoadFontsExtra
 
 	; Load relevant parts from the battle font
@@ -192,6 +191,7 @@ BillsPC_RefreshTheme:
 	jr _BillsPC_GetCGBLayout
 
 UseBillsPC:
+    call ClearVBank1
 	call ClearTilemap
 	call ClearPalettes
 	newfarcall WipeAttrmap

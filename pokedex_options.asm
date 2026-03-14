@@ -1,5 +1,5 @@
 	; Use Rangi's Gen3 Type GFX imported from Polished Crystal?
-DEF USE_GEN3_STYLE_TYPE_GFX EQU FALSE
+DEF USE_GEN3_STYLE_TYPE_GFX EQU TRUE
 	; if FALSE, uses 4-letter shorthand for Types
 	; see 'engine\pokedex\pokedex2.asm'
 

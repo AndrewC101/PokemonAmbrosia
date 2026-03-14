@@ -973,6 +973,17 @@ ENDC
 	farcall Pokedex_place_Mon_Icon
 	callfar PlaySpriteAnimations
 	farcall Pokedex_PlaceAnimatedFrontpic
+
+; DevNote - pics page hack to fix glitchy graphics
+	xor a
+	ldh [hBGMapMode], a
+	ld a, SCGB_POKEDEX_PICS
+	call Pokedex_GetSGBLayout
+	xor a
+	ldh [hObjectStructIndex], a
+	farcall SetDexMonIconColor_SpritePage
+	call WaitBGMap
+
 .spritepage_loop
 	callfar PlaySpriteAnimations
 	call JoyTextDelay

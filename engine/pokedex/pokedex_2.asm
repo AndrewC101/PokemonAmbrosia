@@ -473,6 +473,9 @@ DisplayDexMonType_CustomGFX:
 	ld a, c
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; load the tiles
+
+    inc a
+
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes
@@ -515,6 +518,9 @@ ENDC
 
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE	
 ; load type 2 tiles
+
+    inc a
+
 	ld hl, TypeDarkIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
 	call AddNTimes

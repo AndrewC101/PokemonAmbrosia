@@ -1881,16 +1881,16 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " Option ", $3c, -1
 
 .NewMode:
-	db "NEW #DEX MODE@"
+	db "New #dex Mode@"
 
 .OldMode:
-	db "OLD #DEX MODE@"
+	db "Old #dex Mode@"
 
 .AtoZMode:
-	db "A to Z MODE@"
+	db "A to Z Mode@"
 	
 .Color:
-	db "#DEX COLOR@"
+	db "#dex Colour@"
 
 .UnownMode:
 	db "Unown Mode@"
@@ -1930,42 +1930,42 @@ Pokedex_DrawColorScreenBG:
 	hlcoord 3, 11
 	ld de, .Gray
 	jp Pokedex_PlaceString
-	; hlcoord 3, 12
-	; ld de, .Mewtwo
-	; jp Pokedex_PlaceString
+	hlcoord 3, 12
+	ld de, .Mewtwo
+	jp Pokedex_PlaceString
 
  .Title:
-	db $3b, " COLORS ", $3c, -1
+	db $3b, " Colours ", $3c, -1
 
  .Red
-	db "RED    ", $4f, -1
+	db "Red    ", $4f, -1
 	
  .Blue
-	db "BLUE   ", $4f, -1
+	db "Blue   ", $4f, -1
 
  .Purple
-	db "PURPLE ", $4f, -1
+	db "Purple ", $4f, -1
 
  .Brown
-	db "BROWN  ", $4f, -1
+	db "Brown  ", $4f, -1
 
  .Green
-	db "GREEN  ", $4f, -1	
+	db "Green  ", $4f, -1
 	
  .Pink
-	db "PINK   ", $4f, -1	
+	db "Pink   ", $4f, -1
 	
  .Yellow
-	db "YELLOW ", $4f, -1	
+	db "Yellow ", $4f, -1
 	
  .Cyan
-	db "CYAN   ", $4f, -1
+	db "Cyan   ", $4f, -1
 	
  .Gray
-	db "GRAY   ", $4f, -1	
+	db "Gray   ", $4f, -1
 	
- ; .Mewtwo
-; 	db "MEWTWO ", $4f, -1	
+ .Mewtwo
+ 	db "Mewtwo ", $4f, -1
 
  Pokedex_UpdateColorOption:
 	ld de, .ArrowCursorData
@@ -1980,7 +1980,7 @@ Pokedex_DrawColorScreenBG:
 	ret
 	
  .ArrowCursorData:
-	db PAD_UP | PAD_DOWN, 10
+	db PAD_UP | PAD_DOWN, 9
 	dwcoord 2,  3  ; Red
 	dwcoord 2,  4  ; Blue
 	dwcoord 2,  5  ; Purple
@@ -1990,7 +1990,7 @@ Pokedex_DrawColorScreenBG:
 	dwcoord 2,  9  ; Yellow	
 	dwcoord 2,  10 ; Cyan
 	dwcoord 2,  11 ; Gray
-	; dwcoord 2,  12 ; Mewtwo
+	dwcoord 2,  12 ; Mewtwo - this doesn't work so isn't displayed
 	
  .do_menu_action
 	ld a, [wDexArrowCursorPosIndex]
@@ -2015,7 +2015,7 @@ Pokedex_DrawColorScreenBG:
 	dw .MenuAction_Yellow
 	dw .MenuAction_Cyan
 	dw .MenuAction_Gray
-	; dw .MenuAction_Mewtwo
+	dw .MenuAction_Mewtwo
 	
  .MenuAction_Red
 	ld b, DEXCOLOR_RED
@@ -2053,8 +2053,8 @@ Pokedex_DrawColorScreenBG:
 	ld b, DEXCOLOR_GRAY
 	jr .ChangeColor	
 
- ; .MenuAction_Mewtwo
-; 	ld b, DEXCOLOR_MEWTWO
+  .MenuAction_Mewtwo
+ 	ld b, DEXCOLOR_MEWTWO
 	
  .ChangeColor:
 	ld a, [wCurPokedexColor]

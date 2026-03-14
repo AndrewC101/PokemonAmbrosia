@@ -170,11 +170,11 @@ Pokedex_DetailedArea_rods:
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
 	ret
 .fishing_text:
-	db "FISHING    @"
+	db "Fishing    @"
 .rods_text:
-	db " RODS    @"
+	db " Rods    @"
 .group_text:
-	db "GROUP:@"
+	db "Group:@"
 Fishing_Print_Rod:
 	; day (e) /nite (d) encounter rates
 	ld a, [wPokedexEvoStage3]
@@ -254,11 +254,11 @@ Fishing_Print_Rod:
 	inc b ; we've printed one rod
 	ret
 oldrod_text:
-	db "  OLD ROD@"
+	db "  Old Rod@"
 goodrod_text:
-	db "  GOOD ROD@"
+	db "  Good Rod@"
 superrod_text:
-	db "  SUPER ROD@"
+	db "  Super Rod@"
 
 FishEntry_adjusthlcoord_rod:
 	; NOTE, preserve bc before calling this

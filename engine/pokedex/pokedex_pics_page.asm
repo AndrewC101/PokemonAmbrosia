@@ -1,24 +1,27 @@
 Pokedex_PlaceAnimatedFrontpic:
-	ld a, $1
-	ldh [rVBK], a
 	ld a, [wCurSpecies]
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
+	ld [wCurPartySpecies], a
+	farcall Pokedex_GetSelectedMon
 	call GetBaseData
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
-	hlcoord 1, 1
-	push hl
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
 	ld de, vTiles2
+
+	ld a, $1
+	ldh [rVBK], a
 	predef GetMonFrontpic
-	pop hl
 	xor a
 	ldh [hGraphicStartTile], a
 	lb bc, 7, 7
+	hlcoord 1, 1
 	predef PlaceGraphic
-	ld a, $0
-	ldh [rVBK], a
+	xor a
+    ldh [rVBK], a
 	ret
 
 Pokedex_PlaceBackPic:

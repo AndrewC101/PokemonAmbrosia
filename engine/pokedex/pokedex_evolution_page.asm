@@ -346,7 +346,7 @@ ENDC
 .cont_page_text:
 	db $63, $64, $65, $66, "@"
 .doesnt_evo_text:
-	db "DOES NOT EVOLVE@"
+	db "Does Not Evolve@"
 .exit_early_print_cont
 	pop af
 .exit_early_print_cont2
@@ -428,7 +428,7 @@ EVO_item:
 	call EVO_inchlcoord
 	ret
 .item_text:
-	db "ITEM@"
+	db "Item@"
 
 EVO_trade:
 	ld a, BANK("Evolutions and Attacks")
@@ -459,7 +459,7 @@ EVO_trade:
 	call EVO_inchlcoord
 	ret
 .trade_text:
-	db "TRADE@"
+	db "Trade@"
 .hold_text:
 	db " ", "+","@"
 
@@ -482,16 +482,16 @@ EVO_happiness:
 	call EVO_inchlcoord
 	ret
 .happiness_text:
-	db $6e, "@"; "HAPPINESS@"
+	db $6e, "@"; "Happiness@"
 .anytime_text:
 	db $6e, "@"
-	; db "ANYTIME@"
+	; db "Anytime@"
 .sunup_text:
 	db $6e, $71, $72, "@"
-	; db "MORN/DAY@"
+	; db "Morn/Day@"
 .nite_text:
 	db $6e, $73, "@"
-	; db "NITE@"
+	; db "Nite@"
 
 EVO_stats:
 	push hl ; level Needed byte
@@ -555,7 +555,7 @@ EVO_held:
 	call EVO_inchlcoord
 	ret
 .hold_text:
-	db "HOLD@"
+	db "Hold@"
 ENDC
 
 IF DEF(EVOLVE_HELD_LEVEL)
@@ -591,7 +591,7 @@ EVO_held_level:
 	call EVO_inchlcoord
 	ret
 .hold_text:
-	db "<DEX_LV_VRAM1>   + HOLD@"
+	db "<DEX_LV_VRAM1>   + Hold@"
 ENDC
 
 EVO_place_Mon_Types:
@@ -666,6 +666,8 @@ ENDC
 	predef GetMonTypeIndex
 	ld a, c
 
+	inc a
+
 IF EVO_HIDE_UNSEEN == TRUE
 	push af
 	call EVO_CheckSeenMon
@@ -726,6 +728,8 @@ ENDC
 	ld c, a ; type 2
 	predef GetMonTypeIndex
 	ld a, c ; type 2
+
+	inc a
 
 IF EVO_HIDE_UNSEEN == TRUE
 	push af

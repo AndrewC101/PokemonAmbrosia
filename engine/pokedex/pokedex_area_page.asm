@@ -28,11 +28,11 @@ DEF MAX_LINES_PRINTED_PER_PAGE EQU MAX_ENTRIES_PER_PAGE * 2 ; 6
 ; ; but  Crystal only has 2. please change this if you want to use the 3rd
 
 String_johto_text:
-	db "JOHTO:     @"
+	db "Johto:     @"
 String_kanto_text:
-	db "KANTO:     @"
+	db "Kanto:     @"
 String_swarm_text:
-	db "SWARM:     @"
+	db "SWwarm:     @"
 
 Pokedex_DetailedArea:
 	xor a
@@ -182,7 +182,7 @@ Pokedex_DetailedArea:
 	xor a
 	ret
 .none_found_text:
-	db "NOT LOCATED@"
+	db "Not Located@"
 
 Dex_FindFirstList:
 ; contest, trees(+rocks), grass swarm, grass, rods, water surf, surf
@@ -544,9 +544,9 @@ Pokedex_DetailedArea_grass:
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
 	ret
 .grass_walk_text:
-	; db "GRASS     @"
-	db " WALKING @"
-	; db "GRASS/WALKING@"
+	; db "Grass     @"
+	db " Walking @"
+	; db "Grass/Walking@"
 
 Pokedex_Parse_grass:
 	push hl ; first species byte in morn
@@ -792,7 +792,7 @@ Pokedex_DetailedArea_surf:
 	xor a ; to ensure a isnt actually returned at -1. 0 is for normal
 	ret
 .surfing_text:
-	db " SURFING @"
+	db " Surfing @"
 
 Pokedex_Parse_surf:
 	push hl ; first species byte, surfing has no time of day
@@ -1162,11 +1162,11 @@ Pokedex_DetailedArea_bugcontest:
 	call DexEntry_NextCategory
 	ret
 .bugcontest_text:
-	db "BUG       @" ; CATCH CONTEST@"
+	db "Bug       @" ; CATCH CONTEST@"
 .contest_text:
-	db " CONTEST @"	
+	db " Contest @"
 .park_text:
-	db " NATIONAL PARK@"
+	db " National Park@"
 .String_Tuesday:
 	db " Tuesdays@"
 .String_Thursday:
@@ -1278,7 +1278,7 @@ Pokedex_DetailedArea_roaming:
 	call DexEntry_NextCategory
 	ret
 .roaming_text:
-	db "ROAMING   @"
+	db "Roaming   @"
 
 Dex_Print_Roamer_Info:
 	; push bc ; line counter in c
@@ -1480,9 +1480,9 @@ Pokedex_DetailedArea_casino:
 	call DexEntry_NextCategory
 	ret
 .casino_text:
-	db "CASINO    @"
+	db "Casino    @"
 .prize_text:
-	db " PRIZE   @"
+	db " Prize   @"
 
 Print_casinomon:
 	; 'de' has casino map_id ptr
@@ -1540,7 +1540,7 @@ Print_casinomon:
 	pop hl ; current casinomon species ptr
 	ret
 .coins_text:
-	db "COINS@"
+	db "Coins@"
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; CASINO END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; NPC TRADES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1663,7 +1663,7 @@ Pokedex_DetailedArea_npctrades:
 .npctrade_text:
 	db "NPC       @"
 .trade_text:
-	db " TRADE   @"
+	db " Trade   @"
 
 Dex_Print_TradeMon_Info:
 	; 'de': location: 		hlcoord 2, 10
@@ -1694,13 +1694,13 @@ Dex_Print_TradeMon_Info:
 	ld de, .OT_Name_Text ; "OT/@"
 	call PlaceString
 	hlcoord 2, 12
-	ld de, .Nickname_Text ; "NAME/@"
+	ld de, .Nickname_Text ; "Name/@"
 	call PlaceString
 	hlcoord 2, 13
-	ld de, .GivenItem_Text ; "HOLDING/@"
+	ld de, .GivenItem_Text ; "Holding/@"
 	call PlaceString
 	hlcoord 2, 14
-	ld de, .WantedMon_Text ; "FOR/@"
+	ld de, .WantedMon_Text ; "For/@"
 	call PlaceString
 
 ; requested mon species, hlcoord 8, 15
@@ -1786,11 +1786,11 @@ Dex_Print_TradeMon_Info:
 .OT_Name_Text:
 	db "OT/@"
 .Nickname_Text:
-	db "NAME/@"
+	db "Name/@"
 .GivenItem_Text:
-	db "HOLD/@"
+	db "Hold/@"
 .WantedMon_Text:
-	db "FOR/@"	
+	db "For/@"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; NPC TRADES END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1935,9 +1935,9 @@ Pokedex_DetailedArea_eventwildmons:
 	jp Pokedex_DetailedArea_eventmons
 	
 .eventwildmon_text:
-	db "SPECIAL   @"
+	db "Special   @"
 .eventwildmon_text2:
-	db "ENCOUNTER@"
+	db "Encounter@"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; EVENT WILD MONS END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1961,7 +1961,7 @@ Pokedex_DetailedArea_giftmons:
 	jp Pokedex_DetailedArea_eventmons
 
 .giftmon_text:
-	db "GIFT      @"
+	db "Gift      @"
 	ret
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; GIFT MONS END ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

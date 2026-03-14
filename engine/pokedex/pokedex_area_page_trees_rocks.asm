@@ -235,11 +235,11 @@ Print_TreeTitle:
 	call Print_Category_text
 	ret
 .headbutt_tree_common_text:
-	db "COMMON     @"
+	db "Common     @"
 .headbutt_tree_rare_text:
-	db "RARE       @"
+	db "Rare       @"
 .trees_text:	
-	db " TREES   @"
+	db " Trees   @"
 
 inc_trees_rocksmash_map_index:
 	ld a, [wPokedexStatus]
@@ -423,9 +423,9 @@ Pokedex_DetailedArea_rocksmash:
 	call DexEntry_IncPageNum
 	ret
 .rocksmash_text1:
-	db "ROCK      @"
+	db "Rock      @"
 .rocksmash_text2:	
-	db " SMASH   @"
+	db " Smash   @"
 
 Dex_Check_rocksmash:
 ; check for matching mons in RockSmashMons

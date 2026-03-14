@@ -87,7 +87,7 @@ _BillsPC:
 	ret
 
 .Text_GottaHavePokemon:
-	; You gotta have #MON to call!
+	; You gotta have #mon to call!
 	text_far _PCGottaHavePokemonText
 	text_end
 
@@ -1451,7 +1451,7 @@ ManageBoxes:
 	jp .loop
 
 .ContinueBoxUse:
-	text "Continue BOX"
+	text "Continue Box"
 	line "operations?"
 	done
 
@@ -1523,27 +1523,27 @@ ManageBoxes:
 	db -1
 
 BillsPC_MenuStrings:
-	db "CANCEL@"
+	db "Cancel@"
 	; pokémon management options
-	db "WITHDRAW@"
-	db "DEPOSIT@"
-	db "STATS@"
-	db "SWITCH@"
-	db "MOVES@"
-	db "ITEM@"
-	db "RELEASE@"
+	db "Withdraw@"
+	db "Deposit@"
+	db "Stats@"
+	db "Switch@"
+	db "Moves@"
+	db "Item@"
+	db "Release@"
 	; box options
-	db "RENAME@"
-	db "THEME@"
-	db "RELEASE@"
+	db "Rename@"
+	db "Theme@"
+	db "Release@"
 	; holding a mail
-	db "TAKE@"
-	db "READ@"
+	db "Take@"
+	db "Read@"
 	; holding an item
-	db "MOVE@"
-	db "PACK@"
+	db "Move@"
+	db "Pack@"
 	; doesn't hold an item
-	db "GIVE@"
+	db "Give@"
 
 BillsPC_MenuJumptable:
 	dw DoNothing
@@ -2735,22 +2735,22 @@ BillsPC_ReleaseAll:
 
 .ReallyReleaseBox:
 	text "Really release the"
-	line "entire BOX?"
+	line "entire Box?"
 	done
 
 .CantRecallReleasedMons:
 	text "You can't recall"
-	line "released #MON."
+	line "released #mon."
 	cont "Are you sure?"
 	done
 
 .NothingThere:
-	text "The BOX is empty."
+	text "The Box is empty."
 	prompt
 
 .NothingReleased:
 	text "You can't release"
-	line "EGGs or #MON"
+	line "Eggs or #mon"
 	cont "with HM moves."
 	prompt
 
@@ -2758,7 +2758,7 @@ BillsPC_ReleaseAll:
 	text "Released @"
 	text_decimal wTextDecimalByte, 1, 2
 	text ""
-	line "#MON."
+	line "#mon."
 	prompt
 
 .TheRestWasnt:
@@ -3231,7 +3231,7 @@ BillsPC_SwapStorage:
 	prompt
 
 .BoxIsFull:
-	text "The BOX is full."
+	text "The Box is full."
 	prompt
 
 .IsHoldingMail:
@@ -3246,7 +3246,7 @@ BillsPC_SwapStorage:
 
 BillsPC_LastPartyMon:
 	text "That's your last"
-	line "healthy #MON!"
+	line "healthy #mon!"
 	prompt
 
 BillsPC_MustSaveToContinue:

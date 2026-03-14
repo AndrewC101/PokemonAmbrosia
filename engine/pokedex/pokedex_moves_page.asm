@@ -1,7 +1,7 @@
 Field_Moves_List:
 	db TELEPORT, SOFTBOILED, MILK_DRINK, \
-		HEADBUTT, ROCK_SMASH, DIG,\
-		CUT, FLY, SURF, STRENGTH, FLASH, WATERFALL, WHIRLPOOL, JUDGEMENT
+		HEADBUTT, ROCK_SMASH, DIG, JUDGEMENT, \
+		CUT, FLY, SURF, STRENGTH, FLASH, WATERFALL, WHIRLPOOL
 Field_Moves_Method_List:
 ; 0 means lvl-up only
 	db 0, 0, 0, TM01 + 1, TM01 + 7, TM01 + 11, TM01 + 27, HM01, \
@@ -15,21 +15,21 @@ DEF MAX_NUM_MOVES EQU 7
 ; must fill in spaces to erase other text already printed
 ; top string goes in 8, 6, bottom in 8, 7
 String_LVL_text:
-	db "LVL-UP     @"
+	db "Lvl-Up     @"
 String_FIELD_text:
-	db "FIELD      @"
+	db "Field      @"
 String_EGG_text:
-	db "EGG        @"
+	db "Egg        @"
 String_MOVES_text:
-	db " MOVES     @"
+	db " Moves     @"
 String_TECH_text:
-	db "TECHNICAL  @"
+	db "Technical  @"
 String_MACHINES_text:
-	db " MACHINES  @"
+	db " Machines  @"
 String_MOVE_text:
-	db "MOVE       @"
+	db "Move       @"
 String_TUTOR_text:
-	db " TUTOR     @"
+	db " Tutor     @"
 Print_Category_MOVES_text:
 	ld hl, String_MOVES_text
 	jp Print_Category_text
@@ -801,7 +801,7 @@ Pokedex_anymoreMTs:
 ; 	call PlaceString
 ; 	ret
 ; .dex_HM_text:
-; 	db "HIDDEN MACHINES@"
+; 	db "Hidden Machines@"
 
 ; Pokedex_anymoreHMs:
 ; 	ld a, NUM_HMS - 1
@@ -837,4 +837,4 @@ Pokedex_anymoreMTs:
 ; 	ret
 
 DexEntry_NONE_text:
-	db "NONE@"
+	db "None@"

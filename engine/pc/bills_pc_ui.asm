@@ -191,7 +191,13 @@ BillsPC_RefreshTheme:
 	jr _BillsPC_GetCGBLayout
 
 UseBillsPC:
+; DevNote - Bills PC init state, this is needed to prevent some bugs
+; ==================================================================
     call ClearVBank1
+    xor a
+    ld [wBillsPC_CursorHeldBox], a
+; ==================================================================
+
 	call ClearTilemap
 	call ClearPalettes
 	newfarcall WipeAttrmap

@@ -603,7 +603,7 @@ EcruteakCity_MapEvents:
 	coord_event 5, 6, SCENE_ALWAYS, BurntTowerBlockScript
 
 	def_bg_events
-	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
+	bg_event 11, 21, BGEVENT_READ, EcruteakCitySign
 	bg_event 38, 10, BGEVENT_READ, TinTowerSign
 	bg_event  8, 28, BGEVENT_READ, EcruteakGymSign
 	bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign

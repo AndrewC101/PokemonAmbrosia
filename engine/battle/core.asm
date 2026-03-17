@@ -6748,8 +6748,8 @@ MoveInfoBox:
 	hlcoord 6, 10
 	call PrintNum
 	ld [hl], "a" ; displays percent symbol
+	;ld [hl], '<%>'
 	hlcoord 9, 9
-
 .done
 	ret
 

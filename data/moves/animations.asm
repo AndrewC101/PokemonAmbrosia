@@ -1258,6 +1258,14 @@ BattleAnim_Thunder:
 	anim_ret
 
 
+BattleAnim_PsychoSlash:
+	anim_2gfx BATTLE_ANIM_GFX_WHIP, BATTLE_ANIM_GFX_HIT
+	anim_bgeffect BATTLE_BG_EFFECT_PSYCHIC, $0, $0, $0
+	anim_call BattleAnim_AirSlashSub
+	anim_incbgeffect BATTLE_BG_EFFECT_PSYCHIC
+	anim_wait 4
+	anim_ret
+
 BattleAnim_AirSlash:
 	anim_2gfx BATTLE_ANIM_GFX_WHIP, BATTLE_ANIM_GFX_HIT
 	anim_jump BattleAnim_AirSlashSub
@@ -1265,13 +1273,13 @@ BattleAnim_AirSlash:
 BattleAnim_AirSlashSub:
 .loop
 	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 64, 80, $3
+	anim_obj BATTLE_ANIM_OBJ_SONICBOOM_JP, 64, 80, $3
 	anim_wait 4
 	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 64, 88, $2
+	anim_obj BATTLE_ANIM_OBJ_SONICBOOM_JP, 64, 88, $2
 	anim_wait 4
 	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 64, 96, $4
+	anim_obj BATTLE_ANIM_OBJ_SONICBOOM_JP, 64, 96, $4
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_wait 16
@@ -1284,6 +1292,15 @@ BattleAnim_AirSlashSub:
 	anim_sound 0, 1, SFX_CUT
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnim_NightSlash:
+	anim_1gfx BATTLE_ANIM_GFX_CUT
+	anim_bgp $1b
+	anim_obp0 0, 1, 2, 3
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $2, $0
+	anim_call BattleAnim_SlashPartSub
+	anim_bgp $e4
 	anim_ret
 
 BattleAnim_RazorWind:
@@ -1861,22 +1878,19 @@ BattleAnim_Screech:
 	anim_ret
 
 BattleAnim_MoonBlast:
-    anim_2gfx BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_CHARGE
+	anim_3gfx BATTLE_ANIM_GFX_GLOBE, BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_CHARGE
 	anim_bgp $1b
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $30
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $31
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $32
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $33
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $34
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $35
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $36
-	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 44, 88, $37
+	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 0, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 16, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 32, 72, $0
+	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 48, 88, $0
+	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 64, 104, $0
 	anim_wait 1
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 96
 	anim_clearobjs
 	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 92, $4
+	anim_obj BATTLE_ANIM_OBJ_DRAGONBREATH, 64, 92, $4
 	anim_wait 16
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 132, 28, $0
@@ -2086,6 +2100,24 @@ BattleAnim_TakeDown:
 	anim_ret
 
 BattleAnim_BraveBird:
+BattleAnim_SkyCleave:
+	anim_1gfx BATTLE_ANIM_GFX_SKY_ATTACK
+	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 32
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj BATTLE_ANIM_OBJ_SKY_ATTACK, 48, 88, $40
+	anim_wait 64
+	anim_incobj 1
+	anim_wait 21
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_wait 64
+	anim_incobj 1
+	anim_wait 32
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 16
+	anim_ret
+
 BattleAnim_DragonCrash:
 BattleAnim_DoubleEdge:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
@@ -2318,23 +2350,6 @@ BattleAnim_DrillPeck:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_NightSlash:
-	anim_1gfx BATTLE_ANIM_GFX_CUT
-	anim_bgp $1b
-	anim_obp0 0, 1, 2, 3
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $2, $0
-	anim_call BattleAnim_Slash
-	anim_bgp $e4
-	anim_ret
-
-
-BattleAnim_PsychoSlash:
-	anim_2gfx BATTLE_ANIM_GFX_WHIP, BATTLE_ANIM_GFX_HIT
-	anim_bgeffect BATTLE_BG_EFFECT_PSYCHIC, $0, $0, $0
-	anim_call BattleAnim_AirSlashSub
-	anim_incbgeffect BATTLE_BG_EFFECT_PSYCHIC
-	anim_wait 4
-	anim_ret
 
 BattleAnimSub_SpeedLines:
 	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 24, 88, $2
@@ -3395,7 +3410,7 @@ BattleAnim_FlashCannon:
 	;anim_obj BATTLE_ANIM_OBJ_GRAY_GLOW, 48, 96, $0
 .loop
 	anim_sound 0, 1, SFX_AEROBLAST
-	anim_obj BATTLE_ANIM_OBJ_OCTAZOOKA, 64, 88, $4
+	anim_obj BATTLE_ANIM_OBJ_DRAGONBREATH, 64, 88, $4
 	anim_wait 4
 	anim_loop 16, .loop
 	anim_incobj 1
@@ -4328,7 +4343,6 @@ BattleAnim_PsychUp:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_SkyCleave:
 BattleAnim_Extremespeed:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_CUT
 	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, BG_EFFECT_USER, $0

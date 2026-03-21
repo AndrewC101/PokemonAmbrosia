@@ -2373,6 +2373,7 @@ BattleCommand_ApplyDamage:
 	jp StdBattleTextbox
 
 .focus_band_text
+    farcall ItemRecoveryAnim
 	call GetOpponentItem
     ld a, b
 	cp HELD_FOCUS_BAND

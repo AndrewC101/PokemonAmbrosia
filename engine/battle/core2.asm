@@ -642,12 +642,47 @@ RuthlessClasses:
     db ROLE_PLAYER_SHINY
     db -1
 
-BattleInfoOrForfeit:
-    ld hl, SeeBattleInfoText
-    call PrintText
-    call YesNoBox
-    jr nc, .seeInfo
+BattleChoiceMenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 6, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw .MenuData
+	db 1
 
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_WRAP
+	db 2
+	db "Battle Data@"
+	db "Forfeit?@"
+
+BattleChoiceMenu:
+	ld hl, BattleChoiceMenuHeader
+	call LoadMenuHeader
+	call VerticalMenu
+	call CloseWindow
+	call WaitBGMap
+
+	; press B to exit
+    ldh a, [hJoyPressed]
+    and B_BUTTON
+    ret nz
+
+    ; options when pressing A
+	ld a, [wMenuCursorY]
+	dec a
+	jr z, .BattleData
+	dec a
+	jr z, .Forfeit
+	ret
+
+.BattleData
+	call ClearSprites
+	jp PrintBattleInfo
+
+.Forfeit
+	; fallthrough
+
+BattleInfoOrForfeit:
+	call ClearSprites
     ld hl, ForfeitMatchText
     call PrintText
     call NoYesBox
@@ -683,12 +718,6 @@ BattleInfoOrForfeit:
     xor a
     ld hl, BattleText_DoesNotAccept
     jp StdBattleTextbox
-.seeInfo
-    jp PrintBattleInfo
-
-SeeBattleInfoText:
-    text "See Battle Info?"
-    done
 
 ForfeitMatchText:
     text "Forfeit Battle?"

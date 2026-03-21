@@ -9492,7 +9492,7 @@ TryToRunAwayFromBattle:
 	jr .print_inescapable_text
 
 .cant_run_from_trainer
-    farcall BattleInfoOrForfeit
+    farcall BattleChoiceMenu
 	jp c, SetEnemyTurn
 	ret
 

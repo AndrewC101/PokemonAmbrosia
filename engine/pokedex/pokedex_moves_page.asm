@@ -41,13 +41,12 @@ DisplayDexMonMoves::
 	call Pokedex_Clearbox
 
 	; the byte flag that tells us which type of table we're currently on
-	; 0 = Info, 1 = Stats, 2 = LVL UP, 3 = FIELD, 4 =  EGG, 5 = TMs, 6 = HMs, 7 = MTs
-	
+
 	ld a, [wPokedexEntryType]
 	cp DEXENTRY_LVLUP
 	jr z, .LvlUpLearnset
-	cp DEXENTRY_EGG
-	jr z, .EggMoves
+	;cp DEXENTRY_EGG
+	;jr z, .EggMoves
 	cp DEXENTRY_FIELD
 	jr z, .Field_Moves
 	cp DEXENTRY_TMS
@@ -69,17 +68,17 @@ DisplayDexMonMoves::
 	call Pokedex_Calc_LvlMovesPtr
 	call Pokedex_Print_NextLvlMoves
 	ret
-.EggMoves
+;.EggMoves
 ; place category name
-	ld de, String_EGG_text
-	call Print_Category_MOVES_text
+;	ld de, String_EGG_text
+;	call Print_Category_MOVES_text
 
-	ld a, DEXENTRY_EGG
-	ld [wPokedexEntryType], a
-	call Pokedex_Calc_EggMovesPtr
-	ret z
-	call Pokedex_Print_Egg_moves
-	ret
+;	ld a, DEXENTRY_EGG
+;	ld [wPokedexEntryType], a
+;	call Pokedex_Calc_EggMovesPtr
+;	ret z
+;	call Pokedex_Print_Egg_moves
+;	ret
 .Field_Moves
 ; place category name
 	ld de, String_FIELD_text
@@ -300,7 +299,8 @@ Pokedex_PrintFieldMoves:
 	ld [wPokedexStatus], a ; moves machines index
 	jp .fm_loop
 .done
-	ld a, DEXENTRY_EGG
+	;ld a, DEXENTRY_EGG
+	ld a, DEXENTRY_TMS
 	call DexEntry_NextCategory
 	ld a, c
 	and a
@@ -462,96 +462,95 @@ Pokedex_CheckLvlUpMoves: ; used by pokedex field moves
 	ld c, a
 	ret
 
-Pokedex_Calc_EggMovesPtr:
-	ld a, DEXENTRY_EGG
-	ld [wPokedexEntryType], a
-	call Pokedex_PrintPageNum ; page num is also returned in a
-	ld a, [wPokedexEntryPageNum]
-	ld c, MAX_NUM_MOVES ; we can print MAX_NUM_MOVES Egg moves per page
-	call SimpleMultiply ; double this num and add to first byte after Evo's 0
-	ld b, 0
-	ld c, a
-	push bc
+;Pokedex_Calc_EggMovesPtr:
+;	ld a, DEXENTRY_EGG
+;	ld [wPokedexEntryType], a
+;	call Pokedex_PrintPageNum ; page num is also returned in a
+;	ld a, [wPokedexEntryPageNum]
+;	ld c, MAX_NUM_MOVES ; we can print MAX_NUM_MOVES Egg moves per page
+;	call SimpleMultiply ; double this num and add to first byte after Evo's 0
+;	ld b, 0
+;	ld c, a
+;	push bc
 ; Step 4: Get First byte of learnset
-	callfar GetPreEvolution ; changes wCurPartyMon
-	callfar GetPreEvolution ; changes wCurPartyMon
-	ld a, [wCurPartySpecies]
-	dec a ; Bulbasaur is No 1 but entry ZERO
-	ld b, 0
-	ld c, a
-	ld hl, EggMovePointers
-	add hl, bc ; trying to add the species number in only 'a' will overflow a
-	add hl, bc ; add twice to double the index, words/PTRs are TWO bytes ea
-	ld a, [wCurSpecies]
-	ld [wCurPartySpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
-
-	ld a, BANK(EggMovePointers)
-	call GetFarWord
-.check_if_any
-	ld a, BANK("Egg Moves")
-	call GetFarByte ; a will be -1 if no egg moves
-	pop bc
-	add hl, bc
-	cp -1
-	ret nz
+;	callfar GetPreEvolution ; changes wCurPartyMon
+;	callfar GetPreEvolution ; changes wCurPartyMon
+;	ld a, [wCurPartySpecies]
+;	dec a ; Bulbasaur is No 1 but entry ZERO
+;	ld b, 0
+;	ld c, a
+;	ld hl, EggMovePointers
+;	add hl, bc ; trying to add the species number in only 'a' will overflow a
+;	add hl, bc ; add twice to double the index, words/PTRs are TWO bytes ea
+;	ld a, [wCurSpecies]
+;	ld [wCurPartySpecies], a
+;	ld [wTempSpecies], a
+;	ld [wTempMonSpecies], a
+;	ld a, BANK(EggMovePointers)
+;	call GetFarWord
+;.check_if_any
+;	ld a, BANK("Egg Moves")
+;	call GetFarByte ; a will be -1 if no egg moves
+;	pop bc
+;	add hl, bc
+;	cp -1
+;	ret nz
 	; if we reach here, the mon has no egg moves at all
 	; will not call Pokedex_Print_Egg_moves
 	; increment to next category
-	ld a, DEXENTRY_TMS
-	call DexEntry_NextCategory
+;	ld a, DEXENTRY_TMS
+;	call DexEntry_NextCategory
 	;print NONE
-	hlcoord 3, 9
-	ld de, DexEntry_NONE_text
-	call PlaceString
-	ret
+;	hlcoord 3, 9
+;	ld de, DexEntry_NONE_text
+;	call PlaceString
+;	ret
 
 Pokedex_Print_Egg_moves:
 ; Print No more than MAX_NUM_MOVES moves
-	ld b, 0
-	ld c, 0 ; our move counter, max of MAX_NUM_MOVES - 1 for MAX_NUM_MOVES moves
-	; our adjusted pointer based on page num is in hl
-.Egg_loop
-	ld a, BANK("Egg Moves")
-	call GetFarByte ; EGG Move, or -1 for end
-	cp -1
-	jr z, .FoundEnd
-	inc hl ; Moves HL to next Byte
-	push hl
-	ld [wNamedObjectIndex], a ; all the "Name" Funcs use this 
-	call GetMoveName ; returns the string pointer in de
-	hlcoord 3, 9
-	call DexEntry_adjusthlcoord
-	push bc
-	call PlaceString ; places Move Name
-	pop bc
-	pop hl
-	ld a, MAX_NUM_MOVES - 1 ; means we just printed last move on page
-	cp c
-	jr z, .MaxedPage
-	inc c
-	jr .Egg_loop
-.MaxedPage ; Printed MAX_NUM_MOVES moves. Moves are still left. Inc the Page counter
+;	ld b, 0
+;	ld c, 0 ; our move counter, max of MAX_NUM_MOVES - 1 for MAX_NUM_MOVES moves
+;	; our adjusted pointer based on page num is in hl
+;.Egg_loop
+;	ld a, BANK("Egg Moves")
+;	call GetFarByte ; EGG Move, or -1 for end
+;	cp -1
+;	jr z, .FoundEnd
+;	inc hl ; Moves HL to next Byte
+;	push hl
+;	ld [wNamedObjectIndex], a ; all the "Name" Funcs use this
+;	call GetMoveName ; returns the string pointer in de
+;	hlcoord 3, 9
+;	call DexEntry_adjusthlcoord
+;	push bc
+;	call PlaceString ; places Move Name
+;	pop bc
+;	pop hl
+;	ld a, MAX_NUM_MOVES - 1 ; means we just printed last move on page
+;	cp c
+;	jr z, .MaxedPage
+;	inc c
+;	jr .Egg_loop
+;.MaxedPage ; Printed MAX_NUM_MOVES moves. Moves are still left. Inc the Page counter
 ; CheckNextByte, we dont want blank screen if we just printed last move in slot 5
-	ld a, BANK("Egg Moves")
-	call GetFarByte; Move # returned in "a"
-	cp -1
-	jr z, .FoundEnd
-	call DexEntry_IncPageNum
-	ld a, [wCurPartySpecies]
-	ld [wCurSpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
-	ret
-.FoundEnd
-	ld a, DEXENTRY_TMS
-	call DexEntry_NextCategory
-	ld a, [wCurPartySpecies]
-	ld [wCurSpecies], a
-	ld [wTempSpecies], a
-	ld [wTempMonSpecies], a
-	ret
+;	ld a, BANK("Egg Moves")
+;	call GetFarByte; Move # returned in "a"
+;	cp -1
+;	jr z, .FoundEnd
+;	call DexEntry_IncPageNum
+;	ld a, [wCurPartySpecies]
+;	ld [wCurSpecies], a
+;	ld [wTempSpecies], a
+;	ld [wTempMonSpecies], a
+;	ret
+;.FoundEnd
+;	ld a, DEXENTRY_TMS
+;	call DexEntry_NextCategory
+;	ld a, [wCurPartySpecies]
+;	ld [wCurSpecies], a
+;	ld [wTempSpecies], a
+;	ld [wTempMonSpecies], a
+;	ret
 
 Pokedex_PrintTMs:
 	call Pokedex_PrintPageNum ; page num is also returned in a

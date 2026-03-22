@@ -1904,19 +1904,19 @@ Pokedex_DrawColorScreenBG:
 	ld de, .Title
 	call Pokedex_PlaceString
 	hlcoord 3, 3
-	ld de, .Red
+	ld de, .Green
 	call Pokedex_PlaceString	
 	hlcoord 3, 4
 	ld de, .Blue
 	call Pokedex_PlaceString
 	hlcoord 3, 5
-	ld de, .Purple
+	ld de, .Red
 	call Pokedex_PlaceString
 	hlcoord 3, 6
-	ld de, .Brown
+	ld de, .Purple
 	call Pokedex_PlaceString
 	hlcoord 3, 7
-	ld de, .Green
+	ld de, .Brown
 	call Pokedex_PlaceString
 	hlcoord 3, 8
 	ld de, .Pink
@@ -1981,11 +1981,11 @@ Pokedex_DrawColorScreenBG:
 	
  .ArrowCursorData:
 	db PAD_UP | PAD_DOWN, 9
-	dwcoord 2,  3  ; Red
+	dwcoord 2,  3  ; Green
 	dwcoord 2,  4  ; Blue
-	dwcoord 2,  5  ; Purple
-	dwcoord 2,  6  ; Brown
-	dwcoord 2,  7  ; Green
+	dwcoord 2,  5  ; Red
+	dwcoord 2,  6  ; Purple
+	dwcoord 2,  7  ; Brown
 	dwcoord 2,  8  ; Pink
 	dwcoord 2,  9  ; Yellow	
 	dwcoord 2,  10 ; Cyan
@@ -2006,11 +2006,11 @@ Pokedex_DrawColorScreenBG:
 	ret
 
  .MenuActionJumptable:
-	dw .MenuAction_Red
+	dw .MenuAction_Green
 	dw .MenuAction_Blue
+	dw .MenuAction_Red
 	dw .MenuAction_Purple
 	dw .MenuAction_Brown
-	dw .MenuAction_Green
 	dw .MenuAction_Pink
 	dw .MenuAction_Yellow
 	dw .MenuAction_Cyan

@@ -383,6 +383,7 @@ ApplyHPBarPals:
 	ld bc, 4
 	ld a, BANK(wBGPals2)
 	call FarCopyWRAM
+	; request palette update
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
@@ -405,6 +406,32 @@ ApplyHPBarPals:
 	ld a, e
 	call FillBoxCGB
 	ret
+
+LoadPlayerStatusIconPalette:
+	ld de, wBattleMonStatus
+	call GetStatusConditionIndex
+	ld hl, StatusIconPals
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS color 1
+	ld bc, 2 ; number of bytes to copy
+	ld a, BANK("GBC Video") ;BANK(wBGPals2); BANK(wGBCPalettes)
+	jp FarCopyWRAM
+
+LoadEnemyStatusIconPalette:
+	ld de, wEnemyMonStatus
+	call GetStatusConditionIndex
+	ld hl, StatusIconPals
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS color 2
+	ld bc, 2
+	ld a, BANK("GBC Video") ;BANK(wBGPals2); BANK(wGBCPalettes)
+	jp FarCopyWRAM
 
 LoadStatsScreenPals:
 	call CheckCGB
@@ -1395,6 +1422,9 @@ INCLUDE "gfx/battle/hp_bar.pal"
 
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
+
+StatusIconPals:
+INCLUDE "gfx/battle/status.pal"
 
 INCLUDE "data/pokemon/palettes.asm"
 

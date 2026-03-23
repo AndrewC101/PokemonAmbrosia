@@ -153,10 +153,11 @@ INCLUDE "data/trainers/parties.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
+
+
+SECTION "Battle Core 2", ROMX
+
 INCLUDE "data/battle/effect_command_pointers.asm"
-
-SECTION "Battle Core2", ROMX
-
 INCLUDE "engine/battle/core2.asm"
 
 SECTION "bank10", ROMX
@@ -431,7 +432,6 @@ SECTION "bank3F", ROMX
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
-
 
 SECTION "mobile40", ROMX
 

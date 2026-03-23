@@ -62,3 +62,9 @@ INCBIN "gfx/frames/map_entry_sign.2bpp"
 
 FontsExtra2_UpArrowGFX:
 INCBIN "gfx/font/up_arrow.2bpp"
+
+StatusIconGFX:
+INCBIN "gfx/battle/status.2bpp"
+
+EnemyStatusIconGFX:
+INCBIN "gfx/battle/status_enemy.2bpp"

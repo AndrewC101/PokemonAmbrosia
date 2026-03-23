@@ -3158,6 +3158,7 @@ ForcePlayerMonChoice:
 	call ClearSprites
 	call ClearBGPalettes
 	call _LoadHPBar
+	call _LoadStatusIcons
 	call ExitMenu
 	call LoadTilemapToTempTilemap
 	call WaitBGMap
@@ -3179,6 +3180,7 @@ ForcePlayerMonChoice:
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
+	call _LoadStatusIcons
 	call CloseWindow
 	call GetMemSGBLayout
 	call SetDefaultBGPAndOBP
@@ -4012,6 +4014,7 @@ OfferSwitch:
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
+	call _LoadStatusIcons
     call GetBattleMonBackpic
 	call WaitBGMap
 	pop af
@@ -4026,6 +4029,7 @@ OfferSwitch:
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
+	call _LoadStatusIcons
     call GetBattleMonBackpic
 	call WaitBGMap
 
@@ -5585,6 +5589,13 @@ DrawPlayerHUD:
 	ld b, a
 	call FillInExpBar
 	pop de
+
+	; Status icon
+	farcall LoadPlayerStatusIcon
+	hlcoord 12, 8
+	ld a, $db ; corresponds to vTiles1 tile $5e
+	ld [hli], a
+	ld [hl], $dc ; corresponds to vTiles1 tile $5f
 	ret
 
 UpdatePlayerHPPal:
@@ -5657,22 +5668,20 @@ PrintPlayerHUD:
 	ld a, '♀'
 
 .got_gender_char
-	hlcoord 17, 8
+	hlcoord 18, 8
 	ld [hl], a
-	hlcoord 14, 8
-	push af ; back up gender
-	push hl
-	ld de, wBattleMonStatus
-	predef PlaceNonFaintStatus
-	pop hl
-	pop bc
-	ret nz
-	ld a, b
-	cp ' '
-	jr nz, .copy_level ; male or female
-	dec hl ; genderless
+	hlcoord 11, 8
 
-.copy_level
+	;push af ; back up gender
+	;push hl
+	;; print status condition
+	;ld de, wBattleMonStatus
+	;predef PlaceNonFaintStatus
+	;pop hl
+	;pop bc
+
+	;print level
+	hlcoord 15, 8
 	ld a, [wBattleMonLevel]
 	ld [wTempMonLevel], a
 	jp PrintLevel
@@ -5736,19 +5745,17 @@ DrawEnemyHUD:
 	hlcoord 9, 1
 	ld [hl], a
 
+	; print pokemon status (if any)
+	;hlcoord 2, 1
+	;push af ;backup gender
+	;push hl
+	;ld de, wEnemyMonStatus
+	;predef PlaceNonFaintStatus
+	;pop hl
+	;pop bc
+
+	; print pokemon level
 	hlcoord 6, 1
-	push af
-	push hl
-	ld de, wEnemyMonStatus
-	predef PlaceNonFaintStatus
-	pop hl
-	pop bc
-	jr nz, .skip_level
-	ld a, b
-	cp ' '
-	jr nz, .print_level
-	dec hl
-.print_level
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
@@ -5818,6 +5825,13 @@ DrawEnemyHUD:
 	hlcoord 2, 2
 	ld b, 0
 	call DrawBattleHPBar
+
+	farcall LoadEnemyStatusIcon
+	hlcoord 2, 1
+	ld a, $dd ; corresponds to vTiles1 tile $5d
+	ld [hli], a
+	ld [hl], $de ; corresponds to vTiles1 tile $5e
+	jp FinishBattleAnim
 	ret
 
 UpdateEnemyHPPal:
@@ -6076,6 +6090,7 @@ BattleMenuPKMN_Loop:
 	call ClearPalettes
 	call DelayFrame
 	call _LoadHPBar
+	call _LoadStatusIcons
 	call CloseWindow
     call GetBattleMonBackpic
 	call WaitBGMap
@@ -6165,6 +6180,7 @@ TryPlayerSwitch:
 	call DelayFrame
 	call ClearSprites
 	call _LoadHPBar
+	call _LoadStatusIcons
 	call CloseWindow
     call GetBattleMonBackpic
 	call WaitBGMap
@@ -7058,6 +7074,10 @@ CheckEnemyLockedIn:
 
 LinkBattleSendReceiveAction:
 	farcall _LinkBattleSendReceiveAction
+	ret
+
+_LoadStatusIcons:
+	farcall LoadStatusIcons
 	ret
 
 LoadEnemyMon:

@@ -142,3 +142,40 @@ LoadStatsScreenPageTilesGFX:
 	lb bc, BANK(StatsScreenPageTilesGFX), 17
 	call Get2bppViaHDMA
 	ret
+
+LoadPlayerStatusIcon:
+	push de
+	ld de, wBattleMonStatus
+	call GetStatusConditionIndex
+	ld hl, StatusIconGFX
+	ld bc, 2 tiles
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles1 tile $5b
+	lb bc, BANK(StatusIconGFX), 2
+	call Request2bpp
+	farcall LoadPlayerStatusIconPalette
+	pop de
+	ret
+
+LoadStatusIcons:
+	call LoadPlayerStatusIcon
+	; fallthrough
+
+LoadEnemyStatusIcon:
+	push de
+	ld de, wEnemyMonStatus
+	call GetStatusConditionIndex
+
+	ld hl, EnemyStatusIconGFX
+	ld bc, 2 tiles
+	call AddNTimes
+	ld d, h
+	ld e, l
+	ld hl, vTiles1 tile $5d
+	lb bc, BANK(EnemyStatusIconGFX), 2
+	call Request2bpp
+	farcall LoadEnemyStatusIconPalette
+	pop de
+	ret

@@ -40,7 +40,6 @@ PredefPointers::
 	add_predef CopyMonToTempMon
 	add_predef ListMoves
 	add_predef PlaceNonFaintStatus
-	add_predef Unused_PlaceEnemyHPLevel
 	add_predef ListMovePP
 	add_predef GetGender
 	add_predef StatsScreenInit

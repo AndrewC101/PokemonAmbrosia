@@ -639,6 +639,7 @@ Route26CrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal5LosesText, Crystal5WinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_5

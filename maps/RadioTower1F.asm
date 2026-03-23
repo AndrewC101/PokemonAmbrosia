@@ -554,6 +554,7 @@ RadioTowerCrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal4LosesText, Crystal4WinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_4

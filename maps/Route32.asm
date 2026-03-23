@@ -841,6 +841,7 @@ Route32CrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal2LosesText, Crystal2WinsText
 	loadtrainer CRYSTAL, CRYSTAL_2
 	startbattle

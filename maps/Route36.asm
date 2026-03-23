@@ -752,6 +752,7 @@ Route36CrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal3LosesText, Crystal3WinsText
 	loadtrainer CRYSTAL, CRYSTAL_3
 	startbattle

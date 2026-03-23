@@ -253,6 +253,7 @@ PalletTownCrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal6LosesText, Crystal6WinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_6

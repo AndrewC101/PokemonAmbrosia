@@ -497,6 +497,7 @@ CrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal1LosesText, Crystal1WinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	loadtrainer CRYSTAL, CRYSTAL_1
@@ -677,6 +678,8 @@ FinalCrystalScript:
 	writetext CrystalFinalPreBattleText
 	waitbutton
 	closetext
+
+    special HealParty
 	winlosstext CrystalFinalLossText, CrystalFinalWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_7

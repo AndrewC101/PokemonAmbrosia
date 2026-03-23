@@ -744,6 +744,11 @@ WriteIconPaletteData:
 	jr c, .got_shininess
 	dec b
 .got_shininess
+    ld a, [wMarkOfGod]
+    and a
+    jr z, .noMark
+    inc b
+.noMark
 	newfarcall GetMonPalInBCDE
 	ld h, b
 	ld l, c

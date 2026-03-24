@@ -149,11 +149,26 @@ _CGB_FinishBattleScreenLayout:
 
 	hlcoord 12, 8, wAttrmap
 	lb bc, 1, 2
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .playerStatus
+	ld a, PAL_BATTLE_BG_PLAYER
+	jr .fillPlayer
+.playerStatus
 	ld a, PAL_BATTLE_BG_STATUS ; player
+.fillPlayer
 	call FillBoxCGB
+
 	hlcoord 2, 1, wAttrmap
 	lb bc, 1, 2
+	ld a, [wEnemyMonStatus]
+	and a
+	jr nz, .enemyStatus
+	ld a, PAL_BATTLE_BG_PLAYER
+	jr .fillEnemy
+.enemyStatus
 	ld a, PAL_BATTLE_BG_STATUS ; enemy
+.fillEnemy
 	call FillBoxCGB
 
 	hlcoord 0, 12, wAttrmap
@@ -700,28 +715,6 @@ BillsPC_PreviewTheme:
 .GotPalette:
 	call WipeAttrmap
 	hlcoord 1, 4, wAttrmap
-	lb bc, 7, 7
-	ld a, $1 ; mon palette
-	call FillBoxCGB
-	call InitPartyMenuOBPals
-	call ApplyAttrmap
-	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
-
-_CGB_Unknown: ; unreferenced
-	ld hl, BillsPCOrangePalette
-	call LoadHLPaletteIntoDE
-	jr .GotPalette
-
-.GetMonPalette: ; unreferenced
-	ld bc, wTempMonDVs
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
-.GotPalette:
-	call WipeAttrmap
-	hlcoord 1, 1, wAttrmap
 	lb bc, 7, 7
 	ld a, $1 ; mon palette
 	call FillBoxCGB
@@ -1466,17 +1459,6 @@ _CGB_MysteryGift:
 
 .MysteryGiftPalettes:
 INCLUDE "gfx/mystery_gift/mystery_gift.pal"
-
-GS_CGB_MysteryGift: ; unreferenced
-	ld hl, .MysteryGiftPalette
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	call ApplyAttrmap
-	ret
 
 .MysteryGiftPalette:
 INCLUDE "gfx/mystery_gift/gs_mystery_gift.pal"

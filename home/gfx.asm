@@ -31,48 +31,6 @@ FarCopyBytesDouble_DoubleBankSwitch::
 	pop af
 	rst Bankswitch
 	ret
-
-
-GetStatusConditionIndex::
-; de points to status, e.g. from a party_struct or battle_struct
-; return the status condition index in a
-	ld a, [de]
-	ld b, a
-	and SLP
-	ld a, 0 ; no-optimize a = 0
-	jr nz, .slp
-	bit PSN, b
-	jr nz, .psn
-	bit PAR, b
-	jr nz, .par
-	bit BRN, b
-	jr nz, .brn
-	bit FRZ, b
-	jr nz, .frz
-	ret
-; This should add FNT if we want to use it.
-	inc de
-	inc de ; now de is pointing at hp
-; check if hp is 0
-	ld a, [de]
-	ld b, a
-	inc de
-	ld a, [de]
-	or b
-	ret nz ; not fainted if not zero
-.fnt
-	inc a ; 6
-.frz
-	inc a ; 5
-.brn
-	inc a ; 4
-.slp
-	inc a ; 3
-.par
-	inc a ; 2
-.psn
-	inc a ; 1
-	ret
 	
 SafeHDMATransfer::
 ; Copy c 2bpp tiles from b:de to hl using GDMA. Assumes $00 < c <= $80.

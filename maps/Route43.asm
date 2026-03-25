@@ -33,22 +33,15 @@ WeatherAndFieldMon:
     appear ROUTE43_FIELDMON_4
     appear ROUTE43_FIELDMON_5
     appear ROUTE43_FIELDMON_6
+    appear ROUTE43_FIELDMON_8
 
 ; Pokemon that sometimes appear
     random 2
     ifequal 1, .spawn7
     disappear ROUTE43_FIELDMON_7
-    sjump .mon8
+    sjump .checkNight
 .spawn7
     appear ROUTE43_FIELDMON_7
-
-.mon8
-    random 5 ; shiny
-    ifequal 1, .spawn8
-    disappear ROUTE43_FIELDMON_8
-    sjump .checkNight
-.spawn8
-    appear ROUTE43_FIELDMON_8
 
 .checkNight
 ; Pokemon that only appear at night
@@ -739,10 +732,9 @@ Route43FieldMon7Script:
 
 Route43FieldMon8Script:
 	faceplayer
-	cry SHELGON
+	cry BRELOOM
 	pause 15
-	loadwildmon SHELGON, 30
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon BRELOOM, 30
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8

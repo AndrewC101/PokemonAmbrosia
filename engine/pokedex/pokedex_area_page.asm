@@ -1239,6 +1239,8 @@ Dex_Check_roaming:
 	ret
 
 Pokedex_DetailedArea_roaming:
+    jp Pokedex_Skip_Empty_Area_Category
+
 	call Dex_Check_roaming
 	and a
 	jp nz, Pokedex_Skip_Empty_Area_Category

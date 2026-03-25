@@ -57,7 +57,7 @@ Route17FieldMon4Script:
     end
 
 Route17FieldMon5Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 63, 0, .script
+	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE17_FIELDMON_5
     end

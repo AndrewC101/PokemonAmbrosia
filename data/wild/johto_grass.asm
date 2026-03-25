@@ -627,7 +627,7 @@ JohtoGrassWildMons:
 	db 27, SWINUB
 	db 28, VULPIX
 	db 28, PONYTA
-	db 30, GRAVELER
+	db 30, SNEASLER
 	; day
 	db 26, SNEASEL
 	db 26, ARBOK
@@ -635,7 +635,7 @@ JohtoGrassWildMons:
 	db 27, SWINUB
 	db 28, VULPIX
 	db 28, PONYTA
-	db 30, GRAVELER
+	db 30, SNEASLER
 	; nite
 	db 26, SNEASEL
 	db 26, ARBOK
@@ -643,7 +643,7 @@ JohtoGrassWildMons:
 	db 27, HOUNDOOM
 	db 28, VULPIX
 	db 28, PONYTA
-	db 30, GRAVELER
+	db 30, SNEASLER
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
@@ -1574,7 +1574,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 26, ARBOK
-	db 26, STARAVIA
+	db 26, BRELOOM
 	db 26, SWINUB
 	db 27, AZUMARILL
 	db 27, HAWLUCHA
@@ -1582,7 +1582,7 @@ JohtoGrassWildMons:
 	db 40, MAGMORTAR
 	; day
 	db 26, ARBOK
-	db 26, STARAVIA
+	db 26, BRELOOM
 	db 26, SWINUB
 	db 27, AZUMARILL
 	db 27, HAWLUCHA
@@ -1593,7 +1593,7 @@ JohtoGrassWildMons:
 	db 26, GOLBAT
 	db 26, SWINUB
 	db 27, MARSHTOMP
-	db 27, SNEASEL
+	db 27, SNEASLER
 	db 28, MAGMAR
 	db 40, MAGMORTAR
 	end_grass_wildmons

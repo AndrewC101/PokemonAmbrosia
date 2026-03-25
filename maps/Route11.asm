@@ -61,7 +61,7 @@ Route11_MapScripts:
     endcallback
 
 Route11FieldMon1Script:
-	trainer SCYTHER, FIELD_MON, EVENT_FIELD_MON_1, Route11PokemonAttacksText, 66, 0, .script
+	trainer PORYGON2, FIELD_MON, EVENT_FIELD_MON_1, Route11PokemonAttacksText, 66, 0, .script
 .script
     disappear ROUTE11_FIELDMON_1
     end

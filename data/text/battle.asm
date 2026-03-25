@@ -1260,15 +1260,15 @@ BattleText_HailContinuesToFall:
 	prompt
 
 BattleText_TheHailStopped:
-	text "The hail stopped."
+	text "The Hail stopped."
 	prompt
 
 ItStartedToHailText:
 	text "It started"
-    line "to hail!"
+    line "to Hail!"
 	prompt
 
 PeltedByHailText:
 	text "<USER>"
-	line "is pelted by HAIL!"
+	line "is pelted by Hail!"
 	prompt

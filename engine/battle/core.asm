@@ -9000,8 +9000,6 @@ LoadTrainerOrWildMonPic:
 .field_mon
     ld a, [wWinTextPointer]
     ld [wCurPartyLevel], a
-    ld a, BATTLETYPE_PERFECT_ESCAPE
-    ld [wBattleType], a
     ld a, [wOtherTrainerClass]
     ld [wTempWildMonSpecies], a
     ld [wCurPartySpecies], a
@@ -9025,8 +9023,6 @@ InitEnemy:
     xor a
     ld [wHandOfGod], a
 .wild
-    xor a
-    ld [wOtherTrainerID], a
 	jp InitEnemyWildmon ; wild
 
 BackUpBGMap2:
@@ -9201,6 +9197,7 @@ CleanUpBattleRAM:
 	ld [wBattleType], a
 	ld [wAttackMissed], a
 	ld [wTempWildMonSpecies], a
+	ld [wOtherTrainerID], a
 	ld [wOtherTrainerClass], a
 	ld [wFailedToFlee], a
 	ld [wNumFleeAttempts], a

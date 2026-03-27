@@ -341,10 +341,10 @@ PlacePartyMonTMHMCompatibility:
 	ret
 
 .string_able
-	db "ABLE@"
+	db "Able@"
 
 .string_not_able
-	db "NOT ABLE@"
+	db "Not Able@"
 
 PlacePartyMonEvoStoneCompatibility:
 	ld a, [wPartyCount]
@@ -427,9 +427,9 @@ PlacePartyMonEvoStoneCompatibility:
 	ret
 
 .string_able
-	db "ABLE@"
+	db "Able@"
 .string_not_able
-	db "NOT ABLE@"
+	db "Not Able@"
 
 PlacePartyMonGender:
 	ld a, [wPartyCount]

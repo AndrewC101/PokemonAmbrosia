@@ -3237,8 +3237,10 @@ wVioletCitySceneID::                              db
 wViridianGymSceneID::                             db
 
 wLevelCap:: db
-; DevNote - 156 free bytes!
-	ds 156
+; DevNote - 155 free bytes!
+	ds 155
+
+wChartScrollDelay:: db
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -304,19 +304,19 @@ EventWildMons::
 	specialencounter SALAMENCE, -1, LAKE_OF_RAGE, OverworldEncounterDescription
 	specialencounter SALAMENCE, -1, ABYSS, OverworldEncounterDescription
 	specialencounter GIBLE, -1, FUCHSIA_CITY, OverworldEncounterDescription
-	specialencounter GIBLE, -1, UNION_CAVE_B1F, OverworldEncounterShinyDescription
+	;specialencounter GIBLE, -1, UNION_CAVE_B1F, OverworldEncounterShinyDescription
 	specialencounter GABITE, -1, DIGLETTS_CAVE, OverworldEncounterDescription
-	specialencounter GARCHOMP, -1, ROUTE_45, OverworldEncounterDescription
+	;specialencounter GARCHOMP, -1, ROUTE_45, OverworldEncounterDescription
 	specialencounter GARCHOMP, -1, ABYSS, OverworldEncounterDescription
 	specialencounter DEINO, -1, DARK_CAVE_VIOLET_ENTRANCE, OverworldEncounterDescription
 	specialencounter HYDREIGON, -1, DARK_CAVE_VIOLET_ENTRANCE, OverworldEncounterDescription
-	specialencounter HYDREIGON, -1, ABYSS, OverworldEncounterDescription
+	;specialencounter HYDREIGON, -1, ABYSS, OverworldEncounterDescription
 	specialencounter MELTAN, -1, RUINS_OF_ALPH_INNER_CHAMBER, OverworldEncounterDescription
 	specialencounter MELMETAL, -1, ABYSS, OverworldEncounterDescription
 	specialencounter FRIGIBAX, -1, ROUTE_45, OverworldEncounterDescription
-	specialencounter FRIGIBAX, -1, ICE_PATH_B1F, OverworldEncounterDescription
+	;specialencounter FRIGIBAX, -1, ICE_PATH_B1F, OverworldEncounterDescription
 	specialencounter BAXCALIBUR, -1, ICE_PATH_B3F, OverworldEncounterDescription	
-	specialencounter BAXCALIBUR, -1, ABYSS, OverworldEncounterDescription
+	;specialencounter BAXCALIBUR, -1, ABYSS, OverworldEncounterDescription
 	db -1
 	
 	

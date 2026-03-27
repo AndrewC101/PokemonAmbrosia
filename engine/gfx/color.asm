@@ -50,11 +50,8 @@ LoadMonBaseTypePal:
 	; Type Index (already fixed/adjusted if a Special Type) is passed in 'c'
 	ld hl, TypeIconPals ; pointer to the Type Colors designated in gfx\types_cats_status_pals.asm
 	ld a, c ; c is the Type Index
-; DevNote - Type Pal increment to account for Fairy placement
-	cp 6
-	jr nc, .cont
+
 	inc a
-.cont
 
 	add a
 	ld c, a
@@ -1471,11 +1468,8 @@ LoadDexTypePals:
 
 	ld hl, TypeIconPals
 	ld a, b
-; DevNote - Type Pal increment to account for Fairy placement
-	cp 6
-	jr nc, .cont1
+
 	inc a
-.cont1
 
 	add a
 	push bc
@@ -1490,11 +1484,8 @@ LoadDexTypePals:
 	ld hl, TypeIconPals
 	pop bc
 	ld a, c
-; DevNote - Type Pal increment to account for Fairy placement
-	cp 6
-	jr nc, .cont2
+
 	inc a
-.cont2
 
 	add a
 	ld c, a

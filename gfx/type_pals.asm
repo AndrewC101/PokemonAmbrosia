@@ -11,6 +11,8 @@ TypeIconPals:
 	RGB 29, 24, 12
 ; ROCK
 	RGB 24, 20, 07
+; FAIRY
+	RGB 31, 20, 29
 ; BUG
 	RGB 21, 23, 06
 ; GHOST
@@ -33,7 +35,5 @@ TypeIconPals:
 	RGB 15, 07, 31
 ; DARK
 	RGB 15, 11, 09
-; FAIRY
-	RGB 31, 20, 29
 ; UNKNOWN T
 	RGB 13, 19, 19

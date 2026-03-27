@@ -97,7 +97,7 @@ FishGroups:
 	db  40 percent,     DRAGONAIR,   40
 	db  70 percent,     time_group 9
 	db  90 percent + 1, DRAGONAIR,   50
-	db 100 percent,     DRAGONITE,  60
+	db 100 percent,     DRAGONAIR,  60
 
 .Garchomp_Swarm_Old:
 	db  70 percent + 1, MAGIKARP,   15
@@ -157,7 +157,7 @@ FishGroups:
 	db  40 percent,     DRAGONAIR,   40
 	db  70 percent,     time_group 17
 	db  90 percent + 1, DRAGONAIR,   50
-	db 100 percent,     DRAGONITE,  60
+	db 100 percent,     DRAGONAIR,  60
 
 .WhirlIslands_Old:
 	db  70 percent + 1, MAGIKARP,   15
@@ -172,7 +172,7 @@ FishGroups:
 	db  40 percent,     SLOWBRO,     60
 	db  70 percent,     time_group 19
 	db  90 percent + 1, KINGDRA,    60
-	db 100 percent,     DRAGONITE,     60
+	db 100 percent,     DRAGONAIR,     60
 
 .Garchomp_NoSwarm_Old:
 .Garchomp_Old:
@@ -228,7 +228,7 @@ TimeFishGroups:
 	db FROGADIER,    20,  FROGADIER,    20 ; 16
 	db GRENINJA,    40,  GRENINJA,    40 ; 17
 	db KINGDRA,     60,  KINGDRA,     60 ; 18
-	db DRAGONITE,     60,  DRAGONITE,     60 ; 19
+	db DRACOVISH,     60,  DRACOVISH,     60 ; 19
 	db TENTACOOL,  20,  TENTACOOL,  20 ; 20
 	db TENTACOOL,  40,  TENTACOOL,  40 ; 21
 

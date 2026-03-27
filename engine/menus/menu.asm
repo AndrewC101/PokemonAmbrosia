@@ -14,12 +14,25 @@ _InterpretBattleMenu::
 	ld a, [wMenuData_2DMenuItemStringsBank]
 	rst FarCall
 
+	ld a, [wMenuDataFlags]
+	res 0, a ; Allows quitting the 2DMenu by pressing B.
+	ld [wMenuDataFlags], a
+
+.display
 	call Draw2DMenu
 	farcall MobileTextBorder
 	call UpdateSprites
 	call ApplyTilemap
 	call Get2DMenuSelection
-	ret
+	ret nc
+
+	; If we quitted the 2DMenu by pressing B, we place the cursor over the Run option.
+	ld a, 2
+	ld [wMenuCursorX], a
+	ld [wMenuCursorY], a
+	ld a, 4
+	ld [wMenuCursorPosition], a
+	jr .display ; Then we go back to refreshing the menu and reading joypad inputs.
 
 _InterpretMobileMenu::
 	ld hl, CopyMenuData
@@ -72,7 +85,7 @@ Mobile_GetMenuSelection:
 	jr z, .skip
 	call GetMenuJoypad
 	bit B_PAD_SELECT, a
-	jr nz, .quit1
+	jr nz, .quit
 
 .skip
 	ld a, [wMenuDataFlags]
@@ -80,7 +93,7 @@ Mobile_GetMenuSelection:
 	jr nz, .skip2
 	call GetMenuJoypad
 	bit B_PAD_B, a
-	jr nz, .quit2
+	jr nz, .quit
 
 .skip2
 	ld a, [w2DMenuNumCols]
@@ -95,11 +108,7 @@ Mobile_GetMenuSelection:
 	and a
 	ret
 
-.quit1
-	scf
-	ret
-
-.quit2
+.quit
 	scf
 	ret
 

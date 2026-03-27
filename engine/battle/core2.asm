@@ -1720,7 +1720,7 @@ WaitButtonInfoTrainer:
 	ret
 
 InfoBoxLeftPress:
-	; play switching pockets SFX	
+	; play switching pockets SFX
 	ld de, SFX_SWITCH_POCKETS
 	call PlaySFX
 
@@ -1734,80 +1734,66 @@ InfoBoxLeftPress:
 	cp 3
 	jr z, .jump_to_page_3
 	cp 4
-	ret nz
-.jump_to_page_4
+	jr z, .jump_to_page_4
+	call DecreasePage
+	call UpdatePageText
+	jp FieldInfoBox
+.jump_to_page_1
+	call DecreasePage
+	call UpdatePageText
+	jp StatChangesInfoBox
+.jump_to_page_2
+	call DecreasePage
+	call UpdatePageText
+	jp StatsInfoBox
+.jump_to_page_3
 	call DecreasePage
 	call UpdatePageText
 	jp FeoDetailsPageInfoBox
-
-.jump_to_page_1
+.jump_to_page_4
+	call DecreasePage
+	call UpdatePageText
+	jp EnemyAbilityInfoBox
+.jump_to_page_5
 	call DecreasePage
 	call UpdatePageText
 	jp FieldInfoBox
 
-.jump_to_page_2
-	call DecreasePage
-	call UpdatePageText
-	
-	; prevent slowly loading for those that
-	; play don't play with instant text 
-	ld hl, wOptions
-	set NO_TEXT_SCROLL, [hl]
-	push hl
-	call StatsInfoBox
-	pop hl
-	res NO_TEXT_SCROLL, [hl]
-	ret
-
-.jump_to_page_3
-	call DecreasePage
-	call UpdatePageText
-	jp StatChangesInfoBox
-
-.jump_to_page_5
-	call DecreasePage
-	call UpdatePageText
-	jp EnemyAbilityInfoBox
-
 InfoBoxRightPress:
-	; play switching pockets SFX	
+	; play switching pockets SFX
 	ld de, SFX_SWITCH_POCKETS
 	call PlaySFX
 
 	ld a, [wTrainerInfoPage]
 	and a
-	jr z, .jump_to_page_2
+	jr z, .jump_to_page_1
 	cp 1
-	jr z, .jump_to_page_3
+	jr z, .jump_to_page_2
 	cp 2
-	jr z, .jump_to_page_4
+	jr z, .jump_to_page_3
 	cp 3
-	jr z, .jump_to_page_5
+	jr z, .jump_to_page_4
+	cp 4
+	jr z, .jump_to_page_0
+	ret
+
+.jump_to_page_0
+	call IncreasePage
+	call UpdatePageText
+	jp StatChangesInfoBox
 .jump_to_page_1
 	call IncreasePage
 	call UpdatePageText
 	jp StatsInfoBox
-
 .jump_to_page_2
 	call IncreasePage
 	call UpdatePageText
-	ld hl, wOptions
-	set NO_TEXT_SCROLL, [hl]
-	push hl
-	call StatChangesInfoBox
-	pop hl
-	res NO_TEXT_SCROLL, [hl]
-	ret
-
+	jp FeoDetailsPageInfoBox
 .jump_to_page_3
 	call IncreasePage
 	call UpdatePageText
-	jp FeoDetailsPageInfoBox
-.jump_to_page_4
-	call IncreasePage
-	call UpdatePageText
 	jp EnemyAbilityInfoBox
-.jump_to_page_5
+.jump_to_page_4
 	call IncreasePage
 	call UpdatePageText
 	jp FieldInfoBox

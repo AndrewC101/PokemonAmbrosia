@@ -4365,7 +4365,7 @@ GruntFGroup:
 
 	; GRUNTF (5)
 	db "Jessie@", TRAINERTYPE_ITEM_MOVES
-	db 60, MEOWTH, PINK_BOW, SLASH, BITE, DIG, CHARM
+	db 30, MEOWTH, PINK_BOW, SLASH, BITE, DIG, CHARM
 	db -1 ; end
 
 MysticalmanGroup:

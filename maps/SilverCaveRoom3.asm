@@ -98,7 +98,6 @@ SilverCaveRoom3FieldMon6Script:
 	end
 
 Red:
-	special FadeOutMusic
 	faceplayer
 	opentext
     checkevent EVENT_BEAT_RED
@@ -139,6 +138,7 @@ Red:
     writetext RematchRefuseTextRed
 	waitbutton
     closetext
+    playmapmusic
     end
 .FightDone:
 	writetext RematchRefuseTextRed
@@ -166,9 +166,7 @@ Ash:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ASH, ASH1
 	startbattle
-	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	setevent EVENT_BEAT_ASH
 	opentext
 	writetext AshBeatenText
@@ -296,6 +294,7 @@ FightAshScript2:
     sjump FightAshScript
 
 FightAshScript:
+    special FadeOutMusic
     pause 20
     showemote EMOTE_SHOCK, SILVERCAVEROOM3_RED_PIKACHU, 15
     turnobject SILVERCAVEROOM3_RED, DOWN
@@ -313,7 +312,6 @@ FightAshScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	opentext
 	writetext AshBeatenText
 	waitbutton
@@ -323,6 +321,7 @@ FightAshScript:
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
 	setevent EVENT_BEAT_ASH
 	special HealParty
+	playmapmusic
 	end
 
 Movement_AshToPlayer:

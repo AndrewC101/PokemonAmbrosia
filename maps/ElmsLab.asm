@@ -1674,7 +1674,6 @@ DadBattleScript:
     winlosstext DadLosesText, DadWinsText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer DAD, DAD_1
-	loadtrainer DAD, DAD_1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -1718,7 +1717,7 @@ DadBattleScript:
 	applymovement ELMSLAB_PARENTS_ELM, ELmsLabMovement_ElmLeaves
 	disappear ELMSLAB_PARENTS_ELM
 	turnobject PLAYER, DOWN
-.end
+    playmapmusic
 	end
 
 ELmsLabMovement_PlayerLeftDown:

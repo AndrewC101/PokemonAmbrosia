@@ -60,7 +60,7 @@ Pokedex:
 	call WaitSFX
 	call ClearSprites
 	ld a, [wCurDexMode]
-	;ld [wLastDexMode], a
+	ld [wLastDexMode], a
 
 	ld a, [wPokedexShinyToggle]
 	xor a
@@ -103,8 +103,8 @@ InitPokedex:
 
 	call Pokedex_CheckUnlockedUnownMode
 
-	;ld a, [wLastDexMode]
-	;ld [wCurDexMode], a
+	ld a, [wLastDexMode]
+	ld [wCurDexMode], a
 
 	call Pokedex_OrderMonsByMode
 	call Pokedex_InitCursorPosition
@@ -822,11 +822,10 @@ Evos_Page:
 	call DelayFrame
 	jr .evopage_loop
 .up_or_down_pressed
+	call Pokedex_NextOrPreviousDexEntry
+	jr nc, .evopage_loop
 	ld a, -1
 	ld [wLastDexMode], a
-	call Pokedex_NextOrPreviousDexEntry
-	call Pokedex_GetSelectedMon
-	ld [wCurPartySpecies], a
 .evo_exit
 	call Pokedex_BlackOutBG
 	call DelayFrame
@@ -856,7 +855,7 @@ Evos_Page:
 	ld [wPokedexEntryPageNum], a
 	ld a, [wLastDexMode]
 	cp -1
-	call z, Evos_Page
+	jp z, Evos_Page
 	cp -2
 	jp z, Pokedex_ReinitDexEntryScreen
 
@@ -1007,9 +1006,10 @@ ENDC
 	call DelayFrame
 	jr .spritepage_loop
 .up_or_down_pressed
+ 	call Pokedex_NextOrPreviousDexEntry
+	jr nc, .spritepage_loop
 	ld a, -1
 	ld [wLastDexMode], a
-	call Pokedex_NextOrPreviousDexEntry
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	pop de

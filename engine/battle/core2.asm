@@ -1655,19 +1655,58 @@ FieldTexts:
 
 JoyWaitAorBorDPADInfoTrainer:
 .loop
-	call DelayFrame
-	call GetJoypad
-	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
-	ret nz
+    call DelayFrame
+    call GetJoypad
+
+    ; A / B = exit
+    ldh a, [hJoyPressed]
+    and A_BUTTON | B_BUTTON
+    ret nz
+
+    ; single presses on left and right to switch pages
 	ldh a, [hJoyPressed]
 	and D_RIGHT
 	call nz, InfoBoxRightPress
 	ldh a, [hJoyPressed]
 	and D_LEFT
 	call nz, InfoBoxLeftPress
-	call UpdateTimeAndPals
-	jr .loop
+
+    ; if up/down is not held, reset delay
+    ldh a, [hJoyDown]
+    and D_UP | D_DOWN
+    jr z, .reset_delay
+
+    ; countdown delay
+    ld hl, wChartScrollDelay
+    ld a, [hl]
+    and a
+    jr z, .check_dirs
+    dec [hl]
+    jr .after_dirs
+
+.check_dirs
+    ; reset delay (this is in terms of fps)
+    ld a, 5          ; switch pages every 5 frames
+    ld [hl], a
+
+    ; UP -> go right
+    ldh a, [hJoyDown]
+    bit D_UP_F, a
+    call nz, InfoBoxRightPress
+
+    ; DOWN -> go left
+    ldh a, [hJoyDown]
+    bit D_DOWN_F, a
+    call nz, InfoBoxLeftPress
+
+.after_dirs
+    call UpdateTimeAndPals
+    jr .loop
+
+.reset_delay
+    xor a
+    ld [wChartScrollDelay], a
+    jr .after_dirs
 
 WaitButtonInfoTrainer:
 	ldh a, [hOAMUpdate]
@@ -1681,9 +1720,13 @@ WaitButtonInfoTrainer:
 	ret
 
 InfoBoxLeftPress:
+	; play switching pockets SFX	
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+
 	ld a, [wTrainerInfoPage]
 	and a
-	ret z
+	jr z, .jump_to_page_5
 	cp 1
 	jr z, .jump_to_page_1
 	cp 2
@@ -1691,52 +1734,80 @@ InfoBoxLeftPress:
 	cp 3
 	jr z, .jump_to_page_3
 	cp 4
-	jr z, .jump_to_page_4
-	call DecreasePage
-	call UpdatePageText
-	jp FieldInfoBox
-.jump_to_page_1
-	call DecreasePage
-	call UpdatePageText
-	jp StatChangesInfoBox
-.jump_to_page_2
-	call DecreasePage
-	call UpdatePageText
-	jp StatsInfoBox
-.jump_to_page_3
+	ret nz
+.jump_to_page_4
 	call DecreasePage
 	call UpdatePageText
 	jp FeoDetailsPageInfoBox
-.jump_to_page_4
+
+.jump_to_page_1
+	call DecreasePage
+	call UpdatePageText
+	jp FieldInfoBox
+
+.jump_to_page_2
+	call DecreasePage
+	call UpdatePageText
+	
+	; prevent slowly loading for those that
+	; play don't play with instant text 
+	ld hl, wOptions
+	set NO_TEXT_SCROLL, [hl]
+	push hl
+	call StatsInfoBox
+	pop hl
+	res NO_TEXT_SCROLL, [hl]
+	ret
+
+.jump_to_page_3
+	call DecreasePage
+	call UpdatePageText
+	jp StatChangesInfoBox
+
+.jump_to_page_5
 	call DecreasePage
 	call UpdatePageText
 	jp EnemyAbilityInfoBox
 
 InfoBoxRightPress:
+	; play switching pockets SFX	
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+
 	ld a, [wTrainerInfoPage]
 	and a
-	jr z, .jump_to_page_1
-	cp 1
 	jr z, .jump_to_page_2
-	cp 2
+	cp 1
 	jr z, .jump_to_page_3
-	cp 3
+	cp 2
 	jr z, .jump_to_page_4
-	ret
-
+	cp 3
+	jr z, .jump_to_page_5
 .jump_to_page_1
 	call IncreasePage
 	call UpdatePageText
 	jp StatsInfoBox
+
 .jump_to_page_2
 	call IncreasePage
 	call UpdatePageText
-	jp FeoDetailsPageInfoBox
+	ld hl, wOptions
+	set NO_TEXT_SCROLL, [hl]
+	push hl
+	call StatChangesInfoBox
+	pop hl
+	res NO_TEXT_SCROLL, [hl]
+	ret
+
 .jump_to_page_3
 	call IncreasePage
 	call UpdatePageText
-	jp EnemyAbilityInfoBox
+	jp FeoDetailsPageInfoBox
 .jump_to_page_4
+	call IncreasePage
+	call UpdatePageText
+	jp EnemyAbilityInfoBox
+.jump_to_page_5
 	call IncreasePage
 	call UpdatePageText
 	jp FieldInfoBox

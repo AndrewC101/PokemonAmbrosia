@@ -153,11 +153,41 @@ PlaceMapNameCenterAlign:
 	srl a
 	ld b, 0
 	ld c, a
-	hlcoord 0, 2
+	hlcoord 0, 1
 	add hl, bc
 	ld de, wStringBuffer1
 	call PlaceString
-	ret
+
+	; check weather and print
+	hlcoord 1, 2
+	ld a, [wFieldWeather]
+	cp WEATHER_RAIN
+	jr z, .Raining
+	cp WEATHER_SUN
+	jr z, .Sunny
+	cp WEATHER_SANDSTORM
+	jr z, .Sandstorm
+	cp WEATHER_HAIL
+	ret nz
+
+;.Hailing:
+	ld de, .HailingStr
+	jr .print_weather
+
+.Raining:
+	ld de, .RainingStr
+	jr .print_weather
+
+.Sunny:
+	ld de, .SunnyStr
+	jr .print_weather
+
+.Sandstorm:
+	ld de, .SandstormStr
+	; fallthrough
+
+.print_weather:
+	jp PlaceString
 
 .GetNameLength:
 	ld c, 0
@@ -174,6 +204,15 @@ PlaceMapNameCenterAlign:
 .stop
 	pop hl
 	ret
+
+.RainingStr:
+	db "Raining@"
+.SunnyStr:
+	db "Sunny@"
+.HailingStr:
+	db "Hailing@"
+.SandstormStr:
+	db "Sandstorm@"
 
 InitMapSignAttrmap:
 	ld de, wAttrmap - wTilemap

@@ -6,9 +6,12 @@ ENDC
 EXPORT POKEDEX_STATSPAGE_MAX_PAGE_NUM
 
 String_BASE_text:
-	db "Base       @" ; @ 8, 6
-String_STATS_text:
-	db " Stats     @" ; @ 8, 7
+	db "Base Total @" ; @ 8, 6
+
+; needed to clear other categories' text
+Blank_11_Character_String:
+	db "           @" ; @ 8, 7
+
 DisplayDexMonStats::
 	ld a, [wTempSpecies]
 	ld [wCurSpecies], a
@@ -19,8 +22,10 @@ DisplayDexMonStats::
 
 ; place category name
 	ld de, String_BASE_text
-	ld hl, String_STATS_text
+	ld hl, Blank_11_Character_String
 	call Print_Category_text	
+
+	call Pokedex_BST
 
 	call Pokedex_PrintPageNum ; page num is also returned in a
 	and a
@@ -67,8 +72,6 @@ ENDC ; done handling EVs/StatExp differences
 	xor a
 	ld [wPokedexEntryPageNum], a
 	ret
-.Base_stats_text:
-	db "Base Stats@"
 
 Pokedex_GBS_Stats:
 	hlcoord 1, 9
@@ -117,10 +120,6 @@ Pokedex_GBS_Stats:
 	db " SPA      SPD     @"
 
 Pokedex_BST:
-	hlcoord 2, 9
-	ld de, .BS_Total_text
-	call PlaceString
-
 	xor a
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
@@ -168,7 +167,7 @@ Pokedex_BST:
 	ld a, l
 	ld [wCurDamage + 1], a
 
-	hlcoord 15, 9
+	hlcoord 10, 7
 	ld de, wCurDamage
 	lb bc, 2, 3
 	call PrintNum
@@ -177,8 +176,6 @@ Pokedex_BST:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 	ret
-.BS_Total_text:
-	db "Base Total:@"
 
 Pokedex_Get_Items:
 ; TODO: Add code to differentiate same items in both entries, special cases

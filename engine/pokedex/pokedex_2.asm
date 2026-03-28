@@ -211,12 +211,13 @@ DisplayDexEntry:
 	ld h, b
 	ld l, c
 	push de ; dex entry ptr
-	ld a, [wTempSpecies]
-	dec a
-	call CheckCaughtMon
+; DevNote - Pokedex - display info for uncaught mons
+	;ld a, [wTempSpecies]
+	;dec a
+	;call CheckCaughtMon
 	pop hl ; dex entry ptr
 	pop bc ; bank?
-	jp z, UncaughtMon_Info_Erase_PageNum ; ret z ; leave if we havent caught
+	;jp z, UncaughtMon_Info_Erase_PageNum ; ret z ; leave if we havent caught
 ; Get the height of the Pokemon.
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a

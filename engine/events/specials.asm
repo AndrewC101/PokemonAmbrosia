@@ -42,7 +42,7 @@ GameCornerPrizeMonCheckDex:
 	call ExitAllMenus
 	ret
 
-UnusedSetSeenMon:
+EventSetSeenMon:
 	ld a, [wScriptVar]
 	dec a
 	call SetSeenMon

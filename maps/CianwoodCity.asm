@@ -642,6 +642,8 @@ PsychicGirlTalkScript:
 	playsound SFX_WARP_FROM
 	waitsfx
 	disappear CIANWOODCITY_MEWTWO
+    setval MEWTWO
+	special EventSetSeenMon
 	turnobject PLAYER, LEFT
 	opentext
 	writetext ThanksHereIsTm

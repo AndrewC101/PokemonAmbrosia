@@ -1620,7 +1620,9 @@ DoRareCandyEffect:
 
     ld a, [wGiftOfGod]
     and a
-    ret nz
+    jr z, .dispose
+    farcall EvolvePokemon
+.dispose
 	jp UseDisposableItem
 
 HealPowderEffect:

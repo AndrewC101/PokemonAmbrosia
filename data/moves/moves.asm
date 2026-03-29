@@ -136,7 +136,7 @@ Moves: ; 41afb
 	move OMINOUS_WIND, EFFECT_ALL_UP_HIT,         60, GHOST,         SPECIAL,  100, 10,  10
 	move EARTH_POWER,  EFFECT_NORMAL_HIT,         90, GROUND,        SPECIAL,  100, 10,   0
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,        SPECIAL,  100, 20,  30
-	move CLOSE_COMBAT, EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL, 100, 10,   0
+	move CLOSE_COMBAT, EFFECT_NORMAL_HIT,        110, FIGHTING,      PHYSICAL, 100, 10,   0
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85, 10,  10
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,         PHYSICAL, 100, 15,  20
 	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0 ; not used

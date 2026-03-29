@@ -3216,6 +3216,8 @@ HitSelfInConfusion:
 	ret
 
 PunchMoves:
+    db POUND
+    db MEGA_PUNCH
     db DRAIN_PUNCH
     db FIRE_PUNCH
     db ICE_PUNCH

@@ -3238,8 +3238,9 @@ wViridianGymSceneID::                             db
 
 wLevelCap:: db
 ; DevNote - 155 free bytes!
-	ds 155
+	ds 154
 
+wGiftOfGod:: db
 wChartScrollDelay:: db
 
 wEventFlags:: flag_array NUM_EVENTS

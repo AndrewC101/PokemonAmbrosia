@@ -141,7 +141,7 @@ ItemDescriptions:
 	dw CharcoalDesc
 	dw AmbrosiaDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
+	dw GiftOfGodDesc
 	dw TeruSama13Desc
 	dw MetalCoatDesc
 	dw DragonFangDesc
@@ -811,8 +811,9 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (Hold)@"
 
-TeruSama12Desc:
-	db   "?@"
+GiftOfGodDesc:
+	db   "Maximises level"
+	next "and stats.@"
 
 TeruSama13Desc:
 	db   "?@"

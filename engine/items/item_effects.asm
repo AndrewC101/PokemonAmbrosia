@@ -155,7 +155,7 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw AmbrosiaEffect      ; AMBROSIA
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
+	dw GiftOfGodEffect     ; GIFT_OF_GOD
 	dw NoEffect            ; ITEM_8E
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
@@ -1261,13 +1261,35 @@ VitaminEffect:
 
 	jp UseDisposableItem
 
+GiftOfGodEffect:
+	call .gift
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.gift:
+
+
+DoGiftOfGod:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	ld a, 1
+	ld [wGiftOfGod], a
+	call DoAmbrosiaEffect
+	call DoRareCandyEffect
+	xor a
+	ld [wGiftOfGod], a
+	ret
+
 AmbrosiaEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
 
+DoAmbrosiaEffect:
 	call ShouldUseAmbrosia
-	jp nc, NoEffectMessage
+	jp nc, AmbrosiaNoEffect
 
 ; update DVs to max while retaining gender and shininess
 	ld a, [wCurPartyMon]
@@ -1340,6 +1362,10 @@ AmbrosiaEffect:
 	ld c, HAPPINESS_AMBROSIA
 	farcall ChangeHappiness
 
+	ld a, [wGiftOfGod]
+	and a
+	ret nz
+
     ld a, AMBROSIA
     ld [wCurItem], a
 	jp UseDisposableItem
@@ -1391,6 +1417,12 @@ ShouldUseAmbrosia:
 .yes
     scf
     ret
+
+AmbrosiaNoEffect:
+    ld a, [wGiftOfGod]
+    and a
+    jp z, NoEffectMessage
+	ret
 
 NoEffectMessage:
 	ld hl, ItemWontHaveEffectText
@@ -1477,6 +1509,7 @@ RareCandyEffect:
 
 	jp c, RareCandy_StatBooster_ExitMenu
 
+DoRareCandyEffect:
 	call RareCandy_StatBooster_GetParameters
 
 	ld a, MON_LEVEL
@@ -1485,10 +1518,19 @@ RareCandyEffect:
     ld a, [wLevelCap]
 	ld b, a
 	ld a, [hl]
+	ld [wTempLevel], a
 	cp b
 	jp nc, NoEffectMessage
 
+    ld a, [wGiftOfGod]
+    and a
+    jr z, .oneLevel
+    ld a, [wLevelCap]
+    jr .calcExp
+.oneLevel
+    ld a, [hl]
 	inc a
+.calcExp
 	ld [hl], a
 	ld [wCurPartyLevel], a
 	push de
@@ -1555,12 +1597,30 @@ RareCandyEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
-	predef LearnLevelMoves
 
-	xor a
-	ld [wForceEvolution], a
+	ld a, [wCurPartyLevel]
+	ld c, a
+	ld a, [wTempLevel]
+	ld b, a
+
+.level_loop
+	inc b
+	ld a, b
+	ld [wCurPartyLevel], a
+	push bc
+	predef LearnLevelMoves
+	pop bc
+	ld a, b
+	cp c
+	jr nz, .level_loop
+
+    xor a
+    ld [wForceEvolution], a
 	farcall EvolvePokemon
 
+    ld a, [wGiftOfGod]
+    and a
+    ret nz
 	jp UseDisposableItem
 
 HealPowderEffect:

@@ -146,7 +146,7 @@
 	const CHARCOAL     ; 8a
 	const AMBROSIA     ; 8b
 	const SCOPE_LENS   ; 8c
-	const ITEM_8D      ; 8d
+	const GIFT_OF_GOD  ; 8d
 	const ITEM_8E      ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90

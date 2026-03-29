@@ -76,6 +76,8 @@ MrPokemonsHouse_OakScript:
 	waitsfx
 	setflag ENGINE_POKEDEX
 
+	loadmem wFirstUnownSeen, 1
+
     setval TREECKO
 	special EventSetSeenMon
 	setval GROVYLE

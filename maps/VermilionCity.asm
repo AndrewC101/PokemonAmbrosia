@@ -25,6 +25,10 @@ VermilionCity_MapScripts:
 	endcallback
 
 .Invasion:
+    checkevent EVENT_FOUGHT_SNORLAX
+    iftrue .noLax
+    appear VERMILIONCITY_BIG_SNORLAX
+.noLax
     appear VERMILIONCITY_FIELDMON_1
     appear VERMILIONCITY_FIELDMON_2
     appear VERMILIONCITY_FIELDMON_3
@@ -101,6 +105,7 @@ VermilionSnorlax:
 	sjump .begin
 .begin
 	startbattle
+	disappear VERMILIONCITY_BIG_SNORLAX
 	reloadmapafterbattle
     setval SNORLAX
 	special MonCheck
@@ -108,7 +113,6 @@ VermilionSnorlax:
 	end
 .caught
     setevent EVENT_FOUGHT_SNORLAX
-	disappear VERMILIONCITY_BIG_SNORLAX
 	end
 
 VermilionGymBadgeGuy:

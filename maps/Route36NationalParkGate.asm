@@ -157,6 +157,7 @@ Route36OfficerScriptContest:
 	special ContestDropOffMons
 	clearevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
 .ResumeStartingContest:
+    loadmem wRepulsorToggle, 0
 	setflag ENGINE_BUG_CONTEST_TIMER
 	special PlayMapMusic
 	writetext Route36NationalParkGateOfficer1GiveParkBallsText

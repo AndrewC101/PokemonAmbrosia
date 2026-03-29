@@ -1063,9 +1063,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .lowered
 	jr z, .same
-	;ld a, "<"
-	;ld a, "▷"
-	ld a, "+"
+	ld a, "▷"
 	ld [de], a
 	inc de
 	ld a, c

@@ -143,6 +143,9 @@ RocketBaseBossFScript:
 	reloadmap
 
     special HealParty
+    opentext
+    writetext OldFashionedWayText
+    waitbutton
     playsound SFX_TACKLE
     applymovement PLAYER, Movement_PlayerLeft
     turnobject PLAYER, RIGHT
@@ -403,6 +406,17 @@ RocketsThreatText:
     cont "must punish our"
     cont "enemies severely."
     done
+
+OldFashionedWayText:
+	text "You are a tough"
+	line "little trainer."
+	para "But now with your"
+	line "#mon"
+	cont "weakened...."
+	para "We will end this"
+	line "the old fashioned"
+	cont "way."
+	done
 
 DadDefeatedText:
     text "UH..."

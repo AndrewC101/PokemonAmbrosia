@@ -1,6 +1,6 @@
 	db GROVYLE ; 153
 
-	db  50,  85,  45,  95,  85,  65
+	db  50,  85,  45,  95,  85,  50
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type

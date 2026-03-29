@@ -107,6 +107,9 @@ _ResetWRAM:
 	xor a
 	call ByteFill
 
+	ld a, 1
+	ld [wOptions2], a       ; menu data on by default
+
 	ld hl, STARTOF(WRAMX)
 	ld bc, wGameData - STARTOF(WRAMX)
 	xor a

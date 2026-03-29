@@ -31,11 +31,29 @@ CeladonMansionRoofHouseAndrewScript:
 	verbosegiveitem AMBROSIA
 	iffalse .end
 .noBattle
-	writetext CeladonAndrewFinalText
-	waitbutton
+    checkevent EVENT_GOT_GIFT_OF_GOD
+    iffalse .explainGift
+    writetext GotGiftOfGodText
+    waitbutton
 .end
+    closetext
+    end
+.explainGift
+	writetext CeladonMeExplainGiftText
+	waitbutton
+	readvar VAR_DEXCAUGHT
+	ifgreater 224, .giveGift
 	closetext
 	end
+.giveGift
+    writetext GiveGiftOfGodText
+    waitbutton
+    verbosegiveitem GIFT_OF_GOD
+    writetext GotGiftOfGodText
+    waitbutton
+    closetext
+    setevent EVENT_GOT_GIFT_OF_GOD
+    end
 
 CeladonAndrewInitialIntroText:
     text "Hello <PLAYER>."
@@ -88,6 +106,8 @@ CeladonAndrewAfterBattleText:
     line "going to win that"
     cont "without cheats."
 
+    para "Or a Ditto..."
+
     para "But I think I've"
     line "made my point."
 
@@ -96,36 +116,69 @@ CeladonAndrewAfterBattleText:
     cont "sport."
     done
 
-CeladonAndrewFinalText:
+CeladonMeExplainGiftText:
     text "I'm happy you are"
-    line "playing and"
-    cont "enjoying the game."
+    line "enjoying your"
+    cont "adventure."
 
-    para "I have a house at"
-    line "Mt Silver."
-
-    para "Come visit when"
-    line "you get there."
-
-    para "If you complete"
-    line "the game I'll"
-    cont "give you a very"
-    cont "special item."
-
-    para "One I've buried"
-    line "away in the game."
-
-    para "It's too powerful"
-    line "and game warping"
-    cont "for any player."
-
-    para "If you complete"
-    line "the game I'll"
-    cont "give you the"
-    cont "Hand Of God."
+	text "If you prove your"
+	line "dedication by"
+	cont "catching 225"
+	cont "#mon, I will"
+	cont "reward you with"
+	cont "the greatest of"
+	cont "powers."
+	
+	para "Something you can"
+	line "not otherwise"
+	cont "obtain until"
+	cont "conquering Arceus"
+	cont "itself."
+	
+	para "I will give you"
+	line "the Gift Of God."
+	
+	para "Which lets you"
+	line "instantly max a"
+	cont "#mons level"
+	cont "and stats."
+	
+	para "And can be used"
+	line "as many times"
+	cont "as you like."
+	
+	para "Come see me here"
+	line "when you are"
+	cont "ready."
 
     para "Now go have fun!"
     done
+
+GiveGiftOfGodText:
+	text " ...."
+	para "You have done it!"
+	para "From now on your"
+	line "team is not merely"
+	cont "6 #mon."
+	para "It is all"
+	line "#mon!."
+	para "You have earned"
+	line "this."
+	para "Go and build your"
+	line "empire!"
+	done
+
+GotGiftOfGodText:
+	text "Thanks so much for"
+	line "spending your time"
+	cont "in this world."
+	para "I have a house in"
+	line "Mt Silver."
+	para "You should visit"
+	line "me there if you"
+	cont "seek a real"
+	cont "challenge."
+	done
 
 CeladonRoofHouseTVScript:
 	opentext

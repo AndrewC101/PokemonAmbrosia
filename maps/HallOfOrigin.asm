@@ -68,6 +68,11 @@ ArceusScript:
 	setevent EVENT_CAUGHT_ARCEUS
     special FadeOutMusic
 	opentext
+	checkevent EVENT_GOT_GIFT_OF_GOD
+	iftrue .skipGift
+	verbosegiveitem GIFT_OF_GOD
+	setevent EVENT_GOT_GIFT_OF_GOD
+.skipGift
 	writetext CaughtArceusText
 	waitbutton
 	closetext
@@ -77,7 +82,6 @@ ArceusScript:
 	opentext
 	writetext OakBeatenArceusText
 	waitbutton
-	verbosegiveitem AMBROSIA
 	closetext
 	special HealParty
 	credits
@@ -119,10 +123,6 @@ OakBeatenArceusText:
     cont "ready to reach"
     cont "the heights of"
     cont "#mon Lord."
-
-    para "Until then take"
-    line "this token of my"
-    cont "gratitude."
     done
 ArceusText:
     text "<PLAYER>"
@@ -286,7 +286,6 @@ MasterOakScript:
 	opentext
 	writetext MasterOakVictoryText
 	waitbutton
-	verbosegiveitem AMBROSIA
 	checkevent EVENT_BEAT_LORD_OAK
 	iftrue .skipMarkOfGod
 	writetext MarkOfGodText
@@ -418,9 +417,6 @@ MasterOakVictoryText:
     line "trainer or #mon"
     cont "will dare to"
     cont "challenge you."
-
-    para "Take this token"
-    line "of our kinship."
     done
 
 MarkOfGodText:

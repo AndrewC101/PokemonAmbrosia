@@ -1800,7 +1800,7 @@ BattleArcadeReceptionistScript:
 	opentext
 	writetext BattleWinText
 	waitbutton
-	verbosegiveitem GOLD_BERRY
+	verbosegiveitem MASTER_BALL
 	closetext
 	special LoadPokemonData
 	special HealParty

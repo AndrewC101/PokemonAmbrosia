@@ -121,7 +121,7 @@ CeladonMeExplainGiftText:
     line "enjoying your"
     cont "adventure."
 
-	text "If you prove your"
+	para "If you prove your"
 	line "dedication by"
 	cont "catching 225"
 	cont "#mon, I will"

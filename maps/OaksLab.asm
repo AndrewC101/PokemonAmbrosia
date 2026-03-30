@@ -87,7 +87,6 @@ Oak:
 	writetext OakGiveWarpDeviceText
 	playsound SFX_GET_BADGE
 	waitsfx
-	;verbosegiveitem WARP_DEVICE
 	setflag ENGINE_WARP
 	setevent EVENT_OPENED_MT_SILVER
 	loadmem wExpShareUpgrade, 1

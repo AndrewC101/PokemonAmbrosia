@@ -1302,7 +1302,7 @@ Cianwood_Map_Name14: ; map_const BATTLE_TOWER_HALLWAY, ; 14
 Cianwood_Map_Name15: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 15
    db "Route 40 Gate@"
 Cianwood_Map_Name16: ; map_const BATTLE_TOWER_OUTSIDE ; 16
-   db "Battle Tower@"
+   db "Battle Frontier@"
 
 Viridian_Map_Name1: ; map_const ROUTE_2,;  1
    db "Route 2@"
@@ -1315,9 +1315,9 @@ Viridian_Map_Name4: ; map_const VIRIDIAN_GYM ;  4
 Viridian_Map_Name5: ; map_const VIRIDIAN_NICKNAME_SPEECH_HOUSE ;  5
    db "Viridian House 2@"
 Viridian_Map_Name6: ; map_const TRAINER_HOUSE_1F ;  6
-   db "Viridian House 1F@"
+   db "Viridian House@"
 Viridian_Map_Name7: ; map_const TRAINER_HOUSE_B1F ;  7
-   db "Viridian House B1F@"
+   db "Battle Frontier@"
 Viridian_Map_Name8: ; map_const VIRIDIAN_MART ;  8
    db "Viridian #Mart@"
 Viridian_Map_Name9: ; map_const VIRIDIAN_POKECENTER_1F ;  9

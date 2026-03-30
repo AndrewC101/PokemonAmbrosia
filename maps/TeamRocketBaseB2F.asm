@@ -146,6 +146,7 @@ RocketBaseBossFScript:
     opentext
     writetext OldFashionedWayText
     waitbutton
+    closetext
     playsound SFX_TACKLE
     applymovement PLAYER, Movement_PlayerLeft
     turnobject PLAYER, RIGHT

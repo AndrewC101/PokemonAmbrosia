@@ -13,14 +13,30 @@ PewterGymBrockScript:
 	opentext
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .FightDone
+.rematch
 	writetext BrockIntroText
 	waitbutton
 	closetext
 	winlosstext BrockLossText, BrockWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BROCK, MASTER_BROCK
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BROCK, BROCK1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BROCK, BROCK1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_BROCK
+	iftrue .end
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_CAMPER_JERRY
 	opentext
@@ -31,19 +47,9 @@ PewterGymBrockScript:
 	writetext BrockFightDoneText
 	waitbutton
 	closetext
+.end
 	end
-.rematch
-    writetext BrockIntroText
-	waitbutton
-	closetext
-	winlosstext BrockLossText, BrockWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer BROCK, BROCK1
-	startbattle
-	reloadmapafterbattle
-	end
-
-.FightDone:
+.FightDone
 	writetext BrockFightDoneText
 	waitbutton
     closetext

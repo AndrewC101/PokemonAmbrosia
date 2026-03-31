@@ -255,8 +255,15 @@ PalletTownCrystalScript:
 
     special HealParty
 	winlosstext Crystal6LosesText, Crystal6WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, CRYSTAL_6
+	sjump .battle
+.normal
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_6
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_6

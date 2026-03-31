@@ -17,14 +17,30 @@ AzaleaGymBugsyScript:
 	opentext
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .FightDone
+.rematch
 	writetext BugsyText_INeverLose
 	waitbutton
 	closetext
 	winlosstext BugsyText_ResearchIncomplete, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BUGSY, MASTER_BUGSY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BUGSY, BUGSY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BUGSY, BUGSY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_BUGSY
+	iftrue .end
 	setevent EVENT_BEAT_BUGSY
 	readmem wLevelCap
 	ifgreater 35, .skipCap
@@ -52,16 +68,7 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext BugsyText_INeverLose
-	waitbutton
-	closetext
-	winlosstext BugsyText_ResearchIncomplete, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer BUGSY, BUGSY1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .GotFuryCutter:

@@ -66,7 +66,14 @@ BurnedTowerRivalBattleScript:
 	iftrue .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+	sjump .battle1
+.normal1
+	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+.battle1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -75,7 +82,14 @@ BurnedTowerRivalBattleScript:
 .totodile
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
+	sjump .battle2
+.normal2
+	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
+.battle2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -84,7 +98,14 @@ BurnedTowerRivalBattleScript:
 .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+	sjump .battle3
+.normal3
+	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+.battle3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

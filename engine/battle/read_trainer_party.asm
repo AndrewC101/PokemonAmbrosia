@@ -76,6 +76,27 @@ ReadTrainerPartyPieces:
 	ret z
 
 ; level
+; DevNote - Hard Mode
+; if hard mode is on
+; and we are in a boss battle
+; and the enemy level is not greater than level cap
+; then scale to level cap
+    push bc
+    ld b, a
+    ld a, [wBattleType]
+    cp BATTLETYPE_BOSS_BATTLE
+    jr nz, .normal
+    ld a, [wHardMode]
+    and a
+    jr z, .normal
+    ld a, [wLevelCap]
+    cp b
+    jr c, .normal
+    ld b, a
+.normal
+    ld a, b
+    pop bc
+
 	ld [wCurPartyLevel], a
 	and a
 	jr nz, .notZero

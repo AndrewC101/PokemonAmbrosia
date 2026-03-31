@@ -14,6 +14,7 @@ VioletGymFalknerScript:
 	opentext
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
+.rematch
 	writetext FalknerIntroText
 	waitbutton
 	nooryes
@@ -27,12 +28,30 @@ VioletGymFalknerScript:
 	waitbutton
 	closetext
 	winlosstext FalknerLossText, FalknerWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer FALKNER, MASTER_FALKNER
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer FALKNER, FALKNER1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer FALKNER, FALKNER1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_FALKNER
+	iftrue .end
 	setevent EVENT_BEAT_FALKNER
+	readmem wLevelCap
+	ifgreater 25, .skipCap
 	loadmem wLevelCap, 25
+.skipCap
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE
@@ -55,26 +74,8 @@ VioletGymFalknerScript:
 	writetext FalknerTMMudSlapText
 	waitbutton
 	closetext
+.end
 	end
-.rematch
-	writetext FalknerIntroText
-	waitbutton
-	yesorno
-	closetext
-	opentext
-	writetext FalknerHaikuText
-	waitbutton
-	closetext
-	opentext
-	writetext FalknerIntroText2
-	waitbutton
-	closetext
-	winlosstext FalknerLossText, FalknerWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer FALKNER, FALKNER1
-	startbattle
-	reloadmapafterbattle
-    end
 
 .SpeechAfterTM:
 	writetext FalknerFightDoneText

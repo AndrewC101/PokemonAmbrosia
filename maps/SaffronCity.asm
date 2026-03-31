@@ -386,8 +386,15 @@ SaffronGymBlockScript:
     waitbutton
     closetext
     winlosstext Silver6LosesText, Silver6WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, RIVAL2_SAFFRON
+	sjump .battle
+.normal
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL2, RIVAL2_SAFFRON
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_RIVAL_SAFFRON

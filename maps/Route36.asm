@@ -754,7 +754,14 @@ Route36CrystalScript:
 
     special HealParty
 	winlosstext Crystal3LosesText, Crystal3WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_3
+	sjump .battle
+.normal
+	loadtrainer CRYSTAL, CRYSTAL_3
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_3

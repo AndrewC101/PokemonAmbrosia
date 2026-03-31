@@ -51,8 +51,21 @@ WallaceScript:
 	waitbutton
 	closetext
 	winlosstext WallaceBeatenText, WallaceWinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WALLACE, MASTER_WALLACE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WALLACE, WALLACE_HARD
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer WALLACE, EMPEROR_WALLACE
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	disappear WARZONE_KYOGRE
@@ -1066,14 +1079,36 @@ Soldier3AfterBattleText:
     done
 
 TrainerSoldier5:
-	trainer SOLDIER, SOLDIER_5, EVENT_BEAT_SOLDIER_5, Soldier5SeenText, Soldier5BeatenText, Soldier5WinsText, .Script
-.Script:
-    loadmem wNoRematch, 1
+	faceplayer
 	opentext
+	checkevent EVENT_BEAT_SOLDIER_5
+	iftrue .FightDone
+.fight
+	writetext Soldier5SeenText
+	waitbutton
+	closetext
+	winlosstext Soldier5BeatenText, Soldier5WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SOLDIER, MASTER_DRAKE
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SOLDIER, SOLDIER_5
+.battle
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SOLDIER_5
+	opentext
+.FightDone:
 	writetext Soldier5AfterBattleText
 	waitbutton
 	closetext
 	end
+
 Soldier5SeenText:
     text "I am Admiral"
     line "Drake."
@@ -1349,8 +1384,17 @@ JonathanScript:
 	closetext
 .skipRequest
 	winlosstext JonathanBeatenText, JonathanWinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JONATHAN, JONATHAN_ARCADE
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer JONATHAN, JONATHAN_1
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -1453,6 +1497,13 @@ JonathanWinAfterBattleText:
 	cont "time."
 	done
 
+AdmiralDrakeScene:
+    checkevent EVENT_BEAT_SOLDIER_5
+    iftrue .end
+    sjump TrainerSoldier5
+.end
+    end
+
 WarZone_MapEvents:
 	db 0, 0 ; filler
 
@@ -1467,6 +1518,7 @@ WarZone_MapEvents:
 	coord_event  21,  7, SCENE_ALWAYS, FightWallaceScript2
 	coord_event  7,  32, SCENE_ALWAYS, WarZoneBlueScript1
 	coord_event  7,  33, SCENE_ALWAYS, WarZoneBlueScript2
+	coord_event 23,  13, SCENE_ALWAYS, AdmiralDrakeScene
 
 	def_bg_events
 
@@ -1478,7 +1530,7 @@ WarZone_MapEvents:
 	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier1, EVENT_BEAT_WALLACE
 	object_event 21, 23, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier2, EVENT_BEAT_WALLACE
 	object_event 35, 27, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier3, EVENT_BEAT_WALLACE
-	object_event 23, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSoldier5, EVENT_BEAT_WALLACE
+	object_event 23, 12, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSoldier5, EVENT_BEAT_WALLACE
 
 	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 20, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

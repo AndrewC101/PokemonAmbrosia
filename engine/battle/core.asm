@@ -8031,6 +8031,11 @@ GiveExperiencePoints:
 	inc de
 
 .no_carry_stat_exp
+; DevNote - Stat Exp
+    ld a, [wHardMode]
+    and a
+    jr nz, .double
+
 	push hl
 	push bc
 	ld a, MON_POKERUS
@@ -8040,6 +8045,8 @@ GiveExperiencePoints:
 	pop bc
 	pop hl
 	jr z, .stat_exp_awarded
+
+.double
 	ld a, [de]
 	add [hl]
 	ld [de], a
@@ -8109,12 +8116,20 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
+
+; DevNote - Exp - Multipliers
     call BoostExp
+
+    ld a, [wHardMode]
+    and a
+    jr nz, .skipReduction
+
    	ld a, [wKantoBadges]
    	cp %11111111 ; all badges
     jr z, .skipReduction
     call HalfExp
 .skipReduction
+
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM

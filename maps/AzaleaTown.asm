@@ -66,7 +66,14 @@ AzaleaTownRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
+	sjump .battle1
+.normal1
+	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
+.battle1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -75,6 +82,14 @@ AzaleaTownRivalBattleScript:
 .Totodile:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
+	sjump .battle2
+.normal2
+	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
+.battle2
 	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
 	startbattle
 	dontrestartmapmusic
@@ -84,7 +99,14 @@ AzaleaTownRivalBattleScript:
 .Chikorita:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
+	sjump .battle3
+.normal3
+	loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
+.battle3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

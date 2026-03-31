@@ -90,8 +90,15 @@ VictoryRoadRivalNext:
 	iftrue .GotChikorita
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+	sjump .battle1
+.normal1
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+.battle1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -100,8 +107,15 @@ VictoryRoadRivalNext:
 .GotTotodile:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+	sjump .battle2
+.normal2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+.battle2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -110,8 +124,15 @@ VictoryRoadRivalNext:
 .GotChikorita:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+	sjump .battle3
+.normal3
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+.battle3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

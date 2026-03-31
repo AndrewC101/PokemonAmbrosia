@@ -57,8 +57,15 @@ Oak:
 	iffalse .refuse
 	closetext
     winlosstext OakWinText, OakWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer POKEMON_PROF, MASTER_OAK
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMON_PROF, PROF_OAK
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle

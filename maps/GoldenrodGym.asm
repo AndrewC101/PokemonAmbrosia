@@ -24,14 +24,30 @@ GoldenrodGymWhitneyScript:
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
 	opentext
+.rematch
 	writetext WhitneyBeforeText
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WHITNEY, MASTER_WHITNEY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WHITNEY, WHITNEY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer WHITNEY, WHITNEY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_WHITNEY
+	iftrue .end
 	setevent EVENT_BEAT_WHITNEY
 	setevent EVENT_MADE_WHITNEY_CRY
 	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
@@ -47,16 +63,7 @@ GoldenrodGymWhitneyScript:
 	writetext WhitneyYouMeanieText
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext WhitneyBeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer WHITNEY, WHITNEY1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .StoppedCrying:

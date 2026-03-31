@@ -169,8 +169,15 @@ UndergroundRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	sjump .battle1
+.normal1
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+.battle1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -179,8 +186,15 @@ UndergroundRivalBattleScript:
 .Totodile:
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+	sjump .battle2
+.normal2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+.battle2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -189,8 +203,15 @@ UndergroundRivalBattleScript:
 .Chikorita:
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+	sjump .battle3
+.normal3
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+.battle3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

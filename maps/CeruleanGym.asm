@@ -61,14 +61,30 @@ CeruleanGymMistyScript:
 	opentext
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
+.rematch
 	writetext MistyIntroText
 	waitbutton
 	closetext
 	winlosstext MistyLossText, MistyWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MASTER_MISTY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MISTY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MISTY, MISTY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MISTY
+	iftrue .end
 	setevent EVENT_BEAT_MISTY
 	setevent EVENT_BEAT_SWIMMERF_DIANA
 	setevent EVENT_BEAT_SWIMMERF_BRIANA
@@ -81,9 +97,9 @@ CeruleanGymMistyScript:
 	writetext MistyFightDoneText
     waitbutton
     closetext
+.end
     end
-
-.FightDone:
+.FightDone
 	writetext MistyFightDoneText
 	waitbutton
     closetext
@@ -94,16 +110,6 @@ CeruleanGymMistyScript:
 	writetext RematchRefuseTextMisty
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext MistyIntroText
-	waitbutton
-	closetext
-	winlosstext MistyLossText, MistyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer MISTY, MISTY1
-	startbattle
-	reloadmapafterbattle
 	end
 
 TrainerSwimmerfDiana:

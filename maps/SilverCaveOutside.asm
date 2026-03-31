@@ -235,8 +235,21 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Silver7LosesText, Silver7WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal1
+	readmem wLevelCap
+	ifless 100, .hard1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, MASTER_RIVAL
+	sjump .battle1
+.hard1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+	sjump .battle1
+.normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+.battle1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SILVER_CAVE_RIVAL
@@ -252,8 +265,21 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Crystal7LosesText, Crystal7WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal2
+	readmem wLevelCap
+	ifless 100, .hard2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, MASTER_CRYSTAL
+	sjump .battle2
+.hard2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_7
+	sjump .battle2
+.normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_7
+.battle2
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_7

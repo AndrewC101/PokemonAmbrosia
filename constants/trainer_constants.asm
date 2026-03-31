@@ -63,6 +63,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass CLAIR ; 8
 	const CLAIR1
 	const MASTER_CLAIR
+	const CLAIR_HARD
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -110,6 +111,7 @@ DEF KRIS EQU __trainer_class__
 	const MASTER_LANCE
 	const LANCE_DRAGONITE
 	const LANCE_ARCADE
+	const LANCE_HARD
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -508,6 +510,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass WALLACE ; 2b ; Remove?
 	const EMPEROR_WALLACE
 	const MASTER_WALLACE
+	const WALLACE_HARD
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1

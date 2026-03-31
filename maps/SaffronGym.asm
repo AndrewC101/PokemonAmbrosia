@@ -16,14 +16,30 @@ SaffronGymSabrinaScript:
 	opentext
 	checkflag ENGINE_MARSHBADGE
 	iftrue .FightDone
+.rematch
 	writetext SabrinaIntroText
 	waitbutton
 	closetext
 	winlosstext SabrinaLossText, SabrinaWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WILL, MASTER_WILL
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WILL, WILL1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer WILL, WILL1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_WILL
+	iftrue .end
 	setevent EVENT_BEAT_WILL
 	setevent EVENT_BEAT_MEDIUM_REBECCA
 	setevent EVENT_BEAT_MEDIUM_DORIS
@@ -37,16 +53,7 @@ SaffronGymSabrinaScript:
 	writetext SabrinaMarshBadgeText
 	waitbutton
 	closetext
-	end
-.rematch
-	writetext SabrinaIntroText
-	waitbutton
-	closetext
-	winlosstext SabrinaLossText, SabrinaWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer WILL, WILL1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .FightDone:

@@ -33,14 +33,30 @@ BlackthornGymClairScript:
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .FightDone
+.rematch
 	writetext ClairIntroText
 	waitbutton
 	closetext
 	winlosstext ClairWinText, ClairLoseText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CLAIR, MASTER_CLAIR
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CLAIR, CLAIR_HARD
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CLAIR, CLAIR1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .end
 	setevent EVENT_BEAT_CLAIR
 	opentext
 	writetext ClairText_GoToDragonsDen
@@ -54,16 +70,7 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	end
-.rematch
-    writetext ClairIntroText
-	waitbutton
-	closetext
-	winlosstext ClairWinText, ClairLoseText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer CLAIR, CLAIR1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .FightDone:

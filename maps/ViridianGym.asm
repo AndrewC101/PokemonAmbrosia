@@ -29,7 +29,7 @@ ViridianGymBlueScript:
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
 	checkevent EVENT_BEAT_HOEN_ARMY
-	iftrue .battle
+	iftrue .fight
 
 	checkevent EVENT_BEAT_BROCK
 	iffalse .mustBeatAllGyms
@@ -82,15 +82,30 @@ ViridianGymBlueScript:
     writemem wHoenInvasionUnderway
     blackoutmod VIRIDIAN_CITY
 	end
-.battle
+.fight
 	writetext LeaderBlueBeforeText
 	waitbutton
 	closetext
 	winlosstext LeaderBlueWinText, LeaderBlueLossText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLUE, MASTER_BLUE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLUE, BLUE1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLUE, BLUE1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_BLUE
+	iftrue .end
 	setevent EVENT_BEAT_BLUE
 	opentext
 	writetext Text_ReceivedEarthBadge
@@ -102,16 +117,7 @@ ViridianGymBlueScript:
 	writetext LeaderBlueEpilogueText
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext LeaderBlueBeforeText
-	waitbutton
-	closetext
-	winlosstext LeaderBlueWinText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer BLUE, BLUE1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 .FightDone:
 	writetext LeaderBlueEpilogueText
@@ -120,7 +126,7 @@ ViridianGymBlueScript:
 	opentext
 	writetext RematchTextBlue
 	nooryes
-	iftrue .rematch
+	iftrue .fight
 	writetext RematchRefuseTextBlue
 	waitbutton
 	closetext

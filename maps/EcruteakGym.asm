@@ -26,14 +26,30 @@ EcruteakGymMortyScript:
 	opentext
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
+.rematch
 	writetext MortyIntroText
 	waitbutton
 	closetext
 	winlosstext MortyLossText, MortyWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MASTER_MORTY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MORTY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MORTY, MORTY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MORTY
+	iftrue .end
 	setevent EVENT_BEAT_MORTY
 	readmem wLevelCap
 	ifgreater 50, .skipCap
@@ -64,16 +80,7 @@ EcruteakGymMortyScript:
 	writetext MortyText_ShadowBallSpeech
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext MortyIntroText
-	waitbutton
-	closetext
-	winlosstext MortyLossText, MortyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer MORTY, MORTY1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .GotShadowBall:

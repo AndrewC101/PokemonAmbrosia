@@ -19,6 +19,7 @@ CianwoodGymChuckScript:
 	opentext
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
+.rematch
 	writetext ChuckIntroText1
 	waitbutton
 	closetext
@@ -41,10 +42,25 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, ChuckWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CHUCK, MASTER_CHUCK
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CHUCK, CHUCK1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHUCK, CHUCK1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_CHUCK
+	iftrue .end
 	setevent EVENT_BEAT_CHUCK
 	checkevent EVENT_BEAT_JASMINE
 	iffalse .skipCap
@@ -80,34 +96,7 @@ CianwoodGymChuckScript:
 	writetext ChuckExplainTMText
 	waitbutton
 	closetext
-	end
-.rematch
-	writetext ChuckIntroText1
-	waitbutton
-	closetext
-    playmusic MUSIC_HOEN_CHAMPION
-	opentext
-	writetext ChuckIntroText2
-	waitbutton
-	closetext
-	special FadeOutToWhite
-	pause 10
-	special FadeInFromWhite
-	applymovement CIANWOODGYM_BOULDER1, CianwoodGymMovement_ChuckChucksBoulder
-	playsound SFX_STRENGTH
-	earthquake 80
-	disappear CIANWOODGYM_BOULDER1
-	pause 30
-	faceplayer
-	opentext
-	writetext ChuckIntroText3
-	waitbutton
-	closetext
-	winlosstext ChuckLossText, ChuckWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer CHUCK, CHUCK1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .AlreadyGotTM:

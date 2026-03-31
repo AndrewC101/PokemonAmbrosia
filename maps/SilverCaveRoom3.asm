@@ -107,8 +107,15 @@ Red:
 	waitbutton
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
+	readmem wHardMode
+	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RED, MASTER_RED
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RED, RED1
+.battle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -163,8 +170,15 @@ Ash:
 	waitbutton
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
+	readmem wHardMode
+	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ASH, MASTER_ASH
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ASH, ASH1
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ASH

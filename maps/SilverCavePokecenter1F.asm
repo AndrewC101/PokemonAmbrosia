@@ -11,9 +11,6 @@ SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 SilverCavePokecenter1FBobRossScript:
-    setflag ENGINE_POKEGEAR
-    setflag ENGINE_WARP
-    loadmem wLevelCap, 100
 	jumptextfaceplayer SilverCavePokecenter1FBobRossText
 
 SilverCavePokecenter1FBobRossText:

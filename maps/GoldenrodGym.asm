@@ -62,7 +62,10 @@ GoldenrodGymWhitneyScript:
 .StoppedCrying:
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
+	readmem wLevelCap
+	ifgreater 40, .skipCap
 	loadmem wLevelCap, 40
+.skipCap
 	writetext WhitneyWhatDoYouWantText
 	promptbutton
 	waitsfx

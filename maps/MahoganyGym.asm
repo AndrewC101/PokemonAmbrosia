@@ -24,7 +24,10 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
+	readmem wLevelCap
+	ifgreater 60, .skipCap
 	loadmem wLevelCap, 60
+.skipCap
 	opentext
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE

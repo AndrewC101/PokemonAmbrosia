@@ -10,7 +10,7 @@ _NamingScreen:
 	call ReturnToMapWithSpeechTextbox
 	ret
 
-NamingScreen:
+NamingScreen::
 	ld hl, wNamingScreenDestinationPointer
 	ld [hl], e
 	inc hl
@@ -83,6 +83,7 @@ NamingScreenJumptable:
 	dw .Friend
 	dw .Pokemon
 	dw .Pokemon
+	dw .Cheatcode
 	assert_table_length NUM_NAMING_SCREEN_TYPES
 
 .Pokemon:
@@ -214,6 +215,16 @@ NamingScreenJumptable:
 
 .FriendsNameString:
 	db "おともだち　の　なまえは？@"
+
+.Cheatcode:
+	hlcoord 5, 2
+	ld de, .CheatcodeString
+	call PlaceString
+	call .StoreMonIconParams
+	ret
+
+.CheatcodeString:
+	db "Cheatcode?@"
 
 .LoadSprite:
 	push de

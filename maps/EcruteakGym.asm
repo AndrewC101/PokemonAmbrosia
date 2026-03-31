@@ -35,7 +35,10 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
+	readmem wLevelCap
+	ifgreater 50, .skipCap
 	loadmem wLevelCap, 50
+.skipCap
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE

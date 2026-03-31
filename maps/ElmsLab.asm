@@ -1972,7 +1972,188 @@ ElmsLabMrMimeScript:
     cry MR__MIME
     waitbutton
     closetext
+    callasm PasswordScreen
+    callasm CheckGiftOfGodPassword
+    iftrue .giveGift
+    callasm CheckMarkOfGodPassword
+    iftrue .giveMark
+    callasm CheckHandOfGodPassword
+    iftrue .giveHand
+    callasm CheckMasterBallPassword
+    iftrue .giveMasterBall
+    callasm CheckWarpPassword
+    iftrue .giveWarp
+    callasm CheckLevelCapPassword
+    iftrue .noCaps
+    callasm CheckArceusPassword
+    iftrue .giveArceus
+    reloadmap
+    opentext
+    writetext MimeConfusedText
+    closetext
     end
+.giveGift
+    reloadmap
+    checkitem GIFT_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem GIFT_OF_GOD
+    closetext
+    end
+.giveMark
+    reloadmap
+    checkitem MARK_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem MARK_OF_GOD
+    closetext
+    end
+.giveHand
+    reloadmap
+    checkitem HAND_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem HAND_OF_GOD
+    closetext
+    end
+.giveMasterBall
+    reloadmap
+    opentext
+    verbosegiveitem MASTER_BALL, 99
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+    end
+.giveWarp
+    reloadmap
+    opentext
+    writetext GiveWarpText
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	setflag ENGINE_WARP
+	loadmem wReachedHallOfOrigin, 1
+    end
+.noCaps
+    reloadmap
+    opentext
+    writetext LevelCapText
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	loadmem wLevelCap, 100
+    end
+.giveArceus
+    reloadmap
+    readvar VAR_PARTYCOUNT
+    ifequal PARTY_LENGTH, .noRoom
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+    givepoke ARCEUS, 100, HOLY_CROWN
+    end
+.noRoom
+    opentext
+    writetext MakeRoomInPartyText
+    closetext
+    end
+.nostalgia
+    opentext
+    writetext MimeNostalgicText
+    closetext
+    end
+
+MimeConfusedText:
+    text "Mr Mime looks"
+    line "confused."
+    prompt
+
+MimeNostalgicText:
+    text "Mr Mime looks"
+    line "nostalgic."
+    prompt
+
+LevelCapText:
+    text "Level caps set"
+    line "to 100."
+    prompt
+
+MakeRoomInPartyText:
+    text "Make room in"
+    line "your party."
+    prompt
+
+GiveWarpText:
+    text "Warp enabled in"
+    line "start menu."
+    prompt
+
+PasswordScreen:
+    ld b, NAME_CHEATCODE
+    ld de, wPassword
+    newfarcall NamingScreen
+    ret
+
+CheckGiftOfGodPassword:
+	ld de, GiftOfGodPassword
+	jp ComparePassword
+
+CheckMarkOfGodPassword:
+	ld de, MarkOfGodPassword
+	jp ComparePassword
+
+CheckHandOfGodPassword:
+	ld de, HandOfGodPassword
+	jp ComparePassword
+
+CheckMasterBallPassword:
+	ld de, MasterBallPassword
+	jp ComparePassword
+
+CheckWarpPassword:
+	ld de, WarpPassword
+	jp ComparePassword
+
+CheckLevelCapPassword:
+	ld de, LevelCapPassword
+	jp ComparePassword
+
+CheckArceusPassword:
+	ld de, ArceusPassword
+	jp ComparePassword
+
+ComparePassword:
+	ld hl, wPassword
+	ld c, 4
+	call CompareBytes
+	jr z, .yes
+	xor a
+	ld [wScriptVar], a
+	ret
+.yes
+    ld a, 1
+	ld [wScriptVar], a
+	ret
+
+GiftOfGodPassword:
+    db "Ex Nihilo"
+
+MarkOfGodPassword:
+    db "Omniscient"
+
+HandOfGodPassword:
+    db "Ontology"
+
+MasterBallPassword:
+    db "CatchEmAll"
+
+WarpPassword:
+    db "Lorentz"
+
+LevelCapPassword:
+    db "RUCasual?"
+
+ArceusPassword:
+    db "Omnipotent"
 
 ElmMrMimeText:
     text "Mr Mime!"

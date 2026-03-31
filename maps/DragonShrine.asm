@@ -124,7 +124,10 @@ DragonShrineTakeTestScript:
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wLevelCap
+	ifgreater 70, .skipCap
 	loadmem wLevelCap, 70
+.skipCap
 	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_DRAGONSHRINE_NOOP

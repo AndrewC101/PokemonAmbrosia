@@ -3237,9 +3237,11 @@ wVioletCitySceneID::                              db
 wViridianGymSceneID::                             db
 
 wLevelCap:: db
-; DevNote - 155 free bytes!
-	ds 154
+wHardMode:: db
+; DevNote - 142 free bytes!
+	ds 142
 
+wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db
 wChartScrollDelay:: db
 

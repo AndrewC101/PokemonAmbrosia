@@ -39,7 +39,10 @@ HallOfFameEnterScript:
 
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .skipScenes
+	readmem wLevelCap
+	ifgreater 85, .skipCap
 	loadmem wLevelCap, 85
+.skipCap
 	setmapscene PALLET_TOWN, SCENE_CUSTOM_1
 	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_2
 	setevent EVENT_BEAT_ELITE_FOUR

@@ -3,7 +3,7 @@
 	const OPT_TEXT_SPEED   ; 0
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
-	const OPT_SOUND        ; 3
+	const OPT_DIFFICULTY   ; 3
 	const OPT_FAST_BATTLES ; 4
 	const OPT_MENU_CLOCK   ; 5
 	const OPT_FRAME        ; 6
@@ -83,7 +83,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Battle Speed<LF>"
 	db "        :<LF>"
-	db "Sound<LF>"
+	db "Difficulty<LF>"
 	db "        :<LF>"
 	db "Menu Data<LF>"
 	db "        :<LF>"
@@ -100,7 +100,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_FasterBattles
-	dw Options_Sound
+	dw Options_Difficulty
 	dw Options_MenuClock
 	dw Options_Frame
 	dw Options_Cancel
@@ -278,41 +278,39 @@ Options_BattleStyle:
 .Shift: db "Shift@"
 .Set:   db "Set  @"
 
-Options_Sound:
-	ld hl, wOptions
+Options_Difficulty:
+	ld hl, wHardMode
 	ldh a, [hJoyPressed]
 	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
 	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
-	bit STEREO, [hl]
-	jr nz, .SetMono
-	jr .SetStereo
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit STEREO, [hl]
-	jr z, .SetStereo
-	jr .SetMono
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .NonePressed:
-	bit STEREO, [hl]
-	jr nz, .ToggleStereo
-	jr .ToggleMono
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOn
 
-.SetMono:
-	res STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleMono:
-	ld de, .Mono
+.ToggleOff:
+	xor a
+	ld [wHardMode], a
+	ld de, .Off
 	jr .Display
 
-.SetStereo:
-	set STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleStereo:
-	ld de, .Stereo
+.ToggleOn:
+	ld a, 1
+	ld [wHardMode], a
+	ld de, .On
 
 .Display:
 	hlcoord 11, 11
@@ -320,8 +318,8 @@ Options_Sound:
 	and a
 	ret
 
-.Mono:   db "Mono  @"
-.Stereo: db "Stereo@"
+.On:  db "Hard  @"
+.Off: db "Normal@"
 
 Options_FasterBattles:
  	ld hl, wOptions2

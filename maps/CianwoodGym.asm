@@ -48,6 +48,8 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_CHUCK
 	checkevent EVENT_BEAT_JASMINE
 	iffalse .skipCap
+	readmem wLevelCap
+	ifgreater 55, .skipCap
 	loadmem wLevelCap, 55
 .skipCap
 	opentext

@@ -22,9 +22,11 @@ OlivineGymJasmineScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JASMINE
 	checkevent EVENT_BEAT_CHUCK
-	iffalse .skipCaps
+	iffalse .skipCap
+	readmem wLevelCap
+	ifgreater 55, .skipCap
 	loadmem wLevelCap, 55
-.skipCaps
+.skipCap
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE

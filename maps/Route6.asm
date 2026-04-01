@@ -240,6 +240,7 @@ InvaderBackstaberScene:
     waitbutton
     closetext
     winlosstext InvaderBackstabberBeatenText, InvaderBackstabberVictoryText
+    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer INVADER, BACKSTABER
 	startbattle
 	reloadmapafterbattle

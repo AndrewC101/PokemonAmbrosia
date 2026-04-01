@@ -68,6 +68,8 @@ AzaleaTownRivalBattleScript:
 	setlasttalked AZALEATOWN_RIVAL
 	readmem wHardMode
 	ifequal 0, .normal1
+	readmem wLevelCap
+	ifless 100, .normal1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_2_TOTODILE
 	sjump .battle1
@@ -84,6 +86,8 @@ AzaleaTownRivalBattleScript:
 	setlasttalked AZALEATOWN_RIVAL
 	readmem wHardMode
 	ifequal 0, .normal2
+	readmem wLevelCap
+	ifless 100, .normal2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_2_CHIKORITA
 	sjump .battle2
@@ -101,6 +105,8 @@ AzaleaTownRivalBattleScript:
 	setlasttalked AZALEATOWN_RIVAL
 	readmem wHardMode
 	ifequal 0, .normal3
+	readmem wLevelCap
+	ifless 100, .normal3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_2_CYNDAQUIL
 	sjump .battle3

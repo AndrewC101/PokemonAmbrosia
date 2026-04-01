@@ -510,7 +510,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass WALLACE ; 2b ; Remove?
 	const EMPEROR_WALLACE
 	const MASTER_WALLACE
-	const WALLACE_HARD
+	;const WALLACE_HARD
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -817,7 +817,6 @@ DEF KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
-    const GREEN_ARCADE
 
     trainerclass LORD_OAK ; 47
     const OAK

@@ -60,7 +60,7 @@ WallaceScript:
 	sjump .battle
 .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WALLACE, WALLACE_HARD
+	loadtrainer WALLACE, EMPEROR_WALLACE
 	sjump .battle
 .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -588,7 +588,7 @@ StevenScript:
 	closetext
 .dontAsk
 	winlosstext StevenBeatenText, StevenBeatenText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer STEVEN, CHAMP_STEVEN
 	startbattle
 	ifequal LOSE, .lose
@@ -701,7 +701,7 @@ CynthiaScript:
 	closetext
 .dontAsk
 	winlosstext CynthiaBeatenText, CynthiaWinsText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CYNTHIA, CHAMP_CYNTHIA
 	startbattle
 	ifequal LOSE, .lose
@@ -802,7 +802,7 @@ LeonScript:
 	closetext
 .dontAsk
 	winlosstext LeonBeatenText, LeonWinsText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer LEON, CHAMP_LEON
 	startbattle
 	ifequal LOSE, .lose

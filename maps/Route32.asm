@@ -845,6 +845,8 @@ Route32CrystalScript:
 	winlosstext Crystal2LosesText, Crystal2WinsText
 	readmem wHardMode
 	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_2
 	sjump .battle

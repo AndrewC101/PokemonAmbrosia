@@ -2049,7 +2049,9 @@ ElmsLabMrMimeScript:
     ifequal PARTY_LENGTH, .noRoom
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
+	opentext
     givepoke ARCEUS, 100, HOLY_CROWN
+    closetext
     end
 .noRoom
     opentext
@@ -2123,7 +2125,7 @@ CheckArceusPassword:
 
 ComparePassword:
 	ld hl, wPassword
-	ld c, 4
+	ld c, 8
 	call CompareBytes
 	jr z, .yes
 	xor a
@@ -2147,7 +2149,7 @@ MasterBallPassword:
     db "CatchEmAll"
 
 WarpPassword:
-    db "Lorentz"
+    db "Graviton"
 
 LevelCapPassword:
     db "RUCasual?"
@@ -2157,7 +2159,9 @@ ArceusPassword:
 
 ElmMrMimeText:
     text "Mr Mime!"
-    line "Mime! Mime!"
+    para "Mr Mime makes a"
+    line "mischievous"
+    cont "gesture."
     done
 
 ElmsLab_MapEvents:

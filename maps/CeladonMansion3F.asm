@@ -35,7 +35,7 @@ GameFreakGameDesignerScript:
 	setevent EVENT_ENABLE_DIPLOMA_PRINTING
 
 .bossWantsToSeeYou:
-	checkevent EVENT_GOT_GIFT_OF_GOD
+	checkitem GIFT_OF_GOD
 	iftrue .end
 	opentext
 	writetext BossWantsToSeeYouText

@@ -46,6 +46,7 @@ HallOfFameEnterScript:
 	setmapscene PALLET_TOWN, SCENE_CUSTOM_1
 	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_2
 	setevent EVENT_BEAT_ELITE_FOUR
+	setevent EVENT_UNLOCK_MATERBALL_CODE
 .skipScenes
 
 	special HealParty

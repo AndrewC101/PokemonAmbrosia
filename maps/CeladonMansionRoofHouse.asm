@@ -31,7 +31,7 @@ CeladonMansionRoofHouseAndrewScript:
 	verbosegiveitem AMBROSIA
 	iffalse .end
 .noBattle
-    checkevent EVENT_GOT_GIFT_OF_GOD
+    checkitem GIFT_OF_GOD
     iffalse .explainGift
     writetext GotGiftOfGodText
     waitbutton
@@ -48,11 +48,13 @@ CeladonMansionRoofHouseAndrewScript:
 .giveGift
     writetext GiveGiftOfGodText
     waitbutton
+    checkitem GIFT_OF_GOD
+    iftrue .skipGift
     verbosegiveitem GIFT_OF_GOD
+.skipGift
     writetext GotGiftOfGodText
     waitbutton
     closetext
-    setevent EVENT_GOT_GIFT_OF_GOD
     end
 
 CeladonAndrewInitialIntroText:

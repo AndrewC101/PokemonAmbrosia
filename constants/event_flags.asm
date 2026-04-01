@@ -457,7 +457,9 @@
     const EVENT_CAUGHT_ENTEI
     const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
     const EVENT_CAUGHT_CELEBI
-    const EVENT_GOT_GIFT_OF_GOD
+    const EVENT_UNLOCK_MATERBALL_CODE
+    const EVENT_UNLOCK_WARP_CODE
+    const EVENT_UNLOCK_ARCEUS_CODE
 
     ; ======================================
     ; DevNote - here

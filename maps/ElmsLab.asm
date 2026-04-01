@@ -637,6 +637,82 @@ ElmsLabTrashcan2: ; unreferenced
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
 
+CheatCodeRepo:
+    opentext
+    writetext CheatCodeRepoText
+    waitbutton
+    checkitem GIFT_OF_GOD
+    iffalse .skipGiftCode
+    writetext GiftOfGodCodeText
+.skipGiftCode
+    checkitem MARK_OF_GOD
+    iffalse .skipMarkCode
+    writetext MarkOfGodCodeText
+.skipMarkCode
+    checkitem HAND_OF_GOD
+    iffalse .skipHandCode
+    writetext HandOfGodCodeText
+.skipHandCode
+    checkevent EVENT_UNLOCK_MATERBALL_CODE
+    iffalse .skipMasterBallCode
+    writetext MasterBallCodeText
+.skipMasterBallCode
+    checkevent EVENT_UNLOCK_WARP_CODE
+    iffalse .skipWarpCode
+    writetext WarpCodeText
+.skipWarpCode
+    readmem wLevelCap
+    ifless 100, .skipLevelCapCode
+    writetext LevelCapCodeText
+.skipLevelCapCode
+    checkevent EVENT_UNLOCK_ARCEUS_CODE
+	iffalse .skipArceusCode
+	writetext ArceusCodeText
+.skipArceusCode
+    closetext
+    end
+
+CheatCodeRepoText:
+    text "Cheat codes you"
+    line "unlock will be"
+    cont "displayed here."
+    done
+
+GiftOfGodCodeText:
+    text "Ex Nihilo"
+    line "Gift Of God."
+    prompt
+
+MarkOfGodCodeText:
+    text "Omniscient"
+    line "Mark Of God."
+    prompt
+
+HandOfGodCodeText:
+    text "Ontology"
+    line "Hand Of God."
+    prompt
+
+MasterBallCodeText:
+    text "CatchEmAll"
+    line "99 Master Balls."
+    prompt
+
+WarpCodeText:
+    text "MakeItSo"
+    line "Full Warp menu."
+    prompt
+
+LevelCapCodeText:
+    text "RUCasual?"
+    line "Level caps to 100."
+    prompt
+
+ArceusCodeText:
+    text "Omnipotent"
+    line "Level 100 Arceus."
+    prompt
+
 ElmsLab_WalkUpToElmMovement:
 	step UP
 	step UP
@@ -1672,7 +1748,7 @@ DadBattleScript:
     closetext
 
     winlosstext DadLosesText, DadWinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer DAD, DAD_1
 	startbattle
 	dontrestartmapmusic
@@ -2023,9 +2099,12 @@ ElmsLabMrMimeScript:
     closetext
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
+	setevent EVENT_UNLOCK_MATERBALL_CODE
     end
 .giveWarp
     reloadmap
+    checkevent EVENT_UNLOCK_WARP_CODE
+    iftrue .nostalgia
     opentext
     writetext GiveWarpText
     closetext
@@ -2033,9 +2112,12 @@ ElmsLabMrMimeScript:
 	waitsfx
 	setflag ENGINE_WARP
 	loadmem wReachedHallOfOrigin, 1
+	setevent EVENT_UNLOCK_WARP_CODE
     end
 .noCaps
     reloadmap
+    readmem wLevelCap
+    ifequal 100, .nostalgia
     opentext
     writetext LevelCapText
     closetext
@@ -2051,6 +2133,7 @@ ElmsLabMrMimeScript:
 	waitsfx
 	opentext
     givepoke ARCEUS, 100, HOLY_CROWN
+    setevent EVENT_UNLOCK_ARCEUS_CODE
     closetext
     end
 .noRoom
@@ -2149,7 +2232,7 @@ MasterBallPassword:
     db "CatchEmAll"
 
 WarpPassword:
-    db "Graviton"
+    db "MakeItSo"
 
 LevelCapPassword:
     db "RUCasual?"
@@ -2195,7 +2278,7 @@ ElmsLab_MapEvents:
 	bg_event  3,  7, BGEVENT_READ, ElmsLabTravelTip4
 	bg_event  6,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  8,  8, BGEVENT_READ, CheatCodeRepo
 	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow

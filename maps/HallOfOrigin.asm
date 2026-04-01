@@ -66,12 +66,12 @@ ArceusScript:
 	warp HALL_OF_ORIGIN, 11, 3
 	turnobject PLAYER, UP
 	setevent EVENT_CAUGHT_ARCEUS
+	setevent EVENT_UNLOCK_ARCEUS_CODE
     special FadeOutMusic
 	opentext
-	checkevent EVENT_GOT_GIFT_OF_GOD
+	checkitem GIFT_OF_GOD
 	iftrue .skipGift
 	verbosegiveitem GIFT_OF_GOD
-	setevent EVENT_GOT_GIFT_OF_GOD
 .skipGift
 	writetext CaughtArceusText
 	waitbutton
@@ -287,6 +287,8 @@ MasterOakScript:
 	writetext MasterOakVictoryText
 	waitbutton
 	checkevent EVENT_BEAT_LORD_OAK
+	iftrue .skipMarkOfGod
+	checkitem MARK_OF_GOD
 	iftrue .skipMarkOfGod
 	writetext MarkOfGodText
 	waitbutton
@@ -1116,10 +1118,6 @@ Zygarde2Script:
 	end
 	
 MultiverseRolePlayScript:
-    setflag ENGINE_POKEGEAR
-    setflag ENGINE_WARP
-    loadmem wReachedHallOfOrigin, 1
-
     faceplayer
     opentext
     writetext MultiverseIntroText
@@ -1729,6 +1727,7 @@ InvaderMasterPatches:
 	waitbutton
 	closetext
 	winlosstext InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer INVADER, MASTER_PATCHES
 	startbattle
 	ifequal LOSE, .Lose
@@ -1737,6 +1736,7 @@ InvaderMasterPatches:
 	setmapscene ORIGIN_ROAD, SCENE_FINISHED
 	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
 	loadmem wReachedHallOfOrigin, 1
+	setevent EVENT_UNLOCK_WARP_CODE
 
 	checkevent EVENT_BEAT_MASTER_PATCHES
 	iftrue .finish

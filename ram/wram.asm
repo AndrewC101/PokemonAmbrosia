@@ -3061,7 +3061,7 @@ wStatusFlags2::
 
 wMoney:: ds 3
 wMomsMoney:: ds 3
-wMoneyEnd::
+
 wMomSavingMoney::
 ; bit 0: saving some money
 ; bit 1: saving half money (unused)

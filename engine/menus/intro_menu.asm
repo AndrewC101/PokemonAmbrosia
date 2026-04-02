@@ -48,27 +48,20 @@ NewGame_ClearTilemapEtc:
 	call ClearWindowData
 	ret
 
+MysteryGift:
+	call UpdateTime
+	farcall DoMysteryGiftIfDayHasPassed
+	farcall DoMysteryGift
+	ret
+
 Option:
 	farcall _Option
 	ret
 
-NewGamePlus:
-	xor a
-	ldh [hBGMapMode], a
-	farcall TryLoadSaveFile
-	ret c
-	call ResetWRAM_NewGamePlus
-	jr NewGameCommon
-
 NewGame:
 	xor a
-	ldh [hBGMapMode], a
-    call ResetWRAM
-    ; fallthrough
-
-NewGameCommon:
-	xor a
 	ld [wDebugFlags], a
+	call ResetWRAM
 	call NewGame_ClearTilemapEtc
 	call OakSpeech
 	call PlayerProfileSetup
@@ -84,12 +77,6 @@ NewGameCommon:
 	ld a, MAPSETUP_WARP
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
-
-	xor a
-	ldh [hBGMapMode], a
-
-	farcall TryLoadSaveFile
-	ret c
 
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
@@ -152,7 +139,7 @@ _ResetWRAM:
 	ld [wSecretID + 1], a
 
 	ld hl, wPartyCount
-	call ResetWRAM_InitList
+	call .InitList
 
 	xor a
 	ld [wCurBox], a
@@ -161,26 +148,28 @@ _ResetWRAM:
 	newfarcall InitializeBoxes
 
 	ld hl, wNumItems
-	call ResetWRAM_InitList
+	call .InitList
 
 	ld hl, wNumKeyItems
-	call ResetWRAM_InitList
+	call .InitList
 
 	ld hl, wNumBalls
-	call ResetWRAM_InitList
+	call .InitList
 
 	ld hl, wNumPCItems
-	call ResetWRAM_InitList
+	call .InitList
 
-    ; lock new game plus ?
-	;ld a, BANK(sUnlockedNewGamePlus)
-	;call OpenSRAM
-	;ld hl, sUnlockedNewGamePlus
-	;xor a
-	;ld [hli], a
-	;dec a
-	;ld [hl], a
-	;call CloseSRAM
+	xor a
+
+	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
+	call OpenSRAM
+	ld hl, sMysteryGiftItem
+	xor a
+	ld [hli], a
+	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
+	dec a ; -1
+	ld [hl], a
+	call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
 	call InitializeMagikarpHouse
@@ -228,118 +217,7 @@ endc
 	call ResetGameTime
 	ret
 
-ResetWRAM_NewGamePlus:
-    ld a, [wPlayerID]
-    ld b, a
-    ld a, [wPlayerID + 1]
-    ld c, a
-    push bc
-
-	ld hl, wShadowOAM
-	ld bc, wOptions - wShadowOAM
-	xor a
-	call ByteFill
-
-	ld a, 1
-	ld [wOptions2], a       ; menu data on by default
-
-	ld hl, STARTOF(WRAMX)
-	ld bc, wGameData - STARTOF(WRAMX)
-	xor a
-	call ByteFill
-
-	ld hl, wGameData
-	ld bc, wMoney - wGameData
-	xor a
-	call ByteFill
-	ld hl, wMoneyEnd
-	ld bc, wKeyItems - wMoneyEnd
-	xor a
-	call ByteFill
-
-	call Random
-	ld [wSecretID], a
-	call DelayFrame
-	call Random
-	ld [wSecretID + 1], a
-
-	pop bc
-	ld a, b
-	ld [wPlayerID], a
-	ld a, c
-	ld [wPlayerID + 1], a
-
-	xor a
-    ld [wPartyCount], a
-    ld [wPlayerGender], a
-
-	ld hl, wNumItems
-	call ResetWRAM_InitList
-
-	ld hl, wNumKeyItems
-	call ResetWRAM_InitList
-
-	ld hl, wNumBalls
-	call ResetWRAM_InitList
-
-	ld hl, wNumPCItems
-	call ResetWRAM_InitList
-
-	; keep new game plus unlockd
-	ld a, BANK(sUnlockedNewGamePlus)
-	call OpenSRAM
-	ld hl, sUnlockedNewGamePlus
-	ld a, [hl]
-	inc a
-	jr nz, .ok
-	ld [hld], a
-	ld [hl], a
-.ok
-    call CloseSRAM
-
-	xor a
-	call LoadOrRegenerateLuckyIDNumber
-	call InitializeMagikarpHouse
-
-	xor a
-	ld [wMonType], a
-
-	ld [wJohtoBadges], a
-	ld [wKantoBadges], a
-
-	ld [wCoins], a
-	ld [wCoins + 1], a
-
-	xor a
-	ld [wWhichMomItem], a
-
-	ld hl, wMomItemTriggerBalance
-	ld [hl], HIGH(MOM_MONEY >> 8)
-	inc hl
-	ld [hl], HIGH(MOM_MONEY) ; mid
-	inc hl
-	ld [hl], LOW(MOM_MONEY)
-
-	; DevNote - New Game Plus - 100 level cap
-	ld a, 100
-    ld [wLevelCap], a
-
-    ; DevNote - New Game Plus - Defaults to Hard mode
-    ld a, 1
-    ld [wHardMode], a
-
-	call InitializeNPCNames
-
-	farcall InitDecorations
-
-	farcall DeletePartyMonMail
-
-	farcall ClearGSBallFlag
-
-	call ResetGameTime
-	ret
-
-ResetWRAM_InitList:
+.InitList:
 ; Loads 0 in the count and -1 in the first item or mon slot.
 	xor a
 	ld [hli], a

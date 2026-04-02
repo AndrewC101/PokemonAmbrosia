@@ -30,7 +30,21 @@ GoldenrodDeptStore5FClerkScript:
 	end
 
 Carrie:
-    jumptextfaceplayer GoldenrodDeptStore5FCarrieMysteryGiftExplanationText
+	faceplayer
+	opentext
+	special GameboyCheck
+	ifnotequal GBCHECK_CGB, .NotGBC ; This is a dummy check from Gold/Silver
+	writetext GoldenrodDeptStore5FCarrieMysteryGiftExplanationText
+	waitbutton
+	closetext
+	special UnlockMysteryGift
+	end
+
+.NotGBC:
+	writetext GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText
+	waitbutton
+	closetext
+	end
 
 GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText

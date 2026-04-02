@@ -68,7 +68,7 @@ MainMenu:
 	db "Continue@"
 	db "New Game@"
 	db "Option@"
-	db "New Game Plus@"
+	db "Mystery Gift@"
 	db "Mobile@"
 	db "Mobile Stadium@"
 if DEF(_DEBUG)
@@ -80,7 +80,7 @@ endc
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_NewGamePlus
+	dw MainMenu_MysteryGift
 	dw MainMenu_Mobile
 	dw MainMenu_MobileStudium
 if DEF(_DEBUG)
@@ -203,12 +203,12 @@ MainMenu_GetWhichMenu:
 	cp TRUE
 	ld a, MAINMENU_CONTINUE
 	ret nz
-	ld a, BANK(sUnlockedNewGamePlus)
+	ld a, BANK(sNumDailyMysteryGiftPartnerIDs)
 	call OpenSRAM
-	ld a, [sUnlockedNewGamePlus]
-	cp -1
+	ld a, [sNumDailyMysteryGiftPartnerIDs]
+	cp -1 ; locked?
 	call CloseSRAM
-	jr nz, .new_game_plus
+	jr nz, .mystery_gift
 	; This check makes no difference.
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
@@ -236,10 +236,6 @@ MainMenu_GetWhichMenu:
 .ok4
 	ld a, MAINMENU_MYSTERY
 	ret
-
-.new_game_plus
-    ld a, MAINMENU_MYSTERY
-    ret
 
 MainMenuJoypadLoop:
 	call SetUpMenu
@@ -383,6 +379,6 @@ MainMenu_Continue:
 	farcall Continue
 	ret
 
-MainMenu_NewGamePlus:
-	farcall NewGamePlus
+MainMenu_MysteryGift:
+	farcall MysteryGift
 	ret

@@ -85,12 +85,6 @@ NewGameCommon:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
-	xor a
-	ldh [hBGMapMode], a
-
-	farcall TryLoadSaveFile
-	ret c
-
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
 	jr c, .ok

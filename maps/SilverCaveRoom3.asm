@@ -124,6 +124,7 @@ Red:
 	waitbutton
 	closetext
 	special HealParty
+	special UnlockNewGamePlus
 	checkevent EVENT_BEAT_RED
 	iftrue .skip_credits
 	setevent EVENT_BEAT_RED

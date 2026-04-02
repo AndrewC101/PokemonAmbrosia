@@ -50,7 +50,8 @@ sBackupMysteryGiftItemEnd::
 	ds $30
 
 sRTCStatusFlags:: db
-	ds 7
+sUnlockedNewGamePlus:: db
+	ds 6
 sLuckyNumberDay:: db
 sLuckyIDNumber::  dw
 

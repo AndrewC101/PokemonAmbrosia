@@ -28,7 +28,7 @@ SpecialsPointers::
 	add_special CableClubCheckWhichChris
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift
+	add_special UnlockNewGamePlus
 
 ; Map events
 	add_special BugContestJudging

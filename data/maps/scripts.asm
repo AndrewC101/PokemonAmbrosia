@@ -137,7 +137,6 @@ SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/Route34.asm"
 INCLUDE "maps/ElmsLab.asm"
-INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 
 SECTION "Map Scripts 10", ROMX
@@ -568,4 +567,8 @@ INCLUDE "maps/Abyss.asm"
 SECTION "Map Scripts 52", ROMX
 
 INCLUDE "maps/CeruleanCave.asm"
+
+SECTION "Map Scripts 53", ROMX
+
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
+INCLUDE "maps/PlayersNeighborsHouse.asm"

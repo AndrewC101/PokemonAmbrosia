@@ -641,18 +641,7 @@ CheatCodeRepo:
     opentext
     writetext CheatCodeRepoText
     waitbutton
-    checkitem GIFT_OF_GOD
-    iffalse .skipGiftCode
-    writetext GiftOfGodCodeText
-.skipGiftCode
-    checkitem MARK_OF_GOD
-    iffalse .skipMarkCode
-    writetext MarkOfGodCodeText
-.skipMarkCode
-    checkitem HAND_OF_GOD
-    iffalse .skipHandCode
-    writetext HandOfGodCodeText
-.skipHandCode
+    writetext RebirthCodeText
     checkevent EVENT_UNLOCK_MATERBALL_CODE
     iffalse .skipMasterBallCode
     writetext MasterBallCodeText
@@ -665,6 +654,18 @@ CheatCodeRepo:
     ifless 100, .skipLevelCapCode
     writetext LevelCapCodeText
 .skipLevelCapCode
+    checkitem GIFT_OF_GOD
+    iffalse .skipGiftCode
+    writetext GiftOfGodCodeText
+.skipGiftCode
+    checkitem MARK_OF_GOD
+    iffalse .skipMarkCode
+    writetext MarkOfGodCodeText
+.skipMarkCode
+    checkitem HAND_OF_GOD
+    iffalse .skipHandCode
+    writetext HandOfGodCodeText
+.skipHandCode
     checkevent EVENT_UNLOCK_ARCEUS_CODE
 	iffalse .skipArceusCode
 	writetext ArceusCodeText
@@ -677,6 +678,11 @@ CheatCodeRepoText:
     line "unlock will be"
     cont "displayed here."
     done
+
+RebirthCodeText:
+    text "Resurrect"
+    line "Remake player."
+    prompt
 
 GiftOfGodCodeText:
     text "Ex Nihilo"
@@ -2063,6 +2069,8 @@ ElmsLabMrMimeScript:
     iftrue .noCaps
     callasm CheckArceusPassword
     iftrue .giveArceus
+    callasm CheckRebirthPassword
+    iftrue .rebirth
     reloadmap
     opentext
     writetext MimeConfusedText
@@ -2141,6 +2149,47 @@ ElmsLabMrMimeScript:
     writetext MakeRoomInPartyText
     closetext
     end
+.rebirth
+    reloadmap
+    opentext
+    writetext WhichGenderAreYouText
+	loadmenu .GenderHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Male
+	ifequal 2, .Female
+	closetext
+	end
+.GenderHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .GenderData
+	db 1 ; default option
+.GenderData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .GenderText
+	dbw BANK(@), NULL
+.GenderText:
+	db "Boy@"
+	db "Girl@"
+.Male
+    loadmem wPlayerGender, 0
+    sjump .rename
+.Female
+    loadmem wPlayerGender, 1
+.rename
+    warpfacing UP, NONE, 0, 0
+    opentext
+    writetext WhatIsYourNameText
+    closetext
+    callasm PlayerNamingScreen
+    reloadmap
+    opentext
+    writetext RebornText
+    closetext
+    end
 .nostalgia
     opentext
     writetext MimeNostalgicText
@@ -2167,6 +2216,21 @@ MakeRoomInPartyText:
     line "your party."
     prompt
 
+WhichGenderAreYouText:
+    text "What is your new"
+    line "gender?"
+    prompt
+
+WhatIsYourNameText:
+    text "What is your new"
+    line "name?"
+    prompt
+
+RebornText:
+    text "You are reborn"
+    line "<PLAYER>!"
+    prompt
+
 GiveWarpText:
     text "Warp enabled in"
     line "start menu."
@@ -2178,32 +2242,62 @@ PasswordScreen:
     newfarcall NamingScreen
     ret
 
+PlayerNamingScreen:
+    ld b, NAME_PLAYER
+    ld de, wPlayerName
+    newfarcall NamingScreen
+    ld hl, wPlayerName
+    ld de, DefaultName
+    call InitName
+    ret
+
+MakeMale:
+	ld a, [wPlayerSpriteSetupFlags]
+	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
+	xor a
+	ld [wPlayerGender], a
+	ret
+
+MakeFemale:
+	ld a, [wPlayerSpriteSetupFlags]
+	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
+	ld a, 1
+	ld [wPlayerGender], a
+	ret
+
+DefaultName:
+    db "Gold@@@@@@@"
+
 CheckGiftOfGodPassword:
 	ld de, GiftOfGodPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckMarkOfGodPassword:
 	ld de, MarkOfGodPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckHandOfGodPassword:
 	ld de, HandOfGodPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckMasterBallPassword:
 	ld de, MasterBallPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckWarpPassword:
 	ld de, WarpPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckLevelCapPassword:
 	ld de, LevelCapPassword
-	jp ComparePassword
+	jr ComparePassword
 
 CheckArceusPassword:
 	ld de, ArceusPassword
+	jr ComparePassword
+
+CheckRebirthPassword:
+	ld de, RebirthPassword
 	jp ComparePassword
 
 ComparePassword:
@@ -2239,6 +2333,9 @@ LevelCapPassword:
 
 ArceusPassword:
     db "Omnipotent"
+
+RebirthPassword:
+    db "Resurrect"
 
 ElmMrMimeText:
     text "Mr Mime!"

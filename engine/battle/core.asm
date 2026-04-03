@@ -4794,6 +4794,8 @@ SwitchInEffects:
     jp z, .taunt
     cp SNEASLER
     jp z, .taunt
+    cp HAWLUCHA
+    jp z, .taunt
     cp UMBREON
     jp z, .umbreon
     cp MISMAGIUS
@@ -4913,8 +4915,6 @@ SwitchInEffects:
     jp z, .spikes
 
     cp DIALGA
-    jp z, .stealthrock
-    cp RHYPERIOR
     jp z, .stealthrock
     cp NIDOKING
     jp z, .stealthrock

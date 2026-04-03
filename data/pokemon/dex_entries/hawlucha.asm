@@ -5,7 +5,7 @@
 	next "combat. It loves"
 	next "to have a crowd."
 
-	page "Takes no"
-	next "recoil damage"
-	next "from attacks.@"
+	page "Taunts foe on"
+	next "switch. Immune"
+	next "to recoil.@"
 

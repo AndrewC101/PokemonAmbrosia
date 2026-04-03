@@ -141,8 +141,15 @@ Aerith2Script:
 	closetext
 .dontAsk
 	winlosstext Aerith2BeatenText, Aerith2WinsText
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer KIMONO_GIRL, MASTER_AERITH
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, AERITH_2
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle

@@ -1872,6 +1872,8 @@ BattleCommand_CheckHit:
     call GetCurrentMon
 	cp KLEAVOR
 	ret z
+	cp RHYPERIOR
+	ret z
 .notStoneEdge
 
 	call .StatModifiers

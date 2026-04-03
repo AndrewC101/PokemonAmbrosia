@@ -217,8 +217,17 @@ RocketBaseBossFScript:
 
     setval CHAMPION
 	writemem wOtherTrainerClass
+	readmem wHardMode
+	ifequal 0, .normalDrag
+	readmem wLevelCap
+	ifless 100, .normalDrag
+	setval LANCE_DRAGONITE_100
+	writemem wOtherTrainerID
+	sjump .continueDrag
+.normalDrag
 	setval LANCE_DRAGONITE
 	writemem wOtherTrainerID
+.continueDrag
 	setval BATTLETYPE_BATTLE_FRONTIER
 	writemem wBattleType
 	special OverridePlayerParty

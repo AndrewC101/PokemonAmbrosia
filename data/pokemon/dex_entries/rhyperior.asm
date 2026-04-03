@@ -5,7 +5,7 @@
 	next "able to withstand"
 	next "volcanic blasts."
 
-	page "Lays Stealth"
-	next "Rock. Has reduced"
+	page "Stone Edge will"
+	next "hit. Has reduced"
 	next "weaknesses.@"
 

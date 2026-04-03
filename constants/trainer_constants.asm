@@ -112,6 +112,7 @@ DEF KRIS EQU __trainer_class__
 	const LANCE_DRAGONITE
 	const LANCE_ARCADE
 	const LANCE_HARD
+	const LANCE_DRAGONITE_100
 
 	trainerclass BROCK ; 11
 	const BROCK1

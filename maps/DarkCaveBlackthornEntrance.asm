@@ -5,6 +5,7 @@
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     const DARKCAVEBLACKTHORNENTRANCE_XEHANORT
+    const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL3
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
 
 DarkCaveBlackthornEntrance_MapScripts:
@@ -57,7 +58,6 @@ DarkCaveBlackthornEntranceFieldMon3Script:
 	end
 
 DarkCaveBlackthornEntranceFieldMon4Script:
-	faceplayer
 	cry NOWN
 	pause 15
 	loadwildmon NOWN, 66

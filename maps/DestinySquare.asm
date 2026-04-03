@@ -977,12 +977,15 @@ FightAdamScript:
     sjump MasterAdamScript
 
 ChampionsBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_MASTER_STEVEN
     iffalse .block
     checkevent EVENT_BEAT_MASTER_CYNTHIA
     iffalse .block
     checkevent EVENT_BEAT_MASTER_LEON
     iffalse .block
+.end
     setmapscene DESTINY_SQUARE, SCENE_CUSTOM_1
     end
 .block

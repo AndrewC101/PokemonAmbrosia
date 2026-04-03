@@ -3238,8 +3238,9 @@ wViridianGymSceneID::                             db
 
 wLevelCap:: db
 wHardMode:: db
-; DevNote - 142 free bytes!
-	ds 142
+wNewGamePlus:: db
+; DevNote - 141 free bytes!
+	ds 141
 
 wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db

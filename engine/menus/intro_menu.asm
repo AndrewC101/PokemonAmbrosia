@@ -188,9 +188,6 @@ _ResetWRAM:
 	ld [wCoins], a
 	ld [wCoins + 1], a
 
-if START_MONEY >= $10000
-	ld a, HIGH(START_MONEY >> 8)
-endc
 	ld [wMoney], a
 	ld a, HIGH(START_MONEY) ; mid
 	ld [wMoney + 1], a
@@ -243,11 +240,7 @@ ResetWRAM_NewGamePlus:
 	call ByteFill
 
 	ld hl, wGameData
-	ld bc, wMoney - wGameData
-	xor a
-	call ByteFill
-	ld hl, wMoneyEnd
-	ld bc, wKeyItems - wMoneyEnd
+	ld bc, wGameDataEnd - wGameData
 	xor a
 	call ByteFill
 
@@ -303,6 +296,12 @@ ResetWRAM_NewGamePlus:
 
 	ld [wCoins], a
 	ld [wCoins + 1], a
+
+	ld [wMoney], a
+	ld a, HIGH(START_MONEY) ; mid
+	ld [wMoney + 1], a
+	ld a, LOW(START_MONEY)
+	ld [wMoney + 2], a
 
 	xor a
 	ld [wWhichMomItem], a

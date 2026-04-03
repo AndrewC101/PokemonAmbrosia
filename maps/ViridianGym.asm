@@ -92,7 +92,7 @@ ViridianGymBlueScript:
 	readmem wLevelCap
 	ifless 100, .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BLUE, MASTER_BLUE
+	loadtrainer BLUE, BLUE_ARCADE
 	sjump .battle
 .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE

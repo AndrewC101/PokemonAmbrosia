@@ -2162,7 +2162,7 @@ ElmsLabMrMimeScript:
 	end
 .GenderHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 10, 5
+	menu_coords 0, 0, 6, 5
 	dw .GenderData
 	db 1 ; default option
 .GenderData:

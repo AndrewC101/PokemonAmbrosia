@@ -1741,7 +1741,6 @@ InvaderMasterPatches:
 	checkevent EVENT_BEAT_MASTER_PATCHES
 	iftrue .finish
 	setevent EVENT_BEAT_MASTER_PATCHES
-	setmapscene HALL_OF_ORIGIN, SCENE_CUSTOM_1
 	opentext
 	writetext InvaderMasterPatchesAfterText
 	waitbutton
@@ -1844,8 +1843,12 @@ InvaderMasterPatchesAfterText:
 	done
 
 PatchesAttacks:
+    checkevent EVENT_BEAT_MASTER_PATCHES
+    iftrue .end
     turnobject PLAYER, RIGHT
     sjump InvaderMasterPatches
+.end
+    end
 
 MasterJoeyScript:
 	faceplayer
@@ -2083,11 +2086,11 @@ HallOfOrigin_MapEvents:
 	coord_event 11, 45, SCENE_ALWAYS, HallOfOriginWarpScript2
 	coord_event 12, 45, SCENE_ALWAYS, HallOfOriginWarpScript3
 	coord_event 13, 45, SCENE_ALWAYS, HallOfOriginWarpScript4
-	coord_event 10, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 11, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 12, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 11, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
-	coord_event 12, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
+	coord_event 10, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 11, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 12, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 11, 18, SCENE_DEFAULT, MustBeatMasterRedScript
+	coord_event 12, 18, SCENE_DEFAULT, MustBeatMasterRedScript
 
 	def_bg_events
 

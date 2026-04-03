@@ -177,8 +177,11 @@ MtSilverSignText:
 	done
 
 SilverCaveOutsideBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_RED
     iffalse .block
+.end
     end
 .block
     turnobject PLAYER, UP

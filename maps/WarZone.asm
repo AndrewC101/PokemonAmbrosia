@@ -1500,6 +1500,7 @@ JonathanWinAfterBattleText:
 AdmiralDrakeScene:
     checkevent EVENT_BEAT_SOLDIER_5
     iftrue .end
+    turnobject PLAYER, UP
     sjump TrainerSoldier5
 .end
     end

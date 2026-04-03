@@ -1002,6 +1002,8 @@ StrongestText:
     done
 
 Guard1BlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_MASTER_BROCK
     iffalse .block
     checkevent EVENT_BEAT_MASTER_MISTY
@@ -1018,6 +1020,7 @@ Guard1BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_JANINE
     iffalse .block
+.end
     setmapscene DESTINY_FRONTIER, SCENE_CUSTOM_2
     end
 .block
@@ -1036,6 +1039,8 @@ Guard1BlockText:
     done
 
 Guard2BlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_MASTER_CHUCK
     iffalse .block
     checkevent EVENT_BEAT_MASTER_SURGE
@@ -1052,6 +1057,7 @@ Guard2BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_EUSINE
     iffalse .block
+.end
     setmapscene DESTINY_FRONTIER, SCENE_FINISHED
     end
 .block

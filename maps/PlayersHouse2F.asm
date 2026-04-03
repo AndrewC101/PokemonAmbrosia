@@ -15,6 +15,10 @@ PlayersHouse2FNoopScene: ; unreferenced
 	end
 
 PlayersHouse2FInitializeRoomCallback:
+    readmem wLevelCap
+    ifless 100, .cont
+    loadmem wNewGamePlus, 1
+.cont
 	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS

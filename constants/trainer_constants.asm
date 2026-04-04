@@ -722,8 +722,6 @@ DEF KRIS EQU __trainer_class__
 	const JARETH
 	const REX
 	const ALLAN
-	const CHRIS_CHAN
-	const MASTER_CHRIS_CHAN
 
 	trainerclass KIMONO_GIRL ; 3c
 	const NAOKO_UNUSED ; unused
@@ -770,6 +768,7 @@ DEF KRIS EQU __trainer_class__
 	const SETO
 	const MASTER_SETO
 	const BLUE_ARCADE
+	const MAXWELL
 
 	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH

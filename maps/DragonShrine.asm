@@ -6,19 +6,19 @@
 
 DragonShrine_MapScripts:
 	def_scene_scripts
-	scene_script .DragonShrineTest ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script DragonShrineTakeTestScene, SCENE_DRAGONSHRINE_TAKE_TEST
+	scene_script DragonShrineNoopScene,     SCENE_DRAGONSHRINE_NOOP
 
 	def_callbacks
 
-.DragonShrineTest:
-	sdefer .DragonShrineTestScript
+DragonShrineTakeTestScene:
+	sdefer DragonShrineTakeTestScript
 	end
 
-.DummyScene:
+DragonShrineNoopScene:
 	end
 
-.DragonShrineTestScript:
+DragonShrineTakeTestScript:
 	applymovement PLAYER, DragonShrinePlayerWalkInMovement
 	applymovement DRAGONSHRINE_ELDER1, DragonShrineElderStepDownMovement
 	opentext
@@ -124,10 +124,13 @@ DragonShrine_MapScripts:
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wLevelCap
+	ifgreater 70, .skipCap
 	loadmem wLevelCap, 70
+.skipCap
 	special RestartMapMusic
 	specialphonecall SPECIALCALL_MASTERBALL
-	setscene SCENE_FINISHED
+	setscene SCENE_DRAGONSHRINE_NOOP
 	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 	writetext DragonShrinePlayerReceivedRisingBadgeText
 	promptbutton

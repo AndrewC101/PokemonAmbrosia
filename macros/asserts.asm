@@ -1,44 +1,53 @@
 ; Macros to verify assumptions about the data or code
 
-table_width: MACRO
-CURRENT_TABLE_WIDTH = \1
-if _NARG == 2
-REDEF CURRENT_TABLE_START EQUS "\2"
-else
-REDEF CURRENT_TABLE_START EQUS "._table_width\@"
-{CURRENT_TABLE_START}:
-endc
+MACRO? _redef_current_label
+	if DEF(\1)
+		PURGE \1
+	endc
+	if _NARG == 3 + (\3)
+		DEF \1 EQUS "\<_NARG>"
+	elif STRLEN(#__SCOPE__)
+		if {{__SCOPE__}} - @ == 0
+			DEF \1 EQUS #{__SCOPE__}
+		endc
+	endc
+	if !DEF(\1)
+		DEF \1 EQUS \2
+		{\1}:
+	endc
 ENDM
 
-assert_table_length: MACRO
-x = \1
-	assert x * CURRENT_TABLE_WIDTH == @ - {CURRENT_TABLE_START}, \
-		"{CURRENT_TABLE_START}: expected {d:x} entries, each {d:CURRENT_TABLE_WIDTH} bytes"
+MACRO? table_width
+	DEF CURRENT_TABLE_WIDTH = \1
+	_redef_current_label CURRENT_TABLE_START, "._table_width\@", 2, \#
 ENDM
 
-list_start: MACRO
-list_index = 0
-if _NARG == 1
-REDEF CURRENT_LIST_START EQUS "\1"
-else
-REDEF CURRENT_LIST_START EQUS "._list_start\@"
-{CURRENT_LIST_START}:
-endc
+MACRO? assert_table_length
+	DEF w = \1
+	DEF x = w * CURRENT_TABLE_WIDTH
+	DEF y = @ - {CURRENT_TABLE_START}
+	assert x == y, "{CURRENT_TABLE_START}: expected {d:w} entries, each {d:CURRENT_TABLE_WIDTH} " ++ \
+		"bytes, for {d:x} total; but got {d:y} bytes"
 ENDM
 
-li: MACRO
-	assert !STRIN(\1, "@"), STRCAT("String terminator \"@\" in list entry: ", \1)
+MACRO? list_start
+	DEF list_index = 0
+	_redef_current_label CURRENT_LIST_START, "._list_start\@", 1, \#
+ENDM
+
+MACRO? li
+	assert STRFIND(\1, "@") == -1, "String terminator \"@\" in list entry: \1"
 	db \1, "@"
-list_index += 1
+    DEF list_index += 1
 ENDM
 
-assert_list_length: MACRO
-x = \1
+MACRO? assert_list_length
+	DEF x = \1
 	assert x == list_index, \
 		"{CURRENT_LIST_START}: expected {d:x} entries, got {d:list_index}"
 ENDM
 
-def_grass_wildmons: MACRO
+MACRO? def_grass_wildmons
 ;\1: map id
 REDEF CURRENT_GRASS_WILDMONS_MAP EQUS "\1"
 REDEF CURRENT_GRASS_WILDMONS_LABEL EQUS "._def_grass_wildmons_\1"
@@ -46,12 +55,13 @@ REDEF CURRENT_GRASS_WILDMONS_LABEL EQUS "._def_grass_wildmons_\1"
 	map_id \1
 ENDM
 
-end_grass_wildmons: MACRO
-	assert GRASS_WILDDATA_LENGTH == @ - {CURRENT_GRASS_WILDMONS_LABEL}, \
-		"def_grass_wildmons {CURRENT_GRASS_WILDMONS_MAP}: expected {d:GRASS_WILDDATA_LENGTH} bytes"
+MACRO? end_grass_wildmons
+	DEF x = @ - {CURRENT_GRASS_WILDMONS_LABEL}
+	assert GRASS_WILDDATA_LENGTH == x, \
+		"def_grass_wildmons {CURRENT_GRASS_WILDMONS_MAP}: expected {d:GRASS_WILDDATA_LENGTH} bytes, got {d:x}"
 ENDM
 
-def_water_wildmons: MACRO
+MACRO? def_water_wildmons
 ;\1: map id
 REDEF CURRENT_WATER_WILDMONS_MAP EQUS "\1"
 REDEF CURRENT_WATER_WILDMONS_LABEL EQUS "._def_water_wildmons_\1"
@@ -59,7 +69,8 @@ REDEF CURRENT_WATER_WILDMONS_LABEL EQUS "._def_water_wildmons_\1"
 	map_id \1
 ENDM
 
-end_water_wildmons: MACRO
-	assert WATER_WILDDATA_LENGTH == @ - {CURRENT_WATER_WILDMONS_LABEL}, \
-		"def_water_wildmons {CURRENT_WATER_WILDMONS_MAP}: expected {d:WATER_WILDDATA_LENGTH} bytes"
+MACRO? end_water_wildmons
+	DEF x = @ - {CURRENT_WATER_WILDMONS_LABEL}
+	assert WATER_WILDDATA_LENGTH == x, \
+		"def_water_wildmons {CURRENT_WATER_WILDMONS_MAP}: expected {d:WATER_WILDDATA_LENGTH} bytes, got {d:x}"
 ENDM

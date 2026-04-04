@@ -12,8 +12,9 @@ _ReturnToBattle_UseBall:
 .continue
 	farcall GetEnemyMonFrontpic
 	farcall _LoadBattleFontsHPBar
+	farcall LoadStatusIcons
 	call GetMemSGBLayout
 	call CloseWindow
 	call LoadStandardMenuHeader
 	call WaitBGMap
-	jp SetPalettes
+	jp SetDefaultBGPAndOBP

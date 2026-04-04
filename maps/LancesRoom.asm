@@ -5,20 +5,20 @@
 
 LancesRoom_MapScripts:
 	def_scene_scripts
-	scene_script .LockDoor ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_LANCESROOM_APPROACH_LANCE
+	scene_script LancesRoomLockDoorScene, SCENE_LANCESROOM_LOCK_DOOR
+	scene_script LancesRoomNoopScene,     SCENE_LANCESROOM_APPROACH_LANCE
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .LancesRoomDoors
+	callback MAPCALLBACK_TILES, LancesRoomDoorsCallback
 
-.LockDoor:
-	sdefer .LancesDoorLocksBehindYou
+LancesRoomLockDoorScene:
+	sdefer LancesRoomDoorLocksBehindYouScript
 	end
 
-.DummyScene:
+LancesRoomNoopScene:
 	end
 
-.LancesRoomDoors:
+LancesRoomDoorsCallback:
 	checkevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 22, $34 ; wall
@@ -29,13 +29,13 @@ LancesRoom_MapScripts:
 .KeepExitClosed:
 	endcallback
 
-.LancesDoorLocksBehindYou:
+LancesRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, LancesRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 22, $34 ; wall
-	reloadmappart
+	refreshmap
 	closetext
 	setscene SCENE_LANCESROOM_APPROACH_LANCE
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
@@ -57,8 +57,21 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CHAMPION, LANCE_ARCADE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CHAMPION, LANCE_HARD
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CHAMPION, LANCE
+.battle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -69,7 +82,7 @@ LancesRoomLanceScript:
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
@@ -139,7 +152,7 @@ LancesRoomLanceScript:
 	pause 30
 	closetext
 	;applymovement LANCESROOM_ELM, LancesRoomMovementData_ElmRunsBackAndForth
-	special FadeOutPalettes
+	special FadeOutToWhite
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end

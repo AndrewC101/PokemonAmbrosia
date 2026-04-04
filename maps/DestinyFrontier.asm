@@ -1,5 +1,5 @@
     object_const_def
-    const DESTINYFRONTIER_CHRIS_CHAN
+    const DESTINYFRONTIER_MAXWELL
     const DESTINYFRONTIER_YAMI
     const DESTINYFRONTIER_SETO
     const DESTINYFRONTIER_DRAKE
@@ -31,32 +31,32 @@ Movement_DestinyFrontierTurnLeft:
 	step LEFT
 	step_end
 
-MasterChrisChanScript:
+MaxwellScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MASTER_CHRIS_CHAN
+	checkevent EVENT_BEAT_MAXWELL
 	iftrue .FightDone
 .fight
-	writetext ChrisChanSeenText
+	writetext MaxwellSeenText
 	waitbutton
 	closetext
-	setval MUSIC_MYSTICALMAN_ENCOUNTER
+	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride
-	winlosstext ChrisChanBeatenText, ChrisChanWinText
+	winlosstext MaxwellBeatenText, MaxwellWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer POKEFANM, MASTER_CHRIS_CHAN
+	loadtrainer BLUE, MAXWELL
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmapafterbattle
-	setevent EVENT_BEAT_MASTER_CHRIS_CHAN
+	setevent EVENT_BEAT_MAXWELL
 	special HealParty
 	opentext
-	writetext ChrisChanAfterBattleText
+	writetext MaxwellAfterBattleText
 	waitbutton
 	closetext
 	end
 .FightDone:
-	writetext ChrisChanAfterBattleText
+	writetext MaxwellAfterBattleText
 	waitbutton
     closetext
 	opentext
@@ -71,44 +71,45 @@ MasterChrisChanScript:
     special HealParty
     reloadmap
     opentext
-    writetext ChrisChanLoseAfterBattleText
+    writetext MaxwellLoseAfterBattleText
     waitbutton
     closetext
     end
 
- ChrisChanSeenText:
-	text "Megan!?"
-	para "Who are you?"
-	para "I am the ruler of"
-	line "this universe"
-	cont "C187!"
-	para "The merge is upon"
-	line "us!"
+ MaxwellSeenText:
+	text "You enjoying"
+	line "yourself?"
+	para "I've been all over"
+	line "the world."
+	para "My #mon are my"
+	line "travel companions."
+	para "Show me your team."
 	done
 
- ChrisChanBeatenText:
-    text "CURSYEHAMEHAA!"
+ MaxwellBeatenText:
+    text "Well played."
     done
 
- ChrisChanWinText:
-    text "I am strong!"
+ MaxwellWinText:
+    text "Well played."
     done
 
- ChrisChanAfterBattleText:
-	text "After the merge"
-	line "all shall worship"
-	cont "me and I shall use"
-	cont "my power to build"
-	cont "a sweetheart from"
-	cont "the ground up."
+ MaxwellAfterBattleText:
+	text "If I can give one"
+	line "piece of advice,"
+	cont "it's this."
+	para "People can be"
+	line "really cool if"
+	cont "given the chance"
+	cont "to be."
+	para "Good luck out"
+	line "there."
 	done
 
- ChrisChanLoseAfterBattleText:
-	text "Stay honest and"
-	line "true brave spirit."
-	para "And don't forget"
-	line "to worship me"
-	cont "everyday."
+ MaxwellLoseAfterBattleText:
+	text "You did really"
+	line "well."
+	para "Don't give up."
 	done
 
 MasterYamiScript:
@@ -944,7 +945,7 @@ NurseScript:
 	iffalse .done
 	closetext
 	special HealParty
-	special FadeOutPalettes
+	special FadeOutToWhite
 	reloadmap
 	opentext
 	writetext HealDoneText
@@ -1002,6 +1003,8 @@ StrongestText:
     done
 
 Guard1BlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_MASTER_BROCK
     iffalse .block
     checkevent EVENT_BEAT_MASTER_MISTY
@@ -1018,6 +1021,7 @@ Guard1BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_JANINE
     iffalse .block
+.end
     setmapscene DESTINY_FRONTIER, SCENE_CUSTOM_2
     end
 .block
@@ -1036,6 +1040,8 @@ Guard1BlockText:
     done
 
 Guard2BlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_MASTER_CHUCK
     iffalse .block
     checkevent EVENT_BEAT_MASTER_SURGE
@@ -1052,6 +1058,7 @@ Guard2BlockScript:
     iffalse .block
     checkevent EVENT_BEAT_MASTER_EUSINE
     iffalse .block
+.end
     setmapscene DESTINY_FRONTIER, SCENE_FINISHED
     end
 .block
@@ -1266,7 +1273,7 @@ DestinyFrontier_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 53, 50, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MasterChrisChanScript, -1
+	object_event 53, 50, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MaxwellScript, -1
 	object_event 50, 14, SPRITE_RED, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterYamiScript, -1
 	object_event  4,  4, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MasterSetoScript, -1
 	object_event  9, 52, SPRITE_OFFICER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterDrakeScript, -1

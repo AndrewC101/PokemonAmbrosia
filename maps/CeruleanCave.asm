@@ -188,8 +188,17 @@ CeruleanCaveAizenScript:
 	waitbutton
 	closetext
 	winlosstext AizenBeatenText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer POKEMANIAC, MASTER_AIZEN
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMANIAC, AIZEN
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_AIZEN

@@ -16,9 +16,9 @@ Route17_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
+	callback MAPCALLBACK_NEWMAP, Route17AlwaysOnBikeCallback
 
-.AlwaysOnBike:
+Route17AlwaysOnBikeCallback:
     appear ROUTE17_FIELDMON_1
     appear ROUTE17_FIELDMON_2
     appear ROUTE17_FIELDMON_3
@@ -57,7 +57,7 @@ Route17FieldMon4Script:
     end
 
 Route17FieldMon5Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 63, 0, .script
+	trainer PORYGONZ, FIELD_MON, EVENT_FIELD_MON_5, Route17PokemonAttacksText, 63, 0, .script
 .script
     disappear ROUTE17_FIELDMON_5
     end

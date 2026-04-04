@@ -6,6 +6,8 @@
 	const SCGB_POKEGEAR_PALS
 	const SCGB_STATS_SCREEN_HP_PALS
 	const SCGB_POKEDEX
+	const SCGB_POKEDEX_EVO
+	const SCGB_POKEDEX_PICS
 	const SCGB_SLOT_MACHINE
 	const SCGB_BETA_TITLE_SCREEN
 	const SCGB_GS_INTRO
@@ -33,10 +35,10 @@
 	const SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	const SCGB_MYSTERY_GIFT
 	const SCGB_1E
-NUM_SCGB_LAYOUTS EQU const_value
+DEF NUM_SCGB_LAYOUTS EQU const_value
 
-SCGB_PARTY_MENU_HP_BARS EQU $fc
-SCGB_DEFAULT EQU $ff
+DEF SCGB_PARTY_MENU_HP_BARS EQU $fc
+DEF SCGB_DEFAULT EQU $ff
 
 ; GetCrystalCGBLayout arguments (see engine/gfx/crystal_layouts.asm)
 	const_def
@@ -133,7 +135,8 @@ SCGB_DEFAULT EQU $ff
 	const PREDEFPAL_UNOWN_PUZZLE
 	const PREDEFPAL_GAMEFREAK_LOGO_OB
 	const PREDEFPAL_GAMEFREAK_LOGO_BG
-NUM_PREDEF_PALS EQU const_value
+	const PREDEFPAL_POKEGEAR_TOD_ICONS
+DEF NUM_PREDEF_PALS EQU const_value
 
 ; SGB system command codes
 ; http://gbdev.gg8.se/wiki/articles/SGB_Functions#SGB_System_Command_Table
@@ -164,4 +167,4 @@ NUM_PREDEF_PALS EQU const_value
 	const SGB_MASK_EN
 	const SGB_OBJ_TRN
 
-PALPACKET_LENGTH EQU $10
+DEF PALPACKET_LENGTH EQU $10

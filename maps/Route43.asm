@@ -21,10 +21,10 @@ Route43_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .CheckIfRockets
-	callback MAPCALLBACK_OBJECTS, .WeatherAndFieldMon
+	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
+	callback MAPCALLBACK_OBJECTS, WeatherAndFieldMon
 
-.WeatherAndFieldMon:
+WeatherAndFieldMon:
 	setval WEATHER_RAIN
 	writemem wFieldWeather
 
@@ -33,22 +33,15 @@ Route43_MapScripts:
     appear ROUTE43_FIELDMON_4
     appear ROUTE43_FIELDMON_5
     appear ROUTE43_FIELDMON_6
+    appear ROUTE43_FIELDMON_8
 
 ; Pokemon that sometimes appear
     random 2
     ifequal 1, .spawn7
     disappear ROUTE43_FIELDMON_7
-    sjump .mon8
+    sjump .checkNight
 .spawn7
     appear ROUTE43_FIELDMON_7
-
-.mon8
-    random 5 ; shiny
-    ifequal 1, .spawn8
-    disappear ROUTE43_FIELDMON_8
-    sjump .checkNight
-.spawn8
-    appear ROUTE43_FIELDMON_8
 
 .checkNight
 ; Pokemon that only appear at night
@@ -63,14 +56,14 @@ Route43_MapScripts:
 .end
     endcallback
 
-.CheckIfRockets:
+Route43CheckIfRocketsScene:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .NoRockets
-	setmapscene ROUTE_43_GATE, SCENE_DEFAULT
+	setmapscene ROUTE_43_GATE, SCENE_ROUTE43GATE_ROCKET_SHAKEDOWN
 	endcallback
 
 .NoRockets:
-	setmapscene ROUTE_43_GATE, SCENE_FINISHED
+	setmapscene ROUTE_43_GATE, SCENE_ROUTE43GATE_NOOP
 	endcallback
 
 TrainerCamperSpencer:
@@ -739,10 +732,9 @@ Route43FieldMon7Script:
 
 Route43FieldMon8Script:
 	faceplayer
-	cry SHELGON
+	cry BRELOOM
 	pause 15
-	loadwildmon SHELGON, 30
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
+	loadwildmon BRELOOM, 30
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8

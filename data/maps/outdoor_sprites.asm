@@ -18,7 +18,7 @@
 
 OutdoorSprites:
 ; entries correspond to MAPGROUP_* constants
-	table_width 2, OutdoorSprites
+	table_width 2
 	dw OlivineGroupSprites
 	dw MahoganyGroupSprites
 	dw DungeonsGroupSprites
@@ -124,7 +124,7 @@ SaffronGroupSprites:
 	db SPRITE_MONSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKET
-	db SPRITE_SILVER
+	db SPRITE_RIVAL
 
 	db SPRITE_POKE_BALL
 	db SPRITE_ALAKAZAM
@@ -208,7 +208,7 @@ CherrygroveGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_MONSTER
 	db SPRITE_GRAMPS
-	db SPRITE_SILVER
+	db SPRITE_RIVAL
 	db SPRITE_BIRD
 
     db SPRITE_HERACROSS
@@ -232,7 +232,7 @@ MuseumSprites:
 ManorSprites:
 AbyssSprites:
 SilverGroupSprites:
-	db SPRITE_SILVER
+	db SPRITE_RIVAL
 	db SPRITE_BIRD
 	db SPRITE_SUPER_NERD
 	db SPRITE_BEAUTY
@@ -291,7 +291,7 @@ AzaleaGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_AZALEA_ROCKET
 	db SPRITE_LASS
-	db SPRITE_SILVER
+	db SPRITE_RIVAL
 
 	db SPRITE_FRUIT_TREE
 	db SPRITE_COOLTRAINER_M

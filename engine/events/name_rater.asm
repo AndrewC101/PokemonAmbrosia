@@ -77,9 +77,9 @@ IsNewNameEmpty:
 	ld c, MON_NAME_LENGTH - 1
 .loop
 	ld a, [hli]
-	cp "@"
+	cp '@'
 	jr z, .terminator
-	cp " "
+	cp ' '
 	jr nz, .nonspace
 	dec c
 	jr nz, .loop
@@ -110,7 +110,7 @@ CompareNewToOld:
 	ld de, wStringBuffer2
 .loop
 	ld a, [de]
-	cp "@"
+	cp '@'
 	jr z, .terminator
 	cp [hl]
 	jr nz, .different
@@ -131,7 +131,7 @@ GetNicknamenameLength:
 	ld c, 0
 .loop
 	ld a, [hli]
-	cp "@"
+	cp '@'
 	ret z
 	inc c
 	ld a, c

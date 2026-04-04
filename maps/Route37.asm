@@ -19,9 +19,9 @@ Route37_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Sunny
+	callback MAPCALLBACK_OBJECTS, Route37SunnyCallback
 
-.Sunny:
+Route37SunnyCallback:
 ; Pokemon which always appear
     appear ROUTE37_FIELDMON_1
     appear ROUTE37_FIELDMON_2

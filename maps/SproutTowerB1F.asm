@@ -1,8 +1,9 @@
     object_const_def
-    const SPROUTTOWERB1F_SAGE
+    const SPROUTTOWERB1F_MAXWELL
     const SPROUTTOWERB1F_FIELDMON_1
     const SPROUTTOWERB1F_FIELDMON_2
     const SPROUTTOWERB1F_FIELDMON_3
+    const SPROUTTOWERB1F_SAGE
 
 SproutTowerB1F_MapScripts:
 	def_scene_scripts
@@ -84,24 +85,6 @@ GiveSpellTagText:
     para "Take this."
     prompt
 
-SageWarningText:
-    text "Spell Tag"
-    line "strengthens"
-    cont "ones connection"
-    cont "to the other"
-    cont "side."
-
-    para "It makes Ghost"
-    line "moves stronger."
-
-    para "The darkness"
-    line "ahead is too"
-    cont "strong for me."
-
-    para "Take care dear"
-    line "child."
-    done
-
 Maxwell:
 	faceplayer
 	opentext
@@ -113,16 +96,35 @@ Maxwell:
 	end
 
 mawileTradeText:
+	text "Welcome traveler."
+	para "What's your team?"
+	para "Never mind."
+	para "There is something"
+	line "I need you to get."
+	para "Well I don't"
+	line "really need it, I"
+	cont "just want to see"
+	cont "if you are brave"
+	cont "enough."
+	done
+
+SageWarningText:
 	text "My brother would"
 	line "never understand."
-	para "Avoiding that"
-	line "which we fear only"
-	cont "strengthens said"
-	cont "fear."
-	para "We must lure our"
-	line "fears to us."
-	para "Embrace them."
-	para "Then devour them!"
+	para "None of them do."
+	para "We must learn to"
+	line "embrace that which"
+	cont "we fear."
+	para "Beyond here is an"
+	line "ancient, forbidden"
+	cont "place."
+	para "The darkness is"
+	line "overpowering."
+	para "But I sense an"
+	line "untainted light"
+	cont "deep inside."
+	para "Something of great"
+	line "power."
 	done
 
 SproutTowerB1F_MapEvents:
@@ -138,7 +140,8 @@ SproutTowerB1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Maxwell, -1
+	object_event 13,  4, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Maxwell, -1
 	object_event 16, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, SproutTowerB1FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event  4,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 2, SproutTowerB1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event  9, 13, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SageScript, -1

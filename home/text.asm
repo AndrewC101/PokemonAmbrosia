@@ -1,6 +1,6 @@
 ClearBox::
 ; Fill a c*b box at hl with blank tiles.
-	ld a, " "
+	ld a, ' '
 	; fallthrough
 
 FillBoxWithByte::
@@ -23,20 +23,20 @@ ClearTilemap::
 ; Fill wTilemap with blank tiles.
 
 	hlcoord 0, 0
-	ld a, " "
+	ld a, ' '
 	ld bc, wTilemapEnd - wTilemap
 	call ByteFill
 
 	; Update the BG Map.
 	ldh a, [rLCDC]
-	bit rLCDC_ENABLE, a
+	bit B_LCDC_ENABLE, a
 	ret z
 	jp WaitBGMap
 
 ClearScreen::
 	ld a, PAL_BG_TEXT
 	hlcoord 0, 0, wAttrmap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	ld bc, SCREEN_AREA
 	call ByteFill
 	jr ClearTilemap
 
@@ -51,50 +51,61 @@ Textbox::
 	pop bc
 	jr TextboxPalette
 
+TextBoxCharacters:
+	db "┌─┐" ; top
+	db "│ │" ; middle
+	db "└─┘" ; bottom
+
 TextboxBorder::
+	ld de, TextBoxCharacters
+	; fallthrough
+CreateBoxBorders::
+	ld a, SCREEN_WIDTH
+
 	; Top
+	call .PlaceRow
+	jr .row
+
+.row_loop
+	dec de
+	dec de
+	dec de
+.row
+	call .PlaceRow
+	dec b
+	jr nz, .row_loop
+
+	; Bottom row (fallthrough)
+
+.PlaceRow:
+	push af
 	push hl
-	ld a, "┌"
+	ld a, [de]
+	inc de
 	ld [hli], a
-	inc a ; "─"
+	ld a, [de]
+	inc de
 	call .PlaceChars
-	inc a ; "┐"
+	ld a, [de]
+	inc de
 	ld [hl], a
 	pop hl
-
-	; Middle
-	ld de, SCREEN_WIDTH
-	add hl, de
-.row
-	push hl
-	ld a, "│"
-	ld [hli], a
-	ld a, " "
-	call .PlaceChars
-	ld [hl], "│"
-	pop hl
-
-	ld de, SCREEN_WIDTH
-	add hl, de
-	dec b
-	jr nz, .row
-
-	; Bottom
-	ld a, "└"
-	ld [hli], a
-	ld a, "─"
-	call .PlaceChars
-	ld [hl], "┘"
-
+	pop af
+	push bc
+	ld b, 0
+	ld c, a
+	add hl, bc
+	pop bc
 	ret
 
 .PlaceChars:
 ; Place char a c times.
-	ld d, c
+	push bc
 .loop
 	ld [hli], a
-	dec d
+	dec c
 	jr nz, .loop
+	pop bc
 	ret
 
 TextboxPalette::
@@ -137,10 +148,6 @@ SpeechTextbox::
 	ld c, TEXTBOX_INNERW
 	jp Textbox
 
-GameFreakText:: ; unreferenced
-	text "ゲームフりーク！" ; "GAMEFREAK!"
-	done
-
 RadioTerminator::
 	ld hl, .stop
 	ret
@@ -162,7 +169,7 @@ BuenaPrintText::
 
 PrintTextboxText::
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	ret
 
 SetUpTextbox::
@@ -173,139 +180,153 @@ SetUpTextbox::
 	pop hl
 	ret
 
+PlaceVWFString::
+; Place string de at hl with offset in c.
+; Read while in ROM0 so [de] can be from any ROMX bank.
+.loop
+	ld a, [de]
+	newfarcall PlaceNextVWFChar
+	jr nz, .loop
+	ret
+
+GetVWFLength::
+; Returns length of string de in a.
+; Read while in ROM0 so [de] can be from any ROMX bank.
+	push de
+	push bc
+	ld c, 0
+.loop
+	ld a, [de]
+	newfarcall _GetNextVWFLength
+	jr nz, .loop
+	ld a, c
+	pop bc
+	pop de
+	ret
+
 FarPlaceStringRet:
-    pop af
-    ldh [hROMBank], a
-    ld [MBC3RomBank], a
-    ret
+	pop af
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+	ret
 
 FarPlaceString::
-    ldh a, [hROMBank]
-    push af
-    ld a, b
-    ldh [hROMBank], a
-    ld [MBC3RomBank], a
-    ld bc, FarPlaceStringRet
-    push bc
-    ; fallthrough
+	ldh a, [hROMBank]
+	push af
+	ld a, b
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+	ld bc, FarPlaceStringRet
+	push bc
+	; fallthrough
+
 PlaceString::
 	push hl
 	; fallthrough
 
 PlaceNextChar::
 	ld a, [de]
-	cp "@"
+	cp '@'
 	jr nz, CheckDict
 	ld b, h
 	ld c, l
 	pop hl
 	ret
 
-DummyChar:: ; unreferenced
-	pop de
-	; fallthrough
-
 NextChar::
 	inc de
 	jp PlaceNextChar
 
 CheckDict::
-dict: MACRO
-assert CHARLEN(\1) == 1
-if \1 == 0
-	and a
-else
-	cp \1
-endc
-if ISCONST(\2)
-	; Replace a character with another one
-	jr nz, .not\@
-	ld a, \2
-.not\@:
-elif STRSUB("\2", 1, 1) == "."
-	; Locals can use a short jump
-	jr z, \2
-else
-	jp z, \2
-endc
+MACRO dict
+	if \1 == 0
+		and a
+	else
+		cp \1
+	endc
+	if ISCONST(\2)
+		; Replace a character with another one
+		jr nz, .not\@
+		ld a, \2
+	.not\@:
+	elif STRFIND("\2", ".") == 0
+		; Locals can use a short jump
+		jr z, \2
+	else
+		jp z, \2
+	endc
 ENDM
 
-	dict "<MOBILE>",  MobileScriptChar
-	dict "<LINE>",    LineChar
-	dict "<NEXT>",    NextLineChar
-	dict "<CR>",      CarriageReturnChar
-	dict "<NULL>",    NullChar
-	dict "<SCROLL>",  _ContTextNoPause
-	dict "<_CONT>",   _ContText
-	dict "<PARA>",    Paragraph
-	dict "<MOM>",     PrintMomsName
-	dict "<PLAYER>",  PrintPlayerName
-	dict "<RIVAL>",   PrintRivalName
-	dict "<ROUTE>",   PlaceJPRoute
-	dict "<WATASHI>", PlaceWatashi
-	dict "<KOKO_WA>", PlaceKokoWa
-	dict "<RED>",     PrintRedsName
-	dict "<GREEN>",   PrintGreensName
-	dict "#",         PlacePOKe
-	dict "<PC>",      PCChar
-	dict "<ROCKET>",  RocketChar
-	dict "<TM>",      TMChar
-	dict "<TRAINER>", TrainerChar
-	dict "<KOUGEKI>", PlaceKougeki
-	dict "<LF>",      LineFeedChar
-	dict "<CONT>",    ContText
-	dict "<……>",      SixDotsChar
-	dict "<DONE>",    DoneText
-	dict "<PROMPT>",  PromptText
-	dict "<PKMN>",    PlacePKMN
-	dict "<POKE>",    PlacePOKE
-	dict "%",         NextChar
-	dict "¯",         " "
-	dict "<DEXEND>",  PlaceDexEnd
-	dict "<TARGET>",  PlaceMoveTargetsName
-	dict "<USER>",    PlaceMoveUsersName
-	dict "<ENEMY>",   PlaceEnemysName
-	dict "<PLAY_G>",  PlaceGenderedPlayerName
-	dict "ﾟ",         .place ; should be .diacritic
-	dict "ﾞ",         .place ; should be .diacritic
-	jr .not_diacritic
-
-.diacritic ; unreferenced
-	ld b, a
-	call Diacritic
-	jp NextChar
+	dict '<MOBILE>',  MobileScriptChar
+	dict '<LINE>',    LineChar
+	dict '<NEXT>',    NextLineChar
+	dict '<CR>',      CarriageReturnChar
+	dict '<NULL>',    NullChar
+	dict '<SCROLL>',  _ContTextNoPause
+	dict '<_CONT>',   _ContText
+	dict '<PARA>',    Paragraph
+	dict '<MOM>',     PrintMomsName
+	dict '<PLAYER>',  PrintPlayerName
+	dict '<RIVAL>',   PrintRivalName
+	dict '<ROUTE>',   PlaceJPRoute
+	dict '<WATASHI>', PlaceWatashi
+	dict '<KOKO_WA>', PlaceKokoWa
+	dict '<RED>',     PrintRedsName
+	dict '<GREEN>',   PrintGreensName
+	dict '#',         PlacePOKe
+	dict '<PC>',      PCChar
+	dict '<ROCKET>',  RocketChar
+	dict '<TM>',      TMChar
+	dict '<TRAINER>', TrainerChar
+	dict '<KOUGEKI>', PlaceKougeki
+	dict '<LF>',      LineFeedChar
+	dict '<CONT>',    ContText
+	dict '<……>',      SixDotsChar
+	dict '<DONE>',    DoneText
+	dict '<PROMPT>',  PromptText
+	dict '<PKMN>',    PlacePKMN
+	dict '<POKE>',    PlacePOKE
+	dict '<WBR>',     NextChar
+	dict '<BSP>',     ' '
+	dict '<DEXEND>',  PlaceDexEnd
+	dict '<TARGET>',  PlaceMoveTargetsName
+	dict '<USER>',    PlaceMoveUsersName
+	dict '<ENEMY>',   PlaceEnemysName
+	dict '<PLAY_G>',  PlaceGenderedPlayerName
+	dict 'ﾟ',         .place ; should be .diacritic
+	dict 'ﾞ',         .place ; should be .diacritic
 
 .not_diacritic
 	cp FIRST_REGULAR_TEXT_CHAR
 	jr nc, .place
 ; dakuten or handakuten
-	cp "パ"
+	cp 'パ'
 	jr nc, .handakuten
 ; dakuten
 	cp FIRST_HIRAGANA_DAKUTEN_CHAR
 	jr nc, .hiragana_dakuten
 ; katakana dakuten
-	add "カ" - "ガ"
+	add 'カ' - 'ガ'
 	jr .place_dakuten
 
 .hiragana_dakuten
-	add "か" - "が"
+	add 'か' - 'が'
 .place_dakuten
-	ld b, "ﾞ" ; dakuten
+	ld b, 'ﾞ' ; dakuten
 	call Diacritic
 	jr .place
 
 .handakuten
-	cp "ぱ"
+	cp 'ぱ'
 	jr nc, .hiragana_handakuten
 ; katakana handakuten
-	add "ハ" - "パ"
+	add 'ハ' - 'パ'
 	jr .place_handakuten
 
 .hiragana_handakuten
-	add "は" - "ぱ"
+	add 'は' - 'ぱ'
 .place_handakuten
-	ld b, "ﾟ" ; handakuten
+	ld b, 'ﾟ' ; handakuten
 	call Diacritic
 
 .place
@@ -319,7 +340,7 @@ MobileScriptChar::
 	farcall RunMobileScript
 	jp PlaceNextChar
 
-print_name: MACRO
+MACRO print_name
 	push de
 	ld de, \1
 	jp PlaceCommandCharacter
@@ -633,7 +654,7 @@ ContText::
 PlaceDexEnd::
 ; Ends a Pokédex entry in Gen 1.
 ; Dex entries are now regular strings.
-	ld [hl], "."
+	ld [hl], '.'
 	pop hl
 	ret
 
@@ -665,7 +686,7 @@ DoneText::
 	text_end
 
 NullChar::
-	ld a, "?"
+	ld a, '?'
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
@@ -695,7 +716,7 @@ TextScroll::
 	jr nz, .col
 
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
-	ld a, " "
+	ld a, ' '
 	ld bc, TEXTBOX_INNERW
 	call ByteFill
 	ld c, 5
@@ -720,7 +741,7 @@ Diacritic::
 	ret
 
 LoadBlinkingCursor::
-	ld a, "▼"
+	ld a, '▼'
 	ldcoord_a 18, 17
 	ret
 
@@ -749,10 +770,10 @@ PokeFluteTerminator::
 .stop:
 	text_end
 
-PlaceHLTextAtBC::
+PrintTextboxTextAt::
 	ld a, [wTextboxFlags]
 	push af
-	set NO_TEXT_DELAY_F, a
+	set TEXT_DELAY_F, a
 	ld [wTextboxFlags], a
 
 	call DoTextUntilTerminator
@@ -788,7 +809,7 @@ DoTextUntilTerminator::
 
 TextCommands::
 ; entries correspond to TX_* constants (see macros/scripts/text.asm)
-	table_width 2, TextCommands
+	table_width 2
 	dw TextCommand_START         ; TX_START
 	dw TextCommand_RAM           ; TX_RAM
 	dw TextCommand_BCD           ; TX_BCD
@@ -851,7 +872,7 @@ TextCommand_FAR::
 	ld a, [hli]
 
 	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	ld [rROMB], a
 
 	push hl
 	ld h, d
@@ -861,7 +882,7 @@ TextCommand_FAR::
 
 	pop af
 	ldh [hROMBank], a
-	ld [MBC3RomBank], a
+	ld [rROMB], a
 	ret
 
 TextCommand_BCD::
@@ -982,7 +1003,7 @@ TextCommand_PAUSE::
 	push bc
 	call GetJoypad
 	ldh a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .done
 	ld c, 30
 	call DelayFrames
@@ -1023,18 +1044,6 @@ TextCommand_SOUND::
 	pop bc
 	ret
 
-TextCommand_CRY:: ; unreferenced
-; play a pokemon cry
-	push de
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	call PlayMonCry
-	pop de
-	pop hl
-	pop bc
-	ret
-
 TextSFX::
 	dbw TX_SOUND_DEX_FANFARE_50_79,  SFX_DEX_FANFARE_50_79
 	dbw TX_SOUND_FANFARE,            SFX_FANFARE
@@ -1055,11 +1064,11 @@ TextCommand_DOTS::
 
 .loop
 	push de
-	ld a, "…"
+	ld a, '…'
 	ld [hli], a
 	call GetJoypad
 	ldh a, [hJoyDown]
-	and A_BUTTON | B_BUTTON
+	and PAD_A | PAD_B
 	jr nz, .next
 	ld c, 10
 	call DelayFrames

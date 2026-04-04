@@ -17,6 +17,8 @@ GameFreakGameDesignerScript:
 	ifgreater NUM_POKEMON - 1, .CompletedPokedex
 	waitbutton
 	closetext
+	readvar VAR_DEXCAUGHT
+	ifgreater 224, .bossWantsToSeeYou
 	end
 
 .CompletedPokedex:
@@ -31,7 +33,26 @@ GameFreakGameDesignerScript:
 	waitbutton
 	closetext
 	setevent EVENT_ENABLE_DIPLOMA_PRINTING
+
+.bossWantsToSeeYou:
+	checkitem GIFT_OF_GOD
+	iftrue .end
+	opentext
+	writetext BossWantsToSeeYouText
+	waitbutton
+	closetext
+	warpfacing UP, CELADON_MANSION_ROOF_HOUSE, 3, 3
+.end
 	end
+
+BossWantsToSeeYouText:
+	text "You have caught so"
+	line "many #mon...."
+	para "The boss will want"
+	line "to see you!"
+	para "I'll send you up"
+	line "right away."
+	done
 
 GameFreakGraphicArtistScript:
     jumptextfaceplayer GameFreakGraphicArtistText

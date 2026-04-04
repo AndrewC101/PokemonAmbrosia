@@ -12,19 +12,37 @@ OlivineGymJasmineScript:
 	opentext
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
+.rematch
 	writetext Jasmine_SteelTypeIntro
 	waitbutton
 	closetext
 	winlosstext Jasmine_BetterTrainer, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JASMINE, MASTER_JASMINE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JASMINE, JASMINE1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer JASMINE, JASMINE1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_JASMINE
+	iftrue .end
 	setevent EVENT_BEAT_JASMINE
 	checkevent EVENT_BEAT_CHUCK
-	iffalse .skipCaps
+	iffalse .skipCap
+	readmem wLevelCap
+	ifgreater 55, .skipCap
 	loadmem wLevelCap, 55
-.skipCaps
+.skipCap
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE
@@ -49,16 +67,7 @@ OlivineGymJasmineScript:
 	writetext Jasmine_IronTailSpeech
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext Jasmine_SteelTypeIntro
-	waitbutton
-	closetext
-	winlosstext Jasmine_BetterTrainer, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer JASMINE, JASMINE1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .GotIronTail:

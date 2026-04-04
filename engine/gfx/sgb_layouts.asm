@@ -22,12 +22,15 @@ LoadSGBLayout:
 	jp hl
 
 SGBLayoutJumptable:
-	table_width 2, SGBLayoutJumptable
+; entries correspond to SCGB_* constants (see constants/scgb_constants.asm)
+	table_width 2
 	dw .SGB_BattleGrayscale
 	dw .SGB_BattleColors
 	dw .SGB_PokegearPals
 	dw .SGB_StatsScreenHPPals
 	dw .SGB_Pokedex
+	dw .SGB_Pokedex_EvoPage
+	dw .SGB_Pokedex_PicsPage	
 	dw .SGB_SlotMachine
 	dw .SGB_BetaTitleScreen
 	dw .SGB_GSIntro
@@ -225,7 +228,9 @@ SGBLayoutJumptable:
 	ld hl, wSGBPals
 	ld de, BlkPacket_Pokedex_PC
 	ret
-
+.SGB_Pokedex_EvoPage:
+.SGB_Pokedex_PicsPage:
+	ret
 .SGB_BillsPC:
 	ld hl, PalPacket_Pal01
 	ld de, wSGBPals

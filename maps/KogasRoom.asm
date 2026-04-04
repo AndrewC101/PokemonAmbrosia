@@ -3,20 +3,20 @@
 
 KogasRoom_MapScripts:
 	def_scene_scripts
-	scene_script .LockDoor ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script KogasRoomLockDoorScene, SCENE_KOGASROOM_LOCK_DOOR
+	scene_script KogasRoomNoopScene,     SCENE_KOGASROOM_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .KogasRoomDoors
+	callback MAPCALLBACK_TILES, KogasRoomDoorsCallback
 
-.LockDoor:
-	sdefer .KogasDoorLocksBehindYou
+KogasRoomLockDoorScene:
+	sdefer KogasRoomDoorLocksBehindYouScript
 	end
 
-.DummyScene:
+KogasRoomNoopScene:
 	end
 
-.KogasRoomDoors:
+KogasRoomDoorsCallback:
 	checkevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
@@ -27,15 +27,15 @@ KogasRoom_MapScripts:
 .KeepExitClosed:
 	endcallback
 
-.KogasDoorLocksBehindYou:
+KogasRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, KogasRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_KOGASROOM_NOOP
 	setevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
@@ -54,8 +54,21 @@ AdamScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ADAM, ADAM_ARCADE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ADAM, ADAM_ELITE
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ADAM, ADAM_ELITE
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KOGA
@@ -66,7 +79,7 @@ AdamScript_Battle:
 	special HealParty
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_KOGAS_ROOM_EXIT_OPEN
 	waitsfx

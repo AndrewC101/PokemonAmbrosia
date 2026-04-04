@@ -3,20 +3,20 @@
 
 WillsRoom_MapScripts:
 	def_scene_scripts
-	scene_script .LockDoor ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script WillsRoomLockDoorScene, SCENE_WILLSROOM_LOCK_DOOR
+	scene_script WillsRoomNoopScene,     SCENE_WILLSROOM_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .WillsRoomDoors
+	callback MAPCALLBACK_TILES, WillsRoomDoorsCallback
 
-.LockDoor:
-	sdefer .WillsDoorLocksBehindYou
+WillsRoomLockDoorScene:
+	sdefer WillsRoomDoorLocksBehindYouScript
 	end
 
-.DummyScene:
+WillsRoomNoopScene:
 	end
 
-.WillsRoomDoors:
+WillsRoomDoorsCallback:
 	checkevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
@@ -27,15 +27,15 @@ WillsRoom_MapScripts:
 .KeepExitClosed:
 	endcallback
 
-.WillsDoorLocksBehindYou:
+WillsRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, WillsRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_WILLSROOM_NOOP
 	setevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
@@ -49,8 +49,21 @@ WillScript_Battle:
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SABRINA, MASTER_SABRINA
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer SABRINA, SABRINA1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer SABRINA, SABRINA1
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_WILL
@@ -61,7 +74,7 @@ WillScript_Battle:
 	special HealParty
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	waitsfx

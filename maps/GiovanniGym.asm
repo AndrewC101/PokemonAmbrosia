@@ -10,14 +10,26 @@ SaffronGymGiovanniScript:
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .FightDone
+.rematch
 	writetext GiovanniIntroText
 	waitbutton
 	closetext
 	winlosstext GiovanniLossText, GiovanniWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer GIOVANNI, MASTER_GIOVANNI
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer GIOVANNI, LEADER_GIOVANNI
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_GIOVANNI
+	iftrue .end
 	setevent EVENT_BEAT_GIOVANNI
 	opentext
 	writetext GiovanniFightDoneText
@@ -25,16 +37,7 @@ SaffronGymGiovanniScript:
 	writetext GiovanniAfterBattleText
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext GiovanniIntroText
-	waitbutton
-	closetext
-	winlosstext GiovanniLossText, GiovanniWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer GIOVANNI, LEADER_GIOVANNI
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 .FightDone:
 	writetext GiovanniAfterBattleText

@@ -18,20 +18,20 @@
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CIANWOODCITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP
+	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
-	callback MAPCALLBACK_OBJECTS, .CianwoodCityFieldMon
+	callback MAPCALLBACK_NEWMAP, FlyPointAndSuicune
+	callback MAPCALLBACK_OBJECTS, CianwoodCityFieldMon
 
-.DummyScene0:
+CianwoodCityNoop1Scene:
 	end
 
-.DummyScene1:
+CianwoodCityNoop2Scene:
 	end
 
-.CianwoodCityFieldMon:
+CianwoodCityFieldMon:
 ; Pokemon which always appear
     disappear CIANWOODCITY_POLIWRATH
     disappear CIANWOODCITY_GIRL_1
@@ -58,7 +58,7 @@ CianwoodCity_MapScripts:
 .end
     endcallback
 
-.FlyPointAndSuicune:
+FlyPointAndSuicune:
 	setflag ENGINE_FLYPOINT_CIANWOOD
 	setevent EVENT_EUSINE_IN_BURNED_TOWER
 	checkevent EVENT_FOUGHT_EUSINE
@@ -79,7 +79,7 @@ CianwoodCitySuicuneAndEusine:
 	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneDepartMovement
 	disappear CIANWOODCITY_SUICUNE
 	pause 10
-	setscene SCENE_CIANWOODCITY_NOTHING
+	setscene SCENE_CIANWOODCITY_NOOP
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42
 	setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE
 	checkevent EVENT_FOUGHT_EUSINE
@@ -94,6 +94,7 @@ CianwoodCitySuicuneAndEusine:
 	closetext
 	winlosstext EusineBeatenText, 0
 	setlasttalked CIANWOODCITY_EUSINE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer MYSTICALMAN, EUSINE
 	startbattle
 	dontrestartmapmusic
@@ -597,7 +598,7 @@ PsychicGirlTalkScript:
 	waitbutton
 	closetext
 	pause 15
-	special FadeOutPalettes
+	special FadeOutToWhite
 	playsound SFX_THUNDER
 	waitsfx
 	appear CIANWOODCITY_MEWTWO
@@ -630,7 +631,7 @@ PsychicGirlTalkScript:
 	closetext
 	playsound SFX_PSYCHIC
 	waitsfx
-	special FadeOutPalettes
+	special FadeOutToWhite
 	disappear CIANWOODCITY_HOEN_SPY
 	disappear CIANWOODCITY_POLIWRATH
 	special RestartMapMusic
@@ -642,6 +643,8 @@ PsychicGirlTalkScript:
 	playsound SFX_WARP_FROM
 	waitsfx
 	disappear CIANWOODCITY_MEWTWO
+    setval MEWTWO
+	special EventSetSeenMon
 	turnobject PLAYER, LEFT
 	opentext
 	writetext ThanksHereIsTm

@@ -13,10 +13,10 @@ Route19_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .ClearRocks
-	callback MAPCALLBACK_OBJECTS, .FieldMon
+	callback MAPCALLBACK_TILES, Route19ClearRocksCallback
+	callback MAPCALLBACK_OBJECTS, FieldMon
 
-.ClearRocks:
+Route19ClearRocksCallback:
 	checkevent EVENT_CINNABAR_ROCKS_CLEARED
 	iftrue .Done
 	changeblock  6,  6, $7a ; rock
@@ -28,7 +28,7 @@ Route19_MapScripts:
 .Done:
 	endcallback
 
-.FieldMon
+FieldMon:
     appear ROUTE19_FIELDMON_1
     appear ROUTE19_FIELDMON_2
     appear ROUTE19_FIELDMON_3
@@ -238,7 +238,7 @@ Route19Fisher2Text:
 
 Route19Fisher2Text_RocksCleared:
 	text "There was some"
-	line "kind fo small"
+	line "kind of small"
 	cont "earthquake and it"
 	cont "shifted the rocks!"
 	para "It was Hoenn!"

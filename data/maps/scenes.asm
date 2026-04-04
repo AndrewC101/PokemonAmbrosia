@@ -15,7 +15,7 @@
 ; This is done via - setmapscene MAP_NAME, SCENE_ID - you can do this anywhere
 ; By convention the maps sceneId should have a final state of SCENE_FINISHED = 1, no coord_events should use that Id
 
-scene_var: MACRO
+MACRO scene_var
 ; map, variable
 	map_id \1
 	dw \2

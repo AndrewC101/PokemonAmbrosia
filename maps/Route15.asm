@@ -80,9 +80,9 @@ Route15FieldMon3Script:
 
 Route15FieldMon4Script:
 	faceplayer
-	cry TOGEKISS
+	cry KLEAVOR
 	pause 15
-	loadwildmon TOGEKISS, 50
+	loadwildmon KLEAVOR, 50
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

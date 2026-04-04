@@ -1,4 +1,4 @@
-MAP_NAME_SIGN_START EQU $60
+DEF MAP_NAME_SIGN_START EQU $60
 
 InitMapNameSign::
 	xor a
@@ -26,9 +26,9 @@ InitMapNameSign::
 	ld [wCurLandmark], a
 
 .not_gate
-	ld hl, wEnteredMapFromContinue
-	bit 1, [hl]
-	res 1, [hl]
+	ld hl, wMapNameSignFlags
+	bit SHOWN_MAP_NAME_SIGN, [hl]
+	res SHOWN_MAP_NAME_SIGN, [hl]
 	jr nz, .dont_do_map_sign
 
 	call .CheckMovingWithinLandmark
@@ -53,6 +53,8 @@ InitMapNameSign::
 	ld a, $90
 	ldh [rWY], a
 	ldh [hWY], a
+	ld a, RETI_INSTRUCTION
+	ldh [hFunctionInstruction], a
 	xor a
 	ldh [hLCDCPointer], a
 	ret
@@ -120,6 +122,8 @@ PlaceMapNameSign::
 	ld a, $90
 	ldh [rWY], a
 	ldh [hWY], a
+	ld a, RETI_INSTRUCTION
+	ldh [hFunctionInstruction], a
 	xor a
 	ldh [hLCDCPointer], a
 	ret
@@ -149,11 +153,41 @@ PlaceMapNameCenterAlign:
 	srl a
 	ld b, 0
 	ld c, a
-	hlcoord 0, 2
+	hlcoord 0, 1
 	add hl, bc
 	ld de, wStringBuffer1
 	call PlaceString
-	ret
+
+	; check weather and print
+	hlcoord 1, 2
+	ld a, [wFieldWeather]
+	cp WEATHER_RAIN
+	jr z, .Raining
+	cp WEATHER_SUN
+	jr z, .Sunny
+	cp WEATHER_SANDSTORM
+	jr z, .Sandstorm
+	cp WEATHER_HAIL
+	ret nz
+
+;.Hailing:
+	ld de, .HailingStr
+	jr .print_weather
+
+.Raining:
+	ld de, .RainingStr
+	jr .print_weather
+
+.Sunny:
+	ld de, .SunnyStr
+	jr .print_weather
+
+.Sandstorm:
+	ld de, .SandstormStr
+	; fallthrough
+
+.print_weather:
+	jp PlaceString
 
 .GetNameLength:
 	ld c, 0
@@ -161,15 +195,24 @@ PlaceMapNameCenterAlign:
 	ld hl, wStringBuffer1
 .loop
 	ld a, [hli]
-	cp "@"
+	cp '@'
 	jr z, .stop
-	cp "%"
+	cp '<WBR>'
 	jr z, .loop
 	inc c
 	jr .loop
 .stop
 	pop hl
 	ret
+
+.RainingStr:
+	db "Raining@"
+.SunnyStr:
+	db "Sunny@"
+.HailingStr:
+	db "Hailing@"
+.SandstormStr:
+	db "Sandstorm@"
 
 InitMapSignAttrmap:
 	ld de, wAttrmap - wTilemap
@@ -178,7 +221,7 @@ InitMapSignAttrmap:
 	inc b
 	inc c
 	inc c
-	ld a, PAL_BG_TEXT | PRIORITY
+	ld a, PAL_BG_TEXT | OAM_PRIO
 .loop
 	push bc
 	push hl

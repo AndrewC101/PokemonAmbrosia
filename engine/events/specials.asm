@@ -15,6 +15,22 @@ Special::
 
 INCLUDE "data/events/special_pointers.asm"
 
+INCLUDE "engine/events/heal_machine_anim.asm"
+
+UnlockNewGamePlus:
+; If [sUnlockedNewGamePlus] was -1, this sets it to 0
+	ld a, BANK(sUnlockedNewGamePlus)
+	call OpenSRAM
+	ld hl, sUnlockedNewGamePlus
+	ld a, [hl]
+	inc a
+	jr nz, .ok
+	ld [hld], a
+	ld [hl], a
+.ok
+    call CloseSRAM
+    ret
+
 ;LoadPokemonDataSpecial:
 ;    farcall LoadPokemonData
 ;	ret
@@ -40,7 +56,7 @@ GameCornerPrizeMonCheckDex:
 	call ExitAllMenus
 	ret
 
-UnusedSetSeenMon:
+EventSetSeenMon:
 	ld a, [wScriptVar]
 	dec a
 	call SetSeenMon

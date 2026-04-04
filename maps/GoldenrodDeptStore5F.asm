@@ -10,9 +10,9 @@ GoldenrodDeptStore5F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .CheckIfSunday
+	callback MAPCALLBACK_OBJECTS, GoldenrodDeptStore5FCheckIfSundayCallback
 
-.CheckIfSunday:
+GoldenrodDeptStore5FCheckIfSundayCallback:
 	readvar VAR_WEEKDAY
 	ifequal SUNDAY, .yes
 	disappear GOLDENRODDEPTSTORE5F_RECEPTIONIST
@@ -30,21 +30,7 @@ GoldenrodDeptStore5FClerkScript:
 	end
 
 Carrie:
-	faceplayer
-	opentext
-	special GameboyCheck
-	ifnotequal GBCHECK_CGB, .NotGBC ; This is a dummy check from Gold/Silver
-	writetext GoldenrodDeptStore5FCarrieMysteryGiftExplanationText
-	waitbutton
-	closetext
-	special UnlockMysteryGift
-	end
-
-.NotGBC:
-	writetext GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText
-	waitbutton
-	closetext
-	end
+    jumptextfaceplayer GoldenrodDeptStore5FCarrieMysteryGiftExplanationText
 
 GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText

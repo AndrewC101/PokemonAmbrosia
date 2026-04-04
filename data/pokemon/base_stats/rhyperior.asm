@@ -1,6 +1,6 @@
 	db RHYPERIOR ; 115
 
-	db 115,  140,  130,  40,  55,  55
+	db 115, 160,  130,  40,  55,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, ROCK ; type

@@ -208,6 +208,7 @@ AI_TryItem:
 	ld b, h
 	ld c, l
 	ld hl, AI_Items
+; BUG: AI might use its base reward value as an item (see docs/bugs_and_glitches.md)
 	ld de, wEnemyTrainerItem1
 .loop
     ld de, wEnemyTrainerItem1
@@ -567,6 +568,7 @@ EnemyUsedMaxPotion:
 	jr FullRestoreContinue
 
 EnemyUsedFullRestore:
+; BUG: AI use of Full Heal does not cure confusion status (see docs/bugs_and_glitches.md)
 	call AI_HealStatus
 	ld a, FULL_RESTORE
 	ld [wCurEnemyItem], a
@@ -574,6 +576,7 @@ EnemyUsedFullRestore:
 	res SUBSTATUS_CONFUSED, [hl]
 	xor a
 	ld [wEnemyConfuseCount], a
+	; fallthrough
 
 FullRestoreContinue:
 	ld de, wCurHPAnimOldHP
@@ -780,6 +783,7 @@ EnemyUsedFullHealRed: ; unreferenced
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 AI_HealStatus:
+; BUG: AI use of Full Heal or Full Restore does not cure Nightmare status (see docs/bugs_and_glitches.md)
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
 	ld bc, PARTYMON_STRUCT_LENGTH

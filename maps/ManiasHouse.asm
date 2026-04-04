@@ -22,7 +22,7 @@ ManiaText:
 
 	para "I confounded him"
 	line "him with my"
-	cont "WEAVILES shadow"
+	cont "Weaviles shadow"
 	cont "clone jutsu."
 
 	para "I sure showed him!"

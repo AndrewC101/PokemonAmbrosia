@@ -1,5 +1,5 @@
 	object_const_def
-	const VICTORYROAD_SILVER
+	const VICTORYROAD_RIVAL
 	const VICTORYROAD_POKE_BALL1
 	const VICTORYROAD_POKE_BALL2
 	const VICTORYROAD_POKE_BALL3
@@ -18,17 +18,11 @@
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script VictoryRoadNoop1Scene, SCENE_VICTORYROAD_RIVAL_BATTLE
+	scene_script VictoryRoadNoop2Scene, SCENE_VICTORYROAD_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .VictoryRoadFieldMon
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .VictoryRoadFieldMon:
 ; Pokemon which always appear
@@ -43,20 +37,26 @@ VictoryRoad_MapScripts:
     appear VICTORYROAD_FIELDMON_9
     endcallback
 
+VictoryRoadNoop1Scene:
+	end
+
+VictoryRoadNoop2Scene:
+	end
+
 VictoryRoadRivalLeft:
-	moveobject VICTORYROAD_SILVER, 18, 11
+	moveobject VICTORYROAD_RIVAL, 18, 11
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
 	disappear VICTORYROAD_FIELDMON_1
 	disappear VICTORYROAD_FIELDMON_3
-	appear VICTORYROAD_SILVER
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement1
+	appear VICTORYROAD_RIVAL
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement1
 	scall VictoryRoadRivalNext
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleExitMovement1
-	disappear VICTORYROAD_SILVER
-	setscene SCENE_FINISHED
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement1
+	disappear VICTORYROAD_RIVAL
+	setscene SCENE_VICTORYROAD_NOOP
 	playmapmusic
 	end
 
@@ -67,12 +67,12 @@ VictoryRoadRivalRight:
 	pause 15
 	disappear VICTORYROAD_FIELDMON_1
 	disappear VICTORYROAD_FIELDMON_3
-	appear VICTORYROAD_SILVER
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleApproachMovement2
+	appear VICTORYROAD_RIVAL
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleApproachMovement2
 	scall VictoryRoadRivalNext
-	applymovement VICTORYROAD_SILVER, VictoryRoadRivalBattleExitMovement2
-	disappear VICTORYROAD_SILVER
-	setscene SCENE_FINISHED
+	applymovement VICTORYROAD_RIVAL, VictoryRoadRivalBattleExitMovement2
+	disappear VICTORYROAD_RIVAL
+	setscene SCENE_VICTORYROAD_NOOP
 	playmapmusic
 	end
 
@@ -89,9 +89,16 @@ VictoryRoadRivalNext:
 	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
 	iftrue .GotChikorita
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	setlasttalked VICTORYROAD_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+	sjump .battle1
+.normal1
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+.battle1
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -99,9 +106,16 @@ VictoryRoadRivalNext:
 
 .GotTotodile:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	setlasttalked VICTORYROAD_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+	sjump .battle2
+.normal2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+.battle2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -109,9 +123,16 @@ VictoryRoadRivalNext:
 
 .GotChikorita:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
-	setlasttalked VICTORYROAD_SILVER
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	setlasttalked VICTORYROAD_RIVAL
+	readmem wHardMode
+	ifequal 0, .normal3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+	sjump .battle3
+.normal3
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+.battle3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -361,15 +382,15 @@ VictoryRoad_MapEvents:
 	warp_event 13,  5, ROUTE_23, 3
 
 	def_coord_events
-	coord_event 12,  8, SCENE_DEFAULT, VictoryRoadRivalLeft
-	coord_event 13,  8, SCENE_DEFAULT, VictoryRoadRivalRight
+	coord_event 12,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalLeft
+	coord_event 13,  8, SCENE_VICTORYROAD_RIVAL_BATTLE, VictoryRoadRivalRight
 
 	def_bg_events
 	bg_event  3, 29, BGEVENT_ITEM, VictoryRoadHiddenMaxPotion
 	bg_event  3, 65, BGEVENT_ITEM, VictoryRoadHiddenFullHeal
 
 	def_object_events
-	object_event 18, 13, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_VICTORY_ROAD
+	object_event 18, 13, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_VICTORY_ROAD
 	object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE
 	object_event 12, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadMaxRevive, EVENT_VICTORY_ROAD_MAX_REVIVE
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadLifeOrb, EVENT_VICTORY_ROAD_LIFE_ORB

@@ -18,22 +18,12 @@
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; unusable
-	scene_script .DummyScene1 ; unusable
+	scene_script LakeOfRageNoop1Scene ; unusable
+	scene_script LakeOfRageNoop2Scene ; unusable
 
 	def_callbacks
 	;callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_OBJECTS, .Wesley
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
-.FlyPoint:
-	;setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	endcallback
 
 .Wesley:
 	setval WEATHER_RAIN
@@ -58,6 +48,16 @@ LakeOfRage_MapScripts:
 
 .WesleyAppears:
 	appear LAKEOFRAGE_WESLEY
+	endcallback
+
+LakeOfRageNoop1Scene:
+	end
+
+LakeOfRageNoop2Scene:
+	end
+
+.FlyPoint:
+	;setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
 	endcallback
 
 LakeOfRageLanceScript:

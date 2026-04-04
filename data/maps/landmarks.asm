@@ -1,4 +1,4 @@
-landmark: MACRO
+MACRO landmark
 ; x, y, name
 	db \1 + 8, \2 + 16
 	dw \3
@@ -6,7 +6,7 @@ ENDM
 
 Landmarks:
 ; entries correspond to constants/landmark_constants.asm
-	table_width 4, Landmarks
+	table_width 4
 	landmark  -8, -16, SpecialMapName
 	landmark 140, 100, NewBarkTownName
 	landmark 128, 100, Route29Name
@@ -115,54 +115,54 @@ Landmarks:
     landmark  20,  40, ManorName
 	assert_table_length NUM_LANDMARKS
 
-NewBarkTownName:     db "New Bark¯Town@"
-CherrygroveCityName: db "Cherrygrove¯City@"
+NewBarkTownName:     db "New Bark<BSP>Town@"
+CherrygroveCityName: db "Cherrygrove<BSP>City@"
 VioletCityName:      db "Violet City@"
 AzaleaTownName:      db "Azalea Town@"
-GoldenrodCityName:   db "Goldenrod¯City@"
-EcruteakCityName:    db "Ecruteak¯City@"
-OlivineCityName:     db "Olivine¯City@"
-CianwoodCityName:    db "Cianwood¯City@"
-MahoganyTownName:    db "Mahogany¯Town@"
-BlackthornCityName:  db "Blackthorn¯City@"
-LakeOfRageName:      db "Lake Of¯Rage@"
+GoldenrodCityName:   db "Goldenrod<BSP>City@"
+EcruteakCityName:    db "Ecruteak<BSP>City@"
+OlivineCityName:     db "Olivine<BSP>City@"
+CianwoodCityName:    db "Cianwood<BSP>City@"
+MahoganyTownName:    db "Mahogany<BSP>Town@"
+BlackthornCityName:  db "Blackthorn<BSP>City@"
+LakeOfRageName:      db "Lake Of<BSP>Rage@"
 SilverCaveName:      db "Silver Cave@"
-SproutTowerName:     db "Sprout¯Tower@"
-RuinsOfAlphName:     db "Ruins¯Of Alph@"
+SproutTowerName:     db "Sprout<BSP>Tower@"
+RuinsOfAlphName:     db "Ruins Of<BSP>Alph@"
 UnionCaveName:       db "Union Cave@"
-SlowpokeWellName:    db "Slowpoke¯Well@"
+SlowpokeWellName:    db "Slowpoke<BSP>Well@"
 RadioTowerName:      db "Radio Tower@"
 PowerPlantName:      db "Power Plant@"
-NationalParkName:    db "National¯Park@"
+NationalParkName:    db "National<BSP>Park@"
 TinTowerName:        db "Tin Tower@"
 LighthouseName:      db "Lighthouse@"
-WhirlIslandsName:    db "Whirl¯Islands@"
+WhirlIslandsName:    db "Whirl<BSP>Islands@"
 MtMortarName:        db "MT.Mortar@"
-DragonsDenName:      db "Dragon's¯Den@"
+DragonsDenName:      db "Dragon's<BSP>Den@"
 IcePathName:         db "Ice Path@"
 NotApplicableName:   db "N/A@" ; unreferenced ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
 PalletTownName:      db "Pallet Town@"
-ViridianCityName:    db "Viridian¯City@"
+ViridianCityName:    db "Viridian<BSP>City@"
 PewterCityName:      db "Pewter City@"
-CeruleanCityName:    db "Cerulean¯City@"
-LavenderTownName:    db "Lavender¯Town@"
-VermilionCityName:   db "Vermilion¯City@"
-CeladonCityName:     db "Celadon¯City@"
-SaffronCityName:     db "Saffron¯City@"
-FuchsiaCityName:     db "Fuchsia¯City@"
-CinnabarIslandName:  db "Cinnabar¯Island@"
-IndigoPlateauName:   db "Indigo¯Plateau@"
-VictoryRoadName:     db "Victory¯Road@"
-ElementCaveName:     db "Element¯Cave@"
+CeruleanCityName:    db "Cerulean<BSP>City@"
+LavenderTownName:    db "Lavender<BSP>Town@"
+VermilionCityName:   db "Vermilion<BSP>City@"
+CeladonCityName:     db "Celadon<BSP>City@"
+SaffronCityName:     db "Saffron<BSP>City@"
+FuchsiaCityName:     db "Fuchsia<BSP>City@"
+CinnabarIslandName:  db "Cinnabar<BSP>Island@"
+IndigoPlateauName:   db "Indigo<BSP>Plateau@"
+VictoryRoadName:     db "Victory<BSP>Road@"
+ElementCaveName:     db "Element<BSP>Cave@"
 MtMoonName:          db "MT.Moon@"
 RockTunnelName:      db "Rock Tunnel@"
-LavRadioTowerName:   db "Lav¯Radio Tower@"
+LavRadioTowerName:   db "Lav<BSP>Radio Tower@"
 SilphCoName:         db "Silph Co.@" ; unreferenced
 SafariZoneName:      db "Safari Zone@" ; unreferenced
-SeafoamIslandsName:  db "Seafoam¯Islands@"
-PokemonMansionName:  db "#mon¯Mansion@" ; unreferenced
-CeruleanCaveName:    db "Cerulean¯Cave@" ; unreferenced
-ManorName:           db "Silver Manor@"
+SeafoamIslandsName:  db "Seafoam<BSP>Islands@"
+PokemonMansionName:  db "#mon<BSP>Mansion@" ; unreferenced
+CeruleanCaveName:    db "Cerulean<BSP>Cave@" ; unreferenced
+ManorName:           db "Silver<BSP>Manor@"
 Route1Name:          db "Route 1@"
 Route2Name:          db "Route 2@"
 Route3Name:          db "Route 3@"
@@ -210,18 +210,18 @@ Route44Name:         db "Route 44@"
 Route45Name:         db "Route 45@"
 Route46Name:         db "Route 46@"
 DarkCaveName:        db "Dark Cave@"
-IlexForestName:      db "Ilex¯Forest@"
-BurnedTowerName:     db "Burned¯Tower@"
+IlexForestName:      db "Ilex<BSP>Forest@"
+BurnedTowerName:     db "Burned<BSP>Tower@"
 FastShipName:        db "Fast Ship@"
-ViridianForestName:  db "Viridian¯Forest@" ; unreferenced
-DiglettsCaveName:    db "Diglett's¯Cave@"
+ViridianForestName:  db "Viridian<BSP>Forest@" ; unreferenced
+DiglettsCaveName:    db "Diglett's<BSP>Cave@"
 TohjoFallsName:      db "Tohjo Falls@"
 UndergroundName:     db "Underground@"
-BattleTowerName:     db "Battle¯Plaza@"
+BattleTowerName:     db "Battle<BSP>Plaza@"
 SpecialMapName:      db "Special@"
-HallOfOriginName:    db "Hall Of¯Origin@"
-DestinyTowerName:    db "Master¯Trial@"
-AncientRuinName:     db "Ancient¯Ruin@"
-WarZoneName:         db "War¯Zone@"
+HallOfOriginName:    db "Hall Of<BSP>Origin@"
+DestinyTowerName:    db "Master<BSP>Trial@"
+AncientRuinName:     db "Ancient<BSP>Ruin@"
+WarZoneName:         db "War Zone@"
 MuseumName:          db "Museum@"
 AbyssName:           db "Abyss@"

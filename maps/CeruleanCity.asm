@@ -11,14 +11,14 @@ CeruleanCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .CeruleanFieldMon
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, CeruleanFieldMon
+	callback MAPCALLBACK_NEWMAP, CeruleanCityFlypointCallback
 
-.FlyPoint:
+CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
 	endcallback
 
-.CeruleanFieldMon:
+CeruleanFieldMon:
     appear CERULEANCITY_FIELDMON_1
     endcallback
 
@@ -369,7 +369,7 @@ CeruleanCity_MapEvents:
 
 	def_bg_events
 	bg_event 23, 23, BGEVENT_READ, CeruleanCitySign
-	bg_event 27, 25, BGEVENT_READ, CeruleanGymSign
+	bg_event 33, 25, BGEVENT_READ, CeruleanGymSign
 	bg_event 11, 29, BGEVENT_READ, CeruleanBikeShopSign
 	bg_event 25, 17, BGEVENT_READ, CeruleanPoliceSign
 	bg_event 23,  7, BGEVENT_READ, CeruleanCapeSign

@@ -10,9 +10,9 @@ HiddenPowerGuy:
     setevent EVENT_MET_MAHOGANY_MURDERER
     checkevent EVENT_BEAT_MAHOGANY_MURDERER
     iftrue .beaten
-    jumptextfaceplayer HiFriendText
-.beaten
     jumptextfaceplayer DontLeaveText
+.beaten
+    jumptextfaceplayer HiFriendText
 
 HiddenPowerHouseBookshelf:
     opentext
@@ -56,7 +56,7 @@ MurderScript1:
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat1
 	end
 .lose
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special Reset
 	end
 

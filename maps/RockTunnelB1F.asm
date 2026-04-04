@@ -94,10 +94,15 @@ RockTunnelB1FFieldMon4Script:
     end
 
 RockTunnelB1FFieldMon5Script:
-	trainer NOWN, FIELD_MON, EVENT_FIELD_MON_5, RockTunnelB1FPokemonAttacksText, 70, 0, .script
-.script
-    disappear ROCKTUNNELB1F_FIELDMON_5
-    end
+	faceplayer
+	cry NOWN
+	pause 15
+	loadwildmon NOWN, 66
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
+	disappear ROCKTUNNELB1F_FIELDMON_5
+	end
 
 RockTunnelB1FPokemonAttacksText:
 	text "Wild #mon"
@@ -127,4 +132,4 @@ RockTunnelB1F_MapEvents:
 	object_event 19, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 22, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon3Script, EVENT_FIELD_MON_3
 	object_event  7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 15, 17, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, RockTunnelB1FFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 15, 17, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RockTunnelB1FFieldMon5Script, EVENT_FIELD_MON_5

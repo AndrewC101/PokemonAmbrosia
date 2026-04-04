@@ -49,14 +49,14 @@ TrainerGruntM1:
 	writetext TrainerGruntM1WhenTalkText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	disappear SLOWPOKEWELLB1F_ROCKET1
 	disappear SLOWPOKEWELLB1F_ROCKET2
 	disappear SLOWPOKEWELLB1F_ROCKET3
 	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
 	pause 15
-	special FadeInQuickly
+	special FadeInFromBlack
 	disappear SLOWPOKEWELLB1F_KURT
 	moveobject SLOWPOKEWELLB1F_KURT, 11, 6
 	appear SLOWPOKEWELLB1F_KURT
@@ -67,7 +67,7 @@ TrainerGruntM1:
 	waitbutton
 	closetext
 	setevent EVENT_CLEARED_SLOWPOKE_WELL
-	variablesprite SPRITE_AZALEA_ROCKET, SPRITE_SILVER
+	variablesprite SPRITE_AZALEA_ROCKET, SPRITE_RIVAL
 	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
 	clearevent EVENT_ILEX_FOREST_APPRENTICE
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
@@ -78,7 +78,7 @@ TrainerGruntM1:
 	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
 	clearevent EVENT_KURTS_HOUSE_SLOWPOKE
 	clearevent EVENT_KURTS_HOUSE_KURT_1
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special HealParty
 	pause 15
 	warp KURTS_HOUSE, 3, 3

@@ -8,25 +8,25 @@
 
 RadioTower5F_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_RADIOTOWER5F_ROCKET_BOSS
-	scene_script .DummyScene2 ; SCENE_RADIOTOWER5F_NOTHING
+	scene_script RadioTower5FNoop1Scene, SCENE_RADIOTOWER5F_FAKE_DIRECTOR
+	scene_script RadioTower5FNoop2Scene, SCENE_RADIOTOWER5F_ROCKET_BOSS
+	scene_script RadioTower5FNoop3Scene, SCENE_RADIOTOWER5F_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, .Crystal
 
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
-
-.DummyScene2:
-	end
-
 .Crystal:
     disappear RADIOTOWER5F_CRYSTAL
     endcallback
+
+RadioTower5FNoop1Scene:
+	end
+
+RadioTower5FNoop2Scene:
+	end
+
+RadioTower5FNoop3Scene:
+	end
 
 FakeDirectorScript:
 	turnobject RADIOTOWER5F_DIRECTOR, UP
@@ -107,12 +107,12 @@ RadioTower5FRocketBossScene:
 	writetext RadioTower5FRocketBossAfterText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	disappear RADIOTOWER5F_ROCKET
 	disappear RADIOTOWER5F_ROCKET_GIRL
 	pause 15
-	special FadeInQuickly
+	special FadeInFromBlack
 	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
 	setevent EVENT_CLEARED_RADIO_TOWER
 	clearflag ENGINE_ROCKETS_IN_RADIO_TOWER
@@ -197,7 +197,7 @@ RadioTower5FRocketBossScene:
     writetext Need8BadgesText
 	waitbutton
 	closetext
-	setscene SCENE_RADIOTOWER5F_NOTHING
+	setscene SCENE_RADIOTOWER5F_NOOP
 	setevent EVENT_TEAM_ROCKET_DISBANDED
 	sjump .UselessJump
 
@@ -777,7 +777,7 @@ RadioTower5F_MapEvents:
 	warp_event 12,  0, RADIO_TOWER_4F, 3
 
 	def_coord_events
-	coord_event  0,  3, SCENE_DEFAULT, FakeDirectorScript
+	coord_event  0,  3, SCENE_RADIOTOWER5F_FAKE_DIRECTOR, FakeDirectorScript
 	coord_event 16,  5, SCENE_RADIOTOWER5F_ROCKET_BOSS, RadioTower5FRocketBossScene
 
 	def_bg_events

@@ -5,11 +5,11 @@
 
 SeafoamGym_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene
+	scene_script SeafoamGymNoopScene ; unusable
 
 	def_callbacks
 
-.DummyScene:
+SeafoamGymNoopScene:
 	end
 
 ArticunoScript:
@@ -33,17 +33,33 @@ SeafoamGymBlaineScript:
 	opentext
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
+.rematch
 	writetext BlaineIntroText
 	waitbutton
 	closetext
 	winlosstext BlaineWinLossText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLAINE, MASTER_BLAINE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLAINE, BLAINE1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BLAINE, BLAINE1
+.battle
 	startbattle
 	iftrue .ReturnAfterBattle
 	appear SEAFOAMGYM_GYM_GUIDE
 .ReturnAfterBattle:
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_BLAINE
+	iftrue .end
 	setevent EVENT_BEAT_BLAINE
 	opentext
 	writetext ReceivedVolcanoBadgeText
@@ -53,16 +69,7 @@ SeafoamGymBlaineScript:
 	writetext BlaineFightDoneText
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext BlaineIntroText
-	waitbutton
-	closetext
-	winlosstext BlaineWinLossText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer BLAINE, BLAINE1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .FightDone:

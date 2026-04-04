@@ -18,14 +18,14 @@ VioletCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .VioletCityFieldMon
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, VioletCityFieldMon
+	callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback
 
-.FlyPoint:
+VioletCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIOLET
 	endcallback
 
-.VioletCityFieldMon:
+VioletCityFieldMon:
 ; Pokemon which always appear
     disappear VIOLETCITY_SELF
     appear VIOLETCITY_FIELDMON_1

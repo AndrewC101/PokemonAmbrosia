@@ -17,19 +17,19 @@
 
 Route42_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE42_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE42_SUICUNE
+	scene_script Route42Noop1Scene, SCENE_ROUTE42_NOOP
+	scene_script Route42Noop2Scene, SCENE_ROUTE42_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route42FieldMon
+	callback MAPCALLBACK_OBJECTS, Route42FieldMon
 
-.DummyScene0:
+Route42Noop1Scene:
 	end
 
-.DummyScene1:
+Route42Noop2Scene:
 	end
 
-.Route42FieldMon:
+Route42FieldMon:
 ; Pokemon which always appear
     appear ROUTE42_FIELDMON_1
     appear ROUTE42_FIELDMON_3
@@ -64,7 +64,7 @@ Route42SuicuneScript:
 	applymovement ROUTE42_SUICUNE, Route42SuicuneMovement
 	disappear ROUTE42_SUICUNE
 	pause 10
-	setscene SCENE_ROUTE42_NOTHING
+	setscene SCENE_ROUTE42_NOOP
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	setmapscene ROUTE_36, SCENE_ROUTE36_SUICUNE
 	end

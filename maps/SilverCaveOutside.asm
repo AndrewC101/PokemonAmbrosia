@@ -16,18 +16,23 @@ SilverCaveOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .Objects
+	callback MAPCALLBACK_NEWMAP, SilverCaveOutsideFlypointCallback
+	callback MAPCALLBACK_OBJECTS, Objects
 
-.FlyPoint:
+SilverCaveOutsideFlypointCallback:
 	setflag ENGINE_FLYPOINT_SILVER_CAVE
 	endcallback
 
-.Objects:
+Objects:
     checkevent EVENT_BEAT_CRYSTAL_7
     iffalse .noWeather
-    random 2
-    ifequal 1,.sand
+    random 3
+    ifequal 1, .sand
+    ifequal 2, .hail
+	setval WEATHER_NONE
+	writemem wFieldWeather
+	sjump .spawn
+.hail
 	setval WEATHER_HAIL
 	writemem wFieldWeather
 	sjump .spawn
@@ -177,8 +182,11 @@ MtSilverSignText:
 	done
 
 SilverCaveOutsideBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_BEAT_RED
     iffalse .block
+.end
     end
 .block
     turnobject PLAYER, UP
@@ -235,8 +243,21 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Silver7LosesText, Silver7WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal1
+	readmem wLevelCap
+	ifless 100, .hard1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, MASTER_RIVAL
+	sjump .battle1
+.hard1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+	sjump .battle1
+.normal1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer RIVAL2, RIVAL2_SILVER_CAVE
+.battle1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SILVER_CAVE_RIVAL
@@ -252,8 +273,21 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Crystal7LosesText, Crystal7WinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	readmem wHardMode
+	ifequal 0, .normal2
+	readmem wLevelCap
+	ifless 100, .hard2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, MASTER_CRYSTAL
+	sjump .battle2
+.hard2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_7
+	sjump .battle2
+.normal2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CRYSTAL, CRYSTAL_7
+.battle2
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_7
@@ -1555,9 +1589,8 @@ SilverCaveOutside_MapEvents:
 	bg_event  4, 23, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
-	object_event 17, 16, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 17, 16, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 19, 16, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
-	;object_event 16, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 27, 26, SPRITE_INFERNAPE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 17, 18, SPRITE_SCEPTILE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 18, 25, SPRITE_GRENINJA, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon3Script, EVENT_FIELD_MON_3

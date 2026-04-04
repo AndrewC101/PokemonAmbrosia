@@ -98,7 +98,6 @@ SilverCaveRoom3FieldMon6Script:
 	end
 
 Red:
-	special FadeOutMusic
 	faceplayer
 	opentext
     checkevent EVENT_BEAT_RED
@@ -108,8 +107,17 @@ Red:
 	waitbutton
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
+	readmem wHardMode
+	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RED, MASTER_RED
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RED, RED1
+.battle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -118,6 +126,7 @@ Red:
 	waitbutton
 	closetext
 	special HealParty
+	special UnlockNewGamePlus
 	checkevent EVENT_BEAT_RED
 	iftrue .skip_credits
 	setevent EVENT_BEAT_RED
@@ -139,6 +148,7 @@ Red:
     writetext RematchRefuseTextRed
 	waitbutton
     closetext
+    playmapmusic
     end
 .FightDone:
 	writetext RematchRefuseTextRed
@@ -163,12 +173,19 @@ Ash:
 	waitbutton
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
+	readmem wHardMode
+	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ASH, MASTER_ASH
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ASH, ASH1
+.battle
 	startbattle
-	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	setevent EVENT_BEAT_ASH
 	opentext
 	writetext AshBeatenText
@@ -265,8 +282,11 @@ RematchRefuseTextAsh:
     done
 
 SilverCave3BlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
     checkevent EVENT_CAUGHT_MEWTWO
     iffalse .block
+.end
     end
 .block
     turnobject PLAYER, UP
@@ -296,6 +316,7 @@ FightAshScript2:
     sjump FightAshScript
 
 FightAshScript:
+    special FadeOutMusic
     pause 20
     showemote EMOTE_SHOCK, SILVERCAVEROOM3_RED_PIKACHU, 15
     turnobject SILVERCAVEROOM3_RED, DOWN
@@ -308,12 +329,20 @@ FightAshScript:
     waitbutton
     closetext
     winlosstext AshWinLossText, AshWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
+	readmem wHardMode
+	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ASH, MASTER_ASH
+	sjump .battle
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ASH, ASH1
+.battle
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	special FadeOutMusic
 	opentext
 	writetext AshBeatenText
 	waitbutton
@@ -323,6 +352,7 @@ FightAshScript:
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
 	setevent EVENT_BEAT_ASH
 	special HealParty
+	playmapmusic
 	end
 
 Movement_AshToPlayer:
@@ -442,8 +472,21 @@ PokemonMasterQuestText:
     line "the Mt Silver"
     cont "#center."
 
-    para "That should be"
+    para "That could be"
     line "your next goal."
+
+	para "Or you could start"
+	line "your adventure"
+	cont "again and continue"
+	cont "to grow that way."
+
+	para "A new option is"
+	line "available on the"
+	cont "title screen."
+
+	para "The choice is"
+	line "yours."
+	done
     done
 
 SilverCaveRoom3MewtwoScript:

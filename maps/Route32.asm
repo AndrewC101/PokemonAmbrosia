@@ -19,23 +19,23 @@
 
 Route32_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_ROUTE32_OFFER_SLOWPOKETAIL
-	scene_script .DummyScene2 ; SCENE_ROUTE32_NOTHING
+	scene_script Route32Noop1Scene, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS
+	scene_script Route32Noop2Scene, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
+	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Frieda
+	callback MAPCALLBACK_OBJECTS, Route32FriedaCallback
 
-.DummyScene0:
+Route32Noop1Scene:
 	end
 
-.DummyScene1:
+Route32Noop2Scene:
 	end
 
-.DummyScene2:
+Route32Noop3Scene:
 	end
 
-.Frieda:
+Route32FriedaCallback:
     appear ROUTE32_FIELDMON_1
     appear ROUTE32_FIELDMON_2
     appear ROUTE32_FIELDMON_4
@@ -788,9 +788,9 @@ Route32FieldMon5Script:
 
 Route32FieldMon6Script:
 	faceplayer
-	cry MUDKIP
+	cry POLIWAG
 	pause 15
-	loadwildmon MUDKIP, 15
+	loadwildmon POLIWAG, 15
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6
@@ -812,7 +812,7 @@ Route32FieldMon8Script:
 	faceplayer
 	cry MUDKIP
 	pause 15
-	loadwildmon SOLOSIS, 15
+	loadwildmon MUDKIP, 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
@@ -841,8 +841,18 @@ Route32CrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal2LosesText, Crystal2WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_2
+	sjump .battle
+.normal
+	loadtrainer CRYSTAL, CRYSTAL_2
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_2
@@ -1037,7 +1047,7 @@ Route32_MapEvents:
 	object_event  2, 69, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 47, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 12, 43, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
-	object_event  1, 49, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
+	object_event  1, 49, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
 	object_event 8,  74, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
 

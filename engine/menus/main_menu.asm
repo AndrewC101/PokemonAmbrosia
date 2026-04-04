@@ -30,9 +30,9 @@ MainMenu:
 	call ClearTilemapEtc
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld hl, wGameTimerPaused
-	res GAME_TIMER_PAUSED_F, [hl]
+	res GAME_TIMER_COUNTING_F, [hl]
 	call MainMenu_GetWhichMenu
 	ld [wWhichIndexSet], a
 	call MainMenu_PrintCurrentTimeAndDay
@@ -68,7 +68,7 @@ MainMenu:
 	db "Continue@"
 	db "New Game@"
 	db "Option@"
-	db "Mystery Gift@"
+	db "New Game Plus@"
 	db "Mobile@"
 	db "Mobile Stadium@"
 if DEF(_DEBUG)
@@ -80,7 +80,7 @@ endc
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_MysteryGift
+	dw MainMenu_NewGamePlus
 	dw MainMenu_Mobile
 	dw MainMenu_MobileStudium
 if DEF(_DEBUG)
@@ -203,12 +203,12 @@ MainMenu_GetWhichMenu:
 	cp TRUE
 	ld a, MAINMENU_CONTINUE
 	ret nz
-	ld a, BANK(sNumDailyMysteryGiftPartnerIDs)
+	ld a, BANK(sUnlockedNewGamePlus)
 	call OpenSRAM
-	ld a, [sNumDailyMysteryGiftPartnerIDs]
-	cp -1 ; locked?
+	ld a, [sUnlockedNewGamePlus]
+	cp -1
 	call CloseSRAM
-	jr nz, .mystery_gift
+	jr nz, .new_game_plus
 	; This check makes no difference.
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
@@ -237,18 +237,22 @@ MainMenu_GetWhichMenu:
 	ld a, MAINMENU_MYSTERY
 	ret
 
+.new_game_plus
+    ld a, MAINMENU_MYSTERY
+    ret
+
 MainMenuJoypadLoop:
 	call SetUpMenu
 .loop
 	call MainMenu_PrintCurrentTimeAndDay
 	ld a, [w2DMenuFlags1]
-	set 5, a
+	set _2DMENU_WRAP_UP_DOWN_F, a
 	ld [w2DMenuFlags1], a
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	cp PAD_B
 	jr z, .b_button
-	cp A_BUTTON
+	cp PAD_A
 	jr z, .a_button
 	jr .loop
 
@@ -281,7 +285,7 @@ MainMenu_PrintCurrentTimeAndDay:
 
 .PlaceBox:
 	call CheckRTCStatus
-	and %10000000 ; Day count exceeded 16383
+	and RTC_RESET
 	jr nz, .TimeFail
 	hlcoord 0, 14
 	ld b, 2
@@ -298,7 +302,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	and a
 	ret z
 	call CheckRTCStatus
-	and $80
+	and RTC_RESET
 	jp nz, .PrintTimeNotSet
 	call UpdateTime
 	call GetWeekday
@@ -309,7 +313,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	ldh a, [hHours]
 	ld c, a
 	farcall PrintHour
-	ld [hl], ":"
+	ld [hl], ':'
 	inc hl
 	ld de, hMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
@@ -379,6 +383,6 @@ MainMenu_Continue:
 	farcall Continue
 	ret
 
-MainMenu_MysteryGift:
-	farcall MysteryGift
+MainMenu_NewGamePlus:
+	farcall NewGamePlus
 	ret

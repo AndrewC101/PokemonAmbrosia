@@ -1,4 +1,4 @@
-	db "Fairy@" ; species name
+	db "Bite@" ; species name
 	dw 200, 170 ; height, weight
 
 	db   "In truth, it is a"

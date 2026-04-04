@@ -55,9 +55,9 @@ MountMortar1FOutsideFieldMon3Script:
 
 MountMortar1FOutsideFieldMon4Script:
 	faceplayer
-	cry GOLBAT
+	cry SNEASLER
 	pause 15
-	loadwildmon GOLBAT, 33
+	loadwildmon SNEASLER, 33
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

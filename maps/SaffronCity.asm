@@ -14,14 +14,14 @@ SaffronCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .Silver
+	callback MAPCALLBACK_NEWMAP, SaffronCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, Silver
 
-.FlyPoint:
+SaffronCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_SAFFRON
 	endcallback
 
-.Silver:
+Silver:
     appear SAFFRONCITY_FIELDMON_1
     random 2
     ifequal 1, .keepSpawn
@@ -386,8 +386,15 @@ SaffronGymBlockScript:
     waitbutton
     closetext
     winlosstext Silver6LosesText, Silver6WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer RIVAL2, RIVAL2_SAFFRON
+	sjump .battle
+.normal
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer RIVAL2, RIVAL2_SAFFRON
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_RIVAL_SAFFRON
@@ -603,6 +610,6 @@ SaffronCity_MapEvents:
 	object_event 15, 19, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster1Script, -1
 	object_event 35, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SaffronCityYoungster2Script, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SaffronCityLass2Script, -1
-	object_event 29,  4, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
+	object_event 29,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 24, 19, SPRITE_BELDUM, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SaffronMon1Script, EVENT_FIELD_MON_1
 	object_event  5, 30, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCityMurdochScript, -1

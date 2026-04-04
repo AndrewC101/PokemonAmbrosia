@@ -95,7 +95,7 @@ ZygardeScript:
     setevent EVENT_CAUGHT_ZYGARDE
 	disappear ANCIENTHALL_ZYGARDE
 	pause 15
-	special FadeInQuickly
+	special FadeInFromBlack
 	pause 30
 	special HealParty
 	refreshscreen

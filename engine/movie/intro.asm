@@ -1,8 +1,8 @@
 CrystalIntro:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wGBCPalettes)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ldh a, [hInMenu]
 	push af
 	ldh a, [hVBlank]
@@ -11,10 +11,10 @@ CrystalIntro:
 .loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
-	and BUTTONS
+	and PAD_BUTTONS
 	jr nz, .ShutOffMusic
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call IntroSceneJumper
 	farcall PlaySpriteAnimations
@@ -41,13 +41,14 @@ CrystalIntro:
 	pop af
 	ldh [hInMenu], a
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 	ret
 
 .InitRAMAddrs:
+	assert VBLANK_NORMAL == 0
 	xor a
 	ldh [hVBlank], a
-	ld a, $1
+	ld a, TRUE
 	ldh [hInMenu], a
 	xor a
 	ldh [hMapAnims], a
@@ -82,5 +83,5 @@ IntroScene28:
 
 .done
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret

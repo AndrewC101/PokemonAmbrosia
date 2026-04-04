@@ -14,9 +14,9 @@ EcruteakCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, EcruteakCityFlypointCallback
 
-.FlyPoint:
+EcruteakCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
 	endcallback
 
@@ -96,7 +96,7 @@ EcruteakCityGramps1Text:
 	done
 
 EcruteakCityGramps2Text:
-	text "This theatre"
+	text "This theater"
 	line "is where the"
 	cont "Kimono girls"
 	cont "dance."
@@ -370,7 +370,7 @@ EcruteakTeleportGuyScript:
 	waitbutton
 	closetext
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp NEW_BARK_TOWN, 13, 18
 	end
@@ -587,7 +587,7 @@ EcruteakCity_MapEvents:
 	warp_event 20,  3, WISE_TRIOS_ROOM, 2
 	warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1
 	warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
-	warp_event 23, 21, DANCE_THEATRE, 1
+	warp_event 23, 21, DANCE_THEATER, 1
 	warp_event 29, 21, ECRUTEAK_MART, 2
 	warp_event  6, 27, ECRUTEAK_GYM, 1
 	warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1
@@ -603,7 +603,7 @@ EcruteakCity_MapEvents:
 	coord_event 5, 6, SCENE_ALWAYS, BurntTowerBlockScript
 
 	def_bg_events
-	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
+	bg_event 11, 21, BGEVENT_READ, EcruteakCitySign
 	bg_event 38, 10, BGEVENT_READ, TinTowerSign
 	bg_event  8, 28, BGEVENT_READ, EcruteakGymSign
 	bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign

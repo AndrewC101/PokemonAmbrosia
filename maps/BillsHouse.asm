@@ -9,7 +9,7 @@ BillsHouse_MapScripts:
 BillsGrandpa:
 	faceplayer
     opentext
-    checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+    checkevent EVENT_GOT_MEW
     iftrue .gotMew
     writetext BillGrampsExplainsText
     waitbutton
@@ -51,7 +51,7 @@ BillsGrandpa:
 .midLevel
     givepoke MEW, 60, LUCKY_EGG, GetMewName, GetMewOTName
 .given
-    setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+    setevent EVENT_GOT_MEW
     writetext BillGrampsMewExplain
     waitbutton
     closetext

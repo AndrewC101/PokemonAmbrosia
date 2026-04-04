@@ -9,16 +9,16 @@
 
 EcruteakGym_MapScripts:
 	def_scene_scripts
-	scene_script .ForcedToLeave ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script EcruteakGymForcedToLeaveScene, SCENE_ECRUTEAKGYM_FORCED_TO_LEAVE
+	scene_script EcruteakGymNoopScene,          SCENE_ECRUTEAKGYM_NOOP
 
 	def_callbacks
 
-.ForcedToLeave:
+EcruteakGymForcedToLeaveScene:
 	sdefer EcruteakGymClosed
 	end
 
-.DummyScene:
+EcruteakGymNoopScene:
 	end
 
 EcruteakGymMortyScript:
@@ -26,16 +26,35 @@ EcruteakGymMortyScript:
 	opentext
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
+.rematch
 	writetext MortyIntroText
 	waitbutton
 	closetext
 	winlosstext MortyLossText, MortyWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MASTER_MORTY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MORTY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MORTY, MORTY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MORTY
+	iftrue .end
 	setevent EVENT_BEAT_MORTY
+	readmem wLevelCap
+	ifgreater 50, .skipCap
 	loadmem wLevelCap, 50
+.skipCap
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
@@ -43,7 +62,7 @@ EcruteakGymMortyScript:
 	setflag ENGINE_FOGBADGE
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets
-	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_FINISHED
+	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
 .FightDone:
@@ -61,16 +80,7 @@ EcruteakGymMortyScript:
 	writetext MortyText_ShadowBallSpeech
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext MortyIntroText
-	waitbutton
-	closetext
-	winlosstext MortyLossText, MortyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer MORTY, MORTY1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 .GotShadowBall:
@@ -110,7 +120,7 @@ EcruteakGymClosed:
 	follow PLAYER, ECRUTEAKGYM_GRAMPS
 	applymovement PLAYER, EcruteakGymPlayerSlowStepDownMovement
 	stopfollow
-	special FadeOutPalettes
+	special FadeOutToWhite
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp ECRUTEAK_CITY, 6, 27

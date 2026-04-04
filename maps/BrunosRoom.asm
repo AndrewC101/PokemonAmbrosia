@@ -3,20 +3,20 @@
 
 BrunosRoom_MapScripts:
 	def_scene_scripts
-	scene_script .LockDoor ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script BrunosRoomLockDoorScene, SCENE_BRUNOSROOM_LOCK_DOOR
+	scene_script BrunosRoomNoopScene,     SCENE_BRUNOSROOM_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .BrunosRoomDoors
+	callback MAPCALLBACK_TILES, BrunosRoomDoorsCallback
 
-.LockDoor:
-	sdefer .BrunosDoorLocksBehindYou
+BrunosRoomLockDoorScene:
+	sdefer BrunosRoomDoorLocksBehindYouScript
 	end
 
-.DummyScene:
+BrunosRoomNoopScene:
 	end
 
-.BrunosRoomDoors:
+BrunosRoomDoorsCallback:
 	checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
 	iffalse .KeepEntranceOpen
 	changeblock 4, 14, $2a ; wall
@@ -27,15 +27,15 @@ BrunosRoom_MapScripts:
 .KeepExitClosed:
 	endcallback
 
-.BrunosDoorLocksBehindYou:
+BrunosRoomDoorLocksBehindYouScript:
 	applymovement PLAYER, BrunosRoom_EnterMovement
-	refreshscreen $86
+	reanchormap $86
 	playsound SFX_STRENGTH
 	earthquake 80
 	changeblock 4, 14, $2a ; wall
-	reloadmappart
+	refreshmap
 	closetext
-	setscene SCENE_FINISHED
+	setscene SCENE_BRUNOSROOM_NOOP
 	setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
 	waitsfx
 	end
@@ -49,8 +49,21 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BRUNO, MASTER_BRUNO
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BRUNO, BRUNO1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer BRUNO, BRUNO1
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_BRUNO
@@ -61,7 +74,7 @@ BrunoScript_Battle:
 	special HealParty
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
-	reloadmappart
+	refreshmap
 	closetext
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	waitsfx

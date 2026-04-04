@@ -5,7 +5,7 @@
 ; - EvosAttacksPointers (see data/pokemon/evos_attacks_pointers.asm)
 ; - EggMovePointers (see data/pokemon/egg_move_pointers.asm)
 ; - PokemonCries (see data/pokemon/cries.asm)
-; - MonMenuIcons (see data/pokemon/menu_icons.asm)
+; - IconPointers (see data/pokemon/icon_pointers.asm)
 ; - PokemonPicPointers (see data/pokemon/pic_pointers.asm)
 ; - PokemonPalettes (see data/pokemon/palettes.asm)
 ; - PokedexDataPointerTable (see data/pokemon/dex_entry_pointers.asm)
@@ -170,7 +170,7 @@
 	const DRAGONITE  ; 95
 	const DARKRAI    ; 96
 	const MEW        ; 97
-JOHTO_POKEMON EQU const_value
+DEF JOHTO_POKEMON EQU const_value
 	const TREECKO    ; 98
 	const GROVYLE    ; 99
 	const SCEPTILE   ; 9a
@@ -273,7 +273,7 @@ JOHTO_POKEMON EQU const_value
 	const CELEBI     ; fb
 	const MEWTWO     ; fc
 	const ARCEUS     ; fd
-NUM_POKEMON EQU const_value - 1
+DEF NUM_POKEMON EQU const_value - 1
 	const EGG        ; fe
 
 ; Unown forms
@@ -311,4 +311,4 @@ NUM_POKEMON EQU const_value - 1
 	const UNOWN_X ; 24
 	const UNOWN_Y ; 25
 	const UNOWN_Z ; 26
-NUM_UNOWN EQU const_value - 1 ; 26
+DEF NUM_UNOWN EQU const_value - 1 ; 26

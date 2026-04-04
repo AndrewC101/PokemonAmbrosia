@@ -36,11 +36,11 @@ Route24RocketScript:
 	writetext Route24RocketAfterBattleText
 	promptbutton
 	closetext
-	;special FadeBlackQuickly
+	;special FadeOutToBlack
 	;special ReloadSpritesNoPalettes
 	;disappear ROUTE24_ROCKET
 	;pause 25
-	;special FadeInQuickly
+	;special FadeInFromBlack
     setevent EVENT_ROUTE_24_ROCKET
 	playmapmusic
 	end

@@ -1,6 +1,3 @@
-INCLUDE "constants.asm"
-
-
 SECTION "bank1", ROMX
 
 INCLUDE "engine/link/place_waiting_text.asm"
@@ -19,12 +16,12 @@ INCLUDE "engine/events/haircut.asm"
 
 
 SECTION "bank2", ROMX
-
 INCLUDE "engine/overworld/player_object.asm"
-INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
 
+SECTION "bank2 B", ROMX
+INCLUDE "engine/math/sine.asm"
 
 SECTION "bank3", ROMX
 
@@ -37,7 +34,6 @@ INCLUDE "engine/items/items.asm"
 INCLUDE "engine/overworld/player_step.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
 INCLUDE "engine/pokemon/move_mon.asm"
-INCLUDE "engine/pokemon/bills_pc_top.asm"
 INCLUDE "engine/pokemon/breedmon_level_growth.asm"
 INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/items/item_effects.asm"
@@ -157,15 +153,15 @@ INCLUDE "data/trainers/parties.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
+
+
+SECTION "Battle Core 2", ROMX
+
 INCLUDE "data/battle/effect_command_pointers.asm"
-
-SECTION "Battle Core2", ROMX
-
 INCLUDE "engine/battle/core2.asm"
 
 SECTION "bank10", ROMX
 
-INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
@@ -174,8 +170,10 @@ SECTION "bank11", ROMX
 
 INCLUDE "engine/events/fruit_trees.asm"
 INCLUDE "engine/battle/ai/move.asm"
-INCLUDE "engine/pokedex/pokedex_2.asm"
 INCLUDE "engine/pokemon/mail.asm"
+
+SECTION "Nayru Pokedex2", ROMX
+INCLUDE "engine/pokedex/pokedex_2.asm"
 
 
 SECTION "Crystal Features 1", ROMX
@@ -247,7 +245,6 @@ INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
-INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
@@ -302,7 +299,7 @@ INCLUDE "engine/battle/battle_transition.asm"
 INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/events/magnet_train.asm"
 INCLUDE "engine/battle/battlestart_copytilemapatonce.asm"
-INCLUDE "engine/gfx/sprites.asm"
+INCLUDE "engine/sprite_anims/core.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
 
 
@@ -410,7 +407,6 @@ INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
-INCLUDE "engine/pokemon/bills_pc.asm"
 
 
 SECTION "bank39", ROMX
@@ -423,13 +419,10 @@ INCLUDE "engine/movie/intro.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
-INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
 
@@ -439,7 +432,6 @@ SECTION "bank3F", ROMX
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
-
 
 SECTION "mobile40", ROMX
 
@@ -470,7 +462,6 @@ INCLUDE "engine/movie/title.asm"
 
 SECTION "mobile45", ROMX
 
-INCLUDE "mobile/mobile_45.asm"
 INCLUDE "mobile/mobile_45_sprite_engine.asm"
 INCLUDE "mobile/mobile_45_2.asm"
 INCLUDE "mobile/mobile_45_stadium.asm"
@@ -622,6 +613,47 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
+SECTION "Nayru Pokedex", ROMX
+INCLUDE "engine/pokedex/pokedex.asm"
+
+SECTION "Custom GFX", ROMX
+INCLUDE "gfx/rangi_gfx.asm"
+
+SECTION "Map GroupNums Names", ROMX
+INCLUDE "data/maps/map_names.asm"
+
+SECTION "DEX GFX 2", ROMX
+IF USE_COMPRESSED_POKEDEX_GFX == TRUE
+PokedexLZ:
+INCBIN "gfx/pokedex/pokedex.2bpp.lz"
+PokedexSlowpokeLZ:
+INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
+ELSE
+; IF USE_COMPRESSED_POKEDEX_GFX == FALSE
+PokedexGFX:
+INCBIN "gfx/pokedex/pokedex.2bpp"
+PokedexSlowpokeGFX:
+INCBIN "gfx/pokedex/slowpoke.2bpp"
+ENDC
+
+Pokedex_ExtraTiles:
+INCBIN "gfx/pokedex/rangi_dex_tiles.2bpp"
+Pokedex_PageNumTiles:
+INCBIN "gfx/pokedex/dex_pagenums.2bpp"
+Pokedex_MathTiles:
+INCBIN "gfx/pokedex/math_symbols_inverted.1bpp"
+Pokedex_Imperial_Tiles:
+INCBIN "gfx/pokedex/inversed_feet_inches.1bpp"
+Pokedex_RightArrow_Tile:
+INCBIN "gfx/pokedex/inversed_rightarrow.1bpp"
+
+
+SECTION "Bank3E Overflow", ROMX
+INCLUDE "engine/link/time_capsule.asm"
+INCLUDE "engine/link/time_capsule_2.asm"
+INCLUDE "engine/events/magikarp.asm"
+
+
 SECTION "Battle Weather Images", ROMX
 
 INCLUDE "gfx/weather_images.asm"
@@ -634,9 +666,20 @@ INCLUDE "engine/events/elevator.asm"
 INCLUDE "engine/events/bug_contest/contest.asm"
 INCLUDE "engine/events/repel.asm"
 
-SECTION "Start Menu", ROMX
+SECTION "Newbox", ROMX
 
-INCLUDE "engine/events/heal_machine_anim.asm"
+INCLUDE "engine/pc/bills_pc.asm"
+INCLUDE "engine/pc/bills_pc_ui.asm"
+
+
+SECTION "Prism tilemap copy functions", ROMX
+
+INCLUDE "engine/gfx/copy_tilemap_at_once.asm"
+
+
+SECTION "VWF", ROMX
+
+INCLUDE "engine/gfx/vwf.asm"
 
 
 ;SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]

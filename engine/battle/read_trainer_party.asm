@@ -76,6 +76,45 @@ ReadTrainerPartyPieces:
 	ret z
 
 ; level
+; DevNote - Hard Mode
+; if hard mode is on
+; and we are in a boss battle
+; and the enemy level is not greater than level cap
+; then scale to level cap
+    push bc
+    ld b, a
+    ld a, [wHardMode]
+    and a
+    jr z, .normal
+
+    ld a, [wOtherTrainerClass]
+    cp INVADER
+    jr z, .scale
+    cp EXECUTIVEM
+    jr z, .scale
+    cp EXECUTIVEF
+    jr z, .scale
+    cp SOLDIER
+    jr z, .scale
+    cp KIMONO_GIRL
+    jr z, .scale
+
+    ld a, [wBattleType]
+    cp BATTLETYPE_WEAK_BATTLE
+    jr z, .scale
+    cp BATTLETYPE_BOSS_BATTLE
+    jr nz, .normal
+
+.scale
+    ld a, [wLevelCap]
+    cp b
+    jr c, .normal
+    ld b, a
+
+.normal
+    ld a, b
+    pop bc
+
 	ld [wCurPartyLevel], a
 	and a
 	jr nz, .notZero
@@ -1988,8 +2027,6 @@ CopyTrainerName:
     call FarCopyBytes
 	pop de
 	ret
-
-INCLUDE "data/trainers/party_pointers.asm"
 
 SetTrainerBattleLevel:
 	ld a, 255

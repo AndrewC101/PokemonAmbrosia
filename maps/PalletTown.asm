@@ -9,14 +9,14 @@ PalletTown_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .Aerith
+	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
+	callback MAPCALLBACK_OBJECTS, Aerith
 
-.FlyPoint:
+PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
 
-.Aerith:
+Aerith:
     disappear PALLETTOWN_CRYSTAL
     disappear PALLETTOWN_AERITH
     checkevent EVENT_BEAT_ELITE_FOUR
@@ -141,8 +141,15 @@ Aerith2Script:
 	closetext
 .dontAsk
 	winlosstext Aerith2BeatenText, Aerith2WinsText
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer KIMONO_GIRL, MASTER_AERITH
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, AERITH_2
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -253,9 +260,17 @@ PalletTownCrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal6LosesText, Crystal6WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, CRYSTAL_6
+	sjump .battle
+.normal
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_6
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_6

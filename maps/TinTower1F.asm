@@ -13,26 +13,26 @@
 
 TinTower1F_MapScripts:
 	def_scene_scripts
-	scene_script .FaceSuicune ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script TinTower1FSuicuneBattleScene, SCENE_TINTOWER1F_SUICUNE_BATTLE
+	scene_script TinTower1FNoopScene,          SCENE_TINTOWER1F_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .NPCsCallback
-	callback MAPCALLBACK_TILES, .StairsCallback
+	callback MAPCALLBACK_OBJECTS, TinTower1FNPCsCallback
+	callback MAPCALLBACK_TILES, TinTower1FStairsCallback
 
-.FaceSuicune:
+TinTower1FSuicuneBattleScene:
     checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
     iffalse .end
-	sdefer .SuicuneBattle
+	sdefer SuicuneBattle
 .end
 	end
 
-.DummyScene:
+TinTower1FNoopScene:
 	end
 
 ; if player has rainbow wing and has not fought ho-oh then nothing happens with eusine or suicune
 ; if player does not have rainbow wing player will fight suicune if they have not caught all beasts
-.NPCsCallback:
+TinTower1FNPCsCallback:
     disappear TINTOWER1F_EUSINE
     checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
     iffalse .NoClearBell
@@ -90,7 +90,7 @@ TinTower1F_MapScripts:
 	endcallback
 
  ; if player has rainbow wing then show stairs
-.StairsCallback:
+TinTower1FStairsCallback:
 	checkevent EVENT_GOT_RAINBOW_WING
 	iftrue .DontHideStairs
 	changeblock 10, 2, $09 ; change stairs to floor
@@ -98,7 +98,7 @@ TinTower1F_MapScripts:
 	endcallback
 
 ; handles the beasts interaction with player
-.SuicuneBattle:
+SuicuneBattle:
 	applymovement PLAYER, TinTower1FPlayerEntersMovement
 	pause 15
 	setval RAIKOU
@@ -140,12 +140,12 @@ TinTower1F_MapScripts:
 	disappear TINTOWER1F_SUICUNE
 	setevent EVENT_FOUGHT_SUICUNE
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	setmapscene ROUTE_42, SCENE_ROUTE42_NOTHING
+	setmapscene ROUTE_42, SCENE_ROUTE42_NOOP
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_36
-	setmapscene ROUTE_36, SCENE_ROUTE36_NOTHING
+	setmapscene ROUTE_36, SCENE_ROUTE36_NOOP
 	setevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_NOTHING
-	setscene SCENE_FINISHED
+	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_NOOP
+	setscene SCENE_TINTOWER1F_NOOP
 	clearevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	reloadmapafterbattle
 	pause 20
@@ -212,12 +212,12 @@ TinTower1FSage5Script:
 	promptbutton
 	verbosegiveitem RAINBOW_WING
 	closetext
-	refreshscreen
+	reanchormap
 	earthquake 72
 	waitsfx
 	playsound SFX_STRENGTH
 	changeblock 10, 2, $20 ; stairs
-	reloadmappart
+	refreshmap
 	setevent EVENT_GOT_RAINBOW_WING
 	closetext
 	opentext

@@ -22,14 +22,30 @@ CeladonGymErikaScript:
 	opentext
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
+.rematch
 	writetext ErikaBeforeBattleText
 	waitbutton
 	closetext
 	winlosstext ErikaBeatenText, 0
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ERIKA, MASTER_ERIKA
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ERIKA, ERIKA1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer ERIKA, ERIKA1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_ERIKA
+	iftrue .end
 	setevent EVENT_BEAT_ERIKA
 	setevent EVENT_BEAT_LASS_MICHELLE
 	setevent EVENT_BEAT_PICNICKER_TANYA
@@ -44,7 +60,7 @@ CeladonGymErikaScript:
 	waitbutton
     closetext
     end
-.FightDone:
+.FightDone
 	writetext ErikaAfterBattleText
 	waitbutton
     closetext
@@ -55,16 +71,7 @@ CeladonGymErikaScript:
 	writetext RematchRefuseTextErika
 	waitbutton
 	closetext
-	end
-.rematch
-	writetext ErikaBeforeBattleText
-	waitbutton
-	closetext
-	winlosstext ErikaBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer ERIKA, ERIKA1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 
 TrainerLassMichelle:

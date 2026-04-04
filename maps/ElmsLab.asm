@@ -12,36 +12,37 @@
 
 ElmsLab_MapScripts:
 	def_scene_scripts
-	scene_script .MeetElm ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_ELMSLAB_CANT_LEAVE
-	scene_script .DummyScene2 ; SCENE_ELMSLAB_NOTHING
-	scene_script .DummyScene3 ; SCENE_ELMSLAB_MEET_OFFICER
-	scene_script .DummyScene4 ; SCENE_ELMSLAB_UNUSED
-	scene_script .DummyScene5 ; SCENE_ELMSLAB_AIDE_GIVES_POTION
+	scene_script ElmsLabMeetElmScene, SCENE_ELMSLAB_MEET_ELM
+	scene_script ElmsLabNoop1Scene,   SCENE_ELMSLAB_CANT_LEAVE
+	scene_script ElmsLabNoop2Scene,   SCENE_ELMSLAB_NOOP
+	scene_script ElmsLabNoop3Scene,   SCENE_ELMSLAB_MEET_OFFICER
+	scene_script ElmsLabNoop4Scene,   SCENE_ELMSLAB_UNUSED
+	scene_script ElmsLabNoop5Scene,   SCENE_ELMSLAB_AIDE_GIVES_POTION
+	scene_const SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .MoveElmCallback
+	callback MAPCALLBACK_OBJECTS, ElmsLabMoveElmCallback
 
-.MeetElm:
-	sdefer .WalkUpToElm
+ElmsLabMeetElmScene:
+	sdefer ElmsLabWalkUpToElmScript
 	end
 
-.DummyScene1:
+ElmsLabNoop1Scene:
 	end
 
-.DummyScene2:
+ElmsLabNoop2Scene:
 	end
 
-.DummyScene3:
+ElmsLabNoop3Scene:
 	end
 
-.DummyScene4:
+ElmsLabNoop4Scene:
 	end
 
-.DummyScene5:
+ElmsLabNoop5Scene:
 	end
 
-.MoveElmCallback:
+ElmsLabMoveElmCallback:
     disappear ELMSLAB_MUM
     disappear ELMSLAB_DAD
     disappear ELMSLAB_PARENTS_ELM
@@ -51,12 +52,12 @@ ElmsLab_MapScripts:
     appear ELMSLAB_CYNTHIA
 .cont
 	checkscene
-	iftrue .Skip ; not SCENE_DEFAULT
+	iftrue .Skip ; not SCENE_ELMSLAB_MEET_ELM
 	moveobject ELMSLAB_ELM, 3, 4
 .Skip:
 	endcallback
 
-.WalkUpToElm:
+ElmsLabWalkUpToElmScript:
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -244,7 +245,7 @@ ChikoritaPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	refreshscreen
+	reanchormap
 	pokepic TREECKO
 	cry TREECKO
 	waitbutton
@@ -473,7 +474,7 @@ AideScript_GivePocketPC:
 	writetext AideText_PocketPCInfoText
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_NOTHING
+	setscene SCENE_ELMSLAB_NOOP
 	end
 
 AideScript_WalkBalls1:
@@ -505,7 +506,7 @@ AideScript_GiveYouBalls:
 	writetext AideText_ExplainCaps
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_NOTHING
+	setscene SCENE_ELMSLAB_NOOP
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	end
 
@@ -584,8 +585,8 @@ CopScript:
 	closetext
 	applymovement ELMSLAB_OFFICER, OfficerLeavesMovement
 	disappear ELMSLAB_OFFICER
-	;setscene SCENE_ELMSLAB_NOTHING
-	setflag ENGINE_MAIN_MENU_MOBILE_CHOICES
+	;setscene SCENE_ELMSLAB_NOOP
+	setflag ENGINE_MOBILE_SYSTEM
 	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
@@ -635,6 +636,88 @@ ElmsLabTrashcan2: ; unreferenced
 
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
+
+CheatCodeRepo:
+    opentext
+    writetext CheatCodeRepoText
+    waitbutton
+    writetext RebirthCodeText
+    checkevent EVENT_UNLOCK_MATERBALL_CODE
+    iffalse .skipMasterBallCode
+    writetext MasterBallCodeText
+.skipMasterBallCode
+    checkevent EVENT_UNLOCK_WARP_CODE
+    iffalse .skipWarpCode
+    writetext WarpCodeText
+.skipWarpCode
+    readmem wLevelCap
+    ifless 100, .skipLevelCapCode
+    writetext LevelCapCodeText
+.skipLevelCapCode
+    checkitem GIFT_OF_GOD
+    iffalse .skipGiftCode
+    writetext GiftOfGodCodeText
+.skipGiftCode
+    checkitem MARK_OF_GOD
+    iffalse .skipMarkCode
+    writetext MarkOfGodCodeText
+.skipMarkCode
+    checkitem HAND_OF_GOD
+    iffalse .skipHandCode
+    writetext HandOfGodCodeText
+.skipHandCode
+    checkevent EVENT_UNLOCK_ARCEUS_CODE
+	iffalse .skipArceusCode
+	writetext ArceusCodeText
+.skipArceusCode
+    closetext
+    end
+
+CheatCodeRepoText:
+    text "Cheat codes you"
+    line "unlock will be"
+    cont "displayed here."
+    done
+
+RebirthCodeText:
+    text "Resurrect"
+    line "Remake player."
+    prompt
+
+GiftOfGodCodeText:
+    text "Ex Nihilo"
+    line "Gift Of God."
+    prompt
+
+MarkOfGodCodeText:
+    text "Omniscient"
+    line "Mark Of God."
+    prompt
+
+HandOfGodCodeText:
+    text "Ontology"
+    line "Hand Of God."
+    prompt
+
+MasterBallCodeText:
+    text "CatchEmAll"
+    line "99 Master Balls."
+    prompt
+
+WarpCodeText:
+    text "MakeItSo"
+    line "Full Warp menu."
+    prompt
+
+LevelCapCodeText:
+    text "RUCasual?"
+    line "Level caps to 100."
+    prompt
+
+ArceusCodeText:
+    text "Omnipotent"
+    line "Level 100 Arceus."
+    prompt
 
 ElmsLab_WalkUpToElmMovement:
 	step UP
@@ -1671,8 +1754,7 @@ DadBattleScript:
     closetext
 
     winlosstext DadLosesText, DadWinsText
-    loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer DAD, DAD_1
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer DAD, DAD_1
 	startbattle
 	dontrestartmapmusic
@@ -1717,7 +1799,7 @@ DadBattleScript:
 	applymovement ELMSLAB_PARENTS_ELM, ELmsLabMovement_ElmLeaves
 	disappear ELMSLAB_PARENTS_ELM
 	turnobject PLAYER, DOWN
-.end
+    playmapmusic
 	end
 
 ELmsLabMovement_PlayerLeftDown:
@@ -1972,11 +2054,294 @@ ElmsLabMrMimeScript:
     cry MR__MIME
     waitbutton
     closetext
+    callasm PasswordScreen
+    callasm CheckGiftOfGodPassword
+    iftrue .giveGift
+    callasm CheckMarkOfGodPassword
+    iftrue .giveMark
+    callasm CheckHandOfGodPassword
+    iftrue .giveHand
+    callasm CheckMasterBallPassword
+    iftrue .giveMasterBall
+    callasm CheckWarpPassword
+    iftrue .giveWarp
+    callasm CheckLevelCapPassword
+    iftrue .noCaps
+    callasm CheckArceusPassword
+    iftrue .giveArceus
+    callasm CheckRebirthPassword
+    iftrue .rebirth
+    reloadmap
+    opentext
+    writetext MimeConfusedText
+    closetext
     end
+.giveGift
+    reloadmap
+    checkitem GIFT_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem GIFT_OF_GOD
+    closetext
+    end
+.giveMark
+    reloadmap
+    checkitem MARK_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem MARK_OF_GOD
+    closetext
+    end
+.giveHand
+    reloadmap
+    checkitem HAND_OF_GOD
+    iftrue .nostalgia
+    opentext
+    verbosegiveitem HAND_OF_GOD
+    closetext
+    end
+.giveMasterBall
+    reloadmap
+    opentext
+    verbosegiveitem MASTER_BALL, 99
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	setevent EVENT_UNLOCK_MATERBALL_CODE
+    end
+.giveWarp
+    reloadmap
+    checkevent EVENT_UNLOCK_WARP_CODE
+    iftrue .nostalgia
+    opentext
+    writetext GiveWarpText
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	setflag ENGINE_WARP
+	loadmem wReachedHallOfOrigin, 1
+	setevent EVENT_UNLOCK_WARP_CODE
+    end
+.noCaps
+    reloadmap
+    readmem wLevelCap
+    ifequal 100, .nostalgia
+    opentext
+    writetext LevelCapText
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	loadmem wLevelCap, 100
+    end
+.giveArceus
+    reloadmap
+    readvar VAR_PARTYCOUNT
+    ifequal PARTY_LENGTH, .noRoom
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	opentext
+    givepoke ARCEUS, 100, HOLY_CROWN
+    setevent EVENT_UNLOCK_ARCEUS_CODE
+    closetext
+    end
+.noRoom
+    opentext
+    writetext MakeRoomInPartyText
+    closetext
+    end
+.rebirth
+    reloadmap
+    opentext
+    writetext WhichGenderAreYouText
+	loadmenu .GenderHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Male
+	ifequal 2, .Female
+	closetext
+	end
+.GenderHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 6, 5
+	dw .GenderData
+	db 1 ; default option
+.GenderData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .GenderText
+	dbw BANK(@), NULL
+.GenderText:
+	db "Boy@"
+	db "Girl@"
+.Male
+    loadmem wPlayerGender, 0
+    sjump .rename
+.Female
+    loadmem wPlayerGender, 1
+.rename
+    warpfacing UP, NONE, 0, 0
+    opentext
+    writetext WhatIsYourNameText
+    closetext
+    callasm PlayerNamingScreen
+    reloadmap
+    opentext
+    writetext RebornText
+    closetext
+    end
+.nostalgia
+    opentext
+    writetext MimeNostalgicText
+    closetext
+    end
+
+MimeConfusedText:
+    text "Mr Mime looks"
+    line "confused."
+    prompt
+
+MimeNostalgicText:
+    text "Mr Mime looks"
+    line "nostalgic."
+    prompt
+
+LevelCapText:
+    text "Level caps set"
+    line "to 100."
+    prompt
+
+MakeRoomInPartyText:
+    text "Make room in"
+    line "your party."
+    prompt
+
+WhichGenderAreYouText:
+    text "What is your new"
+    line "gender?"
+    prompt
+
+WhatIsYourNameText:
+    text "What is your new"
+    line "name?"
+    prompt
+
+RebornText:
+    text "You are reborn"
+    line "<PLAYER>!"
+    prompt
+
+GiveWarpText:
+    text "Warp enabled in"
+    line "start menu."
+    prompt
+
+PasswordScreen:
+    ld b, NAME_CHEATCODE
+    ld de, wPassword
+    newfarcall NamingScreen
+    ret
+
+PlayerNamingScreen:
+    ld b, NAME_PLAYER
+    ld de, wPlayerName
+    newfarcall NamingScreen
+    ld hl, wPlayerName
+    ld de, DefaultName
+    call InitName
+    ret
+
+MakeMale:
+	ld a, [wPlayerSpriteSetupFlags]
+	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
+	xor a
+	ld [wPlayerGender], a
+	ret
+
+MakeFemale:
+	ld a, [wPlayerSpriteSetupFlags]
+	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
+	ld a, 1
+	ld [wPlayerGender], a
+	ret
+
+DefaultName:
+    db "Gold@@@@@@@"
+
+CheckGiftOfGodPassword:
+	ld de, GiftOfGodPassword
+	jr ComparePassword
+
+CheckMarkOfGodPassword:
+	ld de, MarkOfGodPassword
+	jr ComparePassword
+
+CheckHandOfGodPassword:
+	ld de, HandOfGodPassword
+	jr ComparePassword
+
+CheckMasterBallPassword:
+	ld de, MasterBallPassword
+	jr ComparePassword
+
+CheckWarpPassword:
+	ld de, WarpPassword
+	jr ComparePassword
+
+CheckLevelCapPassword:
+	ld de, LevelCapPassword
+	jr ComparePassword
+
+CheckArceusPassword:
+	ld de, ArceusPassword
+	jr ComparePassword
+
+CheckRebirthPassword:
+	ld de, RebirthPassword
+	jp ComparePassword
+
+ComparePassword:
+	ld hl, wPassword
+	ld c, 8
+	call CompareBytes
+	jr z, .yes
+	xor a
+	ld [wScriptVar], a
+	ret
+.yes
+    ld a, 1
+	ld [wScriptVar], a
+	ret
+
+GiftOfGodPassword:
+    db "Ex Nihilo"
+
+MarkOfGodPassword:
+    db "Omniscient"
+
+HandOfGodPassword:
+    db "Ontology"
+
+MasterBallPassword:
+    db "CatchEmAll"
+
+WarpPassword:
+    db "MakeItSo"
+
+LevelCapPassword:
+    db "RUCasual?"
+
+ArceusPassword:
+    db "Omnipotent"
+
+RebirthPassword:
+    db "Resurrect"
 
 ElmMrMimeText:
     text "Mr Mime!"
-    line "Mime! Mime!"
+    para "Mr Mime makes a"
+    line "mischievous"
+    cont "gesture."
     done
 
 ElmsLab_MapEvents:
@@ -2010,7 +2375,7 @@ ElmsLab_MapEvents:
 	bg_event  3,  7, BGEVENT_READ, ElmsLabTravelTip4
 	bg_event  6,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  8,  8, BGEVENT_READ, CheatCodeRepo
 	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow

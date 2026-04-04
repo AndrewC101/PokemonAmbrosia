@@ -1,8 +1,8 @@
-__trainer_class__ = 0
+DEF __trainer_class__ = 0
 
-trainerclass: MACRO
-\1 EQU __trainer_class__
-__trainer_class__ += 1
+MACRO trainerclass
+	DEF \1 EQU __trainer_class__
+	DEF __trainer_class__ += 1
 	const_def 1
 ENDM
 
@@ -18,16 +18,16 @@ ENDM
 ; - BTTrainerClassSprites (see data/trainers/sprites.asm)
 ; - BTTrainerClassGenders (see data/trainers/genders.asm)
 ; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
-CHRIS EQU __trainer_class__
+DEF CHRIS EQU __trainer_class__
 	trainerclass TRAINER_NONE ; 0
 	const PHONECONTACT_MOM
 	const PHONECONTACT_BIKESHOP
 	const PHONECONTACT_BILL
 	const PHONECONTACT_ELM
 	const PHONECONTACT_BUENA
-NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
+DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
-KRIS EQU __trainer_class__
+DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const MASTER_FALKNER
@@ -63,6 +63,7 @@ KRIS EQU __trainer_class__
 	trainerclass CLAIR ; 8
 	const CLAIR1
 	const MASTER_CLAIR
+	const CLAIR_HARD
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -110,6 +111,8 @@ KRIS EQU __trainer_class__
 	const MASTER_LANCE
 	const LANCE_DRAGONITE
 	const LANCE_ARCADE
+	const LANCE_HARD
+	const LANCE_DRAGONITE_100
 
 	trainerclass BROCK ; 11
 	const BROCK1
@@ -508,6 +511,7 @@ KRIS EQU __trainer_class__
 	trainerclass WALLACE ; 2b ; Remove?
 	const EMPEROR_WALLACE
 	const MASTER_WALLACE
+	;const WALLACE_HARD
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -718,8 +722,6 @@ KRIS EQU __trainer_class__
 	const JARETH
 	const REX
 	const ALLAN
-	const CHRIS_CHAN
-	const MASTER_CHRIS_CHAN
 
 	trainerclass KIMONO_GIRL ; 3c
 	const NAOKO_UNUSED ; unused
@@ -766,6 +768,7 @@ KRIS EQU __trainer_class__
 	const SETO
 	const MASTER_SETO
 	const BLUE_ARCADE
+	const MAXWELL
 
 	trainerclass OFFICER ; 41 ; Remove?
 	const KEITH
@@ -814,7 +817,6 @@ KRIS EQU __trainer_class__
     trainerclass LEAF ; 46
     const GREEN1
     const MASTER_GREEN
-    const GREEN_ARCADE
 
     trainerclass LORD_OAK ; 47
     const OAK
@@ -902,4 +904,4 @@ KRIS EQU __trainer_class__
 	const MASTER_ASH
 	const ATEM
 
-NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
+DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

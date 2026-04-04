@@ -209,7 +209,8 @@ PrintLevel::
 ; Print wTempMonLevel at hl
 
 	ld a, [wTempMonLevel]
-	ld [hl], "<LV>"
+_PrintLevel::
+	ld [hl], '<LV>'
 	inc hl
 
 ; How many digits?
@@ -224,7 +225,7 @@ PrintLevel::
 
 PrintLevel_Force3Digits::
 ; Print :L and all 3 digits
-	ld [hl], "<LV>"
+	ld [hl], '<LV>'
 	inc hl
 	ld c, 3
 
@@ -233,14 +234,6 @@ Print8BitNumLeftAlign::
 	ld de, wTextDecimalByte
 	ld b, PRINTNUM_LEFTALIGN | 1
 	jp PrintNum
-
-GetNthMove:: ; unreferenced
-	ld hl, wListMoves_MoveIndicesBuffer
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ret
 
 GetBaseData::
 	push bc

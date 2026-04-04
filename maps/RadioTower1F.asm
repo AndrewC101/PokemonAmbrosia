@@ -61,10 +61,10 @@ RadioTower1FLuckyNumberManScript:
 	closetext
 	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement
 	opentext
-	ifequal 1, .FirstPlace
-	ifequal 2, .SecondPlace
-	ifequal 3, .ThirdPlace
-	sjump .NoPrize
+	ifless 2, .NoPrize ; 0-1 digits match
+	ifless 3, .ThirdPlace ; 2 digits match
+	ifless 5, .SecondPlace ; 3-4 digits match
+	sjump .FirstPlace ; all digits match
 
 .GameOver:
 	writetext RadioTower1FLuckyNumberManComeAgainText
@@ -554,9 +554,17 @@ RadioTowerCrystalScript:
     waitbutton
     closetext
 
+    special HealParty
 	winlosstext Crystal4LosesText, Crystal4WinsText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CRYSTAL, CRYSTAL_4
+	sjump .battle
+.normal
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer CRYSTAL, CRYSTAL_4
+.battle
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CRYSTAL_4

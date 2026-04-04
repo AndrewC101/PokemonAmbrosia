@@ -97,9 +97,9 @@ IcePathB1PokemonAttacksText:
 
 IcePathB1FieldMon3Script:
 	faceplayer
-	cry FRIGIBAX
+	cry NINETALES_A
 	pause 15
-	loadwildmon FRIGIBAX, 25
+	loadwildmon NINETALES_A, 25
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

@@ -15,16 +15,35 @@ MahoganyGymPryceScript:
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
+.rematch
 	writetext PryceText_Intro
 	waitbutton
 	closetext
 	winlosstext PryceText_Impressed, PryceWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer PRYCE, MASTER_PRYCE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer PRYCE, PRYCE1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer PRYCE, PRYCE1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .end
 	setevent EVENT_BEAT_PRYCE
+	readmem wLevelCap
+	ifgreater 60, .skipCap
 	loadmem wLevelCap, 60
+.skipCap
 	opentext
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
@@ -34,7 +53,7 @@ MahoganyGymPryceScript:
 	scall MahoganyGymActivateRockets
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
-	iftrue PryceScript_Defeat
+	iftrue .PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE
 	setevent EVENT_BEAT_SKIER_CLARISSA
 	setevent EVENT_BEAT_BOARDER_RONALD
@@ -48,9 +67,9 @@ MahoganyGymPryceScript:
 	writetext PryceText_IcyWindSpeech
 	waitbutton
 	closetext
+.end
 	end
-
-PryceScript_Defeat:
+.PryceScript_Defeat
 	writetext PryceText_CherishYourPokemon
 	waitbutton
     closetext
@@ -61,16 +80,6 @@ PryceScript_Defeat:
 	writetext RematchRefuseTextPryce
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext PryceText_Intro
-	waitbutton
-	closetext
-	winlosstext PryceText_Impressed, PryceWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer PRYCE, PRYCE1
-	startbattle
-	reloadmapafterbattle
 	end
 MahoganyGym_NoRoomForIcyWind:
 	closetext

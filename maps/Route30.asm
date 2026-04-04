@@ -574,7 +574,7 @@ Route30FieldMon7Script:
 	faceplayer
 	cry VENIPEDE
 	pause 15
-	loadwildmon VENIPEDE, 9
+	loadwildmon VENIPEDE, 6
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

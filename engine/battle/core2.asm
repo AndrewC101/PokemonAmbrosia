@@ -642,12 +642,47 @@ RuthlessClasses:
     db ROLE_PLAYER_SHINY
     db -1
 
-BattleInfoOrForfeit:
-    ld hl, SeeBattleInfoText
-    call PrintText
-    call YesNoBox
-    jr nc, .seeInfo
+BattleChoiceMenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 6, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw .MenuData
+	db 1
 
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_WRAP
+	db 2
+	db "Battle Data@"
+	db "Forfeit?@"
+
+BattleChoiceMenu:
+	ld hl, BattleChoiceMenuHeader
+	call LoadMenuHeader
+	call VerticalMenu
+	call CloseWindow
+	call WaitBGMap
+
+	; press B to exit
+    ldh a, [hJoyPressed]
+    and B_BUTTON
+    ret nz
+
+    ; options when pressing A
+	ld a, [wMenuCursorY]
+	dec a
+	jr z, .BattleData
+	dec a
+	jr z, .Forfeit
+	ret
+
+.BattleData
+	call ClearSprites
+	jp PrintBattleInfo
+
+.Forfeit
+	; fallthrough
+
+BattleInfoOrForfeit:
+	call ClearSprites
     ld hl, ForfeitMatchText
     call PrintText
     call NoYesBox
@@ -683,12 +718,6 @@ BattleInfoOrForfeit:
     xor a
     ld hl, BattleText_DoesNotAccept
     jp StdBattleTextbox
-.seeInfo
-    jp PrintBattleInfo
-
-SeeBattleInfoText:
-    text "See Battle Info?"
-    done
 
 ForfeitMatchText:
     text "Forfeit Battle?"
@@ -742,7 +771,7 @@ GetWeatherImage:
 	ld hl, vTiles0
 	call Request2bpp
 	pop bc
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	ld de, .WeatherImageOAMData
 .loop
 	ld a, [de]
@@ -902,7 +931,7 @@ CopyBackpic:
 	ret
 
 .LoadTrainerBackpicAsOAM:
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	xor a
 	ldh [hMapObjectIndex], a
 	ld b, 6
@@ -1034,7 +1063,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .lowered
 	jr z, .same
-	ld a, "<"
+	ld a, "▷"
 	ld [de], a
 	inc de
 	ld a, c
@@ -1048,7 +1077,6 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	jr .insert
 .lowered
 	ld a, "▼"
-	;ld a, "-"
 	ld [de], a
 	inc de
 	ld a, 7
@@ -1069,7 +1097,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	ld b, h
 	ld c, l
 	pop hl
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	pop bc
 	pop hl
 	pop de
@@ -1424,7 +1452,7 @@ FeoDetailsPageInfoBox:
 	;hlcoord 10, 7
 	;predef ListMovePP
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a
@@ -1625,19 +1653,58 @@ FieldTexts:
 
 JoyWaitAorBorDPADInfoTrainer:
 .loop
-	call DelayFrame
-	call GetJoypad
-	ldh a, [hJoyPressed]
-	and A_BUTTON | B_BUTTON
-	ret nz
+    call DelayFrame
+    call GetJoypad
+
+    ; A / B = exit
+    ldh a, [hJoyPressed]
+    and A_BUTTON | B_BUTTON
+    ret nz
+
+    ; single presses on left and right to switch pages
 	ldh a, [hJoyPressed]
 	and D_RIGHT
 	call nz, InfoBoxRightPress
 	ldh a, [hJoyPressed]
 	and D_LEFT
 	call nz, InfoBoxLeftPress
-	call UpdateTimeAndPals
-	jr .loop
+
+    ; if up/down is not held, reset delay
+    ldh a, [hJoyDown]
+    and D_UP | D_DOWN
+    jr z, .reset_delay
+
+    ; countdown delay
+    ld hl, wChartScrollDelay
+    ld a, [hl]
+    and a
+    jr z, .check_dirs
+    dec [hl]
+    jr .after_dirs
+
+.check_dirs
+    ; reset delay (this is in terms of fps)
+    ld a, 5          ; switch pages every 5 frames
+    ld [hl], a
+
+    ; UP -> go right
+    ldh a, [hJoyDown]
+    bit D_UP_F, a
+    call nz, InfoBoxRightPress
+
+    ; DOWN -> go left
+    ldh a, [hJoyDown]
+    bit D_DOWN_F, a
+    call nz, InfoBoxLeftPress
+
+.after_dirs
+    call UpdateTimeAndPals
+    jr .loop
+
+.reset_delay
+    xor a
+    ld [wChartScrollDelay], a
+    jr .after_dirs
 
 WaitButtonInfoTrainer:
 	ldh a, [hOAMUpdate]
@@ -1651,9 +1718,13 @@ WaitButtonInfoTrainer:
 	ret
 
 InfoBoxLeftPress:
+	; play switching pockets SFX
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+
 	ld a, [wTrainerInfoPage]
 	and a
-	ret z
+	jr z, .jump_to_page_5
 	cp 1
 	jr z, .jump_to_page_1
 	cp 2
@@ -1681,8 +1752,16 @@ InfoBoxLeftPress:
 	call DecreasePage
 	call UpdatePageText
 	jp EnemyAbilityInfoBox
+.jump_to_page_5
+	call DecreasePage
+	call UpdatePageText
+	jp FieldInfoBox
 
 InfoBoxRightPress:
+	; play switching pockets SFX
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
+
 	ld a, [wTrainerInfoPage]
 	and a
 	jr z, .jump_to_page_1
@@ -1692,8 +1771,14 @@ InfoBoxRightPress:
 	jr z, .jump_to_page_3
 	cp 3
 	jr z, .jump_to_page_4
+	cp 4
+	jr z, .jump_to_page_0
 	ret
 
+.jump_to_page_0
+	call IncreasePage
+	call UpdatePageText
+	jp StatChangesInfoBox
 .jump_to_page_1
 	call IncreasePage
 	call UpdatePageText

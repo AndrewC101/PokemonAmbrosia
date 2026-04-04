@@ -66,8 +66,13 @@ ArceusScript:
 	warp HALL_OF_ORIGIN, 11, 3
 	turnobject PLAYER, UP
 	setevent EVENT_CAUGHT_ARCEUS
+	setevent EVENT_UNLOCK_ARCEUS_CODE
     special FadeOutMusic
 	opentext
+	checkitem GIFT_OF_GOD
+	iftrue .skipGift
+	verbosegiveitem GIFT_OF_GOD
+.skipGift
 	writetext CaughtArceusText
 	waitbutton
 	closetext
@@ -77,7 +82,6 @@ ArceusScript:
 	opentext
 	writetext OakBeatenArceusText
 	waitbutton
-	verbosegiveitem AMBROSIA
 	closetext
 	special HealParty
 	credits
@@ -119,10 +123,6 @@ OakBeatenArceusText:
     cont "ready to reach"
     cont "the heights of"
     cont "#mon Lord."
-
-    para "Until then take"
-    line "this token of my"
-    cont "gratitude."
     done
 ArceusText:
     text "<PLAYER>"
@@ -286,8 +286,9 @@ MasterOakScript:
 	opentext
 	writetext MasterOakVictoryText
 	waitbutton
-	verbosegiveitem AMBROSIA
 	checkevent EVENT_BEAT_LORD_OAK
+	iftrue .skipMarkOfGod
+	checkitem MARK_OF_GOD
 	iftrue .skipMarkOfGod
 	writetext MarkOfGodText
 	waitbutton
@@ -418,9 +419,6 @@ MasterOakVictoryText:
     line "trainer or #mon"
     cont "will dare to"
     cont "challenge you."
-
-    para "Take this token"
-    line "of our kinship."
     done
 
 MarkOfGodText:
@@ -1120,10 +1118,6 @@ Zygarde2Script:
 	end
 	
 MultiverseRolePlayScript:
-    setflag ENGINE_POKEGEAR
-    setflag ENGINE_WARP
-    loadmem wReachedHallOfOrigin, 1
-
     faceplayer
     opentext
     writetext MultiverseIntroText
@@ -1733,6 +1727,7 @@ InvaderMasterPatches:
 	waitbutton
 	closetext
 	winlosstext InvaderMasterPatchesBeatenText, InvaderMasterPatchesVictoryText
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer INVADER, MASTER_PATCHES
 	startbattle
 	ifequal LOSE, .Lose
@@ -1741,11 +1736,11 @@ InvaderMasterPatches:
 	setmapscene ORIGIN_ROAD, SCENE_FINISHED
 	setflag ENGINE_FLYPOINT_HALL_OF_ORIGIN
 	loadmem wReachedHallOfOrigin, 1
+	setevent EVENT_UNLOCK_WARP_CODE
 
 	checkevent EVENT_BEAT_MASTER_PATCHES
 	iftrue .finish
 	setevent EVENT_BEAT_MASTER_PATCHES
-	setmapscene HALL_OF_ORIGIN, SCENE_CUSTOM_1
 	opentext
 	writetext InvaderMasterPatchesAfterText
 	waitbutton
@@ -1848,8 +1843,12 @@ InvaderMasterPatchesAfterText:
 	done
 
 PatchesAttacks:
+    checkevent EVENT_BEAT_MASTER_PATCHES
+    iftrue .end
     turnobject PLAYER, RIGHT
     sjump InvaderMasterPatches
+.end
+    end
 
 MasterJoeyScript:
 	faceplayer
@@ -2050,28 +2049,28 @@ RatGodText:
 
 HallOfOriginWarpScript1:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 4, 5
     end
 
 HallOfOriginWarpScript2:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 5, 5
     end
 
 HallOfOriginWarpScript3:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 6, 5
     end
 
 HallOfOriginWarpScript4:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warp ORIGIN_ROAD, 7, 5
     end
@@ -2087,11 +2086,11 @@ HallOfOrigin_MapEvents:
 	coord_event 11, 45, SCENE_ALWAYS, HallOfOriginWarpScript2
 	coord_event 12, 45, SCENE_ALWAYS, HallOfOriginWarpScript3
 	coord_event 13, 45, SCENE_ALWAYS, HallOfOriginWarpScript4
-	coord_event 10, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 11, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 12, 29, SCENE_DEFAULT, PatchesAttacks
-	coord_event 11, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
-	coord_event 12, 18, SCENE_CUSTOM_1, MustBeatMasterRedScript
+	coord_event 10, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 11, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 12, 29, SCENE_ALWAYS, PatchesAttacks
+	coord_event 11, 18, SCENE_DEFAULT, MustBeatMasterRedScript
+	coord_event 12, 18, SCENE_DEFAULT, MustBeatMasterRedScript
 
 	def_bg_events
 

@@ -1,6 +1,6 @@
 	db HAWLUCHA ; 047
 
-	db  78,  92,  75,  118,  74,  63
+	db  78, 105,  75,  118,  74,  63
 	;   hp  atk  def  spd  sat  sdf
 
 	db FLYING, FIGHTING ; type

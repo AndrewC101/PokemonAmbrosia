@@ -5,6 +5,7 @@
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     const DARKCAVEBLACKTHORNENTRANCE_XEHANORT
+    const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL3
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
 
 DarkCaveBlackthornEntrance_MapScripts:
@@ -29,10 +30,15 @@ DarkCaveBlackthornEntranceTMSnore:
 	itemball TM_DARK_PULSE
 
 DarkCaveBlackthornEntranceFieldMon1Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_1, DarkCaveBlackthornEntrancePokemonAttacksText, 64, 0, .script
-.script
-    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
-    end
+	faceplayer
+	cry TYRANITAR
+	pause 15
+	loadwildmon TYRANITAR, 64
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_1
+	end
 
 DarkCaveBlackthornEntranceFieldMon2Script:
 	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_2, DarkCaveBlackthornEntrancePokemonAttacksText, 62, 0, .script
@@ -41,16 +47,25 @@ DarkCaveBlackthornEntranceFieldMon2Script:
     end
 
 DarkCaveBlackthornEntranceFieldMon3Script:
-	trainer HYDREIGON, FIELD_MON, EVENT_FIELD_MON_3, DarkCaveBlackthornEntrancePokemonAttacksText, 64, 0, .script
-.script
-    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
-    end
+	faceplayer
+	cry HYDREIGON
+	pause 15
+	loadwildmon HYDREIGON, 64
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
+	end
 
 DarkCaveBlackthornEntranceFieldMon4Script:
-	trainer NOWN, FIELD_MON, EVENT_FIELD_MON_4, DarkCaveBlackthornEntrancePokemonAttacksText, 66, 0, .script
-.script
-    disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
-    end
+	cry NOWN
+	pause 15
+	loadwildmon NOWN, 66
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
+	disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
+	end
 
 DarkCaveBlackthornEntrancePokemonAttacksText:
 	text "Wild #mon"
@@ -198,9 +213,9 @@ DarkCaveBlackthornEntrance_MapEvents:
 	def_object_events
 	object_event 25,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMCurse, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event 39, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceTMSnore, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_TM_SNORE
-	object_event 23, 11, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 23, 11, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
-	object_event 40,  5, SPRITE_HYDREIGON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 40,  5, SPRITE_HYDREIGON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
 	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, DarkCaveXehanortScript, -1
 	object_event  7,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceAmbrosia, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA
-	object_event 17, 13, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, DarkCaveBlackthornEntranceFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 17, 13, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon4Script, EVENT_FIELD_MON_4

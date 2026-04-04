@@ -10,7 +10,7 @@
 	const PARTYMENUQUALITY_GENDER
 	const PARTYMENUQUALITY_MOBILE_SELECTION
 
-partymenuqualities: MACRO
+MACRO partymenuqualities
 rept _NARG
 	db PARTYMENUQUALITY_\1
 	shift
@@ -20,7 +20,7 @@ ENDM
 
 PartyMenuQualityPointers:
 ; entries correspond to PARTYMENUACTION_* constants
-	table_width 2, PartyMenuQualityPointers
+	table_width 2
 	dw .Default  ; PARTYMENUACTION_CHOOSE_POKEMON
 	dw .Default  ; PARTYMENUACTION_HEALING_ITEM
 	dw .Default  ; PARTYMENUACTION_SWITCH

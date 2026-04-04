@@ -32,6 +32,9 @@ EvolveAfterBattle_MasterLoop:
 	ld [wEvolutionOldSpecies], a
 
 	push hl
+	ld a, [wGiftOfGod]
+	and a
+	jr nz, .skipFlagCheck
 	ld a, [wCurPartyMon]
 	ld c, a
 	ld hl, wEvolvableFlags
@@ -41,6 +44,7 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp z, EvolveAfterBattle_MasterLoop
 
+.skipFlagCheck
 	ld a, [wEvolutionOldSpecies]
 	dec a
 	ld b, 0
@@ -360,7 +364,7 @@ UpdateSpeciesNameIfNotNicknamed:
 	cp [hl]
 	inc hl
 	ret nz
-	cp "@"
+	cp '@'
 	jr nz, .loop
 
 	ld a, [wCurPartyMon]

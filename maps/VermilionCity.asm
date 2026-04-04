@@ -655,8 +655,15 @@ YunaScriptVermilion:
 	closetext
 .dontAsk
 	winlosstext VermilionYunaBeatenText, VermilionYunaWinsText
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer KIMONO_GIRL, MASTER_YUNA
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer KIMONO_GIRL, YUNA_2
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle

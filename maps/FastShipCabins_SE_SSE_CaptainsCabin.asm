@@ -16,7 +16,7 @@ FastShipCabins_SE_SSE_CaptainsCabin_MapScripts:
 
 	def_callbacks
 
-.DummyScene: ; unreferenced
+FastShipCabins_SE_SSE_CaptainsCabinNoopScene: ; unreferenced
 	end
 
 SSAquaCaptain:
@@ -46,7 +46,7 @@ SSAquaGranddaughterBefore:
 	writetext SSAquaGranddaughterHasToFindGrandpaText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	disappear FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_TWIN2
 	applymovement PLAYER, SSAquaCaptainsCabinWarpsToGrandpasCabinMovement
@@ -54,7 +54,7 @@ SSAquaGranddaughterBefore:
 	appear FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_TWIN1
 	turnobject PLAYER, UP
 	turnobject FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_TWIN1, UP
-	special FadeInQuickly
+	special FadeInFromBlack
 	turnobject FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_GENTLEMAN, DOWN
 	showemote EMOTE_SHOCK, FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_GENTLEMAN, 15
 	applymovement FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_TWIN1, SSAquaGranddaughterEntersCabinMovement
@@ -79,7 +79,7 @@ SSAquaGranddaughterBefore:
 	writetext SSAquaEntertainedGranddaughterText
 	promptbutton
 	setevent EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
-	setmapscene FAST_SHIP_1F, SCENE_DEFAULT
+	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_NOOP
 	sjump SSAquaMetalCoatAndDocking
 
 SSAquaGrandpa:
@@ -92,7 +92,7 @@ SSAquaGrandpa:
 	writetext SSAquaCantFindGranddaughterText
 	waitbutton
 	closetext
-	setmapscene FAST_SHIP_1F, SCENE_DEFAULT
+	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_NOOP
 	end
 
 SSAquaMetalCoatAndDocking:
@@ -678,7 +678,7 @@ FastShipCabins_SE_SSE_CaptainsCabin_MapEvents:
 	object_event  5,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerPokefanmColin, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
 	object_event  2,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsMegandpeg1, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
 	object_event  3,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsMegandpeg2, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	object_event  5,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerPsychicRodney, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerPsychicRodney, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmJeremy, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
 	object_event  5,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanfGeorgia, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
 	object_event  1, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdShawn, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND

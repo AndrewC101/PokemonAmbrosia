@@ -3,12 +3,12 @@
 	const OPT_TEXT_SPEED   ; 0
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
-	const OPT_SOUND        ; 3
+	const OPT_DIFFICULTY   ; 3
 	const OPT_FAST_BATTLES ; 4
 	const OPT_MENU_CLOCK   ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
-NUM_OPTIONS EQU const_value    ; 8
+DEF NUM_OPTIONS EQU const_value    ; 8
 
 _Option:
     call ClearJoypad
@@ -48,12 +48,12 @@ _Option:
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	and START | B_BUTTON
+	and PAD_START | PAD_B
 	jr nz, .ExitOptions
 	call OptionsControl
 	jr c, .dpad
@@ -83,7 +83,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Battle Speed<LF>"
 	db "        :<LF>"
-	db "Sound<LF>"
+	db "Difficulty<LF>"
 	db "        :<LF>"
 	db "Menu Data<LF>"
 	db "        :<LF>"
@@ -100,7 +100,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_FasterBattles
-	dw Options_Sound
+	dw Options_Difficulty
 	dw Options_MenuClock
 	dw Options_Frame
 	dw Options_Cancel
@@ -114,9 +114,9 @@ GetOptionPointer:
 Options_TextSpeed:
 	call GetTextSpeed
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	ld a, c ; right pressed
 	cp OPT_TEXT_SPEED_NONE
@@ -204,9 +204,9 @@ GetTextSpeed:
 Options_BattleScene:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit BATTLE_SCENE, [hl]
 	jr nz, .ToggleOn
@@ -243,9 +243,9 @@ Options_BattleScene:
 Options_BattleStyle:
 	ld hl, wOptions
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit BATTLE_SHIFT, [hl]
 	jr nz, .ToggleShift
@@ -278,41 +278,39 @@ Options_BattleStyle:
 .Shift: db "Shift@"
 .Set:   db "Set  @"
 
-Options_Sound:
-	ld hl, wOptions
+Options_Difficulty:
+	ld hl, wHardMode
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
-	bit STEREO, [hl]
-	jr nz, .SetMono
-	jr .SetStereo
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	bit STEREO, [hl]
-	jr z, .SetStereo
-	jr .SetMono
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .NonePressed:
-	bit STEREO, [hl]
-	jr nz, .ToggleStereo
-	jr .ToggleMono
+	ld a, [wHardMode]
+	and a
+	jr nz, .ToggleOn
 
-.SetMono:
-	res STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleMono:
-	ld de, .Mono
+.ToggleOff:
+	xor a
+	ld [wHardMode], a
+	ld de, .Off
 	jr .Display
 
-.SetStereo:
-	set STEREO, [hl]
-	call RestartMapMusic
-
-.ToggleStereo:
-	ld de, .Stereo
+.ToggleOn:
+	ld a, 1
+	ld [wHardMode], a
+	ld de, .On
 
 .Display:
 	hlcoord 11, 11
@@ -320,8 +318,8 @@ Options_Sound:
 	and a
 	ret
 
-.Mono:   db "Mono  @"
-.Stereo: db "Stereo@"
+.On:  db "Hard  @"
+.Off: db "Normal@"
 
 Options_FasterBattles:
  	ld hl, wOptions2
@@ -466,9 +464,9 @@ Options_FasterBattles:
 Options_MenuClock:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
 	bit MENU_CLOCK, [hl]
 	jr nz, .ToggleOff
@@ -504,9 +502,9 @@ Options_MenuClock:
 Options_Frame:
 	ld hl, wTextboxFrame
 	ldh a, [hJoyPressed]
-	bit D_LEFT_F, a
+	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
-	bit D_RIGHT_F, a
+	bit B_PAD_RIGHT, a
 	jr nz, .RightPressed
 	and a
 	ret
@@ -526,7 +524,7 @@ Options_Frame:
 UpdateFrame:
 	ld a, [wTextboxFrame]
 	hlcoord 16, 15 ; where on the screen the number is drawn
-	add "1"
+	add '1'
 	ld [hl], a
 	call LoadFontsExtra
 	and a
@@ -534,7 +532,7 @@ UpdateFrame:
 
 Options_Cancel:
 	ldh a, [hJoyPressed]
-	and A_BUTTON
+	and PAD_A
 	jr nz, .Exit
 	and a
 	ret
@@ -546,9 +544,9 @@ Options_Cancel:
 OptionsControl:
 	ld hl, wJumptableIndex
 	ldh a, [hJoyLast]
-	cp D_DOWN
+	cp PAD_DOWN
 	jr z, .DownPressed
-	cp D_UP
+	cp PAD_UP
 	jr z, .UpPressed
 	and a
 	ret
@@ -596,7 +594,7 @@ Options_UpdateCursorPosition:
 	ld de, SCREEN_WIDTH
 	ld c, SCREEN_HEIGHT - 2
 .loop
-	ld [hl], " "
+	ld [hl], ' '
 	add hl, de
 	dec c
 	jr nz, .loop
@@ -604,5 +602,5 @@ Options_UpdateCursorPosition:
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wJumptableIndex]
 	call AddNTimes
-	ld [hl], "▶"
+	ld [hl], '▶'
 	ret

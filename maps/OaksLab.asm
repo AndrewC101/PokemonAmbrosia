@@ -9,7 +9,7 @@ OaksLab_MapScripts:
 
 	def_callbacks
 
-.DummyScene: ; unreferenced
+OaksLabNoopScene: ; unreferenced
 	end
 
 Oak:
@@ -57,8 +57,15 @@ Oak:
 	iffalse .refuse
 	closetext
     winlosstext OakWinText, OakWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer POKEMON_PROF, MASTER_OAK
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMON_PROF, PROF_OAK
+.battle
 	startbattle
 	ifequal LOSE, .lose
 	reloadmapafterbattle
@@ -87,7 +94,6 @@ Oak:
 	writetext OakGiveWarpDeviceText
 	playsound SFX_GET_BADGE
 	waitsfx
-	;verbosegiveitem WARP_DEVICE
 	setflag ENGINE_WARP
 	setevent EVENT_OPENED_MT_SILVER
 	loadmem wExpShareUpgrade, 1

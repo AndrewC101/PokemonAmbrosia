@@ -137,9 +137,7 @@ SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/Route34.asm"
 INCLUDE "maps/ElmsLab.asm"
-INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
-INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 
 SECTION "Map Scripts 10", ROMX
 
@@ -170,7 +168,7 @@ SECTION "Map Scripts 11", ROMX
 
 INCLUDE "maps/EcruteakPokecenter1F.asm"
 INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
-INCLUDE "maps/DanceTheatre.asm"
+INCLUDE "maps/DanceTheater.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
@@ -307,7 +305,7 @@ INCLUDE "maps/BlackthornPokecenter1F.asm"
 INCLUDE "maps/MoveDeletersHouse.asm"
 INCLUDE "maps/SafariZoneMainOffice.asm"
 INCLUDE "maps/FuchsiaGym.asm"
-INCLUDE "maps/BillsBrothersHouse.asm"
+INCLUDE "maps/BillsOlderSistersHouse.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
 
 SECTION "Map Scripts 19", ROMX
@@ -376,28 +374,40 @@ INCLUDE "maps/Route24.asm"
 SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/DestinyEliteFour.asm"
+
+SECTION "Map Scripts 25 B", ROMX
+
 INCLUDE "maps/DestinySquare.asm"
 
 SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/DestinyPark.asm"
+
+SECTION "Map Scripts 27", ROMX
+
 INCLUDE "maps/DestinyFrontier.asm"
 
-SECTION "Map Scripts Overflow 1", ROMX
+SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/OriginRoad.asm"
 INCLUDE "maps/OriginRoadSouth.asm"
+
+SECTION "Map Scripts 29", ROMX
+
 INCLUDE "maps/HallOfOrigin.asm"
 INCLUDE "maps/DarkCaveVioletEntrance.asm"
 
-SECTION "Map Scripts Overflow 2", ROMX
+SECTION "Map Scripts 30", ROMX
 
 INCLUDE "maps/WarZone.asm"
 INCLUDE "maps/GiovanniGym.asm"
+
+SECTION "Map Scripts 31", ROMX
+
 INCLUDE "maps/Museum.asm"
 INCLUDE "maps/VermilionCity.asm"
 
-SECTION "Map Scripts Overflow 3", ROMX
+SECTION "Map Scripts 32", ROMX
 
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/Route15.asm"
@@ -405,12 +415,15 @@ INCLUDE "maps/Route44.asm"
 INCLUDE "maps/SeafoamGym.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
+
+SECTION "Map Scripts 33", ROMX
+
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/ViridianNicknameSpeechHouse.asm"
 INCLUDE "maps/Route30BerryHouse.asm"
 INCLUDE "maps/MrPokemonsHouse.asm"
 
-SECTION "Map Scripts Overflow 4", ROMX
+SECTION "Map Scripts 34", ROMX
 
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
@@ -418,6 +431,9 @@ INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/ViridianMart.asm"
+
+SECTION "Map Scripts 35", ROMX
+
 INCLUDE "maps/TrainerHouse1F.asm"
 INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
@@ -425,17 +441,20 @@ INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/BlackthornEmysHouse.asm"
 INCLUDE "maps/EcruteakTinTowerEntrance.asm"
 
-SECTION "Map Scripts Overflow 5", ROMX
+SECTION "Map Scripts 36", ROMX
 
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/AzaleaTown.asm"
 INCLUDE "maps/Route19FuchsiaGate.asm"
+
+SECTION "Map Scripts 37", ROMX
+
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/CeladonCity.asm"
 INCLUDE "maps/ViridianCity.asm"
 
-SECTION "Map Scripts Overflow 6", ROMX
+SECTION "Map Scripts 38", ROMX
 
 INCLUDE "maps/Route42.asm"
 INCLUDE "maps/Route37.asm"
@@ -444,26 +463,35 @@ INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/RedsHouse1F.asm"
 INCLUDE "maps/AncientTemple.asm"
 INCLUDE "maps/AncientHall.asm"
+
+SECTION "Map Scripts 39", ROMX
+
 INCLUDE "maps/WiseTriosRoom.asm"
 INCLUDE "maps/Route27.asm"
 INCLUDE "maps/Route46.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
 
-SECTION "Map Scripts Overflow 7", ROMX
+SECTION "Map Scripts 40", ROMX
 
 INCLUDE "maps/LavenderTown.asm"
+
+SECTION "Map Scripts 41", ROMX
+
 INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route36NationalParkGate.asm"
 
-SECTION "Map Scripts Overflow 8", ROMX
+SECTION "Map Scripts 42", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/DarkCaveBlackthornEntrance.asm"
+
+SECTION "Map Scripts 43", ROMX
+
 INCLUDE "maps/SilverCaveItemRooms.asm"
 INCLUDE "maps/AncientRuinPresent.asm"
 
-SECTION "Map Scripts Overflow 9", ROMX
+SECTION "Map Scripts 44", ROMX
 
 INCLUDE "maps/AncientRuinPast.asm"
 INCLUDE "maps/AzaleaGym.asm"
@@ -472,6 +500,9 @@ INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
+
+SECTION "Map Scripts 45", ROMX
+
 INCLUDE "maps/VermilionPortPassage.asm"
 INCLUDE "maps/MountMoonSquare.asm"
 INCLUDE "maps/MountMoonGiftShop.asm"
@@ -483,7 +514,7 @@ INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/MobileTradeRoom.asm"
 
-SECTION "Map Scripts Overflow 10", ROMX
+SECTION "Map Scripts 46", ROMX
 
 INCLUDE "maps/OaksLab.asm"
 INCLUDE "maps/Route17Route18Gate.asm"
@@ -491,6 +522,9 @@ INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"
 INCLUDE "maps/CeladonCafe.asm"
 INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
+
+SECTION "Map Scripts 47", ROMX
+
 INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
 INCLUDE "maps/GuideGentsHouse.asm"
 INCLUDE "maps/CherrygroveEvolutionSpeechHouse.asm"
@@ -499,6 +533,9 @@ INCLUDE "maps/SafariZoneWardensHome.asm"
 INCLUDE "maps/Route15FuchsiaGate.asm"
 INCLUDE "maps/CherrygroveMart.asm"
 INCLUDE "maps/CherrygrovePokecenter1F.asm"
+
+SECTION "Map Scripts 48", ROMX
+
 INCLUDE "maps/PewterCity.asm"
 INCLUDE "maps/LavenderForest.asm"
 INCLUDE "maps/Route23.asm"
@@ -507,20 +544,31 @@ INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 INCLUDE "maps/ManorOutside.asm"
 
-SECTION "Map Scripts Overflow 11", ROMX
+SECTION "Map Scripts 49", ROMX
 
 INCLUDE "maps/TrainerHouseB1F.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route29Route46Gate.asm"
 INCLUDE "maps/PewterMart.asm"
 INCLUDE "maps/FuchsiaMart.asm"
+
+SECTION "Map Scripts 50", ROMX
+
 INCLUDE "maps/Route27SandstormHouse.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PewterNidoranSpeechHouse.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 
-SECTION "Map Scripts Overflow 12", ROMX
+SECTION "Map Scripts 51", ROMX
 
 INCLUDE "maps/Abyss.asm"
+
+SECTION "Map Scripts 52", ROMX
+
 INCLUDE "maps/CeruleanCave.asm"
+
+SECTION "Map Scripts 53", ROMX
+
+INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
+INCLUDE "maps/PlayersNeighborsHouse.asm"

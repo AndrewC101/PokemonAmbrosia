@@ -68,6 +68,8 @@ AndrewScript:
 	checkevent EVENT_BEAT_ANDREW
 	iftrue .skipHandOfGod
 	setevent EVENT_BEAT_ANDREW
+	checkitem HAND_OF_GOD
+	iftrue .skipHandOfGod
 	opentext
 	writetext AndrewGiveHandText
 	waitbutton
@@ -843,51 +845,35 @@ ManorFact18:
 
  ManorFact22:
      opentext
-     checkevent EVENT_BEAT_ANDREW
-     iftrue .cheatText
-     writetext ManorCheatLockedText
-     sjump .end
-.cheatText
-     writetext ManorCheatText
-.end
+     writetext ManorFact22Text
      waitbutton
      closetext
      end
 
-ManorCheatLockedText:
-	text "Only those with"
-	line "the Hand Of God"
-	cont "may read this"
-	cont "secret text."
-	done
-
-ManorCheatText:
-	text "Thank you for"
-	line "playing #mon"
-	cont "Ambrosia."
-	para "These cheat codes"
-	line "might make your"
-	cont "next play through"
-	cont "more interesting."
-	para "Infinite Money"
-	line "010F40D8"
-	cont "014241D8"
-	cont "013F42D8"
-	para "Change first item"
-	line "in marts."
-	para "Rare Candy"
-	line "0120FCD0"
-	para "Ambrosia"
-	line "018BFCD0"
-	para "Master Ball"
-	line "0101FCD0"
-	para "Mark Of God"
-	line "012DFCD0"
-	para "Hand Of God"
-	line "0132FCD0"
-	para "Make all wild"
-	line "#mon Arceus"
-	cont "01FD0FD2"
+ManorFact22Text:
+	text "The final big"
+	line "update to the game"
+	cont "added the revamped"
+	cont "PC, revamped"
+	cont "#dex, revamped"
+	cont "tilesets, Mr Mime"
+	cont "cheat codes and"
+	cont "hard mode."
+	para "It required fixing"
+	line "four years of"
+	cont "conflicts when"
+	cont "merging the"
+	cont "features."
+	para "It was all done"
+	line "over weeks on the"
+	cont "corner of a bed in"
+	cont "a dark room at"
+	cont "night with my baby"
+	cont "sleeping beside"
+	cont "me."
+	para "Thank you so much"
+	line "for playing"
+	cont "#mon Ambrosia."
 	done
 
 ManorFact1Text:
@@ -972,7 +958,7 @@ ManorFact6Text:
 ManorFact7Text:
 	text "This romhack took"
 	line "almost 4 years and"
-	cont "over 1200 commits"
+	cont "over 1400 commits"
 	cont "to create."
 	para "I got married,"
 	line "moved house,"

@@ -15,6 +15,7 @@ VermilionGymSurgeScript:
 	opentext
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
+.rematch
 	writetext LtSurgeIntroText
 	yesorno
 	iffalse .refuseSong
@@ -23,10 +24,25 @@ VermilionGymSurgeScript:
 	waitbutton
 	closetext
 	winlosstext LtSurgeLossText, LtSurgeWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LT_SURGE, MASTER_SURGE
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer LT_SURGE, LT_SURGE1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer LT_SURGE, LT_SURGE1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_LTSURGE
+	iftrue .end
 	setevent EVENT_BEAT_LTSURGE
 	setevent EVENT_BEAT_GENTLEMAN_GREGORY
 	setevent EVENT_BEAT_GUITARIST_VINCENT
@@ -39,20 +55,7 @@ VermilionGymSurgeScript:
 	writetext LtSurgeThunderBadgeText
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext LtSurgeIntroText
-	yesorno
-	iffalse .refuseSong
-	playmusic MUSIC_HOEN_GRUNT
-	writetext LtSurgeSingAndBattle
-	waitbutton
-	closetext
-	winlosstext LtSurgeLossText, LtSurgeWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer LT_SURGE, LT_SURGE1
-	startbattle
-	reloadmapafterbattle
+.end
 	end
 .refuseSong
     writetext LtSurgeFineThenText

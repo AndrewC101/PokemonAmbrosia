@@ -21,9 +21,9 @@ IlexForest_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .FarfetchdCallback
+	callback MAPCALLBACK_OBJECTS, IlexForestFarfetchdCallback
 
-.FarfetchdCallback:
+IlexForestFarfetchdCallback:
 ; Pokemon which always appear
     appear ILEXFOREST_FIELDMON_1
     appear ILEXFOREST_FIELDMON_2
@@ -212,6 +212,7 @@ IlexForestShrineScript:
 	takeitem GS_BALL
 	clearevent EVENT_FOREST_IS_RESTLESS
 	setevent EVENT_AZALEA_TOWN_KURT
+	setevent EVENT_CAUGHT_CELEBI
 	disappear ILEXFOREST_LASS
 	clearevent EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	clearflag ENGINE_FOREST_IS_RESTLESS
@@ -731,5 +732,5 @@ IlexForest_MapEvents:
 	object_event 2, 18, SPRITE_PINSIR, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon5Script, EVENT_FIELD_MON_5
 	object_event  4, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 2, 44, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 18, 20, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 0, IlexForestFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 18, 20, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, IlexForestFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 26, 34, SPRITE_HERACROSS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestFieldMon9Script, EVENT_FIELD_MON_9

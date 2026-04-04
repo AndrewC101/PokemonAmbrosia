@@ -8,19 +8,19 @@
 
 CeruleanGym_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_CERULEANGYM_NOTHING
-	scene_script .GruntRunsOut ; SCENE_CERULEANGYM_GRUNT_RUNS_OUT
+	scene_script CeruleanGymNoopScene,         SCENE_CERULEANGYM_NOOP
+	scene_script CeruleanGymGruntRunsOutScene, SCENE_CERULEANGYM_GRUNT_RUNS_OUT
 
 	def_callbacks
 
-.DummyScene0:
+CeruleanGymNoopScene:
 	end
 
-.GruntRunsOut:
-	sdefer .GruntRunsOutScript
+CeruleanGymGruntRunsOutScene:
+	sdefer CeruleanGymGruntRunsOutScript
 	end
 
-.GruntRunsOutScript:
+CeruleanGymGruntRunsOutScript:
 	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsDownMovement
 	playsound SFX_TACKLE
 	applymovement CERULEANGYM_ROCKET, CeruleanGymGruntRunsIntoYouMovement
@@ -46,9 +46,9 @@ CeruleanGym_MapScripts:
 	setevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
 	clearevent EVENT_ROUTE_24_ROCKET
 	clearevent EVENT_ROUTE_25_MISTY_BOYFRIEND
-	setscene SCENE_CERULEANGYM_NOTHING
+	setscene SCENE_CERULEANGYM_NOOP
 	setmapscene ROUTE_25, SCENE_ROUTE25_MISTYS_DATE
-	setmapscene POWER_PLANT, SCENE_POWERPLANT_NOTHING
+	setmapscene POWER_PLANT, SCENE_POWERPLANT_NOOP
 	waitsfx
 	special RestartMapMusic
 	pause 15
@@ -61,14 +61,30 @@ CeruleanGymMistyScript:
 	opentext
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
+.rematch
 	writetext MistyIntroText
 	waitbutton
 	closetext
 	winlosstext MistyLossText, MistyWinText
+	readmem wHardMode
+	ifequal 0, .normal
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MASTER_MISTY
+	sjump .battle
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MISTY1
+	sjump .battle
+.normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer MISTY, MISTY1
+.battle
 	startbattle
 	reloadmapafterbattle
+	checkevent EVENT_BEAT_MISTY
+	iftrue .end
 	setevent EVENT_BEAT_MISTY
 	setevent EVENT_BEAT_SWIMMERF_DIANA
 	setevent EVENT_BEAT_SWIMMERF_BRIANA
@@ -81,9 +97,9 @@ CeruleanGymMistyScript:
 	writetext MistyFightDoneText
     waitbutton
     closetext
+.end
     end
-
-.FightDone:
+.FightDone
 	writetext MistyFightDoneText
 	waitbutton
     closetext
@@ -94,16 +110,6 @@ CeruleanGymMistyScript:
 	writetext RematchRefuseTextMisty
 	waitbutton
 	closetext
-	end
-.rematch
-    writetext MistyIntroText
-	waitbutton
-	closetext
-	winlosstext MistyLossText, MistyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_REMATCH
-	loadtrainer MISTY, MISTY1
-	startbattle
-	reloadmapafterbattle
 	end
 
 TrainerSwimmerfDiana:

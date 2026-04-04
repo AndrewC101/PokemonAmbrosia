@@ -16,14 +16,14 @@ BlackthornCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	callback MAPCALLBACK_OBJECTS, .Santos
+	callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, BlackthornCitySantosCallback
 
-.FlyPoint:
+BlackthornCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
 	endcallback
 
-.Santos:
+BlackthornCitySantosCallback:
     appear BLACKTHORNCITY_FIELDMON_1
     appear BLACKTHORNCITY_FIELDMON_2
 	readvar VAR_WEEKDAY

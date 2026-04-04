@@ -1,6 +1,6 @@
 	db SCEPTILE ; 154
 
-	db  70, 105, 65,  120,  105, 85
+	db  70, 105, 65,  120,  105, 70
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type

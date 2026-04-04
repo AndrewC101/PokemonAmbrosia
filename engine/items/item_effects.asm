@@ -13,7 +13,7 @@ _DoItemEffect::
 
 ItemEffects:
 ; entries correspond to item ids (see constants/item_constants.asm)
-	table_width 2, ItemEffects
+	table_width 2
 	dw PokeBallEffect      ; MASTER_BALL
 	dw PokeBallEffect      ; ULTRA_BALL
 	dw NoEffect            ; BRIGHTPOWDER
@@ -155,7 +155,7 @@ ItemEffects:
 	dw NoEffect            ; CHARCOAL
 	dw AmbrosiaEffect      ; AMBROSIA
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
+	dw GiftOfGodEffect     ; GIFT_OF_GOD
 	dw NoEffect            ; ITEM_8E
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
@@ -211,6 +211,7 @@ ItemEffects:
 ; NoEffect would be appropriate, with the table then being NUM_ITEMS long.
 
 PokeBallEffect:
+; BUG: The Dude's catching tutorial may crash if his Poké Ball can't be used (see docs/bugs_and_glitches.md)
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
@@ -241,14 +242,11 @@ PokeBallEffect:
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
 
-	ld a, BANK(sBoxCount)
-	call OpenSRAM
-	ld a, [sBoxCount]
-	cp MONS_PER_BOX
-	call CloseSRAM
-	jp z, Ball_BoxIsFullMessage
+	newfarcall NewStorageBoxPointer
+	jp c, Ball_BoxIsFullMessage
 
 .room_in_party
+; BUG: Using a Park Ball in non-Contest battles has a corrupt animation (see docs/bugs_and_glitches.md)
 	xor a
 	ld [wWildMon], a
 	ld a, [wBattleType]
@@ -373,11 +371,7 @@ PokeBallEffect:
 	jr nz, .statuscheck
 	ld a, 1
 .statuscheck
-; This routine is buggy. It was intended that SLP and FRZ provide a higher
-; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
-; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
-; benefit.
-; Uncomment the line below to fix this.
+; BUG: BRN/PSN/PAR do not affect catch rate (see docs/bugs_and_glitches.md)
 	ld b, a
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP
@@ -395,9 +389,7 @@ PokeBallEffect:
 	ld a, $ff
 .max_1
 
-	; BUG: farcall overwrites a, and GetItemHeldEffect takes b anyway.
-	; This is probably the reason the HELD_CATCH_CHANCE effect is never used.
-	; Uncomment the line below to fix.
+; BUG: HELD_CATCH_CHANCE has no effect (see docs/bugs_and_glitches.md)
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
@@ -446,7 +438,7 @@ PokeBallEffect:
 	xor a
 	ldh [hBattleTurn], a
 	ld [wThrownBallWobbleCount], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 
 	ld a, [wWildMon]
@@ -485,9 +477,7 @@ PokeBallEffect:
 	push af
 	set SUBSTATUS_TRANSFORMED, [hl]
 
-; This code is buggy. Any wild Pokémon that has Transformed will be
-; caught as a Ditto, even if it was something else like Mew.
-; To fix, do not set [wTempEnemyMonSpecies] to DITTO.
+; BUG: Catching a Transformed Pokémon always catches a Ditto (see docs/bugs_and_glitches.md)
 	bit SUBSTATUS_TRANSFORMED, a
     jr nz, .load_data
 
@@ -654,12 +644,8 @@ PokeBallEffect:
 
 	farcall SetBoxMonCaughtData
 
-	ld a, BANK(sBoxCount)
-	call OpenSRAM
-
-	ld a, [sBoxCount]
-	cp MONS_PER_BOX
-	jr nz, .BoxNotFullYet
+	newfarcall NewStorageBoxPointer
+	jr nc, .BoxNotFullYet
 	ld hl, wBattleResult
 	set BATTLERESULT_BOX_FULL, [hl]
 .BoxNotFullYet:
@@ -668,10 +654,8 @@ PokeBallEffect:
 	jr nz, .SkipBoxMonFriendBall
 	; The captured mon is now first in the box
 	ld a, FRIEND_BALL_HAPPINESS
-	ld [sBoxMon1Happiness], a
+	ld [wBufferMonHappiness], a
 .SkipBoxMonFriendBall:
-	call CloseSRAM
-
 	ld hl, AskGiveNicknameText
 	call PrintText
 
@@ -684,36 +668,55 @@ PokeBallEffect:
 
 	xor a
 	ld [wCurPartyMon], a
-	ld a, BOXMON
+	ld a, BUFFERMON
 	ld [wMonType], a
 	ld de, wMonOrItemNameBuffer
 	ld b, NAME_MON
 	farcall NamingScreen
 
-	ld a, BANK(sBoxMonNicknames)
-	call OpenSRAM
-
 	ld hl, wMonOrItemNameBuffer
-	ld de, sBoxMonNicknames
+	ld de, wBufferMonNickname
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
-	ld hl, sBoxMonNicknames
+	ld hl, wBufferMonNickname
 	ld de, wStringBuffer1
 	call InitName
 
-	call CloseSRAM
-
 .SkipBoxMonNickname:
-	ld a, BANK(sBoxMonNicknames)
-	call OpenSRAM
-
-	ld hl, sBoxMonNicknames
+	ld hl, wBufferMonNickname
 	ld de, wMonOrItemNameBuffer
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
-	call CloseSRAM
+	newfarcall UpdateStorageBoxMonFromTemp
+
+	; Switch current Box if it was full. We can check this by checking if
+	; the buffermon's box location matches the current box.
+	ld a, [wBufferMonBox]
+	ld b, a
+	ld a, [wCurBox]
+	inc a
+	cp b
+	jr z, .curbox_not_full
+
+	push bc
+	ld b, a
+	newfarcall GetBoxName
+	ld hl, CurBoxFullText
+	call PrintText
+	pop bc
+
+	; Switch current box.
+	ld a, b
+	dec a
+	ld [wCurBox], a
+
+.curbox_not_full
+	ld a, [wCurBox]
+	inc a
+	ld b, a
+	newfarcall GetBoxName
 
 	ld hl, BallSentToPCText
 	call PrintText
@@ -769,7 +772,7 @@ DeflectBall:
 	xor a
 	ld [wBattleAnimParam], a
 	ldh [hBattleTurn], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 	ret
 
@@ -807,25 +810,6 @@ ParkBallMultiplier:
 	ld b, $ff
 	ret
 
-GetPokedexEntryBank:
-; This function is buggy.
-; It gets the wrong bank for Kadabra (64), Tauros (128), and Sunflora (192).
-; Uncomment the line below to fix this.
-	push hl
-	push de
-	ld a, [wEnemyMonSpecies]
-	dec a
-	rlca
-	rlca
-	maskbits NUM_DEX_ENTRY_BANKS
-	ld hl, .PokedexEntryBanks
-	ld d, 0
-	ld e, a
-	add hl, de
-	ld a, [hl]
-	pop de
-	pop hl
-	ret
 
 .PokedexEntryBanks:
 	db BANK("Pokedex Entries 001-064")
@@ -846,17 +830,24 @@ HeavyBallMultiplier:
 	ld d, 0
 	add hl, de
 	add hl, de
+	add hl, de
+	; d = bank, hl = address
+	ld a, BANK(PokedexDataPointerTable)
+	call GetFarByte
+	push af
+	inc hl
 	ld a, BANK(PokedexDataPointerTable)
 	call GetFarWord
+	pop de
 
 .SkipText:
-	call GetPokedexEntryBank
+	ld a, d
 	call GetFarByte
 	inc hl
-	cp "@"
+	cp '@'
 	jr nz, .SkipText
 
-	call GetPokedexEntryBank
+	ld a, d
 	push bc
 	inc hl
 	inc hl
@@ -952,9 +943,6 @@ LureBallMultiplier:
 	ret
 
 MoonBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if mon evolves with moon stone
-; Reality: no boost
 	push bc
 	ld a, [wTempEnemyMonSpecies]
 	dec a
@@ -974,13 +962,11 @@ MoonBallMultiplier:
 	pop bc
 	ret nz
 
+; BUG: Moon Ball does not boost catch rate (see docs/bugs_and_glitches.md)
 	inc hl
 	inc hl
 	inc hl
 
-; Moon Stone's constant from Pokémon Red is used.
-; No Pokémon evolve with Burn Heal,
-; so Moon Balls always have a catch rate of 1×.
 	push bc
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
@@ -998,9 +984,6 @@ MoonBallMultiplier:
 	ret
 
 LoveBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 8 if mons are of same species, different sex
-; Reality: multiply catch rate by 8 if mons are of same species, same sex
 
 	; does species match?
 	ld a, [wTempEnemyMonSpecies]
@@ -1021,9 +1004,9 @@ LoveBallMultiplier:
 	jr c, .done1 ; no effect on genderless
 
 	ld d, 0 ; male
-	jr nz, .playermale
+	jr nz, .got_player_gender
 	inc d   ; female
-.playermale
+.got_player_gender
 
 	; check wild mon species
 	push de
@@ -1035,10 +1018,11 @@ LoveBallMultiplier:
 	jr c, .done2 ; no effect on genderless
 
 	ld d, 0 ; male
-	jr nz, .wildmale
+	jr nz, .got_wild_gender
 	inc d   ; female
-.wildmale
+.got_wild_gender
 
+; BUG: Love Ball boosts catch rate for the wrong gender (see docs/bugs_and_glitches.md)
 	ld a, d
 	pop de
 	cp d
@@ -1063,17 +1047,13 @@ LoveBallMultiplier:
 	ret
 
 FastBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if enemy mon is in one of the three
-;          FleeMons tables.
-; Reality: multiply catch rate by 4 if enemy mon is one of the first three in
-;          the first FleeMons table.
 	ld a, [wTempEnemyMonSpecies]
 	ld c, a
 	ld hl, FleeMons
 	ld d, 3
 
 .loop
+; BUG: Fast Ball only boosts catch rate for three Pokémon (see docs/bugs_and_glitches.md)
 	ld a, BANK(FleeMons)
 	call GetFarByte
 
@@ -1178,6 +1158,10 @@ WaitButtonText:
 	text_far _WaitButtonText
 	text_end
 
+CurBoxFullText:
+	text_far _CurBoxFullText
+	text_end
+
 BallSentToPCText:
 	text_far _BallSentToPCText
 	text_end
@@ -1277,13 +1261,35 @@ VitaminEffect:
 
 	jp UseDisposableItem
 
+GiftOfGodEffect:
+	call .gift
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+.gift:
+
+
+DoGiftOfGod:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	ld a, 1
+	ld [wGiftOfGod], a
+	call DoAmbrosiaEffect
+	call DoRareCandyEffect
+	xor a
+	ld [wGiftOfGod], a
+	ret
+
 AmbrosiaEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, RareCandy_StatBooster_ExitMenu
 
+DoAmbrosiaEffect:
 	call ShouldUseAmbrosia
-	jp nc, NoEffectMessage
+	jp nc, AmbrosiaNoEffect
 
 ; update DVs to max while retaining gender and shininess
 	ld a, [wCurPartyMon]
@@ -1356,6 +1362,10 @@ AmbrosiaEffect:
 	ld c, HAPPINESS_AMBROSIA
 	farcall ChangeHappiness
 
+	ld a, [wGiftOfGod]
+	and a
+	ret nz
+
     ld a, AMBROSIA
     ld [wCurItem], a
 	jp UseDisposableItem
@@ -1407,6 +1417,12 @@ ShouldUseAmbrosia:
 .yes
     scf
     ret
+
+AmbrosiaNoEffect:
+    ld a, [wGiftOfGod]
+    and a
+    jp z, NoEffectMessage
+	ret
 
 NoEffectMessage:
 	ld hl, ItemWontHaveEffectText
@@ -1493,6 +1509,7 @@ RareCandyEffect:
 
 	jp c, RareCandy_StatBooster_ExitMenu
 
+DoRareCandyEffect:
 	call RareCandy_StatBooster_GetParameters
 
 	ld a, MON_LEVEL
@@ -1501,10 +1518,19 @@ RareCandyEffect:
     ld a, [wLevelCap]
 	ld b, a
 	ld a, [hl]
+	ld [wTempLevel], a
 	cp b
 	jp nc, NoEffectMessage
 
+    ld a, [wGiftOfGod]
+    and a
+    jr z, .oneLevel
+    ld a, [wLevelCap]
+    jr .calcExp
+.oneLevel
+    ld a, [hl]
 	inc a
+.calcExp
 	ld [hl], a
 	ld [wCurPartyLevel], a
 	push de
@@ -1571,12 +1597,32 @@ RareCandyEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
-	predef LearnLevelMoves
 
-	xor a
-	ld [wForceEvolution], a
+	ld a, [wCurPartyLevel]
+	ld c, a
+	ld a, [wTempLevel]
+	ld b, a
+
+.level_loop
+	inc b
+	ld a, b
+	ld [wCurPartyLevel], a
+	push bc
+	predef LearnLevelMoves
+	pop bc
+	ld a, b
+	cp c
+	jr nz, .level_loop
+
+    xor a
+    ld [wForceEvolution], a
 	farcall EvolvePokemon
 
+    ld a, [wGiftOfGod]
+    and a
+    jr z, .dispose
+    farcall EvolvePokemon
+.dispose
 	jp UseDisposableItem
 
 HealPowderEffect:
@@ -1940,9 +1986,9 @@ ChooseMonToUseItemOn:
 	farcall InitPartyMenuWithCancel
 	farcall InitPartyMenuGFX
 	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuText
+	farcall PlacePartyMenuText
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 	farcall PartyMenuSelect
 	ret
@@ -1959,7 +2005,7 @@ ItemActionText:
 	farcall WritePartyMenuTilemap
 	farcall PrintPartyMenuActionText
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 	pop bc
 	pop de
@@ -1975,7 +2021,7 @@ ItemActionTextWaitButton:
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, wTilemapEnd - wTilemap
-	ld a, " "
+	ld a, ' '
 	call ByteFill
 	ld a, [wPartyMenuActionText]
 	call ItemActionText
@@ -2969,7 +3015,7 @@ UseBallInTrainerBattle:
 	xor a
 	ld [wBattleAnimParam], a
 	ldh [hBattleTurn], a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText
@@ -2991,7 +3037,10 @@ LooksBitterMessage:
 	jp PrintText
 
 Ball_BoxIsFullMessage:
-	ld hl, BallBoxFullText
+	ld hl, StorageFullText
+	jr z, .got_msg
+	ld hl, DatabaseTaxedText
+.got_msg
 	call PrintText
 
 	; Item wasn't used.
@@ -3065,8 +3114,12 @@ ItemCantGetOnText:
 	text_far _ItemCantGetOnText
 	text_end
 
-BallBoxFullText:
-	text_far _BallBoxFullText
+StorageFullText:
+	text_far _StorageFullText
+	text_end
+
+DatabaseTaxedText:
+	text_far _StorageFullText
 	text_end
 
 ItemUsedText:
@@ -3185,6 +3238,18 @@ ComputeMaxPP:
 	pop bc
 	ret
 
+RestoreBufferPP:
+	ld hl, wBufferMonMoves
+	ld de, wBufferMonPP
+	ld a, [wMenuCursorY]
+	push af
+	ld a, BUFFERMON
+	ld [wMonType], a
+	call _RestoreAllPP
+	pop af
+	ld [wMenuCursorY], a
+	ret
+
 RestoreAllPP:
 	ld a, MON_PP
 	call GetPartyParamLocation
@@ -3193,8 +3258,11 @@ RestoreAllPP:
 	call GetPartyParamLocation
 	pop de
 	xor a ; PARTYMON
-	ld [wMenuCursorY], a
 	ld [wMonType], a
+	; fallthrough
+_RestoreAllPP:
+	xor a
+	ld [wMenuCursorY], a
 	ld c, NUM_MOVES
 .loop
 	ld a, [hli]
@@ -3246,6 +3314,10 @@ GetMaxPPOfMove:
 	jr z, .got_nonpartymon ; TEMPMON
 
 	ld hl, wBattleMonMoves ; WILDMON
+	dec a
+	jr z, .got_nonpartymon
+
+	ld hl, wBufferMonMoves ; BUFFERMON
 
 .got_nonpartymon ; BOXMON, TEMPMON, WILDMON
 	call GetMthMoveOfCurrentMon

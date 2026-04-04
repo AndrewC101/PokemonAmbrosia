@@ -1,6 +1,6 @@
 ItemDescriptions:
 ; entries correspond to item ids (see constants/item_constants.asm)
-	table_width 2, ItemDescriptions
+	table_width 2
 	dw MasterBallDesc
 	dw UltraBallDesc
 	dw BrightpowderDesc
@@ -141,7 +141,7 @@ ItemDescriptions:
 	dw CharcoalDesc
 	dw AmbrosiaDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
+	dw GiftOfGodDesc
 	dw TeruSama13Desc
 	dw MetalCoatDesc
 	dw DragonFangDesc
@@ -191,9 +191,9 @@ ItemDescriptions:
 	dw MusicMailDesc
 	dw MirageMailDesc
 	dw TeruSama25Desc
+	dw TeruSama25Desc
+	dw TeruSama25Desc
 	assert_table_length NUM_ITEMS
-	dw TeruSama26Desc
-	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama26Desc
@@ -811,8 +811,9 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (Hold)@"
 
-TeruSama12Desc:
-	db   "?@"
+GiftOfGodDesc:
+	db   "Maximises level"
+	next "and stats.@"
 
 TeruSama13Desc:
 	db   "?@"

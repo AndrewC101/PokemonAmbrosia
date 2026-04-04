@@ -394,35 +394,47 @@ Movement_DestinyEliteFourTurnBack:
 	step_end
 
 KarenBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
 	opentext
 	writetext DefeatOpponentText
     waitbutton
     closetext
     applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+.end
     end
 
 BrunoBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
 	opentext
 	writetext DefeatOpponentText
     waitbutton
     closetext
     applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+.end
     end
 
 SabrinaBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
 	opentext
 	writetext DefeatOpponentText
     waitbutton
     closetext
     applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+.end
     end
 
 GiovanniBlockScript:
+    readmem wNewGamePlus
+    ifequal 1, .end
 	opentext
 	writetext DefeatOpponentText
     waitbutton
     closetext
     applymovement PLAYER, Movement_DestinyEliteFourTurnBack
+.end
     end
 
 DefeatOpponentText:

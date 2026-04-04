@@ -48,23 +48,30 @@ NewGame_ClearTilemapEtc:
 	call ClearWindowData
 	ret
 
-MysteryGift:
-	call UpdateTime
-	farcall DoMysteryGiftIfDayHasPassed
-	farcall DoMysteryGift
-	ret
-
 Option:
 	farcall _Option
 	ret
 
+NewGamePlus:
+	xor a
+	ldh [hBGMapMode], a
+	farcall TryLoadSaveFile
+	ret c
+	call ResetWRAM_NewGamePlus
+	jr NewGameCommon
+
 NewGame:
 	xor a
+	ldh [hBGMapMode], a
+    call ResetWRAM
+    ; fallthrough
+
+NewGameCommon:
+	xor a
 	ld [wDebugFlags], a
-	call ResetWRAM
 	call NewGame_ClearTilemapEtc
 	call OakSpeech
-	call AreYouABoyOrAreYouAGirl
+	call PlayerProfileSetup
 	call FinishIntro
 	call InitializeWorld
 
@@ -78,16 +85,15 @@ NewGame:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
-AreYouABoyOrAreYouAGirl:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile
+PlayerProfileSetup:
+	farcall CheckMobileAdapterStatus
 	jr c, .ok
 	farcall InitGender
 	farcall InitClock
 	ret
-
 .ok
 	ld c, 0
-	farcall InitMobileProfile ; mobile
+	farcall InitMobileProfile
 	ret
 
 if DEF(_DEBUG)
@@ -103,13 +109,16 @@ ResetWRAM:
 	ret
 
 _ResetWRAM:
-	ld hl, wVirtualOAM
-	ld bc, wOptions - wVirtualOAM
+	ld hl, wShadowOAM
+	ld bc, wOptions - wShadowOAM
 	xor a
 	call ByteFill
 
-	ld hl, WRAM1_Begin
-	ld bc, wGameData - WRAM1_Begin
+	ld a, 1
+	ld [wOptions2], a       ; menu data on by default
+
+	ld hl, STARTOF(WRAMX)
+	ld bc, wGameData - STARTOF(WRAMX)
 	xor a
 	call ByteFill
 
@@ -137,43 +146,35 @@ _ResetWRAM:
 	ld [wSecretID + 1], a
 
 	ld hl, wPartyCount
-	call .InitList
+	call ResetWRAM_InitList
 
 	xor a
 	ld [wCurBox], a
 	ld [wSavedAtLeastOnce], a
 
-	call SetDefaultBoxNames
-
-	ld a, BANK(sBoxCount)
-	call OpenSRAM
-	ld hl, sBoxCount
-	call .InitList
-	call CloseSRAM
+	newfarcall InitializeBoxes
 
 	ld hl, wNumItems
-	call .InitList
+	call ResetWRAM_InitList
 
 	ld hl, wNumKeyItems
-	call .InitList
+	call ResetWRAM_InitList
 
 	ld hl, wNumBalls
-	call .InitList
+	call ResetWRAM_InitList
 
 	ld hl, wNumPCItems
-	call .InitList
+	call ResetWRAM_InitList
 
-	xor a
-
-	ld a, BANK(sMysteryGiftItem) ; aka BANK(sMysteryGiftUnlocked)
-	call OpenSRAM
-	ld hl, sMysteryGiftItem
-	xor a
-	ld [hli], a
-	assert sMysteryGiftItem + 1 == sMysteryGiftUnlocked
-	dec a ; -1
-	ld [hl], a
-	call CloseSRAM
+    ; lock new game plus ?
+	;ld a, BANK(sUnlockedNewGamePlus)
+	;call OpenSRAM
+	;ld hl, sUnlockedNewGamePlus
+	;xor a
+	;ld [hli], a
+	;dec a
+	;ld [hl], a
+	;call CloseSRAM
 
 	call LoadOrRegenerateLuckyIDNumber
 	call InitializeMagikarpHouse
@@ -187,9 +188,6 @@ _ResetWRAM:
 	ld [wCoins], a
 	ld [wCoins + 1], a
 
-if START_MONEY >= $10000
-	ld a, HIGH(START_MONEY >> 8)
-endc
 	ld [wMoney], a
 	ld a, HIGH(START_MONEY) ; mid
 	ld [wMoney + 1], a
@@ -216,50 +214,131 @@ endc
 
 	farcall DeletePartyMonMail
 
-	farcall DeleteMobileEventIndex
+	farcall ClearGSBallFlag
 
 	call ResetGameTime
 	ret
 
-.InitList:
+ResetWRAM_NewGamePlus:
+    ld a, [wPlayerID]
+    ld b, a
+    ld a, [wPlayerID + 1]
+    ld c, a
+    push bc
+
+	ld hl, wShadowOAM
+	ld bc, wOptions - wShadowOAM
+	xor a
+	call ByteFill
+
+	ld a, 1
+	ld [wOptions2], a       ; menu data on by default
+
+	ld hl, STARTOF(WRAMX)
+	ld bc, wGameData - STARTOF(WRAMX)
+	xor a
+	call ByteFill
+
+	ld hl, wGameData
+	ld bc, wGameDataEnd - wGameData
+	xor a
+	call ByteFill
+
+	call Random
+	ld [wSecretID], a
+	call DelayFrame
+	call Random
+	ld [wSecretID + 1], a
+
+	pop bc
+	ld a, b
+	ld [wPlayerID], a
+	ld a, c
+	ld [wPlayerID + 1], a
+
+	xor a
+    ld [wPartyCount], a
+    ld [wPlayerGender], a
+
+	ld hl, wNumItems
+	call ResetWRAM_InitList
+
+	ld hl, wNumKeyItems
+	call ResetWRAM_InitList
+
+	ld hl, wNumBalls
+	call ResetWRAM_InitList
+
+	ld hl, wNumPCItems
+	call ResetWRAM_InitList
+
+	; keep new game plus unlockd
+	ld a, BANK(sUnlockedNewGamePlus)
+	call OpenSRAM
+	ld hl, sUnlockedNewGamePlus
+	ld a, [hl]
+	inc a
+	jr nz, .ok
+	ld [hld], a
+	ld [hl], a
+.ok
+    call CloseSRAM
+
+	xor a
+	call LoadOrRegenerateLuckyIDNumber
+	call InitializeMagikarpHouse
+
+	xor a
+	ld [wMonType], a
+
+	ld [wJohtoBadges], a
+	ld [wKantoBadges], a
+
+	ld [wCoins], a
+	ld [wCoins + 1], a
+
+	ld [wMoney], a
+	ld a, HIGH(START_MONEY) ; mid
+	ld [wMoney + 1], a
+	ld a, LOW(START_MONEY)
+	ld [wMoney + 2], a
+
+	xor a
+	ld [wWhichMomItem], a
+
+	ld hl, wMomItemTriggerBalance
+	ld [hl], HIGH(MOM_MONEY >> 8)
+	inc hl
+	ld [hl], HIGH(MOM_MONEY) ; mid
+	inc hl
+	ld [hl], LOW(MOM_MONEY)
+
+	; DevNote - New Game Plus - 100 level cap
+	ld a, 100
+    ld [wLevelCap], a
+
+    ; DevNote - New Game Plus - Defaults to Hard mode
+    ld a, 1
+    ld [wHardMode], a
+
+	call InitializeNPCNames
+
+	farcall InitDecorations
+
+	farcall DeletePartyMonMail
+
+	farcall ClearGSBallFlag
+
+	call ResetGameTime
+	ret
+
+ResetWRAM_InitList:
 ; Loads 0 in the count and -1 in the first item or mon slot.
 	xor a
 	ld [hli], a
 	dec a
 	ld [hl], a
 	ret
-
-SetDefaultBoxNames:
-	ld hl, wBoxNames
-	ld c, 0
-.loop
-	push hl
-	ld de, .Box
-	call CopyName2
-	dec hl
-	ld a, c
-	inc a
-	cp 10
-	jr c, .less
-	sub 10
-	ld [hl], "1"
-	inc hl
-
-.less
-	add "0"
-	ld [hli], a
-	ld [hl], "@"
-	pop hl
-	ld de, 9
-	add hl, de
-	inc c
-	ld a, c
-	cp NUM_BOXES
-	jr c, .loop
-	ret
-
-.Box:
-	db "Box@"
 
 InitializeMagikarpHouse:
 	ld hl, wBestMagikarpLengthFeet
@@ -395,13 +474,10 @@ PostCreditsSpawn:
 	ldh [hMapEntryMethod], a
 	ret
 
-Continue_MobileAdapterMenu:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile check
+Continue_MobileAdapterMenu: ; unused
+	farcall CheckMobileAdapterStatus
 	ret nc
-
-; the rest of this stuff is never reached because
-; the previous function returns with carry not set
-	ld hl, wd479
+	ld hl, wCrystalFlags
 	bit 1, [hl]
 	ret nz
 	ld a, 5
@@ -430,9 +506,9 @@ ConfirmContinue:
 	call DelayFrame
 	call GetJoypad
 	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
+	bit B_PAD_A, [hl]
 	jr nz, .PressA
-	bit B_BUTTON_F, [hl]
+	bit B_PAD_B, [hl]
 	jr z, .loop
 	scf
 	ret
@@ -442,7 +518,7 @@ ConfirmContinue:
 
 Continue_CheckRTC_RestartClock:
 	call CheckRTCStatus
-	and %10000000 ; Day count exceeded 16383
+	and RTC_RESET
 	jr z, .pass
 	farcall RestartClock
 	ld a, c
@@ -461,10 +537,10 @@ FinishContinueFunction:
 	ld [wDontPlayMapMusicOnReload], a
 	ld [wLinkMode], a
 	ld hl, wGameTimerPaused
-	set GAME_TIMER_PAUSED_F, [hl]
+	set GAME_TIMER_COUNTING_F, [hl]
 	res GAME_TIMER_MOBILE_F, [hl]
-	ld hl, wEnteredMapFromContinue
-	set 1, [hl]
+	ld hl, wMapNameSignFlags
+	set SHOWN_MAP_NAME_SIGN, [hl]
 	farcall OverworldLoop
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_RED
@@ -477,7 +553,7 @@ FinishContinueFunction:
 
 DisplaySaveInfoOnContinue:
 	call CheckRTCStatus
-	and %10000000
+	and RTC_RESET
 	jr z, .clock_ok
 	lb de, 4, 8
 	call DisplayContinueDataWithRTCError
@@ -621,7 +697,7 @@ Continue_DisplayGameTime:
 	ld de, wGameTimeHours
 	lb bc, 2, 3
 	call PrintNum
-	ld [hl], "<COLON>"
+	ld [hl], '<COLON>'
 	inc hl
 	ld de, wGameTimeMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
@@ -871,7 +947,7 @@ GSShowPlayerNamingChoices: ; unreferenced
 	ret
 
 StorePlayerName:
-	ld a, "@"
+	ld a, '@'
 	ld bc, NAME_LENGTH
 	ld hl, wPlayerName
 	call ByteFill
@@ -995,7 +1071,7 @@ Intro_PlacePlayerSprite:
 	ld hl, vTiles0
 	call Request2bpp
 
-	ld hl, wVirtualOAMSprite00
+	ld hl, wShadowOAMSprite00
 	ld de, .sprites
 	ld a, [de]
 	inc de
@@ -1028,10 +1104,10 @@ Intro_PlacePlayerSprite:
 .sprites
 	db 4
 	; y pxl, x pxl, tile offset
-	db  9 * 8 + 4,  9 * 8, 0
-	db  9 * 8 + 4, 10 * 8, 1
-	db 10 * 8 + 4,  9 * 8, 2
-	db 10 * 8 + 4, 10 * 8, 3
+	db  9 * TILE_WIDTH + 4,  9 * TILE_WIDTH, 0
+	db  9 * TILE_WIDTH + 4, 10 * TILE_WIDTH, 1
+	db 10 * TILE_WIDTH + 4,  9 * TILE_WIDTH, 2
+	db 10 * TILE_WIDTH + 4, 10 * TILE_WIDTH, 3
 
 
 	const_def
@@ -1040,7 +1116,7 @@ Intro_PlacePlayerSprite:
 	const TITLESCREENOPTION_RESTART
 	const TITLESCREENOPTION_UNUSED
 	const TITLESCREENOPTION_RESET_CLOCK
-NUM_TITLESCREENOPTIONS EQU const_value
+DEF NUM_TITLESCREENOPTIONS EQU const_value
 
 IntroSequence:
 	callfar SplashScreen
@@ -1050,10 +1126,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -1065,12 +1141,14 @@ StartTitleScreen:
 	call ClearBGPalettes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	call ClearScreen
 	call WaitBGMap2
+	ld a, RETI_INSTRUCTION
+	ldh [hFunctionInstruction], a
 	xor a
 	ldh [hLCDCPointer], a
 	ldh [hSCX], a
@@ -1110,7 +1188,7 @@ StartTitleScreen:
 
 RunTitleScreen:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done_title
 	call TitleScreenScene
 	farcall SuicuneFrameIterator
@@ -1192,6 +1270,8 @@ TitleScreenEntrance:
 ; Next scene
 	ld hl, wJumptableIndex
 	inc [hl]
+	ld a, RETI_INSTRUCTION
+	ldh [hFunctionInstruction], a
 	xor a
 	ldh [hLCDCPointer], a
 
@@ -1235,8 +1315,8 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
-	and D_UP + B_BUTTON + SELECT
-	cp  D_UP + B_BUTTON + SELECT
+	and PAD_UP + PAD_B + PAD_SELECT
+	cp  PAD_UP + PAD_B + PAD_SELECT
 	jr z, .delete_save_data
 
 ; To bring up the clock reset dialog, press Down + B.
@@ -1245,8 +1325,8 @@ TitleScreenMain:
 	jr z, .reset_clock
 
 	ld a, [hl]
-	and D_DOWN + B_BUTTON
-	cp  D_DOWN + B_BUTTON
+	and PAD_DOWN + PAD_B + PAD_SELECT
+	cp  PAD_DOWN + PAD_B + PAD_SELECT
 	jr nz, .check_start
 
 	ld a, $34
@@ -1256,7 +1336,7 @@ TitleScreenMain:
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and START | A_BUTTON
+	and PAD_START | PAD_A
 	jr nz, .incave
 	ret
 
@@ -1272,7 +1352,7 @@ TitleScreenMain:
 
 ; Return to the intro sequence.
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .end
@@ -1297,7 +1377,7 @@ TitleScreenMain:
 
 ; Return to the intro sequence.
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 TitleScreenEnd:
@@ -1315,7 +1395,7 @@ TitleScreenEnd:
 
 ; Back to the intro.
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 DeleteSaveData:
@@ -1325,57 +1405,6 @@ DeleteSaveData:
 ResetClock:
 	farcall _ResetClock
 	jp Init
-
-UpdateTitleTrailSprite: ; unreferenced
-	; If bit 0 or 1 of [wTitleScreenTimer] is set, we don't need to be here.
-	ld a, [wTitleScreenTimer]
-	and %00000011
-	ret nz
-	ld bc, wSpriteAnim10
-	ld hl, SPRITEANIMSTRUCT_FRAME
-	add hl, bc
-	ld l, [hl]
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	ld de, .TitleTrailCoords
-	add hl, de
-	; If bit 2 of [wTitleScreenTimer] is set, get the second coords; else, get the first coords
-	ld a, [wTitleScreenTimer]
-	and %00000100
-	srl a
-	srl a
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	and a
-	ret z
-	ld e, a
-	ld d, [hl]
-	ld a, SPRITE_ANIM_INDEX_GS_TITLE_TRAIL
-	call InitSpriteAnimStruct
-	ret
-
-.TitleTrailCoords:
-trail_coords: MACRO
-rept _NARG / 2
-_dx = 4
-if \1 == 0 && \2 == 0
-_dx = 0
-endc
-	dbpixel \1, \2, _dx, 0
-	shift 2
-endr
-ENDM
-	; frame 0 y, x; frame 1 y, x
-	trail_coords 11, 10,  0,  0
-	trail_coords 11, 13, 11, 11
-	trail_coords 11, 13, 11, 15
-	trail_coords 11, 17, 11, 15
-	trail_coords  0,  0, 11, 15
-	trail_coords  0,  0, 11, 11
 
 Copyright:
 	call ClearTilemap

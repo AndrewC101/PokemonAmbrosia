@@ -21,16 +21,16 @@ Route40_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .MonicaCallback
+	callback MAPCALLBACK_OBJECTS, Route40MonicaCallback
 
-.MonicaCallback:
+Route40MonicaCallback:
 ; Pokemon which always appear
     appear AREA_FIELDMON_1
     appear AREA_FIELDMON_2
     appear AREA_FIELDMON_3
     appear AREA_FIELDMON_4
 
-	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .MonicaAppears
 	disappear ROUTE40_MONICA
@@ -430,7 +430,7 @@ AreaFieldMon1Script:
     end
 
 AreaFieldMon2Script:
-	trainer TENTACRUEL, FIELD_MON, EVENT_FIELD_MON_2, AreaPokemonAttacksText, 42, 0, .script
+	trainer POLIWRATH, FIELD_MON, EVENT_FIELD_MON_2, AreaPokemonAttacksText, 42, 0, .script
 .script
     disappear AREA_FIELDMON_2
     end
@@ -481,7 +481,7 @@ Route40_MapEvents:
 	object_event  8, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MonicaScript, EVENT_ROUTE_40_MONICA_OF_MONDAY
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
-	object_event 16,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event 16,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 	object_event 10, 21, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AreaFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 30, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AreaFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 14, 32, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AreaFieldMon3Script, EVENT_FIELD_MON_3

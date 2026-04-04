@@ -174,10 +174,15 @@ UnionCaveB1FFieldMon1Script:
     end
     
 UnionCaveB1FFieldMon2Script:
-	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_2, UnionCaveB1FPokemonAttacksText, 70, 0, .script
-.script
-    disappear UNIONCAVEB1F_FIELDMON_2
-    end
+	faceplayer
+	cry GARCHOMP
+	pause 15
+	loadwildmon GARCHOMP, 64
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear UNIONCAVEB1F_FIELDMON_2
+	end
     
 UnionCaveB1FFieldMon3Script:
 	trainer DRACOVISH, FIELD_MON, EVENT_FIELD_MON_3, UnionCaveB1FPokemonAttacksText, 53, 0, .script
@@ -226,6 +231,6 @@ UnionCaveB1F_MapEvents:
 	object_event 17, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_MUSCLE_BAND
 	
 	object_event 11, 22, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, UnionCaveB1FFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 10, 9, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 0, UnionCaveB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 10, 9, SPRITE_GARCHOMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 8, 31, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, UnionCaveB1FFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 4, 22, SPRITE_GIBLE, SPRITEMOVEDATA_POKEMON, 1, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FFieldMon4Script, EVENT_FIELD_MON_4

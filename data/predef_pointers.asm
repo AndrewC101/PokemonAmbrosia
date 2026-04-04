@@ -1,7 +1,7 @@
 ; Predef routines can be used with the "predef" and "predef_jump" macros.
 ; This preserves registers bc, de, hl and f.
 
-add_predef: MACRO
+MACRO add_predef
 \1Predef::
 	dab \1
 ENDM
@@ -15,7 +15,6 @@ PredefPointers::
 	add_predef FillPP
 	add_predef TryAddMonToParty
 	add_predef AddTempmonToParty
-	add_predef SendGetMonIntoFromBox
 	add_predef SendMonIntoBox
 	add_predef GiveEgg
 	add_predef AnimateHPBar
@@ -41,7 +40,6 @@ PredefPointers::
 	add_predef CopyMonToTempMon
 	add_predef ListMoves
 	add_predef PlaceNonFaintStatus
-	add_predef Unused_PlaceEnemyHPLevel
 	add_predef ListMovePP
 	add_predef GetGender
 	add_predef StatsScreenInit
@@ -78,4 +76,5 @@ PredefPointers::
 	add_predef PlaceStatusString
 	add_predef PrintEnemyMonTypes
 	add_predef CopyOTMonToTempMon
+	add_predef GetMonTypeIndex
 	dbw -1, DummyEndPredef ; pointless

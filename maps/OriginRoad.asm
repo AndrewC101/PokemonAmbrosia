@@ -11,28 +11,28 @@ OriginRoad_MapScripts:
 
 OriginWarpScript1:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warpfacing UP, HALL_OF_ORIGIN, 10, 44
     end
 
 OriginWarpScript2:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warpfacing UP, HALL_OF_ORIGIN, 11, 44
     end
 
 OriginWarpScript3:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warpfacing UP, HALL_OF_ORIGIN, 12, 44
     end
 
 OriginWarpScript4:
 	playsound SFX_WARP_TO
-	special FadeOutPalettes
+	special FadeOutToWhite
 	waitsfx
 	warpfacing UP, HALL_OF_ORIGIN, 13, 44
     end

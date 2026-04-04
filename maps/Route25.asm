@@ -17,19 +17,19 @@
 
 Route25_MapScripts:
 	def_scene_scripts
-	scene_script .DummyScene0 ; SCENE_ROUTE25_NOTHING
-	scene_script .DummyScene1 ; SCENE_ROUTE25_MISTYS_DATE
+	scene_script Route25Noop1Scene, SCENE_ROUTE25_NOOP
+	scene_script Route25Noop2Scene, SCENE_ROUTE25_MISTYS_DATE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Route25FieldMon
+	callback MAPCALLBACK_OBJECTS, Route25FieldMon
 
-.DummyScene0:
+Route25Noop1Scene:
 	end
 
-.DummyScene1:
+Route25Noop2Scene:
 	end
 
-.Route25FieldMon:
+Route25FieldMon:
 ; Pokemon which always appear
     appear ROUTE25_FIELDMON_1
     appear ROUTE25_FIELDMON_2
@@ -68,7 +68,7 @@ Route25MistyDate1Script:
 	applymovement ROUTE25_MISTY, Route25MistyLeavesMovement
 	disappear ROUTE25_MISTY
 	clearevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	setscene SCENE_ROUTE25_NOTHING
+	setscene SCENE_ROUTE25_NOOP
 	special RestartMapMusic
 	end
 
@@ -94,7 +94,7 @@ Route25MistyDate2Script:
 	applymovement ROUTE25_MISTY, Route25MistyLeavesMovement
 	disappear ROUTE25_MISTY
 	clearevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	setscene SCENE_ROUTE25_NOTHING
+	setscene SCENE_ROUTE25_NOOP
 	special RestartMapMusic
 	end
 

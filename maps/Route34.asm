@@ -20,9 +20,9 @@ Route34_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .EggCheckCallback
+	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
 
-.EggCheckCallback:
+Route34EggCheckCallback:
     appear ROUTE34_FIELDMON_3
     appear ROUTE34_FIELDMON_4
     random 5

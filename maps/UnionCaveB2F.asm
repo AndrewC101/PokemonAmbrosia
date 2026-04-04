@@ -14,10 +14,21 @@ UnionCaveB2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-    callback MAPCALLBACK_OBJECTS, .UnionCaveB2FFieldMon
-	callback MAPCALLBACK_OBJECTS, .Lapras
+	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
 
-.Lapras:
+UnionCaveB2FLaprasCallback:
+    appear UNIONCAVEB2F_FIELDMON_4
+    appear UNIONCAVEB2F_FIELDMON_2
+    appear UNIONCAVEB2F_FIELDMON_3
+
+    random 3
+    ifequal 1, .spawn
+    disappear UNIONCAVEB2F_FIELDMON_1
+    sjump .done
+.spawn
+    appear UNIONCAVEB2F_FIELDMON_1
+.done
+
 	checkflag ENGINE_UNION_CAVE_LAPRAS
 	iffalse .Appear
 	disappear UNIONCAVEB2F_LAPRAS
@@ -26,20 +37,6 @@ UnionCaveB2F_MapScripts:
 .Appear:
 	appear UNIONCAVEB2F_LAPRAS
 	endcallback
-	
-.UnionCaveB2FFieldMon:
-    appear UNIONCAVEB2F_FIELDMON_4
-    appear UNIONCAVEB2F_FIELDMON_2
-    appear UNIONCAVEB2F_FIELDMON_3
-
-    random 3
-    ifequal 1, .spawn
-    disappear UNIONCAVEB2F_FIELDMON_1
-    sjump .end
-.spawn
-    appear UNIONCAVEB2F_FIELDMON_1
-.end
-    endcallback
 
 UnionCaveLapras:
 	faceplayer

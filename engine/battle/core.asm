@@ -3965,6 +3965,9 @@ CheckWhetherToAskSwitch:
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
+	ld a, [wHardMode]
+	and a
+	jr nz, .return_nc
 	ld a, [wOtherTrainerClass]
 	cp SOLDIER
 	jr z, .return_nc
@@ -5936,6 +5939,9 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+    ld a, [wHardMode]
+    and a
+    jr nz, .ItemsCantBeUsed
 	ld a, [wOtherTrainerClass]
 	cp SOLDIER
 	jr z, .ItemsCantBeUsed

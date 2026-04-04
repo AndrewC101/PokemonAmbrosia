@@ -238,7 +238,7 @@ Route19Fisher2Text:
 
 Route19Fisher2Text_RocksCleared:
 	text "There was some"
-	line "kind fo small"
+	line "kind of small"
 	cont "earthquake and it"
 	cont "shifted the rocks!"
 	para "It was Hoenn!"

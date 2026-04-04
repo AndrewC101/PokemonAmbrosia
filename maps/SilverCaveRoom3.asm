@@ -107,6 +107,8 @@ Red:
 	waitbutton
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
 	readmem wHardMode
 	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -171,6 +173,8 @@ Ash:
 	waitbutton
 	closetext
 	winlosstext AshWinLossText, AshWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
 	readmem wHardMode
 	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -325,6 +329,8 @@ FightAshScript:
     waitbutton
     closetext
     winlosstext AshWinLossText, AshWinLossText
+    readmem wNewGamePlus
+    ifequal 0, .normal
 	readmem wHardMode
 	ifequal 0, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -466,8 +472,21 @@ PokemonMasterQuestText:
     line "the Mt Silver"
     cont "#center."
 
-    para "That should be"
+    para "That could be"
     line "your next goal."
+
+	para "Or you could start"
+	line "your adventure"
+	cont "again and continue"
+	cont "to grow that way."
+
+	para "A new option is"
+	line "available on the"
+	cont "title screen."
+
+	para "The choice is"
+	line "yours."
+	done
     done
 
 SilverCaveRoom3MewtwoScript:

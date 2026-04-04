@@ -26,8 +26,13 @@ SilverCaveOutsideFlypointCallback:
 Objects:
     checkevent EVENT_BEAT_CRYSTAL_7
     iffalse .noWeather
-    random 2
-    ifequal 1,.sand
+    random 3
+    ifequal 1, .sand
+    ifequal 2, .hail
+	setval WEATHER_NONE
+	writemem wFieldWeather
+	sjump .spawn
+.hail
 	setval WEATHER_HAIL
 	writemem wFieldWeather
 	sjump .spawn

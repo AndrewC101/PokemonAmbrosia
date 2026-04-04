@@ -884,6 +884,8 @@ INCLUDE "gfx/overworld/rpg_transition.pal"
 	ld a, [wOtherTrainerClass]
 	cp LORD_OAK
 	ret z
+	cp JONATHAN
+	ret z
 	cp ADAM
 	jr nz, .notAdam
 	ld a, [wOtherTrainerID]

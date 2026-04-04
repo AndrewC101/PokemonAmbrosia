@@ -586,9 +586,9 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .ChrisChan
-    checkevent EVENT_BEAT_MASTER_CHRIS_CHAN
+    checkevent EVENT_BEAT_MAXWELL
     iffalse .sample
-    loadtrainer POKEFANM, MASTER_CHRIS_CHAN
+    loadtrainer BLUE, MAXWELL
     sjump .finish
 
 .Green

@@ -82,6 +82,8 @@ ReadTrainerPartyPieces:
 ; and the enemy level is not greater than level cap
 ; then scale to level cap
     push bc
+    and a
+    jr z, .normal
     ld b, a
     ld a, [wHardMode]
     and a

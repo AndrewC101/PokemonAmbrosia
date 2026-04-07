@@ -62,6 +62,12 @@ TrainerJoyScript:
 	closetext
 .skipRequest
     winlosstext NurseJoyBeatenText, NurseJoyWinsText
+    readmem wNewGamePlus
+    ifequal 0, .normal
+	readmem wHardMode
+	ifequal 0, .normal
+	sjump .joy4
+.normal
     checkevent EVENT_BEAT_WALLACE
     iftrue .joy4
     checkevent EVENT_BEAT_CLAIR

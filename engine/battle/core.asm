@@ -5939,6 +5939,10 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+	ld a, [wBattleMode]
+	dec a
+	jr z, .canUseItems
+
     ld a, [wHardMode]
     and a
     jr nz, .ItemsCantBeUsed
@@ -5961,6 +5965,7 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+.canUseItems
 	call LoadStandardMenuHeader
 
 	ld a, [wBattleType]

@@ -642,20 +642,23 @@ CheatCodeRepo:
     writetext CheatCodeRepoText
     waitbutton
     writetext RebirthCodeText
+    writetext DoubleExpCodeText
+    readmem wNewGamePlus
+    ifequal 1, .printMasterBallCode
     checkevent EVENT_UNLOCK_MATERBALL_CODE
     iffalse .skipMasterBallCode
+.printMasterBallCode
     writetext MasterBallCodeText
 .skipMasterBallCode
     checkevent EVENT_UNLOCK_WARP_CODE
     iffalse .skipWarpCode
     writetext WarpCodeText
 .skipWarpCode
-    readmem wLevelCap
-    ifless 100, .skipLevelCapCode
-    writetext LevelCapCodeText
-.skipLevelCapCode
+    readmem wNewGamePlus
+    ifequal 1, .printGiftOfGodCode
     checkitem GIFT_OF_GOD
     iffalse .skipGiftCode
+.printGiftOfGodCode
     writetext GiftOfGodCodeText
 .skipGiftCode
     checkitem MARK_OF_GOD
@@ -709,14 +712,14 @@ WarpCodeText:
     line "Full Warp menu."
     prompt
 
-LevelCapCodeText:
+DoubleExpCodeText:
     text "RUCasual?"
-    line "Level caps to 100."
+    line "Double Exp gain."
     prompt
 
 ArceusCodeText:
     text "Omnipotent"
-    line "Level 100 Arceus."
+    line "Obtain Arceus."
     prompt
 
 ElmsLab_WalkUpToElmMovement:
@@ -2065,8 +2068,8 @@ ElmsLabMrMimeScript:
     iftrue .giveMasterBall
     callasm CheckWarpPassword
     iftrue .giveWarp
-    callasm CheckLevelCapPassword
-    iftrue .noCaps
+    callasm CheckDoubleExpPassword
+    iftrue .doubleExp
     callasm CheckArceusPassword
     iftrue .giveArceus
     callasm CheckRebirthPassword
@@ -2122,16 +2125,16 @@ ElmsLabMrMimeScript:
 	loadmem wReachedHallOfOrigin, 1
 	setevent EVENT_UNLOCK_WARP_CODE
     end
-.noCaps
+.doubleExp
     reloadmap
-    readmem wLevelCap
-    ifequal 100, .nostalgia
+    readmem wDoubleExp
+    ifequal 1, .nostalgia
     opentext
-    writetext LevelCapText
+    writetext DoubleExpText
     closetext
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
-	loadmem wLevelCap, 100
+	loadmem wDoubleExp, 1
     end
 .giveArceus
     reloadmap
@@ -2140,7 +2143,13 @@ ElmsLabMrMimeScript:
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .level100
+	givepoke ARCEUS, 5, HOLY_CROWN
+	sjump .givenArceus
+.level100
     givepoke ARCEUS, 100, HOLY_CROWN
+.givenArceus
     setevent EVENT_UNLOCK_ARCEUS_CODE
     closetext
     end
@@ -2206,9 +2215,8 @@ MimeNostalgicText:
     line "nostalgic."
     prompt
 
-LevelCapText:
-    text "Level caps set"
-    line "to 100."
+DoubleExpText:
+    text "Gain double Exp."
     prompt
 
 MakeRoomInPartyText:
@@ -2288,8 +2296,8 @@ CheckWarpPassword:
 	ld de, WarpPassword
 	jr ComparePassword
 
-CheckLevelCapPassword:
-	ld de, LevelCapPassword
+CheckDoubleExpPassword:
+	ld de, DoubleExpPassword
 	jr ComparePassword
 
 CheckArceusPassword:
@@ -2328,7 +2336,7 @@ MasterBallPassword:
 WarpPassword:
     db "MakeItSo"
 
-LevelCapPassword:
+DoubleExpPassword:
     db "RUCasual?"
 
 ArceusPassword:

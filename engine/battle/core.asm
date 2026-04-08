@@ -8043,6 +8043,10 @@ GiveExperiencePoints:
 
 .no_carry_stat_exp
 ; DevNote - Stat Exp
+    ld a, [wDoubleExp]
+    and a
+    jr nz, .double
+
     ld a, [wHardMode]
     and a
     jr nz, .double
@@ -8130,6 +8134,10 @@ GiveExperiencePoints:
 
 ; DevNote - Exp - Multipliers
     call BoostExp
+
+    ld a, [wDoubleExp]
+    and a
+    jr nz, .skipReduction
 
     ld a, [wHardMode]
     and a

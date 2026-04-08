@@ -8047,10 +8047,6 @@ GiveExperiencePoints:
     and a
     jr nz, .double
 
-    ld a, [wHardMode]
-    and a
-    jr nz, .double
-
 	push hl
 	push bc
 	ld a, MON_POKERUS
@@ -8136,10 +8132,6 @@ GiveExperiencePoints:
     call BoostExp
 
     ld a, [wDoubleExp]
-    and a
-    jr nz, .skipReduction
-
-    ld a, [wHardMode]
     and a
     jr nz, .skipReduction
 

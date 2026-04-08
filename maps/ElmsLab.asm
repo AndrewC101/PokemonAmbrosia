@@ -2069,7 +2069,7 @@ ElmsLabMrMimeScript:
     callasm CheckWarpPassword
     iftrue .giveWarp
     callasm CheckDoubleExpPassword
-    iftrue .doubleExp
+    iftrue .doubleExpToggle
     callasm CheckArceusPassword
     iftrue .giveArceus
     callasm CheckRebirthPassword
@@ -2097,6 +2097,10 @@ ElmsLabMrMimeScript:
     end
 .giveHand
     reloadmap
+	readmem wNewGamePlus
+	ifequal 1, .doGiveHand
+	sjump .newGamePlusCheat
+.doGiveHand
     checkitem HAND_OF_GOD
     iftrue .nostalgia
     opentext
@@ -2125,31 +2129,35 @@ ElmsLabMrMimeScript:
 	loadmem wReachedHallOfOrigin, 1
 	setevent EVENT_UNLOCK_WARP_CODE
     end
-.doubleExp
+.doubleExpToggle
     reloadmap
     readmem wDoubleExp
-    ifequal 1, .nostalgia
+    ifequal 1, .turnOff
     opentext
-    writetext DoubleExpText
+    writetext DoubleExpOnText
     closetext
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	loadmem wDoubleExp, 1
     end
+.turnOff
+    opentext
+    writetext DoubleExpOffText
+    closetext
+	loadmem wDoubleExp, 0
+    end
 .giveArceus
     reloadmap
+	readmem wNewGamePlus
+	ifequal 1, .doGiveArceus
+	sjump .newGamePlusCheat
+.doGiveArceus
     readvar VAR_PARTYCOUNT
     ifequal PARTY_LENGTH, .noRoom
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	opentext
-	readmem wNewGamePlus
-	ifequal 1, .level100
-	givepoke ARCEUS, 5, HOLY_CROWN
-	sjump .givenArceus
-.level100
     givepoke ARCEUS, 100, HOLY_CROWN
-.givenArceus
     setevent EVENT_UNLOCK_ARCEUS_CODE
     closetext
     end
@@ -2204,6 +2212,16 @@ ElmsLabMrMimeScript:
     writetext MimeNostalgicText
     closetext
     end
+.newGamePlusCheat
+    opentext
+    writetext NewGamePlusCheatText
+    closetext
+    end
+
+NewGamePlusCheatText:
+    text "That's a New Game"
+    line "Plus only cheat."
+    prompt
 
 MimeConfusedText:
     text "Mr Mime looks"
@@ -2215,8 +2233,12 @@ MimeNostalgicText:
     line "nostalgic."
     prompt
 
-DoubleExpText:
-    text "Gain double Exp."
+DoubleExpOnText:
+    text "Double Exp on!"
+    prompt
+
+DoubleExpOffText:
+    text "Double Exp off!"
     prompt
 
 MakeRoomInPartyText:

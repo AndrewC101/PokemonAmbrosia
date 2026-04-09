@@ -2,7 +2,7 @@ DanaAskNumber1Text:
 DanaAskNumber2Text:
 	text "You are really"
 	line "strong!"
-	para "You must gat lots"
+	para "You must get lots"
 	line "of attention from"
 	cont "admirers like I"
 	cont "do."

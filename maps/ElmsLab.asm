@@ -713,7 +713,7 @@ WarpCodeText:
     prompt
 
 DoubleExpCodeText:
-    text "RUCasual?"
+    text "SpeedRun"
     line "Double Exp gain."
     prompt
 
@@ -2359,7 +2359,7 @@ WarpPassword:
     db "MakeItSo"
 
 DoubleExpPassword:
-    db "RUCasual?"
+    db "SpeedRun"
 
 ArceusPassword:
     db "Omnipotent"

@@ -219,6 +219,7 @@ StarlyEvosAttacks:
 	db 5, QUICK_ATTACK
 	db 9, FALSE_SWIPE
 	db 15, WING_ATTACK
+	db 20, DEFOG
 	db 24, SLASH
 	db 34, FLY
 	db 36, ROOST
@@ -237,6 +238,7 @@ StaraptorEvosAttacks:
 	db 5, QUICK_ATTACK
 	db 9, FALSE_SWIPE
 	db 14, WING_ATTACK
+	db 20, DEFOG
 	db 24, SLASH
 	db 34, FLY
 	db 36, ROOST
@@ -1163,6 +1165,7 @@ GengarEvosAttacks:
 	db 22, WILL_O_WISP
 	db 25, SLUDGE
 	db 30, SHADOW_BALL
+	db 35, DEFOG
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
@@ -1543,6 +1546,7 @@ LaprasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
     db 1, SURF
+    db 1, DEFOG
 	db 15, BODY_SLAM
 	db 20, AURORA_BEAM
 	db 25, HAIL
@@ -1591,6 +1595,7 @@ VaporeonEvosAttacks:
 	db 28, ACID_ARMOR
 	db 32, AURORA_BEAM
 	db 36, SCALD
+	db 40, DEFOG
 	db 42, HAZE
 	db 45, HYDRO_PUMP
 	db 50, CALM_MIND

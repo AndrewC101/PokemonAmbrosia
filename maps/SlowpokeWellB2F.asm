@@ -42,8 +42,8 @@ SlowpokeWellB2FGymGuideScript:
 	closetext
 	end
 
-SlowpokeWellB2FTMRainDance:
-	itemball TM_RAIN_DANCE
+SlowpokeWellB2FLeftovers:
+	itemball LEFTOVERS
 
 SlowpokeWellB2FKingsRock:
 	itemball KINGS_ROCK
@@ -138,7 +138,7 @@ SlowpokeWellB2F_MapEvents:
 
 	def_object_events
 	object_event 12,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SlowpokeWellB2FGymGuideScript, -1
-	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FTMRainDance, EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
+	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FLeftovers, EVENT_SLOWPOKE_WELL_B2F_LEFTOVERS
 	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FKingsRock, EVENT_SLOWPOKE_WELL_B2F_KINGS_ROCK
 	
 	object_event 5, 2, SPRITE_SLOWBRO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB2FFieldMon1Script, EVENT_FIELD_MON_1

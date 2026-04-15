@@ -2281,20 +2281,6 @@ PlayerNamingScreen:
     call InitName
     ret
 
-MakeMale:
-	ld a, [wPlayerSpriteSetupFlags]
-	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	xor a
-	ld [wPlayerGender], a
-	ret
-
-MakeFemale:
-	ld a, [wPlayerSpriteSetupFlags]
-	res PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	ld a, 1
-	ld [wPlayerGender], a
-	ret
-
 DefaultName:
     db "Gold@@@@@@@"
 

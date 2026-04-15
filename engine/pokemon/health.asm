@@ -1,17 +1,22 @@
 HealParty:
+	ld a, [wPartyCount]
+	ld b, a
 	xor a
 	ld [wCurPartyMon], a
 	ld hl, wPartySpecies
 .loop
 	ld a, [hli]
-	cp -1
-	jr z, .done
 	cp EGG
 	jr z, .next
 
+    push bc
 	push hl
 	call HealPartyMon
 	pop hl
+	pop bc
+
+    dec b
+    jr z, .done
 
 .next
 	ld a, [wCurPartyMon]

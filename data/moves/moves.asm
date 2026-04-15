@@ -211,7 +211,7 @@ Moves: ; 41afb
 	move LEAF_BLADE,   EFFECT_NORMAL_HIT,         90, GRASS,         PHYSICAL, 100, 15,   0
 	move PSYCHO_SLASH, EFFECT_NORMAL_HIT,         90, PSYCHIC_TYPE,  PHYSICAL, 100, 15,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0
-	move OUTRAGE,      EFFECT_RAMPAGE,           100, DRAGON,        PHYSICAL, 100, 15,   0
+	move OUTRAGE,      EFFECT_RAMPAGE,           110, DRAGON,        PHYSICAL, 100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          90, GRASS,         SPECIAL,  100, 15,   0
 	move DEFOG,        EFFECT_DEFOG,               0, FLYING,        STATUS,   100, 15,   0

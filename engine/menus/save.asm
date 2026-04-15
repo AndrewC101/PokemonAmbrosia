@@ -448,6 +448,10 @@ SavePlayerData:
 	ld de, sCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
+	ld hl, wCrystalData
+	ld de, sCrystalData
+	ld bc, wCrystalDataEnd - wCrystalData
+	call CopyBytes
 	jp CloseSRAM
 
 SavePokemonData:

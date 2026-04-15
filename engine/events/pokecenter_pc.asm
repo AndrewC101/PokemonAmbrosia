@@ -177,10 +177,9 @@ TurnOffPC:
 	ld de, SFX_FULL_HEAL
 	call PC_WaitPlaySFX
 	call WaitSFX
-	ld hl, PCHealPartyText
-	call PrintText
-	ld hl, PokecenterPCWhoseText
-	call PrintText
+	;ld hl, PCHealPartyText
+	;call PrintText
+	scf
 	ret
 
 PC_PlayBootSound:

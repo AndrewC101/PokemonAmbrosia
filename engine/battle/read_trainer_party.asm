@@ -83,12 +83,25 @@ ReadTrainerPartyPieces:
 ; then scale to level cap
     push bc
     and a
-    jr z, .normal
+    jr z, .normal ; if level is 0 then don't scale - this becomes 255
     ld b, a
+
+    ; if this is a frontier battle then never scale
+    ld a, [wBattleType]
+    cp BATTLETYPE_BATTLE_FRONTIER
+    jr z, .normal
+
+    ; if we aren't on hard mode then don't scale
     ld a, [wHardMode]
     and a
     jr z, .normal
 
+    ; if this is new game plus then scale regardless of trainer class
+    ld a, [wNewGamePlus]
+    and a
+    jr nz, .scale
+
+    ; trainer classes that scale on hard mode when not on new game plus
     ld a, [wOtherTrainerClass]
     cp INVADER
     jr z, .scale
@@ -101,6 +114,7 @@ ReadTrainerPartyPieces:
     cp KIMONO_GIRL
     jr z, .scale
 
+    ; if on hard mode and not on new game plus then scale based on these battle types
     ld a, [wBattleType]
     cp BATTLETYPE_WEAK_BATTLE
     jr z, .scale
@@ -200,6 +214,15 @@ ReadTrainerPartyPieces:
     cp BATTLETYPE_WEAK_BATTLE
     jp z, .zeroStatExp
 
+    ; on new game plus and hard mode all enemies have max stat exp
+    ld a, [wNewGamePlus]
+    and a
+    jr z, .usual
+    ld a, [wHardMode]
+    and a
+    jp nz, .fullStatExp
+
+.usual
     ; trainer classes which always have max stat exp
 	ld a, [wTrainerClass]
 	cp LORD_OAK

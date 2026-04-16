@@ -1964,7 +1964,7 @@ RioluEvosAttacks:
 LucarioEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
-	db 6, COUNTER
+	db 5, COUNTER
 	db 8, BITE
 	db 11, KARATE_CHOP
 	db 15, TAUNT

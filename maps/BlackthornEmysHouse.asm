@@ -17,12 +17,14 @@ Emy:
 	end
 
 snorlaxTradeText:
-	text "Adjust your"
-	line "Mawashi and mount"
-	cont "the Dohyo you"
-	cont "Junokuchi Rikishi."
-	para "You face the"
-	line "Yokozuna."
+	text "Have you ever seen"
+	line "Charizard tears?"
+	para "They are boiling"
+	line "hot."
+	para "I didn't believe"
+	line "it at first."
+	para "Even a dragon may"
+	line "cry."
 	done
 
 EmysHouseBookshelf:

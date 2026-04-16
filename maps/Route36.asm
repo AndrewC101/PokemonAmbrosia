@@ -221,6 +221,11 @@ TrainerSchoolboyAlan1:
 .ChooseRematch:
 	scall .Rematch
 	winlosstext SchoolboyAlan1BeatenText, 0
+	readmem wNewGamePlus
+	ifequal 0, .normal
+	readmem wHardMode
+	ifequal 1, .LoadFight4
+.normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight4
 	checkevent EVENT_BEAT_ELITE_FOUR

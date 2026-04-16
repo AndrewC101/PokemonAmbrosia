@@ -151,6 +151,11 @@ TrainerHikerParry:
 .WantsBattle:
 	scall Route45RematchM
 	winlosstext HikerParry3BeatenText, 0
+	readmem wNewGamePlus
+	ifequal 0, .normal
+	readmem wHardMode
+	ifequal 1, .LoadFight3
+.normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight3
 	checkevent EVENT_BEAT_ELITE_FOUR

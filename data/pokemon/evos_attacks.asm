@@ -1698,9 +1698,9 @@ GaladeEvosAttacks:
 
 AerodactylEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WING_ATTACK
-	db 10, DRAGON_RAGE
-	db 15, BITE
+	db 1, DRAGON_RAGE
+    db 26, WING_ATTACK
+	db 28, BITE
 	db 30, ANCIENTPOWER
 	db 33, CRUNCH
 	db 35, ROCK_SLIDE
@@ -2030,6 +2030,7 @@ GalvantulaEvosAttacks:
 	db 28, DISCHARGE
 	db 30, BUG_BUZZ
 	db 36, THUNDERBOLT
+	db 40, STICKY_WEB
 	db 45, THUNDER
 	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves

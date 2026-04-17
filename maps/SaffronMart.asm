@@ -10,7 +10,13 @@ SaffronMart_MapScripts:
 
 SaffronMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_SAFFRON
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_FRONTIER
 	closetext
 	end
 

@@ -10,7 +10,13 @@ AzaleaMart_MapScripts:
 
 AzaleaMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_AZALEA
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_FRONTIER
 	closetext
 	end
 

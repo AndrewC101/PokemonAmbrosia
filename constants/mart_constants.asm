@@ -43,4 +43,6 @@ DEF NUM_MART_TYPES EQU const_value
 	const MART_PATCHES
 	const MART_FRONTIER
 	const MART_BERRY
+	const MART_NEW_GAME_PLUS
+	const MART_MAIL
 DEF NUM_MARTS EQU const_value

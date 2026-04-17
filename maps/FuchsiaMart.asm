@@ -10,7 +10,13 @@ FuchsiaMart_MapScripts:
 
 FuchsiaMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_FUCHSIA
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_FRONTIER
 	closetext
 	end
 

@@ -162,7 +162,6 @@ INCLUDE "maps/LavenderSpeechHouse.asm"
 INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
-INCLUDE "maps/LavRadioTower1F.asm"
 
 SECTION "Map Scripts 11", ROMX
 
@@ -572,3 +571,4 @@ SECTION "Map Scripts 53", ROMX
 
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
+INCLUDE "maps/LavRadioTower1F.asm"

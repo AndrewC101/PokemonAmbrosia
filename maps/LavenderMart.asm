@@ -10,7 +10,13 @@ LavenderMart_MapScripts:
 
 LavenderMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_LAVENDER
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_MAIL
 	closetext
 	end
 

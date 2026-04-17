@@ -10,7 +10,13 @@ CeruleanMart_MapScripts:
 
 CeruleanMart_Clerk:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_CERULEAN
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_NEW_GAME_PLUS
 	closetext
 	end
 

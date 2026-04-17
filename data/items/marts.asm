@@ -35,6 +35,8 @@ Marts:
 	dw MartPatches
 	dw MartFrontier
 	dw MartBerry
+	dw MartNewGamePlus
+	dw MartMail
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -410,6 +412,18 @@ MartUnderground:
 	db -1 ; end
 
 MartPatches:
+    db 8 ; # items
+    db AMBROSIA
+    db RARE_CANDY
+    db MASTER_BALL
+    db QUICK_CLAW
+    db BRIGHTPOWDER
+    db SCOPE_LENS
+    db KINGS_ROCK
+    db SACRED_ASH
+    db -1
+
+MartFrontier:
     db 16 ; # items
     db RARE_CANDY
     db MASTER_BALL
@@ -419,34 +433,14 @@ MartPatches:
     db CHOICE_SPECS
     db ASSAULT_VEST
     db FOCUS_SASH
+    db EVIOLITE
+    db EXPERT_BELT
     db MUSCLE_BAND
     db WISE_GLASSES
-    db EXPERT_BELT
     db FLAME_ORB
     db HEAVY_BOOTS
-    db QUICK_CLAW
-    db BRIGHTPOWDER
-    db SACRED_ASH
-    db -1
-
-MartFrontier:
-    db 16 ; # items
-    db FULL_RESTORE
-    db MAX_REVIVE
-    db MAX_ELIXER
-    db LEFTOVERS
-    db LIFE_ORB
-    db CHOICE_BAND
-    db CHOICE_SPECS
-    db ASSAULT_VEST
-    db FOCUS_SASH
-    db MUSCLE_BAND
-    db WISE_GLASSES
-    db EXPERT_BELT
-    db FLAME_ORB
-    db HEAVY_BOOTS
-    db SCOPE_LENS
-    db LUCKY_EGG
+ 	db GOLD_BERRY
+ 	db MIRACLEBERRY
     db -1
 
 MartBerry:
@@ -461,6 +455,46 @@ MartBerry:
  	db GOLD_BERRY
  	db MIRACLEBERRY
  	db -1 ; end
+
+MartNewGamePlus:
+    db 16 ; # items
+    db RARE_CANDY
+    db MASTER_BALL
+    db FIRE_STONE
+    db WATER_STONE
+    db LEAF_STONE
+    db THUNDERSTONE
+    db MOON_STONE
+    db SUN_STONE
+    db X_ATTACK
+    db X_DEFEND
+    db X_SPECIAL
+    db X_SPEED
+    db PP_MAX
+    db FULL_RESTORE
+    db MAX_REVIVE
+    db MAX_ELIXER
+    db -1
+
+MartMail:
+    db 16 ; # items
+    db POKE_BALL
+    db GREAT_BALL
+    db ULTRA_BALL
+    db LOVE_BALL
+    db FRIEND_BALL
+    db HEAVY_BALL
+    db FLOWER_MAIL
+	db SURF_MAIL
+	db LITEBLUEMAIL
+	db PORTRAITMAIL
+	db LOVELY_MAIL
+	db EON_MAIL
+	db MORPH_MAIL
+	db BLUESKY_MAIL
+	db MUSIC_MAIL
+	db MIRAGE_MAIL
+	db -1
 
 DefaultMart:
 	db 2 ; # items

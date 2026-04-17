@@ -10,7 +10,13 @@ PewterMart_MapScripts:
 
 PewterMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_PEWTER
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_MAIL
 	closetext
 	end
 

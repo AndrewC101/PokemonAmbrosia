@@ -10,7 +10,13 @@ EcruteakMart_MapScripts:
 
 EcruteakMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_ECRUTEAK
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_FRONTIER
 	closetext
 	end
 

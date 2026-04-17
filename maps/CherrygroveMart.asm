@@ -10,6 +10,8 @@ CherrygroveMart_MapScripts:
 
 CherrygroveMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .PokeBallsInStock
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE
@@ -18,6 +20,11 @@ CherrygroveMartClerkScript:
 
 .PokeBallsInStock:
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
+	closetext
+	end
+
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_NEW_GAME_PLUS
 	closetext
 	end
 

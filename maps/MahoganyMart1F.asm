@@ -106,7 +106,13 @@ MahoganyMart1FLanceUncoversStaircaseScript:
 MahoganyMart1FGrannyScript:
 	faceplayer
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_MAIL
 	closetext
 	end
 

@@ -10,7 +10,13 @@ OlivineMart_MapScripts:
 
 OlivineMartClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_OLIVINE
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_NEW_GAME_PLUS
 	closetext
 	end
 

@@ -282,11 +282,8 @@ RematchRefuseTextAsh:
     done
 
 SilverCave3BlockScript:
-    readmem wNewGamePlus
-    ifequal 1, .end
     checkevent EVENT_CAUGHT_MEWTWO
     iffalse .block
-.end
     end
 .block
     turnobject PLAYER, UP

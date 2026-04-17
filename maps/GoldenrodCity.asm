@@ -50,8 +50,11 @@ GoldenrodCityMoveTutorCallback:
 MoveTutorScript:
 	faceplayer
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .teach
 	checkevent EVENT_BEAT_CLAIR
 	iffalse .notYet
+.teach
 	writetext GoldenrodCityMoveTutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused

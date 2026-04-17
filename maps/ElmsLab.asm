@@ -458,13 +458,44 @@ AideScript_WalkPotion2:
 
 AideScript_GivePotion:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem RARE_CANDY
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
+.ngp
+	writetext AideText_GiveGiftOfGod
+	promptbutton
+	verbosegiveitem GIFT_OF_GOD
+	writetext AideText_GivenGiftOfGod
+	waitbutton
+	closetext
 	end
+
+AideText_GiveGiftOfGod:
+	text "Wait..."
+	para "You have been here"
+	line "before."
+	para "Events are"
+	line "unfolding again."
+	para "But the world is"
+	line "different now."
+	para "May the blessings"
+	line "of Arceus gide"
+	cont "your new journey."
+	done
+
+AideText_GivenGiftOfGod:
+	text "With this you can"
+	line "max out a #mon"
+	cont "instantly."
+	para "Yo can build an"
+	line "empire of #mon"
+	cont "with it!"
+	done
 
 AideScript_GivePocketPC:
 	opentext
@@ -495,9 +526,17 @@ AideScript_GiveYouBalls:
 	opentext
 	writetext AideText_GiveYouBalls
 	promptbutton
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	getitemname STRING_BUFFER_4, POKE_BALL
 	scall AideScript_ReceiveTheBalls
 	giveitem POKE_BALL, 5
+	sjump .cont
+.ngp
+	getitemname STRING_BUFFER_4, MASTER_BALL
+	scall AideScript_ReceiveTheBalls
+	giveitem MASTER_BALL, 99
+.cont
 	writetext AideText_ExplainBalls
 	promptbutton
 	itemnotify

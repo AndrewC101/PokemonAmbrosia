@@ -22,6 +22,7 @@ Route36_MapScripts:
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, ClearPath
 	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
 
 Route36Noop1Scene:
@@ -29,6 +30,15 @@ Route36Noop1Scene:
 
 Route36Noop2Scene:
 	end
+
+ClearPath:
+    readmem wNewGamePlus
+    ifequal 0, .end
+    changeblock 36, 10, $02
+    changeblock 38, 10, $90
+    changeblock 40, 10, $02
+.end
+    endcallback
 
 Route36ArthurCallback:
 ; Pokemon which always appear

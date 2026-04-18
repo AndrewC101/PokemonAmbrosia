@@ -51,11 +51,9 @@ BillExpShareScript:
 	opentext
 	writetext VioletPokecenter1F_BillText1
 	promptbutton
-    readmem wNewGamePlus
-    ifequal 1, .ngp
 	verbosegiveitem LUCKY_EGG
-	sjump .cont
-.ngp
+    readmem wNewGamePlus
+    ifequal 0, .cont
     verbosegiveitem AMULET_COIN
 .cont
 	closetext

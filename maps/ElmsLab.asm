@@ -484,7 +484,7 @@ AideText_GiveGiftOfGod:
 	para "But the world is"
 	line "different now."
 	para "May the blessings"
-	line "of Arceus gide"
+	line "of Arceus guide"
 	cont "your new journey."
 	done
 
@@ -492,7 +492,7 @@ AideText_GivenGiftOfGod:
 	text "With this you can"
 	line "max out a #mon"
 	cont "instantly."
-	para "Yo can build an"
+	para "You can build an"
 	line "empire of #mon"
 	cont "with it!"
 	done
@@ -542,12 +542,36 @@ AideScript_GiveYouBalls:
 	itemnotify
 	closetext
 	opentext
+	readmem wNewGamePlus
+	ifequal 0, .explainCaps
+	writetext AideText_ExplainNGP
+	sjump .doneTalking
+.explainCaps
 	writetext AideText_ExplainCaps
+.doneTalking
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	end
+
+AideText_ExplainNGP:
+	text "This isn't your"
+	line "first time doing"
+	cont "this."
+	para "But the world is"
+	line "different now!"
+	para "Your level caps"
+	line "are maxed but the"
+	cont "rest of the world"
+	cont "might have that"
+	cont "too."
+	para "Be sure to check"
+	line "out the Marts,"
+	cont "they may have"
+	cont "items to help you."
+	para "Good luck!"
+	done
 
 AideScript_ReceiveTheBalls:
 	jumpstd ReceiveItemScript

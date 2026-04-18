@@ -21,8 +21,8 @@ YoungerHaircutBrother:
 	jr HaircutOrGrooming
 
 DaisysGrooming:
-	ld hl, HappinessData_DaisysGrooming
-	; fallthrough
+	farcall SetLevelTo5
+	ret
 
 HaircutOrGrooming:
 	push hl

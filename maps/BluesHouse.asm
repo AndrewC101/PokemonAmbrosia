@@ -9,142 +9,74 @@ BluesHouse_MapScripts:
 DaisyScript:
 	faceplayer
 	opentext
-	readvar VAR_HOUR
-	ifequal 15, .ThreePM
-	writetext DaisyHelloText
-	waitbutton
-	closetext
-	end
-
-.ThreePM:
-	checkflag ENGINE_DAISYS_GROOMING
-	iftrue .AlreadyGroomedMon
-	writetext DaisyOfferGroomingText
-	yesorno
+	writetext DaisyOfferLevelDownText
+	nooryes
 	iffalse .Refused
+	writetext DaisyReallySureText
+	nooryes
+	iffalse .Refused
+	special HealParty
 	writetext DaisyWhichMonText
 	waitbutton
 	special DaisysGrooming
-	ifequal $0, .Refused
-	ifequal $1, .CantGroomEgg
-	setflag ENGINE_DAISYS_GROOMING
-	writetext DaisyAlrightText
-	waitbutton
-	closetext
-	special FadeOutToWhite
-	playmusic MUSIC_HEAL
-	pause 60
-	special FadeInFromWhite
-	special RestartMapMusic
+	reloadmap
 	opentext
-	writetext GroomedMonLooksContentText
-	special PlayCurMonCry
-	promptbutton
-	writetext DaisyAllDoneText
+	writetext DaisyLevelDownDoneText
 	waitbutton
 	closetext
 	end
-
-.AlreadyGroomedMon:
-	writetext DaisyAlreadyGroomedText
-	waitbutton
-	closetext
-	end
-
 .Refused:
 	writetext DaisyRefusedText
 	waitbutton
 	closetext
 	end
 
-.CantGroomEgg:
-	writetext DaisyCantGroomEggText
-	waitbutton
-	closetext
-	end
-
-DaisyHelloText:
-	text "Hi! Oh you are"
-	line "from Johto."
-
-	para "You may have met"
-	line "my little brother."
-
-	para "He is the Gym"
-	line "Leader of"
-	cont "Viridian."
-
-	para "People call him"
-	line "Champion Blue."
-
-	para "Even though he"
-	line "isn't technically"
-	cont "a Champ anymore."
+DaisyOfferLevelDownText:
+	text "Is that a wrinkle"
+	line "I see under your"
+	cont "eye!"
+	para "This is life's"
+	line "ultimate cruelty."
+	para "It offers us a"
+	line "taste of youth and"
+	cont "vitality, and then"
+	cont "it makes us"
+	cont "witness our own"
+	cont "decay."
+	para "But I can make"
+	line "your #mon"
+	cont "young again."
+	para "Shall I reduce one"
+	line "of your #mon"
+	cont "to level to 5?"
 	done
 
-DaisyOfferGroomingText:
-	text "Hello!"
-
-	para "I'm about to"
-	line "have some tea."
-
-	para "Would you like"
-	cont "some?"
-
-	para "Oh I could groom"
-	line "your #mon"
-	cont "while you drink."
+DaisyReallySureText:
+	text "Are you really"
+	line "sure?"
+	para "Reduce a #mon"
+	line "to level 5?"
 	done
 
 DaisyWhichMonText:
-	text "Which one should"
-	line "I groom?"
+	text "Who shall receive"
+	line "my gift?"
 	done
 
-DaisyAlrightText:
-	text "OK, I'll get it"
-	line "looking lovely"
-	cont "in no time."
-	done
-
-GroomedMonLooksContentText:
-	text_ram wStringBuffer3
-	text " looks"
-	line "content."
-	done
-
-DaisyAllDoneText:
-	text "There you have it."
-	line "All done."
-
-	para "See? Doesn't it"
-	line "look nice?"
-
-	para "It's such a cute"
-	line "#mon."
-	done
-
-DaisyAlreadyGroomedText:
-	text "I always have"
-	line "tea around this"
-	cont "time."
-
-	para "Come join me."
+DaisyLevelDownDoneText:
+	text "Now a warning."
+	para "Your #mon is"
+	line "now very weak."
+	para "You must look"
+	line "after your"
+	cont "#mon and enjoy"
+	cont "their friendship"
+	cont "forever."
 	done
 
 DaisyRefusedText:
-	text "You don't want"
-	line "to have one"
-
-	para "groomed? OK, we'll"
-	line "just have tea."
-	done
-
-DaisyCantGroomEggText:
-	text "Oh, sorry."
-
-	para "I honestly can't"
-	cont "groom an Egg."
+	text "Who wants to live"
+	line "forever?"
 	done
 
 BluesHouse_MapEvents:

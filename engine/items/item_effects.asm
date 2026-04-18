@@ -1503,6 +1503,16 @@ RareCandy_StatBooster_GetParameters:
 	call GetNickname
 	ret
 
+SetLevelTo5:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jp c, RareCandy_StatBooster_ExitMenu
+	call RareCandy_StatBooster_GetParameters
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, 5
+	jp UpdateLevel
+
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
@@ -1531,6 +1541,8 @@ DoRareCandyEffect:
     ld a, [hl]
 	inc a
 .calcExp
+
+UpdateLevel:
 	ld [hl], a
 	ld [wCurPartyLevel], a
 	push de

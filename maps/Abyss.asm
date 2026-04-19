@@ -475,7 +475,7 @@ AbyssSage2IntroText:
 	para "Even our bravest"
 	line "warrior."
 	para "ARTORIAS."
-	para "Even he succumb."
+	para "Even he succumbed."
 	para "Only the blessing"
 	line "of Arceus can"
 	cont "purge the curse."
@@ -588,7 +588,7 @@ GiratinaIntroText:
     para "Not far from"
     line "here lies the"
     cont "den of a great"
-    cont "hieratic!"
+    cont "heretic!"
 
     para "The Dragon Lord"
     line "they call him."

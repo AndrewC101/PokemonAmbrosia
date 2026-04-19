@@ -471,13 +471,13 @@ PlacePartyMonGender:
 	ret
 
 .male
-	db "♂…MALE@"
+	db "♂…Male@"
 
 .female
-	db "♀…FEMALE@"
+	db "♀…Female@"
 
 .unknown
-	db "…UNKNOWN@"
+	db "…Unknown@"
 
 PlacePartyMonMobileBattleSelection:
 	ld a, [wPartyCount]

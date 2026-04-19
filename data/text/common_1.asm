@@ -1512,7 +1512,7 @@ _DayCareManIntroEggText::
 
 _DayCareLadyIntroText::
 	text "I'm the Day-Care"
-	line "LADY."
+	line "lady."
 
 	para "Should I raise a"
 	line "#mon for you?"
@@ -1520,7 +1520,7 @@ _DayCareLadyIntroText::
 
 _DayCareLadyIntroEggText::
 	text "I'm the Day-Care"
-	line "LADY. Do you know"
+	line "lady. Do you know"
 	cont "about Eggs?"
 
 	para "My husband and I"

@@ -827,7 +827,7 @@ _LeftWithDayCareLadyText::
 	text_ram wBreedMon2Nickname
 	text_start
 	line "that was left with"
-	cont "the Day-Care LADY."
+	cont "the Day-Care lady."
 	done
 
 _LeftWithDayCareManText::

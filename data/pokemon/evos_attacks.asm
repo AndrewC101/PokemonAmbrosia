@@ -29,6 +29,7 @@ BulbasaurEvosAttacks:
 	db 25, LEAF_BLADE
 	db 30, CROSS_POISON
 	db 32, SLUDGE_BOMB
+	db 36, GIGA_DRAIN
 	db 40, TOXIC_SPIKES
 	db 45, SYNTHESIS
 	db 50, SOLARBEAM
@@ -48,6 +49,7 @@ VenusaurEvosAttacks:
 	db 25, LEAF_BLADE
 	db 30, CROSS_POISON
 	db 32, SLUDGE_BOMB
+	db 36, GIGA_DRAIN
 	db 40, TOXIC_SPIKES
 	db 45, SYNTHESIS
 	db 50, SOLARBEAM

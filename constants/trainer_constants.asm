@@ -511,7 +511,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass WALLACE ; 2b ; Remove?
 	const EMPEROR_WALLACE
 	const MASTER_WALLACE
-	;const WALLACE_HARD
+	const WALLACE_HARD
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1

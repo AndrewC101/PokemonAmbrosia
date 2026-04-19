@@ -60,7 +60,7 @@ WallaceScript:
 	sjump .battle
 .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WALLACE, EMPEROR_WALLACE
+	loadtrainer WALLACE, WALLACE_HARD
 	sjump .battle
 .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE

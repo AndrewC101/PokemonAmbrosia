@@ -3865,7 +3865,7 @@ AI_Smart_Taunt:
 
 ; if we can KO - discourage
     call CanAIKO
-    jr c, .discourage
+    jp c, .discourage
 
 ; if player has a setup move, status move, or healing move - encourage
     ld b, EFFECT_TAUNT
@@ -3911,6 +3911,9 @@ AI_Smart_Taunt:
 	call PlayerHasMoveEffect
 	jr c, .encourage
     ld b, EFFECT_STEALTH_ROCK
+	call PlayerHasMoveEffect
+	jr c, .encourage
+    ld b, EFFECT_ATTACK_DOWN_2
 	call PlayerHasMoveEffect
 	jr c, .encourage
 

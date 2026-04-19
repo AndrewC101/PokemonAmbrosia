@@ -250,7 +250,7 @@ TrainerClassAttributes:
 
 ; Rival2
 	db NO_ITEM, NO_ITEM ; items
-	db 200 ; base reward
+	db 100 ; base reward
 	dw AI_BASIC | AI_SMART | AI_AGGRESSIVE | AI_FINAL_ATTACK | AI_SMART_SWITCH
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 

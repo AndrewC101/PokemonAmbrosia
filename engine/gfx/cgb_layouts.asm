@@ -149,25 +149,26 @@ _CGB_FinishBattleScreenLayout:
 
 	hlcoord 12, 8, wAttrmap
 	lb bc, 1, 2
-	ld a, [wBattleMonStatus]
+	ld a, [wBattleTimeOfDay]
 	and a
-	jr nz, .playerStatus
-	ld a, PAL_BATTLE_BG_PLAYER
+	jr nz, .darkPlayer
+	ld a, PAL_BATTLE_BG_STATUS
 	jr .fillPlayer
-.playerStatus
-	ld a, PAL_BATTLE_BG_STATUS ; player
+.darkPlayer
+	ld a, PAL_BATTLE_BG_PLAYER
 .fillPlayer
 	call FillBoxCGB
 
 	hlcoord 2, 1, wAttrmap
 	lb bc, 1, 2
-	ld a, [wEnemyMonStatus]
+
+	ld a, [wBattleTimeOfDay]
 	and a
-	jr nz, .enemyStatus
-	ld a, PAL_BATTLE_BG_PLAYER
+	jr nz, .darkEnemy
+	ld a, PAL_BATTLE_BG_STATUS
 	jr .fillEnemy
-.enemyStatus
-	ld a, PAL_BATTLE_BG_STATUS ; enemy
+.darkEnemy
+	ld a, PAL_BATTLE_BG_PLAYER
 .fillEnemy
 	call FillBoxCGB
 

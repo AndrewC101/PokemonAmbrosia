@@ -5348,6 +5348,24 @@ ItemRecoveryAnim:
 	pop hl
 	ret
 
+BattleFlinchAnimation:
+	push hl
+	push de
+	push bc
+	call EmptyBattleTextbox
+	ld a, MIMIC ; flinch animation
+	ld [wFXAnimID], a
+	call SwitchTurnCore
+	xor a
+	ld [wBattleAfterAnim], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	call SwitchTurnCore
+	pop bc
+	pop de
+	pop hl
+	ret
+
 UseHeldStatusHealingItem:
 	callfar GetOpponentItem
 	ld hl, HeldStatusHealingEffects

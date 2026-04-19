@@ -10,7 +10,6 @@ StallMoves:
 	db LEECH_SEED
 	db GROWTH
 	db AGILITY
-	db MIMIC
 	db SCREECH
 	db HARDEN
 	db DEFENSE_CURL

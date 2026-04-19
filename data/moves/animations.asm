@@ -103,7 +103,7 @@ BattleAnimations::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_Teleport
 	dw BattleAnim_NightShade
-	dw BattleAnim_Mimic
+	dw BattleAnim_Flinch
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
@@ -2298,6 +2298,19 @@ BattleAnim_Mimic:
 	anim_wait 128
 	anim_wait 48
 	anim_ret
+
+BattleAnim_Flinch:
+    anim_1gfx BATTLE_ANIM_GFX_WATER
+    anim_call BattleAnim_TargetObj_2Row
+    anim_bgeffect BATTLE_BG_EFFECT_DIG, $0, BG_EFFECT_USER, $40
+    anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+    anim_wait 8
+    anim_sound 0, 0, SFX_LICK
+    anim_obj BATTLE_ANIM_OBJ_WATER_GUN, 56, 100, $0
+    anim_wait 14
+    anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
+    anim_incbgeffect BATTLE_BG_EFFECT_DIG
+    anim_jump BattleAnim_ShowMon_0
 
 BattleAnim_DrainKiss:
 BattleAnim_LovelyKiss:

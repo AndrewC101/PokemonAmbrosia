@@ -240,7 +240,7 @@ EventWildMons::
 	specialencounter PILOSWINE, -1, ICE_PATH_1F, OverworldEncounterDescription
 	specialencounter MAMOSWINE, -1, ICE_PATH_B3F, OverworldEncounterDescription
 	specialencounter TEDDIURSA, -1, ROUTE_46, OverworldEncounterDescription
-	specialencounter URSARING, -1, ROUTE_46, OverworldEncounterDescription
+	specialencounter URSARING, -1, NATIONAL_PARK, OverworldEncounterDescription
 	specialencounter URSALUNA, -1, ANCIENT_RUIN_PRESENT, OverworldEncounterDescription
 	specialencounter URSALUNA_B, -1, ANCIENT_RUIN_PRESENT, OverworldEncounterDescription
 	specialencounter COTTONEE, -1, ROUTE_34, OverworldEncounterDescription

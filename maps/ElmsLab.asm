@@ -466,6 +466,7 @@ AideScript_GivePotion:
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
+	end
 .ngp
 	writetext AideText_GiveGiftOfGod
 	promptbutton

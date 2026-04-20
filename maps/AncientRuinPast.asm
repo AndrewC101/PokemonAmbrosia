@@ -223,7 +223,7 @@ AncientRuinsPastGuy2Text:
     line "gold who wields"
     cont "Arceus itself."
 
-    para "He notion that"
+    para "The notion that"
     line "a trainer could"
     cont "command Arceus"
     cont "is heresy."

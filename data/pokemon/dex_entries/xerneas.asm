@@ -5,7 +5,7 @@
 	next "eternal life with"
 	next "the worthy."
 
-	page "Immune to"
-	next "all passive"
-	next "damage.@"
+	page "Raises Light"
+	next "Screen. Passive"
+	next "damage immune.@"
 

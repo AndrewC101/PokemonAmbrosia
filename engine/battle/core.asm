@@ -4948,6 +4948,8 @@ SwitchInEffects:
     jp z, .reflect
     cp LATIOS
     jp z, .reflect
+    cp YVELTAL
+    jp z, .reflect
 
     cp AMPHAROS
     jp z, .lightScreen
@@ -4959,12 +4961,16 @@ SwitchInEffects:
     jp z, .lightScreen
     cp NINETALES
     jp z, .lightScreen
+    cp XERNEAS
+    jp z, .lightScreen
 
     cp MOLTRES
     jp z, .safeguard
     cp POLTEGEIST
     jp z, .safeguard
     cp PALKIA
+    jp z, .safeguard
+    cp ZYGARDE
     jp z, .safeguard
 
     cp STARMIE

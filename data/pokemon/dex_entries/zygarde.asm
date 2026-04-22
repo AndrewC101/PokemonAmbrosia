@@ -5,6 +5,7 @@
 	next "planet. Bringer"
 	next "of order."
 
-	page "Regenerates"
-	next "HP every turn.@"
+	page "Raises Safeguard."
+	next "Regenerates HP"
+	next "every turn.@"
 

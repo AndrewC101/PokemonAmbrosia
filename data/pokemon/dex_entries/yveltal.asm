@@ -5,7 +5,7 @@
 	next "It steals life"
 	next "from its foes."
 
-	page "Immune to"
-	next "all passive"
-	next "damage.@"
+	page "Raises Reflect."
+	next "Passive damage"
+	next "immune.@"
 

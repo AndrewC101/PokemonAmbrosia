@@ -928,6 +928,9 @@ DecodeBufferMon:
 	dec b
 	jr nz, .charmap_loop
 
+    ld a, [wOtherTrainerID]
+    cp FIELD_MON
+    jr z, .skipNames
 	; Copy nickname and OT back to its original place. We need to do this backwards
 	; due to overlap between wEncodedBufferMon(Nickname|OT) and wBufferMon(Nickname|OT).
 	ld hl, wEncodedBufferMonOT + PLAYER_NAME_LENGTH - 2
@@ -951,6 +954,7 @@ DecodeBufferMon:
 	ld c, MON_NAME_LENGTH - 1
 	jr nz, .outer_loop
 
+.skipNames
 	; Shift data past PP to leave room for PP data.
 	; AltSpecies is after stats when decoded, so handle that first separately.
 	ld hl, wEncodedBufferMonAltSpecies

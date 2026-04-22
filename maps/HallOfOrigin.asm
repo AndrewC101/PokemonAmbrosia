@@ -711,6 +711,10 @@ MasterBlueScript:
 	faceplayer
     checkevent EVENT_BEAT_MASTER_LANCE
     iffalse .beatOthersFirst
+    checkevent EVENT_BEAT_MASTER_WALLACE
+    iffalse .beatOthersFirst
+    checkevent EVENT_BEAT_MASTER_GREEN
+    iffalse .beatOthersFirst
 	opentext
 	checkevent EVENT_BEAT_MASTER_BLUE
 	iftrue .FightDone

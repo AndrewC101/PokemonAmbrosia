@@ -45,7 +45,13 @@ IndigoPlateauPokecenter1FNurseScript:
 
 IndigoPlateauPokecenter1FClerkScript:
 	opentext
+	readmem wNewGamePlus
+	ifequal 1, .ngp
 	pokemart MARTTYPE_STANDARD, MART_INDIGO_PLATEAU
+	closetext
+	end
+.ngp
+	pokemart MARTTYPE_STANDARD, MART_FRONTIER
 	closetext
 	end
 

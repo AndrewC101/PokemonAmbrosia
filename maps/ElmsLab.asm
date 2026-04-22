@@ -1757,14 +1757,8 @@ AideText_PocketPCInfoText:
 	done
 
 DadBattleScript2:
-    checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-    iffalse .end
-    checkevent EVENT_BEAT_DAD
-    iftrue .end
     applymovement PLAYER, ELmsLabMovement_PlayerLeftDown
     sjump DadBattleScript
-.end
-    end
 
 DadBattleScript1:
     applymovement PLAYER, ELmsLabMovement_PlayerDown

@@ -83,8 +83,8 @@ ReadTrainerPartyPieces:
 ; then scale to level cap
     push bc
     and a
-    jr z, .normal ; if level is 0 then don't scale - this becomes 255
     ld b, a
+    jr z, .normal ; if level is 0 then don't scale - this becomes 255
 
     ; if this is a frontier battle then never scale
     ld a, [wBattleType]

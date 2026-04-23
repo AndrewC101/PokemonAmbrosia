@@ -728,7 +728,7 @@ StartTrainerBattle_LoadPokeBallGraphics:
     cp PRYCE
 	jp z, .load_pals
     cp CLAIR
-	jr z, .load_pals
+	jp z, .load_pals
     cp BROCK
 	jr z, .load_pals
     cp MISTY

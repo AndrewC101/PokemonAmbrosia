@@ -767,6 +767,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr z, .load_pals
 	cp JONATHAN
 	jr z, .load_pals
+	cp DAD
+	jr z, .load_pals
 	cp ADAM
 	jr nz, .notAdamPals
     ld a, [wOtherTrainerID]

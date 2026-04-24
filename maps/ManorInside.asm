@@ -404,7 +404,7 @@ WifeOfferBattleText:
 	done
 
 WifeBeginBattleText:
-	text "My little plants"
+	text "My little darlings"
 	line "are ready."
 	done
 

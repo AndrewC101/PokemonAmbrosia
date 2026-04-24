@@ -5983,8 +5983,8 @@ Function1029fe:
 	ret
 
 String_102a26:
-	db   "TRADE"
-	next "CANCEL"
+	db   "Trade"
+	next "Cancel"
 	db   "@"
 
 MenuData3_102a33:

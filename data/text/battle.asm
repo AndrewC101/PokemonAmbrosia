@@ -1097,7 +1097,7 @@ ProtectingItselfText:
 
 SpikesText:
 	text "Spikes scattered"
-	line "all around"
+	line "all around."
 	prompt
 
 IdentifiedText:

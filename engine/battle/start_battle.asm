@@ -253,10 +253,6 @@ PlayBattleMusic:
     ld de, MUSIC_EPIC_TETRIS
     cp LORD_OAK
     jp z, .done
-    cp ADAM
-    jp z, .done
-    cp JONATHAN
-    jp z, .done
 
     ; champion music
 	ld de, MUSIC_CHAMPION_BATTLE
@@ -316,9 +312,9 @@ PlayBattleMusic:
 	cp CHUCK
 	jp z, .done
 	cp LT_SURGE
-	jr z, .done
+	jp z, .done
 	cp DAD
-	jr z, .done
+	jp z, .done
 
 	ld de, MUSIC_ELITE_FOUR_PRISM
 	cp SABRINA
@@ -327,9 +323,13 @@ PlayBattleMusic:
 	jr z, .done
 	cp KAREN
 	jr z, .done
+	cp ADAM
+	jp z, .done
 
 	ld de, MUSIC_MEGALOVANIA
 	cp GIOVANNI
+	jr z, .done
+	cp JONATHAN
 	jr z, .done
 	cp ASH
 	jr z, .done

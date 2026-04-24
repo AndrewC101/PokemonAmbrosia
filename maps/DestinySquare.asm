@@ -681,6 +681,8 @@ MasterAdamScript:
 	writetext MasterAdamSeenText
 	waitbutton
 	closetext
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
 	winlosstext MasterAdamBeatenText, MasterAdamWinText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ADAM, MASTER_ADAM

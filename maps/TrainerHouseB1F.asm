@@ -332,6 +332,8 @@ BattleRouletteReceptionistScript:
 .Adam
     checkevent EVENT_BEAT_MASTER_ADAM
     iffalse .Adam1
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
     loadtrainer ADAM, MASTER_ADAM
     sjump .finish
 .Adam1
@@ -2311,6 +2313,8 @@ BattleArcadeReceptionistScript:
 	loadtrainer ADAM, ADAM_ARCADE
 	sjump .beginBattle
 .MasterAdamEnemy
+	setval MUSIC_ZINNIA_BATTLE
+	writemem wBattleMusicOverride
 	loadtrainer ADAM, MASTER_ADAM
 	sjump .beginBattle
 

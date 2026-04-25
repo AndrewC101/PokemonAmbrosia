@@ -154,6 +154,8 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize:
+    readmem wNewGamePlus
+    ifequal 1, .beatE4
     checkevent EVENT_BEAT_ELITE_FOUR
     iftrue .beatE4
 

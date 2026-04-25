@@ -1153,6 +1153,9 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4f], a
 	ld a, $1
 	ldh [rWBK], a
+	ld a, [wNewGamePlus]
+	and a
+	jr nz, .asm_11896b
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a ; DevNote - here is how to check for having defeated E4 in engine code
 	jr nz, .asm_11896b
@@ -4631,10 +4634,10 @@ BattleTowerRoomMenu2_UpdateYesNoMenu:
 	ret
 
 String_11a2cf:
-	db "YES@"
+	db "Yes@"
 
 String_11a2d3:
-	db "NO@"
+	db "No@"
 
 MenuHeader_11a2d6: ; unreferenced
 	db MENU_BACKUP_TILES ; flags

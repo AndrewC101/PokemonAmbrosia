@@ -121,7 +121,7 @@ BattleRouletteReceptionistScript:
 	sjump GivePrize
 
 .Brock
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .brock1
     loadtrainer BROCK, MASTER_BROCK
     sjump .finish
@@ -132,7 +132,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Misty
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .misty1
     loadtrainer MISTY, MASTER_MISTY
     sjump .finish
@@ -143,7 +143,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Surge
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .surge1
     loadtrainer LT_SURGE, MASTER_SURGE
     sjump .finish
@@ -154,7 +154,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Erika
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .erika1
     loadtrainer ERIKA, MASTER_ERIKA
     sjump .finish
@@ -165,7 +165,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Janine
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .janine1
     loadtrainer JANINE, MASTER_JANINE
     sjump .finish
@@ -176,7 +176,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Will
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .will1
     loadtrainer WILL, MASTER_WILL
     sjump .finish
@@ -187,7 +187,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Blaine
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .blaine1
     loadtrainer BLAINE, MASTER_BLAINE
     sjump .finish
@@ -198,7 +198,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Giovanni
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Giovanni1
     loadtrainer GIOVANNI, MASTER_GIOVANNI
     sjump .finish
@@ -209,7 +209,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Falkner
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Falkner1
     loadtrainer FALKNER, MASTER_FALKNER
     sjump .finish
@@ -220,7 +220,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Bugsy
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Bugsy1
     loadtrainer BUGSY, MASTER_BUGSY
     sjump .finish
@@ -231,7 +231,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Whitney
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Whitney1
     loadtrainer WHITNEY, MASTER_WHITNEY
     sjump .finish
@@ -242,7 +242,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Morty
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Morty1
     loadtrainer MORTY, MASTER_MORTY
     sjump .finish
@@ -253,7 +253,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Chuck
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Chuck1
     loadtrainer CHUCK, MASTER_CHUCK
     sjump .finish
@@ -264,7 +264,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Jasmine
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Jasmine1
     loadtrainer JASMINE, MASTER_JASMINE
     sjump .finish
@@ -275,7 +275,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Pryce
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Pryce1
     loadtrainer PRYCE, MASTER_PRYCE
     sjump .finish
@@ -286,7 +286,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Clair
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Clair1
     loadtrainer CLAIR, MASTER_CLAIR
     sjump .finish
@@ -297,7 +297,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Sabrina
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Sabrina1
     loadtrainer SABRINA, MASTER_SABRINA
     sjump .finish
@@ -308,7 +308,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Bruno
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Bruno1
     loadtrainer BRUNO, MASTER_BRUNO
     sjump .finish
@@ -319,7 +319,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Karen
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Karen1
     loadtrainer KAREN, MASTER_KAREN
     sjump .finish
@@ -337,7 +337,7 @@ BattleRouletteReceptionistScript:
     loadtrainer ADAM, MASTER_ADAM
     sjump .finish
 .Adam1
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Adam2
     loadtrainer ADAM, ADAM_ARCADE
     sjump .finish
@@ -348,7 +348,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Jonathan
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Jonathan1
     loadtrainer JONATHAN, MASTER_JONATHAN
     sjump .finish
@@ -359,7 +359,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Lance
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Lance1
     loadtrainer CHAMPION, LANCE_ARCADE
     sjump .finish
@@ -370,13 +370,13 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Red
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .sample
     loadtrainer RED, RED1
     sjump .finish
 
 .Blue
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Blue1
     loadtrainer BLUE, BLUE_ARCADE
     sjump .finish
@@ -393,7 +393,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Steven
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Steven1
     loadtrainer STEVEN, MASTER_STEVEN
     sjump .finish
@@ -404,7 +404,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Cynthia
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Cynthia1
     loadtrainer CYNTHIA, MASTER_CYNTHIA
     sjump .finish
@@ -415,7 +415,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Leon
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Leon1
     loadtrainer LEON, MASTER_LEON
     sjump .finish
@@ -448,19 +448,19 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Alder
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .sample
     loadtrainer HIKER, MASTER_ALDER
     sjump .finish
 
 .Diantha
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .sample
     loadtrainer BEAUTY, MASTER_DIANTHA
     sjump .finish
 
 .Aerith
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Aerith2
     loadtrainer KIMONO_GIRL, MASTER_AERITH
     sjump .finish
@@ -476,7 +476,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Yuna
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Yuna2
     loadtrainer KIMONO_GIRL, MASTER_YUNA
     sjump .finish
@@ -492,7 +492,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Rocket
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Rocket2
     loadtrainer EXECUTIVEF, MASTER_EXECUTIVEF
     sjump .finish
@@ -528,7 +528,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Seto
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Seto1
     loadtrainer BLUE, MASTER_SETO
     sjump .finish
@@ -539,7 +539,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Yami
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Yami1
     loadtrainer ASH, ATEM
     sjump .finish
@@ -550,7 +550,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Aizen
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Aizen1
     loadtrainer POKEMANIAC, MASTER_AIZEN
     sjump .finish
@@ -561,7 +561,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Xehanort
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Xehanort1
     loadtrainer SAGE, MASTER_XEHANORT
     sjump .finish
@@ -572,7 +572,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Eusine
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Eusine2
     loadtrainer MYSTICALMAN, MASTER_EUSINE
     sjump .finish
@@ -594,7 +594,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Green
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .green1
     loadtrainer LEAF, MASTER_GREEN
     sjump .finish
@@ -691,7 +691,7 @@ BattleRouletteReceptionistScript:
     sjump .finish
 
 .Oak
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .Oak1
     loadtrainer POKEMON_PROF, MASTER_OAK
     sjump .finish
@@ -1819,7 +1819,7 @@ BattleArcadeReceptionistScript:
 	setval BATTLETYPE_BATTLE_FRONTIER
 	writemem wBattleType
     writetext PickYourPlayerText
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .notBeatRedPlayerMenu
     loadmenu .PostRedCharacterMenuHeader
     _2dmenu
@@ -1878,7 +1878,7 @@ BattleArcadeReceptionistScript:
 .ChooseEnemyCharacter:
     writetext PickYourEnemyText
 
-    checkevent EVENT_BEAT_RED
+    scall BeatRedOrNewGamePlus
     iffalse .notBeatRedEnemyMenu
     loadmenu .PostRedCharacterMenuHeader
     _2dmenu
@@ -2688,6 +2688,19 @@ WhichVariantChoice:
 WhichVariantText:
     text "Which variant?"
     done
+    
+BeatRedOrNewGamePlus:
+    readmem wNewGamePlus
+    ifequal 1, .yes
+    checkevent EVENT_BEAT_RED
+    iftrue, .yes
+    
+    setval FALSE
+    end
+.yes
+    setval TRUE
+    end
+    
 
 PlayAsFalknerText:
     text "Play as"

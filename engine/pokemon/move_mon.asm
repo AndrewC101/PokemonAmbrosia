@@ -712,19 +712,11 @@ SendMonIntoBox:
 
 	call GetBaseData
 
-    ld a, [wOtherTrainerID]
-    cp FIELD_MON
-    jr nz, .copyOT
-    ld a, [wPartyCount]
-    cp 6
-    jr z, .skipOTName
-.copyOT
 	ld hl, wPlayerName
 	ld de, wBufferMonOT
 	ld bc, NAME_LENGTH
 	call CopyBytes
 
-.skipOTName
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName

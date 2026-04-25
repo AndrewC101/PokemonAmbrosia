@@ -2781,6 +2781,9 @@ WinTrainerBattle:
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
 	jr nz, .skip_win_loss_text
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jr z, .skip_win_loss_text
 	call PrintWinLossText
 .skip_win_loss_text
 
@@ -3362,6 +3365,9 @@ LostBattle:
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
 	jr nz, .skip_win_loss_text
+	ld a, [wOtherTrainerID]
+	cp FIELD_MON
+	jr z, .skip_win_loss_text
 	call PrintWinLossText
 .skip_win_loss_text
 	ret
@@ -9048,7 +9054,7 @@ LoadTrainerOrWildMonPic:
 
 ; DevNote - Field Mon, here we swap trainer and wild mon variables
 .field_mon
-    ld a, [wWinTextPointer]
+    ld a, [wSeenTrainerDistance]
     ld [wCurPartyLevel], a
     ld a, [wOtherTrainerClass]
     ld [wTempWildMonSpecies], a

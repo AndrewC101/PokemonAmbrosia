@@ -1140,6 +1140,12 @@ Script_loadtemptrainer:
 	ld [wOtherTrainerClass], a
 	ld a, [wTempTrainerID]
 	ld [wOtherTrainerID], a
+	cp FIELD_MON
+	ret nz
+	; Field mons stash their level in the trainer's win-text slot.
+	; Cache it before the boxed-capture path reuses the overlapping temp buffer.
+	ld a, [wWinTextPointer]
+	ld [wSeenTrainerDistance], a
 	ret
 
 Script_loadwildmon:

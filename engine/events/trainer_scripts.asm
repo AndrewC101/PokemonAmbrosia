@@ -24,6 +24,7 @@ StartBattleWithMapTrainerScript:
 	loadtemptrainer
 	startbattle
 	reloadmapafterbattle
+	callasm LoadTrainer_continue
 	trainerflagaction SET_FLAG
 	loadmem wRunningTrainerBattleScript, -1
 

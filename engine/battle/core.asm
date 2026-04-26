@@ -503,166 +503,13 @@ DetermineMoveOrder:
 	ld a, [wTrickRoomCount]
 	and a
 	jr z, .speed_check
-	ld de, wBattleMonSpeed
-	ld hl, wEnemyMonSpeed
-	ld c, 2
-	call CompareBytes
-	jp z, .speed_tie
+	call CompareBattleEffectiveSpeed
+	jr z, .speed_tie
 	jp nc, .enemy_first
 	jp .player_first
 
 .speed_check
-	ld de, wBattleMonSpeed
-	ld hl, wEnemyMonSpeed
-
-; DevNote - here add weather speed boosting abilities
-; ==============================
-; ========= Swift Swim =========
-; ==============================
-    ld a, [wBattleWeather]
-    cp WEATHER_RAIN
-    jr nz, .checkSun
-
-    ld a, [wEnemyMonSpecies]
-    cp KINGDRA
-    jr z, .checkOtherPlayerRain
-    cp POLIWRATH
-    jr z, .checkOtherPlayerRain
-
-    ld a, [wBattleMonSpecies]
-    cp KINGDRA
-    jp z, .simulatePlayerDoubleSpeed
-    cp POLIWRATH
-    jp z, .simulatePlayerDoubleSpeed
-
-.checkSun
-; ===============================
-; ========= Chlorophyll =========
-; ===============================
-    ld a, [wBattleWeather]
-    cp WEATHER_SUN
-    jr nz, .checkSand
-
-    ld a, [wEnemyMonSpecies]
-    cp VENUSAUR
-    jr z, .checkOtherPlayerSun
-    cp EXEGGCUTE
-    jr z, .checkOtherPlayerSun
-    cp EXEGGUTOR
-    jr z, .checkOtherPlayerSun
-
-    ld a, [wBattleMonSpecies]
-    cp VENUSAUR
-    jp z, .simulatePlayerDoubleSpeed
-    cp EXEGGCUTE
-    jp z, .simulatePlayerDoubleSpeed
-    cp EXEGGUTOR
-    jp z, .simulatePlayerDoubleSpeed
-
-.checkSand
-; ==============================
-; ========= Sand Rush ==========
-; ==============================
-    ld a, [wBattleWeather]
-    cp WEATHER_SANDSTORM
-    jp nz, .checkHail
-
-    ld a, [wEnemyMonSpecies]
-    cp DRILBUR
-    jr z, .checkOtherPlayerSand
-    cp EXCADRILL
-    jr z, .checkOtherPlayerSand
-    cp GOLEM
-    jr z, .checkOtherPlayerSand
-
-    ld a, [wBattleMonSpecies]
-    cp DRILBUR
-    jr z, .simulatePlayerDoubleSpeed
-    cp EXCADRILL
-    jr z, .simulatePlayerDoubleSpeed
-    cp GOLEM
-    jr z, .simulatePlayerDoubleSpeed
-    jr .continue
-
-.checkHail
-; ==============================
-; ========= Slush Rush =========
-; ==============================
-    ld a, [wBattleWeather]
-    cp WEATHER_HAIL
-    jp nz, .continue
-
-    ld a, [wEnemyMonSpecies]
-    cp ARCTOZOLT
-    jr z, .checkOtherPlayerHail
-
-    ld a, [wBattleMonSpecies]
-    cp ARCTOZOLT
-    jr z, .simulatePlayerDoubleSpeed
-    jr .continue
-
-.checkOtherPlayerRain
-    ld a, [wBattleMonSpecies]
-    cp POLIWRATH
-    jr z, .continue
-    cp KINGDRA
-    jr z, .continue
-    jr .simulateEnemyDoubleSpeed
-
-.checkOtherPlayerSun
-    ld a, [wBattleMonSpecies]
-    cp VENUSAUR
-    jr z, .continue
-    cp EXEGGCUTE
-    jr z, .continue
-    cp EXEGGUTOR
-    jr z, .continue
-    jr .simulateEnemyDoubleSpeed
-
-.checkOtherPlayerSand
-    ld a, [wBattleMonSpecies]
-    cp DRILBUR
-    jr z, .continue
-    cp EXCADRILL
-    jr z, .continue
-    cp GOLEM
-    jr z, .continue
-    jr .simulateEnemyDoubleSpeed
-
-.checkOtherPlayerHail
-    ld a, [wBattleMonSpecies]
-    cp ARCTOZOLT
-    jr z, .continue
-
-; enemy moves first unless enemy is paralysed or enemy is >+2 speed - in which case compare speed as normal
-.simulateEnemyDoubleSpeed
-	ld a, [wEnemyMonStatus]
-	and 1 << PAR
-	jr nz, .continue
-    ld a, [wPlayerSpdLevel]
-    cp BASE_STAT_LEVEL + 2
-    jr nc, .continue
-    ld a, [wEnemySpdLevel]
-    cp BASE_STAT_LEVEL - 1
-    jr c, .continue
-    jr .enemy_first
-
-; player moves first unless player is paralysed or enemy is >+2 speed - in which case compare speed as normal
-.simulatePlayerDoubleSpeed
-	ld a, [wBattleMonStatus]
-	and 1 << PAR
-	jr nz, .continue
-    ld a, [wEnemySpdLevel]
-    cp BASE_STAT_LEVEL + 2
-    jr nc, .continue
-    ld a, [wPlayerSpdLevel]
-    cp BASE_STAT_LEVEL - 1
-    jr c, .continue
-    jr .player_first
-
-.continue
-	ld c, 2
-	call CompareBytes
+	call CompareBattleEffectiveSpeed
 	jr z, .speed_tie
 	jp nc, .player_first
 	jp .enemy_first
@@ -686,6 +533,123 @@ DetermineMoveOrder:
 
 .enemy_first
 	and a
+	ret
+
+CompareBattleEffectiveSpeed:
+	call LoadPlayerEffectiveSpeed
+	call LoadEnemyEffectiveSpeed
+	ld de, hMultiplicand + 1
+	ld hl, hEnemyMonSpeed
+	ld c, 2
+	jp CompareBytes
+
+LoadPlayerEffectiveSpeed:
+	ld a, [wBattleMonSpecies]
+	ld hl, wBattleMonSpeed
+	ld de, hMultiplicand + 1
+	jr LoadEffectiveSpeed
+
+LoadEnemyEffectiveSpeed:
+	ld a, [wEnemyMonSpecies]
+	ld hl, wEnemyMonSpeed
+	ld de, hEnemyMonSpeed
+
+LoadEffectiveSpeed:
+	; Copy the already-calculated battle speed into a scratch buffer, then
+	; apply any active weather ability boost there. This keeps the stored
+	; battle stats unchanged, so weather changes and repeated checks can't
+	; compound the boost. The temporary value is capped to the normal 999
+	; in-battle stat limit before being used for ordering or display.
+	push bc
+	ld b, a
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	ld a, b
+	call DoesMonHaveWeatherSpeedAbility
+	jr nc, .done
+	ld a, [de]
+	add a
+	ld [de], a
+	dec de
+	ld a, [de]
+	adc a
+	ld [de], a
+	inc de
+	ld a, [de]
+	ld c, a
+	dec de
+	ld a, [de]
+	cp HIGH(MAX_STAT_VALUE)
+	jr c, .done
+	jr nz, .cap
+	ld a, c
+	cp LOW(MAX_STAT_VALUE)
+	jr c, .done
+.cap
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [de], a
+	inc de
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [de], a
+.done
+	pop bc
+	ret
+
+DoesMonHaveWeatherSpeedAbility:
+	push hl
+	push de
+	push bc
+	ld b, a
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .swift_swim
+	cp WEATHER_SUN
+	jr z, .chlorophyll
+	cp WEATHER_SANDSTORM
+	jr z, .sand_rush
+	cp WEATHER_HAIL
+	jr z, .slush_rush
+	jr .no
+
+.swift_swim
+	ld a, b
+	ld hl, Core_SwiftSwimPokemon
+	jr .check_array
+
+.chlorophyll
+	ld a, b
+	ld hl, Core_ChlorophyllPokemon
+	jr .check_array
+
+.sand_rush
+	ld a, b
+	ld hl, Core_SandRushPokemon
+	jr .check_array
+
+.slush_rush
+	ld a, b
+	ld hl, Core_SlushRushPokemon
+
+.check_array
+	ld de, 1
+	call IsInArray
+	jr c, .yes
+
+.no
+	pop bc
+	pop de
+	pop hl
+	and a
+	ret
+
+.yes
+	pop bc
+	pop de
+	pop hl
+	scf
 	ret
 
 CheckContestBattleOver:
@@ -1308,6 +1272,27 @@ Core_GrimPokemon:
     db CHARMANDER
     db CHARMELEON
     db CHARIZARD
+    db -1
+
+Core_SwiftSwimPokemon:
+    db KINGDRA
+    db POLIWRATH
+    db -1
+
+Core_ChlorophyllPokemon:
+    db VENUSAUR
+    db EXEGGCUTE
+    db EXEGGUTOR
+    db -1
+
+Core_SandRushPokemon:
+    db DRILBUR
+    db EXCADRILL
+    db GOLEM
+    db -1
+
+Core_SlushRushPokemon:
+    db ARCTOZOLT
     db -1
 
 Core_GutsPokemon:

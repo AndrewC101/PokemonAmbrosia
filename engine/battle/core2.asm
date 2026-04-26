@@ -1146,9 +1146,28 @@ StatsInfoBoxLoop:
 	ld b, a
 	pop hl
 	push de
+	push hl
+	ld a, c
+	cp 8
+	jr nz, .regular_speed
+	ld a, b
+	cp 10
+	jr c, .player_speed
+	farcall LoadEnemyEffectiveSpeed
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.player_speed
+	farcall LoadPlayerEffectiveSpeed
+	ldh a, [hMultiplicand + 1]
+	ldh [hEnemyMonSpeed + 0], a
+	ldh a, [hMultiplicand + 2]
+	ldh [hEnemyMonSpeed + 1], a
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.regular_speed
 	ld d, h
 	ld e, l
-	push hl
+.got_stat_ptr
 	call CoordsBCtoHL
 	push bc
 	lb bc, 2, 4

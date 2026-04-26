@@ -2551,7 +2551,7 @@ BattleCommand_CheckFaint:
 ; apply recoil
 	ld hl, LifeOrbRecoilText
 	call StdBattleTextbox
-	farcall GetEighthMaxHP
+	farcall GetTenthMaxHP
 	farcall SubtractHPFromUser
 .noLifeOrb
 ; checkfaint

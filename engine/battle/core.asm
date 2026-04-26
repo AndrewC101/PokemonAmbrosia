@@ -2185,6 +2185,28 @@ GetEighthMaxHP:
 .end
 	ret
 
+GetTenthMaxHP:
+; output: bc
+	call GetMaxHP
+	ld a, b
+	ldh [hDividend + 0], a
+	ld a, c
+	ldh [hDividend + 1], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	ld c, a
+; at least 1
+	or b
+	jr nz, .end
+	inc c
+.end
+	ret
+
 GetQuarterMaxHP:
 ; output: bc
 	call GetMaxHP
@@ -6804,8 +6826,7 @@ MoveInfoBox:
 	lb bc, 1, 3
 	hlcoord 6, 10
 	call PrintNum
-	ld [hl], "a" ; displays percent symbol
-	;ld [hl], '<%>'
+	ld [hl], "<%>"
 	hlcoord 9, 9
 .done
 	ret

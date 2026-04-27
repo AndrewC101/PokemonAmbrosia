@@ -487,7 +487,7 @@ AI_Smart_Switch:
 	add hl, bc
 	ld a, [hl]
 	and PP_MASK
-	jr z, .switch
+	jp z, .switch
 .not_encored
 
 ; don't switch if enemy is weakened, just let it die
@@ -499,19 +499,32 @@ AI_Smart_Switch:
 	cp BASE_STAT_LEVEL - 1
 	jr c, .switch
 
-; switch if enemy attack or special attack at -2 or lower, unless the other offense is boosted
+; switch if the enemy's role-appropriate offense is at -2 or lower
+; don't do this if either offense is currently boosted or the mon is mixed
     ld a, [wEnemyAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .magicGuard
     ld a, [wEnemySAtkLevel]
     cp BASE_STAT_LEVEL + 1
     jr nc, .magicGuard
-    ld a, [wEnemyAtkLevel]
-	cp BASE_STAT_LEVEL - 1
-	jr c, .checkSetupAndSwitchIfWeCantKO
+	call IsEnemyPhysicalOrSpecial
+	jr z, .magicGuard
+	jr c, .checkLoweredAttack
     ld a, [wEnemySAtkLevel]
 	cp BASE_STAT_LEVEL - 1
-	jr c, .checkSetupAndSwitchIfWeCantKO
+	jr c, .switchForLoweredOffense
+	jr .magicGuard
+
+.checkLoweredAttack
+    ld a, [wEnemyAtkLevel]
+	cp BASE_STAT_LEVEL - 1
+	jr c, .switchForLoweredOffense
+	jr .magicGuard
+
+.switchForLoweredOffense
+	call AI_80_20
+	ret c
+	jr .checkSetupAndSwitchIfWeCantKO
 
 .magicGuard
 ; Pokemon who are immune to residual damage (magic guard) should not be considered
@@ -5504,6 +5517,32 @@ IsPlayerPhysicalOrSpecial:
 .yes
     scf
     ret
+
+; return carry if enemy base Attack is higher than base Special Attack
+; return z if the base offenses are tied
+IsEnemyPhysicalOrSpecial:
+	push bc
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseAttack]
+	ld b, a
+	ld a, [wBaseSpecialAttack]
+	cp b
+	pop bc
+	jr c, .yes
+	jr z, .tie
+	ld a, 1
+	and a
+	ret
+
+.tie
+	xor a
+	ret
+
+.yes
+	scf
+	ret
 
 IsAttackMaxed:
     ld a, [wEnemyAtkLevel]

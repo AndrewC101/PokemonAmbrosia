@@ -707,6 +707,7 @@ CheatCodeRepo:
     waitbutton
     writetext RebirthCodeText
     writetext DoubleExpCodeText
+    writetext RandomPartyCodeText
     readmem wNewGamePlus
     ifequal 1, .printMasterBallCode
     checkevent EVENT_UNLOCK_MATERBALL_CODE
@@ -779,6 +780,11 @@ WarpCodeText:
 DoubleExpCodeText:
     text "SpeedRun"
     line "Double Exp gain."
+    prompt
+
+RandomPartyCodeText:
+    text "Stochastic"
+    line "Random Lv5 party."
     prompt
 
 ArceusCodeText:
@@ -2128,6 +2134,8 @@ ElmsLabMrMimeScript:
     iftrue .giveWarp
     callasm CheckDoubleExpPassword
     iftrue .doubleExpToggle
+    callasm CheckRandomPartyPassword
+    iftrue .randomParty
     callasm CheckArceusPassword
     iftrue .giveArceus
     callasm CheckRebirthPassword
@@ -2203,6 +2211,42 @@ ElmsLabMrMimeScript:
     writetext DoubleExpOffText
     closetext
 	loadmem wDoubleExp, 0
+    end
+.randomParty
+    reloadmap
+    opentext
+    writetext RandomPartyWarningText
+    nooryes
+    iffalse .cancelRandomParty
+    writetext RandomPartyLegendaryFilterText
+    nooryes
+    iffalse .askEvolvedWithoutLegendFilter
+    writetext RandomPartyEvolutionFilterText
+    nooryes
+    iffalse .legendOnlyRandomParty
+    callasm GenerateFilteredRandomPartyCheat
+    sjump .finishRandomParty
+.askEvolvedWithoutLegendFilter
+    writetext RandomPartyEvolutionFilterText
+    nooryes
+    iffalse .unfilteredRandomParty
+    callasm GenerateUnevolvedFilteredRandomPartyCheat
+    sjump .finishRandomParty
+.legendOnlyRandomParty
+    callasm GenerateLegendaryFilteredRandomPartyCheat
+    sjump .finishRandomParty
+.unfilteredRandomParty
+    callasm GenerateRandomPartyCheat
+.finishRandomParty
+    reloadmap
+    opentext
+    writetext RandomPartyText
+    closetext
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+    end
+.cancelRandomParty
+    closetext
     end
 .giveArceus
     reloadmap
@@ -2299,6 +2343,27 @@ DoubleExpOffText:
     text "Double Exp off!"
     prompt
 
+RandomPartyWarningText:
+    text "This will erase"
+    line "your current"
+    cont "party. Continue?"
+    done
+
+RandomPartyLegendaryFilterText:
+    text "Exclude legendary"
+    line "#mon?"
+    done
+
+RandomPartyEvolutionFilterText:
+    text "Exclude evolved"
+    line "#mon?"
+    done
+
+RandomPartyText:
+    text "A random party of"
+    line "Lv5 #mon!"
+    prompt
+
 MakeRoomInPartyText:
     text "Make room in"
     line "your party."
@@ -2366,6 +2431,10 @@ CheckDoubleExpPassword:
 	ld de, DoubleExpPassword
 	jr ComparePassword
 
+CheckRandomPartyPassword:
+	ld de, RandomPartyPassword
+	jr ComparePassword
+
 CheckArceusPassword:
 	ld de, ArceusPassword
 	jr ComparePassword
@@ -2405,8 +2474,339 @@ WarpPassword:
 DoubleExpPassword:
     db "SpeedRun"
 
+RandomPartyPassword:
+    db "Stochastic"
+
 ArceusPassword:
     db "Omnipotent"
+
+GenerateRandomPartyCheat:
+	call ClearPartyForRandomCheat
+	ld b, PARTY_LENGTH
+.loop
+	call GetRandomCheatPartySpecies
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+	xor a
+	ld [wMonType], a
+	predef TryAddMonToParty
+	dec b
+	jr nz, .loop
+	ret
+
+GenerateFilteredRandomPartyCheat:
+	call ClearPartyForRandomCheat
+	ld b, PARTY_LENGTH
+.loop
+	call GetRandomFilteredCheatPartySpecies
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+	xor a
+	ld [wMonType], a
+	predef TryAddMonToParty
+	dec b
+	jr nz, .loop
+	ret
+
+GenerateLegendaryFilteredRandomPartyCheat:
+	call ClearPartyForRandomCheat
+	ld b, PARTY_LENGTH
+.loop
+	call GetRandomLegendaryFilteredCheatPartySpecies
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+	xor a
+	ld [wMonType], a
+	predef TryAddMonToParty
+	dec b
+	jr nz, .loop
+	ret
+
+GenerateUnevolvedFilteredRandomPartyCheat:
+	call ClearPartyForRandomCheat
+	ld b, PARTY_LENGTH
+.loop
+	call GetRandomUnevolvedFilteredCheatPartySpecies
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+	xor a
+	ld [wMonType], a
+	predef TryAddMonToParty
+	dec b
+	jr nz, .loop
+	ret
+
+ClearPartyForRandomCheat:
+	xor a
+	ld [wBattleMode], a
+	ld [wPartyCount], a
+	ld hl, wPartySpecies
+	ld bc, PARTY_LENGTH
+	call ByteFill
+	dec a
+	ld [wPartyEnd], a
+
+	xor a
+	ld hl, wPartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH * PARTY_LENGTH
+	call ByteFill
+
+	xor a
+	ld hl, wPartyMonOTs
+	ld bc, NAME_LENGTH * PARTY_LENGTH
+	call ByteFill
+
+	xor a
+	ld hl, wPartyMonNicknames
+	ld bc, MON_NAME_LENGTH * PARTY_LENGTH
+	call ByteFill
+	ret
+
+GetRandomCheatPartySpecies:
+.loop
+	ld a, NUM_POKEMON
+	call RandomRange
+	inc a
+	cp UNOWN
+	jr z, .loop
+	ret
+
+GetRandomFilteredCheatPartySpecies:
+	push bc
+.loop
+	call GetRandomCheatPartySpecies
+	ld [wCurPartySpecies], a
+	call IsLegendaryOrMythicalCheatSpecies
+	jr c, .loop
+	call IsEvolvedCheatSpecies
+	jr c, .loop
+	ld a, [wCurPartySpecies]
+	pop bc
+	ret
+
+GetRandomLegendaryFilteredCheatPartySpecies:
+	push bc
+.loop
+	call GetRandomCheatPartySpecies
+	ld [wCurPartySpecies], a
+	call IsLegendaryOrMythicalCheatSpecies
+	jr c, .loop
+	ld a, [wCurPartySpecies]
+	pop bc
+	ret
+
+GetRandomUnevolvedFilteredCheatPartySpecies:
+	push bc
+.loop
+	call GetRandomCheatPartySpecies
+	ld [wCurPartySpecies], a
+	call IsEvolvedCheatSpecies
+	jr c, .loop
+	ld a, [wCurPartySpecies]
+	pop bc
+	ret
+
+IsEvolvedCheatSpecies:
+	ld a, [wCurPartySpecies]
+	ld hl, CheatEvolvedSpecies
+.loop
+	ld b, [hl]
+	inc hl
+	ld a, b
+	cp -1
+	jr z, .no
+	ld a, [wCurPartySpecies]
+	cp b
+	jr z, .yes
+	jr .loop
+.yes
+	scf
+	ret
+.no
+	and a
+	ret
+
+IsLegendaryOrMythicalCheatSpecies:
+	ld a, [wCurPartySpecies]
+	ld hl, CheatLegendarySpecies
+.loop
+	ld b, [hl]
+	inc hl
+	ld a, b
+	cp -1
+	jr z, .no
+	ld a, [wCurPartySpecies]
+	cp b
+	jr z, .yes
+	jr .loop
+.yes
+	scf
+	ret
+.no
+	and a
+	ret
+
+CheatLegendarySpecies:
+	db ARTICUNO
+	db ZAPDOS
+	db MOLTRES
+	db DARKRAI
+	db MEW
+	db GENESECT
+	db SHAYMIN
+	db LATIAS
+	db DEOXYS
+	db LATIOS
+	db PALKIA
+	db KYOGRE
+	db GROUDON
+	db RAYQUAZA
+	db DIALGA
+	db XERNEAS
+	db YVELTAL
+	db GIRATINA
+	db RAIKOU
+	db ENTEI
+	db SUICUNE
+	db LUGIA
+	db HO_OH
+	db CELEBI
+	db MEWTWO
+	db ARCEUS
+	db -1
+
+CheatEvolvedSpecies:
+	db ABOMASNOW
+	db AEGISLASH
+	db ALAKAZAM
+	db AMPHAROS
+	db ARCANINE
+	db ARCTIBAX
+	db AZUMARILL
+	db BAXCALIBUR
+	db BISHARP
+	db BLASTOISE
+	db BLISSEY
+	db BRELOOM
+	db CHANDELURE
+	db CHARIZARD
+	db CHARMELEON
+	db CLEFABLE
+	db CLOYSTER
+	db CONKELDURR
+	db CROBAT
+	db DOUBLADE
+	db DRAGONAIR
+	db DRAGONITE
+	db DUOSION
+	db ELECTIVIRE
+	db ESPEON
+	db EXCADRILL
+	db EXEGGUTOR
+	db FERROTHORN
+	db FLAAFFY
+	db FLAREON
+	db FROGADIER
+	db GABITE
+	db GALLADE
+	db GALVANTULA
+	db GARCHOMP
+	db GARDEVOIR
+	db GENGAR
+	db GLISCOR
+	db GOLBAT
+	db GOLEM
+	db GRAVELER
+	db GRENINJA
+	db GROVYLE
+	db GURDURR
+	db GYARADOS
+	db HAUNTER
+	db HONCHKROW
+	db HOUNDOOM
+	db HYDREIGON
+	db INFERNAPE
+	db IVYSAUR
+	db JOLTEON
+	db KADABRA
+	db KINGAMBIT
+	db KINGDRA
+	db KIRLIA
+	db KLEAVOR
+	db LAMPENT
+	db LOPUNNY
+	db LUCARIO
+	db MACHAMP
+	db MACHOKE
+	db MAGMORTAR
+	db MAGNETON
+	db MAGNEZONE
+	db MAMOSWINE
+	db MARSHTOMP
+	db MELMETAL
+	db METAGROSS
+	db METANG
+	db MILOTIC
+	db MISMAGIUS
+	db MONFERNO
+	db NIDOKING
+	db NIDOQUEEN
+	db NIDORINA
+	db NIDORINO
+	db NINETALES
+	db NINETALES_A
+	db NOCTOWL
+	db NOWN
+	db PERSIAN
+	db PILOSWINE
+	db POLITOED
+	db POLIWHIRL
+	db POLIWRATH
+	db PORYGON2
+	db PORYGONZ
+	db PUPITAR
+	db RAICHU
+	db RAPIDASH
+	db RATICATE
+	db REUNICLUS
+	db RHYDON
+	db RHYPERIOR
+	db SALAMENCE
+	db SCEPTILE
+	db SCIZOR
+	db SCOLIPEDE
+	db SHELGON
+	db SLOWBRO
+	db SNEASLER
+	db STARAPTOR
+	db STARAVIA
+	db STARMIE
+	db STEELIX
+	db SWAMPERT
+	db SYLVEON
+	db TENTACRUEL
+	db TOGEKISS
+	db TOGETIC
+	db TYRANITAR
+	db UMBREON
+	db URSALUNA
+	db URSALUNA_B
+	db URSARING
+	db VAPOREON
+	db VENUSAUR
+	db VICTREEBEL
+	db VOLCARONA
+	db WARTORTLE
+	db WEAVILE
+	db WHIMSICOTT
+	db WHIRLIPEDE
+	db YANMEGA
+	db ZWEILOUS
+	db -1
 
 RebirthPassword:
     db "Resurrect"

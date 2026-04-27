@@ -136,8 +136,11 @@ INCLUDE "maps/FastShipCabins_SE_SSE_CaptainsCabin.asm"
 SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/Route34.asm"
-INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/Route26HealHouse.asm"
+
+SECTION "Map Scripts 54", ROMX
+
+INCLUDE "maps/ElmsLab.asm"
 
 SECTION "Map Scripts 10", ROMX
 

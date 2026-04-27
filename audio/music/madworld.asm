@@ -231,7 +231,7 @@ Music_MadWorld_Ch1:
 	note D_, 2
 	octave 2
 	note A#, 16
-	endchannel
+	loopchannel 0, Music_MadWorld_Ch1
 
 Music_MadWorld_Ch2:
 	dutycycle 1
@@ -281,7 +281,7 @@ Music_MadWorld_Ch2:
 	note C_, 4
 	octave 1
 	note A#, 16
-	endchannel
+	loopchannel 0, Music_MadWorld_Ch2
 
 Music_MadWorld_Ch2_ditty_1:
 	octave 2

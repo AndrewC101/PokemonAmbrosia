@@ -277,6 +277,43 @@ ApplyHPBarPals:
 	call FillBoxCGB
 	ret
 
+InitBattleStatusIconPalette:
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
+
+	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS
+	ld a, [wBattleTimeOfDay]
+	and a
+	jr z, .day
+	ld a, LOW(PALRGB_NIGHT)
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_NIGHT)
+	jr .storeBackgroundHigh
+
+.day
+	ld a, LOW(PALRGB_WHITE)
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_WHITE)
+
+.storeBackgroundHigh
+	ld [de], a
+	inc de
+	inc de
+	inc de
+	inc de
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+
+	pop af
+	ldh [rWBK], a
+	ret
+
 LoadPlayerStatusIconPalette:
 	ld de, wBattleMonStatus
 	call GetStatusConditionIndex_Colour

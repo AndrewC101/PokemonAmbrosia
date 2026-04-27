@@ -109,6 +109,7 @@ _CGB_BattleColors:
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
 
+	call InitBattleStatusIconPalette
 	call LoadPlayerStatusIconPalette ; PAL_BATTLE_BG_STATUS + 2
 	call LoadEnemyStatusIconPalette ; PAL_BATTLE_BG_STATUS + 4
 
@@ -149,27 +150,12 @@ _CGB_FinishBattleScreenLayout:
 
 	hlcoord 12, 8, wAttrmap
 	lb bc, 1, 2
-	ld a, [wBattleTimeOfDay]
-	and a
-	jr nz, .darkPlayer
 	ld a, PAL_BATTLE_BG_STATUS
-	jr .fillPlayer
-.darkPlayer
-	ld a, PAL_BATTLE_BG_PLAYER
-.fillPlayer
 	call FillBoxCGB
 
 	hlcoord 2, 1, wAttrmap
 	lb bc, 1, 2
-
-	ld a, [wBattleTimeOfDay]
-	and a
-	jr nz, .darkEnemy
 	ld a, PAL_BATTLE_BG_STATUS
-	jr .fillEnemy
-.darkEnemy
-	ld a, PAL_BATTLE_BG_PLAYER
-.fillEnemy
 	call FillBoxCGB
 
 	hlcoord 0, 12, wAttrmap

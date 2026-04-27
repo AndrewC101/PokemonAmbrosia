@@ -986,6 +986,7 @@ PrintBattleInfo:
 	push bc
 	xor a
 	ld [wTrainerInfoPage], a
+	farcall _LoadFontsExtra2
 	;call LoadFontsExtra
 	;call LoadStandardFont
 	call UpdatePageText
@@ -1060,6 +1061,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	inc de
 	ld a, [hl]  	; Stat
 	ld c, a
+	jp .format_stat_change
 	cp 7			; 7 = no changes
 	jr c, .lowered
 	jr z, .same
@@ -1076,6 +1078,29 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	xor a
 	jr .insert
 .lowered
+	ld a, "▼"
+	ld [de], a
+	inc de
+	ld a, 7
+	sub c
+.format_stat_change
+	ld a, c
+	cp 7			; 7 = no changes
+	jr c, .format_lowered
+	jr z, .format_same
+	ld a, "▲"
+	ld [de], a
+	inc de
+	ld a, c
+	sub 7			; a = a - 7
+	jr .insert
+.format_same
+	ld a, " "
+	ld [de], a
+	inc de
+	xor a
+	jr .insert
+.format_lowered
 	ld a, "▼"
 	ld [de], a
 	inc de
@@ -1137,7 +1162,7 @@ StatsInfoBoxLoop:
 	call CoordsBCtoHL
 	ld a, c
 	cp 14
-	jr nc, .finish
+	jp nc, .finish
 	push bc
 	call PlaceString
 	pop bc
@@ -1148,8 +1173,24 @@ StatsInfoBoxLoop:
 	push de
 	push hl
 	ld a, c
+	cp 6
+	jr z, .effective_defense
 	cp 8
-	jr nz, .regular_speed
+	jr z, .effective_speed
+	cp 12
+	jr z, .effective_spdef
+	jr .regular_stat
+.effective_defense
+	ld a, b
+	cp 10
+	jr c, .player_defense
+	farcall LoadEnemyEffectiveDefense
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.player_defense
+	farcall LoadPlayerEffectiveDefense
+	jr .player_effective_stat
+.effective_speed
 	ld a, b
 	cp 10
 	jr c, .player_speed
@@ -1158,13 +1199,24 @@ StatsInfoBoxLoop:
 	jr .got_stat_ptr
 .player_speed
 	farcall LoadPlayerEffectiveSpeed
+	jr .player_effective_stat
+.effective_spdef
+	ld a, b
+	cp 10
+	jr c, .player_spdef
+	farcall LoadEnemyEffectiveSpDef
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.player_spdef
+	farcall LoadPlayerEffectiveSpDef
+.player_effective_stat
 	ldh a, [hMultiplicand + 1]
 	ldh [hEnemyMonSpeed + 0], a
 	ldh a, [hMultiplicand + 2]
 	ldh [hEnemyMonSpeed + 1], a
 	ld de, hEnemyMonSpeed
 	jr .got_stat_ptr
-.regular_speed
+.regular_stat
 	ld d, h
 	ld e, l
 .got_stat_ptr
@@ -1183,7 +1235,7 @@ StatsInfoBoxLoop:
 	ld b, a
 	inc c
 	inc c
-	jr StatsInfoBoxLoop
+	jp StatsInfoBoxLoop
 .finish
 	pop hl
 	ret
@@ -1499,7 +1551,9 @@ EnemyAbilityInfoBox:
 	ld c, 18
 	call Textbox
 
-    predef CopyOTMonToTempMon
+	xor a
+	ld [wMonType], a
+	predef CopyOTMonToTempMon
 	farcall DisplayFoeNameAndAbility
 
 	ld de, .FoeString
@@ -1741,79 +1795,18 @@ InfoBoxLeftPress:
 	ld de, SFX_SWITCH_POCKETS
 	call PlaySFX
 
-	ld a, [wTrainerInfoPage]
-	and a
-	jr z, .jump_to_page_5
-	cp 1
-	jr z, .jump_to_page_1
-	cp 2
-	jr z, .jump_to_page_2
-	cp 3
-	jr z, .jump_to_page_3
-	cp 4
-	jr z, .jump_to_page_4
 	call DecreasePage
 	call UpdatePageText
-	jp FieldInfoBox
-.jump_to_page_1
-	call DecreasePage
-	call UpdatePageText
-	jp StatChangesInfoBox
-.jump_to_page_2
-	call DecreasePage
-	call UpdatePageText
-	jp StatsInfoBox
-.jump_to_page_3
-	call DecreasePage
-	call UpdatePageText
-	jp FeoDetailsPageInfoBox
-.jump_to_page_4
-	call DecreasePage
-	call UpdatePageText
-	jp EnemyAbilityInfoBox
-.jump_to_page_5
-	call DecreasePage
-	call UpdatePageText
-	jp FieldInfoBox
+	jp RenderTrainerInfoPage
 
 InfoBoxRightPress:
 	; play switching pockets SFX
 	ld de, SFX_SWITCH_POCKETS
 	call PlaySFX
 
-	ld a, [wTrainerInfoPage]
-	and a
-	jr z, .jump_to_page_1
-	cp 1
-	jr z, .jump_to_page_2
-	cp 2
-	jr z, .jump_to_page_3
-	cp 3
-	jr z, .jump_to_page_4
-	cp 4
-	jr z, .jump_to_page_0
-	ret
-
-.jump_to_page_0
 	call IncreasePage
 	call UpdatePageText
-	jp StatChangesInfoBox
-.jump_to_page_1
-	call IncreasePage
-	call UpdatePageText
-	jp StatsInfoBox
-.jump_to_page_2
-	call IncreasePage
-	call UpdatePageText
-	jp FeoDetailsPageInfoBox
-.jump_to_page_3
-	call IncreasePage
-	call UpdatePageText
-	jp EnemyAbilityInfoBox
-.jump_to_page_4
-	call IncreasePage
-	call UpdatePageText
-	jp FieldInfoBox
+	jp RenderTrainerInfoPage
 
 IncreasePage:
 	ld a, [wTrainerInfoPage]
@@ -1834,6 +1827,18 @@ DecreasePage:
 	dec a
 	ld [wTrainerInfoPage], a
 	ret
+
+RenderTrainerInfoPage:
+	ld a, [wTrainerInfoPage]
+	and a
+	jp z, StatChangesInfoBox
+	cp 1
+	jp z, StatsInfoBox
+	cp 2
+	jp z, FeoDetailsPageInfoBox
+	cp 3
+	jp z, EnemyAbilityInfoBox
+	jp FieldInfoBox
 
 UpdatePageText:
 	hlcoord 4, 17

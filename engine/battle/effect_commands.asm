@@ -1440,69 +1440,6 @@ BattleCommand_Stab:
 	ldh a, [hProduct + 3]
 	or b
 	jr z, .ok ; This is a very convoluted way to get back that we've essentially dealt no damage.
-
-; DevNote - expert belt - x1.2 damage on SE hits
-; DevNote - Fix this!!
-; The problem with ExpertBelt / SolidRock is this
-; we are right now in a loop that goes through enemy types
-; if we are SE against one we boost
-; so we sometimes boost even if damage is neutral, eg thunderbolt vs dragon/flying
-; and if we are SE against both we get a double boost 1.2*1.2 = 1.44
-; ============================
-; ======= Expert Belt ========
-; ============================
-    push hl
-	call GetUserItem
-	ld a, b
-	cp HELD_EXPERT_BELT
-	pop hl
-	jr nz, .solidRock
-
-	ld a, [wTypeModifier]
-	and $7f
-    cp EFFECTIVE
-	jr nc, .applyExpertBelt
-	jr .solidRock
-
-; add 15% damage
-.applyExpertBelt
-    call FifteenPercentBoost
-
-.solidRock
-; ==============================
-; ======= Solid Rock ===========
-; ==============================
-    call GetOpposingMon
-	push bc
-	push de
-	push hl
-	ld hl, SolidRockPokemon
-	ld de, 1
-	call IsInArray
-	pop hl
-	pop de
-	pop bc
-	jr c, .checkSolidRock
-	jr .continue
-
-.checkSolidRock
-    ld a, [wTypeModifier]
-	and $7f
-    cp EFFECTIVE
-	jr nc, .applySolidRock
-	jr .continue
-
-.applySolidRock
-; SE hits do 80% normal damage
-    ld a, 4
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 5
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-
-.continue
 ; Take the product and divide it by 10.
 	ld a, 10
 	ldh [hDivisor], a
@@ -1532,12 +1469,71 @@ BattleCommand_Stab:
 
 .end
 	call BattleCheckTypeMatchup
+	call ApplyFinalSuperEffectiveDamageModifiers
 	ld a, [wTypeMatchup]
 	ld b, a
 	ld a, [wTypeModifier]
 	and STAB_DAMAGE
 	or b
 	ld [wTypeModifier], a
+	ret
+
+ApplyFinalSuperEffectiveDamageModifiers:
+	ld a, [wTypeMatchup]
+	cp EFFECTIVE
+	ret c
+	ret z
+
+	call GetUserItem
+	ld a, b
+	cp HELD_EXPERT_BELT
+	jr nz, .solidRock
+	call LoadCurDamageIntoMultiplicand
+	call TwentyPercentBoost
+	call StoreDamageQuotient
+
+.solidRock
+	call GetOpposingMon
+	ld hl, SolidRockPokemon
+	ld de, 1
+	call IsInArray
+	ret nc
+	call LoadCurDamageIntoMultiplicand
+	call ThreeQuartersDamage
+	jp StoreDamageQuotient
+
+LoadCurDamageIntoMultiplicand:
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+	ret
+
+StoreDamageQuotient:
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	or b
+	jr nz, .store
+	ld hl, wCurDamage
+	ld a, [hli]
+	or [hl]
+	ret z
+	xor a
+	ld [wCurDamage], a
+	inc a
+	ld [wCurDamage + 1], a
+	ret
+
+.store
+	ldh a, [hQuotient + 2]
+	ld hl, wCurDamage
+	ld [hli], a
+	ldh a, [hQuotient + 3]
+	ld [hl], a
 	ret
 
 CheckStealthRockTypeMatchup:
@@ -3732,6 +3728,16 @@ TwentyPercentBoost:
 	ldh [hMultiplier], a
 	call Multiply
 	ld a, 5
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ret
+
+ThreeQuartersDamage:
+	ld a, 3
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 4
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide

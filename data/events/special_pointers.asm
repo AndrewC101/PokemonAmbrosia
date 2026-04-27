@@ -111,6 +111,7 @@ SpecialsPointers::
 	add_special OlderHaircutBrother
 	add_special YoungerHaircutBrother
 	add_special DaisysGrooming
+	add_special SilverCaveShinify
 	add_special PlayCurMonCry
 	add_special ProfOaksPCBoot
 	add_special GameboyCheck

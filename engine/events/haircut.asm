@@ -24,6 +24,73 @@ DaisysGrooming:
 	farcall SetLevelTo5
 	ret
 
+SilverCaveShinify:
+	farcall SelectMonFromParty
+	jr c, .cancel
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .egg
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jr c, .genderless
+	jr nz, .male
+
+; shiny female DVs: 15,12,15,15
+	ld a, $fc
+	ld [hli], a
+	ld a, $ff
+	ld [hl], a
+	jr .done
+
+.male
+; shiny male DVs: 15,13,15,14
+	ld a, $fd
+	ld [hli], a
+	ld a, $fe
+	ld [hl], a
+	jr .done
+
+.genderless
+; shiny genderless DVs: 15,13,15,15
+	ld a, $fd
+	ld [hli], a
+	ld a, $ff
+	ld [hl], a
+
+.done
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld d, h
+	ld e, l
+	ld a, MON_STAT_EXP - 1
+	call GetPartyParamLocation
+	ld b, TRUE
+	predef CalcMonStats
+
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.cancel
+	xor a
+	ld [wScriptVar], a
+	ret
+
+.egg
+	ld a, 2
+	ld [wScriptVar], a
+	ret
+
 HaircutOrGrooming:
 	push hl
 	farcall SelectMonFromParty

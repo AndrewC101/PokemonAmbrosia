@@ -11,7 +11,37 @@ SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 SilverCavePokecenter1FBobRossScript:
-	jumptextfaceplayer SilverCavePokecenter1FBobRossText
+	faceplayer
+	opentext
+	writetext SilverCavePokecenter1FBobRossText
+	waitbutton
+	writetext SilverCavePokecenter1FShinyOfferText
+	nooryes
+	iffalse .refused
+	writetext SilverCavePokecenter1FShinyWhichMonText
+	waitbutton
+	special SilverCaveShinify
+	reloadmap
+	opentext
+	ifequal 2, .egg
+	iffalse .refused_after_choice
+	writetext SilverCavePokecenter1FShinyDoneText
+	waitbutton
+	closetext
+	end
+
+.egg
+	writetext SilverCavePokecenter1FShinyEggText
+	waitbutton
+	closetext
+	end
+
+.refused_after_choice
+.refused
+	writetext SilverCavePokecenter1FShinyRefusedText
+	waitbutton
+	closetext
+	end
 
 SilverCavePokecenter1FBobRossText:
 	text "It's hard to see"
@@ -35,6 +65,39 @@ SilverCavePokecenter1FBobRossText:
 	line "mistakes."
 	para "Just happy"
 	line "accidents."
+	done
+
+SilverCavePokecenter1FShinyOfferText:
+	text "Sometimes the"
+	line "light hits just"
+	cont "right."
+	para "Shall I make one"
+	line "of your #mon"
+	cont "shiny?"
+	done
+
+SilverCavePokecenter1FShinyWhichMonText:
+	text "Which #mon"
+	line "shall shine?"
+	done
+
+SilverCavePokecenter1FShinyDoneText:
+	text "There."
+	para "Your #mon now"
+	line "catches the light"
+	cont "just right."
+	done
+
+SilverCavePokecenter1FShinyEggText:
+	text "An Egg is not"
+	line "a good canvas."
+	done
+
+SilverCavePokecenter1FShinyRefusedText:
+	text "The brush isn't"
+	line "ready yet."
+	para "Beat the devil"
+	line "out of it."
 	done
 
 SCBlisseyScript:

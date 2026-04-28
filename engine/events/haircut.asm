@@ -26,16 +26,22 @@ DaisysGrooming:
 
 SilverCaveShinify:
 	farcall SelectMonFromParty
-	jr c, .cancel
+	jp c, .cancel
 
 	ld a, [wCurPartySpecies]
 	cp EGG
-	jr z, .egg
+	jp z, .egg
 
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
+	ld b, h
+	ld c, l
+	push hl
+	callfar CheckShininess
+	pop hl
+	jr c, .unshinify
 
 	xor a
 	ld [wMonType], a
@@ -50,7 +56,7 @@ SilverCaveShinify:
 	ld [hli], a
 	ld a, $ff
 	ld [hl], a
-	jr .done
+	jr .done_shiny
 
 .male
 ; shiny male DVs: 15,13,15,14
@@ -58,7 +64,7 @@ SilverCaveShinify:
 	ld [hli], a
 	ld a, $fe
 	ld [hl], a
-	jr .done
+	jr .done_shiny
 
 .genderless
 ; shiny genderless DVs: 15,13,15,15
@@ -66,6 +72,48 @@ SilverCaveShinify:
 	ld [hli], a
 	ld a, $ff
 	ld [hl], a
+
+	jr .done_shiny
+
+.unshinify
+	xor a
+	ld [wMonType], a
+	push hl
+	farcall GetGender
+	pop hl
+	jr c, .genderless_nonshiny
+	jr nz, .male_nonshiny
+
+; non-shiny female DVs: 15,14,15,15
+	ld a, $fe
+	ld [hli], a
+	ld a, $ff
+	ld [hl], a
+	jr .done_unshiny
+
+.male_nonshiny
+; non-shiny male DVs: 15,15,15,14
+	ld a, $ff
+	ld [hli], a
+	ld a, $fe
+	ld [hl], a
+	jr .done_unshiny
+
+.genderless_nonshiny
+; non-shiny genderless DVs: 15,15,15,15
+	ld a, $ff
+	ld [hli], a
+	ld a, $ff
+	ld [hl], a
+
+.done_unshiny
+	ld a, 3
+	ld [wScriptVar], a
+	jr .done
+
+.done_shiny
+	ld a, 1
+	ld [wScriptVar], a
 
 .done
 	ld a, [wCurPartySpecies]
@@ -85,9 +133,6 @@ SilverCaveShinify:
 	call GetPartyParamLocation
 	ld b, TRUE
 	predef CalcMonStats
-
-	ld a, 1
-	ld [wScriptVar], a
 	ret
 
 .cancel

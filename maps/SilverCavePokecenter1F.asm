@@ -24,6 +24,7 @@ SilverCavePokecenter1FBobRossScript:
 	reloadmap
 	opentext
 	ifequal 2, .egg
+	ifequal 3, .dulled
 	iffalse .refused_after_choice
 	writetext SilverCavePokecenter1FShinyDoneText
 	waitbutton
@@ -32,6 +33,12 @@ SilverCavePokecenter1FBobRossScript:
 
 .egg
 	writetext SilverCavePokecenter1FShinyEggText
+	waitbutton
+	closetext
+	end
+
+.dulled
+	writetext SilverCavePokecenter1FShinyUndoneText
 	waitbutton
 	closetext
 	end
@@ -71,14 +78,13 @@ SilverCavePokecenter1FShinyOfferText:
 	text "Sometimes the"
 	line "light hits just"
 	cont "right."
-	para "Shall I make one"
-	line "of your #mon"
-	cont "shiny?"
+	para "Shall I paint one"
+	line "of your #mon?"
 	done
 
 SilverCavePokecenter1FShinyWhichMonText:
 	text "Which #mon"
-	line "shall shine?"
+	line "shall I paint?"
 	done
 
 SilverCavePokecenter1FShinyDoneText:
@@ -86,6 +92,13 @@ SilverCavePokecenter1FShinyDoneText:
 	para "Your #mon now"
 	line "catches the light"
 	cont "just right."
+	done
+
+SilverCavePokecenter1FShinyUndoneText:
+	text "There."
+	para "A softer touch"
+	line "suits this one"
+	cont "better."
 	done
 
 SilverCavePokecenter1FShinyEggText:

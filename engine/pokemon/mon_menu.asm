@@ -147,6 +147,18 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_CANCEL,     CancelPokemonAction
 	dbw MONMENUITEM_MOVE,       ManagePokemonMoves
 	dbw MONMENUITEM_MAIL,       MonMailAction
+	dbw MONMENUITEM_POKEDEX,    MonMenu_Pokedex
+
+MonMenu_Pokedex:
+	call FadeToMenu
+	farcall Pokedex_DirectEntry
+	call CloseSubmenu
+	farcall LoadPartyMenuGFX
+	farcall InitPartyMenuWithCancel
+	farcall InitPartyMenuGFX
+	farcall UnfreezeMonIcons
+	ld a, 1
+	ret
 
 SwitchPartyMons:
 ; Don't try if there's nothing to switch!

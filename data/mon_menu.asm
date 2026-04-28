@@ -7,6 +7,7 @@
 	const MONMENUVALUE_MOVE   ; 5
 	const MONMENUVALUE_MAIL   ; 6
 	const MONMENUVALUE_ERROR  ; 7
+	const MONMENUVALUE_POKEDEX ; 8
 DEF NUM_MONMENUVALUES EQU const_value - 1
 
 MonMenuOptionStrings:
@@ -19,6 +20,7 @@ MonMenuOptionStrings:
 	li "Move"
 	li "Mail"
 	li "Error!"
+	li "#dex"
 	assert_list_length NUM_MONMENUVALUES
 
 MonMenuOptions:
@@ -47,5 +49,6 @@ MonMenuOptions:
 	db MONMENU_MENUOPTION, MONMENUITEM_MOVE,       MONMENUVALUE_MOVE
 	db MONMENU_MENUOPTION, MONMENUITEM_MAIL,       MONMENUVALUE_MAIL
 	db MONMENU_MENUOPTION, MONMENUITEM_ERROR,      MONMENUVALUE_ERROR
+	db MONMENU_MENUOPTION, MONMENUITEM_POKEDEX,    MONMENUVALUE_POKEDEX
 	assert_table_length NUM_MONMENUITEMS
 	db -1 ; end

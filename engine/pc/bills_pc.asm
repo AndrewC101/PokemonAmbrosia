@@ -400,7 +400,7 @@ NewStoragePointer:
 	; Try twice, flushing the database if the first one failed.
 	call .GetStorage
 	ret nc
-	call FlushStorageSystem
+	call SanitizeStorageSystem
 	; fallthrough
 .GetStorage:
 	ld d, 1
@@ -463,6 +463,33 @@ FlushStorageSystem:
 	cp NUM_BOXES * 2 ; current + backup
 	jr nz, .outer_loop
 	jp PopBCDEHL
+
+SanitizeStorageSystem::
+; Clamp invalid active and backup box entry ids before rebuilding allocation
+; flags. Blank-slot bank flags are ignored by the format, so there is no need
+; to rewrite them when an invalid slot is cleared.
+	ld a, BANK(sNewBox1)
+	call OpenSRAM
+	ld b, NUM_BOXES * 2
+	ld hl, sNewBox1Entries
+.outer_loop
+	ld c, MONS_PER_BOX
+.inner_loop
+	ld a, [hl]
+	cp MONDB_ENTRIES + 1
+	jr c, .valid_entry
+	xor a
+	ld [hl], a
+.valid_entry
+	inc hl
+	dec c
+	jr nz, .inner_loop
+	ld de, sNewBox2 - sNewBox1 - MONS_PER_BOX
+	add hl, de
+	dec b
+	jr nz, .outer_loop
+	call CloseSRAM
+	jp FlushStorageSystem
 
 GetStorageBoxPointer:
 ; Returns the pokedb bank+entry in de for box b, slot c.
@@ -1058,8 +1085,8 @@ EnsureStorageSpace:
 CheckFreeDatabaseEntries:
 ; Returns amount of unused database entries left, or 255 if 255+. We don't
 ; really care if we have 255 or 314 entries left, only if we're running low.
-	; Flush the storage system of duplicate entries.
-	call FlushStorageSystem
+	; Clamp invalid metadata and rebuild allocation flags before counting.
+	call SanitizeStorageSystem
 	; fallthrough
 _CheckFreeDatabaseEntries:
 	; Now, count used entries.

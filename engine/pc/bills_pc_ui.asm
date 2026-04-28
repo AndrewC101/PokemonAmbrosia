@@ -193,9 +193,10 @@ BillsPC_RefreshTheme:
 UseBillsPC:
 ; DevNote - Bills PC init state, this is needed to prevent some bugs
 ; ==================================================================
-    call ClearVBank1
-    xor a
-    ld [wBillsPC_CursorHeldBox], a
+	newfarcall SanitizeStorageSystem
+	call ClearVBank1
+	xor a
+	ld [wBillsPC_CursorHeldBox], a
 ; ==================================================================
 
 	call ClearTilemap

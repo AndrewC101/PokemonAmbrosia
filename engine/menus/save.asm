@@ -225,11 +225,12 @@ LoadStorageSystem:
 	ld de, sNewBox1
 	call CopyStorageSystem
 
-	; Initialize allocation information.
-	newfarjp FlushStorageSystem
+	; Clamp invalid metadata and then rebuild allocation information.
+	newfarjp SanitizeStorageSystem
 
 SaveStorageSystem:
 ; Copy active storage system to backup.
+	newfarcall SanitizeStorageSystem
 	ld hl, sNewBox1
 	ld de, sBackupNewBox1
 	; fallthrough

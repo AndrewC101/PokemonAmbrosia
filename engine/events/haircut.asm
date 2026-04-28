@@ -14,11 +14,11 @@ BillsGrandfather:
 
 OlderHaircutBrother:
 	ld hl, HappinessData_OlderHaircutBrother
-	jr HaircutOrGrooming
+	jp HaircutOrGrooming
 
 YoungerHaircutBrother:
 	ld hl, HappinessData_YoungerHaircutBrother
-	jr HaircutOrGrooming
+	jp HaircutOrGrooming
 
 DaisysGrooming:
 	farcall SetLevelTo5
@@ -68,6 +68,15 @@ SilverCaveShinify:
 	ld [hl], a
 
 .done
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	ld [wTempSpecies], a
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurPartyLevel], a
+	call GetBaseData
+
 	ld a, MON_MAXHP
 	call GetPartyParamLocation
 	ld d, h

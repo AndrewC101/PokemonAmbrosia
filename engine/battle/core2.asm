@@ -723,27 +723,6 @@ ForfeitMatchText:
     text "Forfeit Battle?"
     done
 
-AllowShinyOverride:
-    ld a, [wShinyOverride]
-    and a
-    jr nz, .no
-	ld a, [wLinkMode]
-	and a
-	jr nz, .no
-	ld a, [wOtherTrainerClass]
-	cp ROLE_PLAYER_NORMAL
-	jr z, .no
-	cp ROLE_PLAYER_SHINY
-	jr z, .no
-    ld a, [wMarkOfGod]
-    and a
-    jr z, .no
-    scf
-    ret
-.no
-    xor a
-    ret
-
 GetWeatherImage:
 	ld a, [wBattleWeather]
 	and a
@@ -986,7 +965,6 @@ PrintBattleInfo:
 	push bc
 	xor a
 	ld [wTrainerInfoPage], a
-	farcall _LoadFontsExtra2
 	;call LoadFontsExtra
 	;call LoadStandardFont
 	call UpdatePageText
@@ -1088,7 +1066,7 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .format_lowered
 	jr z, .format_same
-	ld a, "▲"
+	ld a, "▷"
 	ld [de], a
 	inc de
 	ld a, c

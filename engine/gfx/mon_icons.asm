@@ -199,10 +199,6 @@ GetMenuMonIconPalette_PredeterminedShininess:
 	ld e, [hl]
 	pop af
 	jr c, .shiny
-
-    farcall AllowShinyOverride
-    jr c, .shiny
-
 	ld a, e
 	swap a
 	and $f

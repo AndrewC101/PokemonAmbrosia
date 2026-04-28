@@ -4366,18 +4366,11 @@ InitBattleMon:
 	ret
 
 BattleCheckPlayerShininess:
-; DevNote - Shiny Pokemon for player when immortal
-    farcall AllowShinyOverride
-    jr nc, .normal
-    scf
-    ret
-.normal
 	call GetPartyMonDVs
 	jr BattleCheckShininess
 
 BattleCheckEnemyShininess:
 ; DevNote - Lord Oaks Pokemon are shiny regardless of stats
-; CALs Pokemon are shiny if MarkOfGod is active
 	ld a, [wLinkMode]
 	and a
 	jr nz, .normal
@@ -4385,15 +4378,6 @@ BattleCheckEnemyShininess:
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
     jr z, .shiny
-    cp CAL
-    jr z, .check
-    cp CAL_F
-    jr nz, .normal
-.check
-    ld a, [wMarkOfGod]
-    and a
-    jr nz, .shiny
-    jr .normal
 .shiny
     scf
     ret

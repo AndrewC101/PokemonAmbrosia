@@ -3124,7 +3124,7 @@ wExpShareUpgrade:: db
 
 wHandOfGod:: db
 wBattleMusicOverride:: ds 2
-wShinyOverride:: db
+wShinyOverride:: db ; unused
 wRunningShoesOn:: db
 wNoRematch:: db
 wReachedHallOfOrigin::db

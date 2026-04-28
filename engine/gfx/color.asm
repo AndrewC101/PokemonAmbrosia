@@ -6,10 +6,6 @@ DEF SHINY_DEF_VAL_2 EQU 12
 DEF SHINY_SPD_VAL EQU 15
 
 CheckShininess:
-    ld a, [wShinyOverride]
-    and a
-    jr nz, .not_shiny
-    
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
 	ld l, c
@@ -863,28 +859,12 @@ GetMonNormalOrShinyPalettePointer:
 	push hl
 	call CheckShininess
 	pop hl
-	jr nc, .checkImmortal
+	ret nc
 .shiny
 rept 4
 	inc hl
 endr
 	ret
-.checkImmortal
-    ld a, [wShinyOverride]
-    and a
-    ret nz
-	ld a, [wLinkMode] ; don't make shiny in link battle
-	and a
-	ret nz
-	ld a, [wOtherTrainerClass]
-	cp ROLE_PLAYER_NORMAL
-	ret z
-	cp ROLE_PLAYER_SHINY
-	ret z
-    ld a, [wMarkOfGod]
-    and a
-    jr nz, .shiny
-    ret
 
 GetEnemyMonNormalOrShinyPalettePointer:
 	push bc
@@ -900,22 +880,10 @@ rept 4
 endr
 	ret
 ; DevNote - Lord Oaks Pokemon are shiny regardless of stats
-; CALs Pokemon are shiny if MarkOfGod is active
 .checkOak
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
     jr z, .shiny
-    cp CAL
-    jr z, .check
-    cp CAL_F
-    jr nz, .done
-.check
-	ld a, [wLinkMode]
-	and a
-	ret nz
-    ld a, [wMarkOfGod]
-    and a
-    jr nz, .shiny
 .done
     ret
 

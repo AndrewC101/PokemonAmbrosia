@@ -1758,8 +1758,6 @@ BattleArcadeReceptionistScript:
     iffalse .Declined
     setval 0
     writemem wHandOfGod
-    setval 1
-    writemem wShinyOverride
 	setval WEATHER_NONE
 	writemem wFieldWeather
    ; writetext WantToPlayAsAnotherText
@@ -1791,8 +1789,6 @@ BattleArcadeReceptionistScript:
 	closetext
 	special LoadPokemonData
 	special HealParty
-    setval 0
-    writemem wShinyOverride
 	end
 .win
     dontrestartmapmusic
@@ -1806,8 +1802,6 @@ BattleArcadeReceptionistScript:
 	closetext
 	special LoadPokemonData
 	special HealParty
-    setval 0
-    writemem wShinyOverride
 	end
 .Declined:
 	writetext PleaseComeAgainText
@@ -2693,7 +2687,7 @@ BeatRedOrNewGamePlus:
     readmem wNewGamePlus
     ifequal 1, .yes
     checkevent EVENT_BEAT_RED
-    iftrue, .yes
+    iftrue .yes
     
     setval FALSE
     end

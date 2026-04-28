@@ -2675,6 +2675,8 @@ CheatLegendarySpecies:
 	db LUGIA
 	db HO_OH
 	db CELEBI
+	db REGIGIGAS
+	db ZYGARDE
 	db MEWTWO
 	db ARCEUS
 	db -1

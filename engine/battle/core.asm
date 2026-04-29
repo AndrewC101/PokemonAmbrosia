@@ -5860,8 +5860,6 @@ DrawEnemyHUD:
 	lb bc, 4, 11
 	call ClearBox
 
-	farcall DrawEnemyHUDBorder
-
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -5899,6 +5897,17 @@ DrawEnemyHUD:
 .got_gender
 	hlcoord 9, 1
 	ld [hl], a
+
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .skip_caught_icon
+	ld a, [wTempEnemyMonSpecies]
+	dec a
+	call CheckCaughtMon
+	jr z, .skip_caught_icon
+	hlcoord 1, 1
+	ld [hl], $5d
+.skip_caught_icon
 
 	; print pokemon status (if any)
 	;hlcoord 2, 1

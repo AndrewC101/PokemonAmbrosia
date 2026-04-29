@@ -152,12 +152,9 @@ PokemonActionSubmenu:
 MonMenu_Pokedex:
 	call FadeToMenu
 	farcall Pokedex_DirectEntry
-	call CloseSubmenu
-	farcall LoadPartyMenuGFX
-	farcall InitPartyMenuWithCancel
-	farcall InitPartyMenuGFX
-	farcall UnfreezeMonIcons
-	ld a, 1
+	call LoadStandardFont
+	call Call_ExitMenu
+	xor a
 	ret
 
 SwitchPartyMons:

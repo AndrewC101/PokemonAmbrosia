@@ -4377,8 +4377,7 @@ BattleCheckEnemyShininess:
 
     ld a, [wOtherTrainerClass]
     cp LORD_OAK
-    jr z, .shiny
-.shiny
+    jr nz, .normal
     scf
     ret
 .normal

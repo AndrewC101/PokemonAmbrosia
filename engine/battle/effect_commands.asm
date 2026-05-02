@@ -1652,6 +1652,20 @@ BattleCommand_DamageVariation:
 ; is not consistent. This makes the highest damage multipliers
 ; rarer than normal.
 
+; Multiply by 85-100%...
+.loop
+	call BattleRandom
+	rrca
+	cp 85 percent + 1
+	jr c, .loop
+
+	ld b, a
+	jp ApplyDamageVariationMultiplierToCurDamage
+
+ApplyDamageVariationMultiplierToCurDamage::
+; Apply the engine's damage variation formula to wCurDamage using multiplier b.
+	ld c, b
+
 ; No point in reducing 1 or 0 damage.
 	ld hl, wCurDamage
 	ld a, [hli]
@@ -1662,6 +1676,9 @@ BattleCommand_DamageVariation:
 	ret c
 
 .go
+	ld a, c
+	ldh [hMultiplier], a
+
 ; Start with the maximum damage.
 	xor a
 	ldh [hMultiplicand + 0], a
@@ -1670,15 +1687,6 @@ BattleCommand_DamageVariation:
 	ldh [hMultiplicand + 1], a
 	ld a, [hl]
 	ldh [hMultiplicand + 2], a
-
-; Multiply by 85-100%...
-.loop
-	call BattleRandom
-	rrca
-	cp 85 percent + 1
-	jr c, .loop
-
-	ldh [hMultiplier], a
 	call Multiply
 
 ; ...divide by 100%...

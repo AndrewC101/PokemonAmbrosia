@@ -5848,7 +5848,7 @@ DrawEnemyHUD:
 	ldh [hBGMapMode], a
 
 	hlcoord 1, 0
-	lb bc, 4, 11
+	lb bc, 5, 11
 	call ClearBox
 
 	ld a, [wTempEnemyMonSpecies]
@@ -5980,6 +5980,18 @@ DrawEnemyHUD:
 	hlcoord 2, 2
 	ld b, 0
 	call DrawBattleHPBar
+
+	push de
+	hlcoord 4, 3
+	ld de, wEnemyMonHP
+	lb bc, 2, 3
+	call PrintNum
+	ld a, '/'
+	ld [hli], a
+	ld de, wEnemyMonMaxHP
+	lb bc, 2, 3
+	call PrintNum
+	pop de
 
 	farcall LoadEnemyStatusIcon
 	hlcoord 2, 1
@@ -6938,7 +6950,7 @@ MoveInfoBox:
 .pp_string:
 	db "pp@"
 .damage_string:
-	db "dmg:@"
+	db "D @"
 .Disabled:
 	db "Disabled!@"
 
@@ -7003,23 +7015,30 @@ MoveInfoBox:
 	callfar BattleCommand_Stab
 
 	ld a, [wCurDamage]
-	cp HIGH(MAX_STAT_VALUE)
-	jr c, .print_damage
-	jr nz, .cap_damage
+	ld h, a
 	ld a, [wCurDamage + 1]
-	cp LOW(MAX_STAT_VALUE)
-	jr c, .print_damage
-	jr z, .print_damage
+	ld l, a
+	push hl
 
-.cap_damage
-	ld a, HIGH(MAX_STAT_VALUE)
-	ld [wCurDamage], a
-	ld a, LOW(MAX_STAT_VALUE)
-	ld [wCurDamage + 1], a
+	ld b, 85 percent + 1
+	callfar ApplyDamageVariationMultiplierToCurDamage
+	call .CapDisplayDamage
 
-.print_damage
-
+	hlcoord 3, 11
+	ld de, wCurDamage
+	lb bc, 2, 3
+	call PrintNum
 	hlcoord 6, 11
+	ld [hl], '-'
+
+	pop hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	call .CapDisplayDamage
+
+	hlcoord 7, 11
 	ld de, wCurDamage
 	lb bc, 2, 3
 	call PrintNum
@@ -7041,6 +7060,23 @@ MoveInfoBox:
 	ld a, h
 	ld [wCurDamage], a
 	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+.CapDisplayDamage
+	ld a, [wCurDamage]
+	cp HIGH(MAX_STAT_VALUE)
+	ret c
+	jr nz, .cap_damage
+	ld a, [wCurDamage + 1]
+	cp LOW(MAX_STAT_VALUE)
+	ret c
+	ret z
+
+.cap_damage
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [wCurDamage], a
+	ld a, LOW(MAX_STAT_VALUE)
 	ld [wCurDamage + 1], a
 	ret
 
@@ -7536,13 +7572,13 @@ LoadEnemyMon:
 
 .TreeMon:
 ; If we're headbutting trees, some monsters enter battle asleep
-	call CheckSleepingTreeMon
-	ld a, TREEMON_SLEEP_TURNS
-	jr c, .UpdateStatus
+;	call CheckSleepingTreeMon
+;	ld a, TREEMON_SLEEP_TURNS
+;	jr c, .UpdateStatus
 ; Otherwise, no status
 	xor a
 
-.UpdateStatus:
+;.UpdateStatus:
 	ld hl, wEnemyMonStatus
 	ld [hli], a
 
@@ -7704,36 +7740,36 @@ LoadEnemyMon:
     call ApplyStatusEffectOnEnemyStats
 	ret
 
-CheckSleepingTreeMon:
+;CheckSleepingTreeMon:
 ; Return carry if species is in the list
 ; for the current time of day
 
 ; Don't do anything if this isn't a tree encounter
-	ld a, [wBattleType]
-	cp BATTLETYPE_TREE
-	jr nz, .NotSleeping
+;	ld a, [wBattleType]
+;	cp BATTLETYPE_TREE
+;	jr nz, .NotSleeping
 
 ; Get list for the time of day
-	ld hl, AsleepTreeMonsMorn
-	ld a, [wTimeOfDay]
-	cp DAY_F
-	jr c, .Check
-	ld hl, AsleepTreeMonsDay
-	jr z, .Check
-	ld hl, AsleepTreeMonsNite
+;	ld hl, AsleepTreeMonsMorn
+;	ld a, [wTimeOfDay]
+;	cp DAY_F
+;	jr c, .Check
+;	ld hl, AsleepTreeMonsDay
+;	jr z, .Check
+;	ld hl, AsleepTreeMonsNite
 
-.Check:
-	ld a, [wTempEnemyMonSpecies]
-	ld de, 1 ; length of species id
-	call IsInArray
+;.Check:
+;	ld a, [wTempEnemyMonSpecies]
+;	ld de, 1 ; length of species id
+;	call IsInArray
 ; If it's a match, the opponent is asleep
-	ret c
+;	ret c
 
-.NotSleeping:
-	and a
-	ret
+;.NotSleeping:
+;	and a
+;	ret
 
-INCLUDE "data/wild/treemons_asleep.asm"
+;INCLUDE "data/wild/treemons_asleep.asm"
 
 CheckUnownLetter:
 ; Return carry if the Unown letter hasn't been unlocked yet
@@ -9641,15 +9677,15 @@ BattleStartMessage:
 	call Call_PlayBattleAnim
 
 .not_shiny
-	farcall CheckSleepingTreeMon
-	jr c, .skip_cry
+;	farcall CheckSleepingTreeMon
+;	jr c, .skip_cry
 
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
 	call PlayStereoCry
 
-.skip_cry
+;.skip_cry
 	; Skip PokemonAttacked text if fast battles is on
 	call CheckIfFastBattlesIsOn
 	jr nz, .PrintBattleStartText

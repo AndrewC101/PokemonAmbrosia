@@ -227,13 +227,33 @@ TauntSwitch:
     ret nz
     ld de, TAUNT
     call PlayAnimationIfNeeded
+    ld a, BATTLE_VARS_MOVE_ANIM
+    call GetBattleVarAddr
+    ld a, [hl]
+    push hl
+    push af
+    xor a
+    ld [hl], a
     callfar BattleCommand_Taunt
+    pop af
+    pop hl
+    ld [hl], a
 	ret
 
 LeechSeedSwitch:
     ld de, LEECH_SEED
     call PlayAnimationIfNeeded
+    ld a, BATTLE_VARS_MOVE_ANIM
+    call GetBattleVarAddr
+    ld a, [hl]
+    push hl
+    push af
+    xor a
+    ld [hl], a
     callfar BattleCommand_LeechSeed
+    pop af
+    pop hl
+    ld [hl], a
 	ret
 
 SubSwitch:

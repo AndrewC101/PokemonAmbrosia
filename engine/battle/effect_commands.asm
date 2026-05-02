@@ -1430,10 +1430,14 @@ BattleCommand_Stab:
 	jp .TypesLoop
 
 .end
-	ld a, [wTypeModifier]
-	and EFFECTIVENESS_MASK
-	ld [wTypeMatchup], a
+	call BattleCheckTypeMatchup
 	call ApplyFinalSuperEffectiveDamageModifiers
+	ld a, [wTypeMatchup]
+	ld b, a
+	ld a, [wTypeModifier]
+	and STAB_DAMAGE
+	or b
+	ld [wTypeModifier], a
 	ret
 
 ApplyFinalSuperEffectiveDamageModifiers:

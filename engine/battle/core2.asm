@@ -1043,7 +1043,8 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .lowered
 	jr z, .same
-	ld a, "▷"
+	;ld a, "▷"
+	ld a, $c8
 	ld [de], a
 	inc de
 	ld a, c
@@ -1066,7 +1067,8 @@ PrintStatChangeValue: ; Input is hl (either wPlayerStatX or wEnemyStatX) and bc 
 	cp 7			; 7 = no changes
 	jr c, .format_lowered
 	jr z, .format_same
-	ld a, "▷"
+	;ld a, "▷"
+	ld a, $c8
 	ld [de], a
 	inc de
 	ld a, c

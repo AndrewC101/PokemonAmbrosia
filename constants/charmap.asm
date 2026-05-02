@@ -176,6 +176,9 @@
 	charmap "ä",         $c3
 	charmap "ö",         $c4
 	charmap "ü",         $c5
+	charmap "<physical>",$c6
+	charmap "<special>", $c7
+	charmap "<status>",  $c8
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1

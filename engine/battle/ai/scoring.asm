@@ -32,18 +32,19 @@ AI_MagicGuardPokemon:
     db DEOXYS
     db $FF
 
+; Shared battle/AI ability-immunity data lives here for bank-space reasons.
 AI_LevitatePokemon:
     db GASTLY
     db HAUNTER
     db GENGAR
-    db WEEZING
     db MISDREAVUS
     db MISMAGIUS
+    db WEEZING
     db LATIAS
     db LATIOS
     db ROTOM
-    db HYDREIGON
     db UNOWN
+    db HYDREIGON
     db NOWN
     db $FF
 
@@ -259,35 +260,7 @@ AI_Basic:
 	jp c, .discourage ; discourage if sub is up and blocks move - loop back to check move
 
 .checkLevitate
-; Dismiss ground move if the player has levitate
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	cp GROUND
-	jr nz, .checkWaterAbsorb
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveLevitate
-    jp c, .discourage
-
-.checkWaterAbsorb
-    cp WATER
-	jr nz, .checkVoltAbsorb
-
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveWaterAbsorb
-    jp c, .discourage
-
-.checkVoltAbsorb
-    cp ELECTRIC
-	jr nz, .checkFireAbsorb
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveVoltAbsorb
-    jp c, .discourage
-
-.checkFireAbsorb
-    cp FIRE
-	jr nz, .checkKO
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveFireAbsorb
+	call DoesEnemyMoveTypeTriggerPlayerAbilityImmunity
     jp c, .discourage
 
 ; Dismiss Safeguard if it's already active.
@@ -5166,35 +5139,7 @@ AI_Aggressive:
 	jr z, .checkmove
 
 ; don't encourage ground moves vs levitate Pokemon
-; Dismiss ground move if the player has levitate
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	and TYPE_MASK
-	cp GROUND
-	jr nz, .waterAbsorb
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveLevitate
-    jp c, .checkmove
-
-.waterAbsorb
-    cp WATER
-	jr nz, .voltAbsorb
-
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveWaterAbsorb
-    jp c, .checkmove
-
-.voltAbsorb
-    cp ELECTRIC
-	jr nz, .fireAbsorb
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveVoltAbsorb
-    jp c, .checkmove
-
-.fireAbsorb
-    cp FIRE
-	jr nz, .continue
-	ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveFireAbsorb
+	call DoesEnemyMoveTypeTriggerPlayerAbilityImmunity
     jp c, .checkmove
 
 .continue
@@ -5673,73 +5618,152 @@ DoesPokemonHaveClearBody:
     scf
     ret
 
+BattleTargetHasTypeAbilityImmunity::
+; Return carry if the active target is immune to move type b because of an
+; ability-like species mapping such as Levitate or Water Absorb.
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .check_species
+	ld a, [wBattleMonSpecies]
+
+.check_species
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	ret
+
+DoesSpeciesHaveTypeAbilityImmunity::
+; Return carry if species c is immune to move type b because of an
+; ability-like species mapping such as Levitate or Water Absorb.
+	push hl
+	push de
+	push bc
+	ld a, b
+	and TYPE_MASK
+	cp GROUND
+	jr z, .levitate
+	cp WATER
+	jr z, .water_absorb
+	cp ELECTRIC
+	jr z, .volt_absorb
+	cp FIRE
+	jr z, .fire_absorb
+	and a
+	jr .done
+
+.levitate
+	ld a, c
+	ld hl, AI_LevitatePokemon
+	jr .check_table
+
+.water_absorb
+	ld a, c
+	ld hl, AI_WaterAbsorbPokemon
+	jr .check_table
+
+.volt_absorb
+	ld a, c
+	ld hl, AI_VoltAbsorbPokemon
+	jr .check_table
+
+.fire_absorb
+	ld a, c
+	ld hl, AI_FireAbsorbPokemon
+
+.check_table
+	ld de, 1
+	call IsInArray
+
+.done
+	pop bc
+	pop de
+	pop hl
+	ret
+
 DoesPokemonHaveVoltAbsorb:
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_VoltAbsorbPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
-   	jr c, .yes
-   	xor a
-   	ret
-.yes
-    scf
-    ret
+	push hl
+	push de
+	push bc
+	ld b, ELECTRIC
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	pop de
+	pop hl
+	jr c, .volt_absorb
+	xor a
+	ret
+.volt_absorb
+	scf
+	ret
 
 DoesPokemonHaveWaterAbsorb:
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_WaterAbsorbPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
-   	jr c, .yes
-   	xor a
-   	ret
-.yes
-    scf
-    ret
+	push hl
+	push de
+	push bc
+	ld b, WATER
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	pop de
+	pop hl
+	jr c, .water_absorb
+	xor a
+	ret
+.water_absorb
+	scf
+	ret
 
 DoesPokemonHaveFireAbsorb:
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_FireAbsorbPokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
-   	jr c, .yes
-   	xor a
-   	ret
-.yes
-    scf
-    ret
+	push hl
+	push de
+	push bc
+	ld b, FIRE
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	pop de
+	pop hl
+	jr c, .fire_absorb
+	xor a
+	ret
+.fire_absorb
+	scf
+	ret
 
 DoesPokemonHaveLevitate:
-    push hl
-    push de
-   	push bc
-   	ld hl, AI_LevitatePokemon
-   	ld de, 1
-   	call IsInArray
-   	pop bc
-   	pop de
-   	pop hl
-   	jr c, .yes
-   	xor a
-   	ret
-.yes
-    scf
-    ret
+	push hl
+	push de
+	push bc
+	ld b, GROUND
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	pop de
+	pop hl
+	jr c, .levitate
+	xor a
+	ret
+.levitate
+	scf
+	ret
+
+DoesEnemyMoveTypeTriggerPlayerAbilityImmunity:
+	push hl
+	push de
+	push bc
+	ld a, [wEnemyMoveStruct + MOVE_TYPE]
+	and TYPE_MASK
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	ld c, a
+	call DoesSpeciesHaveTypeAbilityImmunity
+	pop bc
+	pop de
+	pop hl
+	ret
 
 AI_80_20:
 	call Random
@@ -5750,121 +5774,6 @@ AI_50_50:
 	call Random
 	cp 50 percent + 1
 	ret
-
-
-; effect_commands
-
-Levitate:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	jr nz, .checkType
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.checkType
-	and TYPE_MASK
-	cp GROUND
-    jr z, .getPokemon
-	ret
-.getPokemon
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .checkLevitate
-	ld a, [wBattleMonSpecies]
-.checkLevitate
-	ld hl, AI_LevitatePokemon
-	ld de, 1
-	call IsInArray
-    jr c, .found
-    ret
-.found
-	ld hl, LevitateText
-	call StdBattleTextbox
-    ret z
-
-WaterAbsorb:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	jr nz, .checkType
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.checkType
-	and TYPE_MASK
-	cp WATER
-    jr z, .getPokemon
-	ret
-.getPokemon
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .check
-	ld a, [wBattleMonSpecies]
-.check
-	ld hl, AI_WaterAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    jr c, .found
-    ret
-.found
-	ld hl, ElementAbsorbText
-	call StdBattleTextbox
-    ret z
-
-VoltAbsorb:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	jr nz, .checkType
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.checkType
-	and TYPE_MASK
-	cp ELECTRIC
-    jr z, .getPokemon
-	ret
-.getPokemon
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .check
-	ld a, [wBattleMonSpecies]
-.check
-	ld hl, AI_VoltAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    jr c, .found
-    ret
-.found
-	ld hl, ElementAbsorbText
-	call StdBattleTextbox
-    ret z
-
-FireAbsorb:
-    ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	jr nz, .checkType
-	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-.checkType
-	and TYPE_MASK
-	cp FIRE
-    jr z, .getPokemon
-	ret
-.getPokemon
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wEnemyMonSpecies]
-	jr z, .check
-	ld a, [wBattleMonSpecies]
-.check
-	ld hl, AI_FireAbsorbPokemon
-	ld de, 1
-	call IsInArray
-    jr c, .found
-    ret
-.found
-	ld hl, ElementAbsorbText
-	call StdBattleTextbox
-    ret z
 
 DreamEaterMiss:
 ; Return z if we're trying to eat the dream of

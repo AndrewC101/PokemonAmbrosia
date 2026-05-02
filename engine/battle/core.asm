@@ -1333,21 +1333,6 @@ Core_MagicGuardPokemon:
     db DEOXYS
     db -1
 
-Core_LevitatePokemon:
-    db GASTLY
-    db HAUNTER
-    db GENGAR
-    db MISDREAVUS
-    db MISMAGIUS
-    db WEEZING
-    db LATIAS
-    db LATIOS
-    db ROTOM
-    db UNOWN
-    db HYDREIGON
-    db NOWN
-    db -1
-
 Core_SpikesImmunePokemon: ; magic guard + levitate
     db CLEFAIRY
     db CLEFABLE
@@ -4722,9 +4707,9 @@ SpikesDamage:
     push de
 	push bc
 	call GetCurrentMonCore
-	ld hl, Core_LevitatePokemon
-	ld de, 1
-	call IsInArray
+	ld b, GROUND
+	ld c, a
+	farcall DoesSpeciesHaveTypeAbilityImmunity
 	pop bc
 	pop de
 	pop hl
@@ -4813,9 +4798,9 @@ SpikesDamage:
     push de
 	push bc
 	call GetCurrentMonCore
-	ld hl, Core_LevitatePokemon
-	ld de, 1
-	call IsInArray
+	ld b, GROUND
+	ld c, a
+	farcall DoesSpeciesHaveTypeAbilityImmunity
 	pop bc
 	pop de
 	pop hl

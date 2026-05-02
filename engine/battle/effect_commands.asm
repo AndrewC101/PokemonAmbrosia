@@ -1335,6 +1335,20 @@ BattleCommand_Stab:
 	ld [wTypeModifier], a
 	ret
 .goOn
+	farcall BattleTargetHasTypeAbilityImmunity
+	jr nc, .check_chart
+	ld a, [wTypeModifier]
+	and STAB_DAMAGE
+	ld [wTypeModifier], a
+	xor a
+	ld [wTypeMatchup], a
+	ld [wCurDamage], a
+	ld [wCurDamage + 1], a
+	inc a
+	ld [wAttackMissed], a
+	ret
+
+.check_chart
 	ld hl, TypeMatchups ; load the type matchups in hl
 
 .TypesLoop: ; we loop through type matchups
@@ -1597,11 +1611,24 @@ CheckTypeMatchup:
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
 ; If there is immunity in play, the move automatically misses.
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	and TYPE_MASK
+	ld b, a
+	farcall BattleTargetHasTypeAbilityImmunity
+	jr nc, .check_type_chart
+	xor a
+	ld [wTypeMatchup], a
+	jr .immune
+
+.check_type_chart
 	call BattleCheckTypeMatchup
 	ld a, [wTypeMatchup]
 	and a
 	ld a, EFFECTIVE
 	jr nz, .reset
+
+.immune
 	call ResetDamage
 	xor a
 	ld [wTypeModifier], a
@@ -1670,20 +1697,6 @@ BattleCommand_DamageVariation:
 
 BattleCommand_CheckHit:
 ; checkhit
-
-    ; DevNote - levitate, water absorb, volt absorb, fire absorb here
-    ; note these functions are defined in scoring.asm as this file is out of space
-	farcall Levitate
-	jp z, .Miss
-
-	farcall WaterAbsorb
-	jp z, .Miss
-
-	farcall VoltAbsorb
-    jp z, .Miss
-
-	farcall FireAbsorb
-    jp z, .Miss
 
 	farcall DreamEaterMiss
 	jp z, .Miss

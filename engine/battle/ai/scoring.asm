@@ -4816,7 +4816,13 @@ DoubleCurrentDamage:
 
 DoesAIOutSpeedPlayer:
 ; Return carry if enemy is faster than player.
+	push hl
+	push de
+	push bc
 	farcall CompareBattleEffectiveSpeed
+	pop bc
+	pop de
+	pop hl
 	jr z, .doNo
 	jr nc, .no
 .yes

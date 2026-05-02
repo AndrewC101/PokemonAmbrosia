@@ -2214,29 +2214,29 @@ ElmsLabMrMimeScript:
     end
 .randomParty
     reloadmap
-    opentext
-    writetext RandomPartyWarningText
-    nooryes
-    iffalse .cancelRandomParty
-    writetext RandomPartyLegendaryFilterText
-    nooryes
-    iffalse .askEvolvedWithoutLegendFilter
-    writetext RandomPartyEvolutionFilterText
-    nooryes
-    iffalse .legendOnlyRandomParty
-    callasm GenerateFilteredRandomPartyCheat
-    sjump .finishRandomParty
-.askEvolvedWithoutLegendFilter
-    writetext RandomPartyEvolutionFilterText
-    nooryes
-    iffalse .unfilteredRandomParty
-    callasm GenerateUnevolvedFilteredRandomPartyCheat
-    sjump .finishRandomParty
-.legendOnlyRandomParty
-    callasm GenerateLegendaryFilteredRandomPartyCheat
-    sjump .finishRandomParty
+	opentext
+	writetext RandomPartyWarningText
+	nooryes
+	iffalse .cancelRandomParty
+	writetext RandomPartyEvolutionFilterText
+	yesorno
+	iffalse .askLegendWithoutEvolutionFilter
+	writetext RandomPartyLegendaryFilterText
+	yesorno
+	iffalse .unevolvedOnlyRandomParty
+	callasm GenerateFilteredRandomPartyCheat
+	sjump .finishRandomParty
+.askLegendWithoutEvolutionFilter
+	writetext RandomPartyLegendaryFilterText
+	yesorno
+	iffalse .unfilteredRandomParty
+	callasm GenerateLegendaryFilteredRandomPartyCheat
+	sjump .finishRandomParty
+.unevolvedOnlyRandomParty
+	callasm GenerateUnevolvedFilteredRandomPartyCheat
+	sjump .finishRandomParty
 .unfilteredRandomParty
-    callasm GenerateRandomPartyCheat
+	callasm GenerateRandomPartyCheat
 .finishRandomParty
     reloadmap
     opentext
@@ -2573,6 +2573,34 @@ GetRandomCheatPartySpecies:
 	inc a
 	cp UNOWN
 	jr z, .loop
+	cp ARCEUS
+	jr z, .loop
+	ld [wCurPartySpecies], a
+	push bc
+	call IsSpeciesAlreadyInRandomCheatParty
+	pop bc
+	jr c, .loop
+	ld a, [wCurPartySpecies]
+	ret
+
+IsSpeciesAlreadyInRandomCheatParty:
+	ld a, [wPartyCount]
+	and a
+	jr z, .no
+	ld b, a
+	ld hl, wPartySpecies
+.loop
+	ld a, [wCurPartySpecies]
+	cp [hl]
+	jr z, .yes
+	inc hl
+	dec b
+	jr nz, .loop
+.no
+	and a
+	ret
+.yes
+	scf
 	ret
 
 GetRandomFilteredCheatPartySpecies:

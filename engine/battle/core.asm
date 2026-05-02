@@ -6883,6 +6883,8 @@ MoveInfoBox:
 
 	farcall UpdateMoveData
 
+	;call .PlaceCategoryIcon
+
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 8
@@ -6955,6 +6957,20 @@ MoveInfoBox:
 .Disabled:
 	db "Disabled!@"
 
+;.PlaceCategoryIcon:
+;	ld a, [wPlayerMoveStruct + MOVE_TYPE]
+;	and ~TYPE_MASK
+;	cp SPECIAL
+;	ld a, CHARVAL("<physical>")
+;	jr c, .place
+;	ld a, CHARVAL("<special>")
+;	jr z, .place
+;	inc a
+;.place
+;	hlcoord 1, 8
+;	ld [hl], a
+;	ret
+
 .PrintPP:
 	hlcoord 5, 10
 	push hl
@@ -7000,6 +7016,23 @@ MoveInfoBox:
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
+
+	ld a, [wCurDamage]
+	cp HIGH(MAX_STAT_VALUE)
+	jr c, .print_damage
+	jr nz, .cap_damage
+	ld a, [wCurDamage + 1]
+	cp LOW(MAX_STAT_VALUE)
+	jr c, .print_damage
+	jr z, .print_damage
+
+.cap_damage
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [wCurDamage], a
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [wCurDamage + 1], a
+
+.print_damage
 
 	hlcoord 6, 11
 	ld de, wCurDamage

@@ -91,6 +91,13 @@ ReadTrainerPartyPieces:
     cp BATTLETYPE_BATTLE_FRONTIER
     jr z, .normal
 
+    ; never scale in rpg battles
+    ld a, [wOtherTrainerClass]
+    cp ROLE_PLAYER_NORMAL
+    jr z, .normal
+    cp ROLE_PLAYER_SHINY
+    jr z, .normal
+
     ; if we aren't on hard mode then don't scale
     ld a, [wHardMode]
     and a

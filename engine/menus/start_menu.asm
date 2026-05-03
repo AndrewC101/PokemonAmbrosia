@@ -334,8 +334,6 @@ endr
 	jp ._DrawMenuClockTextBox
 
 .PrintMenuClock:
-    call .IsMenuClockOn
-	ret z
 	call .DrawMenuClockTextBox
 	bccoord 1, 13
 	call TextCommand_DAY
@@ -410,8 +408,6 @@ endr
 	ret
 
 ._DrawMenuClockTextBox
-	call .IsMenuClockOn
-	ret z
 	; place white box
 	hlcoord 0, 12
 	lb bc, 6, 11

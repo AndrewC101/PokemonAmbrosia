@@ -4883,6 +4883,8 @@ SwitchInEffects:
 	farcall BattleCommand_FlameOrb
 
     call GetCurrentMonCore
+	ld c, a
+	ld de, 1
 ; DevNote - abilities that activate on switching in
     cp DITTO
     jp z, .imposter
@@ -4912,137 +4914,97 @@ SwitchInEffects:
     cp ARTICUNO
     jp z, .hail
 
-    cp DARKRAI
-    jp z, .taunt
-    cp SNEASLER
-    jp z, .taunt
-    cp HAWLUCHA
-    jp z, .taunt
+    ld a, c
     cp UMBREON
     jp z, .umbreon
-    cp MISMAGIUS
-    jp z, .taunt
-    cp DEINO
-    jp z, .taunt
-    cp ZWEILOUS
-    jp z, .taunt
-    cp HYDREIGON
-    jp z, .taunt
+	ld a, c
+	ld hl, .TauntMons
+	call IsInArray
+	jp c, .taunt
 
-    cp GENESECT
-    jp z, .spAtkUp
+	ld a, c
     cp ESPEON
     jp z, .espeon
-    cp RAICHU
-    jp z, .spAtkUp
-    cp HOUNDOOM
-    jp z, .spAtkUp
+	ld a, c
+	ld hl, .SpecialAttackUpMons
+	call IsInArray
+	jp c, .spAtkUp
 
-    cp SUICUNE
-    jp z, .defUp
-    cp NOCTOWL
-    jp z, .defUp
-    cp BLASTOISE
-    jp z, .defUp
+	ld a, c
+	ld hl, .DefenseUpMons
+	call IsInArray
+	jp c, .defUp
 
+	ld a, c
     cp MIMIKYU
     jp z, .subSwitch
 
-    cp RAIKOU
-    jp z, .spdUp
-    cp YANMA
-    jp z, .spdUp
-    cp YANMEGA
-    jp z, .spdUp
-    cp PONYTA
-    jp z, .spdUp
-    cp RAPIDASH
-    jp z, .spdUp
-    cp VENIPEDE
-    jp z, .spdUp
+	ld a, c
     cp SCOLIPEDE
     jp z, .scolipede
+	ld a, c
+	ld hl, .SpeedUpMons
+	call IsInArray
+	jp c, .spdUp
 
-    cp ENTEI
-    jp z, .atkUp
-    cp LUCARIO
-    jp z, .atkUp
-    cp KINGAMBIT
-    jp z, .atkUp
+	ld a, c
+	ld hl, .AttackUpMons
+	call IsInArray
+	jp c, .atkUp
 
-    cp SALAMENCE
-    jp z, .atkDown
-    cp ARCANINE
-    jp z, .atkDown
-    cp ARBOK
-    jp z, .atkDown
-    cp TAUROS
-    jp z, .atkDown
-    cp STARAPTOR
-    jp z, .atkDown
-    cp MAWILE
-    jp z, .atkDown
+	ld a, c
+	ld hl, .AttackDownMons
+	call IsInArray
+	jp c, .atkDown
 
+	ld a, c
     cp WEEZING
     jp z, .accDown
 
-    cp FLAREON
-    jp z, .spAtkDown
-    cp JYNX
-    jp z, .spAtkDown
-    cp MILTANK
-    jp z, .spAtkDown
-    cp LAPRAS
-    jp z, .spAtkDown
-    cp BAXCALIBUR
-    jp z, .spAtkDown
+	ld a, c
+	ld hl, .SpecialAttackDownMons
+	call IsInArray
+	jp c, .spAtkDown
 
+	ld a, c
     cp AEGISLASH
     jp z, .defenseMode
 
-    cp WHIMSICOTT
-    jp z, .leechSeed
+	ld a, c
     cp CELEBI
     jp z, .celebi
+    cp WHIMSICOTT
+    jp z, .leechSeed
 
-    cp CLEFABLE
-    jp z, .spDefUp
-    cp SLOWPOKE
-    jp z, .spDefUp
-    cp SLOWBRO
-    jp z, .spDefUp
+	ld a, c
+	ld hl, .SpecialDefenseUpMons
+	call IsInArray
+	jp c, .spDefUp
 
-    cp SNEASEL
-    jp z, .evasionUp
-    cp WEAVILE
-    jp z, .evasionUp
-    cp ZUBAT
-    jp z, .evasionUp
-    cp GOLBAT
-    jp z, .evasionUp
-    cp CROBAT
-    jp z, .evasionUp
+	ld a, c
+	ld hl, .EvasionUpMons
+	call IsInArray
+	jp c, .evasionUp
 
+	ld a, c
     cp EEVEE
     jp z, .randomStatUp
 
+	ld a, c
     cp SMEARGLE
     jp z, .smeargle
 
-    cp FERROTHORN
-    jp z, .spikes
-    cp SKARMORY
-    jp z, .spikes
-    cp STEELIX
-    jp z, .spikes
+	ld a, c
+	ld hl, .SpikesMons
+	call IsInArray
+	jp c, .spikes
 
-    cp DIALGA
-    jp z, .stealthrock
-    cp NIDOKING
-    jp z, .stealthrock
-    cp KLEAVOR
-    jp z, .stealthrock
+	ld a, c
+	ld hl, .StealthRockMons
+	call IsInArray
+	jp c, .stealthrock
 
+	ld a, c
     cp NIDOQUEEN
     jp z, .toxicspikes
     cp TENTACRUEL
@@ -5054,59 +5016,79 @@ SwitchInEffects:
     cp MR__MIME
     jp z, .bothScreens
 
-    cp MEWTWO
-    jp z, .screenBreak
-    cp DEOXYS
-    jp z, .screenBreak
-    cp NOWN
-    jp z, .screenBreak
+	ld a, c
+	ld hl, .ScreenBreakMons
+	call IsInArray
+	jp c, .screenBreak
 
-    cp GALLADE
-    jp z, .reflect
-    cp NINETALES_A
-    jp z, .reflect
-    cp LATIOS
-    jp z, .reflect
-    cp YVELTAL
-    jp z, .reflect
+	ld a, c
+	ld hl, .ReflectMons
+	call IsInArray
+	jp c, .reflect
 
-    cp AMPHAROS
-    jp z, .lightScreen
-    cp ZAPDOS
-    jp z, .lightScreen
-    cp GARDEVOIR
-    jp z, .lightScreen
-    cp LATIAS
-    jp z, .lightScreen
-    cp NINETALES
-    jp z, .lightScreen
-    cp XERNEAS
-    jp z, .lightScreen
+	ld a, c
+	ld hl, .LightScreenMons
+	call IsInArray
+	jp c, .lightScreen
 
-    cp MOLTRES
-    jp z, .safeguard
-    cp POLTEGEIST
-    jp z, .safeguard
-    cp PALKIA
-    jp z, .safeguard
-    cp ZYGARDE
-    jp z, .safeguard
+	ld a, c
+	ld hl, .SafeguardMons
+	call IsInArray
+	jp c, .safeguard
 
-    cp STARMIE
-    jp z, .naturalCure
-    cp SCEPTILE
-    jp z, .naturalCure
-    cp CHANSEY
-    jp z, .naturalCure
-    cp BLISSEY
-    jp z, .naturalCure
-    cp SHAYMIN
-    jp z, .naturalCure
-    cp TOGEKISS
-    jp z, .naturalCure
-    cp MEW
-    jp z, .naturalCure
+	ld a, c
+	ld hl, .NaturalCureMons
+	call IsInArray
+	jp c, .naturalCure
     ret
+
+.TauntMons
+	db DARKRAI, SNEASLER, HAWLUCHA, MISMAGIUS, DEINO, ZWEILOUS, HYDREIGON, -1
+
+.SpecialAttackUpMons
+	db GENESECT, RAICHU, HOUNDOOM, -1
+
+.DefenseUpMons
+	db SUICUNE, NOCTOWL, BLASTOISE, -1
+
+.SpeedUpMons
+	db RAIKOU, YANMA, YANMEGA, PONYTA, RAPIDASH, VENIPEDE, -1
+
+.AttackUpMons
+	db ENTEI, LUCARIO, KINGAMBIT, -1
+
+.AttackDownMons
+	db SALAMENCE, ARCANINE, ARBOK, TAUROS, STARAPTOR, MAWILE, -1
+
+.SpecialAttackDownMons
+	db FLAREON, JYNX, MILTANK, LAPRAS, BAXCALIBUR, -1
+
+.SpecialDefenseUpMons
+	db CLEFABLE, SLOWPOKE, SLOWBRO, -1
+
+.EvasionUpMons
+	db SNEASEL, WEAVILE, ZUBAT, GOLBAT, CROBAT, -1
+
+.SpikesMons
+	db FERROTHORN, SKARMORY, STEELIX, -1
+
+.StealthRockMons
+	db DIALGA, NIDOKING, KLEAVOR, -1
+
+.ScreenBreakMons
+	db MEWTWO, DEOXYS, NOWN, -1
+
+.ReflectMons
+	db GALLADE, NINETALES_A, LATIOS, YVELTAL, -1
+
+.LightScreenMons
+	db AMPHAROS, ZAPDOS, GARDEVOIR, LATIAS, NINETALES, XERNEAS, -1
+
+.SafeguardMons
+	db MOLTRES, POLTEGEIST, PALKIA, ZYGARDE, -1
+
+.NaturalCureMons
+	db STARMIE, SCEPTILE, CHANSEY, BLISSEY, SHAYMIN, TOGEKISS, MEW, -1
 
 .politoed
     farcall SpecialDefenseUpSwitch
@@ -5981,6 +5963,10 @@ DrawEnemyHUD:
 	ld b, 0
 	call DrawBattleHPBar
 
+	ld a, [wOptions2]
+	and 1 << MENU_CLOCK
+	jr z, .skip_hp_numbers
+
 	push de
 	hlcoord 4, 3
 	ld de, wEnemyMonHP
@@ -5992,6 +5978,7 @@ DrawEnemyHUD:
 	lb bc, 2, 3
 	call PrintNum
 	pop de
+.skip_hp_numbers
 
 	farcall LoadEnemyStatusIcon
 	hlcoord 2, 1
@@ -6605,7 +6592,7 @@ MoveSelectionScreen:
 	jr .interpret_joypad
 
 .battle_player_moves
-	call MoveInfoBox
+	farcall MoveInfoBox
 	farcall GetWeatherImage
 	ld a, [wSwappingMove]
 	and a
@@ -6822,316 +6809,6 @@ MoveSelectionScreen:
 	ld a, [wMenuCursorY]
 	ld [wSwappingMove], a
 	jp MoveSelectionScreen
-
-MoveInfoBox:
-	xor a
-	ldh [hBGMapMode], a
-
-	hlcoord 0, 7 ; upper right corner of the textbox
-	ld b, 4 ; Box height
-	ld c, 9 ; Box length
-	call Textbox
-	call MobileTextBorder
-
-	ld a, [wPlayerDisableCount]
-	and a
-	jr z, .not_disabled
-
-	swap a
-	and $f
-	ld b, a
-	ld a, [wMenuCursorY]
-	cp b
-	jr nz, .not_disabled
-
-	hlcoord 1, 10
-	ld de, .Disabled
-	call PlaceString
-	jp .done
-
-.not_disabled
-	ld hl, wMenuCursorY
-	dec [hl]
-	call SetPlayerTurn
-	ld hl, wBattleMonMoves
-	ld a, [wMenuCursorY]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ld [wCurPlayerMove], a
-
-	ld a, [wCurBattleMon]
-	ld [wCurPartyMon], a
-	ld a, WILDMON
-	ld [wMonType], a
-	callfar GetMaxPPOfMove
-
-	ld hl, wMenuCursorY
-	ld c, [hl]
-	inc [hl]
-	ld b, 0
-	ld hl, wBattleMonPP
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	ld [wStringBuffer1], a
-	call .PrintPP
-
-	farcall UpdateMoveData
-
-	;call .PlaceCategoryIcon
-
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	hlcoord 2, 8
-	predef PrintMoveType
-
-; print "pp"
-	ld de, .pp_string ; "p"
-	hlcoord 2, 10
-	call PlaceString
-
-; print move BP (Base Power)
-	ld de, .power_string ; "p/"
-	hlcoord 4, 9
-	call PlaceString
-
-	hlcoord 1, 9
-	ld a, [wPlayerMoveStruct + MOVE_POWER]
-	cp 2
-	jr c, .nopower
-	; MOVE_POWER is 2 or higher
-
-	; code for moves with power 2+
-	jr .haspower
-
-.nopower:
-	ld de, .nopower_string
-	call PlaceString
-	jr .place_accuracy
-
-.haspower:
-	ld [wTextDecimalByte], a
-	ld de, wTextDecimalByte
-	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
-	call PrintNum
-
-; print move's accuracy
-.place_accuracy
-	ld a, [wCurSpecies]
-	ld bc, MOVE_LENGTH
-
-	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-
-	Call CoreConvertPercentages
-	ld [wBuffer1], a
-	ld de, wBuffer1
-	lb bc, 1, 3
-	hlcoord 6, 9
-	call PrintNum
-	ld [hl], "<%>"
-	ld de, .damage_string
-	hlcoord 1, 11
-	call PlaceString
-	call .PrintDamage
-.done
-	ret
-
-.nopower_string:
-	db "---@"
-.place_var_string:
-	db " var@"
-.power_string:
-	db "p/@"
-.pp_string:
-	db "pp@"
-.damage_string:
-	db "D @"
-.Disabled:
-	db "Disabled!@"
-
-;.PlaceCategoryIcon:
-;	ld a, [wPlayerMoveStruct + MOVE_TYPE]
-;	and ~TYPE_MASK
-;	cp SPECIAL
-;	ld a, CHARVAL("<physical>")
-;	jr c, .place
-;	ld a, CHARVAL("<special>")
-;	jr z, .place
-;	inc a
-;.place
-;	hlcoord 1, 8
-;	ld [hl], a
-;	ret
-
-.PrintPP:
-	hlcoord 5, 10
-	push hl
-	ld de, wStringBuffer1
-	lb bc, 1, 2
-	call PrintNum
-	pop hl
-	inc hl
-	inc hl
-	ld [hl], '/'
-	inc hl
-	ld de, wNamedObjectIndex
-	lb bc, 1, 2
-	call PrintNum
-	ret
-
-.PrintDamage:
-	ld a, [wCurDamage]
-	ld h, a
-	ld a, [wCurDamage + 1]
-	ld l, a
-	push hl
-
-	ld a, [wTypeModifier]
-	push af
-	ld a, [wTypeMatchup]
-	push af
-	ld a, [wCurType]
-	push af
-	ld a, [wAttackMissed]
-	push af
-	ld a, [wCriticalHit]
-	push af
-	ld a, [wHalfDamage]
-	push af
-
-	xor a
-	ld [wTypeModifier], a
-	ld [wAttackMissed], a
-	ld [wCriticalHit], a
-	ld [wHalfDamage], a
-
-	callfar PlayerAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
-
-	ld a, [wCurDamage]
-	ld h, a
-	ld a, [wCurDamage + 1]
-	ld l, a
-	push hl
-
-	ld b, 85 percent + 1
-	callfar ApplyDamageVariationMultiplierToCurDamage
-	call .CapDisplayDamage
-
-	hlcoord 3, 11
-	ld de, wCurDamage
-	lb bc, 2, 3
-	call PrintNum
-	hlcoord 6, 11
-	ld [hl], '-'
-
-	pop hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-	call .CapDisplayDamage
-
-	hlcoord 7, 11
-	ld de, wCurDamage
-	lb bc, 2, 3
-	call PrintNum
-
-	pop af
-	ld [wHalfDamage], a
-	pop af
-	ld [wCriticalHit], a
-	pop af
-	ld [wAttackMissed], a
-	pop af
-	ld [wCurType], a
-	pop af
-	ld [wTypeMatchup], a
-	pop af
-	ld [wTypeModifier], a
-
-	pop hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-	ret
-
-.CapDisplayDamage
-	ld a, [wCurDamage]
-	cp HIGH(MAX_STAT_VALUE)
-	ret c
-	jr nz, .cap_damage
-	ld a, [wCurDamage + 1]
-	cp LOW(MAX_STAT_VALUE)
-	ret c
-	ret z
-
-.cap_damage
-	ld a, HIGH(MAX_STAT_VALUE)
-	ld [wCurDamage], a
-	ld a, LOW(MAX_STAT_VALUE)
-	ld [wCurDamage + 1], a
-	ret
-
-; This converts values out of 256 into a value
-; out of 100. It achieves this by multiplying
-; the value by 100 and dividing it by 256.
-CoreConvertPercentages:
-
-	; Overwrite the "hl" register.
-	ld l, a
-	ld h, 0
-	push af
-
-	; Multiplies the value of the "hl" register by 3.
-	add hl, hl
-	add a, l
-	ld l, a
-	adc h
-	sub l
-	ld h, a
-
-	; Multiplies the value of the "hl" register
-	; by 8. The value of the "hl" register
-	; is now 24 times its original value.
-	add hl, hl
-	add hl, hl
-	add hl, hl
-
-	; Add the original value of the "hl" value to itself,
-	; making it 25 times its original value.
-	pop af
-	add a, l
-	ld l, a
-	adc h
-	sbc l
-	ld h, a
-
-	; Multiply the value of the "hl" register by
-	; 4, making it 100 times its original value.
-	add hl, hl
-	add hl, hl
-
-	; Set the "l" register to 0.5, otherwise the rounded
-	; value may be lower than expected. Round the
-	; high byte to nearest and drop the low byte.
-	ld l, 0.5
-	sla l
-	sbc a
-	and 1
-	add a, h
-
-	; add 1?
-	ld a, 1
-	add a, h
-	ret
 
 CheckPlayerHasUsableMoves:
 

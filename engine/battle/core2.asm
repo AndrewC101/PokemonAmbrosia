@@ -739,6 +739,282 @@ BattleInfoOrForfeit:
     ld hl, BattleText_DoesNotAccept
     jp StdBattleTextbox
 
+MoveInfoBox:
+	xor a
+	ldh [hBGMapMode], a
+
+	hlcoord 0, 7 ; upper right corner of the textbox
+	ld b, 4 ; Box height
+	ld c, 9 ; Box length
+	call Textbox
+	call MobileTextBorder
+
+	ld a, [wPlayerDisableCount]
+	and a
+	jr z, .not_disabled
+
+	swap a
+	and $f
+	ld b, a
+	ld a, [wMenuCursorY]
+	cp b
+	jr nz, .not_disabled
+
+	hlcoord 1, 10
+	ld de, .Disabled
+	call PlaceString
+	ret
+
+.not_disabled
+	ld hl, wMenuCursorY
+	dec [hl]
+	call SetPlayerTurn
+	ld hl, wBattleMonMoves
+	ld a, [wMenuCursorY]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld [wCurPlayerMove], a
+
+	ld a, [wCurBattleMon]
+	ld [wCurPartyMon], a
+	ld a, WILDMON
+	ld [wMonType], a
+	callfar GetMaxPPOfMove
+
+	ld hl, wMenuCursorY
+	ld c, [hl]
+	inc [hl]
+	ld b, 0
+	ld hl, wBattleMonPP
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	ld [wStringBuffer1], a
+	call .PrintPP
+
+	farcall UpdateMoveData
+
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	hlcoord 2, 8
+	predef PrintMoveType
+
+	ld de, .pp_string
+	hlcoord 2, 10
+	call PlaceString
+
+	ld de, .power_string
+	hlcoord 4, 9
+	call PlaceString
+
+	hlcoord 1, 9
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	cp 2
+	jr c, .nopower
+	jr .haspower
+
+.nopower
+	ld de, .nopower_string
+	call PlaceString
+	jr .place_accuracy
+
+.haspower
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	call PrintNum
+
+.place_accuracy
+	ld a, [wCurSpecies]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	call .ConvertPercentages
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 6, 9
+	call PrintNum
+	ld [hl], "<%>"
+	ld a, [wOptions2]
+	and 1 << MENU_CLOCK
+	jr z, .place_category
+	ld de, .damage_string
+	hlcoord 1, 11
+	call PlaceString
+	call .PrintDamage
+	ret
+
+.place_category
+	ld a, [wCurPlayerMove]
+	ld b, a
+	farcall GetMoveCategoryName
+	hlcoord 1, 11
+	ld de, wStringBuffer1
+	call PlaceString
+	ret
+
+.PrintPP
+	hlcoord 5, 10
+	push hl
+	ld de, wStringBuffer1
+	lb bc, 1, 2
+	call PrintNum
+	pop hl
+	inc hl
+	inc hl
+	ld [hl], '/'
+	inc hl
+	ld de, wNamedObjectIndex
+	lb bc, 1, 2
+	call PrintNum
+	ret
+
+.PrintDamage
+	ld a, [wCurDamage]
+	ld h, a
+	ld a, [wCurDamage + 1]
+	ld l, a
+	push hl
+
+	ld a, [wTypeModifier]
+	push af
+	ld a, [wTypeMatchup]
+	push af
+	ld a, [wCurType]
+	push af
+	ld a, [wAttackMissed]
+	push af
+	ld a, [wCriticalHit]
+	push af
+	ld a, [wHalfDamage]
+	push af
+
+	xor a
+	ld [wTypeModifier], a
+	ld [wAttackMissed], a
+	ld [wCriticalHit], a
+	ld [wHalfDamage], a
+
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
+
+	ld a, [wCurDamage]
+	ld h, a
+	ld a, [wCurDamage + 1]
+	ld l, a
+	push hl
+
+	ld b, 85 percent + 1
+	callfar ApplyDamageVariationMultiplierToCurDamage
+	call .CapDisplayDamage
+
+	hlcoord 3, 11
+	ld de, wCurDamage
+	lb bc, 2, 3
+	call PrintNum
+	hlcoord 6, 11
+	ld [hl], '-'
+
+	pop hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	call .CapDisplayDamage
+
+	hlcoord 7, 11
+	ld de, wCurDamage
+	lb bc, 2, 3
+	call PrintNum
+
+	pop af
+	ld [wHalfDamage], a
+	pop af
+	ld [wCriticalHit], a
+	pop af
+	ld [wAttackMissed], a
+	pop af
+	ld [wCurType], a
+	pop af
+	ld [wTypeMatchup], a
+	pop af
+	ld [wTypeModifier], a
+
+	pop hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+.CapDisplayDamage
+	ld a, [wCurDamage]
+	cp HIGH(MAX_STAT_VALUE)
+	ret c
+	jr nz, .cap_damage
+	ld a, [wCurDamage + 1]
+	cp LOW(MAX_STAT_VALUE)
+	ret c
+	ret z
+
+.cap_damage
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [wCurDamage], a
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [wCurDamage + 1], a
+	ret
+
+.ConvertPercentages
+	ld l, a
+	ld h, 0
+	push af
+	add hl, hl
+	add a, l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	pop af
+	add a, l
+	ld l, a
+	adc h
+	sbc l
+	ld h, a
+	add hl, hl
+	add hl, hl
+	ld l, 0.5
+	sla l
+	sbc a
+	and 1
+	add a, h
+	ld a, 1
+	add a, h
+	ret
+
+.nopower_string
+	db "---@"
+
+.power_string
+	db "p/@"
+
+.pp_string
+	db "pp@"
+
+.damage_string
+	db "D @"
+
+.Disabled
+	db "Disabled!@"
+
 ForfeitMatchText:
     text "Forfeit Battle?"
     done

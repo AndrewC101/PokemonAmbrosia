@@ -85,7 +85,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Difficulty<LF>"
 	db "        :<LF>"
-	db "Menu Data<LF>"
+	db "Battle Info<LF>"
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"

@@ -245,13 +245,16 @@ HPBarAnim_RedrawHPBar:
 HPBarAnim_UpdateHPRemaining:
 	ld a, [wWhichHPBar]
 	and a
-	jr z, .load_enemy
+	jr z, .enemy_hp
 	cp $1
 	jr z, .load_15
 	ld de, SCREEN_WIDTH + 2
 	jr .loaded_de
 
-.load_enemy
+.enemy_hp
+	ld a, [wOptions2]
+	and 1 << MENU_CLOCK
+	ret z
 	ld de, SCREEN_WIDTH + 2
 	jr .loaded_de
 

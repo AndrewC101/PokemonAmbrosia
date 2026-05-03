@@ -116,6 +116,17 @@ NameRater:
 	farcall _NameRater
 	ret
 
+ForceOptionsMenu:
+	ld hl, wStatusFlags2
+	set STATUSFLAGS2_FORCED_OPTIONS_MENU_F, [hl]
+	call FadeToMenu
+	farcall _Option
+	ld hl, wStatusFlags2
+	res STATUSFLAGS2_FORCED_OPTIONS_MENU_F, [hl]
+	call ExitAllMenus
+	call ReturnToMapWithSpeechTextbox
+	ret
+
 OverworldTownMap:
 	call FadeToMenu
 	farcall _TownMap

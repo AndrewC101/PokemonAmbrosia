@@ -3,9 +3,9 @@
 	const OPT_TEXT_SPEED   ; 0
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
-	const OPT_DIFFICULTY   ; 3
-	const OPT_FAST_BATTLES ; 4
-	const OPT_MENU_CLOCK   ; 5
+	const OPT_FAST_BATTLES ; 3
+	const OPT_MENU_CLOCK   ; 4
+	const OPT_DIFFICULTY   ; 5
 	const OPT_FRAME        ; 6
 	const OPT_CANCEL       ; 7
 DEF NUM_OPTIONS EQU const_value    ; 8
@@ -54,7 +54,12 @@ _Option:
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
 	and PAD_START | PAD_B
-	jr nz, .ExitOptions
+	jr z, .check_dpad
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_FORCED_OPTIONS_MENU_F, a
+	jr z, .ExitOptions
+
+.check_dpad
 	call OptionsControl
 	jr c, .dpad
 	call GetOptionPointer
@@ -83,13 +88,13 @@ StringOptions:
 	db "        :<LF>"
 	db "Battle Speed<LF>"
 	db "        :<LF>"
-	db "Difficulty<LF>"
-	db "        :<LF>"
 	db "Battle Info<LF>"
+	db "        :<LF>"
+	db "Difficulty<LF>"
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
-	db "Cancel@"
+	db "Done@"
 
 GetOptionPointer:
 	jumptable .Pointers, wJumptableIndex
@@ -100,8 +105,8 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_FasterBattles
-	dw Options_Difficulty
 	dw Options_MenuClock
+	dw Options_Difficulty
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -313,7 +318,7 @@ Options_Difficulty:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 11
+	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
@@ -491,7 +496,7 @@ Options_MenuClock:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 13
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -554,15 +559,15 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckMenuClock
+	jr nz, .CheckDifficulty
 	ld [hl], OPT_TEXT_SPEED ; first option
 	scf
 	ret
 
-.CheckMenuClock: ; I have no idea why this exists...
-	cp OPT_MENU_CLOCK
+.CheckDifficulty: ; I have no idea why this exists...
+	cp OPT_DIFFICULTY
 	jr nz, .Increase
-	ld [hl], OPT_MENU_CLOCK
+	ld [hl], OPT_DIFFICULTY
 
 .Increase:
 	inc [hl]
@@ -575,7 +580,7 @@ OptionsControl:
 ; Another thing where I'm not sure why it exists
 	cp OPT_FRAME
 	jr nz, .NotFrame
-	ld [hl], OPT_MENU_CLOCK
+	ld [hl], OPT_DIFFICULTY
 	scf
 	ret
 

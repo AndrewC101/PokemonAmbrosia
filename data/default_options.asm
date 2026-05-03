@@ -7,8 +7,8 @@ DefaultOptions:
 	db FRAME_1
 ; wTextboxFlags: use text speed
 	db 1 << FAST_TEXT_DELAY_F
-; wOptions2: menu clock on
-	db 1 << MENU_CLOCK
+; wOptions2: battle damage info off
+	db 0
 	db 0 << FAST_BATTLES
 
 	db $00

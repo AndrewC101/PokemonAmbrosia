@@ -114,8 +114,8 @@ _ResetWRAM:
 	xor a
 	call ByteFill
 
-	ld a, 1
-	ld [wOptions2], a       ; menu data on by default
+	xor a
+	ld [wOptions2], a       ; battle damage info off by default
 
 	ld hl, STARTOF(WRAMX)
 	ld bc, wGameData - STARTOF(WRAMX)
@@ -231,8 +231,8 @@ ResetWRAM_NewGamePlus:
 	xor a
 	call ByteFill
 
-	ld a, 1
-	ld [wOptions2], a       ; menu data on by default
+	xor a
+	ld [wOptions2], a       ; battle damage info off by default
 
 	ld hl, STARTOF(WRAMX)
 	ld bc, wGameData - STARTOF(WRAMX)

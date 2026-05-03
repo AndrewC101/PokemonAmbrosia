@@ -1010,6 +1010,7 @@ SwinubEvosAttacks:
 	db 31, HAIL
 	db 34, STEALTH_ROCK
 	db 37, AMNESIA
+	db 40, FREEZE_DRY
 	db 42, EARTHQUAKE
 	db 46, BLIZZARD
 	db 50, AVALANCHE
@@ -1027,6 +1028,7 @@ MamoswineEvosAttacks:
 	db 30, HAIL
 	db 34, STEALTH_ROCK
 	db 37, AMNESIA
+	db 40, FREEZE_DRY
 	db 42, EARTHQUAKE
 	db 46, BLIZZARD
 	db 50, AVALANCHE
@@ -1326,6 +1328,7 @@ WeavileEvosAttacks:
 	db 30, ICE_PUNCH
 	db 33, SUCKER_PUNCH
 	db 36, DARK_PULSE
+	db 40, FREEZE_DRY
 	db 41, NASTY_PLOT
 	db 45, NIGHT_SLASH
 	db 50, AVALANCHE
@@ -2579,6 +2582,7 @@ SneaselEvosAttacks:
 	db 30, ICE_PUNCH
 	db 33, SUCKER_PUNCH
 	db 36, DARK_PULSE
+	db 40, FREEZE_DRY
 	db 41, NASTY_PLOT
 	db 45, NIGHT_SLASH
 	db 50, AVALANCHE
@@ -2678,9 +2682,9 @@ KyogreEvosAttacks:
 	db 20, WATERFALL
 	db 30, BODY_SLAM
 	db 40, REST
-	db 50, DOUBLE_EDGE
+	db 50, FREEZE_DRY
 	db 60, CALM_MIND
-	db 70, FREEZE_DRY
+	db 70, THUNDER
 	db 80, HYDRO_PUMP
 	db 0 ; no more level-up moves
 

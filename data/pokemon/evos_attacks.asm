@@ -1128,9 +1128,10 @@ CloysterEvosAttacks:
 	db 1, TACKLE
 	db 1, PROTECT
 	db 9, POWDER_SNOW
-	db 17, AURORA_BEAM
+	db 17, ICY_WIND
 	db 20, HAIL
 	db 22, BUBBLEBEAM
+	db 28, AURORA_BEAM
 	db 30, CLAMP
 	db 35, WATERFALL
 	db 40, FREEZE_DRY
@@ -1481,8 +1482,8 @@ JynxEvosAttacks:
 	db 13, POWDER_SNOW
 	db 18, BODY_SLAM
 	db 22, HAIL
-	db 26, AURORA_BEAM
-	db 30, MEAN_LOOK
+	db 26, MEAN_LOOK
+	db 30, AURORA_BEAM
 	db 36, PSYCHIC_M
 	db 40, FREEZE_DRY
 	db 45, PERISH_SONG
@@ -1550,12 +1551,13 @@ GyaradosEvosAttacks:
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
+	db 1, PERISH_SONG
     db 1, SURF
     db 1, DEFOG
 	db 15, BODY_SLAM
-	db 20, AURORA_BEAM
+	db 20, ICY_WIND
 	db 25, HAIL
-	db 30, PERISH_SONG
+	db 30, AURORA_BEAM
 	db 35, WATERFALL
 	db 40, FREEZE_DRY
 	db 45, HYDRO_PUMP
@@ -1735,6 +1737,7 @@ ArticunoEvosAttacks:
 	db 1, GUST
 	db 1, POWDER_SNOW
 	db 25, AGILITY
+	db 35, AURORA_BEAM
 	db 37, HAIL
 	db 40, AIR_SLASH
 	db 45, ROOST
@@ -1752,6 +1755,7 @@ ZapdosEvosAttacks:
 	db 25, DRILL_PECK
 	db 30, AIR_SLASH
 	db 35, DISCHARGE
+	db 40, AURORA_BEAM
 	db 45, ROOST
 	db 50, THUNDERBOLT
 	db 55, HURRICANE
@@ -2153,8 +2157,8 @@ NinetalesAEvosAttacks:
 	db 14, DRAIN_KISS
 	db 20, ICY_WIND
 	db 25, HYPNOSIS
-	db 25, AURORA_BEAM
-	db 30, HAIL
+	db 25, HAIL
+	db 30, AURORA_BEAM
 	db 36, MOON_BLAST
 	db 40, FREEZE_DRY
 	db 45, BLIZZARD

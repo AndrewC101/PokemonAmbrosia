@@ -70,10 +70,10 @@ Moves: ; 41afb
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   85, 10,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,         SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 15,  10
-	move BLIZZARD,     EFFECT_BLIZZARD,        120, ICE,           SPECIAL,   75, 10,  10
+	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,           SPECIAL,   75, 10,  30
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     60, WATER,         SPECIAL,  100, 20,  10
-	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    75, ICE,           SPECIAL,  100, 20,  10
+	move AURORA_BEAM,  EFFECT_FREEZE_HIT,         80, ICE,           SPECIAL,  100, 15,  30
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        SPECIAL,  100, 10,   0
 	move PECK,         EFFECT_NORMAL_HIT,         40, FLYING,        PHYSICAL, 100, 35,   0
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0

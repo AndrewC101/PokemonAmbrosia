@@ -5634,6 +5634,44 @@ BattleTargetHasTypeAbilityImmunity::
 	pop bc
 	ret
 
+ApplyBattleMoveTypeMatchupOverrides::
+	push hl
+	push de
+	push bc
+
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FREEZE_DRY
+	jr nz, .done
+
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .check_water
+	ld hl, wBattleMonType1
+
+.check_water
+	ld a, [hli]
+	cp WATER
+	jr z, .boost
+	ld a, [hl]
+	cp WATER
+	jr nz, .done
+
+.boost
+	ld a, [wTypeMatchup]
+	and a
+	jr z, .done
+	add a
+	add a
+	ld [wTypeMatchup], a
+
+.done
+	pop bc
+	pop de
+	pop hl
+	ret
+
 DoesSpeciesHaveTypeAbilityImmunity::
 ; Return carry if species c is immune to move type b because of an
 ; ability-like species mapping such as Levitate or Water Absorb.

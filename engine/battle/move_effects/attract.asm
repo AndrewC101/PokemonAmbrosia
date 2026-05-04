@@ -5,8 +5,6 @@ BattleCommand_Attract:
 	jr nz, .failed
 	call CheckOppositeGender
 	jr c, .failed
-	call CheckHiddenOpponent
-	jr nz, .failed
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_IN_LOVE, [hl]

@@ -57,9 +57,6 @@ BattleCommand_Curse:
 
 ; Cut HP in half and put a curse on the opponent.
 
-	call CheckHiddenOpponent
-	jr nz, .failed
-
 	call CheckSubstituteOpp
 	jr nz, .failed
 

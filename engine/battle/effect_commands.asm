@@ -1529,9 +1529,12 @@ BattleCheckTypeMatchup:
 	jr z, .get_type
 	ld hl, wBattleMonType1
 .get_type
-    ld a, BATTLE_VARS_MOVE_TYPE
+	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar ; preserves hl, de, and bc
-; fallthrough
+	call CheckTypeMatchup
+	farcall ApplyBattleMoveTypeMatchupOverrides
+	ret
+
 CheckTypeMatchup:
 ; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
@@ -1572,21 +1575,11 @@ CheckTypeMatchup:
 	jr .TypesLoop
 
 .Yup:
-	call FreezeDryOverrideMatchedType
-	jr c, .GotFreezeDryTypeMatchup
 	xor a
 	ldh [hDividend + 0], a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
 	ld a, [hli]
-	jr .HaveTypeMatchupMultiplier
-
-.GotFreezeDryTypeMatchup:
-	inc hl
-	xor a
-	ldh [hDividend + 0], a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
 .HaveTypeMatchupMultiplier:
 	ldh [hMultiplicand + 2], a
 	ld a, [wTypeMatchup]
@@ -4926,9 +4919,6 @@ BattleCommand_StatDown:
 	and a
 	jr nz, .Failed
 
-	call CheckHiddenOpponent
-	jr nz, .Failed
-
 ; Accuracy/Evasion reduction don't involve stats.
 	ld [hl], b
 	ld a, c
@@ -7005,9 +6995,6 @@ BattleCommand_ArenaTrap:
 
 ; Doesn't work on an absent opponent.
 
-	call CheckHiddenOpponent
-	jr nz, .failed
-
 ; Don't trap if the opponent is already trapped.
 
 	ld a, BATTLE_VARS_SUBSTATUS5
@@ -7292,11 +7279,6 @@ BattleCommand_SkipSunCharge:
 INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
-
-CheckHiddenOpponent:
-; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.
-    xor a
-	ret
 
 SandstormSpDefBoost:
 ; First, check if Sandstorm is active.

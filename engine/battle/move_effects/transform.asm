@@ -6,8 +6,6 @@ BattleCommand_Transform:
 	call GetBattleVarAddr
 	bit SUBSTATUS_TRANSFORMED, [hl]
 	jp nz, BattleEffect_ButItFailed
-	call CheckHiddenOpponent
-	jp nz, BattleEffect_ButItFailed
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_SUBSTITUTE, [hl]

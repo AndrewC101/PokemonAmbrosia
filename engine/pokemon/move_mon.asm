@@ -203,9 +203,7 @@ endr
 	jr nz, .copywildmonDVs
 
 ; this part is for non wild pokes, so gift mon
-; DevNote - Gift Pokemon DVs - after having 8 badges all gift pokemon have max dvs
 ; pikachu always has max dvs
-
 ; DevNote - shiny - all gift Pokemon have 2% chance to be shiny
 	call BattleRandom
     cp 2 percent
@@ -225,14 +223,14 @@ endr
 	jr .initializeDVs
 
 .normal
-	ld a, [wJohtoBadges]
-	cp %11111111 ; all badges
-	jr nz, .checkPikachu
-	ld b, $FF
-	ld c, $FF
-	jr .initializeDVs
+;	ld a, [wJohtoBadges]
+;	cp %11111111 ; all badges
+;	jr nz, .checkPikachu
+;	ld b, $FF
+;	ld c, $FF
+;	jr .initializeDVs
 
-.checkPikachu
+;.checkPikachu
     ld a, [wCurPartySpecies]
     cp PIKACHU
     jr nz, .random

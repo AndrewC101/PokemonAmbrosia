@@ -82,8 +82,8 @@ LoadBattleFontsHPBar:
 	lb bc, BANK(FontBattleExtra), 12
 	call Get2bppViaHDMA
 	ld hl, vTiles2 tile $70
-	ld de, FontBattleExtra + 16 tiles ; '<DO>'
-	lb bc, BANK(FontBattleExtra), 3 ; '<DO>' to '『'
+	ld de, FontBattleExtra + 16 tiles ; '<DV>'
+	lb bc, BANK(FontBattleExtra), 3 ; '<DV>' to '『'
 	call Get2bppViaHDMA
 	call LoadFrame
 

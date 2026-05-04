@@ -5967,6 +5967,10 @@ DrawEnemyHUD:
 	and 1 << MENU_CLOCK
 	jr z, .skip_hp_numbers
 
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .print_wild_dvs
+
 	push de
 	hlcoord 4, 3
 	ld de, wEnemyMonHP
@@ -5978,6 +5982,10 @@ DrawEnemyHUD:
 	lb bc, 2, 3
 	call PrintNum
 	pop de
+	jr .skip_hp_numbers
+
+.print_wild_dvs
+	farcall PrintEnemyWildDVs
 .skip_hp_numbers
 
 	farcall LoadEnemyStatusIcon

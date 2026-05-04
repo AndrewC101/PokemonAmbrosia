@@ -255,6 +255,9 @@ HPBarAnim_UpdateHPRemaining:
 	ld a, [wOptions2]
 	and 1 << MENU_CLOCK
 	ret z
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	ret z ; wild enemy HUD shows fixed DVs, so don't animate HP digits over them
 	ld de, SCREEN_WIDTH + 2
 	jr .loaded_de
 

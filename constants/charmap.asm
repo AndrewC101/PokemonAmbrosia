@@ -77,7 +77,7 @@
 	charmap "<LV>",      $6e
 	charmap "<DEX_LV>",  $5d
 	charmap "<DEX_LV_VRAM1>",$74
-	charmap "<DO>",      $70 ; hiragana small do, unused
+	charmap "<DV>",      $70 ; battle-only DV glyph
 	charmap "◀",         $71
 	charmap "『",         $72 ; Japanese opening quote, unused
 	charmap "<ID>",      $73

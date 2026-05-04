@@ -1845,6 +1845,63 @@ EnemyAbilityInfoBox:
 .AbilitiesString:
 	db "Ability Info:@"
 
+PrintEnemyWildDVs::
+	push hl
+	push de
+	push bc
+
+	; Unpack enemy DVs into c/d/e/b = Atk/Def/Spd/Spcl.
+	ld a, [wTempMonDVs]
+	ld b, a
+	and $f0
+	swap a
+	ld c, a
+	ld a, b
+	and $0f
+	ld d, a
+
+	ld a, [wTempMonDVs + 1]
+	ld b, a
+	and $f0
+	swap a
+	ld e, a
+	ld a, b
+	and $0f
+	ld b, a
+
+	; HP DV follows the project's stat rule: HP DV = Atk DV, so omit it here.
+	; Place the DV glyph two tiles right of the old left edge, then print Atk/Def/Spd/Spcl.
+	hlcoord 2, 3
+	ld a, "<DV>"
+	ld [hli], a
+
+	; Print 4 two-digit values left-to-right: Atk, Def, Spd, Spcl.
+	ld a, c
+	call .PrintDV
+	ld a, d
+	call .PrintDV
+	ld a, e
+	call .PrintDV
+	ld a, b
+	call .PrintDV
+
+	pop bc
+	pop de
+	pop hl
+	ret
+
+.PrintDV
+	; Input: a = DV value, hl = tilemap cursor. PrintNum advances hl by 2 tiles.
+	push de
+	push bc
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	pop bc
+	pop de
+	ret
+
 FieldInfoBoxPlaceElement: ; input: bc -> coords, hl -> Field text, de -> Count
 	push de
 	ld d, h

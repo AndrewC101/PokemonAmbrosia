@@ -10,6 +10,7 @@ DEF STAT_PAGE_MASK EQU %00000011
 	const STATS_SCREEN_PLACE_FRONTPIC ; 4
 	const STATS_SCREEN_ANIMATE_MON    ; 5
 	const STATS_SCREEN_ANIMATE_EGG    ; 6
+	const STATS_SCREEN_SHOW_DVS_STATEXP ; 7
 
 BattleStatsScreenInit:
 ; Load current Battle Time of Day into Backup
@@ -272,7 +273,7 @@ MonStatsJoypad:
 	ret
 
 .next
-	and PAD_CTRL_PAD | PAD_A | PAD_B
+	and PAD_CTRL_PAD | PAD_A | PAD_B | PAD_SELECT
 	jp StatsScreen_JoypadAction
 
 StatsScreenWaitCry:
@@ -323,8 +324,10 @@ StatsScreen_JoypadAction:
 	pop af
 	bit B_PAD_B, a
 	jp nz, .b_button
+	bit B_PAD_SELECT, a
+	jr nz, .select_button
 	bit B_PAD_LEFT, a
-	jr nz, .d_left
+	jp nz, .d_left
 	bit B_PAD_RIGHT, a
 	jr nz, .d_right
 	bit B_PAD_A, a
@@ -333,7 +336,23 @@ StatsScreen_JoypadAction:
 	jr nz, .d_up
 	bit B_PAD_DOWN, a
 	jr nz, .d_down
-	jr .done
+	jp .done
+
+.select_button
+	ld a, c
+	cp BLUE_PAGE
+	jr nz, .done
+	ld hl, wStatsScreenFlags
+	bit STATS_SCREEN_SHOW_DVS_STATEXP, [hl]
+	jr nz, .show_stats
+	set STATS_SCREEN_SHOW_DVS_STATEXP, [hl]
+	jr .reload_page
+.show_stats
+	res STATS_SCREEN_SHOW_DVS_STATEXP, [hl]
+.reload_page
+	ld h, 4
+	call StatsScreen_SetJumptableIndex
+	ret
 
 .d_down
 	ld a, [wMonType]
@@ -796,7 +815,24 @@ LoadGreenPage:
 	db "Move@"
 
 LoadBluePage:
+	ld hl, wStatsScreenFlags
+	bit STATS_SCREEN_SHOW_DVS_STATEXP, [hl]
+	jr nz, .LoadDVsAndStatExp
 	call .PlaceOTInfo
+	call .PlaceVerticalDivider
+	hlcoord 11, 8
+	ld bc, 6
+	predef PrintTempMonStats
+	call .PlaceSelectHint
+	ret
+
+.LoadDVsAndStatExp
+	call .PlaceVerticalDivider
+	call .PlaceDVs
+	call .PlaceStatExp
+	jp .PlaceHappiness
+
+.PlaceVerticalDivider
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
@@ -806,9 +842,146 @@ LoadBluePage:
 	add hl, de
 	dec b
 	jr nz, .vertical_divider
+	ret
+
+.PlaceDVs
+	; Unpack DVs into scratch bytes so PlaceString can't clobber them.
+	ld a, [wTempMonDVs]
+	ld b, a
+	and $f0
+	swap a
+	ld [wStringBuffer2], a
+	ld a, b
+	and $0f
+	ld [wStringBuffer2 + 1], a
+
+	ld a, [wTempMonDVs + 1]
+	ld b, a
+	and $f0
+	swap a
+	ld [wStringBuffer2 + 2], a
+	ld a, b
+	and $0f
+	ld [wStringBuffer2 + 3], a
+
+	ld de, BluePageDVsTitleText
+	hlcoord 2, 8
+	call PlaceString
+
+	ld de, BluePageHPText
+	hlcoord 1, 10
+	call PlaceString
+	hlcoord 5, 10
+	ld a, [wStringBuffer2] ; project rule: HP DV = Atk DV
+	call .PrintDV
+
+	ld de, BluePageAtkText
+	hlcoord 1, 11
+	call PlaceString
+	hlcoord 5, 11
+	ld a, [wStringBuffer2]
+	call .PrintDV
+
+	ld de, BluePageDefText
+	hlcoord 1, 12
+	call PlaceString
+	hlcoord 5, 12
+	ld a, [wStringBuffer2 + 1]
+	call .PrintDV
+
+	ld de, BluePageSpdText
+	hlcoord 1, 13
+	call PlaceString
+	hlcoord 5, 13
+	ld a, [wStringBuffer2 + 2]
+	call .PrintDV
+
+	ld de, BluePageSpcText
+	hlcoord 1, 14
+	call PlaceString
+	hlcoord 5, 14
+	ld a, [wStringBuffer2 + 3]
+	call .PrintDV
+	ret
+
+.PlaceStatExp
+	ld de, BluePageStatExpTitleText
 	hlcoord 11, 8
-	ld bc, 6
-	predef PrintTempMonStats
+	call PlaceString
+
+	ld de, BluePageHPText
+	hlcoord 11, 10
+	call PlaceString
+	hlcoord 15, 10
+	ld de, wTempMonHPExp
+	call .PrintStatExp
+
+	ld de, BluePageAtkText
+	hlcoord 11, 11
+	call PlaceString
+	hlcoord 15, 11
+	ld de, wTempMonAtkExp
+	call .PrintStatExp
+
+	ld de, BluePageDefText
+	hlcoord 11, 12
+	call PlaceString
+	hlcoord 15, 12
+	ld de, wTempMonDefExp
+	call .PrintStatExp
+
+	ld de, BluePageSpdText
+	hlcoord 11, 13
+	call PlaceString
+	hlcoord 15, 13
+	ld de, wTempMonSpdExp
+	call .PrintStatExp
+
+	ld de, BluePageSpcText
+	hlcoord 11, 14
+	call PlaceString
+	hlcoord 15, 14
+	ld de, wTempMonSpcExp
+	call .PrintStatExp
+	ret
+
+.PlaceHappiness
+	ld de, BluePageHappinessText
+	hlcoord 1, 16
+	call PlaceString
+	hlcoord 4, 17
+	ld de, wTempMonHappiness
+	push bc
+	lb bc, 1, 3
+	call PrintNum
+	pop bc
+	ret
+
+.PlaceSelectHint
+	ld de, BluePagePressText
+	hlcoord 1, 16
+	call PlaceString
+	ld de, BluePageSelectText
+	hlcoord 1, 17
+	call PlaceString
+	ret
+
+.PrintDV
+	push de
+	push bc
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	pop bc
+	pop de
+	ret
+
+.PrintStatExp
+	push bc
+	lb bc, 2, 5
+	call PrintNum
+	pop bc
 	ret
 
 .PlaceOTInfo:
@@ -856,6 +1029,36 @@ IDNoString:
 
 OTString:
 	db "OT/@"
+
+BluePageHPText:
+	db "HP@"
+
+BluePageAtkText:
+	db "Atk@"
+
+BluePageDefText:
+	db "Def@"
+
+BluePageSpdText:
+	db "Spd@"
+
+BluePageSpcText:
+	db "Spc@"
+
+BluePageDVsTitleText:
+	db "DVs@"
+
+BluePageStatExpTitleText:
+	db "Stat Exp@"
+
+BluePagePressText:
+	db "Press@"
+
+BluePageSelectText:
+	db "Select@"
+
+BluePageHappinessText:
+	db "Happiness@"
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs

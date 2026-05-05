@@ -88,14 +88,7 @@ MeetMomScript:
 
 .FinishPhone:
 	writetext InstructionsNextText
-	promptbutton
-	readmem wNewGamePlus
-	ifequal 1, .SkipJourneySetup
-	writetext JourneySetupText
-	promptbutton
-	special ForceOptionsMenu
-
-.SkipJourneySetup:
+	waitbutton
 	writetext GiveWarpBeaconText
 	verbosegiveitem ESCAPE_POD
 	writetext StaySafeText
@@ -382,13 +375,6 @@ InstructionsNextText:
 	line "call me and let"
 	cont "me know how you"
 	cont "are doing."
-	done
-
-JourneySetupText:
-	text "Before you go,"
-	line "take a moment to"
-	cont "set yourself up"
-	cont "for the journey."
 	done
 
 HurryUpElmIsWaitingText:

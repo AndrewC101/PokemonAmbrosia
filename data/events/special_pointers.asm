@@ -49,7 +49,6 @@ SpecialsPointers::
 	add_special MagnetTrain
 	add_special NameRival
 	add_special SetDayOfWeek
-	add_special ForceOptionsMenu
 	add_special OverworldTownMap
 	add_special UnownPrinter
 	add_special MapRadio

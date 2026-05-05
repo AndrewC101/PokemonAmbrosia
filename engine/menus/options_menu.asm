@@ -10,7 +10,7 @@
 	const OPT_CANCEL       ; 7
 DEF NUM_OPTIONS EQU const_value    ; 8
 
-_Option:
+_Option::
     call ClearJoypad
 	ld hl, hInMenu
 	ld a, [hl]
@@ -55,8 +55,8 @@ _Option:
 	ldh a, [hJoyPressed]
 	and PAD_START | PAD_B
 	jr z, .check_dpad
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_FORCED_OPTIONS_MENU_F, a
+	ld a, [wForcedMenu]
+	and a
 	jr z, .ExitOptions
 
 .check_dpad

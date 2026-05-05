@@ -3240,8 +3240,9 @@ wLevelCap:: db
 wHardMode:: db
 wNewGamePlus:: db
 wDoubleExp:: db
-; DevNote - 140 free bytes!
-	ds 140
+wForcedMenu:: db
+; DevNote - 139 free bytes!
+	ds 139
 
 wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db

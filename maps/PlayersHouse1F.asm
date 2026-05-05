@@ -88,7 +88,14 @@ MeetMomScript:
 
 .FinishPhone:
 	writetext InstructionsNextText
-	waitbutton
+	promptbutton
+	readmem wNewGamePlus
+	ifequal 1, .SkipJourneySetup
+	writetext JourneySetupText
+	promptbutton
+	callasm PlayersHouse1FForceOptionsMenu
+
+.SkipJourneySetup:
 	writetext GiveWarpBeaconText
 	verbosegiveitem ESCAPE_POD
 	writetext StaySafeText
@@ -146,6 +153,19 @@ PokegearName:
 PlayersHouse1FReceiveItemStd:
 	jumpstd ReceiveItemScript
 	end
+
+PlayersHouse1FForceOptionsMenu:
+	; Keep the intro-only options wrapper local to this map script so
+	; it doesn't grow specials.asm and shift later bank 3 code.
+	ld a, 1
+	ld [wForcedMenu], a
+	call FadeToMenu
+	farcall _Option
+	xor a
+	ld [wForcedMenu], a
+	call ExitAllMenus
+	call ReturnToMapWithSpeechTextbox
+	ret
 
 MomScript:
 	faceplayer
@@ -375,6 +395,13 @@ InstructionsNextText:
 	line "call me and let"
 	cont "me know how you"
 	cont "are doing."
+	done
+
+JourneySetupText:
+	text "Before you go,"
+	line "take a moment to"
+	cont "set yourself up"
+	cont "for the journey."
 	done
 
 HurryUpElmIsWaitingText:

@@ -1141,12 +1141,74 @@ Script_loadtemptrainer:
 	ld a, [wTempTrainerID]
 	ld [wOtherTrainerID], a
 	cp FIELD_MON
-	ret nz
+	jr z, .field_mon
+	call UpgradePhoneRematchTrainerID
+	ret
+
+.field_mon
 	; Field mons stash their level in the trainer's win-text slot.
 	; Cache it before the boxed-capture path reuses the overlapping temp buffer.
 	ld a, [wWinTextPointer]
 	ld [wSeenTrainerDistance], a
 	ret
+
+UpgradePhoneRematchTrainerID:
+	; NG+ Hard mode uses the strongest phone-rematch teams even on the first battle.
+	ld a, [wNewGamePlus]
+	and a
+	ret z
+	ld a, [wHardMode]
+	and a
+	ret z
+
+	ld a, [wOtherTrainerClass]
+	ld c, a
+	ld a, [wOtherTrainerID]
+	ld b, a
+	ld hl, PhoneRematchStrongestTrainerIDs
+
+.loop
+	ld a, [hli]
+	and a
+	ret z
+	cp c
+	jr nz, .skip_entry
+
+	ld a, [hli]
+	cp b
+	jr nz, .skip_strongest
+
+	ld a, [hl]
+	ld [wOtherTrainerID], a
+	ret
+
+.skip_entry
+	inc hl
+.skip_strongest
+	inc hl
+	jr .loop
+
+PhoneRematchStrongestTrainerIDs:
+	; A few phone trainers use non-1 opening IDs or non-max suffixes for their strongest rematch.
+	db SCHOOLBOY, JACK1, JACK5
+	db COOLTRAINERM, GAVEN1, GAVEN2
+	db YOUNGSTER, JOEY1, JOEY5
+	db BUG_CATCHER, WADE1, WADE5
+	db HIKER, ANTHONY2, ANTHONY5
+	db CAMPER, TODD1, TODD5
+	db BUG_CATCHER, ARNIE1, ARNIE5
+	db SCHOOLBOY, ALAN1, ALAN5
+	db SCHOOLBOY, CHAD1, CHAD5
+	db POKEMANIAC, BRENT1, BRENT4
+	db FISHER, WILTON1, WILTON3
+	db HIKER, PARRY1, PARRY3
+	db COOLTRAINERF, BETH1, BETH3
+	db COOLTRAINERF, REENA1, REENA3
+	db PICNICKER, LIZ1, LIZ5
+	db PICNICKER, GINA1, GINA5
+	db LASS, DANA1, DANA5
+	db PICNICKER, TIFFANY3, TIFFANY4
+	db 0
 
 Script_loadwildmon:
 	ld a, (1 << 7)

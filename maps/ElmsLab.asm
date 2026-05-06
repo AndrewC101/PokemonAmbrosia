@@ -304,6 +304,10 @@ ElmDirectionsScript:
 	closetext
 	callasm CrystalNamingScreen
 	reloadmap
+	opentext
+	writetext ConfirmCrystalText
+	waitbutton
+	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -1239,6 +1243,12 @@ ElmAskCrystalNameText:
 	para "What is it you"
 	line "call her again?"
 	done
+
+ConfirmCrystalText:
+    text "Ah yes <GREEN>"
+    line "is out looking"
+    cont "for you."
+    done
 
 GotElmsNumberText:
 	text "<PLAYER> got Elm's"

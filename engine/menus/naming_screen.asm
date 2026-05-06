@@ -82,7 +82,7 @@ NamingScreenJumptable:
 	dw .Box
 	dw .Friend
 	dw .Pokemon
-	dw .Pokemon
+	dw .Crystal
 	dw .Cheatcode
 	assert_table_length NUM_NAMING_SCREEN_TYPES
 
@@ -215,6 +215,19 @@ NamingScreenJumptable:
 
 .FriendsNameString:
 	db "おともだち　の　なまえは？@"
+
+.Crystal:
+	ld de, KrisSpriteGFX
+	ld b, BANK(KrisSpriteGFX)
+	call .LoadSprite
+	hlcoord 5, 2
+	ld de, .CrystalNameString
+	call PlaceString
+	call .StoreSpriteIconParams
+	ret
+
+.CrystalNameString:
+	db "Friend's Name?@"
 
 .Cheatcode:
 	hlcoord 5, 2

@@ -376,7 +376,7 @@ InitializeNPCNames:
 
 .Rival:  db "???@"
 .Red:    db "Red@"
-.Green:  db "Green@"
+.Green:  db "Crystal@"
 .Mom:    db "Mum@"
 
 InitializeWorld:

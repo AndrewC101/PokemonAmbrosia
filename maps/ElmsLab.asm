@@ -298,6 +298,12 @@ ElmDirectionsScript:
 	writetext ElmDirectionsText3
 	waitbutton
 	closetext
+	opentext
+	writetext ElmAskCrystalNameText
+	waitbutton
+	closetext
+	callasm CrystalNamingScreen
+	reloadmap
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -1224,6 +1230,14 @@ ElmDirectionsText2:
 ElmDirectionsText3:
 	text "<PLAY_G>, I'm"
 	line "counting on you!"
+	done
+
+ElmAskCrystalNameText:
+	text "Your friend was"
+	line "asking about you."
+
+	para "What is it you"
+	line "call her again?"
 	done
 
 GotElmsNumberText:
@@ -2404,8 +2418,21 @@ PlayerNamingScreen:
     call InitName
     ret
 
+CrystalNamingScreen:
+    ld b, NAME_CRYSTAL
+    ld de, wGreensName
+    newfarcall NamingScreen
+    ; Keep the stored default aligned with Crystal for blank submissions.
+    ld hl, wGreensName
+    ld de, DefaultCrystalName
+    call InitName
+    ret
+
 DefaultName:
     db "Gold@@@@@@@"
+
+DefaultCrystalName:
+    db "Crystal@@@@"
 
 CheckGiftOfGodPassword:
 	ld de, GiftOfGodPassword

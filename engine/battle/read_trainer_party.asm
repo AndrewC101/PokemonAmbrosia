@@ -2052,11 +2052,26 @@ GetTrainerName::
 	jr .loop
 
 CopyTrainerName:
+	; GetTrainerName decrements c for trainer-group indexing before it reaches this helper.
+	ld a, [wOtherTrainerClass]
+	cp CRYSTAL
+	jr z, .crystal
+
 	ld de, wStringBuffer1
 	push de
 	ld bc, NAME_LENGTH
 	ld a, [wTrainerGroupBank]
-    call FarCopyBytes
+	call FarCopyBytes
+	pop de
+	ret
+
+.crystal
+	; Crystal's trainer header stays hardcoded in parties.asm; battle UI reads the saved name instead.
+	ld hl, wGreensName
+	ld de, wStringBuffer1
+	push de
+	ld bc, NAME_LENGTH
+	call CopyBytes
 	pop de
 	ret
 

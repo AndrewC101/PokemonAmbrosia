@@ -126,6 +126,6 @@ DEF NUM_PARTYMENUACTIONS EQU const_value
 	const NAME_BOX
 	const NAME_FRIEND
 	const NAME_6 ; duplicate of NAME_MON
-	const NAME_7 ; duplicate of NAME_MON
+	const NAME_CRYSTAL
 	const NAME_CHEATCODE
 DEF NUM_NAMING_SCREEN_TYPES EQU const_value

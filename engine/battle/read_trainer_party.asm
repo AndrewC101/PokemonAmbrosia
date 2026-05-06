@@ -84,6 +84,7 @@ ReadTrainerPartyPieces:
     push bc
     and a
     ld b, a
+    ld c, a ; keep the trainer's original level so species upgrades only run after a real bump
     jr z, .normal ; if level is 0 then don't scale - this becomes 255
 
     ; if this is a frontier battle then never scale
@@ -136,7 +137,6 @@ ReadTrainerPartyPieces:
 
 .normal
     ld a, b
-    pop bc
 
 	ld [wCurPartyLevel], a
 	and a
@@ -148,6 +148,10 @@ ReadTrainerPartyPieces:
 ; species
 	call GetNextTrainerDataByte
 	ld [wCurPartySpecies], a
+	push hl
+	call MaybeUpgradeScaledTrainerSpecies
+	pop hl
+	pop bc
 
 ; add to party
 	ld a, OTPARTYMON
@@ -454,6 +458,111 @@ endr
 	pop hl
 .no_stat_recalc
 	jp .loop
+
+MaybeUpgradeScaledTrainerSpecies:
+	; b = scaled level, c = original level while the caller's bc lives on the stack.
+	ld a, b
+	cp c
+	ret z
+
+	call CurrentTrainerMonHoldsEviolite
+	ret c
+
+.loop
+	call ChooseScaledTrainerEvolution
+	ret nc
+	jr .loop
+
+CurrentTrainerMonHoldsEviolite:
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_NICKNAME_F, a
+	jr z, .check_item
+
+.skip_nickname
+	; Trainer nicknames sit between species and held item in the party data stream.
+	call GetNextTrainerDataByte
+	cp "@"
+	jr nz, .skip_nickname
+
+.check_item
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_ITEM_F, a
+	jr z, .no_item
+	call GetNextTrainerDataByte
+	cp EVIOLITE
+	jr z, .has_eviolite
+
+.no_item
+	and a
+	ret
+
+.has_eviolite
+	scf
+	ret
+
+ChooseScaledTrainerEvolution:
+	ld a, [wCurPartySpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarWord
+
+	ld a, [wCurPartyLevel]
+	ld c, a
+	xor a
+	ld d, a
+
+.loop
+	call GetTrainerEvolutionByte
+	and a
+	jr z, .done
+	cp EVOLVE_LEVEL
+	jr z, .level
+	cp EVOLVE_STAT
+	jr z, .stat
+	call GetTrainerEvolutionByte
+	ld b, 40
+	jr .species
+
+.level
+	call GetTrainerEvolutionByte
+	ld b, a
+	jr .species
+
+.stat
+	call GetTrainerEvolutionByte
+	ld b, a
+	call GetTrainerEvolutionByte ; skip the ATK/DEF comparison; trainer scaling always takes the highest species
+
+.species
+	call GetTrainerEvolutionByte
+	ld e, a
+	ld a, c
+	cp b
+	jr c, .loop
+	ld a, d
+	cp e
+	jr nc, .loop
+	ld d, e
+	jr .loop
+
+.done
+	ld a, d
+	and a
+	ret z
+	ld [wCurPartySpecies], a
+	scf
+	ret
+
+GetTrainerEvolutionByte:
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	inc hl
+	ret
 
 ReadPlayerPartyAsTrainerParty:
 	ld a, [wLinkMode]

@@ -217,8 +217,8 @@ NamingScreenJumptable:
 	db "おともだち　の　なまえは？@"
 
 .Crystal:
-	ld de, KrisSpriteGFX
-	ld b, BANK(KrisSpriteGFX)
+	ld de, BeautySpriteGFX
+	ld b, BANK(BeautySpriteGFX)
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .CrystalNameString

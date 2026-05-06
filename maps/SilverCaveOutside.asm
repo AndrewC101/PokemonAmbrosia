@@ -595,7 +595,7 @@ SilverCaveSilverFriendshipText:
 
     para "I nearly got"
     line "thrashed by"
-    cont "Crystal because"
+    cont "<GREEN> because"
     cont "I didn't want"
     cont "to invoke her"
     cont "wrath by easily"
@@ -627,7 +627,7 @@ SilverCaveSilverFriendshipText:
 
 	para "I certainly didn't"
 	line "learn it from"
-	cont "Crystal."
+	cont "<GREEN>."
 	done
 
 SilverCaveCrystalShouldGoText:

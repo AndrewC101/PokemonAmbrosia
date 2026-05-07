@@ -348,7 +348,7 @@ EvolveAfterBattle_MasterLoop:
 	call nz, RestartMapMusic
 	ret
 
-UpdateSpeciesNameIfNotNicknamed:
+UpdateSpeciesNameIfNotNicknamed::
 	ld a, [wCurSpecies]
 	push af
 	ld a, [wBaseDexNo]

@@ -1506,12 +1506,25 @@ RareCandy_StatBooster_GetParameters:
 SetLevelTo5:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
-	jp c, RareCandy_StatBooster_ExitMenu
+	jr nc, .selected_mon
+	xor a
+	ld [wScriptVar], a
+	jp RareCandy_StatBooster_ExitMenu
+
+.selected_mon
 	call RareCandy_StatBooster_GetParameters
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 	ld a, 5
-	jp UpdateLevel
+	call UpdateLevel
+	; Report back to the map script whether Daisy can offer a de-evolution.
+	call DaisyHasYoungerPreEvolution
+	ld a, 1
+	jr nc, .done
+	inc a
+.done
+	ld [wScriptVar], a
+	ret
 
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1541,6 +1554,18 @@ DoRareCandyEffect:
     ld a, [hl]
 	inc a
 .calcExp
+	call UpdateLevel
+
+	xor a
+	ld [wForceEvolution], a
+	farcall EvolvePokemon
+
+	ld a, [wGiftOfGod]
+	and a
+	jr z, .dispose
+	farcall EvolvePokemon
+.dispose
+	jp UseDisposableItem
 
 UpdateLevel:
 	ld [hl], a
@@ -1625,17 +1650,100 @@ UpdateLevel:
 	ld a, b
 	cp c
 	jr nz, .level_loop
+	ret
 
-    xor a
-    ld [wForceEvolution], a
-	farcall EvolvePokemon
+DaisyHasYoungerPreEvolution:
+	; Compare the current species with the youngest reachable pre-evolution.
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	call FindYoungestPreEvolution
+	ld a, [wCurPartySpecies]
+	ld b, a
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	cp b
+	jr z, .no
+	scf
+	ret
 
-    ld a, [wGiftOfGod]
-    and a
-    jr z, .dispose
-    farcall EvolvePokemon
-.dispose
-	jp UseDisposableItem
+.no
+	and a
+	ret
+
+DaisyDevolveSelectedMon::
+	; Reload the selected species from party data so the script-side reloadmap
+	; does not matter.
+	ld a, [wCurPartyMon]
+	ld c, a
+	ld b, 0
+	ld hl, wPartySpecies
+	add hl, bc
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+	ld [wTempSpecies], a
+	call FindYoungestPreEvolution
+	ld a, [wCurPartySpecies]
+	ld b, a
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	cp b
+	ret z
+
+	; Cache the current nickname so the shared helper can update species names
+	; only for mons that still use their default species name.
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMonNicknames
+	call GetNickname
+	call CopyName1
+
+	call FindYoungestPreEvolution
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	ld [wTempSpecies], a
+
+	; Keep both the party species list and the party struct species byte aligned.
+	ld a, [wCurPartyMon]
+	ld c, a
+	ld b, 0
+	ld hl, wPartySpecies
+	add hl, bc
+	ld a, [wCurPartySpecies]
+	ld [hl], a
+
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [wCurPartySpecies]
+	ld [hl], a
+
+	farcall UpdateSpeciesNameIfNotNicknamed
+	call GetBaseData
+	call UpdateStatsAfterItem
+
+	; Daisy heals the party before this routine, so keep the de-evolved mon at
+	; full HP after its new stats are recalculated.
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+	ld c, a
+	ld a, MON_HP
+	call GetPartyParamLocation
+	ld a, b
+	ld [hli], a
+	ld a, c
+	ld [hl], a
+
+	ld a, [wCurPartySpecies]
+	dec a
+	call SetSeenAndCaughtMon
+	ret
+
+FindYoungestPreEvolution:
+.loop
+	callfar GetPreEvolution
+	jr c, .loop
+	ret
 
 HealPowderEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM

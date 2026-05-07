@@ -12,18 +12,41 @@ DaisyScript:
 	writetext DaisyOfferLevelDownText
 	nooryes
 	iffalse .Refused
-	writetext DaisyReallySureText
-	nooryes
-	iffalse .Refused
+	;writetext DaisyReallySureText
+	;nooryes
+	;iffalse .Refused
 	special HealParty
 	writetext DaisyWhichMonText
 	waitbutton
 	special DaisysGrooming
+	ifequal 0, .NoSelection
+	ifequal 2, .OfferDevolution
 	reloadmap
 	opentext
 	writetext DaisyLevelDownDoneText
 	waitbutton
 	closetext
+	end
+.OfferDevolution:
+	reloadmap
+	opentext
+	writetext DaisyDevolveOfferText
+	yesorno
+	iffalse .DeclineDevolution
+	closetext
+	callasm DaisyDevolveSelectedMonScript
+	sjump .Finish
+.DeclineDevolution:
+	closetext
+.Finish:
+	reloadmap
+	opentext
+	writetext DaisyLevelDownDoneText
+	waitbutton
+	closetext
+	end
+.NoSelection:
+	reloadmap
 	end
 .Refused:
 	writetext DaisyRefusedText
@@ -63,6 +86,15 @@ DaisyWhichMonText:
 	line "my gift?"
 	done
 
+DaisyDevolveOfferText:
+	text "Your #mon can"
+	line "become younger"
+	cont "still."
+
+	para "Shall I de-evolve"
+	line "it too?"
+	done
+
 DaisyLevelDownDoneText:
 	text "Now a warning."
 	para "Your #mon is"
@@ -78,6 +110,10 @@ DaisyRefusedText:
 	text "Who wants to live"
 	line "forever?"
 	done
+
+DaisyDevolveSelectedMonScript:
+	newfarcall DaisyDevolveSelectedMon
+	ret
 
 BluesHouse_MapEvents:
 	db 0, 0 ; filler

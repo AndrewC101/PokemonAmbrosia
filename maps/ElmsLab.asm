@@ -716,6 +716,7 @@ CheatCodeRepo:
     writetext CheatCodeRepoText
     waitbutton
     writetext RebirthCodeText
+    writetext DesignateCodeText
     writetext DoubleExpCodeText
     writetext RandomPartyCodeText
     readmem wNewGamePlus
@@ -795,6 +796,11 @@ DoubleExpCodeText:
 RandomPartyCodeText:
     text "Stochastic"
     line "Random Lv5 party."
+    prompt
+
+DesignateCodeText:
+    text "Designate"
+    line "Rename rivals."
     prompt
 
 ArceusCodeText:
@@ -2162,6 +2168,8 @@ ElmsLabMrMimeScript:
     iftrue .randomParty
     callasm CheckArceusPassword
     iftrue .giveArceus
+    callasm CheckDesignatePassword
+    iftrue .designate
     callasm CheckRebirthPassword
     iftrue .rebirth
     reloadmap
@@ -2235,6 +2243,36 @@ ElmsLabMrMimeScript:
     writetext DoubleExpOffText
     closetext
 	loadmem wDoubleExp, 0
+    end
+.designate
+    reloadmap
+    opentext
+    writetext DesignateCrystalText
+    waitbutton
+    yesorno
+    iffalse .maybe_rival
+    closetext
+    callasm CrystalNamingScreen
+    reloadmap
+    opentext
+    writetext DesignateCrystalDoneText
+    waitbutton
+.maybe_rival
+    checkevent EVENT_ROUTE_30_BATTLE
+    iffalse .finish_designate
+    writetext DesignateRivalText
+    waitbutton
+    yesorno
+    iffalse .finish_designate
+    closetext
+    callasm RivalNamingScreen
+    reloadmap
+    opentext
+    writetext DesignateRivalDoneText
+    waitbutton
+.finish_designate
+    writetext DesignateDoneText
+    closetext
     end
 .randomParty
     reloadmap
@@ -2373,6 +2411,29 @@ RandomPartyWarningText:
     cont "party. Continue?"
     done
 
+DesignateRivalText:
+    text "Rename <RIVAL>?"
+    done
+
+DesignateCrystalText:
+    text "Rename <GREEN>?"
+    done
+
+DesignateCrystalDoneText:
+    text "<GREEN> is now"
+    line "her name."
+    done
+
+DesignateRivalDoneText:
+    text "<RIVAL> is now"
+    line "his name."
+    done
+
+DesignateDoneText:
+    text "Rename"
+    line "complete."
+    prompt
+
 RandomPartyLegendaryFilterText:
     text "Exclude legendary"
     line "#mon?"
@@ -2438,8 +2499,21 @@ CrystalNamingScreen:
     call InitName
     ret
 
+RivalNamingScreen:
+    ld b, NAME_RIVAL
+    ld de, wRivalName
+    newfarcall NamingScreen
+    ; Keep the stored default aligned with the standard rival name for blank submissions.
+    ld hl, wRivalName
+    ld de, DefaultRivalName
+    call InitName
+    ret
+
 DefaultName:
     db "Gold@@@@@@@"
+
+DefaultRivalName:
+    db "Silver@"
 
 DefaultCrystalName:
     db "Crystal@@@@"
@@ -2474,6 +2548,10 @@ CheckRandomPartyPassword:
 
 CheckArceusPassword:
 	ld de, ArceusPassword
+	jr ComparePassword
+
+CheckDesignatePassword:
+	ld de, DesignatePassword
 	jr ComparePassword
 
 CheckRebirthPassword:
@@ -2516,6 +2594,9 @@ RandomPartyPassword:
 
 ArceusPassword:
     db "Omnipotent"
+
+DesignatePassword:
+    db "Designate"
 
 GenerateRandomPartyCheat:
 	call ClearPartyForRandomCheat

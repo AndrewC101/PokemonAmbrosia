@@ -2717,6 +2717,14 @@ FaintEnemyPokemon:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
+	; Wild-battle DVs now span 11 tiles on row 3, so blank the trailing tile
+	; that sits just outside the standard 10-tile enemy HUD clear box.
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr nz, .skip_wild_dv_tail
+	hlcoord 11, 3
+	ld [hl], ' '
+.skip_wild_dv_tail
 
 	; Skip foe mon fainted text if fast battles is on
 	call CheckIfFastBattlesIsOn

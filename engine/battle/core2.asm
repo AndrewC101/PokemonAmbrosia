@@ -881,6 +881,19 @@ MoveInfoBox:
 	ld l, a
 	push hl
 
+	; The move struct stores Return at base power 1 and normally upgrades it
+	; via happinesspower at runtime. The preview path goes straight through
+	; PlayerAttackDamage, so patch the displayed power here and restore it later.
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	push af
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_RETURN
+	jr nz, .check_fixed_damage
+	callfar BattleCommand_HappinessPower
+	ld a, d
+	ld [wPlayerMoveStruct + MOVE_POWER], a
+
+.check_fixed_damage
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	; Fixed-damage moves bypass the normal damage-variation preview.
 	cp EFFECT_LEVEL_DAMAGE
@@ -981,6 +994,8 @@ MoveInfoBox:
 	ld [wTypeMatchup], a
 	pop af
 	ld [wTypeModifier], a
+	pop af
+	ld [wPlayerMoveStruct + MOVE_POWER], a
 
 	pop hl
 	ld a, h
@@ -995,6 +1010,8 @@ MoveInfoBox:
 	call .CapDisplayDamage
 	call .PrintSingleDamage
 
+	pop af
+	ld [wPlayerMoveStruct + MOVE_POWER], a
 	pop hl
 	ld a, h
 	ld [wCurDamage], a
@@ -1952,18 +1969,18 @@ PrintEnemyWildDVs::
 	ld b, a
 
 	; HP DV follows the project's stat rule: HP DV = Atk DV, so omit it here.
-	; Place the DV glyph two tiles right of the old left edge, then print Atk/Def/Spd/Spcl.
-	hlcoord 2, 3
-	ld a, "<DV>"
-	ld [hli], a
+	; Start at the left edge of the info row and print Atk/Def/Spd/Spcl as dd/dd/dd/dd.
+	hlcoord 1, 3
 
-	; Print 4 two-digit values left-to-right: Atk, Def, Spd, Spcl.
 	ld a, c
 	call .PrintDV
+	call .PrintSlash
 	ld a, d
 	call .PrintDV
+	call .PrintSlash
 	ld a, e
 	call .PrintDV
+	call .PrintSlash
 	ld a, b
 	call .PrintDV
 
@@ -1982,6 +1999,11 @@ PrintEnemyWildDVs::
 	call PrintNum
 	pop bc
 	pop de
+	ret
+
+.PrintSlash
+	ld a, '/'
+	ld [hli], a
 	ret
 
 FieldInfoBoxPlaceElement: ; input: bc -> coords, hl -> Field text, de -> Count

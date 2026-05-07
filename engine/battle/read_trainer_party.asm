@@ -104,16 +104,17 @@ ReadTrainerPartyPieces:
     and a
     jr z, .normal
 
-    ; if this is new game plus then scale regardless of trainer class
-    ld a, [wNewGamePlus]
-    and a
-    jr nz, .scale
+	; if this is new game plus then scale regardless of trainer class
+	ld a, [wNewGamePlus]
+	and a
+	jr nz, .scale
 
-    ; trainer classes that scale on hard mode when not on new game plus
-    ld a, [wOtherTrainerClass]
-    cp INVADER
-    jr z, .scale
-    cp EXECUTIVEM
+	; trainer classes that still scale all the way to the full level cap on
+	; base-game hard mode
+	ld a, [wOtherTrainerClass]
+	cp INVADER
+	jr z, .scale
+	cp EXECUTIVEM
     jr z, .scale
     cp EXECUTIVEF
     jr z, .scale
@@ -122,18 +123,29 @@ ReadTrainerPartyPieces:
     cp KIMONO_GIRL
     jr z, .scale
 
-    ; if on hard mode and not on new game plus then scale based on these battle types
-    ld a, [wBattleType]
-    cp BATTLETYPE_WEAK_BATTLE
-    jr z, .scale
-    cp BATTLETYPE_BOSS_BATTLE
-    jr nz, .normal
+	; certain scripted battle types also keep the full-cap scaling on base-game
+	; hard mode
+	ld a, [wBattleType]
+	cp BATTLETYPE_WEAK_BATTLE
+	jr z, .scale
+	cp BATTLETYPE_BOSS_BATTLE
+	jr z, .scale
+
+	; ordinary hard-mode trainers on the base game scale to level cap - 10
+	; instead. Clamp at 0 so low caps simply stop scaling rather than wrapping.
+	ld a, [wLevelCap]
+	sub 10
+	jr nc, .check_scaled_level
+	xor a
+	jr .check_scaled_level
 
 .scale
-    ld a, [wLevelCap]
-    cp b
-    jr c, .normal
-    ld b, a
+	ld a, [wLevelCap]
+
+.check_scaled_level
+	cp b
+	jr c, .normal
+	ld b, a
 
 .normal
     ld a, b

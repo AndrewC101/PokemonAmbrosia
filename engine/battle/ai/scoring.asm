@@ -431,9 +431,9 @@ AI_Smart_Switch:
 ; 50% chance to switch if enemy afflicted with leech seed
 
 ; possibly switch if enemy is setup bait
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ
-	jp nz, .checkSetupAndSwitchIfPlayerSetsUp
+;	ld a, [wEnemyMonStatus]
+;	and 1 << FRZ
+;	jp nz, .checkSetupAndSwitchIfPlayerSetsUp
 
 ; switch if choice locked into a NVE move
 	ld hl, wEnemySubStatus5
@@ -1955,12 +1955,12 @@ AI_Smart_Substitute:
     call AICheckEnemyMaxHP
     jr c, .encourage
 
-; if above 1/4 hp encourage if player is asleep/frozen or user has boosted evasion
-    call AICheckEnemyQuarterHP
-    jr nc, .discourage
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr nz, .encourage
+; if above 1/4 hp encourage if player is asleep or user has boosted evasion
+	    call AICheckEnemyQuarterHP
+	    jr nc, .discourage
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr nz, .encourage
 	ld a, [wEnemyEvaLevel]
     cp BASE_STAT_LEVEL + 2
     jp nc, .encourage
@@ -2184,7 +2184,7 @@ AI_Smart_DestinyBond:
 AI_Smart_HealBell:
 ; Dismiss this move if none of the opponent's Pokemon is statused.
 ; Encourage this move if the enemy is statused.
-; 50% chance to greatly encourage this move if the enemy is fast asleep or frozen.
+; 50% chance to greatly encourage this move if the enemy is fast asleep.
 
 	push hl
 	ld a, [wOTPartyCount]
@@ -2223,8 +2223,8 @@ AI_Smart_HealBell:
 	jr z, .ok
 	dec [hl]
 .ok
-	and 1 << FRZ | SLP
-	ret z
+		and SLP
+		ret z
 	call AI_50_50
 	ret c
 	dec [hl]
@@ -2420,10 +2420,10 @@ AI_Smart_BulkUp:
 	jp c, StandardDiscourage
 
 .continue
-; if player is asleep or frozen and is physical we should boost
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr z, .noStatus
+; if player is asleep and is physical we should boost
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr z, .noStatus
 	call IsPlayerPhysicalOrSpecial
 	jp c, StandardEncourage
 .noStatus
@@ -2464,10 +2464,10 @@ AI_Smart_Curse:
 	jr c, .discourage
 
 .continue
-; if player is asleep or frozen and is physical we should boost
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr z, .noStatus
+; if player is asleep and is physical we should boost
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr z, .noStatus
 	call IsPlayerPhysicalOrSpecial
 	jr c, .encourage
 .noStatus
@@ -3346,10 +3346,10 @@ AI_Smart_CalmMind:
 	jp c, StandardDiscourage
 
 .continue
-; if player is asleep or frozen and is special we should boost
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr z, .noStatus
+; if player is asleep and is special we should boost
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr z, .noStatus
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
@@ -3525,10 +3525,10 @@ AI_Smart_Geomancy:
 	cp BASE_STAT_LEVEL + 2
 	jp nc, StandardEncourage
 
-; if player is asleep or frozen and is special we should boost
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr z, .noStatus
+; if player is asleep and is special we should boost
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr z, .noStatus
 	call IsPlayerPhysicalOrSpecial
 	jp nc, StandardEncourage
 .noStatus
@@ -3690,10 +3690,10 @@ AI_Smart_ShellSmash:
 
 .notUsingSuckerPunch
 ; don't use if we will be koed
-; skip if player is SLP or FRZ
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ | SLP
-	jr nz, .skipKOCheck
+; skip if player is asleep
+		ld a, [wBattleMonStatus]
+		and SLP
+		jr nz, .skipKOCheck
 ; discourage if player can 2HKO and either has priority move or is >= +2 speed
     call CanPlayer2HKO
     jr nc, .checkSash
@@ -4093,12 +4093,8 @@ ShouldAIBoost:
     jp .boost
 
 .decideNotToBoost
-; is player FRZ we can boost
-	ld a, [wBattleMonStatus]
-	and 1 << FRZ
-	jp nz, .boost
-
-; if player is SLP and we get more than one turn before they wake up, then boost
+; if player is asleep and we get more than one turn before they wake up,
+; then boost. Frostbite no longer grants a free turn here.
 	ld a, [wBattleMonStatus]
 	and SLP
 	jr z, .keepgoing

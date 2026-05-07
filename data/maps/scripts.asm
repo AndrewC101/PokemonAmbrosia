@@ -174,7 +174,6 @@ INCLUDE "maps/DanceTheater.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
-INCLUDE "maps/ManorInside.asm"
 INCLUDE "maps/PewterPokecenter1F.asm"
 
 SECTION "Map Scripts 12", ROMX
@@ -575,3 +574,7 @@ SECTION "Map Scripts 53", ROMX
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
+
+SECTION "Map Scripts 55", ROMX
+
+INCLUDE "maps/ManorInside.asm"

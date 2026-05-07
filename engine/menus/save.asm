@@ -36,7 +36,7 @@ SaveAfterLinkTrade:
 Link_SaveGame:
 	call AskOverwriteSaveFile
 	ret c
-ForceGameSave:
+ForceGameSave::
 	call PauseGameLogic
 	call SavedTheGame
 	call ResumeGameLogic

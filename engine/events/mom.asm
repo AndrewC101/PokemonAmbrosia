@@ -77,7 +77,7 @@ BankOfMom:
 	jr .done_2
 
 .nope
-	call DSTChecks
+	call ResetClockChecks
 	ld a, $7
 
 .done_2
@@ -281,97 +281,24 @@ BankOfMom:
 	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
-DSTChecks:
-; check the time; avoid changing DST if doing so would change the current day
-	ld a, [wDST]
-	bit DST_F, a
-	ldh a, [hHours]
-	jr z, .NotDST
-	and a ; within one hour of 00:00?
-	jr z, .LostBooklet
-	jr .loop
-
-.NotDST:
-	cp 23 ; within one hour of 23:00?
-	jr nz, .loop
-	; fallthrough
-
-.LostBooklet:
+ResetClockChecks:
 	call .ClearBox
 	bccoord 1, 14
-	ld hl, .TimesetAskAdjustDSTText
+	ld hl, .AskResetClockText
 	call PrintTextboxTextAt
 	call YesNoBox
 	ret c
 	call .ClearBox
 	bccoord 1, 14
-	ld hl, .MomLostGearBookletText
-	call PrintTextboxTextAt
-	ret
-
-.loop
-	call .ClearBox
-	bccoord 1, 14
-	ld a, [wDST]
-	bit DST_F, a
-	jr z, .SetDST
-	ld hl, .TimesetAskNotDSTText
+	ld hl, .ResetClockText
 	call PrintTextboxTextAt
 	call YesNoBox
 	ret c
-	ld a, [wDST]
-	res DST_F, a
-	ld [wDST], a
-	call .SetClockBack
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .TimesetNotDSTText
-	call PrintTextboxTextAt
-	ret
-
-.SetDST:
-	ld hl, .TimesetAskDSTText
-	call PrintTextboxTextAt
-	call YesNoBox
-	ret c
-	ld a, [wDST]
-	set DST_F, a
-	ld [wDST], a
-	call .SetClockForward
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .TimesetDSTText
-	call PrintTextboxTextAt
-	ret
-
-.SetClockForward:
-	ld a, [wStartHour]
-	add 1
-	sub 24
-	jr nc, .DontLoopHourForward
-	add 24
-.DontLoopHourForward:
-	ld [wStartHour], a
-	ccf
-	ld a, [wStartDay]
-	adc 0
-	ld [wStartDay], a
-	ret
-
-.SetClockBack:
-	ld a, [wStartHour]
-	sub 1
-	jr nc, .DontLoopHourBack
-	add 24
-.DontLoopHourBack:
-	ld [wStartHour], a
-	ld a, [wStartDay]
-	sbc 0
-	jr nc, .DontLoopDayBack
-	add 7
-.DontLoopDayBack:
-	ld [wStartDay], a
-	ret
+	farcall ForceGameSave
+	ld a, RTC_RESET
+	call RecordRTCStatus
+	; Re-enter the title flow so Continue runs the normal clock setup path.
+	jp Init
 
 .ClearBox:
 	hlcoord 1, 14
@@ -379,28 +306,16 @@ DSTChecks:
 	call ClearBox
 	ret
 
-.TimesetAskAdjustDSTText:
-	text_far _TimesetAskAdjustDSTText
+.AskResetClockText:
+	text_far _PasswordAskResetClockText
 	text_end
 
-.MomLostGearBookletText:
-	text_far _MomLostGearBookletText
-	text_end
+.ResetClockText:
+	text "I'll save the"
+	line "game and send you"
 
-.TimesetAskDSTText:
-	text_far _TimesetAskDSTText
-	text_end
-
-.TimesetDSTText:
-	text_far _TimesetDSTText
-	text_end
-
-.TimesetAskNotDSTText:
-	text_far _TimesetAskNotDSTText
-	text_end
-
-.TimesetNotDSTText:
-	text_far _TimesetNotDSTText
+	para "back to the title"
+	line "screen."
 	text_end
 
 Mom_SetUpWithdrawMenu:

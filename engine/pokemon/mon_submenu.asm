@@ -131,19 +131,19 @@ GetMonSubmenuItems:
 	call CanUseMilkdrink
 	call CanUseHeal
 
-.skip_moves
-	ld a, MONMENUITEM_STATS
-	call AddMonMenuItem
-	ld hl, wStatusFlags
-	bit STATUSFLAGS_POKEDEX_F, [hl]
-	jr z, .no_pokedex
-	ld a, MONMENUITEM_POKEDEX
-	call AddMonMenuItem
-.no_pokedex
-	ld a, MONMENUITEM_SWITCH
-	call AddMonMenuItem
-	ld a, MONMENUITEM_MOVE
-	call AddMonMenuItem
+	.skip_moves
+		ld a, MONMENUITEM_STATS
+		call AddMonMenuItem
+		ld a, MONMENUITEM_SWITCH
+		call AddMonMenuItem
+		ld hl, wStatusFlags
+		bit STATUSFLAGS_POKEDEX_F, [hl]
+		jr z, .no_pokedex
+		ld a, MONMENUITEM_POKEDEX
+		call AddMonMenuItem
+	.no_pokedex
+		ld a, MONMENUITEM_MOVE
+		call AddMonMenuItem
 	ld a, [wLinkMode]
 	and a
 	jr nz, .skip2

@@ -881,6 +881,13 @@ MoveInfoBox:
 	ld l, a
 	push hl
 
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	; Fixed-damage moves bypass the normal damage-variation preview.
+	cp EFFECT_LEVEL_DAMAGE
+	jp z, .print_fixed_damage
+	cp EFFECT_STATIC_DAMAGE
+	jp z, .print_fixed_damage
+
 	ld a, [wTypeModifier]
 	push af
 	ld a, [wTypeMatchup]
@@ -913,6 +920,34 @@ MoveInfoBox:
 	ld b, 85 percent + 1
 	callfar ApplyDamageVariationMultiplierToCurDamage
 	call .CapDisplayDamage
+	ld a, [wCurDamage]
+	ld d, a
+	ld a, [wCurDamage + 1]
+	ld e, a
+
+	pop hl
+	ld a, h
+	cp d
+	jr nz, .print_damage_range
+	ld a, l
+	cp e
+	jr nz, .print_damage_range
+	; Fixed 0-0 previews and other exact results read better as a single value.
+	ld a, d
+	ld [wCurDamage], a
+	ld a, e
+	ld [wCurDamage + 1], a
+	call .PrintSingleDamage
+	jr .restore_damage_preview
+
+.print_damage_range
+	; Keep the uncapped max damage on the stack while hl is reused as a tilemap cursor.
+	push hl
+
+	ld a, d
+	ld [wCurDamage], a
+	ld a, e
+	ld [wCurDamage + 1], a
 
 	hlcoord 3, 11
 	ld de, wCurDamage
@@ -933,6 +968,7 @@ MoveInfoBox:
 	lb bc, 2, 3
 	call PrintNum
 
+.restore_damage_preview
 	pop af
 	ld [wHalfDamage], a
 	pop af
@@ -951,6 +987,52 @@ MoveInfoBox:
 	ld [wCurDamage], a
 	ld a, l
 	ld [wCurDamage + 1], a
+	ret
+
+.print_fixed_damage
+	; Fixed-damage moves preview one exact value.
+	call .LoadFixedDamagePreview
+	call .CapDisplayDamage
+	call .PrintSingleDamage
+
+	pop hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+.PrintSingleDamage
+	hlcoord 3, 11
+	ld de, wCurDamage
+	lb bc, 2, 3
+	call PrintNum
+	hlcoord 6, 11
+	ld [hl], ' '
+	inc hl
+	ld [hl], ' '
+	inc hl
+	ld [hl], ' '
+	inc hl
+	ld [hl], ' '
+	ret
+
+.LoadFixedDamagePreview
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_LEVEL_DAMAGE
+	jr z, .level_damage
+
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	ld [wCurDamage + 1], a
+	xor a
+	ld [wCurDamage], a
+	ret
+
+.level_damage
+	ld a, [wBattleMonLevel]
+	ld [wCurDamage + 1], a
+	xor a
+	ld [wCurDamage], a
 	ret
 
 .CapDisplayDamage

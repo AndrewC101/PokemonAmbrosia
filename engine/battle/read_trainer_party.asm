@@ -484,7 +484,7 @@ MaybeUpgradeScaledTrainerSpecies:
 	cp c
 	ret z
 
-	call CurrentTrainerMonHoldsEviolite
+	call CurrentTrainerMonBlocksScaledEvolution
 	ret c
 
 .loop
@@ -492,7 +492,7 @@ MaybeUpgradeScaledTrainerSpecies:
 	ret nc
 	jr .loop
 
-CurrentTrainerMonHoldsEviolite:
+CurrentTrainerMonBlocksScaledEvolution:
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_NICKNAME_F, a
 	jr z, .check_item
@@ -509,13 +509,15 @@ CurrentTrainerMonHoldsEviolite:
 	jr z, .no_item
 	call GetNextTrainerDataByte
 	cp EVIOLITE
-	jr z, .has_eviolite
+	jr z, .blocked_item
+	cp LIGHT_BALL
+	jr z, .blocked_item
 
 .no_item
 	and a
 	ret
 
-.has_eviolite
+.blocked_item
 	scf
 	ret
 

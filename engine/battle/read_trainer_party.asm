@@ -291,11 +291,13 @@ ReadTrainerPartyPieces:
     jp .no_stat_exp
 
 .fullStatExp
-rept 6
-    ld a, $ff
-	ld [de], a
-	inc de
-	ld [de], a
+	; There are 5 stat-exp fields (HP/Atk/Def/Spd/Spc). Writing a sixth word
+	; here spills into MON_DVS and accidentally perfects the trainer's DVs.
+rept 5
+	    ld a, $ff
+		ld [de], a
+		inc de
+		ld [de], a
 	inc de
 endr
 	pop hl

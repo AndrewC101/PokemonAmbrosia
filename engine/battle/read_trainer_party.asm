@@ -337,15 +337,22 @@ endr
 	pop hl
 	jr .no_stat_exp
 
-.zeroStatExp
-rept 5
-    xor a
+	.zeroStatExp
+	; Weak battles keep only HP stat exp maxed so the mons stay bulky without
+	; getting the offensive/defensive stat-exp boosts.
+	ld a, $ff
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+rept 4
+	xor a
 	ld [de], a
 	inc de
 	ld [de], a
 	inc de
 endr
-	pop hl
+		pop hl
 
 .no_stat_exp
 

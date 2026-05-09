@@ -1,8 +1,6 @@
 	object_const_def
-	const ROUTE3_FISHER1
 	const ROUTE3_YOUNGSTER1
 	const ROUTE3_YOUNGSTER2
-	const ROUTE3_FISHER2
 	const ROUTE3_FIELDMON_1
     const ROUTE3_FIELDMON_2
     const ROUTE3_FIELDMON_3
@@ -46,17 +44,6 @@ Route3_MapScripts:
 .end
     endcallback
 
-TrainerFirebreatherOtis:
-	trainer FIREBREATHER, OTIS, EVENT_BEAT_FIREBREATHER_OTIS, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext FirebreatherOtisAfterBattleText
-	waitbutton
-	closetext
-	end
-
 TrainerYoungsterWarren:
 	trainer YOUNGSTER, WARREN, EVENT_BEAT_YOUNGSTER_WARREN, YoungsterWarrenSeenText, YoungsterWarrenBeatenText, 0, .Script
 
@@ -79,44 +66,8 @@ TrainerYoungsterJimmy:
 	closetext
 	end
 
-TrainerFirebreatherBurt:
-	trainer FIREBREATHER, BURT, EVENT_BEAT_FIREBREATHER_BURT, FirebreatherBurtSeenText, FirebreatherBurtBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext FirebreatherBurtAfterBattleText
-	waitbutton
-	closetext
-	end
-
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
-
-FirebreatherOtisSeenText:
-	text "I am the great"
-	line "Otis, fire"
-	cont "breather"
-	cont "extraordinaire!"
-	para "No other fire"
-	line "breather can match"
-	cont "my style."
-	para "Certainly not that"
-	line "brutish Burt."
-	done
-
-FirebreatherOtisBeatenText:
-	text "Behold my style!"
-	done
-
-FirebreatherOtisAfterBattleText:
-	text "I hope you"
-	line "appreciated the"
-	cont "show."
-	para "Those troglodytes"
-	line "in Pewter are too"
-	cont "dim to do so."
-	done
 
 YoungsterWarrenSeenText:
 	text "I need to get out"
@@ -159,27 +110,6 @@ YoungsterJimmyAfterBattleText:
 	cont "Museum."
 	para "They were comfy"
 	line "and easy to wear."
-	done
-
-FirebreatherBurtSeenText:
-	text "I want to put on a"
-	line "show to cheer up"
-	cont "the people of"
-	cont "Pewter."
-	para "But that damn Otis"
-	line "is here first."
-	done
-
-FirebreatherBurtBeatenText:
-	text "You have flare!"
-	done
-
-FirebreatherBurtAfterBattleText:
-	text "Otis only cares"
-	line "about himself."
-	para "I want to make"
-	line "people warm and"
-	cont "happy."
 	done
 
 Route3MtMoonSquareSignText:
@@ -311,10 +241,8 @@ Route3_MapEvents:
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
 
 	def_object_events
-	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
 	object_event 10,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterWarren, -1
 	object_event 16,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJimmy, -1
-	object_event 47, 15, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBurt, -1
 	object_event 28,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route3FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 39,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route3FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 16,  7, SPRITE_CHARMANDER, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3FieldMon3Script, EVENT_FIELD_MON_3

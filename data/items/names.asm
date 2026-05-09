@@ -141,7 +141,7 @@ ItemNames::
     li "Ambrosia"
     li "Scope Lens"
     li "Gift Of God"
-    li "Teru-Sama"
+    li "Jukebox"
     li "Metal Coat"
     li "Dragon Fang"
     li "Teru-Sama"

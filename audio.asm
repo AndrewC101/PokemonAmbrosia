@@ -171,3 +171,4 @@ INCLUDE "audio/music/megalovania.asm"
 INCLUDE "audio/music/hoohbattle.asm"
 INCLUDE "audio/music/lavendertown.asm"
 
+INCLUDE "data/music/jukebox_songs.asm"

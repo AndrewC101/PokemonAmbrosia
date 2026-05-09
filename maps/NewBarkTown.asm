@@ -518,6 +518,9 @@ CrystalScript:
 	waitbutton
 	playmusic MUSIC_NEW_BARK_TOWN
 	turnobject NEWBARKTOWN_CRYSTAL, LEFT
+	writetext PresentForYouText
+	waitbutton
+	verbosegiveitem JUKEBOX
 	writetext Crystal1_GoodLuckText
 	waitbutton
 	closetext
@@ -600,6 +603,15 @@ Crystal1_SorryText:
 
     para "I hope you find"
     line "your Dad."
+    done
+
+PresentForYouText:
+    text "Oh I got a present"
+    line "for you!"
+    para "With this you can"
+    line "listen to some"
+    cont "music while you"
+    cont "relax."
     done
 
 Crystal1_GoodLuckText:

@@ -142,7 +142,7 @@ ItemDescriptions:
 	dw AmbrosiaDesc
 	dw ScopeLensDesc
 	dw GiftOfGodDesc
-	dw TeruSama13Desc
+	dw JukeboxDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
 	dw TeruSama14Desc
@@ -815,8 +815,9 @@ GiftOfGodDesc:
 	db   "Maximises level"
 	next "and stats.@"
 
-TeruSama13Desc:
-	db   "?@"
+JukeboxDesc:
+	db   "Play any song"
+	next "from your Pack.@"
 
 MetalCoatDesc:
 	db   "Powers up steel-"

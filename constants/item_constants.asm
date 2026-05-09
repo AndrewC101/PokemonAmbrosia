@@ -147,7 +147,7 @@
 	const AMBROSIA     ; 8b
 	const SCOPE_LENS   ; 8c
 	const GIFT_OF_GOD  ; 8d
-	const ITEM_8E      ; 8e
+	const JUKEBOX      ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
 	const ITEM_91      ; 91

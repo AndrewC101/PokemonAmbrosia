@@ -156,7 +156,7 @@ ItemEffects:
 	dw AmbrosiaEffect      ; AMBROSIA
 	dw NoEffect            ; SCOPE_LENS
 	dw GiftOfGodEffect     ; GIFT_OF_GOD
-	dw NoEffect            ; ITEM_8E
+	dw JukeboxEffect       ; JUKEBOX
 	dw NoEffect            ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
 	dw NoEffect            ; ITEM_91
@@ -2745,6 +2745,180 @@ CoinCaseEffect:
 .CoinCaseCountText:
 	text_far _CoinCaseCountText
 	text_end
+
+JukeboxEffect:
+	call OpenJukebox
+	ret
+
+OpenJukebox:
+	xor a
+	ld [wUnusedScriptByte], a
+	ld a, 1
+	ld [wTempByteValue], a
+	ld hl, .MenuHeader
+	call LoadMenuHeader
+	call ClearSprites
+	call UpdateSprites
+	call .DrawJukebox
+
+.loop
+	call .GetJukeboxJoypad
+	cp PAD_B
+	jr z, .exit
+	cp PAD_LEFT
+	jr z, .prev
+	cp PAD_A
+	jr z, .play
+	cp PAD_RIGHT
+	jr z, .next
+	jr .loop
+
+.prev
+	call .PreviousSong
+	call .RefreshSongName
+	jr .loop
+
+.play
+	call .PlaySelectedSong
+	jr .loop
+
+.next
+	call .NextSong
+	call .RefreshSongName
+	jr .loop
+
+.exit
+	call CloseWindow
+	call UpdateSprites
+	call WaitBGMap
+	ld hl, .ExitScript
+	call QueueScript
+	ld a, [wUnusedScriptByte]
+	and a
+	ret z
+	; Only restart the area's BGM if the player actually previewed a song.
+	call RestartMapMusic
+	ret
+
+.PreviousSong:
+	ld a, [wTempByteValue]
+	dec a
+	jr nz, .store_previous
+	ld a, NUM_MUSIC_SONGS - 1
+.store_previous
+	ld [wTempByteValue], a
+	ret
+
+.NextSong:
+	ld a, [wTempByteValue]
+	inc a
+	cp NUM_MUSIC_SONGS
+	jr c, .store_next
+	ld a, 1
+.store_next
+	ld [wTempByteValue], a
+	ret
+
+.PlaySelectedSong:
+	ld a, [wTempByteValue]
+	ld e, a
+	ld d, 0
+	ld a, 1
+	ld [wUnusedScriptByte], a
+	call PlayMusic2
+	ret
+
+.PlaceCurrentSongName:
+	hlcoord 1, 4
+	lb bc, 1, 18
+	call ClearBox
+	call .GetCurrentSongName
+	hlcoord 1, 4
+	call FarPlaceString
+	ret
+
+.RefreshSongName:
+	call .PlaceCurrentSongName
+	call ApplyTilemap
+	ret
+
+.GetCurrentSongName:
+	ld a, [wTempByteValue]
+	; fallthrough
+
+.GetSongName:
+	; Read the far pointer for the selected song name from the packed pointer table.
+	ld hl, JukeboxSongNamePointers
+	ld c, 3
+	ld b, 0
+	call AddNTimes
+	ld a, BANK(JukeboxSongNamePointers)
+	call GetFarByte
+	ld b, a
+	inc hl
+	ld a, BANK(JukeboxSongNamePointers)
+	call GetFarByte
+	ld e, a
+	inc hl
+	ld a, BANK(JukeboxSongNamePointers)
+	call GetFarByte
+	ld d, a
+	ret
+
+.DrawJukebox:
+	xor a
+	ldh [hBGMapMode], a
+	call MenuBox
+	call ClearMenuBoxInterior
+	call .PlaceCurrentSongName
+	hlcoord 1, 7
+	ld de, .ControlsLine1
+	call PlaceString
+	hlcoord 1, 8
+	ld de, .ControlsLine2
+	call PlaceString
+	call ApplyTilemap
+	ret
+
+.GetJukeboxJoypad:
+.wait
+	call JoyTextDelay
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr nz, .done
+	ldh a, [hJoyPressed]
+	and B_BUTTON
+	jr nz, .done
+	ldh a, [hJoyLast]
+	and PAD_LEFT
+	jr nz, .done
+	ldh a, [hJoyLast]
+	and PAD_RIGHT
+	jr nz, .done
+	jr .wait
+
+.done
+	ret
+
+.ExitScript:
+	refreshmap
+	end
+
+.ControlsLine1:
+	db "Left   / Right@"
+
+.ControlsLine2:
+	db "A:Play / B:Quit@"
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 10
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db 0 ; flags
+	db 0 ; items
 
 OldRodEffect:
 	ld e, $0

@@ -33,12 +33,12 @@ TrainerClassDVs:
 	dn 9, 8, 13, 13 ; BEAUTY
 	dn 13, 9, 8, 13 ; POKEMANIAC
 	dn 13, 11, 11, 11 ; GRUNTM
-	dn 9, 8, 9, 9 ; GENTLEMAN
+	dn 9, 8, 9, 12 ; GENTLEMAN
 	dn 15, 15, 15, 15 ; GIOVANNI
 	dn 15, 15, 15, 15 ; CYNTHIA
 	dn 15, 15, 15, 15 ; SABRINA
 	dn 11, 5, 5, 8 ; BUG_CATCHER
-	dn 9, 12, 6, 11 ; FISHER
+	dn 9, 12, 6, 12 ; FISHER
 	dn 12, 8, 9, 9 ; SWIMMERM
 	dn 8, 9, 9, 13 ; SWIMMERF
 	dn 13, 11, 8, 10 ; SAILOR

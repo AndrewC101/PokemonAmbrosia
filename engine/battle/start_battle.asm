@@ -388,9 +388,13 @@ PlayBattleMusic:
 	ld de, MUSIC_KANTO_TRAINER_BATTLE
 
 .done
+    ld a, [wOtherTrainerClass]
+    and a
+    jr z, .play
     xor a
     ld [wBattleMusicOverride], a
     ld [wBattleMusicOverride + 1], a
+.play
 	call PlayMusic
 
 .skip

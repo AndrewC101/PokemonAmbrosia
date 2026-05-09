@@ -2747,7 +2747,19 @@ CoinCaseEffect:
 	text_end
 
 JukeboxEffect:
+	ld a, [wUsingItemWithSelect]
+	and a
+	jr z, .open
+	call FadeToMenu
+.open
+	farcall BlankScreen
+	call LoadStandardFont
+	call LoadFontsExtra
 	call OpenJukebox
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	call CloseSubmenu
 	ret
 
 OpenJukebox:
@@ -2758,19 +2770,24 @@ OpenJukebox:
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 	call ClearSprites
-	call UpdateSprites
 	call .DrawJukebox
 
 .loop
 	call .GetJukeboxJoypad
-	cp PAD_B
-	jr z, .exit
-	cp PAD_LEFT
-	jr z, .prev
-	cp PAD_A
-	jr z, .play
-	cp PAD_RIGHT
-	jr z, .next
+	bit B_PAD_B, a
+	jr nz, .exit
+	bit B_PAD_LEFT, a
+	jr nz, .prev
+	bit B_PAD_UP, a
+	jr nz, .prev
+	bit B_PAD_A, a
+	jr nz, .play
+	bit B_PAD_SELECT, a
+	jr nz, .save
+	bit B_PAD_RIGHT, a
+	jr nz, .next
+	bit B_PAD_DOWN, a
+	jr nz, .next
 	jr .loop
 
 .prev
@@ -2780,6 +2797,11 @@ OpenJukebox:
 
 .play
 	call .PlaySelectedSong
+	jr .loop
+
+.save
+	call .SaveBattleSong
+	call .RefreshSongName
 	jr .loop
 
 .next
@@ -2804,7 +2826,7 @@ OpenJukebox:
 	ld a, [wTempByteValue]
 	dec a
 	jr nz, .store_previous
-	ld a, NUM_MUSIC_SONGS - 1
+	call .GetSongCount
 .store_previous
 	ld [wTempByteValue], a
 	ret
@@ -2812,15 +2834,35 @@ OpenJukebox:
 .NextSong:
 	ld a, [wTempByteValue]
 	inc a
-	cp NUM_MUSIC_SONGS
-	jr c, .store_next
+	ld b, a
+	call .GetSongCount
+	cp b
+	ld a, b
+	jr nc, .store_next
 	ld a, 1
 .store_next
 	ld [wTempByteValue], a
 	ret
 
-.PlaySelectedSong:
+.GetSongCount:
+	ld hl, JukeboxSongs
+	ld a, BANK(JukeboxSongs)
+	call GetFarByte
+	ret
+
+.GetSelectedSongID:
 	ld a, [wTempByteValue]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, JukeboxSongs + 1
+	add hl, bc
+	ld a, BANK(JukeboxSongs)
+	call GetFarByte
+	ret
+
+.PlaySelectedSong:
+	call .GetSelectedSongID
 	ld e, a
 	ld d, 0
 	ld a, 1
@@ -2828,23 +2870,40 @@ OpenJukebox:
 	call PlayMusic2
 	ret
 
+.SaveBattleSong:
+	call .GetSelectedSongID
+	ld [wBattleMusicOverride], a
+	xor a
+	ld [wBattleMusicOverride + 1], a
+	ret
+
 .PlaceCurrentSongName:
-	hlcoord 1, 4
+	hlcoord 1, 5
 	lb bc, 1, 18
 	call ClearBox
 	call .GetCurrentSongName
-	hlcoord 1, 4
+	hlcoord 1, 5
+	call FarPlaceString
+	ret
+
+.PlaceSavedSongName:
+	hlcoord 1, 8
+	lb bc, 1, 18
+	call ClearBox
+	ld a, [wBattleMusicOverride]
+	call .GetSongName
+	hlcoord 1, 8
 	call FarPlaceString
 	ret
 
 .RefreshSongName:
 	call .PlaceCurrentSongName
+	call .PlaceSavedSongName
 	call ApplyTilemap
 	ret
 
 .GetCurrentSongName:
-	ld a, [wTempByteValue]
-	; fallthrough
+	call .GetSelectedSongID
 
 .GetSongName:
 	; Read the far pointer for the selected song name from the packed pointer table.
@@ -2870,33 +2929,45 @@ OpenJukebox:
 	ldh [hBGMapMode], a
 	call MenuBox
 	call ClearMenuBoxInterior
+	hlcoord 1, 1
+	ld de, .Title
+	call PlaceString
+	hlcoord 1, 4
+	ld de, .CurrentLabel
+	call PlaceString
 	call .PlaceCurrentSongName
 	hlcoord 1, 7
+	ld de, .SavedLabel
+	call PlaceString
+	call .PlaceSavedSongName
+	hlcoord 1, 12
 	ld de, .ControlsLine1
 	call PlaceString
-	hlcoord 1, 8
+	hlcoord 1, 13
+	ld de, .ControlsLine4
+	call PlaceString
+	hlcoord 1, 14
 	ld de, .ControlsLine2
+	call PlaceString
+	hlcoord 1, 15
+	ld de, .ControlsLine3
 	call PlaceString
 	call ApplyTilemap
 	ret
 
 .GetJukeboxJoypad:
 .wait
-	call JoyTextDelay
+	call JoyTextDelay_ForcehJoyDown
+	ld a, c
+	and PAD_A | PAD_B | PAD_SELECT | PAD_UP | PAD_DOWN
+	jr nz, .done_repeat
 	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jr nz, .done
-	ldh a, [hJoyPressed]
-	and B_BUTTON
-	jr nz, .done
-	ldh a, [hJoyLast]
-	and PAD_LEFT
-	jr nz, .done
-	ldh a, [hJoyLast]
-	and PAD_RIGHT
+	and PAD_LEFT | PAD_RIGHT
 	jr nz, .done
 	jr .wait
 
+.done_repeat
+	ld a, c
 .done
 	ret
 
@@ -2905,14 +2976,29 @@ OpenJukebox:
 	end
 
 .ControlsLine1:
-	db "Left   / Right@"
+	db "L/R:Change Track@"
+
+.ControlsLine4:
+	db "U/D:Cycle Tracks@"
 
 .ControlsLine2:
-	db "A:Play / B:Quit@"
+	db "A:Play  B:Quit@"
+
+.ControlsLine3:
+	db "Sel:Set Battle@"
+
+.CurrentLabel:
+	db "Current Track:@"
+
+.SavedLabel:
+	db "Next Battle:@"
+
+.Title:
+	db "Jukebox@"
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 10
+	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default option
 

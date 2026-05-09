@@ -45,6 +45,10 @@ CherrygroveMartCooltrainerMScript:
 	end
 
 CherrygroveMartYoungsterScript:
+    checkitem JUKEBOX
+    iftrue .normal
+    verbosegiveitem JUKEBOX
+.normal
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:

@@ -2949,11 +2949,11 @@ LarvitarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SANDSTORM
+	db 10, STEALTH_ROCK
 	db 16, MAGNITUDE
+	db 20, TAUNT
 	db 25, ROCK_SLIDE
-	db 31, CRUNCH
-	db 33, TAUNT
-	db 36, STEALTH_ROCK
+	db 30, CRUNCH
 	db 40, EARTHQUAKE
 	db 50, STONE_EDGE
 	db 55, DRAGON_DANCE
@@ -2965,11 +2965,11 @@ TyranitarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, SANDSTORM
+	db 10, STEALTH_ROCK
 	db 16, MAGNITUDE
+	db 20, TAUNT
 	db 25, ROCK_SLIDE
 	db 30, CRUNCH
-	db 33, TAUNT
-	db 36, STEALTH_ROCK
 	db 40, EARTHQUAKE
 	db 50, STONE_EDGE
 	db 55, DRAGON_DANCE

@@ -88,16 +88,13 @@ SaffronCityYoungster1Script:
     end
 
 PartakeText:
-	text "You look like a"
-	line "person of refined"
-	cont "tastes."
-	para "I'm in the market"
-	line "for a"
-	cont "particular..."
-	para "Exchange."
-	para "Would you be"
-	line "willing to..."
-	para "Partake?"
+	text "I need to lay low"
+	line "for a while until"
+	cont "the heat dies"
+	cont "down."
+	para "Got this cop after"
+	line "me."
+	para "I need a disguise."
 	done
 
 PartakeRefuseText:

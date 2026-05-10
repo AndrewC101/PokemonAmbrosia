@@ -153,29 +153,27 @@ SchoolboyDannyAfterBattleText:
 	done
 
 CooltrainerfQuinnSeenText:
-	text "Are you a new"
-	line "trainer?"
-	para "I'm really"
-	line "sorry but I"
-	cont "have to do"
-	cont "this."
-	para "I have to"
-	line "destroy you."
+	text "Daisy in Pallet"
+	line "can devolve"
+	cont "#mon."
+	para "I just can't stop"
+	line "doing it!"
+	para "I have found some"
+	line "interesting things"
+	cont "are possible."
 	done
 
 CooltrainerfQuinnBeatenText:
-	text "Please"
-	line "forgive me."
+	text "What else could"
+	line "I have done?"
 	done
 
 CooltrainerfQuinnAfterBattleText:
-	text "It is my duty"
-	line "as a trainer"
-	cont "to destroy my"
-	cont "enemies."
-	para "No matter how"
-	line "unfair it"
-	cont "might be."
+	text "Don't tell Daisy"
+	line "what I've done!"
+	para "She doesn't intend"
+	line "for her gift to be"
+	cont "abused like this."
 	done
 
 Route1SignText:

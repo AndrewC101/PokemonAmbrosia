@@ -5972,7 +5972,7 @@ DrawEnemyHUD:
 	call DrawBattleHPBar
 
 	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
+	and 1 << BATTLE_INFO
 	jr z, .skip_hp_numbers
 
 	ld a, [wBattleMode]

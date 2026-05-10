@@ -473,26 +473,26 @@ Options_MenuClock:
 	jr nz, .LeftPressed
 	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_INFO, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_INFO, [hl]
 	jr z, .ToggleOn
 	jr .ToggleOff
 
 .NonePressed:
-	bit MENU_CLOCK, [hl]
+	bit BATTLE_INFO, [hl]
 	jr nz, .ToggleOn
 
 .ToggleOff:
-	res MENU_CLOCK, [hl]
+	res BATTLE_INFO, [hl]
 	ld de, .Off
 	jr .Display
 
 .ToggleOn:
-	set MENU_CLOCK, [hl]
+	set BATTLE_INFO, [hl]
 	ld de, .On
 
 .Display:

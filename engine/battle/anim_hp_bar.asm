@@ -253,7 +253,7 @@ HPBarAnim_UpdateHPRemaining:
 
 .enemy_hp
 	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
+	and 1 << BATTLE_INFO
 	ret z
 	ld a, [wBattleMode]
 	cp WILD_BATTLE

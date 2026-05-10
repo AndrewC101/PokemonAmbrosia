@@ -841,7 +841,7 @@ MoveInfoBox:
 	call PrintNum
 	ld [hl], "<%>"
 	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
+	and 1 << BATTLE_INFO
 	jr z, .place_category
 	ld de, .damage_string
 	hlcoord 1, 11

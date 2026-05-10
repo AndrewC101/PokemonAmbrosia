@@ -404,7 +404,7 @@ endr
 
 .IsMenuClockOn:
 	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
+	and 1 << BATTLE_INFO
 	ret
 
 ._DrawMenuClockTextBox

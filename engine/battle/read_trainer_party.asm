@@ -133,6 +133,12 @@ ReadTrainerPartyPieces:
 
 	; ordinary hard-mode trainers on the base game scale to level cap - 10
 	; instead. Clamp at 0 so low caps simply stop scaling rather than wrapping.
+	push hl
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_POKEDEX_F, [hl]
+	pop hl
+	jr z, .normal
+
 	ld a, [wLevelCap]
 	sub 10
 	jr nc, .check_scaled_level

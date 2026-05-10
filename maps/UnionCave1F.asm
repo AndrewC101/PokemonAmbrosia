@@ -126,7 +126,7 @@ PokemaniacLarrySeenText:
 	text "I lost it!"
 	para "I lost my inner"
 	line "strength, my"
-	cont "Hidden Power!"
+	cont "Ancient Power!"
 	done
 
 PokemaniacLarryBeatenText:

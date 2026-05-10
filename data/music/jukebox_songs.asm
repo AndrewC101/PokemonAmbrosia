@@ -28,8 +28,8 @@ JukeboxSongs::
 	db MUSIC_JOHTO_WILD_BATTLE_NIGHT, MUSIC_BATTLE_TOWER_THEME, MUSIC_ROCKET_OVERTURE
 	db MUSIC_HOEN_GRUNT, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	db MUSIC_KANTO_GYM_LEADER_BATTLE, MUSIC_RIVAL_BATTLE, MUSIC_SUICUNE_BATTLE
-	db MUSIC_CHAMPION_BATTLE, MUSIC_HOEN_CHAMPION, MUSIC_CHAMPION_DPPT, MUSIC_ELITE_FOUR_PRISM
-	db MUSIC_HO_OH_BATTLE, MUSIC_LUGIA_SONG, MUSIC_FINAL_BATTLE, MUSIC_GUILE_THEME
+	db MUSIC_FINAL_BATTLE, MUSIC_CHAMPION_BATTLE, MUSIC_HOEN_CHAMPION, MUSIC_CHAMPION_DPPT, MUSIC_ELITE_FOUR_PRISM
+	db MUSIC_HO_OH_BATTLE, MUSIC_LUGIA_SONG, MUSIC_GUILE_THEME
 	db MUSIC_ZINNIA_BATTLE, MUSIC_XVZ, MUSIC_MEGALOVANIA, MUSIC_EPIC_TETRIS, MUSIC_POST_CREDITS
 	db -1
 
@@ -186,7 +186,7 @@ JukeboxSongNamePointers::
 .EcruteakCity:        db "Ecruteak City@"
 .VioletCity:          db "Violet City@"
 .JohtoGymBattle:      db "Johto Gym Battle@"
-.ChampionBattle:      db "Champion Battle@"
+.ChampionBattle:      db "Johto Champion@"
 .RivalBattle:         db "Rival Battle@"
 .RocketBattle:        db "Rocket Battle@"
 .ElmsLab:             db "Elm's Lab@"
@@ -242,11 +242,11 @@ JukeboxSongNamePointers::
 .HoennGrunt:          db "Hoenn Grunt@"
 .MadWorld:            db "Mad World@"
 .EpicTetris:          db "Epic Tetris@"
-.FinalBattle:         db "Final Battle@"
+.FinalBattle:         db "Kanto Champion@"
 .RedIndigoPlateau:    db "Red Plateau@"
 .LavenderTown:        db "Lavender Town@"
 .RedDungeon:          db "Red Dungeon@"
-.ChampionDPPt:        db "Champion DPPt@"
+.ChampionDPPt:        db "Sinnoh Champion@"
 .EliteFourPrism:      db "Elite Four Prism@"
 .Megalovania:         db "Megalovania@"
 .HoOhBattle:          db "Ho-Oh Battle@"

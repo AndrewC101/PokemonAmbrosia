@@ -23,6 +23,36 @@ SpawnPlayer:
 	ld a, PLAYER
 	ld hl, PlayerObjectTemplate
 	call CopyPlayerObjectTemplate
+	ld a, [wPartyCount]
+	and a
+	jr z, .clear_follower
+	ld a, FOLLOWER
+	ld hl, FollowObjTemplate
+	call CopyPlayerObjectTemplate
+	ld b, FOLLOWER
+	call PlayerSpawn_ConvertCoords
+	ld a, FOLLOWER
+	ldh [hMapObjectIndex], a
+	ld bc, wMap1Object
+	ld a, FOLLOWER
+	ldh [hObjectStructIndex], a
+	ld de, wObject1Struct
+	call CopyMapObjectToObjectStruct
+	jr .skip_follower
+
+.clear_follower
+	ld hl, wMap1Object
+	ld bc, MAPOBJECT_LENGTH
+	xor a
+	call ByteFill
+	ld a, -1
+	ld [wMap1Object], a
+	ld hl, wObject1Struct
+	ld bc, OBJECT_LENGTH
+	xor a
+	call ByteFill
+
+.skip_follower
 	ld b, PLAYER
 	call PlayerSpawn_ConvertCoords
 	ld a, PLAYER_OBJECT
@@ -75,6 +105,14 @@ SpawnPlayer:
 	ldh [hObjectStructIndex], a
 	ld de, wObjectStructs
 	call CopyMapObjectToObjectStruct
+	ld a, [wPartyCount]
+	and a
+	jr z, .done
+	ld b, PLAYER
+	ld c, FOLLOWER
+	farcall StartFollow
+
+.done
 	ld a, PLAYER
 	ld [wCenteredObject], a
 	ret
@@ -84,6 +122,16 @@ PlayerObjectTemplate:
 ; Shorter than the actual amount copied by two bytes.
 ; Said bytes seem to be unused.
 	object_event -4, -4, SPRITE_CHRIS, SPRITEMOVEDATA_PLAYER, 15, 15, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, 0, -1
+
+FollowObjTemplate:
+; _NUM_OBJECT_EVENTS is intentionally undefined here; this is a runtime template.
+	object_event -4, -4, SPRITE_FOLLOWER, SPRITEMOVEDATA_FOLLOWNOTEXACT, 15, 15, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, _FollowerScript, -1
+
+PUSHS
+SECTION "Follower Script Home", ROM0
+_FollowerScript:
+	end
+POPS
 
 CopyDECoordsToMapObject::
 	push de
@@ -156,13 +204,38 @@ RefreshPlayerCoords:
 	ret nz
 	ret
 
+RefreshFollowingCoords::
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld a, [wMap1ObjectSprite]
+	and a
+	ret z
+	ld b, FOLLOWER
+	call PlayerSpawn_ConvertCoords
+	ld a, FOLLOWER
+	ldh [hMapObjectIndex], a
+	ld bc, wMap1Object
+	ld a, FOLLOWER
+	ldh [hObjectStructIndex], a
+	ld de, wObject1Struct
+	call CopyMapObjectToObjectStruct
+	ld b, PLAYER
+	ld c, FOLLOWER
+	farcall StartFollow
+	ret
+
 CopyObjectStruct::
 	call CheckObjectMask
 	and a
 	ret nz ; masked
 
-	ld hl, wObjectStructs + OBJECT_LENGTH * 1
-	ld a, 1
+	ldh a, [hMapObjectIndex]
+	cp FOLLOWER
+	jr z, .follower
+
+	ld hl, wObjectStructs + OBJECT_LENGTH * 2
+	ld a, 2
 	ld de, OBJECT_LENGTH
 .loop
 	ldh [hObjectStructIndex], a
@@ -176,6 +249,11 @@ CopyObjectStruct::
 	jr nz, .loop
 	scf
 	ret ; overflow
+
+.follower
+	ld hl, wObject1Struct
+	ld a, FOLLOWER
+	ldh [hObjectStructIndex], a
 
 .done
 	ld d, h

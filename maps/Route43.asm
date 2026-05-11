@@ -8,7 +8,6 @@
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
 	const ROUTE43_FIELDMON_1
-    const ROUTE43_FIELDMON_2
     const ROUTE43_FIELDMON_3
     const ROUTE43_FIELDMON_4
     const ROUTE43_FIELDMON_5
@@ -47,8 +46,6 @@ WeatherAndFieldMon:
 ; Pokemon that only appear at night
     checktime NITE
     iffalse .end
-
-    appear ROUTE43_FIELDMON_2
 
 ; Pokemon that don't appear at night
     disappear ROUTE43_FIELDMON_7
@@ -674,12 +671,6 @@ Route43FieldMon1Script:
     disappear ROUTE43_FIELDMON_1
     end
 
-Route43FieldMon2Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_2, Route43PokemonAttacksText, 46, 0, .script
-.script
-    disappear ROUTE43_FIELDMON_2
-    end
-
 Route43PokemonAttacksText:
 	text "Wild #mon"
 	line "attacks!"
@@ -782,7 +773,6 @@ Route43_MapEvents:
 	object_event 12, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
 
 	object_event  8,  9, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route43FieldMon1Script, EVENT_FIELD_MON_1
-	object_event 21, 17, SPRITE_BIRD, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route43FieldMon2Script, EVENT_FIELD_MON_2
 	object_event  9, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route43FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 19,  28, SPRITE_AMPHAROS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route43FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  7, 28, SPRITE_SWAMPERT, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route43FieldMon5Script, EVENT_FIELD_MON_5

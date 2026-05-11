@@ -9,7 +9,6 @@
 	const ROUTE32_FRIEDA
     const ROUTE32_FIELDMON_1
 	const ROUTE32_FIELDMON_2
-	const ROUTE32_FIELDMON_3
 	const ROUTE32_FIELDMON_4
 	const ROUTE32_FIELDMON_5
 	const ROUTE32_FIELDMON_6
@@ -47,11 +46,9 @@ Route32FriedaCallback:
     random 5
     ifequal 1, .spawn8
     disappear ROUTE32_FIELDMON_8
-    disappear ROUTE32_FIELDMON_3
     sjump .feieda
 .spawn8
     appear ROUTE32_FIELDMON_8
-    appear ROUTE32_FIELDMON_3
 
 .feieda
 	readvar VAR_WEEKDAY
@@ -758,12 +755,6 @@ Route32FieldMon2Script:
     disappear ROUTE32_FIELDMON_2
     end
     
-Route32FieldMon3Script:
-	trainer MARSHTOMP, FIELD_MON, EVENT_FIELD_MON_3, Route32PokemonAttacksText, 30, 0, .script
-.script
-    disappear ROUTE32_FIELDMON_3
-    end
-    
 Route32PokemonAttacksText:
 	text "Wild #mon"
 	line "attacks!"
@@ -1049,7 +1040,6 @@ Route32_MapEvents:
 
 	object_event  5, 14, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 5, Route32FieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon2Script, EVENT_FIELD_MON_2
-	object_event  2, 69, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route32FieldMon3Script, EVENT_FIELD_MON_3
 	object_event  8, 47, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 12, 43, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event  1, 49, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6

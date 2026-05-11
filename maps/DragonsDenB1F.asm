@@ -3,8 +3,6 @@
 	const DRAGONSDENB1F_CLAIR
 	const DRAGONSDENB1F_COOLTRAINER_M
 	const DRAGONSDENB1F_COOLTRAINER_F
-	const DRAGONSDENB1F_TWIN1
-	const DRAGONSDENB1F_TWIN2
 	const DRAGONSDENB1F_RAYQUAZA
 	const DRAGONSDENB1F_FIELDMON_1
     const DRAGONSDENB1F_FIELDMON_2
@@ -376,28 +374,6 @@ TrainerCooltrainerfCara:
 	closetext
 	end
 
-TrainerTwinsLeaandpia1:
-	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia1SeenText, TwinsLeaandpia1BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TwinsLeaandpia1AfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerTwinsLeaandpia2:
-	trainer TWINS, LEAANDPIA1, EVENT_BEAT_TWINS_LEA_AND_PIA, TwinsLeaandpia2SeenText, TwinsLeaandpia2BeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext TwinsLeaandpia2AfterBattleText
-	waitbutton
-	closetext
-	end
-
 DragonsDenB1FDragonFangScript:
 ; This whole script is written out rather than as an itemball
 ; because it's left over from the GS event.
@@ -614,66 +590,6 @@ CooltrainerfCaraAfterBattleText:
 	line "in no time."
 	done
 
-TwinsLeaandpia1SeenText:
-	text "This is a"
-	line "sacred place."
-
-	para "My sister and I"
-	line "can hear the"
-	cont "dragons talk."
-
-	para "Very few have"
-	line "such a gift."
-
-	para "Even the master"
-	line "and Clair can not"
-	cont "do that."
-	done
-
-TwinsLeaandpia1BeatenText:
-	text "You must listen."
-	done
-
-TwinsLeaandpia1AfterBattleText:
-	text "You should talk"
-	line "with the great"
-	cont "Dragon Lord."
-
-	para "I'm too scared to"
-	line "talk to him."
-
-	para "He will eat me!"
-	done
-
-TwinsLeaandpia2SeenText:
-	text "My sister keeps"
-	line "asking me to"
-	cont "talk to the"
-	cont "Dragon Lord."
-
-	para "She is too"
-	line "scared of him."
-	done
-
-TwinsLeaandpia2BeatenText:
-	text "Can you speak"
-	line "dragon!"
-	done
-
-TwinsLeaandpia2AfterBattleText:
-	text "Hearing dragons"
-	line "talk is a rare"
-	cont "gift."
-
-	para "The only other"
-	line "who can do it"
-	cont "is Lance."
-
-	para "That's why we"
-	line "are allowed in"
-	cont "here."
-	done
-
 Text_FoundDragonFang:
 	text "<PLAYER> found"
 	line "@"
@@ -771,8 +687,6 @@ DragonsDenB1F_MapEvents:
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
 	object_event 21, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermDarin, -1
 	object_event  8,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfCara, -1
-	object_event  4, 17, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia1, -1
-	object_event  4, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinsLeaandpia2, -1
 	object_event 20, 15, SPRITE_RAYQUAZA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RayquazaScript, EVENT_CAUGHT_RAYQUAZA
 	object_event 24, 11, SPRITE_DRACOVISH, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 13, 15, SPRITE_MILOTIC, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FieldMon2Script, EVENT_FIELD_MON_2

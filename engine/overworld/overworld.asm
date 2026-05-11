@@ -182,6 +182,8 @@ SafeGetSprite:
 	ret
 
 GetSprite:
+	call GetFollowingSprite
+	ret c
 	call GetMonSprite
 	ret c
 
@@ -270,6 +272,61 @@ GetMonSprite:
 	and a
 	ret
 
+GetFirstAliveMon:
+; Returns species in a and 1-based party index in d.
+	ld a, [wPartyCount]
+	and a
+	ret z
+	inc a
+	ld d, 1
+	ld e, a
+	ld bc, wPartyMon1
+.loop
+	ld hl, MON_HP
+	add hl, bc
+	ld a, [hli]
+	push de
+	ld d, a
+	ld a, [hl]
+	or d
+	pop de
+	jr nz, .got_mon_struct
+	inc d
+	ld a, d
+	cp e
+	jr z, .fallback
+	ld hl, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	jr .loop
+
+.got_mon_struct
+	ld a, [bc]
+	ret
+
+.fallback
+	ld d, 1
+	ld a, [wPartySpecies]
+	ret
+
+GetFollowingSprite:
+	cp SPRITE_FOLLOWER
+	jr nz, .nope
+
+	call GetFirstAliveMon
+	jr z, .nope
+	ld e, a
+	farcall LoadOverworldMonIcon
+	ld l, WALKING_SPRITE
+	ld h, 0
+	scf
+	ret
+
+.nope
+	and a
+	ret
+
 _DoesSpriteHaveFacings::
 ; Checks to see whether we can apply a facing to a sprite.
 ; Returns carry unless the sprite is a Pokemon or a Still Sprite.
@@ -298,6 +355,8 @@ _DoesSpriteHaveFacings::
 
 _GetSpritePalette::
 	ld a, c
+	cp SPRITE_FOLLOWER
+	jr z, .is_pokemon
 	call GetMonSprite
 	jr c, .is_pokemon
 

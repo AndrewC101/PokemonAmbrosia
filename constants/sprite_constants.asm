@@ -245,7 +245,7 @@ DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 	const SPRITE_DAY_CARE_MON_2 ; ef
 
 ; wVariableSprites indexes (see wram.asm)
-	const_next $f0
+const_next $f0
 DEF SPRITE_VARS EQU const_value
 	const SPRITE_CONSOLE ; f0
 	const SPRITE_DOLL_1 ; f1
@@ -260,3 +260,6 @@ DEF SPRITE_VARS EQU const_value
 	const SPRITE_FUCHSIA_GYM_4 ; fa
 	const SPRITE_COPYCAT ; fb
 	const SPRITE_JANINE_IMPERSONATOR ; fc
+
+; Reserved runtime sprite id for the player's follow-mon.
+DEF SPRITE_FOLLOWER EQU $fd

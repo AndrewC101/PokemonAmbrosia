@@ -87,7 +87,6 @@ EventWildMons::
 	specialencounter GRENINJA, -1, SILVER_CAVE_OUTSIDE, OverworldEncounterDescription
 	specialencounter BULBASAUR, -1, ROUTE_2, OverworldEncounterDayDescription
 	specialencounter BULBASAUR, -1, ROUTE_21, OverworldEncounterShiny50Description
-	specialencounter IVYSAUR, -1, NATIONAL_PARK, OverworldEncounterDayDescription
 	specialencounter VENUSAUR, -1, ROUTE_15, OverworldEncounter50Description
 	specialencounter CHARMANDER, -1, ROUTE_3, OverworldEncounterDescription
 	specialencounter CHARMANDER, -1, ROUTE_21, OverworldEncounterShiny50Description

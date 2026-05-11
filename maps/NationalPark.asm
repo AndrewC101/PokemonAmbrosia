@@ -13,7 +13,6 @@
     const NATIONALPARK_FIELDMON_2
     const NATIONALPARK_FIELDMON_3
     const NATIONALPARK_FIELDMON_4
-    const NATIONALPARK_FIELDMON_5
     const NATIONALPARK_FIELDMON_6
     const NATIONALPARK_CHARIZARD
 
@@ -53,7 +52,6 @@ NationalPark_MapScripts:
     appear NATIONALPARK_FIELDMON_1
     appear NATIONALPARK_FIELDMON_3
     appear NATIONALPARK_FIELDMON_4
-    appear NATIONALPARK_FIELDMON_5
 
 ; Pokemon that sometimes appear
     random 5 ; shiny
@@ -71,13 +69,9 @@ NationalPark_MapScripts:
     random 2
     ifequal 1, .spawn2
     disappear NATIONALPARK_FIELDMON_2
-    sjump .disappear
+    sjump .end
 .spawn2
     appear NATIONALPARK_FIELDMON_2
-
-.disappear
-; Pokemon that don't appear at night
-    disappear NATIONALPARK_FIELDMON_5
 
 .end
     endcallback
@@ -721,17 +715,6 @@ NationalParkFieldMon4Script:
 	disappear NATIONALPARK_FIELDMON_4
 	end
 
-NationalParkFieldMon5Script:
-	faceplayer
-	cry IVYSAUR
-	pause 15
-	loadwildmon IVYSAUR, 25
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_5
-	disappear NATIONALPARK_FIELDMON_5
-	end
-
 NationalParkFieldMon6Script:
 	faceplayer
 	cry TEDDIURSA
@@ -1015,6 +998,5 @@ NationalPark_MapEvents:
 	object_event  6, 21, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, NationalParkFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 15, 41, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 27, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 27, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon5Script, EVENT_FIELD_MON_5
 	object_event 18, 12, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NationalParkFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 19, 27, SPRITE_CHARIZARD, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkCharizardScript, EVENT_FIELD_MON_7

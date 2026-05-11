@@ -567,12 +567,6 @@ ReadObjectEvents::
 	ld [wMap1Object], a
 	ld hl, wMapObjects + MAPOBJECT_LENGTH * 2
 	ld a, [de]
-	; Temporary guard for follower-slot migration: dense maps lose late objects
-	; instead of overflowing the reserved slot/object array during bring-up.
-	cp NUM_OBJECTS - 1
-	jr c, .count_ok
-	ld a, NUM_OBJECTS - 2
-.count_ok
 	inc de
 	ld [wCurMapObjectEventCount], a
 	ld a, e

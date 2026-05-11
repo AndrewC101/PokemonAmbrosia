@@ -551,6 +551,8 @@ TryObjectEvent:
 	add hl, bc
 	ld a, [hl]
 	ldh [hLastTalked], a
+	cp FOLLOWER
+	jr z, .nope
 
 	ldh a, [hLastTalked]
 	call GetMapObject

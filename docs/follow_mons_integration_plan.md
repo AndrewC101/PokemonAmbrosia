@@ -44,17 +44,7 @@ Implication:
 - Maps with `17` `object_event`s must be reduced or handled specially.
 - Maps with `16` `object_event`s become red-zone maps and need explicit review.
 
-Maps currently at `17` object events:
-
-- `DragonsDenB1F.asm`
-- `LakeOfRage.asm`
-- `NationalPark.asm`
-- `Route29.asm`
-- `Route32.asm`
-- `Route43.asm`
-- `WarZone.asm`
-
-Maps currently at `16` object events:
+The original `17`-object overflow set has now been fixed. The current red-zone maps are the ones at `16` object events:
 
 - `Abyss.asm`
 - `AncientRuinPast.asm`
@@ -64,14 +54,20 @@ Maps currently at `16` object events:
 - `DestinyPark.asm`
 - `GoldenrodCity.asm`
 - `HallOfOrigin.asm`
+- `LakeOfRage.asm`
 - `MountMortar1FInside.asm`
+- `NationalPark.asm`
 - `Route2.asm`
+- `Route29.asm`
 - `Route30.asm`
+- `Route32.asm`
 - `Route34.asm`
 - `Route36.asm`
 - `Route41.asm`
+- `Route43.asm`
 - `Route45.asm`
 - `VictoryRoad.asm`
+- `WarZone.asm`
 
 ### ROM and RAM headroom
 
@@ -546,10 +542,16 @@ Completed on `dev`:
 - reserved map object slot `1` added for the follower template
 - reserved object struct `1` added for the follower runtime object
 - follower spawn template added in `player_object.asm`
-- basic follower sprite load path hooked through the existing walking-mon icon loader
+- shared placeholder follower walking sprite now uses a branch-style pointer-table and decompression path
+- outdoor sprite loading now explicitly registers the runtime follower sprite
 - map-entry follower refresh hook added
 - dense-map audit written to `docs/follow_mons_dense_map_audit.md`
-- temporary dense-map clamp added so overflow does not corrupt map-object state during bring-up
+- original 17-object overflow maps reduced to fit the reserved follower slot
+- temporary dense-map clamp removed after map cleanup
+- follower no longer blocks player movement
+- pressing `A` on the unfinished follower no longer dispatches random NPC scripts
+- placeholder follower has been verified stable across indoor/outdoor map transitions
+- placeholder follower currently appears as the shared Rhydon sprite
 - deferred WRAM staging decision documented
 
 Not done yet:
@@ -557,19 +559,18 @@ Not done yet:
 - follower-specific palette path
 - follower invisibility / in-ball / freeze state logic
 - follower interaction script/content
-- full follower sprite pointer / placeholder asset table
-- map cleanup for all dense maps
-- removal of the temporary dense-map clamp
 - object-struct / WRAM budget revisit for later follower parity features
 
 ### Milestone A - Proof of concept
 
+- Completed:
 - One follower appears
-- Follows player on simple maps
-- Uses placeholder or borrowed graphics
+- Follows across normal map transitions
+- Uses stable placeholder graphics
 
 ### Milestone B - Runtime stable
 
+- In progress:
 - Warps and major transitions stable
 - Dense maps reviewed
 - No object corruption

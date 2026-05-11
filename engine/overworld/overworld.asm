@@ -113,9 +113,11 @@ AddMapSprites:
 	jr z, .outdoor
 .indoor
 	call AddIndoorSprites
+	call AddFollowerSpriteGFX
 	ret
 
 .outdoor
+	call AddFollowerSpriteGFX
 	call AddOutdoorSprites
 	ret
 
@@ -151,6 +153,15 @@ AddOutdoorSprites:
 	ret z
 	call AddSpriteGFX
 	jr .loop
+
+AddFollowerSpriteGFX:
+; Outdoor maps use a static group sprite list, so the runtime follower sprite
+; needs to be registered explicitly for its tiles to be loaded.
+	ld a, [wMap1ObjectSprite]
+	and a
+	ret z
+	call AddSpriteGFX
+	ret
 
 LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES
@@ -316,10 +327,43 @@ GetFollowingSprite:
 
 	call GetFirstAliveMon
 	jr z, .nope
+
+	push af
+	dec a
+	ld hl, FollowingSpritePointers
+	ld d, 0
 	ld e, a
-	farcall LoadOverworldMonIcon
-	ld l, WALKING_SPRITE
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, BANK(FollowingSpritePointers)
+	push af
+	call GetFarByte
+	ld b, a
+	inc hl
+	pop af
+	call GetFarWord
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+
+	push bc
+	ld a, b
+	ld de, wDecompressScratch
+	call FarDecompress
+	pop bc
+	ld de, wDecompressScratch
+
+	pop af
+	ldh [rSVBK], a
+
 	ld h, 0
+	ld c, 12
+	ld l, WALKING_SPRITE
+
+	pop af
 	scf
 	ret
 
@@ -330,6 +374,8 @@ GetFollowingSprite:
 _DoesSpriteHaveFacings::
 ; Checks to see whether we can apply a facing to a sprite.
 ; Returns carry unless the sprite is a Pokemon or a Still Sprite.
+	cp SPRITE_FOLLOWER
+	jr z, .follower
 	cp SPRITE_POKEMON
 	jr nc, .only_down
 
@@ -348,6 +394,9 @@ _DoesSpriteHaveFacings::
 	jr nz, .only_down
 	scf
 	ret
+
+.follower
+	ld a, WALKING_SPRITE
 
 .only_down
 	and a
@@ -697,7 +746,15 @@ endr
 
 .bankswitch
 	ldh [rVBK], a
+
+	; Follower sprites are decompressed into banked WRAM scratch first.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
 	call Get2bpp
+	pop af
+	ldh [rSVBK], a
 	pop af
 	ldh [rVBK], a
 	ret

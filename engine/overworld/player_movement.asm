@@ -720,6 +720,11 @@ ENDM
 	ld bc, wObjectStructs ; redundant
 	farcall IsNPCAtCoord
 	jr nc, .no_npc
+	ld hl, OBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITE_FOLLOWER
+	jr z, .no_npc
 	call .CheckStrengthBoulder
 	jr c, .no_bump
 

@@ -12,22 +12,10 @@ With the current port shape:
 
 That leaves **16 usable `object_event` slots** per map.
 
-Implications:
+Implication:
 
-- maps with **17 `object_event`s** must lose at least one object
 - maps with **16 `object_event`s** still fit, but have no spare room
-
-## Maps that must be reduced
-
-These maps currently have **17 `object_event`s** and need at least one object removed:
-
-- `maps/DragonsDenB1F.asm`
-- `maps/LakeOfRage.asm`
-- `maps/NationalPark.asm`
-- `maps/Route29.asm`
-- `maps/Route32.asm`
-- `maps/Route43.asm`
-- `maps/WarZone.asm`
+- there are currently **22** red-zone maps at that ceiling
 
 ## Maps already at the limit
 
@@ -41,22 +29,35 @@ These maps currently have **16 `object_event`s** and fit exactly, but have no ma
 - `maps/DestinyPark.asm`
 - `maps/GoldenrodCity.asm`
 - `maps/HallOfOrigin.asm`
+- `maps/LakeOfRage.asm`
 - `maps/MountMortar1FInside.asm`
+- `maps/NationalPark.asm`
 - `maps/Route2.asm`
+- `maps/Route29.asm`
 - `maps/Route30.asm`
+- `maps/Route32.asm`
 - `maps/Route34.asm`
 - `maps/Route36.asm`
 - `maps/Route41.asm`
+- `maps/Route43.asm`
 - `maps/Route45.asm`
 - `maps/VictoryRoad.asm`
+- `maps/WarZone.asm`
 
-## Temporary runtime guard
+## Maps previously reduced
 
-The current port includes a temporary clamp in `home/map.asm` so dense maps do not overflow the reserved follower slot during bring-up.
+The original 17-object overflow set has now been fixed.
 
-That means:
+Those maps were:
 
-- the 17-object maps do not currently crash from this issue alone
-- they may silently lose late objects until the map cleanup is done
+- `maps/DragonsDenB1F.asm`
+- `maps/LakeOfRage.asm`
+- `maps/NationalPark.asm`
+- `maps/Route29.asm`
+- `maps/Route32.asm`
+- `maps/Route43.asm`
+- `maps/WarZone.asm`
 
-This guard is only for bring-up. Final follow-mon enablement should not rely on it.
+## Runtime guard status
+
+The temporary bring-up clamp in `home/map.asm` has been removed now that the 17-object maps have been reduced.

@@ -145,7 +145,7 @@ GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
 	done
 
 GoldenrodDeptStoreRoofPokefanMText:
-	text "I'm in huge dept"
+	text "I'm in huge debt"
 	line "to the Game"
 	cont "Corner."
 	para "They are coming to"

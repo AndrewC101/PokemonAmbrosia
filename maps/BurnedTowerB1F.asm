@@ -216,7 +216,7 @@ BurnedTowerB1FEusineText:
 	line "you <PLAYER>!"
 
 	para "I owe you a"
-	line "dept for the rest"
+	line "debt for the rest"
 	cont "of my life."
 
 	para "Suicune fled with"

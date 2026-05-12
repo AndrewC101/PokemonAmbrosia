@@ -2315,7 +2315,8 @@ _FlyMap:
 	ld a, [wPokegearMapRegion]
 	and a
 	ret nz
-	call HasAnyKantoFlypoint
+	ld a, KANTO_REGION
+	call HasAnyVisitedFlypointInRegion
 	ret z
 	ld a, KANTO_REGION
 	call FlyMap_SetRegion
@@ -2324,6 +2325,9 @@ _FlyMap:
 .ToggleLeft:
 	ld a, [wPokegearMapRegion]
 	and a
+	ret z
+	xor a ; JOHTO_REGION
+	call HasAnyVisitedFlypointInRegion
 	ret z
 	xor a ; JOHTO_REGION
 	call FlyMap_SetRegion
@@ -2469,7 +2473,8 @@ FlyMap:
 	ret
 
 .KantoFlyMap:
-	call HasAnyKantoFlypoint
+	ld a, KANTO_REGION
+	call HasAnyVisitedFlypointInRegion
 	jr z, .NoKanto
 	ld a, KANTO_REGION
 	call FlyMap_SetRegion
@@ -2503,42 +2508,33 @@ SetFlypointRangeForRegion:
 	ld [wEndFlypoint], a
 	ret
 
-HasAnyKantoFlypoint:
-	ld hl, .KantoFlypointFlags
-.loop
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	inc hl
+HasAnyVisitedFlypointInRegion:
+; Check whether the selected region has at least one usable fly destination.
+; This uses visited spawns rather than engine flypoint flags so region toggles
+; only succeed when the player can actually confirm a destination there.
+	ld a, [wStartFlypoint]
+	ld b, a
+	ld a, [wEndFlypoint]
+	ld c, a
+	push bc
+	call SetFlypointRangeForRegion
+	call FindFirstVisitedFlypointInRange
+	ld l, a
+	ld h, 0
+	add hl, hl
+	ld de, Flypoints + 1
+	add hl, de
+	ld c, [hl]
+	call HasVisitedSpawn
+	ld d, a
+	pop bc
+	ld a, b
+	ld [wStartFlypoint], a
+	ld a, c
+	ld [wEndFlypoint], a
 	ld a, d
-	or e
-	jr z, .none
-	push hl
-	call CheckEngineFlag
-	pop hl
-	jr nc, .found
-	jr .loop
-.found
-	ld a, 1
+	and a
 	ret
-.none
-	xor a
-	ret
-
-.KantoFlypointFlags:
-	dw ENGINE_FLYPOINT_PALLET
-	dw ENGINE_FLYPOINT_VIRIDIAN
-	dw ENGINE_FLYPOINT_PEWTER
-	dw ENGINE_FLYPOINT_CERULEAN
-	dw ENGINE_FLYPOINT_VERMILION
-	dw ENGINE_FLYPOINT_ROCK_TUNNEL
-	dw ENGINE_FLYPOINT_LAVENDER
-	dw ENGINE_FLYPOINT_CELADON
-	dw ENGINE_FLYPOINT_SAFFRON
-	dw ENGINE_FLYPOINT_FUCHSIA
-	dw ENGINE_FLYPOINT_CINNABAR
-	dw ENGINE_FLYPOINT_INDIGO_PLATEAU
-	dw 0
 
 FindFirstVisitedFlypointInRange:
 	ld a, [wStartFlypoint]

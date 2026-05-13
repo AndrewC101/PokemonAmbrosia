@@ -127,13 +127,37 @@ AddIndoorSprites:
 .loop
 	push af
 	ld a, [hl]
+	call .SkipHiddenFollower
+	jr c, .next
 	call AddSpriteGFX
+.next
 	ld de, MAPOBJECT_LENGTH
 	add hl, de
 	pop af
 	inc a
 	cp NUM_OBJECTS
 	jr nz, .loop
+	ret
+
+.SkipHiddenFollower
+	cp SPRITE_FOLLOWER
+	jr nz, .keep
+	push af
+	push hl
+	ld a, [wPartyCount]
+	pop hl
+	and a
+	scf
+	jr z, .drop
+	pop af
+	and a
+	ret
+.drop
+	pop af
+	scf
+	ret
+.keep
+	and a
 	ret
 
 AddOutdoorSprites:
@@ -160,6 +184,13 @@ AddFollowerSpriteGFX:
 	ld a, [wMap1ObjectSprite]
 	and a
 	ret z
+	cp SPRITE_FOLLOWER
+	jr nz, .add
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld a, [wMap1ObjectSprite]
+.add
 	call AddSpriteGFX
 	ret
 
@@ -283,7 +314,7 @@ GetMonSprite:
 	and a
 	ret
 
-GetFirstAliveMon:
+GetFirstAliveMon::
 ; Returns species in a and 1-based party index in d.
 	ld a, [wPartyCount]
 	and a

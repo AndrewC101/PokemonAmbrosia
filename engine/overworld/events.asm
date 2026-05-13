@@ -30,46 +30,6 @@ EnableEvents::
 	ld [wEnabledPlayerEvents], a
 	ret
 
-CheckEnabledMapEventsBit5:
-	ld hl, wEnabledPlayerEvents
-	bit PLAYEREVENTS_UNUSED, [hl]
-	ret
-
-DisableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res PLAYEREVENTS_WARPS_AND_CONNECTIONS, [hl]
-	ret
-
-DisableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res PLAYEREVENTS_COORD_EVENTS, [hl]
-	ret
-
-DisableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res PLAYEREVENTS_COUNT_STEPS, [hl]
-	ret
-
-DisableWildEncounters: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	res PLAYEREVENTS_WILD_ENCOUNTERS, [hl]
-	ret
-
-EnableWarpsConnections: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set PLAYEREVENTS_WARPS_AND_CONNECTIONS, [hl]
-	ret
-
-EnableCoordEvents: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set PLAYEREVENTS_COORD_EVENTS, [hl]
-	ret
-
-EnableStepCount: ; unreferenced
-	ld hl, wEnabledPlayerEvents
-	set PLAYEREVENTS_COUNT_STEPS, [hl]
-	ret
-
 EnableWildEncounters:
 	ld hl, wEnabledPlayerEvents
 	set PLAYEREVENTS_WILD_ENCOUNTERS, [hl]
@@ -131,11 +91,6 @@ EnterMap:
 	ldh [hMapEntryMethod], a
 	ld a, MAPSTATUS_HANDLE
 	ld [wMapStatus], a
-	ret
-
-UnusedWait30Frames: ; unreferenced
-	ld c, 30
-	call DelayFrames
 	ret
 
 HandleMap:
@@ -240,13 +195,10 @@ _CheckObjectEnteringVisibleRange:
 	ret
 
 PlayerEvents:
-	xor a
 ; If there's already a player event, don't interrupt it.
 	ld a, [wScriptRunning]
 	and a
 	ret nz
-
-	call Dummy_CheckEnabledMapEventsBit5 ; This is a waste of time
 
 	call CheckTrainerEvent
 	jr c, .ok
@@ -393,18 +345,6 @@ SetUpFiveStepWildEncounterCooldown:
 SetMinTwoStepWildEncounterCooldown:
 ; dummied out
 	ret
-	ld a, [wWildEncounterCooldown]
-	cp 2
-	ret nc
-	ld a, 2
-	ld [wWildEncounterCooldown], a
-	ret
-
-Dummy_CheckEnabledMapEventsBit5:
-	call CheckEnabledMapEventsBit5
-	ret z
-	call SetXYCompareFlags
-	ret
 
 RunSceneScript:
 	ld a, [wCurMapSceneScriptCount]
@@ -482,11 +422,6 @@ CheckTimeEvents:
 	ld a, BANK(BugCatchingContestOverScript)
 	ld hl, BugCatchingContestOverScript
 	call CallScript
-	scf
-	ret
-
-.hatch ; unreferenced
-	ld a, PLAYEREVENT_HATCH
 	scf
 	ret
 
@@ -939,11 +874,6 @@ CountStep:
 	scf
 	ret
 
-.whiteout ; unreferenced
-	ld a, PLAYEREVENT_WHITEOUT
-	scf
-	ret
-
 DoRepelStep:
 	ld a, [wRepulsorToggle]
 	and a
@@ -1016,9 +946,6 @@ PlayerEventScriptPointers:
 InvalidEventScript:
 	end
 
-UnusedPlayerEventScript: ; unreferenced
-	end
-
 HatchEggScript:
 	callasm OverworldHatchEgg
 	end
@@ -1032,6 +959,7 @@ FallIntoMapScript:
 	newloadmap MAPSETUP_FALL
 	playsound SFX_KINESIS
 	applymovement PLAYER, .SkyfallMovement
+	callasm FollowerInBall
 	playsound SFX_STRENGTH
 	scall LandAfterPitfallScript
 	end
@@ -1051,6 +979,32 @@ ChangeDirectionScript:
 	deactivatefacing 3
 	callasm EnableWildEncounters
 	end
+
+_CheckActiveFollowerBallAnim::
+	ld bc, wObject1Struct
+	ld hl, wFollowerFlags
+	bit FOLLOWER_ENTERING_BALL_F, [hl]
+	jr nz, .entering
+	bit FOLLOWER_EXITING_BALL_F, [hl]
+	ret z
+	farcall SpawnPokeballOpening
+	ret
+
+.entering
+	farcall SpawnPokeballClosing
+	ret
+
+FollowerInBall:
+	push bc
+	ld bc, wObject1Struct
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	set INVISIBLE_F, [hl]
+	ld hl, wFollowerFlags
+	set FOLLOWER_INVISIBLE_F, [hl]
+	set FOLLOWER_IN_POKEBALL_F, [hl]
+	pop bc
+	ret
 
 INCLUDE "engine/overworld/scripting.asm"
 

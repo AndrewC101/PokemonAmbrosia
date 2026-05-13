@@ -196,7 +196,6 @@ CyndaquilPokeBallScript:
 	writetext TakeCyndaquilText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL1
 	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -207,7 +206,11 @@ CyndaquilPokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke CHIMCHAR, 5, BERRY
+	moveobject FOLLOWER, 6, 3
 	closetext
+	scall AddFollowing
+	cry CHIMCHAR
+	disappear ELMSLAB_POKE_BALL1
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCyndaquilMovement
@@ -226,7 +229,6 @@ TotodilePokeBallScript:
 	writetext TakeTotodileText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL2
 	setevent EVENT_GOT_TOTODILE_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -237,7 +239,11 @@ TotodilePokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke FROAKIE, 5, BERRY
+	moveobject FOLLOWER, 7, 3
 	closetext
+	scall AddFollowing
+	cry FROAKIE
+	disappear ELMSLAB_POKE_BALL2
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
 
@@ -254,7 +260,6 @@ ChikoritaPokeBallScript:
 	writetext TakeChikoritaText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL3
 	setevent EVENT_GOT_CHIKORITA_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -265,7 +270,11 @@ ChikoritaPokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke TREECKO, 5, BERRY
+	moveobject FOLLOWER, 8, 3
 	closetext
+	scall AddFollowing
+	cry TREECKO
+	disappear ELMSLAB_POKE_BALL3
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
 
@@ -277,6 +286,7 @@ DidntChooseStarterScript:
 
 ElmDirectionsScript:
 	turnobject PLAYER, UP
+	turnobject FOLLOWER, UP
 	opentext
 	writetext ElmDirectionsText1
 	waitbutton
@@ -312,6 +322,12 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_1
+	end
+
+AddFollowing:
+	appearfollower
+	callasm RefreshFollowingCoords
+	closetext
 	end
 
 ElmDescribesMrPokemonScript:

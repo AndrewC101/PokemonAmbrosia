@@ -721,6 +721,7 @@ FlyFunction:
 	ret
 
 .FlyScript:
+	silentstowfollower
 	refreshmap
 	callasm HideSprites
 	special UpdateTimePals
@@ -729,6 +730,7 @@ FlyFunction:
 	special WarpToSpawnPoint
 	callasm SkipUpdateMapSprites
 	loadvar VAR_MOVEMENT, PLAYER_NORMAL
+	loadvar VAR_FOLLOWERSTATE, PLAYER_NORMAL
 	newloadmap MAPSETUP_FLY
 	callasm FlyToAnim
 	special WaitSFX

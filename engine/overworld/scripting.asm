@@ -235,6 +235,15 @@ ScriptCommandTable:
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
 	dw Script_nooryes                    ; aa
+	dw Script_freezefollower             ; ab
+	dw Script_unfreezefollower           ; ac
+	dw Script_getfollowerdirection       ; ad
+	dw Script_followcry                  ; ae
+	dw Script_stowfollower               ; af
+	dw Script_appearfollower             ; b0
+	dw Script_appearfolloweronestep      ; b1
+	dw Script_savefollowercoords         ; b2
+	dw Script_silentstowfollower         ; b3
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -251,6 +260,11 @@ StopScript:
 	ld hl, wScriptFlags
 	res SCRIPT_RUNNING, [hl]
 	ret
+
+DoScriptWait:
+	ld a, SCRIPT_WAIT
+	ld [wScriptMode], a
+	jp StopScript
 
 Script_callasm:
 	call GetScriptByte
@@ -802,7 +816,8 @@ GetScriptObject:
 	ret z
 	cp LAST_TALKED
 	ret z
-	dec a
+	; With the follower reserving map object slot 1, object_const_def starts at 2
+	; and script object constants already match their wMapObjects indices.
 	ret
 
 Script_setlasttalked:
@@ -967,6 +982,9 @@ Script_variablesprite:
 
 Script_appear:
 	call GetScriptByte
+	ld b, a
+Script_appear_skipinput::
+	ld a, b
 	call GetScriptObject
 	call UnmaskCopyMapObjectStruct
 	ldh a, [hMapObjectIndex]
@@ -2424,6 +2442,76 @@ Script_nooryes:
 	ld a, TRUE
 .no
 	ld [wScriptVar], a
+	ret
+
+Script_freezefollower:
+	farcall _FreezeFollower
+	ret
+
+Script_unfreezefollower:
+	farcall _UnfreezeFollower
+	ret
+
+Script_getfollowerdirection:
+	ld a, [wObject1MapX]
+	ld b, a
+	ld a, [wPlayerMapX]
+	cp b
+	jr z, .check_y
+	ld a, RIGHT
+	jr c, .done
+	ld a, LEFT
+	jr .done
+
+.check_y
+	ld a, [wObject1MapY]
+	ld b, a
+	ld a, [wPlayerMapY]
+	cp b
+	ld a, STANDING
+	jr z, .done
+	ld a, DOWN
+	jr c, .done
+	ld a, UP
+
+.done
+	ld [wScriptVar], a
+	ret
+
+Script_followcry:
+	farcall GetFirstAliveMon
+	ret z
+	call PlayMonCry
+	ret
+
+Script_stowfollower:
+	farcall _StowFollower
+	jp DoScriptWait
+
+Script_appearfollower:
+	farcall _AppearFollower
+	ld a, 1
+	ld [wScriptDelay], a
+	jp DoScriptWait
+
+Script_appearfolloweronestep:
+	farcall _AppearFollowerOneStep
+	ld a, [wScriptDelay]
+	and a
+	jr nz, .wait_for_appear
+	ld a, 1
+	ld [wScriptDelay], a
+.wait_for_appear
+	jp DoScriptWait
+
+Script_savefollowercoords:
+	farcall _SaveFollowerCoords
+	ret
+
+Script_silentstowfollower:
+	xor a
+	ld [wScriptDelay], a
+	farcall _SilentStowFollower
 	ret
 
 .gs_version:

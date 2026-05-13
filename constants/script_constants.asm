@@ -73,7 +73,8 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const VAR_BLUECARDBALANCE  ; 18
 	const VAR_BUENASPASSWORD   ; 19
 	const VAR_KENJI_BREAK      ; 1a
-DEF NUM_VARS EQU const_value           ; 1b
+	const VAR_FOLLOWERSTATE    ; 1b
+DEF NUM_VARS EQU const_value           ; 1c
 
 ; variable action types
 DEF RETVAR_STRBUF2 EQU 0 << 6

@@ -2987,7 +2987,8 @@ wGameTimeMinutes:: db
 wGameTimeSeconds:: db
 wGameTimeFrames::  db
 
-	ds 2
+wFollowerNextMovement:: db
+	ds 1
 
 wCurDay:: db
 
@@ -2995,6 +2996,7 @@ wPokedexShinyToggle::
 ; bit 0: set if displaying shiny palettes
 	db
 
+wFollowerFlags:: db
 wObjectFollow_Leader:: db
 wObjectFollow_Follower:: db
 wCenteredObject:: db
@@ -3013,7 +3015,9 @@ endr
 
 wStoneTableAddress:: dw
 
-    ds 3
+	; Keep one byte of slack here; use one for follower movement state parity.
+wFollowerState:: db
+	ds 1
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0

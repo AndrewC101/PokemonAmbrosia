@@ -493,13 +493,19 @@ Mitigation:
 
 ### WRAM staging note
 
-The current port intentionally does **not** keep all branch-parity follower WRAM yet.
+The current port still does **not** keep all branch-parity follower WRAM yet, but it now includes the minimum state needed for the currently ported script and transition logic.
 
-Deferred follower RAM items include:
+Currently present:
 
-- follower flag/state bytes used by invisibility, ball transitions, and freeze control
-- follower species / party index scratch bytes used by interaction and follower-specific palette flows
-- any additional movement-state bytes needed by the full branch movement model
+- `wFollowerFlags`
+- `wFollowerState`
+- `wFollowerNextMovement`
+
+Still deferred:
+
+- `wFollowerSpriteID`
+- `wFollowerPartyNum`
+- any remaining follower-specific scratch/state bytes tied to full palette and interaction parity
 
 This is a staging choice, not a final resolution of WRAM pressure.
 
@@ -542,6 +548,22 @@ Completed on `dev`:
 - reserved map object slot `1` added for the follower template
 - reserved object struct `1` added for the follower runtime object
 - follower spawn template added in `player_object.asm`
+- follower movement/runtime constants added:
+  `SPRITEMOVEDATA_FOLLOWEROBJ`, `SPRITEMOVEFN_FOLLOWER_OBJ`,
+  `FOLLOWERMOVE_*`, `SPRITEMOVEDATA_POKEBALL_OPENING`,
+  `SPRITEMOVEDATA_POKEBALL_CLOSING`, and related step types
+- branch-style follower movement data rows added in `data/sprites/map_objects.asm`
+- branch-style `MovementFunction_FollowerObj` ported
+- branch-style Poke Ball temp-object movement functions ported
+- follower movement queue/runtime pieces now present:
+  `ApplyMovementToFollower`, `GetFollowerNextMovementIndex`,
+  `QueueFollowerFirstStep`, `FollowNotExact`, and branch-shaped
+  `RefreshFollowingCoords`
+- follower visibility/update helpers now ported:
+  `HideFollowerIfNPCBump`, `UpdateFollowerSprite`,
+  `CheckFollowerInvisOneStep`
+- Poke Ball temp-object helpers now ported:
+  `SpawnPokeballOpening`, `SpawnPokeballClosing`
 - shared placeholder follower walking sprite now uses a branch-style pointer-table and decompression path
 - outdoor sprite loading now explicitly registers the runtime follower sprite
 - map-entry follower refresh hook added
@@ -553,13 +575,60 @@ Completed on `dev`:
 - placeholder follower has been verified stable across indoor/outdoor map transitions
 - placeholder follower currently appears as the shared Rhydon sprite
 - deferred WRAM staging decision documented
+- minimum follower WRAM staged for current runtime:
+  `wFollowerFlags`, `wFollowerState`, `wFollowerNextMovement`
+- internal follower helpers added for stow/appear/save-coords/freeze control
+- non-command `Script_appear_skipinput` helper added to match the reference runtime flow
+- follower script command surface added locally:
+  `freezefollower`, `unfreezefollower`, `getfollowerdirection`, `followcry`,
+  `stowfollower`, `appearfollower`, `appearfolloweronestep`,
+  `savefollowercoords`, `silentstowfollower`
+- local command-id conflict resolved by keeping existing `nooryes` at `$aa`
+  and assigning the follower commands to `$ab`-`$b3`
+- branch-style follower ball-state runtime added:
+  `FollowerInBall`, `_CheckActiveFollowerBallAnim`,
+  and the home-bank `CheckActiveFollowerBallAnim` wrapper
+- trainer post-battle path now calls `CheckActiveFollowerBallAnim`
+- fall-map transition path now calls `FollowerInBall`
+- Fly field-move script now matches the branch follower path:
+  `silentstowfollower` and `loadvar VAR_FOLLOWERSTATE, PLAYER_NORMAL`
+- `VAR_FOLLOWERSTATE` and the `wFollowerState` variable-table entry restored
+- `map_setup.asm` now resets `wFollowerState` alongside `wPlayerState`
 
 Not done yet:
 
-- follower-specific palette path
-- follower invisibility / in-ball / freeze state logic
-- follower interaction script/content
-- object-struct / WRAM budget revisit for later follower parity features
+- follower-specific palette/identity path from `overworld.asm`
+  (`wFollowerSpriteID`, `wFollowerPartyNum`, follower palette parity)
+- full branch follower interaction/content from `engine/events/follower.asm`
+- broad branch map-script pass using the new follower commands
+  (`freezefollower`, `unfreezefollower`, `getfollowerdirection`, etc.)
+- starter-scene / Elm's Lab behavior is still **not** a valid acceptance test
+  and should not be treated as stable until more branch map-script work lands
+- `appearfolloweronestep` still falls back to plain appear behavior;
+  the temporary helper plumbing is present, but one-step branch parity is not done
+- object-struct / WRAM budget revisit for deferred parity bytes
+  (`wFollowerSpriteID`, `wFollowerPartyNum`) and any later runtime pressure
+
+### Engine parity estimate
+
+Estimated follower engine parity versus `follow-mons`: roughly **55-65%**.
+
+What is substantially in place:
+
+- reserved follower object model
+- core follow movement runtime
+- placeholder follower gfx loading path
+- basic follower script command surface
+- follower visibility / ball-transition runtime scaffolding
+- trainer/fall/fly engine hooks
+
+What still keeps parity well short of complete:
+
+- follower palette and species identity bookkeeping
+- `engine/events/follower.asm` content layer
+- broad map-script adoption of the follower command surface
+- remaining transition/cutscene verification after the script pass
+- final WRAM cleanup for the deferred follower identity bytes
 
 ### Milestone A - Proof of concept
 
@@ -573,7 +642,8 @@ Not done yet:
 - In progress:
 - Warps and major transitions stable
 - Dense maps reviewed
-- No object corruption
+- No object corruption on the currently verified bring-up path
+- Branch transition hooks are partially ported, but story/cutscene script parity is not done
 
 ### Milestone C - Playable release candidate
 

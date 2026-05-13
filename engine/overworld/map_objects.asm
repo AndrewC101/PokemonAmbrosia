@@ -323,9 +323,111 @@ GetNextTile:
 	push bc
 	call GetCoordTileCollision
 	pop bc
+	push af
+	call HideFollowerIfNPCBump
+	pop af
+	push af
+	call UpdateFollowerSprite
+	pop af
 	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld [hl], a
+	ret
+
+HideFollowerIfNPCBump:
+	ldh a, [hMapObjectIndex]
+	cp PLAYER
+	ret z
+	cp FOLLOWER
+	ret z
+	push hl
+	push bc
+	call WillObjectBumpIntoSomeoneElse
+	jr nc, .return
+	ld hl, OBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITE_FOLLOWER
+	jr nz, .return
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	set INVISIBLE_F, [hl]
+	ld hl, wFollowerFlags
+	set FOLLOWER_INVISIBLE_F, [hl]
+	set FOLLOWER_INVISIBLE_ONE_STEP_F, [hl]
+.return
+	pop bc
+	pop hl
+	ret
+
+UpdateFollowerSprite:
+	ld e, a
+	ldh a, [hMapObjectIndex]
+	call CheckFollowerInvisOneStep
+	cp FOLLOWER
+	ld a, e
+	ret nz
+	ld hl, OBJECT_TILE_COLLISION
+	add hl, bc
+	ld d, [hl]
+	push de
+	ld a, d ; previous tile permission
+	call GetTilePermission
+	pop de
+	ld d, a
+	push de
+	ld a, e ; next tile permission
+	call GetTilePermission
+	pop de
+	cp d
+	ret z
+	and a ; LAND_TILE = 0
+	jr z, .land_tile
+	cp WATER_TILE
+	jr z, .water_tile
+	ret
+
+.land_tile
+	ld hl, wFollowerFlags
+	bit FOLLOWER_IN_POKEBALL_F, [hl]
+	ret z
+	call SpawnPokeballOpening
+	ret
+
+.water_tile
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	set INVISIBLE_F, [hl]
+	ld hl, wFollowerFlags
+	set FOLLOWER_INVISIBLE_F, [hl]
+	set FOLLOWER_IN_POKEBALL_F, [hl]
+	call SpawnPokeballClosing
+	ret
+
+CheckFollowerInvisOneStep:
+	cp PLAYER
+	ret nz
+	ld hl, wFollowerFlags
+	bit FOLLOWER_INVISIBLE_F, [hl]
+	ret z
+	bit FOLLOWER_INVISIBLE_ONE_STEP_F, [hl]
+	ret z
+	ret c
+	res FOLLOWER_INVISIBLE_ONE_STEP_F, [hl]
+	bit FOLLOWER_IN_POKEBALL_F, [hl]
+	push bc
+	ld bc, wObject1Struct
+	jr nz, .spawn_pokeball
+	res FOLLOWER_INVISIBLE_F, [hl]
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	res INVISIBLE_F, [hl]
+	pop bc
+	ret
+
+.spawn_pokeball
+	call SpawnPokeballOpening
+	pop bc
 	ret
 
 AddStepVector:
@@ -553,6 +655,9 @@ StepFunction_FromMovement:
 	dw MovementFunction_SpinCounterclockwise ; 19
 	dw MovementFunction_BoulderDust          ; 1a
 	dw MovementFunction_ShakingGrass         ; 1b
+	dw MovementFunction_FollowerObj          ; 1c
+	dw MovementFunction_Pokeball_Opening     ; 1d
+	dw MovementFunction_Pokeball_Closing     ; 1e
 	assert_table_length NUM_SPRITEMOVEFN
 
 MovementFunction_Null:
@@ -898,6 +1003,109 @@ MovementFunction_Shadow:
 	ld [hl], STEP_TYPE_TRACKING_OBJECT
 	ret
 
+MovementFunction_FollowerObj:
+	ld a, [wFollowerFlags]
+	bit FOLLOWER_FROZEN_F, a
+	jr z, .follow_not_exact
+	ld hl, OBJECT_ACTION
+	add hl, bc
+	ld [hl], OBJECT_ACTION_STAND
+	ret
+
+.follow_not_exact
+	call FollowNotExact
+	ret nc
+	push af
+	ld a, [wFollowerNextMovement]
+	cp FOLLOWERMOVE_NUM_TYPES
+	jr c, .get_step
+	xor a
+.get_step
+	ld e, a
+	ld d, 0
+	ld hl, .step_functions
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld [wFollowerNextMovement], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	pop af
+	jp hl
+
+.step_functions
+	dbw FOLLOWERMOVE_NORMAL,   NormalStep ; FOLLOWERMOVE_NORMAL
+	dbw FOLLOWERMOVE_NORMAL,   SlideStep  ; FOLLOWERMOVE_SLIDE
+	dbw FOLLOWERMOVE_NORMAL,   .BigStep   ; FOLLOWERMOVE_BIG_STEP
+	dbw FOLLOWERMOVE_STILL,    .TurnHead  ; FOLLOWERMOVE_STILL
+	dbw FOLLOWERMOVE_BIG_STEP, .TurnHead  ; FOLLOWERMOVE_PREPARE_JUMP
+
+.BigStep
+	; Turn the queued follow step into the right jump speed for the player state.
+	ld e, a
+	xor a
+	ld [wFollowerNextMovement], a
+	ld a, [wPlayerStepType]
+	cp STEP_TYPE_PLAYER_JUMP
+	jr z, .regular
+	ld a, [wPlayerState]
+	cp PLAYER_BIKE
+	jr z, .biking
+	ld a, [wPlayerTileCollision]
+	cp COLL_ICE
+	jr z, .biking
+.regular
+	ld a, e
+	and $3
+	or STEP_BIKE << 2
+	jp JumpStep
+
+.biking
+	ld a, e
+	and %00000011
+	or %00001100 ; very big step
+	jp JumpStep
+
+.TurnHead:
+	; TurnHead uses different arguments, so convert the queued movement here.
+	and %00000011
+	add a
+	add a
+	jp TurnHead
+
+MovementFunction_Pokeball_Opening:
+	ld hl, OBJECT_RANGE
+	add hl, bc
+	ld [hl], FOLLOWER
+	call InitMovementField1dField1e
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], 4
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_POKEBALL_OPENING
+	ld hl, wFollowerFlags
+	set FOLLOWER_EXITING_BALL_F, [hl]
+	ret
+
+MovementFunction_Pokeball_Closing:
+	ld hl, OBJECT_RANGE
+	add hl, bc
+	ld [hl], FOLLOWER
+	call InitMovementField1dField1e
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], 4
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_POKEBALL_CLOSING
+	ld hl, wFollowerFlags
+	set FOLLOWER_ENTERING_BALL_F, [hl]
+	ret
+
 MovementFunction_Emote:
 	call EndSpriteMovement
 	call InitMovementField1dField1e
@@ -1115,6 +1323,9 @@ StepTypesJumptable:
 	dw StepFunction_17              ; 17
 	dw StepFunction_Delete          ; 18
 	dw StepFunction_SkyfallTop      ; 19
+	dw StepFunction_PokeballOpening ; 1a
+	dw StepFunction_PokeballClosing ; 1b
+	dw StepFunction_NPCJumpInPlace  ; 1c
 	assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
@@ -1125,6 +1336,168 @@ WaitStep_InPlace:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	ret
+
+PokeballTracking:
+	ld hl, OBJECT_1D
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ld hl, OBJECT_SPRITE
+	add hl, de
+	ld a, [hl]
+	and a
+	ret z
+	ld hl, OBJECT_SPRITE_X
+	add hl, de
+	ld a, [hl]
+	ld hl, OBJECT_SPRITE_X
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_SPRITE_Y
+	add hl, de
+	ld a, [hl]
+	ld hl, OBJECT_SPRITE_Y
+	add hl, bc
+	ld [hl], a
+	ret
+
+StepFunction_PokeballOpening:
+	call ObjectStep_AnonJumptable
+.anon_dw
+	dw .Closed
+	dw .Opening
+	dw .Open
+
+.Closed:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_LEFT
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld [hl], 4
+	call ObjectStep_IncAnonJumptableIndex
+	jp PokeballTracking
+
+.Opening:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_UP
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld [hl], 4
+	call ObjectStep_IncAnonJumptableIndex
+	jp PokeballTracking
+
+.Open:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_DOWN
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld hl, OBJECT_1D
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ld hl, OBJECT_FLAGS1
+	add hl, de
+	res INVISIBLE_F, [hl]
+	ld hl, wFollowerFlags
+	res FOLLOWER_INVISIBLE_F, [hl]
+	res FOLLOWER_IN_POKEBALL_F, [hl]
+	res FOLLOWER_EXITING_BALL_F, [hl]
+	jp DeleteMapObject
+
+StepFunction_PokeballClosing:
+	call ObjectStep_AnonJumptable
+.anon_dw
+	dw .Open
+	dw .Closing
+	dw .Closed
+
+.Open:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_DOWN
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld [hl], 4
+	call ObjectStep_IncAnonJumptableIndex
+	jp PokeballTracking
+
+.Closing:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_UP
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld [hl], 4
+	call ObjectStep_IncAnonJumptableIndex
+	jp PokeballTracking
+
+.Closed:
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld [hl], OW_LEFT
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	jp nz, PokeballTracking
+	ld hl, wFollowerFlags
+	set FOLLOWER_IN_POKEBALL_F, [hl]
+	res FOLLOWER_ENTERING_BALL_F, [hl]
+	jp DeleteMapObject
+
+StepFunction_NPCJumpInPlace:
+	call ObjectStep_AnonJumptable
+.anon_dw
+	dw .Jump
+	dw .Land
+
+.Jump:
+	ld h, 4
+	call UpdateJumpPositionInPlace
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD_F, [hl]
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], 4
+	jp ObjectStep_IncAnonJumptableIndex
+
+.Land:
+	ld h, 4
+	call UpdateJumpPositionInPlace
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	xor a
+	ld hl, OBJECT_SPRITE_Y_OFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res HIGH_PRIORITY_F, [hl]
 	ret
 
 StepFunction_NPCJump:
@@ -1836,7 +2209,7 @@ UpdateJumpPosition:
 	nop
 	srl e
 	ld d, 0
-	ld hl, .y_offsets
+	ld hl, JumpYOffsets
 	add hl, de
 	ld a, [hl]
 	ld hl, OBJECT_SPRITE_Y_OFFSET
@@ -1844,7 +2217,25 @@ UpdateJumpPosition:
 	ld [hl], a
 	ret
 
-.y_offsets:
+UpdateJumpPositionInPlace:
+	ld a, h
+	ld hl, OBJECT_JUMP_HEIGHT
+	add hl, bc
+	ld e, [hl]
+	add e
+	ld [hl], a
+	nop
+	srl e
+	ld d, 0
+	ld hl, JumpYOffsets
+	add hl, de
+	ld a, [hl]
+	ld hl, OBJECT_SPRITE_Y_OFFSET
+	add hl, bc
+	ld [hl], a
+	ret
+
+JumpYOffsets:
 	db  -4,  -6,  -8, -10, -11, -12, -12, -12
 	db -11, -10,  -9,  -8,  -6,  -4,   0,   0
 
@@ -2023,6 +2414,30 @@ GetFollowerNextMovementIndex:
 	ld a, movement_step_end
 	scf
 	ret
+
+SpawnPokeballOpening::
+	push bc
+	ld de, .PokeballOpeningObject
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.PokeballOpeningObject:
+	; vtile, palette, movement
+	db $f0, PAL_OW_RED, SPRITEMOVEDATA_POKEBALL_OPENING
+
+SpawnPokeballClosing::
+	push bc
+	ld de, .PokeballClosingObject
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.PokeballClosingObject:
+	; vtile, palette, movement
+	db $f0, PAL_OW_RED, SPRITEMOVEDATA_POKEBALL_CLOSING
 
 SpawnShadow:
 	push bc
@@ -2651,6 +3066,77 @@ _UnfreezeFollowerObject::
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	res FROZEN_F, [hl]
+	ret
+
+_FreezeFollower::
+	ld bc, wObject1Struct
+	call DoesObjectHaveASprite
+	ret z
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	set FROZEN_F, [hl]
+	ld hl, wFollowerFlags
+	set FOLLOWER_FROZEN_F, [hl]
+	ret
+
+_UnfreezeFollower::
+	ld bc, wObject1Struct
+	call DoesObjectHaveASprite
+	ret z
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res FROZEN_F, [hl]
+	ld hl, wFollowerFlags
+	res FOLLOWER_FROZEN_F, [hl]
+	ret
+
+_StowFollower::
+	ld a, 20
+	ld [wScriptDelay], a
+_SilentStowFollower::
+	ld bc, wObject1Struct
+	call DoesObjectHaveASprite
+	ret z
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	set INVISIBLE_F, [hl]
+	ld hl, wFollowerFlags
+	set FOLLOWER_INVISIBLE_F, [hl]
+	set FOLLOWER_IN_POKEBALL_F, [hl]
+	ret
+
+_AppearFollower::
+	; The animated one-step appearance path depends on the separate Poke Ball
+	; object helpers from follow-mons, which are not ported yet.
+	ld b, FOLLOWER
+	farcall Script_appear_skipinput
+	ld bc, wObject1Struct
+	call DoesObjectHaveASprite
+	jr z, .clear_flags
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	res INVISIBLE_F, [hl]
+.clear_flags
+	ld hl, wFollowerFlags
+	res FOLLOWER_INVISIBLE_F, [hl]
+	res FOLLOWER_IN_POKEBALL_F, [hl]
+	ret
+
+_AppearFollowerOneStep::
+	; Keep the scripted command surface aligned with follow-mons until the
+	; separate Poke Ball object helpers are ported.
+	jp _AppearFollower
+
+_SaveFollowerCoords::
+	ld hl, wObject1MapX
+	ld a, [hli]
+	ld c, [hl]
+	ld b, a
+	; b = X coord, c = Y coord
+	ld hl, wMap1ObjectYCoord
+	ld [hl], c
+	inc hl
+	ld [hl], b
 	ret
 
 UnfreezeAllObjects::

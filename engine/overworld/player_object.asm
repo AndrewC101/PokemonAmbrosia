@@ -23,30 +23,19 @@ SpawnPlayer:
 	ld a, PLAYER
 	ld hl, PlayerObjectTemplate
 	call CopyPlayerObjectTemplate
-	ld a, [wPartyCount]
-	and a
-	jr z, .clear_follower
 	ld a, FOLLOWER
 	ld hl, FollowObjTemplate
 	call CopyPlayerObjectTemplate
 	ld b, FOLLOWER
 	call PlayerSpawn_ConvertCoords
-	ld a, FOLLOWER
-	ldh [hMapObjectIndex], a
-	ld bc, wMap1Object
-	ld a, FOLLOWER
-	ldh [hObjectStructIndex], a
-	ld de, wObject1Struct
-	call CopyMapObjectToObjectStruct
+	xor a
+	ld [wFollowerNextMovement], a
+	ld a, [wPartyCount]
+	and a
+	jr z, .clear_follower
 	jr .skip_follower
 
 .clear_follower
-	ld hl, wMap1Object
-	ld bc, MAPOBJECT_LENGTH
-	xor a
-	call ByteFill
-	ld a, -1
-	ld [wMap1Object], a
 	ld hl, wObject1Struct
 	ld bc, OBJECT_LENGTH
 	xor a
@@ -105,12 +94,6 @@ SpawnPlayer:
 	ldh [hObjectStructIndex], a
 	ld de, wObjectStructs
 	call CopyMapObjectToObjectStruct
-	ld a, [wPartyCount]
-	and a
-	jr z, .done
-	ld b, PLAYER
-	ld c, FOLLOWER
-	farcall StartFollow
 
 .done
 	ld a, PLAYER
@@ -205,24 +188,15 @@ RefreshPlayerCoords:
 	ret
 
 RefreshFollowingCoords::
-	ld a, [wPartyCount]
-	and a
-	ret z
-	ld a, [wMap1ObjectSprite]
-	and a
-	ret z
-	ld b, FOLLOWER
-	call PlayerSpawn_ConvertCoords
-	ld a, FOLLOWER
-	ldh [hMapObjectIndex], a
-	ld bc, wMap1Object
-	ld a, FOLLOWER
-	ldh [hObjectStructIndex], a
-	ld de, wObject1Struct
-	call CopyMapObjectToObjectStruct
 	ld b, PLAYER
 	ld c, FOLLOWER
-	farcall StartFollow
+	call FollowNotExact
+	ret c
+	ld a, FOLLOWER
+	call GetObjectStruct
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld [hl], SPRITEMOVEDATA_FOLLOWEROBJ
 	ret
 
 CopyObjectStruct::

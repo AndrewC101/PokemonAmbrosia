@@ -311,12 +311,9 @@ ResetClockChecks:
 	text_end
 
 .ResetClockText:
-	text "I'll save the"
-	line "game and send you"
-
-	para "back to the title"
-	line "screen."
-	text_end
+	text "Save and return"
+	line "to title screen?"
+	done
 
 Mom_SetUpWithdrawMenu:
 	ld de, Mon_WithdrawString

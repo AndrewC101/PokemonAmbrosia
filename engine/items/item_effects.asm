@@ -1558,7 +1558,11 @@ DoRareCandyEffect:
 
 	xor a
 	ld [wForceEvolution], a
+	ld a, [wCurPartyMon]
+	push af
 	farcall EvolvePokemon
+	pop af
+	ld [wCurPartyMon], a
 
 	ld a, [wGiftOfGod]
 	and a

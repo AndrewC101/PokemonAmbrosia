@@ -32,9 +32,6 @@ EvolveAfterBattle_MasterLoop:
 	ld [wEvolutionOldSpecies], a
 
 	push hl
-	ld a, [wGiftOfGod]
-	and a
-	jr nz, .skipFlagCheck
 	ld a, [wCurPartyMon]
 	ld c, a
 	ld hl, wEvolvableFlags
@@ -44,8 +41,13 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp z, EvolveAfterBattle_MasterLoop
 
-.skipFlagCheck
 	ld a, [wEvolutionOldSpecies]
+	and a
+	jp z, EvolveAfterBattle_MasterLoop
+	cp EGG
+	jp z, EvolveAfterBattle_MasterLoop
+	cp NUM_POKEMON + 1
+	jp nc, EvolveAfterBattle_MasterLoop
 	dec a
 	ld b, 0
 	ld c, a

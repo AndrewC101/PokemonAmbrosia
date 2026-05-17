@@ -1970,7 +1970,7 @@ PrintEnemyWildDVs::
 
 	; HP DV follows the project's stat rule: HP DV = Atk DV, so omit it here.
 	; Start at the left edge of the info row and print Atk/Def/Spd/Spcl as dd/dd/dd/dd.
-	hlcoord 1, 3
+	hlcoord 0, 3
 
 	ld a, c
 	call .PrintDV

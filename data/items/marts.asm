@@ -392,15 +392,23 @@ MartMtMoon:
 	db -1 ; end
 
 MartIndigoPlateau:
-	db 8 ; # items
-	db ULTRA_BALL
-	db HYPER_POTION
-	db MAX_POTION
-	db FULL_RESTORE
-	db MAX_ELIXER
-	db MAX_REVIVE
-	db REVIVE
-	db FULL_HEAL
+	db 16 ; # items
+    db LEFTOVERS
+    db LIFE_ORB
+    db CHOICE_BAND
+    db CHOICE_SPECS
+    db ASSAULT_VEST
+    db FOCUS_SASH
+    db EVIOLITE
+    db EXPERT_BELT
+    db MUSCLE_BAND
+    db WISE_GLASSES
+    db FLAME_ORB
+    db HEAVY_BOOTS
+ 	db GOLD_BERRY
+ 	db MIRACLEBERRY
+ 	db PP_MAX
+ 	db ULTRA_BALL
 	db -1 ; end
 
 MartUnderground:

@@ -871,8 +871,8 @@ FlashDescription:
 	line "reduce Accuracy.@"
 
 PsyblastDescription:
-	db   "A powerful"
-	line "psychic blast.@"
+	db   "An attack that may"
+	line "lower Spcl.Def.@"
 
 SplashDescription:
 	db   "Has no effect"

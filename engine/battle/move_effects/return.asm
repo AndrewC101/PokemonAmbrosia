@@ -25,5 +25,15 @@ BattleCommand_HappinessPower:
 	inc a
 .done
 	ld d, a
+	; Keep the live move struct in sync with the resolved Return power so
+	; later checks like Technician do not read the stored placeholder power 1.
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerMoveStruct + MOVE_POWER
+	jr z, .store_power
+	ld hl, wEnemyMoveStruct + MOVE_POWER
+.store_power
+	ld a, d
+	ld [hl], a
 	pop bc
 	ret

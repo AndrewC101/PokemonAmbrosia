@@ -8458,11 +8458,44 @@ GiveExperiencePoints:
 	jr nz, .level_loop
 	pop af
 	ld [wCurPartyLevel], a
+	; Active transformed battlers keep the old deferred path.
+	ld a, [wCurBattleMon]
+	ld b, a
+	ld a, [wCurPartyMon]
+	cp b
+	jr nz, .try_in_battle_evolution
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TRANSFORMED, a
+	jr z, .try_in_battle_evolution
 	ld hl, wEvolvableFlags
 	ld a, [wCurPartyMon]
 	ld c, a
 	ld b, SET_FLAG
 	predef SmallFarFlagAction
+	jr .done_in_battle_evolution
+
+.try_in_battle_evolution
+	farcall TryEvolveCurPartyMon
+	jr nc, .done_in_battle_evolution
+	ld a, [wCurBattleMon]
+	ld b, a
+	ld a, [wCurPartyMon]
+	cp b
+	jr nz, .restore_battle_screen
+	; Rebuild the live battler without resetting stat stages.
+	call InitBattleMon
+	xor a ; FALSE
+	ld [wApplyStatLevelMultipliersToEnemy], a
+	call ApplyStatLevelMultiplierOnAllStats
+
+.restore_battle_screen
+	call RestoreBattleScreenAfterEvolution
+	; Keep the generic current-species globals aligned with the battler on screen.
+	ld a, [wBattleMonSpecies]
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+
+.done_in_battle_evolution
 	pop af
 	ld [wCurPartyLevel], a
 
@@ -8482,6 +8515,36 @@ GiveExperiencePoints:
 
 .done
 	jp ResetBattleParticipants
+
+RestoreBattleScreenAfterEvolution:
+	call ClearPalettes
+	call DelayFrame
+	call _LoadBattleFontsHPBar
+	call ClearSprites
+	call GetBattleMonBackpic
+	call GetEnemyMonFrontpic
+	call UpdateBattleHUDs
+	call WaitBGMap
+	call LoadTilemapToTempTilemap
+	call ClearWindowData
+	call FinishBattleAnim
+	ldh a, [hBattleTurn]
+	push af
+	xor a
+	ldh [hBattleTurn], a
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jr nz, .raise_sub
+	farcall _AppearUserLowerSub
+	jr .done_player_appear
+
+.raise_sub
+	farcall _AppearUserRaiseSub
+
+.done_player_appear
+	pop af
+	ldh [hBattleTurn], a
+	jp LoadTilemapToTempTilemap
 
 BoostExp:
 ; Multiply experience by 1.5x

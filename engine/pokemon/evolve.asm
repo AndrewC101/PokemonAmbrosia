@@ -14,24 +14,14 @@ EvolveAfterBattle:
 	push hl
 	push bc
 	push de
-	ld hl, wPartyCount
-
-	push hl
-
 EvolveAfterBattle_MasterLoop:
 	ld hl, wCurPartyMon
 	inc [hl]
-
-	pop hl
-
-	inc hl
+	ld a, [wPartyCount]
+	ld b, a
 	ld a, [hl]
-	cp $ff
-	jp z, .ReturnToMap
-
-	ld [wEvolutionOldSpecies], a
-
-	push hl
+	cp b
+	jp z, EvolveAfterBattle_ReturnToMap
 	ld a, [wCurPartyMon]
 	ld c, a
 	ld hl, wEvolvableFlags
@@ -40,14 +30,23 @@ EvolveAfterBattle_MasterLoop:
 	ld a, c
 	and a
 	jp z, EvolveAfterBattle_MasterLoop
+	call TryEvolveCurPartyMon
+	jp EvolveAfterBattle_MasterLoop
 
-	ld a, [wEvolutionOldSpecies]
+TryEvolveCurPartyMon::
+	ld a, [wCurPartyMon]
+	ld e, a
+	ld d, 0
+	ld hl, wPartySpecies
+	add hl, de
+	ld a, [hl]
+	ld [wEvolutionOldSpecies], a
 	and a
-	jp z, EvolveAfterBattle_MasterLoop
+	ret z
 	cp EGG
-	jp z, EvolveAfterBattle_MasterLoop
+	ret z
 	cp NUM_POKEMON + 1
-	jp nc, EvolveAfterBattle_MasterLoop
+	ret nc
 	dec a
 	ld b, 0
 	ld c, a
@@ -67,7 +66,7 @@ EvolveAfterBattle_MasterLoop:
 .loop
 	ld a, [hli]
 	and a
-	jr z, EvolveAfterBattle_MasterLoop
+	ret z
 
 	ld b, a
 
@@ -245,7 +244,6 @@ EvolveAfterBattle_MasterLoop:
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
 
-	push hl
 	ld hl, EvolvedIntoText
 	call PrintTextboxText
 	farcall StubbedTrainerRankings_MonsEvolved
@@ -316,14 +314,19 @@ EvolveAfterBattle_MasterLoop:
 	callfar UpdateUnownDex
 
 .skip_unown
-	pop de
-	pop hl
 	ld a, [wTempMonSpecies]
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies], a
+	ld hl, wPartySpecies
+	ld e, a
+	ld a, [wCurPartyMon]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, e
 	ld [hl], a
-	push hl
-	ld l, e
-	ld h, d
-	jp EvolveAfterBattle_MasterLoop
+	scf
+	ret
 
 .dont_evolve_1
 	inc hl
@@ -333,9 +336,9 @@ EvolveAfterBattle_MasterLoop:
 	inc hl
 	jp .loop
 
-.UnusedReturnToMap: ; unreferenced
+UnusedEvolveReturnToMap: ; unreferenced
 	pop hl
-.ReturnToMap:
+EvolveAfterBattle_ReturnToMap:
 	pop de
 	pop bc
 	pop hl
@@ -387,7 +390,8 @@ CancelEvolution:
 	call PrintText
 	call ClearTilemap
 	pop hl
-	jp EvolveAfterBattle_MasterLoop
+	xor a
+	ret
 
 IsMonHoldingEverstone:
 	push hl

@@ -6920,8 +6920,13 @@ ParseEnemyAction:
 
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
+	jr z, .linked_choose_slot
 	ld a, [wLastEnemyMove]
-	jp nz, .finish
+	and a
+	jr z, .linked_choose_slot
+	call ParseEnemyAction_TryLoadLockedEnemyMove
+	jp c, .finish
+.linked_choose_slot
 	ld hl, wEnemyMonMoves
 	ld b, 0
 	add hl, bc
@@ -6936,7 +6941,8 @@ ParseEnemyAction:
 	ld a, [wLastEnemyMove]
 	and a
 	jr z, .skip_encore
-	jp .finish
+	call ParseEnemyAction_TryLoadLockedEnemyMove
+	jp c, .finish
 
 .skip_encore
 	call CheckEnemyLockedIn
@@ -7033,6 +7039,40 @@ ResetVarsForSubstatusRage:
 	xor a
 	ld [wEnemyProtectCount], a
 	ld hl, wEnemySubStatus4
+	ret
+
+ParseEnemyAction_TryLoadLockedEnemyMove:
+; a = locked move id, hl = wEnemySubStatus5
+; If the locked move is present, update wCurEnemyMoveNum to the matching
+; slot and return carry with a preserved as the move id.
+; If it is no longer present, clear the lock state and return nc so the
+; normal move-selection path can recover.
+	push hl
+	ld b, a
+	ld c, 0
+	ld hl, wEnemyMonMoves
+.find_locked_move
+	ld a, [hli]
+	cp b
+	jr z, .got_locked_move
+	inc c
+	ld a, c
+	cp NUM_MOVES
+	jr c, .find_locked_move
+
+	pop hl
+	res SUBSTATUS_ENCORED, [hl]
+	xor a
+	ld [wEnemyEncoreCount], a
+	and a
+	ret
+
+.got_locked_move
+	pop hl
+	ld a, c
+	ld [wCurEnemyMoveNum], a
+	ld a, b
+	scf
 	ret
 
 CheckEnemyLockedIn:

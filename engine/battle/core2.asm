@@ -1887,7 +1887,16 @@ FeoDetailsPageInfoBox:
 	hlcoord 1, 5
 	call PlaceString
 
-	ld hl, wTempMonMoves
+	; ListMovePP reads from wTempMonPP, so replace the copied OT-party PP
+	; with the live enemy battle PP before rendering the move list.
+	ld hl, wEnemyMonPP
+	ld de, wTempMonPP
+	ld bc, NUM_MOVES
+	call CopyBytes
+
+	; Use the live enemy battle moves so move names stay aligned with the
+	; live PP slots in wEnemyMonPP.
+	ld hl, wEnemyMonMoves
 	ld de, wListMoves_MoveIndicesBuffer
 	ld bc, NUM_MOVES
 	call CopyBytes
@@ -1895,13 +1904,42 @@ FeoDetailsPageInfoBox:
 	ld [wListMovesLineSpacing], a
 	hlcoord 2, 7
 	predef ListMoves
-	;hlcoord 10, 7
-	;predef ListMovePP
+	hlcoord 15, 7
+	call .ListCurrentMovePP
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a
+	ret
+
+.ListCurrentMovePP
+	ld de, wTempMonPP
+	ld a, [wNumMoves]
+	inc a
+	ld b, a
+.loop
+	ld a, [de]
+	and PP_MASK
+	ld [wStringBuffer1], a
+
+	push bc
+	push de
+	push hl
+	ld de, wStringBuffer1
+	lb bc, 1, 2
+	call PrintNum
+	pop hl
+	pop de
+	pop bc
+
+	inc de
+	push bc
+	ld bc, SCREEN_WIDTH * 2
+	add hl, bc
+	pop bc
+	dec b
+	jr nz, .loop
 	ret
 
 .FoeItemString

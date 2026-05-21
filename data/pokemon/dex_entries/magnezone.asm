@@ -6,6 +6,6 @@
 	next "immense energy."
 
 	page "Zap Cannon"
-	next "hits. Has a"
-	next "final attack.@"
+	next "hits. Can't be"
+	next "KOd at full HP.@"
 

@@ -5,7 +5,7 @@
 	next "even dynamite"
 	next "won't scratch it."
 
-	page "Speed"
-	next "increases in"
-	next "a sandstorm.@"
+	page "Speed boost in"
+	next "sand. Can't be"
+	next "KOd at full HP.@"
 

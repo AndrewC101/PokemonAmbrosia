@@ -8475,8 +8475,16 @@ GiveExperiencePoints:
 	jr .done_in_battle_evolution
 
 .try_in_battle_evolution
+	xor a
+	ld [wMonTriedToEvolve], a
 	farcall TryEvolveCurPartyMon
-	jr nc, .done_in_battle_evolution
+	jr c, .evolved_in_battle
+	ld a, [wMonTriedToEvolve]
+	and a
+	jr z, .done_in_battle_evolution
+	jr .restore_battle_screen
+
+.evolved_in_battle
 	ld a, [wCurBattleMon]
 	ld b, a
 	ld a, [wCurPartyMon]

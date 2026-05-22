@@ -2780,6 +2780,8 @@ OpenJukebox:
 	call .GetJukeboxJoypad
 	bit B_PAD_B, a
 	jr nz, .exit
+	bit B_PAD_START, a
+	jr nz, .save
 	bit B_PAD_LEFT, a
 	jr nz, .prev
 	bit B_PAD_UP, a
@@ -2787,7 +2789,7 @@ OpenJukebox:
 	bit B_PAD_A, a
 	jr nz, .play
 	bit B_PAD_SELECT, a
-	jr nz, .save
+	jr nz, .default
 	bit B_PAD_RIGHT, a
 	jr nz, .next
 	bit B_PAD_DOWN, a
@@ -2804,7 +2806,12 @@ OpenJukebox:
 	jr .loop
 
 .save
-	call .SaveBattleSong
+	call .SavePersistentBattleSong
+	call .RefreshSongName
+	jr .loop
+
+.default
+	call .ClearPersistentBattleSong
 	call .RefreshSongName
 	jr .loop
 
@@ -2874,11 +2881,17 @@ OpenJukebox:
 	call PlayMusic2
 	ret
 
-.SaveBattleSong:
+.SavePersistentBattleSong:
 	call .GetSelectedSongID
-	ld [wBattleMusicOverride], a
+	ld [wPersistentBattleMusicOverride], a
 	xor a
-	ld [wBattleMusicOverride + 1], a
+	ld [wPersistentBattleMusicOverride + 1], a
+	ret
+
+.ClearPersistentBattleSong:
+	xor a
+	ld [wPersistentBattleMusicOverride], a
+	ld [wPersistentBattleMusicOverride + 1], a
 	ret
 
 .PlaceCurrentSongName:
@@ -2894,7 +2907,19 @@ OpenJukebox:
 	hlcoord 1, 8
 	lb bc, 1, 18
 	call ClearBox
-	ld a, [wBattleMusicOverride]
+	ld a, [wPersistentBattleMusicOverride]
+	and a
+	jr nz, .saved_song
+	ld a, [wPersistentBattleMusicOverride + 1]
+	and a
+	jr nz, .saved_song
+	ld de, .DefaultName
+	hlcoord 1, 8
+	call PlaceString
+	ret
+
+.saved_song
+	ld a, [wPersistentBattleMusicOverride]
 	call .GetSongName
 	hlcoord 1, 8
 	call FarPlaceString
@@ -2956,6 +2981,9 @@ OpenJukebox:
 	hlcoord 1, 15
 	ld de, .ControlsLine3
 	call PlaceString
+	hlcoord 1, 16
+	ld de, .ControlsLine5
+	call PlaceString
 	call ApplyTilemap
 	ret
 
@@ -2963,7 +2991,7 @@ OpenJukebox:
 .wait
 	call JoyTextDelay_ForcehJoyDown
 	ld a, c
-	and PAD_A | PAD_B | PAD_SELECT | PAD_UP | PAD_DOWN
+	and PAD_A | PAD_B | PAD_SELECT | PAD_START | PAD_UP | PAD_DOWN
 	jr nz, .done_repeat
 	ldh a, [hJoyPressed]
 	and PAD_LEFT | PAD_RIGHT
@@ -2989,13 +3017,19 @@ OpenJukebox:
 	db "A:Play  B:Quit@"
 
 .ControlsLine3:
-	db "Sel:Set Battle@"
+	db "Start:Set Battle@"
+
+.ControlsLine5:
+	db "Select:Default@"
 
 .CurrentLabel:
 	db "Current Track:@"
 
 .SavedLabel:
-	db "Next Battle:@"
+	db "Battle Song:@"
+
+.DefaultName:
+	db "Default@"
 
 .Title:
 	db "Jukebox@"

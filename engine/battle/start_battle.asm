@@ -224,11 +224,24 @@ PlayBattleMusic:
 	ld a, [wBattleMusicOverride + 1]
 	and a
 	jr nz, .useOverride
+	ld a, [wPersistentBattleMusicOverride]
+	and a
+	jr nz, .usePersistentOverride
+	ld a, [wPersistentBattleMusicOverride + 1]
+	and a
+	jr nz, .usePersistentOverride
 	jr .noOverride
 .useOverride
 	ld a, [wBattleMusicOverride + 1]
 	ld d, a
 	ld a, [wBattleMusicOverride]
+	ld e, a
+	jp .done
+
+.usePersistentOverride
+	ld a, [wPersistentBattleMusicOverride + 1]
+	ld d, a
+	ld a, [wPersistentBattleMusicOverride]
 	ld e, a
 	jp .done
 

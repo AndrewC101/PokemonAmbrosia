@@ -31,6 +31,31 @@ Script_Whiteout:
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	newloadmap MAPSETUP_WARP
+	readmem wWildBattlePanic
+	iftrue .count_trainer_whiteout
+	loadmem wWildBattlePanic, 0
+	endall
+
+.count_trainer_whiteout
+	loadmem wWildBattlePanic, 0
+	callasm IncrementWhiteoutCount
+	iftrue .unlock_gift_of_god_code
+	endall
+
+.unlock_gift_of_god_code
+	checkitem GIFT_OF_GOD
+	iftrue .already_has_gift_of_god
+	callasm HideWhiteoutMapNameSign
+	pause 10
+	playsound SFX_DEX_FANFARE_20_49
+	waitsfx
+	opentext
+	writetext .GiftOfGodCodeUnlockedText
+	waitbutton
+	closetext
+	endall
+
+.already_has_gift_of_god
 	endall
 
 .bug_contest
@@ -48,6 +73,13 @@ Script_Whiteout:
 .WhitedOutToTrainerText:
 	text_far _WhitedOutToTrainerText
 	text_end
+
+.GiftOfGodCodeUnlockedText:
+	text "Unlocked a new"
+	line "Mr Mime cheatcode!"
+	para "It can make your"
+	line "journey easier."
+	done
 
 OverworldBGMap:
 	call ClearPalettes
@@ -169,8 +201,6 @@ CheckWildBattlePanic:
 	ld a, [hl]
 	and 1
 	ld [wScriptVar], a
-	xor a
-	ld [hl], a
 	ret
 
 GetWhiteoutSpawn:
@@ -185,4 +215,35 @@ GetWhiteoutSpawn:
 
 .yes
 	ld [wDefaultSpawnpoint], a
+	ret
+
+IncrementWhiteoutCount:
+	ld hl, wWhiteoutCount
+	inc [hl]
+	jr nz, .check_exact_count
+	inc hl
+	inc [hl]
+
+.check_exact_count
+	ld a, [wWhiteoutCount + 1]
+	and a
+	jr nz, .not_exact_count
+	ld a, [wWhiteoutCount]
+	cp 5 ; this number needs to stay in sync with ElmsLab.asm
+	jr nz, .not_exact_count
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+.not_exact_count
+	xor a
+	ld [wScriptVar], a
+	ret
+
+HideWhiteoutMapNameSign:
+	; Force the map-entry sign overlay onto its existing disappear path
+	; before opening the unlock textbox after a whiteout warp.
+	xor a
+	ld [wLandmarkSignTimer], a
+	farcall PlaceMapNameSign
 	ret

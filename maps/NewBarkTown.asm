@@ -130,11 +130,38 @@ NewBarkTownTeacherScript:
 	end
 
 NewBarkTownFisherScript:
-    checkevent EVENT_BEAT_ELITE_FOUR
-    iffalse .notBeatE4
-    jumptextfaceplayer Text_FishBeatE4
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .notBeatE4
+	writetext Text_FishBeatE4
+	sjump .report_losses
 .notBeatE4
-	jumptextfaceplayer Text_ElmDiscoveredNewMon
+	writetext Text_ElmDiscoveredNewMon
+.report_losses
+	promptbutton
+	callasm .FormatWhiteoutCount
+	writetext Text_FisherLossReport
+	waitbutton
+	closetext
+	end
+
+.FormatWhiteoutCount
+	; Pre-fill with terminators so shorter numbers don't leak stale buffer text.
+	ld hl, wStringBuffer3
+	ld a, "@"
+	ld bc, 6
+	call ByteFill
+	; PrintNum expects a 2-byte value in big-endian order.
+	ld a, [wWhiteoutCount + 1]
+	ld [wStringBuffer4], a
+	ld a, [wWhiteoutCount]
+	ld [wStringBuffer4 + 1], a
+	ld de, wStringBuffer4
+	ld hl, wStringBuffer3
+	lb bc, PRINTNUM_LEFTALIGN | 2, 5
+	call PrintNum
+	ret
 
 NewBarkTownSilverScript:
     faceplayer
@@ -310,6 +337,19 @@ Text_FishBeatE4:
 	para "You are way"
 	line "stronger than he"
 	cont "could ever be!"
+	done
+
+Text_FisherLossReport:
+	text "Not like me."
+	line "I always lose."
+
+	para "I can tell you"
+	line "have lost"
+	cont "@"
+	text_ram wStringBuffer3
+	text " battles."
+
+	para "Keep it up!"
 	done
 
 NewBarkTownRivalNotThatOneText:

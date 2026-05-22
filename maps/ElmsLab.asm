@@ -733,7 +733,11 @@ CheatCodeRepo:
     readmem wNewGamePlus
     ifequal 1, .printGiftOfGodCode
     checkitem GIFT_OF_GOD
-    iffalse .skipGiftCode
+    iftrue .printGiftOfGodCode
+    readmem wWhiteoutCount + 1
+    ifgreater 0, .printGiftOfGodCode
+    readmem wWhiteoutCount
+    ifless 5, .skipGiftCode ; this number needs to stay in sync with whiteout.asm
 .printGiftOfGodCode
     writetext GiftOfGodCodeText
 .skipGiftCode

@@ -3027,7 +3027,7 @@ wObjectMasks:: ds NUM_OBJECTS
 wVariableSprites:: ds $100 - SPRITE_VARS
 
 wMapNameSignFlags:: db
-	ds 2
+wWhiteoutCount:: dw
 wTimeOfDayPal:: db
 	ds 4
 wTimeOfDayPalFlags:: db

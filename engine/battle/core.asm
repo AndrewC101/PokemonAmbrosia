@@ -8552,6 +8552,7 @@ RestoreBattleScreenAfterEvolution:
 .done_player_appear
 	pop af
 	ldh [hBattleTurn], a
+	farcall PlayBattleMusic
 	jp LoadTilemapToTempTilemap
 
 BoostExp:

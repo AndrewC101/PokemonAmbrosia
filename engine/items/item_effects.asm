@@ -3026,7 +3026,7 @@ OpenJukebox:
 	db "Current Track:@"
 
 .SavedLabel:
-	db "Battle Song:@"
+	db "Battle Track:@"
 
 .DefaultName:
 	db "Default@"

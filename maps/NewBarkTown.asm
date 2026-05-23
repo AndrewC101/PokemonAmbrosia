@@ -651,7 +651,7 @@ PresentForYouText:
     para "With this you can"
     line "listen to some"
     cont "music while you"
-    cont "relax."
+    cont "battle."
     done
 
 Crystal1_GoodLuckText:

@@ -8458,6 +8458,11 @@ GiveExperiencePoints:
 	jr nz, .level_loop
 	pop af
 	ld [wCurPartyLevel], a
+	; Wild battles stay on the old deferred evolution path to avoid
+	; interrupting the wild KO/cleanup flow mid-battle.
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	jr z, .defer_in_battle_evolution
 	; Active transformed battlers keep the old deferred path.
 	ld a, [wCurBattleMon]
 	ld b, a
@@ -8467,6 +8472,8 @@ GiveExperiencePoints:
 	ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TRANSFORMED, a
 	jr z, .try_in_battle_evolution
+
+.defer_in_battle_evolution
 	ld hl, wEvolvableFlags
 	ld a, [wCurPartyMon]
 	ld c, a
@@ -8531,7 +8538,7 @@ RestoreBattleScreenAfterEvolution:
 	call ClearSprites
 	call GetBattleMonBackpic
 	call GetEnemyMonFrontpic
-	call UpdateBattleHUDs
+	call UpdatePlayerHUD
 	call WaitBGMap
 	call LoadTilemapToTempTilemap
 	call ClearWindowData

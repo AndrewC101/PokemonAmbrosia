@@ -58,6 +58,7 @@ NewGamePlus:
 	farcall TryLoadSaveFile
 	ret c
 	call ResetWRAM_NewGamePlus
+	call RestoreTMHMsForNewGamePlus
 	jr NewGameCommon
 
 NewGame:
@@ -330,6 +331,17 @@ ResetWRAM_NewGamePlus:
 	farcall ClearGSBallFlag
 
 	call ResetGameTime
+	ret
+
+RestoreTMHMsForNewGamePlus:
+	; NG+ keeps the saved TM/HM counts but resets the rest of the pack.
+	ld a, BANK(sPlayerData)
+	call OpenSRAM
+	ld hl, sPlayerData + (wTMsHMs - wPlayerData)
+	ld de, wTMsHMs
+	ld bc, NUM_TMS + NUM_HMS
+	call CopyBytes
+	call CloseSRAM
 	ret
 
 ResetWRAM_InitList:

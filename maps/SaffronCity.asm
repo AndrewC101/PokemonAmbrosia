@@ -383,8 +383,10 @@ SaffronGymBlockScript:
     waitbutton
     closetext
     winlosstext Silver6LosesText, Silver6WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, RIVAL2_SAFFRON
 	sjump .battle

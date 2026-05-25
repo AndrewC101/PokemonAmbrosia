@@ -153,8 +153,8 @@ TrainerHikerParry:
 	winlosstext HikerParry3BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight3
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight3
 .normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight3

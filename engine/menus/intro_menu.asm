@@ -320,8 +320,8 @@ ResetWRAM_NewGamePlus:
     ld [wLevelCap], a
 
     ; DevNote - New Game Plus - Defaults to Hard mode
-    ld a, 1
-    ld [wHardMode], a
+    ld a, DIFFICULTY_HARD
+    ld [wDifficulty], a
 
 	call InitializeNPCNames
 

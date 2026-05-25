@@ -692,8 +692,10 @@ FinalSilverScript:
 	waitbutton
 	closetext
 	winlosstext SilverFinalLossText, SilverFinalWinText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL2, MASTER_RIVAL
 	sjump .battle
@@ -740,8 +742,10 @@ FinalCrystalScript:
 
     special HealParty
 	winlosstext CrystalFinalLossText, CrystalFinalWinText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard_crystal
+	sjump .normal
+.hard_crystal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, MASTER_CRYSTAL
 	sjump .battle

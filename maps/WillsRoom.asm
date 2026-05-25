@@ -49,8 +49,10 @@ WillScript_Battle:
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
 	readmem wLevelCap
 	ifless 100, .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -167,4 +169,3 @@ WillsRoom_MapEvents:
 	def_object_events
 	object_event  5,  7, SPRITE_SABRINA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WillScript_Battle, -1
 	object_event  4,  7, SPRITE_ALAKAZAM, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SabrinaAlakazam, -1
-

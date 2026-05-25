@@ -284,47 +284,95 @@ Options_BattleStyle:
 .Set:   db "Set  @"
 
 Options_Difficulty:
-	ld hl, wHardMode
 	ldh a, [hJoyPressed]
 	bit B_PAD_LEFT, a
 	jr nz, .LeftPressed
 	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
-	ld a, [wHardMode]
+	call .EasyModeUnlocked
+	jr nc, .ToggleNormalHard
+	call .GetDifficultyMode
 	and a
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	jr z, .SetHard
+	cp DIFFICULTY_HARD
+	jr z, .SetEasy
+	jr .SetNormal
 
 .LeftPressed:
-	ld a, [wHardMode]
+	call .EasyModeUnlocked
+	jr nc, .ToggleNormalHard
+	call .GetDifficultyMode
 	and a
-	jr nz, .ToggleOff
-	jr .ToggleOn
+	jr z, .SetEasy
+	cp DIFFICULTY_HARD
+	jr z, .SetNormal
+	jr .SetHard
 
 .NonePressed:
-	ld a, [wHardMode]
-	and a
-	jr nz, .ToggleOn
-
-.ToggleOff:
-	xor a
-	ld [wHardMode], a
-	ld de, .Off
+	call .GetDifficultyMode
 	jr .Display
 
-.ToggleOn:
-	ld a, 1
-	ld [wHardMode], a
-	ld de, .On
+.ToggleNormalHard:
+	call .GetDifficultyMode
+	cp DIFFICULTY_HARD
+	jr z, .SetNormal
+
+.SetHard:
+	ld a, DIFFICULTY_HARD
+	ld [wDifficulty], a
+	ld a, DIFFICULTY_HARD
+	jr .Display
+
+.SetNormal:
+	xor a
+	ld [wDifficulty], a
+	ld a, DIFFICULTY_NORMAL
+	jr .Display
+
+.SetEasy:
+	ld a, DIFFICULTY_EASY
+	ld [wDifficulty], a
 
 .Display:
+	ld de, .Normal
+	cp DIFFICULTY_HARD
+	jr nz, .check_easy
+	ld de, .Hard
+	jr .place_string
+
+.check_easy
+	cp DIFFICULTY_EASY
+	jr nz, .place_string
+	ld de, .Easy
+
+.place_string
 	hlcoord 11, 13
 	call PlaceString
 	and a
 	ret
 
-.On:  db "Hard  @"
-.Off: db "Normal@"
+.GetDifficultyMode:
+	ld a, [wDifficulty]
+	ret
+
+.EasyModeUnlocked:
+	ld a, [wWhiteoutCount + 1]
+	and a
+	jr nz, .unlocked
+	ld a, [wWhiteoutCount]
+	cp EASY_MODE_UNLOCK_LOSSES
+	jr c, .locked
+.unlocked
+	scf
+	ret
+
+.locked
+	and a
+	ret
+
+.Hard:   db "Hard  @"
+.Normal: db "Normal@"
+.Easy:   db "Easy  @"
 
 Options_FasterBattles:
  	ld hl, wOptions2

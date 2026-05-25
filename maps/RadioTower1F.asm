@@ -556,8 +556,10 @@ RadioTowerCrystalScript:
 
     special HealParty
 	winlosstext Crystal4LosesText, Crystal4WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_4
 	sjump .battle
@@ -741,4 +743,3 @@ RadioTower1F_MapEvents:
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, -1
 	object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, -1
 	object_event  3,  7, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-

@@ -125,8 +125,8 @@ TrainerCooltrainermGaven3:
 	winlosstext CooltrainermGaven3BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight2
 .normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2
@@ -256,8 +256,8 @@ TrainerCooltrainerfBeth1:
 	winlosstext CooltrainerfBeth1BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight2
 .normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2
@@ -651,8 +651,10 @@ Route26CrystalScript:
 
     special HealParty
 	winlosstext Crystal5LosesText, Crystal5WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard_crystal
+	sjump .normal
+.hard_crystal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_5
 	sjump .battle

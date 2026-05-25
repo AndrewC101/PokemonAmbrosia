@@ -185,8 +185,8 @@ TrainerPicnickerLiz1:
 	winlosstext PicnickerLiz1BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight4
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight4
 .normal
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .LoadFight4
@@ -848,8 +848,10 @@ Route32CrystalScript:
 
     special HealParty
 	winlosstext Crystal2LosesText, Crystal2WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
 	readmem wLevelCap
 	ifless 100, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -1057,4 +1059,3 @@ Route32_MapEvents:
 	object_event 8,  74, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
 
 	object_event  17, 2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-

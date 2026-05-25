@@ -109,8 +109,10 @@ Red:
 	winlosstext RedWinLossText, RedWinLossText
     readmem wNewGamePlus
     ifequal 0, .normal
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard_red
+	sjump .normal
+.hard_red
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RED, MASTER_RED
 	sjump .battle
@@ -175,8 +177,10 @@ Ash:
 	winlosstext AshWinLossText, AshWinLossText
     readmem wNewGamePlus
     ifequal 0, .normal
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard_ash_1
+	sjump .normal
+.hard_ash_1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ASH, MASTER_ASH
 	sjump .battle
@@ -328,8 +332,10 @@ FightAshScript:
     winlosstext AshWinLossText, AshWinLossText
     readmem wNewGamePlus
     ifequal 0, .normal
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard_ash_2
+	sjump .normal
+.hard_ash_2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer ASH, MASTER_ASH
 	sjump .battle

@@ -64,9 +64,9 @@ TrainerJoyScript:
     winlosstext NurseJoyBeatenText, NurseJoyWinsText
     readmem wNewGamePlus
     ifequal 0, .normal
-	readmem wHardMode
-	ifequal 0, .normal
-	sjump .joy4
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .joy4
+	sjump .normal
 .normal
     checkevent EVENT_BEAT_WALLACE
     iftrue .joy4
@@ -248,4 +248,3 @@ Route5_MapEvents:
 	object_event  7, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5TrainerScript1, -1
 	object_event 12, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route5TrainerScript2, -1
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route5LuckyEggScript, EVENT_PICKED_UP_ROUTE5_LUCKY_EGG
-

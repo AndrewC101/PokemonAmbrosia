@@ -4109,9 +4109,18 @@ CheckWhetherToAskSwitch:
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
-	ld a, [wHardMode]
-	and a
-	jr nz, .return_nc
+	call GetBattleDifficultyMode
+	cp DIFFICULTY_EASY
+	jr nz, .check_standard_restrictions
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jr z, .return_nc
+	jr .check_active_mon
+
+.check_standard_restrictions
+	ld a, [wDifficulty]
+	cp DIFFICULTY_HARD
+	jr z, .return_nc
 	ld a, [wOtherTrainerClass]
 	cp SOLDIER
 	jr z, .return_nc
@@ -4120,10 +4129,14 @@ CheckWhetherToAskSwitch:
     jr z, .return_nc
     cp BATTLETYPE_BOSS_BATTLE
     jr z, .return_nc
+    cp BATTLETYPE_SUPER_BOSS_BATTLE
+    jr z, .return_nc
     cp BATTLETYPE_REMATCH
     jr z, .return_nc
     cp BATTLETYPE_BATTLE_FRONTIER
     jr z, .return_nc
+
+.check_active_mon
 	ld a, [wCurPartyMon]
 	push af
 	ld a, [wCurBattleMon]
@@ -4138,6 +4151,10 @@ CheckWhetherToAskSwitch:
 
 .return_nc
 	and a
+	ret
+
+GetBattleDifficultyMode:
+	ld a, [wDifficulty]
 	ret
 
 OfferSwitch:
@@ -6110,24 +6127,36 @@ BattleMenu_Pack:
 	dec a
 	jr z, .canUseItems
 
-    ld a, [wHardMode]
-    and a
-    jr nz, .ItemsCantBeUsed
+	call GetBattleDifficultyMode
+	cp DIFFICULTY_EASY
+	jr nz, .standard_item_restrictions
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jp z, .ItemsCantBeUsed
+	jr .check_battle_tower
+
+.standard_item_restrictions
+	ld a, [wDifficulty]
+	cp DIFFICULTY_HARD
+	jr z, .ItemsCantBeUsed
 	ld a, [wOtherTrainerClass]
 	cp SOLDIER
 	jr z, .ItemsCantBeUsed
-    ld a, [wBattleType]
-    cp BATTLETYPE_SETNOITEMS
-    jp z, .ItemsCantBeUsed
-    cp BATTLETYPE_BOSS_BATTLE
-    jp z, .ItemsCantBeUsed
-    cp BATTLETYPE_REMATCH
-    jp z, .ItemsCantBeUsed
-    cp BATTLETYPE_BATTLE_FRONTIER
-    jp z, .ItemsCantBeUsed
-    cp BATTLETYPE_WEAK_BATTLE
-    jp z, .ItemsCantBeUsed
+	ld a, [wBattleType]
+	cp BATTLETYPE_SETNOITEMS
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_BOSS_BATTLE
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_REMATCH
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_BATTLE_FRONTIER
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_WEAK_BATTLE
+	jp z, .ItemsCantBeUsed
 
+.check_battle_tower
 	ld a, [wInBattleTowerBattle]
 	and a
 	jp nz, .ItemsCantBeUsed

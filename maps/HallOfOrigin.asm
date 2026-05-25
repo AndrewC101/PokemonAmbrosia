@@ -270,7 +270,7 @@ MasterOakScript:
 	waitbutton
 	closetext
 	winlosstext MasterOakBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer LORD_OAK, OAK
 	startbattle
 	ifequal LOSE, .lose

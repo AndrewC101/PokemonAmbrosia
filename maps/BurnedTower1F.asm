@@ -66,8 +66,10 @@ BurnedTowerRivalBattleScript:
 	iftrue .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal1
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard1
+	sjump .normal1
+.hard1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
 	sjump .battle1
@@ -82,8 +84,10 @@ BurnedTowerRivalBattleScript:
 .totodile
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard2
+	sjump .normal2
+.hard2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
 	sjump .battle2
@@ -98,8 +102,10 @@ BurnedTowerRivalBattleScript:
 .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal3
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard3
+	sjump .normal3
+.hard3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
 	sjump .battle3

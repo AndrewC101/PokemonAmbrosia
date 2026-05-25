@@ -222,8 +222,8 @@ TrainerFisherWilton1:
 	winlosstext FisherWilton1BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight2
 .normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight2

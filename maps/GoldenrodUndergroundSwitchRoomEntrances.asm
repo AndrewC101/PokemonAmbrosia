@@ -169,8 +169,10 @@ UndergroundRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal1
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard1
+	sjump .normal1
+.hard1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
 	sjump .battle1
@@ -186,8 +188,10 @@ UndergroundRivalBattleScript:
 .Totodile:
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard2
+	sjump .normal2
+.hard2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
 	sjump .battle2
@@ -203,8 +207,10 @@ UndergroundRivalBattleScript:
 .Chikorita:
 	winlosstext UndergroundSilverWinText, UndergroundSilverLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal3
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard3
+	sjump .normal3
+.hard3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
 	sjump .battle3

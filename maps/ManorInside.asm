@@ -59,7 +59,7 @@ AndrewScript:
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
 	winlosstext AndrewBeatenText, AndrewWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer DAD, ME
 	startbattle
 	ifequal LOSE, .lose
@@ -91,7 +91,7 @@ AndrewScript:
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
    	winlosstext AndrewImpossibleBeatenText, AndrewImpossibleWinText
-   	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+   	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
    	loadtrainer DAD, FINAL_ME
    	startbattle
    	ifequal LOSE, .loseImpossible
@@ -330,7 +330,7 @@ WifeScript:
 	setval MUSIC_ZINNIA_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext WifeBeatenText, WifeWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer CYNTHIA, WIFE
 	startbattle
 	ifequal LOSE, .lose
@@ -466,7 +466,7 @@ BrotherScript:
 	setval MUSIC_FINAL_BATTLE
 	writemem wBattleMusicOverride
 	winlosstext BrotherBeatenText, BrotherWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer LEON, BROTHER
 	startbattle
 	ifequal LOSE, .lose

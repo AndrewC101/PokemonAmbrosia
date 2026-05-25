@@ -734,10 +734,8 @@ CheatCodeRepo:
     ifequal 1, .printGiftOfGodCode
     checkitem GIFT_OF_GOD
     iftrue .printGiftOfGodCode
-    readmem wWhiteoutCount + 1
-    ifgreater 0, .printGiftOfGodCode
-    readmem wWhiteoutCount
-    ifless 5, .skipGiftCode ; this number needs to stay in sync with whiteout.asm
+    ; Gift Of God is no longer unlocked by whiteout count.
+    sjump .skipGiftCode
 .printGiftOfGodCode
     writetext GiftOfGodCodeText
 .skipGiftCode

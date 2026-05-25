@@ -39,23 +39,18 @@ Script_Whiteout:
 .count_trainer_whiteout
 	loadmem wWildBattlePanic, 0
 	callasm IncrementWhiteoutCount
-	iftrue .unlock_gift_of_god_code
+	iftrue .unlock_easy_mode
 	endall
 
-.unlock_gift_of_god_code
-	checkitem GIFT_OF_GOD
-	iftrue .already_has_gift_of_god
+.unlock_easy_mode
 	callasm HideWhiteoutMapNameSign
 	pause 10
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	opentext
-	writetext .GiftOfGodCodeUnlockedText
+	writetext .EasyModeUnlockedText
 	waitbutton
 	closetext
-	endall
-
-.already_has_gift_of_god
 	endall
 
 .bug_contest
@@ -74,11 +69,11 @@ Script_Whiteout:
 	text_far _WhitedOutToTrainerText
 	text_end
 
-.GiftOfGodCodeUnlockedText:
+.EasyModeUnlockedText:
 	text "Unlocked a new"
-	line "Mr Mime cheatcode!"
-	para "It can make your"
-	line "journey easier."
+	line "difficulty mode!"
+	para "Easy Mode is now"
+	line "in Options."
 	done
 
 OverworldBGMap:
@@ -229,7 +224,7 @@ IncrementWhiteoutCount:
 	and a
 	jr nz, .not_exact_count
 	ld a, [wWhiteoutCount]
-	cp 5 ; this number needs to stay in sync with ElmsLab.asm
+	cp EASY_MODE_UNLOCK_LOSSES
 	jr nz, .not_exact_count
 	ld a, TRUE
 	ld [wScriptVar], a

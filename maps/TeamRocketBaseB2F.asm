@@ -217,8 +217,10 @@ RocketBaseBossFScript:
 
     setval CHAMPION
 	writemem wOtherTrainerClass
-	readmem wHardMode
-	ifequal 0, .normalDrag
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard_drag
+	sjump .normalDrag
+.check_hard_drag
 	readmem wLevelCap
 	ifless 100, .normalDrag
 	setval LANCE_DRAGONITE_100
@@ -1279,4 +1281,3 @@ TeamRocketBaseB2F_MapEvents:
 	object_event 21, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM19, EVENT_TEAM_ROCKET_BASE_POPULATION
 	object_event  3, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB2FTMThief, EVENT_TEAM_ROCKET_BASE_B2F_TM_THIEF
 	object_event  9, 13, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
-

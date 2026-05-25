@@ -262,8 +262,10 @@ PalletTownCrystalScript:
 
     special HealParty
 	winlosstext Crystal6LosesText, Crystal6WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_6
 	sjump .battle

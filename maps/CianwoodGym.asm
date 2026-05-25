@@ -42,8 +42,10 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, ChuckWinText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
 	readmem wLevelCap
 	ifless 100, .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -526,4 +528,3 @@ CianwoodGym_MapEvents:
 	;object_event  2,  3, SPRITE_MACHAMP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodGymMachampScript, -1
 	object_event  2,  3, SPRITE_CONKELDURR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodGymConkeldurrScript, -1
 	;object_event  1,  3, SPRITE_GALLADE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodGymGalladeScript, -1
-

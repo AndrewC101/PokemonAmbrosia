@@ -3237,7 +3237,7 @@ wVioletCitySceneID::                              db
 wViridianGymSceneID::                             db
 
 wLevelCap:: db
-wHardMode:: db
+wDifficulty:: db
 wNewGamePlus:: db
 wDoubleExp:: db
 wForcedMenu:: db

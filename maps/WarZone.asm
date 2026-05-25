@@ -51,8 +51,10 @@ WallaceScript:
 	waitbutton
 	closetext
 	winlosstext WallaceBeatenText, WallaceWinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
 	readmem wLevelCap
 	ifless 100, .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -1088,8 +1090,10 @@ TrainerSoldier5:
 	waitbutton
 	closetext
 	winlosstext Soldier5BeatenText, Soldier5WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard_soldier
+	sjump .normal
+.check_hard_soldier
 	readmem wLevelCap
 	ifless 100, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -1384,8 +1388,10 @@ JonathanScript:
 	closetext
 .skipRequest
 	winlosstext JonathanBeatenText, JonathanWinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard_jonathan
+	sjump .normal
+.check_hard_jonathan
 	readmem wLevelCap
 	ifless 100, .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE

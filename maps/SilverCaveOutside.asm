@@ -243,8 +243,10 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Silver7LosesText, Silver7WinsText
-	readmem wHardMode
-	ifequal 0, .normal1
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard1
+	sjump .normal1
+.check_hard1
 	readmem wLevelCap
 	ifless 100, .hard1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -273,8 +275,10 @@ SilverCaveRivalsScript:
     waitbutton
     closetext
 	winlosstext Crystal7LosesText, Crystal7WinsText
-	readmem wHardMode
-	ifequal 0, .normal2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard2
+	sjump .normal2
+.check_hard2
 	readmem wLevelCap
 	ifless 100, .hard2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -1602,4 +1606,3 @@ SilverCaveOutside_MapEvents:
 	object_event 13, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon9Script, EVENT_FIELD_MON_9
 	object_event  5, 20, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCaveOutsideFieldMon10Script, EVENT_FIELD_MON_10
 	object_event 26, 19, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, HoenWarRolePlayScript, -1
-

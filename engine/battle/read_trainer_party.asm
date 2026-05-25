@@ -4,6 +4,51 @@ GetNextTrainerDataByte:
 	inc hl
 	ret
 
+GetTrainerBattleDifficultyMode:
+	ld a, [wDifficulty]
+	ret
+
+ApplyEasyModeLevelReduction:
+	; b holds the trainer mon's working level. Keep c untouched so species
+	; upgrades still key off the original, pre-easy-adjustment level.
+	ld a, b
+	and a
+	ret z
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_BATTLE_FRONTIER
+	ret z
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	ret z
+
+	ld a, [wOtherTrainerClass]
+	cp ROLE_PLAYER_NORMAL
+	ret z
+	cp ROLE_PLAYER_SHINY
+	ret z
+
+	call GetTrainerBattleDifficultyMode
+	cp DIFFICULTY_EASY
+	ret nz
+
+	ld a, [wLevelCap]
+	cp 50
+	ld a, b
+	jr c, .subtract_two
+	sub 5
+	jr nc, .store_level
+	ld a, 1
+	jr .store_level
+
+.subtract_two
+	sub 2
+	jr nc, .store_level
+	ld a, 1
+
+.store_level
+	ld b, a
+	ret
+
 ReadTrainerParty:
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
@@ -99,10 +144,10 @@ ReadTrainerPartyPieces:
     cp ROLE_PLAYER_SHINY
     jr z, .normal
 
-    ; if we aren't on hard mode then don't scale
-    ld a, [wHardMode]
-    and a
-    jr z, .normal
+    ; Only hard mode gets the legacy scaling path. Easy stays with normal.
+    ld a, [wDifficulty]
+    cp DIFFICULTY_HARD
+    jr nz, .normal
 
 	; if this is new game plus then scale regardless of trainer class
 	ld a, [wNewGamePlus]
@@ -130,6 +175,8 @@ ReadTrainerPartyPieces:
 	jr z, .scale
 	cp BATTLETYPE_BOSS_BATTLE
 	jr z, .scale
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jr z, .scale
 
 	; ordinary hard-mode trainers on the base game scale to level cap - 10
 	; instead. Clamp at 0 so low caps simply stop scaling rather than wrapping.
@@ -154,6 +201,7 @@ ReadTrainerPartyPieces:
 	ld b, a
 
 .normal
+	call ApplyEasyModeLevelReduction
     ld a, b
 
 	ld [wCurPartyLevel], a
@@ -234,22 +282,52 @@ ReadTrainerPartyPieces:
 ; CLAIR badge = $FFFF = 65535 stat exp = 64/64 extra stat at lvl 100
     push hl
 
+	call GetTrainerBattleDifficultyMode
+	cp DIFFICULTY_EASY
+	jr nz, .check_stat_exp_battle_type
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jr z, .check_stat_exp_battle_type
+	cp BATTLETYPE_BATTLE_FRONTIER
+	jr z, .check_stat_exp_battle_type
+	ld a, [wTrainerClass]
+	cp ROLE_PLAYER_NORMAL
+	jr z, .check_stat_exp_battle_type
+	cp ROLE_PLAYER_SHINY
+	jr z, .check_stat_exp_battle_type
+	push de
+	ld de, EVENT_BEAT_RED
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	pop de
+	and a
+	jp nz, .mediumStatExp
+	ld a, [wLevelCap]
+	cp 70
+	jp nc, .lowStatExp
+	pop hl
+	jp .no_stat_exp
+
+.check_stat_exp_battle_type
     ; boss battles have max stat exp
     ld a, [wBattleType]
     cp BATTLETYPE_BOSS_BATTLE
+    jr z, .fullStatExp
+    cp BATTLETYPE_SUPER_BOSS_BATTLE
     jr z, .fullStatExp
     cp BATTLETYPE_BATTLE_FRONTIER
     jr z, .fullStatExp
     cp BATTLETYPE_WEAK_BATTLE
     jp z, .zeroStatExp
 
-    ; on new game plus and hard mode all enemies have max stat exp
+    ; On new game plus and hard mode all enemies have max stat exp.
     ld a, [wNewGamePlus]
     and a
     jr z, .usual
-    ld a, [wHardMode]
-    and a
-    jp nz, .fullStatExp
+    ld a, [wDifficulty]
+    cp DIFFICULTY_HARD
+    jp z, .fullStatExp
 
 .usual
     ; trainer classes which always have max stat exp

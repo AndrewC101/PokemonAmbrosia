@@ -233,8 +233,8 @@ TrainerSchoolboyAlan1:
 	winlosstext SchoolboyAlan1BeatenText, 0
 	readmem wNewGamePlus
 	ifequal 0, .normal
-	readmem wHardMode
-	ifequal 1, .LoadFight4
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .LoadFight4
 .normal
 	checkevent EVENT_BEAT_WALLACE
 	iftrue .LoadFight4
@@ -769,8 +769,10 @@ Route36CrystalScript:
 
     special HealParty
 	winlosstext Crystal3LosesText, Crystal3WinsText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer CRYSTAL, CRYSTAL_3
 	sjump .battle

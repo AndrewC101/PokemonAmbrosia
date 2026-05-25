@@ -1157,9 +1157,9 @@ UpgradePhoneRematchTrainerID:
 	ld a, [wNewGamePlus]
 	and a
 	ret z
-	ld a, [wHardMode]
-	and a
-	ret z
+	ld a, [wDifficulty]
+	cp DIFFICULTY_HARD
+	ret nz
 
 	ld a, [wOtherTrainerClass]
 	ld c, a

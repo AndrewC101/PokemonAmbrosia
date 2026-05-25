@@ -66,8 +66,10 @@ AzaleaTownRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal1
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard1
+	sjump .normal1
+.check_hard1
 	readmem wLevelCap
 	ifless 100, .normal1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -84,8 +86,10 @@ AzaleaTownRivalBattleScript:
 .Totodile:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal2
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard2
+	sjump .normal2
+.check_hard2
 	readmem wLevelCap
 	ifless 100, .normal2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
@@ -103,8 +107,10 @@ AzaleaTownRivalBattleScript:
 .Chikorita:
 	winlosstext AzaleaTownRivalWinText, AzaleaTownRivalLossText
 	setlasttalked AZALEATOWN_RIVAL
-	readmem wHardMode
-	ifequal 0, .normal3
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard3
+	sjump .normal3
+.check_hard3
 	readmem wLevelCap
 	ifless 100, .normal3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE

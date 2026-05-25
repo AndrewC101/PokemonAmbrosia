@@ -57,8 +57,10 @@ Oak:
 	iffalse .refuse
 	closetext
     winlosstext OakWinText, OakWinText
-	readmem wHardMode
-	ifequal 0, .normal
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .hard
+	sjump .normal
+.hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer POKEMON_PROF, MASTER_OAK
 	sjump .battle

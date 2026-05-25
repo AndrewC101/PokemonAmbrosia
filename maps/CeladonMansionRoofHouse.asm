@@ -19,7 +19,7 @@ CeladonMansionRoofHouseAndrewScript:
 	setval MUSIC_EPIC_TETRIS
 	writemem wBattleMusicOverride
 	winlosstext CeladonAndrewBeatenText, CeladonAndrewWinsText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer DAD, FINAL_ME
 	startbattle
 	reloadmap

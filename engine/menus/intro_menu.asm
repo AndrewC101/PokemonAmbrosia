@@ -59,6 +59,7 @@ NewGamePlus:
 	ret c
 	call ResetWRAM_NewGamePlus
 	call RestoreTMHMsForNewGamePlus
+	call RestorePokedexCompletionForNewGamePlus
 	jr NewGameCommon
 
 NewGame:
@@ -340,6 +341,17 @@ RestoreTMHMsForNewGamePlus:
 	ld hl, sPlayerData + (wTMsHMs - wPlayerData)
 	ld de, wTMsHMs
 	ld bc, NUM_TMS + NUM_HMS
+	call CopyBytes
+	call CloseSRAM
+	ret
+
+RestorePokedexCompletionForNewGamePlus:
+	; Keep seen/caught completion, but do not restore the dex unlock flag.
+	ld a, BANK(sPlayerData)
+	call OpenSRAM
+	ld hl, sPlayerData + (wPokedexCaught - wPlayerData)
+	ld de, wPokedexCaught
+	ld bc, wEndPokedexSeen - wPokedexCaught
 	call CopyBytes
 	call CloseSRAM
 	ret

@@ -31,17 +31,21 @@ ApplyEasyModeLevelReduction:
 	cp DIFFICULTY_EASY
 	ret nz
 
-	ld a, [wLevelCap]
-	cp 50
 	ld a, b
-	jr c, .subtract_two
-	sub 5
+	push af
+	ld a, [wJohtoBadges]
+	bit FOGBADGE, a
+	pop af
+	jr nz, .subtract_five
+
+.subtract_two
+	sub 2
 	jr nc, .store_level
 	ld a, 1
 	jr .store_level
 
-.subtract_two
-	sub 2
+.subtract_five
+	sub 5
 	jr nc, .store_level
 	ld a, 1
 
@@ -296,16 +300,16 @@ ReadTrainerPartyPieces:
 	cp ROLE_PLAYER_SHINY
 	jr z, .check_stat_exp_battle_type
 	push de
-	ld de, EVENT_BEAT_RED
+	ld de, EVENT_BEAT_CRYSTAL_7
 	ld b, CHECK_FLAG
 	call EventFlagAction
 	ld a, c
 	pop de
 	and a
 	jp nz, .mediumStatExp
-	ld a, [wLevelCap]
-	cp 70
-	jp nc, .lowStatExp
+	ld a, [wJohtoBadges]
+	bit RISINGBADGE, a
+	jp nz, .lowStatExp
 	pop hl
 	jp .no_stat_exp
 

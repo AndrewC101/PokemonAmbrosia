@@ -787,7 +787,7 @@ MasterBallCodeText:
 
 WarpCodeText:
     text "MakeItSo"
-    line "Full Warp menu."
+    line "Warp menu."
     prompt
 
 DoubleExpCodeText:
@@ -2226,7 +2226,6 @@ ElmsLabMrMimeScript:
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	setflag ENGINE_WARP
-	loadmem wReachedHallOfOrigin, 1
 	setevent EVENT_UNLOCK_WARP_CODE
     end
 .doubleExpToggle

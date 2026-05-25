@@ -1408,7 +1408,7 @@ HoenWarCh3VillainText:
     cont "Kanto."
 
     para "You fly atop"
-    line "AIR WEAPON."
+    line "Sky Weapon."
 
     para "Within hours you"
     line "approach the"
@@ -1418,13 +1418,13 @@ HoenWarCh3VillainText:
     line "of Fire tries to"
     cont "impede you."
 
-    para "SEA WEAPON makes"
+    para "Sea Weapon makes"
     line "swift work of him."
 
     para "A tsunami crashes"
     line "on the shore."
 
-    para "GEO WEAPON splits"
+    para "Geo Weapon splits"
     line "the earth and"
     cont "destroys any"
     cont "ground defenses."

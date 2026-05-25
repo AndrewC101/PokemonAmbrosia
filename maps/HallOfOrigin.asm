@@ -1866,7 +1866,7 @@ MasterJoeyScript:
 	waitbutton
 	closetext
 	winlosstext MasterJoeyBeatenText, MasterJoeyWinText
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUPER_BOSS_BATTLE
 	loadtrainer YOUNGSTER, MASTER_JOEY
 	startbattle
 	ifequal LOSE, .Lose

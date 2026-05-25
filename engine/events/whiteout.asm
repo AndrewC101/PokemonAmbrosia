@@ -70,10 +70,8 @@ Script_Whiteout:
 	text_end
 
 .EasyModeUnlockedText:
-	text "Unlocked a new"
-	line "difficulty mode!"
-	para "Easy Mode is now"
-	line "in Options."
+	text "You unlocked a new"
+	line "difficulty Option!"
 	done
 
 OverworldBGMap:

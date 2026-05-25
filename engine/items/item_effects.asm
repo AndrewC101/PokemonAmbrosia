@@ -46,7 +46,7 @@ ItemEffects:
 	dw NoEffect            ; HOLY_CROWN
 	dw VitaminEffect       ; CALCIUM
 	dw RareCandyEffect     ; RARE_CANDY
-	dw XAccuracyEffect     ; X_ACCURACY
+	dw NoEffect            ; X_ACCURACY
 	dw EvoStoneEffect      ; LEAF_STONE
 	dw NoEffect            ; CHOICE_SPECS
 	dw NoEffect            ; NUGGET
@@ -54,7 +54,7 @@ ItemEffects:
 	dw StatusHealingEffect ; FULL_HEAL
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
-	dw UnusedItemEffect    ; not used
+	dw NoEffect            ; not used
 	dw GoldDiceEffect      ; GOLD_DICE
 	;dw MaxRepelEffect      ; MAX_REPEL
     dw RunningShoesEffect  ; RUNNING_SHOES
@@ -1903,6 +1903,9 @@ RevivalHerbEffect:
 	jp StatusHealer_Jumptable
 
 ReviveEffect:
+	call CheckRestrictedBattleItemUse
+	jp c, RestrictedBattleItemMessage
+
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 	jp c, StatusHealer_ExitMenu
@@ -2559,13 +2562,6 @@ RepelUsedEarlierIsStillInEffectText:
 	text_far _RepelUsedEarlierIsStillInEffectText
 	text_end
 
-XAccuracyEffect:
-	ld hl, wPlayerSubStatus4
-	bit SUBSTATUS_X_ACCURACY, [hl]
-	jp nz, WontHaveAnyEffect_NotUsedMessage
-	set SUBSTATUS_X_ACCURACY, [hl]
-	jp UseItemText
-
 PokeDollEffect:
 	ld a, [wBattleMode]
 	dec a ; WILD_BATTLE?
@@ -2582,9 +2578,6 @@ PokeDollEffect:
 	xor a
 	ld [wItemEffectSucceeded], a
 	ret
-
-UnusedItemEffect:
-    ret
 
 RepulsorEffect:
 	ld a, [wRepulsorToggle]
@@ -2611,6 +2604,9 @@ RepulsorTurnOnText:
 	text_end
 
 XItemEffect:
+	call CheckRestrictedBattleItemUse
+	jp c, RestrictedBattleItemMessage
+
 	call UseItemText
 
 	ld a, [wCurItem]
@@ -3470,6 +3466,27 @@ CantUseOnEggMessage:
 	ld hl, ItemCantUseOnEggText
 	jr CantUseItemMessage
 
+CheckRestrictedBattleItemUse:
+	; Revives and battle stat-boosters stay blocked in these trainer battle
+	; types even when Easy Mode opens the Pack more broadly.
+	ld a, [wBattleMode]
+	and a
+	ret z
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_SETNOITEMS
+	scf
+	ret z
+	cp BATTLETYPE_BOSS_BATTLE
+	scf
+	ret z
+	and a
+	ret
+
+RestrictedBattleItemMessage:
+	ld hl, ItemCantUseInThisBattleText
+	jr CantUseItemMessage
+
 IsntTheTimeMessage:
 	ld hl, ItemOakWarningText
 	jr CantUseItemMessage
@@ -3477,18 +3494,6 @@ IsntTheTimeMessage:
 WontHaveAnyEffectMessage:
 	ld hl, ItemWontHaveEffectText
 	jr CantUseItemMessage
-
-;BelongsToSomeoneElseMessage: ; unreferenced
-;	ld hl, ItemBelongsToSomeoneElseText
-;	jr CantUseItemMessage
-
-;CyclingIsntAllowedMessage: ; unreferenced
-;	ld hl, NoCyclingText
-;	jr CantUseItemMessage
-
-;CantGetOnYourBikeMessage: ; unreferenced
-;	ld hl, ItemCantGetOnText
-	; fallthrough
 
 CantUseItemMessage:
 ; Item couldn't be used.
@@ -3508,12 +3513,12 @@ ItemOakWarningText:
 	text_far _ItemOakWarningText
 	text_end
 
-ItemBelongsToSomeoneElseText:
-	text_far _ItemBelongsToSomeoneElseText
-	text_end
-
 ItemWontHaveEffectText:
 	text_far _ItemWontHaveEffectText
+	text_end
+
+ItemCantUseInThisBattleText:
+	text_far _YouCantUseItInABattleText
 	text_end
 
 BallBlockedText:
@@ -3522,14 +3527,6 @@ BallBlockedText:
 
 BallDontBeAThiefText:
 	text_far _BallDontBeAThiefText
-	text_end
-
-NoCyclingText:
-	text_far _NoCyclingText
-	text_end
-
-ItemCantGetOnText:
-	text_far _ItemCantGetOnText
 	text_end
 
 StorageFullText:

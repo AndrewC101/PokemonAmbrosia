@@ -259,23 +259,35 @@ EarlsPokemonAcademyYoungster1Text:
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
-	text "What happens if I"
-	line "catch a #mon"
-	cont "and trade it to a"
-	cont "friend who trains"
-	cont "it beyond my level"
-	cont "cap then trades it"
-	cont "back to me!"
+	text "I lost 3 matches"
+	line "and not I play on"
+	cont "easy mode."
+	para "My enemies are"
+	line "weaker and I can"
+	cont "use items in"
+	cont "fights."
+	para "I don't need to"
+	line "worry about"
+	cont "strategy or any of"
+	cont "that."
+	para "Unlike this toxic"
+	line "tryhard beside me."
 	done
 
 EarlsPokemonAcademyGameboyKid2Text:
-	text "As soon as this"
-	line "guy puts this"
-	cont "#mon in a PC"
-	cont "he is in for a"
-	cont "surprise."
-	para "It'll level down"
-	line "to his level cap."
+	text "I only play on"
+	line "hard mode!"
+	para "My enemies are as"
+	line "strong as they can"
+	cont "be."
+	para "I need superior"
+	line "strategy to win."
+	para "Unlike this filthy"
+	line "casual beside me I"
+	cont "long for a"
+	cont "glorious victory"
+	cont "in a legendary"
+	cont "battle!"
 	done
 
 EarlsPokemonAcademyYoungster2Text:

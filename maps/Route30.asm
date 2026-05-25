@@ -391,21 +391,27 @@ YoungsterJoey1AfterText:
 	done
 
 YoungsterMikeySeenText:
-	text "That last guy"
-	line "never shuts up"
-	cont "about his weak"
-	cont "Rattata."
-
-	para "You need more"
-	line "than just one"
-	cont "#mon."
-
-	para "I'll show you."
+	text "Listen up!"
+	para "I have some"
+	line "important"
+	cont "information for"
+	cont "someone like you."
+	para "If you lose a"
+	line "battle and get"
+	cont "sent to the"
+	cont "#center 3"
+	cont "times you will"
+	cont "unlock easy mode"
+	cont "difficulty."
+	para "You look like"
+	line "you'll need it."
+	para "Let me help you"
+	line "unlock it."
 	done
 
 YoungsterMikeyBeatenText:
-	text "That's strange."
-	line "I won before."
+	text "I guess you don't"
+	line "need it."
 	done
 
 YoungsterMikeyAfterText:
@@ -413,6 +419,9 @@ YoungsterMikeyAfterText:
 	line "trainers by"
 	cont "talking to them"
 	cont "again."
+	para "Forfeiting a match"
+	line "also counts as a"
+	cont "loss."
 	done
 
 BugCatcherDonSeenText:

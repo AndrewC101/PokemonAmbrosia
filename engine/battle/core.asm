@@ -4115,6 +4115,8 @@ CheckWhetherToAskSwitch:
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUPER_BOSS_BATTLE
 	jr z, .return_nc
+	cp BATTLETYPE_BATTLE_FRONTIER
+	jr z, .return_nc
 	jr .check_active_mon
 
 .check_standard_restrictions
@@ -6132,6 +6134,8 @@ BattleMenu_Pack:
 	jr nz, .standard_item_restrictions
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jp z, .ItemsCantBeUsed
+	cp BATTLETYPE_BATTLE_FRONTIER
 	jp z, .ItemsCantBeUsed
 	jr .check_battle_tower
 

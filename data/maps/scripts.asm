@@ -336,7 +336,6 @@ INCLUDE "maps/CianwoodCity.asm"
 INCLUDE "maps/Route29.asm"
 INCLUDE "maps/Route30.asm"
 INCLUDE "maps/Route38.asm"
-INCLUDE "maps/Route13.asm"
 INCLUDE "maps/PewterGym.asm"
 
 SECTION "Map Scripts 22", ROMX
@@ -574,6 +573,7 @@ SECTION "Map Scripts 53", ROMX
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
+INCLUDE "maps/Route13.asm"
 
 SECTION "Map Scripts 55", ROMX
 

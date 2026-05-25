@@ -743,6 +743,8 @@ GoldenrodCitySelfScript:
 	special HealParty
 	end
 .lose
+    readmem wDifficulty
+    ifequal DIFFICULTY_EASY, .over
     dontrestartmapmusic
     reloadmap
     playmusic MUSIC_RUINS_OF_ALPH_RADIO

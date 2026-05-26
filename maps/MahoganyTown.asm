@@ -195,6 +195,7 @@ MahoganyTownSelfScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+.beaten
 	setevent EVENT_BEAT_MAHOGANY_SELF
 	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
 	opentext
@@ -206,11 +207,11 @@ MahoganyTownSelfScript:
 	special HealParty
 	end
 .lose
-    readmem wDifficulty
-    ifequal DIFFICULTY_EASY, .over
     dontrestartmapmusic
     reloadmap
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    readmem wDifficulty
+    ifequal DIFFICULTY_EASY, .beaten
 	opentext
 	writetext MahoganySelfText6
 	waitbutton

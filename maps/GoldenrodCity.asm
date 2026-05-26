@@ -732,6 +732,7 @@ GoldenrodCitySelfScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+.beaten
 	setevent EVENT_BEAT_GOLDENROD_SELF
 	setmapscene GOLDENROD_CITY, SCENE_FINISHED
 	opentext
@@ -743,11 +744,11 @@ GoldenrodCitySelfScript:
 	special HealParty
 	end
 .lose
-    readmem wDifficulty
-    ifequal DIFFICULTY_EASY, .over
     dontrestartmapmusic
     reloadmap
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    readmem wDifficulty
+    ifequal DIFFICULTY_EASY, .beaten
 	opentext
 	writetext GoldenrodSelfText6
 	waitbutton

@@ -513,6 +513,7 @@ FuchsiaCitySelfScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_RUINS_OF_ALPH_RADIO
+.beaten
 	setevent EVENT_BEAT_FUCHSIA_SELF
 	opentext
 	writetext FuchsiaSelfText5
@@ -567,11 +568,11 @@ FuchsiaCitySelfScript:
 .end
 	end
 .lose
-    readmem wDifficulty
-    ifequal DIFFICULTY_EASY, .over
     dontrestartmapmusic
     reloadmap
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
+    readmem wDifficulty
+    ifequal DIFFICULTY_EASY, .beaten
 	opentext
 	writetext FuchsiaSelfText6
 	waitbutton

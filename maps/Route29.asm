@@ -121,48 +121,54 @@ Route29Tutorial2:
 	end
 
 CatchingTutorialDudeScript:
-    faceplayer
-    opentext
-    writetext CatchingTutorialDebriefText
-    waitbutton
-    readmem wFieldWeather
-    ifequal WEATHER_SUN, .sun
-    ifequal WEATHER_RAIN, .rain
-    writetext NoWeatherText
-    waitbutton
-    closetext
-    end
-.sun
-    writetext SunText
-    waitbutton
-    closetext
-    end
-.rain
-    writetext RainText
-    waitbutton
-    closetext
-    end
+    readmem wNewGamePlus
+    ifequal 1, .ngp
+    jumptextfaceplayer DifficultyModeExplanationText
+ .ngp
+    jumptextfaceplayer DifficultyModeExplanationNGPText
 
-NoWeatherText:
-	text "Right now it seems"
-	line "to be clear."
-	para "Could be better,"
-	line "could be worse."
+DifficultyModeExplanationText:
+	text "The Difficulty"
+	line "setting in the"
+	cont "Option menu"
+	cont "changes how tough"
+	cont "your adventure is."
+	para "Easy is a"
+	line "lighthearted"
+	cont "experience that"
+	cont "still requires"
+	cont "occasional"
+	cont "engagement."
+	para "Hard is an intense"
+	line "and focused"
+	cont "experience"
+	cont "intended for those"
+	cont "with some prior"
+	cont "knowledge."
+	para "Normal is a"
+	line "balanced"
+	cont "experience that"
+	cont "starts out easy"
+	cont "and gradually"
+	cont "intensifies, being"
+	cont "equal to Hard mode"
+	cont "by the postgame."
 	done
 
-SunText:
-	text "Right now it seems"
-	line "to be sunny."
-	para "Grab some sun"
-	line "cream and a nice"
-	cont "cold drink!"
-	done
-
-RainText:
-	text "Right now it seems"
-	line "to be raining."
-	para "I don't have an"
-	line "umbrella either!"
+DifficultyModeExplanationNGPText:
+	text "This isn't your"
+	line "first adventure."
+	para "The world has"
+	line "changed."
+	para "Hard mode is the"
+	line "only difficulty"
+	cont "that offers a"
+	cont "unique experience"
+	cont "here."
+	para "Easy and Normal"
+	line "will both be"
+	cont "trivial and"
+	cont "boring."
 	done
 
 
@@ -245,15 +251,11 @@ Route29Potion:
 DudeMovementData1a:
 	step UP
 	step UP
-	step UP
-	step UP
 	step RIGHT
 	step RIGHT
 	step_end
 
 DudeMovementData2a:
-	step UP
-	step UP
 	step UP
 	step RIGHT
 	step RIGHT
@@ -264,15 +266,11 @@ DudeMovementData1b:
 	step LEFT
 	step DOWN
 	step DOWN
-	step DOWN
-	step DOWN
 	step_end
 
 DudeMovementData2b:
 	step LEFT
 	step LEFT
-	step DOWN
-	step DOWN
 	step DOWN
 	step_end
 
@@ -553,7 +551,7 @@ Route29_MapEvents:
 	bg_event  5,  3, BGEVENT_READ, Route29Sign2
 
 	def_object_events
-	object_event 50, 20, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
+	object_event 50, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
 	object_event 27, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
 	object_event 15, 19, SPRITE_BEAUTY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1

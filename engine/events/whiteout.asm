@@ -39,7 +39,8 @@ Script_Whiteout:
 .count_trainer_whiteout
 	loadmem wWildBattlePanic, 0
 	callasm IncrementWhiteoutCount
-	iftrue .unlock_easy_mode
+	; Easy mode is currently always available, so the old unlock popup is disabled.
+	; iftrue .unlock_easy_mode
 	endall
 
 .unlock_easy_mode
@@ -213,22 +214,24 @@ GetWhiteoutSpawn:
 IncrementWhiteoutCount:
 	ld hl, wWhiteoutCount
 	inc [hl]
-	jr nz, .check_exact_count
+	jr nz, .unlock_check_disabled
 	inc hl
 	inc [hl]
 
-.check_exact_count
-	ld a, [wWhiteoutCount + 1]
-	and a
-	jr nz, .not_exact_count
-	ld a, [wWhiteoutCount]
-	cp EASY_MODE_UNLOCK_LOSSES
-	jr nz, .not_exact_count
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
+	; Easy mode is currently always available, so the old exact-loss unlock check
+	; is disabled here and preserved as comments for possible reuse later.
+;.check_exact_count
+;	ld a, [wWhiteoutCount + 1]
+;	and a
+;	jr nz, .not_exact_count
+;	ld a, [wWhiteoutCount]
+;	cp EASY_MODE_UNLOCK_LOSSES
+;	jr nz, .not_exact_count
+;	ld a, TRUE
+;	ld [wScriptVar], a
+;	ret
 
-.not_exact_count
+.unlock_check_disabled
 	xor a
 	ld [wScriptVar], a
 	ret

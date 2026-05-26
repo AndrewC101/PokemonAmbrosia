@@ -289,8 +289,6 @@ Options_Difficulty:
 	jr nz, .LeftPressed
 	bit B_PAD_RIGHT, a
 	jr z, .NonePressed
-	call .EasyModeUnlocked
-	jr nc, .ToggleNormalHard
 	call .GetDifficultyMode
 	and a
 	jr z, .SetHard
@@ -299,8 +297,6 @@ Options_Difficulty:
 	jr .SetNormal
 
 .LeftPressed:
-	call .EasyModeUnlocked
-	jr nc, .ToggleNormalHard
 	call .GetDifficultyMode
 	and a
 	jr z, .SetEasy
@@ -311,11 +307,6 @@ Options_Difficulty:
 .NonePressed:
 	call .GetDifficultyMode
 	jr .Display
-
-.ToggleNormalHard:
-	call .GetDifficultyMode
-	cp DIFFICULTY_HARD
-	jr z, .SetNormal
 
 .SetHard:
 	ld a, DIFFICULTY_HARD
@@ -356,19 +347,21 @@ Options_Difficulty:
 	ret
 
 .EasyModeUnlocked:
-	ld a, [wWhiteoutCount + 1]
-	and a
-	jr nz, .unlocked
-	ld a, [wWhiteoutCount]
-	cp EASY_MODE_UNLOCK_LOSSES
-	jr c, .locked
-.unlocked
+	; Easy mode is currently always available.
+	; The original loss-based unlock gate is left commented here in case it is reused.
+	; ld a, [wWhiteoutCount + 1]
+	; and a
+	; jr nz, .unlocked
+	; ld a, [wWhiteoutCount]
+	; cp EASY_MODE_UNLOCK_LOSSES
+	; jr c, .locked
+;.unlocked
 	scf
 	ret
 
-.locked
-	and a
-	ret
+;.locked
+;	and a
+;	ret
 
 .Hard:   db "Hard  @"
 .Normal: db "Normal@"

@@ -2233,6 +2233,13 @@ Pokedex_DrawSearchResultsScreenBG:
 	hlcoord 1, 12
 	ld de, wStringBuffer1
 	call PlaceString
+	hlcoord 1, 13
+	ld bc, 18
+	ld a, " "
+	call ByteFill
+	hlcoord 1, 14
+	ld de, .AreaTimeLabel
+	call PlaceString
 .print_count
 	ld de, wDexSearchResultCount
 	hlcoord 1, 16
@@ -2259,13 +2266,37 @@ Pokedex_DrawSearchResultsScreenBG:
 	next "    Found"
 	db   "@"
 
+.AreaTimeLabel:
+	db "  Time@"
+
+Pokedex_SearchResultsTime_Morn:
+	db "Morn@"
+
+Pokedex_SearchResultsTime_Day:
+	db "Day@"
+
+Pokedex_SearchResultsTime_Night:
+	db "Night@"
+
 Pokedex_PlaceSearchResultsTypeStrings:
 	hlcoord 0, 14
 	lb bc, 2, 9
 	call ClearBox
 	ld a, [wDexConvertedMonType]
 	cp DEXSEARCH_SOURCE_CURRENT_AREA
-	ret z
+	jr nz, .type_search
+	call Pokedex_SearchCurrentArea_GetGrassTimeOfDayIndex
+	hlcoord 1, 14
+	and a
+	ld de, Pokedex_SearchResultsTime_Morn
+	jr z, .place_area_time
+	cp DAY_F
+	ld de, Pokedex_SearchResultsTime_Day
+	jr z, .place_area_time
+	ld de, Pokedex_SearchResultsTime_Night
+.place_area_time
+	call PlaceString
+	ret
 
 .type_search
 	ld a, [wDexSearchMonType1]

@@ -260,7 +260,7 @@ EarlsPokemonAcademyYoungster1Text:
 
 EarlsPokemonAcademyGameboyKid1Text:
 	text "I play on"
-	cont "Easy mode."
+	line "Easy mode."
 	para "My enemies are"
 	line "weaker and I can"
 	cont "use items in"

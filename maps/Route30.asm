@@ -401,6 +401,7 @@ YoungsterMikeySeenText:
 	cont "#mon."
 
 	para "I'll show you."
+	done
 
 YoungsterMikeyBeatenText:
 	text "I need more"

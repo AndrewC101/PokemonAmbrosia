@@ -259,9 +259,8 @@ EarlsPokemonAcademyYoungster1Text:
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
-	text "I lost 3 matches"
-	line "and not I play on"
-	cont "easy mode."
+	text "I play on"
+	cont "Easy mode."
 	para "My enemies are"
 	line "weaker and I can"
 	cont "use items in"
@@ -276,7 +275,7 @@ EarlsPokemonAcademyGameboyKid1Text:
 
 EarlsPokemonAcademyGameboyKid2Text:
 	text "I only play on"
-	line "hard mode!"
+	line "Hard mode!"
 	para "My enemies are as"
 	line "strong as they can"
 	cont "be."

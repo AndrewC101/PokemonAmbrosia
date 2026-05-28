@@ -1478,12 +1478,14 @@ ScytherEvosAttacks:
 JynxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 9, LOVELY_KISS
+	db 1, CHARM
+	db 1, LOVELY_KISS
 	db 13, POWDER_SNOW
 	db 18, BODY_SLAM
-	db 22, HAIL
-	db 26, MEAN_LOOK
-	db 30, AURORA_BEAM
+	db 20, HAIL
+	db 24, MEAN_LOOK
+	db 28, BATON_PASS
+	db 32, AURORA_BEAM
 	db 36, PSYCHIC_M
 	db 40, FREEZE_DRY
 	db 45, PERISH_SONG

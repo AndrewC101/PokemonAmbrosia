@@ -2213,46 +2213,12 @@ JoyWaitAorBorDPADInfoTrainer:
 	ldh a, [hJoyPressed]
 	and D_RIGHT
 	call nz, InfoBoxRightPress
-	ldh a, [hJoyPressed]
+    ldh a, [hJoyPressed]
 	and D_LEFT
 	call nz, InfoBoxLeftPress
 
-    ; if up/down is not held, reset delay
-    ldh a, [hJoyDown]
-    and D_UP | D_DOWN
-    jr z, .reset_delay
-
-    ; countdown delay
-    ld hl, wChartScrollDelay
-    ld a, [hl]
-    and a
-    jr z, .check_dirs
-    dec [hl]
-    jr .after_dirs
-
-.check_dirs
-    ; reset delay (this is in terms of fps)
-    ld a, 5          ; switch pages every 5 frames
-    ld [hl], a
-
-    ; UP -> go right
-    ldh a, [hJoyDown]
-    bit D_UP_F, a
-    call nz, InfoBoxRightPress
-
-    ; DOWN -> go left
-    ldh a, [hJoyDown]
-    bit D_DOWN_F, a
-    call nz, InfoBoxLeftPress
-
-.after_dirs
     call UpdateTimeAndPals
     jr .loop
-
-.reset_delay
-    xor a
-    ld [wChartScrollDelay], a
-    jr .after_dirs
 
 WaitButtonInfoTrainer:
 	ldh a, [hOAMUpdate]

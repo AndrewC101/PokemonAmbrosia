@@ -288,16 +288,17 @@ BugCatcherWade1AfterText:
 	done
 
 Text_Route31SleepyMan:
-	text "I found a really"
-	line "strong #mon in"
-	cont "Dark Cave but"
-	cont "I don't have"
-	cont "enough Badges to"
-	cont "catch it!"
-
-	para "You need Badges"
-	line "to catch high"
-	cont "level #mon."
+	text "Your #dex can"
+	line "show you all the"
+	cont "#mon available"
+	cont "in the grass and"
+	cont "water in your"
+	cont "area."
+	para "Just open the"
+	line "#dex, press"
+	cont "start to go to"
+	cont "search, then use"
+	cont "Area Search."
 	done
 
 Route31YoungsterText:

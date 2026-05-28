@@ -280,7 +280,7 @@ PostWallaceMumText:
 	line "you <PLAYER>."
 	para "You are our child."
 	para "Our Champion."
-	para "Our HERO."
+	para "Our Hero."
 	para "You will do great"
 	line "things and we will"
 	cont "always love you."

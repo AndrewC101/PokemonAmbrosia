@@ -6,7 +6,7 @@ AnthonyAskNumber1Text:
 	line "what, give you"
 	cont "your number."
 	para "Not anyone can"
-	line "become a true CHAD"
+	line "become a true Chad"
 	cont "but with my expert"
 	cont "tutelage you just"
 	cont "may."

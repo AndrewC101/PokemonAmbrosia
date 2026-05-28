@@ -1683,14 +1683,40 @@ AI_Smart_Ohko:
 	ret
 
 AI_Smart_StaticDamage:
-; don't use on Uber Pokemon as they are immune
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
-   	ret nc
+; Never pick type-immune fixed-damage moves into targets they always fail on.
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp NIGHT_SHADE
+	jr nz, .check_seismic_toss
+	ld a, [wBattleMonType1]
+	cp NORMAL
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp NORMAL
+	jr z, .discourage
+	jr .check_uber
 
-   	inc [hl]
-   	inc [hl]
-   	ret
+.check_seismic_toss
+	cp SEISMIC_TOSS
+	jr nz, .check_uber
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .discourage
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jr z, .discourage
+
+.check_uber
+; don't use on Uber Pokemon as they are immune
+	ld a, [wBattleMonSpecies]
+	call DoesPokemonHaveUberImmunity
+	ret nc
+	jr .discourage
+
+.discourage
+    inc [hl]
+	inc [hl]
+	inc [hl]
+	ret
 
 AI_Smart_SpDefenseUp2:
 	call ShouldAIBoost

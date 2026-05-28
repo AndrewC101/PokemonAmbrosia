@@ -920,6 +920,10 @@ MoveInfoBox:
 	ld [wCriticalHit], a
 	ld [wHalfDamage], a
 
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_MAGNITUDE
+	jr z, .print_magnitude_damage
+
 	callfar PlayerAttackDamage
 	callfar BattleCommand_DamageCalc
 	callfar BattleCommand_Stab
@@ -938,6 +942,32 @@ MoveInfoBox:
 	ld a, [wCurDamage + 1]
 	ld e, a
 
+	jr .compare_damage_range
+
+.print_magnitude_damage
+	; Magnitude's preview needs the true power extremes, not the move table's base power.
+	ld a, 150
+	ld [wPlayerMoveStruct + MOVE_POWER], a
+	call .LoadVariableDamagePreview
+
+	ld a, [wCurDamage]
+	ld h, a
+	ld a, [wCurDamage + 1]
+	ld l, a
+	push hl
+
+	ld a, 10
+	ld [wPlayerMoveStruct + MOVE_POWER], a
+	call .LoadVariableDamagePreview
+	ld b, 85 percent + 1
+	callfar ApplyDamageVariationMultiplierToCurDamage
+	call .CapDisplayDamage
+	ld a, [wCurDamage]
+	ld d, a
+	ld a, [wCurDamage + 1]
+	ld e, a
+
+.compare_damage_range
 	pop hl
 	ld a, h
 	cp d
@@ -1050,6 +1080,12 @@ MoveInfoBox:
 	ld [wCurDamage + 1], a
 	xor a
 	ld [wCurDamage], a
+	ret
+
+.LoadVariableDamagePreview
+	callfar PlayerAttackDamage
+	callfar BattleCommand_DamageCalc
+	callfar BattleCommand_Stab
 	ret
 
 .CapDisplayDamage

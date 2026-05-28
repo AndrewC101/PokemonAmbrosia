@@ -1321,17 +1321,17 @@ Pokedex_UpdateSearchScreen:
 
 .ArrowCursorData:
 	db PAD_UP | PAD_DOWN, 5
-	dwcoord 2, 4  ; TYPE 1
-	dwcoord 2, 6  ; TYPE 2
-	dwcoord 2, 11 ; BEGIN SEARCH
-	dwcoord 2, 13 ; AREA SEARCH
-	dwcoord 2, 15 ; CANCEL
+	dwcoord 2, 4  ; AREA SEARCH
+	dwcoord 2, 7  ; TYPE 1
+	dwcoord 2, 9  ; TYPE 2
+	dwcoord 2, 12 ; TYPE SEARCH
+	dwcoord 2, 14 ; CANCEL
 
 .MenuActionJumptable:
+	dw .MenuAction_CurrentAreaSearch
 	dw .MenuAction_MonSearchType
 	dw .MenuAction_MonSearchType
 	dw .MenuAction_BeginSearch
-	dw .MenuAction_CurrentAreaSearch
 	dw .MenuAction_Cancel
 
 .MenuAction_MonSearchType:
@@ -2177,17 +2177,23 @@ Pokedex_DrawSearchScreenBG:
 	hlcoord 0, 1
 	ld de, .Title
 	call Pokedex_PlaceString
-	hlcoord 8, 4
+	hlcoord 8, 7
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
-	hlcoord 8, 6
+	hlcoord 8, 9
 	ld de, .TypeLeftRightArrows
 	call Pokedex_PlaceString
-	hlcoord 3, 4
+	hlcoord 3, 7
 	ld de, .Types
 	call PlaceString
-	hlcoord 3, 11
-	ld de, .Menu
+	hlcoord 3, 4
+	ld de, .AreaSearch
+	call PlaceString
+	hlcoord 3, 12
+	ld de, .TypeSearch
+	call PlaceString
+	hlcoord 3, 14
+	ld de, .Cancel
 	call PlaceString
 	ret
 
@@ -2202,11 +2208,14 @@ Pokedex_DrawSearchScreenBG:
 	next "Type2"
 	db   "@"
 
-.Menu:
-	db   "Type Search"
-	next "Area Search"
-	next "Cancel"
-	db   "@"
+.AreaSearch:
+	db "Area Search@"
+
+.TypeSearch:
+	db "Type Search@"
+
+.Cancel:
+	db "Cancel@"
 
 Pokedex_DrawSearchResultsScreenBG:
 	call Pokedex_FillBackgroundColor2
@@ -2795,7 +2804,9 @@ String_ChangingModesPleaseWait:
 
 Pokedex_UpdateSearchMonType:
 	ld a, [wDexArrowCursorPosIndex]
-	cp 2
+	cp 1
+	jr c, .no_change
+	cp 3
 	jr nc, .no_change
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -2810,7 +2821,7 @@ Pokedex_UpdateSearchMonType:
 
 Pokedex_PrevSearchMonType:
 	ld a, [wDexArrowCursorPosIndex]
-	and a
+	cp 1
 	jr nz, .type2
 
 	ld hl, wDexSearchMonType1
@@ -2837,7 +2848,7 @@ Pokedex_PrevSearchMonType:
 
 Pokedex_NextSearchMonType:
 	ld a, [wDexArrowCursorPosIndex]
-	and a
+	cp 1
 	jr nz, .type2
 
 	ld hl, wDexSearchMonType1
@@ -2867,15 +2878,15 @@ Pokedex_NextSearchMonType:
 Pokedex_PlaceSearchScreenTypeStrings:
 	xor a
 	ldh [hBGMapMode], a
-	hlcoord 9, 3
+	hlcoord 9, 6
 	lb bc, 4, 8
 	ld a, ' '
 	call Pokedex_FillBox
 	ld a, [wDexSearchMonType1]
-	hlcoord 9, 4
+	hlcoord 9, 7
 	call Pokedex_PlaceTypeString
 	ld a, [wDexSearchMonType2]
-	hlcoord 9, 6
+	hlcoord 9, 9
 	call Pokedex_PlaceTypeString
 	ld a, $1
 	ldh [hBGMapMode], a

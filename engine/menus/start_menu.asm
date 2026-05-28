@@ -30,12 +30,14 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
+	call .DrawDifficultyTextBox
 	call .DrawMenuClockTextBox
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatusBox
 	call SafeUpdateSprites
 	call HDMATransferTilemapAndAttrmap_Menu
 	farcall LoadFonts_NoOAMUpdate
+	call .PrintDifficulty
 	call .DrawBugContestStatus
 	call UpdateTimePals
 	jr .Select
@@ -46,6 +48,7 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
+	call .PrintDifficulty
 
 .Select:
 	call .GetInput
@@ -148,8 +151,10 @@ StartMenu::
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
+	call .DrawDifficultyTextBox
 	call .DrawMenuClockTextBox
 	call DrawVariableLengthMenuBox
+	call .PrintDifficulty
 	call .DrawBugContestStatus
 	call UpdateSprites
 	call GSReloadPalettes
@@ -417,6 +422,56 @@ endr
 	hlcoord 0, 12
 	lb bc, 4, 9
 	jp Textbox
+
+.DrawDifficultyTextBox:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ret nz
+
+	hlcoord 2, 0
+	lb bc, 2, 6
+	call ClearBox
+	hlcoord 2, 0
+	lb bc, 2, 6
+	jp Textbox
+
+.PrintDifficulty:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ret nz
+
+	hlcoord 3, 1
+	ld de, .ModeLabel
+	call PlaceString
+
+	ld a, [wDifficulty]
+	ld de, .Normal
+	cp DIFFICULTY_HARD
+	jr nz, .check_easy
+	ld de, .Hard
+	jr .place_mode
+
+.check_easy
+	cp DIFFICULTY_EASY
+	jr nz, .place_mode
+	ld de, .Easy
+
+.place_mode
+	hlcoord 3, 2
+	call PlaceString
+	ret
+
+.ModeLabel:
+	db "Mode:@"
+
+.Hard:
+	db "Hard@"
+
+.Normal:
+	db "Normal@"
+
+.Easy:
+	db "Easy@"
 
 .DrawBugContestStatusBox:
 	ld hl, wStatusFlags2

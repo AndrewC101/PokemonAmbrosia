@@ -305,6 +305,15 @@ ReadTrainerPartyPieces:
 	cp ROLE_PLAYER_SHINY
 	jr z, .check_stat_exp_battle_type
 	push de
+	ld de, EVENT_BEAT_RED
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	pop de
+	and a
+	jp nz, .highStatExp
+
+	push de
 	ld de, EVENT_BEAT_CLAIR
 	ld b, CHECK_FLAG
 	call EventFlagAction

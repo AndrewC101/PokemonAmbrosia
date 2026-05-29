@@ -2822,11 +2822,6 @@ OpenJukebox:
 	call WaitBGMap
 	ld hl, .ExitScript
 	call QueueScript
-	ld a, [wUnusedScriptByte]
-	and a
-	ret z
-	; Only restart the area's BGM if the player actually previewed a song.
-	call RestartMapMusic
 	ret
 
 .PreviousSong:

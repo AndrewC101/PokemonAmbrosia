@@ -32,6 +32,8 @@ ApplyEasyModeLevelReduction:
 	ret nz
 
 	ld a, b
+	cp 3
+	ret c
 	cp 41
 	jr c, .subtract_two
 	cp 91

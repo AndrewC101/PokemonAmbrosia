@@ -427,7 +427,7 @@ AI_Smart_Switch:
 ; switch if enemy accuracy at -2 or lower
 ; switch if enemy attack at -2 or lower and has unboosted special attack
 ; switch if enemy is cursed
-; 50% chance to switch if enemy afflicted with toxic
+; toxic only influences switching once the counter has ramped past 3 turns
 ; 50% chance to switch if enemy afflicted with leech seed
 
 ; possibly switch if enemy is setup bait
@@ -516,6 +516,9 @@ AI_Smart_Switch:
     ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
     jr z, .checkLeechSeed
+	ld a, [wEnemyToxicCount]
+	cp 4
+	jr c, .checkLeechSeed
 	call AICheckEnemyHalfHP
 	jr nc, .checkSetupAndSwitchIfWeCantKO
 	call AI_50_50
@@ -1450,7 +1453,7 @@ AI_Smart_Moonlight:
     jr z, .restHeal
     ld a, $0
     ld [wEnemyIsSwitching], a
-    jr .nonRestHeal
+    jp .healBelowHalf
 
 .restHeal
 ; for rest don't heal if player can 3hko from max hp, unless AI also knows sleep talk
@@ -4013,7 +4016,16 @@ ShouldAIBoost:
     call DoesEnemyHaveChoiceItem
     jp c, .dontBoost
 
+; don't boost once Toxic has started ramping.
+; Count 4 means the AI has already taken three Toxic ticks.
+    call IsAIToxified
+    jr nc, .checkSuckerPunch
+    ld a, [wEnemyToxicCount]
+    cp 4
+    jp nc, .dontBoost
+
 ; if players last move was sucker punch - 50% chance to boost
+.checkSuckerPunch
     ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
     ld a, [wPlayerMoveStruct + MOVE_EFFECT]

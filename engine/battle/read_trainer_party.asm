@@ -38,6 +38,14 @@ ApplyEasyModeLevelReduction:
 	jr c, .subtract_two
 	cp 91
 	jr c, .subtract_five
+	cp 101
+	jr c, .subtract_ten
+	sub 20
+	jr nc, .store_level
+	ld a, 1
+	jr .store_level
+
+.subtract_ten
 	sub 10
 	jr nc, .store_level
 	ld a, 1
@@ -304,6 +312,10 @@ ReadTrainerPartyPieces:
 	jr z, .check_stat_exp_battle_type
 	cp ROLE_PLAYER_SHINY
 	jr z, .check_stat_exp_battle_type
+	; Easy mode keys max stat exp off the final adjusted battle level.
+	ld a, [wCurPartyLevel]
+	cp 91
+	jp nc, .fullStatExp
 	push de
 	ld de, EVENT_BEAT_RED
 	ld b, CHECK_FLAG

@@ -1584,22 +1584,36 @@ StatsInfoBoxLoop:
 	push de
 	push hl
 	ld a, c
+	cp 4
+	jr z, .effective_attack
 	cp 6
 	jr z, .effective_defense
 	cp 8
 	jr z, .effective_speed
+	cp 10
+	jr z, .effective_spattack
 	cp 12
 	jr z, .effective_spdef
-	jr .regular_stat
+	jp .regular_stat
+.effective_attack
+	ld a, b
+	cp 10
+	jr c, .player_attack
+	call LoadEnemyEffectiveAttack
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.player_attack
+	call LoadPlayerEffectiveAttack
+	jr .player_effective_stat
 .effective_defense
 	ld a, b
 	cp 10
 	jr c, .player_defense
-	farcall LoadEnemyEffectiveDefense
+	call LoadEnemyEffectiveDefense
 	ld de, hEnemyMonSpeed
 	jr .got_stat_ptr
 .player_defense
-	farcall LoadPlayerEffectiveDefense
+	call LoadPlayerEffectiveDefense
 	jr .player_effective_stat
 .effective_speed
 	ld a, b
@@ -1611,15 +1625,25 @@ StatsInfoBoxLoop:
 .player_speed
 	farcall LoadPlayerEffectiveSpeed
 	jr .player_effective_stat
+.effective_spattack
+	ld a, b
+	cp 10
+	jr c, .player_spattack
+	call LoadEnemyEffectiveSpAtk
+	ld de, hEnemyMonSpeed
+	jr .got_stat_ptr
+.player_spattack
+	call LoadPlayerEffectiveSpAtk
+	jr .player_effective_stat
 .effective_spdef
 	ld a, b
 	cp 10
 	jr c, .player_spdef
-	farcall LoadEnemyEffectiveSpDef
+	call LoadEnemyEffectiveSpDef
 	ld de, hEnemyMonSpeed
 	jr .got_stat_ptr
 .player_spdef
-	farcall LoadPlayerEffectiveSpDef
+	call LoadPlayerEffectiveSpDef
 .player_effective_stat
 	ldh a, [hMultiplicand + 1]
 	ldh [hEnemyMonSpeed + 0], a
@@ -1649,6 +1673,388 @@ StatsInfoBoxLoop:
 	jp StatsInfoBoxLoop
 .finish
 	pop hl
+	ret
+
+LoadPlayerEffectiveAttack:
+	push bc
+	ld hl, wBattleMonAttack
+	ld de, hMultiplicand + 1
+	ld a, [wBattleMonItem]
+	ld b, a
+	ld a, [wBattleMonStatus]
+	ld c, a
+	ld a, [wBattleMonSpecies]
+	call LoadEffectiveAttack
+	pop bc
+	ret
+
+LoadEnemyEffectiveAttack:
+	push bc
+	ld hl, wEnemyMonAttack
+	ld de, hEnemyMonSpeed
+	ld a, [wEnemyMonItem]
+	ld b, a
+	ld a, [wEnemyMonStatus]
+	ld c, a
+	ld a, [wEnemyMonSpecies]
+	call LoadEffectiveAttack
+	pop bc
+	ret
+
+LoadPlayerEffectiveSpAtk:
+	push bc
+	ld hl, wBattleMonSpclAtk
+	ld de, hMultiplicand + 1
+	ld a, [wBattleMonItem]
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	call LoadEffectiveSpecialAttack
+	pop bc
+	ret
+
+LoadEnemyEffectiveSpAtk:
+	push bc
+	ld hl, wEnemyMonSpclAtk
+	ld de, hEnemyMonSpeed
+	ld a, [wEnemyMonItem]
+	ld b, a
+	ld a, [wEnemyMonSpecies]
+	call LoadEffectiveSpecialAttack
+	pop bc
+	ret
+
+LoadEffectiveAttack:
+	; Copy the live attack stat into scratch space, then layer any display-only
+	; attack modifiers that are applied later in damage, such as Guts.
+	push bc
+	push af
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	pop af
+	push af
+	call DisplayMonHasGuts
+	jr nc, .check_species_boost
+	ld a, c
+	and a
+	jr z, .check_species_boost
+	push bc
+	call ApplyFiftyPercentStatBoost
+	pop bc
+
+.check_species_boost
+	pop af
+	cp MAWILE
+	jr z, .double_attack
+	cp AZUMARILL
+	jr z, .double_attack
+	cp PIKACHU
+	jr nz, .check_choice_band
+	ld a, b
+	cp LIGHT_BALL
+	jr nz, .check_choice_band
+
+.double_attack
+	call ApplyDoubleStatBoost
+.check_choice_band
+	ld a, b
+	cp CHOICE_BAND
+	jr nz, .done
+	call ApplyFiftyPercentStatBoost
+.done
+	pop bc
+	ret
+
+LoadEffectiveSpecialAttack:
+	; Mirror special-attack boosts that live outside the stored battle stat.
+	push bc
+	ld c, a
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	ld a, b
+	cp LIGHT_BALL
+	jr nz, .check_choice_specs
+	ld a, c
+	cp PIKACHU
+	jr nz, .check_choice_specs
+	call ApplyDoubleStatBoost
+.check_choice_specs
+	ld a, b
+	cp CHOICE_SPECS
+	jr nz, .done
+	call ApplyFiftyPercentStatBoost
+.done
+	pop bc
+	ret
+
+ApplyDoubleStatBoost:
+	ld a, [de]
+	add a
+	ld [de], a
+	dec de
+	ld a, [de]
+	adc a
+	ld [de], a
+	inc de
+	ld a, [de]
+	ld c, a
+	dec de
+	ld a, [de]
+	cp HIGH(MAX_STAT_VALUE)
+	jr c, .done
+	jr nz, .cap
+	ld a, c
+	cp LOW(MAX_STAT_VALUE)
+	jr c, .done
+.cap
+	ld a, HIGH(MAX_STAT_VALUE)
+	ld [de], a
+	inc de
+	ld a, LOW(MAX_STAT_VALUE)
+	ld [de], a
+.done
+	ret
+
+LoadPlayerEffectiveDefense:
+	push bc
+	ld hl, wBattleMonDefense
+	ld de, hMultiplicand + 1
+	ld bc, wBattleMonType1
+	ld a, DEFENSE
+	call LoadEffectiveWeatherDefenseStat
+	ld a, [wBattleMonItem]
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	ld c, DEFENSE
+	call ApplyHeldDefenseDisplayBoosts
+	pop bc
+	ret
+
+LoadEnemyEffectiveDefense:
+	push bc
+	ld hl, wEnemyMonDefense
+	ld de, hEnemyMonSpeed
+	ld bc, wEnemyMonType1
+	ld a, DEFENSE
+	call LoadEffectiveWeatherDefenseStat
+	ld a, [wEnemyMonItem]
+	ld b, a
+	ld a, [wEnemyMonSpecies]
+	ld c, DEFENSE
+	call ApplyHeldDefenseDisplayBoosts
+	pop bc
+	ret
+
+LoadPlayerEffectiveSpDef:
+	push bc
+	ld hl, wBattleMonSpclDef
+	ld de, hMultiplicand + 1
+	ld bc, wBattleMonType1
+	ld a, SP_DEFENSE
+	call LoadEffectiveWeatherDefenseStat
+	ld a, [wBattleMonItem]
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	ld c, SP_DEFENSE
+	call ApplyHeldDefenseDisplayBoosts
+	pop bc
+	ret
+
+LoadEnemyEffectiveSpDef:
+	push bc
+	ld hl, wEnemyMonSpclDef
+	ld de, hEnemyMonSpeed
+	ld bc, wEnemyMonType1
+	ld a, SP_DEFENSE
+	call LoadEffectiveWeatherDefenseStat
+	ld a, [wEnemyMonItem]
+	ld b, a
+	ld a, [wEnemyMonSpecies]
+	ld c, SP_DEFENSE
+	call ApplyHeldDefenseDisplayBoosts
+	pop bc
+	ret
+
+LoadEffectiveWeatherDefenseStat:
+	push af
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	pop af
+	call DoesMonGetWeatherDefenseBoost
+	jr nc, .done
+	call ApplyFiftyPercentStatBoost
+.done
+	ret
+
+ApplyHeldDefenseDisplayBoosts:
+	; Mirror held-item defense boosts that are applied in the damage path.
+	push af
+	push bc
+	ld a, c
+	cp SP_DEFENSE
+	jr nz, .check_eviolite
+	ld a, b
+	cp ASSAULT_VEST
+	jr nz, .check_eviolite
+	call ApplyFiftyPercentStatBoost
+
+.check_eviolite
+	pop bc
+	pop af
+	push bc
+	push af
+	call SpeciesHasDisplayEvolutions
+	jr nc, .done
+	ld a, b
+	cp EVIOLITE
+	jr nz, .done
+	call ApplyFiftyPercentStatBoost
+
+.done
+	pop af
+	pop bc
+	ret
+
+SpeciesHasDisplayEvolutions:
+	; Return carry if species a has at least one evolution.
+	dec a
+	push hl
+	push bc
+	ld c, a
+	ld b, 0
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarWord
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	and a
+	pop bc
+	pop hl
+	jr z, .no
+	scf
+	ret
+
+.no
+	and a
+	ret
+
+DisplayMonHasGuts:
+	; Return carry if species a is in the canonical Guts ability table.
+	push hl
+	push de
+	push bc
+	ld c, a
+	ld hl, GutsPokemon
+.loop
+	ld a, BANK(GutsPokemon)
+	call GetFarByte
+	cp -1
+	jr z, .no
+	cp c
+	jr z, .yes
+	inc hl
+	jr .loop
+
+.no
+	pop bc
+	pop de
+	pop hl
+	and a
+	ret
+
+.yes
+	pop bc
+	pop de
+	pop hl
+	scf
+	ret
+
+DoesMonGetWeatherDefenseBoost:
+	push hl
+	push de
+	push bc
+	cp DEFENSE
+	jr z, .defense
+	cp SP_DEFENSE
+	jr z, .sp_defense
+	jr .no
+
+.defense
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr nz, .no
+	ld a, [bc]
+	cp ICE
+	jr z, .yes
+	inc bc
+	ld a, [bc]
+	cp ICE
+	jr z, .yes
+	jr .no
+
+.sp_defense
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr nz, .no
+	ld a, [bc]
+	cp ROCK
+	jr z, .yes
+	inc bc
+	ld a, [bc]
+	cp ROCK
+	jr z, .yes
+
+.no
+	pop bc
+	pop de
+	pop hl
+	and a
+	ret
+
+.yes
+	pop bc
+	pop de
+	pop hl
+	scf
+	ret
+
+ApplyFiftyPercentStatBoost:
+	ld a, [de]
+	ld c, a
+	dec de
+	ld a, [de]
+	ld b, a
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	add hl, bc
+	ld a, h
+	cp HIGH(MAX_STAT_VALUE)
+	jr c, .store
+	jr nz, .cap
+	ld a, l
+	cp LOW(MAX_STAT_VALUE)
+	jr c, .store
+.cap
+	ld h, HIGH(MAX_STAT_VALUE)
+	ld l, LOW(MAX_STAT_VALUE)
+.store
+	ld a, h
+	ld [de], a
+	inc de
+	ld a, l
+	ld [de], a
 	ret
 
 FieldInfoBox:

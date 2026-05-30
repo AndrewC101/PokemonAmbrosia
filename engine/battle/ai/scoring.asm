@@ -470,7 +470,7 @@ AI_Smart_Switch:
 ; switch if enemy accuracy at -2 or lower
     ld a, [wEnemyAccLevel]
 	cp BASE_STAT_LEVEL - 1
-	jr c, .switch
+	jp c, .switch
 
 ; switch if the enemy's role-appropriate offense is at -2 or lower
 ; don't do this if either offense is currently boosted or the mon is mixed

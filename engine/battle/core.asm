@@ -4153,6 +4153,10 @@ endr
     ld [wEnemyTauntCount], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
+	ld hl, wEnemyMonStatus
+	ld de, wEnemySubStatus5
+	ld bc, wEnemyToxicCount
+	call RestorePersistedToxicSubstatus
 	ret
 
 ResetEnemyStatLevels:
@@ -4462,6 +4466,27 @@ endr
 	ld [wPlayerTauntCount], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
+	ld hl, wBattleMonStatus
+	ld de, wPlayerSubStatus5
+	ld bc, wPlayerToxicCount
+	call RestorePersistedToxicSubstatus
+	ret
+
+RestorePersistedToxicSubstatus:
+	; hl = active mon status byte, de = side's substatus5, bc = toxic counter.
+	; The battle struct's second status byte mirrors the party struct's
+	; otherwise-unused byte and persists whether the poison is Toxic or normal.
+	ld a, [hl]
+	bit PSN, a
+	ret z
+	inc hl
+	bit 0, [hl]
+	ret z
+	ld h, d
+	ld l, e
+	set SUBSTATUS_TOXIC, [hl]
+	xor a
+	ld [bc], a
 	ret
 
 BreakAttraction:
@@ -4639,18 +4664,31 @@ SpikesDamage:
 ; Toxic Spikes can't poison a status immune Pokemon
     call GetCurrentMonCore
     cp ARCEUS
-    jr z, .pop
+    jp z, .pop
     cp SYLVEON
-    jr z, .pop
+    jp z, .pop
 
 ; Toxic Spikes can't poison a Pokemon that already has a status condition
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	and a
-	jr nz, .pop
+	jp nz, .pop
 
-; Apply poison
+; Apply Toxic poison and persist that this poison should stay toxic on later switch-ins.
 	set PSN, [hl]
+	inc hl
+	set 0, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	set SUBSTATUS_TOXIC, [hl]
+	ld de, wPlayerToxicCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .gotToxicCounter
+	ld de, wEnemyToxicCount
+.gotToxicCounter
+	xor a
+	ld [de], a
 	ld de, ANIM_PSN
 	call Call_PlayBattleAnim
 	call RefreshBattleHuds
@@ -4658,7 +4696,7 @@ SpikesDamage:
 	call CheckIfFastBattlesIsOn
 	jr nz, .skipToxicSpikesText
 
-	ld hl, WasPoisonedText
+	ld hl, BadlyPoisonedText
 	call SwitchTurnCore
 	call StdBattleTextbox
 	call SwitchTurnCore
@@ -5385,6 +5423,7 @@ UseHeldStatusHealingItem:
 	and b
 	ret z
 	xor a
+	ld [hli], a
 	ld [hl], a
 	push bc
 	call UpdateOpponentInParty

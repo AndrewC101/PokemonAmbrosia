@@ -4307,6 +4307,21 @@ PoisonOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set PSN, [hl]
+	push hl
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVar
+	pop hl
+	inc hl
+	; Persist whether this poison was Toxic in the battle/party status shadow byte.
+	bit SUBSTATUS_TOXIC, a
+	jr z, .clear_toxic_flag
+	set 0, [hl]
+	jr .update_party
+
+.clear_toxic_flag
+	res 0, [hl]
+
+.update_party
 	jp UpdateOpponentInParty
 
 BattleCommand_EatDream:
@@ -6757,6 +6772,9 @@ BattleCommand_Heal:
 	ld a, [hl]
 	and a
 	ld [hl], REST_SLEEP_TURNS + 1
+	inc hl
+	xor a
+	ld [hld], a
 	ld hl, WentToSleepText
 	jr z, .no_status_to_heal
 	ld hl, RestedText

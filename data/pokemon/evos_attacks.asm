@@ -30,8 +30,8 @@ BulbasaurEvosAttacks:
 	db 30, CROSS_POISON
 	db 32, SLUDGE_BOMB
 	db 36, GIGA_DRAIN
-	db 40, TOXIC_SPIKES
-	db 45, SYNTHESIS
+	db 40, SYNTHESIS
+	db 45, TOXIC_SPIKES
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -50,8 +50,8 @@ VenusaurEvosAttacks:
 	db 30, CROSS_POISON
 	db 32, SLUDGE_BOMB
 	db 36, GIGA_DRAIN
-	db 40, TOXIC_SPIKES
-	db 45, SYNTHESIS
+	db 40, SYNTHESIS
+	db 45, TOXIC_SPIKES
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -139,12 +139,13 @@ VenipedeEvosAttacks:
 	db 1, POISON_STING
 	db 10, LEECH_LIFE
 	db 15, BITE
-	db 21, TOXIC_SPIKES
+	db 21, SLUDGE
 	db 23, CRUNCH
-	db 26, BUG_BUZZ
-	db 30, CROSS_POISON
-	db 35, SLUDGE_BOMB
-	db 40, MEGAHORN
+	db 30, TOXIC_SPIKES
+	db 32, BUG_BUZZ
+	db 35, CROSS_POISON
+	db 40, SLUDGE_BOMB
+	db 45, MEGAHORN
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
@@ -155,12 +156,13 @@ ScolipedeEvosAttacks:
 	db 1, POISON_STING
 	db 10, LEECH_LIFE
 	db 15, BITE
-	db 20, TOXIC_SPIKES
+	db 21, SLUDGE
 	db 23, CRUNCH
-	db 26, BUG_BUZZ
-	db 30, CROSS_POISON
-	db 35, SLUDGE_BOMB
-	db 40, MEGAHORN
+	db 30, TOXIC_SPIKES
+	db 32, BUG_BUZZ
+	db 35, CROSS_POISON
+	db 40, SLUDGE_BOMB
+	db 45, MEGAHORN
 	db 50, BATON_PASS
 	db 0 ; no more level-up moves
 
@@ -398,9 +400,9 @@ NidoranFEvosAttacks:
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 17, SLUDGE
-	db 23, TOXIC_SPIKES
-	db 25, STEALTH_ROCK
-	db 30, BODY_SLAM
+	db 20, TOXIC_SPIKES
+	db 25, BODY_SLAM
+	db 30, STEALTH_ROCK
 	db 33, LOVELY_KISS
 	db 35, SLUDGE_BOMB
 	db 40, EARTH_POWER
@@ -416,9 +418,9 @@ NidoqueenEvosAttacks:
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 16, SLUDGE
-	db 23, TOXIC_SPIKES
-	db 25, STEALTH_ROCK
-	db 30, BODY_SLAM
+	db 20, TOXIC_SPIKES
+	db 25, BODY_SLAM
+	db 30, STEALTH_ROCK
 	db 33, LOVELY_KISS
 	db 35, SLUDGE_BOMB
 	db 40, EARTH_POWER
@@ -432,9 +434,9 @@ NidoranMEvosAttacks:
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 17, SLUDGE
-	db 23, STEALTH_ROCK
-	db 25, TOXIC_SPIKES
-	db 30, THRASH
+	db 20, STEALTH_ROCK
+	db 25, THRASH
+	db 30, TOXIC_SPIKES
 	db 33, LOVELY_KISS
 	db 35, CROSS_POISON
 	db 40, EARTHQUAKE
@@ -450,9 +452,9 @@ NidokingEvosAttacks:
 	db 10, DOUBLE_KICK
 	db 12, POISON_STING
 	db 16, SLUDGE
-	db 23, STEALTH_ROCK
-	db 25, TOXIC_SPIKES
-	db 30, THRASH
+	db 20, STEALTH_ROCK
+	db 25, THRASH
+	db 30, TOXIC_SPIKES
 	db 33, LOVELY_KISS
 	db 35, CROSS_POISON
 	db 40, EARTHQUAKE
@@ -899,13 +901,14 @@ TentacoolEvosAttacks:
 	db EVOLVE_LEVEL, 30, TENTACRUEL
 TentacruelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TOXIC_SPIKES
+	db 1, POISON_STING
 	db 15, WRAP
 	db 20, BUBBLEBEAM
+	db 23, RAPID_SPIN
 	db 25, SLUDGE
-	db 30, CROSS_POISON
-	db 35, SLUDGE_BOMB
-	db 38, RAPID_SPIN
+	db 30, TOXIC_SPIKES
+	db 33, CROSS_POISON
+	db 36, SLUDGE_BOMB
 	db 40, SCALD
 	db 45, RECOVER
 	db 50, HYDRO_PUMP
@@ -1093,10 +1096,10 @@ GliscorEvosAttacks:
 	db 18, MAGNITUDE
 	db 24, NIGHT_SLASH
 	db 28, SLASH
-	db 32, TOXIC_SPIKES
+	db 32, STEALTH_ROCK
 	db 37, X_SCISSOR
-	db 40, STEALTH_ROCK
-	db 44, EARTHQUAKE
+	db 40, EARTHQUAKE
+	db 45, TOXIC_SPIKES
 	db 50, SWORDS_DANCE
 	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
@@ -1312,8 +1315,8 @@ WeezingEvosAttacks:
 	db 24, WILL_O_WISP
 	db 28, HAZE
 	db 32, SLUDGE_BOMB
-	db 35, TOXIC_SPIKES
-	db 40, DESTINY_BOND
+	db 35, DESTINY_BOND
+	db 40, TOXIC_SPIKES
 	db 45, NASTY_PLOT
 	db 50, EXPLOSION
 	db 0 ; no more level-up moves

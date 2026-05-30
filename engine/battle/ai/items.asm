@@ -789,8 +789,10 @@ AI_HealStatus:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	xor a
+	ld [hli], a
 	ld [hl], a
 	ld [wEnemyMonStatus], a
+	ld [wEnemyMonStatus + 1], a
 	; Bug: this should reset SUBSTATUS_NIGHTMARE
 	; Uncomment the 2 lines below to fix
 	ld hl, wEnemySubStatus1

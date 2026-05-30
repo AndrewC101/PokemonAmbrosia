@@ -4,6 +4,9 @@ BattleCommand_HealBell:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_TOXIC, [hl]
 	ld de, wPartyMon1Status
 	ldh a, [hBattleTurn]
 	and a
@@ -13,12 +16,14 @@ BattleCommand_HealBell:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVarAddr
 	xor a
+	ld [hli], a
 	ld [hl], a
 	ld h, d
 	ld l, e
-	ld bc, PARTYMON_STRUCT_LENGTH
+	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, PARTY_LENGTH
 .loop
+	ld [hli], a
 	ld [hl], a
 	add hl, bc
 	dec d

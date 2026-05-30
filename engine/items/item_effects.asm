@@ -1835,6 +1835,7 @@ HealStatus:
 	ret nc
 	xor a
 	ld [wBattleMonStatus], a
+	ld [wBattleMonStatus + 1], a
 	ld hl, wPlayerSubStatus5
 	res SUBSTATUS_TOXIC, [hl]
 	ld hl, wPlayerSubStatus1

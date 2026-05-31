@@ -332,10 +332,7 @@ Pokedex_InitMainScreen:
 	call WaitBGMap
 
 	call Pokedex_ResetBGMapMode
-	ld a, -1
-	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_UpdateCursorOAM
 	farcall DrawPokedexListWindow
 	hlcoord 0, 17
@@ -367,6 +364,7 @@ Pokedex_UpdateMainScreen:
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_SetBGMapMode3
 	call Pokedex_ResetBGMapMode
 	ret
@@ -2521,7 +2519,7 @@ Pokedex_PrintListing:
 	assert wTempSpecies == wNamedObjectIndex
 	push de
 	push hl
-	call .PrintEntry
+	call Pokedex_PrintListing_PrintEntry
 	pop hl
 	ld de, 2 * SCREEN_WIDTH
 	add hl, de
@@ -2533,7 +2531,21 @@ Pokedex_PrintListing:
 	call Pokedex_LoadSelectedMonTiles
 	ret
 
-.PrintEntry:
+Pokedex_LoadMainScreenPreviewPalette:
+; Refresh the main-list preview box palette for the selected entry.
+; Unseen entries keep the question-mark palette by using species -1.
+	call Pokedex_GetSelectedMon
+	call Pokedex_CheckSeen
+	ld a, -1
+	jr z, .got_species
+	ld a, [wTempSpecies]
+.got_species
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	ret
+
+Pokedex_PrintListing_PrintEntry:
 ; Prints one entry in the list of Pokémon on the main Pokédex screen.
 	and a
 	ret z

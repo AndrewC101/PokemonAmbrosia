@@ -393,7 +393,7 @@ ENDC
 	call WipeAttrmap
 	hlcoord 1, 1, wAttrmap
 	lb bc, 7, 7
-	ld a, $1 ; green question mark palette
+	ld a, $1 ; preview mon / question-mark palette
 	call FillBoxCGB
 
 IF USE_GEN3_STYLE_TYPE_GFX == TRUE

@@ -542,6 +542,7 @@ endr
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
+	call MaybeApplyBossTrainerPPMax
 	pop bc
 	pop hl
 
@@ -593,6 +594,51 @@ endr
 	pop hl
 .no_stat_recalc
 	jp .loop
+
+MaybeApplyBossTrainerPPMax:
+; a = base move PP from the move table.
+; For super boss battles, and hard-mode boss battles, convert that into the
+; stored PP byte for a fully PP Maxed move: current PP in bits 0-5 and three
+; PP Ups in bits 6-7.
+	ld c, a
+	ld a, [wBattleType]
+	cp BATTLETYPE_SUPER_BOSS_BATTLE
+	jr z, .apply
+	cp BATTLETYPE_BOSS_BATTLE
+	jr nz, .no_apply
+
+	push bc
+	call GetTrainerBattleDifficultyMode
+	pop bc
+	cp DIFFICULTY_HARD
+	jr nz, .no_apply
+
+.apply
+	ld b, c
+	ld a, b
+	ld c, 0
+.divide_by_five
+	sub 5
+	jr c, .got_quotient
+	inc c
+	jr .divide_by_five
+
+.got_quotient
+	ld a, c
+	cp 8
+	jr c, .extra_ok
+	ld a, 7
+.extra_ok
+	ld c, a
+	add a
+	add c
+	add b
+	or PP_UP_MASK
+	ret
+
+.no_apply
+	ld a, c
+	ret
 
 MaybeUpgradeScaledTrainerSpecies:
 	; b = scaled level, c = original level while the caller's bc lives on the stack.

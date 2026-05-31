@@ -4942,6 +4942,8 @@ SwitchInEffects:
     jp z, .toxicspikes
     cp TENTACRUEL
     jp z, .toxicspikes
+    cp VICTREEBEL
+    jp z, .toxicspikes
 
     cp REUNICLUS
     jp z, .trickroom

@@ -36,7 +36,6 @@ SniperPokemon:
     db GABITE
     db GARCHOMP
     db CROBAT
-    db VICTREEBEL
     db -1
 
 SuperLuckPokemon:

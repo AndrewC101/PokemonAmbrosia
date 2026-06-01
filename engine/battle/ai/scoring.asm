@@ -2959,6 +2959,14 @@ AI_Smart_BatonPass:
     ret
 
 AI_Smart_RapidSpin:
+    call DoesAIOutSpeedPlayer
+    jr nc, .slower
+    call CanAI2HKO
+    ret c
+.slower
+    call CanAIKO
+    ret c
+
 	ld a, [wEnemyScreens]
 	bit SCREENS_SPIKES, a
 	jr nz, .encourage
@@ -2967,7 +2975,10 @@ AI_Smart_RapidSpin:
 	bit SCREENS_TOXIC_SPIKES, a
 	jr nz, .encourage
 	bit SCREENS_STICKY_WEB, a
-	ret z
+	jr nz, .encourage
+	inc [hl]
+	inc [hl]
+	ret
 .encourage
 	dec [hl]
 	dec [hl]

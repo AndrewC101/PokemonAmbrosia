@@ -878,6 +878,7 @@ VictreebelEvosAttacks:
 	db 24, NIGHT_SLASH
 	db 26, STUN_SPORE
 	db 30, CROSS_POISON
+	db 32, TOXIC_SPIKES
 	db 35, SLUDGE_BOMB
 	db 40, LEAF_BLADE
 	db 45, AGILITY

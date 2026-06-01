@@ -206,6 +206,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke CHIMCHAR, 5, BERRY
 	closetext
 	readvar VAR_FACING
@@ -236,6 +237,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke FROAKIE, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
@@ -264,10 +266,23 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
+	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke TREECKO, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
+
+ElmsLab_EnsureRoomForStarterScript:
+.loop
+	readvar VAR_PARTYCOUNT
+	ifnotequal PARTY_LENGTH, .done
+	writetext MakeRoomInPartyText
+	special PokemonCenterPC
+	reloadmappart
+	sjump .loop
+
+.done
+	end
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText

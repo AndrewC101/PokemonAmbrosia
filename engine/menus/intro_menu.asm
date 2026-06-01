@@ -60,7 +60,9 @@ NewGamePlus:
 	call ResetWRAM_NewGamePlus
 	call RestoreTMHMsForNewGamePlus
 	call RestorePokedexCompletionForNewGamePlus
-	jr NewGameCommon
+	call NewGameCommon_Init
+	call RestorePartyForNewGamePlus
+	jr NewGameCommon_Finish
 
 NewGame:
 	xor a
@@ -69,14 +71,9 @@ NewGame:
     ; fallthrough
 
 NewGameCommon:
-	xor a
-	ld [wDebugFlags], a
-	call NewGame_ClearTilemapEtc
-	call OakSpeech
-	call PlayerProfileSetup
-	call FinishIntro
-	call InitializeWorld
+	call NewGameCommon_Init
 
+NewGameCommon_Finish:
 	ld a, LANDMARK_NEW_BARK_TOWN
 	ld [wPrevLandmark], a
 
@@ -86,6 +83,16 @@ NewGameCommon:
 	ld a, MAPSETUP_WARP
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
+
+NewGameCommon_Init:
+	xor a
+	ld [wDebugFlags], a
+	call NewGame_ClearTilemapEtc
+	call OakSpeech
+	call PlayerProfileSetup
+	call FinishIntro
+	call InitializeWorld
+	ret
 
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
@@ -259,8 +266,8 @@ ResetWRAM_NewGamePlus:
 	ld [wPlayerID + 1], a
 
 	xor a
-    ld [wPartyCount], a
-    ld [wPlayerGender], a
+	; Preserve the loaded NG+ party instead of blanking access to it.
+	ld [wPlayerGender], a
 
 	ld hl, wNumItems
 	call ResetWRAM_InitList
@@ -327,11 +334,25 @@ ResetWRAM_NewGamePlus:
 
 	farcall InitDecorations
 
-	farcall DeletePartyMonMail
+	; Keep party/mail data in sync when carrying the saved party into NG+.
+	; The regular new-game reset still clears party mail.
+	;farcall DeletePartyMonMail
 
 	farcall ClearGSBallFlag
 
 	call ResetGameTime
+	ret
+
+RestorePartyForNewGamePlus:
+	; ResetWRAM_NewGamePlus wipes all of wGameData, including the party block.
+	; Reload just the saved party payload so Elm can see the carried-over team.
+	ld a, BANK(sPokemonData)
+	call OpenSRAM
+	ld hl, sPokemonData + (wPartyCount - wPokemonData)
+	ld de, wPartyCount
+	ld bc, wPartyMonNicknamesEnd - wPartyCount
+	call CopyBytes
+	call CloseSRAM
 	ret
 
 RestoreTMHMsForNewGamePlus:

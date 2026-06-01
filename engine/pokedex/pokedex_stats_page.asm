@@ -718,11 +718,13 @@ ENDC
 .heavy_weight	
 	
 IF DEF(MON_STAT_EXP) ; vanilla
-	hlcoord 14, 15
+	hlcoord 13, 15
 ELSE ; using EVs
-	hlcoord 14, 14
+	hlcoord 13, 14
 ENDC
-	lb bc, 2, (3 << 4) | 4
+	; Weight is stored with one decimal digit (e.g. 1000.0 lbs = 10000), so
+	; heavy species need five total digits, with four before the decimal point.
+	lb bc, 2, (4 << 4) | 5
 	call PrintNum
 IF DEF(MON_STAT_EXP) ; vanilla
 	hlcoord 17, 15

@@ -518,10 +518,6 @@ Pokedex_toggle_shininess_Entry:
 
 Pokedex_toggle_shininess_Pics:
 	call Pokedex_toggle_shininess1
-; refresh palettes
-	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout
-
 	; add or remove shiny icon
 	hlcoord 3, 11 ; 1, 9 ; 9, 7 ; 0, 9
 	ld a, [hl]
@@ -533,6 +529,20 @@ Pokedex_toggle_shininess_Pics:
 	ld [hl], " "
 .done	
 	call Pokedex_toggle_shininess2
+	call Pokedex_RefreshPicsPagePalettes
+	ret
+
+Pokedex_RefreshPicsPagePalettes:
+; Animated frontpics can leave stale attrs/pixels behind until the pics-page
+; palette map and icon palette are both reapplied.
+	xor a
+	ldh [hBGMapMode], a
+	ld a, SCGB_POKEDEX_PICS
+	call Pokedex_GetSGBLayout
+	xor a
+	ldh [hObjectStructIndex], a
+	farcall SetDexMonIconColor_SpritePage
+	call WaitBGMap
 	ret
 
 Pokedex_toggle_shininess1:
@@ -1025,8 +1035,6 @@ ENDC
 	ld [wTempSpecies], a
 	ld [wTempMonSpecies], a
 	call GetBaseData
-	ld a, SCGB_POKEDEX_PICS
-	call Pokedex_GetSGBLayout
 	call Pokedex_GetSelectedMon
 
 	hlcoord 0, 0
@@ -1045,15 +1053,10 @@ ENDC
 	farcall Pokedex_place_Mon_Icon
 	callfar PlaySpriteAnimations
 	farcall Pokedex_PlaceAnimatedFrontpic
-
-; DevNote - pics page hack to fix glitchy graphics
-	xor a
-	ldh [hBGMapMode], a
+	; Apply the pics-page attrmap after the final frontpic/icon setup so the
+	; 7x7 frontpic box keeps its VRAM bank 1 attrs from the first visible frame.
 	ld a, SCGB_POKEDEX_PICS
 	call Pokedex_GetSGBLayout
-	xor a
-	ldh [hObjectStructIndex], a
-	farcall SetDexMonIconColor_SpritePage
 	call WaitBGMap
 
 .spritepage_loop
@@ -1065,7 +1068,7 @@ ENDC
 	jp nz, .toggle_shininess
 	ld a, [hl]
 	and START
-	call nz, .toCry
+	jp nz, .play_cry
 	ld a, [hl]
 	bit B_BUTTON_F, a
 	jr nz, .sprite_b
@@ -1135,20 +1138,18 @@ ENDC
 .shiny_done	
 	call WaitBGMap
 	ret
+.play_cry
+	call .toCry
+	jp .spritepage_loop
 .toggle_shininess:
-	xor a
-	ldh [hBGMapMode], a
 	call Pokedex_toggle_shininess_Pics
-	xor a
-	ldh [hObjectStructIndex], a
-	farcall SetDexMonIconColor_SpritePage
-	call WaitBGMap
 	jp .spritepage_loop
 
 .toCry:
 	call Pokedex_GetSelectedMon
 	ld a, [wTempSpecies]
 	call GetCryIndex
+	ret c
 	ld e, c
 	ld d, b
 	call PlayCry

@@ -2010,7 +2010,17 @@ MarkOfGodFunction:
 	ld [wMarkOfGod], a
 	and a
 	ld hl, MarkOfGodOn
+	jr z, .turn_off
+	; Mark Of God already prevents money loss; also top off the wallet when
+	; the state is enabled so the item immediately grants its full economy perk.
+	ld a, HIGH(MAX_MONEY >> 8)
+	ld [wMoney], a
+	ld a, HIGH(MAX_MONEY)
+	ld [wMoney + 1], a
+	ld a, LOW(MAX_MONEY)
+	ld [wMoney + 2], a
 	jr nz, .done
+.turn_off
 	ld hl, MarkOfGodOff
 .done
 	call PrintText

@@ -797,15 +797,16 @@ Route34SignText:
 	done
 
 Route34TrainerTipsText:
-	text "Trainer Tips"
-
-	para "Berry trees grow"
-	line "new Berries"
-	cont "every day."
-
-	para "Make a note of"
-	line "which trees bear"
-	cont "which Berries."
+	text "Something is"
+	line "written on the"
+	cont "ground..."
+	para "The Gift, the Mark"
+	line "and the Hand."
+	para "Ex Nihilo."
+	para "Omniscient."
+	para "Ontology."
+	para "What does that"
+	line "mean?"
 	done
 
 DayCareSignText:

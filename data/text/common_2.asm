@@ -1679,7 +1679,7 @@ _WallaceText2::
 	para "No longer shall"
 	line "you suffer the"
 	cont "rampant"
-	cont "industrialization"
+	cont "industrialisation"
 	cont "of Kanto."
 	para "However, should"
 	line "you come to"

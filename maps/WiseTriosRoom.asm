@@ -22,7 +22,7 @@ WiseTriosRoomNoop2Scene:
 
 WiseTriosRoomWiseTrioCallback:
     sjump .NoWiseTrio
-	checkevent EVENT_FOUGHT_SUICUNE
+	checkevent EVENT_CAUGHT_SUICUNE
 	iftrue .NoWiseTrio
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
 	iftrue .WiseTrio2

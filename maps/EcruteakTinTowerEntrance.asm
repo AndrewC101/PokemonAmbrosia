@@ -20,7 +20,7 @@ EcruteakTinTowerEntranceNoop2Scene:
 
 EcruteakTinTowerEntranceInitializeSagesCallback:
     sjump .DontBlockTower
-	checkevent EVENT_FOUGHT_SUICUNE
+	checkevent EVENT_CAUGHT_SUICUNE
 	iftrue .DontBlockTower
 	checkevent EVENT_KOJI_ALLOWS_YOU_PASSAGE_TO_TIN_TOWER
 	iftrue .DontBlockTower

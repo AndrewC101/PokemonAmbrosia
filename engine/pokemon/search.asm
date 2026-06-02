@@ -1,22 +1,27 @@
 BeastsCheck:
-; Check if the player owns all three legendary beasts.
-; They must exist in either party or PC, and have the player's OT and ID.
+; Check if the player has caught all three legendary beasts.
 ; Return the result in wScriptVar.
 
-	ld a, RAIKOU
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, .notexist
+	ld de, EVENT_CAUGHT_RAIKOU
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .notexist
 
-	ld a, ENTEI
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, .notexist
+	ld de, EVENT_CAUGHT_ENTEI
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .notexist
 
-	ld a, SUICUNE
-	ld [wScriptVar], a
-	call CheckOwnMonAnywhere
-	jr nc, .notexist
+	ld de, EVENT_CAUGHT_SUICUNE
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr z, .notexist
 
 	; they exist
 	ld a, 1
@@ -31,9 +36,12 @@ BeastsCheck:
 MonCheck:
 ; Check if the player owns any Pokémon of the species in wScriptVar.
 ; Return the result in wScriptVar.
+; Static encounter scripts only need the caught-dex flag, not a full storage scan.
 
-	call CheckOwnMonAnywhere
-	jr c, .exists
+	ld a, [wScriptVar]
+	dec a
+	call CheckCaughtMon
+	jr nz, .exists
 
 	; doesn't exist
 	xor a
@@ -48,6 +56,15 @@ MonCheck:
 CheckOwnMonAnywhere:
 ; Check if the player owns any monsters of the species in wScriptVar.
 ; It must exist in either party or PC, and have the player's OT and ID.
+;
+; NewBox makes the full storage scan expensive, so bail out early when the
+; species is not even marked as caught in the dex. If it is caught, we still
+; do the ownership scan to reject traded mons or species the player no longer has.
+
+	ld a, [wScriptVar]
+	dec a
+	call CheckCaughtMon
+	ret z
 
 	ld b, NUM_BOXES
 .outer_loop

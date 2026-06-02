@@ -65,7 +65,7 @@ TinTower1FNPCsCallback:
 	appear TINTOWER1F_RAIKOU
 	appear TINTOWER1F_ENTEI
 
-	checkevent EVENT_FOUGHT_SUICUNE
+	checkevent EVENT_CAUGHT_SUICUNE
 	iftrue .FoughtSuicune
 	appear TINTOWER1F_SUICUNE
 	setval RAIKOU
@@ -163,8 +163,8 @@ SuicuneBattle:
 	end
 
 .CaughtSuicune:
-	; The cutscene is one-shot, but EVENT_FOUGHT_SUICUNE now means caught, not merely battled.
-	setevent EVENT_FOUGHT_SUICUNE
+	; The cutscene is one-shot, but EVENT_CAUGHT_SUICUNE only flips on capture.
+	setevent EVENT_CAUGHT_SUICUNE
 	disappear TINTOWER1F_SUICUNE
 	sjump TinTower1FSuicuneCaughtScene
 
@@ -221,7 +221,7 @@ TinTower1FSuicuneScript:
 	end
 
 .caught:
-	setevent EVENT_FOUGHT_SUICUNE
+	setevent EVENT_CAUGHT_SUICUNE
 	disappear TINTOWER1F_SUICUNE
 	sjump TinTower1FSuicuneCaughtScene
 

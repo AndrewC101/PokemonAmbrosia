@@ -12,7 +12,7 @@ CeladonPokecenter1F_MapScripts:
 
 .Eusine
     disappear CELADONPOKECENTER1F_EUSINE
-    checkevent EVENT_FOUGHT_SUICUNE
+	checkevent EVENT_CAUGHT_SUICUNE
     iffalse .end
     appear CELADONPOKECENTER1F_EUSINE
 .end

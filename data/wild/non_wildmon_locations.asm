@@ -54,7 +54,7 @@ EventWildMons::
 	specialencounter MOLTRES, 	EVENT_CAUGHT_MOLTRES, 			ROUTE_2, LegendaryEncounterDescription
 	specialencounter RAIKOU, 	EVENT_CAUGHT_RAIKOU, 			ROUTE_45, LegendaryEncounterDescription
 	specialencounter ENTEI, 	EVENT_CAUGHT_ENTEI, 			RUINS_OF_ALPH_INNER_CHAMBER, LegendaryEncounterDescription
-	specialencounter SUICUNE, 	EVENT_FOUGHT_SUICUNE, 			TIN_TOWER_1F, LegendaryEncounterDescription
+	specialencounter SUICUNE, 	EVENT_CAUGHT_SUICUNE, 			TIN_TOWER_1F, LegendaryEncounterDescription
 	specialencounter MEW, 	    EVENT_GOT_MEW, 			        BILLS_HOUSE, LegendaryEncounterDescription
 	specialencounter CELEBI, 	EVENT_CAUGHT_CELEBI, 			ILEX_FOREST, LegendaryEncounterDescription
 	specialencounter LATIAS, 	EVENT_CAUGHT_LATIAS, 			FUCHSIA_CITY, LegendaryEncounterDescription

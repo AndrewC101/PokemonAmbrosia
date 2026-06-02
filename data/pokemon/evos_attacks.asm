@@ -875,14 +875,15 @@ VictreebelEvosAttacks:
 	db 15, RAZOR_LEAF
 	db 18, SLEEP_POWDER
 	db 22, SLUDGE
-	db 24, NIGHT_SLASH
 	db 26, STUN_SPORE
 	db 30, CROSS_POISON
-	db 32, TOXIC_SPIKES
-	db 35, SLUDGE_BOMB
+	db 30, TOXIC_SPIKES
+	db 33, GIGA_DRAIN
+	db 36, SLUDGE_BOMB
 	db 40, LEAF_BLADE
-	db 45, AGILITY
+	db 45, SOLARBEAM
 	db 50, SWORDS_DANCE
+	db 60, QUIVER_DANCE
 	db 0 ; no more level-up moves
 
 MimikyuEvosAttacks:

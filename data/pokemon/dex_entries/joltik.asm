@@ -5,6 +5,7 @@
 	next "cities and drain"
 	next "the electricity."
 
-	page "Thunder will"
-	next "always hit.@"
+	page "Boosted effect"
+	next "chance. Thunder"
+	next "always hits.@"
 

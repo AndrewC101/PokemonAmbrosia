@@ -672,6 +672,8 @@ AI_TrySwitch:
 	ret z
 	cp GIRATINA
 	ret z
+	cp VICTREEBEL
+	ret z
 
     ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_CANT_RUN, a

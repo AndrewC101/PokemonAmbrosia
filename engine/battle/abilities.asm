@@ -48,7 +48,6 @@ SuperLuckPokemon:
     db HONCHKROW
     db WEAVILE
     db BELLSPROUT
-    db VICTREEBEL
     db SNEASLER
     db -1
 
@@ -60,6 +59,8 @@ SereneGracePokemon:
     db TOGEKISS
     db SHAYMIN
     db FLAREON
+    db JOLTIK
+    db GALVANTULA
     db -1
 
 RockHeadPokemon:

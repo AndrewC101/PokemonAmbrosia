@@ -1240,6 +1240,8 @@ ShadowTag:
     jr z, .trap
     cp NOWN
     jr z, .trap
+	cp VICTREEBEL
+	jr z, .trap
     ret
 .trap
     ld hl, wEnemySubStatus5

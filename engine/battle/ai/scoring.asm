@@ -562,13 +562,13 @@ AI_Smart_Switch:
 .switch
 ; can't switch if trapped
 	ld a, [wBattleMonSpecies]
-	cp MELTAN
-	ret z
 	cp CHANDELURE
 	ret z
 	cp NOWN
 	ret z
 	cp GIRATINA
+	ret z
+	cp VICTREEBEL
 	ret z
 
     ld a, $1

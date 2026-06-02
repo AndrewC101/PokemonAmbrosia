@@ -5,7 +5,7 @@
 	next "and dissolve"
 	next "anything."
 
-	page "Gets critical"
-	next "hits often. Lays"
+	page "Prevents enemy"
+	next "switching. Lays"
 	next "Toxic Spikes.@"
 

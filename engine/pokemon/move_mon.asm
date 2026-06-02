@@ -1,4 +1,4 @@
-DEF RANDY_OT_ID EQU 01001
+DEF SCRIPT_GIFT_OT_ID EQU 01001
 
 TryAddMonToParty:
 ; Check if to copy wild mon or generate a new one
@@ -1362,9 +1362,9 @@ GivePoke::
 	ld hl, wPartyMon1ID
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
-	ld a, HIGH(RANDY_OT_ID)
+	ld a, HIGH(SCRIPT_GIFT_OT_ID)
 	ld [hli], a
-	ld [hl], LOW(RANDY_OT_ID)
+	ld [hl], LOW(SCRIPT_GIFT_OT_ID)
 	pop bc
 	farcall SetGiftPartyMonCaughtData
 	jr .skip_nickname
@@ -1383,10 +1383,9 @@ GivePoke::
 	call GetFarByte
 	ld b, a
 	ld hl, wBufferMonID
-	call Random
+	ld a, HIGH(SCRIPT_GIFT_OT_ID)
 	ld [hli], a
-	call Random
-	ld [hl], a
+	ld [hl], LOW(SCRIPT_GIFT_OT_ID)
 	push bc
 	newfarcall UpdateStorageBoxMonFromTemp
 	pop bc

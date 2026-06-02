@@ -2203,7 +2203,6 @@ _FlyMap:
 	lb bc, BANK(FlyMapLabelBorderGFX), 6
 	call Request1bpp
 	call FlyMap
-	call Pokegear_DummyFunction
 	ld b, SCGB_POKEGEAR_PALS
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
@@ -2445,9 +2444,6 @@ HasVisitedSpawn:
 
 INCLUDE "data/maps/flypoints.asm"
 
-Pokegear_DummyFunction:
-	ret
-
 FlyMap:
 	ld a, [wMapGroup]
 	ld b, a
@@ -2632,7 +2628,11 @@ RefreshFlyMap:
 	jr .Done
 
 .SkipPlayerIcon:
-	call ClearSprites
+	; Preserve the fly mon in sprite slots 0-3 and only clear the player icon.
+	ld hl, wShadowOAMSprite04
+	ld bc, wShadowOAMEnd - wShadowOAMSprite04
+	xor a
+	call ByteFill
 .Done:
 	call GetMapCursorCoordinates
 	ret

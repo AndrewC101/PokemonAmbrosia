@@ -39,6 +39,8 @@ TinTower1FNPCsCallback:
 	setval SUICUNE
 	special MonCheck
 	iftrue .NoClearBell
+	checkscene
+	ifequal SCENE_TINTOWER1F_NOOP, .SuicuneOnly
 	sjump .FaceBeasts
 	clearevent EVENT_TIN_TOWER_1F_WISE_TRIO_2
 	setevent EVENT_TIN_TOWER_1F_WISE_TRIO_1
@@ -48,8 +50,17 @@ TinTower1FNPCsCallback:
 	disappear TINTOWER1F_ENTEI
     endcallback
 
+.SuicuneOnly:
+	; After the one-time beast cutscene, Suicune stays as a normal static encounter.
+	moveobject TINTOWER1F_SUICUNE, 9, 11
+	appear TINTOWER1F_SUICUNE
+	disappear TINTOWER1F_RAIKOU
+	disappear TINTOWER1F_ENTEI
+	endcallback
+
 .FaceBeasts:
 ; if player has not fought suicune and has not caught raikou then both appear
+	moveobject TINTOWER1F_SUICUNE, 9, 9
 	appear TINTOWER1F_SUICUNE
 	appear TINTOWER1F_RAIKOU
 	appear TINTOWER1F_ENTEI
@@ -80,7 +91,7 @@ TinTower1FNPCsCallback:
 .BeastsDone:
 	endcallback
 
-; if player has fought suicune then nothing appears and all is cleared
+; Once Suicune is actually caught, clear the Tin Tower encounter state.
 .FoughtSuicune:
 	disappear TINTOWER1F_SUICUNE
 	disappear TINTOWER1F_RAIKOU
@@ -137,8 +148,6 @@ SuicuneBattle:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	dontrestartmapmusic
-	disappear TINTOWER1F_SUICUNE
-	setevent EVENT_FOUGHT_SUICUNE
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_42
 	setmapscene ROUTE_42, SCENE_ROUTE42_NOOP
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_36
@@ -148,6 +157,18 @@ SuicuneBattle:
 	setscene SCENE_TINTOWER1F_NOOP
 	clearevent EVENT_SET_WHEN_FOUGHT_HO_OH
 	reloadmapafterbattle
+	setval SUICUNE
+	special MonCheck
+	iftrue .CaughtSuicune
+	end
+
+.CaughtSuicune:
+	; The cutscene is one-shot, but EVENT_FOUGHT_SUICUNE now means caught, not merely battled.
+	setevent EVENT_FOUGHT_SUICUNE
+	disappear TINTOWER1F_SUICUNE
+	sjump TinTower1FSuicuneCaughtScene
+
+TinTower1FSuicuneCaughtScene:
 	pause 20
 	turnobject PLAYER, DOWN
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
@@ -183,6 +204,26 @@ SuicuneBattle:
 	pause 20
 	playmapmusic
 	end
+
+TinTower1FSuicuneScript:
+	checkscene
+	ifnotequal SCENE_TINTOWER1F_NOOP, .end
+	cry SUICUNE
+	pause 15
+	loadwildmon SUICUNE, 60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	startbattle
+	reloadmapafterbattle
+	setval SUICUNE
+	special MonCheck
+	iftrue .caught
+.end
+	end
+
+.caught:
+	setevent EVENT_FOUGHT_SUICUNE
+	disappear TINTOWER1F_SUICUNE
+	sjump TinTower1FSuicuneCaughtScene
 
 TinTower1FSage1Script:
 	jumptextfaceplayer TinTower1FSage1Text
@@ -540,7 +581,7 @@ TinTower1F_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
+	object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FSuicuneScript, EVENT_TIN_TOWER_1F_SUICUNE
 	object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
 	object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
 	object_event  8,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FEusine, EVENT_TIN_TOWER_1F_EUSINE

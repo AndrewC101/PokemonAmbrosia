@@ -405,10 +405,10 @@ MartIndigoPlateau:
     db WISE_GLASSES
     db FLAME_ORB
     db HEAVY_BOOTS
+ 	db FULL_RESTORE
+ 	db MAX_REVIVE
+ 	db MAX_ELIXER
  	db GOLD_BERRY
- 	db MIRACLEBERRY
- 	db PP_MAX
- 	db ULTRA_BALL
 	db -1 ; end
 
 MartUnderground:

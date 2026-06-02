@@ -155,6 +155,158 @@ CaughtAskNicknameText:
 	text_far _CaughtAskNicknameText
 	text_end
 
+BuildGiftMonIntoStorage::
+; Script gift mons with a full party need a box path that builds from the
+; gift-generation flow, not from battle enemy state.
+	newfarcall NewStorageBoxPointer
+	ret c
+
+	push bc
+
+	ld a, [wCurPartySpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wCurPartySpecies]
+	ld [wBufferMonSpecies], a
+
+	ld a, [wCurItem]
+	ld [wBufferMonItem], a
+
+	ld hl, wBufferMonMoves
+	xor a
+	ld bc, NUM_MOVES
+	call ByteFill
+	ld de, wBufferMonMoves
+	ld [wSkipMovesBeforeLevelUp], a
+	predef FillMoves
+
+	ld hl, wPlayerID
+	ld de, wBufferMonID
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+
+	ld a, [wCurPartyLevel]
+	ld d, a
+	callfar CalcExpAtLevel
+	ld hl, wBufferMonExp
+	ldh a, [hProduct + 1]
+	ld [hli], a
+	ldh a, [hProduct + 2]
+	ld [hli], a
+	ldh a, [hProduct + 3]
+	ld [hl], a
+
+	xor a
+	ld hl, wBufferMonStatExp
+	ld bc, MON_DVS - MON_STAT_EXP
+	call ByteFill
+
+	call BattleRandom
+	cp 2 percent
+	jr c, .shiny_dvs
+
+	ld a, [wCurPartySpecies]
+	cp PIKACHU
+	jr nz, .random_dvs
+	ld b, $ff
+	ld c, $ff
+	jr .write_dvs
+
+.random_dvs
+	call Random
+	ld b, a
+	call Random
+	ld c, a
+	jr .write_dvs
+
+.shiny_dvs
+	call BattleRandom
+	cp 50 percent
+	jr c, .shiny_2
+	ld b, ATKDEFDV_SHINY_1
+	ld c, SPDSPCDV_SHINY_1
+	jr .write_dvs
+
+.shiny_2
+	ld b, ATKDEFDV_SHINY_2
+	ld c, SPDSPCDV_SHINY_2
+
+.write_dvs
+	ld hl, wBufferMonDVs
+	ld a, b
+	ld [hli], a
+	ld a, c
+	ld [hl], a
+
+	ld hl, wBufferMonMoves
+	ld de, wBufferMonPP
+	predef FillPP
+
+	ld a, BASE_HAPPINESS
+	ld [wBufferMonHappiness], a
+	xor a
+	ld [wBufferMonPokerusStatus], a
+	ld hl, wBufferMonCaughtData
+	ld [hli], a
+	ld [hl], a
+	ld a, [wCurPartyLevel]
+	ld [wBufferMonLevel], a
+
+	ld hl, wPlayerName
+	ld de, wBufferMonOT
+	ld bc, NAME_LENGTH
+	call CopyBytes
+
+	ld a, [wCurPartySpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wBufferMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+
+	ld a, [wCurPartySpecies]
+	ld [wBufferMonAltSpecies], a
+
+	pop bc
+	ld a, b
+	ld [wBufferMonBox], a
+	ld a, c
+	ld [wBufferMonSlot], a
+
+	ld hl, wBufferMonCaughtData
+	call SetBoxmonOrEggmonCaughtData
+
+	newfarcall UpdateStorageBoxMonFromTemp
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	dec a
+	call CheckCaughtMon
+	ld a, [wTempSpecies]
+	dec a
+	call SetSeenAndCaughtMon
+	scf
+	ret
+
+FinalizeGiftBoxMon::
+; Reload the just-written gift mon from storage, apply the final nickname
+; buffer, then write it back.
+	ld a, [wBufferMonBox]
+	ld b, a
+	ld a, [wBufferMonSlot]
+	ld c, a
+	newfarcall GetStorageBoxMon
+
+	ld hl, wMonOrItemNameBuffer
+	ld de, wBufferMonNickname
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
+	newfarcall UpdateStorageBoxMonFromTemp
+	ret
+
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a

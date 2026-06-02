@@ -19,20 +19,12 @@ BillScript:
 	writetext BillImCountingOnYouText
 	promptbutton
 	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
 	writetext ReceivedEeveeText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke EEVEE, 25
 	setevent EVENT_GOT_EEVEE
 	writetext BillEeveeMayEvolveText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext BillPartyFullText
 	waitbutton
 	closetext
 	end

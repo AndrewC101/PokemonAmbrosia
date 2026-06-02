@@ -157,9 +157,6 @@ ArceusPokeBallScript:
 	yesorno
 	iffalse .Refused
 
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-
 	clearevent EVENT_JUST_BEAT_LORD_OAK
 	waitsfx
 	getmonname STRING_BUFFER_3, ARCEUS
@@ -174,12 +171,6 @@ ArceusPokeBallScript:
 .MustBeatOak
     opentext
 	writetext MustBeatOakText
-	waitbutton
-	closetext
-	end
-.NoRoom
-    opentext
-	writetext MakeRoomText
 	waitbutton
 	closetext
 	end
@@ -210,9 +201,6 @@ MewtwoPokeBallScript:
 	yesorno
 	iffalse .Refused
 
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-
 	clearevent EVENT_JUST_BEAT_LORD_OAK
 	waitsfx
 	getmonname STRING_BUFFER_3, MEWTWO
@@ -227,12 +215,6 @@ MewtwoPokeBallScript:
 .MustBeatOak
     opentext
 	writetext MustBeatOakText
-	waitbutton
-	closetext
-	end
-.NoRoom
-    opentext
-	writetext MakeRoomText
 	waitbutton
 	closetext
 	end

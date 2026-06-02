@@ -11,34 +11,21 @@ Route35GoldenrodGate_MapScripts:
 RandyScript:
 	faceplayer
 	opentext
-	;checkevent EVENT_GOT_HP_UP_FROM_RANDY
-	;iftrue .gothpup
-	;checkevent EVENT_GAVE_KENYA
-	;iftrue .questcomplete
 	checkevent EVENT_GOT_KENYA
 	iftrue .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText
-	nooryes
+	yesorno
 	iffalse .refused
 	writetext Route35GoldenrodGateRandyThanksText
 	promptbutton
 	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .partyfull
 	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
 	playsound SFX_KEY_ITEM
 	waitsfx
 	givepoke PIKACHU, 25, LIGHT_BALL, GiftSpearowName, GiftSpearowOTName
-	;givepokemail GiftSpearowMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
-	waitbutton
-	closetext
-	end
-
-.partyfull
-	writetext Route35GoldenrodGateRandyCantCarryAnotherMonText
 	waitbutton
 	closetext
 	end

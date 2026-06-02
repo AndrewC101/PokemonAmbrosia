@@ -24,8 +24,6 @@ BillsGrandpa:
     writetext BillGrampsImCountingOnYouText
     promptbutton
     waitsfx
-    readvar VAR_PARTYCOUNT
-    ifequal PARTY_LENGTH, .noRoom
     writetext ReceivedMewText
     playsound SFX_CAUGHT_MON
     waitsfx
@@ -63,11 +61,6 @@ BillsGrandpa:
     end
 .refused
     writetext BillGrampsTooBad
-    waitbutton
-    closetext
-    end
-.noRoom
-    writetext BillGrampsNoRoom
     waitbutton
     closetext
     end

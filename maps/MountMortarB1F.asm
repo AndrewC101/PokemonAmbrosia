@@ -84,8 +84,6 @@ MountMortarB1FKiyoScript:
 .BeatKiyo:
 	writetext MountMortarB1FLucarioRewardText
 	promptbutton
-    readvar VAR_PARTYCOUNT
-    ifequal PARTY_LENGTH, .noRoom
 	waitsfx
 	writetext MountMortarB1FReceiveMonText
 	playsound SFX_CAUGHT_MON
@@ -97,11 +95,6 @@ MountMortarB1FKiyoScript:
 	waitbutton
 	closetext
 	end
-.noRoom
-    writetext MountMortarB1FNoRoom
-    waitbutton
-    closetext
-    end
 
 MountMortarB1FNoRoom:
     text "You must make"

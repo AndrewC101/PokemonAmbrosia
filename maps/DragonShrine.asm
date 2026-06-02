@@ -173,8 +173,6 @@ DragonShrineElder1Script:
 .GiveDratini:
 	writetext DragonShrineTakeThisDratiniText
 	waitbutton
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
 	writetext DragonShrinePlayerReceivedDratiniText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -184,12 +182,6 @@ DragonShrineElder1Script:
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	writetext DragonShrineSymbolicDragonText
-	waitbutton
-	closetext
-	end
-
-.PartyFull:
-	writetext DragonShrinePartyFullText
 	waitbutton
 	closetext
 	end

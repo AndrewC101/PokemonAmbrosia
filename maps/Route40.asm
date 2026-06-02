@@ -91,8 +91,6 @@ Route40Lass1Script:
     opentext
     writetext GetLaprasText
     waitbutton
-    readvar VAR_PARTYCOUNT
-    ifequal PARTY_LENGTH, .partyfull
     writetext GotLaprasText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -103,11 +101,6 @@ Route40Lass1Script:
     end
 .gotLapras
 	jumptextfaceplayer Route40Lass1Text
-.partyfull
-    writetext MakeRoomForLaprasText
-    waitbutton
-    closetext
-    end
 
 GetLaprasText:
 	text "The water is"

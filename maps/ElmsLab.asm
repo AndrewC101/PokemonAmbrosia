@@ -206,7 +206,6 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke CHIMCHAR, 5, BERRY
 	closetext
 	readvar VAR_FACING
@@ -237,7 +236,6 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke FROAKIE, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
@@ -266,23 +264,10 @@ ChikoritaPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	scall ElmsLab_EnsureRoomForStarterScript
 	givepoke TREECKO, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
-
-ElmsLab_EnsureRoomForStarterScript:
-.loop
-	readvar VAR_PARTYCOUNT
-	ifnotequal PARTY_LENGTH, .done
-	writetext MakeRoomInPartyText
-	special PokemonCenterPC
-	reloadmappart
-	sjump .loop
-
-.done
-	end
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText
@@ -2332,18 +2317,11 @@ ElmsLabMrMimeScript:
 	ifequal 1, .doGiveArceus
 	sjump .newGamePlusCheat
 .doGiveArceus
-    readvar VAR_PARTYCOUNT
-    ifequal PARTY_LENGTH, .noRoom
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	opentext
     givepoke ARCEUS, 100, HOLY_CROWN
     setevent EVENT_UNLOCK_ARCEUS_CODE
-    closetext
-    end
-.noRoom
-    opentext
-    writetext MakeRoomInPartyText
     closetext
     end
 .rebirth

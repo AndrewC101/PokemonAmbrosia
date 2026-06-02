@@ -1283,19 +1283,18 @@ GivePoke::
 	jr .done
 
 .failed
-	ld a, [wCurPartySpecies]
-	ld [wTempEnemyMonSpecies], a
-	callfar LoadEnemyMon
-	call SendMonIntoBox
+	callfar BuildGiftMonIntoStorage
 	jp nc, .FailedToGiveMon
-	ld a, BOXMON
+	; Boxed script gifts use the buffer-mon naming path before their final
+	; storage writeback.
+	ld a, BUFFERMON
 	ld [wMonType], a
 	xor a
 	ld [wCurPartyMon], a
-	ld de, wMonOrItemNameBuffer
 	pop bc
 	ld a, b
 	ld b, 1
+	ld de, wMonOrItemNameBuffer
 	push bc
 	push de
 	push af
@@ -1388,7 +1387,9 @@ GivePoke::
 	ld [hli], a
 	call Random
 	ld [hl], a
+	push bc
 	newfarcall UpdateStorageBoxMonFromTemp
+	pop bc
 	farcall SetGiftBoxMonCaughtData
 	jr .skip_nickname
 
@@ -1399,9 +1400,7 @@ GivePoke::
 	push de
 	ld a, b
 	and a
-	jr z, .party
-	farcall SetBoxMonCaughtData
-	jr .set_caught_data
+	jr nz, .set_caught_data
 
 .party
 	farcall SetCaughtData
@@ -1419,11 +1418,7 @@ GivePoke::
 	ret z
 	ld hl, WasSentToBillsPCText
 	call PrintText
-	ld hl, wMonOrItemNameBuffer
-	ld de, wBufferMonNickname
-	ld bc, MON_NAME_LENGTH
-	call CopyBytes
-	newfarcall UpdateStorageBoxMonFromTemp
+	callfar FinalizeGiftBoxMon
 	ld b, $1
 	ret
 

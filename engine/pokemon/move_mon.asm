@@ -203,7 +203,7 @@ endr
 	jr nz, .copywildmonDVs
 
 ; this part is for non wild pokes, so gift mon
-; pikachu always has max dvs
+; Pikachu and Lord Oak's prize mons always have max DVs.
 ; DevNote - shiny - all gift Pokemon have 2% chance to be shiny
 	call BattleRandom
     cp 2 percent
@@ -233,15 +233,22 @@ endr
 ;.checkPikachu
     ld a, [wCurPartySpecies]
     cp PIKACHU
+    jr z, .max_dvs
+    cp ARCEUS
+    jr z, .max_dvs
+    cp MEWTWO
     jr nz, .random
+.max_dvs
    	ld b, $FF
    	ld c, $FF
    	jr .initializeDVs
 
 .random
 	call Random
+	or $88 ; Gift mons get Atk/Def DVs in the 8-15 range.
 	ld b, a
 	call Random
+	or $88 ; Gift mons get Spd/Spc DVs in the 8-15 range.
 	ld c, a
 .initializeDVs
 	ld a, b

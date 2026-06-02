@@ -210,15 +210,22 @@ BuildGiftMonIntoStorage::
 
 	ld a, [wCurPartySpecies]
 	cp PIKACHU
+	jr z, .max_dvs
+	cp ARCEUS
+	jr z, .max_dvs
+	cp MEWTWO
 	jr nz, .random_dvs
+.max_dvs
 	ld b, $ff
 	ld c, $ff
 	jr .write_dvs
 
 .random_dvs
 	call Random
+	or $88 ; Keep boxed gift mon Atk/Def DVs in sync with party gifts.
 	ld b, a
 	call Random
+	or $88 ; Keep boxed gift mon Spd/Spc DVs in sync with party gifts.
 	ld c, a
 	jr .write_dvs
 

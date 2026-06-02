@@ -92,7 +92,7 @@ PokeGear:
 	ld [wJumptableIndex], a ; POKEGEARSTATE_CLOCKINIT
 	ld [wPokegearCard], a ; POKEGEARCARD_CLOCK
 	ld [wPokegearMapRegion], a ; JOHTO_REGION
-	ld [wUnusedPokegearByte], a
+	ld [wFlyMapPlayerLandmark], a
 	ld [wPokegearPhoneScrollPosition], a
 	ld [wPokegearPhoneCursorPosition], a
 	ld [wPokegearPhoneSelectedPerson], a
@@ -2460,7 +2460,7 @@ FlyMap:
 	ld c, a
 	call GetWorldMapLocation
 .CheckRegion:
-	ld [wTownMapCursorLandmark], a
+	ld [wFlyMapPlayerLandmark], a
 ; The first landmarks are part of Johto. The rest are in Kanto.
 	cp KANTO_LANDMARK
 	jr nc, .KantoFlyMap
@@ -2610,20 +2610,20 @@ RefreshFlyMap:
 	ld [wTownMapCursorCoordinates], a
 	ld a, b
 	ld [wTownMapCursorCoordinates + 1], a
-	ld a, [wTownMapCursorLandmark]
+	ld a, [wFlyMapPlayerLandmark]
 	cp KANTO_LANDMARK
 	ld a, [wPokegearMapRegion]
 	jr c, .PlayerInJohto
 	and a
 	jr z, .SkipPlayerIcon
-	ld a, [wTownMapCursorLandmark]
+	ld a, [wFlyMapPlayerLandmark]
 	call TownMapPlayerIcon
 	jr .Done
 
 .PlayerInJohto:
 	and a
 	jr nz, .SkipPlayerIcon
-	ld a, [wTownMapCursorLandmark]
+	ld a, [wFlyMapPlayerLandmark]
 	call TownMapPlayerIcon
 	jr .Done
 

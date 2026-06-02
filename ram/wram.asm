@@ -1610,7 +1610,7 @@ NEXTU
 ; pokegear
 wPokegearCard:: db
 wPokegearMapRegion:: db
-wUnusedPokegearByte:: db
+wFlyMapPlayerLandmark:: db
 
 NEXTU
 ; pack

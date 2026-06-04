@@ -802,9 +802,9 @@ Route34TrainerTipsText:
 	cont "ground..."
 	para "The Gift, the Mark"
 	line "and the Hand."
-	para "Ex Nihilo."
-	para "Omniscient."
-	para "Ontology."
+	para "Ex Nihilo"
+	para "Omniscient"
+	para "Ontology"
 	para "What does that"
 	line "mean?"
 	done

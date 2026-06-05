@@ -1029,7 +1029,7 @@ Battle_EnemyFirst:
 	call LoadTilemapToTempTilemap
 	call TryEnemyFlee
 	jp c, WildFled_EnemyFled_LinkBattleCanceled
-    call SetEnemyTurn
+	call SetEnemyTurn
 	ld a, $1
 	ld [wEnemyGoesFirst], a
 ; DevNote - logic for ai switching
@@ -1053,30 +1053,33 @@ Battle_EnemyFirst:
 	ld a, [wForcedSwitch]
 	and a
 	ret nz
-	call HasPlayerFainted
-	jp z, HandlePlayerMonFaint
-	call HasEnemyFainted
-	jp z, HandleEnemyMonFaint
 
 .switch_item
+	; Let the acting battler finish its own residual pass before resolving faints.
 	call SetEnemyTurn
 	call ResidualDamage
-	jp z, HandleEnemyMonFaint
+	jr z, .resolve_player_then_enemy
 	call RefreshBattleHuds
+.resolve_player_then_enemy
+	call HasPlayerFainted
+	jp z, CheckFaint_PlayerThenEnemy
+	call HasEnemyFainted
+	jp z, CheckFaint_PlayerThenEnemy
 	call PlayerTurn_EndOpponentProtectEndureDestinyBond
 	call CheckMobileBattleError
 	ret c
 	ld a, [wForcedSwitch]
 	and a
 	ret nz
-	call HasEnemyFainted
-	jp z, HandleEnemyMonFaint
-	call HasPlayerFainted
-	jp z, HandlePlayerMonFaint
 	call SetPlayerTurn
 	call ResidualDamage
-	jp z, HandlePlayerMonFaint
+	jr z, .resolve_enemy_then_player
 	call RefreshBattleHuds
+.resolve_enemy_then_player
+	call HasEnemyFainted
+	jp z, CheckFaint_EnemyThenPlayer
+	call HasPlayerFainted
+	jp z, CheckFaint_EnemyThenPlayer
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret
@@ -1106,17 +1109,21 @@ Battle_PlayerFirst:
 	ret nz
 	call CheckMobileBattleError
 	ret c
-	call HasEnemyFainted
-	jp z, HandleEnemyMonFaint
-	call HasPlayerFainted
-	jp z, HandlePlayerMonFaint
 	push bc
 	call SetPlayerTurn
 	call ResidualDamage
 	pop bc
-	jp z, HandlePlayerMonFaint
+	jr z, .after_player_residual
 	push bc
 	call RefreshBattleHuds
+	pop bc
+
+.after_player_residual
+	call HasEnemyFainted
+	jp z, CheckFaint_EnemyThenPlayer
+	call HasPlayerFainted
+	jp z, CheckFaint_EnemyThenPlayer
+	push bc
 	pop af
 	jr c, .switched_or_used_item
 	call LoadTilemapToTempTilemap
@@ -1128,16 +1135,17 @@ Battle_PlayerFirst:
 	ld a, [wForcedSwitch]
 	and a
 	ret nz
-	call HasPlayerFainted
-	jp z, HandlePlayerMonFaint
-	call HasEnemyFainted
-	jp z, HandleEnemyMonFaint
 
 .switched_or_used_item
 	call SetEnemyTurn
 	call ResidualDamage
-	jp z, HandleEnemyMonFaint
+	jr z, .resolve_player_then_enemy
 	call RefreshBattleHuds
+.resolve_player_then_enemy
+	call HasPlayerFainted
+	jp z, CheckFaint_PlayerThenEnemy
+	call HasEnemyFainted
+	jp z, CheckFaint_PlayerThenEnemy
 	xor a ; BATTLEPLAYERACTION_USEMOVE
 	ld [wBattlePlayerAction], a
 	ret

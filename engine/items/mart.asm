@@ -543,7 +543,10 @@ BuyMenuLoop:
 	ret
 
 StandardMartAskPurchaseQuantity:
-	ld a, MAX_ITEM_STACK
+	farcall GetItemPrice
+	call GetMartMaxAffordableQuantity
+	and a
+	jp z, MartAskPurchaseQuantity_NotEnoughMoney
 	ld [wItemQuantity], a
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
@@ -599,11 +602,13 @@ BargainShopAskPurchaseQuantity:
 	ret
 
 RooftopSaleAskPurchaseQuantity:
+	call .GetSalePrice
+	call GetMartMaxAffordableQuantity
+	and a
+	jr z, MartAskPurchaseQuantity_NotEnoughMoney
+	ld [wItemQuantity], a
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
-	call .GetSalePrice
-	ld a, MAX_ITEM_STACK
-	ld [wItemQuantity], a
 	farcall RooftopSale_SelectQuantityToBuy
 	call ExitMenu
 	ret
@@ -624,6 +629,55 @@ RooftopSaleAskPurchaseQuantity:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
+	ret
+
+MartAskPurchaseQuantity_NotEnoughMoney:
+	ld a, MARTTEXT_NOT_ENOUGH_MONEY
+	call LoadBuyMenuText
+	call JoyWaitAorB
+	scf
+	ret
+
+GetMartMaxAffordableQuantity:
+; Return the max quantity the player can afford in a, capped to MAX_ITEM_STACK.
+; hMoneyTemp holds the running subtotal for the candidate quantity.
+	ld a, d
+	ld [wBuySellItemPrice + 0], a
+	ld a, e
+	ld [wBuySellItemPrice + 1], a
+	xor a
+	ldh [hMoneyTemp], a
+	ldh [hMoneyTemp + 1], a
+	ldh [hMoneyTemp + 2], a
+	ld [wItemQuantity], a
+
+.loop
+	ld hl, wBuySellItemPrice + 1
+	ldh a, [hMoneyTemp + 2]
+	add [hl]
+	ldh [hMoneyTemp + 2], a
+	dec hl
+	ldh a, [hMoneyTemp + 1]
+	adc [hl]
+	ldh [hMoneyTemp + 1], a
+	ldh a, [hMoneyTemp]
+	adc 0
+	ldh [hMoneyTemp], a
+
+	ld de, wMoney
+	ld bc, hMoneyTemp
+	ld a, 3
+	call CompareMoney
+	jr c, .done
+
+	ld hl, wItemQuantity
+	inc [hl]
+	ld a, [hl]
+	cp MAX_ITEM_STACK
+	jr c, .loop
+
+.done
+	ld a, [wItemQuantity]
 	ret
 
 MartHowManyText:

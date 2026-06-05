@@ -128,74 +128,21 @@ ForgetMove:
 	ld bc, -NUM_MOVES
 	add hl, bc
 	push hl
-	ld de, wListMoves_MoveIndicesBuffer
-	ld bc, NUM_MOVES
-	call CopyBytes
-	pop hl
-.loop
-	push hl
 	ld hl, MoveAskForgetText
 	call PrintText
-	hlcoord 5, 2
-	ld b, NUM_MOVES * 2
-	ld c, MOVE_NAME_LENGTH
-	call Textbox
-	hlcoord 5 + 2, 2 + 2
-	ld a, SCREEN_WIDTH * 2
-	ld [wListMovesLineSpacing], a
-	predef ListMoves
-	; w2DMenuData
-	ld a, $4
-	ld [w2DMenuCursorInitY], a
-	ld a, $6
-	ld [w2DMenuCursorInitX], a
-	ld a, [wNumMoves]
-	inc a
-	ld [w2DMenuNumRows], a
-	ld a, $1
-	ld [w2DMenuNumCols], a
-	ld [wMenuCursorY], a
-	ld [wMenuCursorX], a
-	ld a, $3
-	ld [wMenuJoypadFilter], a
-	ld a, $20
-	ld [w2DMenuFlags1], a
-	xor a
-	ld [w2DMenuFlags2], a
-	ld a, $20
-	ld [w2DMenuCursorOffsets], a
-	call StaticMenuJoypad
-	push af
-	call SafeLoadTempTilemapToTilemap
-	pop af
+	farcall ChooseMoveToForget
 	pop hl
-	bit B_PAD_B, a
-	jr nz, .cancel
-	push hl
+	jr c, .cancel
 	ld a, [wMenuCursorY]
+	cp NUM_MOVES + 1
+	jr z, .cancel
 	dec a
 	ld c, a
 	ld b, 0
 	add hl, bc
 	ld a, [hl]
-	push af
-	push bc
-	call IsHMMove
-	pop bc
-	pop de
-	ld a, d
-; DevNote - HMs can be forgotten
-	;jr c, .hmmove
-	pop hl
-	add hl, bc
 	and a
 	ret
-
-.hmmove
-	ld hl, MoveCantForgetHMText
-	call PrintText
-	pop hl
-	jr .loop
 
 .cancel
 	scf

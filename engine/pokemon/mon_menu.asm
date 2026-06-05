@@ -948,6 +948,120 @@ ChooseMoveToDelete:
 	pop af
 	ret
 
+ChooseMoveToForget:
+	ld hl, wOptions
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	call LoadFontsBattleExtra
+	call .ChooseMoveToForget
+	push af
+	pop de
+	pop bc
+	ld a, b
+	ld [wOptions], a
+	push de
+	pop af
+	push af
+	call RestoreForgetMoveScreen
+	pop af
+	ret
+
+.ChooseMoveToForget
+	call SetUpMoveScreenBG
+	ld a, 1
+	ld [wMenuCursorY], a
+
+.loop
+	call SetUpForgetMoveList
+	call PrepareToPlaceForgetMoveData
+	call PlaceMoveData
+
+.joy_loop
+	farcall PlaySpriteAnimationsAndDelayFrame
+	call JoyTextDelay
+	ldh a, [hJoyPressed]
+	bit B_PAD_B, a
+	jr nz, .b_button
+	bit B_PAD_A, a
+	jr nz, .a_button
+	bit B_PAD_UP, a
+	jr nz, .d_up
+	bit B_PAD_DOWN, a
+	jr nz, .d_down
+	jr .joy_loop
+
+.a_button
+	call PlayClickSFX
+	call WaitSFX
+	ld a, [wMenuCursorY]
+	and a
+	ret
+
+.b_button
+	call PlayClickSFX
+	call WaitSFX
+	scf
+	ret
+
+.d_up
+	ld hl, wMenuCursorY
+	ld a, [hl]
+	cp 1
+	jr z, .joy_loop
+	dec [hl]
+	jr .loop
+
+.d_down
+	ld hl, wMenuCursorY
+	ld a, [hl]
+	cp NUM_MOVES + 1
+	jr z, .joy_loop
+	inc [hl]
+	jr .loop
+
+RestoreForgetMoveScreen:
+	ld a, [wBattleMode]
+	and a
+	jr nz, .battle
+
+	ld a, [wPartyMenuActionText]
+	and $f
+	cp PARTYMENUACTION_TEACH_TMHM
+	jr z, .party_menu
+
+	call ClearSprites
+	jp SafeLoadTempTilemapToTilemap
+
+.battle
+	call ClearTilemap
+	call ClearSprites
+	call ClearPalettes
+	call DelayFrame
+	call UpdateSprites
+	farcall FinishBattleAnim
+	farcall _LoadBattleFontsHPBar
+	farcall GetBattleMonBackpic
+	farcall GetEnemyMonFrontpic
+	call SafeLoadTempTilemapToTilemap
+	call UpdateBattleHuds
+	call WaitBGMap
+	call SetDefaultBGPAndOBP
+	call DelayFrame
+	ret
+
+.party_menu
+	ld a, [wCurPartyMon]
+	push af
+	farcall InitPartyMenuLayout
+	pop af
+	ld [wCurPartyMon], a
+	call SpeechTextbox
+	call WaitBGMap
+	call SetDefaultBGPAndOBP
+	call DelayFrame
+	ret
+
 DeleteMoveScreen2DMenuData:
 	db 3, 1 ; cursor start y, x
 	db 3, 1 ; rows, columns
@@ -1268,6 +1382,136 @@ SetUpMoveList:
 	ld b, 5
 	ld c, 18
 	jp Textbox
+
+SetUpForgetMoveList:
+	xor a
+	ldh [hBGMapMode], a
+	ld [wMonType], a
+	predef CopyMonToTempMon
+	ld a, TEMPMON
+	ld [wMonType], a
+	; ListMovePP reads the visible move/PP buffer via wMonType.
+	call PopulateForgetMoveDisplayBuffer
+	hlcoord 1, 2
+	lb bc, 8, SCREEN_WIDTH - 2
+	call ClearBox
+	ld a, SCREEN_WIDTH * 2
+	ld [wListMovesLineSpacing], a
+	hlcoord 2, 3
+	predef ListMoves
+	hlcoord 10, 4
+	predef ListMovePP
+	call PlaceForgetMoveCursor
+	call WaitBGMap
+	call SetDefaultBGPAndOBP
+	hlcoord 0, 11
+	ld b, 5
+	ld c, 18
+	jp Textbox
+
+PopulateForgetMoveDisplayBuffer:
+	ld a, [wMenuCursorY]
+	cp NUM_MOVES + 1
+	jr z, .new_move_page
+
+	ld hl, wTempMonMoves
+	ld de, wListMoves_MoveIndicesBuffer
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ret
+
+.new_move_page
+	ld hl, wTempMonMoves + 1
+	ld de, wTempMonMoves
+	ld bc, NUM_MOVES - 1
+	call CopyBytes
+	ld a, [wPutativeTMHMMove]
+	ld [wTempMonMoves + NUM_MOVES - 1], a
+
+	ld hl, wTempMonPP + 1
+	ld de, wTempMonPP
+	ld bc, NUM_MOVES - 1
+	call CopyBytes
+	ld a, [wPutativeTMHMMove]
+	dec a
+	ld hl, Moves + MOVE_PP
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [wTempMonPP + NUM_MOVES - 1], a
+
+	ld hl, wTempMonMoves
+	ld de, wListMoves_MoveIndicesBuffer
+	ld bc, NUM_MOVES
+	call CopyBytes
+	ret
+
+PrepareToPlaceForgetMoveData:
+	ld a, [wMenuCursorY]
+	cp NUM_MOVES + 1
+	jr z, .new_move
+
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	call AddNTimes
+	ld a, [wMenuCursorY]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	jr .got_move
+
+.new_move
+	ld a, [wPutativeTMHMMove]
+
+.got_move
+	ld [wCurSpecies], a
+	hlcoord 1, 12
+	lb bc, 5, 18
+	jp ClearBox
+
+PlaceForgetMoveCursor:
+	hlcoord 1, 3
+	ld [hl], ' '
+	hlcoord 1, 5
+	ld [hl], ' '
+	hlcoord 1, 7
+	ld [hl], ' '
+	hlcoord 1, 9
+	ld [hl], ' '
+
+	ld a, [wMenuCursorY]
+	cp NUM_MOVES + 1
+	jr nz, .row_ok
+	ld a, NUM_MOVES
+
+.row_ok
+	cp 1
+	jr z, .row_1
+	cp 2
+	jr z, .row_2
+	cp 3
+	jr z, .row_3
+	hlcoord 1, 9
+	jr .place
+
+.row_1
+	hlcoord 1, 3
+	jr .place
+
+.row_2
+	hlcoord 1, 5
+	jr .place
+
+.row_3
+	hlcoord 1, 7
+
+.place
+	ld [hl], '▷'
+	ret
 
 PrepareToPlaceMoveData:
 	ld hl, wPartyMon1Moves

@@ -961,9 +961,11 @@ ChooseMoveToForget:
 	ld a, b
 	ld [wOptions], a
 	push de
-	pop af
-	push af
 	call RestoreForgetMoveScreen
+	pop de
+	ld a, d
+	ld [wMenuSelection], a
+	push de
 	pop af
 	ret
 

@@ -133,7 +133,7 @@ ForgetMove:
 	farcall ChooseMoveToForget
 	pop hl
 	jr c, .cancel
-	ld a, [wMenuCursorY]
+	ld a, [wMenuSelection]
 	cp NUM_MOVES + 1
 	jr z, .cancel
 	dec a

@@ -701,7 +701,7 @@ MenuHeader_Buy:
 	dbw 0, wCurMartCount
 	dba PlaceMenuItemName
 	dba .PrintBCDPrices
-	dba UpdateItemDescription
+	dba UpdateMartItemIconAndDescription
 
 .PrintBCDPrices:
 	ld a, [wScrollingMenuCursorPosition]

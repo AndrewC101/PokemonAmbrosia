@@ -617,6 +617,11 @@ INCLUDE "engine/pokedex/pokedex.asm"
 
 SECTION "Custom GFX", ROMX
 INCLUDE "gfx/rangi_gfx.asm"
+INCLUDE "gfx/items.asm"
+
+SECTION "Item Icon Menu Code", ROMX
+INCLUDE "engine/items/update_item_icon_and_description.asm"
+INCLUDE "data/items/icon_palettes.asm"
 
 SECTION "Map GroupNums Names", ROMX
 INCLUDE "data/maps/map_names.asm"

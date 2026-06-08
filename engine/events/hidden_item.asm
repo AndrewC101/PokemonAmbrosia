@@ -6,6 +6,7 @@ HiddenItemScript::
 	writetext .PlayerFoundItemText
 	giveitem ITEM_FROM_MEM
 	iffalse .bag_full
+	callasm ShowCurrentItemIconScriptHelper
 	callasm SetMemEvent
 	specialsound
 	itemnotify

@@ -470,6 +470,7 @@ GiveItemScript:
 	callasm GiveItemScript_DummyFunction
 	writetext .ReceivedItemText
 	iffalse .Full
+	callasm ShowReceivedItemIconScriptHelper
 	waitsfx
 	specialsound
 	waitbutton
@@ -482,8 +483,11 @@ GiveItemScript:
 	end
 
 .ReceivedItemText:
-	text_far _ReceivedItemText
-	text_end
+	text "<PLAYER> received"
+	line "    @"
+	text_ram wStringBuffer4
+	text "."
+	done
 
 Script_verbosegiveitemvar:
 	call GetScriptByte

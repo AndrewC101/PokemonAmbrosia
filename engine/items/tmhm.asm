@@ -245,9 +245,16 @@ TMHM_ShowTMMoveDescription:
 	call Textbox
 	ld a, [wCurItem]
 	cp NUM_TMS + NUM_HMS + 1
-	jr nc, TMHM_JoypadLoop
+	jr c, .show_tmhm
+	xor a
+	ld [wTempTMHM], a
+	farcall ClearPackTMHMIcon
+	jp TMHM_JoypadLoop
+
+.show_tmhm
 	ld [wTempTMHM], a
 	predef GetTMHMMove
+	farcall ShowPackTMHMIcon
 	ld a, [wTempTMHM]
 	ld [wCurSpecies], a
 	hlcoord 1, 14

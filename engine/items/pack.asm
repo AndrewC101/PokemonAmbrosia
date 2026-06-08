@@ -1110,7 +1110,7 @@ TutorialPack:
 	dbw 0, wDudeNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 .KeyItems:
 	ld a, KEY_ITEM_POCKET
@@ -1130,7 +1130,7 @@ TutorialPack:
 	dbw 0, wDudeNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 .TMHM:
 	ld a, TM_HM_POCKET
@@ -1159,7 +1159,7 @@ TutorialPack:
 	dbw 0, wDudeNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 .DisplayPocket:
 	push hl
@@ -1380,33 +1380,31 @@ PlacePackGFX:
 	ret
 
 DrawPocketName:
+	hlcoord 0, 7
+	lb bc, 3, 5
+	call ClearBox
+
 	ld a, [wCurPocket]
-	; * 15
+	; Each pocket label still lives in the original 5x3 pack tilemap blocks.
+	; Skip the border row and copy the 5 middle tiles into the top label slot.
 	ld d, a
 	swap a
 	sub d
+	add 5
 	ld d, 0
 	ld e, a
 	ld hl, .tilemap
 	add hl, de
 	ld d, h
 	ld e, l
-	hlcoord 0, 7
-	ld c, 3
-.row
-	ld b, 5
-.col
+	hlcoord 15, 0
+	ld c, 5
+.top_row
 	ld a, [de]
 	inc de
 	ld [hli], a
-	dec b
-	jr nz, .col
-	ld a, c
-	ld c, SCREEN_WIDTH - 5
-	add hl, bc
-	ld c, a
 	dec c
-	jr nz, .row
+	jr nz, .top_row
 	ret
 
 .tilemap: ; 5x12
@@ -1454,7 +1452,7 @@ ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 PC_Mart_ItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1469,7 +1467,7 @@ PC_Mart_ItemsPocketMenuHeader:
 	dbw 0, wNumItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1484,7 +1482,7 @@ KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 PC_Mart_KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1499,7 +1497,7 @@ PC_Mart_KeyItemsPocketMenuHeader:
 	dbw 0, wNumKeyItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1514,7 +1512,7 @@ BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 PC_Mart_BallsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1529,7 +1527,7 @@ PC_Mart_BallsPocketMenuHeader:
 	dbw 0, wNumBalls
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
+	dba UpdatePackItemIconAndDescription
 
 PackNoItemText: ; unreferenced
 	text_far _PackNoItemText

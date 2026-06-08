@@ -433,6 +433,224 @@ LoadMailPalettes:
 .MailPals:
 INCLUDE "gfx/mail/mail.pal"
 
+RefreshPackItemIconPalette::
+	call CheckCGB
+	ret z
+	call LoadItemIconPalette
+	hlcoord 1, 7, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RefreshPackTMHMIconPalette::
+	call CheckCGB
+	ret z
+	call LoadTMHMIconPalette
+	hlcoord 1, 7, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RefreshTextboxItemIconPalette::
+	call CheckCGB
+	ret z
+	call LoadItemIconPalette
+	hlcoord 1, 13, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RefreshOverworldItemIconPalette::
+	call CheckCGB
+	ret z
+	call LoadItemIconPalette
+	hlcoord 16, 13, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RefreshReceivedItemIconPalette::
+	call CheckCGB
+	ret z
+	call LoadItemIconPalette
+	hlcoord 1, 14, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RefreshTextboxTMHMIconPalette::
+	call CheckCGB
+	ret z
+	call LoadTMHMIconPalette
+	hlcoord 1, 13, wAttrmap
+	lb bc, 3, 3
+	ld a, 7
+	call FillBoxCGB
+	call ApplyAttrmap
+	call ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+LoadItemIconPalette:
+	ld hl, BillsPC_WhitePalette
+	ld de, wBGPals1 palette 7
+	call LoadHLPaletteIntoDE
+
+	ld a, [wCurItem]
+	inc a
+	jr z, .fallback
+	dec a
+	cp NUM_ITEMS + 1
+	jr nc, .fallback
+	jr .got_index
+
+.fallback
+	xor a
+
+.got_index
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld bc, ItemIconPalettes
+	add hl, bc
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld de, wBGPals1 palette 7 + 2
+	ld b, BANK(ItemIconPalettes)
+rept 4
+	ld a, b
+	call GetFarByte
+	ld [de], a
+	inc de
+	inc hl
+endr
+
+	pop af
+	ldh [rSVBK], a
+
+	ld de, wBGPals1 palette 7 + 6
+	jp LoadSingleBlackPal
+
+LoadTMHMIconPalette:
+	ld hl, BillsPC_WhitePalette
+	ld de, wBGPals1 palette 7
+	call LoadHLPaletteIntoDE
+
+	ld a, [wTempTMHM]
+	and a
+	jr z, .load_black
+	dec a
+	ld bc, MOVE_LENGTH
+	ld hl, Moves + MOVE_TYPE
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	and TYPE_MASK
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld bc, TMHMTypeIconPals
+	add hl, bc
+	ld de, wBGPals1 palette 7 + 2
+	ld c, 4
+	call LoadHLBytesIntoDE
+
+.load_black
+	ld de, wBGPals1 palette 7 + 6
+	jp LoadSingleBlackPal
+
+TMHMTypeIconPals:
+; Ordered to match this repo's type constants.
+; NORMAL
+	RGB 28, 28, 29
+	RGB 24, 24, 23
+; FIGHTING
+	RGB 30, 24, 18
+	RGB 31, 13, 00
+; FLYING
+	RGB 21, 29, 31
+	RGB 24, 24, 23
+; POISON
+	RGB 31, 25, 20
+	RGB 24, 11, 26
+; GROUND
+	RGB 31, 31, 18
+	RGB 28, 24, 08
+; ROCK
+	RGB 30, 27, 20
+	RGB 27, 21, 08
+; FAIRY
+	RGB 29, 23, 30
+	RGB 31, 17, 26
+; BUG
+	RGB 27, 30, 24
+	RGB 17, 29, 13
+; GHOST
+	RGB 29, 25, 30
+	RGB 24, 11, 26
+; STEEL
+	RGB 26, 26, 25
+	RGB 05, 19, 19
+; FIRE
+	RGB 31, 27, 18
+	RGB 31, 20, 03
+; WATER
+	RGB 21, 26, 30
+	RGB 00, 20, 29
+; GRASS
+	RGB 22, 30, 26
+	RGB 00, 29, 20
+; ELECTRIC
+	RGB 31, 28, 14
+	RGB 31, 24, 00
+; PSYCHIC
+	RGB 31, 26, 24
+	RGB 31, 20, 18
+; ICE
+	RGB 22, 30, 31
+	RGB 11, 26, 29
+; DRAGON
+	RGB 17, 24, 31
+	RGB 31, 21, 14
+; DARK
+	RGB 22, 26, 25
+	RGB 05, 19, 19
+; UNKNOWN T
+	RGB 17, 26, 24
+	RGB 10, 20, 17
+
 INCLUDE "engine/gfx/cgb_layouts.asm"
 
 CopyFourPalettes:

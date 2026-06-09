@@ -138,7 +138,7 @@ CheckPartyCanLearnMove:
 	ld b,b
 	ld a, d
 	push de
-	call OW_CheckLvlUpMoves
+	farcall OW_CheckLvlUpMoves
 	pop de
 	jr nc, .yes
 ; done checking
@@ -155,62 +155,6 @@ CheckPartyCanLearnMove:
 	ret
 .no
 	scf
-	ret
-
-OW_CheckLvlUpMoves:
-; move looking for in a
-	ld d, a
-	ld a, [wCurPartySpecies]
-	dec a
-	ld b, 0
-	ld c, a
-	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
-	ld a, BANK(EvosAttacksPointers)
-	ld b, a
-	call GetFarWord
-	ld a, b
-	call GetFarByte
-	inc hl
-	and a
-	jr z, .find_move ; no evolutions
-	dec hl ; does have evolution(s)
-	call OW_SkipEvolutions
-.find_move
-	call OW_GetNextEvoAttackByte
-	and a
-	jr z, .notfound ; end of mon's lvl up learnset
-	call OW_GetNextEvoAttackByte
-	cp d
-	jr z, .found
-	jr .find_move
-.found
-	xor a
-	ret ; move is in lvl up learnset
-.notfound
-	scf ; move isnt in lvl up learnset
-	ret
-
-OW_SkipEvolutions:
-; Receives a pointer to the evos and attacks, and skips to the attacks.
-	ld a, b
-	call GetFarByte
-	inc hl
-	and a
-	ret z
-	cp EVOLVE_STAT
-	jr nz, .no_extra_skip
-	inc hl
-.no_extra_skip
-	inc hl
-	inc hl
-	jr OW_SkipEvolutions
-
-OW_GetNextEvoAttackByte:
-	ld a, BANK(EvosAttacksPointers)
-	call GetFarByte
-	inc hl
 	ret
 
 FieldMoveFailed:
@@ -315,9 +259,10 @@ Script_Cut:
     opentext
 	callasm GetPartyNickname
 	writetext UseCutText
+	closetext
+	callasm ShowFieldMovePreview
 	refreshmap
 	callasm CutDownTreeOrGrass
-	closetext
 	end
 
 CutDownTreeOrGrass:
@@ -420,8 +365,9 @@ Script_UseFlash:
 	refreshmap
 	special UpdateTimePals
 	writetext UseFlashTextScript
-	callasm BlindingFlash
 	closetext
+	callasm ShowFieldMovePreview
+	callasm BlindingFlash
 	end
 
 UseFlashTextScript:
@@ -514,6 +460,7 @@ UsedSurfScript:
 	writetext UsedSurfText ; "used SURF!"
 	waitbutton
 	closetext
+	callasm ShowFieldMovePreview
 
 	callasm .stubbed_fn
 
@@ -722,8 +669,9 @@ FlyFunction:
 
 .FlyScript:
 	refreshmap
-	callasm HideSprites
 	special UpdateTimePals
+	callasm ShowFieldMovePreview
+	callasm HideSprites
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -793,6 +741,7 @@ Script_UsedWaterfall:
 	writetext .UseWaterfallText
 	waitbutton
 	closetext
+	callasm ShowFieldMovePreview
 	playsound SFX_BUBBLEBEAM
 .loop
 	applymovement PLAYER, .WaterfallStep
@@ -1182,10 +1131,12 @@ EscapeRopeOrDig:
 	refreshmap
 	special UpdateTimePals
 	writetext .UseDigText
-
-.UsedDigOrEscapeRopeScript:
 	waitbutton
 	closetext
+	callasm ShowFieldMovePreview
+	sjump .UsedDigOrEscapeRopeScript
+
+.UsedDigOrEscapeRopeScript:
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .DigOut
 	farscall Script_AbortBugContest
@@ -1265,6 +1216,7 @@ TeleportFunction:
 	pause 60
 	refreshmap
 	closetext
+	callasm ShowFieldMovePreview
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .TeleportFrom
 	farscall Script_AbortBugContest
@@ -1337,11 +1289,9 @@ Script_UsedStrength:
     opentext
 	callasm SetStrengthFlag
 	writetext .UseStrengthText
-	readmem wStrengthSpecies
-	cry 0 ; plays [wStrengthSpecies] cry
-	pause 3
 	writetext .MoveBoulderText
 	closetext
+	callasm ShowFieldMovePreview
 	end
 
 .UseStrengthText:
@@ -1506,9 +1456,10 @@ Script_UsedWhirlpool:
     opentext
 	callasm GetPartyNickname
 	writetext UseWhirlpoolText
+	closetext
+	callasm ShowFieldMovePreview
 	refreshmap
 	callasm DisappearWhirlpool
-	closetext
 	end
 
 DisappearWhirlpool:
@@ -1619,13 +1570,14 @@ HeadbuttScript:
     opentext
 	callasm GetPartyNickname
 	writetext UseHeadbuttText
+	closetext
+	callasm ShowFieldMovePreview
 
 	refreshmap
 	callasm ShakeHeadbuttTree
 
 	callasm TreeMonEncounter
 	iffalse .no_battle
-	closetext
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
@@ -1720,6 +1672,7 @@ RockSmashScript:
 	callasm GetPartyNickname
 	writetext UseRockSmashText
 	closetext
+	callasm ShowFieldMovePreview
 	special WaitSFX
 	playsound SFX_STRENGTH
 	earthquake 84

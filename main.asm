@@ -163,6 +163,8 @@ INCLUDE "engine/battle/core2.asm"
 SECTION "bank10", ROMX
 
 INCLUDE "data/moves/moves.asm"
+INCLUDE "engine/events/overworld_move_learnset.asm"
+INCLUDE "engine/events/field_move_preview.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
 

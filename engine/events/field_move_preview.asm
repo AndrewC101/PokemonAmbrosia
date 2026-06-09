@@ -1,7 +1,10 @@
 ShowFieldMovePreview::
-; Rebuild a clean overworld screen before opening the centered pic box.
+; Match the script refresh path so the preview starts and ends on a clean map.
+	xor a
+	ldh [hBGMapMode], a
 	call LoadOverworldTilemapAndAttrmapPals
-	call ApplyTilemap
+	call GetMovementPermissions
+	farcall HDMATransferTilemapAndAttrmap_Overworld
 	call UpdateSprites
 
 ; Resolve the acting party mon's species for the shared Pokepic routine.
@@ -17,4 +20,11 @@ ShowFieldMovePreview::
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	farcall ClosePokepic
+
+	xor a
+	ldh [hBGMapMode], a
+	call LoadOverworldTilemapAndAttrmapPals
+	call GetMovementPermissions
+	farcall HDMATransferTilemapAndAttrmap_Overworld
+	call UpdateSprites
 	ret

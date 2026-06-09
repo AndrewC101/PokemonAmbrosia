@@ -1,4 +1,5 @@
 DEF MENU_ITEM_ICON_TILE EQU $60
+DEF MART_ITEM_ICON_TILE EQU $1e
 DEF OVERWORLD_ITEM_ICON_TILE EQU $6d
 
 UpdatePackItemIconAndDescription:
@@ -35,14 +36,14 @@ UpdateMartItemIconAndDescription:
 	cp -1
 	jr z, .load_icon
 	push af
-	decoord 5, 14
+	decoord 1, 14
 	farcall PrintItemDescription
 	pop af
 
 .load_icon
-	call LoadMenuItemIcon
-	call PlaceTextboxItemIcon
-	farcall RefreshTextboxItemIconPalette
+	call LoadMartItemIcon
+	call PlaceMartItemIcon
+	farcall RefreshPackItemIconPalette
 	ret
 
 ShowTextboxTMHMIcon::
@@ -107,6 +108,43 @@ LoadTMHMIcon::
 	ld de, vTiles2 tile MENU_ITEM_ICON_TILE
 	jp DecompressRequest2bpp
 
+LoadMartItemIcon:
+; a = selected item id; TM/HM ids use the shared TM/HM icon.
+	inc a
+	jr z, .no_item
+	dec a
+	cp TM01
+	jr nc, .check_tmhm
+	ld c, a
+	ld b, 0
+	ld hl, ItemIconPointers
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld c, 9
+	ld de, vTiles2 tile MART_ITEM_ICON_TILE
+	jp DecompressRequest2bpp
+
+.check_tmhm
+	cp ITEM_FA
+	jr c, .tmhm
+	jr .no_item
+
+.no_item
+	xor a
+	jr LoadMartItemIcon
+
+.tmhm
+	ld hl, TMHMIcon
+	lb bc, BANK(TMHMIcon), 9
+	ld de, vTiles2 tile MART_ITEM_ICON_TILE
+	jp DecompressRequest2bpp
+
 ClearTMHMIcon::
 	ld hl, NoItemIcon
 	lb bc, BANK(NoItemIcon), 9
@@ -120,6 +158,32 @@ PlacePackItemIcon:
 	call ClearBox
 	hlcoord 1, 7
 	ld a, MENU_ITEM_ICON_TILE
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ld bc, SCREEN_WIDTH - 2
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	add hl, bc
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
+	ret
+
+PlaceMartItemIcon:
+; The mart's left icon frame lives at x=0..4, y=6..10, so only fill the 3x3 interior.
+	hlcoord 1, 7
+	ld a, MART_ITEM_ICON_TILE
 	ld [hli], a
 	inc a
 	ld [hli], a

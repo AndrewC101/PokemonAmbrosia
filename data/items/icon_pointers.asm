@@ -3,7 +3,7 @@ ItemIconPointers:
 	dba NoItemIcon
 	dba MasterBallIcon
 	dba UltraBallIcon
-	dba PokeBallIcon
+	dba BrightPowderIcon
 	dba GreatBallIcon
 	dba PokeBallIcon
 	dba KurtsMapIcon
@@ -19,18 +19,18 @@ ItemIconPointers:
 	dba HyperPotionIcon
 	dba SuperPotionIcon
 	dba PotionIcon
-	dba EscapeRopeIcon
+	dba AbilityCapIcon
 	dba KurtsMapIcon
 	dba MaxElixirIcon
 	dba FireStoneIcon
 	dba ThunderStoneIcon
 	dba WaterStoneIcon
-	dba KurtsMapIcon
+	dba PokedexItemIcon
 	dba HPUpIcon
 	dba ProteinIcon
 	dba IronIcon
 	dba CarbosIcon
-	dba PokeBallIcon
+	dba KingsRockIcon
 	dba CalciumIcon
 	dba RareCandyIcon
 	dba XAccuracyIcon
@@ -42,15 +42,15 @@ ItemIconPointers:
 	dba ReviveIcon
 	dba MaxReviveIcon
 	dba AssaultVestIcon
-	dba PokeBallIcon
-	dba BicycleIcon
-	dba RepelIcon
-	dba PokeBallIcon
+	dba LoadedDiceIcon
+	dba HeavyBootsIcon
+	dba SootheBellIcon
+	dba ClearAmuletIcon
 	dba FreshWaterIcon
 	dba SodaPopIcon
 	dba LemonadeIcon
 	dba XAttackIcon
-	dba PokeBallIcon
+	dba PunchinGloveIcon
 	dba XDefendIcon
 	dba XSpeedIcon
 	dba XSpclAtkIcon
@@ -66,10 +66,10 @@ ItemIconPointers:
 	dba EtherIcon
 	dba MaxEtherIcon
 	dba ElixirIcon
-	dba PokeBallIcon
+	dba ExpCandyXLIcon
 	dba PotionIcon
-	dba PokeBallIcon
-	dba PokeBallIcon
+	dba SSTicketIcon
+	dba MysteryEggIcon
 	dba ClearBellIcon
 	dba SilverWingIcon
 	dba MoomooMilkIcon
@@ -116,7 +116,7 @@ ItemIconPointers:
 	dba SpellTagIcon
 	dba RageCandyBarIcon
 	dba GSBallIcon
-	dba PokeBallIcon
+	dba BlueCardIcon
 	dba MiracleSeedIcon
 	dba ThickClubIcon
 	dba FocusSashIcon
@@ -127,22 +127,22 @@ ItemIconPointers:
 	dba RevivalHerbIcon
 	dba HardStoneIcon
 	dba LuckyEggIcon
-	dba PokeBallIcon
+	dba CardKeyIcon
 	dba MachinePartIcon
 	dba PokeBallIcon
-	dba PokeBallIcon
+	dba LostItemIcon
 	dba StardustIcon
 	dba StarPieceIcon
-	dba PokeBallIcon
-	dba PokeBallIcon
+	dba BasementKeyIcon
+	dba PassIcon
 	dba ExpertBeltIcon
 	dba LifeOrbIcon
 	dba ChoiceBandIcon
 	dba CharcoalIcon
-	dba PokeBallIcon
+	dba AmbrosiaIcon
 	dba ScopeLensIcon
-	dba PokeBallIcon
-	dba PokeBallIcon
+	dba BigNuggetIcon
+	dba ElectirizerIcon
 	dba MetalCoatIcon
 	dba DragonFangIcon
 	dba PokeBallIcon
@@ -157,15 +157,15 @@ ItemIconPointers:
 	dba PokeBallIcon
 	dba PokeBallIcon
 	dba SacredAshIcon
-	dba PokeBallIcon
+	dba GeodeIcon
 	dba FlowerMailIcon
-	dba PokeBallIcon
-	dba PokeBallIcon
+	dba JezeBallIcon
+	dba BubBallIcon
 	dba FastBallIcon
 	dba PokeBallIcon
 	dba LightBallIcon
-	dba PokeBallIcon
-	dba PokeBallIcon
+	dba HerbBallIcon
+	dba DeciBallIcon
 	dba LoveBallIcon
 	dba NuggetIcon
 	dba BigNuggetIcon

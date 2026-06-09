@@ -5,7 +5,7 @@ ItemIconPalettes:
 	RGB 28, 02, 16
 	RGB 07, 07, 08 ; ULTRA_BALL / UltraBallIcon
 	RGB 31, 26, 07
-	RGB 21, 28, 21 ; BRIGHTPOWDER / PokeBallIcon
+	RGB 21, 28, 21 ; BRIGHTPOWDER / BrightPowderIcon
 	RGB 09, 14, 09
 	RGB 00, 17, 25 ; GREAT_BALL / GreatBallIcon
 	RGB 30, 10, 06
@@ -37,8 +37,8 @@ ItemIconPalettes:
 	RGB 24, 12, 11
 	RGB 20, 25, 23 ; POTION / PotionIcon
 	RGB 16, 12, 21
-	RGB 27, 24, 14 ; ESCAPE_POD / EscapeRopeIcon
-	RGB 18, 15, 05
+	RGB 19, 25, 24 ; ESCAPE_POD / AbilityCapIcon
+	RGB 15, 17, 17
 	RGB 31, 31, 31 ; WARP_DEVICE / KurtsMapIcon
 	RGB 30, 10, 06
 	RGB 26, 26, 11 ; MAX_ELIXER / MaxElixirIcon
@@ -49,8 +49,8 @@ ItemIconPalettes:
 	RGB 09, 18, 09
 	RGB 18, 22, 27 ; WATER_STONE / WaterStoneIcon
 	RGB 12, 10, 25
-	RGB 31, 31, 31 ; POCKET_PC / KurtsMapIcon
-	RGB 30, 10, 06
+	RGB 22, 08, 07 ; POCKET_PC / PokedexItemIcon
+	RGB 02, 09, 19
 	RGB 13, 20, 29 ; HP_UP / HPUpIcon
 	RGB 18, 11, 07
 	RGB 30, 20, 00 ; PROTEIN / ProteinIcon
@@ -59,8 +59,8 @@ ItemIconPalettes:
 	RGB 18, 11, 07
 	RGB 05, 20, 30 ; CARBOS / CarbosIcon
 	RGB 18, 11, 07
-	RGB 31, 31, 31 ; HOLY_CROWN / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 30, 22, 00 ; HOLY_CROWN / KingsRockIcon
+	RGB 22, 14, 00
 	RGB 30, 08, 00 ; CALCIUM / CalciumIcon
 	RGB 18, 11, 07
 	RGB 15, 18, 29 ; RARE_CANDY / RareCandyIcon
@@ -83,14 +83,14 @@ ItemIconPalettes:
 	RGB 20, 20, 07
 	RGB 26, 10, 10 ; ASSAULT_VEST / AssaultVestIcon
 	RGB 18, 06, 07
-	RGB 31, 31, 31 ; GOLD_DICE / PokeBallIcon
-	RGB 30, 10, 06
-	RGB 31, 31, 31 ; RUNNING_SHOES / BicycleIcon
-	RGB 30, 10, 06
-	RGB 10, 22, 10 ; REPULSOR / RepelIcon
-	RGB 23, 06, 02
-	RGB 31, 31, 31 ; MARK_OF_GOD / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 30, 22, 00 ; GOLD_DICE / LoadedDiceIcon
+	RGB 22, 14, 00
+	RGB 31, 10, 10 ; RUNNING_SHOES / HeavyBootsIcon
+	RGB 09, 08, 08
+	RGB 31, 10, 10 ; REPULSOR / SootheBellIcon
+	RGB 09, 08, 08
+	RGB 30, 22, 00 ; MARK_OF_GOD / ClearAmuletIcon
+	RGB 22, 14, 00
 	RGB 18, 20, 27 ; FRESH_WATER / FreshWaterIcon
 	RGB 08, 16, 06
 	RGB 13, 23, 28 ; SODA_POP / SodaPopIcon
@@ -99,8 +99,8 @@ ItemIconPalettes:
 	RGB 24, 24, 16
 	RGB 28, 16, 15 ; X_ATTACK / XAttackIcon
 	RGB 20, 09, 09
-	RGB 31, 31, 31 ; HAND_OF_GOD / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 30, 22, 00 ; HAND_OF_GOD / PunchinGloveIcon
+	RGB 22, 14, 00
 	RGB 15, 16, 28 ; X_DEFEND / XDefendIcon
 	RGB 09, 09, 20
 	RGB 13, 25, 25 ; X_SPEED / XSpeedIcon
@@ -131,14 +131,14 @@ ItemIconPalettes:
 	RGB 16, 24, 14
 	RGB 25, 25, 16 ; ELIXER / ElixirIcon
 	RGB 24, 16, 14
-	RGB 31, 31, 31 ; REMEMBRALL / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 15, 22, 31 ; REMEMBRALL / ExpCandyXLIcon
+	RGB 07, 13, 31
 	RGB 20, 25, 23 ; SECRETPOTION / PotionIcon
 	RGB 16, 12, 21
-	RGB 31, 31, 31 ; S_S_TICKET / PokeBallIcon
-	RGB 30, 10, 06
-	RGB 31, 31, 31 ; MYSTERY_EGG / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 12, 22, 29 ; S_S_TICKET / SSTicketIcon
+	RGB 06, 13, 17
+	RGB 29, 26, 18 ; MYSTERY_EGG / MysteryEggIcon
+	RGB 08, 19, 11
 	RGB 31, 31, 31 ; CLEAR_BELL / ClearBellIcon
 	RGB 30, 10, 06
 	RGB 31, 31, 31 ; SILVER_WING / SilverWingIcon
@@ -231,8 +231,8 @@ ItemIconPalettes:
 	RGB 20, 08, 06
 	RGB 31, 31, 31 ; GS_BALL / GSBallIcon
 	RGB 30, 10, 06
-	RGB 31, 31, 31 ; BLUE_CARD / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 15, 22, 31 ; BLUE_CARD / BlueCardIcon
+	RGB 07, 13, 31
 	RGB 29, 29, 11 ; MIRACLE_SEED / MiracleSeedIcon
 	RGB 24, 24, 06
 	RGB 26, 26, 21 ; THICK_CLUB / ThickClubIcon
@@ -253,22 +253,22 @@ ItemIconPalettes:
 	RGB 10, 09, 09
 	RGB 27, 29, 30 ; LUCKY_EGG / LuckyEggIcon
 	RGB 20, 21, 22
-	RGB 31, 31, 31 ; CARD_KEY / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 31, 14, 00 ; CARD_KEY / CardKeyIcon
+	RGB 04, 15, 29
 	RGB 31, 31, 31 ; MACHINE_PART / MachinePartIcon
 	RGB 30, 10, 06
 	RGB 31, 31, 31 ; EGG_TICKET / PokeBallIcon
 	RGB 30, 10, 06
-	RGB 31, 31, 31 ; LOST_ITEM / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 31, 20, 25 ; LOST_ITEM / LostItemIcon
+	RGB 28, 15, 23
 	RGB 27, 14, 14 ; STARDUST / StardustIcon
 	RGB 12, 19, 26
 	RGB 30, 20, 20 ; STAR_PIECE / StarPieceIcon
 	RGB 27, 14, 14
-	RGB 31, 31, 31 ; BASEMENT_KEY / PokeBallIcon
-	RGB 30, 10, 06
-	RGB 31, 31, 31 ; PASS / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 20, 21, 23 ; BASEMENT_KEY / BasementKeyIcon
+	RGB 11, 12, 16
+	RGB 13, 23, 00 ; PASS / PassIcon
+	RGB 26, 13, 12
 	RGB 12, 11, 12 ; EXPERT_BELT / ExpertBeltIcon
 	RGB 09, 08, 09
 	RGB 28, 08, 28 ; LIFE_ORB / LifeOrbIcon
@@ -277,14 +277,14 @@ ItemIconPalettes:
 	RGB 27, 11, 11
 	RGB 17, 17, 17 ; CHARCOAL / CharcoalIcon
 	RGB 08, 08, 08
-	RGB 31, 31, 31 ; AMBROSIA / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 30, 22, 00 ; AMBROSIA / AmbrosiaIcon
+	RGB 22, 14, 00
 	RGB 18, 20, 22 ; SCOPE_LENS / ScopeLensIcon
 	RGB 29, 24, 09
-	RGB 31, 31, 31 ; GIFT_OF_GOD / PokeBallIcon
-	RGB 30, 10, 06
-	RGB 31, 31, 31 ; JUKEBOX / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 31, 25, 09 ; GIFT_OF_GOD / BigNuggetIcon
+	RGB 19, 14, 02
+	RGB 31, 20, 00 ; JUKEBOX / ElectirizerIcon
+	RGB 20, 12, 00
 	RGB 22, 24, 24 ; METAL_COAT / MetalCoatIcon
 	RGB 13, 16, 16
 	RGB 23, 20, 19 ; DRAGON_FANG / DragonFangIcon
@@ -313,13 +313,13 @@ ItemIconPalettes:
 	RGB 30, 10, 06
 	RGB 19, 19, 19 ; SACRED_ASH / SacredAshIcon
 	RGB 21, 21, 05
-	RGB 07, 07, 08 ; HEAVY_BALL / PokeBallIcon
+	RGB 07, 07, 08 ; HEAVY_BALL / GeodeIcon
 	RGB 00, 15, 21
 	RGB 20, 31, 11 ; FLOWER_MAIL / FlowerMailIcon
 	RGB 31, 19, 00
-	RGB 20, 20, 20 ; LEVEL_BALL / PokeBallIcon
+	RGB 20, 20, 20 ; LEVEL_BALL / JezeBallIcon
 	RGB 31, 08, 06
-	RGB 31, 25, 20 ; LURE_BALL / PokeBallIcon
+	RGB 31, 25, 20 ; LURE_BALL / BubBallIcon
 	RGB 00, 16, 31
 	RGB 31, 15, 00 ; FAST_BALL / FastBallIcon
 	RGB 31, 25, 08
@@ -327,9 +327,9 @@ ItemIconPalettes:
 	RGB 30, 10, 06
 	RGB 28, 27, 05 ; LIGHT_BALL / LightBallIcon
 	RGB 20, 20, 02
-	RGB 13, 25, 12 ; FRIEND_BALL / PokeBallIcon
+	RGB 13, 25, 12 ; FRIEND_BALL / HerbBallIcon
 	RGB 09, 19, 08
-	RGB 28, 28, 28 ; MOON_BALL / PokeBallIcon
+	RGB 28, 28, 28 ; MOON_BALL / DeciBallIcon
 	RGB 31, 21, 00
 	RGB 31, 16, 19 ; LOVE_BALL / LoveBallIcon
 	RGB 31, 25, 26

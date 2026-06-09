@@ -473,6 +473,7 @@ GetMartDialogGroup:
 
 BuyMenuLoop:
 	farcall PlaceMoneyTopRight
+	call DrawMartBuyIconFrame
 	call UpdateSprites
 	ld hl, MenuHeader_Buy
 	call CopyMenuHeader
@@ -690,7 +691,7 @@ MartFinalPriceText:
 
 MenuHeader_Buy:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 1, 3, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 6, 3, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
@@ -715,10 +716,21 @@ MenuHeader_Buy:
 	ld d, h
 	ld e, l
 	pop hl
-	ld bc, SCREEN_WIDTH
+	ld bc, SCREEN_WIDTH - 4
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
 	call PrintBCDNumber
+	ret
+
+DrawMartBuyIconFrame:
+; Clear the left margin reserved for the icon panel, then draw a 5x5 frame
+; whose 3x3 interior matches PlaceMartItemIcon's target coordinates.
+	hlcoord 0, 3
+	lb bc, 9, 5
+	call ClearBox
+	hlcoord 0, 6
+	lb bc, 3, 3
+	call Textbox
 	ret
 
 HerbShopLadyIntroText:

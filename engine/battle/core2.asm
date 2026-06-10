@@ -796,10 +796,7 @@ MoveInfoBox:
 
 	farcall UpdateMoveData
 
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	hlcoord 2, 8
-	predef PrintMoveType
+	farcall DrawBattleMoveTypeCategoryIcons
 
 	ld de, .pp_string
 	hlcoord 2, 10
@@ -850,12 +847,6 @@ MoveInfoBox:
 	ret
 
 .place_category
-	ld a, [wCurPlayerMove]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 1, 11
-	ld de, wStringBuffer1
-	call PlaceString
 	ret
 
 .PrintPP

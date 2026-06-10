@@ -465,10 +465,7 @@ ChooseMoveToLearn:
 
 ; This prints the move's type.
 .print_move_type
-	ld a, [wCurSpecies]
-	ld b, a
-	hlcoord 10, 11
-	predef PrintMoveType
+	farcall DrawRelearnerMoveTypeCategoryIcons
 ; This code falls through into the ".print_move_stat_strings" local jump.
 
 ; This prints the notch in the description text box border
@@ -491,21 +488,6 @@ ChooseMoveToLearn:
 	hlcoord 1, 11
 	ld de, MoveAccuracyString
 	call PlaceString
-
-; This code falls through into the ".print_move_category" local jump.
-
-; This prints the move's category ("PHYSICAL",
-; "SPECIAL" or "STATUS").
-.print_move_category
-	ld a, [wCurSpecies]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 11, 12
-	ld de, wStringBuffer1
-	call PlaceString
-	hlcoord 10, 12
-	ld [hl], "/"
-	inc hl
 
 ; This code falls through into the ".print_move_chance" local jump.
 ; This prints the move's status effect chance number.

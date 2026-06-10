@@ -1605,16 +1605,8 @@ PlaceMoveData:
 	ld de, String_MoveEff
 	call PlaceString
 
-; Print move category
-	ld a, [wCurSpecies]
-	ld b, a
-	farcall GetMoveCategoryName
-	hlcoord 11, 13
-	ld de, wStringBuffer1
-	call PlaceString
-	hlcoord 10, 13
-	ld [hl], "/"
-	inc hl
+; Draw the category+type icon strip in the right half of the box.
+	farcall DrawPartyMoveTypeCategoryIcons
 
 ; Print move effect chance
 	ld a, [wCurSpecies]
@@ -1654,12 +1646,6 @@ PlaceMoveData:
 	lb bc, 1, 3
 	hlcoord 5, 12
 	call PrintNum
-
-; Print move type
-	ld a, [wCurSpecies]
-	ld b, a
-	hlcoord 10, 12
-	predef PrintMoveType
 
 ; Print move power
 	ld a, [wCurSpecies]

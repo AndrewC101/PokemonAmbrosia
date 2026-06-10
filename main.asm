@@ -625,6 +625,9 @@ SECTION "Item Icon Menu Code", ROMX
 INCLUDE "engine/items/update_item_icon_and_description.asm"
 INCLUDE "data/items/icon_palettes.asm"
 
+SECTION "Move Type Category Icon Code", ROMX
+INCLUDE "engine/gfx/move_type_category_icons.asm"
+
 SECTION "Map GroupNums Names", ROMX
 INCLUDE "data/maps/map_names.asm"
 

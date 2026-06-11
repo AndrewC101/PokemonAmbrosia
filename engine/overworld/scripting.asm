@@ -470,7 +470,7 @@ GiveItemScript:
 	callasm GiveItemScript_DummyFunction
 	writetext .ReceivedItemText
 	iffalse .Full
-	callasm ShowReceivedItemIconScriptHelper
+	callasm ShowCurrentItemIconScriptHelper
 	waitsfx
 	specialsound
 	waitbutton

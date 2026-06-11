@@ -295,42 +295,11 @@ PlaceOverworldItemIcon::
 	ld [hl], a
 	ret
 
-PlaceOverworldReceivedItemIcon::
-	hlcoord 1, 14
-	ld a, $ed
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hl], a
-	ld a, $f0
-	hlcoord 1, 15
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hl], a
-	ld a, $f3
-	hlcoord 1, 16
-	ld [hli], a
-	inc a
-	ld [hli], a
-	inc a
-	ld [hl], a
-	ret
-
 ShowCurrentItemIconScriptHelper::
 	call LoadItemIconForOverworld
 	call PlaceOverworldItemIcon
 	call ApplyTilemap
 	farcall RefreshOverworldItemIconPalette
-	ret
-
-ShowReceivedItemIconScriptHelper::
-	call LoadItemIconForOverworld
-	call PlaceOverworldReceivedItemIcon
-	call ApplyTilemap
-	farcall RefreshReceivedItemIconPalette
 	ret
 
 INCLUDE "data/items/icon_pointers.asm"

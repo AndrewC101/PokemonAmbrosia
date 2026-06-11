@@ -599,13 +599,14 @@ RegigigasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, CONFUSE_RAY
-	db 18, STOMP
-	db 24, PROTECT
+	db 10, STOMP
+	db 20, PROTECT
 	db 30, BODY_SLAM
 	db 40, ZEN_HEADBUTT
 	db 50, SHADOW_PUNCH
-	db 60, DYNAMICPUNCH
-	db 70, DOUBLE_EDGE
+	db 60, FLARE_BLITZ
+	db 70, VOLT_TACKLE
+	db 80, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 ZygardeEvosAttacks:

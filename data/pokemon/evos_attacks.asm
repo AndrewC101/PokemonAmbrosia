@@ -3030,7 +3030,6 @@ MewtwoEvosAttacks:
 
 ArceusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, DIG
 	db 1, TELEPORT
 	db 1, EXTREMESPEED
 	db 1, JUDGEMENT

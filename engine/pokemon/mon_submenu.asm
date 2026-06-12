@@ -223,6 +223,8 @@ AddMonMenuItem:
 	push de
 	push af
 	ld a, [wMonSubmenuCount]
+	cp NUM_MONMENU_ITEMS
+	jr nc, .done ; the submenu box only has room for eight entries
 	ld e, a
 	inc a
 	ld [wMonSubmenuCount], a
@@ -231,6 +233,12 @@ AddMonMenuItem:
 	add hl, de
 	pop af
 	ld [hl], a
+	jr .pop_regs
+
+.done
+	pop af
+
+.pop_regs
 	pop de
 	pop hl
 	ret

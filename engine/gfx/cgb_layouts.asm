@@ -112,6 +112,9 @@ _CGB_BattleColors:
 	call InitBattleStatusIconPalette
 	call LoadPlayerStatusIconPalette ; PAL_BATTLE_BG_STATUS + 2
 	call LoadEnemyStatusIconPalette ; PAL_BATTLE_BG_STATUS + 4
+	ld hl, wBGPals1 palette PAL_BATTLE_BG_PLAYER
+	ld de, wBGPals1 palette PAL_BATTLE_BG_6
+	call LoadHLPaletteIntoDE
 
 	ld de, wOBPals1
 	pop hl
@@ -156,6 +159,11 @@ _CGB_FinishBattleScreenLayout:
 	hlcoord 2, 1, wAttrmap
 	lb bc, 1, 2
 	ld a, PAL_BATTLE_BG_STATUS
+	call FillBoxCGB
+
+	hlcoord 2, 8, wAttrmap
+	lb bc, 1, 6
+	ld a, PAL_BATTLE_BG_6
 	call FillBoxCGB
 
 	hlcoord 0, 12, wAttrmap

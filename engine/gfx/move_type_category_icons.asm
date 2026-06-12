@@ -47,8 +47,8 @@ DrawBattleMoveTypeCategoryIcons::
 	call LoadBattleMoveTypeCategoryIconGfx
 	hlcoord 2, 8
 	call PlaceBattleMoveTypeCategoryTiles
-	decoord 2, 8, wAttrmap
 	ld a, BATTLE_MOVE_TYPECAT_PALETTE
+	jr ApplyMoveTypeCategoryColors_NoAttrmap
 
 ApplyMoveTypeCategoryColors:
 ; Input:
@@ -68,6 +68,32 @@ ApplyMoveTypeCategoryColors:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
+
+ApplyMoveTypeCategoryColors_NoAttrmap:
+; Input:
+;   a = destination palette
+;   b = category index
+;   c = raw type index
+	push af
+	ldh a, [hCGB]
+	and a
+	pop af
+	ret z
+
+	call LoadMoveTypeCategoryPaletteOnly
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+RestoreBattleMoveTypeCategoryFontTiles::
+; The battle move info strip reuses vTiles1 $55-$5a, which overlap standard
+; font glyphs. Restore those six 1bpp font tiles once the move-info box is
+; gone so later battle text punctuation renders correctly.
+	ld de, Font + BATTLE_MOVE_CATEGORY_ICON_TILE * TILE_1BPP_SIZE
+	ld hl, vTiles1 tile BATTLE_MOVE_CATEGORY_ICON_TILE
+	lb bc, BANK(Font), 6
+	jp Get1bppViaHDMA
 
 GetMoveTypeCategoryIconIndices:
 ; Input:
@@ -117,14 +143,14 @@ LoadMenuMoveTypeCategoryIconGfx:
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	ld hl, TypeIconGFX
-	ld bc, 4 * LEN_1BPP_TILE
+	ld hl, TypeIconGFX2bpp
+	ld bc, 4 tiles
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles2 tile MENU_MOVE_TYPE_ICON_TILE
-	lb bc, BANK(TypeIconGFX), 4
-	call Request1bpp
+	lb bc, BANK(TypeIconGFX2bpp), 4
+	call Request2bpp
 	pop bc
 	ret
 
@@ -151,14 +177,14 @@ LoadBattleMoveTypeCategoryIconGfx:
 	ld d, 0
 	add hl, de
 	ld a, [hl]
-	ld hl, TypeIconGFX
-	ld bc, 4 * LEN_1BPP_TILE
+	ld hl, TypeIconGFX2bpp
+	ld bc, 4 tiles
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles1 tile BATTLE_MOVE_TYPE_ICON_TILE
-	lb bc, BANK(TypeIconGFX), 4
-	call Request1bpp
+	lb bc, BANK(TypeIconGFX2bpp), 4
+	call Request2bpp
 	pop bc
 	ret
 
@@ -180,6 +206,7 @@ PlaceMoveTypeCategoryTiles:
 ;   hl = tilemap destination for the 6-tile strip
 	ldh a, [rSVBK]
 	push af
+	push bc ; preserve category/type indices for the palette step that follows
 	ld a, BANK(wTilemap)
 	ldh [rSVBK], a
 	ld b, 6
@@ -191,6 +218,7 @@ PlaceMoveTypeCategoryTiles:
 	jr nz, .loop
 
 .done
+	pop bc
 	pop af
 	ldh [rSVBK], a
 	ret
@@ -201,68 +229,8 @@ LoadMoveTypeCategoryPaletteAndAttrmap:
 ;   b = category index
 ;   c = raw type index
 ;   de = attrmap destination for the 6-tile strip
-	push de
-	push bc
-	push af
-	cp BATTLE_MOVE_TYPECAT_PALETTE
-	ld de, wBGPals1 palette MENU_MOVE_TYPECAT_PALETTE
-	jr nz, .got_dest
-	ld de, wBGPals1 palette BATTLE_MOVE_TYPECAT_PALETTE
-.got_dest
-
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-
-	ld a, LOW(PALRGB_WHITE)
-	ld [de], a
-	inc de
-	ld a, HIGH(PALRGB_WHITE)
-	ld [de], a
-	inc de
-
-	push de
-	ld hl, CategoryIconPals
-	ld a, b
-	add a
-	add a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld c, 4
-.copy_category
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .copy_category
-
-	pop de
-	pop bc
-	inc de
-	inc de
-	inc de
-	inc de
-	ld hl, MoveTypeColorPals
-	ld a, c
-	add a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
-
-	pop af
-	ldh [rSVBK], a
-
-	pop af
+	call LoadMoveTypeCategoryPaletteOnly
 	ld c, a ; preserve the chosen palette number across the WRAM bank switch
-	pop hl ; original bc is no longer needed after the palette copy
-	pop de
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wAttrmap)
@@ -276,6 +244,88 @@ LoadMoveTypeCategoryPaletteAndAttrmap:
 	jr nz, .fill_attr
 	pop af
 	ldh [rSVBK], a
+	ret
+
+LoadMoveTypeCategoryPaletteOnly:
+; Input:
+;   a = destination BG palette
+;   b = category index
+;   c = raw type index
+	push de
+	push bc
+	push af
+	cp BATTLE_MOVE_TYPECAT_PALETTE
+	ld h, 0
+	ld de, wBGPals1 palette MENU_MOVE_TYPECAT_PALETTE
+	jr nz, .got_dest
+	inc h ; battle uses a time-of-day-aware background, like status icons
+	ld de, wBGPals1 palette BATTLE_MOVE_TYPECAT_PALETTE
+.got_dest
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	push bc ; keep the original category/type indices after reusing bc as an offset
+
+	ld a, h
+	and a
+	jr z, .white_bg
+	ld a, [wBattleTimeOfDay]
+	and a
+	jr z, .white_bg
+	ld a, LOW(PALRGB_NIGHT)
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_NIGHT)
+	jr .store_bg_high
+
+.white_bg
+	ld a, LOW(PALRGB_WHITE)
+	ld [de], a
+	inc de
+	ld a, HIGH(PALRGB_WHITE)
+
+.store_bg_high
+	ld [de], a
+	inc de
+	ld hl, CategoryIconPals
+	ld a, b
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+
+	pop bc
+	ld hl, MoveTypeColorPals
+	ld a, c
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	inc de
+
+	xor a
+	ld [de], a
+	inc de
+	ld [de], a
+
+	pop af
+	ldh [rSVBK], a
+	pop af
+	pop bc
+	pop de
 	ret
 
 MoveTypeIconIndexMap:
@@ -312,18 +362,19 @@ MoveTypeIconIndexMap:
 	db 18 ; UBER
 
 CategoryIconPals:
+; One solid glyph color per category. The 2bpp art uses one mid-tone, matching
+; the status-icon pattern of "background plus one patched glyph entry".
 ; PHYSICAL
-	RGB 31, 28, 00
 	RGB 27, 04, 02
 ; SPECIAL
-	RGB 27, 31, 31
-	RGB 00, 14, 29
+	RGB 11, 18, 30
 ; STATUS
-	RGB 31, 31, 31
-	RGB 21, 21, 14
+	RGB 11, 25, 11
 
 MoveTypeColorPals:
 ; One solid glyph color per raw type id in this repo's sparse type space.
+; The 2bpp type art uses the second patched glyph entry, like battle status
+; icons using separate middle colors inside one reserved palette slot.
 ; Unused/custom slots fall back to the UNKNOWN color.
 ; NORMAL
 	RGB 21, 21, 14
@@ -384,8 +435,8 @@ MoveTypeColorPals:
 ; UBER
 	RGB 13, 19, 19
 
-TypeIconGFX:
-INCBIN "gfx/battle/types.1bpp"
+TypeIconGFX2bpp:
+INCBIN "gfx/battle/types.2bpp"
 
 CategoryIconGFX:
 INCBIN "gfx/battle/categories.2bpp"

@@ -721,6 +721,8 @@ ParsePlayerAction:
 	push af
 	call SafeLoadTempTilemapToTilemap
 	call UpdateBattleHuds
+	call WaitBGMap
+	farcall RestoreBattleMoveTypeCategoryFontTiles
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle

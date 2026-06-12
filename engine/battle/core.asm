@@ -5637,6 +5637,13 @@ DrawPlayerHUD:
 	lb bc, 5, 11
 	call ClearBox
 
+	; The player HUD rebuild uses the active battler's species for gender and
+	; palette-related lookups, but callers do not expect that species context
+	; to replace the current mon being processed elsewhere.
+	ld a, [wCurPartySpecies]
+	push af
+	ld a, [wCurSpecies]
+	push af
 	farcall DrawPlayerHUDBorder
 
 	hlcoord 18, 9
@@ -5670,6 +5677,10 @@ DrawPlayerHUD:
 	ld a, $db ; corresponds to vTiles1 tile $5e
 	ld [hli], a
 	ld [hl], $dc ; corresponds to vTiles1 tile $5f
+	pop af
+	ld [wCurSpecies], a
+	pop af
+	ld [wCurPartySpecies], a
 	ret
 
 UpdatePlayerHPPal:
@@ -5779,6 +5790,12 @@ DrawEnemyHUD:
 	lb bc, 5, 11
 	call ClearBox
 
+	; The enemy HUD needs enemy species context for name/gender/palette data,
+	; but callers do not expect that context to survive the redraw.
+	ld a, [wCurPartySpecies]
+	push af
+	ld a, [wCurSpecies]
+	push af
 	ld a, [wTempEnemyMonSpecies]
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -5939,6 +5956,10 @@ DrawEnemyHUD:
 	ld a, $dd ; corresponds to vTiles1 tile $5d
 	ld [hli], a
 	ld [hl], $de ; corresponds to vTiles1 tile $5e
+	pop af
+	ld [wCurSpecies], a
+	pop af
+	ld [wCurPartySpecies], a
 	jp FinishBattleAnim
 	ret
 
@@ -8993,7 +9014,11 @@ DropEnemySub:
 	ld hl, BattleAnimCmd_MinimizeOpp
 	jr nz, GetEnemyMonFrontpic_DoAnim
 
+	; This redraw helper needs enemy species context to rebuild the frontpic,
+	; but callers do not expect it to leak that species into generic globals.
 	ld a, [wCurPartySpecies]
+	push af
+	ld a, [wCurSpecies]
 	push af
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
@@ -9003,6 +9028,8 @@ DropEnemySub:
 	predef GetUnownLetter
 	ld de, vTiles2
 	predef GetAnimatedFrontpic
+	pop af
+	ld [wCurSpecies], a
 	pop af
 	ld [wCurPartySpecies], a
 	ret

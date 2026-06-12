@@ -1335,6 +1335,15 @@ _CGB_Pokepic:
 	ld c, a
 	ld a, PAL_BG_GRAY
 	call FillBoxCGB
+
+; The surrounding box stays gray, but the 7x7 picture interior uses PAL_BG_TEXT,
+; matching Pokepic's palette load destination.
+	call MenuBoxCoord2Attr
+	ld de, SCREEN_WIDTH + 1
+	add hl, de
+	lb bc, 7, 7
+	ld a, PAL_BG_TEXT
+	call FillBoxCGB
 	call ApplyAttrmap
 	ret
 

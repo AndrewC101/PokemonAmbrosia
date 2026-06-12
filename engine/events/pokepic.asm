@@ -2,6 +2,8 @@ Pokepic::
 	ld hl, PokepicMenuHeader
 	call CopyMenuHeader
 	call MenuBox
+	ld b, SCGB_POKEPIC
+	call GetSGBLayout
 	call UpdateSprites
 	call ApplyTilemap
 	ld de, wBGPals1 palette PAL_BG_TEXT color 1
@@ -44,6 +46,6 @@ ClosePokepic::
 
 PokepicMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 6, 4, 14, 13
+	menu_coords 6, 4, 14, 12
 	dw NULL
 	db 1 ; default option

@@ -443,9 +443,7 @@ RefreshPackItemIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FinishItemIconPaletteRefresh
 
 RefreshPackTMHMIconPalette::
 	call CheckCGB
@@ -457,9 +455,7 @@ RefreshPackTMHMIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FinishItemIconPaletteRefresh
 
 RefreshTextboxItemIconPalette::
 	call CheckCGB
@@ -471,9 +467,7 @@ RefreshTextboxItemIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FinishItemIconPaletteRefresh
 
 RefreshOverworldItemIconPalette::
 	call CheckCGB
@@ -485,9 +479,7 @@ RefreshOverworldItemIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FinishItemIconPaletteRefresh
 
 RefreshReceivedItemIconPalette::
 	call CheckCGB
@@ -499,9 +491,7 @@ RefreshReceivedItemIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
-	ret
+	jp FinishItemIconPaletteRefresh
 
 RefreshTextboxTMHMIconPalette::
 	call CheckCGB
@@ -513,9 +503,12 @@ RefreshTextboxTMHMIconPalette::
 	call FillBoxCGB
 	call ApplyAttrmap
 	call ApplyPals
+	jp FinishItemIconPaletteRefresh
+
+FinishItemIconPaletteRefresh:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
-	ret
+	jp UpdatePalsIfCGB
 
 LoadItemIconPalette:
 	ld hl, BillsPC_WhitePalette

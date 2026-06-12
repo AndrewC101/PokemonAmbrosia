@@ -484,7 +484,7 @@ GiveItemScript:
 
 .ReceivedItemText:
 	text "<PLAYER> received"
-	line "    @"
+	line "@"
 	text_ram wStringBuffer4
 	text "."
 	done
@@ -520,6 +520,7 @@ Script_verbosegiveitemvar:
 Script_itemnotify:
 	call GetPocketName
 	call CurItemName
+	farcall HideCurrentItemIconAndRestoreFontScriptHelper
 	ld b, BANK(PutItemInPocketText)
 	ld hl, PutItemInPocketText
 	call MapTextbox

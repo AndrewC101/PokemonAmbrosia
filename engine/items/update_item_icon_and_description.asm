@@ -298,8 +298,24 @@ PlaceOverworldItemIcon::
 ShowCurrentItemIconScriptHelper::
 	call LoadItemIconForOverworld
 	call PlaceOverworldItemIcon
-	call ApplyTilemap
 	farcall RefreshOverworldItemIconPalette
+	call ApplyTilemap
+	ld hl, wScriptFlags
+	set UNUSED_SCRIPT_FLAG_0, [hl]
+	ret
+
+HideCurrentItemIconAndRestoreFontScriptHelper::
+	ld hl, wScriptFlags
+	bit UNUSED_SCRIPT_FLAG_0, [hl]
+	ret z
+	res UNUSED_SCRIPT_FLAG_0, [hl]
+	hlcoord 16, 13
+	lb bc, 3, 3
+	call ClearBox
+	call ApplyTilemap
+	; LoadItemIconForOverworld overwrites part of the standard font in vTiles1.
+	; Restore those glyphs only after the icon tiles are no longer on-screen.
+	call LoadStandardFont
 	ret
 
 INCLUDE "data/items/icon_pointers.asm"

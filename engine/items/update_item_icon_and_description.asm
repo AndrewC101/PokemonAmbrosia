@@ -43,7 +43,7 @@ UpdateMartItemIconAndDescription:
 .load_icon
 	call LoadMartItemIcon
 	call PlaceMartItemIcon
-	farcall RefreshPackItemIconPalette
+	farcall RefreshMartItemIconPaletteByItem
 	ret
 
 ShowTextboxTMHMIcon::
@@ -298,7 +298,7 @@ PlaceOverworldItemIcon::
 ShowCurrentItemIconScriptHelper::
 	call LoadItemIconForOverworld
 	call PlaceOverworldItemIcon
-	farcall RefreshOverworldItemIconPalette
+	farcall RefreshOverworldItemIconPaletteByItem
 	call ApplyTilemap
 	ld hl, wScriptFlags
 	set UNUSED_SCRIPT_FLAG_0, [hl]

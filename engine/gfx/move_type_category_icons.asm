@@ -365,11 +365,11 @@ CategoryIconPals:
 ; One solid glyph color per category. The 2bpp art uses one mid-tone, matching
 ; the status-icon pattern of "background plus one patched glyph entry".
 ; PHYSICAL
-	RGB 27, 04, 02
+	RGB 20, 01, 01
 ; SPECIAL
-	RGB 11, 18, 30
+	RGB 07, 12, 22
 ; STATUS
-	RGB 11, 25, 11
+	RGB 07, 17, 07
 
 MoveTypeColorPals:
 ; One solid glyph color per raw type id in this repo's sparse type space.
@@ -377,63 +377,63 @@ MoveTypeColorPals:
 ; icons using separate middle colors inside one reserved palette slot.
 ; Unused/custom slots fall back to the UNKNOWN color.
 ; NORMAL
-	RGB 21, 21, 14
+	RGB 15, 15, 09
 ; FIGHTING
-	RGB 27, 04, 02
+	RGB 20, 01, 01
 ; FLYING
-	RGB 22, 17, 30
+	RGB 16, 11, 22
 ; POISON
-	RGB 22, 07, 19
+	RGB 16, 03, 13
 ; GROUND
-	RGB 29, 24, 12
+	RGB 21, 17, 08
 ; ROCK
-	RGB 24, 20, 07
+	RGB 17, 14, 03
 ; FAIRY
-	RGB 31, 20, 29
+	RGB 23, 14, 21
 ; BUG
-	RGB 21, 23, 06
+	RGB 15, 17, 02
 ; GHOST
-	RGB 15, 11, 18
+	RGB 10, 07, 12
 ; STEEL
-	RGB 23, 23, 25
+	RGB 17, 17, 18
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; unused
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; CURSE_TYPE
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 ; FIRE
-	RGB 31, 15, 04
+	RGB 23, 10, 01
 ; WATER
-	RGB 11, 18, 30
+	RGB 07, 12, 22
 ; GRASS
-	RGB 11, 25, 11
+	RGB 07, 17, 07
 ; ELECTRIC
-	RGB 31, 24, 06
+	RGB 24, 18, 02
 ; PSYCHIC
-	RGB 31, 09, 15
+	RGB 23, 05, 10
 ; ICE
-	RGB 16, 27, 27
+	RGB 11, 20, 20
 ; DRAGON
-	RGB 15, 07, 31
+	RGB 10, 03, 23
 ; DARK
-	RGB 15, 11, 09
+	RGB 10, 07, 05
 ; UBER
-	RGB 13, 19, 19
+	RGB 09, 13, 13
 
 TypeIconGFX2bpp:
 INCBIN "gfx/battle/types.2bpp"

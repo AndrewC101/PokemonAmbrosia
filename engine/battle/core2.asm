@@ -743,8 +743,19 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
+	ld a, [wOptions2]
+	and 1 << BATTLE_INFO
+	jr nz, .draw_full_box
+
+	hlcoord 0, 8 ; upper right corner of the compact textbox
+	ld b, 3 ; Box height
+	jr .draw_box
+
+.draw_full_box
 	hlcoord 0, 7 ; upper right corner of the textbox
 	ld b, 4 ; Box height
+
+.draw_box
 	ld c, 9 ; Box length
 	call Textbox
 	call MobileTextBorder
@@ -760,7 +771,17 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
+	ld a, [wOptions2]
+	and 1 << BATTLE_INFO
+	jr nz, .full_disabled
+
+	hlcoord 1, 11
+	jr .print_disabled
+
+.full_disabled
 	hlcoord 1, 10
+
+.print_disabled
 	ld de, .Disabled
 	call PlaceString
 	ret
@@ -798,6 +819,23 @@ MoveInfoBox:
 
 	farcall DrawBattleMoveTypeCategoryIcons
 
+	ld a, [wOptions2]
+	and 1 << BATTLE_INFO
+	jr nz, .full_layout
+
+	call .ShiftCompactTypeCategoryStrip
+	ld de, .pp_string
+	hlcoord 2, 11
+	call PlaceString
+
+	ld de, .power_string
+	hlcoord 4, 10
+	call PlaceString
+
+	hlcoord 1, 10
+	jr .print_power
+
+.full_layout
 	ld de, .pp_string
 	hlcoord 2, 10
 	call PlaceString
@@ -807,6 +845,8 @@ MoveInfoBox:
 	call PlaceString
 
 	hlcoord 1, 9
+
+.print_power
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	cp 2
 	jr c, .nopower
@@ -834,7 +874,17 @@ MoveInfoBox:
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
+	ld a, [wOptions2]
+	and 1 << BATTLE_INFO
+	jr nz, .full_accuracy
+
+	hlcoord 6, 10
+	jr .print_accuracy
+
+.full_accuracy
 	hlcoord 6, 9
+
+.print_accuracy
 	call PrintNum
 	ld [hl], "<%>"
 	ld a, [wOptions2]
@@ -850,7 +900,17 @@ MoveInfoBox:
 	ret
 
 .PrintPP
+	ld a, [wOptions2]
+	and 1 << BATTLE_INFO
+	jr nz, .full_pp
+
+	hlcoord 5, 11
+	jr .print_pp
+
+.full_pp
 	hlcoord 5, 10
+
+.print_pp
 	push hl
 	ld de, wStringBuffer1
 	lb bc, 1, 2
@@ -863,6 +923,37 @@ MoveInfoBox:
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
 	call PrintNum
+	ret
+
+.ShiftCompactTypeCategoryStrip
+; The battle icon loader always targets row 8. For the compact 3-line move
+; info box, copy that strip down to row 9 and restore the top border run.
+	hlcoord 2, 8
+	decoord 2, 9
+	ld c, 6
+.copy_strip
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .copy_strip
+
+	hlcoord 2, 8
+	ld a, $7a ; "─"
+	ld bc, 6
+	call ByteFill
+
+	hlcoord 2, 8, wAttrmap
+	ld a, PAL_BATTLE_BG_PLAYER
+	ld bc, 6
+	call ByteFill
+
+	hlcoord 2, 9, wAttrmap
+	ld a, BATTLE_MOVE_TYPECAT_PALETTE
+	ld bc, 6
+	call ByteFill
+
+	farcall ApplyAttrmap
 	ret
 
 .PrintDamage

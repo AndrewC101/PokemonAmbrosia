@@ -1397,7 +1397,7 @@ DrawPocketName:
 	add hl, de
 	ld d, h
 	ld e, l
-	hlcoord 15, 0
+	hlcoord 11, 0
 	ld c, 5
 .top_row
 	ld a, [de]

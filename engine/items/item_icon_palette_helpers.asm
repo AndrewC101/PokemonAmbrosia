@@ -34,7 +34,7 @@ RefreshOverworldTMHMIconPalette:
 	hlcoord 16, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, 7
-	call FillBoxCGB
+	farcall FillBoxCGB
 	farcall ApplyAttrmap
 	farcall ApplyPals
 	ld a, TRUE

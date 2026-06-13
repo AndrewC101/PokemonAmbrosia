@@ -961,11 +961,17 @@ MoveInfoBox:
 ; Borrow two more vTiles1 font slots for the battle-only DMG icon. The
 ; matching close-path restore covers the full borrowed span once the move
 ; info box is gone.
+	ld a, [wUnusedBit]
+	and a
+	jr nz, .place_tiles
 	ld de, BattleDamageIconGFX
 	ld hl, vTiles1 tile BATTLE_DMG_ICON_VTILE
 	lb bc, BANK(BattleDamageIconGFX), 2
 	call Request2bpp
+	ld a, TRUE
+	ld [wUnusedBit], a
 
+.place_tiles
 	hlcoord 1, 11
 	ld a, BATTLE_DMG_ICON_TILE_ID
 	ld [hli], a

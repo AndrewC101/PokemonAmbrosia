@@ -714,6 +714,7 @@ ParsePlayerAction:
 	jr nz, .reset
 	xor a
 	ld [wMoveSelectionMenuType], a
+	ld [wUnusedBit], a ; force the static DMG icon tiles to upload on first draw
 	assert POUND == 1
 	inc a
 	ld [wFXAnimID], a
@@ -723,6 +724,8 @@ ParsePlayerAction:
 	call UpdateBattleHuds
 	call WaitBGMap
 	farcall RestoreBattleMoveTypeCategoryFontTiles
+	xor a
+	ld [wUnusedBit], a
 	ld a, [wCurPlayerMove]
 	cp STRUGGLE
 	jr z, .struggle

@@ -3,9 +3,12 @@ DEF BATTLE_MOVE_TYPECAT_PALETTE EQU PAL_BATTLE_BG_6
 DEF MENU_MOVE_CATEGORY_ICON_TILE   EQU $59
 DEF MENU_MOVE_TYPE_ICON_TILE       EQU $5b
 ; Battle status icons already occupy $db-$de while the move info box is open.
-; Use the preceding six vTiles1 slots so the icon strip stays local to the box.
+; Use the preceding vTiles1 slots so the battle-only move info icons stay local
+; to the box and away from the status icon tiles.
+DEF BATTLE_MOVE_DAMAGE_ICON_TILE     EQU $53
 DEF BATTLE_MOVE_CATEGORY_ICON_TILE   EQU $55
 DEF BATTLE_MOVE_TYPE_ICON_TILE       EQU $57
+DEF BATTLE_MOVE_DAMAGE_TILE_ID       EQU $d3
 DEF BATTLE_MOVE_CATEGORY_TILE_ID     EQU $d5
 DEF BATTLE_MOVE_TYPE_TILE_ID         EQU $d7
 
@@ -87,12 +90,12 @@ ApplyMoveTypeCategoryColors_NoAttrmap:
 	ret
 
 RestoreBattleMoveTypeCategoryFontTiles::
-; The battle move info strip reuses vTiles1 $55-$5a, which overlap standard
-; font glyphs. Restore those six 1bpp font tiles once the move-info box is
-; gone so later battle text punctuation renders correctly.
-	ld de, Font + BATTLE_MOVE_CATEGORY_ICON_TILE * TILE_1BPP_SIZE
-	ld hl, vTiles1 tile BATTLE_MOVE_CATEGORY_ICON_TILE
-	lb bc, BANK(Font), 6
+; The battle move info box borrows vTiles1 $53-$5a for the DMG icon plus the
+; move type/category strip. Restore those eight 1bpp font tiles once the box
+; is gone so later battle text punctuation renders correctly.
+	ld de, Font + BATTLE_MOVE_DAMAGE_ICON_TILE * TILE_1BPP_SIZE
+	ld hl, vTiles1 tile BATTLE_MOVE_DAMAGE_ICON_TILE
+	lb bc, BANK(Font), 8
 	jp Get1bppViaHDMA
 
 GetMoveTypeCategoryIconIndices:

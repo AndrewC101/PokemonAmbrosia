@@ -739,6 +739,9 @@ BattleInfoOrForfeit:
     ld hl, BattleText_DoesNotAccept
     jp StdBattleTextbox
 
+DEF BATTLE_DMG_ICON_VTILE   EQU $53
+DEF BATTLE_DMG_ICON_TILE_ID EQU $d3
+
 MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
@@ -890,9 +893,7 @@ MoveInfoBox:
 	ld a, [wOptions2]
 	and 1 << BATTLE_INFO
 	jr z, .place_category
-	ld de, .damage_string
-	hlcoord 1, 11
-	call PlaceString
+	call .LoadAndPlaceBattleDamageIcon
 	call .PrintDamage
 	ret
 
@@ -954,6 +955,59 @@ MoveInfoBox:
 	call ByteFill
 
 	farcall ApplyAttrmap
+	ret
+
+.LoadAndPlaceBattleDamageIcon
+; Borrow two more vTiles1 font slots for the battle-only DMG icon. The
+; matching close-path restore covers the full borrowed span once the move
+; info box is gone.
+	ld de, BattleDamageIconGFX
+	ld hl, vTiles1 tile BATTLE_DMG_ICON_VTILE
+	lb bc, BANK(BattleDamageIconGFX), 2
+	call Request2bpp
+
+	hlcoord 1, 11
+	ld a, BATTLE_DMG_ICON_TILE_ID
+	ld [hli], a
+	inc a
+	ld [hl], a
+
+	ldh a, [hCGB]
+	and a
+	ret z
+
+; Reuse the existing move-strip palette slot and dedicate color 3 to the
+; fixed pure-red DMG glyph. Patch only that one palette entry so the existing
+; category/type colors loaded by DrawBattleMoveTypeCategoryIcons stay intact.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld de, wBGPals1 palette PAL_BATTLE_BG_6 color 3
+	ld a, LOW(palred 31)
+	ld [de], a
+	inc de
+	ld a, HIGH(palred 31)
+	ld [de], a
+	ld de, wBGPals2 palette PAL_BATTLE_BG_6 color 3
+	ld a, LOW(palred 31)
+	ld [de], a
+	inc de
+	ld a, HIGH(palred 31)
+	ld [de], a
+	pop af
+	ldh [rSVBK], a
+
+	hlcoord 1, 11, wAttrmap
+	ld a, PAL_BATTLE_BG_6
+	ld [hli], a
+	ld [hl], a
+	hlcoord 2, 8, wAttrmap
+	ld bc, 6
+	call ByteFill
+	farcall ApplyAttrmap
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	ret
 
 .PrintDamage
@@ -1226,11 +1280,11 @@ MoveInfoBox:
 .pp_string
 	db "pp@"
 
-.damage_string
-	db "D @"
-
 .Disabled
 	db "Disabled!@"
+
+BattleDamageIconGFX:
+INCBIN "gfx/battle/damage.2bpp"
 
 ForfeitMatchText:
     text "Forfeit Battle?"

@@ -1395,6 +1395,17 @@ ResidualDamage:
 	bit SUBSTATUS_LEECH_SEED, [hl]
 	jr z, .not_seeded
 
+	; Leech Seed has no live beneficiary once the other battler has fainted.
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .check_seed_enemy
+	call HasPlayerFainted
+	jr .check_seed_target
+.check_seed_enemy
+	call HasEnemyFainted
+.check_seed_target
+	jr z, .not_seeded
+
 	call SwitchTurnCore
 	xor a
 	ld [wBattleAfterAnim], a
@@ -1407,6 +1418,8 @@ ResidualDamage:
 
 	call GetEighthMaxHP
 	call SubtractHPFromUser
+	call HasUserFainted
+	jr z, .fainted
 	ld a, $1
 	ldh [hBGMapMode], a
 	call RestoreHP

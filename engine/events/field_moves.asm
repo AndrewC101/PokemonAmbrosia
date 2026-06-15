@@ -135,6 +135,16 @@ OWCutAnimation:
 	jr .loop
 
 .finish
+	call .Cleanup
+	ret
+
+.Cleanup
+	xor a
+	ldh [hBGMapMode], a
+	farcall ClearSpriteAnims
+	ld hl, wShadowOAMSprite36
+	ld bc, wShadowOAMEnd - wShadowOAMSprite36
+	call ByteFill
 	ret
 
 .LoadCutGFX:

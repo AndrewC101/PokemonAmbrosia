@@ -1,3 +1,9 @@
+ShowFieldMovePreview_Cut::
+; Cut already closes text and refreshes the map around its own BG animation path.
+; Reusing the generic preview redraws here is the one difference that correlates
+; with the Cut-only corruption, so keep this variant to just the centered pic.
+	jp FieldMovePreview_DoPreview
+
 ShowFieldMovePreview::
 ; Match the script refresh path so the preview starts and ends on a clean map.
 	xor a
@@ -7,6 +13,17 @@ ShowFieldMovePreview::
 	farcall HDMATransferTilemapAndAttrmap_Overworld
 	call UpdateSprites
 
+	call FieldMovePreview_DoPreview
+
+	xor a
+	ldh [hBGMapMode], a
+	call LoadOverworldTilemapAndAttrmapPals
+	call GetMovementPermissions
+	farcall HDMATransferTilemapAndAttrmap_Overworld
+	call UpdateSprites
+	ret
+
+FieldMovePreview_DoPreview:
 ; Resolve the acting party mon's species for the shared Pokepic routine.
 	ld a, [wCurPartyMon]
 	ld e, a
@@ -21,13 +38,6 @@ ShowFieldMovePreview::
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	farcall ClosePokepic
-
-	xor a
-	ldh [hBGMapMode], a
-	call LoadOverworldTilemapAndAttrmapPals
-	call GetMovementPermissions
-	farcall HDMATransferTilemapAndAttrmap_Overworld
-	call UpdateSprites
 	ret
 
 ApplyFieldMovePreviewPalette:

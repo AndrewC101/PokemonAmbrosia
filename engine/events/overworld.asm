@@ -260,7 +260,7 @@ Script_Cut:
 	callasm GetPartyNickname
 	writetext UseCutText
 	closetext
-	callasm ShowFieldMovePreview
+	callasm ShowFieldMovePreview_Cut
 	refreshmap
 	callasm CutDownTreeOrGrass
 	end

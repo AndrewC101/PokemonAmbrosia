@@ -990,16 +990,16 @@ MoveInfoBox:
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 	ld de, wBGPals1 palette PAL_BATTLE_BG_6 color 3
-	ld a, LOW(palred 31)
+	ld a, LOW(palred 20)
 	ld [de], a
 	inc de
-	ld a, HIGH(palred 31)
+	ld a, HIGH(palred 20)
 	ld [de], a
 	ld de, wBGPals2 palette PAL_BATTLE_BG_6 color 3
-	ld a, LOW(palred 31)
+	ld a, LOW(palred 20)
 	ld [de], a
 	inc de
-	ld a, HIGH(palred 31)
+	ld a, HIGH(palred 20)
 	ld [de], a
 	pop af
 	ldh [rSVBK], a

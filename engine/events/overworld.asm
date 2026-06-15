@@ -1584,6 +1584,7 @@ HeadbuttScript:
 	end
 
 .no_battle
+	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext

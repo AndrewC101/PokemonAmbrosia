@@ -283,6 +283,21 @@ gfx/font/unused_bold_font.1bpp: tools/gfx += --trim-whitespace
 gfx/sgb/sgb_border.2bpp: tools/gfx += --trim-whitespace
 gfx/sgb/sgb_border.sgb.tilemap: gfx/sgb/sgb_border.bin ; tr < $< -d '\000' > $@
 
+gfx/type_chart/bg.2bpp: tools/gfx += --remove-duplicates --remove-xflip --remove-yflip
+gfx/type_chart/bg0.2bpp: gfx/type_chart/bg.2bpp.vram1p gfx/type_chart/bg.2bpp.vram0p
+	cat $^ > $@
+
+gfx/type_chart/bg.2bpp.vram0p: gfx/type_chart/bg.2bpp tools/sub_2bpp.sh
+	sh tools/sub_2bpp.sh $< 127 > $@
+
+gfx/type_chart/bg.2bpp.vram1p: gfx/type_chart/bg.2bpp tools/sub_2bpp.sh
+	sh tools/sub_2bpp.sh $< 127 128 > $@
+
+gfx/type_chart/bg.2bpp.vram2p: gfx/type_chart/bg.2bpp tools/sub_2bpp.sh
+	sh tools/sub_2bpp.sh $< 255 128 > $@
+
+gfx/type_chart/ob.2bpp: tools/gfx += --interleave --png=$<
+
 gfx/mobile/ascii_font.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad_cursor.2bpp: tools/gfx += --trim-whitespace

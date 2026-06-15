@@ -176,7 +176,7 @@ ItemDescriptions:
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama23Desc
+	dw TypeChartDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
@@ -942,8 +942,9 @@ SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-TeruSama23Desc:
-	db   "?@"
+TypeChartDesc:
+	db   "Summarizes all"
+	next "type advantages.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"

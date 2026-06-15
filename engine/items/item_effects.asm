@@ -190,7 +190,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_B0
+	dw TypeChartEffect     ; TYPE_CHART
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
@@ -2762,6 +2762,23 @@ JukeboxEffect:
 	ret z
 	call CloseSubmenu
 	ret
+
+TypeChartEffect:
+	call FadeToMenu
+	farcall _TypeChart
+	call ExitMenu
+
+	; Battle Pack restores the battle scene after DoItemEffect returns.
+	; Only rebuild the Pack UI when we're in the overworld Pack path.
+	ld a, [wBattleMode]
+	and a
+	ret nz
+
+	xor a
+	ldh [hBGMapMode], a
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	newfarjp Pack_InitColors
 
 OpenJukebox:
 	xor a

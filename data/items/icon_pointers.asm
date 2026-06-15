@@ -176,7 +176,7 @@ ItemIconPointers:
 	dba OranBerryIcon
 	dba SitrusBerryIcon
 	dba FreshWaterIcon
-	dba PokeBallIcon
+	dba TypeChartIcon
 	dba ParkBallIcon
 	dba RainbowWingIcon
 	dba PokeBallIcon

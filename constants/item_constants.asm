@@ -181,7 +181,7 @@
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
 	const SQUIRTBOTTLE ; af
-	const ITEM_B0      ; b0
+	const TYPE_CHART   ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
 	const ITEM_B3      ; b3

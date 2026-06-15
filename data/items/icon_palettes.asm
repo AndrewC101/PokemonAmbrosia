@@ -351,8 +351,8 @@ ItemIconPalettes:
 	RGB 28, 22, 08
 	RGB 18, 20, 27 ; SQUIRTBOTTLE / FreshWaterIcon
 	RGB 08, 16, 06
-	RGB 31, 31, 31 ; ITEM_B0 / PokeBallIcon
-	RGB 30, 10, 06
+	RGB 22, 22, 24 ; TYPE_CHART / TypeChartIcon
+	RGB 20, 13, 06
 	RGB 31, 31, 31 ; PARK_BALL / ParkBallIcon
 	RGB 30, 10, 06
 	RGB 31, 31, 31 ; RAINBOW_WING / RainbowWingIcon

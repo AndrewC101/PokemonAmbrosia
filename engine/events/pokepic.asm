@@ -6,9 +6,13 @@ Pokepic::
 	call GetSGBLayout
 	call UpdateSprites
 	call ApplyTilemap
-	ld de, wBGPals1 palette PAL_BG_TEXT color 1
-	farcall LoadPokemonPalette
-	call UpdateTimePals
+	ld a, [wCurPartySpecies]
+	newfarcall GetMonPalettePointer
+	ld de, wBGPals1 palette PAL_BG_TEXT
+	newfarcall LoadPalette_White_Col1_Col2_Black
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [wCurPartySpecies]

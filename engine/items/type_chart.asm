@@ -37,6 +37,10 @@ _TypeChart:
 	lb bc, BANK(TypeChartOBGFX), 32
 	call DecompressRequest2bpp
 
+	; Battle can enter here with active sprite anim state. Clear it so the
+	; chart's fixed OAM data isn't immediately overwritten on the next frame.
+	farcall ClearSpriteAnims
+
 	ld hl, TypeChartOAMData
 	ld de, wShadowOAM
 	ld bc, 40 * 4
@@ -140,21 +144,25 @@ ENDM
 	oamdata 146, 101, $16, 1
 	; not very effective
 	oamdata  69,  18, $18, 2
-	oamdata 153, 115, $18, 2
+	oamdata 90, 67, $18, 2
+	oamdata 90, 130, $18, 2
+	oamdata 153, 123, $18, 2
+	oamdata 132, 123, $18, 2
 	; super effective
 	oamdata  32,  25, $1a, 2
 	; top off-white
-	oamdata  54,   8, $1c, 3
-	oamdata  96,   8, $1c, 3
-	oamdata 110,   8, $1c, 3
-	oamdata 124,   8, $1c, 3
-	oamdata 138,   8, $1c, 3
-	oamdata 152,   8, $1c, 3
+	; top off-white
+	oamdata  54,   8, $1c, 3 ; Normal x1 Poison
+	oamdata  96,   8, $1c, 3 ; Normal x1 Fire
+	oamdata 110,   8, $1c, 3 ; Normal x1 Grass
+	oamdata 124,   8, $1c, 3 ; Normal x1 Psychic
+	oamdata 138,   8, $1c, 3 ; Normal x1 Dragon
+	oamdata 152,   8, $1c, 3 ; Normal x1 Fairy
 	; left off-white
-	oamdata  32,  30, $1e, 3
-	oamdata  32,  44, $1e, 3
-	oamdata  32,  72, $1e, 3
-	oamdata  32,  86, $1e, 3
-	oamdata  32, 100, $1e, 3
-	oamdata  32, 114, $1e, 3
-	oamdata  32, 128, $1e, 3
+	oamdata  32,  30, $1e, 3 ; Poison x1 Normal
+	oamdata  32,  44, $1e, 3 ; Rock x1 Normal
+	oamdata  32,  72, $1e, 3 ; Fire x1 Normal
+	oamdata  32,  86, $1e, 3 ; Grass x1 Normal
+	oamdata  32, 100, $1e, 3 ; Psychic x1 Normal
+	oamdata  32, 114, $1e, 3 ; Dragon x1 Normal
+	oamdata  32, 128, $1e, 3 ; Fairy x1 Normal

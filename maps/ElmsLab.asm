@@ -463,6 +463,7 @@ AideScript_WalkPotion2:
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
 	scall AideScript_GivePocketPC
+	scall AideScript_GiveTypeChart
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft2
 	end
 
@@ -517,6 +518,16 @@ AideScript_GivePocketPC:
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
+	end
+
+AideScript_GiveTypeChart:
+	opentext
+	writetext AideText_GetTypeChartText
+	promptbutton
+	verbosegiveitem TYPE_CHART
+	writetext AideText_GetTypeChartInfoText
+	waitbutton
+	closetext
 	end
 
 AideScript_WalkBalls1:
@@ -1792,6 +1803,25 @@ AideText_PocketPCInfoText:
 	line "quickly heal your"
 	cont "#mon after a"
 	cont "battle."
+	done
+
+AideText_GetTypeChartText:
+	text "Oh one more thing."
+	para "This will be"
+	line "helpful to you."
+	done
+
+AideText_GetTypeChartInfoText:
+	text "This details every"
+	line "#mon type and"
+	cont "how they interact"
+	cont "with each other."
+	para "Study it well."
+	para "You can even use"
+	line "it in battle and"
+	cont "see the enemy type"
+	cont "by pressing"
+	cont "Select."
 	done
 
 DadBattleScript2:

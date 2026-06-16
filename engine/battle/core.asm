@@ -6098,7 +6098,7 @@ BattleMenu_Pack:
 .standard_item_restrictions
 	ld a, [wDifficulty]
 	cp DIFFICULTY_HARD
-	jr z, .ItemsCantBeUsed
+	jp z, .ItemsCantBeUsed
 	ld a, [wOtherTrainerClass]
 	cp SOLDIER
 	jr z, .ItemsCantBeUsed
@@ -6132,6 +6132,13 @@ BattleMenu_Pack:
 	ld [wCurrentBattleWindow], a
 
 	farcall BattlePack
+	ld a, [wCurItem]
+	cp TYPE_CHART
+	jr nz, .check_player_action
+	xor a
+	ld [wBattlePlayerAction], a
+
+.check_player_action
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item

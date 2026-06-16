@@ -2768,12 +2768,8 @@ TypeChartEffect:
 	farcall _TypeChart
 	call ExitMenu
 
-	; Battle Pack restores the battle scene after DoItemEffect returns.
-	; Only rebuild the Pack UI when we're in the overworld Pack path.
-	ld a, [wBattleMode]
-	and a
-	ret nz
-
+	; Always rebuild the Pack UI after the full-screen chart, matching the
+	; standard menu/viewer return flow.
 	xor a
 	ldh [hBGMapMode], a
 	farcall Pack_InitGFX

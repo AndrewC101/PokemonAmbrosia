@@ -14,6 +14,7 @@ SubstituteImmuneEffects:
 	db EFFECT_SPEED_DOWN_2
 	db EFFECT_TRANSFORM
 	db EFFECT_TOXIC
+	db EFFECT_BURN
 	db $FF
 
 AI_MagicGuardPokemon:
@@ -1961,7 +1962,19 @@ AI_Smart_Substitute:
 	ld b, EFFECT_SLEEP
 	call PlayerHasMoveEffect
 	jr c, .hasStatus
+	ld b, EFFECT_CONFUSE
+	call PlayerHasMoveEffect
+	jr c, .hasStatus
 	ld b, EFFECT_TOXIC
+	call PlayerHasMoveEffect
+	jr c, .hasStatus
+	ld b, EFFECT_BURN
+	call PlayerHasMoveEffect
+	jr c, .hasStatus
+	ld b, EFFECT_LEECH_SEED
+	call PlayerHasMoveEffect
+	jr c, .hasStatus
+	ld b, EFFECT_ACCURACY_DOWN
 	call PlayerHasMoveEffect
 	jr c, .hasStatus
 

@@ -944,7 +944,7 @@ SquirtBottleDesc:
 
 TypeChartDesc:
 	db   "Summarizes all"
-	next "type advantages.@"
+	next "type interactions.@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"

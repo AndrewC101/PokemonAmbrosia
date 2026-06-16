@@ -139,10 +139,10 @@ ItemIconPalettes:
 	RGB 06, 13, 17
 	RGB 29, 26, 18 ; MYSTERY_EGG / MysteryEggIcon
 	RGB 08, 19, 11
-	RGB 31, 31, 31 ; CLEAR_BELL / ClearBellIcon
-	RGB 30, 10, 06
-	RGB 31, 31, 31 ; SILVER_WING / SilverWingIcon
-	RGB 30, 10, 06
+	RGB 15, 22, 31 ; CLEAR_BELL / ClearBellIcon
+	RGB 07, 13, 31
+	RGB 15, 22, 31 ; SILVER_WING / SilverWingIcon
+	RGB 07, 13, 31
 	RGB 28, 28, 22 ; MOOMOO_MILK / MoomooMilkIcon
 	RGB 22, 13, 22
 	RGB 27, 24, 13 ; QUICK_CLAW / QuickClawIcon
@@ -351,8 +351,8 @@ ItemIconPalettes:
 	RGB 28, 22, 08
 	RGB 18, 20, 27 ; SQUIRTBOTTLE / FreshWaterIcon
 	RGB 08, 16, 06
-	RGB 31, 24, 16 ; TYPE_CHART / TypeChartIcon
-	RGB 20, 13, 06
+	RGB 27, 20, 13 ; TYPE_CHART / TypeChartIcon
+	RGB 17, 11, 05
 	RGB 31, 31, 31 ; PARK_BALL / ParkBallIcon
 	RGB 30, 10, 06
 	RGB 31, 31, 31 ; RAINBOW_WING / RainbowWingIcon

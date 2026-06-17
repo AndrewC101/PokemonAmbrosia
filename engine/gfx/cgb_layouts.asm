@@ -161,11 +161,6 @@ _CGB_FinishBattleScreenLayout:
 	ld a, PAL_BATTLE_BG_STATUS
 	call FillBoxCGB
 
-	hlcoord 2, 8, wAttrmap
-	lb bc, 1, 6
-	ld a, PAL_BATTLE_BG_6
-	call FillBoxCGB
-
 	hlcoord 0, 12, wAttrmap
 	ld bc, 6 * SCREEN_WIDTH
 

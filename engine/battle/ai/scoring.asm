@@ -4217,6 +4217,10 @@ ShouldAIBoost:
     cp EFFECT_SYNTHESIS
     jr z, .check2HKOMaxHp
 
+    ld a, [wBattleHasJustStarted]
+    and a
+    jr nz, .dontBoost
+
     push hl
     push de
     push bc

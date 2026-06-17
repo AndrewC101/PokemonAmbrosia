@@ -46,9 +46,15 @@ CherrygroveMartCooltrainerMScript:
 
 CherrygroveMartYoungsterScript:
     checkitem JUKEBOX
-    iftrue .normal
+    iftrue .checkTypeChart
     opentext
     verbosegiveitem JUKEBOX
+    closetext
+.checkTypeChart
+    checkitem TYPE_CHART
+    iftrue .normal
+    opentext
+    verbosegiveitem TYPE_CHART
     closetext
 .normal
 	jumptextfaceplayer CherrygroveMartYoungsterText

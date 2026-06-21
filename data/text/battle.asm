@@ -250,7 +250,7 @@ BattleText_EnemyIsAboutToUseWillPlayerChangeMon:
 	text "<ENEMY>"
 	line "is about to use"
 	cont "@"
-	text_ram wEnemyMonNickname
+	text_ram wStringBuffer2
 	text "."
 
 	para "Will <PLAYER>"

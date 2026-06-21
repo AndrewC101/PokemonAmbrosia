@@ -4057,6 +4057,13 @@ OfferSwitch:
 	ld a, [wCurPartyMon]
 	push af
 	callfar Battle_GetTrainerName
+	ld a, [wEnemyMonSpecies]
+	ld [wNamedObjectIndex], a
+	call GetPokemonName
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+	ld bc, MON_NAME_LENGTH
+	call CopyBytes
 	ld hl, BattleText_EnemyIsAboutToUseWillPlayerChangeMon
 	call StdBattleTextbox
 	lb bc, 1, 7

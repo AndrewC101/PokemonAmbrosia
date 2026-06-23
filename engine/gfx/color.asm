@@ -8,6 +8,12 @@ DEF SHINY_SPD_VAL EQU 15
 CheckShininess:
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
+	; Battle Tower mirror fights copy ROLE_PLAYER_SHINY teams through Hand of God.
+	; Treat all shiny checks as non-shiny in that state so battle visuals stay consistent.
+	ld a, [wInBattleTowerBattle]
+	ld hl, wHandOfGod
+	and [hl]
+	jr nz, .not_shiny
 	ld l, c
 	ld h, b
 

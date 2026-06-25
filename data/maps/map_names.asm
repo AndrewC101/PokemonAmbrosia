@@ -188,6 +188,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name93 ; map_const CERULEAN_CAVE,; 93
 	dw Dungeons_Map_Name94 ; map_const ANCIENT_TEMPLE,; 94
 	dw Dungeons_Map_Name95 ; map_const ANCIENT_HALL,; 95
+	dw Dungeons_Map_Name96 ; map_const OLD_LIGHTHOUSE,; 96
 	assert_table_length NUM_DUNGEONS_MAPS
 
 
@@ -515,6 +516,8 @@ New_Bark_Map_Names: ; newgroup NEW_BARK ; 24
 	dw New_Bark_Map_Name11 ; map_const DAY_OF_WEEK_SIBLINGS_HOUSE ; 11
 	dw New_Bark_Map_Name12 ; map_const ROUTE_27_SANDSTORM_HOUSE ; 12
 	dw New_Bark_Map_Name13 ; map_const ROUTE_29_ROUTE_46_GATE ; 13
+	dw New_Bark_Map_Name14 ; map_const CAPE_STORM ; 14
+	dw New_Bark_Map_Name15 ; map_const CAPE_STORM_ROUTE_21_GATE ; 15
 	assert_table_length NUM_NEW_BARK_MAPS
 
 
@@ -834,6 +837,8 @@ Dungeons_Map_Name94: ; map_const ANCIENT_TEMPLE,;  4
    db "Ancient Temple@"
 Dungeons_Map_Name95: ; map_const ANCIENT_HALL,;  4
    db "Ancient Hall@"
+Dungeons_Map_Name96: ; map_const OLD_LIGHTHOUSE,;  4
+   db "Old Lighthouse@"
 
 Ecruteak_Map_Name1: ; map_const ECRUTEAK_TIN_TOWER_ENTRANCE,;  1
    db "Tin Tower Path@"
@@ -1357,6 +1362,10 @@ New_Bark_Map_Name12: ; map_const ROUTE_27_SANDSTORM_HOUSE ; 12
    db "Route 27 House@"
 New_Bark_Map_Name13: ; map_const ROUTE_29_ROUTE_46_GATE ; 13
    db "Route 29 Gate@"
+New_Bark_Map_Name14: ; map_const CAPE_STORM ; 14
+   db "Cape Storm@"
+New_Bark_Map_Name15: ; map_const CAPE_STORM_ROUTE_21_GATE ; 15
+   db "Cape Storm Gate@"
 
 Saffron_Map_Name1: ; map_const ROUTE_5,;  1
    db "Route 5@"

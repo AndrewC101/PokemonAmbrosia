@@ -50,7 +50,7 @@ EventWildMons::
 	specialencounter GYARADOS, 	EVENT_LAKE_OF_RAGE_RED_GYARADOS,LAKE_OF_RAGE, LegendaryEncounterShinyDescription
 	specialencounter SNORLAX, 	EVENT_FOUGHT_SNORLAX,           VERMILION_CITY, LegendaryEncounterDescription
 	specialencounter ARTICUNO, 	EVENT_CAUGHT_ARTICUNO, 			SEAFOAM_GYM, LegendaryEncounterDescription
-	specialencounter ZAPDOS, 	EVENT_CAUGHT_ZAPDOS, 			POWER_PLANT, LegendaryEncounterDescription
+	specialencounter ZAPDOS, 	EVENT_CAUGHT_ZAPDOS, 			OLD_LIGHTHOUSE, LegendaryEncounterDescription
 	specialencounter MOLTRES, 	EVENT_CAUGHT_MOLTRES, 			ROUTE_2, LegendaryEncounterDescription
 	specialencounter RAIKOU, 	EVENT_CAUGHT_RAIKOU, 			ROUTE_45, LegendaryEncounterDescription
 	specialencounter ENTEI, 	EVENT_CAUGHT_ENTEI, 			RUINS_OF_ALPH_INNER_CHAMBER, LegendaryEncounterDescription

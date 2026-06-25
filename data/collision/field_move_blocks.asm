@@ -50,6 +50,7 @@ WhirlpoolBlockPointers:
 	db -1 ; end
 
 .johto:
-; facing block, replacement block, animation
 	db $07, $36, 0
-	db -1 ; end
+	db $93, $39, 0
+	db $94, $31, 0
+	db -1

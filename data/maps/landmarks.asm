@@ -105,6 +105,7 @@ Landmarks:
 	landmark  28,  44, Route23Name
 	landmark  28,  36, IndigoPlateauName
 	landmark  28,  92, Route26Name
+	landmark  40, 106, CapeStormName
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
@@ -163,6 +164,7 @@ SeafoamIslandsName:  db "Seafoam<BSP>Islands@"
 PokemonMansionName:  db "#mon<BSP>Mansion@" ; unreferenced
 CeruleanCaveName:    db "Cerulean<BSP>Cave@" ; unreferenced
 ManorName:           db "Silver<BSP>Manor@"
+CapeStormName:       db "Cape Storm@"
 Route1Name:          db "Route 1@"
 Route2Name:          db "Route 2@"
 Route3Name:          db "Route 3@"

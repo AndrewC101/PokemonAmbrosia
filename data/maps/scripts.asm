@@ -578,3 +578,9 @@ INCLUDE "maps/Route13.asm"
 SECTION "Map Scripts 55", ROMX
 
 INCLUDE "maps/ManorInside.asm"
+INCLUDE "maps/OldLighthouse.asm"
+INCLUDE "maps/CapeStorm.asm"
+
+SECTION "Map Scripts 56", ROMX
+
+INCLUDE "maps/CapeStormRoute21Gate.asm"

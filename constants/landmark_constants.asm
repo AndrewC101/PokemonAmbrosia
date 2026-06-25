@@ -102,6 +102,7 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_23          ; 59
 	const LANDMARK_INDIGO_PLATEAU    ; 5a
 	const LANDMARK_ROUTE_26          ; 5b
+	const LANDMARK_CAPE_STORM
 	const LANDMARK_ROUTE_27          ; 5c
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e

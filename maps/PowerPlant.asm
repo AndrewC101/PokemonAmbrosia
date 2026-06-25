@@ -22,35 +22,6 @@ PowerPlantNoop1Scene:
 PowerPlantNoop2Scene:
 	end
 
-ZapdosScript:
-	cry ZAPDOS
-	pause 15
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
-	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 80
-    sjump .begin
-.midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 60
-    sjump .begin
-.lowerLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon ZAPDOS, 50
-.begin
-	startbattle
-	reloadmapafterbattle
-    setval ZAPDOS
-	special MonCheck
-	iftrue .caught
-	end
-.caught
-    setevent EVENT_CAUGHT_ZAPDOS
-	disappear POWERPLANT_ZAPDOS
-	end
-
 PowerPlantGuardPhoneScript:
 	playsound SFX_CALL
 	showemote EMOTE_SHOCK, POWERPLANT_OFFICER1, 15
@@ -414,5 +385,4 @@ PowerPlant_MapEvents:
 	object_event  7,  2, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide4Script, -1
 	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1
 	object_event  5,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Forest, -1
-	object_event 17, 17, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ZapdosScript, EVENT_CAUGHT_ZAPDOS
-	object_event 34,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, PowerPlantBodySlam, EVENT_BODY_SLAM
+	object_event 17, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, PowerPlantBodySlam, EVENT_BODY_SLAM

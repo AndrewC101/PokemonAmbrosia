@@ -144,8 +144,9 @@ ENDM
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
 	connection east, Route28, ROUTE_28, 6
 
-	map_attributes Route26, ROUTE_26, $05, WEST
+	map_attributes Route26, ROUTE_26, $05, WEST | EAST
 	connection west, Route27, ROUTE_27, 44
+	connection east, CapeStorm, CAPE_STORM, 49
 
 	map_attributes Route27, ROUTE_27, $35, WEST | EAST
 	connection west, NewBarkTown, NEW_BARK_TOWN, -5
@@ -685,6 +686,7 @@ ENDM
 	map_attributes DayOfWeekSiblingsHouse, DAY_OF_WEEK_SIBLINGS_HOUSE, $00, 0
 	map_attributes Route27SandstormHouse, ROUTE_27_SANDSTORM_HOUSE, $00, 0
 	map_attributes Route29Route46Gate, ROUTE_29_ROUTE_46_GATE, $00, 0
+	map_attributes CapeStormRoute21Gate, CAPE_STORM_ROUTE_21_GATE, $00, 0
 	;map_attributes FightingDojo, FIGHTING_DOJO, $00, 0
 	map_attributes SaffronGym, SAFFRON_GYM, $00, 0
 	map_attributes SaffronMart, SAFFRON_MART, $00, 0
@@ -722,3 +724,6 @@ ENDM
 	map_attributes ManorOutside, MANOR_OUTSIDE, $05, 0
 	map_attributes ManorInside, MANOR_INSIDE, $00, 0
 	map_attributes Abyss, ABYSS, $0A, 0
+	map_attributes OldLighthouse, OLD_LIGHTHOUSE, $00, 0
+	map_attributes CapeStorm, CAPE_STORM, $35, WEST
+	connection west, Route26, ROUTE_26, -49

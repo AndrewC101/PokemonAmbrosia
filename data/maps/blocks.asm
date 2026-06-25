@@ -233,6 +233,7 @@ Route16Gate_Blocks:
 Route7SaffronGate_Blocks:
 Route17Route18Gate_Blocks:
 Route31VioletGate_Blocks:
+CapeStormRoute21Gate_Blocks:
 	INCBIN "maps/EastWestGate.blk"
 
 VermilionCity_Blocks:
@@ -951,6 +952,12 @@ AncientRuinPresent_Blocks:
 AncientRuinPast_Blocks:
 	INCBIN "maps/AncientRuinPast.blk"
 
+OldLighthouse_Blocks:
+    INCBIN "maps/OldLighthouse.blk"
+
+CapeStorm_Blocks:
+    INCBIN "maps/CapeStorm.blk"
+
 CeruleanCave_Blocks:
 	INCBIN "maps/CeruleanCave.blk"
 
@@ -980,4 +987,3 @@ ManorInside_Blocks:
 
 Abyss_Blocks:
     INCBIN "maps/Abyss.blk"
-

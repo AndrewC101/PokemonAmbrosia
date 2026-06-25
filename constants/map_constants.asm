@@ -159,6 +159,7 @@ ENDM
 	map_const CERULEAN_CAVE,                               15, 31 ; 93
 	map_const ANCIENT_TEMPLE,                              20, 16 ; 94
 	map_const ANCIENT_HALL,                                 5, 10 ; 95
+	map_const OLD_LIGHTHOUSE,                              20, 18 ; 96
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -473,6 +474,8 @@ ENDM
 	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 11
 	map_const ROUTE_27_SANDSTORM_HOUSE,                     4,  4 ; 12
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 13
+	map_const CAPE_STORM,                                  22, 12 ; 14
+	map_const CAPE_STORM_ROUTE_21_GATE,                     5,  4 ; 15
 	endgroup
 
 	newgroup SAFFRON                                              ; 25

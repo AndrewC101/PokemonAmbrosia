@@ -110,7 +110,7 @@ _PrepareFrontpic:
 _GetFrontpic:
 	call _PrepareFrontpic
 	push hl
-	call Get2bpp
+	call Get2bpp_NoGDMA
 	pop hl
 	ret
 

@@ -222,6 +222,10 @@ Request2bpp::
 ; Load 2bpp at b:de to occupy c tiles of hl.
 	call CheckGDMA
 	jp c, SafeHDMATransfer
+	; fallthrough
+
+Request2bpp_NoGDMA::
+; Load 2bpp at b:de to occupy c tiles of hl without the GDMA fast path.
 
 	ldh a, [hBGMapMode]
 	push af
@@ -379,6 +383,16 @@ Get2bpp::
 Copy2bpp:
 	call CheckGDMA
 	jp c, SafeHDMATransfer
+	; fallthrough
+
+Get2bpp_NoGDMA::
+; Copy c 2bpp tiles from b:de to hl without the GDMA fast path.
+	ldh a, [rLCDC]
+	bit B_LCDC_ENABLE, a
+	jp nz, Request2bpp_NoGDMA
+	; fallthrough
+
+Copy2bpp_NoGDMA:
 
 	push hl
 	ld h, d

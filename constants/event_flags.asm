@@ -461,6 +461,7 @@
     const EVENT_UNLOCK_WARP_CODE
     const EVENT_UNLOCK_ARCEUS_CODE
     const EVENT_LAKE_OF_RAGE_RAIN_DANCE
+    const EVENT_OLD_LIGHTHOUSE_TM_THUNDER
 
     ; ======================================
     ; DevNote - here

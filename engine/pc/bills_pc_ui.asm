@@ -704,6 +704,15 @@ BillsPC_GetStorageBoxMonIconData:
 	jr nz, .got_species
 	ld a, d
 .got_species
+	; Icon rendering only needs a safe species id for icon/palette lookup.
+	; Treat malformed payload species like an Egg until the full decode path
+	; gets a chance to surface a Bad Egg on selection.
+	cp EGG
+	jr z, .store_species
+	cp NUM_POKEMON + 1
+	jr c, .store_species
+	ld a, EGG
+.store_species
 	ld [wBufferMonAltSpecies], a
 	call CloseSRAM
 

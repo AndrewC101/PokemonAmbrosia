@@ -106,6 +106,7 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_ROUTE_27          ; 5c
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e
+	const LANDMARK_CINNABAR_LAB
 DEF KANTO_LANDMARK_LAST EQU const_value - 1
 
 DEF OTHER_LANDMARK EQU const_value

@@ -898,4 +898,32 @@ KantoGrassWildMons:
 	db 77, DITTO
 	end_grass_wildmons
 
+	def_grass_wildmons CINNABAR_LAB
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 57, WEEZING
+	db 57, ARBOK
+	db 61, NINETALES
+	db 61, RAPIDASH
+	db 64, ARCANINE
+	db 64, MAGMORTAR
+	db 69, DITTO
+	; day
+	db 57, WEEZING
+	db 57, ARBOK
+	db 61, CHANDELURE
+	db 61, RAPIDASH
+	db 64, ARCANINE
+	db 64, MAGMORTAR
+	db 69, DITTO
+	; nite
+	db 57, WEEZING
+	db 57, ARBOK
+	db 61, GENGAR
+	db 61, CHANDELURE
+	db 64, HOUNDOOM
+	db 64, MAGMORTAR
+	db 69, DITTO
+	end_grass_wildmons
+
 	db -1 ; end

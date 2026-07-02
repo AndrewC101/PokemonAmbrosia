@@ -987,3 +987,8 @@ ManorInside_Blocks:
 
 Abyss_Blocks:
     INCBIN "maps/Abyss.blk"
+
+SECTION "Map Blocks 12", ROMX
+
+CinnabarLab_Blocks:
+	INCBIN "maps/CinnabarLab.blk"

@@ -152,20 +152,19 @@ PowerPlantManager:
 Forest:
 	faceplayer
 	opentext
-	writetext genesectTradeText
+	writetext kingambitTradeText
 	waitbutton
 	trade NPC_TRADE_FOREST
 	waitbutton
 	closetext
 	end
 
-genesectTradeText:
+kingambitTradeText:
 	text "Everyone needs a"
-	line "cyborg assassin"
-	cont "from the future"
-	cont "that doesn't feel"
-	cont "pity or remorse or"
-	cont "fear to protect"
+	line "steel warlord"
+	cont "with no pity or"
+	cont "remorse or fear"
+	cont "to protect them"
 	cont "them from the AI"
 	cont "overlords."
 	done

@@ -587,3 +587,7 @@ INCLUDE "maps/CapeStormRoute21Gate.asm"
 SECTION "Map Scripts 57", ROMX
 
 INCLUDE "maps/CapeStorm.asm"
+
+SECTION "Map Scripts 58", ROMX
+
+INCLUDE "maps/CinnabarLab.asm"

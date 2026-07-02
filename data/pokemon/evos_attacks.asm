@@ -1397,7 +1397,6 @@ MagmarEvosAttacks:
 MagmortarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, EMBER
-	db 1, LEER
 	db 1, WILL_O_WISP
 	db 14, FLAME_WHEEL
 	db 19, CONFUSE_RAY
@@ -1406,6 +1405,9 @@ MagmortarEvosAttacks:
 	db 36, SUNNY_DAY
 	db 40, FLAMETHROWER
 	db 50, FIRE_BLAST
+	db 101, THUNDERBOLT
+	db 102, EARTHQUAKE
+	db 103, DRAIN_PUNCH
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:

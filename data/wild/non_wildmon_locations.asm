@@ -62,7 +62,6 @@ EventWildMons::
 	specialencounter DEOXYS, 	EVENT_CAUGHT_DEOXYS, 			MUSEUM, LegendaryEncounterDescription
 	specialencounter DARKRAI, 	EVENT_CAUGHT_DARKRAI, 			ROCK_TUNNEL_B1F, LegendaryEncounterDescription
 	specialencounter SHAYMIN, 	EVENT_CAUGHT_SHAYMIN, 			LAVENDER_FOREST, LegendaryEncounterDescription
-	specialencounter GENESECT, 	-1, 			                ANCIENT_RUIN_PRESENT, LegendaryEncounterDescription
 	specialencounter LUGIA, 	EVENT_FOUGHT_LUGIA, 			WHIRL_ISLAND_LUGIA_CHAMBER, LegendaryEncounterDescription
 	specialencounter HO_OH, 	EVENT_FOUGHT_HO_OH, 			TIN_TOWER_ROOF, LegendaryEncounterDescription
 	specialencounter GROUDON, 	EVENT_CAUGHT_GROUDON, 			ELEMENT_CAVE, LegendaryEncounterDescription

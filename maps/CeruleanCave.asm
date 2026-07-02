@@ -1,6 +1,6 @@
 	object_const_def
 	const CERULEANCAVE_AIZEN
-	const CERULEANCAVE_GENESECT
+	const CERULEANCAVE_KINGAMBIT
 	const CERULEANCAVE_REGIGIGAS
 	const CERULEANCAVE_FIELDMON_1
     const CERULEANCAVE_FIELDMON_2
@@ -31,7 +31,7 @@ CeruleanCave_MapScripts:
     appear CERULEANCAVE_FIELDMON_8
     appear CERULEANCAVE_FIELDMON_9
     appear CERULEANCAVE_FIELDMON_10
-    appear CERULEANCAVE_GENESECT
+    appear CERULEANCAVE_KINGAMBIT
     endcallback
 
 CeruleanCaveAmbrosiaScript:
@@ -138,15 +138,15 @@ CeruleanCavePokemonAttacksText:
 	line "attacks!"
 	done
 
-GenesectScript:
-	cry GENESECT
+KingambitScript:
+	cry KINGAMBIT
 	pause 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon GENESECT, 70
+	loadwildmon KINGAMBIT, 70
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_TEMP_EVENT_1
-	disappear CERULEANCAVE_GENESECT
+	disappear CERULEANCAVE_KINGAMBIT
 	end
 
 RegigigasScript:
@@ -317,7 +317,7 @@ CeruleanCave_MapEvents:
 
 	def_object_events
 	object_event 28, 46, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCaveAizenScript, -1
-	object_event 15, 23, SPRITE_GENESECT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GenesectScript, EVENT_TEMP_EVENT_1
+	object_event 15, 23, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KingambitScript, EVENT_TEMP_EVENT_1
 	object_event 27, 57, SPRITE_REGIGIGAS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, RegigigasScript, EVENT_CAUGHT_REGIGIGAS
 	object_event 22, 35, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 1, CeruleanCaveFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, CeruleanCaveFieldMon2Script, EVENT_FIELD_MON_2

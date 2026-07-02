@@ -109,6 +109,7 @@ Landmarks:
 	landmark  20, 100, Route27Name
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
+	landmark  53, 131, CinnabarLabName
 	landmark 140, 116, FastShipName
     landmark  92, 106, WarZoneName
     landmark  52,  50, MuseumName
@@ -141,7 +142,6 @@ WhirlIslandsName:    db "Whirl<BSP>Islands@"
 MtMortarName:        db "MT.Mortar@"
 DragonsDenName:      db "Dragon's<BSP>Den@"
 IcePathName:         db "Ice Path@"
-NotApplicableName:   db "N/A@" ; unreferenced ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
 PalletTownName:      db "Pallet Town@"
 ViridianCityName:    db "Viridian<BSP>City@"
 PewterCityName:      db "Pewter City@"
@@ -152,16 +152,14 @@ CeladonCityName:     db "Celadon<BSP>City@"
 SaffronCityName:     db "Saffron<BSP>City@"
 FuchsiaCityName:     db "Fuchsia<BSP>City@"
 CinnabarIslandName:  db "Cinnabar<BSP>Island@"
+CinnabarLabName:     db "Cinnabar<BSP>Lab@"
 IndigoPlateauName:   db "Indigo<BSP>Plateau@"
 VictoryRoadName:     db "Victory<BSP>Road@"
 ElementCaveName:     db "Element<BSP>Cave@"
 MtMoonName:          db "MT.Moon@"
 RockTunnelName:      db "Rock Tunnel@"
 LavRadioTowerName:   db "Lav<BSP>Radio Tower@"
-SilphCoName:         db "Silph Co.@" ; unreferenced
-SafariZoneName:      db "Safari Zone@" ; unreferenced
 SeafoamIslandsName:  db "Seafoam<BSP>Islands@"
-PokemonMansionName:  db "#mon<BSP>Mansion@" ; unreferenced
 CeruleanCaveName:    db "Cerulean<BSP>Cave@" ; unreferenced
 ManorName:           db "Silver<BSP>Manor@"
 CapeStormName:       db "Cape Storm@"
@@ -215,7 +213,6 @@ DarkCaveName:        db "Dark Cave@"
 IlexForestName:      db "Ilex<BSP>Forest@"
 BurnedTowerName:     db "Burned<BSP>Tower@"
 FastShipName:        db "Fast Ship@"
-ViridianForestName:  db "Viridian<BSP>Forest@" ; unreferenced
 DiglettsCaveName:    db "Diglett's<BSP>Cave@"
 TohjoFallsName:      db "Tohjo Falls@"
 UndergroundName:     db "Underground@"

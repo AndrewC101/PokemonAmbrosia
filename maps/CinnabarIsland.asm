@@ -179,10 +179,11 @@ CinnabarIsland_MapEvents:
 
 	def_warp_events
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
-	warp_event 14, 5, ELEMENT_CAVE, 1
+	warp_event 14, 5, CINNABAR_LAB, 1
+	warp_event 14, 15, CINNABAR_LAB, 1
+	warp_event 15, 15, CINNABAR_LAB, 2
 
 	def_coord_events
-	coord_event 14, 6, SCENE_ALWAYS, ElementCaveBlockScript
 
 	def_bg_events
 	bg_event 12, 11, BGEVENT_READ, CinnabarIslandPokecenterSign

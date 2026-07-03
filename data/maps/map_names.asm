@@ -229,6 +229,7 @@ Cinnabar_Map_Names: ;newgroup CINNABAR
 	dw Cinnabar_Map_Name7 ; map_const ROUTE_21,                                    10, 18 ;  7
 	dw Cinnabar_Map_Name8 ; map_const CINNABAR_ISLAND,                             10,  9 ;  8
 	dw Cinnabar_Map_Name9 ; map_const CINNABAR_LAB,                                33, 14 ;  9
+	dw Cinnabar_Map_Name10 ; map_const SEAFOAM_CAVE,                               33,  9 ; 10
 	assert_table_length NUM_CINNABAR_MAPS
 
 Cerulean_Map_Names: ;newgroup CERULEAN
@@ -899,6 +900,8 @@ Cinnabar_Map_Name8: ; map_const CINNABAR_ISLAND,;  7
    db "Cinnabar Island@"
 Cinnabar_Map_Name9: ; map_const CINNABAR_LAB ;  9
    db "Cinnabar Lab@"
+Cinnabar_Map_Name10: ; map_const SEAFOAM_CAVE ; 10
+   db "Seafoam Cave@"
 
 Cerulean_Map_Name1: ; map_const CERULEAN_GYM_BADGE_SPEECH_HOUSE ;  1
    db "Cerulean House 1@"

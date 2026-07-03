@@ -467,6 +467,7 @@
     const EVENT_GOT_CINNABAR_LAB_DITTO
     const EVENT_CINNABAR_LAB_TM_TOXIC
     const EVENT_CINNABAR_LAB_TM_HYPER_BEAM
+    const EVENT_SEAFOAM_CAVE_TM_BLIZZARD
 
     ; ======================================
     ; DevNote - here

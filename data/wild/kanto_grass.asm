@@ -926,4 +926,32 @@ KantoGrassWildMons:
 	db 69, DITTO
 	end_grass_wildmons
 
+	def_grass_wildmons SEAFOAM_CAVE
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 55, CLOYSTER
+	db 58, NINETALES_A
+	db 60, SLOWBRO
+	db 60, MAMOSWINE
+	db 62, DRACOVISH
+	db 62, ARCTOZOLT
+	db 75, BAXCALIBUR
+	; day
+	db 55, CLOYSTER
+	db 58, NINETALES_A
+	db 60, LAPRAS
+	db 60, MAMOSWINE
+	db 62, DRACOVISH
+	db 62, ARCTOZOLT
+	db 75, BAXCALIBUR
+	; nite
+	db 55, CLOYSTER
+	db 58, NINETALES_A
+	db 60, STARMIE
+	db 60, MAMOSWINE
+	db 62, DRACOVISH
+	db 62, ARCTOZOLT
+	db 75, BAXCALIBUR
+	end_grass_wildmons
+
 	db -1 ; end

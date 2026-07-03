@@ -591,3 +591,7 @@ INCLUDE "maps/CapeStorm.asm"
 SECTION "Map Scripts 58", ROMX
 
 INCLUDE "maps/CinnabarLab.asm"
+
+SECTION "Map Scripts 59", ROMX
+
+INCLUDE "maps/SeafoamCave.asm"

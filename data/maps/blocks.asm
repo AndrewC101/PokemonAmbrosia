@@ -992,3 +992,8 @@ SECTION "Map Blocks 12", ROMX
 
 CinnabarLab_Blocks:
 	INCBIN "maps/CinnabarLab.blk"
+
+SECTION "Map Blocks 13", ROMX
+
+SeafoamCave_Blocks:
+	INCBIN "maps/SeafoamCave.blk"

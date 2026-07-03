@@ -253,35 +253,15 @@ Movement_CinnabarGymTurnBack:
 	step DOWN
 	step_end
 
-Route20ElementCaveBlockScript:
-    checkevent EVENT_BEAT_WALLACE
-    iffalse .block
-    end
-.block
-    turnobject PLAYER, UP
-	opentext
-	writetext Route20ElementCaveBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_CinnabarGymTurnBack
-    end
-
-Route20ElementCaveBlockText:
-    text "The cave entrance"
-    line "is blocked by"
-    cont "rocks for now."
-    done
-
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 38,  7, SEAFOAM_GYM, 1
-	warp_event 30,  5, ELEMENT_CAVE, 2
+	warp_event 30,  5, SEAFOAM_CAVE, 1
 
 	def_coord_events
 	coord_event 38, 8, SCENE_ALWAYS, CinnabarGymBlockScript
-	coord_event 30, 6, SCENE_ALWAYS, Route20ElementCaveBlockScript
 
 	def_bg_events
 	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign

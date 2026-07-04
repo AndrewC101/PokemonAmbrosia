@@ -522,9 +522,12 @@ BillsPC_SafeRequest2bppInWRA6::
 BillsPC_SafeGet2bpp:
 ; Only copies graphics when doing so wont interfere with hblank palette usage.
 ; Otherwise, wait until next frame.
+; For Bills PC's live icon redraw path, avoid the global GDMA fast path and use
+; the conservative copy route instead. This covers both icon blanking and icon
+; redraws, which are the most likely source of the intermittent black columns.
 	ldh a, [rLY]
 	cp $40
-	jp c, Get2bpp
+	jp c, Get2bpp_NoGDMA
 	call DelayFrame
 	jr BillsPC_SafeGet2bpp
 

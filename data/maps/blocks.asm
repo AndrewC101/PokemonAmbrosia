@@ -997,3 +997,13 @@ SECTION "Map Blocks 13", ROMX
 
 SeafoamCave_Blocks:
 	INCBIN "maps/SeafoamCave.blk"
+
+SECTION "Map Blocks 14", ROMX
+
+HeroesPass_Blocks:
+	INCBIN "maps/HeroesPass.blk"
+
+SECTION "Map Blocks 15", ROMX
+
+HeroesPassCaves_Blocks:
+	INCBIN "maps/HeroesPassCaves.blk"

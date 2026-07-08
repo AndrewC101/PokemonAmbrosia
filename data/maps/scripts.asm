@@ -595,3 +595,11 @@ INCLUDE "maps/CinnabarLab.asm"
 SECTION "Map Scripts 59", ROMX
 
 INCLUDE "maps/SeafoamCave.asm"
+
+SECTION "Map Scripts 60", ROMX
+
+INCLUDE "maps/HeroesPass.asm"
+
+SECTION "Map Scripts 61", ROMX
+
+INCLUDE "maps/HeroesPassCaves.asm"

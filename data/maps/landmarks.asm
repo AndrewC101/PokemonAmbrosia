@@ -41,6 +41,7 @@ Landmarks:
 	landmark  28,  92, WhirlIslandsName
 	landmark  28, 100, Route41Name
 	landmark  20, 100, CianwoodCityName
+	landmark  16, 100, HeroesPassName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark 108,  44, MahoganyTownName
@@ -101,7 +102,7 @@ Landmarks:
 	landmark  52, 120, Route21Name
 	landmark  36,  68, Route22Name
 	landmark  28,  52, VictoryRoadName
-	landmark  59, 132, ElementCaveName
+	landmark  16, 100, ElementCaveName
 	landmark  28,  44, Route23Name
 	landmark  28,  36, IndigoPlateauName
 	landmark  28,  92, Route26Name
@@ -125,6 +126,7 @@ GoldenrodCityName:   db "Goldenrod<BSP>City@"
 EcruteakCityName:    db "Ecruteak<BSP>City@"
 OlivineCityName:     db "Olivine<BSP>City@"
 CianwoodCityName:    db "Cianwood<BSP>City@"
+HeroesPassName:      db "Heroes Pass@"
 MahoganyTownName:    db "Mahogany<BSP>Town@"
 BlackthornCityName:  db "Blackthorn<BSP>City@"
 LakeOfRageName:      db "Lake Of<BSP>Rage@"
@@ -155,7 +157,7 @@ CinnabarIslandName:  db "Cinnabar<BSP>Island@"
 CinnabarLabName:     db "Cinnabar<BSP>Lab@"
 IndigoPlateauName:   db "Indigo<BSP>Plateau@"
 VictoryRoadName:     db "Victory<BSP>Road@"
-ElementCaveName:     db "Element<BSP>Cave@"
+ElementCaveName:     db "Primal Cave@"
 MtMoonName:          db "MT.Moon@"
 RockTunnelName:      db "Rock Tunnel@"
 LavRadioTowerName:   db "Lav<BSP>Radio Tower@"

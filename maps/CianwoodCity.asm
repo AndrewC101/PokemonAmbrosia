@@ -1151,6 +1151,7 @@ CianwoodCity_MapEvents:
 	warp_event  0, 65, CIANWOOD_PHOTO_STUDIO, 1
 	warp_event 15, 49, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event  5, 29, POKE_SEERS_HOUSE, 1
+	warp_event  4, 35, HEROES_PASS_CAVES, 14
 
 	def_coord_events
 	coord_event 11, 28, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine

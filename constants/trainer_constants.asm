@@ -803,6 +803,7 @@ DEF KRIS EQU __trainer_class__
     const ARTORIAS
     const MASTER_PATCHES
     const MANUS
+    const SIEGMEYER_2
 
     trainerclass CRYSTAL ; 45
     const CRYSTAL_1

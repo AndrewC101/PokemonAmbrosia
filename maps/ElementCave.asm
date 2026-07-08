@@ -113,8 +113,8 @@ ElementCave_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 5, 3, CINNABAR_ISLAND, 2
-	warp_event 43, 21, ROUTE_20, 2
+	warp_event  5, 21, HEROES_PASS, 15
+	warp_event 43, 21, HEROES_PASS, 14
 
 	def_coord_events
 

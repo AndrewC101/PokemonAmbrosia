@@ -454,7 +454,7 @@ WallaceAfterBattleText1:
     para "My soldiers shall"
     line "have new orders."
 
-    para "To kill on sight."
+    para "Merciless orders."
 
     para "Starting with"
     line "New Bark Town."

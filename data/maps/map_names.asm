@@ -484,6 +484,8 @@ Cianwood_Map_Names: ;newgroup CIANWOOD
 	dw Cianwood_Map_Name14 ; map_const BATTLE_TOWER_HALLWAY,                        11,  2 ; 14
 	dw Cianwood_Map_Name15 ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 15
 	dw Cianwood_Map_Name16 ; map_const BATTLE_TOWER_OUTSIDE,                        10, 14 ; 16
+	dw Cianwood_Map_Name17 ; map_const HEROES_PASS ; 17
+	dw Cianwood_Map_Name18 ; map_const HEROES_PASS_CAVES ; 18
 	assert_table_length NUM_CIANWOOD_MAPS
 
 Viridian_Map_Names: ;newgroup VIRIDIAN ; 23
@@ -1314,6 +1316,10 @@ Cianwood_Map_Name15: ; map_const ROUTE_40_BATTLE_TOWER_GATE ; 15
    db "Route 40 Gate@"
 Cianwood_Map_Name16: ; map_const BATTLE_TOWER_OUTSIDE ; 16
    db "Battle Frontier@"
+Cianwood_Map_Name17: ; map_const HEROES_PASS ; 17
+   db "Heroes Pass@"
+Cianwood_Map_Name18: ; map_const HEROES_PASS_CAVES ; 18
+   db "Heroes Pass Caves@"
 
 Viridian_Map_Name1: ; map_const ROUTE_2,;  1
    db "Route 2@"

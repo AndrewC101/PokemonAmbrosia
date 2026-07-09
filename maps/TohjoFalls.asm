@@ -44,15 +44,15 @@ TohjoFalls_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 13, 15, ROUTE_27, 2
-	warp_event 25, 15, ROUTE_27, 3
+	warp_event 13, 27, ROUTE_27, 2
+	warp_event 25, 27, ROUTE_27, 3
+	warp_event  7,  3, ROUTE_27, 4
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsPoisonBarb, EVENT_TOHJO_FALLS_POISON_BARB
-	object_event 10, 14, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, TohjoFallsFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 27, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TohjoFallsFieldMon2Script, EVENT_FIELD_MON_2
-	
+	object_event  2, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsPoisonBarb, EVENT_TOHJO_FALLS_POISON_BARB
+	object_event 10, 26, SPRITE_POLIWRATH, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, TohjoFallsFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 27, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TohjoFallsFieldMon2Script, EVENT_FIELD_MON_2

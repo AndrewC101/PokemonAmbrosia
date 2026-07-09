@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE28_LATIOS
     const ROUTE28_FIELDMON_1
     const ROUTE28_FIELDMON_2
     const ROUTE28_FIELDMON_3
@@ -149,34 +148,6 @@ Route28FieldMon10Script:
 	disappear ROUTE28_FIELDMON_10
 	end
 
-LatiosScript:
-	faceplayer
-	opentext
-	writetext LatiosCry
-	cry LATIOS
-	pause 15
-	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIOS, 80
-	startbattle
-	reloadmapafterbattle
-    setval LATIOS
-	special MonCheck
-	iftrue .caught
-	end
-.caught
-    setevent EVENT_CAUGHT_LATIOS
-	disappear ROUTE28_LATIOS
-	end
-
-LatiosCry:
-    text "...."
-
-    para "...."
-
-    para "...."
-    done
-
 Route28Sign:
 	jumptext Route28SignText
 
@@ -203,7 +174,6 @@ Route28_MapEvents:
 	bg_event 25,  8, BGEVENT_ITEM, Route28HiddenRareCandy
 
 	def_object_events
-	object_event 17, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LatiosScript, EVENT_CAUGHT_LATIOS
 	object_event 25, 14, SPRITE_CHARIZARD, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route28FieldMon1Script, EVENT_FIELD_MON_1
 	object_event  9, 18, SPRITE_VENUSAUR, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route28FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 21, 20, SPRITE_BLASTOISE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route28FieldMon3Script, EVENT_FIELD_MON_3
@@ -214,4 +184,3 @@ Route28_MapEvents:
 	object_event  6,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, Route28FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 35, 12, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route28FieldMon9Script, EVENT_FIELD_MON_9
 	object_event 21, 15, SPRITE_SWAMPERT, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route28FieldMon10Script, EVENT_FIELD_MON_10
-	

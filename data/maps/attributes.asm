@@ -148,9 +148,13 @@ ENDM
 	connection west, Route27, ROUTE_27, 44
 	connection east, CapeStorm, CAPE_STORM, 49
 
-	map_attributes Route27, ROUTE_27, $35, WEST | EAST
+	map_attributes Route27, ROUTE_27, $35, NORTH | WEST | EAST
+	connection north, TohjoLake, TOHJO_LAKE, 0
 	connection west, NewBarkTown, NEW_BARK_TOWN, -5
 	connection east, Route26, ROUTE_26, -44
+
+	map_attributes TohjoLake, TOHJO_LAKE, $05, SOUTH
+	connection south, Route27, ROUTE_27, 0
 
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -6
@@ -725,6 +729,7 @@ ENDM
 	map_attributes LavenderForest, LAVENDER_FOREST, $05, 0
 	map_attributes AncientTemple, ANCIENT_TEMPLE, $09, 0
 	map_attributes AncientHall, ANCIENT_HALL, $00, 0
+	map_attributes AncientHallStairs, ANCIENT_HALL_STAIRS, $01, 0
 	map_attributes ManorOutside, MANOR_OUTSIDE, $05, 0
 	map_attributes ManorInside, MANOR_INSIDE, $00, 0
 	map_attributes Abyss, ABYSS, $0A, 0

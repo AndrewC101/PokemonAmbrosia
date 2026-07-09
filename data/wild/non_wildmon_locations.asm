@@ -58,7 +58,7 @@ EventWildMons::
 	specialencounter MEW, 	    EVENT_GOT_MEW, 			        BILLS_HOUSE, LegendaryEncounterDescription
 	specialencounter CELEBI, 	EVENT_CAUGHT_CELEBI, 			ILEX_FOREST, LegendaryEncounterDescription
 	specialencounter LATIAS, 	EVENT_CAUGHT_LATIAS, 			FUCHSIA_CITY, LegendaryEncounterDescription
-	specialencounter LATIOS, 	EVENT_CAUGHT_LATIOS, 			ROUTE_28, LegendaryEncounterDescription
+	specialencounter LATIOS, 	EVENT_CAUGHT_LATIOS, 			TOHJO_LAKE, LegendaryEncounterDescription
 	specialencounter DEOXYS, 	EVENT_CAUGHT_DEOXYS, 			MUSEUM, LegendaryEncounterDescription
 	specialencounter DARKRAI, 	EVENT_CAUGHT_DARKRAI, 			ROCK_TUNNEL_B1F, LegendaryEncounterDescription
 	specialencounter SHAYMIN, 	EVENT_CAUGHT_SHAYMIN, 			LAVENDER_FOREST, LegendaryEncounterDescription

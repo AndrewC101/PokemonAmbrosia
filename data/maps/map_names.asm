@@ -177,7 +177,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name80 ; map_const DRAGONS_DEN_1F ; 80
 	dw Dungeons_Map_Name81 ; map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	dw Dungeons_Map_Name82 ; map_const DRAGON_SHRINE ; 82
-	dw Dungeons_Map_Name83 ; map_const TOHJO_FALLS,                                 15,  9 ; 83
+	dw Dungeons_Map_Name83 ; map_const TOHJO_FALLS,                                 15, 15 ; 83
 	dw Dungeons_Map_Name84 ; map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	dw Dungeons_Map_Name85 ; map_const MOUNT_MOON,                                  15,  9 ; 85
 	dw Dungeons_Map_Name86 ; map_const UNDERGROUND_PATH,                             3, 14 ; 86
@@ -189,6 +189,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name94 ; map_const ANCIENT_TEMPLE,; 94
 	dw Dungeons_Map_Name95 ; map_const ANCIENT_HALL,; 95
 	dw Dungeons_Map_Name96 ; map_const OLD_LIGHTHOUSE,; 96
+	dw Dungeons_Map_Name97 ; map_const ANCIENT_HALL_STAIRS,; 97
 	assert_table_length NUM_DUNGEONS_MAPS
 
 
@@ -522,6 +523,7 @@ New_Bark_Map_Names: ; newgroup NEW_BARK ; 24
 	dw New_Bark_Map_Name13 ; map_const ROUTE_29_ROUTE_46_GATE ; 13
 	dw New_Bark_Map_Name14 ; map_const CAPE_STORM ; 14
 	dw New_Bark_Map_Name15 ; map_const CAPE_STORM_ROUTE_21_GATE ; 15
+	dw New_Bark_Map_Name16 ; map_const TOHJO_LAKE ; 16
 	assert_table_length NUM_NEW_BARK_MAPS
 
 
@@ -843,6 +845,8 @@ Dungeons_Map_Name95: ; map_const ANCIENT_HALL,;  4
    db "Ancient Hall@"
 Dungeons_Map_Name96: ; map_const OLD_LIGHTHOUSE,;  4
    db "Old Lighthouse@"
+Dungeons_Map_Name97: ; map_const ANCIENT_HALL_STAIRS,; 97
+   db "Ancient Hall Stairs@"
 
 Ecruteak_Map_Name1: ; map_const ECRUTEAK_TIN_TOWER_ENTRANCE,;  1
    db "Tin Tower Path@"
@@ -1378,6 +1382,8 @@ New_Bark_Map_Name14: ; map_const CAPE_STORM ; 14
    db "Cape Storm@"
 New_Bark_Map_Name15: ; map_const CAPE_STORM_ROUTE_21_GATE ; 15
    db "Cape Storm Gate@"
+New_Bark_Map_Name16: ; map_const TOHJO_LAKE ; 16
+   db "Lake Tohjo@"
 
 Saffron_Map_Name1: ; map_const ROUTE_5,;  1
    db "Route 5@"

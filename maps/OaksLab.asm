@@ -16,7 +16,7 @@ Oak:
 	faceplayer
 	opentext
 	checkevent EVENT_OPENED_MT_SILVER
-	iftrue .CheckPokedex
+	iftrue .MtSilverOpen
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
@@ -33,6 +33,16 @@ Oak:
 	warp SAFFRON_CITY, 9, 30
 	playsound SFX_WARP_TO
 	end
+.MtSilverOpen:
+	checkevent EVENT_BEAT_ASH
+	iftrue .CheckSilverCaveOutsideScene
+	setmapscene SILVER_CAVE_ROOM_3, SCENE_CUSTOM_1
+.CheckSilverCaveOutsideScene:
+	checkevent EVENT_BEAT_CRYSTAL_7
+	iftrue .CheckPokedex
+	setmapscene SILVER_CAVE_OUTSIDE, SCENE_CUSTOM_1
+	sjump .CheckPokedex
+
 .CheckBadges:
 	readvar VAR_BADGES
 	ifequal NUM_BADGES, .OpenMtSilver
@@ -98,6 +108,8 @@ Oak:
 	waitsfx
 	setflag ENGINE_WARP
 	setevent EVENT_OPENED_MT_SILVER
+	setmapscene SILVER_CAVE_ROOM_3, SCENE_CUSTOM_1
+	setmapscene SILVER_CAVE_OUTSIDE, SCENE_CUSTOM_1
 	loadmem wExpShareUpgrade, 1
 	sjump .CheckPokedex
 

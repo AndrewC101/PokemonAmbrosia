@@ -1585,7 +1585,7 @@ SilverCaveOutside_MapEvents:
 	def_coord_events
 	coord_event 31,  6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
 	coord_event 32,  6, SCENE_ALWAYS, SilverCaveOutsideBlockScript
-	coord_event 18, 10, SCENE_DEFAULT, SilverCaveRivalsScript
+	coord_event 18, 10, SCENE_CUSTOM_1, SilverCaveRivalsScript
 
 	def_bg_events
 	bg_event 24, 19, BGEVENT_READ, MtSilverPokecenterSign

@@ -6,7 +6,6 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
-	const ECRUTEAKCITY_SETO
 	const ECRUTEAKCITY_TELEPORT
 	const ECRUTEAKCITY_AERITH
 
@@ -245,118 +244,6 @@ BurnedTowerSignText:
 	para "Please stay away,"
 	line "as it is unsafe."
 	done
-
-SetoScript:
-	faceplayer
-    checkevent EVENT_BEAT_HENSHIN
-    iffalse .beatHenshinFirst
-	opentext
-	checkevent EVENT_BEAT_SETO
-	iftrue .FightDone
-.fight
-	writetext SetoSeenText
-	waitbutton
-	closetext
-	winlosstext SetoBeatenText, 0
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer BLUE, SETO
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_SETO
-	opentext
-	writetext SetoAfterBattleText
-	waitbutton
-	closetext
-	special HealParty
-	end
-.FightDone:
-	writetext SetoAfterBattleText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextSeto
-	nooryes
-	iftrue .fight
-	writetext RematchRefuseTextSeto
-	waitbutton
-	closetext
-	end
-.beatHenshinFirst
-    opentext
-	writetext BeatHenshinFirstText
-	waitbutton
-	closetext
-	end
-
-SetoSeenText:
-    text "You defeated that"
-    line "old fool Henshin!"
-
-    para "Where was he?"
-
-    para "I see..."
-
-    para "The power of"
-    line "death will be"
-    cont "mine!"
-
-    para "Then I will"
-    line "return and"
-    cont "finally beat"
-    cont "you Atem!"
-
-    para "For your reward"
-    line "I will give you"
-    cont "humility."
-
-    para "By crushing you"
-    line "now!"
-    done
-
-SetoBeatenText:
-    text "Not again!"
-    done
-
-SetoAfterBattleText:
-    text "I was born to"
-    line "rule."
-
-    para "When that day"
-    line "comes people"
-    cont "like you may"
-    cont "live to be"
-    cont "my pets."
-
-    para "And Atem will"
-    line "kneel before me!"
-    done
-
-BeatHenshinFirstText:
-    text "I am Seto!"
-    line "I am from a"
-    cont "different time."
-
-    para "I came here with"
-    line "an old man named"
-    cont "Henshin."
-
-    para "But I've lost him."
-
-    para "If you find him"
-    line "be careful."
-
-    para "He would destroy"
-    line "a peasant like"
-    cont "you."
-    done
-
-RematchTextSeto:
-    text "One more duel?"
-    done
-
-RematchRefuseTextSeto:
-    text "You scared?"
-    done
 
 EcruteakTeleportGuyScript:
 	faceplayer
@@ -620,6 +507,5 @@ EcruteakCity_MapEvents:
 	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
-	object_event 29,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SetoScript, -1
 	object_event 17, 30, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakTeleportGuyScript, -1
 	object_event 23, 12, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Aerith1Script, EVENT_BEAT_ELITE_FOUR

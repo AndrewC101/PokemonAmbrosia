@@ -146,7 +146,7 @@ ENDM
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
-	map_const TOHJO_FALLS,                                 15,  9 ; 83
+	map_const TOHJO_FALLS,                                 15, 15 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	map_const MOUNT_MOON,                                  15,  9 ; 85
 	map_const UNDERGROUND_PATH,                             3, 14 ; 86
@@ -160,6 +160,7 @@ ENDM
 	map_const ANCIENT_TEMPLE,                              20, 16 ; 94
 	map_const ANCIENT_HALL,                                 5, 10 ; 95
 	map_const OLD_LIGHTHOUSE,                              20, 18 ; 96
+	map_const ANCIENT_HALL_STAIRS,                          7, 14 ; 97
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -480,6 +481,7 @@ ENDM
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 13
 	map_const CAPE_STORM,                                  22, 12 ; 14
 	map_const CAPE_STORM_ROUTE_21_GATE,                     5,  4 ; 15
+	map_const TOHJO_LAKE,                                  20, 20 ; 16
 	endgroup
 
 	newgroup SAFFRON                                              ; 25

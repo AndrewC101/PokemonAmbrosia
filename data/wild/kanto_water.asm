@@ -109,9 +109,16 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_27
 	db 6 percent ; encounter rate
-	db 40, KINGDRA
-	db 40, MILOTIC
 	db 40, GYARADOS
+	db 40, MILOTIC
+	db 40, KINGDRA
+	end_water_wildmons
+
+	def_water_wildmons TOHJO_LAKE
+	db 6 percent ; encounter rate
+	db 40, GYARADOS
+	db 40, MILOTIC
+	db 40, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28

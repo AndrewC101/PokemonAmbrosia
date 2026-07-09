@@ -9,12 +9,33 @@
     const SILVERCAVEROOM3_FIELDMON_4
     const SILVERCAVEROOM3_FIELDMON_5
     const SILVERCAVEROOM3_FIELDMON_6
+    const SILVERCAVEROOM3_MEWTWO
+    const SILVERCAVEROOM3_HO_OH
 
 SilverCaveRoom3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-    callback MAPCALLBACK_OBJECTS, .FieldMon
+    callback MAPCALLBACK_OBJECTS, .Objects
+
+.Objects:
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .HideMtSilverScene
+	appear SILVERCAVEROOM3_RED
+	appear SILVERCAVEROOM3_ASH
+	appear SILVERCAVEROOM3_RED_PIKACHU
+	appear SILVERCAVEROOM3_ASH_PIKACHU
+	appear SILVERCAVEROOM3_MEWTWO
+	appear SILVERCAVEROOM3_HO_OH
+	sjump .FieldMon
+
+.HideMtSilverScene:
+	disappear SILVERCAVEROOM3_RED
+	disappear SILVERCAVEROOM3_ASH
+	disappear SILVERCAVEROOM3_RED_PIKACHU
+	disappear SILVERCAVEROOM3_ASH_PIKACHU
+	disappear SILVERCAVEROOM3_MEWTWO
+	disappear SILVERCAVEROOM3_HO_OH
 
 .FieldMon:
 	appear SILVERCAVEROOM3_FIELDMON_1
@@ -191,6 +212,7 @@ Ash:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ASH
+	setmapscene SILVER_CAVE_ROOM_3, SCENE_FINISHED
 	opentext
 	writetext AshBeatenText
 	waitbutton
@@ -531,8 +553,8 @@ SilverCaveRoom3_MapEvents:
 	warp_event  10, 3, ORIGIN_ROAD_SOUTH, 3
 
 	def_coord_events
-	coord_event 9, 14, SCENE_DEFAULT, FightAshScript1
-	coord_event 10, 14, SCENE_DEFAULT, FightAshScript2
+	coord_event 9, 14, SCENE_CUSTOM_1, FightAshScript1
+	coord_event 10, 14, SCENE_CUSTOM_1, FightAshScript2
 	coord_event 9, 4, SCENE_ALWAYS, SilverCave3BlockScript
 	coord_event 10, 4, SCENE_ALWAYS, SilverCave3BlockScript
 

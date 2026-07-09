@@ -111,6 +111,7 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark  53, 131, CinnabarLabName
+	landmark  12,  92, LakeTohjoName
 	landmark 140, 116, FastShipName
     landmark  92, 106, WarZoneName
     landmark  52,  50, MuseumName
@@ -217,6 +218,7 @@ BurnedTowerName:     db "Burned<BSP>Tower@"
 FastShipName:        db "Fast Ship@"
 DiglettsCaveName:    db "Diglett's<BSP>Cave@"
 TohjoFallsName:      db "Tohjo Falls@"
+LakeTohjoName:       db "Lake Tohjo@"
 UndergroundName:     db "Underground@"
 BattleTowerName:     db "Battle<BSP>Plaza@"
 SpecialMapName:      db "Special@"

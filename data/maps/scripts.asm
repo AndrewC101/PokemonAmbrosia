@@ -603,3 +603,11 @@ INCLUDE "maps/HeroesPass.asm"
 SECTION "Map Scripts 61", ROMX
 
 INCLUDE "maps/HeroesPassCaves.asm"
+
+SECTION "Map Scripts 62", ROMX
+
+INCLUDE "maps/TohjoLake.asm"
+
+SECTION "Map Scripts 63", ROMX
+
+INCLUDE "maps/AncientHallStairs.asm"

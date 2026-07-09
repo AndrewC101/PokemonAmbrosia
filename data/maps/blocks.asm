@@ -1007,3 +1007,13 @@ SECTION "Map Blocks 15", ROMX
 
 HeroesPassCaves_Blocks:
 	INCBIN "maps/HeroesPassCaves.blk"
+
+SECTION "Map Blocks 16", ROMX
+
+TohjoLake_Blocks:
+	INCBIN "maps/TohjoLake.blk"
+
+SECTION "Map Blocks 17", ROMX
+
+AncientHallStairs_Blocks:
+	INCBIN "maps/AncientHallStairs.blk"

@@ -1427,10 +1427,7 @@ Pokedex_InitSearchResultsScreen:
 	farcall DrawPokedexSearchResultsWindow
 	call Pokedex_PlaceSearchResultsTypeStrings
 	call Pokedex_UpdateSearchResultsCursorOAM
-	ld a, -1
-	ld [wCurPartySpecies], a
-	ld a, SCGB_POKEDEX
-	call Pokedex_GetSGBLayout
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_IncrementDexPointer
 	ret
 
@@ -1448,6 +1445,7 @@ Pokedex_UpdateSearchResultsScreen:
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_SetBGMapMode3
 	call Pokedex_ResetBGMapMode
 	ret
@@ -2533,7 +2531,7 @@ Pokedex_PrintListing:
 	ret
 
 Pokedex_LoadMainScreenPreviewPalette:
-; Refresh the main-list preview box palette for the selected entry.
+; Refresh the list preview box palette for the selected entry.
 ; Unseen entries keep the question-mark palette by using species -1.
 	call Pokedex_GetSelectedMon
 	call Pokedex_CheckSeen

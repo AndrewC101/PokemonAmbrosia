@@ -360,11 +360,11 @@ Pokedex_UpdateMainScreen:
 	jr nz, .start
 	call Pokedex_ListingHandleDPadInput
 	ret nc
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_UpdateCursorOAM
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
-	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_SetBGMapMode3
 	call Pokedex_ResetBGMapMode
 	ret
@@ -1441,11 +1441,11 @@ Pokedex_UpdateSearchResultsScreen:
 	jr nz, .go_to_dex_entry
 	call Pokedex_ListingHandleDPadInput
 	ret nc
+	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_UpdateSearchResultsCursorOAM
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_PrintListing
-	call Pokedex_LoadMainScreenPreviewPalette
 	call Pokedex_SetBGMapMode3
 	call Pokedex_ResetBGMapMode
 	ret

@@ -895,9 +895,22 @@ MoveInfoBox:
 	jr z, .place_category
 	call .LoadAndPlaceBattleDamageIcon
 	call .PrintDamage
-	ret
+	jr .CommitMoveInfoBox
 
 .place_category
+	jr .CommitMoveInfoBox
+
+.CommitMoveInfoBox
+; Copy the finished box and attrs before exposing the staged icon palette.
+; PAL_BATTLE_BG_6 is the player backsprite palette in normal battle UI, so
+; pushing it early can recolor visible battle tiles before the box covers them.
+	ldh a, [hCGB]
+	and a
+	ret z
+	call CopyTilemapAtOnce
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
 	ret
 
 .PrintPP
@@ -953,8 +966,6 @@ MoveInfoBox:
 	ld a, BATTLE_MOVE_TYPECAT_PALETTE
 	ld bc, 6
 	call ByteFill
-
-	farcall ApplyAttrmap
 	ret
 
 .LoadAndPlaceBattleDamageIcon
@@ -983,19 +994,13 @@ MoveInfoBox:
 	ret z
 
 ; Reuse the existing move-strip palette slot and dedicate color 3 to the
-; fixed pure-red DMG glyph. Patch only that one palette entry so the existing
-; category/type colors loaded by DrawBattleMoveTypeCategoryIcons stay intact.
+; fixed pure-red DMG glyph. Stage only wBGPals1 here; the final box commit
+; copies it to wBGPals2 after the tilemap and attrs are in place.
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 	ld de, wBGPals1 palette PAL_BATTLE_BG_6 color 3
-	ld a, LOW(palred 20)
-	ld [de], a
-	inc de
-	ld a, HIGH(palred 20)
-	ld [de], a
-	ld de, wBGPals2 palette PAL_BATTLE_BG_6 color 3
 	ld a, LOW(palred 20)
 	ld [de], a
 	inc de
@@ -1011,9 +1016,6 @@ MoveInfoBox:
 	hlcoord 2, 8, wAttrmap
 	ld bc, 6
 	call ByteFill
-	farcall ApplyAttrmap
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
 	ret
 
 .PrintDamage

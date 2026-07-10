@@ -84,9 +84,6 @@ ApplyMoveTypeCategoryColors_NoAttrmap:
 	ret z
 
 	call LoadMoveTypeCategoryPaletteOnly
-	farcall ApplyPals
-	ld a, TRUE
-	ldh [hCGBPalUpdate], a
 	ret
 
 RestoreBattleMoveTypeCategoryFontTiles::

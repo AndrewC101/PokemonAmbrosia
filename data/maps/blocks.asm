@@ -1017,3 +1017,8 @@ SECTION "Map Blocks 17", ROMX
 
 AncientHallStairs_Blocks:
 	INCBIN "maps/AncientHallStairs.blk"
+
+SECTION "Map Blocks 18", ROMX
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"

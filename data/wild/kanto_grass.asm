@@ -226,6 +226,34 @@ KantoGrassWildMons:
 	db 36, NOCTOWL
 	end_grass_wildmons
 
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 4, VENIPEDE
+	db 4, JOLTIK
+	db 6, LARVESTA
+	db 6, YANMA
+	db 11, SCYTHER
+	db 11, PINSIR
+	db 35, KLEAVOR
+	; day
+	db 4, VENIPEDE
+	db 4, JOLTIK
+	db 6, LARVESTA
+	db 6, YANMA
+	db 11, SCYTHER
+	db 11, PINSIR
+	db 35, KLEAVOR
+	; nite
+	db 4, VENIPEDE
+	db 4, JOLTIK
+	db 6, LARVESTA
+	db 6, YANMA
+	db 11, SCYTHER
+	db 11, PINSIR
+	db 35, KLEAVOR
+	end_grass_wildmons
+
 	def_grass_wildmons ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

@@ -429,6 +429,7 @@ INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/VictoryRoadGate.asm"
 INCLUDE "maps/Route2Gate.asm"
 INCLUDE "maps/Route2NuggetHouse.asm"
+INCLUDE "maps/ViridianForest.asm"
 INCLUDE "maps/ViridianPokecenter1F.asm"
 INCLUDE "maps/ViridianMart.asm"
 

@@ -503,6 +503,7 @@ Viridian_Map_Names: ;newgroup VIRIDIAN ; 23
 	dw Viridian_Map_Name11 ; map_const ROUTE_2_NUGGET_HOUSE ; 11
 	dw Viridian_Map_Name12 ; map_const ROUTE_2_GATE ; 12
 	dw Viridian_Map_Name13 ; map_const VICTORY_ROAD_GATE,                           10,  9 ; 13
+	dw Viridian_Map_Name14 ; map_const VIRIDIAN_FOREST ; 14
 	assert_table_length NUM_VIRIDIAN_MAPS
 
 
@@ -1351,6 +1352,8 @@ Viridian_Map_Name12: ; map_const ROUTE_2_GATE ; 12
    db "Route 2 Gate@"
 Viridian_Map_Name13: ; map_const VICTORY_ROAD_GATE, 13
    db "Victory Road Gate@"
+Viridian_Map_Name14: ; map_const VIRIDIAN_FOREST ; 14
+   db "Viridian Forest@"
 
 New_Bark_Map_Name1: ; map_const ROUTE_26,  1
    db "Route 26@"

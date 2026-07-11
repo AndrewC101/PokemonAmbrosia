@@ -112,6 +112,7 @@ Landmarks:
 	landmark  20,  68, Route28Name
 	landmark  53, 131, CinnabarLabName
 	landmark  12,  92, LakeTohjoName
+	landmark  52,  58, ViridianForestName
 	landmark 140, 116, FastShipName
     landmark  92, 106, WarZoneName
     landmark  52,  50, MuseumName
@@ -147,6 +148,7 @@ DragonsDenName:      db "Dragon's<BSP>Den@"
 IcePathName:         db "Ice Path@"
 PalletTownName:      db "Pallet Town@"
 ViridianCityName:    db "Viridian<BSP>City@"
+ViridianForestName:  db "Viridian<BSP>Forest@"
 PewterCityName:      db "Pewter City@"
 CeruleanCityName:    db "Cerulean<BSP>City@"
 LavenderTownName:    db "Lavender<BSP>Town@"

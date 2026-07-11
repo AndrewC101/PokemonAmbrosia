@@ -90,33 +90,6 @@ SoulHouseGrannyText:
 	line "friend."
 	done
 
-SpiritHouseBlockScript:
-    checkevent EVENT_RESTORED_POWER_TO_KANTO
-    iffalse .block
-    end
-.block
-    turnobject SOULHOUSE_MRFUJI, RIGHT
-	opentext
-	writetext SoulHouseBlockText
-    waitbutton
-    closetext
-    applymovement PLAYER, Movement_SoulHouseLeft
-    turnobject SOULHOUSE_MRFUJI, DOWN
-    end
-
-Movement_SoulHouseLeft:
-    step LEFT
-    step_end
-
-SoulHouseBlockText:
-    text "Mr Fuji: Excuse"
-    line "me."
-
-    para "That area is off"
-    line "limits to the"
-    cont "public."
-    done
-
 SoulHouseWiseGlasses:
 	itemball SACRED_ASH
 
@@ -164,13 +137,7 @@ SoulHouse_MapEvents:
 	warp_event  4,  7, LAVENDER_TOWN, 6
 	warp_event  5,  7, LAVENDER_TOWN, 6
 
-	warp_event  9,  1, SOUL_HOUSE, 4
-	warp_event 16,  5, SOUL_HOUSE, 3
-
-	warp_event 29,  5, LAVENDER_FOREST, 1
-
 	def_coord_events
-	coord_event  8,  1, SCENE_ALWAYS, SpiritHouseBlockScript
 
 	def_bg_events
 

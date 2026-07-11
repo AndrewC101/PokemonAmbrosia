@@ -113,6 +113,7 @@ Landmarks:
 	landmark  53, 131, CinnabarLabName
 	landmark  12,  92, LakeTohjoName
 	landmark  52,  58, ViridianForestName
+	landmark 132,  54, LavenderForestName
 	landmark 140, 116, FastShipName
     landmark  92, 106, WarZoneName
     landmark  52,  50, MuseumName
@@ -152,6 +153,7 @@ ViridianForestName:  db "Viridian<BSP>Forest@"
 PewterCityName:      db "Pewter City@"
 CeruleanCityName:    db "Cerulean<BSP>City@"
 LavenderTownName:    db "Lavender<BSP>Town@"
+LavenderForestName:  db "Lavender<BSP>Forest@"
 VermilionCityName:   db "Vermilion<BSP>City@"
 CeladonCityName:     db "Celadon<BSP>City@"
 SaffronCityName:     db "Saffron<BSP>City@"

@@ -1,6 +1,5 @@
     object_const_def
     const LAVENDERFOREST_AGATHA_SISTER
-    const LAVENDERFOREST_SHAYMIN
 	const LAVENDERFOREST_FIELDMON_1
     const LAVENDERFOREST_FIELDMON_2
     const LAVENDERFOREST_FIELDMON_3
@@ -32,29 +31,7 @@ LavenderForest_MapScripts:
     appear LAVENDERFOREST_FIELDMON_9
     appear LAVENDERFOREST_FIELDMON_10
     endcallback
-    
-ShayminScript:
-    faceplayer
-	cry SHAYMIN
-	pause 15
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon SHAYMIN, 70
-	startbattle
-	reloadmapafterbattle
-    setval SHAYMIN
-	special MonCheck
-	iftrue .caught
-	end
-.caught
-    setevent EVENT_CAUGHT_SHAYMIN
-	disappear LAVENDERFOREST_SHAYMIN
-	pause 15
-	special FadeInFromBlack
-	pause 30
-	special HealParty
-	refreshscreen
-	end
-    
+
 LavenderForestFieldMon1Script:
 	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, LavenderForestPokemonAttacksText, 66, 0, .script
 .script
@@ -114,7 +91,7 @@ LavenderForestFieldMon10Script:
 .script
     disappear LAVENDERFOREST_FIELDMON_10
     end
-    
+
 LavenderForestPokemonAttacksText:
 	text "Spirit attacks!"
 	done
@@ -232,8 +209,10 @@ LavenderForest_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2, 26, SOUL_HOUSE, 5
-	warp_event  2, 27, SOUL_HOUSE, 5
+	warp_event 12, 27, ROUTE_10_SOUTH, 1
+	warp_event 13, 27, ROUTE_10_SOUTH, 2
+	warp_event 12,  0, ROCK_TUNNEL_1F, 2
+	warp_event 13,  0, ROCK_TUNNEL_1F, 2
 
 	def_coord_events
 
@@ -241,7 +220,6 @@ LavenderForest_MapEvents:
 
 	def_object_events
 	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AgathaSisterScript, -1
-	object_event 13,  1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ShayminScript, EVENT_CAUGHT_SHAYMIN
 	object_event  5, 24, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon1Script, EVENT_FIELD_MON_1
 	object_event  3, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 21, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon3Script, EVENT_FIELD_MON_3
@@ -253,4 +231,3 @@ LavenderForest_MapEvents:
 	object_event 19,  4, SPRITE_GRANNY, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon9Script, EVENT_FIELD_MON_9
 	object_event  7, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon10Script, EVENT_FIELD_MON_10
 	object_event 20,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LavenderForestLifeOrb, EVENT_LAVENDER_FOREST_LIFE_ORB
-

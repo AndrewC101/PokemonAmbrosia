@@ -74,7 +74,7 @@ RockTunnel1F_MapEvents:
 
 	def_warp_events
 	warp_event 15,  3, ROUTE_9, 1
-	warp_event 11, 25, ROUTE_10_SOUTH, 1
+	warp_event 11, 25, LAVENDER_FOREST, 3
 	warp_event  5,  3, ROCK_TUNNEL_B1F, 3
 	warp_event 15,  9, ROCK_TUNNEL_B1F, 2
 	warp_event 27,  3, ROCK_TUNNEL_B1F, 4

@@ -51,7 +51,7 @@ EventWildMons::
 	specialencounter SNORLAX, 	EVENT_FOUGHT_SNORLAX,           VERMILION_CITY, LegendaryEncounterDescription
 	specialencounter ARTICUNO, 	EVENT_CAUGHT_ARTICUNO, 			SEAFOAM_CAVE, LegendaryEncounterDescription
 	specialencounter ZAPDOS, 	EVENT_CAUGHT_ZAPDOS, 			OLD_LIGHTHOUSE, LegendaryEncounterDescription
-	specialencounter MOLTRES, 	EVENT_CAUGHT_MOLTRES, 			ROUTE_2, LegendaryEncounterDescription
+	specialencounter MOLTRES, 	EVENT_CAUGHT_MOLTRES, 			ROCK_TUNNEL_B1F, LegendaryEncounterDescription
 	specialencounter RAIKOU, 	EVENT_CAUGHT_RAIKOU, 			ROUTE_45, LegendaryEncounterDescription
 	specialencounter ENTEI, 	EVENT_CAUGHT_ENTEI, 			RUINS_OF_ALPH_INNER_CHAMBER, LegendaryEncounterDescription
 	specialencounter SUICUNE, 	EVENT_CAUGHT_SUICUNE, 			TIN_TOWER_1F, LegendaryEncounterDescription
@@ -60,7 +60,7 @@ EventWildMons::
 	specialencounter LATIAS, 	EVENT_CAUGHT_LATIAS, 			FUCHSIA_CITY, LegendaryEncounterDescription
 	specialencounter LATIOS, 	EVENT_CAUGHT_LATIOS, 			TOHJO_LAKE, LegendaryEncounterDescription
 	specialencounter DEOXYS, 	EVENT_CAUGHT_DEOXYS, 			MUSEUM, LegendaryEncounterDescription
-	specialencounter DARKRAI, 	EVENT_CAUGHT_DARKRAI, 			ROCK_TUNNEL_B1F, LegendaryEncounterDescription
+	specialencounter DARKRAI, 	EVENT_CAUGHT_DARKRAI, 			DARK_CAVE_BLACKTHORN_ENTRANCE, LegendaryEncounterDescription
 	specialencounter SHAYMIN, 	EVENT_CAUGHT_SHAYMIN, 			LAVENDER_FOREST, LegendaryEncounterDescription
 	specialencounter LUGIA, 	EVENT_FOUGHT_LUGIA, 			WHIRL_ISLAND_LUGIA_CHAMBER, LegendaryEncounterDescription
 	specialencounter HO_OH, 	EVENT_FOUGHT_HO_OH, 			TIN_TOWER_ROOF, LegendaryEncounterDescription

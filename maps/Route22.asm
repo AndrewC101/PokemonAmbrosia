@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE22_MOLTRES
 	const ROUTE22_FIELDMON_1
     const ROUTE22_FIELDMON_2
     const ROUTE22_FIELDMON_3
@@ -69,35 +68,6 @@ Route22FieldMon4Script:
 	disappear ROUTE22_FIELDMON_4
 	end
 
-MoltresScript:
-	cry MOLTRES
-	pause 15
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
-	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 80
-    sjump .begin
-.midLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 60
-    sjump .begin
-.lowerLevel
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MOLTRES, 50
-.begin
-	startbattle
-	reloadmapafterbattle
-    setval MOLTRES
-	special MonCheck
-	iftrue .caught
-	end
-.caught
-    setevent EVENT_CAUGHT_MOLTRES
-	disappear ROUTE22_MOLTRES
-	end
-
 VictoryRoadEntranceSign:
 	jumptext VictoryRoadEntranceSignText
 
@@ -144,7 +114,6 @@ Route22_MapEvents:
 	bg_event 15,  7, BGEVENT_READ, VictoryRoadEntranceSign
 
 	def_object_events
-	object_event  6,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, MoltresScript, EVENT_CAUGHT_MOLTRES
 	object_event 19,  9, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route22FieldMon1Script, EVENT_FIELD_MON_1
 	object_event 30,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route22FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 33, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route22FieldMon3Script, EVENT_FIELD_MON_3

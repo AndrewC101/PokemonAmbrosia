@@ -186,6 +186,10 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $42, AnimateCaveLavaBubbleTile
+	dw NULL,  FlickeringCaveEntrancePalette
+	dw vTiles2 tile $43, AnimateCaveLavaBubbleTileOffset
+	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
@@ -735,6 +739,52 @@ LavaBubbleTileFrames:
 	INCBIN "gfx/tilesets/lava/2.2bpp"
 	INCBIN "gfx/tilesets/lava/3.2bpp"
 	INCBIN "gfx/tilesets/lava/4.2bpp"
+
+AnimateCaveLavaBubbleTile:
+; Input de is the destination tile in VRAM.
+; A cycle of 4 frames, updating every other tick.
+	ld a, [wTileAnimationTimer]
+	and %110
+	jr WriteCaveLavaBubbleTile
+
+AnimateCaveLavaBubbleTileOffset:
+; Input de is the destination tile in VRAM.
+; Offset by 2 frames so the two cave lava tiles do not animate in lockstep.
+	ld a, [wTileAnimationTimer]
+	and %110
+	srl a
+	inc a
+	inc a
+	and %011
+	swap a
+	jr WriteCaveLavaBubbleTileWithOffset
+
+WriteCaveLavaBubbleTile:
+; a is pre-multiplied by 2 from 'and %110'; convert it to a tile-byte offset.
+	add a
+	add a
+	add a
+WriteCaveLavaBubbleTileWithOffset:
+; Save the stack pointer in bc for WriteTile to restore.
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; hl = LavaBubbleTileFrames + a
+	ld l, a
+	ld h, 0
+	ld a, LOW(LavaBubbleTileFrames)
+	add l
+	ld l, a
+	ld a, HIGH(LavaBubbleTileFrames)
+	adc h
+	ld h, a
+
+; Write the lava frame from hl (now sp) to destination de (now hl).
+	ld sp, hl
+	ld l, e
+	ld h, d
+	jp WriteTile
 
 AnimateTowerPillarTile:
 ; Input de points to the destination in VRAM, then the source tile frames

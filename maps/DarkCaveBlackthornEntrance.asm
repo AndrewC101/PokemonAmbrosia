@@ -5,8 +5,8 @@
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_2
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_3
     const DARKCAVEBLACKTHORNENTRANCE_XEHANORT
-    const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL3
     const DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
+    const DARKCAVEBLACKTHORNENTRANCE_DARKRAI
 
 DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
@@ -66,6 +66,36 @@ DarkCaveBlackthornEntranceFieldMon4Script:
 	setevent EVENT_FIELD_MON_4
 	disappear DARKCAVEBLACKTHORNENTRANCE_FIELDMON_4
 	end
+
+DarkraiScript:
+	cry DARKRAI
+	pause 15
+
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .lowerLevel
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 80
+    sjump .begin
+.midLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 70
+    sjump .begin
+.lowerLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DARKRAI, 60
+.begin
+	startbattle
+	reloadmapafterbattle
+    setval DARKRAI
+	special MonCheck
+	iftrue .caught
+	end
+.caught
+    setevent EVENT_CAUGHT_DARKRAI
+    disappear DARKCAVEBLACKTHORNENTRANCE_DARKRAI
+    end
 
 DarkCaveBlackthornEntrancePokemonAttacksText:
 	text "Wild #mon"
@@ -135,69 +165,6 @@ RematchRefuseTextDarkCaveXehanort:
     text "Open your heart."
     done
 
-GiratinaBarrierScript:
-    callasm IsDarkraiInParty
-    iftrue .unblock
-    opentext
-    writetext BeGoneText
-    waitbutton
-    closetext
-    warp DARK_CAVE_VIOLET_ENTRANCE, 17, 2
-    opentext
-    writetext DarkraiNeededText
-    waitbutton
-    closetext
-    sjump .end
-.unblock
-    opentext
-    writetext DarkraiUnblocksText
-    waitbutton
-    closetext
-.end
-    end
-
-IsDarkraiInParty:
-    ld a, [wPartyCount]
-    ld b, a
-	ld hl, wPartySpecies
-.loop
-	ld a, [hli]
-	cp DARKRAI
-	jr z, .found
-	dec b
-	jr z, .notFound
-	jr .loop
-.notFound
-    xor a
-    ld [wScriptVar], a
-    ret
-.found
-    ld a, 1
-    ld [wScriptVar], a
-    ret
-
-BeGoneText:
-    text "A powerful"
-    line "darkness overcomes"
-    cont "and expels you."
-    done
-
-DarkraiNeededText:
-    text "It will take a"
-    line "Dark #mon"
-    cont "that can cross"
-    cont "the dream world"
-    cont "to allow passage."
-    done
-
-DarkraiUnblocksText:
-    text "The path is"
-    line "revealed!"
-    done
-
-DarkCaveBlackthornEntranceAmbrosia:
-    itemball AMBROSIA
-
 DarkCaveBlackthornEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -206,7 +173,6 @@ DarkCaveBlackthornEntrance_MapEvents:
 	warp_event 21, 25, DARK_CAVE_VIOLET_ENTRANCE, 2
 
 	def_coord_events
-	coord_event 15, 13, SCENE_ALWAYS, GiratinaBarrierScript
 
 	def_bg_events
 
@@ -216,6 +182,6 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event 23, 11, SPRITE_TYRANITAR, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 21, 19, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, DarkCaveBlackthornEntranceFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 40,  5, SPRITE_HYDREIGON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon3Script, EVENT_FIELD_MON_3
-	object_event  5,  5, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, DarkCaveXehanortScript, -1
-	object_event  7,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceAmbrosia, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_AMBROSIA
+	object_event  5, 11, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, DarkCaveXehanortScript, -1
 	object_event 17, 13, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceFieldMon4Script, EVENT_FIELD_MON_4
+	object_event  6,  6, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, DarkraiScript, EVENT_CAUGHT_DARKRAI

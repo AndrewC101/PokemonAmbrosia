@@ -2,7 +2,7 @@
 	const ROCKTUNNELB1F_POKE_BALL1
 	const ROCKTUNNELB1F_POKE_BALL2
 	const ROCKTUNNELB1F_POKE_BALL3
-	const ROCKTUNNELB1F_DARKRAI
+	const ROCKTUNNELB1F_MOLTRES
 	const ROCKTUNNELB1F_FIELDMON_1
     const ROCKTUNNELB1F_FIELDMON_2
     const ROCKTUNNELB1F_FIELDMON_3
@@ -32,39 +32,40 @@ RockTunnelB1FPPUp:
 RockTunnelB1FRevive:
 	itemball MAX_REVIVE
 
-DarkraiScript:
-	cry DARKRAI
+MoltresScript:
+	cry MOLTRES
 	pause 15
-
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .baseLevel
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
+	iffalse .postClairLevel
 	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
+	iffalse .postE4Level
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 80
+	loadwildmon MOLTRES, 80
     sjump .begin
-.midLevel
+.postE4Level
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 60
+	loadwildmon MOLTRES, 70
     sjump .begin
-.lowerLevel
+.postClairLevel
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon DARKRAI, 50
+	loadwildmon MOLTRES, 60
+    sjump .begin
+.baseLevel
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MOLTRES, 50
 .begin
 	startbattle
 	reloadmapafterbattle
-    setval DARKRAI
+    setval MOLTRES
 	special MonCheck
 	iftrue .caught
 	end
 .caught
-    setevent EVENT_CAUGHT_DARKRAI
-    disappear ROCKTUNNELB1F_DARKRAI
-    end
-
-DarkraiCry:
-    text "Darkrai!"
-    done
+    setevent EVENT_CAUGHT_MOLTRES
+	disappear ROCKTUNNELB1F_MOLTRES
+	end
 
 RockTunnelB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION
@@ -127,7 +128,7 @@ RockTunnelB1F_MapEvents:
 	object_event  2, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, RockTunnelB1FIron, EVENT_ROCK_TUNNEL_B1F_IRON
 	object_event  6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RockTunnelB1FPPUp, EVENT_ROCK_TUNNEL_B1F_PP_UP
 	object_event 10, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RockTunnelB1FRevive, EVENT_ROCK_TUNNEL_B1F_REVIVE
-	object_event 14,  6, SPRITE_DARKRAI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_ROCK, OBJECTTYPE_SCRIPT, 0, DarkraiScript, EVENT_CAUGHT_DARKRAI
+	object_event 14,  6, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoltresScript, EVENT_CAUGHT_MOLTRES
 	object_event 20, 32, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 19, 25, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 22, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon3Script, EVENT_FIELD_MON_3

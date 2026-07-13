@@ -118,7 +118,7 @@ Moves: ; 41afb
 	move AFTER_IMAGE,  EFFECT_EVASION_UP_2,        0, UBER,          STATUS,   100, 15,   0
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,        STATUS,   100, 30,   0
-	move DARK_VOID,    EFFECT_SLEEP,               0, DARK,          STATUS,   75,  10,   0
+	move DARK_VOID,    EFFECT_SLEEP,               0, DARK,          STATUS,   80,  10,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   90,  20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,         STATUS,   100, 10,   0
 	move ZEN_HEADBUTT, EFFECT_FLINCH_HIT,         80, PSYCHIC_TYPE,  PHYSICAL, 100, 20,  30

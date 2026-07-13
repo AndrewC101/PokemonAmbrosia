@@ -481,6 +481,7 @@
 	const EVENT_TOHJO_LAKE_TM_HORN_DRILL
 	const EVENT_VIRIDIAN_FOREST_BARRIER_OPEN
 	const EVENT_VIRIDIAN_FOREST_TM_GIGA_DRAIN
+	const EVENT_ROCK_TUNNEL_B1F_TM_FIRE_BLAST
 
 	; ======================================
 	; DevNote - here

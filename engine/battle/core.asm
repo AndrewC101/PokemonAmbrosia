@@ -4832,6 +4832,10 @@ FieldWeather:
 	ld hl, DownpourText
 	jp StdBattleTextbox
 .sun
+; Match Drought-style switch-in sun: force the battle colors to day.
+    ld a, 0
+	ld [wBattleTimeOfDay], a
+	farcall _CGB_BattleColors
 	ld de, SUNNY_DAY
 	call Call_PlayBattleAnim
 	ld hl, SunGotBrightText
@@ -4883,6 +4887,8 @@ SwitchInEffects:
     ld a, c
     cp UMBREON
     jp z, .umbreon
+    cp DARKRAI
+    jp z, .darkrai
 	ld a, c
 	ld hl, .TauntMons
 	call IsInArray
@@ -5011,7 +5017,7 @@ SwitchInEffects:
     ret
 
 .TauntMons
-	db DARKRAI, SNEASLER, HAWLUCHA, MISMAGIUS, DEINO, ZWEILOUS, HYDREIGON, -1
+	db SNEASLER, HAWLUCHA, MISMAGIUS, DEINO, ZWEILOUS, HYDREIGON, -1
 
 .SpecialAttackUpMons
 	db GENESECT, RAICHU, HOUNDOOM, -1
@@ -5119,6 +5125,10 @@ SwitchInEffects:
 .taunt
     farcall TauntSwitch
     ret
+.darkrai
+    farcall TauntSwitch
+    call ClearFailures
+    jp .spAtkUp
 .espeon
     farcall SafeguardSwitch
     ; fallthrough

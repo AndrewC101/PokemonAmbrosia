@@ -3239,7 +3239,7 @@ BattleTowerMons:
 
     db DARKRAI
 	db LEFTOVERS
-	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
+	db DARK_VOID, DARK_PULSE, FLAMETHROWER, ICE_BEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3249,7 +3249,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 32, 32 ; PP
+	db 16, 24, 24, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 84 ; Level
@@ -5247,7 +5247,7 @@ BattleTowerMons:
 
     db DARKRAI
 	db LEFTOVERS
-	db DARK_VOID, DARK_PULSE, AURA_SPHERE, NASTY_PLOT
+	db DARK_VOID, DARK_PULSE, AURA_SPHERE, ICE_BEAM
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5257,7 +5257,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 16, 24, 32, 32 ; PP
+	db 16, 24, 32, 24 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level

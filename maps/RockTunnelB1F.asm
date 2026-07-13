@@ -8,6 +8,9 @@
     const ROCKTUNNELB1F_FIELDMON_3
     const ROCKTUNNELB1F_FIELDMON_4
     const ROCKTUNNELB1F_FIELDMON_5
+	const ROCKTUNNELB1F_FIREBREATHER_DICK
+	const ROCKTUNNELB1F_FIREBREATHER_OTIS
+	const ROCKTUNNELB1F_TM_FIRE_BLAST
 
 RockTunnelB1F_MapScripts:
 	def_scene_scripts
@@ -16,6 +19,8 @@ RockTunnelB1F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .fieldMon
 
 .fieldMon
+	setval WEATHER_SUN
+	writemem wFieldWeather
     appear ROCKTUNNELB1F_FIELDMON_1
     appear ROCKTUNNELB1F_FIELDMON_2
     appear ROCKTUNNELB1F_FIELDMON_3
@@ -31,6 +36,9 @@ RockTunnelB1FPPUp:
 
 RockTunnelB1FRevive:
 	itemball MAX_REVIVE
+
+RockTunnelB1FTMFireBlast:
+	itemball TM_FIRE_BLAST
 
 MoltresScript:
 	cry MOLTRES
@@ -69,6 +77,28 @@ MoltresScript:
 
 RockTunnelB1FHiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION
+
+TrainerFirebreatherDick:
+	trainer FIREBREATHER, DICK, EVENT_BEAT_FIREBREATHER_DICK, FirebreatherDickSeenText, FirebreatherDickBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FirebreatherDickAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerFirebreatherOtis:
+	trainer FIREBREATHER, OTIS, EVENT_BEAT_FIREBREATHER_OTIS, FirebreatherOtisSeenText, FirebreatherOtisBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FirebreatherOtisAfterBattleText
+	waitbutton
+	closetext
+	end
 
 RockTunnelB1FFieldMon1Script:
 	trainer UMBREON, FIELD_MON, EVENT_FIELD_MON_1, RockTunnelB1FPokemonAttacksText, 62, 0, .script
@@ -110,6 +140,46 @@ RockTunnelB1FPokemonAttacksText:
 	line "attacks!"
 	done
 
+FirebreatherDickSeenText:
+	text "My brother and I"
+	line "are here to guard"
+	cont "the divine flame."
+	para "We can not let you"
+	line "pass!"
+	done
+
+FirebreatherDickBeatenText:
+	text "Impressive!"
+	done
+
+FirebreatherDickAfterBattleText:
+	text "I was getting kind"
+	line "of bored of"
+	cont "standing here to"
+	cont "be honest."
+	done
+
+FirebreatherOtisSeenText:
+	text "Look brother!"
+	para "We have a guest."
+	para "You are unworthy"
+	line "of the divine"
+	cont "flame."
+	para "You shall not"
+	line "pass!"
+	done
+
+FirebreatherOtisBeatenText:
+	text "You are not human!"
+	done
+
+FirebreatherOtisAfterBattleText:
+	text "This is your fault"
+	line "brother!"
+	para "We had one job in"
+	line "this world!"
+	done
+
 RockTunnelB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -134,3 +204,6 @@ RockTunnelB1F_MapEvents:
 	object_event 22, 13, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon3Script, EVENT_FIELD_MON_3
 	object_event  7, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, RockTunnelB1FFieldMon4Script, EVENT_FIELD_MON_4
 	object_event 15, 17, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RockTunnelB1FFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 13, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherDick, -1
+	object_event 16, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1
+	object_event 16,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, RockTunnelB1FTMFireBlast, EVENT_ROCK_TUNNEL_B1F_TM_FIRE_BLAST

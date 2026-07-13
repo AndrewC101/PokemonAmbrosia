@@ -5,7 +5,7 @@
 	next "victims into an"
 	next "eternal sleep."
 
-	page "Taunts foe on"
-	next "switch. Gives"
-	next "nightmares.@"
+	page "Gives nightmares."
+	next "Taunt and Sp.Atk"
+	next "boost on switch.@"
 

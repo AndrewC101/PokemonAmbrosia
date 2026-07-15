@@ -59,6 +59,7 @@ Landmarks:
 	landmark 148,  68, SilverCaveName
 	landmark  80,  80, AncientRuinName
     landmark 132,  36, AbyssName
+	landmark  92,  96, CherrygroveBayName
 	assert_table_length KANTO_LANDMARK
 	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
@@ -123,6 +124,7 @@ Landmarks:
 
 NewBarkTownName:     db "New Bark<BSP>Town@"
 CherrygroveCityName: db "Cherrygrove<BSP>City@"
+CherrygroveBayName:  db "Cherrygrove<BSP>Bay@"
 VioletCityName:      db "Violet City@"
 AzaleaTownName:      db "Azalea Town@"
 GoldenrodCityName:   db "Goldenrod<BSP>City@"

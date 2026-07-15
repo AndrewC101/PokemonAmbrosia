@@ -100,9 +100,14 @@ ENDM
 	connection west, Route29, ROUTE_29, 2
 	connection east, Route27, ROUTE_27, 5
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, NORTH | EAST
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, NORTH | WEST | EAST
 	connection north, Route30, ROUTE_30, 5
+	connection west, CherrygroveBay, CHERRYGROVE_BAY, -7
 	connection east, Route29, ROUTE_29, 1
+
+	map_attributes CherrygroveBay, CHERRYGROVE_BAY, $05, WEST | EAST
+	connection west, Route32, ROUTE_32, -20
+	connection east, CherrygroveCity, CHERRYGROVE_CITY, 7
 
 	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
 	connection south, Route32, ROUTE_32, 0
@@ -172,9 +177,10 @@ ENDM
 	connection south, Route30, ROUTE_30, 10
 	connection west, VioletCity, VIOLET_CITY, -9
 
-	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH
+	map_attributes Route32, ROUTE_32, $05, NORTH | SOUTH | EAST
 	connection north, VioletCity, VIOLET_CITY, 0
 	connection south, Route33, ROUTE_33, 0
+	connection east, CherrygroveBay, CHERRYGROVE_BAY, 20
 
 	map_attributes Route33, ROUTE_33, $05, NORTH | WEST
 	connection north, Route32, ROUTE_32, 0
@@ -718,6 +724,7 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
+	map_attributes CherrygroveRuins, CHERRYGROVE_RUINS, $00, 0
 	map_attributes DestinyPark, DESTINY_PARK, $00, 0
 	map_attributes DestinySquare, DESTINY_SQUARE, $00, 0
 	map_attributes DestinyFrontier, DESTINY_FRONTIER, $00, 0

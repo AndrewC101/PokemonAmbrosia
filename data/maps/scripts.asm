@@ -612,3 +612,8 @@ INCLUDE "maps/TohjoLake.asm"
 SECTION "Map Scripts 63", ROMX
 
 INCLUDE "maps/AncientHallStairs.asm"
+
+SECTION "Map Scripts 64", ROMX
+
+INCLUDE "maps/CherrygroveBay.asm"
+INCLUDE "maps/CherrygroveRuins.asm"

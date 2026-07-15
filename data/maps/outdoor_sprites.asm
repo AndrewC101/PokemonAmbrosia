@@ -200,7 +200,7 @@ IndigoGroupSprites:
 NewBarkGroupSprites:
 ; Route26, Route27, Route29, NewBarkTown
 CherrygroveGroupSprites:
-; Route30, Route31, CherrygroveCity
+; Route30, Route31, CherrygroveCity, CherrygroveBay
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_BEAUTY

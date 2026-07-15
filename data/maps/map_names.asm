@@ -561,6 +561,8 @@ Cherrygrove_Map_Names:
 	dw Cherrygrove_Map_Name9 ; map_const ROUTE_30_BERRY_HOUSE ;  9
 	dw Cherrygrove_Map_Name10 ; map_const MR_POKEMONS_HOUSE ; 10
 	dw Cherrygrove_Map_Name11 ; map_const ROUTE_31_VIOLET_GATE ; 11
+	dw Cherrygrove_Map_Name12 ; map_const CHERRYGROVE_BAY ; 12
+	dw Cherrygrove_Map_Name13 ; map_const CHERRYGROVE_RUINS ; 13
 	assert_table_length NUM_CHERRYGROVE_MAPS
 
 	; MASTER TRIAL, 26
@@ -1443,6 +1445,10 @@ Cherrygrove_Map_Name10: ; map_const MR_POKEMONS_HOUSE ; 10
 	db "Mr. #mon House@"
 Cherrygrove_Map_Name11: ; map_const ROUTE_31_VIOLET_GATE ; 11
 	db "Route 31 Gate@"
+Cherrygrove_Map_Name12: ; map_const CHERRYGROVE_BAY ; 12
+	db "Cherrygrove Bay@"
+Cherrygrove_Map_Name13: ; map_const CHERRYGROVE_RUINS ; 13
+	db "Cherrygrove Ruins@"
 
 MasterTrial_Map_Name1:
     db "Master Trial@"

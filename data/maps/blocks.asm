@@ -1022,3 +1022,11 @@ SECTION "Map Blocks 18", ROMX
 
 ViridianForest_Blocks:
 	INCBIN "maps/ViridianForest.blk"
+
+SECTION "Map Blocks 19", ROMX
+
+CherrygroveBay_Blocks:
+	INCBIN "maps/CherrygroveBay.blk"
+
+CherrygroveRuins_Blocks:
+	INCBIN "maps/CherrygroveRuins.blk"

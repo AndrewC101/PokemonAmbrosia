@@ -796,6 +796,10 @@ INCBIN "gfx/unown_puzzle/tile_borders.2bpp"
 LoadUnownPuzzlePiecesGFX:
 	ld a, [wScriptVar]
 	maskbits NUM_UNOWN_PUZZLES
+	cp NUM_UNOWN_PUZZLES
+	jr c, .valid_puzzle
+	xor a
+.valid_puzzle
 	ld e, a
 	ld d, 0
 	ld hl, .LZPointers
@@ -815,6 +819,7 @@ LoadUnownPuzzlePiecesGFX:
 	dw OmanytePuzzleLZ
 	dw AerodactylPuzzleLZ
 	dw HoOhPuzzleLZ
+	dw MewPuzzleLZ
 
 UnownPuzzleCursorGFX:
 INCBIN "gfx/unown_puzzle/cursor.2bpp"
@@ -833,3 +838,6 @@ INCBIN "gfx/unown_puzzle/kabuto.2bpp.lz"
 
 OmanytePuzzleLZ:
 INCBIN "gfx/unown_puzzle/omanyte.2bpp.lz"
+
+MewPuzzleLZ:
+INCBIN "gfx/unown_puzzle/mew.2bpp.lz"

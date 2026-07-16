@@ -324,6 +324,7 @@ DEF BUG_CONTESTANT_SIZE EQU 4
 	const UNOWNPUZZLE_OMANYTE    ; 1
 	const UNOWNPUZZLE_AERODACTYL ; 2
 	const UNOWNPUZZLE_HO_OH      ; 3
+	const UNOWNPUZZLE_MEW        ; 4
 DEF NUM_UNOWN_PUZZLES EQU const_value
 
 ; DisplayUnownWords setval arguments

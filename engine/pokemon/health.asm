@@ -7,18 +7,18 @@ HealParty:
 .loop
 	ld a, [hli]
 	cp EGG
-	jr z, .next
+	jr z, .skip_heal
 
-    push bc
+	push bc
 	push hl
 	call HealPartyMon
 	pop hl
 	pop bc
 
-    dec b
-    jr z, .done
+.skip_heal
+	dec b
+	jr z, .done
 
-.next
 	ld a, [wCurPartyMon]
 	inc a
 	ld [wCurPartyMon], a

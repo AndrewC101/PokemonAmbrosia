@@ -55,7 +55,7 @@ EventWildMons::
 	specialencounter RAIKOU, 	EVENT_CAUGHT_RAIKOU, 			ROUTE_45, LegendaryEncounterDescription
 	specialencounter ENTEI, 	EVENT_CAUGHT_ENTEI, 			RUINS_OF_ALPH_INNER_CHAMBER, LegendaryEncounterDescription
 	specialencounter SUICUNE, 	EVENT_CAUGHT_SUICUNE, 			TIN_TOWER_1F, LegendaryEncounterDescription
-	specialencounter MEW, 	    EVENT_GOT_MEW, 			        BILLS_HOUSE, LegendaryEncounterDescription
+	specialencounter MEW, 	    EVENT_CAUGHT_MEW, 			    CHERRYGROVE_RUINS, LegendaryEncounterDescription
 	specialencounter CELEBI, 	EVENT_CAUGHT_CELEBI, 			ILEX_FOREST, LegendaryEncounterDescription
 	specialencounter LATIAS, 	EVENT_CAUGHT_LATIAS, 			FUCHSIA_CITY, LegendaryEncounterDescription
 	specialencounter LATIOS, 	EVENT_CAUGHT_LATIOS, 			TOHJO_LAKE, LegendaryEncounterDescription
@@ -381,6 +381,7 @@ GiftMons::
 	specialencounter PIKACHU, 	EVENT_GOT_KENYA, 					ROUTE_35_GOLDENROD_GATE, DefaultGiftDescription
 	specialencounter DRATINI, 	EVENT_GOT_DRATINI, 					DRAGON_SHRINE, DefaultGiftDescription
 	specialencounter EEVEE,	 	EVENT_GOT_EEVEE, 					BILLS_FAMILYS_HOUSE, DefaultGiftDescription
+	specialencounter PORYGON2, 	EVENT_GOT_PORYGON2, 				BILLS_HOUSE, DefaultGiftDescription
 	specialencounter LUCARIO, 	EVENT_GOT_LUCARIO_FROM_KIYO, 		MOUNT_MORTAR_1F_OUTSIDE, DefaultGiftDescription
 	specialencounter LAPRAS, 	EVENT_GOT_ROUTE40_LAPRAS, 		    ROUTE_40, DefaultGiftDescription
 	specialencounter SKARMORY, 	EVENT_GOT_BLACKTHORN_SKARM, 		BLACKTHORN_CITY, SkarmGiftDescription

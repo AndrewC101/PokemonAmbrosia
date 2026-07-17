@@ -147,3 +147,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 92
 	tilecoll WATER, WHIRLPOOL, BUOY, BUOY ; 93
 	tilecoll BUOY, BUOY, WHIRLPOOL, WATER ; 94
+	tilecoll WALL, WALL, WALL, WALL ; 95

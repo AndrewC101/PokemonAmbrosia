@@ -1,10 +1,29 @@
-	object_const_def
+object_const_def
+	const CHERRYGROVERUINS_TM_THUNDERPUNCH
+	const CHERRYGROVERUINS_TM_FIRE_PUNCH
+	const CHERRYGROVERUINS_TM_ICE_PUNCH
+	const CHERRYGROVERUINS_LEFTOVERS
+	const CHERRYGROVERUINS_MASTER_BALL
+	const CHERRYGROVERUINS_ASSAULT_VEST
+	const CHERRYGROVERUINS_SACRED_ASH
+	const CHERRYGROVERUINS_AMBROSIA
+	const CHERRYGROVERUINS_FIELDMON_1
+	const CHERRYGROVERUINS_FIELDMON_2
+	const CHERRYGROVERUINS_FIELDMON_3
+	const CHERRYGROVERUINS_MEW
 
 CherrygroveRuins_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, .FieldMonCallback
 	callback MAPCALLBACK_TILES, .MewPuzzleCallback
+
+.FieldMonCallback:
+	appear CHERRYGROVERUINS_FIELDMON_1
+	appear CHERRYGROVERUINS_FIELDMON_2
+	appear CHERRYGROVERUINS_FIELDMON_3
+	endcallback
 
 .MewPuzzleCallback:
 	checkevent EVENT_SOLVED_MEW_PUZZLE
@@ -294,6 +313,111 @@ CherrygroveRuinsTrialOfFriendshipText:
 CherrygroveRuinsTrialOfFriendshipScript:
 	jumptext CherrygroveRuinsTrialOfFriendshipText
 
+CherrygroveRuinsTMThunderpunch:
+	itemball TM_THUNDERPUNCH
+
+CherrygroveRuinsTMFirePunch:
+	itemball TM_FIRE_PUNCH
+
+CherrygroveRuinsTMIcePunch:
+	itemball TM_ICE_PUNCH
+
+CherrygroveRuinsLeftovers:
+	itemball LEFTOVERS
+
+CherrygroveRuinsMasterBall:
+	itemball MASTER_BALL
+
+CherrygroveRuinsAssaultVest:
+	itemball ASSAULT_VEST
+
+CherrygroveRuinsSacredAsh:
+	itemball SACRED_ASH
+
+CherrygroveRuinsAmbrosia:
+	itemball AMBROSIA
+
+CherrygroveRuinsMrMimeScript:
+	faceplayer
+	cry MR__MIME
+	pause 15
+	loadwildmon MR__MIME, 40
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
+	disappear CHERRYGROVERUINS_FIELDMON_1
+	end
+
+CherrygroveRuinsBlisseyScript:
+	faceplayer
+	cry BLISSEY
+	pause 15
+	loadwildmon BLISSEY, 40
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
+	disappear CHERRYGROVERUINS_FIELDMON_2
+	end
+
+CherrygroveRuinsSmeargleScript:
+	faceplayer
+	cry SMEARGLE
+	pause 15
+	loadwildmon SMEARGLE, 40
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear CHERRYGROVERUINS_FIELDMON_3
+	end
+
+CherrygroveRuinsMewScript:
+	faceplayer
+	cry MEW
+	pause 15
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .Level80
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Level70
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .Level60
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .Level50
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MEW, 40
+	sjump .Begin
+
+.Level50:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MEW, 50
+	sjump .Begin
+
+.Level60:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MEW, 60
+	sjump .Begin
+
+.Level70:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MEW, 70
+	sjump .Begin
+
+.Level80:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon MEW, 80
+
+.Begin:
+	startbattle
+	reloadmapafterbattle
+	setval MEW
+	special MonCheck
+	iftrue .Caught
+	end
+
+.Caught:
+	setevent EVENT_CAUGHT_MEW
+	disappear CHERRYGROVERUINS_MEW
+	end
+
 CherrygroveRuins_MapEvents:
 	db 0, 0 ; filler
 
@@ -324,3 +448,15 @@ CherrygroveRuins_MapEvents:
 	bg_event 22, 35, BGEVENT_READ, CherrygroveRuinsTrialOfFriendshipScript
 
 	def_object_events
+	object_event  8, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsTMThunderpunch, EVENT_CHERRYGROVE_RUINS_TM_THUNDERPUNCH
+	object_event 40, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsTMFirePunch, EVENT_CHERRYGROVE_RUINS_TM_FIRE_PUNCH
+	object_event 24, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsTMIcePunch, EVENT_CHERRYGROVE_RUINS_TM_ICE_PUNCH
+	object_event  1, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsLeftovers, EVENT_CHERRYGROVE_RUINS_LEFTOVERS
+	object_event 17, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsMasterBall, EVENT_CHERRYGROVE_RUINS_MASTER_BALL
+	object_event 33, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsAssaultVest, EVENT_CHERRYGROVE_RUINS_ASSAULT_VEST
+	object_event 18,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsSacredAsh, EVENT_CHERRYGROVE_RUINS_SACRED_ASH
+	object_event 23,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, CherrygroveRuinsAmbrosia, EVENT_CHERRYGROVE_RUINS_AMBROSIA
+	object_event  5, 25, SPRITE_MR_MIME, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveRuinsMrMimeScript, EVENT_FIELD_MON_1
+	object_event 21, 25, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveRuinsBlisseyScript, EVENT_FIELD_MON_2
+	object_event 37, 25, SPRITE_SMEARGLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygroveRuinsSmeargleScript, EVENT_FIELD_MON_3
+	object_event 20,  6, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveRuinsMewScript, EVENT_CAUGHT_MEW

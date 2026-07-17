@@ -9,22 +9,17 @@ BillsHouse_MapScripts:
 BillsGrandpa:
 	faceplayer
     opentext
-    checkevent EVENT_GOT_MEW
-    iftrue .gotMew
+    checkevent EVENT_GOT_PORYGON2
+    iftrue .gotPorygon2
     writetext BillGrampsExplainsText
     waitbutton
-	readvar VAR_DEXCAUGHT
-	ifgreater 79, .giveMew
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .dontGiveMew
-.giveMew
-    writetext BillGrampsTakeThisMewText
+    writetext BillGrampsTakeThisPorygon2Text
     yesorno
     iffalse .refused
     writetext BillGrampsImCountingOnYouText
     promptbutton
     waitsfx
-    writetext ReceivedMewText
+    writetext ReceivedPorygon2Text
     playsound SFX_CAUGHT_MON
     waitsfx
 	checkevent EVENT_BEAT_MORTY
@@ -35,27 +30,27 @@ BillsGrandpa:
 	iffalse .lowerLevel
 	checkevent EVENT_BEAT_WALLACE
 	iffalse .midLevel
-    givepoke MEW, 80, LUCKY_EGG, GetMewName, GetMewOTName
+    givepoke PORYGON2, 80, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .tinyLevel
-    givepoke MEW, 30, LUCKY_EGG, GetMewName, GetMewOTName
+    givepoke PORYGON2, 30, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .smallLevel
-    givepoke MEW, 40, LUCKY_EGG, GetMewName, GetMewOTName
+    givepoke PORYGON2, 40, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .lowerLevel
-    givepoke MEW, 50, LUCKY_EGG, GetMewName, GetMewOTName
+    givepoke PORYGON2, 50, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .midLevel
-    givepoke MEW, 60, LUCKY_EGG, GetMewName, GetMewOTName
+    givepoke PORYGON2, 60, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
 .given
-    setevent EVENT_GOT_MEW
-    writetext BillGrampsMewExplain
+    setevent EVENT_GOT_PORYGON2
+    writetext BillGrampsPorygon2Explain
     waitbutton
     closetext
     end
-.gotMew
-    writetext BillGrampsGotMew
+.gotPorygon2
+    writetext BillGrampsGotPorygon2
     waitbutton
     closetext
     end
@@ -64,17 +59,11 @@ BillsGrandpa:
     waitbutton
     closetext
     end
-.dontGiveMew
-    opentext
-    writetext BillBeatE4
-    waitbutton
-    closetext
-    end
 
-GetMewName:
-    db "Mew@"
+GetPorygon2Name:
+    db "Porygon2@"
 
-GetMewOTName:
+GetPorygon2OTName:
     db "Bill@"
 
 BillGrampsExplainsText:
@@ -89,29 +78,9 @@ BillGrampsExplainsText:
 	line "says."
 	para "It is wasted with"
 	line "me."
-	para "I want to give it"
-	line "to a deserving"
-	cont "trainer."
-	para "If I could find a"
-	line "trainer that has"
-	cont "caught 80"
-	cont "different"
-	cont "#mon."
-	para "Or maybe a strong"
-	line "trainer like a"
-	cont "Champion."
-	para "Yes someone like"
-	line "that would do."
 	done
 
-BillBeatE4:
-	text "You seem like a"
-	line "talented trainer"
-	cont "but you aren't"
-	cont "quite ready yet."
-	done
-
-BillGrampsTakeThisMewText:
+BillGrampsTakeThisPorygon2Text:
 	text "Oh my!"
 	para "Why you are"
 	line "exactly the type"
@@ -130,19 +99,23 @@ BillGrampsImCountingOnYouText:
 	cont "your goals!"
 	done
 
-BillGrampsMewExplain:
+BillGrampsPorygon2Explain:
 	text "Bill tells me"
 	line "this is a very"
-	cont "powerful #mon."
+	cont "versatile #mon."
 
-	para "It can learn"
-	line "any move!"
+	para "It is great"
+	line "with Eviolite."
+
+	para "Or a great"
+	line "attacker once"
+	cont "evolved."
 	done
 
-BillGrampsGotMew:
+BillGrampsGotPorygon2:
 	text "I know Bill will"
 	line "understand that"
-	cont "Mew will only"
+	cont "Porygon2 will"
 	cont "reach its full"
 	cont "potential with"
 	cont "you."
@@ -164,9 +137,9 @@ BillGrampsNoRoom:
     cont "party."
     done
 
-ReceivedMewText:
+ReceivedPorygon2Text:
 	text "<PLAYER> received"
-	line "Mew!"
+	line "Porygon2!"
 	done
 
 BillsHouse_MapEvents:

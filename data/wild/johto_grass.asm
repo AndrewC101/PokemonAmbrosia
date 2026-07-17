@@ -1858,7 +1858,7 @@ JohtoGrassWildMons:
 	db 58, REUNICLUS
 	db 75, CHARIZARD
 	db 75, SNORLAX
-	db 80, MEW
+	db 80, METAGROSS
 	; day
 	db 55, LUCARIO
 	db 55, VENUSAUR
@@ -1866,7 +1866,7 @@ JohtoGrassWildMons:
 	db 58, REUNICLUS
 	db 75, CHARIZARD
 	db 75, SNORLAX
-	db 80, MEW
+	db 80, METAGROSS
 	; nite
 	db 55, LUCARIO
 	db 55, VENUSAUR
@@ -1874,7 +1874,7 @@ JohtoGrassWildMons:
 	db 58, REUNICLUS
 	db 75, CHARIZARD
 	db 75, SNORLAX
-	db 80, MEW
+	db 80, METAGROSS
 	end_grass_wildmons
 
     def_grass_wildmons ANCIENT_TEMPLE

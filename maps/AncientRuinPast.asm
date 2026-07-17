@@ -151,9 +151,9 @@ AncientRuinPastFieldMon7Script:
 
 AncientRuinPastFieldMon8Script:
 	faceplayer
-	cry MEW
+	cry METAGROSS
 	pause 15
-	loadwildmon MEW, 70
+	loadwildmon METAGROSS, 70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT_ESCAPE
 	startbattle
 	reloadmapafterbattle

@@ -97,19 +97,8 @@ SSAquaGrandpa:
 
 SSAquaMetalCoatAndDocking:
 	writetext SSAquaGrandpaHaveThisText
-	promptbutton
-
-	checkitem RAINBOW_WING
-	iffalse .giveRainbowWing
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
-	writetext SSAquaGrandpaHaveThisSilverWingText
-	sjump .continue
-.giveRainbowWing
-	verbosegiveitem RAINBOW_WING
-	setevent EVENT_GOT_RAINBOW_WING
-	writetext SSAquaGrandpaHaveThisRainbowWingText
-.continue
+	waitbutton
+	verbosegiveitem MASTER_BALL
 	setevent EVENT_GOT_METAL_COAT_FROM_GRANDPA_ON_SS_AQUA
 	closetext
 	waitsfx
@@ -125,18 +114,8 @@ SSAquaMetalCoatAndDocking:
 
 SSAquaFoundGranddaughter:
 	writetext SSAquaGrandpaHaveThisText
-	promptbutton
-	checkitem RAINBOW_WING
-	iffalse .giveRainbowWing
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
-	writetext SSAquaGrandpaHaveThisSilverWingText
-	sjump .continue
-.giveRainbowWing
-	verbosegiveitem RAINBOW_WING
-	setevent EVENT_GOT_RAINBOW_WING
-	writetext SSAquaGrandpaHaveThisRainbowWingText
-.continue
+	waitbutton
+	verbosegiveitem MASTER_BALL
 	closetext
 	end
 
@@ -329,78 +308,6 @@ SSAquaGrandpaHaveThisText:
     text "I want you to"
     line "have this!"
     done
-
-SSAquaGrandpaHaveThisRainbowWingText:
-    text "There used to be a"
-	line "tower in"
-	cont "Goldenrod City."
-
-	para "But it was old and"
-	line "creaky."
-
-	para "So it was replaced"
-	line "with the Radio"
-	cont "Tower."
-
-	para "I dug up that"
-	line "wing during"
-	cont "construction."
-
-	para "I heard that all"
-	line "sorts of #mon"
-
-	para "lived in Goldenrod"
-	line "in the past."
-
-	para "Perhaps…"
-
-	para "That wing has some"
-	line "connection to the"
-
-	para "Tin Tower in"
-	line "Ecruteak City…"
-	done
-
-SSAquaGrandpaHaveThisSilverWingText:
-    text "I found that when"
-    line "traveling the sea"
-    cont "near Olivine."
-
-    para "There was a storm"
-    line "that day."
-
-    para "It was the worst"
-    line "storm I had ever"
-    cont "seen."
-
-    para "Everyone was in"
-    line "panic."
-
-    para "Then the sun"
-    line "pierced the clouds"
-    cont "and the storm just"
-    cont "disappeared."
-
-    para "A huge #mon"
-    line "flew over me!"
-
-    para "It filled the"
-    line "sky."
-
-    para "I know it must"
-    line "have saved us."
-
-    para "I followed it out"
-    line "to the Whirl"
-    cont "Islands."
-
-    para "But all I found"
-    line "was this feather."
-
-    para "Maybe you will be"
-    line "the one to"
-    cont "find it."
-	done
 
 SSAquaGrandpaTravellingText:
 	text "Well done"

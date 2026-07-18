@@ -400,8 +400,22 @@ ElmGiveTicketScript:
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
 	waitbutton
-	verbosegiveitem CLEAR_BELL
-	writetext ClearBellTips
+
+	checkitem SILVER_WING
+	iftrue, .giveRainbowWing
+
+	verbosegiveitem SILVER_WING
+	setevent EVENT_GOT_SILVER_WING
+	writetext GiveSilverWingText
+	sjump .givenWing
+.giveRainbowWing
+    verbosegiveitem RAINBOW_WING
+    setevent EVENT_GOT_RAINBOW_WING
+    writetext GiveRainbowWingText
+
+	;verbosegiveitem CLEAR_BELL
+	;writetext ClearBellTips
+.givenWing
 	waitbutton
 	writetext ElmKantoExplainText
 	waitbutton
@@ -1565,21 +1579,38 @@ ElmGiveTicketText2:
 	line "thing for you!"
 
 	para "This was entrusted"
-	line "to me by a strange"
-	cont "man who seemed"
-	cont "obsessed with you."
+	line "to me recently by"
+	cont "the Director of"
+	cont "the radio tower."
 	done
 
-ClearBellTips:
-    text "It is in some"
-    line "way connected to"
-    cont "the Tin Tower in"
-    cont "Ecruteak City."
+GiveSilverWingText:
+	text "He said he found"
+	line "it years ago near"
+	cont "the Whirl Islands"
+	cont "while searching"
+	cont "for a huge"
+	cont "#mon that"
+	cont "calmed the stormy"
+	cont "sea and may have"
+	cont "saved his life."
+	done
 
-    para "You should go"
-    line "there and check"
-    cont "it out."
-    done
+GiveRainbowWingText:
+	text "He said he found"
+	line "it years ago"
+	cont "during the"
+	cont "construction of"
+	cont "the Radio Tower."
+	para "A previous"
+	line "building was torn"
+	cont "down and the"
+	cont "feather must of"
+	cont "came from it."
+	para "He said it may be"
+	line "connected to Tin"
+	cont "Tower in Ecruteak."
+	done
 
 ElmKantoExplainText:
 	text "<PLAYER> now that"

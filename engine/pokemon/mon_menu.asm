@@ -1046,7 +1046,15 @@ RestoreForgetMoveScreen:
 	farcall GetBattleMonBackpic
 	farcall GetEnemyMonFrontpic
 	call SafeLoadTempTilemapToTilemap
-	call UpdateBattleHuds
+	farcall UpdatePlayerHUD
+	; If this menu opened after an enemy fainted, keep the cleared enemy HUD
+	; cleared so the trainer party balls can draw in that space.
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	jr z, .skip_enemy_hud
+	farcall UpdateEnemyHUD
+.skip_enemy_hud
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame

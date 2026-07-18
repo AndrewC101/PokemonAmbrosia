@@ -402,7 +402,7 @@ ElmGiveTicketScript:
 	waitbutton
 
 	checkitem SILVER_WING
-	iftrue, .giveRainbowWing
+	iftrue .giveRainbowWing
 
 	verbosegiveitem SILVER_WING
 	setevent EVENT_GOT_SILVER_WING

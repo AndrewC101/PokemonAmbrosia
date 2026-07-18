@@ -63,8 +63,39 @@ ShayminScript:
 	faceplayer
 	cry SHAYMIN
 	pause 15
+
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .Level80
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Level70
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .Level60
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .Level50
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SHAYMIN, 40
+	sjump .Begin
+
+.Level50:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SHAYMIN, 50
+	sjump .Begin
+
+.Level60:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SHAYMIN, 60
+	sjump .Begin
+
+.Level70:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SHAYMIN, 70
+	sjump .Begin
+
+.Level80:
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SHAYMIN, 80
+
+.Begin:
 	startbattle
 	reloadmapafterbattle
 	setval SHAYMIN

@@ -159,8 +159,15 @@ PalkiaScript:
 	cry PALKIA
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon PALKIA, 70
+	sjump .begin
+.level80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon PALKIA, 80
+.begin
 	startbattle
 	reloadmapafterbattle
     setval PALKIA
@@ -180,8 +187,15 @@ DialgaScript:
 	cry DIALGA
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon DIALGA, 70
+	sjump .begin
+.level80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon DIALGA, 80
+.begin
 	startbattle
 	reloadmapafterbattle
     setval DIALGA

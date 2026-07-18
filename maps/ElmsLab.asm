@@ -400,10 +400,8 @@ ElmGiveTicketScript:
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
 	waitbutton
-
 	checkitem SILVER_WING
 	iftrue .giveRainbowWing
-
 	verbosegiveitem SILVER_WING
 	setevent EVENT_GOT_SILVER_WING
 	writetext GiveSilverWingText
@@ -412,9 +410,6 @@ ElmGiveTicketScript:
     verbosegiveitem RAINBOW_WING
     setevent EVENT_GOT_RAINBOW_WING
     writetext GiveRainbowWingText
-
-	;verbosegiveitem CLEAR_BELL
-	;writetext ClearBellTips
 .givenWing
 	waitbutton
 	writetext ElmKantoExplainText

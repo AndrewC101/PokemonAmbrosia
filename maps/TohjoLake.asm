@@ -44,11 +44,11 @@ TohjoLakeLatiosTrainerScript:
 	sjump .Begin
 .MidLevel:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIOS, 60
+	loadwildmon LATIOS, 70
 	sjump .Begin
 .LowerLevel:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon LATIOS, 50
+	loadwildmon LATIOS, 60
 .Begin:
 	startbattle
 	reloadmapafterbattle

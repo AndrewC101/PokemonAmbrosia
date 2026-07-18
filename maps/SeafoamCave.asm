@@ -31,18 +31,24 @@ SeafoamCave_MapScripts:
 SeafoamCaveArticunoScript:
 	cry ARTICUNO
 	pause 15
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
+	iffalse .level60
 	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
+	iffalse .level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARTICUNO, 80
 	sjump .begin
-.midLevel
+.level70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ARTICUNO, 70
+	sjump .begin
+.level60
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARTICUNO, 60
 	sjump .begin
-.lowerLevel
+.level50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ARTICUNO, 50
 .begin

@@ -83,8 +83,15 @@ ZygardeScript:
 	cry ZYGARDE
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level90
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon ZYGARDE, 75
+	sjump .begin
+.level90
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon ZYGARDE, 90
+.begin
 	startbattle
 	reloadmapafterbattle
     setval ZYGARDE

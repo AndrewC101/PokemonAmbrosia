@@ -19,8 +19,15 @@ GroudonScript:
 	cry GROUDON
 	pause 15
 
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon GROUDON, 70
+	sjump .begin
+.level80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon GROUDON, 80
+.begin
 	startbattle
 	reloadmapafterbattle
     setval GROUDON
@@ -39,8 +46,15 @@ GroudonCry:
 KyogreScript:
 	cry KYOGRE
 	pause 15
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon KYOGRE, 70
+	sjump .begin
+.level80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon KYOGRE, 80
+.begin
 	startbattle
 	reloadmapafterbattle
     setval KYOGRE

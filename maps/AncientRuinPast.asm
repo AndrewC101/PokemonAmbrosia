@@ -31,8 +31,15 @@ AncientRuinPast_MapScripts:
 XerneasScript:
 	cry XERNEAS
 	pause 15
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .level80
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon XERNEAS, 70
+	sjump .begin
+.level80
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon XERNEAS, 80
+.begin
 	startbattle
 	reloadmapafterbattle
     setval XERNEAS

@@ -50,29 +50,35 @@ LatiasScript:
 	pause 15
 	closetext
 	checkevent EVENT_BEAT_MORTY
-	iffalse .tinyLevel
+	iffalse .level30
 	checkevent EVENT_BEAT_PRYCE
-	iffalse .smallLevel
+	iffalse .level40
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
+	iffalse .level60
 	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
+	iffalse .level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 80
     sjump .begin
-.midLevel
+.level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 70
     sjump .begin
-.lowerLevel
+.level60
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 60
 	sjump .begin
-.smallLevel
+.level50
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon LATIAS, 50
+	sjump .begin
+.level40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 40
 	sjump .begin
-.tinyLevel
+.level30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon LATIAS, 30
 .begin

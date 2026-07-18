@@ -144,8 +144,28 @@ SuicuneBattle:
 	applymovement TINTOWER1F_SUICUNE, TinTower1FSuicuneApproachesMovement
 	cry SUICUNE
 	pause 20
+
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .level60
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .level70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 80
+	sjump .begin
+.level70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 70
+	sjump .begin
+.level60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SUICUNE, 60
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	sjump .begin
+.level50
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 50
+.begin
 	startbattle
 	dontrestartmapmusic
 	setevent EVENT_SAW_SUICUNE_ON_ROUTE_42
@@ -210,8 +230,27 @@ TinTower1FSuicuneScript:
 	ifnotequal SCENE_TINTOWER1F_NOOP, .end
 	cry SUICUNE
 	pause 15
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .level60
+	checkevent EVENT_BEAT_WALLACE
+	iffalse .level70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 80
+	sjump .begin
+.level70
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 70
+	sjump .begin
+.level60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SUICUNE, 60
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	sjump .begin
+.level50
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SUICUNE, 50
+.begin
 	startbattle
 	reloadmapafterbattle
 	setval SUICUNE

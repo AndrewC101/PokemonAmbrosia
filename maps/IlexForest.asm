@@ -182,23 +182,29 @@ IlexForestShrineScript:
 	pause 20
 	special CelebiShrineEvent
 	checkevent EVENT_BEAT_PRYCE
-	iffalse .smallLevel
+	iffalse .level40
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
+	iffalse .level60
 	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
+	iffalse .level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon CELEBI, 80
     sjump .begin
-.midLevel
+.level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon CELEBI, 70
     sjump .begin
-.lowerLevel
+.level60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon CELEBI, 60
+	sjump .begin
+.level50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon CELEBI, 50
 	sjump .begin
-.smallLevel
+.level40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon CELEBI, 40
 	sjump .begin

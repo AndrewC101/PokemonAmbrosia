@@ -133,6 +133,9 @@ RadioTower5FRocketBossScene:
 	opentext
 	writetext RadioTower5CrystalText
 	waitbutton
+	verbosegiveitem CLEAR_BELL
+	writetext CrystalByeText
+	waitbutton
 	closetext
 	applymovement RADIOTOWER5F_CRYSTAL, RadioTower5Movement_CrystalLeaves
 	disappear RADIOTOWER5F_CRYSTAL
@@ -338,7 +341,24 @@ RadioTower5CrystalText:
     cont "too. In his own"
     cont "ignorant way."
 
-    para "Now we should"
+	para "By the way, a"
+	line "creepy guy gave"
+	cont "this to me."
+	para "He said I need to"
+	line "look after it to"
+	cont "make sure you"
+	cont "don't get it."
+	para "Which makes me"
+	line "want to give it to"
+	cont "you more."
+	para "Apparently it has"
+	line "something to do"
+	cont "with the Tin Tower"
+	cont "in Ecruteak."
+	done
+
+CrystalByeText:
+    text "Now we should"
     line "head to"
     cont "Blackthorn."
 

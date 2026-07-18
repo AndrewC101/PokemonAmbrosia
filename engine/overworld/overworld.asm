@@ -136,6 +136,16 @@ AddIndoorSprites:
 
 AddOutdoorSprites:
 	ld a, [wMapGroup]
+	call GetOutdoorSpriteSetPointer
+.loop
+	ld a, [hli]
+	and a
+	ret z
+	call AddSpriteGFX
+	jr .loop
+
+GetOutdoorSpriteSetPointer:
+; Return the outdoor sprite-set pointer for map group a in hl.
 	dec a
 	ld c, a
 	ld b, 0
@@ -145,12 +155,62 @@ AddOutdoorSprites:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-.loop
-	ld a, [hli]
-	and a
+	ret
+
+RefreshSpritesForOutdoorConnection::
+; Outdoor connections normally keep the old map group's sprite graphics.
+; Refresh once when a connection also changes landmark and sprite set.
+	ldh a, [hMapEntryMethod]
+	cp MAPSETUP_CONNECTION
+	ret nz
+
+	call .LandmarkChanged
 	ret z
-	call AddSpriteGFX
-	jr .loop
+	call .CurrentMapIsOutdoor
+	ret nz
+	call .PreviousMapIsOutdoor
+	ret nz
+
+	ld a, [wPrevMapGroup]
+	call GetOutdoorSpriteSetPointer
+	ld d, h
+	ld e, l
+	ld a, [wMapGroup]
+	call GetOutdoorSpriteSetPointer
+	ld a, h
+	cp d
+	jr nz, .refresh
+	ld a, l
+	cp e
+	ret z
+
+.refresh
+	jp RefreshSprites
+
+.LandmarkChanged:
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	ld c, a
+	ld a, [wPrevLandmark]
+	cp c
+	ret
+
+.CurrentMapIsOutdoor:
+	call GetMapEnvironment
+	call CheckOutdoorMap
+	ret
+
+.PreviousMapIsOutdoor:
+	ld a, [wPrevMapGroup]
+	ld b, a
+	ld a, [wPrevMapNumber]
+	ld c, a
+	call GetAnyMapEnvironment
+	call CheckOutdoorMap
+	ret
 
 LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES

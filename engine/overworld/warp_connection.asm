@@ -18,6 +18,11 @@ HandleContinueMap:
 
 EnterMapConnection:
 ; Return carry if a connection has been entered.
+	ld a, [wMapGroup]
+	ld [wPrevMapGroup], a
+	ld a, [wMapNumber]
+	ld [wPrevMapNumber], a
+
 	ld a, [wPlayerStepDirection]
 	and a ; DOWN
 	jp z, .south

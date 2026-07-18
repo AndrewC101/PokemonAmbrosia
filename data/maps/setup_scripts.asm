@@ -89,6 +89,7 @@ MapSetupScript_Connection:
 	mapsetup LoadMapObjects
 	mapsetup FadeToMapMusic
 	mapsetup LoadMapPalettes
+	mapsetup RefreshSpritesForOutdoorConnection
 	mapsetup InitMapNameSign
 	mapsetup ApplyMapPalettes
 	mapsetup LoadWildMonData

@@ -9,8 +9,9 @@
 ; the last two are always pokeball and tree
 
 ; IMPORTANT!
-; when you cross one mapgroup to another by a map connection the new set is not loaded
-; this means you need to keep such groups the same to avoid errors
+; when you cross one mapgroup to another by a map connection the new set is only
+; loaded if the landmark and outdoor sprite-set pointer change. Same-landmark
+; connected groups still need compatible sets. Shared pointers avoid reloads.
 ; this applies in two transitions, so ensure
 ; NewBarkGroupSprites = CherrygroveGroupSprites
 ; OlivineGroupSprites = CianwoodGroupSprites

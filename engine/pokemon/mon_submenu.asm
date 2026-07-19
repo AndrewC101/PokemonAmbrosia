@@ -411,6 +411,9 @@ CanUseFlash:
 	ld hl, wNumItems
 	call CheckItem
 	ret nc ; hm isnt in bag
+	ld a, [wCurPartySpecies]
+	cp DITTO
+	jr z, .yes
 
 ; Step 5: Check if Mon can learn move from TM/HM/Move Tutor
 	ld a, FLASH
@@ -453,6 +456,9 @@ CanUseFly:
 	ld hl, wNumItems
 	call CheckItem
 	ret nc ; .fail, hm isnt in bag
+	ld a, [wCurPartySpecies]
+	cp DITTO
+	jr z, .yes
 
 ; Step 5: Check if mon can learn move via HM/TM/Move Tutor
 	ld a, FLY

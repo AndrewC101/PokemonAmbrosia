@@ -123,6 +123,11 @@ CheckPartyCanLearnMove:
 	cp EGG
 	jr z, .next
 
+; Let Ditto act as Mew for field-move compatibility, without changing its learnset.
+	cp DITTO
+	jr nz, .not_ditto
+	ld a, MEW
+.not_ditto
 	ld [wCurPartySpecies], a
 	ld a, d
 ; Check the TM/HM/Move Tutor list

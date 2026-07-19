@@ -22,7 +22,7 @@ RandyScript:
 	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
 	playsound SFX_KEY_ITEM
 	waitsfx
-	givepoke PIKACHU, 25, LIGHT_BALL, GiftSpearowName, GiftSpearowOTName
+	givepoke PIKACHU, 20, LIGHT_BALL, GiftSpearowName, GiftSpearowOTName
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText

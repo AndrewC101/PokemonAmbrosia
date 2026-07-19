@@ -22,6 +22,8 @@ BillsGrandpa:
     writetext ReceivedPorygon2Text
     playsound SFX_CAUGHT_MON
     waitsfx
+    checkevent EVENT_BEAT_BUGSY
+    iffalse .minLevel
 	checkevent EVENT_BEAT_MORTY
 	iffalse .tinyLevel
 	checkevent EVENT_BEAT_PRYCE
@@ -31,6 +33,9 @@ BillsGrandpa:
 	checkevent EVENT_BEAT_WALLACE
 	iffalse .midLevel
     givepoke PORYGON2, 80, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    sjump .given
+.minLevel
+    givepoke PORYGON, 20, LUCKY_EGG, GetPorygonName, GetPorygon2OTName
     sjump .given
 .tinyLevel
     givepoke PORYGON2, 30, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
@@ -62,6 +67,9 @@ BillsGrandpa:
 
 GetPorygon2Name:
     db "Porygon2@"
+
+GetPorygonName:
+    db "Porygon@"
 
 GetPorygon2OTName:
     db "Bill@"

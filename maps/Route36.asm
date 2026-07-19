@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE36_YOUNGSTER1
+	;const ROUTE36_YOUNGSTER1
 	const ROUTE36_YOUNGSTER2
 	const ROUTE36_WEIRD_TREE
 	const ROUTE36_LASS1
@@ -22,7 +22,6 @@ Route36_MapScripts:
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, ClearPath
 	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
 
 Route36Noop1Scene:
@@ -30,15 +29,6 @@ Route36Noop1Scene:
 
 Route36Noop2Scene:
 	end
-
-ClearPath:
-    readmem wNewGamePlus
-    ifequal 0, .end
-    changeblock 36, 10, $02
-    changeblock 38, 10, $90
-    changeblock 40, 10, $02
-.end
-    endcallback
 
 Route36ArthurCallback:
 ; Pokemon which always appear
@@ -914,7 +904,7 @@ Route36_MapEvents:
 	bg_event 21,  7, BGEVENT_READ, Route36TrainerTips1
 
 	def_object_events
-	object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
+	;object_event 14,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
 	object_event 35,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1

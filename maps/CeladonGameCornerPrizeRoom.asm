@@ -166,7 +166,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval SMEARGLE
 	special GameCornerPrizeMonCheckDex
-	givepoke SMEARGLE, 25
+	givepoke SMEARGLE, 20
 	takecoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
 	sjump .loop
 
@@ -182,7 +182,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval CHANSEY
 	special GameCornerPrizeMonCheckDex
-	givepoke CHANSEY, 25
+	givepoke CHANSEY, 20
 	takecoins CELADONGAMECORNERPRIZEROOM_PORYGON_COINS
 	sjump .loop
 
@@ -198,7 +198,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	waitbutton
 	setval DITTO
 	special GameCornerPrizeMonCheckDex
-	givepoke DITTO, 25
+	givepoke DITTO, 20
 	takecoins CELADONGAMECORNERPRIZEROOM_LARVITAR_COINS
 	sjump .loop
 

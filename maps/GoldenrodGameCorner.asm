@@ -201,7 +201,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	setval EEVEE
 	special GameCornerPrizeMonCheckDex
-	givepoke EEVEE, 25
+	givepoke EEVEE, 20
 	takecoins GOLDENRODGAMECORNER_ABRA_COINS
 	sjump .loop
 
@@ -217,7 +217,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	setval PORYGON
 	special GameCornerPrizeMonCheckDex
-	givepoke PORYGON, 25
+	givepoke PORYGON, 20
 	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
 	sjump .loop
 
@@ -233,7 +233,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	waitbutton
 	setval MELTAN
 	special GameCornerPrizeMonCheckDex
-	givepoke MELTAN, 25
+	givepoke MELTAN, 20
 	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
 	sjump .loop
 

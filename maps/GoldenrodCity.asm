@@ -258,6 +258,18 @@ GoldenrodCityGameCornerSign:
 GoldenrodCityNameRaterSign:
 	jumptext GoldenrodCityNameRaterSignText
 
+GoldenrodGymClosedScript:
+	checkevent EVENT_BEAT_BUGSY
+	iftrue .open
+	turnobject PLAYER, UP
+	opentext
+	writetext GoldenrodGymClosedText
+	waitbutton
+	closetext
+	applymovement PLAYER, GoldenrodGymClosedMovement
+.open
+	end
+
 GoldenrodCityUndergroundSignNorth:
 	jumptext GoldenrodCityUndergroundSignNorthText
 
@@ -282,6 +294,10 @@ GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement:
 	step RIGHT
 	step UP
 	step UP
+	step_end
+
+GoldenrodGymClosedMovement:
+	step DOWN
 	step_end
 
 GoldenrodCityPokefanMText:
@@ -536,6 +552,14 @@ GoldenrodGymSignText:
 
 	para "The Incredibly"
 	line "Pretty Girl!"
+	done
+
+GoldenrodGymClosedText:
+	text "The Gym is closed"
+	line "pending"
+	cont "investigation into"
+	cont "Rocket activity in"
+	cont "Azalea Town."
 	done
 
 GoldenrodCitySignText:
@@ -848,6 +872,7 @@ GoldenrodCity_MapEvents:
 
 	def_coord_events
 	coord_event 5, 16, SCENE_CUSTOM_1, GoldenrodCitySelfScript
+	coord_event 24,  8, SCENE_ALWAYS, GoldenrodGymClosedScript
 
 	def_bg_events
 	bg_event 10, 14, BGEVENT_READ, GoldenrodCityStationSign
@@ -880,5 +905,4 @@ GoldenrodCity_MapEvents:
 	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	object_event 24, 16, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, GoldenrodCityFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 7, 16, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-
 

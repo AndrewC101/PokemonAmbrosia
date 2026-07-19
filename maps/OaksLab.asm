@@ -15,6 +15,11 @@ OaksLabNoopScene: ; unreferenced
 Oak:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_OAK_AERODACTYL_EGG
+	iftrue .SkipAerodactylEgg
+	checkevent EVENT_BEAT_BUGSY
+	iffalse .GiveAerodactylEgg
+.SkipAerodactylEgg
 	checkevent EVENT_OPENED_MT_SILVER
 	iftrue .MtSilverOpen
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -123,6 +128,26 @@ Oak:
 	promptbutton
 	sjump .CheckPokedex
 
+.GiveAerodactylEgg
+	writetext OakAerodactylEggOfferText
+	waitbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	giveegg AERODACTYL, EGG_LEVEL
+	writetext OakAerodactylEggReceivedText
+	playsound SFX_GET_EGG
+	waitsfx
+	setevent EVENT_GOT_OAK_AERODACTYL_EGG
+	waitbutton
+	closetext
+	end
+
+.PartyFull
+	writetext OakAerodactylEggPartyFullText
+	waitbutton
+	closetext
+	end
+
 OaksAssistant1Script:
 	jumptextfaceplayer OaksAssistant1Text
 
@@ -208,6 +233,43 @@ OakRefusedText:
     para "It was a silly"
     line "suggestion."
     done
+
+OakAerodactylEggOfferText:
+	text "<PLAYER> you hardly"
+	line "have any badges!"
+
+	para "And you have"
+	line "traveled all the"
+	cont "way to me."
+
+	para "You are a very"
+	line "brave trainer."
+
+	para "I wonder..."
+
+	para "I happen to have"
+	line "a #mon egg and"
+	cont "I know the #mon"
+	cont "inside is far too"
+	cont "dangerous for a"
+	cont "normal trainer to"
+	cont "raise."
+
+	para "But you might be"
+	line "able to train it."
+
+	para "Here take this."
+	done
+
+OakAerodactylEggReceivedText:
+	text "Received Egg!"
+	done
+
+OakAerodactylEggPartyFullText:
+	text "You will need to"
+	line "make room in your"
+	cont "party for this."
+	done
 
 OakWelcomeKantoText:
 	text "Good to see you"

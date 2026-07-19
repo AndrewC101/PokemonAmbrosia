@@ -165,6 +165,8 @@ INCLUDE "audio/music/redlavender.asm"
 SECTION "New Songs 2", ROMX
 
 INCLUDE "audio/music/reddungeon.asm"
+INCLUDE "audio/music/cinnabarmansion.asm"
+INCLUDE "audio/music/dungeon2.asm"
 INCLUDE "audio/music/championbattledpp.asm"
 INCLUDE "audio/music/gymleaderbattleprism.asm"
 INCLUDE "audio/music/megalovania.asm"

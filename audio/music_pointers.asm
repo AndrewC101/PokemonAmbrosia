@@ -110,5 +110,7 @@ Music:
 	dba Music_GymLeaderBattlePrism
 	dba Music_Megalovania
 	dba Music_HoOhBattleHGSS
-    dba Music_RedLavender
+	dba Music_RedLavender
+	dba Music_CinnabarMansion
+	dba Music_Dungeon2
 	assert_table_length NUM_MUSIC_SONGS

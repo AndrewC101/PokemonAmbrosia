@@ -135,6 +135,177 @@ OldLighthouseZapdosScript:
 	disappear OLDLIGHTHOUSE_ZAPDOS
 	end
 
+OldLighthouseHistory1:
+	jumptext LighthouseHistoryText1
+
+OldLighthouseHistory2:
+	jumptext LighthouseHistoryText2
+
+OldLighthouseHistory3:
+	jumptext LighthouseHistoryText3
+
+OldLighthouseHistory4:
+	jumptext LighthouseHistoryText4
+
+OldLighthouseHistory5:
+	jumptext LighthouseHistoryText5
+
+OldLighthouseHistory6:
+	jumptext LighthouseHistoryText6
+
+LighthouseHistoryText1:
+	text "What do those"
+	line "mainland fools"
+	cont "think they are"
+	cont "playing at!"
+	para "I've been manning"
+	line "this lighthouse by"
+	cont "myself for 7"
+	cont "years."
+	para "My Ampharos"
+	line "produces plenty of"
+	cont "light."
+	para "This lad Li from"
+	line "Violet has some"
+	cont "nerve thinking he"
+	cont "can improve things"
+	cont "around here!"
+	done
+
+LighthouseHistoryText2:
+	text "The light produced"
+	line "by this life"
+	cont "saving beacon is"
+	cont "not sufficient."
+	para "I see why I was"
+	line "sent here."
+	para "There is a bleak"
+	line "foggy haze that"
+	cont "has infected this"
+	cont "place."
+	para "It stifles the"
+	line "luminosity of the"
+	cont "Ampharos and it"
+	cont "stifles the heart"
+	cont "of he old"
+	cont "caretaker."
+	para "I will restore the"
+	line "brilliance to this"
+	cont "tower."
+	done
+
+LighthouseHistoryText3:
+	text "This Lad Li, he be"
+	line "talking about all"
+	cont "sorts of mad"
+	cont "ideas."
+	para "I think they sent"
+	line "me a lot of"
+	cont "trouble with this"
+	cont "one."
+	para "He spends hours"
+	line "tracking storms on"
+	cont "maps and is"
+	cont "building some kind"
+	cont "of contraption"
+	cont "atop the tower."
+	para "I think I'll need"
+	line "to send him on a"
+	cont "boat back to"
+	cont "Violet first"
+	cont "chance I get."
+	done
+
+LighthouseHistoryText4:
+	text "This lifesaving"
+	line "tower will require"
+	cont "a light of"
+	cont "unmatched"
+	cont "intensity."
+	para "Even saving a"
+	line "single extra life"
+	cont "shall justify the"
+	cont "immense effort."
+	para "Efforts that are"
+	line "not aided by the"
+	cont "old caretaker."
+	para "I think his heart"
+	line "dulled long ago."
+	para "I have tracked the"
+	line "patterns of the"
+	cont "recent"
+	cont "thunderstorms and"
+	cont "I'm convinced it"
+	cont "is not a random"
+	cont "act of nature, but"
+	cont "the manifestations"
+	cont "of a #mon."
+	para "Of light"
+	line "incarnate!"
+	para "I will call it"
+	line "here, where its"
+	cont "light shall guide"
+	cont "souls from harm."
+	done
+
+LighthouseHistoryText5:
+	text "That damn crazy"
+	line "fool!"
+	para "We are here to"
+	line "save lives."
+	para "He has broken this"
+	line "promise by leading"
+	cont "that monster here."
+	para "A #mon of"
+	line "storms and death."
+	para "What did he think"
+	line "would happen!"
+	para "He is on the first"
+	line "boat out of here."
+	para "May his soul be"
+	line "swallowed by"
+	cont "Giratina for what"
+	cont "he has done."
+	done
+
+LighthouseHistoryText6:
+	text "They say the path"
+	line "to oblivion is"
+	cont "pathed with good"
+	cont "intentions."
+	para "The lightening rod"
+	line "attracted Zapdos"
+	cont "as I had hoped."
+	para "And the tower"
+	line "shawn brighter"
+	cont "than ever."
+	para "I always believed"
+	line "light to be the"
+	cont "defender of life."
+	para "But a bolt of"
+	line "light from Zapdos"
+	cont "stuck a small boat"
+	cont "as it approached"
+	cont "and I saw it go"
+	cont "under."
+	para "I wish it could be"
+	line "me, instead of"
+	cont "them."
+	para "I will return to"
+	line "Violet and devote"
+	cont "myself to finding"
+	cont "balance."
+	para "Maybe the sages at"
+	line "Sprout Tower can"
+	cont "help."
+	para "First I must"
+	line "present myself to"
+	cont "my people and be"
+	cont "punished for my"
+	cont "perversion of"
+	cont "light and of bird"
+	cont "#mon."
+	done
 
 OldLighthouse_MapEvents:
 	db 0, 0 ; filler
@@ -152,6 +323,18 @@ OldLighthouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  2, 23, BGEVENT_READ, OldLighthouseHistory1
+	bg_event  3, 23, BGEVENT_READ, OldLighthouseHistory1
+	bg_event 24, 23, BGEVENT_READ, OldLighthouseHistory2
+	bg_event 25, 23, BGEVENT_READ, OldLighthouseHistory2
+	bg_event 10,  3, BGEVENT_READ, OldLighthouseHistory3
+	bg_event 11,  3, BGEVENT_READ, OldLighthouseHistory3
+	bg_event  6,  3, BGEVENT_READ, OldLighthouseHistory4
+	bg_event  7,  3, BGEVENT_READ, OldLighthouseHistory4
+	bg_event 34,  5, BGEVENT_READ, OldLighthouseHistory5
+	bg_event 35,  5, BGEVENT_READ, OldLighthouseHistory5
+	bg_event 26,  5, BGEVENT_READ, OldLighthouseHistory6
+	bg_event 27,  5, BGEVENT_READ, OldLighthouseHistory6
 
 	def_object_events
 	object_event 31,  4, SPRITE_ZAPDOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, OldLighthouseZapdosScript, EVENT_CAUGHT_ZAPDOS

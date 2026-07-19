@@ -78,27 +78,44 @@ VermilionSnorlax:
 	cry SNORLAX
 	pause 15
 	closetext
+	checkevent EVENT_BEAT_BUGSY
+	iffalse .level10
+	checkevent EVENT_BEAT_MORTY
+	iffalse .level30
 	checkevent EVENT_BEAT_PRYCE
-	iffalse .smallLevel
+	iffalse .level40
+	checkevent EVENT_BEAT_CLAIR
+	iffalse .level50
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .lowerLevel
+	iffalse .level60
 	checkevent EVENT_BEAT_WALLACE
-	iffalse .midLevel
+	iffalse .level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 80
     sjump .begin
-.midLevel
+.level70
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 70
     sjump .begin
-.lowerLevel
+.level60
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 60
+	sjump .begin
+.level50
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 50
 	sjump .begin
-.smallLevel
+.level40
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 40
 	sjump .begin
+.level30
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 30
+	sjump .begin
+.level10
+	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
+	loadwildmon SNORLAX, 10
 .begin
 	startbattle
 	reloadmapafterbattle

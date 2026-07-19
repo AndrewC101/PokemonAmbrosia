@@ -1,5 +1,4 @@
 object_const_def
-	const CHERRYGROVEBAY_TM_EXPLOSION
 
 CherrygroveBay_MapScripts:
 	def_scene_scripts
@@ -29,9 +28,6 @@ CherrygroveBayTrialGateSignText:
 	line "shall pass."
 	done
 
-CherrygroveBayTMExplosion:
-	itemball TM_EXPLOSION
-
 CherrygroveBay_MapEvents:
 	db 0, 0 ; filler
 
@@ -47,4 +43,3 @@ CherrygroveBay_MapEvents:
 	bg_event 18,  5, BGEVENT_READ, CherrygroveBayTrialGateSign
 
 	def_object_events
-	object_event 19, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, CherrygroveBayTMExplosion, EVENT_CHERRYGROVE_BAY_TM_EXPLOSION

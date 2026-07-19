@@ -78,6 +78,9 @@ VictoryRoadEntranceSignText:
 	line "Entrance"
 	done
 
+Route22TMExplosion:
+	itemball TM_EXPLOSION
+
 Route22HoenInvadedBlockScript:
     checkevent EVENT_BEAT_ELITE_FOUR
     iffalse .block
@@ -118,3 +121,4 @@ Route22_MapEvents:
 	object_event 30,  8, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route22FieldMon2Script, EVENT_FIELD_MON_2
 	object_event 33, 10, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route22FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 30,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route22FieldMon4Script, EVENT_FIELD_MON_4
+	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, Route22TMExplosion, EVENT_ROUTE22_TM_EXPLOSION

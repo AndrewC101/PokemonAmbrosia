@@ -331,7 +331,7 @@ PlayBattleMusic:
 
 	ld de, MUSIC_ELITE_FOUR_PRISM
 	cp SABRINA
-	jr z, .done
+	jp z, .done
 	cp BRUNO
 	jr z, .done
 	cp KAREN
@@ -349,6 +349,10 @@ PlayBattleMusic:
 
 	ld de, MUSIC_SUICUNE_BATTLE
 	cp MYSTICALMAN
+	jr z, .done
+
+	ld de, MUSIC_POKEMON_CENTER
+	cp NURSE
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE

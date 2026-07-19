@@ -78,4 +78,5 @@ TrainerClassNames::
     li "Trainer"
     li "Prodigy"
     li "Trainer"
+	li "Nurse"
 	assert_list_length NUM_TRAINER_CLASSES

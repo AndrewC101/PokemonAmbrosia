@@ -86,5 +86,6 @@ INCBIN "gfx/trainers/calFemale.gbcpal", middle_colors
 INCBIN "gfx/trainers/dad.gbcpal", middle_colors
 INCBIN "gfx/trainers/jonathan.gbcpal", middle_colors
 INCBIN "gfx/trainers/ash.gbcpal", middle_colors
+INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

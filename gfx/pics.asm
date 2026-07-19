@@ -732,6 +732,8 @@ AshPic:            INCBIN "gfx/trainers/ash.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
+NursePic:          INCBIN "gfx/trainers/nurse.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX

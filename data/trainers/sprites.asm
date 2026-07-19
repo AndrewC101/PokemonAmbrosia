@@ -67,4 +67,4 @@ BTTrainerClassSprites:
 	db SPRITE_BLUE
 	db SPRITE_OFFICER
 	db SPRITE_ROCKET_GIRL
-	assert_table_length NUM_TRAINER_CLASSES - 11 ; exclude MYSTICALMAN, INVADER, CRYSTAL, GREEN, ROLE_PLAYERS, CAL_FEMALE, DAD, JONATHAN
+	assert_table_length NUM_TRAINER_CLASSES - 12 ; exclude custom late classes not used by Battle Tower trainers

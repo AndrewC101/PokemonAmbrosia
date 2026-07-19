@@ -81,4 +81,5 @@ TrainerEncounterMusic::
 	db MUSIC_NONE                  ; dad
 	db MUSIC_OFFICER_ENCOUNTER     ; jonathan
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; ash
+	db MUSIC_LASS_ENCOUNTER        ; nurse
 	assert_table_length NUM_TRAINER_CLASSES + 1

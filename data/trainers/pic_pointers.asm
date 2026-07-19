@@ -80,4 +80,5 @@ TrainerPicPointers::
 	dba_pic DadPic
 	dba_pic JonathanPic
 	dba_pic AshPic
+	dba_pic NursePic
 	assert_table_length NUM_TRAINER_CLASSES

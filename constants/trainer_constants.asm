@@ -35,10 +35,6 @@ DEF KRIS EQU __trainer_class__
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
 	const MASTER_WHITNEY
-	const JOY1
-	const JOY2
-	const JOY3
-	const JOY4
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
@@ -904,5 +900,11 @@ DEF KRIS EQU __trainer_class__
 	const ASH1
 	const MASTER_ASH
 	const ATEM
+
+	trainerclass NURSE
+	const JOY1
+	const JOY2
+	const JOY3
+	const JOY4
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

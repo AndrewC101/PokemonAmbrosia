@@ -80,4 +80,5 @@ TrainerGroups:
 	dba DadGroup
 	dba JonathanGroup
 	dba AshGroup
+	dba NurseGroup
 	assert_table_length NUM_TRAINER_CLASSES

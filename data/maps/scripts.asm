@@ -515,9 +515,12 @@ INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/TimeCapsule.asm"
 INCLUDE "maps/MobileTradeRoom.asm"
 
-SECTION "Map Scripts 46", ROMX
+SECTION "Map Scripts 46 Oak", ROMX
 
 INCLUDE "maps/OaksLab.asm"
+
+SECTION "Map Scripts 46", ROMX
+
 INCLUDE "maps/Route17Route18Gate.asm"
 INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/Route7SaffronGate.asm"

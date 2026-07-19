@@ -1446,7 +1446,7 @@ BattleTrialReceptionistScript:
 	closetext
 	winlosstext victoryText, defeatText
     loadvar VAR_BATTLETYPE, BATTLETYPE_BATTLE_FRONTIER
-    loadtrainer WHITNEY, JOY2
+    loadtrainer NURSE, JOY2
 	startbattle
 	ifequal LOSE, .Lose
 	reloadmap

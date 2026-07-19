@@ -79,4 +79,5 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; DAD
 	dn 15, 15, 15, 15 ; JONATHAN
 	dn 15, 15, 15, 15 ; ASH
+	dn 15, 14, 15, 15 ; NURSE
 	assert_table_length NUM_TRAINER_CLASSES

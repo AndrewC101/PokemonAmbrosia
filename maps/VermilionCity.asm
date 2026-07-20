@@ -78,8 +78,6 @@ VermilionSnorlax:
 	cry SNORLAX
 	pause 15
 	closetext
-	checkevent EVENT_BEAT_BUGSY
-	iffalse .level10
 	checkevent EVENT_BEAT_MORTY
 	iffalse .level30
 	checkevent EVENT_BEAT_PRYCE
@@ -112,10 +110,6 @@ VermilionSnorlax:
 .level30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
 	loadwildmon SNORLAX, 30
-	sjump .begin
-.level10
-	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon SNORLAX, 10
 .begin
 	startbattle
 	reloadmapafterbattle

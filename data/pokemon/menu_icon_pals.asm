@@ -155,7 +155,7 @@ MonMenuIconPals:
 	icon_pals BLUE,  GREEN      ; DRAGONAIR
 	icon_pals RED,  GOLD      ; DRAGONITE
 	icon_pals BLUE,  PURPLE   ; DARKRAI
-	icon_pals SILVER,  GOLD   ; MEW
+	icon_pals RED,  GOLD   ; MEW
 	icon_pals GREEN,  BLUE      ; TREECKO
 	icon_pals GREEN,  BLUE    ; GROVYLE
 	icon_pals GREEN,  BLUE     ; SCEPTILE
@@ -251,7 +251,7 @@ MonMenuIconPals:
 	icon_pals RED,  BROWN        ; ENTEI
 	icon_pals BLUE,  TEAL         ; SUICUNE
 	icon_pals GREEN,  BROWN    ; LARVITAR
-	icon_pals GREEN,  BROWN     ; PUPITAR
+	icon_pals BLUE,  BROWN     ; PUPITAR
 	icon_pals GREEN,  BROWN     ; TYRANITAR
 	icon_pals SILVER,  GOLD       ; LUGIA
 	icon_pals RED,  GOLD      ; HO_OH

@@ -19,7 +19,13 @@ BillsGrandpa:
     writetext BillGrampsImCountingOnYouText
     promptbutton
     waitsfx
+    checkevent EVENT_BEAT_BUGSY
+    iffalse .receivedPorygon
     writetext ReceivedPorygon2Text
+    sjump .receivedPokemon
+.receivedPorygon
+    writetext ReceivedPorygonText
+.receivedPokemon
     playsound SFX_CAUGHT_MON
     waitsfx
     checkevent EVENT_BEAT_BUGSY
@@ -32,22 +38,22 @@ BillsGrandpa:
 	iffalse .lowerLevel
 	checkevent EVENT_BEAT_WALLACE
 	iffalse .midLevel
-    givepoke PORYGON2, 80, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    givepoke PORYGON2, 80, EVIOLITE, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .minLevel
-    givepoke PORYGON, 20, LUCKY_EGG, GetPorygonName, GetPorygon2OTName
+    givepoke PORYGON, 20, EVIOLITE, GetPorygonName, GetPorygon2OTName
     sjump .given
 .tinyLevel
-    givepoke PORYGON2, 30, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    givepoke PORYGON2, 30, EVIOLITE, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .smallLevel
-    givepoke PORYGON2, 40, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    givepoke PORYGON2, 40, EVIOLITE, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .lowerLevel
-    givepoke PORYGON2, 50, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    givepoke PORYGON2, 50, EVIOLITE, GetPorygon2Name, GetPorygon2OTName
     sjump .given
 .midLevel
-    givepoke PORYGON2, 60, LUCKY_EGG, GetPorygon2Name, GetPorygon2OTName
+    givepoke PORYGON2, 60, EVIOLITE, GetPorygon2Name, GetPorygon2OTName
 .given
     setevent EVENT_GOT_PORYGON2
     writetext BillGrampsPorygon2Explain
@@ -117,13 +123,18 @@ BillGrampsPorygon2Explain:
 
 	para "Or a great"
 	line "attacker once"
-	cont "evolved."
+	cont "evolved to"
+	cont "PorygonZ."
+
+	para "Just remember it"
+	line "won't evolve if"
+	cont "holding Eviolite."
 	done
 
 BillGrampsGotPorygon2:
 	text "I know Bill will"
 	line "understand that"
-	cont "Porygon2 will"
+	cont "Porygon will"
 	cont "reach its full"
 	cont "potential with"
 	cont "you."
@@ -148,6 +159,11 @@ BillGrampsNoRoom:
 ReceivedPorygon2Text:
 	text "<PLAYER> received"
 	line "Porygon2!"
+	done
+
+ReceivedPorygonText:
+	text "<PLAYER> received"
+	line "Porygon!"
 	done
 
 BillsHouse_MapEvents:

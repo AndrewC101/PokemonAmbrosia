@@ -1716,15 +1716,16 @@ GaladeEvosAttacks:
 AerodactylEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAGON_RAGE
-    db 26, WING_ATTACK
-	db 28, BITE
-	db 30, ANCIENTPOWER
-	db 33, CRUNCH
-	db 35, ROCK_SLIDE
-	db 40, STEALTH_ROCK
+	db 11, ANCIENTPOWER
+	db 15, BITE
+    db 20, WING_ATTACK
+	db 25, CRUNCH
+	db 30, ROCK_SLIDE
+	db 35, STEALTH_ROCK
 	db 40, DEFOG
-	db 45, STONE_EDGE
-	db 50, DRACO_IMPACT
+	db 40, DOUBLE_EDGE
+	db 45, DRACO_IMPACT
+	db 50, STONE_EDGE
 	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 

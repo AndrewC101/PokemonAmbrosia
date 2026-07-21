@@ -91,6 +91,7 @@ HeroesPassGrannyBlockScript:
     closetext
     opentext
     writetext PalkiaOpensGateText
+    waitbutton
 	setevent EVENT_HEROES_PASS_PALKIA_GATE_OPEN
 	closetext
 	end

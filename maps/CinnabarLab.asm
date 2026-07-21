@@ -354,7 +354,7 @@ CinnabarLabPlaceholderText4:
 	para "But the primary"
 	line "specimen not only"
 	cont "survived."
-	para "It's neuron"
+	para "Its neuron"
 	line "density saw"
 	cont "exponential"
 	cont "growth."

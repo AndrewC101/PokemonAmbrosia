@@ -171,7 +171,7 @@ LavRadioTowerName:   db "Lav<BSP>Radio Tower@"
 SeafoamIslandsName:  db "Seafoam<BSP>Islands@"
 CeruleanCaveName:    db "Cerulean<BSP>Cave@" ; unreferenced
 ManorName:           db "Silver<BSP>Manor@"
-CapeStormName:       db "Cape Storm@"
+CapeStormName:       db "Jagged Pass@"
 Route1Name:          db "Route 1@"
 Route2Name:          db "Route 2@"
 Route3Name:          db "Route 3@"

@@ -1384,9 +1384,9 @@ New_Bark_Map_Name12: ; map_const ROUTE_27_SANDSTORM_HOUSE ; 12
 New_Bark_Map_Name13: ; map_const ROUTE_29_ROUTE_46_GATE ; 13
    db "Route 29 Gate@"
 New_Bark_Map_Name14: ; map_const CAPE_STORM ; 14
-   db "Cape Storm@"
+   db "Jagged Pass@"
 New_Bark_Map_Name15: ; map_const CAPE_STORM_ROUTE_21_GATE ; 15
-   db "Cape Storm Gate@"
+   db "Jagged Pass Gate@"
 New_Bark_Map_Name16: ; map_const TOHJO_LAKE ; 16
    db "Lake Tohjo@"
 

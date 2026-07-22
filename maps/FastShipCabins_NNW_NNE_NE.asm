@@ -233,9 +233,8 @@ HikerNolandAfterBattleText:
 	cont "Rock Tunnel."
 
 	para "It is said they"
-	line "fall into a"
-	cont "sleep and never"
-	cont "wake."
+	line "fall into the"
+	cont "lava pools."
 	done
 
 SailorStanlySeenText:

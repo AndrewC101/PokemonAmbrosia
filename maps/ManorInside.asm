@@ -2,6 +2,8 @@
     const MANOR_ANDREW
     const MANOR_WIFE
     const MANOR_BROTHER
+    const MANOR_WEEKEND_ADAM
+    const MANOR_WEEKEND_JONATHAN
 
 ManorInside_MapScripts:
 	def_scene_scripts
@@ -10,23 +12,60 @@ ManorInside_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MoveAboutHouse
 
 .MoveAboutHouse:
-    checktime MORN
-    iffalse .checkNite
-    moveobject MANOR_ANDREW, 2, 16
-    moveobject MANOR_WIFE, 11, 5
-    moveobject MANOR_BROTHER, 16, 16
-.checkNite
-    checktime NITE
-    iffalse .checkSaturday
-    moveobject MANOR_WIFE, 11, 5
-.checkSaturday
 	readvar VAR_WEEKDAY
-	ifequal SATURDAY, .moveToLivingRoom
+	ifequal SATURDAY, .Saturday
+	ifequal SUNDAY, .Sunday
+	disappear MANOR_WEEKEND_ADAM
+	disappear MANOR_WEEKEND_JONATHAN
+	sjump .RegularSchedule
+
+.Sunday:
+	appear MANOR_WEEKEND_ADAM
+	appear MANOR_WEEKEND_JONATHAN
+	sjump .RegularSchedule
+
+.Saturday:
+	appear MANOR_WEEKEND_ADAM
+	appear MANOR_WEEKEND_JONATHAN
+	checktime NITE
+	iftrue .SaturdayNite
+	checktime MORN
+	iftrue .SaturdayMorn
+	moveobject MANOR_ANDREW, 4, 34
+	moveobject MANOR_WIFE, 17, 40
+	moveobject MANOR_BROTHER, 4, 37
 	endcallback
-.moveToLivingRoom
-    moveobject MANOR_ANDREW, 2, 16
-    moveobject MANOR_BROTHER, 5, 16
-    endcallback
+
+.SaturdayMorn:
+	moveobject MANOR_ANDREW, 4, 34
+	moveobject MANOR_WIFE, 31, 40
+	moveobject MANOR_BROTHER, 4, 37
+	endcallback
+
+.SaturdayNite:
+	moveobject MANOR_ANDREW, 5, 14
+	moveobject MANOR_WIFE, 4, 4
+	moveobject MANOR_BROTHER, 18, 27
+	endcallback
+
+.RegularSchedule:
+	checktime NITE
+	iftrue .RegularNite
+	checktime MORN
+	iftrue .RegularMorn
+	endcallback
+
+.RegularMorn:
+	moveobject MANOR_ANDREW, 25, 38
+	moveobject MANOR_WIFE, 42, 42
+	moveobject MANOR_BROTHER, 7, 27
+	endcallback
+
+.RegularNite:
+	moveobject MANOR_ANDREW, 5, 14
+	moveobject MANOR_WIFE, 5, 18
+	moveobject MANOR_BROTHER, 18, 27
+	endcallback
 
 AndrewScript:
     faceplayer
@@ -666,20 +705,17 @@ ManorFF7RText:
 	para "It's alright."
 	done
 
-ManorRC2:
+ManorBigTV:
     opentext
-    writetext ManorRC2Text
+    writetext ManorBigTVText
     waitbutton
     closetext
     end
 
-ManorRC2Text:
-	text "Looks like the"
-	line "last game played"
-	cont "was Final Fantasy"
-	cont "X."
-	para "Now that's a good"
-	line "game!"
+ManorBigTVText:
+	text "Too many movies"
+	line "and games to pick"
+	cont "from!"
 	done
 
 ManorCheese:
@@ -1212,54 +1248,87 @@ ManorFact6Text:
 	cont "might lead."
 	done
 
+ManorWeekendAdamScript:
+	jumptextfaceplayer ManorWeekendAdamText
+
+ManorWeekendJonathanScript:
+	jumptextfaceplayer ManorWeekendJonathanText
+
+ManorWeekendAdamText:
+	text "Don't you hate"
+	line "backseat gamers."
+	para "Especially ones"
+	line "that have such"
+	cont "horrible taste in"
+	cont "games."
+	para "All this arguing"
+	line "is making me"
+	cont "thirsty."
+	para "Where are the"
+	line "drinks!?"
+	done
+
+ManorWeekendJonathanText:
+	text "What kind of build"
+	line "is this?"
+	para "You don't need 40"
+	line "mind!"
+	para "Adam always hogs"
+	line "the games because"
+	cont "he keeps losing."
+	para "Just give it to"
+	line "me, I'll do it!"
+	done
+
 ManorInside_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  8,  19, MANOR_OUTSIDE, 1
-	warp_event  9,  19, MANOR_OUTSIDE, 1
-	warp_event  10,  12, MANOR_INSIDE, 4
-	warp_event  10,  24, MANOR_INSIDE, 3
-	warp_event  7,  12, MANOR_INSIDE, 6
-	warp_event  7,  0, MANOR_INSIDE, 5
+	warp_event 36, 39, MANOR_OUTSIDE, 1
+	warp_event 37, 39, MANOR_OUTSIDE, 1
+	warp_event  4, 30, MANOR_INSIDE, 4
+	warp_event  4,  6, MANOR_INSIDE, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  16, 25, BGEVENT_READ, ManorHeul
-	bg_event  14, 13, BGEVENT_READ, ManorUnused
-	bg_event  13, 13, BGEVENT_READ, ManorDayo
-	bg_event  2, 14, BGEVENT_READ, ManorDS2
+	bg_event 11, 25, BGEVENT_READ, ManorHeul
+	bg_event 39, 25, BGEVENT_READ, ManorUnused
+	bg_event 43, 36, BGEVENT_READ, ManorDayo
+	bg_event 11, 10, BGEVENT_READ, ManorDS2
 	bg_event  8, 5, BGEVENT_READ, ManorUnused
 	bg_event  3, 5, BGEVENT_READ, ManorUnused
-	bg_event  15, 26, BGEVENT_READ, ManorFF7R
-	bg_event  17, 2, BGEVENT_READ, ManorRC2
-	bg_event 16, 13, BGEVENT_READ, ManorCheese
+	bg_event 23, 36, BGEVENT_READ, ManorFF7R
+	bg_event  6, 31, BGEVENT_READ, ManorBigTV
+	bg_event  7, 31, BGEVENT_READ, ManorBigTV
+	bg_event 43, 25, BGEVENT_READ, ManorCheese
 
-	bg_event  5, 13, BGEVENT_READ, ManorFact1
-	bg_event  4, 13, BGEVENT_READ, ManorFact2
-	bg_event  3, 13, BGEVENT_READ, ManorFact3
-	bg_event 11,  1, BGEVENT_READ, ManorFact4
-	bg_event 12,  1, BGEVENT_READ, ManorFact5
-	bg_event 13,  1, BGEVENT_READ, ManorFact6
-	bg_event 14,  1, BGEVENT_READ, ManorFact7
-	bg_event  0, 1, BGEVENT_READ, ManorFact8
-	bg_event  1, 1, BGEVENT_READ, ManorFact9
+	bg_event 41, 35, BGEVENT_READ, ManorFact1
+	bg_event 40, 35, BGEVENT_READ, ManorFact2
+	bg_event 33, 35, BGEVENT_READ, ManorFact3
+	bg_event  8,  1, BGEVENT_READ, ManorFact4
+	bg_event  9,  1, BGEVENT_READ, ManorFact5
+	bg_event  3, 11, BGEVENT_READ, ManorFact6
+	bg_event  4, 11, BGEVENT_READ, ManorFact7
+	bg_event 30, 25, BGEVENT_READ, ManorFact8
+	bg_event  2, 11, BGEVENT_READ, ManorFact9
 	bg_event  2, 1, BGEVENT_READ, ManorFact10
 	bg_event  3, 1, BGEVENT_READ, ManorFact11
-	bg_event  2,  25, BGEVENT_READ, ManorFact12
-	bg_event  3,  25, BGEVENT_READ, ManorFact13
-	bg_event  4,  25, BGEVENT_READ, ManorFact14
-	bg_event  5,  25, BGEVENT_READ, ManorFact15
-	bg_event  6,  25, BGEVENT_READ, ManorFact16
-	bg_event  7,  25, BGEVENT_READ, ManorFact17
-	bg_event  8,  25, BGEVENT_READ, ManorFact18
-	bg_event  9,  25, BGEVENT_READ, ManorFact19
-	bg_event  12,  25, BGEVENT_READ, ManorFact20
-	bg_event  13,  25, BGEVENT_READ, ManorFact21
-	bg_event  15,  1, BGEVENT_READ, ManorFact22
+	bg_event  2, 31, BGEVENT_READ, ManorFact12
+	bg_event  3, 31, BGEVENT_READ, ManorFact13
+	bg_event  8, 31, BGEVENT_READ, ManorFact14
+	bg_event  9, 31, BGEVENT_READ, ManorFact15
+	bg_event 26, 35, BGEVENT_READ, ManorFact16
+	bg_event 27, 35, BGEVENT_READ, ManorFact17
+	bg_event 18, 25, BGEVENT_READ, ManorFact18
+	bg_event 19, 25, BGEVENT_READ, ManorFact19
+	bg_event 31, 25, BGEVENT_READ, ManorFact20
+	bg_event 32, 35, BGEVENT_READ, ManorFact21
+	bg_event  5, 11, BGEVENT_READ, ManorFact22
 
 	def_object_events
-	object_event  15,  4, SPRITE_BILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
-	object_event   1, 17, SPRITE_SABRINA, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
-	object_event  15, 28, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1
+	object_event  4, 34, SPRITE_BILL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AndrewScript, -1
+	object_event  3, 41, SPRITE_SABRINA, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, WifeScript, -1
+	object_event 41, 41, SPRITE_BLUE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrotherScript, -1
+	object_event  6, 39, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ManorWeekendAdamScript, EVENT_MANOR_WEEKEND_KIDS_HIDDEN
+	object_event  7, 39, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ManorWeekendJonathanScript, EVENT_MANOR_WEEKEND_KIDS_HIDDEN

@@ -291,6 +291,11 @@ PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
 	cont "to one of LT"
 	cont "Surges rock"
 	cont "concerts!"
+
+	para "We should try"
+	line "to harness the"
+	cont "geothermal energy"
+	cont "in Rock Tunnel."
 	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:

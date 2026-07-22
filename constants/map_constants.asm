@@ -547,8 +547,8 @@ ENDM
 	endgroup
 
     newgroup MANOR
-	map_const MANOR_OUTSIDE,                               7, 13 ;  1
-	map_const MANOR_INSIDE,                                9, 16 ; 2
+	map_const MANOR_OUTSIDE,                              16, 13 ;  1
+	map_const MANOR_INSIDE,                               23, 22 ;  2
 	endgroup
 
     newgroup ABYSS

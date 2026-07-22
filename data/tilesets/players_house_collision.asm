@@ -17,7 +17,7 @@
 	tilecoll WALL, WALL, PC, FLOOR ; 10
 	tilecoll WALL, WALL, TV, WALL ; 11
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 12
-	tilecoll FLOOR, TV, FLOOR, WALL ; 13
+	tilecoll FLOOR, TV, FLOOR, FLOOR ; 13
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 14
 	tilecoll WALL, WALL, FLOOR, WALL ; 15
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 16

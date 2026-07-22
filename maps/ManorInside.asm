@@ -644,10 +644,9 @@ ManorHeul:
 
 ManorHeulText:
 	text "It's full to the"
-	line "brim with"
-	cont "something called"
-	cont "Heul..."
-	cont "Yuck!"
+	line "brim with ready"
+	cont "meals."
+	para "Yuck!"
 	done
 
 ManorUnused:
@@ -684,10 +683,9 @@ ManorDS2:
     end
 
 ManorDS2Text:
-	text "Looks like the"
-	line "last game played"
-	cont "was Elden Ring."
-	para "Makes sense."
+	text "Looks like this"
+	line "hasn't been used"
+	cont "in a while."
 	done
 
 ManorFF7R:
@@ -700,9 +698,20 @@ ManorFF7R:
 ManorFF7RText:
 	text "Looks like the"
 	line "last game played"
-	cont "was Final Fantasy"
-	cont "7 Rebirth."
-	para "It's alright."
+	cont "was Elden Ring."
+	done
+
+ManorHalo:
+    opentext
+    writetext ManorHaloText
+    waitbutton
+    closetext
+    end
+
+ManorHaloText:
+	text "Looks like the"
+	line "last game played"
+	cont "was Halo."
 	done
 
 ManorBigTV:
@@ -1295,10 +1304,11 @@ ManorInside_MapEvents:
 	bg_event 11, 25, BGEVENT_READ, ManorHeul
 	bg_event 39, 25, BGEVENT_READ, ManorUnused
 	bg_event 43, 36, BGEVENT_READ, ManorDayo
-	bg_event 11, 10, BGEVENT_READ, ManorDS2
+	bg_event 11, 10, BGEVENT_READ, ManorUnused
 	bg_event  8, 5, BGEVENT_READ, ManorUnused
 	bg_event  3, 5, BGEVENT_READ, ManorUnused
 	bg_event 23, 36, BGEVENT_READ, ManorFF7R
+	bg_event 31, 36, BGEVENT_READ, ManorHalo
 	bg_event  6, 31, BGEVENT_READ, ManorBigTV
 	bg_event  7, 31, BGEVENT_READ, ManorBigTV
 	bg_event 43, 25, BGEVENT_READ, ManorCheese

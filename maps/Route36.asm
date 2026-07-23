@@ -113,6 +113,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	waitsfx
 	playsound SFX_SANDSTORM
 	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
+	setscene SCENE_CUSTOM_2
 	opentext
 	writetext SudowoodoAttackedText
 	waitbutton
@@ -791,6 +792,29 @@ Route36Movement_CrystalApproaches:
     big_step RIGHT
     step_end
 
+Route36StrongTrainersWarningScript:
+	checkevent EVENT_BEAT_BUGSY
+	iffalse .Warn
+	setscene SCENE_CUSTOM_2
+	end
+
+.Warn:
+	turnobject PLAYER, UP
+	opentext
+	writetext Route36StrongTrainersWarningText
+	waitbutton
+	closetext
+	setscene SCENE_CUSTOM_2
+	end
+
+Route36StrongTrainersWarningText:
+	text "There are really"
+	line "strong trainers"
+	cont "that way. You'll"
+	cont "need to be real"
+	cont "careful."
+	done
+
 Route36CrystalText_Intro:
     text "You cleared that"
     line "Ghost #mon!"
@@ -893,9 +917,12 @@ Route36_MapEvents:
 	coord_event 20,  6, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  6, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 20,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
-    coord_event 21,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 21,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  5, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 35,  9, SCENE_DEFAULT, Route36CrystalScript
+	coord_event 35,  9, SCENE_CUSTOM_2, Route36CrystalScript
+	coord_event 40, 10, SCENE_DEFAULT, Route36StrongTrainersWarningScript
+	coord_event 40, 11, SCENE_DEFAULT, Route36StrongTrainersWarningScript
 
 	def_bg_events
 	bg_event 29,  3, BGEVENT_READ, Route36TrainerTips2
@@ -908,7 +935,7 @@ Route36_MapEvents:
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
 	object_event 35,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
-	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
+	object_event 40,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
@@ -921,4 +948,5 @@ Route36_MapEvents:
 	object_event 28,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route36FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 16, 14, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FieldMon6Script, EVENT_FIELD_MON_6
 
+	object_event 30,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 30,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

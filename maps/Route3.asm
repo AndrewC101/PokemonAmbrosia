@@ -140,7 +140,7 @@ Route3FieldMon3Script:
 	faceplayer
 	cry CHARMANDER
 	pause 15
-	loadwildmon CHARMANDER, 20
+	loadwildmon CHARMANDER, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

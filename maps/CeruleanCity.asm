@@ -345,7 +345,7 @@ CeruleanMon1Script:
 	faceplayer
 	cry SQUIRTLE
 	pause 15
-	loadwildmon SQUIRTLE, 20
+	loadwildmon SQUIRTLE, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

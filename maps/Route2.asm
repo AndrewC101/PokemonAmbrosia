@@ -33,7 +33,7 @@ Route2FieldMon3Script:
 	faceplayer
 	cry BULBASAUR
 	pause 15
-	loadwildmon BULBASAUR, 20
+	loadwildmon BULBASAUR, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

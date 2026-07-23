@@ -273,7 +273,7 @@ LighthouseHistoryText6:
 	line "to oblivion is"
 	cont "pathed with good"
 	cont "intentions."
-	para "The lightening rod"
+	para "The lightning rod"
 	line "attracted Zapdos"
 	cont "as I had hoped."
 	para "And the tower"

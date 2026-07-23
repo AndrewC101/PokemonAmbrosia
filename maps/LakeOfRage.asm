@@ -239,8 +239,8 @@ WesleyNotWednesdayScript:
 ;LakeOfRageElixer:
 ;	itemball MAX_ELIXER
 
-LakeOfRageChoiceSpecs:
-	itemball CHOICE_SPECS
+LakeOfRageThunderbolt:
+	itemball TM_THUNDERBOLT
 
 LakeOfRageRainDance:
 	itemball TM_RAIN_DANCE
@@ -643,7 +643,7 @@ LakeOfRage_MapEvents:
 	def_bg_events
 	bg_event 21, 27, BGEVENT_READ, LakeOfRageSign
 	bg_event 25, 31, BGEVENT_READ, MagikarpHouseSignScript
-	bg_event 11, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
+	bg_event  9, 28, BGEVENT_ITEM, LakeOfRageHiddenFullRestore
 	bg_event  4,  4, BGEVENT_ITEM, LakeOfRageHiddenRareCandy
 	bg_event 35,  5, BGEVENT_ITEM, LakeOfRageHiddenMaxPotion
 
@@ -657,7 +657,7 @@ LakeOfRage_MapEvents:
 	object_event 36,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CooltrainerfLoisScript, -1
 	object_event 18, 22, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RedGyarados, EVENT_LAKE_OF_RAGE_RED_GYARADOS
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
-	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageChoiceSpecs, EVENT_LAKE_OF_RAGE_CHOICE_SPECS
+	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, LakeOfRageThunderbolt, EVENT_LAKE_OF_RAGE_CHOICE_SPECS
 	object_event 15, 24, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon1Script, EVENT_FIELD_MON_1
 	object_event 29,  26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, NITE, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, LakeOfRageFieldMon2Script, EVENT_FIELD_MON_2
 	object_event 24, 17, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LakeOfRageFieldMon3Script, EVENT_FIELD_MON_3

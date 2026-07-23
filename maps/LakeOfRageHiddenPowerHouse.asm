@@ -51,7 +51,7 @@ MurderScript1:
 	opentext
 	writetext MurderGivesThunderboltText
 	waitbutton
-	verbosegiveitem TM_THUNDERBOLT
+	verbosegiveitem CHOICE_SPECS
 	closetext
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat1
 	end
@@ -89,7 +89,7 @@ MurderScript2:
 	opentext
 	writetext MurderGivesThunderboltText
 	waitbutton
-	verbosegiveitem TM_THUNDERBOLT
+	verbosegiveitem CHOICE_SPECS
 	closetext
 	applymovement LAKEOFRAGEHIDDENPOWERHOUSE_FISHER, Movement_MurderRetreat2
 	end
@@ -143,13 +143,13 @@ MurderGivesThunderboltText:
     para "Consider this a"
     line "gift."
 
-    para "It is very"
-    line "reliable and if"
-    cont "you're lucky can"
-    cont "paralyse your"
-    cont "prey."
-
-    para "Good luck."
+	para "It makes you"
+	line "really good at"
+	cont "what you do."
+	para "But no matter how"
+	line "hard you try..."
+	para "You just can't"
+	line "stop."
     done
 
 MurdererStaySafeText:

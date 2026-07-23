@@ -44,6 +44,7 @@ AzaleaGymBugsyScript:
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .end
 	setevent EVENT_BEAT_BUGSY
+	setmapscene ROUTE_36, SCENE_CUSTOM_2
 	readmem wLevelCap
 	ifgreater 35, .skipCap
 	loadmem wLevelCap, 35

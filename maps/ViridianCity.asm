@@ -103,7 +103,7 @@ ViridianCityCoffeeGrampsQuestionText:
 
 	para "I'm just an"
 	line "Old Man who"
-	cont "like coffee..."
+	cont "likes coffee..."
 
 	para "Isn't that right?"
 	done
@@ -123,7 +123,7 @@ ViridianCityCoffeeGrampsDoubtedText:
 
 	para "No!"
 
-	para "Don't speak it's"
+	para "Don't speak its"
 	line "name!"
 
 	para "It's not real!"

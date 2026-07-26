@@ -183,7 +183,7 @@ MonMenuIconPals:
 	icon_pals SILVER,  BLUE       ; TOGETIC
 	icon_pals SILVER,  BLUE       ; TOGEKISS
 	icon_pals TEAL,  PURPLE       ; NINETALES_A
-	icon_pals PURPLE,  PURPLE        ; MAREEP
+	icon_pals BLUE,  PURPLE        ; MAREEP
 	icon_pals PURPLE,  PURPLE     ; FLAAFFY
 	icon_pals GOLD,  PURPLE     ; AMPHAROS
 	icon_pals PURPLE,  PURPLE     ; SYLVEON
@@ -257,6 +257,6 @@ MonMenuIconPals:
 	icon_pals RED,  GOLD      ; HO_OH
 	icon_pals GREEN,  PURPLE  ; CELEBI
 	icon_pals SILVER,  GOLD  ; MEWTWO
-	icon_pals SILVER,  GOLD      ; ARCEUS
+	icon_pals GOLD,  GOLD      ; ARCEUS
 	assert_table_length NUM_POKEMON
 	icon_pals SILVER, GOLD  ; EGG

@@ -443,6 +443,7 @@ RefreshPackItemIconPalette::
 	call CheckCGB
 	ret z
 	call LoadItemIconPalette
+.apply
 	hlcoord 1, 7, wAttrmap
 	lb bc, 3, 3
 	ld a, 7
@@ -455,18 +456,13 @@ RefreshPackTMHMIconPalette::
 	call CheckCGB
 	ret z
 	call LoadTMHMIconPalette
-	hlcoord 1, 7, wAttrmap
-	lb bc, 3, 3
-	ld a, 7
-	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	jp FinishItemIconPaletteRefresh
+	jr RefreshPackItemIconPalette.apply
 
 RefreshTextboxItemIconPalette::
 	call CheckCGB
 	ret z
 	call LoadItemIconPalette
+.apply
 	hlcoord 1, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, 7
@@ -479,6 +475,7 @@ RefreshOverworldItemIconPalette::
 	call CheckCGB
 	ret z
 	call LoadItemIconPalette
+.apply
 	hlcoord 16, 13, wAttrmap
 	lb bc, 3, 3
 	ld a, 7
@@ -486,6 +483,12 @@ RefreshOverworldItemIconPalette::
 	call ApplyAttrmap
 	call ApplyPals
 	jp FinishItemIconPaletteRefresh
+
+RefreshOverworldTMHMIconPalette::
+	call CheckCGB
+	ret z
+	call LoadTMHMIconPalette
+	jr RefreshOverworldItemIconPalette.apply
 
 RefreshReceivedItemIconPalette::
 	call CheckCGB
@@ -503,13 +506,7 @@ RefreshTextboxTMHMIconPalette::
 	call CheckCGB
 	ret z
 	call LoadTMHMIconPalette
-	hlcoord 1, 13, wAttrmap
-	lb bc, 3, 3
-	ld a, 7
-	call FillBoxCGB
-	call ApplyAttrmap
-	call ApplyPals
-	jp FinishItemIconPaletteRefresh
+	jr RefreshTextboxItemIconPalette.apply
 
 FinishItemIconPaletteRefresh:
 	ld a, TRUE

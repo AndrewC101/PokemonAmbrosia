@@ -257,6 +257,6 @@ MonMenuIconPals:
 	icon_pals RED,  GOLD      ; HO_OH
 	icon_pals GREEN,  PURPLE  ; CELEBI
 	icon_pals SILVER,  GOLD  ; MEWTWO
-	icon_pals GOLD,  GOLD      ; ARCEUS
+	icon_pals SILVER,  GOLD      ; ARCEUS
 	assert_table_length NUM_POKEMON
 	icon_pals SILVER, GOLD  ; EGG

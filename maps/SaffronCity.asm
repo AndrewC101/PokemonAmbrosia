@@ -540,7 +540,7 @@ SaffronMon1Script:
 	faceplayer
 	cry BELDUM
 	pause 15
-	loadwildmon BELDUM, 21
+	loadwildmon BELDUM, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

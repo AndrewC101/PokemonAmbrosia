@@ -61,7 +61,7 @@ Route22FieldMon4Script:
 	faceplayer
 	cry BAGON
 	pause 15
-	loadwildmon BAGON, 20
+	loadwildmon BAGON, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_4

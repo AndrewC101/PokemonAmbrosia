@@ -774,7 +774,7 @@ FuchsiaCityMon3Script:
 	faceplayer
 	cry GIBLE
 	pause 15
-	loadwildmon GIBLE, 22
+	loadwildmon GIBLE, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_3

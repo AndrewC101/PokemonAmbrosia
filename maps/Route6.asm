@@ -98,7 +98,7 @@ Route6FieldMon6Script:
 	faceplayer
 	cry TREECKO
 	pause 15
-	loadwildmon TREECKO, 20
+	loadwildmon TREECKO, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_6

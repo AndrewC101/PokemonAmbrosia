@@ -315,7 +315,7 @@ CeladonMon1Script:
 	faceplayer
 	cry FROAKIE
 	pause 15
-	loadwildmon FROAKIE, 20
+	loadwildmon FROAKIE, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_1

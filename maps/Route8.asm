@@ -102,7 +102,7 @@ Route8FieldMon7Script:
 	faceplayer
 	cry CHIMCHAR
 	pause 15
-	loadwildmon CHIMCHAR, 20
+	loadwildmon CHIMCHAR, 10
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_7

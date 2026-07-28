@@ -301,7 +301,9 @@ TryEvolveCurPartyMon::
 	xor a
 	ld [wMonType], a
 	call LearnLevelMoves
-	ld a, [wTempSpecies]
+	; Move-learning UI touches generic species state; register the cached evo target.
+	ld a, [wEvolutionNewSpecies]
+	ld [wTempSpecies], a
 	dec a
 	call SetSeenAndCaughtMon
 

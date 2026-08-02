@@ -684,7 +684,7 @@ MasterLanceAfterBattleText:
 	cont "that besets you."
 	para "You are Dragon"
 	line "incarnate."
-	para "Destined to peirce"
+	para "Destined to pierce"
 	line "the heavens and"
 	cont "raise above all."
 	done

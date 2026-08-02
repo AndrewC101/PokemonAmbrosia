@@ -557,11 +557,13 @@ AI_Smart_Switch:
 	ret
 
 .checkSetupAndSwitchIfWeCantKO
-    ld a, [wPlayerSubStatus4]
-	bit SUBSTATUS_SUBSTITUTE, a
-	jp nz, .skipKOCheck
-    call DoesPlayerHaveIntactFocusSashOrSturdy
-    jr c, .skipKOCheck
+	ld b, EFFECT_PROTECT
+	call PlayerHasMoveEffect
+	jr c, .skipKOCheck
+	ld b, EFFECT_PROTECT
+	call PlayerHasMoveEffect
+	jr c, .skipKOCheck
+
     call CanAIKO
     ret c
 .skipKOCheck
@@ -1520,7 +1522,7 @@ AI_Smart_Moonlight:
 .healBelowHalf
     call AICheckEnemyHalfHP
     jr c, .discourage
-    ; fallthrough
+    jr .bigEncourage
 
 .encourage
 ; ARCEUS should play defensively and prioritize healing above scoring KOs
@@ -4303,44 +4305,6 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 
 ; sturdy
     ld a, [wEnemyMonSpecies]
-    push bc
-    push hl
-    push de
-	ld hl, AI_SturdyPokemon
-	ld de, 1
-	call IsInArray
-	pop de
-	pop hl
-	pop bc
-	jr c, .yes
-
-.no
-    xor a ; clear carry flag
-    ret
-.yes
-    scf
-    ret
-
-DoesPlayerHaveIntactFocusSashOrSturdy:
-; Is the Player at full HP
-    call AICheckPlayerMaxHP
-    jr nc, .no
-
-; focus sash
-	push hl
-	push de
-	ld a, [wBattleMonItem]
-	ld [wNamedObjectIndex], a
-	ld b, a
-	callfar GetItemHeldEffect
-	ld a, b
-	cp HELD_FOCUS_BAND
-	pop de
-	pop hl
-	jr z, .yes
-
-; sturdy
-    ld a, [wBattleMonSpecies]
     push bc
     push hl
     push de

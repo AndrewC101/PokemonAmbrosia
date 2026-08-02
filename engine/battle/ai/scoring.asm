@@ -115,6 +115,8 @@ AI_SturdyPokemon:
     db HONEDGE
     db DOUBLADE
     db PINSIR
+    db SHELLDER
+    db CLOYSTER
     db $FF
 
 AI_ClearBodyPokemon:
@@ -555,8 +557,14 @@ AI_Smart_Switch:
 	ret
 
 .checkSetupAndSwitchIfWeCantKO
+    ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
+	jp nz, .skipKOCheck
+    call DoesPlayerHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
     call CanAIKO
     ret c
+.skipKOCheck
     call IsAISetup
     ret c
     ; fallthrough
@@ -4313,6 +4321,44 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
     scf
     ret
 
+DoesPlayerHaveIntactFocusSashOrSturdy:
+; Is the Player at full HP
+    call AICheckPlayerMaxHP
+    jr nc, .no
+
+; focus sash
+	push hl
+	push de
+	ld a, [wBattleMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_FOCUS_BAND
+	pop de
+	pop hl
+	jr z, .yes
+
+; sturdy
+    ld a, [wBattleMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_SturdyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr c, .yes
+
+.no
+    xor a ; clear carry flag
+    ret
+.yes
+    scf
+    ret
+
 IsAIToxified:
     ld a, [wEnemyMonSpecies]
     call DoesPokemonHaveMagicGuard
@@ -4614,7 +4660,7 @@ CanAIKO:
 	pop hl
     jp nc, .loopAIKOMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopAIKOMoves
 	cp EFFECT_SKY_ATTACK
@@ -4672,7 +4718,7 @@ CanAI2HKO:
     jr z, .setFlag
     cp URSALUNA_B
     jr z, .setFlag
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopMoves
 	cp EFFECT_HYPER_BEAM
@@ -4733,7 +4779,7 @@ CanAI2HKOMaxHP:
     jr z, .setFlag
     cp URSALUNA_B
     jr z, .setFlag
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopMoves
 	cp EFFECT_HYPER_BEAM
@@ -4807,7 +4853,7 @@ CanAI3HKO:
     jr z, .setFlag
     cp URSALUNA_B
     jr z, .setFlag
-	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
 	jr z, .loopAI3HKOMoves
 	cp EFFECT_HYPER_BEAM

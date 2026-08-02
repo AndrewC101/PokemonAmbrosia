@@ -557,12 +557,14 @@ AI_Smart_Switch:
 	ret
 
 .checkSetupAndSwitchIfWeCantKO
-	ld b, EFFECT_PROTECT
-	call PlayerHasMoveEffect
-	jr c, .skipKOCheck
-	ld b, EFFECT_PROTECT
-	call PlayerHasMoveEffect
-	jr c, .skipKOCheck
+    ld a, [wCurPlayerMove]
+    cp SUBSTITUTE
+    jr z, .skipKOCheck
+    cp PROTECT
+    jr z, .skipKOCheck
+
+    call DoesPlayerHaveIntactFocusSashOrSturdy
+    jr c, .skipKOCheck
 
     call CanAIKO
     ret c
@@ -1288,7 +1290,7 @@ AI_Smart_Spikes:
 	jp nz, StandardDiscourage
 
 ; Don't use if enemy has rapid spin or defog
-    ld a, [wLastPlayerMove]
+    ld a, [wCurPlayerMove]
     cp RAPID_SPIN
     jp z, StandardDiscourage
     cp DEFOG
@@ -1310,7 +1312,7 @@ AI_Smart_StealthRock:
 	jp nz, StandardDiscourage
 
 ; Don't use if enemy has rapid spin or defog
-    ld a, [wLastPlayerMove]
+    ld a, [wCurPlayerMove]
     cp RAPID_SPIN
     jp z, StandardDiscourage
     cp DEFOG
@@ -1332,7 +1334,7 @@ AI_Smart_ToxicSpikes:
 	jp nz, StandardDiscourage
 
 ; Don't use if enemy has rapid spin or defog
-    ld a, [wLastPlayerMove]
+    ld a, [wCurPlayerMove]
     cp RAPID_SPIN
     jp z, StandardDiscourage
     cp DEFOG
@@ -1354,7 +1356,7 @@ AI_Smart_StickyWeb:
 	jp nz, StandardDiscourage
 
 ; Don't use if enemy has rapid spin or defog
-    ld a, [wLastPlayerMove]
+    ld a, [wCurPlayerMove]
     cp RAPID_SPIN
     jp z, StandardDiscourage
     cp DEFOG
@@ -1995,7 +1997,7 @@ AI_Smart_Substitute:
 
 .hasStatus
 ; extra encourage at full hp
-    call AICheckEnemyMaxHP
+    call AICheckEnemyHalfHP
     jr nc, .pastStatus
     dec [hl]
     dec [hl]
@@ -3967,7 +3969,7 @@ AI_Smart_Taunt:
 	jr c, .encourage
 
 ; if players last move had 0 power - 50% chance to encourage
-	ld a, [wLastPlayerMove]
+	ld a, [wCurPlayerMove]
 	call AIGetPlayerMove
 	ld a, [wPlayerMoveStruct + MOVE_POWER]
 	and a
@@ -4305,6 +4307,44 @@ DoesEnemyHaveIntactFocusSashOrSturdy:
 
 ; sturdy
     ld a, [wEnemyMonSpecies]
+    push bc
+    push hl
+    push de
+	ld hl, AI_SturdyPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+	pop hl
+	pop bc
+	jr c, .yes
+
+.no
+    xor a ; clear carry flag
+    ret
+.yes
+    scf
+    ret
+
+DoesPlayerHaveIntactFocusSashOrSturdy:
+; Is the AI at full HP
+    call AICheckPlayerMaxHP
+    jr nc, .no
+
+; focus sash
+	push hl
+	push de
+	ld a, [wBattleMonItem]
+	ld [wNamedObjectIndex], a
+	ld b, a
+	callfar GetItemHeldEffect
+	ld a, b
+	cp HELD_FOCUS_BAND
+	pop de
+	pop hl
+	jr z, .yes
+
+; sturdy
+    ld a, [wBattleMonSpecies]
     push bc
     push hl
     push de

@@ -4691,7 +4691,7 @@ SpikesDamage:
 	push de
 
 ; Toxic Spikes can't poison a Safeguarded target
-	farcall SafeCheckSafeguard
+	call CheckSafeguardOwnSide
 	jp nz, .pop
 
 ; Toxic Spikes can't poison a status immune Pokemon
@@ -9771,5 +9771,17 @@ BattleMissAnim:
 	call SwitchTurnCore
 	pop bc
 	pop de
+	pop hl
+	ret
+
+CheckSafeguardOwnSide:
+	push hl
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .got_turn
+	ld hl, wPlayerScreens
+.got_turn
+	bit SCREENS_SAFEGUARD, [hl]
 	pop hl
 	ret

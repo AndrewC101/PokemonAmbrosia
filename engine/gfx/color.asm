@@ -319,25 +319,20 @@ InitBattleStatusIconPalette:
 LoadPlayerStatusIconPalette:
 	ld de, wBattleMonStatus
 	call GetStatusConditionIndex_Colour
-	ld hl, StatusIconPals
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
 	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS color 1
-	ld bc, 2 ; number of bytes to copy
-	ld a, BANK("GBC Video") ;BANK(wBGPals2); BANK(wGBCPalettes)
-	jp FarCopyWRAM
+	jr LoadStatusIconPalette
 
 LoadEnemyStatusIconPalette:
 	ld de, wEnemyMonStatus
 	call GetStatusConditionIndex_Colour
+	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS color 2
+
+LoadStatusIconPalette:
 	ld hl, StatusIconPals
 	ld c, a
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	ld de, wBGPals1 palette PAL_BATTLE_BG_STATUS color 2
 	ld bc, 2
 	ld a, BANK("GBC Video") ;BANK(wBGPals2); BANK(wGBCPalettes)
 	jp FarCopyWRAM
@@ -351,7 +346,7 @@ GetStatusConditionIndex_Colour:
 	ld a, 0 ; no-optimize a = 0
 	jr nz, .slp
 	bit PSN, b
-	jr nz, .psn
+	jr nz, .poison
 	bit PAR, b
 	jr nz, .par
 	bit BRN, b
@@ -369,6 +364,14 @@ GetStatusConditionIndex_Colour:
 	inc a ; 2
 .psn
 	inc a ; 1
+	ret
+.poison
+	inc de
+	ld a, [de]
+	bit 0, a
+	ld a, 1
+	ret z
+	ld a, 7 ; Toxic
 	ret
 
 LoadStatsScreenPals:

@@ -7357,8 +7357,14 @@ LoadEnemyMon:
 
 ; Get status from the party struct
 	dec hl
-	ld a, [hl] ; OTPartyMonStatus
+	ld a, [hli] ; OTPartyMonStatus
 	ld [wEnemyMonStatus], a
+	ld a, [hl] ; OTPartyMonUnused, used to persist Toxic poison
+	ld [wEnemyMonStatus + 1], a
+	ld hl, wEnemyMonStatus
+	ld de, wEnemySubStatus5
+	ld bc, wEnemyToxicCount
+	call RestorePersistedToxicSubstatus
 
 .Moves:
 	ld hl, wBaseType1

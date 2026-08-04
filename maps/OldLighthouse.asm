@@ -284,7 +284,7 @@ LighthouseHistoryText6:
 	cont "defender of life."
 	para "But a bolt of"
 	line "light from Zapdos"
-	cont "stuck a small boat"
+	cont "struck a ship"
 	cont "as it approached"
 	cont "and I saw it go"
 	cont "under."

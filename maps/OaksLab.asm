@@ -17,7 +17,7 @@ Oak:
 	opentext
 	checkevent EVENT_GOT_OAK_AERODACTYL_EGG
 	iftrue .SkipAerodactylEgg
-	checkevent EVENT_BEAT_BUGSY
+	checkevent EVENT_BEAT_WHITNEY
 	iffalse .GiveAerodactylEgg
 .SkipAerodactylEgg
 	checkevent EVENT_OPENED_MT_SILVER

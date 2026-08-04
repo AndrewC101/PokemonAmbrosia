@@ -151,7 +151,7 @@ ItemIconPointers:
 	dba PokeBallIcon
 	dba PokeBallIcon
 	dba OranBerryIcon
-	dba DragonScaleIcon
+	dba DragonFangIcon
 	dba BerserkGeneIcon
 	dba PokeBallIcon
 	dba PokeBallIcon

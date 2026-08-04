@@ -301,8 +301,8 @@ ItemIconPalettes:
 	RGB 30, 10, 06
 	RGB 10, 20, 30 ; MYSTERYBERRY / OranBerryIcon
 	RGB 13, 13, 23
-	RGB 19, 27, 31 ; DRAGON_SCALE / DragonScaleIcon
-	RGB 13, 21, 25
+	RGB 23, 20, 19 ; DRAGON_SCALE / DragonFangIcon
+	RGB 16, 13, 12
 	RGB 31, 22, 16 ; BERSERK_GENE / BerserkGeneIcon
 	RGB 17, 14, 18
 	RGB 31, 31, 31 ; ITEM_99 / PokeBallIcon

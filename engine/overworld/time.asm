@@ -234,26 +234,17 @@ UnusedCheckSwarmFlag: ; unreferenced
 	ret
 
 RestartLuckyNumberCountdown:
-	call .GetDaysUntilNextFriday
 	ld hl, wLuckyNumberDayTimer
-	jp InitNDaysCountdown
-
-.GetDaysUntilNextFriday:
-	call GetWeekday
-	ld c, a
-	ld a, FRIDAY
-	sub c
-	jr z, .friday_saturday
-	jr nc, .earlier ; could have done "ret nc"
-
-.friday_saturday
-	add 7
-
-.earlier
-	ret
+	jp InitOneDayCountdown
 
 _CheckLuckyNumberShowFlag:
 	ld hl, wLuckyNumberDayTimer
+	ld a, [hl]
+	cp 2
+	jr c, .check
+	; Clamp old weekly countdowns so existing saves move to daily cadence.
+	ld [hl], 1
+.check
 	jp CheckDayDependentEventHL
 
 DoMysteryGiftIfDayHasPassed:

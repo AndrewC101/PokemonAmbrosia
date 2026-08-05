@@ -39,32 +39,46 @@ RadioTower1FLuckyNumberManScript:
 	writetext RadioTower1FLuckyNumberManAskToPlayText
 	promptbutton
 	special CheckLuckyNumberShowFlag
-	iffalse .skip
+	iffalse .Ready
 	special ResetLuckyNumberShowFlag
-.skip
-	special PrintTodaysLuckyNumber
+.Ready:
 	checkflag ENGINE_LUCKY_NUMBER_SHOW
 	iftrue .GameOver
-	writetext RadioTower1FLuckyNumberManThisWeeksIdIsText
+	writetext RadioTower1FLuckyNumberManPickNumberText
 	promptbutton
-	closetext
-	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManGoToPCMovement
-	opentext
-	writetext RadioTower1FLuckyNumberManCheckIfMatchText
+	loadmenu .LuckyNumberMenuHeader
+	_2dmenu
+	closewindow
+	callasm RadioTower1FLuckyNumberManCheckGuess
+	writetext RadioTower1FLuckyNumberManWinningNumberText
 	promptbutton
-	waitsfx
-	writetext RadioTower1FLuckyNumberManDotDotDotText
-	playsound SFX_DEX_FANFARE_20_49
-	waitsfx
-	promptbutton
-	special CheckForLuckyNumberWinners
-	closetext
-	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement
-	opentext
-	ifless 2, .NoPrize ; 0-1 digits match
-	ifless 3, .ThirdPlace ; 2 digits match
-	ifless 5, .SecondPlace ; 3-4 digits match
-	sjump .FirstPlace ; all digits match
+	ifequal 1, .FirstPlace
+	ifequal 2, .SecondPlace
+	ifequal 3, .ThirdPlace
+	sjump .NoPrize
+
+.LuckyNumberMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 11
+	dw .LuckyNumberMenuData
+	db 1 ; default option
+.LuckyNumberMenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 5, 2 ; rows, columns
+	db 4 ; spacing
+	dba .LuckyNumberMenuText
+	dbw BANK(@), NULL
+.LuckyNumberMenuText:
+	db "1@"
+	db "2@"
+	db "3@"
+	db "4@"
+	db "5@"
+	db "6@"
+	db "7@"
+	db "8@"
+	db "9@"
+	db "10@"
 
 .GameOver:
 	writetext RadioTower1FLuckyNumberManComeAgainText
@@ -107,6 +121,7 @@ RadioTower1FLuckyNumberManScript:
 
 .NoPrize:
 	writetext RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText
+	setflag ENGINE_LUCKY_NUMBER_SHOW
 	waitbutton
 	closetext
 	end
@@ -207,15 +222,53 @@ RadioTower1FDirectory:
 RadioTower1FLuckyChannelSign:
 	jumptext RadioTower1FLuckyChannelSignText
 
-RadioTower1FLuckyNumberManGoToPCMovement:
-	step RIGHT
-	turn_head UP
-	step_end
+RadioTower1FLuckyNumberManCheckGuess:
+; wScriptVar holds the player's 1-10 guess. Return prize tier in wScriptVar:
+; 1 = exact, 2 = off by 1, 3 = off by 2, 0 = no prize.
+.random
+	call Random
+	and $f
+	cp 10
+	jr nc, .random
+	inc a
+	ld b, a
 
-RadioTower1FLuckyNumberManReturnToPlayerMovement:
-	step LEFT
-	turn_head UP
-	step_end
+	ld a, [wScriptVar]
+	ld c, a
+	ld a, b
+	cp 10
+	jr z, .print_ten
+	add '0'
+	ld [wStringBuffer3], a
+	ld a, '@'
+	ld [wStringBuffer3 + 1], a
+	jr .score
+
+.print_ten
+	ld a, '1'
+	ld [wStringBuffer3], a
+	ld a, '0'
+	ld [wStringBuffer3 + 1], a
+	ld a, '@'
+	ld [wStringBuffer3 + 2], a
+
+.score
+	ld a, b
+	sub c
+	jr nc, .got_difference
+	cpl
+	inc a
+.got_difference
+	cp 3
+	jr nc, .no_prize
+	inc a
+	ld [wScriptVar], a
+	ret
+
+.no_prize
+	xor a
+	ld [wScriptVar], a
+	ret
 
 RadioTower1FReceptionistWelcomeText:
 	text "Welcome!"
@@ -233,41 +286,34 @@ RadioTower1FLuckyNumberManAskToPlayText:
 	line "for the Lucky"
 	cont "Number Show?"
 
-	para "Want me to check"
-	line "the ID numbers of"
-	cont "your #mon?"
+	para "Pick a number"
+	line "from 1 to 10."
 
-	para "If you get lucky,"
-	line "you win a prize."
+	para "Guess exactly for"
+	line "first prize!"
 	done
 
-RadioTower1FLuckyNumberManThisWeeksIdIsText:
-	text "This week's ID"
-	line "number is @"
+RadioTower1FLuckyNumberManPickNumberText:
+	text "Which number will"
+	line "you choose?"
+	done
+
+RadioTower1FLuckyNumberManWinningNumberText:
+	text "The winning number"
+	line "was @"
 	text_ram wStringBuffer3
 	text "."
 	done
 
-RadioTower1FLuckyNumberManCheckIfMatchText:
-	text "Let's see if you"
-	line "have a match."
-	done
-
-RadioTower1FLuckyNumberManDotDotDotText:
-	text "<……>"
-	line "<……>"
-	done
-
 RadioTower1FLuckyNumberManComeAgainText:
 	text "Please come back"
-	line "next week for the"
+	line "tomorrow for the"
 	cont "next Lucky Number."
 	done
 
 RadioTower1FLuckyNumberManPerfectMatchText:
-	text "Wow! You have a"
-	line "perfect match of"
-	cont "all five numbers!"
+	text "Wow! You guessed"
+	line "it exactly!"
 
 	para "We have a grand"
 	line "prize winner!"
@@ -277,9 +323,8 @@ RadioTower1FLuckyNumberManPerfectMatchText:
 	done
 
 RadioTower1FLuckyNumberManOkayMatchText:
-	text "Hey! You've"
-	line "matched the last"
-	cont "three numbers!"
+	text "Hey! You were"
+	line "off by only one!"
 
 	para "You've won second"
 	line "prize, a Lucky"
@@ -287,17 +332,17 @@ RadioTower1FLuckyNumberManOkayMatchText:
 	done
 
 RadioTower1FLuckyNumberManWeakMatchText:
-	text "Ooh, you've"
-	line "matched the last"
-	cont "two numbers."
+	text "Ooh, you were"
+	line "off by two."
 
 	para "You've won third"
 	line "prize, a PP Max."
 	done
 
 RadioTower1FLuckyNumberManNoneOfYourIDNumbersMatchText:
-	text "Nope, none of your"
-	line "ID numbers match."
+	text "Nope, not close"
+	line "enough for a"
+	cont "prize today."
 	done
 
 RadioTower1FLuckyNumberManNoRoomForYourPrizeText:
@@ -505,12 +550,12 @@ RadioTower1FDirectoryText:
 RadioTower1FLuckyChannelSignText:
 	text "Lucky Channel!"
 
-	para "Win with #mon"
-	line "ID numbers!"
+	para "Pick a number"
+	line "from 1 to 10!"
 
-	para "Trade your #mon"
-	line "to collect differ-"
-	cont "ent ID numbers!"
+	para "The closer you"
+	line "are, the better"
+	cont "your prize!"
 	done
 
 RadioTowerCrystalScript1:

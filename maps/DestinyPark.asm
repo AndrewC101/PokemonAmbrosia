@@ -558,26 +558,33 @@ MasterBlaineScript:
     end
 
 MasterBlaineSeenText:
-	text "Our hearts are a"
-	line "pendulum that"
-	cont "swing between rage"
-	cont "and despair."
-	para "Real strength lies"
-	line "in between."
-	para "A Master must be"
-	line "able to catch this"
-	cont "pendulum."
-	para "Can you?"
+	text "A flame is like a"
+	line "little heartbeat."
+	para "It can race and"
+	line "swell with fury."
+	para "It can flicker and"
+	line "dim."
+	para "In the end it"
+	line "always goes out."
+	para "Forgiveness is a"
+	line "difficult thing."
+	para "The fire doesn't"
+	line "want to forgive,"
+	cont "it wants to burn"
+	cont "all the hotter."
+	para "Can you show me"
+	line "how to control it."
 	done
 
 MasterBlaineBeatenText:
-    text "I see the fire"
-    line "in you."
-    done
+	text "You are in"
+	line "complete control."
+	para "Remarkable!"
+	done
 
 MasterBlaineWinText:
     text "Your fire burns"
-    line "too hot."
+    line "too savage."
     done
 
 MasterBlaineAfterBattleText:
@@ -586,6 +593,17 @@ MasterBlaineAfterBattleText:
 	cont "everything you"
 	cont "love if you can't"
 	cont "control it."
+	para "I thought I would"
+	line "hate the brother"
+	cont "who left me for"
+	cont "dead."
+	para "Fire and Ice"
+	line "couldn't be more"
+	cont "different."
+	para "But he and I are"
+	line "so similar, even"
+	cont "after all these"
+	cont "years."
 	done
 
 MasterBlaineLoseAfterBattleText:
@@ -1140,9 +1158,18 @@ MasterPryceSeenText:
 	line "drains all energy"
 	cont "and in the end it"
 	cont "kills."
+	para "I thought it had"
+	line "killed my brother."
+	para "But his #mon"
+	line "saved him while I"
+	cont "abandoned him."
+	para "Ice keeps things"
+	line "frozen."
+	para "The guilt never"
+	line "thaws."
 	para "Do you have the"
-	line "strength to"
-	cont "resist."
+	line "strength I did"
+	cont "not?"
 	done
 
 MasterPryceBeatenText:
@@ -1164,6 +1191,8 @@ MasterPryceAfterBattleText:
 	line "family."
 	para "Or your inner"
 	line "self."
+	para "At long last I"
+	line "have found mine."
 	done
 
 MasterPryceLoseAfterBattleText:
@@ -1175,6 +1204,8 @@ MasterPryceLoseAfterBattleText:
 	line "family."
 	para "Or your inner"
 	line "self."
+	para "At long last I"
+	line "have found mine."
 	done
 
 MasterClairScript:

@@ -75,29 +75,33 @@ SeafoamGymGuideScript:
 
 BlaineIntroText:
 	text "I am Blaine."
-
 	para "A Gym Leader"
 	line "without a Gym."
-
-	para "Without a city."
-
-	para "But I still have"
-	line "my pride."
-
-    para "Nothing can take"
-    line "that from me."
-
-	para "I am the second"
-	line "strongest Gym"
-	cont "Leader in Kanto."
-
-	para "And you..."
-
-	para "Champion!"
-
-	para "Will feel the"
-	line "fires of my"
-	cont "pride!"
+	para "You might think I"
+	line "have very little."
+	para "But everyday is a"
+	line "gift."
+	para "I should have died"
+	line "years ago when my"
+	cont "brother abandoned"
+	cont "me on a distant"
+	cont "mountain."
+	para "I know he had to"
+	line "do it."
+	para "But I honestly"
+	line "believed he"
+	cont "wouldn't."
+	para "I only recall"
+	line "looking up and"
+	cont "seeing a pair of"
+	cont "great blazing"
+	cont "wings."
+	para "Fire #mon are"
+	line "my family."
+	para "Show me the bond"
+	line "you have forged"
+	cont "with your"
+	cont "#mon."
 	done
 
 BlaineWinLossText:
@@ -123,6 +127,12 @@ BlaineFightDoneText:
 
 	para "All of Kanto"
 	line "is my city."
+
+	para "I don't need a"
+	line "family."
+
+	para "My #mon are"
+	line "my family."
 
 	para "Here on these"
 	line "waters I am the"

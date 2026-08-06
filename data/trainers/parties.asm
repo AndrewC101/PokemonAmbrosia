@@ -4369,7 +4369,7 @@ MysticalmanGroup:
 
 InvaderGroup:
 	db "Giant Dad@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM
-	db 10, AERODACTYL, "Git Gud@", GOLD_BERRY
+	db 10, AERODACTYL, "Git Gud@", FOCUS_SASH
 	db -1 ; end
 
 	db "Siegmeyer@", TRAINERTYPE_NICKNAME | TRAINERTYPE_ITEM_MOVES

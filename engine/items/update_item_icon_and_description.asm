@@ -19,9 +19,11 @@ UpdatePackItemIconAndDescription:
 	pop af
 
 .load_icon
+	push af
+	farcall RefreshPackItemIconPalette
+	pop af
 	call LoadMenuItemIcon
 	call PlacePackItemIcon
-	farcall RefreshPackItemIconPalette
 	ret
 
 UpdateMartItemIconAndDescription:
@@ -41,9 +43,11 @@ UpdateMartItemIconAndDescription:
 	pop af
 
 .load_icon
+	push af
+	farcall RefreshMartItemIconPaletteByItem
+	pop af
 	call LoadMartItemIcon
 	call PlaceMartItemIcon
-	farcall RefreshMartItemIconPaletteByItem
 	ret
 
 ShowTextboxTMHMIcon::

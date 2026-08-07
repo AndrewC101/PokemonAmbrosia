@@ -576,6 +576,10 @@ LoadTMHMIconPalette:
 	ld a, BANK(Moves)
 	call GetFarByte
 	and TYPE_MASK
+	cp UNUSED_TYPES_END
+	jr c, .got_type
+	sub UNUSED_TYPES_END - UNUSED_TYPES
+.got_type
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -591,7 +595,8 @@ LoadTMHMIconPalette:
 	jp LoadSingleBlackPal
 
 TMHMTypeIconPals:
-; Ordered to match this repo's type constants.
+	table_width PAL_COLOR_SIZE * 2, TMHMTypeIconPals
+; Ordered by compact type id; raw move types after CURSE_TYPE skip the unused gap.
 ; NORMAL
 	RGB 28, 28, 29
 	RGB 24, 24, 23
@@ -649,6 +654,7 @@ TMHMTypeIconPals:
 ; UNKNOWN T
 	RGB 17, 26, 24
 	RGB 10, 20, 17
+	assert_table_length NUM_TYPES
 
 INCLUDE "engine/gfx/cgb_layouts.asm"
 

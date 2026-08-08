@@ -5,7 +5,7 @@
 	next "its forked tail"
 	next "quivers."
 
-	page "Sp.Atk boost and"
-	next "raises Safeguard"
-	next "upon switch in.@"
+	page "Raises Safeguard"
+	next "on switch. Boosted"
+	next "STAB.@"
 

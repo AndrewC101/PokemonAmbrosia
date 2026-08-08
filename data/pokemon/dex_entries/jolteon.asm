@@ -5,7 +5,7 @@
 	next "charged ions"
 	next "flow through it."
 
-	page "Immune to"
-	next "Electric. Gets"
-	next "crits often.@"
+	page "Gets criticals"
+	next "often. Boosted"
+	next "STAB.@"
 

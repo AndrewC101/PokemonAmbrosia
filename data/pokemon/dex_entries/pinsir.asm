@@ -6,5 +6,6 @@
 	next "its foe in half."
 
 	page "Can not be KOd"
-	next "from full HP.@"
+	next "from full HP."
+	next "Boosted STAB.@"
 

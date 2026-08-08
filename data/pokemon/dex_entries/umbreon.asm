@@ -5,7 +5,7 @@
 	next "full moon, it"
 	next "glows with power"
 
-	page "Taunts foe and"
-	next "boosts Sp.Def"
-	next "on switch.@"
+	page "Sp.Def boost and"
+	next "Taunt on switch."
+	next "Boosted STAB.@"
 

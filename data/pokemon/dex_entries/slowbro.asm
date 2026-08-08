@@ -6,6 +6,6 @@
 	next "go."
 
 	page "Special Defense"
-	next "increases upon"
-	next "entering battle.@"
+	next "boost on switch."
+	next "Boosted STAB.@"
 

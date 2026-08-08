@@ -5,6 +5,6 @@
 	next "#mon created"
 	next "due to research."
 
-	page "Makes weaker"
-	next "moves stronger.@"
+	page "Boosted same"
+	next "type damage.@"
 

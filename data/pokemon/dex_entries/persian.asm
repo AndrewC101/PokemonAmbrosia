@@ -6,6 +6,6 @@
 	next "lies a killer."
 
 	page "Slash always"
-	next "crits. Makes weak"
-	next "moves stronger.@"
+	next "crits. Boosted"
+	next "STAB.@"
 

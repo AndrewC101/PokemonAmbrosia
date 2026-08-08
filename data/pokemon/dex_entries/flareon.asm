@@ -5,7 +5,7 @@
 	next "can reach up to"
 	next "1700 degrees."
 
-	page "Boosted effect"
-	next "chance. Lowers"
-	next "foes SP Attack.@"
+	page "Lowers foes"
+	next "Sp.Atk on switch."
+	next "Boosted STAB.@"
 

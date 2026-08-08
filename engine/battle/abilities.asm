@@ -58,7 +58,6 @@ SereneGracePokemon:
     db TOGETIC
     db TOGEKISS
     db SHAYMIN
-    db FLAREON
     db JOLTIK
     db GALVANTULA
     db -1
@@ -98,7 +97,6 @@ GutsPokemon:
     db URSALUNA
     db BUNEARY
     db LOPUNNY
-    db POLIWRATH
     db -1
 
 RivalryPokemon:
@@ -128,7 +126,6 @@ ThickFatPokemon:
     db PILOSWINE
     db MAMOSWINE
     db PALKIA
-    db RATICATE
     db EXEGGCUTE
     db EXEGGUTOR
     db -1
@@ -136,15 +133,11 @@ ThickFatPokemon:
 TechnicianPokemon:
     db SCYTHER
     db SCIZOR
-    db MEOWTH
-    db PERSIAN
     db PAWNIARD
     db BISHARP
     db KINGAMBIT
     db SHROOMISH
     db BRELOOM
-    db PORYGON
-    db PORYGON2
     db BULBASAUR
     db IVYSAUR
     db VENUSAUR
@@ -179,7 +172,6 @@ ClearBodyPokemon:
     db DIALGA
     db ARCEUS
     db REGIGIGAS
-    db VAPOREON
     db MELTAN
     db MELMETAL
     db KYOGRE
@@ -206,7 +198,6 @@ IronFistPokemon:
     db TIMBURR
     db GURDURR
     db CONKELDURR
-    db POLIWRATH
     db BRELOOM
     db CHIMCHAR
     db MONFERNO
@@ -225,6 +216,28 @@ CompoundEyesPokemon:
     db DEINO
     db ZWEILOUS
     db HYDREIGON
+    db -1
+
+AdaptabilityPokemon:
+    db RATICATE
+    db MEOWTH
+    db PERSIAN
+    db POLIWAG
+    db POLIWHIRL
+    db POLIWRATH
+    db PINSIR
+    db PORYGON
+    db PORYGON2
+    db PORYGONZ
+    db EEVEE
+    db VAPOREON
+    db FLAREON
+    db JOLTEON
+    db ESPEON
+    db UMBREON
+    db SYLVEON
+    db SLOWPOKE
+    db SLOWBRO
     db -1
 
 UberImmunePokemon:

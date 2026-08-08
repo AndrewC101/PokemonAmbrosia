@@ -5,6 +5,6 @@
 	next "#mon evolved"
 	next "from software."
 
-	page "Makes weaker"
-	next "moves stronger.@"
+	page "Boosted same"
+	next "type damage.@"
 

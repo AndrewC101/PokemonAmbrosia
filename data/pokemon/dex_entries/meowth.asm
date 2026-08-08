@@ -5,6 +5,6 @@
 	next "that sparkle and"
 	next "collects them."
 
-	page "Makes weaker"
-	next "moves stronger.@"
+	page "Boosted same"
+	next "type damage.@"
 

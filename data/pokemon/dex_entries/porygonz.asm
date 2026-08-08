@@ -6,6 +6,6 @@
 	next "dimensions."
 
 	page "Hyper Beam"
-	next "does not need"
-	next "to recharge.@"
+	next "doesn't recharge."
+	next "Boosted STAB.@"
 

@@ -6,6 +6,6 @@
 	next "arms and legs."
 
 	page "Speed boost in"
-	next "rain. Attack"
-	next "boost on status.@"
+	next "rain. Boosted"
+	next "STAB.@"
 

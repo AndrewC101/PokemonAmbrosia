@@ -6,6 +6,6 @@
 	next "water perfectly."
 
 	page "Clears field."
-	next "Immune to stat"
-	next "drops and Water.@"
+	next "Immune to Water."
+	next "Boosted STAB.@"
 

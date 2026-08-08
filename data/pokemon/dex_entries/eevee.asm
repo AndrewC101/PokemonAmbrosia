@@ -6,6 +6,6 @@
 	next "friendship."
 
 	page "Random stat"
-	next "increase upon"
-	next "entering battle.@"
+	next "up on switch."
+	next "Boosted STAB.@"
 

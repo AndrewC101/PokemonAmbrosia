@@ -1463,8 +1463,10 @@ Script_UsedWhirlpool:
 	writetext UseWhirlpoolText
 	closetext
 	callasm ShowFieldMovePreview
+	callasm PlayWhirlpoolSound
 	refreshmap
 	callasm DisappearWhirlpool
+	refreshmap
 	end
 
 DisappearWhirlpool:
@@ -1474,14 +1476,6 @@ DisappearWhirlpool:
 	ld l, a
 	ld a, [wCutWhirlpoolReplacementBlock]
 	ld [hl], a
-	xor a
-	ldh [hBGMapMode], a
-	call LoadOverworldTilemapAndAttrmapPals
-	ld a, [wCutWhirlpoolAnimationType]
-	ld e, a
-	farcall PlayWhirlpoolSound
-	call BufferScreen
-	call GetMovementPermissions
 	ret
 
 TryWhirlpoolOW::

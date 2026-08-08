@@ -22,32 +22,9 @@ CeladonGymErikaScript:
 	opentext
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
-.rematch
-	writetext ErikaBeforeBattleText
-	waitbutton
-	closetext
-	winlosstext ErikaBeatenText, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer ERIKA, MASTER_ERIKA
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer ERIKA, ERIKA1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer ERIKA, ERIKA1
-.battle
+	scall .LoadErikaBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_ERIKA
-	iftrue .end
 	setevent EVENT_BEAT_ERIKA
 	setevent EVENT_BEAT_LASS_MICHELLE
 	setevent EVENT_BEAT_PICNICKER_TANYA
@@ -69,12 +46,39 @@ CeladonGymErikaScript:
 	opentext
 	writetext RematchTextErika
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextErika
 	waitbutton
 	closetext
 .end
 	end
+.RematchBattle:
+	scall .LoadErikaBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadErikaBattle:
+	writetext ErikaBeforeBattleText
+	waitbutton
+	closetext
+	winlosstext ErikaBeatenText, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ERIKA, MASTER_ERIKA
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer ERIKA, ERIKA1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer ERIKA, ERIKA1
+	endcallback
 
 TrainerLassMichelle:
 	trainer LASS, MICHELLE, EVENT_BEAT_LASS_MICHELLE, LassMichelleSeenText, LassMichelleBeatenText, 0, .Script

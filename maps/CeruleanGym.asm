@@ -61,32 +61,9 @@ CeruleanGymMistyScript:
 	opentext
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
-.rematch
-	writetext MistyIntroText
-	waitbutton
-	closetext
-	winlosstext MistyLossText, MistyWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer MISTY, MASTER_MISTY
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer MISTY, MISTY1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer MISTY, MISTY1
-.battle
+	scall .LoadMistyBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_MISTY
-	iftrue .end
 	setevent EVENT_BEAT_MISTY
 	setevent EVENT_BEAT_SWIMMERF_DIANA
 	setevent EVENT_BEAT_SWIMMERF_BRIANA
@@ -108,11 +85,38 @@ CeruleanGymMistyScript:
 	opentext
 	writetext RematchTextMisty
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextMisty
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadMistyBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadMistyBattle:
+	writetext MistyIntroText
+	waitbutton
+	closetext
+	winlosstext MistyLossText, MistyWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MASTER_MISTY
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MISTY, MISTY1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer MISTY, MISTY1
+	endcallback
 
 TrainerSwimmerfDiana:
 	trainer SWIMMERF, DIANA, EVENT_BEAT_SWIMMERF_DIANA, SwimmerfDianaSeenText, SwimmerfDianaBeatenText, 0, .Script
@@ -311,14 +315,8 @@ MistyIntroText:
 	done
 
 MistyLossText:
-	text "Misty: You really"
-	line "are good…"
-
-	para "I'll admit that"
+	text "I'll admit that"
 	line "you are skilled…"
-
-	para "Here you go. It's"
-	line "Cascadebadge."
 	done
 
 MistyWinText:

@@ -15,32 +15,9 @@ MahoganyGymPryceScript:
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
-.rematch
-	writetext PryceText_Intro
-	waitbutton
-	closetext
-	winlosstext PryceText_Impressed, PryceWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer PRYCE, MASTER_PRYCE
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer PRYCE, PRYCE1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer PRYCE, PRYCE1
-.battle
+	scall .LoadPryceBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_PRYCE
-	iftrue .end
 	setevent EVENT_BEAT_PRYCE
 	readmem wLevelCap
 	ifgreater 60, .skipCap
@@ -78,11 +55,38 @@ MahoganyGymPryceScript:
 	opentext
 	writetext RematchTextPryce
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextPryce
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadPryceBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadPryceBattle:
+	writetext PryceText_Intro
+	waitbutton
+	closetext
+	winlosstext PryceText_Impressed, PryceWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer PRYCE, MASTER_PRYCE
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer PRYCE, PRYCE1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer PRYCE, PRYCE1
+	endcallback
 MahoganyGym_NoRoomForIcyWind:
 	closetext
 	end

@@ -16,35 +16,12 @@ SeafoamGymBlaineScript:
 	opentext
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
-.rematch
-	writetext BlaineIntroText
-	waitbutton
-	closetext
-	winlosstext BlaineWinLossText, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BLAINE, MASTER_BLAINE
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BLAINE, BLAINE1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer BLAINE, BLAINE1
-.battle
+	scall .LoadBlaineBattle
 	startbattle
 	iftrue .ReturnAfterBattle
 	appear SEAFOAMGYM_GYM_GUIDE
 .ReturnAfterBattle:
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_BLAINE
-	iftrue .end
 	setevent EVENT_BEAT_BLAINE
 	opentext
 	writetext ReceivedVolcanoBadgeText
@@ -64,11 +41,38 @@ SeafoamGymBlaineScript:
 	opentext
 	writetext RematchTextBlaine
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextBlaine
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadBlaineBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadBlaineBattle:
+	writetext BlaineIntroText
+	waitbutton
+	closetext
+	winlosstext BlaineWinLossText, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLAINE, MASTER_BLAINE
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BLAINE, BLAINE1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer BLAINE, BLAINE1
+	endcallback
 
 SeafoamGymGuideScript:
     jumptextfaceplayer SeafoamGymGuideWinText2

@@ -24,32 +24,9 @@ GoldenrodGymWhitneyScript:
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
 	opentext
-.rematch
-	writetext WhitneyBeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WHITNEY, MASTER_WHITNEY
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WHITNEY, WHITNEY1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer WHITNEY, WHITNEY1
-.battle
+	scall .LoadWhitneyBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_WHITNEY
-	iftrue .end
 	setevent EVENT_BEAT_WHITNEY
 	setevent EVENT_MADE_WHITNEY_CRY
 	setscene SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
@@ -100,11 +77,38 @@ GoldenrodGymWhitneyScript:
 	opentext
 	writetext RematchTextWhitney
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextWhitney
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadWhitneyBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadWhitneyBattle:
+	writetext WhitneyBeforeText
+	waitbutton
+	closetext
+	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WHITNEY, MASTER_WHITNEY
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WHITNEY, WHITNEY1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer WHITNEY, WHITNEY1
+	endcallback
 
 GoldenrodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets

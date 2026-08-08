@@ -10,28 +10,9 @@ SaffronGymGiovanniScript:
 	opentext
 	checkevent EVENT_BEAT_GIOVANNI
 	iftrue .FightDone
-.rematch
-	writetext GiovanniIntroText
-	waitbutton
-	closetext
-	winlosstext GiovanniLossText, GiovanniWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer GIOVANNI, MASTER_GIOVANNI
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer GIOVANNI, LEADER_GIOVANNI
-.battle
+	scall .LoadGiovanniBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_GIOVANNI
-	iftrue .end
 	setevent EVENT_BEAT_GIOVANNI
 	opentext
 	writetext GiovanniFightDoneText
@@ -48,11 +29,33 @@ SaffronGymGiovanniScript:
 	opentext
 	writetext RematchTextGiovanni
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextGiovanni
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadGiovanniBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadGiovanniBattle:
+	writetext GiovanniIntroText
+	waitbutton
+	closetext
+	winlosstext GiovanniLossText, GiovanniWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer GIOVANNI, LEADER_GIOVANNI
+	endcallback
+.check_hard
+	readmem wLevelCap
+	ifless 100, .normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer GIOVANNI, MASTER_GIOVANNI
+	endcallback
 
 GiovanniIntroText:
     text "Welcome to the"

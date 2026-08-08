@@ -13,32 +13,9 @@ PewterGymBrockScript:
 	opentext
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .FightDone
-.rematch
-	writetext BrockIntroText
-	waitbutton
-	closetext
-	winlosstext BrockLossText, BrockWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BROCK, MASTER_BROCK
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BROCK, BROCK1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer BROCK, BROCK1
-.battle
+	scall .LoadBrockBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_BROCK
-	iftrue .end
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_CAMPER_JERRY
 	opentext
@@ -58,11 +35,38 @@ PewterGymBrockScript:
 	opentext
 	writetext RematchTextBrock
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextBrock
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadBrockBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadBrockBattle:
+	writetext BrockIntroText
+	waitbutton
+	closetext
+	winlosstext BrockLossText, BrockWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BROCK, MASTER_BROCK
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BROCK, BROCK1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer BROCK, BROCK1
+	endcallback
 
 TrainerCamperJerry:
 	trainer CAMPER, JERRY, EVENT_BEAT_CAMPER_JERRY, CamperJerrySeenText, CamperJerryBeatenText, 0, .Script

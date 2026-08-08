@@ -33,32 +33,9 @@ BlackthornGymClairScript:
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .FightDone
-.rematch
-	writetext ClairIntroText
-	waitbutton
-	closetext
-	winlosstext ClairWinText, ClairLoseText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer CLAIR, MASTER_CLAIR
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer CLAIR, CLAIR_HARD
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer CLAIR, CLAIR1
-.battle
+	scall .LoadClairBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_CLAIR
-	iftrue .end
 	setevent EVENT_BEAT_CLAIR
 	opentext
 	writetext ClairText_GoToDragonsDen
@@ -111,11 +88,38 @@ BlackthornGymClairScript:
 	opentext
 	writetext RematchTextClair
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextClair
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadClairBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadClairBattle:
+	writetext ClairIntroText
+	waitbutton
+	closetext
+	winlosstext ClairWinText, ClairLoseText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CLAIR, MASTER_CLAIR
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer CLAIR, CLAIR_HARD
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer CLAIR, CLAIR1
+	endcallback
 
 TrainerCooltrainermPaul:
 	trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script

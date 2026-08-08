@@ -17,32 +17,9 @@ AzaleaGymBugsyScript:
 	opentext
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .FightDone
-.rematch
-	writetext BugsyText_INeverLose
-	waitbutton
-	closetext
-	winlosstext BugsyText_ResearchIncomplete, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BUGSY, MASTER_BUGSY
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer BUGSY, BUGSY1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer BUGSY, BUGSY1
-.battle
+	scall .LoadBugsyBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_BUGSY
-	iftrue .end
 	setevent EVENT_BEAT_BUGSY
 	setmapscene ROUTE_36, SCENE_CUSTOM_2
 	readmem wLevelCap
@@ -81,11 +58,38 @@ AzaleaGymBugsyScript:
 	opentext
 	writetext RematchTextBugsy
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextBugsy
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadBugsyBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadBugsyBattle:
+	writetext BugsyText_INeverLose
+	waitbutton
+	closetext
+	winlosstext BugsyText_ResearchIncomplete, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BUGSY, MASTER_BUGSY
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer BUGSY, BUGSY1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer BUGSY, BUGSY1
+	endcallback
 .NoRoomForFuryCutter:
 	closetext
 	end

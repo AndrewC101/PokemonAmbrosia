@@ -26,32 +26,9 @@ EcruteakGymMortyScript:
 	opentext
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
-.rematch
-	writetext MortyIntroText
-	waitbutton
-	closetext
-	winlosstext MortyLossText, MortyWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer MORTY, MASTER_MORTY
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer MORTY, MORTY1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer MORTY, MORTY1
-.battle
+	scall .LoadMortyBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_MORTY
-	iftrue .end
 	setevent EVENT_BEAT_MORTY
 	readmem wLevelCap
 	ifgreater 50, .skipCap
@@ -92,11 +69,38 @@ EcruteakGymMortyScript:
 	opentext
 	writetext RematchTextMorty
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextMorty
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadMortyBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadMortyBattle:
+	writetext MortyIntroText
+	waitbutton
+	closetext
+	winlosstext MortyLossText, MortyWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MASTER_MORTY
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer MORTY, MORTY1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer MORTY, MORTY1
+	endcallback
 .NoRoomForShadowBall:
 	closetext
 	end

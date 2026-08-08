@@ -16,32 +16,9 @@ SaffronGymSabrinaScript:
 	opentext
 	checkflag ENGINE_MARSHBADGE
 	iftrue .FightDone
-.rematch
-	writetext SabrinaIntroText
-	waitbutton
-	closetext
-	winlosstext SabrinaLossText, SabrinaWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WILL, MASTER_WILL
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer WILL, WILL1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer WILL, WILL1
-.battle
+	scall .LoadSabrinaBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_WILL
-	iftrue .end
 	setevent EVENT_BEAT_WILL
 	setevent EVENT_BEAT_MEDIUM_REBECCA
 	setevent EVENT_BEAT_MEDIUM_DORIS
@@ -65,11 +42,38 @@ SaffronGymSabrinaScript:
 	opentext
 	writetext RematchTextSabrina
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextSabrina
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadSabrinaBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadSabrinaBattle:
+	writetext SabrinaIntroText
+	waitbutton
+	closetext
+	winlosstext SabrinaLossText, SabrinaWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WILL, MASTER_WILL
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer WILL, WILL1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer WILL, WILL1
+	endcallback
 
 TrainerMediumRebecca:
 	trainer MEDIUM, REBECCA, EVENT_BEAT_MEDIUM_REBECCA, MediumRebeccaSeenText, MediumRebeccaBeatenText, 0, .Script

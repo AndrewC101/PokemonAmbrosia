@@ -19,32 +19,9 @@ FuchsiaGymJanineScript:
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	faceplayer
 	opentext
-.rematch
-	writetext JanineText_DisappointYou
-	waitbutton
-	closetext
-	winlosstext JanineText_ToughOne, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JANINE, MASTER_JANINE
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JANINE, JANINE1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer JANINE, JANINE1
-.battle
+	scall .LoadJanineBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_JANINE
-	iftrue .end
 	setevent EVENT_BEAT_JANINE
 	setevent EVENT_BEAT_LASS_ALICE
 	setevent EVENT_BEAT_LASS_LINDA
@@ -71,12 +48,39 @@ FuchsiaGymJanineScript:
 	opentext
 	writetext RematchTextJanine
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextJanine
 	waitbutton
 	closetext
 .end
 	end
+.RematchBattle:
+	scall .LoadJanineBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadJanineBattle:
+	writetext JanineText_DisappointYou
+	waitbutton
+	closetext
+	winlosstext JanineText_ToughOne, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JANINE, MASTER_JANINE
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JANINE, JANINE1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer JANINE, JANINE1
+	endcallback
 
 LassAliceScript:
 	checkevent EVENT_BEAT_LASS_ALICE

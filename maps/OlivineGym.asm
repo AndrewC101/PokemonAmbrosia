@@ -12,32 +12,9 @@ OlivineGymJasmineScript:
 	opentext
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
-.rematch
-	writetext Jasmine_SteelTypeIntro
-	waitbutton
-	closetext
-	winlosstext Jasmine_BetterTrainer, 0
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JASMINE, MASTER_JASMINE
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer JASMINE, JASMINE1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer JASMINE, JASMINE1
-.battle
+	scall .LoadJasmineBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_JASMINE
-	iftrue .end
 	setevent EVENT_BEAT_JASMINE
 	checkevent EVENT_BEAT_CHUCK
 	iffalse .skipCap
@@ -79,11 +56,38 @@ OlivineGymJasmineScript:
 	opentext
 	writetext RematchTextJasmine
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseTextJasmine
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadJasmineBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadJasmineBattle:
+	writetext Jasmine_SteelTypeIntro
+	waitbutton
+	closetext
+	winlosstext Jasmine_BetterTrainer, 0
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JASMINE, MASTER_JASMINE
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer JASMINE, JASMINE1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer JASMINE, JASMINE1
+	endcallback
 .NoRoomForIronTail:
 	closetext
 	end

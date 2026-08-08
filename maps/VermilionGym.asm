@@ -15,7 +15,42 @@ VermilionGymSurgeScript:
 	opentext
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
-.rematch
+	scall .LoadSurgeBattle
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_LTSURGE
+	setevent EVENT_BEAT_GENTLEMAN_GREGORY
+	setevent EVENT_BEAT_GUITARIST_VINCENT
+	setevent EVENT_BEAT_JUGGLER_HORTON
+	opentext
+	writetext ReceivedThunderBadgeText
+	playsound SFX_GET_BADGE
+	waitsfx
+	setflag ENGINE_THUNDERBADGE
+	writetext LtSurgeThunderBadgeText
+	waitbutton
+	closetext
+.end
+	end
+
+.FightDone:
+	writetext LtSurgeFightDoneText
+	waitbutton
+    closetext
+	opentext
+	writetext RematchTextSurge
+	nooryes
+	iftrue .RematchBattle
+	writetext RematchRefuseTextSurge
+	waitbutton
+	closetext
+	end
+.RematchBattle:
+	scall .LoadSurgeBattle
+	startbattle
+	reloadmapafterbattle
+	end
+.LoadSurgeBattle:
 	writetext LtSurgeIntroText
 	yesorno
 	iffalse .refuseSong
@@ -32,51 +67,20 @@ VermilionGymSurgeScript:
 	ifless 100, .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LT_SURGE, MASTER_SURGE
-	sjump .battle
+	endcallback
 .hard
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer LT_SURGE, LT_SURGE1
-	sjump .battle
+	endcallback
 .normal
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	loadtrainer LT_SURGE, LT_SURGE1
-.battle
-	startbattle
-	reloadmapafterbattle
-	checkevent EVENT_BEAT_LTSURGE
-	iftrue .end
-	setevent EVENT_BEAT_LTSURGE
-	setevent EVENT_BEAT_GENTLEMAN_GREGORY
-	setevent EVENT_BEAT_GUITARIST_VINCENT
-	setevent EVENT_BEAT_JUGGLER_HORTON
-	opentext
-	writetext ReceivedThunderBadgeText
-	playsound SFX_GET_BADGE
-	waitsfx
-	setflag ENGINE_THUNDERBADGE
-	writetext LtSurgeThunderBadgeText
-	waitbutton
-	closetext
-.end
-	end
+	endcallback
 .refuseSong
     writetext LtSurgeFineThenText
     waitbutton
     closetext
     end
-
-.FightDone:
-	writetext LtSurgeFightDoneText
-	waitbutton
-    closetext
-	opentext
-	writetext RematchTextSurge
-	nooryes
-	iftrue .rematch
-	writetext RematchRefuseTextSurge
-	waitbutton
-	closetext
-	end
 
 TrainerGentlemanGregory:
 	trainer GENTLEMAN, GREGORY, EVENT_BEAT_GENTLEMAN_GREGORY, GentlemanGregorySeenText, GentlemanGregoryBeatenText, 0, .Script

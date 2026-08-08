@@ -14,41 +14,9 @@ VioletGymFalknerScript:
 	opentext
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
-.rematch
-	writetext FalknerIntroText
-	waitbutton
-	nooryes
-	closetext
-	opentext
-	writetext FalknerHaikuText
-	waitbutton
-	closetext
-	opentext
-	writetext FalknerIntroText2
-	waitbutton
-	closetext
-	winlosstext FalknerLossText, FalknerWinText
-	readmem wDifficulty
-	ifequal DIFFICULTY_HARD, .check_hard
-	sjump .normal
-.check_hard
-	readmem wLevelCap
-	ifless 100, .hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer FALKNER, MASTER_FALKNER
-	sjump .battle
-.hard
-	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
-	loadtrainer FALKNER, FALKNER1
-	sjump .battle
-.normal
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-	loadtrainer FALKNER, FALKNER1
-.battle
+	scall .LoadFalknerBattle
 	startbattle
 	reloadmapafterbattle
-	checkevent EVENT_BEAT_FALKNER
-	iftrue .end
 	setevent EVENT_BEAT_FALKNER
 	readmem wLevelCap
 	ifgreater 25, .skipCap
@@ -86,14 +54,51 @@ VioletGymFalknerScript:
 	opentext
 	writetext RematchText
 	nooryes
-	iftrue .rematch
+	iftrue .RematchBattle
 	writetext RematchRefuseText
 	waitbutton
 	closetext
 	end
+.RematchBattle:
+	scall .LoadFalknerBattle
+	startbattle
+	reloadmapafterbattle
+	end
 .NoRoomForMudSlap:
 	closetext
 	end
+
+.LoadFalknerBattle:
+	writetext FalknerIntroText
+	waitbutton
+	nooryes
+	closetext
+	opentext
+	writetext FalknerHaikuText
+	waitbutton
+	closetext
+	opentext
+	writetext FalknerIntroText2
+	waitbutton
+	closetext
+	winlosstext FalknerLossText, FalknerWinText
+	readmem wDifficulty
+	ifequal DIFFICULTY_HARD, .check_hard
+	sjump .normal
+.check_hard
+	readmem wLevelCap
+	ifless 100, .hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer FALKNER, MASTER_FALKNER
+	endcallback
+.hard
+	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
+	loadtrainer FALKNER, FALKNER1
+	endcallback
+.normal
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+	loadtrainer FALKNER, FALKNER1
+	endcallback
 
 VioletGymActivateRockets:
 	ifequal 7, .RadioTowerRockets

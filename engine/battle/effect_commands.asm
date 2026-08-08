@@ -1303,17 +1303,31 @@ BattleCommand_Stab:
 	jr .SkipStab
 
 .stab
+	push de
+	call GetCurrentMon
+	ld hl, AdaptabilityPokemon
+	ld de, 1
+	call IsInArray
+	pop de
+
 	ld hl, wCurDamage + 1
 	ld a, [hld]
 	ld h, [hl]
 	ld l, a
 
+	jr c, .adaptability
 	ld b, h
 	ld c, l
 	srl b
 	rr c
 	add hl, bc
+	jr .store_stab_damage
 
+.adaptability
+	; Adaptability turns STAB into 2x instead of the usual 1.5x.
+	add hl, hl
+
+.store_stab_damage
 	ld a, h
 	ld [wCurDamage], a
 	ld a, l
@@ -2000,8 +2014,7 @@ BattleCommand_EffectChance:
 	pop hl
 	pop de
 	pop bc
-    jr c, .sereneGrace
-    jr .continue
+    jr nc, .continue
 .sereneGrace
 	sla [hl]
 .continue
@@ -2273,8 +2286,7 @@ BattleCommand_ApplyDamage:
 	ld de, 1
 	call IsInArray
 	pop bc
-	jr c, .focusSash
-    jr .damage
+	jr nc, .damage
 
 .focusSash
  ; DevNote - this is actually focus sash
@@ -2608,6 +2620,16 @@ BattleCommand_CheckFaint:
 .no_dbond
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	cp EFFECT_SWITCH_HIT
+	jr nz, .not_switch_hit
+	farcall HasUserFainted
+	jr z, .finish
+	ldh a, [hBattleTurn]
+	inc a
+	ld [wDeferredSwitchHit], a
+	jr .finish
+
+.not_switch_hit
 	cp EFFECT_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_DOUBLE_FLINCH_HIT
@@ -3487,9 +3509,7 @@ BattleCommand_DamageCalc:
 	call IsInArray
 	pop bc
 	pop de
-	jr c, .multiscaleReduction
-    jr .finishDamage
-.multiscaleReduction
+	jr nc, .finishDamage
 	call HalfDamage
 .finishDamage
 
@@ -3513,8 +3533,7 @@ BattleCommand_DamageCalc:
 	cp FIRE
     jr z, .thickFatReduction
     cp ICE
-    jr z, .thickFatReduction
-    jr .finishThickFat
+    jr nz, .finishThickFat
 .thickFatReduction
 	call HalfDamage
 .finishThickFat
@@ -3545,9 +3564,7 @@ BattleCommand_DamageCalc:
 	call IsInArray
 	pop bc
 	pop de
-	jr c, .loadMovePower
-    jr .finishTechnician
-.loadMovePower
+	jr nc, .finishTechnician
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
     cp $3D ; is power larger than 60
@@ -3756,16 +3773,14 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	cp EFFECT_LEVEL_DAMAGE
 	ld b, [hl]
-	ld a, 0
 	jr z, .got_power
 
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	ld b, a
-	ld a, $0
-	jr .got_power
 
 .got_power
+	xor a
 	ld hl, wCurDamage
 	ld [hli], a
 	ld [hl], b
@@ -5902,8 +5917,7 @@ BattleCommand_FlinchTarget:
 	ld de, 1
 	call IsInArray
 	pop bc
-	jr c, .noFlinch
-    jr FlinchTarget
+    jr nc, FlinchTarget
 .noFlinch
 	ld hl, CantFlinchText
 	jp StdBattleTextbox
@@ -5929,30 +5943,12 @@ CheckOpponentWentFirst:
 
 BattleCommand_HeldFlinch:
 ; kingsrock
+	farcall BattleCommand_HeldFlinch_Core2
+	ret
 
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call GetUserItem
-	ld a, b
-	cp HELD_FLINCH
-	ret nz
-
-	call CheckSubstituteOpp
-	ret nz
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	ld d, h
-	ld e, l
-	call GetUserItem
-	call BattleRandom
-	cp c
-	ret nc
-	call EndRechargeOpp
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLINCHED, [hl]
+BattleCommand_SwitchHit:
+; switchhit
+	farcall BattleCommand_SwitchHit_Core2
 	ret
 
 BattleCommand_CheckDeathImmunity:
@@ -6267,7 +6263,6 @@ BattleCommand_TrapTarget:
 .Traps:
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 
 INCLUDE "engine/battle/move_effects/geomancy.asm"
@@ -6307,9 +6302,7 @@ BattleCommand_Recoil:
 	pop hl
 	pop de
 	pop bc
-	jr c, .rockHead
-    jr .endRockHead
-.rockHead
+	jr nc, .endRockHead
 	ld hl, RockHeadText
 	jp StdBattleTextbox
 .endRockHead

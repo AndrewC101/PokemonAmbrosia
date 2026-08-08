@@ -319,7 +319,7 @@ ScreenBreakSwitch:
 	ret z
 .effect
     push hl
-    ld de, POISON_GAS
+    ld de, ANIM_SCREEN_BREAK
     farcall SwitchTurnCore
     call PlayAnimationIfNeeded
     farcall SwitchTurnCore
@@ -2922,6 +2922,148 @@ CoordsBCtoHL:
 	ret nc
 	inc h
 	ret
+
+BattleCommand_HeldFlinch_Core2:
+; kingsrock
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	farcall GetUserItem
+	ld a, b
+	cp HELD_FLINCH
+	ret nz
+
+	farcall CheckSubstituteOpp
+	ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	ld d, h
+	ld e, l
+	farcall GetUserItem
+	call BattleRandom
+	cp c
+	ret nc
+	farcall EndRechargeOpp
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	set SUBSTATUS_FLINCHED, [hl]
+	ret
+
+BattleCommand_SwitchHit_Core2:
+; switchhit
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_SWITCH_HIT
+	ret nz
+
+SwitchHitAfterSuccessfulHit:
+	farcall HasUserFainted
+	ret z
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+	farcall CheckAnyOtherAlivePartyMons
+	ret z
+
+	farcall UpdateBattleMonInParty
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu
+	farcall ForcePickSwitchMonInBattle
+
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP
+	farcall BatonPass_LinkPlayerSwitch
+
+	farcall CheckMobileBattleError
+	ret c
+
+	farcall PlayerPartyMonEntrance
+	ld a, TRUE
+	and a
+	ret
+
+.enemy
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	ret z
+
+	farcall CheckAnyOtherAliveEnemyMons
+	ret z
+
+	farcall UpdateEnemyMonInParty
+	farcall BatonPass_LinkEnemySwitch
+	farcall CheckMobileBattleError
+	ret c
+
+; Link battles use wBattleAction from the link exchange, not local RNG.
+	ld a, [wLinkMode]
+	and a
+	jr nz, .got_enemy_switch_mon
+	call .PickEnemySwitchMon
+	ret c
+	inc a
+	ld [wEnemySwitchMonIndex], a
+.got_enemy_switch_mon
+	farcall NewEnemyMonStatus
+	farcall ResetEnemyStatLevels
+	farcall BreakAttraction
+	farcall EnemySwitch_SetMode
+	farcall ResetBattleParticipants
+	call SetEnemyTurn
+	farcall SpikesDamage
+	farcall SwitchInEffects
+	xor a
+	ld [wEnemyMoveStruct + MOVE_ANIM], a
+	ld [wBattlePlayerAction], a
+	inc a
+	ret
+
+.PickEnemySwitchMon:
+; Return a random alive enemy party index in a, excluding wCurOTMon.
+	ld a, [wOTPartyCount]
+	ld b, a
+	ld a, [wCurOTMon]
+	ld c, a
+.loop
+	call BattleRandom
+	and $7
+	cp b
+	jr nc, .loop
+	cp c
+	jr z, .loop
+	push af
+	push bc
+	ld hl, wOTPartyMon1HP
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	pop bc
+	pop de
+	jr z, .loop
+	ld a, d
+	and a
+	ret
+
+TryDeferredSwitchHitAfterKO:
+	ld a, [wDeferredSwitchHit]
+	and a
+	ret z
+	dec a
+	ldh [hBattleTurn], a
+	xor a
+	ld [wDeferredSwitchHit], a
+	jp SwitchHitAfterSuccessfulHit
 
 HLMultiply:
 ; Returns hl + a * c

@@ -3242,8 +3242,9 @@ wNewGamePlus:: db
 wDoubleExp:: db
 wForcedMenu:: db
 wPersistentBattleMusicOverride:: ds 2
-; DevNote - 137 free bytes!
-	ds 137
+wDeferredSwitchHit:: db
+; DevNote - 136 free bytes!
+	ds 136
 
 wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db

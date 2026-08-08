@@ -113,7 +113,7 @@ Moves: ; 41afb
 	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          STATUS,    85, 15,   0
 	move TELEPORT,     EFFECT_TELEPORT,            0, PSYCHIC_TYPE,  STATUS,   100, 20,   0
 	move NIGHT_SHADE,  EFFECT_LEVEL_DAMAGE,        1, GHOST,         SPECIAL,  100, 15,   0
-	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,        STATUS,   100, 10,   0 ; not used
+	move U_TURN,       EFFECT_SWITCH_HIT,         70, BUG,           PHYSICAL, 100, 20,   0
 	move SCREECH,      EFFECT_DEFENSE_DOWN_2,      0, NORMAL,        STATUS,    85, 40,   0
 	move AFTER_IMAGE,  EFFECT_EVASION_UP_2,        0, UBER,          STATUS,   100, 15,   0
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
@@ -139,7 +139,7 @@ Moves: ; 41afb
 	move CLOSE_COMBAT, EFFECT_NORMAL_HIT,        110, FIGHTING,      PHYSICAL, 100, 10,   0
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,          SPECIAL,   85, 10,  10
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,         PHYSICAL, 100, 15,  20
-	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         PHYSICAL,  75, 10,   0 ; not used
+	move VOLT_SWITCH,  EFFECT_SWITCH_HIT,         70, ELECTRIC,      SPECIAL,  100, 20,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0
 	move PSYCHO_BOOST, EFFECT_NORMAL_HIT,        120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0
 	move DISCHARGE,    EFFECT_PARALYZE_HIT,       80, ELECTRIC,      SPECIAL,  100, 15,  30
@@ -150,7 +150,7 @@ Moves: ; 41afb
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         120, FIGHTING,      PHYSICAL,  90, 20,   0
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,        STATUS,   100, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC_TYPE,  SPECIAL,  100, 15,   0
-	move POISON_GAS,   EFFECT_POISON,              0, POISON,        STATUS,    65, 40,   0 ; - not used
+	move FLIP_TURN,    EFFECT_SWITCH_HIT,         70, WATER,         PHYSICAL, 100, 20,   0
 	move ROOST,        EFFECT_HEAL,                0, FLYING,        STATUS,   100, 10,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          50, BUG,           PHYSICAL, 100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        STATUS,    70, 10,   0

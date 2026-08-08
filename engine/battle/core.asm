@@ -6,6 +6,7 @@ DoBattle:
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
+	ld [wDeferredSwitchHit], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -2418,6 +2419,20 @@ HandleEnemyMonFaint:
 	jr DoubleSwitch
 
 .player_mon_not_fainted
+	farcall TryDeferredSwitchHitAfterKO
+	jr z, .regular_enemy_switch
+	ld a, [wLinkMode]
+	and a
+	jr nz, .regular_enemy_switch
+	ld a, BATTLEPLAYERACTION_USEITEM
+	ld [wBattlePlayerAction], a
+	ld a, TRUE
+	call EnemyPartyMonEntrance
+	xor a ; BATTLEPLAYERACTION_USEMOVE
+	ld [wBattlePlayerAction], a
+	ret
+
+.regular_enemy_switch
 	ld a, BATTLEPLAYERACTION_USEITEM
 	ld [wBattlePlayerAction], a
 	call HandleEnemySwitch
@@ -3081,6 +3096,7 @@ HandlePlayerMonFaint:
 	jp z, WinTrainerBattle
 
 .notfainted
+	farcall TryDeferredSwitchHitAfterKO
 	call AskUseNextPokemon
 	jr nc, .switch
 	ld a, $1
@@ -4895,9 +4911,6 @@ SwitchInEffects:
 	jp c, .taunt
 
 	ld a, c
-    cp ESPEON
-    jp z, .espeon
-	ld a, c
 	ld hl, .SpecialAttackUpMons
 	call IsInArray
 	jp c, .spAtkUp
@@ -5059,7 +5072,7 @@ SwitchInEffects:
 	db AMPHAROS, ZAPDOS, GARDEVOIR, LATIAS, NINETALES, XERNEAS, -1
 
 .SafeguardMons
-	db MOLTRES, POLTEGEIST, PALKIA, ZYGARDE, -1
+	db MOLTRES, ESPEON, POLTEGEIST, PALKIA, ZYGARDE, -1
 
 .NaturalCureMons
 	db STARMIE, SCEPTILE, CHANSEY, BLISSEY, SHAYMIN, TOGEKISS, MEW, -1
@@ -5129,9 +5142,6 @@ SwitchInEffects:
     farcall TauntSwitch
     call ClearFailures
     jp .spAtkUp
-.espeon
-    farcall SafeguardSwitch
-    ; fallthrough
 .spAtkUp
     farcall SpecialAttackUpSwitch
 	ret
@@ -5438,12 +5448,14 @@ BattleFlinchAnimation:
 	push de
 	push bc
 	call EmptyBattleTextbox
-	ld a, MIMIC ; flinch animation
+	ld de, ANIM_FLINCH
+	ld a, e
 	ld [wFXAnimID], a
+	ld a, d
+	ld [wFXAnimID + 1], a
 	call SwitchTurnCore
 	xor a
 	ld [wBattleAfterAnim], a
-	ld [wFXAnimID + 1], a
 	predef PlayBattleAnim
 	call SwitchTurnCore
 	pop bc

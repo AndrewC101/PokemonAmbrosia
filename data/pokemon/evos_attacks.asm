@@ -158,6 +158,7 @@ ScolipedeEvosAttacks:
 	db 15, BITE
 	db 21, SLUDGE
 	db 23, CRUNCH
+	db 26, U_TURN
 	db 30, TOXIC_SPIKES
 	db 32, BUG_BUZZ
 	db 35, CROSS_POISON
@@ -223,6 +224,7 @@ StarlyEvosAttacks:
 	db 5, QUICK_ATTACK
 	db 9, FALSE_SWIPE
 	db 15, WING_ATTACK
+	db 17, U_TURN
 	db 20, DEFOG
 	db 24, SLASH
 	db 34, FLY
@@ -242,6 +244,7 @@ StaraptorEvosAttacks:
 	db 5, QUICK_ATTACK
 	db 9, FALSE_SWIPE
 	db 14, WING_ATTACK
+	db 17, U_TURN
 	db 20, DEFOG
 	db 24, SLASH
 	db 34, FLY
@@ -341,7 +344,7 @@ PikachuEvosAttacks:
 	db 1, GROWL
 	db 5, THUNDER_WAVE
 	db 8, QUICK_ATTACK
-	db 15, BODY_SLAM
+	db 15, VOLT_SWITCH
 	db 21, DISCHARGE
 	db 24, AGILITY
 	db 27, CRUNCH
@@ -357,7 +360,7 @@ RaichuEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 5, THUNDER_WAVE
 	db 8, QUICK_ATTACK
-	db 15, BODY_SLAM
+	db 15, VOLT_SWITCH
 	db 21, DISCHARGE
 	db 27, CRUNCH
 	db 30, THUNDERBOLT
@@ -370,10 +373,10 @@ RotomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, WATER_GUN
-	db 10, CONFUSE_RAY
 	db 15, THUNDER_WAVE
 	db 20, PAIN_SPLIT
-	db 25, WILL_O_WISP
+	db 23, WILL_O_WISP
+	db 25, VOLT_SWITCH
 	db 30, SHADOW_BALL
 	db 35, DISCHARGE
 	db 40, THUNDERBOLT
@@ -566,6 +569,7 @@ ZubatEvosAttacks:
 	db 21, SLUDGE
 	db 22, WING_ATTACK
 	db 28, AIR_SLASH
+	db 30, U_TURN
 	db 33, CRUNCH
 	db 37, SLUDGE_BOMB
 	db 40, DEFOG
@@ -586,6 +590,7 @@ CrobatEvosAttacks:
 	db 20, SLUDGE
 	db 22, WING_ATTACK
 	db 28, AIR_SLASH
+	db 30, U_TURN
 	db 33, CRUNCH
 	db 37, SLUDGE_BOMB
 	db 40, DEFOG
@@ -632,10 +637,10 @@ HawluchaEvosAttacks:
 	db 12, LOW_KICK
 	db 16, ENCORE
 	db 16, TAUNT
-	db 20, DOUBLE_KICK
+	db 20, U_TURN
 	db 25, SUBMISSION
 	db 30, ROOST
-	db 35, DEFOG
+	db 35, DRAIN_PUNCH
 	db 40, BULK_UP
 	db 45, HI_JUMP_KICK
 	db 50, BRAVE_BIRD
@@ -661,10 +666,10 @@ ArctozoltEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POWDER_SNOW
 	db 1, THUNDERSHOCK
-	db 12, BITE
 	db 21, ANCIENTPOWER
-	db 28, THUNDERPUNCH
-	db 30, ICE_PUNCH
+	db 25, THUNDERPUNCH
+	db 25, ICE_PUNCH
+	db 30, VOLT_SWITCH
 	db 35, HAIL
 	db 40, THUNDERBOLT
 	db 42, FREEZE_DRY
@@ -678,11 +683,11 @@ DracovishEvosAttacks:
 	db 1, WATER_GUN
 	db 12, BITE
 	db 21, ANCIENTPOWER
-	db 28, AQUA_JET
-	db 30, DRAGON_CLAW
+	db 24, AQUA_JET
+	db 30, FLIP_TURN
 	db 35, CRUNCH
-	db 40, SURF
-	db 42, DRAGON_PULSE
+	db 37, DRAGON_CLAW
+	db 40, WATERFALL
 	db 45, OUTRAGE
 	db 50, DRACO_IMPACT
 	db 55, SAVAGE_REND
@@ -760,9 +765,9 @@ PoliwagEvosAttacks:
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
 	db 10, AQUA_JET
-	db 13, DOUBLESLAP
-	db 20, BUBBLEBEAM
-	db 26, BODY_SLAM
+	db 13, BUBBLEBEAM
+	db 20, BODY_SLAM
+	db 26, FLIP_TURN
 	db 30, RAIN_DANCE
 	db 35, WATERFALL
 	db 42, BULK_UP
@@ -777,9 +782,9 @@ PoliwhirlEvosAttacks:
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
 	db 10, AQUA_JET
-	db 13, DOUBLESLAP
-	db 20, BUBBLEBEAM
-	db 25, BODY_SLAM
+	db 13, BUBBLEBEAM
+	db 20, BODY_SLAM
+	db 25, FLIP_TURN
 	db 30, RAIN_DANCE
 	db 35, WATERFALL
 	db 42, BULK_UP
@@ -792,8 +797,9 @@ PoliwrathEvosAttacks:
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
 	db 10, AQUA_JET
-	db 13, DOUBLESLAP
-	db 20, BUBBLEBEAM
+	db 13, BUBBLEBEAM
+	db 20, BODY_SLAM
+	db 25, FLIP_TURN
 	db 25, RAIN_DANCE
 	db 30, DRAIN_PUNCH
 	db 35, WATERFALL
@@ -997,7 +1003,7 @@ MagnemiteEvosAttacks:
 	db 1, THUNDERSHOCK
 	db 10, SONICBOOM
 	db 15, THUNDER_WAVE
-	db 20, TRI_ATTACK
+	db 20, VOLT_SWITCH
 	db 25, FLASH_CANNON
 	db 31, DISCHARGE
     db 36, THUNDERBOLT
@@ -1047,7 +1053,7 @@ ElectivireEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, THUNDERSHOCK
 	db 16, LIGHT_SCREEN
-	db 20, THUNDER_WAVE
+	db 20, VOLT_SWITCH
 	db 24, THUNDERPUNCH
 	db 28, SUBMISSION
 	db 32, DISCHARGE
@@ -1063,7 +1069,8 @@ MagnezoneEvosAttacks:
 	db 1, TACKLE
 	db 1, THUNDERSHOCK
 	db 16, SONICBOOM
-	db 21, THUNDER_WAVE
+	db 20, THUNDER_WAVE
+	db 23, VOLT_SWITCH
 	db 26, FLASH_CANNON
 	db 30, DISCHARGE
 	db 33, TRI_ATTACK
@@ -1081,7 +1088,8 @@ YanmegaEvosAttacks:
 	db 10, BITE
 	db 14, LEECH_LIFE
 	db 18, WING_ATTACK
-	db 24, HYPNOSIS
+	db 22, HYPNOSIS
+	db 26, U_TURN
 	db 30, ANCIENTPOWER
 	db 33, STICKY_WEB
 	db 35, AIR_SLASH
@@ -1138,7 +1146,7 @@ CloysterEvosAttacks:
 	db 20, HAIL
 	db 22, BUBBLEBEAM
 	db 28, AURORA_BEAM
-	db 30, CLAMP
+	db 30, FLIP_TURN
 	db 35, WATERFALL
 	db 40, FREEZE_DRY
 	db 50, HYDRO_PUMP
@@ -1269,7 +1277,7 @@ AzumarillEvosAttacks:
 	db 6, DEFENSE_CURL
 	db 16, AQUA_JET
 	db 18, HEADBUTT
-	db 25, ROLLOUT
+	db 25, FLIP_TURN
 	db 30, BODY_SLAM
 	db 35, WATERFALL
 	db 40, PLAY_ROUGH
@@ -1378,10 +1386,10 @@ RhyperiorEvosAttacks:
 
 SneaslerEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, QUICK_ATTACK
 	db 1, POISON_STING
 	db 1, FOCUS_ENERGY
 	db 15, KARATE_CHOP
+	db 20, U_TURN
 	db 22, SLASH
 	db 25, TAUNT
 	db 30, NIGHT_SLASH
@@ -1443,6 +1451,7 @@ StarmieEvosAttacks:
 	db 19, RECOVER
 	db 22, PSYBEAM
 	db 25, BUBBLEBEAM
+	db 30, FLIP_TURN
 	db 33, AURORA_BEAM
 	db 38, PSYCHIC_M
 	db 40, RECOVER
@@ -1477,6 +1486,7 @@ ScytherEvosAttacks:
 	db 12, FEINT_ATTACK
 	db 15, FALSE_SWIPE
 	db 18, SLASH
+	db 20, U_TURN
 	db 24, WING_ATTACK
     db 31, X_SCISSOR
     db 40, LEECH_LIFE
@@ -1550,6 +1560,7 @@ GyaradosEvosAttacks:
 	db 1, THRASH
 	db 20, BITE
 	db 25, DRAGON_RAGE
+	db 30, FLIP_TURN
 	db 35, CRUNCH
 	db 40, WATERFALL
 	db 45, HURRICANE
@@ -1625,7 +1636,7 @@ JolteonEvosAttacks:
 	db 8, FOCUS_ENERGY
 	db 12, QUICK_ATTACK
 	db 16, THUNDERSHOCK
-	db 25, THUNDER_WAVE
+	db 25, VOLT_SWITCH
 	db 28, FLASH_CANNON
 	db 30, DISCHARGE
 	db 32, AGILITY
@@ -1760,10 +1771,9 @@ ArticunoEvosAttacks:
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, THUNDERSHOCK
-	db 13, THUNDER_WAVE
-	db 25, DRILL_PECK
+	db 1, THUNDER_WAVE
+	db 1, DRILL_PECK
+	db 25, VOLT_SWITCH
 	db 30, AIR_SLASH
 	db 35, DISCHARGE
 	db 40, AURORA_BEAM
@@ -1871,7 +1881,7 @@ TreeckoEvosAttacks:
 	db 14, FEINT_ATTACK
 	db 12, QUICK_ATTACK
 	db 17, RAZOR_LEAF
-	db 20, MEGA_DRAIN
+	db 20, U_TURN
 	db 25, SLASH
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
@@ -1891,7 +1901,7 @@ SceptileEvosAttacks:
 	db 14, FEINT_ATTACK
 	db 12, QUICK_ATTACK
 	db 16, RAZOR_LEAF
-	db 20, MEGA_DRAIN
+	db 20, U_TURN
 	db 25, SLASH
 	db 32, X_SCISSOR
 	db 36, GIGA_DRAIN
@@ -1907,6 +1917,7 @@ ChimcharEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
+	db 12, U_TURN
 	db 16, KARATE_CHOP
 	db 20, MACH_PUNCH
 	db 22, WILL_O_WISP
@@ -1927,6 +1938,7 @@ InfernapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 8, EMBER
+	db 12, U_TURN
 	db 16, KARATE_CHOP
 	db 20, MACH_PUNCH
 	db 22, WILL_O_WISP
@@ -1968,9 +1980,10 @@ GreninjaEvosAttacks:
 	db 6, WATER_GUN
 	db 8, QUICK_ATTACK
 	db 10, AQUA_JET
-	db 12, DISABLE
-	db 16, SWIFT
-	db 20, NIGHT_SHADE
+	db 13, DISABLE
+	db 15, SWIFT
+	db 18, NIGHT_SHADE
+	db 20, FLIP_TURN
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M
 	db 36, NIGHT_SLASH
@@ -2045,8 +2058,8 @@ GalvantulaEvosAttacks:
 	db 8, ABSORB
 	db 12, MEGA_DRAIN
 	db 16, THUNDER_WAVE
-	db 20, X_SCISSOR
-	db 24, GIGA_DRAIN
+	db 22, U_TURN
+	db 22, VOLT_SWITCH
 	db 28, DISCHARGE
 	db 30, BUG_BUZZ
 	db 36, THUNDERBOLT
@@ -2182,7 +2195,7 @@ MareepEvosAttacks:
 	db 1, TACKLE
 	db 1, THUNDERSHOCK
 	db 18, THUNDER_WAVE
-	db 25, THUNDERPUNCH
+	db 25, VOLT_SWITCH
 	db 31, DISCHARGE
 	db 33, LIGHT_SCREEN
 	db 36, THUNDERBOLT
@@ -2197,7 +2210,7 @@ AmpharosEvosAttacks:
 	db 1, TACKLE
 	db 1, THUNDERSHOCK
 	db 18, THUNDER_WAVE
-	db 25, THUNDERPUNCH
+	db 25, VOLT_SWITCH
 	db 30, DISCHARGE
 	db 33, LIGHT_SCREEN
 	db 36, THUNDERBOLT
@@ -2271,8 +2284,8 @@ GenesectEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_LIFE
 	db 14, METAL_CLAW
-	db 20, TRI_ATTACK
-	db 25, ANCIENTPOWER
+	db 20, ANCIENTPOWER
+	db 25, U_TURN
 	db 30, X_SCISSOR
 	db 35, IRON_HEAD
 	db 38, ZAP_CANNON
@@ -2379,7 +2392,7 @@ MudkipEvosAttacks:
     db 17, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
-	db 30, BODY_SLAM
+	db 30, FLIP_TURN
 	db 33, STEALTH_ROCK
 	db 36, WATERFALL
 	db 40, AMNESIA
@@ -2397,7 +2410,7 @@ SwampertEvosAttacks:
     db 16, MAGNITUDE
 	db 20, BUBBLEBEAM
 	db 25, ROCK_SLIDE
-	db 30, BODY_SLAM
+	db 30, FLIP_TURN
 	db 33, STEALTH_ROCK
 	db 36, WATERFALL
 	db 40, AMNESIA
@@ -2551,6 +2564,7 @@ ScizorEvosAttacks:
 	db 6, FOCUS_ENERGY
 	db 12, FEINT_ATTACK
 	db 18, FALSE_SWIPE
+	db 20, U_TURN
 	db 24, AGILITY
 	db 30, BULLET_PUNCH
 	db 36, X_SCISSOR
@@ -2830,13 +2844,13 @@ DialgaEvosAttacks:
 
 KleavorEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROCK_THROW
+	db 1, CUT
 	db 1, STEALTH_ROCK
-	db 6, LEECH_LIFE
 	db 10, AGILITY
 	db 12, FEINT_ATTACK
 	db 15, FALSE_SWIPE
 	db 18, LEECH_LIFE
+	db 20, U_TURN
 	db 26, ROCK_SLIDE
     db 30, X_SCISSOR
     db 35, NIGHT_SLASH
@@ -2914,11 +2928,10 @@ BlisseyEvosAttacks:
 
 RaikouEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, BITE
-	db 1, LEER
-	db 11, THUNDERSHOCK
-	db 21, ROAR
-	db 31, QUICK_ATTACK
+	db 1, THUNDERSHOCK
+	db 1, ROAR
+	db 25, EXTREMESPEED
+	db 31, VOLT_SWITCH
 	db 36, DISCHARGE
 	db 41, THUNDERBOLT
 	db 45, CRUNCH

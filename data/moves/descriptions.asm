@@ -102,7 +102,7 @@ MoveDescriptions::
 	dw WillOWispDescription
 	dw TeleportDescription
 	dw NightShadeDescription
-	dw MimicDescription
+	dw SwitchHitDescription
 	dw ScreechDescription
 	dw DoubleTeamDescription
 	dw RecoverDescription
@@ -128,7 +128,7 @@ MoveDescriptions::
 	dw CloseCombatDescription
 	dw FireBlastDescription
 	dw WaterfallDescription
-	dw ClampDescription
+	dw SwitchHitDescription
 	dw SwiftDescription
 	dw PsychoBoostDescription
 	dw DischargeDescription
@@ -139,7 +139,7 @@ MoveDescriptions::
 	dw HiJumpKickDescription
 	dw GlareDescription
 	dw DreamEaterDescription
-	dw PoisonGasDescription
+	dw SwitchHitDescription
 	dw RoostDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
@@ -682,9 +682,9 @@ NightShadeDescription:
 	db   "The user's level"
 	line "equals damage HP.@"
 
-MimicDescription:
-	db   "Copies a move used"
-	line "by the foe.@"
+SwitchHitDescription:
+	db   "Attacks, then"
+	line "switches out.@"
 
 ScreechDescription:
 	db   "Sharply reduces"
@@ -786,10 +786,6 @@ WaterfallDescription:
 	db   "An attack that may"
 	line "cause flinching.@"
 
-ClampDescription:
-	db   "Traps the foe for"
-	line "2-5 turns.@"
-
 SwiftDescription:
 	db   "An attack that"
 	line "never misses.@"
@@ -829,10 +825,6 @@ GlareDescription:
 DreamEaterDescription:
 	db   "Steals HP from a"
 	line "sleeping victim.@"
-
-PoisonGasDescription:
-	db   "A move that may"
-	line "poison the foe.@"
 
 RoostDescription:
 	db   "Restores HP by 1/2"

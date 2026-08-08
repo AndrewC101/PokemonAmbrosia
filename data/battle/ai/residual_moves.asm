@@ -6,7 +6,6 @@ ResidualMoves:
 	db STUN_SPORE
 	db THUNDER_WAVE
 	db FOCUS_ENERGY
-	db POISON_GAS
 	db TRANSFORM
 	db SUBSTITUTE
 	db SPIKES

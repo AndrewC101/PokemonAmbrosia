@@ -107,7 +107,7 @@
 	const WILL_O_WISP  ; 63
 	const TELEPORT     ; 64
 	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66 - not used
+	const U_TURN       ; 66
 	const SCREECH      ; 67
 	const AFTER_IMAGE  ; 68
 	const RECOVER      ; 69
@@ -133,7 +133,7 @@
 	const CLOSE_COMBAT ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
-	const CLAMP        ; 80 - not used
+	const VOLT_SWITCH  ; 80
 	const SWIFT        ; 81
 	const PSYCHO_BOOST ; 82
 	const DISCHARGE    ; 83
@@ -144,7 +144,7 @@
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
-	const POISON_GAS   ; 8b  - not used
+	const FLIP_TURN    ; 8b
 	const ROOST        ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
@@ -293,4 +293,6 @@ DEF BATTLE_AFTERANIMS EQU const_value
 	const ANIM_SHAKE             ; 114
 	const ANIM_HIT_CONFUSION     ; 115
 	const ANIM_IN_HAIL           ; 116
+	const ANIM_FLINCH            ; 117
+	const ANIM_SCREEN_BREAK      ; 118
 DEF NUM_BATTLE_ANIMS EQU const_value - 1

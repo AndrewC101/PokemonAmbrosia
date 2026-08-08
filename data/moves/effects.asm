@@ -20,6 +20,7 @@ NormalHit:
 	checkfaint
 	buildopponentrage
 	kingsrock
+	switchhit
 	endmove
 
 DoSleep:

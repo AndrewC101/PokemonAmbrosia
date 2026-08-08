@@ -103,7 +103,7 @@ BattleAnimations::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_Teleport
 	dw BattleAnim_NightShade
-	dw BattleAnim_Flinch
+	dw BattleAnim_QuickAttack
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
@@ -129,7 +129,7 @@ BattleAnimations::
 	dw BattleAnim_CloseCombat
 	dw BattleAnim_FireBlast
 	dw BattleAnim_Waterfall
-	dw BattleAnim_Tackle
+	dw BattleAnim_Thunderbolt
 	dw BattleAnim_Swift
 	dw BattleAnim_PsychoBoost
 	dw BattleAnim_Discharge
@@ -140,7 +140,7 @@ BattleAnimations::
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
-	dw BattleAnim_PoisonGas
+	dw BattleAnim_AquaJet
 	dw BattleAnim_Roost
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
@@ -283,6 +283,8 @@ BattleAnimations::
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_InHail
+	dw BattleAnim_Flinch
+	dw BattleAnim_PoisonGas
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_Dummy:

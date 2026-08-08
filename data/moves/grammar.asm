@@ -33,7 +33,6 @@ MoveGrammar:
 
 ; 2: originally "[mon]の¯[move]¯した!" ("[mon]¯did¯[move]!")
 	db AGILITY
-	db MIMIC
 	db AFTER_IMAGE
 	db TRANSFORM
 	db STRUGGLE
@@ -63,8 +62,9 @@ MoveGrammar:
 	db TOXIC
 	db SCREECH
 	db METRONOME
-	db CLAMP
-	db POISON_GAS
+	db U_TURN
+	db VOLT_SWITCH
+	db FLIP_TURN
 	db SLASH
 	db NIGHTMARE
 	db CURSE

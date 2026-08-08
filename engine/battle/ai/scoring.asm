@@ -864,6 +864,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_ATTRACT,          AI_Smart_Attract
 	dbw EFFECT_MAGNITUDE,        AI_Smart_Magnitude
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
+	dbw EFFECT_SWITCH_HIT,       AI_Smart_SwitchHit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
 	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
 	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
@@ -2982,6 +2983,48 @@ AI_Smart_BatonPass:
     inc [hl]
     inc [hl]
     ret
+
+AI_Smart_SwitchHit:
+; Slightly prefer pivoting when the player can 2HKO us, but we cannot 2HKO them.
+	push hl
+	farcall FindAliveEnemyMons
+	pop hl
+	ret c
+	push hl
+	farcall CheckAnyOtherAlivePartyMons
+	pop hl
+	ret z
+
+	ld a, [wEnemyMoveStruct + MOVE_ANIM]
+	cp VOLT_SWITCH
+	jr nz, .check_flip_turn
+
+; Do not Volt Switch into Ground-types or Electric-immune ability targets.
+	ld a, [wBattleMonType1]
+	cp GROUND
+	jp z, AIDiscourageMove
+	ld a, [wBattleMonType2]
+	cp GROUND
+	jp z, AIDiscourageMove
+	call DoesEnemyMoveTypeTriggerPlayerAbilityImmunity
+	jp c, AIDiscourageMove
+	jr .check_damage_race
+
+.check_flip_turn
+	cp FLIP_TURN
+	jr nz, .check_damage_race
+
+; Do not Flip Turn into Water-immune ability targets.
+	call DoesEnemyMoveTypeTriggerPlayerAbilityImmunity
+	jp c, AIDiscourageMove
+
+.check_damage_race
+	call CanPlayer2HKO
+	ret nc
+	call CanAI2HKO
+	ret c
+	dec [hl]
+	ret
 
 AI_Smart_RapidSpin:
     call DoesAIOutSpeedPlayer

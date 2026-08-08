@@ -31,7 +31,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db GOLD_BERRY
-	db DRAGON_RAGE, WATERFALL, EARTHQUAKE, FLY
+	db DRAGON_RAGE, WATERFALL, FLIP_TURN, FLY
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -41,7 +41,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 15, 10, 15 ; PP
+	db 10, 15, 20, 15 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 24 ; Level
@@ -109,7 +109,7 @@ BattleTowerMons:
 
 	db AZUMARILL
 	db CHOICE_BAND
-	db PLAY_ROUGH, AQUA_JET, DRAIN_PUNCH, ICE_PUNCH
+	db PLAY_ROUGH, AQUA_JET, DRAIN_PUNCH, FLIP_TURN
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -119,7 +119,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 20, 15, 15 ; PP
+	db 15, 20, 15, 20 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 24 ; Level
@@ -681,7 +681,7 @@ BattleTowerMons:
 
 	db FLAREON
 	db LEFTOVERS
-	db LAVA_PLUME, EARTH_POWER, GIGA_DRAIN, MORNING_SUN
+	db FIRE_BLAST, EARTH_POWER, GIGA_DRAIN, MORNING_SUN
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -691,7 +691,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 10, 15, 10 ; PP
+	db 10, 10, 15, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
@@ -707,7 +707,7 @@ BattleTowerMons:
 
 	db JOLTEON
 	db MAGNET
-	db THUNDER, AURA_SPHERE, SHADOW_BALL, GROWTH
+	db THUNDER, AURA_SPHERE, SHADOW_BALL, VOLT_SWITCH
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -717,7 +717,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 65000
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 20, 15, 40 ; PP
+	db 10, 20, 15, 20 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
@@ -748,13 +748,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 21 ; Level
 	db 0, 0 ; Status
-    bigdw 77
-    bigdw 77
-    bigdw 51
-    bigdw 49
-    bigdw 70
-    bigdw 74
-    bigdw 68
+	bigdw 77
+	bigdw 77
+	bigdw 51
+	bigdw 49
+	bigdw 70
+	bigdw 79
+	bigdw 64
 	db "KAIRIKI-@@@"
 
 	db UMBREON
@@ -941,7 +941,7 @@ BattleTowerMons:
 
 	db SCIZOR
 	db LEFTOVERS
-	db X_SCISSOR, METAL_CLAW, FEINT_ATTACK, ROOST
+	db U_TURN, METAL_CLAW, FEINT_ATTACK, ROOST
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -951,7 +951,7 @@ BattleTowerMons:
 	bigdw 65000
 	bigdw 6500
 	dn 15, 15, 15, 15 ; DVs
-	db 10, 35, 20, 10 ; PP
+	db 20, 35, 20, 10 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 22 ; Level
@@ -1125,7 +1125,7 @@ BattleTowerMons:
 
 	db SCEPTILE
 	db LIFE_ORB
-	db LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE, THUNDERPUNCH
+	db LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE, U_TURN
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -1135,7 +1135,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 15, 10, 15, 15 ; PP
+	db 15, 10, 15, 20 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 44 ; Level
@@ -1611,12 +1611,12 @@ BattleTowerMons:
 	db 42 ; Level
 	db 0, 0 ; Status
 	bigdw 162
-    bigdw 162
-    bigdw 111
-    bigdw 102
-    bigdw 119
-    bigdw 165
-    bigdw 107
+	bigdw 162
+	bigdw 111
+	bigdw 102
+	bigdw 119
+	bigdw 157
+	bigdw 107
 	db "RANTA-N@@@@"
 
     db GENGAR
@@ -1647,7 +1647,7 @@ BattleTowerMons:
 
 	db ROTOM
 	db LEFTOVERS
-	db PAIN_SPLIT, THUNDERBOLT, SHADOW_BALL, HYDRO_PUMP
+	db VOLT_SWITCH, THUNDERBOLT, SHADOW_BALL, HYDRO_PUMP
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2548,13 +2548,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 62 ; Level
 	db 0, 0 ; Status
-    bigdw 235
-    bigdw 235
-    bigdw 161
-    bigdw 149
-    bigdw 161
-    bigdw 242
-    bigdw 155
+	bigdw 235
+	bigdw 235
+	bigdw 161
+	bigdw 149
+	bigdw 174
+	bigdw 230
+	bigdw 155
 	db "RANTA-N@@@@"
 
 	db KINGAMBIT
@@ -2613,7 +2613,7 @@ BattleTowerMons:
 
 	db GRENINJA
 	db LIFE_ORB
-	db NASTY_PLOT, HYDRO_PUMP, DARK_PULSE, BLIZZARD
+	db FLIP_TURN, HYDRO_PUMP, DARK_PULSE, BLIZZARD
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2821,7 +2821,7 @@ BattleTowerMons:
 
 	db SCEPTILE
 	db LIFE_ORB
-	db SWORDS_DANCE, LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE
+	db U_TURN, LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -2976,8 +2976,8 @@ BattleTowerMons:
 	db "RANTA-N@@@@"
 
     db SCIZOR
-	db LEFTOVERS
-	db SWORDS_DANCE, BULLET_PUNCH, LEECH_LIFE, ROOST
+	db CHOICE_BAND
+	db U_TURN, BULLET_PUNCH, LEECH_LIFE, FEINT_ATTACK
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3280,13 +3280,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 84 ; Level
 	db 0, 0 ; Status
-    bigdw 314
-    bigdw 314
-    bigdw 217
-    bigdw 200
-    bigdw 217
-    bigdw 326
-    bigdw 209
+ 	bigdw 314
+ 	bigdw 314
+ 	bigdw 217
+ 	bigdw 200
+ 	bigdw 234
+ 	bigdw 309
+ 	bigdw 209
 	db "RANTA-N@@@@"
 
     db KINGAMBIT
@@ -3525,7 +3525,7 @@ BattleTowerMons:
 
 	db GYARADOS
 	db LEFTOVERS
-	db WATERFALL, FLY, EARTHQUAKE, DRAGON_DANCE
+	db WATERFALL, FLY, FLIP_TURN, DRAGON_DANCE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -3535,7 +3535,7 @@ BattleTowerMons:
 	bigdw 65500
 	bigdw 65500
 	dn 15, 15, 15, 15 ; DVs
-	db 24, 24, 16, 32 ; PP
+	db 24, 24, 32, 32 ; PP
 	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 82 ; Level
@@ -4099,7 +4099,7 @@ BattleTowerMons:
 
 	db SCEPTILE
 	db LIFE_ORB
-	db SWORDS_DANCE, LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE
+	db U_TURN, LEAF_BLADE, EARTHQUAKE, ROCK_SLIDE
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -4151,7 +4151,7 @@ BattleTowerMons:
 
 	db GRENINJA
 	db LIFE_ORB
-	db NASTY_PLOT, HYDRO_PUMP, DARK_PULSE, BLIZZARD
+	db FLIP_TURN, HYDRO_PUMP, DARK_PULSE, BLIZZARD
 	dw 0 ; OT ID
 	dt 0 ; Exp
 	; Stat exp
@@ -5548,13 +5548,13 @@ BattleTowerMons:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
-	bigdw 373 ; HP
-	bigdw 373 ; Max HP
-	bigdw 258 ; Atk
-	bigdw 238 ; Def
-	bigdw 258 ; Spd
-	bigdw 388 ; SAtk
-	bigdw 248 ; SDef
+	bigdw 373
+	bigdw 373
+	bigdw 258
+	bigdw 238
+	bigdw 278
+	bigdw 368
+	bigdw 248
 	db "RANTA-N@@@@"
 
 	db ZAPDOS ; 50 mons

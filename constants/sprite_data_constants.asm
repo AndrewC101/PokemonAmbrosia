@@ -22,7 +22,7 @@ DEF NUM_SPRITEDATA_FIELDS EQU _RS
 	const PAL_OW_PINK   ; 4
 	const PAL_OW_EMOTE  ; 5
 	const PAL_OW_TREE   ; 6
-	const PAL_OW_ROCK   ; 7
+	const PAL_OW_SILVER ; 7
 
 ; object_events set bit 3 so as not to use the sprite's default palette
 ; MapObjectPals indexes (see gfx/overworld/npc_sprites.pal)
@@ -32,6 +32,9 @@ DEF NUM_SPRITEDATA_FIELDS EQU _RS
 	const PAL_NPC_GREEN     ; a
 	const PAL_NPC_BROWN     ; b
 	const PAL_NPC_DEEP_RED  ; c
-	const PAL_NPC_GOLD    ; d
+	const PAL_NPC_GOLD      ; d
 	const PAL_NPC_TREE      ; e
-	const PAL_NPC_ROCK      ; f
+	const PAL_NPC_SILVER    ; f
+
+DEF PAL_OW_ROCK  EQUS "PAL_OW_BROWN"
+DEF PAL_NPC_ROCK EQUS "PAL_NPC_BROWN"

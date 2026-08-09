@@ -1134,7 +1134,15 @@ Intro_PlacePlayerSprite:
 	ld [hli], a ; tile id
 
 	ld a, [wPlayerColor]
-	and NUM_PLAYER_COLORS - 1
+	cp PLAYER_COLOR_SILVER
+	jr nz, .not_silver
+	ld a, PAL_OW_SILVER
+	jr .got_palette
+.not_silver
+	cp NUM_PLAYER_COLORS
+	jr c, .got_palette
+	xor a
+.got_palette
 
 	ld [hli], a ; attributes
 	dec c

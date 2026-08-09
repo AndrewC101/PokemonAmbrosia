@@ -70,7 +70,7 @@ SetPlayerColor:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 6, 3, 14, 12
+	menu_coords 6, 2, 15, 14
 	dw .MenuData
 	db 1 ; default option
 
@@ -81,6 +81,7 @@ SetPlayerColor:
 	db "Blue@"
 	db "Green@"
 	db "Brown@"
+	db "Silver@"
 
 AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText

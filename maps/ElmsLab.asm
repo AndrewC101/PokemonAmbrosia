@@ -2419,16 +2419,17 @@ ElmsLabMrMimeScript:
 	ifequal 2, .ColorBlue
 	ifequal 3, .ColorGreen
 	ifequal 4, .ColorBrown
+	ifequal 5, .ColorSilver
 	closetext
 	end
 .ColorHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 8, 10
+	menu_coords 0, 0, 9, 12
 	dw .ColorData
 	db 1 ; default option
 .ColorData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 4, 1 ; rows, columns
+	dn 5, 1 ; rows, columns
 	db 7 ; spacing
 	dba .ColorText
 	dbw BANK(@), NULL
@@ -2437,6 +2438,7 @@ ElmsLabMrMimeScript:
 	db "Blue@"
 	db "Green@"
 	db "Brown@"
+	db "Silver@"
 .ColorRed
 	loadmem wPlayerColor, PLAYER_COLOR_RED
 	sjump .rename
@@ -2448,6 +2450,9 @@ ElmsLabMrMimeScript:
 	sjump .rename
 .ColorBrown
 	loadmem wPlayerColor, PLAYER_COLOR_BROWN
+	sjump .rename
+.ColorSilver
+	loadmem wPlayerColor, PLAYER_COLOR_SILVER
 .rename
     warpfacing UP, NONE, 0, 0
     opentext

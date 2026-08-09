@@ -22,7 +22,16 @@ LoadPlayerColor:
 	assert PAL_NPC_RED + PLAYER_COLOR_GREEN == PAL_NPC_GREEN
 	assert PAL_NPC_RED + PLAYER_COLOR_BROWN == PAL_NPC_BROWN
 	ld a, [wPlayerColor]
-	and NUM_PLAYER_COLORS - 1
+	cp PLAYER_COLOR_SILVER
+	jr nz, .not_silver
+	ln e, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT
+	ret
+
+.not_silver
+	cp NUM_PLAYER_COLORS
+	jr c, .valid
+	xor a
+.valid
 	add PAL_NPC_RED
 	swap a
 	or OBJECTTYPE_SCRIPT

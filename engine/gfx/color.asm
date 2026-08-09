@@ -1027,8 +1027,25 @@ GetPlayerOrMonPalettePointer:
 
 GetPlayerPalettePointer:
 	push de
+	ld a, [wInvading]
+	and a
+	jr z, .check_mark
+	ld hl, DeepRedPlayerPalette
+	jr .done
+
+.check_mark
+	ld a, [wMarkOfGod]
+	and a
+	jr z, .normal
+	ld hl, GoldPlayerPalette
+	jr .done
+
+.normal
 	ld a, [wPlayerColor]
-	and NUM_PLAYER_COLORS - 1
+	cp NUM_PLAYER_COLORS
+	jr c, .got_color
+	xor a
+.got_color
 	ld e, a
 	ld d, 0
 	ld hl, .Palettes
@@ -1037,6 +1054,7 @@ GetPlayerPalettePointer:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+.done
 	pop de
 	ret
 
@@ -1045,6 +1063,7 @@ GetPlayerPalettePointer:
 	dw BluePlayerPalette
 	dw GreenPlayerPalette
 	dw BrownPlayerPalette
+	dw SilverPlayerPalette
 
 GetFrontpicPalettePointer:
 	and a
@@ -1685,7 +1704,9 @@ LoadMapPals:
 	inc hl
 	inc hl
 
-	ld de, wOBPals1 palette PAL_OW_ROCK + 2
+	; Day-care mon 2 used the old rock slot as a dynamic palette.
+	; Keep it away from the reclaimed silver player slot.
+	ld de, wOBPals1 palette PAL_OW_TREE + 2
 	ld bc, 1 palettes - 2
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM

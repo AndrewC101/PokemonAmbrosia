@@ -80,9 +80,11 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+DeepRedPlayerPalette:
 INCBIN "gfx/trainers/invader.gbcpal", middle_colors
 INCBIN "gfx/trainers/crystal.gbcpal", middle_colors
 INCBIN "gfx/trainers/green.gbcpal", middle_colors
+GoldPlayerPalette:
 INCBIN "gfx/trainers/lord_oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/role_player.gbcpal", middle_colors
 INCBIN "gfx/trainers/role_player.gbcpal", middle_colors
@@ -93,3 +95,7 @@ INCBIN "gfx/trainers/ash.gbcpal", middle_colors
 INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1
+
+SilverPlayerPalette:
+	RGB 31,23,14
+	RGB 17,17,17

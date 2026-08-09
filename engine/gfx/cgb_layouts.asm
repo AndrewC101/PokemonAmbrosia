@@ -1251,16 +1251,9 @@ _CGB_PackPals:
 .ApplyPlayerColor:
 	ldh a, [rWBK]
 	push af
+	call GetPlayerPalettePointer
 	ld a, BANK(wBGPals1)
 	ldh [rWBK], a
-	ld a, [wPlayerColor]
-	and NUM_PLAYER_COLORS - 1
-	add a
-	add a
-	ld e, a
-	ld d, 0
-	ld hl, .PackColors
-	add hl, de
 	; Palette 0 is the default pack screen frame/background color.
 	ld a, [hli]
 	ld [wBGPals1 palette 0 color 1], a
@@ -1273,16 +1266,6 @@ _CGB_PackPals:
 	pop af
 	ldh [rWBK], a
 	ret
-
-.PackColors:
-	RGB 31, 19, 10
-	RGB 31, 07, 01
-	RGB 15, 15, 31
-	RGB 00, 00, 31
-	RGB 12, 25, 01
-	RGB 05, 14, 00
-	RGB 24, 18, 07
-	RGB 20, 15, 03
 
 .ChrisPackPals:
 INCLUDE "gfx/pack/pack.pal"

@@ -16,6 +16,19 @@ BlankScreen:
 	call SetDefaultBGPAndOBP
 	ret
 
+LoadPlayerColor:
+; Return the normal player object palette/type byte in e.
+	assert PAL_NPC_RED + PLAYER_COLOR_BLUE == PAL_NPC_BLUE
+	assert PAL_NPC_RED + PLAYER_COLOR_GREEN == PAL_NPC_GREEN
+	assert PAL_NPC_RED + PLAYER_COLOR_BROWN == PAL_NPC_BROWN
+	ld a, [wPlayerColor]
+	and NUM_PLAYER_COLORS - 1
+	add PAL_NPC_RED
+	swap a
+	or OBJECTTYPE_SCRIPT
+	ld e, a
+	ret
+
 SpawnPlayer:
 	ld a, -1
 	ld [wObjectFollow_Leader], a
@@ -31,40 +44,17 @@ SpawnPlayer:
 	add hl, bc
 	ld a, [wInvading]
 	and a
-	jr z, .checkMasterOakMale
-	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
-	jr .continueMale
-.checkMasterOakMale
-	ld a, [wMarkOfGod]
-	and a
-	jr z, .normalColourMale
-	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
-	jr .continueMale
-.normalColourMale
-	ln e, PAL_NPC_RED, OBJECTTYPE_SCRIPT
-.continueMale
-	ld a, [wPlayerSpriteSetupFlags]
-	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	jr nz, .ok
-
-; ========== Female ===========
-
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .ok
-	ld a, [wInvading]
-	and a
-	jr z, .checkMasterOakFemale
+	jr z, .checkMasterOak
 	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
 	jr .ok
-.checkMasterOakFemale
+.checkMasterOak
 	ld a, [wMarkOfGod]
 	and a
-	jr z, .normalColourFemale
+	jr z, .normalColour
 	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
 	jr .ok
-.normalColourFemale
-	ln e, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT
+.normalColour
+	call LoadPlayerColor
 
 .ok
 	ld [hl], e

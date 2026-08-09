@@ -201,6 +201,14 @@ DEF PLAYERSPRITESETUP_RESET_ACTION_F    EQU 7
 ; wPlayerGender::
 DEF PLAYERGENDER_FEMALE_F EQU 0
 
+; wPlayerColor::
+	const_def
+	const PLAYER_COLOR_RED
+	const PLAYER_COLOR_BLUE
+	const PLAYER_COLOR_GREEN
+	const PLAYER_COLOR_BROWN
+DEF NUM_PLAYER_COLORS EQU const_value
+
 ; wMapStatus::
 	const_def
 	const MAPSTATUS_START  ; 0

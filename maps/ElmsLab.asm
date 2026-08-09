@@ -2407,9 +2407,47 @@ ElmsLabMrMimeScript:
 	db "Girl@"
 .Male
     loadmem wPlayerGender, 0
-    sjump .rename
+    sjump .chooseColor
 .Female
     loadmem wPlayerGender, 1
+.chooseColor
+	writetext WhichColorAreYouText
+	loadmenu .ColorHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .ColorRed
+	ifequal 2, .ColorBlue
+	ifequal 3, .ColorGreen
+	ifequal 4, .ColorBrown
+	closetext
+	end
+.ColorHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 8, 10
+	dw .ColorData
+	db 1 ; default option
+.ColorData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 4, 1 ; rows, columns
+	db 7 ; spacing
+	dba .ColorText
+	dbw BANK(@), NULL
+.ColorText:
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+.ColorRed
+	loadmem wPlayerColor, PLAYER_COLOR_RED
+	sjump .rename
+.ColorBlue
+	loadmem wPlayerColor, PLAYER_COLOR_BLUE
+	sjump .rename
+.ColorGreen
+	loadmem wPlayerColor, PLAYER_COLOR_GREEN
+	sjump .rename
+.ColorBrown
+	loadmem wPlayerColor, PLAYER_COLOR_BROWN
 .rename
     warpfacing UP, NONE, 0, 0
     opentext
@@ -2507,6 +2545,11 @@ MakeRoomInPartyText:
 WhichGenderAreYouText:
     text "What is your new"
     line "gender?"
+    prompt
+
+WhichColorAreYouText:
+    text "What is your new"
+    line "color?"
     prompt
 
 WhatIsYourNameText:

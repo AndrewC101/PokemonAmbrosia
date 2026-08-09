@@ -809,13 +809,7 @@ PokegearMap_ContinueMap:
 PokegearMap_InitPlayerIcon:
 	push af
 	depixel 0, 0
-	ld b, SPRITE_ANIM_OBJ_RED_WALK
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_gender
-	ld b, SPRITE_ANIM_OBJ_BLUE_WALK
-.got_gender
-	ld a, b
+	ld a, SPRITE_ANIM_OBJ_RED_WALK
 	call InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
@@ -2858,17 +2852,8 @@ Pokedex_GetArea:
 	add $78 ; where the player's sprite is loaded
 	ld [hli], a ; tile id
 	inc de
-	push bc
-	ld c, PAL_OW_RED
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .male
-	assert PAL_OW_RED + 1 == PAL_OW_BLUE
-	inc c
-.male
-	ld a, c
+	xor a ; palette 0 is loaded with the selected player color
 	ld [hli], a ; attributes
-	pop bc
 	jr .ShowPlayerLoop
 
 .clear_oam
@@ -3085,17 +3070,10 @@ TownMapPlayerIcon:
 	ld e, l
 	ld hl, vTiles0 tile $14
 	ld c, 4 ; # tiles
-	ld a, BANK(ChrisSpriteGFX) ; does nothing
 	call Request2bpp
 ; Animation/palette
 	depixel 0, 0
-	ld b, SPRITE_ANIM_OBJ_RED_WALK ; Male
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_gender
-	ld b, SPRITE_ANIM_OBJ_BLUE_WALK ; Female
-.got_gender
-	ld a, b
+	ld a, SPRITE_ANIM_OBJ_RED_WALK
 	call InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc

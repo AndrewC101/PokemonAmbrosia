@@ -216,6 +216,16 @@ _CGB_PokegearPals:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
+	ld a, [wBattleTimeOfDay]
+	push af
+	xor a
+	ld [wBattleTimeOfDay], a
+	ld de, wOBPals1 palette 0
+	call GetPlayerPalettePointer
+	call LoadPalette_White_Col1_Col2_Black
+	pop af
+	ld [wBattleTimeOfDay], a
+
 	ld de, wBGPals1 palette 6
 	ld a, PREDEFPAL_POKEGEAR_TOD_ICONS
 	call GetPredefPal
@@ -991,8 +1001,7 @@ _CGB_TrainerCard:
 	ld [wBattleWeather], a
 	ld [wBattleTimeOfDay], a
 	ld de, wBGPals1
-	xor a ; CHRIS
-	call GetTrainerPalettePointer
+	call GetPlayerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, FALKNER ; KRIS
 	call GetTrainerPalettePointer
@@ -1020,29 +1029,18 @@ _CGB_TrainerCard:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with opposite-gender palette for the card border
+	; Palette 0 is the selected player color.
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_AREA
-	ld a, [wPlayerGender]
-	and a
-	ld a, $1 ; kris
-	jr z, .got_gender
-	ld a, $0 ; chris
-.got_gender
+	xor a
 	call ByteFill
-	; fill trainer sprite area with same-gender palette
 	hlcoord 14, 1, wAttrmap
 	lb bc, 7, 5
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; chris
-	jr z, .got_gender2
-	ld a, $1 ; kris
-.got_gender2
+	xor a
 	call FillBoxCGB
-	; top-right corner still uses the border's palette
+	; top-right corner still uses the player palette
 	hlcoord 18, 1, wAttrmap
-	ld [hl], $1
+	ld [hl], $0
 	hlcoord 3, 10, wAttrmap
     lb bc, 3, 3
 	ld a, $1 ; falkner
@@ -1071,24 +1069,12 @@ _CGB_TrainerCard:
     lb bc, 3, 3
 	ld a, $7 ; pryce
 	call FillBoxCGB
-	; clair uses kris's palette
-	ld a, [wPlayerGender]
-	and a
-	push af
-	jr z, .got_gender3
 	hlcoord 15, 13, wAttrmap
     lb bc, 3, 3
-	ld a, $1
+	ld a, $1 ; clair uses falkner/kris's palette
 	call FillBoxCGB
-.got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
-.got_gender4
-	ld a, c
 	hlcoord 18, 1, wAttrmap
-	ld [hl], a
+	ld [hl], $0
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -1100,10 +1086,9 @@ INCLUDE "gfx/trainer_card/badges.pal"
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
-	xor a ; CHRIS & MISTY
-	call GetTrainerPalettePointer
+	call GetPlayerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, FALKNER ; KRIS
+	ld a, MISTY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, BROCK
@@ -1129,25 +1114,14 @@ _CGB_TrainerCardKanto:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-	; fill screen with opposite-gender palette for the card border
+	; Palette 0 is the selected player color.
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, [wPlayerGender]
-	and a
-	ld a, $1 ; kris
-	jr z, .got_gender
-	ld a, $0 ; chris
-.got_gender
+	xor a
 	call ByteFill
-	; fill trainer sprite area with same-gender palette
 	hlcoord 14, 1, wAttrmap
 	lb bc, 7, 5
-	ld a, [wPlayerGender]
-	and a
-	ld a, $0 ; chris
-	jr z, .got_gender2
-	ld a, $1 ; kris
-.got_gender2
+	xor a
 	call FillBoxCGB
 	hlcoord 3, 10, wAttrmap
     lb bc, 3, 3
@@ -1155,7 +1129,7 @@ _CGB_TrainerCardKanto:
 	call FillBoxCGB
 	hlcoord 7, 10, wAttrmap
     lb bc, 3, 3
-	ld a, $0 ; misty / chris
+	ld a, $1 ; misty
 	call FillBoxCGB
 	hlcoord 11, 10, wAttrmap
     lb bc, 3, 3
@@ -1181,15 +1155,9 @@ _CGB_TrainerCardKanto:
     lb bc, 3, 3
 	ld a, $7 ; blue
 	call FillBoxCGB
-; top-right corner still uses the border's palette
-	ld a, [wPlayerGender]
-	and a
-	ld a, $1 ; kris
-	jr z, .got_gender3
-	ld a, $0 ; chris
-.got_gender3
+; top-right corner uses the player palette.
 	hlcoord 18, 1, wAttrmap
-	ld [hl], a
+	ld [hl], $0
 	call ApplyAttrmap
 	call ApplyPals
 	ld a, TRUE
@@ -1247,25 +1215,12 @@ _CGB_PokedexSearchOption:
 
 _CGB_PackPals:
 ; pack pals
-	ld a, [wBattleType]
-;	cp BATTLETYPE_TUTORIAL
-;	jr z, .tutorial_male
-
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .tutorial_male
-
-	ld hl, .KrisPackPals
-	jr .got_gender
-
-.tutorial_male
 	ld hl, .ChrisPackPals
-
-.got_gender
 	ld de, wBGPals1
 	ld bc, 6 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
+	call .ApplyPlayerColor
 	call WipeAttrmap
 	hlcoord 0, 0, wAttrmap
 	lb bc, 1, 10
@@ -1293,11 +1248,44 @@ _CGB_PackPals:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.ApplyPlayerColor:
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
+	ld a, [wPlayerColor]
+	and NUM_PLAYER_COLORS - 1
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, .PackColors
+	add hl, de
+	; Palette 0 is the default pack screen frame/background color.
+	ld a, [hli]
+	ld [wBGPals1 palette 0 color 1], a
+	ld a, [hli]
+	ld [wBGPals1 palette 0 color 1 + 1], a
+	ld a, [hli]
+	ld [wBGPals1 palette 0 color 2], a
+	ld a, [hl]
+	ld [wBGPals1 palette 0 color 2 + 1], a
+	pop af
+	ldh [rWBK], a
+	ret
+
+.PackColors:
+	RGB 31, 19, 10
+	RGB 31, 07, 01
+	RGB 15, 15, 31
+	RGB 00, 00, 31
+	RGB 12, 25, 01
+	RGB 05, 14, 00
+	RGB 24, 18, 07
+	RGB 20, 15, 03
+
 .ChrisPackPals:
 INCLUDE "gfx/pack/pack.pal"
-
-.KrisPackPals:
-INCLUDE "gfx/pack/pack_f.pal"
 
 _CGB_Pokepic:
 	call _CGB_MapPals

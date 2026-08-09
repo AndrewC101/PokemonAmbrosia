@@ -1022,18 +1022,29 @@ GetEnemyFrontpicPalettePointer:
 GetPlayerOrMonPalettePointer:
 	and a
 	jp nz, GetMonNormalOrShinyPalettePointer
-	ld a, [wPlayerSpriteSetupFlags]
-	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
-	jr nz, .male
-	ld a, [wPlayerGender]
-	and a
-	jr z, .male
-	ld hl, KrisPalette
+	call GetPlayerPalettePointer
 	ret
 
-.male
-	ld hl, PlayerPalette
+GetPlayerPalettePointer:
+	push de
+	ld a, [wPlayerColor]
+	and NUM_PLAYER_COLORS - 1
+	ld e, a
+	ld d, 0
+	ld hl, .Palettes
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop de
 	ret
+
+.Palettes:
+	dw RedPlayerPalette
+	dw BluePlayerPalette
+	dw GreenPlayerPalette
+	dw BrownPlayerPalette
 
 GetFrontpicPalettePointer:
 	and a

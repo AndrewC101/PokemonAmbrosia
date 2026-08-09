@@ -36,6 +36,7 @@ InitGender:
 	ld a, [wMenuCursorY]
 	dec a
 	ld [wPlayerGender], a
+	call SetPlayerColor
 	ld c, 10
 	call DelayFrames
 	ret
@@ -52,9 +53,43 @@ InitGender:
 	db "Boy@"
 	db "Girl@"
 
+SetPlayerColor:
+	call ClearTilemap
+	call WaitBGMap2
+	ld hl, WhatColorWillYouWearText
+	call PrintText
+	ld hl, .MenuHeader
+	call LoadMenuHeader
+	call WaitBGMap2
+	call VerticalMenu
+	call CloseWindow
+	ld a, [wMenuCursorY]
+	dec a
+	ld [wPlayerColor], a
+	ret
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 6, 3, 14, 12
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
+	db NUM_PLAYER_COLORS ; items
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+
 AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText
 	text_end
+
+WhatColorWillYouWearText:
+	text "Next, pick your"
+	line "color."
+	prompt
 
 InitGenderScreen:
 	ld a, $10

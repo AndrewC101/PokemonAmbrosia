@@ -1872,7 +1872,8 @@ wOptions2::
 ; bit 1: menu clock off/on
 ; bit 2: fast battles normal/quick
 	db
-	ds 2
+wPlayerColor:: db
+	ds 1
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since

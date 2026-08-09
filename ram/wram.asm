@@ -1873,7 +1873,7 @@ wOptions2::
 ; bit 2: fast battles normal/quick
 	db
 wPlayerColor:: db
-	ds 1
+wPlayerSpriteChoice:: db
 wOptionsEnd::
 
 ; Time buffer, for counting the amount of time since

@@ -2439,20 +2439,72 @@ ElmsLabMrMimeScript:
 	db "Green@"
 	db "Brown@"
 	db "Silver@"
+.MaleSpriteHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 9
+	dw .MaleSpriteData
+	db 1 ; default option
+.MaleSpriteData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 4, 2 ; rows, columns
+	db 8 ; spacing
+	dba .MaleSpriteText
+	dbw BANK(@), NULL
+.MaleSpriteText:
+	db "Default@"
+	db "Silver@"
+	db "Blue@"
+	db "Falkner@"
+	db "Lance@"
+	db "Bruno@"
+	db "Giovanni@"
+	db "Rocket@"
+.FemaleSpriteHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 9
+	dw .FemaleSpriteData
+	db 1 ; default option
+.FemaleSpriteData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 4, 2 ; rows, columns
+	db 8 ; spacing
+	dba .FemaleSpriteText
+	dbw BANK(@), NULL
+.FemaleSpriteText:
+	db "Default@"
+	db "Misty@"
+	db "Clair@"
+	db "Rocket@"
+	db "Sabrina@"
+	db "Whitney@"
+	db "Jasmine@"
+	db "Erika@"
 .ColorRed
 	loadmem wPlayerColor, PLAYER_COLOR_RED
-	sjump .rename
+	sjump .chooseSprite
 .ColorBlue
 	loadmem wPlayerColor, PLAYER_COLOR_BLUE
-	sjump .rename
+	sjump .chooseSprite
 .ColorGreen
 	loadmem wPlayerColor, PLAYER_COLOR_GREEN
-	sjump .rename
+	sjump .chooseSprite
 .ColorBrown
 	loadmem wPlayerColor, PLAYER_COLOR_BROWN
-	sjump .rename
+	sjump .chooseSprite
 .ColorSilver
 	loadmem wPlayerColor, PLAYER_COLOR_SILVER
+.chooseSprite
+	writetext WhichSpriteAreYouText
+	readmem wPlayerGender
+	ifequal 1, .chooseFemaleSprite
+	loadmenu .MaleSpriteHeader
+	sjump .openSpriteMenu
+.chooseFemaleSprite
+	loadmenu .FemaleSpriteHeader
+.openSpriteMenu
+	_2dmenu
+	closewindow
+	callasm StoreResurrectPlayerSpriteChoice
 .rename
     warpfacing UP, NONE, 0, 0
     opentext
@@ -2557,6 +2609,11 @@ WhichColorAreYouText:
     line "color?"
     prompt
 
+WhichSpriteAreYouText:
+    text "What is your new"
+    line "sprite?"
+    prompt
+
 WhatIsYourNameText:
     text "What is your new"
     line "name?"
@@ -2606,6 +2663,54 @@ RivalNamingScreen:
     ld de, DefaultRivalName
     call InitName
     ret
+
+StoreResurrectPlayerSpriteChoice:
+; Convert the 1-based 4x2 menu cursor into the gendered sprite-choice value.
+	ld a, [wScriptVar]
+	and a
+	jr z, .default
+	cp 9
+	jr nc, .default
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, .MaleOptions
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .got_table
+	ld hl, .FemaleOptions
+
+.got_table
+	add hl, de
+	ld a, [hl]
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerSpriteChoice], a
+	ret
+
+.MaleOptions:
+	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_SILVER
+	db PLAYER_SPRITE_BLUE
+	db PLAYER_SPRITE_FALKNER
+	db PLAYER_SPRITE_LANCE
+	db PLAYER_SPRITE_BRUNO
+	db PLAYER_SPRITE_GIOVANNI
+	db PLAYER_SPRITE_ROCKET
+
+.FemaleOptions:
+	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_MISTY
+	db PLAYER_SPRITE_CLAIR
+	db PLAYER_SPRITE_ROCKET_GIRL
+	db PLAYER_SPRITE_SABRINA
+	db PLAYER_SPRITE_WHITNEY
+	db PLAYER_SPRITE_JASMINE
+	db PLAYER_SPRITE_ERIKA
 
 DefaultName:
     db "Gold@@@@@@@"

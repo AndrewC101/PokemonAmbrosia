@@ -37,6 +37,7 @@ InitGender:
 	dec a
 	ld [wPlayerGender], a
 	call SetPlayerColor
+	farcall SetInitialPlayerSpriteChoice
 	ld c, 10
 	call DelayFrames
 	ret

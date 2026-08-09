@@ -605,6 +605,7 @@ INCLUDE "data/battle_tower/trainer_text.asm"
 SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
+INCLUDE "engine/player_sprite_choice.asm"
 
 
 ;SECTION "Mobile News Data", ROMX

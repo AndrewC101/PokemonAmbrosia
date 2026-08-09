@@ -13,6 +13,7 @@ DefaultOptions:
 	db 0 << FAST_BATTLES
 ; wPlayerColor: red
 	db PLAYER_COLOR_RED
-	db $00
+; wPlayerSpriteChoice: default
+	db PLAYER_SPRITE_DEFAULT
 .End
 	assert DefaultOptions.End - DefaultOptions == wOptionsEnd - wOptions

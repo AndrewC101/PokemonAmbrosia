@@ -67,6 +67,13 @@ SpawnPlayer:
 
 .ok
 	ld [hl], e
+	ld a, [wPlayerObjectSprite]
+	and a
+	jr z, .got_sprite
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld [hl], a
+.got_sprite
 	ld a, PLAYER_OBJECT
 	ldh [hMapObjectIndex], a
 	ld bc, wMapObjects

@@ -81,7 +81,15 @@ GetPlayerSprite:
 	jr .finish
 
 .good
+	ld a, c
+	and a ; PLAYER_NORMAL
+	jr z, .custom_sprite
+	cp PLAYER_RUN
 	ld a, [hl]
+	jr nz, .finish
+
+.custom_sprite
+	newfarcall GetSelectedPlayerOverworldSprite
 
 .finish
 	ld [wUsedSprites + 0], a

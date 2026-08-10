@@ -2441,44 +2441,48 @@ ElmsLabMrMimeScript:
 	db "Silver@"
 .MaleSpriteHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 9
+	menu_coords 0, 0, 19, 11
 	dw .MaleSpriteData
 	db 1 ; default option
 .MaleSpriteData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 4, 2 ; rows, columns
+	dn 5, 2 ; rows, columns
 	db 8 ; spacing
 	dba .MaleSpriteText
 	dbw BANK(@), NULL
 .MaleSpriteText:
 	db "Default@"
+	db "Ash@"
 	db "Silver@"
 	db "Blue@"
 	db "Falkner@"
-	db "Lance@"
 	db "Bruno@"
+	db "Morty@"
+	db "Lance@"
+	db "Oak@"
 	db "Giovanni@"
-	db "Rocket@"
 .FemaleSpriteHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 9
+	menu_coords 0, 0, 19, 11
 	dw .FemaleSpriteData
 	db 1 ; default option
 .FemaleSpriteData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 4, 2 ; rows, columns
+	dn 5, 2 ; rows, columns
 	db 8 ; spacing
 	dba .FemaleSpriteText
 	dbw BANK(@), NULL
 .FemaleSpriteText:
 	db "Default@"
-	db "Misty@"
-	db "Clair@"
-	db "Rocket@"
-	db "Sabrina@"
+	db "Lass@"
 	db "Whitney@"
+	db "Misty@"
 	db "Jasmine@"
 	db "Erika@"
+	db "Clair@"
+	db "Sabrina@"
+	db "Kimono@"
+	db "Rocket@"
 .ColorRed
 	loadmem wPlayerColor, PLAYER_COLOR_RED
 	sjump .chooseSprite
@@ -2665,11 +2669,11 @@ RivalNamingScreen:
     ret
 
 StoreResurrectPlayerSpriteChoice:
-; Convert the 1-based 4x2 menu cursor into the gendered sprite-choice value.
+; Convert the 1-based 5x2 menu cursor into the gendered sprite-choice value.
 	ld a, [wScriptVar]
 	and a
 	jr z, .default
-	cp 9
+	cp 11
 	jr nc, .default
 	dec a
 	ld e, a
@@ -2694,23 +2698,27 @@ StoreResurrectPlayerSpriteChoice:
 
 .MaleOptions:
 	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_ASH
 	db PLAYER_SPRITE_SILVER
 	db PLAYER_SPRITE_BLUE
 	db PLAYER_SPRITE_FALKNER
-	db PLAYER_SPRITE_LANCE
 	db PLAYER_SPRITE_BRUNO
-	db PLAYER_SPRITE_GIOVANNI
+	db PLAYER_SPRITE_MORTY
+	db PLAYER_SPRITE_LANCE
 	db PLAYER_SPRITE_ROCKET
+	db PLAYER_SPRITE_GIOVANNI
 
 .FemaleOptions:
 	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_LASS
+    db PLAYER_SPRITE_WHITNEY
 	db PLAYER_SPRITE_MISTY
-	db PLAYER_SPRITE_CLAIR
-	db PLAYER_SPRITE_ROCKET_GIRL
-	db PLAYER_SPRITE_SABRINA
-	db PLAYER_SPRITE_WHITNEY
 	db PLAYER_SPRITE_JASMINE
 	db PLAYER_SPRITE_ERIKA
+	db PLAYER_SPRITE_CLAIR
+	db PLAYER_SPRITE_SABRINA
+	db PLAYER_SPRITE_KIMONO_GIRL
+	db PLAYER_SPRITE_ROCKET_GIRL
 
 DefaultName:
     db "Gold@@@@@@@"

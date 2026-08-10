@@ -13,6 +13,12 @@ GetSelectedPlayerSpriteChoice::
 
 	cp PLAYER_SPRITE_MISTY
 	ret c
+	cp PLAYER_SPRITE_MORTY
+	jr c, .invalid
+	cp PLAYER_SPRITE_KIMONO_GIRL
+	ret c
+
+.invalid
 	xor a
 	ret
 
@@ -20,8 +26,11 @@ GetSelectedPlayerSpriteChoice::
 	and a
 	ret z
 	cp PLAYER_SPRITE_MISTY
-	ret nc
-	xor a
+	jr c, .invalid
+	cp PLAYER_SPRITE_MORTY
+	ret c
+	cp PLAYER_SPRITE_KIMONO_GIRL
+	jr c, .invalid
 	ret
 
 GetSelectedPlayerOverworldSprite::
@@ -165,7 +174,7 @@ StorePlayerSpriteChoiceFromPosition:
 ; Menu positions are 1-based; bad positions fall back to the default sprite.
 	and a
 	jr z, .default
-	cp 9
+	cp 11
 	jr nc, .default
 	dec a
 	ld e, a
@@ -194,7 +203,7 @@ PlayerSpriteChoiceSprites:
 	db SPRITE_LANCE        ; PLAYER_SPRITE_LANCE
 	db SPRITE_BRUNO        ; PLAYER_SPRITE_BRUNO
 	db SPRITE_GIOVANNI     ; PLAYER_SPRITE_GIOVANNI
-	db SPRITE_ROCKET       ; PLAYER_SPRITE_ROCKET
+	db SPRITE_OAK          ; PLAYER_SPRITE_ROCKET
 	db SPRITE_MISTY        ; PLAYER_SPRITE_MISTY
 	db SPRITE_CLAIR        ; PLAYER_SPRITE_CLAIR
 	db SPRITE_ROCKET_GIRL  ; PLAYER_SPRITE_ROCKET_GIRL
@@ -202,6 +211,10 @@ PlayerSpriteChoiceSprites:
 	db SPRITE_WHITNEY      ; PLAYER_SPRITE_WHITNEY
 	db SPRITE_JASMINE      ; PLAYER_SPRITE_JASMINE
 	db SPRITE_ERIKA        ; PLAYER_SPRITE_ERIKA
+	db SPRITE_MORTY        ; PLAYER_SPRITE_MORTY
+	db SPRITE_RED          ; PLAYER_SPRITE_ASH
+	db SPRITE_KIMONO_GIRL  ; PLAYER_SPRITE_KIMONO_GIRL
+	db SPRITE_LASS         ; PLAYER_SPRITE_LASS
 
 PlayerSpriteChoiceGFX:
 	dba RivalSpriteGFX
@@ -210,7 +223,7 @@ PlayerSpriteChoiceGFX:
 	dba LanceSpriteGFX
 	dba BrunoSpriteGFX
 	dba GiovanniSpriteGFX
-	dba RocketSpriteGFX
+	dba OakSpriteGFX
 	dba MistySpriteGFX
 	dba ClairSpriteGFX
 	dba RocketGirlSpriteGFX
@@ -218,6 +231,10 @@ PlayerSpriteChoiceGFX:
 	dba WhitneySpriteGFX
 	dba JasmineSpriteGFX
 	dba ErikaSpriteGFX
+	dba MortySpriteGFX
+	dba RedSpriteGFX
+	dba KimonoGirlSpriteGFX
+	dba LassSpriteGFX
 
 PlayerSpriteChoiceTrainerClasses:
 	db RIVAL1
@@ -226,7 +243,7 @@ PlayerSpriteChoiceTrainerClasses:
 	db CHAMPION
 	db BRUNO
 	db GIOVANNI
-	db GRUNTM
+	db POKEMON_PROF
 	db MISTY
 	db CLAIR
 	db GRUNTF
@@ -234,72 +251,84 @@ PlayerSpriteChoiceTrainerClasses:
 	db WHITNEY
 	db JASMINE
 	db ERIKA
+	db MORTY
+	db ASH
+	db KIMONO_GIRL
+	db LASS
 
 MalePlayerSpriteChoiceMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 9
+	menu_coords 0, 0, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	dn 4, 2 ; rows, columns
+	dn 5, 2 ; rows, columns
 	db 8 ; spacing
 	dba MalePlayerSpriteChoiceText
 	dbw BANK(@), NULL
 
 FemalePlayerSpriteChoiceMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 9
+	menu_coords 0, 0, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	dn 4, 2 ; rows, columns
+	dn 5, 2 ; rows, columns
 	db 8 ; spacing
 	dba FemalePlayerSpriteChoiceText
 	dbw BANK(@), NULL
 
 MalePlayerSpriteChoiceOptions:
 	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_ASH
 	db PLAYER_SPRITE_SILVER
 	db PLAYER_SPRITE_BLUE
 	db PLAYER_SPRITE_FALKNER
-	db PLAYER_SPRITE_LANCE
 	db PLAYER_SPRITE_BRUNO
-	db PLAYER_SPRITE_GIOVANNI
+	db PLAYER_SPRITE_MORTY
+	db PLAYER_SPRITE_LANCE
 	db PLAYER_SPRITE_ROCKET
+	db PLAYER_SPRITE_GIOVANNI
 
 FemalePlayerSpriteChoiceOptions:
 	db PLAYER_SPRITE_DEFAULT
+	db PLAYER_SPRITE_LASS
+    db PLAYER_SPRITE_WHITNEY
 	db PLAYER_SPRITE_MISTY
-	db PLAYER_SPRITE_CLAIR
-	db PLAYER_SPRITE_ROCKET_GIRL
-	db PLAYER_SPRITE_SABRINA
-	db PLAYER_SPRITE_WHITNEY
 	db PLAYER_SPRITE_JASMINE
 	db PLAYER_SPRITE_ERIKA
+	db PLAYER_SPRITE_CLAIR
+	db PLAYER_SPRITE_SABRINA
+	db PLAYER_SPRITE_KIMONO_GIRL
+	db PLAYER_SPRITE_ROCKET_GIRL
 
 MalePlayerSpriteChoiceText:
 	db "Default@"
+	db "Ash@"
 	db "Silver@"
 	db "Blue@"
 	db "Falkner@"
-	db "Lance@"
 	db "Bruno@"
+	db "Morty@"
+	db "Lance@"
+	db "Oak@"
 	db "Giovanni@"
-	db "Rocket@"
 
 FemalePlayerSpriteChoiceText:
 	db "Default@"
-	db "Misty@"
-	db "Clair@"
-	db "Rocket@"
-	db "Sabrina@"
+	db "Lass@"
 	db "Whitney@"
+	db "Misty@"
 	db "Jasmine@"
 	db "Erika@"
+	db "Clair@"
+	db "Sabrina@"
+	db "Kimono@"
+	db "Rocket@"
 
 WhatSpriteWillYouUseText:
 	text "Next, pick your"

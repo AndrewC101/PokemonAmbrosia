@@ -1011,11 +1011,26 @@ GetBattlemonBackpicPalettePointer:
 
 GetEnemyFrontpicPalettePointer:
 	push de
+	ld a, [wTempEnemyMonSpecies]
+	and a
+	jr nz, .not_self_trainer
+	ld a, [wTrainerClass]
+	cp CAL
+	jr z, .self_trainer
+	cp CAL_F
+	jr z, .self_trainer
+
+.not_self_trainer
 	farcall GetEnemyMonDVs
 	ld c, l
 	ld b, h
 	ld a, [wTempEnemyMonSpecies]
 	call GetFrontpicPalettePointer
+	pop de
+	ret
+
+.self_trainer
+	call GetPlayerPalettePointer
 	pop de
 	ret
 

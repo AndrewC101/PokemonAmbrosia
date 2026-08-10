@@ -27,7 +27,6 @@ INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/adam.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
-BrownPlayerPalette:
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
@@ -103,3 +102,7 @@ SilverPlayerPalette:
 YellowPlayerPalette:
 	RGB 31,19,10
 	RGB 28,28,0
+
+BrownPlayerPalette:
+	RGB 31,19,10
+	RGB 15,10,03

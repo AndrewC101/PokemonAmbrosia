@@ -7592,8 +7592,7 @@ BattleWinSlideInEnemyTrainerFrontpic:
 	call FinishBattleAnim
 	ld a, [wOtherTrainerClass]
 	ld [wTrainerClass], a
-	ld de, vTiles2
-	callfar GetTrainerPic
+	call LoadEnemyTrainerFrontpic
 	hlcoord 19, 0
 	ld c, 0
 
@@ -7644,6 +7643,22 @@ BattleWinSlideInEnemyTrainerFrontpic:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+LoadEnemyTrainerFrontpic:
+; CAL and CAL_F use the player's current appearance, but keep their trainer
+; class identity for party/text/palette handling outside the graphics load.
+	ld de, vTiles2
+	ld a, [wOtherTrainerClass]
+	cp CAL
+	jr z, .self
+	cp CAL_F
+	jr z, .self
+	callfar GetTrainerPic
+	ret
+
+.self
+	callfar LoadSelectedSelfTrainerPic
 	ret
 
 ApplyStatusEffectOnPlayerStats:
@@ -9256,8 +9271,7 @@ InitEnemyTrainer:
 .notCal
 	callfar ReadTrainerParty
 .ok
-	ld de, vTiles2
-	callfar GetTrainerPic
+	call LoadEnemyTrainerFrontpic
 	xor a
 	ldh [hGraphicStartTile], a
 	dec a

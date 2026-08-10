@@ -613,6 +613,22 @@ ApplyPlayerNamingScreenPalette::
 	ldh [hCGBPalUpdate], a
 	ret
 
+LoadSelectedSelfTrainerPic::
+; Load the chosen player frontpic for self battles without changing the active
+; self trainer class seen by the rest of battle setup.
+	call WaitBGMap
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wTrainerClass]
+	push af
+	newfarcall LoadSelectedPlayerFrontpicAtDE
+	pop af
+	ld [wTrainerClass], a
+	call WaitBGMap
+	ld a, $1
+	ldh [hBGMapMode], a
+	ret
+
 PlayerMirrorPicMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 6, 4, 14, 12

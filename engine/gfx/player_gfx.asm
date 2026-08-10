@@ -136,11 +136,17 @@ GetChrisBackpic:
 	ret
 
 LoadSelectedPlayerFrontpic:
+	ld de, vTiles2
+
+LoadSelectedPlayerFrontpicAtDE::
+; Load the selected player frontpic to de. Overworld previews use vTiles1 so
+; they do not overwrite active map graphics in vTiles2.
+	push de
 	newfarcall GetSelectedPlayerTrainerClass
 	and a
 	jr z, .default
 	ld [wTrainerClass], a
-	ld de, vTiles2
+	pop de
 	farcall GetTrainerPic
 	ret
 
@@ -161,7 +167,7 @@ LoadSelectedPlayerFrontpic:
 	jr z, .got_pic
 	ld de, KrisPic
 .got_pic
-	ld hl, vTiles2
+	pop hl
 	ld b, BANK(ChrisPic) ; aka BANK(KrisPic)
 	ld c, 7 * 7
 	call Get2bpp

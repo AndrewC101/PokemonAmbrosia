@@ -473,7 +473,7 @@ ENDM
 	map_const NEW_BARK_TOWN,                               10,  15 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
-	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
+	map_const PLAYERS_HOUSE_2F,                             6,  3 ;  7
 	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  8
 	map_const ELMS_HOUSE,                                   4,  4 ;  9
 	map_const ROUTE_26_HEAL_HOUSE,                          4,  4 ; 10

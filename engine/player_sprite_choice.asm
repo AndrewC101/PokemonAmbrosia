@@ -214,7 +214,7 @@ PlayerSpriteChoiceSprites:
 	db SPRITE_MORTY        ; PLAYER_SPRITE_MORTY
 	db SPRITE_RED          ; PLAYER_SPRITE_ASH
 	db SPRITE_KIMONO_GIRL  ; PLAYER_SPRITE_KIMONO_GIRL
-	db SPRITE_LASS         ; PLAYER_SPRITE_LASS
+	db SPRITE_BEAUTY       ; PLAYER_SPRITE_LASS
 
 PlayerSpriteChoiceGFX:
 	dba RivalSpriteGFX
@@ -334,3 +334,264 @@ WhatSpriteWillYouUseText:
 	text "Now, who do you"
 	line "look like?"
 	prompt
+
+PlayerRecreationScript::
+	reloadmap
+	opentext
+	writetext PlayerRecreationGenderText
+	loadmenu PlayerRecreationGenderHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .Male
+	ifequal 2, .Female
+	closetext
+	end
+
+.Male
+	loadmem wPlayerGender, 0
+	sjump .chooseSprite
+
+.Female
+	loadmem wPlayerGender, 1
+	sjump .chooseSprite
+
+.chooseSprite
+	writetext PlayerRecreationSpriteText
+	readmem wPlayerGender
+	ifequal 1, .chooseFemaleSprite
+	loadmenu MalePlayerSpriteChoiceMenuHeader
+	sjump .openSpriteMenu
+
+.chooseFemaleSprite
+	loadmenu FemalePlayerSpriteChoiceMenuHeader
+
+.openSpriteMenu
+	_2dmenu
+	closewindow
+	callasm StoreScriptPlayerSpriteChoice
+
+.chooseColor
+	writetext PlayerRecreationColorText
+	loadmenu PlayerRecreationColorHeader
+	_2dmenu
+	closewindow
+	callasm StoreScriptPlayerColorChoice
+
+.rename
+	warpfacing UP, NONE, 0, 0
+	opentext
+	writetext PlayerRecreationNameText
+	closetext
+	callasm PlayerRecreationNamingScreen
+	reloadmap
+	opentext
+	writetext PlayerRecreationDoneText
+	closetext
+	end
+
+PlayerRecreationGenderHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 9, 5
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 5 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "Male@"
+	db "Female@"
+
+PlayerRecreationColorHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 17, 7
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 3, 2 ; rows, columns
+	db 7 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Yellow@"
+	db "Brown@"
+	db "Silver@"
+
+PlayerRecreationColorOptions:
+	table_width 1
+	db PLAYER_COLOR_RED
+	db PLAYER_COLOR_BLUE
+	db PLAYER_COLOR_GREEN
+	db PLAYER_COLOR_YELLOW
+	db PLAYER_COLOR_BROWN
+	db PLAYER_COLOR_SILVER
+	assert_table_length NUM_PLAYER_COLORS
+
+PlayerRecreationGenderText:
+	text "What is your new"
+	line "gender?"
+	prompt
+
+PlayerRecreationSpriteText:
+	text "What is your new"
+	line "sprite?"
+	prompt
+
+PlayerRecreationColorText:
+	text "What is your new"
+	line "color?"
+	prompt
+
+PlayerRecreationNameText:
+	text "What is your new"
+	line "name?"
+	prompt
+
+PlayerRecreationDoneText:
+	text "You are reborn"
+	line "<PLAYER>!"
+	prompt
+
+StoreScriptPlayerColorChoice::
+; Convert the 1-based color menu cursor into the stored player color.
+	ld a, [wScriptVar]
+	and a
+	jr z, .default
+	cp NUM_PLAYER_COLORS + 1
+	jr nc, .default
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, PlayerRecreationColorOptions
+	add hl, de
+	ld a, [hl]
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerColor], a
+	ret
+
+StoreScriptPlayerSpriteChoice::
+; In-game recreation should use the newly selected gender, not transient sprite
+; setup overrides such as female-to-male disguise state.
+	ld a, [wScriptVar]
+	and a
+	jr z, .default
+	cp 11
+	jr nc, .default
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, MalePlayerSpriteChoiceOptions
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .got_table
+	ld hl, FemalePlayerSpriteChoiceOptions
+
+.got_table
+	add hl, de
+	ld a, [hl]
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerSpriteChoice], a
+	ret
+
+PlayerRecreationNamingScreen::
+	ld b, NAME_PLAYER
+	ld de, wPlayerName
+	newfarcall NamingScreen
+	ld hl, wPlayerName
+	ld de, PlayerRecreationDefaultName
+	call InitName
+	ret
+
+PlayerRecreationDefaultName:
+	db "Gold@@@@@@@"
+
+ShowPlayerMirrorPic::
+; Show the selected player frontpic in a field-style picture box until A or B.
+	call ReanchorMap
+	xor a
+	ldh [hBGMapMode], a
+	call LoadOverworldTilemapAndAttrmapPals
+	call GetMovementPermissions
+	farcall HDMATransferTilemapAndAttrmap_Overworld
+	call UpdateSprites
+
+	ld hl, PlayerMirrorPicMenuHeader
+	call CopyMenuHeader
+	call MenuBox
+	ld b, SCGB_POKEPIC
+	call GetSGBLayout
+	call UpdateSprites
+	call ApplyTilemap
+
+	xor a
+	ld [wCurPartySpecies], a
+	ld de, vTiles1
+	farcall LoadSelectedPlayerFrontpicAtDE
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wMenuBorderTopCoord]
+	inc a
+	ld b, a
+	ld a, [wMenuBorderLeftCoord]
+	inc a
+	ld c, a
+	call Coord2Tile
+	ld a, $80
+	ldh [hGraphicStartTile], a
+	lb bc, 7, 7
+	predef PlaceGraphic
+	call ApplyPlayerMirrorPicPalette
+	call WaitBGMap
+	call WaitPressAorB_BlinkCursor
+
+	ld hl, PlayerMirrorPicMenuHeader
+	call CopyMenuHeader
+	call ClearMenuBoxInterior
+	call WaitBGMap
+	call GetMemSGBLayout
+	xor a
+	ldh [hBGMapMode], a
+	call LoadOverworldTilemapAndAttrmapPals
+	call ApplyTilemap
+	call UpdateSprites
+	call LoadStandardFont
+	ret
+
+ApplyPlayerMirrorPicPalette:
+; Keep mirror previews aligned with normal player color and temporary overrides.
+	ldh a, [hCGB]
+	and a
+	ret z
+	newfarcall GetPlayerPalettePointer
+	ld de, wBGPals1 palette PAL_BG_TEXT
+	newfarcall LoadPalette_White_Col1_Col2_Black
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+PlayerMirrorPicMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 6, 4, 14, 12
+	dw NULL
+	db 1 ; default option

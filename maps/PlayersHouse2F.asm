@@ -131,6 +131,24 @@ PlayersTVText:
 	cont "TV."
 	done
 
+PlayersHouseMirrorScript:
+	callasm ShowPlayerMirrorPic
+	opentext
+	writetext PlayersHouseMirrorAuthenticSelfText
+	yesorno
+	iftrue .done
+	closetext
+	farsjump PlayerRecreationScript
+
+.done
+	closetext
+	end
+
+PlayersHouseMirrorAuthenticSelfText:
+	text "Is this your"
+	line "authentic self?"
+	done
+
 PlayersHousePCScript:
 	opentext
 	special PlayersHousePC
@@ -191,6 +209,7 @@ PlayersHouse2F_MapEvents:
 	bg_event  5,  1, BGEVENT_READ, PlayersHouseBookshelfScript
 	bg_event  4,  1, BGEVENT_READ, PlayersHouseTVScript
 	bg_event  6,  0, BGEVENT_IFSET, PlayersHousePosterScript
+	bg_event 10,  0, BGEVENT_READ, PlayersHouseMirrorScript
 
 	def_object_events
 	object_event  4,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseGameConsoleScript, EVENT_PLAYERS_HOUSE_2F_CONSOLE

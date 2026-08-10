@@ -2381,138 +2381,7 @@ ElmsLabMrMimeScript:
     closetext
     end
 .rebirth
-    reloadmap
-    opentext
-    writetext WhichGenderAreYouText
-	loadmenu .GenderHeader
-	_2dmenu
-	closewindow
-	ifequal 1, .Male
-	ifequal 2, .Female
-	closetext
-	end
-.GenderHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 9, 5
-	dw .GenderData
-	db 1 ; default option
-.GenderData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 2, 1 ; rows, columns
-	db 5 ; spacing
-	dba .GenderText
-	dbw BANK(@), NULL
-.GenderText:
-	db "Male@"
-	db "Female@"
-.Male
-    loadmem wPlayerGender, 0
-    sjump .chooseSprite
-.Female
-    loadmem wPlayerGender, 1
-    sjump .chooseSprite
-.chooseColor
-	writetext WhichColorAreYouText
-	loadmenu .ColorHeader
-	_2dmenu
-	closewindow
-	callasm StoreResurrectPlayerColorChoice
-	sjump .rename
-.ColorHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 17, 7
-	dw .ColorData
-	db 1 ; default option
-.ColorData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 3, 2 ; rows, columns
-	db 7 ; spacing
-	dba .ColorText
-	dbw BANK(@), NULL
-.ColorText:
-	db "Red@"
-	db "Blue@"
-	db "Green@"
-	db "Yellow@"
-	db "Brown@"
-	db "Silver@"
-.ColorOptions:
-	table_width 1
-	db PLAYER_COLOR_RED
-	db PLAYER_COLOR_BLUE
-	db PLAYER_COLOR_GREEN
-	db PLAYER_COLOR_YELLOW
-	db PLAYER_COLOR_BROWN
-	db PLAYER_COLOR_SILVER
-	assert_table_length NUM_PLAYER_COLORS
-.MaleSpriteHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 11
-	dw .MaleSpriteData
-	db 1 ; default option
-.MaleSpriteData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 5, 2 ; rows, columns
-	db 8 ; spacing
-	dba .MaleSpriteText
-	dbw BANK(@), NULL
-.MaleSpriteText:
-	db "Default@"
-	db "Ash@"
-	db "Silver@"
-	db "Blue@"
-	db "Falkner@"
-	db "Bruno@"
-	db "Morty@"
-	db "Lance@"
-	db "Oak@"
-	db "Giovanni@"
-.FemaleSpriteHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 11
-	dw .FemaleSpriteData
-	db 1 ; default option
-.FemaleSpriteData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 5, 2 ; rows, columns
-	db 8 ; spacing
-	dba .FemaleSpriteText
-	dbw BANK(@), NULL
-.FemaleSpriteText:
-	db "Default@"
-	db "Lass@"
-	db "Whitney@"
-	db "Misty@"
-	db "Jasmine@"
-	db "Erika@"
-	db "Clair@"
-	db "Sabrina@"
-	db "Kimono@"
-	db "Rocket@"
-.chooseSprite
-	writetext WhichSpriteAreYouText
-	readmem wPlayerGender
-	ifequal 1, .chooseFemaleSprite
-	loadmenu .MaleSpriteHeader
-	sjump .openSpriteMenu
-.chooseFemaleSprite
-	loadmenu .FemaleSpriteHeader
-.openSpriteMenu
-	_2dmenu
-	closewindow
-	callasm StoreResurrectPlayerSpriteChoice
-	sjump .chooseColor
-.rename
-    warpfacing UP, NONE, 0, 0
-    opentext
-    writetext WhatIsYourNameText
-    closetext
-    callasm PlayerNamingScreen
-    reloadmap
-    opentext
-    writetext RebornText
-    closetext
-    end
+	farsjump PlayerRecreationScript
 .nostalgia
     opentext
     writetext MimeNostalgicText
@@ -2596,49 +2465,15 @@ MakeRoomInPartyText:
     line "your party."
     prompt
 
-WhichGenderAreYouText:
-    text "What is your new"
-    line "gender?"
-    prompt
-
-WhichColorAreYouText:
-    text "What is your new"
-    line "color?"
-    prompt
-
-WhichSpriteAreYouText:
-    text "What is your new"
-    line "sprite?"
-    prompt
-
-WhatIsYourNameText:
-    text "What is your new"
-    line "name?"
-    prompt
-
-RebornText:
-    text "You are reborn"
-    line "<PLAYER>!"
-    prompt
-
 GiveWarpText:
-    text "Warp enabled in"
-    line "start menu."
-    prompt
+	text "Warp enabled in"
+	line "start menu."
+	prompt
 
 PasswordScreen:
     ld b, NAME_CHEATCODE
     ld de, wPassword
     newfarcall NamingScreen
-    ret
-
-PlayerNamingScreen:
-    ld b, NAME_PLAYER
-    ld de, wPlayerName
-    newfarcall NamingScreen
-    ld hl, wPlayerName
-    ld de, DefaultName
-    call InitName
     ret
 
 CrystalNamingScreen:
@@ -2660,83 +2495,6 @@ RivalNamingScreen:
     ld de, DefaultRivalName
     call InitName
     ret
-
-StoreResurrectPlayerColorChoice:
-; Menu positions are 1-based; bad positions fall back to red.
-	ld a, [wScriptVar]
-	and a
-	jr z, .default
-	cp NUM_PLAYER_COLORS + 1
-	jr nc, .default
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, ElmsLabMrMimeScript.ColorOptions
-	add hl, de
-	ld a, [hl]
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerColor], a
-	ret
-
-StoreResurrectPlayerSpriteChoice:
-; Convert the 1-based 5x2 menu cursor into the gendered sprite-choice value.
-	ld a, [wScriptVar]
-	and a
-	jr z, .default
-	cp 11
-	jr nc, .default
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, .MaleOptions
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_table
-	ld hl, .FemaleOptions
-
-.got_table
-	add hl, de
-	ld a, [hl]
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerSpriteChoice], a
-	ret
-
-.MaleOptions:
-	db PLAYER_SPRITE_DEFAULT
-	db PLAYER_SPRITE_ASH
-	db PLAYER_SPRITE_SILVER
-	db PLAYER_SPRITE_BLUE
-	db PLAYER_SPRITE_FALKNER
-	db PLAYER_SPRITE_BRUNO
-	db PLAYER_SPRITE_MORTY
-	db PLAYER_SPRITE_LANCE
-	db PLAYER_SPRITE_ROCKET
-	db PLAYER_SPRITE_GIOVANNI
-
-.FemaleOptions:
-	db PLAYER_SPRITE_DEFAULT
-	db PLAYER_SPRITE_LASS
-    db PLAYER_SPRITE_WHITNEY
-	db PLAYER_SPRITE_MISTY
-	db PLAYER_SPRITE_JASMINE
-	db PLAYER_SPRITE_ERIKA
-	db PLAYER_SPRITE_CLAIR
-	db PLAYER_SPRITE_SABRINA
-	db PLAYER_SPRITE_KIMONO_GIRL
-	db PLAYER_SPRITE_ROCKET_GIRL
-
-DefaultName:
-    db "Gold@@@@@@@"
 
 DefaultRivalName:
     db "Silver@"

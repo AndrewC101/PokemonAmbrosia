@@ -331,6 +331,6 @@ FemalePlayerSpriteChoiceText:
 	db "Rocket@"
 
 WhatSpriteWillYouUseText:
-	text "Next, pick your"
-	line "sprite."
+	text "Now, who do you"
+	line "look like?"
 	prompt

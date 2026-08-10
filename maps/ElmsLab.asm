@@ -2393,7 +2393,7 @@ ElmsLabMrMimeScript:
 	end
 .GenderHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 6, 5
+	menu_coords 0, 0, 9, 5
 	dw .GenderData
 	db 1 ; default option
 .GenderData:
@@ -2403,20 +2403,21 @@ ElmsLabMrMimeScript:
 	dba .GenderText
 	dbw BANK(@), NULL
 .GenderText:
-	db "Boy@"
-	db "Girl@"
+	db "Male@"
+	db "Female@"
 .Male
     loadmem wPlayerGender, 0
-    sjump .chooseColor
+    sjump .chooseSprite
 .Female
     loadmem wPlayerGender, 1
+    sjump .chooseSprite
 .chooseColor
 	writetext WhichColorAreYouText
 	loadmenu .ColorHeader
 	_2dmenu
 	closewindow
 	callasm StoreResurrectPlayerColorChoice
-	sjump .chooseSprite
+	sjump .rename
 .ColorHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 17, 7
@@ -2500,6 +2501,7 @@ ElmsLabMrMimeScript:
 	_2dmenu
 	closewindow
 	callasm StoreResurrectPlayerSpriteChoice
+	sjump .chooseColor
 .rename
     warpfacing UP, NONE, 0, 0
     opentext

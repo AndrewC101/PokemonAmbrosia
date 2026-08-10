@@ -863,6 +863,7 @@ OakSpeech:
 	ret
 
 FinishIntro:
+.loop
 	call RotateThreePalettesRight
 	call ClearTilemap
 
@@ -874,6 +875,14 @@ FinishIntro:
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
+	ld hl, AuthenticSelfText
+	call PrintText
+	call YesNoBox
+	jr nc, .confirmed
+	farcall InitGender
+	jr .loop
+
+.confirmed
 	ld hl, OakText6
 	call PrintText
 	call NamePlayer
@@ -913,6 +922,11 @@ OakText6:
 OakText7:
 	text_far _OakText7
 	text_end
+
+AuthenticSelfText:
+	text "Is this your"
+	line "authentic self?"
+	done
 
 DontKillUsText:
 	text_far _DontKillUsText

@@ -56,6 +56,7 @@ NamingScreen::
 	call WaitBGMap
 	call WaitTop
 	call SetDefaultBGPAndOBP
+	farcall ApplyPlayerNamingScreenPalette
 	call NamingScreen_InitNameEntry
 	ret
 
@@ -257,16 +258,7 @@ NamingScreenJumptable:
 	ld [hli], a
 	ld [hl], a
 	pop de
-	ld b, SPRITE_ANIM_OBJ_RED_WALK
-	ld a, d
-	cp HIGH(KrisSpriteGFX)
-	jr nz, .not_kris
-	ld a, e
-	cp LOW(KrisSpriteGFX)
-	jr nz, .not_kris
-	ld b, SPRITE_ANIM_OBJ_BLUE_WALK
-.not_kris
-	ld a, b
+	ld a, SPRITE_ANIM_OBJ_RED_WALK
 	depixel 4, 4, 4, 0
 	call InitSpriteAnimStruct
 	ret

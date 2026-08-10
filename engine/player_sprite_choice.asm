@@ -234,7 +234,7 @@ PlayerSpriteChoiceGFX:
 	dba MortySpriteGFX
 	dba RedSpriteGFX
 	dba KimonoGirlSpriteGFX
-	dba LassSpriteGFX
+	dba BeautySpriteGFX
 
 PlayerSpriteChoiceTrainerClasses:
 	db RIVAL1
@@ -585,6 +585,29 @@ ApplyPlayerMirrorPicPalette:
 	newfarcall GetPlayerPalettePointer
 	ld de, wBGPals1 palette PAL_BG_TEXT
 	newfarcall LoadPalette_White_Col1_Col2_Black
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
+
+ApplyPlayerNamingScreenPalette::
+; The naming screen's walking preview uses PAL_OW_RED, so replace that OBJ
+; palette with the current player color only for player-name entry.
+	ld a, [wNamingScreenType]
+	cp NAME_PLAYER
+	ret nz
+	ldh a, [hCGB]
+	and a
+	ret z
+	ld a, [wBattleTimeOfDay]
+	push af
+	xor a
+	ld [wBattleTimeOfDay], a
+	newfarcall GetPlayerPalettePointer
+	ld de, wOBPals1 palette PAL_OW_RED
+	newfarcall LoadPalette_White_Col1_Col2_Black
+	pop af
+	ld [wBattleTimeOfDay], a
 	farcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a

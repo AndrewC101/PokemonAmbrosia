@@ -741,6 +741,24 @@ ManorCheeseText:
 	cont "cheese!"
 	done
 
+ManorMirrorScript:
+	callasm ShowPlayerMirrorPic
+	opentext
+	writetext ManorMirrorAuthenticSelfText
+	yesorno
+	iftrue .done
+	closetext
+	farsjump PlayerRecreationScript
+
+.done
+	closetext
+	end
+
+ManorMirrorAuthenticSelfText:
+	text "Is this your"
+	line "authentic self?"
+	done
+
 ManorFact1:
     opentext
     writetext ManorFact1Text
@@ -1304,6 +1322,7 @@ ManorInside_MapEvents:
 	bg_event 11, 25, BGEVENT_READ, ManorHeul
 	bg_event 39, 25, BGEVENT_READ, ManorUnused
 	bg_event 43, 36, BGEVENT_READ, ManorDayo
+	bg_event  6, 10, BGEVENT_READ, ManorMirrorScript
 	bg_event 11, 10, BGEVENT_READ, ManorUnused
 	bg_event  8, 5, BGEVENT_READ, ManorUnused
 	bg_event  3, 5, BGEVENT_READ, ManorUnused

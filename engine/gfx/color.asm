@@ -1064,6 +1064,7 @@ GetPlayerPalettePointer:
 	dw GreenPlayerPalette
 	dw BrownPlayerPalette
 	dw SilverPlayerPalette
+	dw YellowPlayerPalette
 
 GetFrontpicPalettePointer:
 	and a
@@ -1656,7 +1657,7 @@ LoadMapPals:
 	ld hl, wBreedMon1Species
 	call GetFarWRAMByte
 	and a
-	jr z, .day_care_mon_2
+	ret z
 	ld [wCurPartySpecies], a
 
 	ld hl, wBreedMon1DVs ; HL now points to the params of the wBreedMon1, which is needed by GetMenuMonIconPalette to determine if it's shiny.
@@ -1680,37 +1681,8 @@ LoadMapPals:
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
-.day_care_mon_2
-	ld a, BANK(wBreedMon2Species)
-	ld hl, wBreedMon2Species
-	call GetFarWRAMByte
-	and a
-	ret z
-	ld [wCurPartySpecies], a
-
-	ld hl, wBreedMon2DVs ; HL now points to the params of the wBreedMon2, which is needed by GetMenuMonIconPalette to determine if it's shiny.
-	ld de, GetMenuMonIconPalette
-	ld a, BANK(GetMenuMonIconPalette)
-	call FarCall_de
-	ld a, e
-	add a
-	add a
-	add a
-	ld e, a
-	ld d, 0
-	ld hl, PartyMenuOBPals
-	add hl, de
-
-	inc hl
-	inc hl
-
-	; Day-care mon 2 used the old rock slot as a dynamic palette.
-	; Keep it away from the reclaimed silver player slot.
-	ld de, wOBPals1 palette PAL_OW_TREE + 2
-	ld bc, 1 palettes - 2
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-
+	; Day-care mon 2 now uses a fixed object palette so the reclaimed
+	; tree slot remains available for the yellow player color.
 	ret
 
 LoadDexTypePals:

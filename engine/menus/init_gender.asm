@@ -62,27 +62,64 @@ SetPlayerColor:
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 	call WaitBGMap2
-	call VerticalMenu
+	call _2DMenu
+	push af
 	call CloseWindow
-	ld a, [wMenuCursorY]
-	dec a
-	ld [wPlayerColor], a
+	pop af
+	call StorePlayerColorFromPosition
 	ret
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 6, 2, 15, 14
+	menu_coords 1, 2, 18, 10
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	db NUM_PLAYER_COLORS ; items
+	dn 3, 2 ; rows, columns
+	db 8 ; spacing
+	dba .ColorText
+	dbw BANK(@), NULL
+
+.ColorText:
 	db "Red@"
 	db "Blue@"
 	db "Green@"
+	db "Yellow@"
 	db "Brown@"
 	db "Silver@"
+
+StorePlayerColorFromPosition:
+; Menu positions are 1-based; bad positions fall back to red.
+	and a
+	jr z, .default
+	cp NUM_PLAYER_COLORS + 1
+	jr nc, .default
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, .ColorOptions
+	add hl, de
+	ld a, [hl]
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerColor], a
+	ret
+
+.ColorOptions:
+	table_width 1
+	db PLAYER_COLOR_RED
+	db PLAYER_COLOR_BLUE
+	db PLAYER_COLOR_GREEN
+	db PLAYER_COLOR_YELLOW
+	db PLAYER_COLOR_BROWN
+	db PLAYER_COLOR_SILVER
+	assert_table_length NUM_PLAYER_COLORS
 
 AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText

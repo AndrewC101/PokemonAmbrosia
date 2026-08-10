@@ -28,6 +28,12 @@ LoadPlayerColor:
 	ret
 
 .not_silver
+	cp PLAYER_COLOR_YELLOW
+	jr nz, .not_yellow
+	ln e, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT
+	ret
+
+.not_yellow
 	cp NUM_PLAYER_COLORS
 	jr c, .valid
 	xor a

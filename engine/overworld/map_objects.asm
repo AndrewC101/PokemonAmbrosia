@@ -2070,7 +2070,7 @@ ShakeGrass:
 
 .GrassObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_TREE, SPRITEMOVEDATA_GRASS
+	db $00, PAL_OW_GREEN, SPRITEMOVEDATA_GRASS
 
 ShakeScreen:
 	push bc

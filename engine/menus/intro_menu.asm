@@ -1140,6 +1140,11 @@ Intro_PlacePlayerSprite:
 	ld a, PAL_OW_SILVER
 	jr .got_palette
 .not_silver
+	cp PLAYER_COLOR_YELLOW
+	jr nz, .not_yellow
+	ld a, PAL_OW_YELLOW
+	jr .got_palette
+.not_yellow
 	cp NUM_PLAYER_COLORS
 	jr c, .got_palette
 	xor a

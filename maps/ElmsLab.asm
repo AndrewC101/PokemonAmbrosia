@@ -2415,21 +2415,16 @@ ElmsLabMrMimeScript:
 	loadmenu .ColorHeader
 	_2dmenu
 	closewindow
-	ifequal 1, .ColorRed
-	ifequal 2, .ColorBlue
-	ifequal 3, .ColorGreen
-	ifequal 4, .ColorBrown
-	ifequal 5, .ColorSilver
-	closetext
-	end
+	callasm StoreResurrectPlayerColorChoice
+	sjump .chooseSprite
 .ColorHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 9, 12
+	menu_coords 0, 0, 17, 7
 	dw .ColorData
 	db 1 ; default option
 .ColorData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 5, 1 ; rows, columns
+	dn 3, 2 ; rows, columns
 	db 7 ; spacing
 	dba .ColorText
 	dbw BANK(@), NULL
@@ -2437,8 +2432,18 @@ ElmsLabMrMimeScript:
 	db "Red@"
 	db "Blue@"
 	db "Green@"
+	db "Yellow@"
 	db "Brown@"
 	db "Silver@"
+.ColorOptions:
+	table_width 1
+	db PLAYER_COLOR_RED
+	db PLAYER_COLOR_BLUE
+	db PLAYER_COLOR_GREEN
+	db PLAYER_COLOR_YELLOW
+	db PLAYER_COLOR_BROWN
+	db PLAYER_COLOR_SILVER
+	assert_table_length NUM_PLAYER_COLORS
 .MaleSpriteHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 19, 11
@@ -2483,20 +2488,6 @@ ElmsLabMrMimeScript:
 	db "Sabrina@"
 	db "Kimono@"
 	db "Rocket@"
-.ColorRed
-	loadmem wPlayerColor, PLAYER_COLOR_RED
-	sjump .chooseSprite
-.ColorBlue
-	loadmem wPlayerColor, PLAYER_COLOR_BLUE
-	sjump .chooseSprite
-.ColorGreen
-	loadmem wPlayerColor, PLAYER_COLOR_GREEN
-	sjump .chooseSprite
-.ColorBrown
-	loadmem wPlayerColor, PLAYER_COLOR_BROWN
-	sjump .chooseSprite
-.ColorSilver
-	loadmem wPlayerColor, PLAYER_COLOR_SILVER
 .chooseSprite
 	writetext WhichSpriteAreYouText
 	readmem wPlayerGender
@@ -2667,6 +2658,28 @@ RivalNamingScreen:
     ld de, DefaultRivalName
     call InitName
     ret
+
+StoreResurrectPlayerColorChoice:
+; Menu positions are 1-based; bad positions fall back to red.
+	ld a, [wScriptVar]
+	and a
+	jr z, .default
+	cp NUM_PLAYER_COLORS + 1
+	jr nc, .default
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, ElmsLabMrMimeScript.ColorOptions
+	add hl, de
+	ld a, [hl]
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerColor], a
+	ret
 
 StoreResurrectPlayerSpriteChoice:
 ; Convert the 1-based 5x2 menu cursor into the gendered sprite-choice value.

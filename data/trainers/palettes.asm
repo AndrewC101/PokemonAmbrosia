@@ -100,8 +100,8 @@ SilverPlayerPalette:
 	RGB 17,17,17
 
 YellowPlayerPalette:
-	RGB 31,19,10
-	RGB 28,28,0
+	RGB 31,24,12
+	RGB 31,26,00
 
 BrownPlayerPalette:
 	RGB 31,19,10

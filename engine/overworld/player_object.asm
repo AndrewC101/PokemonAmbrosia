@@ -17,31 +17,8 @@ BlankScreen:
 	ret
 
 LoadPlayerColor:
-; Return the normal player object palette/type byte in e.
-	assert PAL_NPC_RED + PLAYER_COLOR_BLUE == PAL_NPC_BLUE
-	assert PAL_NPC_RED + PLAYER_COLOR_GREEN == PAL_NPC_GREEN
-	assert PAL_NPC_RED + PLAYER_COLOR_BROWN == PAL_NPC_BROWN
-	ld a, [wPlayerColor]
-	cp PLAYER_COLOR_SILVER
-	jr nz, .not_silver
-	ln e, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT
-	ret
-
-.not_silver
-	cp PLAYER_COLOR_YELLOW
-	jr nz, .not_yellow
-	ln e, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT
-	ret
-
-.not_yellow
-	cp NUM_PLAYER_COLORS
-	jr c, .valid
-	xor a
-.valid
-	add PAL_NPC_RED
-	swap a
-	or OBJECTTYPE_SCRIPT
-	ld e, a
+; Normal player colours share one dynamic overworld palette slot.
+	ln e, PAL_NPC_PLAYER, OBJECTTYPE_SCRIPT
 	ret
 
 SpawnPlayer:

@@ -112,6 +112,22 @@ YellowPlayerPalette:
 	RGB 31,24,12
 	RGB 31,26,00
 
+PinkPlayerPalette:
+	RGB 31,19,10
+	RGB 31,12,20
+
+PurplePlayerPalette:
+	RGB 31,19,10
+	RGB 17,07,25
+
+OrangePlayerPalette:
+	RGB 31,19,10
+	RGB 31,13,00
+
+DarkGreyPlayerPalette:
+	RGB 31,19,10
+	RGB 08,08,08
+
 BrownPlayerPalette:
 	RGB 31,19,10
 	RGB 15,10,03

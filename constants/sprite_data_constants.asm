@@ -21,8 +21,8 @@ DEF NUM_SPRITEDATA_FIELDS EQU _RS
 	const PAL_OW_BROWN  ; 3
 	const PAL_OW_PINK   ; 4
 	const PAL_OW_EMOTE  ; 5
-	const PAL_OW_TREE   ; 6 ; reclaimed as yellow for player colors
-	const PAL_OW_SILVER ; 7
+	const PAL_OW_TREE   ; 6 ; available as yellow
+	const PAL_OW_SILVER ; 7 ; reserved for the dynamic player palette
 
 ; object_events set bit 3 so as not to use the sprite's default palette
 ; MapObjectPals indexes (see gfx/overworld/npc_sprites.pal)
@@ -33,10 +33,12 @@ DEF NUM_SPRITEDATA_FIELDS EQU _RS
 	const PAL_NPC_BROWN     ; b
 	const PAL_NPC_DEEP_RED  ; c
 	const PAL_NPC_GOLD      ; d
-	const PAL_NPC_TREE      ; e ; reclaimed as yellow for player colors
-	const PAL_NPC_SILVER    ; f
+	const PAL_NPC_TREE      ; e ; available as yellow
+	const PAL_NPC_SILVER    ; f ; reserved for the dynamic player palette
 
 DEF PAL_OW_YELLOW  EQUS "PAL_OW_TREE"
 DEF PAL_NPC_YELLOW EQUS "PAL_NPC_TREE"
+DEF PAL_OW_PLAYER  EQUS "PAL_OW_SILVER"
+DEF PAL_NPC_PLAYER EQUS "PAL_NPC_SILVER"
 DEF PAL_OW_ROCK  EQUS "PAL_OW_BROWN"
 DEF PAL_NPC_ROCK EQUS "PAL_NPC_BROWN"

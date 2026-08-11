@@ -583,6 +583,7 @@ SECTION "Map Scripts 55", ROMX
 
 INCLUDE "maps/ManorInside.asm"
 INCLUDE "maps/OldLighthouse.asm"
+INCLUDE "maps/AncientHallStairs.asm"
 
 SECTION "Map Scripts 56", ROMX
 
@@ -613,8 +614,6 @@ SECTION "Map Scripts 62", ROMX
 INCLUDE "maps/TohjoLake.asm"
 
 SECTION "Map Scripts 63", ROMX
-
-INCLUDE "maps/AncientHallStairs.asm"
 
 SECTION "Map Scripts 64", ROMX
 

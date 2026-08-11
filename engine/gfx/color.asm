@@ -1080,6 +1080,19 @@ GetPlayerPalettePointer:
 	dw BrownPlayerPalette
 	dw SilverPlayerPalette
 	dw YellowPlayerPalette
+	dw PinkPlayerPalette
+	dw PurplePlayerPalette
+	dw OrangePlayerPalette
+	dw DarkGreyPlayerPalette
+
+LoadPlayerOverworldPalette::
+; The player object uses PAL_OW_PLAYER as a dynamic slot. Preserve that
+; slot's time-of-day color 0 and black, and replace only the two middle colors.
+	call GetPlayerPalettePointer
+	ld de, wOBPals1 palette PAL_OW_PLAYER color 1
+	ld bc, 2 * COLOR_SIZE
+	ld a, BANK(wOBPals1)
+	jp FarCopyWRAM
 
 GetFrontpicPalettePointer:
 	and a
@@ -1627,6 +1640,9 @@ LoadMapPals:
 	call FarCopyWRAM
 
 	farcall LoadSpecialNPCPalette
+	jr c, .got_obj_pals
+	call LoadPlayerOverworldPalette
+.got_obj_pals
 
 	ld a, [wEnvironment]
 	cp TOWN

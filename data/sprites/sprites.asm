@@ -100,7 +100,7 @@ OverworldSprites:
 	overworld_sprite SnesSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite FamicomSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite FruitTreeSpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
-	overworld_sprite GoldTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_SILVER
+	overworld_sprite GoldTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_YELLOW
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE

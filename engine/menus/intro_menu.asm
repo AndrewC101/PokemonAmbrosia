@@ -1130,6 +1130,8 @@ Intro_PlacePlayerSprite:
 	ld c, 12
 	ld hl, vTiles0
 	call Request2bpp
+	farcall LoadPlayerOverworldPalette
+	farcall ApplyPals
 
 	ld hl, wShadowOAMSprite00
 	ld de, .sprites
@@ -1148,21 +1150,7 @@ Intro_PlacePlayerSprite:
 	inc de
 	ld [hli], a ; tile id
 
-	ld a, [wPlayerColor]
-	cp PLAYER_COLOR_SILVER
-	jr nz, .not_silver
-	ld a, PAL_OW_SILVER
-	jr .got_palette
-.not_silver
-	cp PLAYER_COLOR_YELLOW
-	jr nz, .not_yellow
-	ld a, PAL_OW_YELLOW
-	jr .got_palette
-.not_yellow
-	cp NUM_PLAYER_COLORS
-	jr c, .got_palette
-	xor a
-.got_palette
+	ld a, PAL_OW_PLAYER
 
 	ld [hli], a ; attributes
 	dec c

@@ -71,14 +71,14 @@ SetPlayerColor:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 1, 2, 18, 10
+	menu_coords 1, 2, 19, 14
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	dn 3, 2 ; rows, columns
-	db 8 ; spacing
+	dn 5, 2 ; rows, columns
+	db 9 ; spacing
 	dba .ColorText
 	dbw BANK(@), NULL
 
@@ -87,8 +87,12 @@ SetPlayerColor:
 	db "Blue@"
 	db "Green@"
 	db "Yellow@"
+	db "Purple@"
+	db "Pink@"
+	db "Orange@"
 	db "Brown@"
 	db "Silver@"
+	db "Grey@"
 
 StorePlayerColorFromPosition:
 ; Menu positions are 1-based; bad positions fall back to red.
@@ -117,8 +121,12 @@ StorePlayerColorFromPosition:
 	db PLAYER_COLOR_BLUE
 	db PLAYER_COLOR_GREEN
 	db PLAYER_COLOR_YELLOW
+	db PLAYER_COLOR_PURPLE
+	db PLAYER_COLOR_PINK
+	db PLAYER_COLOR_ORANGE
 	db PLAYER_COLOR_BROWN
 	db PLAYER_COLOR_SILVER
+	db PLAYER_COLOR_DARK_GREY
 	assert_table_length NUM_PLAYER_COLORS
 
 AreYouABoyOrAreYouAGirlText:

@@ -407,14 +407,14 @@ PlayerRecreationGenderHeader:
 
 PlayerRecreationColorHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 17, 7
+	menu_coords 0, 0, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 3, 2 ; rows, columns
-	db 7 ; spacing
+	dn 5, 2 ; rows, columns
+	db 9 ; spacing
 	dba .Text
 	dbw BANK(@), NULL
 
@@ -423,8 +423,12 @@ PlayerRecreationColorHeader:
 	db "Blue@"
 	db "Green@"
 	db "Yellow@"
+	db "Purple@"
+	db "Pink@"
+	db "Orange@"
 	db "Brown@"
 	db "Silver@"
+	db "Grey@"
 
 PlayerRecreationColorOptions:
 	table_width 1
@@ -432,8 +436,12 @@ PlayerRecreationColorOptions:
 	db PLAYER_COLOR_BLUE
 	db PLAYER_COLOR_GREEN
 	db PLAYER_COLOR_YELLOW
+	db PLAYER_COLOR_PURPLE
+	db PLAYER_COLOR_PINK
+	db PLAYER_COLOR_ORANGE
 	db PLAYER_COLOR_BROWN
 	db PLAYER_COLOR_SILVER
+	db PLAYER_COLOR_DARK_GREY
 	assert_table_length NUM_PLAYER_COLORS
 
 PlayerRecreationGenderText:

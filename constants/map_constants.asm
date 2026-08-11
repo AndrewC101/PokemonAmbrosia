@@ -160,7 +160,7 @@ ENDM
 	map_const ANCIENT_TEMPLE,                              20, 16 ; 94
 	map_const ANCIENT_HALL,                                 5, 10 ; 95
 	map_const OLD_LIGHTHOUSE,                              20, 18 ; 96
-	map_const ANCIENT_HALL_STAIRS,                          7, 14 ; 97
+	map_const ANCIENT_HALL_STAIRS,                          7, 26 ; 97
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

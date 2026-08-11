@@ -254,7 +254,7 @@ PlayerSpriteChoiceTrainerClasses:
 	db MORTY
 	db ASH
 	db KIMONO_GIRL
-	db LASS
+	db CRYSTAL
 
 MalePlayerSpriteChoiceMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -320,7 +320,7 @@ MalePlayerSpriteChoiceText:
 
 FemalePlayerSpriteChoiceText:
 	db "Default@"
-	db "Lass@"
+	db "May@"
 	db "Whitney@"
 	db "Misty@"
 	db "Jasmine@"

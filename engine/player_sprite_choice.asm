@@ -214,7 +214,7 @@ PlayerSpriteChoiceSprites:
 	db SPRITE_MORTY        ; PLAYER_SPRITE_MORTY
 	db SPRITE_RED          ; PLAYER_SPRITE_ASH
 	db SPRITE_KIMONO_GIRL  ; PLAYER_SPRITE_KIMONO_GIRL
-	db SPRITE_BEAUTY       ; PLAYER_SPRITE_LASS
+	db SPRITE_LASS         ; PLAYER_SPRITE_LASS
 
 PlayerSpriteChoiceGFX:
 	dba RivalSpriteGFX
@@ -234,7 +234,7 @@ PlayerSpriteChoiceGFX:
 	dba MortySpriteGFX
 	dba RedSpriteGFX
 	dba KimonoGirlSpriteGFX
-	dba BeautySpriteGFX
+	dba LassSpriteGFX
 
 PlayerSpriteChoiceTrainerClasses:
 	db RIVAL1
@@ -336,7 +336,6 @@ WhatSpriteWillYouUseText:
 	prompt
 
 PlayerRecreationScript::
-	reloadmap
 	opentext
 	writetext PlayerRecreationGenderText
 	loadmenu PlayerRecreationGenderHeader

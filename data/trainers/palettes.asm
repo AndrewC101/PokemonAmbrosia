@@ -6,10 +6,8 @@ TrainerPalettes:
 
 	table_width COLOR_SIZE * 2
 
-RedPlayerPalette:
 PlayerPalette: ; Chris uses the same colors as Cal
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-BluePlayerPalette:
 KrisPalette: ; Kris shares Falkner's palette
 INCBIN "gfx/trainers/falkner.gbcpal", middle_colors
 INCBIN "gfx/trainers/whitney.gbcpal", middle_colors
@@ -31,7 +29,6 @@ INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
 INCBIN "gfx/trainers/scientist.gbcpal", middle_colors
-GreenPlayerPalette:
 INCBIN "gfx/trainers/erika.gbcpal", middle_colors
 INCBIN "gfx/trainers/youngster.gbcpal", middle_colors
 INCBIN "gfx/trainers/schoolboy.gbcpal", middle_colors
@@ -94,6 +91,18 @@ INCBIN "gfx/trainers/ash.gbcpal", middle_colors
 INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1
+
+RedPlayerPalette:
+	RGB 31,19,10
+	RGB 31,07,01
+
+BluePlayerPalette:
+	RGB 31,19,10
+	RGB 10,09,31
+
+GreenPlayerPalette:
+	RGB 31,19,10
+	RGB 07,23,03
 
 SilverPlayerPalette:
 	RGB 31,19,10

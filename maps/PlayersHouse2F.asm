@@ -135,8 +135,8 @@ PlayersHouseMirrorScript:
 	callasm ShowPlayerMirrorPic
 	opentext
 	writetext PlayersHouseMirrorAuthenticSelfText
-	yesorno
-	iftrue .done
+	nooryes
+	iffalse .done
 	closetext
 	farsjump PlayerRecreationScript
 
@@ -145,8 +145,8 @@ PlayersHouseMirrorScript:
 	end
 
 PlayersHouseMirrorAuthenticSelfText:
-	text "Is this your"
-	line "authentic self?"
+	text "Do you want to"
+	line "change yourself?"
 	done
 
 PlayersHousePCScript:

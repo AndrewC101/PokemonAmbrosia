@@ -745,8 +745,8 @@ ManorMirrorScript:
 	callasm ShowPlayerMirrorPic
 	opentext
 	writetext ManorMirrorAuthenticSelfText
-	yesorno
-	iftrue .done
+	nooryes
+	iffalse .done
 	closetext
 	farsjump PlayerRecreationScript
 
@@ -755,8 +755,8 @@ ManorMirrorScript:
 	end
 
 ManorMirrorAuthenticSelfText:
-	text "Is this your"
-	line "authentic self?"
+	text "Do you want to"
+	line "change yourself?"
 	done
 
 ManorFact1:

@@ -3,10 +3,7 @@
 	const BATTLE_MIRROR_RECEPTIONIST
 	const BATTLE_TRIAL_RECEPTIONIST
 	const BATTLE_ARCADE_RECEPTIONIST
-	const BATTLE_MIRROR_CHRIS
-	const BATTLE_MIRROR_CHRIS_GOLD
-	const BATTLE_MIRROR_KRIS
-	const BATTLE_MIRROR_KRIS_GOLD
+	const BATTLE_MIRROR_PLAYER
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
@@ -15,10 +12,7 @@ TrainerHouseB1F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .Chris
 
 .Chris
-    disappear BATTLE_MIRROR_CHRIS
-    disappear BATTLE_MIRROR_CHRIS_GOLD
-    disappear BATTLE_MIRROR_KRIS
-    disappear BATTLE_MIRROR_KRIS_GOLD
+    disappear BATTLE_MIRROR_PLAYER
     endcallback
 
 BattleRouletteReceptionistScript:
@@ -983,22 +977,7 @@ BattleMirrorReceptionistScript:
 	applymovement BATTLE_MIRROR_RECEPTIONIST, Movement_MoveReceptionistOut
 	applymovement PLAYER, Movement_EnterBattleRoom
 	pause 15
-	readmem wMarkOfGod
-	ifequal 0, .normalChris
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .goldKris
-	appear BATTLE_MIRROR_CHRIS_GOLD
-	sjump .fightCal
-.goldKris
-  	appear BATTLE_MIRROR_KRIS_GOLD
-  	sjump .fightCal
-.normalChris
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .normalKris
-	appear BATTLE_MIRROR_CHRIS
-	sjump .fightCal
-.normalKris
-    appear BATTLE_MIRROR_KRIS
+	appear BATTLE_MIRROR_PLAYER
 .fightCal
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
@@ -3408,7 +3387,4 @@ TrainerHouseB1F_MapEvents:
 	object_event 17, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleMirrorReceptionistScript, -1
 	object_event 31, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTrialReceptionistScript, -1
 	object_event 45, 12, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleArcadeReceptionistScript, -1
-	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
-	object_event 18,  3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
-	object_event 18,  3, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_1
-	object_event 18,  3, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_2
+	object_event 18,  3, SPRITE_SELECTED_PLAYER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PLAYER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

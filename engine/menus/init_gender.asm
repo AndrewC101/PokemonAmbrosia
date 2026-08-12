@@ -135,7 +135,7 @@ AreYouABoyOrAreYouAGirlText:
 
 WhatColorWillYouWearText:
 	text "Now, what colour"
-	line "suites you?"
+	line "suits you?"
 	prompt
 
 InitGenderScreen:

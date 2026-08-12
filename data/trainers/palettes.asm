@@ -93,41 +93,41 @@ INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 	assert_table_length NUM_TRAINER_CLASSES + 1
 
 RedPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 31,07,01
 
 BluePlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 10,09,31
 
 GreenPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 07,23,03
 
 SilverPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 17,17,17
 
 YellowPlayerPalette:
-	RGB 31,24,12
-	RGB 31,26,00
+	RGB 31,21,11
+	RGB 31,24,05
 
 PinkPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 31,12,20
 
 PurplePlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 17,07,25
 
 OrangePlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 31,13,00
 
 DarkGreyPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 08,08,08
 
 BrownPlayerPalette:
-	RGB 31,19,10
+	RGB 31,21,11
 	RGB 15,10,03

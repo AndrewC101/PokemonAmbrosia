@@ -36,13 +36,21 @@ GetSelectedPlayerSpriteChoice::
 GetSelectedPlayerOverworldSprite::
 	call GetSelectedPlayerSpriteChoice
 	and a
-	jp z, GetDefaultPlayerOverworldSprite
+	jr nz, .custom
+	call GetDefaultPlayerOverworldSprite
+	jr .store
+
+.custom
 	dec a
 	ld e, a
 	ld d, 0
 	ld hl, PlayerSpriteChoiceSprites
 	add hl, de
 	ld a, [hl]
+
+.store
+; Keep the reusable variable sprite synced to the chosen walking identity.
+	ld [wVariableSprites + SPRITE_SELECTED_PLAYER - SPRITE_VARS], a
 	ret
 
 GetSelectedPlayerSpriteGFX::
@@ -203,14 +211,14 @@ PlayerSpriteChoiceSprites:
 	db SPRITE_LANCE        ; PLAYER_SPRITE_LANCE
 	db SPRITE_BRUNO        ; PLAYER_SPRITE_BRUNO
 	db SPRITE_GIOVANNI     ; PLAYER_SPRITE_GIOVANNI
-	db SPRITE_OAK          ; PLAYER_SPRITE_ROCKET
+	db SPRITE_ROCKER       ; PLAYER_SPRITE_EUSINE
 	db SPRITE_MISTY        ; PLAYER_SPRITE_MISTY
 	db SPRITE_CLAIR        ; PLAYER_SPRITE_CLAIR
 	db SPRITE_ROCKET_GIRL  ; PLAYER_SPRITE_ROCKET_GIRL
 	db SPRITE_SABRINA      ; PLAYER_SPRITE_SABRINA
 	db SPRITE_WHITNEY      ; PLAYER_SPRITE_WHITNEY
 	db SPRITE_JASMINE      ; PLAYER_SPRITE_JASMINE
-	db SPRITE_ERIKA        ; PLAYER_SPRITE_ERIKA
+	db SPRITE_KAREN        ; PLAYER_SPRITE_ERIKA
 	db SPRITE_MORTY        ; PLAYER_SPRITE_MORTY
 	db SPRITE_RED          ; PLAYER_SPRITE_ASH
 	db SPRITE_KIMONO_GIRL  ; PLAYER_SPRITE_KIMONO_GIRL
@@ -223,14 +231,14 @@ PlayerSpriteChoiceGFX:
 	dba LanceSpriteGFX
 	dba BrunoSpriteGFX
 	dba GiovanniSpriteGFX
-	dba OakSpriteGFX
+	dba RockerSpriteGFX
 	dba MistySpriteGFX
 	dba ClairSpriteGFX
 	dba RocketGirlSpriteGFX
 	dba SabrinaSpriteGFX
 	dba WhitneySpriteGFX
 	dba JasmineSpriteGFX
-	dba ErikaSpriteGFX
+	dba KarenSpriteGFX
 	dba MortySpriteGFX
 	dba RedSpriteGFX
 	dba KimonoGirlSpriteGFX
@@ -243,14 +251,14 @@ PlayerSpriteChoiceTrainerClasses:
 	db CHAMPION
 	db BRUNO
 	db GIOVANNI
-	db POKEMON_PROF
+	db MYSTICALMAN
 	db MISTY
 	db CLAIR
 	db GRUNTF
 	db SABRINA
 	db WHITNEY
 	db JASMINE
-	db ERIKA
+	db KAREN
 	db MORTY
 	db ASH
 	db KIMONO_GIRL
@@ -291,7 +299,7 @@ MalePlayerSpriteChoiceOptions:
 	db PLAYER_SPRITE_BRUNO
 	db PLAYER_SPRITE_MORTY
 	db PLAYER_SPRITE_LANCE
-	db PLAYER_SPRITE_ROCKET
+	db PLAYER_SPRITE_EUSINE
 	db PLAYER_SPRITE_GIOVANNI
 
 FemalePlayerSpriteChoiceOptions:
@@ -315,7 +323,7 @@ MalePlayerSpriteChoiceText:
 	db "Bruno@"
 	db "Morty@"
 	db "Lance@"
-	db "Oak@"
+	db "Eusine@"
 	db "Giovanni@"
 
 FemalePlayerSpriteChoiceText:
@@ -324,7 +332,7 @@ FemalePlayerSpriteChoiceText:
 	db "Whitney@"
 	db "Misty@"
 	db "Jasmine@"
-	db "Erika@"
+	db "Karen@"
 	db "Clair@"
 	db "Sabrina@"
 	db "Kimono@"
@@ -376,16 +384,21 @@ PlayerRecreationScript::
 	closewindow
 	callasm StoreScriptPlayerColorChoice
 
-.rename
+	writetext PlayerRecreationChangeNameText
+	nooryes
+	iffalse .skipName
+	closetext
 	warpfacing UP, NONE, 0, 0
 	opentext
 	writetext PlayerRecreationNameText
 	closetext
 	callasm PlayerRecreationNamingScreen
 	reloadmap
-	opentext
-	writetext PlayerRecreationDoneText
+	end
+
+.skipName
 	closetext
+	warpfacing UP, NONE, 0, 0
 	end
 
 PlayerRecreationGenderHeader:
@@ -450,13 +463,17 @@ PlayerRecreationGenderText:
 	prompt
 
 PlayerRecreationSpriteText:
-	text "What is your new"
-	line "sprite?"
+	text "Now, who do you"
+	line "look like?"
 	prompt
 
 PlayerRecreationColorText:
-	text "What is your new"
-	line "color?"
+	text "Now, what colour"
+	line "suits you?"
+	prompt
+
+PlayerRecreationChangeNameText:
+	text "Change your name?"
 	prompt
 
 PlayerRecreationNameText:

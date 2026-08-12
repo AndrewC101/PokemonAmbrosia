@@ -750,10 +750,10 @@ BattleTowerMons:
 	db 0, 0 ; Status
 	bigdw 77
 	bigdw 77
-	bigdw 51
+	bigdw 47
 	bigdw 49
 	bigdw 70
-	bigdw 79
+	bigdw 83
 	bigdw 64
 	db "KAIRIKI-@@@"
 

@@ -206,6 +206,8 @@ gfx/pokemon/jynx/normal.gbcpal: tools/gbcpal += --reverse
 gfx/pokemon/porygon/normal.gbcpal: tools/gbcpal += --reverse
 gfx/pokemon/porygon2/normal.gbcpal: tools/gbcpal += --reverse
 
+gfx/trainers/crystal.gbcpal: tools/gbcpal += --reverse
+gfx/trainers/karen.gbcpal: tools/gbcpal += --reverse
 gfx/trainers/swimmer_m.gbcpal: tools/gbcpal += --reverse
 
 gfx/new_game/shrink1.2bpp: RGBGFXFLAGS += --columns

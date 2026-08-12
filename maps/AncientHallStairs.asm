@@ -98,7 +98,7 @@ AncientHallStairs_MapEvents:
 
 	def_warp_events
 	warp_event  7, 47, TOHJO_LAKE, 1
-	warp_event  7, 29, ANCIENT_TEMPLE, 9
+	warp_event  7,  5, ANCIENT_TEMPLE, 9
 
 	def_coord_events
 

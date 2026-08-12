@@ -441,7 +441,7 @@ PlayerRecreationColorHeader:
 	db "Orange@"
 	db "Brown@"
 	db "Silver@"
-	db "Grey@"
+	db "Black@"
 
 PlayerRecreationColorOptions:
 	table_width 1
@@ -474,7 +474,7 @@ PlayerRecreationColorText:
 
 PlayerRecreationChangeNameText:
 	text "Change your name?"
-	prompt
+	done
 
 PlayerRecreationNameText:
 	text "What is your new"

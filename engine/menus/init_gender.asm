@@ -92,7 +92,7 @@ SetPlayerColor:
 	db "Orange@"
 	db "Brown@"
 	db "Silver@"
-	db "Grey@"
+	db "Black@"
 
 StorePlayerColorFromPosition:
 ; Menu positions are 1-based; bad positions fall back to red.

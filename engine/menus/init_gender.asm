@@ -37,6 +37,7 @@ InitGender:
 	dec a
 	ld [wPlayerGender], a
 	farcall SetInitialPlayerSpriteChoice
+	call SetPlayerComplexion
 	call SetPlayerColor
 	ld c, 10
 	call DelayFrames
@@ -53,6 +54,54 @@ InitGender:
 	db 2 ; items
 	db "Male@"
 	db "Female@"
+
+SetPlayerComplexion:
+	call ClearTilemap
+	call WaitBGMap2
+	ld hl, WhatIsYourComplexionText
+	call PrintText
+	ld hl, .MenuHeader
+	call LoadMenuHeader
+	call WaitBGMap2
+	call _2DMenu
+	push af
+	call CloseWindow
+	pop af
+	call StorePlayerComplexionFromPosition
+	ret
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 5
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 8 ; spacing
+	dba .ComplexionText
+	dbw BANK(@), NULL
+
+.ComplexionText:
+	db "Lighter@"
+	db "Darker@"
+
+StorePlayerComplexionFromPosition:
+; Menu positions are 1-based; bad positions fall back to lighter.
+	and a
+	jr z, .default
+	cp NUM_PLAYER_COMPLEXIONS + 1
+	jr nc, .default
+	dec a
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerComplexionChoice], a
+	ret
 
 SetPlayerColor:
 	call ClearTilemap
@@ -71,7 +120,7 @@ SetPlayerColor:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 1, 2, 19, 14
+	menu_coords 0, 0, 19, 11
 	dw .MenuData
 	db 1 ; default option
 
@@ -95,17 +144,34 @@ SetPlayerColor:
 	db "Black@"
 
 StorePlayerColorFromPosition:
-; Menu positions are 1-based; bad positions fall back to red.
+; Menu positions are 1-based; bad positions fall back to lighter red.
 	and a
 	jr z, .default
-	cp NUM_PLAYER_COLORS + 1
+	cp NUM_PLAYER_BASE_COLORS + 1
 	jr nc, .default
 	dec a
 	ld e, a
 	ld d, 0
 	ld hl, .ColorOptions
 	add hl, de
-	ld a, [hl]
+	; c is the base color; b is the complexion offset multiplier.
+	ld c, [hl]
+	ld a, [wPlayerComplexionChoice]
+	cp NUM_PLAYER_COMPLEXIONS
+	jr c, .got_complexion
+	xor a
+
+.got_complexion
+	ld b, a
+	ld a, b
+	and a
+	ld a, c
+	jr z, .save
+
+.add_complexion_offset
+	add NUM_PLAYER_BASE_COLORS
+	dec b
+	jr nz, .add_complexion_offset
 	jr .save
 
 .default
@@ -127,11 +193,16 @@ StorePlayerColorFromPosition:
 	db PLAYER_COLOR_BROWN
 	db PLAYER_COLOR_SILVER
 	db PLAYER_COLOR_DARK_GREY
-	assert_table_length NUM_PLAYER_COLORS
+	assert_table_length NUM_PLAYER_BASE_COLORS
 
 AreYouABoyOrAreYouAGirlText:
 	text_far _AreYouABoyOrAreYouAGirlText
 	text_end
+
+WhatIsYourComplexionText:
+	text "What is your"
+	line "complexion?"
+	prompt
 
 WhatColorWillYouWearText:
 	text "Now, what colour"

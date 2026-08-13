@@ -377,6 +377,13 @@ PlayerRecreationScript::
 	closewindow
 	callasm StoreScriptPlayerSpriteChoice
 
+.chooseComplexion
+	writetext PlayerRecreationComplexionText
+	loadmenu PlayerRecreationComplexionHeader
+	_2dmenu
+	closewindow
+	callasm StoreScriptPlayerComplexionChoice
+
 .chooseColor
 	writetext PlayerRecreationColorText
 	loadmenu PlayerRecreationColorHeader
@@ -418,6 +425,23 @@ PlayerRecreationGenderHeader:
 	db "Male@"
 	db "Female@"
 
+PlayerRecreationComplexionHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 5
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 8 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "Lighter@"
+	db "Darker@"
+
 PlayerRecreationColorHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 19, 11
@@ -428,10 +452,10 @@ PlayerRecreationColorHeader:
 	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
 	dn 5, 2 ; rows, columns
 	db 9 ; spacing
-	dba .Text
+	dba PlayerColorTextChoices
 	dbw BANK(@), NULL
 
-.Text:
+PlayerColorTextChoices:
 	db "Red@"
 	db "Blue@"
 	db "Green@"
@@ -455,7 +479,7 @@ PlayerRecreationColorOptions:
 	db PLAYER_COLOR_BROWN
 	db PLAYER_COLOR_SILVER
 	db PLAYER_COLOR_DARK_GREY
-	assert_table_length NUM_PLAYER_COLORS
+	assert_table_length NUM_PLAYER_BASE_COLORS
 
 PlayerRecreationGenderText:
 	text "What is your new"
@@ -465,6 +489,11 @@ PlayerRecreationGenderText:
 PlayerRecreationSpriteText:
 	text "Now, who do you"
 	line "look like?"
+	prompt
+
+PlayerRecreationComplexionText:
+	text "What is your"
+	line "complexion?"
 	prompt
 
 PlayerRecreationColorText:
@@ -486,19 +515,55 @@ PlayerRecreationDoneText:
 	line "<PLAYER>!"
 	prompt
 
-StoreScriptPlayerColorChoice::
-; Convert the 1-based color menu cursor into the stored player color.
+StoreScriptPlayerComplexionChoice::
+; Convert the 1-based complexion menu cursor into a temporary complexion.
 	ld a, [wScriptVar]
+StorePlayerComplexionChoiceFromA:
 	and a
 	jr z, .default
-	cp NUM_PLAYER_COLORS + 1
+	cp NUM_PLAYER_COMPLEXIONS + 1
+	jr nc, .default
+	dec a
+	jr .save
+
+.default
+	xor a
+
+.save
+	ld [wPlayerComplexionChoice], a
+	ret
+
+StoreScriptPlayerColorChoice::
+; Convert the 1-based color cursor and complexion choice into wPlayerColor.
+	ld a, [wScriptVar]
+StorePlayerColorChoiceFromA:
+	and a
+	jr z, .default
+	cp NUM_PLAYER_BASE_COLORS + 1
 	jr nc, .default
 	dec a
 	ld e, a
 	ld d, 0
 	ld hl, PlayerRecreationColorOptions
 	add hl, de
-	ld a, [hl]
+	; c is the base color; b is the complexion offset multiplier.
+	ld c, [hl]
+	ld a, [wPlayerComplexionChoice]
+	cp NUM_PLAYER_COMPLEXIONS
+	jr c, .got_complexion
+	xor a
+
+.got_complexion
+	ld b, a
+	ld a, b
+	and a
+	ld a, c
+	jr z, .save
+
+.add_complexion_offset
+	add NUM_PLAYER_BASE_COLORS
+	dec b
+	jr nz, .add_complexion_offset
 	jr .save
 
 .default

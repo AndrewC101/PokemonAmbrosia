@@ -104,6 +104,10 @@ GreenPlayerPalette:
 	RGB 31,19,10
 	RGB 07,23,03
 
+BrownPlayerPalette:
+	RGB 31,19,10
+	RGB 15,10,03
+
 SilverPlayerPalette:
 	RGB 31,19,10
 	RGB 17,17,17
@@ -128,6 +132,45 @@ DarkGreyPlayerPalette:
 	RGB 31,19,10
 	RGB 08,08,08
 
-BrownPlayerPalette:
-	RGB 31,19,10
+DarkerRedPlayerPalette:
+	RGB 17,10,05
+	RGB 31,07,01
+
+DarkerBluePlayerPalette:
+	RGB 17,10,05
+	RGB 10,09,31
+
+DarkerGreenPlayerPalette:
+	RGB 17,10,05
+	RGB 07,23,03
+
+DarkerBrownPlayerPalette:
+	RGB 17,10,05
 	RGB 15,10,03
+
+DarkerSilverPlayerPalette:
+	RGB 17,10,05
+	RGB 17,17,17
+
+DarkerYellowPlayerPalette:
+	RGB 17,10,05
+	RGB 31,24,05
+
+DarkerPinkPlayerPalette:
+	RGB 17,10,05
+	RGB 31,12,20
+
+DarkerPurplePlayerPalette:
+	RGB 17,10,05
+	RGB 17,07,25
+
+DarkerOrangePlayerPalette:
+	RGB 17,10,05
+	RGB 31,13,00
+
+DarkerDarkGreyPlayerPalette:
+	RGB 17,10,05
+	RGB 08,08,08
+
+	assert BrownPlayerPalette == RedPlayerPalette + PLAYER_COLOR_BROWN * 2 * COLOR_SIZE
+	assert DarkerDarkGreyPlayerPalette + 2 * COLOR_SIZE - RedPlayerPalette == NUM_PLAYER_COLORS * 2 * COLOR_SIZE

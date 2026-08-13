@@ -1061,29 +1061,15 @@ GetPlayerPalettePointer:
 	jr c, .got_color
 	xor a
 .got_color
+	add a
+	add a
 	ld e, a
 	ld d, 0
-	ld hl, .Palettes
+	ld hl, RedPlayerPalette
 	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 .done
 	pop de
 	ret
-
-.Palettes:
-	dw RedPlayerPalette
-	dw BluePlayerPalette
-	dw GreenPlayerPalette
-	dw BrownPlayerPalette
-	dw SilverPlayerPalette
-	dw YellowPlayerPalette
-	dw PinkPlayerPalette
-	dw PurplePlayerPalette
-	dw OrangePlayerPalette
-	dw DarkGreyPlayerPalette
 
 LoadPlayerOverworldPalette::
 ; The player object uses PAL_OW_PLAYER as a dynamic slot. Preserve that

@@ -920,7 +920,7 @@ MasterMortyWinText:
 
 MasterMortyAfterBattleText:
 	text "Life is a tiny"
-	line "slither of light"
+	line "sliver of light"
 	cont "sandwiched between"
 	cont "two infinite"
 	cont "darknesses."

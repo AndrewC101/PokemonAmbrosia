@@ -308,8 +308,8 @@ FemalePlayerSpriteChoiceOptions:
     db PLAYER_SPRITE_WHITNEY
 	db PLAYER_SPRITE_MISTY
 	db PLAYER_SPRITE_JASMINE
-	db PLAYER_SPRITE_ERIKA
 	db PLAYER_SPRITE_CLAIR
+	db PLAYER_SPRITE_ERIKA
 	db PLAYER_SPRITE_SABRINA
 	db PLAYER_SPRITE_KIMONO_GIRL
 	db PLAYER_SPRITE_ROCKET_GIRL
@@ -332,8 +332,8 @@ FemalePlayerSpriteChoiceText:
 	db "Whitney@"
 	db "Misty@"
 	db "Jasmine@"
-	db "Karen@"
 	db "Clair@"
+	db "Karen@"
 	db "Sabrina@"
 	db "Kimono@"
 	db "Rocket@"

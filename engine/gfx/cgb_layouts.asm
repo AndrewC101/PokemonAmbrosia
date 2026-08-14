@@ -1252,13 +1252,11 @@ _CGB_PackPals:
 	ldh a, [rWBK]
 	push af
 	call GetPlayerPalettePointer
+	inc hl
+	inc hl
 	ld a, BANK(wBGPals1)
 	ldh [rWBK], a
-	; Palette 0 is the default pack screen frame/background color.
-	ld a, [hli]
-	ld [wBGPals1 palette 0 color 1], a
-	ld a, [hli]
-	ld [wBGPals1 palette 0 color 1 + 1], a
+	; Palette 0 keeps the pack's base color and uses only the player's hair/clothes color.
 	ld a, [hli]
 	ld [wBGPals1 palette 0 color 2], a
 	ld a, [hl]

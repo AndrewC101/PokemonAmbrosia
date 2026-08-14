@@ -10,3 +10,9 @@
 	tilepal 0, YELLOW, YELLOW, GRAY, GRAY, GRAY, RED, RED, GRAY
 	tilepal 0, RED, RED, RED, RED, RED, RED, GRAY, GRAY
 	tilepal 0, YELLOW, YELLOW, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
+
+rept 16
+	db $ff
+endr
+
+	tilepal 1, WATER, TEXT

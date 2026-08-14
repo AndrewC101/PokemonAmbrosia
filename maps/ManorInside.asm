@@ -1323,7 +1323,7 @@ ManorInside_MapEvents:
 	bg_event 39, 25, BGEVENT_READ, ManorUnused
 	bg_event 43, 36, BGEVENT_READ, ManorDayo
 	bg_event  6, 10, BGEVENT_READ, ManorMirrorScript
-	bg_event 11, 10, BGEVENT_READ, ManorUnused
+	bg_event 11, 14, BGEVENT_READ, ManorUnused
 	bg_event  8, 5, BGEVENT_READ, ManorUnused
 	bg_event  3, 5, BGEVENT_READ, ManorUnused
 	bg_event 23, 36, BGEVENT_READ, ManorFF7R

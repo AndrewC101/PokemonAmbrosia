@@ -15,4 +15,4 @@ rept 16
 	db $ff
 endr
 
-	tilepal 1, WATER, TEXT
+	tilepal 1, WATER, WATER

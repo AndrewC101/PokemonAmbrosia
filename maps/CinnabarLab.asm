@@ -382,7 +382,7 @@ CinnabarLabHologramMessageText:
 	para "I never got to"
 	line "know you."
 	para "I didn't give you"
-	line "a change to try."
+	line "a chance to try."
 	para "I promise..."
 	para "I will not waste"
 	line "the gift you all"

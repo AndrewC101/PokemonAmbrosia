@@ -264,23 +264,22 @@ PokeBallEffect:
 ;	cp BATTLETYPE_TUTORIAL
 ;	jp z, .catch_without_fail
 
-	ld a, [wEnemyMonSpecies]
-	cp ARCEUS
-	jr z, .forcePokeball
-	cp MEWTWO
-	jr z, .forcePokeball
-	cp ZYGARDE
-	jr z, .forcePokeball
-	jr .masterBall
-
-.forcePokeball
-    ld a, POKE_BALL
-    jr .notMaster
-
-.masterBall
 	ld a, [wCurItem]
 	cp MASTER_BALL
-	jp z, .catch_without_fail
+	jr nz, .notMaster
+	ld a, [wEnemyMonSpecies]
+	cp ARCEUS
+	jr z, .nerfMasterBall
+	cp MEWTWO
+	jr z, .nerfMasterBall
+	cp ZYGARDE
+	jr z, .nerfMasterBall
+	jp .catch_without_fail
+
+.nerfMasterBall
+	; Boss legendaries use normal ball rules, but Master Ball is fixed 20%.
+	ld a, 20 percent
+	jp .skip_hp_calc
 
 .notMaster
 	ld c, a

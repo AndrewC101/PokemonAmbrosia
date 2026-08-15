@@ -436,17 +436,14 @@ NationalParkLassText:
 	done
 
 NationalParkLassLeonText:
-	text "I always feel so"
-	line "privileged when"
-	cont "I'm this close"
-	cont "to Leon!"
-
-	para "The strongest"
-	line "trainer!"
-
-	para "Oh..."
-
-	para "I feel faint."
+	text "Standing this"
+	line "close to Leons"
+	cont "Charizard the heat"
+	cont "is so"
+	cont "overwhelming."
+	para "I can hardly"
+	line "breath."
+	para "Oh Leon."
 	done
 
 NationalParkTeacher1Text:

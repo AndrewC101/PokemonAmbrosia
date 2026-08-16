@@ -1629,6 +1629,7 @@ LoadMapPals:
 	jr c, .got_obj_pals
 	call LoadPlayerOverworldPalette
 .got_obj_pals
+	farcall ApplyDarkSkinNPCPaletteOverrides
 
 	ld a, [wEnvironment]
 	cp TOWN

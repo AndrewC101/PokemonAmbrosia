@@ -119,6 +119,7 @@ MACRO object_event
 ;\9: palette: a PAL_NPC_* constant, or 0 for sprite default
 ;\<10>: function: a OBJECTTYPE_* constant
 ;\<11>: sight range: applies to OBJECTTYPE_TRAINER
+;       set MAPOBJECT_DARK_SKIN for non-trainer NPCs to darken their shared palette's skin color
 ;\<12>: script pointer
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
 	db \3, \2 + 4, \1 + 4, \4

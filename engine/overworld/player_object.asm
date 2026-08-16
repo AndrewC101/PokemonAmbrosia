@@ -223,6 +223,7 @@ CopyMapObjectToObjectStruct:
 	ld hl, MAPOBJECT_SIGHT_RANGE
 	add hl, bc
 	ld a, [hl]
+	and MAPOBJECT_SIGHT_RANGE_MASK
 	ld [wTempObjectCopyRange], a
 
 	ld hl, MAPOBJECT_X_COORD

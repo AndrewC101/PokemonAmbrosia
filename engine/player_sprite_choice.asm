@@ -702,6 +702,76 @@ ApplyPlayerNamingScreenPalette::
 	ldh [hCGBPalUpdate], a
 	ret
 
+ApplyDarkSkinNPCPaletteOverrides::
+	ld bc, wMap1Object
+	ld e, NUM_OBJECTS - 1
+
+.loop
+	push bc
+	push de
+	ld hl, MAPOBJECT_SIGHT_RANGE
+	add hl, bc
+	bit MAPOBJECT_DARK_SKIN_F, [hl]
+	jr z, .next
+
+	ld hl, MAPOBJECT_TYPE
+	add hl, bc
+	ld a, [hl]
+	and MAPOBJECT_TYPE_MASK
+	cp OBJECTTYPE_TRAINER
+	jr z, .next
+
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .next
+
+	ld hl, MAPOBJECT_PALETTE
+	add hl, bc
+	ld a, [hl]
+	and MAPOBJECT_PALETTE_MASK
+	jr z, .default_palette
+	swap a
+	and OAM_PALETTE
+	jr .got_palette
+
+.default_palette
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	call GetSpritePalette
+
+.got_palette
+; Marked objects darken the shared palette slot, affecting all objects using it.
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, wOBPals1 + COLOR_SIZE
+	add hl, de
+	ld d, h
+	ld e, l
+	ld hl, .DarkSkinColor
+	ld bc, COLOR_SIZE
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+
+.next
+	pop de
+	pop bc
+	ld hl, MAPOBJECT_LENGTH
+	add hl, bc
+	ld b, h
+	ld c, l
+	dec e
+	jr nz, .loop
+	ret
+
+.DarkSkinColor:
+	RGB 18,11,05
+
 LoadSelectedSelfTrainerPic::
 ; Load the chosen player frontpic for self battles without changing the active
 ; self trainer class seen by the rest of battle setup.

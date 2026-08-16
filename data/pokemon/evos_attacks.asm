@@ -703,6 +703,8 @@ PersianEvosAttacks:
 	db 16, FALSE_SWIPE
 	db 22, TAUNT
 	db 28, SLASH
+	db 32, NIGHT_SLASH
+	db 35, PSYCHO_SLASH
 	db 0 ; no more level-up moves
 
 SnoverEvosAttacks:

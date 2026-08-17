@@ -46,13 +46,13 @@ CherrygrovePokecenter1FGentlemanText:
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The communication"
-	line "Center upstairs"
-	cont "was just built."
-
-	para "But good luck"
-	line "finding someone to"
-	cont "play with."
+	text "There is a"
+	line "changing room"
+	cont "upstairs."
+	para "You can reinvent"
+	line "yourself with a"
+	cont "new look whenever"
+	cont "you feel like it."
 	done
 
 ChBlisseyScript:

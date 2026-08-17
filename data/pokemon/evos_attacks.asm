@@ -700,11 +700,12 @@ PersianEvosAttacks:
 	db 1, SCRATCH
 	db 1, SCREECH
 	db 10, BITE
-	db 16, FALSE_SWIPE
+	db 14, CUT
+	db 18, FALSE_SWIPE
 	db 22, TAUNT
-	db 28, SLASH
-	db 32, NIGHT_SLASH
-	db 35, PSYCHO_SLASH
+	db 28, NIGHT_SLASH
+	db 32, PSYCHO_SLASH
+	db 35, SLASH
 	db 0 ; no more level-up moves
 
 SnoverEvosAttacks:

@@ -1256,10 +1256,12 @@ _CGB_PackPals:
 	inc hl
 	ld a, BANK(wBGPals1)
 	ldh [rWBK], a
-	; Palette 0 keeps the pack's base color and uses only the player's hair/clothes color.
+	; Palette 0's pattern uses the selected player accent for both colored slots.
 	ld a, [hli]
+	ld [wBGPals1 palette 0 color 1], a
 	ld [wBGPals1 palette 0 color 2], a
 	ld a, [hl]
+	ld [wBGPals1 palette 0 color 1 + 1], a
 	ld [wBGPals1 palette 0 color 2 + 1], a
 	pop af
 	ldh [rWBK], a

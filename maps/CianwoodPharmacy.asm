@@ -100,4 +100,4 @@ CianwoodPharmacy_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, CianwoodPharmacyBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1
+	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, MAPOBJECT_DARK_SKIN, CianwoodPharmacist, -1

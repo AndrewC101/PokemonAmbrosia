@@ -1,4 +1,4 @@
-	object_const_def
+3	object_const_def
 	const OLIVINEGYM_JASMINE
 	const OLIVINEGYM_GYM_GUIDE
 
@@ -323,5 +323,5 @@ OlivineGym_MapEvents:
 
 	def_object_events
 	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymJasmineScript, EVENT_OLIVINE_GYM_JASMINE
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineGymGuideScript, -1
+	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, MAPOBJECT_DARK_SKIN, OlivineGymGuideScript, -1
 	object_event  4,  3, SPRITE_MELMETAL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineGymSteelixScript, -1

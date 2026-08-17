@@ -1,4 +1,4 @@
-3	object_const_def
+	object_const_def
 	const OLIVINEGYM_JASMINE
 	const OLIVINEGYM_GYM_GUIDE
 

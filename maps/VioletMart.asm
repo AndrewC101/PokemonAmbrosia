@@ -1,4 +1,4 @@
-3	object_const_def
+	object_const_def
 	const VIOLETMART_CLERK
 	const VIOLETMART_GRANNY
 	const VIOLETMART_COOLTRAINER_M

@@ -2091,10 +2091,10 @@ BattleCommand_LowerSub:
 	ret
 
 .rollout_rampage
-	ld a, [wSomeoneIsRampaging]
+	ld hl, wSomeoneIsRampaging
+	ld a, [hl]
 	and a
-	ld a, 0
-	ld [wSomeoneIsRampaging], a
+	ld [hl], 0
 	ret
 
 BattleCommand_MoveAnim:
@@ -3367,7 +3367,7 @@ BattleCommand_DamageCalc:
 	jr z, .checkStatus
 	ld a, [wEnemyMonStatus]
 .checkStatus
-	cp 0
+	and a
 	jr z, .choiceBand
     call FiftyPercentBoost
 

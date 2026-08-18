@@ -54,6 +54,7 @@ SuperLuckPokemon:
 SereneGracePokemon:
     db CHANSEY
     db BLISSEY
+    db FLAREON
     db TOGEPI
     db TOGETIC
     db TOGEKISS
@@ -166,6 +167,7 @@ MagicGuardPokemon:
 ClearBodyPokemon:
     db TENTACOOL
     db TENTACRUEL
+    db VAPOREON
     db BELDUM
     db METANG
     db METAGROSS

@@ -23,6 +23,7 @@ HealMachineAnim:
 	call .DoJumptableFunctions
 	ld a, [wHealMachineTempOBP1]
 	call DmgToCgbObjPal1
+	call RestoreCGBOverworldYellowObjPalette
 	ret
 
 .DoJumptableFunctions:

@@ -233,6 +233,37 @@ DmgToCgbObjPal1::
 	pop af
 	ret
 
+RestoreCGBOverworldYellowObjPalette::
+	ldh a, [hCGB]
+	and a
+	ret z
+
+	push hl
+	push de
+	push bc
+
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wOBPals2)
+	ldh [rWBK], a
+
+	; The heal machine temporarily animates this slot; restore the map's
+	; palette, including any per-map NPC color overrides.
+	ld hl, wOBPals1 palette PAL_OW_YELLOW
+	ld de, wOBPals2 palette PAL_OW_YELLOW
+	ld bc, 1 palettes
+	call CopyBytes
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+
+	pop af
+	ldh [rWBK], a
+
+	pop bc
+	pop de
+	pop hl
+	ret
+
 CopyPals::
 ; copy c palettes in order b from de to hl
 

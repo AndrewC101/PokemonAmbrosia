@@ -9400,6 +9400,8 @@ CleanUpBattleRAM:
 	ld [wLowHealthAlarm], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
+	ld [wBattleMusicOverride], a
+	ld [wBattleMusicOverride + 1], a
 	ld [wAttackMissed], a
 	ld [wTempWildMonSpecies], a
 	ld [wOtherTrainerID], a

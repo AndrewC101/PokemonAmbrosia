@@ -169,12 +169,15 @@ INCLUDE "maps/SoulHouse.asm"
 SECTION "Map Scripts 11", ROMX
 
 INCLUDE "maps/EcruteakPokecenter1F.asm"
-INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
 INCLUDE "maps/DanceTheater.asm"
 INCLUDE "maps/EcruteakMart.asm"
 INCLUDE "maps/EcruteakGym.asm"
 INCLUDE "maps/EcruteakItemfinderHouse.asm"
 INCLUDE "maps/PewterPokecenter1F.asm"
+
+SECTION "Ecruteak Lugia Speech House Scripts", ROMX
+
+INCLUDE "maps/EcruteakLugiaSpeechHouse.asm"
 
 SECTION "Map Scripts 12", ROMX
 

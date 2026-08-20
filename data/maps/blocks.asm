@@ -1030,3 +1030,8 @@ CherrygroveBay_Blocks:
 
 CherrygroveRuins_Blocks:
 	INCBIN "maps/CherrygroveRuins.blk"
+
+SECTION "Map Blocks 20", ROMX
+
+DestinyPark2_Blocks:
+	INCBIN "maps/DestinyPark2.blk"

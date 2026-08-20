@@ -572,6 +572,7 @@ Cherrygrove_Map_Names:
 	dw  MasterTrial_Map_Name1
 	dw  MasterTrial_Map_Name1
 	dw  MasterTrial_Map_Name1
+	dw  MasterTrial_Map_Name1
 	assert_table_length NUM_DESTINY_TOWER_MAPS
 
 	; Hall of Origin, 26

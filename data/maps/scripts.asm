@@ -385,6 +385,7 @@ INCLUDE "maps/DestinySquare.asm"
 SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/DestinyPark.asm"
+INCLUDE "maps/DestinyPark2.asm"
 
 SECTION "Map Scripts 27", ROMX
 

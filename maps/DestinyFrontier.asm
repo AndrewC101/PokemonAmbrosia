@@ -1246,14 +1246,14 @@ DestinyFrontier_MapEvents:
 	warp_event  30, 44, DESTINY_FRONTIER, 1
 	warp_event  30, 59, SILVER_CAVE_OUTSIDE, 3
 	warp_event  31, 59, SILVER_CAVE_OUTSIDE, 4
-	warp_event 42, 53, DESTINY_PARK, 1
-	warp_event  36, 31, DESTINY_PARK, 3
-	warp_event 18, 53, DESTINY_PARK, 5
-	warp_event   6, 37, DESTINY_PARK, 7
-	warp_event  20, 31, DESTINY_PARK, 9
-	warp_event  52, 37, DESTINY_PARK, 11
-	warp_event  36, 13, DESTINY_PARK, 13
-	warp_event  8,  5, DESTINY_PARK, 15
+	warp_event 42, 53, DESTINY_PARK_2, 1
+	warp_event  36, 31, DESTINY_PARK_2, 3
+	warp_event 18, 53, DESTINY_PARK, 1
+	warp_event   6, 37, DESTINY_PARK, 3
+	warp_event  20, 31, DESTINY_PARK, 5
+	warp_event  52, 37, DESTINY_PARK, 7
+	warp_event  36, 13, DESTINY_PARK, 9
+	warp_event  8,  5, DESTINY_PARK_2, 5
 
 	warp_event 26,  0, DESTINY_FRONTIER, 14
 	warp_event 27,  0, DESTINY_FRONTIER, 15
@@ -1284,7 +1284,7 @@ DestinyFrontier_MapEvents:
 	object_event 55, 14, SPRITE_SAGE, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterXehanortScript, -1
 	object_event 28, 46, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MasterAerithScript, -1
 	object_event 29, 42, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript, -1
-	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MartScript, -1
+	object_event 32, 42, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, MAPOBJECT_DARK_SKIN, MartScript, -1
 	object_event 31, 38, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
 	object_event 11,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GuardScript, -1
 	object_event 31, 50, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OakScript, -1

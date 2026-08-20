@@ -521,10 +521,11 @@ ENDM
 	endgroup
 
 	newgroup DESTINY_TOWER                                      ; 27
-	map_const DESTINY_PARK,                                19, 28 ; 1
+	map_const DESTINY_PARK,                                19, 20 ; 1
 	map_const DESTINY_SQUARE,                               7, 14 ; 2
 	map_const DESTINY_FRONTIER,                            30, 30 ; 3
 	map_const DESTINY_ELITE_FOUR,                          12, 20 ; 4
+	map_const DESTINY_PARK_2,                              19,  8 ; 5
 	endgroup
 
     newgroup HALL_OF_ORIGIN                                     ; 28

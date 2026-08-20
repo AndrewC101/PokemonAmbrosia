@@ -1021,7 +1021,7 @@ ManorFact21Text:
 ManorFact7Text:
 	text "This romhack took"
 	line "almost 5 years and"
-	cont "over 1700 commits"
+	cont "over 1800 commits"
 	cont "to create."
 	para "I got married,"
 	line "moved house,"

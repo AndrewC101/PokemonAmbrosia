@@ -1,6 +1,6 @@
 DEF MENU_ITEM_ICON_TILE EQU $60
 DEF MART_ITEM_ICON_TILE EQU $1e
-DEF OVERWORLD_ITEM_ICON_TILE EQU $6d
+DEF OVERWORLD_ITEM_ICON_TILE EQU $60
 
 UpdatePackItemIconAndDescription:
 	ld a, [wMenuSelection]
@@ -256,7 +256,7 @@ LoadItemIconForOverworld::
 	ld h, [hl]
 	ld l, a
 	ld c, 9
-	ld de, vTiles1 tile OVERWORLD_ITEM_ICON_TILE
+	ld de, vTiles2 tile OVERWORLD_ITEM_ICON_TILE
 	jp DecompressRequest2bpp
 
 .check_tmhm
@@ -266,31 +266,31 @@ LoadItemIconForOverworld::
 .no_item
 	ld hl, NoItemIcon
 	lb bc, BANK(NoItemIcon), 9
-	ld de, vTiles1 tile OVERWORLD_ITEM_ICON_TILE
+	ld de, vTiles2 tile OVERWORLD_ITEM_ICON_TILE
 	jp DecompressRequest2bpp
 
 .tmhm
 	ld hl, TMHMIcon
 	lb bc, BANK(TMHMIcon), 9
-	ld de, vTiles1 tile OVERWORLD_ITEM_ICON_TILE
+	ld de, vTiles2 tile OVERWORLD_ITEM_ICON_TILE
 	jp DecompressRequest2bpp
 
 PlaceOverworldItemIcon::
 	hlcoord 16, 13
-	ld a, $ed
+	ld a, OVERWORLD_ITEM_ICON_TILE
 	ld [hli], a
 	inc a
 	ld [hli], a
 	inc a
 	ld [hli], a
-	ld a, $f0
+	ld a, OVERWORLD_ITEM_ICON_TILE + 3
 	hlcoord 16, 14
 	ld [hli], a
 	inc a
 	ld [hli], a
 	inc a
 	ld [hli], a
-	ld a, $f3
+	ld a, OVERWORLD_ITEM_ICON_TILE + 6
 	hlcoord 16, 15
 	ld [hli], a
 	inc a
@@ -317,9 +317,9 @@ HideCurrentItemIconAndRestoreFontScriptHelper::
 	lb bc, 3, 3
 	call ClearBox
 	call ApplyTilemap
-	; LoadItemIconForOverworld overwrites part of the standard font in vTiles1.
+	; LoadItemIconForOverworld overwrites part of the extra font in vTiles2.
 	; Restore those glyphs only after the icon tiles are no longer on-screen.
-	call LoadStandardFont
+	call LoadFontsExtra
 	ret
 
 INCLUDE "data/items/icon_pointers.asm"

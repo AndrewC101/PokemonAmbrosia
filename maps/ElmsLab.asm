@@ -735,7 +735,6 @@ CheatCodeRepo:
     opentext
     writetext CheatCodeRepoText
     waitbutton
-    writetext RebirthCodeText
     writetext DesignateCodeText
     writetext DoubleExpCodeText
     writetext RandomPartyCodeText
@@ -779,11 +778,6 @@ CheatCodeRepoText:
     line "unlock will be"
     cont "displayed here."
     done
-
-RebirthCodeText:
-    text "Resurrect"
-    line "Remake player."
-    prompt
 
 GiftOfGodCodeText:
     text "Ex Nihilo"
@@ -2228,8 +2222,6 @@ ElmsLabMrMimeScript:
     iftrue .giveArceus
     callasm CheckDesignatePassword
     iftrue .designate
-    callasm CheckRebirthPassword
-    iftrue .rebirth
     reloadmap
     opentext
     writetext MimeConfusedText
@@ -2253,9 +2245,10 @@ ElmsLabMrMimeScript:
     end
 .giveHand
     reloadmap
-	readmem wNewGamePlus
-	ifequal 1, .doGiveHand
-	sjump .newGamePlusCheat
+	setval ARCEUS
+	special MonCheck
+	iftrue .doGiveHand
+	sjump .arceusCaughtCheat
 .doGiveHand
     checkitem HAND_OF_GOD
     iftrue .nostalgia
@@ -2337,6 +2330,7 @@ ElmsLabMrMimeScript:
 	writetext RandomPartyWarningText
 	nooryes
 	iffalse .cancelRandomParty
+	loadmem wFirstUnownSeen, 1
 	readmem wNewGamePlus
 	ifequal 1, .askRandomPartyFilters
 	callasm GenerateFilteredRandomPartyCheat
@@ -2374,33 +2368,38 @@ ElmsLabMrMimeScript:
     end
 .giveArceus
     reloadmap
-	readmem wNewGamePlus
-	ifequal 1, .doGiveArceus
-	sjump .newGamePlusCheat
+	setval ARCEUS
+	special MonCheck
+	iftrue .doGiveArceus
+	sjump .arceusCaughtCheat
 .doGiveArceus
 	playsound SFX_DEX_FANFARE_20_49
 	waitsfx
 	opentext
+	callasm CheckAndrewPlayerName
+	iftrue .giveAndrewArceus
     givepoke ARCEUS, 100, HOLY_CROWN
+	sjump .finishGiveArceus
+.giveAndrewArceus
+    givepoke ARCEUS, 255, HOLY_CROWN
+.finishGiveArceus
     setevent EVENT_UNLOCK_ARCEUS_CODE
     closetext
     end
-.rebirth
-	farsjump PlayerRecreationScript
 .nostalgia
     opentext
     writetext MimeNostalgicText
     closetext
     end
-.newGamePlusCheat
+.arceusCaughtCheat
     opentext
-    writetext NewGamePlusCheatText
+    writetext ArceusCaughtCheatText
     closetext
     end
 
-NewGamePlusCheatText:
-    text "That's a New Game"
-    line "Plus only cheat."
+ArceusCaughtCheatText:
+    text "Arceus must be"
+    line "caught first."
     prompt
 
 MimeConfusedText:
@@ -2543,9 +2542,17 @@ CheckDesignatePassword:
 	ld de, DesignatePassword
 	jr ComparePassword
 
-CheckRebirthPassword:
-	ld de, RebirthPassword
-	jp ComparePassword
+CheckAndrewPlayerName:
+	ld hl, wPlayerName
+	ld de, AndrewPlayerName
+	ld c, 7 ; "Andrew" plus terminator, so longer names do not match.
+	call CompareBytes
+	ld a, 1
+	jr z, .done
+	xor a
+.done
+	ld [wScriptVar], a
+	ret
 
 ComparePassword:
 	ld hl, wPassword
@@ -2586,6 +2593,9 @@ ArceusPassword:
 
 DesignatePassword:
     db "Designate"
+
+AndrewPlayerName:
+    db "Andrew@"
 
 GenerateRandomPartyCheat:
 	call ClearPartyForRandomCheat
@@ -2678,9 +2688,9 @@ GetRandomCheatPartySpecies:
 	ld a, NUM_POKEMON
 	call RandomRange
 	inc a
-	cp UNOWN
-	jr z, .loop
 	cp ARCEUS
+	jr z, .loop
+	cp MEWTWO
 	jr z, .loop
 	ld [wCurPartySpecies], a
 	push bc
@@ -2944,9 +2954,6 @@ CheatEvolvedSpecies:
 	db YANMEGA
 	db ZWEILOUS
 	db -1
-
-RebirthPassword:
-    db "Resurrect"
 
 ElmMrMimeText:
     text "Mr Mime!"

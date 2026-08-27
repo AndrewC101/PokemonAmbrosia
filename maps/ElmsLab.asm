@@ -2545,7 +2545,7 @@ CheckDesignatePassword:
 CheckAndrewPlayerName:
 	ld hl, wPlayerName
 	ld de, AndrewPlayerName
-	ld c, 7 ; "Andrew" plus terminator, so longer names do not match.
+	ld c, 7 ;
 	call CompareBytes
 	ld a, 1
 	jr z, .done
@@ -2595,7 +2595,7 @@ DesignatePassword:
     db "Designate"
 
 AndrewPlayerName:
-    db "Andrew@"
+    db "AndrewC"
 
 GenerateRandomPartyCheat:
 	call ClearPartyForRandomCheat

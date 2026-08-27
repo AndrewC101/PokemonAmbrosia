@@ -807,19 +807,6 @@ NightColorSwap:
 
 	ld c, a ; blue in c
 
-;modify colors here
-	srl e ; 1/2 red
-	srl d ; 1/2 green
-
-; 3/4 blue
-	ld a, c
-	rrca ; 1/2
-	ld b, a
-	rrca ; 1/4
-	add b ; 2/4 + 1/4 = 3/4
-	and %01111100 ; mask the blue bits
-	ld c, a
-
 ;reassemble green
 	ld a, d
 	rlca ; 00GGggg0

@@ -2337,25 +2337,30 @@ ElmsLabMrMimeScript:
 	writetext RandomPartyWarningText
 	nooryes
 	iffalse .cancelRandomParty
+	readmem wNewGamePlus
+	ifequal 1, .askRandomPartyFilters
+	callasm GenerateFilteredRandomPartyCheat
+	sjump .finishRandomParty
+.askRandomPartyFilters
 	writetext RandomPartyEvolutionFilterText
 	yesorno
 	iffalse .askLegendWithoutEvolutionFilter
 	writetext RandomPartyLegendaryFilterText
 	yesorno
-	iffalse .unevolvedOnlyRandomParty
-	callasm GenerateFilteredRandomPartyCheat
+	iffalse .legendaryFilteredRandomParty
+	callasm GenerateRandomPartyCheat
 	sjump .finishRandomParty
 .askLegendWithoutEvolutionFilter
 	writetext RandomPartyLegendaryFilterText
 	yesorno
-	iffalse .unfilteredRandomParty
-	callasm GenerateLegendaryFilteredRandomPartyCheat
-	sjump .finishRandomParty
-.unevolvedOnlyRandomParty
+	iffalse .fullyFilteredRandomParty
 	callasm GenerateUnevolvedFilteredRandomPartyCheat
 	sjump .finishRandomParty
-.unfilteredRandomParty
-	callasm GenerateRandomPartyCheat
+.legendaryFilteredRandomParty
+	callasm GenerateLegendaryFilteredRandomPartyCheat
+	sjump .finishRandomParty
+.fullyFilteredRandomParty
+	callasm GenerateFilteredRandomPartyCheat
 .finishRandomParty
     reloadmap
     opentext
@@ -2446,12 +2451,12 @@ DesignateDoneText:
     prompt
 
 RandomPartyLegendaryFilterText:
-    text "Exclude legendary"
+    text "Include legendary"
     line "#mon?"
     done
 
 RandomPartyEvolutionFilterText:
-    text "Exclude evolved"
+    text "Include evolved"
     line "#mon?"
     done
 

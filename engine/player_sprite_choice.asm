@@ -770,7 +770,7 @@ ApplyDarkSkinNPCPaletteOverrides::
 	ret
 
 .DarkSkinColor:
-	RGB 18,11,05
+	RGB 20,13,05
 
 LoadSelectedSelfTrainerPic::
 ; Load the chosen player frontpic for self battles without changing the active

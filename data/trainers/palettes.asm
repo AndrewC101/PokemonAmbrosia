@@ -93,83 +93,83 @@ INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 	assert_table_length NUM_TRAINER_CLASSES + 1
 
 RedPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 31,07,01
 
 BluePlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 10,09,31
 
 GreenPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 07,23,03
 
 BrownPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 15,10,03
 
 SilverPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 17,17,17
 
 YellowPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 31,24,05
 
 PinkPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 31,12,20
 
 PurplePlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 17,07,25
 
 OrangePlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 31,13,00
 
 DarkGreyPlayerPalette:
-	RGB 31,22,16
+	RGB 29,21,16
 	RGB 08,08,08
 
 DarkerRedPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 31,07,01
 
 DarkerBluePlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 10,09,31
 
 DarkerGreenPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 07,23,03
 
 DarkerBrownPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 15,10,03
 
 DarkerSilverPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 17,17,17
 
 DarkerYellowPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 31,24,05
 
 DarkerPinkPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 31,12,20
 
 DarkerPurplePlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 17,07,25
 
 DarkerOrangePlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 31,13,00
 
 DarkerDarkGreyPlayerPalette:
-	RGB 18,11,05
+	RGB 20,13,05
 	RGB 08,08,08
 
 	assert BrownPlayerPalette == RedPlayerPalette + PLAYER_COLOR_BROWN * 2 * COLOR_SIZE

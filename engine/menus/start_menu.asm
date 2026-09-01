@@ -9,7 +9,7 @@
 	const STARTMENUITEM_EXIT     ; 6
 	const STARTMENUITEM_POKEGEAR ; 7
 	const STARTMENUITEM_QUIT     ; 8
-	const STARTMENUITEM_WARP     ; 9
+	const STARTMENUITEM_SPEED    ; 9
 
 StartMenu::
 	call ClearWindowData
@@ -191,7 +191,7 @@ StartMenu::
 	dw StartMenu_Exit,     .ExitString,     .EmptyDesc
 	dw StartMenu_Pokegear, .PokegearString, .EmptyDesc
 	dw StartMenu_Quit,     .QuitString,     .EmptyDesc
-	dw StartMenu_Warp,     .WarpString,     .EmptyDesc
+	dw StartMenu_Speed,    .SpeedString,    .EmptyDesc
 
 .PokedexString:  db "#dex@"
 .PartyString:    db "#mon@"
@@ -202,7 +202,7 @@ StartMenu::
 .ExitString:     db "Exit@"
 .PokegearString: db "<POKE>gear@"
 .QuitString:     db "Quit@"
-.WarpString:     db "Warp@"
+.SpeedString:    db "Speed@"
 
 .EmptyDesc:
 	db   "@"
@@ -294,24 +294,18 @@ endr
 	ld a, STARTMENUITEM_OPTION
 	call .AppendMenuList
 
-	; Bug Catching contest must always have the Exit Option
+	; Bug Catching Contest and link mode keep their exit-only bottom item.
+	ld b, STARTMENUITEM_EXIT
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	jr nz, .bug_contest_or_fast_travel_not_obtained
+	jr nz, .append_bottom_item
 	ld a, [wLinkMode]
 	and a
-	jr nz, .bug_contest_or_fast_travel_not_obtained
+	jr nz, .append_bottom_item
+	ld b, STARTMENUITEM_SPEED
 
-	; check if end game fast travel has been obtained
-	ld hl, wPokegearFlags
-	bit POKEGEAR_WARP_F, [hl]
-	jr z, .bug_contest_or_fast_travel_not_obtained
-	ld a, STARTMENUITEM_WARP
-	call .AppendMenuList
-	jr .next
-
-.bug_contest_or_fast_travel_not_obtained
-	ld a, STARTMENUITEM_EXIT
+.append_bottom_item
+	ld a, b
 	call .AppendMenuList
 .next
 	ld a, c
@@ -489,18 +483,28 @@ endr
 	farcall StartMenu_PrintBugContestStatus
 	ret
 
+OpenUnlockedWarpMenu::
+	call OpenText
+	call StartMenu_OpenUnlockedWarpMenu
+	call CloseText
+	jp UpdateTimePals
+
 StartMenu_Warp:
-    ld a, [wReachedHallOfOrigin]
-    and a
-    jr nz, .hallOfOriginWarp
-	call DefaultWarp
-	jr StartMenu_Exit
-.hallOfOriginWarp
-    call HallOfOriginWarp
+	call StartMenu_OpenUnlockedWarpMenu
 StartMenu_Exit:
 ; Exit the menu.
 
 	ld a, 1
+	ret
+
+StartMenu_OpenUnlockedWarpMenu:
+	ld a, [wReachedHallOfOrigin]
+	and a
+	jr nz, .hallOfOriginWarp
+	call DefaultWarp
+	ret
+.hallOfOriginWarp
+	call HallOfOriginWarp
 	ret
 
 StartMenu_Quit:
@@ -541,6 +545,14 @@ StartMenu_Option:
 
 	call FadeToMenu
 	farcall Option
+	ld a, 6
+	ret
+
+StartMenu_Speed:
+; Game speed settings.
+
+	call FadeToMenu
+	farcall OpenGameSpeedMenu
 	ld a, 6
 	ret
 

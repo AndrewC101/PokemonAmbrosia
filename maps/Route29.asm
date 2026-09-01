@@ -314,13 +314,10 @@ Route29YoungsterText:
 	line "battles more epic"
 	cont "but they take"
 	cont "longer."
-	para "Battle Speed set"
-	line "to Quick makes"
-	cont "battles way faster"
-	cont "but it's only for"
-	cont "people who really"
-	cont "know what they're"
-	cont "doing."
+	para "Battle Text set"
+	line "to Minimum skips"
+	cont "most battle text"
+	cont "and cries."
 	done
 
 Route29TeacherText:

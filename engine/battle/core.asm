@@ -2597,7 +2597,7 @@ FaintYourPokemon:
 	lb bc, 5, 11
 	call ClearBox
 
-	; Skip player mon fainted text if fast battles is on
+	; Skip player mon fainted text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	ret nz
 
@@ -2635,7 +2635,7 @@ FaintEnemyPokemon:
 	ld [hl], ' '
 .skip_wild_dv_extra
 
-	; Skip foe mon fainted text if fast battles is on
+	; Skip foe mon fainted text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	ret nz
 
@@ -3621,7 +3621,7 @@ EnemySwitch:
 	push af
 	call ClearEnemyMonBox
 
-	; Skip ShowBattleTextEnemySentOut text if fast battles is on
+	; Skip ShowBattleTextEnemySentOut text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .skip2
 	call ShowBattleTextEnemySentOut
@@ -3652,7 +3652,7 @@ EnemySwitch_SetMode:
 	ld [wEnemyIsSwitching], a
 	call ClearEnemyMonBox
 
-	; Skip ShowBattleTextEnemySentOut text if fast battles is on
+	; Skip ShowBattleTextEnemySentOut text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .send_out_animation
 
@@ -8255,7 +8255,7 @@ GiveExperiencePoints:
 	and a
 	jr nz, .ExpShareON
 
-	; Skip regular exp text if fast battles is on
+	; Skip regular exp text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .ExpShareON
 	ld hl, Text_MonGainedExpPoint
@@ -8265,7 +8265,7 @@ GiveExperiencePoints:
 	and a
 	jr nz, .AfterText
 
-	; Skip exp share text if fast battles is on
+	; Skip exp share text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .AfterText
 	inc a
@@ -8453,7 +8453,7 @@ GiveExperiencePoints:
 	call PlaySFX
 	call WaitSFX
 
-	; Skip GrewToLevel text if fast battles is on
+	; Skip GrewToLevel text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .next
 	ld hl, BattleText_StringBuffer1GrewToLevel
@@ -8788,7 +8788,7 @@ AnimateExpBar:
 	farcall AnimateEndOfExpBar
 	call WaitSFX
 
-	; Skip GrewToLevel text if fast battles is on
+	; Skip GrewToLevel text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .next2
 	ld hl, BattleText_StringBuffer1GrewToLevel
@@ -9551,7 +9551,7 @@ BattleStartMessage:
 	call PlayStereoCry
 
 ;.skip_cry
-	; Skip PokemonAttacked text if fast battles is on
+	; Skip PokemonAttacked text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .PrintBattleStartText
 
@@ -9575,7 +9575,7 @@ BattleStartMessage:
 	farcall BattleStart_TrainerHuds
 	pop hl
 
-	; Skip PokemonAttacked text if fast battles is on
+	; Skip PokemonAttacked text when minimum battle text is on.
 	; need to do this or the game would crash
 	call CheckIfFastBattlesIsOn
 	jr nz, .skip
@@ -9764,7 +9764,7 @@ TryToRunAwayFromBattle:
 	pop de
 	call WaitSFX
 
-	; Skip GotAwaySafely text if fast battles is on
+	; Skip GotAwaySafely text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	jr nz, .skip
 	ld hl, BattleText_GotAwaySafely

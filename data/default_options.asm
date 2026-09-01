@@ -9,8 +9,8 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: lightest
 	db 0
-; wOptions2: battle damage info off
-	db 0 << FAST_BATTLES
+; wOptions2: battle info off, battle text normal, speed x1/x1
+	db 0
 ; wPlayerColor: red
 	db PLAYER_COLOR_RED
 ; wPlayerSpriteChoice: default

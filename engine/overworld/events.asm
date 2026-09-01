@@ -178,7 +178,13 @@ MaxOverworldDelay:
 	db 2
 
 ResetOverworldDelay:
+	newfarcall GetOverworldSpeedOption
+	and a
 	ld a, [MaxOverworldDelay]
+	jr z, .got_delay
+	; x2 and x4 currently share the safe one-frame overworld delay.
+	ld a, 1
+.got_delay
 	ld [wOverworldDelay], a
 	ret
 
@@ -842,6 +848,22 @@ CheckMenuOW:
 
 .Select:
 	call PlayTalkObject
+	ld a, [wLinkMode]
+	and a
+	jr nz, .SelectMenu
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	jr nz, .SelectMenu
+	ld hl, wPokegearFlags
+	bit POKEGEAR_WARP_F, [hl]
+	jr z, .SelectMenu
+	ld a, BANK(SelectWarpScript)
+	ld hl, SelectWarpScript
+	call CallScript
+	scf
+	ret
+
+.SelectMenu:
 	ld a, BANK(SelectMenuScript)
 	ld hl, SelectMenuScript
 	call CallScript
@@ -854,6 +876,10 @@ StartMenuScript:
 
 SelectMenuScript:
 	callasm SelectMenu
+	sjump SelectMenuCallback
+
+SelectWarpScript:
+	callasm OpenUnlockedWarpMenu
 	sjump SelectMenuCallback
 
 StartMenuCallback:

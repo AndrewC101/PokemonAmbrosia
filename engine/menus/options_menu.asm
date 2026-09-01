@@ -3,7 +3,7 @@
 	const OPT_TEXT_SPEED   ; 0
 	const OPT_BATTLE_SCENE ; 1
 	const OPT_BATTLE_STYLE ; 2
-	const OPT_FAST_BATTLES ; 3
+	const OPT_BATTLE_TEXT  ; 3
 	const OPT_MENU_CLOCK   ; 4
 	const OPT_DIFFICULTY   ; 5
 	const OPT_FRAME        ; 6
@@ -86,7 +86,7 @@ StringOptions:
 	db "        :<LF>"
 	db "Battle Mode<LF>"
 	db "        :<LF>"
-	db "Battle Speed<LF>"
+	db "Battle Text<LF>"
 	db "        :<LF>"
 	db "Battle Info<LF>"
 	db "        :<LF>"
@@ -104,7 +104,7 @@ GetOptionPointer:
 	dw Options_TextSpeed
 	dw Options_BattleScene
 	dw Options_BattleStyle
-	dw Options_FasterBattles
+	dw Options_BattleText
 	dw Options_MenuClock
 	dw Options_Difficulty
 	dw Options_Frame
@@ -367,34 +367,34 @@ Options_Difficulty:
 .Normal: db "Normal@"
 .Easy:   db "Easy  @"
 
-Options_FasterBattles:
- 	ld hl, wOptions2
- 	ldh a, [hJoyPressed]
- 	bit D_LEFT_F, a
- 	jr nz, .LeftPressed
- 	bit D_RIGHT_F, a
- 	jr z, .NonePressed
- 	bit FAST_BATTLES, [hl]
- 	jr nz, .ToggleOff
- 	jr .ToggleOn
+Options_BattleText:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	bit D_LEFT_F, a
+	jr nz, .LeftPressed
+	bit D_RIGHT_F, a
+	jr z, .NonePressed
+	bit MINIMUM_BATTLE_TEXT, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
- 	bit FAST_BATTLES, [hl]
- 	jr z, .ToggleOn
- 	jr .ToggleOff
+	bit MINIMUM_BATTLE_TEXT, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
 
 .NonePressed:
- 	bit FAST_BATTLES, [hl]
- 	jr nz, .ToggleOn
+	bit MINIMUM_BATTLE_TEXT, [hl]
+	jr nz, .ToggleOn
 
 .ToggleOff:
- 	res FAST_BATTLES, [hl]
- 	ld de, .Off
- 	jr .Display
+	res MINIMUM_BATTLE_TEXT, [hl]
+	ld de, .Off
+	jr .Display
 
 .ToggleOn:
- 	set FAST_BATTLES, [hl]
- 	ld de, .On
+	set MINIMUM_BATTLE_TEXT, [hl]
+	ld de, .On
 
 .Display:
 	hlcoord 11, 9
@@ -402,8 +402,8 @@ Options_FasterBattles:
 	and a
 	ret
 
-.On:  db "Quick @"
-.Off: db "Normal@"
+.On:  db "Minimum@"
+.Off: db "Normal @"
 
 ;	const_def
 ;	const OPT_PRINT_LIGHTEST ; 0

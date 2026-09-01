@@ -1701,8 +1701,11 @@ wUnusedTradeAnimPlayEvolutionMusic:: db
 
 NEXTU
 ; mobile
+wGameSpeedMenuRow::
 wcf64:: db
+wGameSpeedMenuOverworldTemp::
 wcf65:: db
+wGameSpeedMenuBattleTemp::
 wcf66:: db
 ENDU
 
@@ -1870,8 +1873,10 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 1: menu clock off/on
-; bit 2: fast battles normal/quick
+; bit 0: battle info off/on
+; bit 1: battle text normal/minimum
+; bits 2-3: overworld speed, x1/x2/x4
+; bits 4-5: battle engine speed, x1/x2/x4
 	db
 wPlayerColor:: db
 wPlayerSpriteChoice:: db

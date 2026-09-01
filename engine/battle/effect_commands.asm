@@ -2515,7 +2515,7 @@ BattleCommand_SuperEffectiveText:
 	cp EFFECTIVE
 	ret z
 
-	; Skip effectiveness text if fast battles is on
+	; Skip effectiveness text when minimum battle text is on.
 	call CheckIfFastBattlesIsOn
 	ret nz
 

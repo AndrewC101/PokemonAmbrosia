@@ -152,6 +152,10 @@ PokemonActionSubmenu:
 MonMenu_Pokedex:
 	call FadeToMenu
 	farcall Pokedex_DirectEntry
+	; Hide the Pokedex tilemap before restoring the normal font tiles.
+	; Otherwise the inverted Pokedex text flashes as normal black text.
+	call ClearBGPalettes
+	call DelayFrame
 	call LoadStandardFont
 	call Call_ExitMenu
 	xor a

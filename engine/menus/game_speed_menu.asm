@@ -151,17 +151,18 @@ OpenGameSpeedMenu::
 	ldh [hInMenu], a
 	call ClearJoypad
 	call ClearBGPalettes
-	call ClearScreen
+	call LoadStandardFont
+	call LoadFontsExtra
 	call GetOverworldSpeedOption
 	ld [wGameSpeedMenuOverworldTemp], a
 	call GetBattleEngineSpeedOption
 	ld [wGameSpeedMenuBattleTemp], a
 	xor a
 	ld [wGameSpeedMenuRow], a
+	ld hl, GameSpeedMenuHeader
+	call LoadMenuHeader
+	call ClearSprites
 	call DrawGameSpeedMenu
-	ld a, TRUE
-	ldh [hBGMapMode], a
-	call WaitBGMap
 	call SetDefaultBGPAndOBP
 
 .joypad_loop
@@ -215,7 +216,6 @@ OpenGameSpeedMenu::
 .redraw
 	call PlayClickSFX
 	call DrawGameSpeedMenu
-	call WaitBGMap
 	jr .joypad_loop
 
 .a_button
@@ -223,9 +223,12 @@ OpenGameSpeedMenu::
 	call SetOverworldSpeedOption
 	ld a, [wGameSpeedMenuBattleTemp]
 	call SetBattleEngineSpeedOption
-	call PlayClickSFX
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
 
 .b_button
+	call ExitMenu
 	pop af
 	ldh [hInMenu], a
 	ld a, 6 ; redraw the Start menu after closing this panel
@@ -240,45 +243,54 @@ GetGameSpeedTempPointer:
 	ret
 
 DrawGameSpeedMenu:
-	hlcoord 0, 4
-	lb bc, 6, 18
-	call Textbox
-	hlcoord 5, 5
+	xor a
+	ldh [hBGMapMode], a
+	call MenuBox
+	call ClearMenuBoxInterior
+	hlcoord 1, 1
 	ld de, .Title
 	call PlaceString
-	hlcoord 1, 7
+	hlcoord 1, 4
 	ld de, .Overworld
 	call PlaceString
-	hlcoord 1, 8
+	hlcoord 1, 6
 	ld de, .Battle
+	call PlaceString
+	hlcoord 1, 14
+	ld de, .Confirm
+	call PlaceString
+	hlcoord 1, 15
+	ld de, .Cancel
 	call PlaceString
 	call .PlaceSpeedValues
 	call .ClearCursors
-	jr .PlaceCursor
+	call .PlaceCursor
+	call HDMATransferTilemapAndAttrmap_Menu
+	ret
 
 .PlaceSpeedValues:
-	hlcoord 11, 7
+	hlcoord 11, 4
 	ld de, .X1
 	call PlaceString
-	hlcoord 14, 7
+	hlcoord 14, 4
 	ld de, .X2
 	call PlaceString
-	hlcoord 17, 7
+	hlcoord 17, 4
 	ld de, .X4
 	call PlaceString
-	hlcoord 11, 8
+	hlcoord 11, 6
 	ld de, .X1
 	call PlaceString
-	hlcoord 14, 8
+	hlcoord 14, 6
 	ld de, .X2
 	call PlaceString
-	hlcoord 17, 8
+	hlcoord 17, 6
 	ld de, .X4
 	call PlaceString
 	ret
 
 .ClearCursors:
-	hlcoord 10, 7
+	hlcoord 10, 4
 	ld a, ' '
 	ld [hli], a
 	inc hl
@@ -287,7 +299,7 @@ DrawGameSpeedMenu:
 	inc hl
 	inc hl
 	ld [hl], a
-	hlcoord 10, 8
+	hlcoord 10, 6
 	ld [hli], a
 	inc hl
 	inc hl
@@ -301,12 +313,12 @@ DrawGameSpeedMenu:
 	ld a, [wGameSpeedMenuRow]
 	and a
 	jr nz, .battle
-	hlcoord 10, 7
+	hlcoord 10, 4
 	ld a, [wGameSpeedMenuOverworldTemp]
 	jr .got_row
 
 .battle
-	hlcoord 10, 8
+	hlcoord 10, 6
 	ld a, [wGameSpeedMenuBattleTemp]
 
 .got_row
@@ -327,3 +339,17 @@ DrawGameSpeedMenu:
 	db "x2@"
 .X4:
 	db "x4@"
+.Confirm:
+	db "A: Confirm@"
+.Cancel:
+	db "B: Cancel@"
+
+GameSpeedMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw GameSpeedMenuData
+	db 1 ; default option
+
+GameSpeedMenuData:
+	db 0 ; flags
+	db 0 ; items

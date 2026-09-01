@@ -82,6 +82,9 @@ MeetMomScript:
 	callasm PlayersHouse1FForceOptionsMenu
 
 .SkipJourneySetup:
+	writetext HowMuchOfAHurryText
+	promptbutton
+	callasm PlayersHouse1FForceGameSpeedMenu
 	writetext GiveWarpBeaconText
 	verbosegiveitem ESCAPE_POD
 	writetext StaySafeText
@@ -149,6 +152,15 @@ PlayersHouse1FForceOptionsMenu:
 	farcall _Option
 	xor a
 	ld [wForcedMenu], a
+	call ExitAllMenus
+	call ReturnToMapWithSpeechTextbox
+	ret
+
+PlayersHouse1FForceGameSpeedMenu:
+	; This intro hook runs outside the Start menu, so restore the map
+	; speech box after the speed panel closes.
+	call FadeToMenu
+	farcall OpenGameSpeedMenu
 	call ExitAllMenus
 	call ReturnToMapWithSpeechTextbox
 	ret
@@ -381,6 +393,11 @@ JourneySetupText:
 	line "take a moment to"
 	cont "set yourself up"
 	cont "for the journey."
+	done
+
+HowMuchOfAHurryText:
+	text "How much of a"
+	line "hurry are you in?"
 	done
 
 HurryUpElmIsWaitingText:

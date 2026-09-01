@@ -663,6 +663,7 @@ TurnStep:
 
 NormalStep:
 	call InitStep
+	call InitOverworldX4NormalStepGuard
 	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
@@ -695,6 +696,45 @@ NormalStep:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_PLAYER_WALK
+	ret
+
+InitOverworldX4NormalStepGuard:
+; Scripted/cinematic NormalStep movement keeps stock timing at x4.
+	ld hl, wCenteredObject
+	ldh a, [hMapObjectIndex]
+	cp [hl]
+	jr nz, .check_follower
+	ld hl, wStateFlags
+	bit SCRIPTED_MOVEMENT_STATE_F, [hl]
+	jr z, ResetOverworldX4WalkGuard
+	jr DisableOverworldX4WalkGuard
+
+.check_follower
+	ld a, [wObjectFollow_Follower]
+	cp -1
+	jr z, DisableOverworldX4WalkGuard
+	ld d, a
+	ldh a, [hMapObjectIndex]
+	cp d
+	jr nz, DisableOverworldX4WalkGuard
+	ld hl, wStateFlags
+	bit SCRIPTED_MOVEMENT_STATE_F, [hl]
+	jr z, ResetOverworldX4WalkGuard
+	; fallthrough
+
+DisableOverworldX4WalkGuard:
+	ld a, -1
+	ld hl, OBJECT_1D
+	add hl, bc
+	ld [hl], a
+	ret
+
+ResetOverworldX4WalkGuard:
+; OBJECT_1D marks whether this plain walk may take x4 extra ticks.
+	xor a
+	ld hl, OBJECT_1D
+	add hl, bc
+	ld [hl], a
 	ret
 
 TurningStep:

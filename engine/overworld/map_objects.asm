@@ -1037,6 +1037,7 @@ _RandomWalkContinue:
 	call InitStep
 	call CanObjectMoveInDirection
 	jr c, .new_duration
+	call ResetOverworldX4WalkGuard
 	call UpdateTallGrassFlags
 	ld hl, OBJECT_ACTION
 	add hl, bc
@@ -1553,7 +1554,10 @@ StepFunction_NPCWalk:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	dec [hl]
+	jr z, .done
+	call TryOverworldX4ExtraNPCWalkTick
 	ret nz
+.done
 	call CopyCoordsTileToLastCoordsTile
 	ld hl, OBJECT_WALKING
 	add hl, bc
@@ -1568,7 +1572,10 @@ StepFunction_ContinueWalk:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	dec [hl]
+	jr z, .done
+	call TryOverworldX4ExtraNPCWalkTick
 	ret nz
+.done
 	call CopyCoordsTileToLastCoordsTile
 	jp RandomStepDuration_Slow
 
@@ -1587,7 +1594,10 @@ StepFunction_PlayerWalk:
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
 	dec [hl]
+	jr z, .done
+	call TryOverworldX4ExtraPlayerWalkTick
 	ret nz
+.done
 	ld hl, wPlayerStepFlags
 	set PLAYERSTEP_STOP_F, [hl]
 	call CopyCoordsTileToLastCoordsTile
@@ -1597,6 +1607,64 @@ StepFunction_PlayerWalk:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	ret
+
+TryOverworldX4ExtraNPCWalkTick:
+; x4 uses one extra walk tick on plain NPC walking only. d/e are scratch.
+	call CheckOverworldX4ExtraWalkTick
+	jr nz, .extra
+	ld a, 1
+	and a
+	ret
+
+.extra
+	call AddStepVector
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret
+
+TryOverworldX4ExtraPlayerWalkTick:
+; Called after the normal player tick. wPlayerStepVector accumulates both ticks
+; so ScrollScreen still runs once with the full visible-frame movement.
+	call CheckOverworldX4ExtraWalkTick
+	jr nz, .extra
+	ld a, 1
+	and a
+	ret
+
+.extra
+	call UpdatePlayerStep
+	ld a, 1
+	ld [wOverworldX4PlayerStepTicks], a
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret
+
+CheckOverworldX4ExtraWalkTick:
+; Returns NZ when the current walk may consume a second tick this frame.
+	ld a, [wOptions2]
+	and OVERWORLD_SPEED_MASK
+	cp GAME_SPEED_X4 << OVERWORLD_SPEED_SHIFT
+	jr z, .x4
+	xor a
+	ret
+
+.x4
+	ld hl, OBJECT_1D
+	add hl, bc
+	ld a, [hl]
+	cp -1
+	jr z, .no_extra
+	jr .extra
+.no_extra
+	xor a
+	ret
+
+.extra
+	ld a, 1
+	and a
 	ret
 
 StepFunction_Turn:
@@ -2448,6 +2516,7 @@ ResetStepVector:
 	ld [wPlayerStepVectorX], a
 	ld [wPlayerStepVectorY], a
 	ld [wPlayerStepFlags], a
+	ld [wOverworldX4PlayerStepTicks], a
 	ld a, STANDING
 	ld [wPlayerStepDirection], a
 	ret

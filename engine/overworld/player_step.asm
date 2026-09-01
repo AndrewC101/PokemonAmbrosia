@@ -22,6 +22,13 @@ _HandlePlayerStep::
 
 .finish
 	call HandlePlayerStep
+	ld a, [wOverworldX4PlayerStepTicks]
+	and a
+	jr z, .scroll
+	xor a
+	ld [wOverworldX4PlayerStepTicks], a
+	call HandlePlayerStep
+.scroll
 	ld a, [wPlayerStepVectorX]
 	ld d, a
 	ld a, [wPlayerStepVectorY]

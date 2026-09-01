@@ -32,7 +32,6 @@ INCLUDE "engine/pokemon/health.asm"
 INCLUDE "engine/events/overworld.asm"
 INCLUDE "engine/items/items.asm"
 INCLUDE "engine/overworld/player_step.asm"
-INCLUDE "engine/battle/anim_hp_bar.asm"
 INCLUDE "engine/pokemon/move_mon.asm"
 INCLUDE "engine/pokemon/breedmon_level_growth.asm"
 INCLUDE "engine/events/bug_contest/caught_mon.asm"
@@ -607,6 +606,7 @@ SECTION "Battle Tower Trainer Data", ROMX
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/player_sprite_choice.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
+INCLUDE "engine/battle/anim_hp_bar.asm"
 
 
 ;SECTION "Mobile News Data", ROMX

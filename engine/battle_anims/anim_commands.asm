@@ -47,7 +47,7 @@ _PlayBattleAnim:
 	call BattleAnimDelayFrame
 	call BattleAnimDelayFrame
 	call BattleAnimDelayFrame
-	call WaitSFX
+	newfarcall BattleAnimWaitSFX
 	ret
 
 BattleAnimRunScript:
@@ -85,7 +85,7 @@ BattleAnimRunScript:
 	ld [wFXAnimID + 1], a
 
 .not_move
-	call WaitSFX
+	newfarcall BattleAnimWaitSFX
 	call PlayHitSound
 	call RunBattleAnimScript
 
@@ -97,20 +97,45 @@ RunBattleAnimScript:
 	call ClearBattleAnims
 
 .playframe
+	call RunBattleAnimFrame
+	call BattleAnim_ShouldSkipDelayForRollout
+	jr c, .done
+	call BattleAnim_IsAccelerated
+	jr z, .delay
+	call BattleAnim_IsDone
+	jr nz, .delay
+	call RunBattleAnimFrame
+	call BattleAnim_ShouldSkipDelayForRollout
+	jr c, .done
+
+.delay
+	call BattleAnimDelayFrame
+
+.done
+	call BattleAnim_IsDone
+	jr z, .playframe
+
+	call BattleAnim_ClearOAM
+	ret
+
+RunBattleAnimFrame:
+; One logical animation tick. x2 battle speed runs this twice before one wait.
 	call RunBattleAnimCommand
 	call _ExecuteBGEffects
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
+	ret
 
+BattleAnim_ShouldSkipDelayForRollout:
 ; Speed up Rollout's animation.
 	ld a, [wFXAnimID + 1]
 	or a
-	jr nz, .not_rollout
+	jr nz, .no
 
 	ld a, [wFXAnimID]
 	cp ROLLOUT
-	jr nz, .not_rollout
+	jr nz, .no
 
 	ld a, BATTLE_BG_EFFECT_ROLLOUT
 	ld b, NUM_BG_EFFECTS
@@ -118,20 +143,28 @@ RunBattleAnimScript:
 	ld hl, wBGEffect1Function
 .find
 	cp [hl]
-	jr z, .done
+	jr z, .skip
 	add hl, de
 	dec b
 	jr nz, .find
 
-.not_rollout
-	call BattleAnimDelayFrame
+.no
+	and a
+	ret
 
-.done
+.skip
+	scf
+	ret
+
+BattleAnim_IsAccelerated:
+; x4 intentionally shares x2 behavior until the later x4 audit.
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	ret
+
+BattleAnim_IsDone:
 	ld a, [wBattleAnimFlags]
 	bit BATTLEANIM_STOP_F, a
-	jr z, .playframe
-
-	call BattleAnim_ClearOAM
 	ret
 
 BattleAnimClearHud:

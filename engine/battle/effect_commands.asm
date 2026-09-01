@@ -7542,9 +7542,9 @@ AnimateFailedMove:
 
 BattleCommand_MoveDelay:
 ; movedelay
-; Wait 40 frames.
+; Presentation wait; battle speed x2/x4 halves it, with a one-frame minimum.
 	ld c, 40
-	jp DelayFrames
+	newfarjp BattleEngineDelayFrames
 
 BattleCommand_ClearText:
 ; cleartext

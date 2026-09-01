@@ -43,6 +43,62 @@ SetBattleEngineSpeedOption::
 	ld [wOptions2], a
 	ret
 
+BattleEngineDelayFrames::
+; Presentation wait wrapper. x2 and x4 both use x2 timing until x4 is audited.
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	jr z, .delay
+	srl c
+	jr nz, .delay
+	inc c
+.delay
+	jp DelayFrames
+
+BattleAnimWaitSFX::
+; Battle-animation SFX channels use normal audio updates plus one extra
+; note-duration tick per real frame at accelerated battle speeds.
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	jp z, WaitSFX
+
+	push hl
+	push de
+
+.wait
+	call CheckSFX
+	jr nc, .done
+	call BattleAnimSpeedUpSFXChannels
+	call DelayFrame
+	jr .wait
+
+.done
+	pop de
+	pop hl
+	ret
+
+BattleAnimSpeedUpSFXChannels:
+	ld hl, wChannel5
+	call BattleAnimSpeedUpSFXChannel
+	ld hl, wChannel6
+	call BattleAnimSpeedUpSFXChannel
+	ld hl, wChannel7
+	call BattleAnimSpeedUpSFXChannel
+	ld hl, wChannel8
+	; fallthrough
+
+BattleAnimSpeedUpSFXChannel:
+	ld de, CHANNEL_FLAGS1
+	add hl, de
+	bit SOUND_CHANNEL_ON, [hl]
+	ret z
+	ld de, CHANNEL_NOTE_DURATION - CHANNEL_FLAGS1
+	add hl, de
+	ld a, [hl]
+	cp 2
+	ret c
+	dec [hl]
+	ret
+
 OpenGameSpeedMenu::
 	ldh a, [hInMenu]
 	push af

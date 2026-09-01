@@ -110,6 +110,6 @@ ComputeHPBarPixels:
 
 AnimateHPBar:
 	call WaitBGMap
-	call _AnimateHPBar
+	newfarcall _AnimateHPBar
 	call WaitBGMap
 	ret

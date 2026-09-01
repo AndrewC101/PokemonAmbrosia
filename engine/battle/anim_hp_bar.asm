@@ -8,6 +8,7 @@ _AnimateHPBar:
 	call ShortAnim_UpdateVariables
 	pop hl
 	pop bc
+	call HPBarAnim_TryShortExtraTick
 	push af
 	push bc
 	push hl
@@ -28,6 +29,7 @@ _AnimateHPBar:
 	pop hl
 	pop bc
 	ret c
+	call HPBarAnim_TryLongExtraTick
 	push af
 	push bc
 	push hl
@@ -65,7 +67,7 @@ _AnimateHPBar:
 	ld a, [hli]
 	ld b, a
 	pop hl
-	call ComputeHPBarPixels
+	newfarcall ComputeHPBarPixels
 	ld a, e
 	ld [wCurHPBarPixels], a
 
@@ -77,7 +79,7 @@ _AnimateHPBar:
 	ld e, a
 	ld a, [wCurHPAnimMaxHP + 1]
 	ld d, a
-	call ComputeHPBarPixels
+	newfarcall ComputeHPBarPixels
 	ld a, e
 	ld [wNewHPBarPixels], a
 
@@ -124,6 +126,34 @@ _AnimateHPBar:
 	ld [wCurHPAnimDeltaHP], a
 	ld a, e
 	ld [wCurHPAnimDeltaHP + 1], a
+	ret
+
+HPBarAnim_TryShortExtraTick:
+; x2 battle speed advances HP math twice per safe BG-map update.
+	ret c
+	call HPBarAnim_BattleSpeedUp
+	ret z
+	push bc
+	push hl
+	call ShortAnim_UpdateVariables
+	pop hl
+	pop bc
+	ret
+
+HPBarAnim_TryLongExtraTick:
+	call HPBarAnim_BattleSpeedUp
+	ret z
+	push bc
+	push hl
+	call LongAnim_UpdateVariables
+	pop hl
+	pop bc
+	ret
+
+HPBarAnim_BattleSpeedUp:
+; x4 intentionally shares x2 behavior until the later x4 audit.
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
 	ret
 
 ShortAnim_UpdateVariables:
@@ -179,7 +209,7 @@ LongAnim_UpdateVariables:
 	ld a, [hli]
 	ld b, a
 ; BUG: HP bar animation is slow for high HP (see docs/bugs_and_glitches.md)
-	call ComputeHPBarPixels
+	newfarcall ComputeHPBarPixels
 	ld a, e
 	pop bc
 	pop de
@@ -216,7 +246,7 @@ LongHPBarAnim_UpdateTiles:
 	ld e, a
 	ld a, [wCurHPAnimMaxHP + 1]
 	ld d, a
-	call ComputeHPBarPixels
+	newfarcall ComputeHPBarPixels
 	ld c, e
 	ld d, HP_BAR_LENGTH
 	ld a, [wWhichHPBar]

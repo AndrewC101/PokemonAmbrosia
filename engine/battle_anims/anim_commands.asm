@@ -100,13 +100,21 @@ RunBattleAnimScript:
 	call RunBattleAnimFrame
 	call BattleAnim_ShouldSkipDelayForRollout
 	jr c, .done
-	call BattleAnim_IsAccelerated
+	call BattleAnim_GetExtraTicks
+	and a
 	jr z, .delay
+	ld c, a
+
+.extra_ticks
 	call BattleAnim_IsDone
 	jr nz, .delay
+	push bc
 	call RunBattleAnimFrame
 	call BattleAnim_ShouldSkipDelayForRollout
+	pop bc
 	jr c, .done
+	dec c
+	jr nz, .extra_ticks
 
 .delay
 	call BattleAnimDelayFrame
@@ -119,7 +127,8 @@ RunBattleAnimScript:
 	ret
 
 RunBattleAnimFrame:
-; One logical animation tick. x2 battle speed runs this twice before one wait.
+; One logical animation tick. Faster battle speeds run extra safe ticks
+; before one real-frame wait.
 	call RunBattleAnimCommand
 	call _ExecuteBGEffects
 	call BattleAnim_UpdateOAM_All
@@ -156,10 +165,24 @@ BattleAnim_ShouldSkipDelayForRollout:
 	scf
 	ret
 
-BattleAnim_IsAccelerated:
-; x4 intentionally shares x2 behavior until the later x4 audit.
+BattleAnim_GetExtraTicks:
+; Return extra logical animation ticks for this displayed frame.
+; Reserved speed encoding keeps x1 behavior.
 	ld a, [wOptions2]
 	and BATTLE_ENGINE_SPEED_MASK
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x2
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x4
+	xor a
+	ret
+
+.x2
+	ld a, 1
+	ret
+
+.x4
+	ld a, 7
 	ret
 
 BattleAnim_IsDone:

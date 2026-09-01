@@ -129,31 +129,67 @@ _AnimateHPBar:
 	ret
 
 HPBarAnim_TryShortExtraTick:
-; x2 battle speed advances HP math twice per safe BG-map update.
+; Extra HP math ticks happen before one safe BG-map update.
 	ret c
-	call HPBarAnim_BattleSpeedUp
+	call HPBarAnim_GetExtraTicks
+	and a
 	ret z
+	push de
+	ld e, a
+.loop
+	push de
 	push bc
 	push hl
 	call ShortAnim_UpdateVariables
 	pop hl
 	pop bc
+	pop de
+	jr c, .done
+	dec e
+	jr nz, .loop
+.done
+	pop de
 	ret
 
 HPBarAnim_TryLongExtraTick:
-	call HPBarAnim_BattleSpeedUp
+	call HPBarAnim_GetExtraTicks
+	and a
 	ret z
+	push de
+	ld e, a
+.loop
+	push de
 	push bc
 	push hl
 	call LongAnim_UpdateVariables
 	pop hl
 	pop bc
+	pop de
+	jr c, .done
+	dec e
+	jr nz, .loop
+.done
+	pop de
 	ret
 
-HPBarAnim_BattleSpeedUp:
-; x4 intentionally shares x2 behavior until the later x4 audit.
+HPBarAnim_GetExtraTicks:
+; Return extra HP math updates for this BG-map refresh.
+; Reserved speed encoding keeps x1 behavior.
 	ld a, [wOptions2]
 	and BATTLE_ENGINE_SPEED_MASK
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x2
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x4
+	xor a
+	ret
+
+.x2
+	ld a, 1
+	ret
+
+.x4
+	ld a, 7
 	ret
 
 ShortAnim_UpdateVariables:

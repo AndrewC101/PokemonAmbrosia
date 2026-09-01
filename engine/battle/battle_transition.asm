@@ -28,7 +28,7 @@ DoBattleTransition:
 	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call BattleTransitionJumptable
-	call DelayFrame
+	call BattleTransitionDelayFrame
 	jr .loop
 
 .done
@@ -96,6 +96,113 @@ DoBattleTransition:
 	call LoadTrainerBattlePokeballTiles
 	hlbgcoord 0, 0
 	call ConvertTrainerBattlePokeballTilesTo2bpp
+	ret
+
+BattleTransitionDelayFrame:
+; Accelerate visual transition states by running extra state-machine ticks
+; before the next real VBlank. Setup and cleanup states keep normal cadence.
+	call BattleTransition_GetExtraTicks
+	and a
+	jr z, .delay
+	ld c, a
+
+.extra_ticks
+	call BattleTransition_ShouldRunExtraTick
+	jr z, .delay
+	push bc
+	call BattleTransitionJumptable
+	pop bc
+	dec c
+	jr nz, .extra_ticks
+
+.delay
+	jp DelayFrame
+
+BattleTransitionDelayFrames:
+; x4 uses stronger compression to offset unavoidable one-frame staging waits.
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .half
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .eighth
+	jr .delay
+
+.half
+	srl c
+	jr nz, .delay
+	inc c
+	jr .delay
+
+.eighth
+	srl c
+	srl c
+	srl c
+	jr nz, .delay
+	inc c
+.delay
+	jp DelayFrames
+
+BattleTransition_GetExtraTicks:
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x2
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x4
+	xor a
+	ret
+
+.x2
+	ld a, 1
+	ret
+
+.x4
+	ld a, 7
+	ret
+
+BattleTransition_ShouldRunExtraTick:
+	ld a, [wJumptableIndex]
+	bit JUMPTABLE_EXIT_F, a
+	jr nz, .no
+
+	cp BATTLETRANSITION_CAVE + 2
+	jr c, .check_cave_sine
+	cp BATTLETRANSITION_CAVE + 5
+	jr c, .yes
+
+.check_cave_sine
+	cp BATTLETRANSITION_CAVE + 7
+	jr z, .yes
+
+	cp BATTLETRANSITION_CAVE_STRONGER + 2
+	jr c, .check_no_cave
+	cp BATTLETRANSITION_CAVE_STRONGER + 5
+	jr c, .yes
+
+.check_no_cave
+	cp BATTLETRANSITION_NO_CAVE + 2
+	jr c, .check_stronger_no_cave
+	cp BATTLETRANSITION_NO_CAVE + 5
+	jr c, .yes
+
+.check_stronger_no_cave
+	cp BATTLETRANSITION_NO_CAVE_STRONGER + 2
+	jr c, .check_speckle
+	cp BATTLETRANSITION_NO_CAVE_STRONGER + 5
+	jr c, .yes
+
+.check_speckle
+	cp BATTLETRANSITION_NO_CAVE_STRONGER + 7
+	jr z, .yes
+
+.no
+	xor a
+	ret
+
+.yes
+	ld a, 1
+	and a
 	ret
 
 LoadTrainerBattlePokeballTiles:
@@ -421,8 +528,8 @@ endr
 	call .load
 	ld a, 1
 	ldh [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
+	ld c, 2
+	call BattleTransitionDelayFrames
 	ld hl, wBattleTransitionCounter
 	inc [hl]
 	ret
@@ -430,9 +537,8 @@ endr
 .end
 	ld a, 1
 	ldh [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
-	call DelayFrame
+	ld c, 3
+	call BattleTransitionDelayFrames
 	xor a
 	ldh [hBGMapMode], a
 	ld a, BATTLETRANSITION_FINISH
@@ -566,9 +672,8 @@ StartTrainerBattle_SpeckleToBlack:
 .done
 	ld a, $1
 	ldh [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
-	call DelayFrame
+	ld c, 3
+	call BattleTransitionDelayFrames
 	xor a
 	ldh [hBGMapMode], a
 	ld a, BATTLETRANSITION_FINISH
@@ -678,8 +783,8 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr nz, .cgb
 	ld a, 1
 	ldh [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
+	ld c, 2
+	call BattleTransitionDelayFrames
 	jp .nextscene
 
 .cgb

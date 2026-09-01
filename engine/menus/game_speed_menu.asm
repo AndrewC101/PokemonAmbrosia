@@ -44,10 +44,25 @@ SetBattleEngineSpeedOption::
 	ret
 
 BattleEngineDelayFrames::
-; Presentation wait wrapper. x2 and x4 both use x2 timing until x4 is audited.
+; Presentation wait wrapper. x4 uses stronger compression to offset
+; unavoidable one-frame staging waits elsewhere.
 	ld a, [wOptions2]
 	and BATTLE_ENGINE_SPEED_MASK
-	jr z, .delay
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .half
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .eighth
+	jr .delay
+
+.half
+	srl c
+	jr nz, .delay
+	inc c
+	jr .delay
+
+.eighth
+	srl c
+	srl c
 	srl c
 	jr nz, .delay
 	inc c
@@ -55,25 +70,55 @@ BattleEngineDelayFrames::
 	jp DelayFrames
 
 BattleAnimWaitSFX::
-; Battle-animation SFX channels use normal audio updates plus one extra
-; note-duration tick per real frame at accelerated battle speeds.
+; Battle-animation SFX channels use normal audio updates plus extra
+; note-duration ticks per real frame at accelerated battle speeds.
 	ld a, [wOptions2]
 	and BATTLE_ENGINE_SPEED_MASK
 	jp z, WaitSFX
 
 	push hl
 	push de
+	push bc
 
 .wait
 	call CheckSFX
 	jr nc, .done
+	call BattleAnimSFX_GetExtraTicks
+	and a
+	jr z, .frame
+	ld b, a
+.extra_ticks
+	push bc
 	call BattleAnimSpeedUpSFXChannels
+	pop bc
+	dec b
+	jr nz, .extra_ticks
+.frame
 	call DelayFrame
 	jr .wait
 
 .done
+	pop bc
 	pop de
 	pop hl
+	ret
+
+BattleAnimSFX_GetExtraTicks:
+	ld a, [wOptions2]
+	and BATTLE_ENGINE_SPEED_MASK
+	cp GAME_SPEED_X2 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x2
+	cp GAME_SPEED_X4 << BATTLE_ENGINE_SPEED_SHIFT
+	jr z, .x4
+	xor a
+	ret
+
+.x2
+	ld a, 1
+	ret
+
+.x4
+	ld a, 7
 	ret
 
 BattleAnimSpeedUpSFXChannels:

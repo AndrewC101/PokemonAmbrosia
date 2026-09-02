@@ -39,8 +39,8 @@ ItemIconPalettes:
 	RGB 16, 12, 21
 	RGB 19, 25, 24 ; ESCAPE_POD / AbilityCapIcon
 	RGB 15, 17, 17
-	RGB 31, 31, 31 ; WARP_DEVICE / KurtsMapIcon
-	RGB 30, 10, 06
+	RGB 10, 28, 12 ; WARP_DEVICE / ExpShareIcon
+	RGB 03, 16, 06
 	RGB 26, 26, 11 ; MAX_ELIXER / MaxElixirIcon
 	RGB 14, 24, 24
 	RGB 27, 25, 02 ; FIRE_STONE / FireStoneIcon

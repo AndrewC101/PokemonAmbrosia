@@ -5,6 +5,7 @@
 	const ENGINE_MAP_CARD
 	const ENGINE_PHONE_CARD
 	const ENGINE_EXPN_CARD
+	; Legacy warp-menu unlock slot. Warp access is now the WARP_DEVICE key item.
 	const ENGINE_WARP
 	const ENGINE_POKEGEAR
 ; wDayCareMan

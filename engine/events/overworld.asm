@@ -827,99 +827,28 @@ EscapeRopeFunction:
 	jp EscapeRopeOrDig
 
 WarpDeviceFunction:
-	call .WarpDevice
-	and $7f
-	ld [wFieldMoveSucceeded], a
-	ret
-
-.WarpDevice:
+	; Queue the shared fast-travel menu; destinations are selected there.
+	ld a, [wLinkMode]
+	and a
+	jr nz, .cant_use
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	jr nz, .cant_use
 	ld hl, WarpDeviceScript
 	call QueueScript
 	ld a, TRUE
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.cant_use
+	xor a
+	ld [wItemEffectSucceeded], a
+	ld [wFieldMoveSucceeded], a
 	ret
 
 WarpDeviceScript:
-    opentext
-    writetext WarpChoiceText
-
-    checkflag ENGINE_FLYPOINT_SILVER_CAVE
-    iffalse .defaultWarp
-
-	loadmenu .BattleTowerWarpMenuHeader
-	_2dmenu
-	closewindow
-	ifequal 1, .home
-	ifequal 2, .goldenrod
-	ifequal 3, .saffron
-	ifequal 4, .battleTower
-	ifequal 5, .silver
-	closetext
+	callasm OpenUnlockedWarpMenu
 	end
-.BattleTowerWarpMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 11, 11
-	dw .BattleTowerWarpMenuData
-	db 1 ; default option
-.BattleTowerWarpMenuData:
-	db STATICMENU_CURSOR ; flags
-	dn 5, 1 ; rows, columns
-	db 5 ; spacing
-	dba .BattleTowerWarpText
-	dbw BANK(@), NULL
-.BattleTowerWarpText:
-	db "Home@"
-	db "Goldenrod@"
-	db "Saffron@"
-	db "Frontier@"
-	db "Silver@"
-
-.defaultWarp
-	loadmenu .HomeMenuHeader
-	_2dmenu
-	closewindow
-	ifequal 1, .home
-	ifequal 2, .goldenrod
-	ifequal 3, .saffron
-	ifequal 4, .battleTower
-	closetext
-	end
-.HomeMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 11, 9
-	dw .HomeMenuData
-	db 1 ; default option
-.HomeMenuData:
-	db STATICMENU_CURSOR ; flags
-	dn 4, 1 ; rows, columns
-	db 5 ; spacing
-	dba .HomeMenuText
-	dbw BANK(@), NULL
-.HomeMenuText:
-	db "Home@"
-	db "Goldenrod@"
-	db "Saffron@"
-	db "Frontier@"
-
-.home
-	warp PLAYERS_HOUSE_2F, 3, 3
-	end
-.goldenrod
-	warp GOLDENROD_CITY, 15, 28
-	end
-.battleTower
-	warp BATTLE_TOWER_OUTSIDE, 8, 16
-	end
-.saffron
-    warp SAFFRON_CITY, 9, 30
-    end
-.silver
-    warp SILVER_CAVE_OUTSIDE, 23, 20
-    end
-
-WarpChoiceText:
-    text "Where do you"
-    line "want to go?"
-    done
 
 GoldDiceFunction:
 	call .GoldDice

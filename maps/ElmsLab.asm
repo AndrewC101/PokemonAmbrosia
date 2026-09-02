@@ -2271,10 +2271,9 @@ ElmsLabMrMimeScript:
     iftrue .nostalgia
     opentext
     writetext GiveWarpText
-    closetext
-	playsound SFX_DEX_FANFARE_20_49
-	waitsfx
-	setflag ENGINE_WARP
+	promptbutton
+	verbosegiveitem WARP_DEVICE
+	closetext
 	setevent EVENT_UNLOCK_WARP_CODE
     end
 .doubleExpToggle
@@ -2470,9 +2469,9 @@ MakeRoomInPartyText:
     prompt
 
 GiveWarpText:
-	text "Warp enabled in"
-	line "start menu."
-	prompt
+	text "The Warp Device"
+	line "is ready."
+	done
 
 PasswordScreen:
     ld b, NAME_CHEATCODE

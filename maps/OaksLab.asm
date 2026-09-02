@@ -39,6 +39,10 @@ Oak:
 	playsound SFX_WARP_TO
 	end
 .MtSilverOpen:
+	; Old saves may have unlocked warp before it became a key item.
+	checkitem WARP_DEVICE
+	iffalse .GiveWarpDeviceAfterUnlock
+.MtSilverOpenAfterWarpDevice
 	checkevent EVENT_BEAT_ASH
 	iftrue .CheckSilverCaveOutsideScene
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_CUSTOM_1
@@ -105,13 +109,18 @@ Oak:
     closetext
     end
 
+.GiveWarpDeviceAfterUnlock:
+	writetext OakGiveWarpDeviceText
+	promptbutton
+	verbosegiveitem WARP_DEVICE
+	sjump .MtSilverOpenAfterWarpDevice
+
 .OpenMtSilver:
 	writetext OakOpenMtSilverText
 	promptbutton
 	writetext OakGiveWarpDeviceText
-	playsound SFX_GET_BADGE
-	waitsfx
-	setflag ENGINE_WARP
+	promptbutton
+	verbosegiveitem WARP_DEVICE
 	setevent EVENT_OPENED_MT_SILVER
 	setmapscene SILVER_CAVE_ROOM_3, SCENE_CUSTOM_1
 	setmapscene SILVER_CAVE_OUTSIDE, SCENE_CUSTOM_1
@@ -402,9 +411,9 @@ OakGiveWarpDeviceText:
     para "I use it all"
     line "the time."
 
-    para "WARP option was"
-    line "added to start"
-    cont "menu."
+    para "Use the Warp"
+    line "Device to travel"
+    cont "quickly."
     done
 
 OakNoKantoBadgesText:

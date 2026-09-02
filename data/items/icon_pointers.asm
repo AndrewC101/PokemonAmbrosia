@@ -20,7 +20,7 @@ ItemIconPointers:
 	dba SuperPotionIcon
 	dba PotionIcon
 	dba AbilityCapIcon
-	dba KurtsMapIcon
+	dba ExpShareIcon
 	dba MaxElixirIcon
 	dba FireStoneIcon
 	dba ThunderStoneIcon

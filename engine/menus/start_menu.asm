@@ -489,8 +489,6 @@ OpenUnlockedWarpMenu::
 	call CloseText
 	jp UpdateTimePals
 
-StartMenu_Warp:
-	call StartMenu_OpenUnlockedWarpMenu
 StartMenu_Exit:
 ; Exit the menu.
 

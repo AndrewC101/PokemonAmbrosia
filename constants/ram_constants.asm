@@ -378,6 +378,7 @@ DEF NUM_BADGES EQU NUM_JOHTO_BADGES + NUM_KANTO_BADGES
 	const POKEGEAR_RADIO_CARD_F ; 1
 	const POKEGEAR_PHONE_CARD_F ; 2
 	const POKEGEAR_EXPN_CARD_F  ; 3
+	; Legacy warp-menu unlock bit. Kept to preserve saved flag layout.
 	const POKEGEAR_WARP_F
 	const POKEGEAR_OBTAINED_F   ; 7
 

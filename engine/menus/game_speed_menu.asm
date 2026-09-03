@@ -168,8 +168,8 @@ OpenGameSpeedMenu::
 .joypad_loop
 	call JoyTextDelay
 	ldh a, [hJoyPressed]
-	bit B_PAD_A, a
-	jr nz, .a_button
+	bit B_PAD_START, a
+	jr nz, .start_button
 	bit B_PAD_B, a
 	jr nz, .b_button
 
@@ -218,7 +218,7 @@ OpenGameSpeedMenu::
 	call DrawGameSpeedMenu
 	jr .joypad_loop
 
-.a_button
+.start_button
 	ld a, [wGameSpeedMenuOverworldTemp]
 	call SetOverworldSpeedOption
 	ld a, [wGameSpeedMenuBattleTemp]
@@ -340,7 +340,7 @@ DrawGameSpeedMenu:
 .X4:
 	db "x4@"
 .Confirm:
-	db "A: Confirm@"
+	db "Start: Confirm@"
 .Cancel:
 	db "B: Cancel@"
 

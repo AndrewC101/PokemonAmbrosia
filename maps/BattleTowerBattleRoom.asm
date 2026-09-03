@@ -91,8 +91,8 @@ Script_DontSaveAndEndTheSession:
 	sjump Script_BattleTowerHopeToServeYouAgain
 
 Script_FailedBattleTowerChallenge:
-    setval 0
-    writemem wHandOfGod
+	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
+	special BattleTowerAction
 	pause 60
 	special BattleTowerFade
 	warpfacing UP, BATTLE_TOWER_1F, 7, 7
@@ -110,8 +110,8 @@ Script_BeatenAllTrainers:
 	warpfacing UP, BATTLE_TOWER_1F, 7, 7
 Script_BeatenAllTrainers2:
 	readmem wHandOfGod
-    ifequal 0, .reward
-    setval 0
+    ifequal BATTLETOWER_MIRROR_NONE, .reward
+    setval BATTLETOWER_MIRROR_NONE
     writemem wHandOfGod
     opentext
     writetext Text_CongratulationsMirror
@@ -119,6 +119,8 @@ Script_BeatenAllTrainers2:
     verbosegiveitem AMBROSIA
     waitbutton
     closetext
+	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
+	special BattleTowerAction
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
     end

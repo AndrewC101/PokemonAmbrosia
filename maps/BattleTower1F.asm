@@ -84,22 +84,40 @@ Script_ChooseChallenge:
 	special TryQuickSave
 	iffalse Script_Menu_ChallengeExplanationCancel
 
+	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
+	special BattleTowerAction
 	writetext MirrorBattlesText
-    loadmenu .MirrorMenuHeader
+	loadmenu .MirrorMenuHeader
 	_2dmenu
 	closewindow
-	ifequal 1, .normal
-	ifequal 2, .mirror
-.mirror
-	setval 1
-	writemem wHandOfGod
-.normal
+	ifequal 1, .current
+	ifequal 2, .random
+.random
+	setval BATTLETOWERACTION_SELECT_RANDOM_MIRROR_MODE
+	special BattleTowerAction
+	sjump .choose_room
+.current
+.choose_room
 	setscene SCENE_BATTLETOWER1F_NOOP
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
 	special BattleTowerAction
 	special BattleTowerRoomMenu
 	ifequal $a, Script_Menu_ChallengeExplanationCancel
 	ifnotequal $0, Script_MobileError
+	readmem wHandOfGod
+	ifequal BATTLETOWER_MIRROR_NONE, .ask_scale_party
+	sjump .save_options
+.ask_scale_party
+	writetext Text_ScalePartyForChallenge
+	yesorno
+	iffalse .clear_scale_party
+	setval BATTLETOWERACTION_SET_SCALE_PARTY
+	special BattleTowerAction
+	sjump .save_options
+.clear_scale_party
+	setval BATTLETOWERACTION_CLEAR_SCALE_PARTY
+	special BattleTowerAction
+.save_options
 	setval BATTLETOWERACTION_11
 	special BattleTowerAction
 	writetext Text_RightThisWayToYourBattleRoom
@@ -120,21 +138,25 @@ Script_ChooseChallenge:
 	dba .MirrorText
 	dbw BANK(@), NULL
 .MirrorText:
-	db "Normal@"
-	db "Mirror@"
+	db "Current@"
+	db "Random@"
 
 MirrorBattlesText:
-    text "Which kind of"
-    line "battles do you"
-    cont "want."
+	text "Which team will"
+	line "you use?"
+	prompt
 
-    para "Normal battles"
-    line "or Mirror battles?"
-    prompt
+Text_ScalePartyForChallenge:
+	text "Scale your party"
+	line "to this challenge"
+	cont "level?"
+	done
 
 Script_ResumeBattleTowerChallenge:
 	closetext
 	setval BATTLETOWERACTION_LOADLEVELGROUP ; load choice of level group
+	special BattleTowerAction
+	setval BATTLETOWERACTION_LOAD_MIRROR_MODE
 	special BattleTowerAction
 Script_WalkToBattleTowerElevator:
 	musicfadeout MUSIC_NONE, 8
@@ -202,8 +224,8 @@ Script_BattleTowerSkipExplanation:
 	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_BattleTowerHopeToServeYouAgain:
-    setval 0
-    writemem wHandOfGod
+	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
+	special BattleTowerAction
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
@@ -365,13 +387,10 @@ Text_BattleTowerIntroduction_2:
 	line "rigorous test of"
 	cont "your knowledge and"
 	cont "skill you can"
-	cont "select Mirror mode"
-	cont "where you and your"
-	cont "enemy always have"
-	cont "the same team, you"
-	cont "fight with a"
-	cont "different team"
-	cont "every round."
+	cont "select Random"
+	cont "where you battle"
+	cont "with a random"
+	cont "team every round."
 	para "We hope you enjoy"
 	line "the challenges!"
 	done
@@ -465,13 +484,13 @@ Text_BattleTowerRules:
 	para "You must win"
 	line "four full battles."
 
-	para "Normal battles"
+	para "Current battles"
 	line "use your own"
 	cont "party."
 
-	para "Mirror battles"
-	line "use a copy of"
-	cont "the enemy party."
+	para "Random battles"
+	line "use a random"
+	cont "Tower party."
 
 	para "Different prizes"
 	line "are won in each."
@@ -602,8 +621,8 @@ Text_BattleTowerGranny:
 	done
 
 Text_BattleTowerBugCatcher:
-	text "I only play on"
-	line "Mirror mode."
+	text "I only play with"
+	line "random teams."
 
 	para "With my keen"
 	line "intellectual"
@@ -615,7 +634,7 @@ Text_BattleTowerBugCatcher:
 	done
 
 TurnOffHandOfGodScript:
-    setval 0
+    setval BATTLETOWER_MIRROR_NONE
     writemem wHandOfGod
     end
 

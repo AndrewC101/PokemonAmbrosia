@@ -9159,8 +9159,8 @@ BattleIntro:
     jr z, .noCopy
 
 	ld a, [wHandOfGod]
-	and a
-	jr z, .noCopy
+	dec a ; BATTLETOWER_MIRROR_EXACT_COPY
+	jr nz, .noCopy
     farcall ReadCopyOfTrainerParty
 .noCopy
 

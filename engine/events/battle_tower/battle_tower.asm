@@ -226,11 +226,30 @@ RunBattleTowerTrainer:
 	ld [wLinkMode], a
 	farcall StubbedTrainerRankings_Healings
 	farcall HealParty
+	; Temporary player-party overrides for Battle Tower modes belong here,
+	; after the saved party is healed and before StartBattle can see WRAM.
+	call BattleTowerAction_CheckRandomMirror
+	ld a, [wScriptVar]
+	and a
+	jr z, .not_random_mirror
+	farcall BattleTower_GenerateRandomPlayerParty
+	jr .skip_party_scaling
+
+.not_random_mirror
+	call BattleTowerAction_CheckScaleParty
+	ld a, [wScriptVar]
+	and a
+	jr z, .skip_party_scaling
+	farcall BattleTower_ScalePartyMonsToChallengeLevel
+
+.skip_party_scaling
 	call ReadBTTrainerParty
 	call Clears5_a89a
 
 	predef StartBattle
 
+	; Restore the real party before script control returns. Do not save while
+	; Battle Tower scaling or random-team mirror data is still in wPartyMons.
 	farcall LoadPokemonData
 	farcall HealParty
 	ld a, [wBattleResult]
@@ -344,7 +363,7 @@ ReadBTTrainerParty:
 	ld de, wOTPartyMon1Species
 	ld bc, wOTPartyCount
 	;ld a, BATTLETOWER_PARTY_LENGTH
-	ld a, 6
+	ld a, BATTLETOWER_ENEMY_PARTY_LENGTH
 	ld [bc], a
 	inc bc
 .otpartymon_loop
@@ -886,6 +905,15 @@ BattleTowerAction:
 	dw BattleTowerAction_1D
 	dw BattleTower_RandomlyChooseReward
 	dw BattleTower_SaveOptions
+	dw BattleTowerAction_SetScaleParty
+	dw BattleTowerAction_ClearScaleParty
+	dw BattleTowerAction_CheckScaleParty
+	dw BattleTowerAction_SetRandomMirror
+	dw BattleTowerAction_ClearRandomMirror
+	dw BattleTowerAction_CheckRandomMirror
+	dw BattleTowerAction_ClearModeOptions
+	dw BattleTowerAction_SelectRandomMirrorMode
+	dw BattleTowerAction_LoadMirrorMode
 
 ; Reset the save memory for BattleTower-Trainers (Counter and all 7 TrainerBytes)
 ResetBattleTowerTrainersSRAM:
@@ -994,13 +1022,8 @@ BattleTowerAction_CheckExplanationRead:
 	and a
 	ret z
 
-	ld a, BANK(sBattleTowerSaveFileFlags)
-	call OpenSRAM
-	ld a, [sBattleTowerSaveFileFlags]
-	and 2
-	ld [wScriptVar], a
-	call CloseSRAM
-	ret
+	ld c, BATTLETOWER_SAVEFILEFLAG_EXPLANATION_READ
+	jp BattleTowerAction_CheckSaveFileFlag
 
 BattleTowerAction_GetChallengeState:
 	ld hl, sBattleTowerChallengeState
@@ -1012,13 +1035,8 @@ BattleTowerAction_GetChallengeState:
 	ret
 
 BattleTowerAction_SetExplanationRead:
-	ld a, BANK(sBattleTowerSaveFileFlags)
-	call OpenSRAM
-	ld a, [sBattleTowerSaveFileFlags]
-	or 2
-	ld [sBattleTowerSaveFileFlags], a
-	call CloseSRAM
-	ret
+	ld c, BATTLETOWER_SAVEFILEFLAG_EXPLANATION_READ
+	jp BattleTowerAction_SetSaveFileFlag
 
 BattleTowerAction_SetByteToQuickSaveChallenge:
 	ld c, BATTLETOWER_SAVED_AND_LEFT
@@ -1487,20 +1505,91 @@ BattleTowerAction_14:
 	and a
 	ret z
 
+	ld c, BATTLETOWER_SAVEFILEFLAG_SAVEFILE_IS_YOURS
+	jp BattleTowerAction_CheckSaveFileFlag
+
+BattleTowerAction_15:
+	ld c, BATTLETOWER_SAVEFILEFLAG_SAVEFILE_IS_YOURS
+	jp BattleTowerAction_SetSaveFileFlag
+
+BattleTowerAction_SetScaleParty:
+	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	jp BattleTowerAction_SetSaveFileFlag
+
+BattleTowerAction_ClearScaleParty:
+	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	jp BattleTowerAction_ClearSaveFileFlag
+
+BattleTowerAction_CheckScaleParty:
+	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	jp BattleTowerAction_CheckSaveFileFlag
+
+BattleTowerAction_SetRandomMirror:
+	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jp BattleTowerAction_SetSaveFileFlag
+
+BattleTowerAction_ClearRandomMirror:
+	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jp BattleTowerAction_ClearSaveFileFlag
+
+BattleTowerAction_CheckRandomMirror:
+	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jp BattleTowerAction_CheckSaveFileFlag
+
+BattleTowerAction_ClearModeOptions:
+	xor a
+	ld [wHandOfGod], a
+	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	call BattleTowerAction_ClearSaveFileFlag
+	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jp BattleTowerAction_ClearSaveFileFlag
+
+BattleTowerAction_SelectRandomMirrorMode:
+	ld a, BATTLETOWER_MIRROR_RANDOM_TEAM
+	ld [wHandOfGod], a
+	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	call BattleTowerAction_ClearSaveFileFlag
+	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jp BattleTowerAction_SetSaveFileFlag
+
+BattleTowerAction_LoadMirrorMode:
+	xor a
+	ld [wHandOfGod], a
+	call BattleTowerAction_CheckRandomMirror
+	ld a, [wScriptVar]
+	and a
+	ret z
+	ld a, BATTLETOWER_MIRROR_RANDOM_TEAM
+	ld [wHandOfGod], a
+	ret
+
+BattleTowerAction_SetSaveFileFlag:
 	ld a, BANK(sBattleTowerSaveFileFlags)
 	call OpenSRAM
 	ld a, [sBattleTowerSaveFileFlags]
-	and 1
-	ld [wScriptVar], a
+	or c
+	ld [sBattleTowerSaveFileFlags], a
 	call CloseSRAM
 	ret
 
-BattleTowerAction_15:
+BattleTowerAction_ClearSaveFileFlag:
+	ld a, BANK(sBattleTowerSaveFileFlags)
+	call OpenSRAM
+	ld a, c
+	cpl
+	ld c, a
+	ld a, [sBattleTowerSaveFileFlags]
+	and c
+	ld [sBattleTowerSaveFileFlags], a
+	call CloseSRAM
+	ret
+
+BattleTowerAction_CheckSaveFileFlag:
 	ld a, BANK(sBattleTowerSaveFileFlags)
 	call OpenSRAM
 	ld a, [sBattleTowerSaveFileFlags]
-	or 1
-	ld [sBattleTowerSaveFileFlags], a
+	and c
+	ld [wScriptVar], a
 	call CloseSRAM
 	ret
 

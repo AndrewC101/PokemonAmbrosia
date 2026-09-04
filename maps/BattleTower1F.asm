@@ -558,24 +558,35 @@ Text_WeveBeenWaitingForYou:
 	done
 
 Text_BattleTowerYoungster:
-	text "There are four"
-	line "opponents."
-
-	para "But the final"
-	line "one is different."
-
-	para "The final one"
-	line "uses only the"
-	cont "best #mon"
-
-	para "And there is"
-	line "one #mon"
-	cont "that only the"
-	cont "final opponent"
-	cont "may use."
-
-	para "We call that"
-	line "the run killer!"
+	text "There are 5"
+	line "challenge levels"
+	cont "each one adding"
+	cont "new #mon to"
+	cont "the roster."
+	para "Novice has"
+	line "#mon that"
+	cont "evolve early."
+	para "Leader adds"
+	line "#mon that"
+	cont "evolve up to level"
+	cont "40."
+	para "Elite adds"
+	line "powerful #mon"
+	cont "that evolve late."
+	para "Champ adds weaker"
+	line "legendary"
+	cont "#mon."
+	para "Master adds the"
+	line "strongest uber"
+	cont "#mon."
+	para "If you want to"
+	line "have fun matches"
+	cont "with no"
+	cont "legendaries you"
+	cont "should pick Elite"
+	cont "level and scale"
+	cont "your #mon to"
+	cont "that level."
 	done
 
 Text_BattleTowerCooltrainerF:

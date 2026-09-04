@@ -307,17 +307,27 @@ CatchingTutorialDebriefText:
 	done
 
 Route29YoungsterText:
-	text "You should check"
-	line "out your Options"
-	cont "in the menu."
-	para "Battle Anim makes"
-	line "battles more epic"
-	cont "but they take"
-	cont "longer."
-	para "Battle Text set"
-	line "to Minimum skips"
-	cont "most battle text"
-	cont "and cries."
+	text "You can speed"
+	line "thing up a lot"
+	cont "with the right"
+	cont "options."
+	para "The Speed menu at"
+	line "the bottom of the"
+	cont "pause screen can"
+	cont "let you go much"
+	cont "faster in and"
+	cont "out of battle."
+	para "The Battle Text"
+	line "Option can let you"
+	cont "skip most battle"
+	cont "text when set to"
+	cont "minimum."
+	para "You can turn off"
+	line "attack animations"
+	cont "with Battle Anim"
+	cont "for even faster"
+	cont "battles if you"
+	cont "want."
 	done
 
 Route29TeacherText:

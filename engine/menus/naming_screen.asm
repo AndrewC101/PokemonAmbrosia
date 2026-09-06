@@ -7,8 +7,7 @@ DEF NAMINGSCREEN_UNDERLINE  EQU '<DOT>' ; $f2
 _NamingScreen:
 	call DisableSpriteUpdates
 	call NamingScreen
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jp ReturnToMapWithSpeechTextbox
 
 NamingScreen::
 	ld hl, wNamingScreenDestinationPointer
@@ -57,8 +56,7 @@ NamingScreen::
 	call WaitTop
 	call SetDefaultBGPAndOBP
 	farcall ApplyPlayerNamingScreenPalette
-	call NamingScreen_InitNameEntry
-	ret
+	jp NamingScreen_InitNameEntry
 
 .GetNamingScreenSetup:
 	ld a, [wNamingScreenType]
@@ -459,8 +457,15 @@ NamingScreenJoypadLoop:
 	jr z, .b
 	cp $3
 	jr z, .end
+	ld a, [wNamingScreenCurNameLength]
+	ld hl, wNamingScreenMaxNameLength
+	cp [hl]
+	ret nc
 	call NamingScreen_GetLastCharacter
-	call NamingScreen_TryAddCharacter
+	call NamingScreen_LoadNextCharacter
+	push af
+	call .AutoSwitchCaseAfterCharacter
+	pop af
 	ret nc
 
 .start
@@ -494,15 +499,28 @@ NamingScreenJoypadLoop:
 	ld a, [hl]
 	xor 1
 	ld [hl], a
+.apply_case
 	jr z, .upper
 	ld de, NameInputLower
-	call NamingScreen_ApplyTextInputMode
-	ret
+	jp NamingScreen_ApplyTextInputMode
 
 .upper
 	ld de, NameInputUpper
-	call NamingScreen_ApplyTextInputMode
-	ret
+	jp NamingScreen_ApplyTextInputMode
+
+.AutoSwitchCaseAfterCharacter:
+; Space starts the next word in uppercase; an uppercase letter makes the next
+; character lowercase. Other accepted characters leave the active case alone.
+	ld a, [wNamingScreenLastCharacter]
+	sub ' '
+	cp 'Z' - ' ' + 1
+	ret nc
+	and a
+	jr z, .got_case
+	ld a, 1
+.got_case
+	ld [wNamingScreenLetterCase], a
+	jr .apply_case
 
 .GetCursorPosition:
 	ld hl, wNamingScreenCursorObjectPointer
@@ -704,7 +722,6 @@ NamingScreen_AnimateCursor:
 	ret
 
 NamingScreen_TryAddCharacter:
-	ld a, [wNamingScreenLastCharacter] ; lost
 MailComposition_TryAddCharacter:
 	ld a, [wNamingScreenMaxNameLength]
 	ld c, a
@@ -1186,13 +1203,11 @@ INCBIN "gfx/naming_screen/mail.2bpp"
 	ld [hl], a
 	jr nz, .switch_to_lowercase
 	ld de, MailEntry_Uppercase
-	call .PlaceMailCharset
-	ret
+	jp .PlaceMailCharset
 
 .switch_to_lowercase
 	ld de, MailEntry_Lowercase
-	call .PlaceMailCharset
-	ret
+	jp .PlaceMailCharset
 
 ; called from engine/sprite_anims/functions.asm
 

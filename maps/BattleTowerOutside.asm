@@ -67,7 +67,7 @@ BattleTowerOutsideBeautyText:
 	cont "#mon."
 
 	para "But I do well"
-	line "in Mirror mode."
+	line "in random mode."
 
 	para "I even won once"
 	line "and I got an"
@@ -429,13 +429,18 @@ BattleTowerIntro:
     para "Particularly for"
     line "the top levels."
 
-    para "There is also a"
-    line "Mirror battle"
-    cont "mode."
+	para "You can fight with"
+	line "your own team with"
+	cont "the option to"
+	cont "scale your teams"
+	cont "level to the"
+	cont "challenge level."
 
-    para "This means you"
-    line "fight with a copy"
-    cont "of the enemy team."
+	para "Or you can fight"
+	line "with a random"
+	cont "team, getting a"
+	cont "different random"
+	cont "team every match."
 
     para "Making for the"
     line "ultimate test of"

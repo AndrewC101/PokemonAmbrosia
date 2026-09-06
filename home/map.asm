@@ -2187,10 +2187,14 @@ GetMapMusic::
 	ret
 
 .radiotower
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	jr z, .clearedradiotower
-	ld de, MUSIC_ROCKET_OVERTURE
+	; This event is clear only while the Radio Tower takeover is active.
+	ld de, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ld a, c
+	and a
+	jr nz, .clearedradiotower
+	ld de, MUSIC_ROCKET_HIDEOUT
 	jr .done
 
 .clearedradiotower

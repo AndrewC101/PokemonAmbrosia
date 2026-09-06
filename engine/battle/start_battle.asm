@@ -250,13 +250,7 @@ PlayBattleMusic:
     ld a, [wInBattleTowerBattle]
     and a
     jr z, .notBT
-    ld a, [wNrOfBeatenBattleTowerTrainers]
-    cp BATTLETOWER_STREAK_LENGTH - 1
-    jr z, .lastTrainer
-    ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
-    jp .done
-.lastTrainer
-    ld de, MUSIC_XVZ
+    ld de, MUSIC_ELITE_FOUR_PRISM
     jp .done
 .notBT
 

@@ -261,6 +261,7 @@ RunBattleTowerTrainer:
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	ld [wNrOfBeatenBattleTowerTrainers], a
 	call CloseSRAM
+	call BattleTowerAction_RecordWin
 	ld hl, wStringBuffer3
 	ld a, [wNrOfBeatenBattleTowerTrainers]
 	add '1'
@@ -914,6 +915,209 @@ BattleTowerAction:
 	dw BattleTowerAction_ClearModeOptions
 	dw BattleTowerAction_SelectRandomMirrorMode
 	dw BattleTowerAction_LoadMirrorMode
+	dw BattleTowerAction_RecordWin
+	dw BattleTowerAction_ResetCurrentStreak
+	dw BattleTowerAction_FormatStreakRecord
+
+BattleTowerAction_RecordWin:
+	call BattleTower_InitStreakRecords
+	ld a, BANK(sBattleTowerCurrentTeamCurrentStreak)
+	call OpenSRAM
+	call BattleTower_ShouldTrackActiveRecord
+	jr z, .done
+	call BattleTower_GetActiveRecordPointers
+	; hl = current low byte, de = longest low byte.
+	; Saturate at $ffff instead of wrapping a maxed streak to zero.
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	cp $ff
+	jr nz, .increment
+	ld a, b
+	cp $ff
+	jr z, .compare
+
+.increment
+	inc [hl]
+	jr nz, .compare
+	inc hl
+	inc [hl]
+	dec hl
+
+.compare
+	; Unsigned 16-bit compare, high byte first.
+	inc hl
+	inc de
+	ld a, [de]
+	ld c, a
+	ld a, [hl]
+	cp c
+	jr c, .done
+	jr nz, .copy_from_high
+	dec hl
+	dec de
+	ld a, [de]
+	ld c, a
+	ld a, [hl]
+	cp c
+	jr z, .done
+	jr c, .done
+
+.copy_from_low
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	jr .done
+
+.copy_from_high
+	ld a, [hl]
+	ld [de], a
+	dec hl
+	dec de
+	ld a, [hl]
+	ld [de], a
+
+.done
+	call CloseSRAM
+	ret
+
+BattleTowerAction_ResetCurrentStreak:
+	call BattleTower_InitStreakRecords
+	ld a, BANK(sBattleTowerCurrentTeamCurrentStreak)
+	call OpenSRAM
+	call BattleTower_ShouldTrackActiveRecord
+	jr z, .done
+	call BattleTower_GetActiveRecordPointers
+	xor a
+	ld [hli], a
+	ld [hl], a
+
+.done
+	call CloseSRAM
+	ret
+
+BattleTowerAction_FormatStreakRecord:
+	call BattleTower_InitStreakRecords
+	ld a, BANK(sBattleTowerCurrentTeamCurrentStreak)
+	call OpenSRAM
+	ld hl, sBattleTowerCurrentTeamCurrentStreak
+	ld de, wStringBuffer1
+	call BattleTower_FormatStreakCounter
+	ld hl, sBattleTowerCurrentTeamLongestStreak
+	ld de, wStringBuffer2
+	call BattleTower_FormatStreakCounter
+	ld hl, sBattleTowerRandomTeamCurrentStreak
+	ld de, wStringBuffer3
+	call BattleTower_FormatStreakCounter
+	ld hl, sBattleTowerRandomTeamLongestStreak
+	ld de, wStringBuffer4
+	call BattleTower_FormatStreakCounter
+	call CloseSRAM
+	ret
+
+BattleTower_InitStreakRecords:
+	ld a, BANK(sBattleTowerSaveFileFlags)
+	call OpenSRAM
+	call BattleTower_GetSanitizedSaveFileFlags
+	bit BATTLETOWER_SAVEFILEFLAG_RECORDS_INITIALIZED_F, a
+	jr nz, .done
+	ld d, a
+	xor a
+	ld hl, sBattleTowerCurrentTeamCurrentStreak
+	ld bc, sBattleTowerRandomTeamLongestStreak + 2 - sBattleTowerCurrentTeamCurrentStreak
+	call ByteFill
+	ld a, d
+	or BATTLETOWER_SAVEFILEFLAG_RECORDS_INITIALIZED
+	ld [sBattleTowerSaveFileFlags], a
+
+.done
+	call CloseSRAM
+	ret
+
+BattleTower_GetActiveRecordPointers:
+; Return hl = current streak pointer, de = longest streak pointer.
+; Battle Tower SRAM must already be open for the persisted random-mode fallback.
+	ld a, [wHandOfGod]
+	cp BATTLETOWER_MIRROR_RANDOM_TEAM
+	jr z, .random
+	and a
+	jr nz, .current
+	ld a, [sBattleTowerSaveFileFlags]
+	and BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	jr nz, .random
+
+.current
+	ld hl, sBattleTowerCurrentTeamCurrentStreak
+	ld de, sBattleTowerCurrentTeamLongestStreak
+	ret
+
+.random
+	ld hl, sBattleTowerRandomTeamCurrentStreak
+	ld de, sBattleTowerRandomTeamLongestStreak
+	ret
+
+BattleTower_ShouldTrackActiveRecord:
+; Return nz when the active Battle Tower mode should update records.
+; Random-team mode always tracks. Current-team mode only tracks scaled runs.
+; Battle Tower SRAM must already be open for the save-file flag checks.
+	ld a, [wHandOfGod]
+	cp BATTLETOWER_MIRROR_RANDOM_TEAM
+	jr z, .track
+	and a
+	jr nz, .current_mode
+	ld a, [sBattleTowerSaveFileFlags]
+	and BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	ret nz
+
+.current_mode
+	ld a, [sBattleTowerSaveFileFlags]
+	and BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
+	ret
+
+.track
+	ld a, TRUE
+	and a
+	ret
+
+BattleTower_FormatStreakCounter:
+; Read little-endian SRAM word at hl and print it left-aligned into de.
+	push hl
+	push de
+	ld h, d
+	ld l, e
+	ld a, "@"
+	ld bc, 6
+	call ByteFill
+	pop hl
+	pop de
+	ld a, [de]
+	ld c, a
+	inc de
+	ld a, [de]
+	ld [wStringBuffer5], a
+	ld a, c
+	ld [wStringBuffer5 + 1], a
+	ld de, wStringBuffer5
+	lb bc, PRINTNUM_LEFTALIGN | 2, 5
+	jp PrintNum
+
+BattleTowerRecordText::
+	text "Own team:"
+	line "Now @"
+	text_ram wStringBuffer1
+	text " Best @"
+	text_ram wStringBuffer2
+	text_start
+
+	para "Random team:"
+	line "Now @"
+	text_ram wStringBuffer3
+	text " Best @"
+	text_ram wStringBuffer4
+	text_start
+	done
 
 ; Reset the save memory for BattleTower-Trainers (Counter and all 7 TrainerBytes)
 ResetBattleTowerTrainersSRAM:
@@ -1566,7 +1770,7 @@ BattleTowerAction_LoadMirrorMode:
 BattleTowerAction_SetSaveFileFlag:
 	ld a, BANK(sBattleTowerSaveFileFlags)
 	call OpenSRAM
-	ld a, [sBattleTowerSaveFileFlags]
+	call BattleTower_GetSanitizedSaveFileFlags
 	or c
 	ld [sBattleTowerSaveFileFlags], a
 	call CloseSRAM
@@ -1578,7 +1782,7 @@ BattleTowerAction_ClearSaveFileFlag:
 	ld a, c
 	cpl
 	ld c, a
-	ld a, [sBattleTowerSaveFileFlags]
+	call BattleTower_GetSanitizedSaveFileFlags
 	and c
 	ld [sBattleTowerSaveFileFlags], a
 	call CloseSRAM
@@ -1587,10 +1791,24 @@ BattleTowerAction_ClearSaveFileFlag:
 BattleTowerAction_CheckSaveFileFlag:
 	ld a, BANK(sBattleTowerSaveFileFlags)
 	call OpenSRAM
-	ld a, [sBattleTowerSaveFileFlags]
+	call BattleTower_GetSanitizedSaveFileFlags
 	and c
 	ld [wScriptVar], a
 	call CloseSRAM
+	ret
+
+BattleTower_GetSanitizedSaveFileFlags:
+; Treat erased SRAM ($ff) and other out-of-range flag bytes as no flags set.
+	ld a, [sBattleTowerSaveFileFlags]
+	ld b, a
+	and ~BATTLETOWER_SAVEFILEFLAG_VALID_MASK
+	jr z, .valid
+	xor a
+	ld [sBattleTowerSaveFileFlags], a
+	ret
+
+.valid
+	ld a, b
 	ret
 
 BattleTowerAction_LevelCheck:

@@ -80,6 +80,8 @@ Script_DontSaveAndEndTheSession:
 	writetext Text_CancelYourBattleRoomChallenge
 	yesorno
 	iffalse Script_ContinueAndBattleNextOpponent
+	setval BATTLETOWERACTION_RESET_CURRENT_STREAK
+	special BattleTowerAction
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
 	setval BATTLETOWERACTION_06
@@ -91,6 +93,8 @@ Script_DontSaveAndEndTheSession:
 	sjump Script_BattleTowerHopeToServeYouAgain
 
 Script_FailedBattleTowerChallenge:
+	setval BATTLETOWERACTION_RESET_CURRENT_STREAK
+	special BattleTowerAction
 	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
 	special BattleTowerAction
 	pause 60

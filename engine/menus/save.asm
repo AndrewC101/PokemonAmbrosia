@@ -370,8 +370,10 @@ InitDefaultEZChatMsgs: ; unreferenced
 EraseBattleTowerStatus:
 	ld a, BANK(sBattleTowerChallengeState)
 	call OpenSRAM
+	ld hl, sBattleTowerChallengeState
+	ld bc, sBattleTowerRandomTeamLongestStreak + 2 - sBattleTowerChallengeState
 	xor a
-	ld [sBattleTowerChallengeState], a
+	call ByteFill
 	jp CloseSRAM
 
 SaveData:

@@ -182,6 +182,11 @@ for n, 1, BATTLETOWER_PARTY_LENGTH + 1
 sBTMonPrevPrevTrainer{d:n}:: db
 endr
 
+sBattleTowerCurrentTeamCurrentStreak:: dw
+sBattleTowerCurrentTeamLongestStreak:: dw
+sBattleTowerRandomTeamCurrentStreak:: dw
+sBattleTowerRandomTeamLongestStreak:: dw
+
 
 SECTION "PokeDB Bank 1", SRAM
 

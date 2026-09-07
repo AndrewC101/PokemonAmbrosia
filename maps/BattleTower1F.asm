@@ -31,6 +31,8 @@ BattleTower1FCheckStateScene:
 
 .LeftWithoutSaving
 	sdefer BattleTower_LeftWithoutSaving
+	setval BATTLETOWERACTION_RESET_CURRENT_STREAK
+	special BattleTowerAction
 	setval BATTLETOWERACTION_CHALLENGECANCELED
 	special BattleTowerAction
 	setval BATTLETOWERACTION_06
@@ -44,13 +46,39 @@ BattleTower1FNoopScene:
 BattleTower1FRulesSign:
 	opentext
 	writetext Text_ReadBattleTowerRules
-	yesorno
-	iffalse .skip
-	writetext Text_BattleTowerRules
-	waitbutton
-.skip:
+	loadmenu .RulesSignMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .rules
+	ifequal 2, .record
 	closetext
 	end
+.rules
+	writetext Text_BattleTowerRules
+	waitbutton
+	closetext
+	end
+.record
+	setval BATTLETOWERACTION_FORMAT_STREAK_RECORD
+	special BattleTowerAction
+	farwritetext BattleTowerRecordText
+	waitbutton
+	closetext
+	end
+.RulesSignMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 10, 5
+	dw .RulesSignMenuData
+	db 1 ; default option
+.RulesSignMenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 2, 1 ; rows, columns
+	db 6 ; spacing
+	dba .RulesSignMenuText
+	dbw BANK(@), NULL
+.RulesSignMenuText:
+	db "Rules@"
+	db "Record@"
 
 BattleTower1FReceptionistScript:
 	setval BATTLETOWERACTION_GET_CHALLENGE_STATE ; readmem sBattleTowerChallengeState
@@ -115,6 +143,9 @@ Script_ChooseChallenge:
 	special BattleTowerAction
 	sjump .save_options
 .clear_scale_party
+	writetext Text_UnscaledChallengeNoRecordWarning
+	yesorno
+	iffalse Script_Menu_ChallengeExplanationCancel
 	setval BATTLETOWERACTION_CLEAR_SCALE_PARTY
 	special BattleTowerAction
 .save_options
@@ -150,6 +181,16 @@ Text_ScalePartyForChallenge:
 	text "Scale your party"
 	line "to this challenge"
 	cont "level?"
+	done
+
+Text_UnscaledChallengeNoRecordWarning:
+	text "Without scaling"
+	line "the matches won't"
+	cont "count towards"
+	cont "records."
+
+	para "Do you want to"
+	line "continue?"
 	done
 
 Script_ResumeBattleTowerChallenge:
@@ -471,10 +512,10 @@ Text_WouldYouLikeToHearAboutTheBattleTower:
 	done
 
 Text_ReadBattleTowerRules:
-	text "Battle Tower rules"
-	line "are written here."
+	text "Battle Tower info"
+	line "is written here."
 
-	para "Read the rules?"
+	para "Check what?"
 	done
 
 Text_BattleTowerRules:

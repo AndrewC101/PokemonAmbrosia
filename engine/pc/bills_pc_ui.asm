@@ -691,7 +691,7 @@ BillsPC_GetStorageBoxMonIconData:
 
 	call OpenPokeDB
 	ld a, [hl]
-	ld d, a
+	ld [wBufferMonSpecies], a ; preserve species for legacy entries without AltSpecies
 	ld bc, SAVEMON_DVS
 	add hl, bc
 	ld de, wBufferMonDVs
@@ -705,7 +705,7 @@ BillsPC_GetStorageBoxMonIconData:
 	ld a, [hl]
 	and a
 	jr nz, .got_species
-	ld a, d
+	ld a, [wBufferMonSpecies]
 .got_species
 	; Icon rendering only needs a safe species id for icon/palette lookup.
 	; Treat malformed payload species like an Egg until the full decode path
@@ -725,6 +725,7 @@ BillsPC_GetStorageBoxMonIconData:
 	ld a, c
 	ld [wBufferMonSlot], a
 	ld a, 1
+	and a
 	ret
 
 .empty

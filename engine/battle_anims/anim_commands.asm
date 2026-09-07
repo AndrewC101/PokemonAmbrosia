@@ -106,6 +106,8 @@ RunBattleAnimScript:
 	ld c, a
 
 .extra_ticks
+	newfarcall BattleAnim_HasPendingVideoRequest
+	jr nz, .delay
 	call BattleAnim_IsDone
 	jr nz, .delay
 	push bc

@@ -121,6 +121,16 @@ BattleAnimSFX_GetExtraTicks:
 	ld a, 7
 	ret
 
+BattleAnim_HasPendingVideoRequest::
+; BG-map and LY-override requests need a real VBlank before accelerated
+; animation ticks can safely clear or replace them.
+	ldh a, [hBGMapMode]
+	and a
+	ret nz
+	ld a, [wRequested2bppSize]
+	and a
+	ret
+
 BattleAnimSpeedUpSFXChannels:
 	ld hl, wChannel5
 	call BattleAnimSpeedUpSFXChannel

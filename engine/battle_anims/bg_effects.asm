@@ -2265,9 +2265,6 @@ BattleBGEffect_Rollout:
 .xor_a
 	xor a
 .okay
-	push af
-	call DelayFrame
-	pop af
 	ldh [hSCY], a
 	xor $ff
 	inc a

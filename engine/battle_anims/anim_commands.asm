@@ -98,8 +98,6 @@ RunBattleAnimScript:
 
 .playframe
 	call RunBattleAnimFrame
-	call BattleAnim_ShouldSkipDelayForRollout
-	jr c, .done
 	call BattleAnim_GetExtraTicks
 	and a
 	jr z, .delay
@@ -112,9 +110,7 @@ RunBattleAnimScript:
 	jr nz, .delay
 	push bc
 	call RunBattleAnimFrame
-	call BattleAnim_ShouldSkipDelayForRollout
 	pop bc
-	jr c, .done
 	dec c
 	jr nz, .extra_ticks
 
@@ -136,35 +132,6 @@ RunBattleAnimFrame:
 	call BattleAnim_UpdateOAM_All
 	call PushLYOverrides
 	call BattleAnimRequestPals
-	ret
-
-BattleAnim_ShouldSkipDelayForRollout:
-; Speed up Rollout's animation.
-	ld a, [wFXAnimID + 1]
-	or a
-	jr nz, .no
-
-	ld a, [wFXAnimID]
-	cp ROLLOUT
-	jr nz, .no
-
-	ld a, BATTLE_BG_EFFECT_ROLLOUT
-	ld b, NUM_BG_EFFECTS
-	ld de, BG_EFFECT_STRUCT_LENGTH
-	ld hl, wBGEffect1Function
-.find
-	cp [hl]
-	jr z, .skip
-	add hl, de
-	dec b
-	jr nz, .find
-
-.no
-	and a
-	ret
-
-.skip
-	scf
 	ret
 
 BattleAnim_GetExtraTicks:

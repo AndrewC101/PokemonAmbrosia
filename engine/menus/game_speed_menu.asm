@@ -122,13 +122,31 @@ BattleAnimSFX_GetExtraTicks:
 	ret
 
 BattleAnim_HasPendingVideoRequest::
-; BG-map and LY-override requests need a real VBlank before accelerated
+; BG-map and real tile requests need a real VBlank before accelerated
 ; animation ticks can safely clear or replace them.
 	ldh a, [hBGMapMode]
 	and a
 	ret nz
 	ld a, [wRequested2bppSize]
 	and a
+	ret z
+	; PushLYOverrides stages WRAM for the next LCD interrupt; extra ticks may
+	; replace the pending copy with the latest state before the next VBlank.
+	cp (wLYOverridesEnd - wLYOverrides) / TILE_SIZE
+	ret nz
+	ld a, [wRequested2bppSource]
+	cp LOW(wLYOverridesBackup)
+	ret nz
+	ld a, [wRequested2bppSource + 1]
+	cp HIGH(wLYOverridesBackup)
+	ret nz
+	ld a, [wRequested2bppDest]
+	cp LOW(wLYOverrides)
+	ret nz
+	ld a, [wRequested2bppDest + 1]
+	cp HIGH(wLYOverrides)
+	ret nz
+	xor a
 	ret
 
 BattleAnimSpeedUpSFXChannels:

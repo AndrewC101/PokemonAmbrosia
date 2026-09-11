@@ -605,6 +605,7 @@ SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/player_sprite_choice.asm"
+INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
 

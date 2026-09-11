@@ -535,18 +535,7 @@ RegisterItem:
 	ld a, [wItemAttributeValue]
 	and a
 	jr nz, .cant_register
-	ld a, [wCurPocket]
-	rrca
-	rrca
-	and REGISTERED_POCKET
-	ld b, a
-	ld a, [wCurItemQuantity]
-	inc a
-	and REGISTERED_NUMBER
-	or b
-	ld [wWhichRegisteredItem], a
-	ld a, [wCurItem]
-	ld [wRegisteredItem], a
+	farcall AddRegisteredItem
 	call Pack_GetItemName
 	ld de, SFX_FULL_HEAL
 	call WaitPlaySFX

@@ -3106,7 +3106,9 @@ wPokegearFlags::
 wRadioTuningKnob:: db
 wExpShareToggle:: db
 wMarkOfGod:: db
+wRegisteredItemSlot1::
 wWhichRegisteredItem:: db
+wRegisteredItemSlot2::
 wRegisteredItem:: db
 
 wPlayerState:: db
@@ -3131,7 +3133,8 @@ wExpShareUpgrade:: db
 
 wHandOfGod:: db
 wBattleMusicOverride:: ds 2
-wShinyOverride:: db ; unused
+wRegisteredItemSlot3::
+wShinyOverride:: db ; legacy unused byte, reused as a registered item slot
 wRunningShoesOn:: db
 wNoRematch:: db
 wReachedHallOfOrigin::db
@@ -3140,7 +3143,8 @@ wExpShareText:: db
 wHalfDamage:: db
 wLastDexMode:: db
 wCurPokedexColor:: db ; current dex color
-	db
+wRegisteredItemSlot4::
+	db ; spare byte reused as a registered item slot
 
 ; map scene ids
 wPokecenter2FSceneID::                            db

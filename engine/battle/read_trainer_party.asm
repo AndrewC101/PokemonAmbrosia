@@ -555,12 +555,11 @@ endr
 	pop hl
 .no_moves
 
-; custom palette? This byte is last so the next read starts at the next level.
+; Custom palette colors are last, so the next read starts at the next level.
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_PALETTE_F, a
 	jr z, .no_palette
-	call GetNextTrainerDataByte
-	; The banked helper preserves hl, which is the trainer-record cursor.
+	; The banked helper reads both colors and returns hl at the next record.
 	newfarcall StoreCurrentTrainerMonPalette
 .no_palette
 

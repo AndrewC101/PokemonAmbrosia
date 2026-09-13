@@ -157,7 +157,10 @@ DEF REDMON_STRUCT_LENGTH EQU 44
 
 DEF MON_PALETTE_DEFAULT EQU $00
 
-; Valid custom-palette nibbles. Zero selects the species palette.
+; Trainer-party data writes this for both color fields to select the species palette.
+DEF PAL_COLOR_DEFAULT EQU 0
+
+; Valid explicit custom-palette colors.
 	const_def 1
 	const PAL_COLOR_RED
 	const PAL_COLOR_BLUE

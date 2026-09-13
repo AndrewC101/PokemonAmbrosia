@@ -105,6 +105,7 @@ LoadPartyMenuMonIconColors:
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	call GetMenuMonIconPalette
+	newfarcall OverridePartyMenuIconPaletteWithCustom
 	ld hl, wShadowOAMSprite00Attributes
 	push af
 	ld a, [wCurPartyMon]

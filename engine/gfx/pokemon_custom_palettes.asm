@@ -12,25 +12,10 @@ LoadMonNormalShinyOrCustomPalette::
 	cp NUM_POKEMON + 1
 	jr nc, .default ; Eggs and reserved species always use their own palettes.
 
-	; Shiny colors take precedence over a stored custom pair. Save both inputs
-	; because CheckShininess uses a and hl while returning its result in carry.
+	; A valid custom pair takes precedence over the DV-based shiny palette.
+	; Save the species so the default branch can still perform its normal lookup.
 	push af
-	push hl
-	newfarcall CheckShininess
-	jr c, .shiny
-	pop hl
-
-	; Both nibbles must name one of the eleven shared colors.
-	ld a, l
-	and $f
-	jr z, .invalid
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
-	jr nc, .invalid
-	ld a, l
-	swap a
-	and $f
-	jr z, .invalid
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
+	call .IsCustomPairValid
 	jr nc, .invalid
 	pop af ; discard the saved species after validation
 
@@ -55,8 +40,6 @@ LoadMonNormalShinyOrCustomPalette::
 	pop af
 	ret
 
-.shiny
-	pop hl
 .invalid
 	pop af
 .default
@@ -64,6 +47,20 @@ LoadMonNormalShinyOrCustomPalette::
 	; then making a second banked call, keeps its hl result valid for the load.
 	newfarcall GetPlayerOrMonPalettePointer
 	newfarcall LoadPalette_White_Col1_Col2_Black
+	ret
+
+.IsCustomPairValid:
+; Return carry when both nibbles in l name one of the eleven shared colors.
+	ld a, l
+	and $f
+	ret z
+	cp NUM_CUSTOM_PALETTE_COLORS + 1
+	ret nc
+	ld a, l
+	swap a
+	and $f
+	ret z
+	cp NUM_CUSTOM_PALETTE_COLORS + 1 ; carry denotes a valid high nibble
 	ret
 
 .GetColor:
@@ -88,20 +85,7 @@ CopyMonNormalShinyOrCustomMiddleColors::
 	cp NUM_POKEMON + 1
 	jr nc, .default
 	push af
-	push hl
-	newfarcall CheckShininess
-	jr c, .shiny
-	pop hl
-	ld a, l
-	and $f
-	jr z, .invalid
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
-	jr nc, .invalid
-	ld a, l
-	swap a
-	and $f
-	jr z, .invalid
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
+	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
 	jr nc, .invalid
 	pop af
 
@@ -125,8 +109,6 @@ CopyMonNormalShinyOrCustomMiddleColors::
 	pop af
 	ret
 
-.shiny
-	pop hl
 .invalid
 	pop af
 .default
@@ -200,34 +182,55 @@ LoadEnemyMonNormalShinyOrCustomPalette::
 	jp LoadMonNormalShinyOrCustomPalette
 
 .lord_oak
-	; Lord Oak's existing forced-shiny rule also overrides custom colors.
+	; A custom pair overrides Lord Oak's forced-shiny rule as it does DV shininess.
+	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
+	jr nc, .lord_oak_shiny
+	pop af
+	jp LoadMonNormalShinyOrCustomPalette
+
+.lord_oak_shiny
+	; With no custom pair, retain Lord Oak's existing forced-shiny palette.
 	pop af
 	newfarcall GetEnemyMonNormalOrShinyPalettePointer
 	newfarcall LoadPalette_White_Col1_Col2_Black
 	ret
 
 .player
+	; CAL/CAL_F comparisons leave a holding the trainer class; restore the zero
+	; species sentinel so the shared loader selects the current player palette.
+	xor a
 	ld l, MON_PALETTE_DEFAULT
 	jp LoadMonNormalShinyOrCustomPalette
 
 StoreCurrentTrainerMonPalette::
-; Input: a = raw trainer palette byte. Invalid pairs become the species default.
-; Preserves bc, de, and the caller's trainer-record pointer in hl.
+; Input: hl = light color in the banked trainer record.
+; Output: hl advanced past the light and dark color bytes.
+; A default or invalid component makes the packed party field use species colors.
+; Preserves bc and de.
 	push bc
 	push de
-	push hl
+	ld a, [wTrainerGroupBank]
+	call GetFarByte
+	inc hl
+	ld b, a
+	ld a, [wTrainerGroupBank]
+	call GetFarByte
+	inc hl
 	ld c, a
-	and $f
+	push hl ; retain the advanced trainer-record cursor while locating the party field
+	ld a, b
+	and a
 	jr z, .invalid
 	cp NUM_CUSTOM_PALETTE_COLORS + 1
 	jr nc, .invalid
-	ld a, c
 	swap a
-	and $f
+	ld b, a
+	ld a, c
+	and a
 	jr z, .invalid
 	cp NUM_CUSTOM_PALETTE_COLORS + 1
 	jr nc, .invalid
-	ld a, c
+	or b
 	jr .store
 
 .invalid
@@ -296,6 +299,62 @@ CopyPartyPalettePairs:
 	dec b
 	jr nz, .loop
 	ret
+
+OverridePartyMenuIconPaletteWithCustom::
+; Input: a/e = the species/shiny icon palette from GetMenuMonIconPalette.
+; Output: a/e = that fallback, or the six-color approximation for a custom pair.
+; Preserve bc, de except for e, and hl; wCurPartyMon identifies the owner.
+	push bc
+	push de
+	push hl
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .fallback
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1PalettePair
+	call GetPartyLocation
+	ld l, [hl]
+	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
+	jr nc, .fallback
+
+	; The high nibble is the player's first (lighter) color choice.
+	ld a, l
+	swap a
+	and $f
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, .ColorMap
+	add hl, bc
+	ld c, [hl]
+	pop hl
+	pop de
+	ld a, c
+	ld e, a
+	jr .done
+
+.fallback
+	pop hl
+	pop de
+	ld a, e
+.done
+	pop bc
+	ret
+
+.ColorMap:
+	table_width 1
+	db PAL_ICON_RED    ; red
+	db PAL_ICON_BLUE   ; blue
+	db PAL_ICON_GREEN  ; green
+	db PAL_ICON_BROWN  ; brown
+	db PAL_ICON_SILVER ; silver
+	db PAL_ICON_GOLD   ; yellow
+	db PAL_ICON_RED    ; pink
+	db PAL_ICON_PURPLE ; purple
+	db PAL_ICON_RED    ; orange
+	db PAL_ICON_BLUE   ; black
+	db PAL_ICON_GOLD   ; gold
+	assert_table_length NUM_CUSTOM_PALETTE_COLORS
 
 ; CopyMonNormalShinyOrCustomMiddleColors may also receive the zero player
 ; sentinel, so every possible pointer from GetPlayerOrMonPalettePointer must be

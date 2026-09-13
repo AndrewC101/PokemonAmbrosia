@@ -225,7 +225,6 @@ INCLUDE "engine/battle/sliding_intro.asm"
 INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
-INCLUDE "engine/events/poke_seer.asm"
 
 
 SECTION "bank14", ROMX
@@ -605,6 +604,7 @@ SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/player_sprite_choice.asm"
+INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
 INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"

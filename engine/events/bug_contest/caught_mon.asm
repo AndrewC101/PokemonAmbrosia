@@ -23,7 +23,7 @@ BugContest_SetCaughtContestMon:
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
-	xor a
+	xor a ; MON_PALETTE_DEFAULT is included in the cleared party struct.
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wContestMon
 	call ByteFill

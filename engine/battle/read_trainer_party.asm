@@ -555,6 +555,15 @@ endr
 	pop hl
 .no_moves
 
+; custom palette? This byte is last so the next read starts at the next level.
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_PALETTE_F, a
+	jr z, .no_palette
+	call GetNextTrainerDataByte
+	; The banked helper preserves hl, which is the trainer-record cursor.
+	newfarcall StoreCurrentTrainerMonPalette
+.no_palette
+
 ; Custom DVs and state exp affect stats,
 ; so recalculate them after TryAddMonToParty
 	;ld a, [wOtherTrainerType]
@@ -1191,6 +1200,9 @@ ReadPlayerPartyAsTrainerPartyPieces:
     ld a, [wPartyMon6PP + 3]
     ld [wOTPartyMon6PP + 3], a
 
+    ; custom palettes follow the party slots through role-player mirror battles
+    newfarcall CopyPlayerPartyPalettePairsToOT
+
     ; nickname
     ld a, [wPartyMon1Nickname]
     and a
@@ -1481,6 +1493,9 @@ ReadCopyOfTrainerParty:
     ld [wPartyMon5Item], a
     ld a, [wOTPartyMon6Item]
     ld [wPartyMon6Item], a
+
+    ; preserve authored palettes when a trainer party temporarily replaces yours
+    newfarcall CopyOTPartyPalettePairsToPlayer
 
     ; dvs
     push bc

@@ -1925,7 +1925,8 @@ wMonOrItemNameBuffer:: ds NAME_LENGTH
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
-; poke seer
+; Reserved former Poke Seer footprint; keep these addresses stable.
+wPokemonPaletteEditorColor1::
 wSeerAction:: db
 wSeerNickname:: ds MON_NAME_LENGTH
 wSeerCaughtLocation:: ds 17

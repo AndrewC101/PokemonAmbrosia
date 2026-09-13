@@ -69,8 +69,8 @@ CianwoodLugiaSpeechHouseTwinText:
 	para "My friend Amber"
 	line "thinks so too."
 
-	para "She lives with"
-	line "the #SEER."
+	para "She lives in the"
+	line "quiet house."
 
 	para "She is psychic!"
 	done

@@ -1141,11 +1141,12 @@ Link_ConvertPartyStruct1to2:
 	ldh a, [hQuotient + 3]
 	ld [hli], a
 	push hl
-	ld hl, $1b
+	ld hl, MON_HAPPINESS
 	add hl, bc
 	ld a, $46
 	ld [hli], a
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
+	; Gen 1 has no Pokerus, custom palette, or caught location fields.
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a

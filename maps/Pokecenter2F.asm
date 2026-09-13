@@ -401,6 +401,9 @@ Pokecenter2FPlayerRemakeScript:
 	closetext
 	end
 
+Pokecenter2FPokemonColorScript:
+	farsjump PokemonColorEditorScript
+
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
 	slow_step UP
 	slow_step LEFT
@@ -667,9 +670,11 @@ Pokecenter2F_MapEvents:
 	warp_event 14,  0, MOBILE_BATTLE_ROOM, 1
 
 	def_coord_events
+	coord_event 1, 2, SCENE_ALWAYS, Pokecenter2FPokemonColorScript
 
 	def_bg_events
-	bg_event  4,  0, BGEVENT_READ, Pokecenter2FPlayerRemakeScript
+	bg_event  5,  0, BGEVENT_READ, Pokecenter2FPlayerRemakeScript
+	bg_event  1,  1, BGEVENT_READ, Pokecenter2FPokemonColorScript
 
 	def_object_events
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1

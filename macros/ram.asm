@@ -20,13 +20,14 @@ MACRO box_struct
 \1PP::             ds NUM_MOVES
 \1Happiness::      db
 \1PokerusStatus::  db
-\1CaughtData::
-\1CaughtTime::
-\1CaughtLevel::    db
+\1PalettePair::     db
 \1CaughtGender::
 \1CaughtLocation:: db
 \1Level::          db
 \1BoxEnd::
+	assert \1PalettePair - \1 == MON_PALETTE_PAIR
+	assert \1CaughtGender - \1 == MON_CAUGHTGENDER
+	assert \1BoxEnd - \1 == BOXMON_STRUCT_LENGTH
 ENDM
 
 MACRO savemon_struct
@@ -45,9 +46,7 @@ MACRO savemon_struct
 \1PPUps::          db
 \1Happiness::      db
 \1PokerusStatus::  db
-\1CaughtData::
-\1CaughtTime::
-\1CaughtLevel::    db
+\1PalettePair::     db
 \1CaughtGender::
 \1CaughtLocation:: db
 \1Level::          db
@@ -55,6 +54,9 @@ MACRO savemon_struct
 \1Nickname::       ds MON_NAME_LENGTH - 1 ; terminator is implicit
 \1OT::             ds PLAYER_NAME_LENGTH - 1 ; terminator is implicit
 \1End::
+	assert \1PalettePair - \1 == SAVEMON_PALETTE_PAIR
+	assert \1CaughtGender - \1 == SAVEMON_CAUGHTGENDER
+	assert \1End - \1 == SAVEMON_STRUCT_LENGTH
 ENDM
 
 MACRO pokedb
@@ -85,6 +87,7 @@ MACRO party_struct
 \1SpclAtk::        dw
 \1SpclDef::        dw
 \1StructEnd::
+	assert \1StructEnd - \1 == PARTYMON_STRUCT_LENGTH
 ENDM
 
 MACRO red_box_struct

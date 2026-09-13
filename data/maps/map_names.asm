@@ -1311,7 +1311,7 @@ Cianwood_Map_Name8: ; map_const CIANWOOD_PHOTO_STUDIO ;  8
 Cianwood_Map_Name9: ; map_const CIANWOOD_LUGIA_SPEECH_HOUSE ;  9
    db "Cianwood House@"
 Cianwood_Map_Name10: ; map_const POKE_SEERS_HOUSE ; 10
-   db "#Seer House@"
+   db "Quiet House@"
 Cianwood_Map_Name11: ; map_const BATTLE_TOWER_1F ; 11
    db "Battle Tower 1F@"
 Cianwood_Map_Name12: ; map_const BATTLE_TOWER_BATTLE_ROOM ; 12

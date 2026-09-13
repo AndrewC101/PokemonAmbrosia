@@ -91,13 +91,9 @@ DEF MON_DVS                rw
 DEF MON_PP                 rb NUM_MOVES
 DEF MON_HAPPINESS          rb
 DEF MON_POKERUS            rb
-DEF MON_CAUGHTDATA         rw
-rsset MON_CAUGHTDATA
-DEF MON_CAUGHTTIME         rb
+DEF MON_PALETTE_PAIR       rb
 DEF MON_CAUGHTGENDER       rb
-rsset MON_CAUGHTDATA
-DEF MON_CAUGHTLEVEL        rb
-DEF MON_CAUGHTLOCATION     rb
+DEF MON_CAUGHTLOCATION EQU MON_CAUGHTGENDER
 DEF MON_LEVEL              rb
 DEF BOXMON_STRUCT_LENGTH EQU _RS
 DEF MON_STATUS             rb
@@ -112,6 +108,12 @@ DEF MON_SPD                rw
 DEF MON_SAT                rw
 DEF MON_SDF                rw
 DEF PARTYMON_STRUCT_LENGTH EQU _RS
+
+; Keep the repurposed caught-data byte and both struct sizes layout-compatible.
+assert MON_PALETTE_PAIR == 29
+assert MON_CAUGHTGENDER == 30
+assert BOXMON_STRUCT_LENGTH == 32
+assert PARTYMON_STRUCT_LENGTH == 48
 
 ; savemon_struct members (see macros/wram.asm)
 rsreset
@@ -133,13 +135,9 @@ DEF SAVEMON_PP_UPS             rb
 ; savemon_struct is shifted from party_struct beyond this point
 DEF SAVEMON_HAPPINESS          rb
 DEF SAVEMON_PKRUS              rb
-DEF SAVEMON_CAUGHTDATA         rw
-rsset SAVEMON_CAUGHTDATA
-DEF SAVEMON_CAUGHTTIME         rb
+DEF SAVEMON_PALETTE_PAIR       rb
 DEF SAVEMON_CAUGHTGENDER       rb
-rsset SAVEMON_CAUGHTDATA
-DEF SAVEMON_CAUGHTLEVEL        rb
-DEF SAVEMON_CAUGHTLOCATION     rb
+DEF SAVEMON_CAUGHTLOCATION EQU SAVEMON_CAUGHTGENDER
 DEF SAVEMON_LEVEL              rb
 ; savemon_struct is different from party_struct beyond this point
 DEF SAVEMON_ALTSPECIES         rb
@@ -147,13 +145,33 @@ DEF SAVEMON_NICKNAME           rb MON_NAME_LENGTH - 1
 DEF SAVEMON_OT                 rb PLAYER_NAME_LENGTH - 1
 DEF SAVEMON_STRUCT_LENGTH EQU _RS
 
+; The compact saved-mon format must remain compatible with existing storage.
+assert SAVEMON_PALETTE_PAIR == 26
+assert SAVEMON_CAUGHTGENDER == 27
+assert SAVEMON_STRUCT_LENGTH == 47
+
 DEF NICKNAMED_MON_STRUCT_LENGTH EQU PARTYMON_STRUCT_LENGTH + MON_NAME_LENGTH
 DEF REDMON_STRUCT_LENGTH EQU 44
 
-; caught data
+; custom palette and caught data
 
-DEF CAUGHT_TIME_MASK  EQU %11000000
-DEF CAUGHT_LEVEL_MASK EQU %00111111
+DEF MON_PALETTE_DEFAULT EQU $00
+
+; Valid custom-palette nibbles. Zero selects the species palette.
+	const_def 1
+	const PAL_COLOR_RED
+	const PAL_COLOR_BLUE
+	const PAL_COLOR_GREEN
+	const PAL_COLOR_BROWN
+	const PAL_COLOR_SILVER
+	const PAL_COLOR_YELLOW
+	const PAL_COLOR_PINK
+	const PAL_COLOR_PURPLE
+	const PAL_COLOR_ORANGE
+	const PAL_COLOR_BLACK
+	const PAL_COLOR_GOLD
+DEF NUM_CUSTOM_PALETTE_COLORS EQU const_value - 1
+assert NUM_CUSTOM_PALETTE_COLORS == 11
 
 DEF CAUGHT_GENDER_MASK   EQU %10000000
 DEF CAUGHT_LOCATION_MASK EQU %01111111
@@ -161,8 +179,6 @@ DEF CAUGHT_LOCATION_MASK EQU %01111111
 DEF CAUGHT_BY_UNKNOWN EQU 0
 DEF CAUGHT_BY_GIRL    EQU 1
 DEF CAUGHT_BY_BOY     EQU 2
-
-DEF CAUGHT_EGG_LEVEL EQU 1
 
 DEF MON_CRY_LENGTH EQU 6
 

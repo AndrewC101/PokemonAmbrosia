@@ -41,7 +41,7 @@ FieldMovePreview_DoPreview:
 	ret
 
 ApplyFieldMovePreviewPalette:
-; Use the acting party mon's real palette so shinies display correctly.
+; Use the acting party mon's real palette, including its stored custom pair.
 	ldh a, [hCGB]
 	and a
 	ret z
@@ -51,11 +51,16 @@ ApplyFieldMovePreviewPalette:
 	call GetPartyLocation
 	ld b, h
 	ld c, l
+	push bc
+	ld bc, MON_PALETTE_PAIR - MON_DVS
+	add hl, bc
+	ld a, [hl]
+	ld l, a
+	pop bc
 	ld a, [wCurPartySpecies]
-	newfarcall GetMonNormalOrShinyPalettePointer
 
 	ld de, wBGPals1 palette PAL_BG_TEXT
-	newfarcall LoadPalette_White_Col1_Col2_Black
+	newfarcall LoadMonNormalShinyOrCustomPalette
 	farcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a

@@ -712,9 +712,12 @@ DayCare_InitBreeding:
 	ld a, [wBaseEggSteps]
 	ld hl, wEggMonHappiness
 	ld [hli], a
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
+	; PokerusStatus
 	ld [hli], a
+	; PalettePair
 	ld [hli], a
+	; CaughtGender/CaughtLocation
 	ld [hl], a
 	ld a, [wCurPartyLevel]
 	ld [wEggMonLevel], a

@@ -275,11 +275,11 @@ endr
 	ld [de], a
 	inc de
 
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; PalettePair
 	ld [de], a
 	inc de
 	; CaughtGender/CaughtLocation
@@ -338,11 +338,11 @@ endr
 	ld [de], a
 	inc de
 
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
 	; PokerusStatus
 	ld [de], a
 	inc de
-	; CaughtData/CaughtTime/CaughtLevel
+	; PalettePair
 	ld [de], a
 	inc de
 	; CaughtGender/CaughtLocation
@@ -796,11 +796,14 @@ SendMonIntoBox:
 	ld a, BASE_HAPPINESS
 	ld [de], a
 	inc de
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
+	; PokerusStatus
 	ld [de], a
 	inc de
+	; PalettePair
 	ld [de], a
 	inc de
+	; CaughtGender/CaughtLocation
 	ld [de], a
 	inc de
 	ld a, [wCurPartyLevel]

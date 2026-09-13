@@ -408,6 +408,218 @@ PlayerRecreationScript::
 	warpfacing UP, NONE, 0, 0
 	end
 
+PokemonColorEditorScript::
+	opentext
+	writetext PokemonColorEditorConfirmText
+	yesorno
+	iffalse .done
+	callasm PokemonColorEditorSelectMon
+	ifequal 0, .done
+	ifequal 2, .egg
+
+	writetext PokemonColorEditorLightText
+	loadmenu PokemonColorEditorMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 0, .done
+	ifequal 12, .default
+	callasm PokemonColorEditorStageLightColor
+
+	writetext PokemonColorEditorDarkText
+	loadmenu PokemonColorEditorMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 0, .done
+	ifequal 12, .default
+	callasm PokemonColorEditorCommitDarkColor
+	sjump .rename
+
+.default
+	callasm PokemonColorEditorCommitDefault
+	sjump .reload
+
+.rename
+	writetext PokemonColorEditorRenameText
+	yesorno
+	iffalse .reload
+	closetext
+	callasm PokemonColorEditorNamingScreen
+	reloadmap
+	end
+
+.reload
+	closetext
+	reloadmap
+	end
+
+.egg
+	writetext PokemonColorEditorEggText
+	waitbutton
+.done
+	closetext
+	end
+
+PokemonColorEditorMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 19, 12
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
+	dn 6, 2 ; rows, columns
+	db 8 ; spacing
+	dba PokemonColorEditorChoices
+	dbw BANK(@), NULL
+
+PokemonColorEditorChoices:
+	db "Red@"
+	db "Blue@"
+	db "Green@"
+	db "Brown@"
+	db "Yellow@"
+	db "Pink@"
+	db "Purple@"
+	db "Orange@"
+	db "Silver@"
+	db "Black@"
+	db "Gold@"
+	db "Default@"
+
+PokemonColorEditorColorOptions:
+	table_width 1
+	db PAL_COLOR_RED
+	db PAL_COLOR_BLUE
+	db PAL_COLOR_GREEN
+	db PAL_COLOR_BROWN
+	db PAL_COLOR_YELLOW
+	db PAL_COLOR_PINK
+	db PAL_COLOR_PURPLE
+	db PAL_COLOR_ORANGE
+	db PAL_COLOR_SILVER
+	db PAL_COLOR_BLACK
+	db PAL_COLOR_GOLD
+	assert_table_length NUM_CUSTOM_PALETTE_COLORS
+
+PokemonColorEditorConfirmText:
+	text "Change a #mon's"
+	line "colour?"
+	done
+
+PokemonColorEditorLightText:
+	text "Color 1 (lighter):"
+	prompt
+
+PokemonColorEditorDarkText:
+	text "Color 2 (darker):"
+	prompt
+
+PokemonColorEditorEggText:
+	text "Eggs can't change"
+	line "colour."
+	done
+
+PokemonColorEditorRenameText:
+	text "Change its name?"
+	done
+
+PokemonColorEditorSelectMon::
+; Return 0 for cancel, 1 for a Pokemon, or 2 for an Egg in wScriptVar.
+	newfarcall SelectMonFromParty
+	jr c, .cancel
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .egg
+	ld a, 1
+	jr .return
+
+.egg
+	ld a, 2
+	jr .return
+
+.cancel
+	xor a
+.return
+	ld [wScriptVar], a
+	ret
+
+PokemonColorEditorStageLightColor::
+; Convert menu positions 1..11 through the stable encoded-color table.
+	ld a, [wScriptVar]
+	and a
+	ret z
+	cp NUM_CUSTOM_PALETTE_COLORS + 1
+	ret nc
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, PokemonColorEditorColorOptions
+	add hl, de
+	ld a, [hl]
+	swap a
+	ld [wPokemonPaletteEditorColor1], a
+	ret
+
+PokemonColorEditorCommitDarkColor::
+; Commit only after both menu choices exist; the staged byte holds color 1.
+	ld a, [wScriptVar]
+	and a
+	ret z
+	cp NUM_CUSTOM_PALETTE_COLORS + 1
+	ret nc
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, PokemonColorEditorColorOptions
+	add hl, de
+	ld c, [hl]
+	ld a, [wPokemonPaletteEditorColor1]
+	or c
+	jr PokemonColorEditorStorePair
+
+PokemonColorEditorCommitDefault::
+	xor a
+
+PokemonColorEditorStorePair:
+; a = encoded pair. wCurPartyMon remains the party-menu selection.
+	push af
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1PalettePair
+	call GetPartyLocation
+	pop af
+	ld [hl], a
+	ret
+
+PokemonColorEditorNamingScreen::
+; Reuse the Name Rater's validation against the already-selected party slot.
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Species
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld a, [wCurPartySpecies]
+	ld [wNamedObjectIndex], a
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld b, NAME_MON
+	ld de, wStringBuffer2
+	newfarcall _NamingScreen
+	newfarcall IsNewNameEmpty
+	ret c
+	newfarcall CompareNewToOld
+	ret c
+	ld hl, wPartyMonNicknames
+	ld bc, MON_NAME_LENGTH
+	ld a, [wCurPartyMon]
+	call AddNTimes
+	ld e, l
+	ld d, h
+	ld hl, wStringBuffer2
+	ld bc, MON_NAME_LENGTH
+	jp CopyBytes
+
 PlayerRecreationGenderHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 9, 5

@@ -7,7 +7,9 @@ INCLUDE "data/trainers/party_pointers.asm"
 ;    * with TRAINERTYPE_NICKNAME: db "Nickname@"
 ;    * with TRAINERTYPE_ITEM:     db item
 ;    * with TRAINERTYPE_MOVES:    db move 1, move 2, move 3, move 4
+;    * with TRAINERTYPE_PALETTE:  mon_palette light, dark
 ;    (TRAINERTYPE_ITEM_MOVES = TRAINERTYPE_ITEM | TRAINERTYPE_MOVES)
+;   The palette byte is always last, after every other optional field.
 ; - db -1 ; end
 ;
 ; NOTE
@@ -24,10 +26,13 @@ SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	; FALKNER (1)
-	db "Falkner@", TRAINERTYPE_ITEM_MOVES
+	db "Falkner@", TRAINERTYPE_ITEM_MOVES | TRAINERTYPE_PALETTE
 	db 16, MURKROW, NO_ITEM, FEINT_ATTACK, NIGHT_SHADE, PECK, CONFUSE_RAY
+	mon_palette PAL_COLOR_BLACK, PAL_COLOR_PURPLE
 	db 17, STARAVIA, MUSCLE_BAND, QUICK_ATTACK, CUT, WING_ATTACK, ROCK_SMASH
+	mon_palette_default
 	db 18, NOCTOWL, BERRY, PECK, SWIFT, CONFUSION, REFLECT
+	mon_palette PAL_COLOR_BROWN, PAL_COLOR_YELLOW
 	db -1 ; end
 
 	; FALKNER (2)

@@ -48,6 +48,20 @@ MACRO? dn ; nybbles
 	endr
 ENDM
 
+MACRO? mon_palette
+	assert _NARG == 2, "mon_palette requires light and dark color indices"
+	assert PAL_COLOR_RED <= (\1) && (\1) <= PAL_COLOR_GOLD, \
+		"mon_palette light color must be PAL_COLOR_RED through PAL_COLOR_GOLD"
+	assert PAL_COLOR_RED <= (\2) && (\2) <= PAL_COLOR_GOLD, \
+		"mon_palette dark color must be PAL_COLOR_RED through PAL_COLOR_GOLD"
+	db ((\1) << 4) | (\2)
+ENDM
+
+MACRO? mon_palette_default
+	assert _NARG == 0, "mon_palette_default takes no arguments"
+	db MON_PALETTE_DEFAULT
+ENDM
+
 MACRO? dc ; "crumbs"
 	rept? _NARG / 4
 		db ((\1) << 6) | ((\2) << 4) | ((\3) << 2) | (\4)

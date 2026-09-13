@@ -161,8 +161,8 @@ CianwoodPharmacySign:
 CianwoodPhotoStudioSign:
 	jumptext CianwoodPhotoStudioSignText
 
-CianwoodPokeSeerSign:
-	jumptext CianwoodPokeSeerSignText
+CianwoodQuietHouseSign:
+	jumptext CianwoodQuietHouseSignText
 
 CianwoodBeachSign:
 	jumptext CianwoodBeachSignText
@@ -302,17 +302,9 @@ CianwoodCityPokefanMText:
 	done
 
 CianwoodCityLassText:
-	text "Up ahead is the"
-	line "#seer."
-	para "She can tell lots"
-	line "of things about"
-	cont "your #mon."
-	para "But she can only"
-	line "count to 64!"
-	para "Any number higher"
-	line "than that she just"
-	cont "starts over from"
-	cont "0."
+	text "The house up ahead"
+	line "has been quiet for"
+	cont "a while now."
 	done
 
 EusineSuicuneText:
@@ -424,8 +416,8 @@ CianwoodPhotoStudioSignText:
 	line "a Keepsake!"
 	done
 
-CianwoodPokeSeerSignText:
-	text "The # Seer"
+CianwoodQuietHouseSignText:
+	text "Quiet House"
 	line "Ahead"
 	done
 
@@ -1165,7 +1157,7 @@ CianwoodCity_MapEvents:
 	bg_event 24, 55, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 19, 59, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  0, 65, BGEVENT_READ, CianwoodPhotoStudioSign
-	bg_event  8, 36, BGEVENT_READ, CianwoodPokeSeerSign
+	bg_event  8, 36, BGEVENT_READ, CianwoodQuietHouseSign
 	bg_event 12, 22, BGEVENT_READ, CianwoodBeachSign
 	bg_event  4, 31, BGEVENT_ITEM, CianwoodCityHiddenRevive
 	bg_event  5, 41, BGEVENT_ITEM, CianwoodCityHiddenMaxEther

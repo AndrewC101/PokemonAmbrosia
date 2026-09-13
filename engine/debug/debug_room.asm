@@ -1319,8 +1319,8 @@ DebugRoomMenu_PokemonGet_Page4Values:
 	db 6
 	paged_value wDebugRoomMonHappiness,     $00, $ff,         BASE_HAPPINESS, DebugRoom_BoxStructStrings.Friend,    NULL,                       FALSE
 	paged_value wDebugRoomMonPokerusStatus, $00, $ff,         $00,            DebugRoom_BoxStructStrings.Pokerus,   NULL,                       TRUE
-	paged_value wDebugRoomMonCaughtData+0,  $00, $ff,         $00,            DebugRoom_BoxStructStrings.NoUse0,    NULL,                       FALSE
-	paged_value wDebugRoomMonCaughtData+1,  $00, $ff,         $00,            DebugRoom_BoxStructStrings.NoUse1,    NULL,                       FALSE
+	paged_value wDebugRoomMonPalettePair,   $00, $ff,         $00,            DebugRoom_BoxStructStrings.Palette,   NULL,                       FALSE
+	paged_value wDebugRoomMonCaughtGender,  $00, $ff,         $00,            DebugRoom_BoxStructStrings.Caught,    NULL,                       FALSE
 	paged_value wDebugRoomMonLevel,         1,   MAX_LEVEL,   $05,            DebugRoom_BoxStructStrings.Level,     NULL,                       FALSE
 	paged_value wDebugRoomMonBox,           1,   NUM_BOXES,   $0e,            DebugRoom_BoxStructStrings.SendBox,   NULL,                       FALSE
 
@@ -1354,8 +1354,8 @@ DebugRoom_BoxStructStrings:
 .PP4:       db "PP 4@"
 .Friend:    db "FRIEND@"
 .Pokerus:   db "#rus@"
-.NoUse0:    db "No Use[0]@"
-.NoUse1:    db "No Use[1]@"
+.Palette:   db "Palette@"
+.Caught:    db "Caught@"
 .Level:     db "Level@"
 .SendBox:   db "Send Box@"
 

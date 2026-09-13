@@ -254,9 +254,9 @@ BuildGiftMonIntoStorage::
 
 	ld a, BASE_HAPPINESS
 	ld [wBufferMonHappiness], a
-	xor a
+	xor a ; MON_PALETTE_DEFAULT, also used for adjacent cleared fields
 	ld [wBufferMonPokerusStatus], a
-	ld hl, wBufferMonCaughtData
+	ld hl, wBufferMonPalettePair
 	ld [hli], a
 	ld [hl], a
 	ld a, [wCurPartyLevel]
@@ -284,7 +284,7 @@ BuildGiftMonIntoStorage::
 	ld a, c
 	ld [wBufferMonSlot], a
 
-	ld hl, wBufferMonCaughtData
+	ld hl, wBufferMonPalettePair
 	call SetBoxmonOrEggmonCaughtData
 
 	newfarcall UpdateStorageBoxMonFromTemp
@@ -317,17 +317,10 @@ FinalizeGiftBoxMon::
 SetCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1PalettePair
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
-	ld a, [wTimeOfDay]
-	inc a
-	rrca
-	rrca
-	and CAUGHT_TIME_MASK
-	ld b, a
-	ld a, [wCurPartyLevel]
-	or b
+	ld a, MON_PALETTE_DEFAULT
 	ld [hli], a
 	ld a, [wMapGroup]
 	ld b, a
@@ -354,24 +347,24 @@ SetBoxmonOrEggmonCaughtData:
 	ret
 
 SetBoxMonCaughtData:
-	ld hl, wBufferMonCaughtData
+	ld hl, wBufferMonPalettePair
 	call SetBoxmonOrEggmonCaughtData
 	newfarjp UpdateStorageBoxMonFromTemp
 
 SetGiftBoxMonCaughtData:
-	ld hl, wBufferMonCaughtLevel
+	ld hl, wBufferMonPalettePair
 	call SetGiftMonCaughtData
 	newfarjp UpdateStorageBoxMonFromTemp
 
 SetGiftPartyMonCaughtData:
 	ld a, [wPartyCount]
 	dec a
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1PalettePair
 	push bc
 	call GetPartyLocation
 	pop bc
 SetGiftMonCaughtData:
-	xor a
+	ld a, MON_PALETTE_DEFAULT
 	ld [hli], a
 	ld a, LANDMARK_GIFT
 	rrc b
@@ -381,13 +374,35 @@ SetGiftMonCaughtData:
 
 SetEggMonCaughtData:
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtLevel
+	ld hl, wPartyMon1PalettePair
 	call GetPartyLocation
+	; Preserve this wrapper's prior a/flags return contract across the shared writer.
 	ld a, [wCurPartyLevel]
 	push af
-	ld a, CAUGHT_EGG_LEVEL
-	ld [wCurPartyLevel], a
 	call SetBoxmonOrEggmonCaughtData
 	pop af
-	ld [wCurPartyLevel], a
+	ret
+
+GetCaughtGender:
+	ld hl, MON_CAUGHTGENDER
+	add hl, bc
+
+	ld a, [hl]
+	and CAUGHT_LOCATION_MASK
+	jr z, .genderless
+	cp LANDMARK_EVENT
+	jr z, .genderless
+
+	ld a, [hl]
+	and CAUGHT_GENDER_MASK
+	jr nz, .male
+	ld c, CAUGHT_BY_GIRL
+	ret
+
+.male
+	ld c, CAUGHT_BY_BOY
+	ret
+
+.genderless
+	ld c, CAUGHT_BY_UNKNOWN
 	ret

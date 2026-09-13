@@ -36,7 +36,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 30, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -62,7 +62,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 20, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -88,7 +88,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 30, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -114,7 +114,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 40, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -140,7 +140,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 30, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -166,7 +166,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 30, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0
@@ -192,7 +192,7 @@ OddEggs:
 	dn 15, 13, 15, 15 ; DVs
 	db 35, 25, 0, 0 ; PP
 	db 10 ; step cycles to hatch
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokerus, palette pair, caught gender/location
 	db 1 ; Level
 	db 0, 0 ; Status
     bigdw 0

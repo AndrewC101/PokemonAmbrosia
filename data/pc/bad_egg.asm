@@ -14,7 +14,7 @@ BadEgg:
 	dn 0, 0, 0, 0 ; DVs
 	db 0, 0, 0, 0 ; PP
 	db 255 ; Step cycles to hatch
-	db 0, 0, 0 ; Pokérus, Caught data
+	db 0, MON_PALETTE_DEFAULT, 0 ; Pokérus, palette pair, caught gender/location
 	db EGG_LEVEL ; Level
 	db 0 ; Status
 	db 0 ; unused

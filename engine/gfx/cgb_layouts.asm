@@ -84,12 +84,8 @@ _CGB_BattleGrayscale:
 
 _CGB_BattleColors:
 	ld de, wBGPals1
-	call GetBattlemonBackpicPalettePointer
-	push hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER
-	call GetEnemyFrontpicPalettePointer
-	push hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_ENEMY
+	newfarcall LoadBattleMonNormalShinyOrCustomPalette ; PAL_BATTLE_BG_PLAYER
+	newfarcall LoadEnemyMonNormalShinyOrCustomPalette ; PAL_BATTLE_BG_ENEMY
 	ld a, [wEnemyHPPal]
 	ld l, a
 	ld h, 0
@@ -116,11 +112,14 @@ _CGB_BattleColors:
 	ld de, wBGPals1 palette PAL_BATTLE_BG_6
 	call LoadHLPaletteIntoDE
 
-	ld de, wOBPals1
-	pop hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
-	pop hl
-	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_PLAYER
+	; Copy the completed BG palettes. This supports stack-backed custom colors and
+	; avoids retaining banked ROM pointers while the remaining BG pals are built.
+	ld hl, wBGPals1 palette PAL_BATTLE_BG_ENEMY
+	ld de, wOBPals1 palette PAL_BATTLE_OB_ENEMY
+	call LoadHLPaletteIntoDE
+	ld hl, wBGPals1 palette PAL_BATTLE_BG_PLAYER
+	assert PAL_BATTLE_OB_PLAYER == PAL_BATTLE_OB_ENEMY + 1
+	call LoadHLPaletteIntoDE ; PAL_BATTLE_OB_PLAYER follows PAL_BATTLE_OB_ENEMY
 	ld a, SCGB_BATTLE_COLORS
 	ld [wDefaultSGBLayout], a
 	call ApplyPals
@@ -253,10 +252,11 @@ _CGB_StatsScreenHPPals:
 	ld bc, HPBarPals
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
+	ld a, [wTempMonPalettePair]
+	ld l, a
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black ; mon palette
+	newfarcall LoadMonNormalShinyOrCustomPalette ; mon palette
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
@@ -932,9 +932,14 @@ _CGB_Evolution:
 	call AddNTimes
 	ld c, l
 	ld b, h
+	push bc
+	ld bc, MON_PALETTE_PAIR - MON_DVS
+	add hl, bc
+	ld a, [hl]
+	ld l, a
+	pop bc
 	ld a, [wPlayerHPPal]
-	call GetPlayerOrMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+	newfarcall LoadMonNormalShinyOrCustomPalette
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes
@@ -1351,6 +1356,8 @@ _CGB_GamefreakLogo:
 INCLUDE "gfx/splash/ditto.pal"
 
 _CGB_PlayerOrMonFrontpicPals:
+	; Shared frontpic callers supply species and DVs but no owning mon record.
+	; Keep their species/shiny or zero-sentinel player fallback explicit.
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
@@ -1386,6 +1393,7 @@ _CGB_TradeTube:
 	ret
 
 _CGB_TrainerOrMonFrontpicPals:
+	; Generic trainer/Pokemon frontpics have no stored PalettePair owner.
 	ld de, wBGPals1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs

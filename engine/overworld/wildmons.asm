@@ -645,6 +645,11 @@ RandomPhoneMon:
 	add c
 	ld c, a
 .no_moves
+; TRAINERTYPE_PALETTE uses 1 final byte
+	bit TRAINERTYPE_PALETTE_F, b
+	jr z, .no_palette
+	inc c
+.no_palette
 ; bc = mon length
 	xor a
 	ld b, a

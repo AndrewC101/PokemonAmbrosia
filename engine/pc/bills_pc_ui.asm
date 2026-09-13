@@ -1175,21 +1175,11 @@ _GetCursorMon:
 
 	; Colors
 	ld bc, wBufferMonDVs
+	ld a, [wBufferMonPalettePair]
+	ld l, a
 	ld a, [wBufferMonAltSpecies]
-	newfarcall GetMonNormalOrShinyPalettePointer
 	ld de, wBillsPC_PokepicPal
-	push de
-	ld b, 4
-.loop
-	ld a, BANK(PokemonPalettes)
-	call GetFarByte
-	inc hl
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .loop
-
-	pop hl
+	newfarcall CopyMonNormalShinyOrCustomMiddleColors
 
 	; Show or hide item icon
 	ld hl, wShadowOAMSprite30

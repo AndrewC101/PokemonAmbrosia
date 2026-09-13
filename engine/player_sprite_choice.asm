@@ -440,7 +440,7 @@ PokemonColorEditorScript::
 
 .rename
 	writetext PokemonColorEditorRenameText
-	yesorno
+	nooryes
 	iffalse .reload
 	closetext
 	callasm PokemonColorEditorNamingScreen

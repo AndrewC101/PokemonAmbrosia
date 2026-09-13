@@ -638,6 +638,7 @@ HawluchaEvosAttacks:
 	db 16, ENCORE
 	db 16, TAUNT
 	db 20, U_TURN
+	db 23, COUNTER
 	db 25, SUBMISSION
 	db 30, ROOST
 	db 35, DRAIN_PUNCH
@@ -835,6 +836,7 @@ AlakazamEvosAttacks:
 	db 18, DISABLE
 	db 21, PSYBEAM
 	db 26, RECOVER
+	db 30, MIRROR_COAT
     db 33, ZEN_HEADBUTT
 	db 38, PSYCHIC_M
 	db 40, CALM_MIND
@@ -1314,6 +1316,7 @@ ReuniclusEvosAttacks:
 	db 20, LIGHT_SCREEN
 	db 20, REFLECT
 	db 30, RECOVER
+	db 34, MIRROR_COAT
 	db 38, BARRIER
 	db 40, PSYCHIC_M
 	db 40, TRICK_ROOM
@@ -1517,10 +1520,10 @@ JynxEvosAttacks:
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ROCK_THROW
-	db 1, COUNTER
 	db 10, MAGNITUDE
 	db 15, LEECH_LIFE
 	db 20, SEISMIC_TOSS
+	db 20, COUNTER
 	db 25, DIG
 	db 30, X_SCISSOR
 	db 35, ROCK_SLIDE
@@ -1622,7 +1625,8 @@ VaporeonEvosAttacks:
 	db 12, QUICK_ATTACK
 	db 16, WATER_GUN
 	db 20, BITE
-	db 25, BUBBLEBEAM
+	db 23, BUBBLEBEAM
+	db 25, MIRROR_COAT
 	db 28, ACID_ARMOR
 	db 32, AURORA_BEAM
 	db 36, SCALD
@@ -1704,6 +1708,7 @@ GardevoirEvosAttacks:
 	db 16, DRAIN_KISS
 	db 20, PSYBEAM
 	db 24, ATTRACT
+	db 27, MIRROR_COAT
 	db 30, DREAM_EATER
 	db 32, WILL_O_WISP
 	db 36, PSYCHIC_M
@@ -1719,6 +1724,7 @@ GaladeEvosAttacks:
 	db 16, DRAIN_KISS
 	db 20, PSYBEAM
 	db 25, KARATE_CHOP
+	db 27, COUNTER
 	db 30, NIGHT_SLASH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH
@@ -1747,8 +1753,9 @@ SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 15, DEFENSE_CURL
-	db 25, ROLLOUT
-	db 29, HEADBUTT
+	db 20, ROLLOUT
+	db 25, HEADBUTT
+    db 30, COUNTER
 	db 33, BODY_SLAM
 	db 35, REST
 	db 38, AMNESIA
@@ -2186,6 +2193,7 @@ NinetalesAEvosAttacks:
 	db 25, HYPNOSIS
 	db 25, HAIL
 	db 30, AURORA_BEAM
+	db 33, MIRROR_COAT
 	db 36, MOON_BLAST
 	db 40, FREEZE_DRY
 	db 45, BLIZZARD
@@ -2381,6 +2389,8 @@ MetagrossEvosAttacks:
 	db 43, IRON_HEAD
 	db 45, AGILITY
 	db 48, METEOR_MASH
+	db 50, COUNTER
+	db 50, MIRROR_COAT
 	db 55, TRICK_ROOM
 	db 60, HYPER_BEAM
 	db 60, EXPLOSION
@@ -2519,6 +2529,7 @@ SteelixEvosAttacks:
 	db 30, STEALTH_ROCK
 	db 32, IRON_HEAD
 	db 36, CRUNCH
+	db 40, MIRROR_COAT
 	db 45, EARTHQUAKE
 	db 50, DRAGON_DANCE
 	db 0 ; no more level-up moves
@@ -2746,6 +2757,8 @@ SkarmoryEvosAttacks:
 	db 30, IRON_HEAD
 	db 33, DRILL_PECK
 	db 35, DEFOG
+	db 38, COUNTER
+	db 38, MIRROR_COAT
 	db 40, WHIRLWIND
 	db 45, BRAVE_BIRD
 	db 0 ; no more level-up moves
@@ -2921,6 +2934,7 @@ BlisseyEvosAttacks:
 	db 22, SING
 	db 27, BODY_SLAM
 	db 30, COUNTER
+	db 30, MIRROR_COAT
     db 33, TRI_ATTACK
 	db 36, LIGHT_SCREEN
 	db 40, SOFTBOILED

@@ -473,8 +473,12 @@ SECTION "Map Scripts 39", ROMX
 INCLUDE "maps/WiseTriosRoom.asm"
 INCLUDE "maps/Route27.asm"
 INCLUDE "maps/Route46.asm"
-INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
+
+; This expanded Pokecenter no longer fits in Map Scripts 39; use a roomier bank.
+SECTION "Silver Cave Pokecenter Scripts", ROMX, BANK[124]
+
+INCLUDE "maps/SilverCavePokecenter1F.asm"
 
 SECTION "Map Scripts 40", ROMX
 

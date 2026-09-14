@@ -1,6 +1,9 @@
 	object_const_def
 	const SILVERCAVEPOKECENTER1F_NURSE
 	const SILVERCAVEPOKECENTER1F_GRANNY
+	const SILVERCAVEPOKECENTER1F_BLISSEY
+	const SILVERCAVEPOKECENTER1F_SMEARGLE
+	const SILVERCAVEPOKECENTER1F_BEAUTY
 
 SilverCavePokecenter1F_MapScripts:
 	def_scene_scripts
@@ -47,6 +50,41 @@ SilverCavePokecenter1FBobRossScript:
 .refused
 	writetext SilverCavePokecenter1FShinyRefusedText
 	waitbutton
+	closetext
+	end
+
+SilverCavePokecenter1FGenderToggleScript:
+	faceplayer
+	opentext
+	writetext SilverCavePokecenter1FGenderToggleOfferText
+	nooryes
+	iffalse .refused
+	writetext SilverCavePokecenter1FGenderToggleWhichMonText
+	waitbutton
+	callasm SilverCaveTogglePokemonGender
+	reloadmap
+	opentext
+	iffalse .done
+	ifequal 2, .egg
+	ifequal 3, .fixed_gender
+	writetext SilverCavePokecenter1FGenderToggleDoneText
+	waitbutton
+	sjump .done
+
+.egg
+	writetext SilverCavePokecenter1FGenderToggleEggText
+	waitbutton
+	sjump .done
+
+.fixed_gender
+	writetext SilverCavePokecenter1FGenderToggleFixedGenderText
+	waitbutton
+	sjump .done
+
+.refused
+	writetext SilverCavePokecenter1FGenderToggleRefusedText
+	waitbutton
+.done
 	closetext
 	end
 
@@ -102,6 +140,51 @@ SilverCavePokecenter1FShinyRefusedText:
 	line "out of it."
 	done
 
+SilverCavePokecenter1FGenderToggleOfferText:
+	text "How do you do?"
+	para "I have discovered"
+	line "the secret."
+	para "That elusive"
+	line "ingredient that..."
+	para "spark that is the"
+	line "breath of life..."
+	para "Yes, I have that"
+	line "knowledge!"
+	para "Shall I share this"
+	line "secret with your"
+	cont "#mon?"
+	done
+
+SilverCavePokecenter1FGenderToggleWhichMonText:
+	text "I see you shiver"
+	line "with antici..."
+	cont "..."
+	cont "..."
+	cont "...pation."
+	done
+
+SilverCavePokecenter1FGenderToggleDoneText:
+	text "Don't dream it."
+	para "Be it!"
+	done
+
+SilverCavePokecenter1FGenderToggleEggText:
+	text "What am I to do"
+	line "with that?"
+	para "Have it for"
+	line "breakfast!"
+	done
+
+SilverCavePokecenter1FGenderToggleFixedGenderText:
+	text "Such a perfect"
+	line "specimen."
+	done
+
+SilverCavePokecenter1FGenderToggleRefusedText:
+	text "I didn't make this"
+	line "for you!"
+	done
+
 SCBlisseyScript:
     opentext
     writetext SCBlisseyText
@@ -143,3 +226,4 @@ SilverCavePokecenter1F_MapEvents:
 	object_event  1,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FBobRossScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SCBlisseyScript, -1
 	object_event  2,  5, SPRITE_SMEARGLE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SCSmeargleScript, -1
+	object_event  7,  3, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FGenderToggleScript, -1

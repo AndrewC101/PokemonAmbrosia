@@ -6,29 +6,31 @@
 	const VIOLETPOKECENTER1F_ELMS_AIDE
 	const VIOLETPOKECENTER1F_BILL
 
-VioletPokecenter1F_MapScripts:
+VioletPokecenter1F_MapScripts::
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, .Bill
+	callback MAPCALLBACK_OBJECTS, .HideBill
 
-.Bill
-    disappear VIOLETPOKECENTER1F_BILL
-    endcallback
-	
+.HideBill:
+	disappear VIOLETPOKECENTER1F_BILL
+	endcallback
+
 BillExpShareScriptLeft:
-    checkevent EVENT_GOT_EXP_SHARE
-    iftrue .finish
-    sjump BillExpShareScript
-.finish
+	checkevent EVENT_GOT_EXP_SHARE
+	iftrue .Done
+	sjump BillExpShareScript
+
+.Done:
 	end
 
 BillExpShareScriptRight:
-    checkevent EVENT_GOT_EXP_SHARE
-    iftrue .finish
+	checkevent EVENT_GOT_EXP_SHARE
+	iftrue .Done
 	applymovement PLAYER, VioletPokecenter1FPlayerMovement2
 	sjump BillExpShareScript
-.finish
+
+.Done:
 	end
 
 BillExpShareScript:
@@ -52,19 +54,25 @@ BillExpShareScript:
 	writetext VioletPokecenter1F_BillText1
 	promptbutton
 	verbosegiveitem LUCKY_EGG
-    readmem wNewGamePlus
-    ifequal 0, .cont
-    verbosegiveitem AMULET_COIN
-.cont
+	readmem wNewGamePlus
+	ifequal 0, .StartTour
+	verbosegiveitem AMULET_COIN
+
+.StartTour:
 	closetext
-	turnobject PLAYER, DOWN
-	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillMovement2
-	playsound SFX_EXIT_BUILDING
-	disappear VIOLETPOKECENTER1F_BILL
+	; Bill leads the player back to the upstairs warp at (0, 7).
+	follow VIOLETPOKECENTER1F_BILL, PLAYER
+	applymovement VIOLETPOKECENTER1F_BILL, VioletPokecenter1FBillReturnsToStairs
+	stopfollow
+	setmapscene VIOLET_POKECENTER_2F, SCENE_VIOLETPOKECENTER2F_BILL_TOUR
 	clearevent EVENT_MET_BILL
 	setflag ENGINE_TIME_CAPSULE
 	setevent EVENT_GOT_EXP_SHARE
+	playsound SFX_EXIT_BUILDING
+	disappear VIOLETPOKECENTER1F_BILL
 	waitsfx
+	applymovement PLAYER, VioletPokecenter1FPlayerStepsOntoStairs
+	warpcheck
 	end
 
 VioletPokecenter1FBillMovement1:
@@ -78,14 +86,6 @@ VioletPokecenter1FBillMovement1:
 	turn_head UP
 	step_end
 
-VioletPokecenter1FBillMovement2:
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 VioletPokecenter1FPlayerMovement1:
 	step UP
 	step UP
@@ -95,6 +95,20 @@ VioletPokecenter1FPlayerMovement1:
 VioletPokecenter1FPlayerMovement2:
 	step LEFT
 	turn_head UP
+	step_end
+
+VioletPokecenter1FBillReturnsToStairs:
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+VioletPokecenter1FPlayerStepsOntoStairs:
+	step DOWN
 	step_end
 
 VioletPokecenter1F_BillText1:
@@ -129,8 +143,10 @@ VioletPokecenter1F_BillText1:
 	para "It will help you"
 	line "grow stronger"
 	cont "even faster!"
-	para "Good luck"
-	line "<PLAYER>!"
+	para "Take this and"
+	line "then follow me."
+	para "I'll show you my"
+	line "new creation!"
 	done
 
 VioletPokecenterNurse:
@@ -349,13 +365,13 @@ VioDratiniText:
     text "Dratini!"
     done
 
-VioletPokecenter1F_MapEvents:
+VioletPokecenter1F_MapEvents::
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, VIOLET_CITY, 5
 	warp_event  4,  7, VIOLET_CITY, 5
-	warp_event  0,  7, POKECENTER_2F, 1
+	warp_event  0,  7, VIOLET_POKECENTER_2F, 1
 
 	def_coord_events
 	coord_event 3, 7, SCENE_ALWAYS, BillExpShareScriptLeft

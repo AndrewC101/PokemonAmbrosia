@@ -199,7 +199,6 @@ INCLUDE "data/collision/collision_permissions.asm"
 INCLUDE "engine/menus/empty_sram.asm"
 INCLUDE "engine/menus/savemenu_copytilemapatonce.asm"
 INCLUDE "engine/events/checksave.asm"
-INCLUDE "data/maps/scenes.asm"
 INCLUDE "engine/overworld/load_map_part.asm"
 INCLUDE "engine/phone/phonering_copytilemapatonce.asm"
 
@@ -608,6 +607,18 @@ INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
 INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
+
+
+; GetMapSceneID uses BANK(MapScenes), so this table can live outside crowded bank 13.
+SECTION "Map Scene Data", ROMX, BANK[124]
+
+INCLUDE "data/maps/scenes.asm"
+
+
+SECTION "Pokecenter Customization Tour", ROMX, BANK[124]
+
+INCLUDE "maps/VioletPokecenter1F.asm"
+INCLUDE "maps/VioletPokecenter2F.asm"
 
 
 ;SECTION "Mobile News Data", ROMX

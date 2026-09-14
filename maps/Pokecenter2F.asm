@@ -48,7 +48,7 @@ Script_BattleRoomClosed:
 	closetext
 	end
 
-LinkReceptionistScript_Trade:
+LinkReceptionistScript_Trade::
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iffalse Script_TradeCenterClosed
 	opentext
@@ -150,7 +150,7 @@ BattleTradeMobile_WalkIn:
 	applymovement PLAYER, Pokecenter2FMobileMovementData_PlayerWalksIntoMobileBattleRoom
 	end
 
-LinkReceptionistScript_Battle:
+LinkReceptionistScript_Battle::
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iffalse Script_BattleRoomClosed
 	opentext
@@ -388,7 +388,7 @@ Script_WalkOutOfLinkBattleRoom:
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
 	end
 
-Pokecenter2FPlayerRemakeScript:
+Pokecenter2FPlayerRemakeScript::
 	callasm ShowPlayerMirrorPic
 	opentext
 	writetext Pokecenter2FPlayerRemakeText
@@ -401,7 +401,7 @@ Pokecenter2FPlayerRemakeScript:
 	closetext
 	end
 
-Pokecenter2FPokemonColorScript:
+Pokecenter2FPokemonColorScript::
 	farsjump PokemonColorEditorScript
 
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:

@@ -41,6 +41,7 @@ Route10South_Blocks:
 
 SECTION "Map Blocks 2", ROMX
 
+VioletPokecenter2F_Blocks:
 Pokecenter2F_Blocks:
 CinnabarPokecenter2FBeta_Blocks:
 CeruleanPokecenter2FBeta_Blocks:

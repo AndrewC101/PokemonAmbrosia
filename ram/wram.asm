@@ -3255,8 +3255,9 @@ wDoubleExp:: db
 wForcedMenu:: db
 wPersistentBattleMusicOverride:: ds 2
 wDeferredSwitchHit:: db
-; DevNote - 136 free bytes!
-	ds 136
+wVioletPokecenter2FSceneID:: db ; allocated from the existing free block
+; DevNote - 135 free bytes!
+	ds 135
 
 wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db

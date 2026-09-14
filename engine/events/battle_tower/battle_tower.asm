@@ -360,11 +360,14 @@ ReadBTTrainerParty:
 	ld a, HIGH(wOTPartyMonNicknames)
 	ld [wBGMapBuffer + 1], a
 
-	; Copy mon into Memory from the address in hl
+	; hl points at the first serialized mon. Preserve that cursor while the
+	; format helper temporarily opens Battle Tower SRAM.
+	push hl
+	call BattleTower_GetChallengePartyLength
+	pop hl
+	; Copy the selected format's mon into the enemy party.
 	ld de, wOTPartyMon1Species
 	ld bc, wOTPartyCount
-	;ld a, BATTLETOWER_PARTY_LENGTH
-	ld a, BATTLETOWER_ENEMY_PARTY_LENGTH
 	ld [bc], a
 	inc bc
 .otpartymon_loop
@@ -1119,7 +1122,7 @@ BattleTowerRecordText::
 	text_start
 	done
 
-; Reset the save memory for BattleTower-Trainers (Counter and all 7 TrainerBytes)
+; Reset the shared counter and both format-specific trainer histories.
 ResetBattleTowerTrainersSRAM:
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
@@ -1127,6 +1130,10 @@ ResetBattleTowerTrainersSRAM:
 	ld a, $ff
 	ld hl, sBTTrainers
 	ld bc, BATTLETOWER_STREAK_LENGTH
+	call ByteFill
+	ld a, $ff
+	ld hl, sBTTrainers3v3
+	ld bc, BATTLETOWER_3V3_BATTLE_COUNT
 	call ByteFill
 
 	xor a
@@ -1179,7 +1186,8 @@ BattleTowerAction_1D:
 	ld a, BATTLETOWER_RECEIVED_REWARD
 	ld [sBattleTowerChallengeState], a
 	call CloseSRAM
-	ret
+	ld c, BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	jp BattleTowerAction_ClearSaveFileFlag
 
 BattleTower_SaveOptions:
 	farcall SaveOptions
@@ -1740,12 +1748,26 @@ BattleTowerAction_CheckRandomMirror:
 	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
 	jp BattleTowerAction_CheckSaveFileFlag
 
+BattleTowerAction_Set3v3Format::
+	ld c, BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	jp BattleTowerAction_SetSaveFileFlag
+
+BattleTowerAction_Clear3v3Format::
+	ld c, BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	jp BattleTowerAction_ClearSaveFileFlag
+
+BattleTowerAction_Check3v3Format::
+	ld c, BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	jp BattleTowerAction_CheckSaveFileFlag
+
 BattleTowerAction_ClearModeOptions:
 	xor a
 	ld [wHandOfGod], a
 	ld c, BATTLETOWER_SAVEFILEFLAG_SCALE_PARTY
 	call BattleTowerAction_ClearSaveFileFlag
 	ld c, BATTLETOWER_SAVEFILEFLAG_RANDOM_MIRROR
+	call BattleTowerAction_ClearSaveFileFlag
+	ld c, BATTLETOWER_SAVEFILEFLAG_3V3_X7
 	jp BattleTowerAction_ClearSaveFileFlag
 
 BattleTowerAction_SelectRandomMirrorMode:
@@ -1809,6 +1831,52 @@ BattleTower_GetSanitizedSaveFileFlags:
 
 .valid
 	ld a, b
+	ret
+
+BattleTower_GetChallengePartyLength::
+; Return a/c = 3 for 3v3 x7, or 6 for the default 6v6 x4 format.
+; c carries the result safely through the farcall bank-return trampoline.
+	call BattleTower_Is3v3Format
+	ld a, BATTLETOWER_6V6_PARTY_LENGTH
+	jr z, .done
+	ld a, BATTLETOWER_3V3_PARTY_LENGTH
+
+.done
+	ld c, a
+	ret
+
+BattleTower_GetChallengeBattleCount::
+; Return a = 7 for 3v3 x7, or 4 for the default 6v6 x4 format.
+	call BattleTower_Is3v3Format
+	ld a, BATTLETOWER_6V6_BATTLE_COUNT
+	ret z
+	ld a, BATTLETOWER_3V3_BATTLE_COUNT
+	ret
+
+BattleTower_Is3v3Format:
+; Return nz when the persisted 3v3 x7 format bit is set.
+	ld a, BANK(sBattleTowerSaveFileFlags)
+	call OpenSRAM
+	call BattleTower_GetSanitizedSaveFileFlags
+	and BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	call CloseSRAM
+	ret
+
+BattleTower_CheckChallengeComplete::
+; callasm: return TRUE once the active format's final battle has been won.
+	call BattleTower_GetChallengeBattleCount
+	ld b, a
+	ld a, [wNrOfBeatenBattleTowerTrainers]
+	cp b
+	jr z, .complete
+	xor a ; FALSE
+	jr .done
+
+.complete
+	ld a, TRUE
+
+.done
+	ld [wScriptVar], a
 	ret
 
 BattleTowerAction_LevelCheck:

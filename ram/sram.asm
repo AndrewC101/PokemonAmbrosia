@@ -187,6 +187,9 @@ sBattleTowerCurrentTeamLongestStreak:: dw
 sBattleTowerRandomTeamCurrentStreak:: dw
 sBattleTowerRandomTeamLongestStreak:: dw
 
+; Separate history for the longer format; appending it keeps old save addresses fixed.
+sBTTrainers3v3:: ds BATTLETOWER_3V3_BATTLE_COUNT
+
 
 SECTION "PokeDB Bank 1", SRAM
 

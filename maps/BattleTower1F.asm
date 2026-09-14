@@ -54,7 +54,7 @@ BattleTower1FRulesSign:
 	closetext
 	end
 .rules
-	writetext Text_BattleTowerRules
+	farwritetext Text_BattleTowerRules
 	waitbutton
 	closetext
 	end
@@ -114,6 +114,25 @@ Script_ChooseChallenge:
 
 	setval BATTLETOWERACTION_CLEAR_MODE_OPTIONS
 	special BattleTowerAction
+	setscene SCENE_BATTLETOWER1F_NOOP
+	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
+	special BattleTowerAction
+	special BattleTowerRoomMenu
+	ifequal $a, Script_Menu_ChallengeExplanationCancel
+	ifnotequal $0, Script_MobileError
+
+	writetext BattleFormatQuestionText
+	loadmenu .BattleFormatMenuHeader
+	_2dmenu
+	closewindow
+	ifequal 1, .six_on_six
+	ifequal 2, .three_on_three
+.three_on_three
+	callasm BattleTowerAction_Set3v3Format
+	sjump .choose_team
+.six_on_six
+	callasm BattleTowerAction_Clear3v3Format
+.choose_team
 	writetext MirrorBattlesText
 	loadmenu .MirrorMenuHeader
 	_2dmenu
@@ -123,18 +142,16 @@ Script_ChooseChallenge:
 .random
 	setval BATTLETOWERACTION_SELECT_RANDOM_MIRROR_MODE
 	special BattleTowerAction
-	sjump .choose_room
-.current
-.choose_room
-	setscene SCENE_BATTLETOWER1F_NOOP
-	setval BATTLETOWERACTION_SET_EXPLANATION_READ ; set 1, [sBattleTowerSaveFileFlags]
-	special BattleTowerAction
-	special BattleTowerRoomMenu
-	ifequal $a, Script_Menu_ChallengeExplanationCancel
-	ifnotequal $0, Script_MobileError
-	readmem wHandOfGod
-	ifequal BATTLETOWER_MIRROR_NONE, .ask_scale_party
 	sjump .save_options
+.current
+	callasm BattleTowerAction_Check3v3Format
+	iffalse .ask_scale_party
+	readvar VAR_PARTYCOUNT
+	ifgreater BATTLETOWER_3V3_PARTY_LENGTH, .too_many_pokemon
+	sjump .ask_scale_party
+.too_many_pokemon
+	writetext Text_DepositPokemonFor3v3
+	sjump Script_WaitButton
 .ask_scale_party
 	writetext Text_ScalePartyForChallenge
 	yesorno
@@ -157,6 +174,20 @@ Script_ChooseChallenge:
 	setval BATTLETOWERACTION_CHOOSEREWARD
 	special BattleTowerAction
 	sjump Script_WalkToBattleTowerElevator
+.BattleFormatMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 12, 5
+	dw .BattleFormatMenuData
+	db 1 ; default option
+.BattleFormatMenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 1 ; rows, columns
+	db 8 ; spacing
+	dba .BattleFormatMenuText
+	dbw BANK(@), NULL
+.BattleFormatMenuText:
+	db "6v6 x4@"
+	db "3v3 x7@"
 .MirrorMenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 0, 12, 5
@@ -171,6 +202,20 @@ Script_ChooseChallenge:
 .MirrorText:
 	db "Current@"
 	db "Random@"
+
+BattleFormatQuestionText:
+	text "Which types of"
+	line "battles do you"
+	cont "want?"
+	prompt
+
+Text_DepositPokemonFor3v3:
+	text "Only three #mon"
+	line "may be entered."
+
+	para "Please deposit the"
+	line "others and return."
+	done
 
 MirrorBattlesText:
 	text "Which team will"
@@ -258,7 +303,7 @@ Script_BattleTowerIntroductionYesNo:
 	yesorno
 	iffalse Script_BattleTowerSkipExplanation
 Script_BattleTowerExplanation:
-	writetext Text_BattleTowerIntroduction_2
+	farwritetext Text_BattleTowerIntroduction_2
 Script_BattleTowerSkipExplanation:
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ
 	special BattleTowerAction
@@ -408,34 +453,6 @@ Text_RightThisWayToYourBattleRoom:
 	line "your Battle Room."
 	done
 
-Text_BattleTowerIntroduction_2:
-	text "Battle Tower is"
-	line "the most popular"
-	cont "extreme #mon"
-	cont "challenge."
-	para "You must fight"
-	line "four trainers in"
-	cont "full battles with"
-	cont "no rules."
-	para "There are five"
-	line "difficulties to"
-	cont "pick from, with"
-	cont "the top two only"
-	cont "available to"
-	cont "Champion level"
-	cont "trainers."
-	para "If you want a more"
-	line "rigorous test of"
-	cont "your knowledge and"
-	cont "skill you can"
-	cont "select Random"
-	cont "where you battle"
-	cont "with a random"
-	cont "team every round."
-	para "We hope you enjoy"
-	line "the challenges!"
-	done
-
 Text_PleaseConfirmOnThisMonitor:
 	text "Please confirm on"
 	line "this monitor."
@@ -516,25 +533,6 @@ Text_ReadBattleTowerRules:
 	line "is written here."
 
 	para "Check what?"
-	done
-
-Text_BattleTowerRules:
-	text "There are no"
-	line "rules!"
-
-	para "You must win"
-	line "four full battles."
-
-	para "Current battles"
-	line "use your own"
-	cont "party."
-
-	para "Random battles"
-	line "use a random"
-	cont "Tower party."
-
-	para "Different prizes"
-	line "are won in each."
 	done
 
 Text_BattleTower_LeftWithoutSaving:

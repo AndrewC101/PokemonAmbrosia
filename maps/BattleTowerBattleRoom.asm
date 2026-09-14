@@ -19,7 +19,7 @@ BattleTowerBattleRoomNoopScene:
 
 Script_BattleRoom:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerWalksIn
-; beat all 7 opponents in a row
+; Beat every opponent required by the selected battle format.
 Script_BattleRoomLoop:
 	setval BATTLETOWERBATTLEROOM_YOUNGSTER
 	special LoadOpponentTrainerAndPokemonWithOTSprite
@@ -35,8 +35,8 @@ Script_BattleRoomLoop:
 	special FadeOutToWhite
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
-	readmem wNrOfBeatenBattleTowerTrainers
-	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
+	callasm BattleTower_CheckChallengeComplete
+	iftrue Script_BeatenAllTrainers
 	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
 	warpsound
 	disappear BATTLETOWERBATTLEROOM_YOUNGSTER

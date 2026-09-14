@@ -609,6 +609,11 @@ INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
 
 
+SECTION "Pokemon Gender Toggle", ROMX, BANK[124]
+
+INCLUDE "engine/events/pokemon_gender_toggle.asm"
+
+
 ; GetMapSceneID uses BANK(MapScenes), so this table can live outside crowded bank 13.
 SECTION "Map Scene Data", ROMX, BANK[124]
 
@@ -628,6 +633,7 @@ INCLUDE "maps/VioletPokecenter2F.asm"
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
+INCLUDE "engine/events/battle_tower/battle_format.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
 SECTION "Nayru Pokedex", ROMX

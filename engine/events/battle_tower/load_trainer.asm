@@ -41,16 +41,15 @@ endc
 	ld a, BANK(sBTTrainers)
 	call OpenSRAM
 
-	ld c, BATTLETOWER_STREAK_LENGTH
-	ld hl, sBTTrainers
+	call GetBattleTowerTrainerHistory
 .next_trainer
 	ld a, [hli]
 	cp b
 	jr z, .resample
 	dec c
-	jr nz, .next_trainer ; c <= 7  initialise all 7 trainers?
+	jr nz, .next_trainer
 
-	ld hl, sBTTrainers
+	call GetBattleTowerTrainerHistory
 	ld a, [sNrOfBeatenBattleTowerTrainers]
 	ld c, a
 	ld a, b
@@ -91,10 +90,24 @@ endc
 
 	ret
 
+GetBattleTowerTrainerHistory:
+; SRAM is already open. Return hl = active trainer history and c = its length;
+; preserve b, which holds the newly selected trainer index.
+	ld hl, sBTTrainers
+	ld c, BATTLETOWER_6V6_BATTLE_COUNT
+	ld a, [sBattleTowerSaveFileFlags]
+	and BATTLETOWER_SAVEFILEFLAG_3V3_X7
+	ret z
+	ld hl, sBTTrainers3v3
+	ld c, BATTLETOWER_3V3_BATTLE_COUNT
+	ret
+
 LoadRandomBattleTowerMon:
-	;ld c, BATTLETOWER_PARTY_LENGTH
-	ld a, BATTLETOWER_ENEMY_PARTY_LENGTH
-	ld c, a
+	; de is the serialized trainer write cursor and must survive the far call;
+	; c is the bank-safe party-length return value.
+	push de
+	farcall BattleTower_GetChallengePartyLength
+	pop de
 .loop
 	push bc
 	ld a, BANK(sBTMonOfTrainers)
@@ -418,8 +431,12 @@ BattleTower_GenerateRandomPlayerParty:
 	ld a, BANK(wPartyCount)
 	ldh [rWBK], a
 
-	ld a, BATTLETOWER_ENEMY_PARTY_LENGTH
+	; The farcall trampoline clobbers a while restoring the ROM bank, so the
+	; helper also returns the party length in c.
+	farcall BattleTower_GetChallengePartyLength
+	ld a, c
 	ld [wPartyCount], a
+	push af
 	ld a, $ff
 	ld hl, wPartySpecies
 	ld bc, PARTY_LENGTH + 1
@@ -427,7 +444,8 @@ BattleTower_GenerateRandomPlayerParty:
 
 	xor a
 	ld [wCurPartyMon], a
-	ld b, BATTLETOWER_ENEMY_PARTY_LENGTH
+	pop af
+	ld b, a
 
 .party_loop
 	push bc

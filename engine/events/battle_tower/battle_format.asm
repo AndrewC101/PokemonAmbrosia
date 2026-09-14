@@ -1,0 +1,51 @@
+Text_BattleTowerIntroduction_2::
+	text "Battle Tower is"
+	line "the most popular"
+	cont "extreme #mon"
+	cont "challenge."
+	para "Choose either four"
+	line "full battles or"
+	cont "seven 3-on-3"
+	cont "battles."
+	para "For Current"
+	line "3-on-3, use up to"
+	cont "three #mon."
+	para "There are five"
+	line "difficulties to"
+	cont "pick from, with"
+	cont "the top two only"
+	cont "available to"
+	cont "Champion level"
+	cont "trainers."
+	para "If you want a more"
+	line "rigorous test of"
+	cont "your knowledge and"
+	cont "skill you can"
+	cont "select Random"
+	cont "where you battle"
+	cont "with a random"
+	cont "team every round."
+	para "We hope you enjoy"
+	line "the challenges!"
+	done
+
+Text_BattleTowerRules::
+	text "Choose four full"
+	line "battles or seven"
+	cont "3-on-3 battles."
+
+	para "For Current"
+	line "3-on-3, use up to"
+	cont "three #mon."
+
+	para "Current battles"
+	line "use your own"
+	cont "party."
+
+	para "Random battles"
+	line "use a random"
+	cont "Tower party."
+
+	para "Different prizes"
+	line "are won in each."
+	done

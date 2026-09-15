@@ -19,7 +19,7 @@ PokemonCustomDarkColors:
 	RGB  5,  5, 17 ; blue
 	RGB  5, 17,  5 ; green
 	RGB 13,  8,  4 ; brown
-	RGB 13, 13, 13 ; silver
+	RGB 20, 20, 20 ; silver
 	RGB 20, 16,  4 ; yellow
 	RGB 17, 6, 10 ; pink
 	RGB 11,  6, 16 ; purple

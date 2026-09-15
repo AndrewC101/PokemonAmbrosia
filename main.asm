@@ -607,6 +607,7 @@ INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
 INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
+INCLUDE "engine/battle/set_trainer_battle_level.asm"
 
 
 SECTION "Pokemon Gender Toggle", ROMX, BANK[124]

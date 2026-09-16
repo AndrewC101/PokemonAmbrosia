@@ -123,7 +123,41 @@ ValidateRegisteredItems:
 
 .done
 	ld a, [wStringBuffer2]
-	ld c, a
+	ld c, a ; number of valid, unique items
+	ld b, 0 ; destination registered-item slot
+
+; Keep the stored queue packed in the same order as the menu buffer. This
+; closes holes left by consumed items and lets a valid legacy item in slot 2
+; move into slot 1, so the next registration always appends at the queue tail.
+.compact_slots
+	ld a, b
+	cp NUM_REGISTERED_ITEMS
+	jr z, .terminate_menu
+	push bc
+	call GetRegisteredItemSlotAddress
+	pop bc
+	ld a, b
+	cp c
+	jr nc, .clear_slot
+	ld e, a
+	ld d, 0
+	push hl
+	ld hl, wStringBuffer2 + 1
+	add hl, de
+	ld a, [hl]
+	pop hl
+	ld [hl], a
+	jr .next_slot
+
+.clear_slot
+	xor a
+	ld [hl], a
+
+.next_slot
+	inc b
+	jr .compact_slots
+
+.terminate_menu
 	ld b, 0
 	ld hl, wStringBuffer2 + 1
 	add hl, bc

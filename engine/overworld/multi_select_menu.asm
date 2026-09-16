@@ -43,7 +43,7 @@ SelectRegisteredItem:
 	ld [wMenuCursorPosition], a
 	ld hl, .MenuHeader
 	call LoadMenuHeader
-	call DoNthMenu
+	call RegisteredItemMenu
 	ld a, [wMenuSelection]
 	jr c, .canceled
 	call CloseWindow
@@ -90,6 +90,89 @@ SelectRegisteredItem:
 	dw wStringBuffer2
 	dw PlaceRegisteredItemName
 
+RegisteredItemMenu:
+; wSwitchItem is zero while browsing, or the one-based source row while moving.
+	xor a
+	ld [wSwitchItem], a
+	call SetUpMenu
+
+.enable_select
+	ld hl, wMenuJoypadFilter
+	set B_PAD_SELECT, [hl]
+
+.input_loop
+	call ScrollingMenuJoypad
+	bit B_PAD_A, a
+	jr nz, .a_button
+	bit B_PAD_B, a
+	jr nz, .b_button
+	bit B_PAD_SELECT, a
+	jr z, .input_loop
+
+.select_button
+	call MenuClickSound
+	ld a, [wSwitchItem]
+	and a
+	jr nz, .place_item
+	ld a, [wMenuCursorY]
+	ld [wSwitchItem], a
+	call PlaceHollowCursor
+	call ApplyTilemap
+	jr .input_loop
+
+.a_button
+	call MenuClickSound
+	ld a, [wSwitchItem]
+	and a
+	jr nz, .place_item
+	call .get_selection
+	xor a
+	ld [wSwitchItem], a
+	ret
+
+.b_button
+	call MenuClickSound
+	ld a, [wSwitchItem]
+	and a
+	jr nz, .cancel_move
+	ld a, -1
+	ld [wMenuSelection], a
+	scf
+	ret
+
+.cancel_move
+	xor a
+	ld [wSwitchItem], a
+	jr .redraw
+
+.place_item
+	call ReorderRegisteredItems
+	xor a
+	ld [wSwitchItem], a
+	ld de, SFX_SWITCH_POKEMON
+	call WaitPlaySFX
+	ld de, SFX_SWITCH_POKEMON
+	call WaitPlaySFX
+
+.redraw
+	ld a, [wMenuCursorY]
+	ld [wMenuCursorPosition], a
+	call SetUpMenu
+	jp .enable_select
+
+.get_selection
+	call GetMenuIndexSet
+	ld a, [wMenuCursorY]
+	ld l, a
+	ld h, 0
+	add hl, de
+	ld a, [hl]
+	ld [wMenuSelection], a
+	ld a, [wMenuCursorY]
+	ld [wMenuCursorPosition], a
+	and a
+	ret
+
 ValidateRegisteredItems:
 	xor a
 	ld [wStringBuffer2], a
@@ -122,42 +205,12 @@ ValidateRegisteredItems:
 	jr .loop
 
 .done
-	ld a, [wStringBuffer2]
-	ld c, a ; number of valid, unique items
-	ld b, 0 ; destination registered-item slot
-
 ; Keep the stored queue packed in the same order as the menu buffer. This
 ; closes holes left by consumed items and lets a valid legacy item in slot 2
 ; move into slot 1, so the next registration always appends at the queue tail.
-.compact_slots
-	ld a, b
-	cp NUM_REGISTERED_ITEMS
-	jr z, .terminate_menu
-	push bc
-	call GetRegisteredItemSlotAddress
-	pop bc
-	ld a, b
-	cp c
-	jr nc, .clear_slot
-	ld e, a
-	ld d, 0
-	push hl
-	ld hl, wStringBuffer2 + 1
-	add hl, de
-	ld a, [hl]
-	pop hl
-	ld [hl], a
-	jr .next_slot
-
-.clear_slot
-	xor a
-	ld [hl], a
-
-.next_slot
-	inc b
-	jr .compact_slots
-
-.terminate_menu
+	call StoreRegisteredItemMenu
+	ld a, [wStringBuffer2]
+	ld c, a
 	ld b, 0
 	ld hl, wStringBuffer2 + 1
 	add hl, bc
@@ -198,6 +251,95 @@ AddItemToRegisteredItemMenu:
 	ld [hl], c
 	ld hl, wStringBuffer2
 	inc [hl]
+	ret
+
+StoreRegisteredItemMenu:
+	ld a, [wStringBuffer2]
+	ld c, a ; number of valid, unique items
+	ld b, 0 ; destination registered-item slot
+
+.loop
+	ld a, b
+	cp NUM_REGISTERED_ITEMS
+	ret z
+	push bc
+	call GetRegisteredItemSlotAddress
+	pop bc
+	ld a, b
+	cp c
+	jr nc, .clear_slot
+	ld e, a
+	ld d, 0
+	push hl
+	ld hl, wStringBuffer2 + 1
+	add hl, de
+	ld a, [hl]
+	pop hl
+	ld [hl], a
+	jr .next_slot
+
+.clear_slot
+	xor a
+	ld [hl], a
+
+.next_slot
+	inc b
+	jr .loop
+
+ReorderRegisteredItems:
+	ld a, [wSwitchItem]
+	dec a
+	ld b, a ; zero-based source position
+	ld a, [wMenuCursorY]
+	dec a
+	ld c, a ; zero-based destination position
+	cp b
+	ret z
+
+	ld e, b
+	ld d, 0
+	ld hl, wStringBuffer2 + 1
+	add hl, de
+	ld a, [hl]
+	ld [wCurItem], a ; item being moved while the gap is closed
+	ld a, b
+	cp c
+	jr c, .move_down
+
+; Moving upward: copy each preceding item down by one position.
+.move_up_loop
+	dec b
+	ld e, b
+	ld d, 0
+	ld hl, wStringBuffer2 + 1
+	add hl, de
+	ld a, [hli]
+	ld [hl], a
+	ld a, b
+	cp c
+	jr nz, .move_up_loop
+	dec hl
+	jr .store_moved_item
+
+; Moving downward: copy each following item up by one position.
+.move_down
+	ld e, b
+	ld d, 0
+	ld hl, wStringBuffer2 + 1
+	add hl, de
+	inc hl
+	ld a, [hld]
+	ld [hl], a
+	inc b
+	ld a, b
+	cp c
+	jr nz, .move_down
+	inc hl
+
+.store_moved_item
+	ld a, [wCurItem]
+	ld [hl], a
+	call StoreRegisteredItemMenu
 	ret
 
 FindRegisteredItemSlot:

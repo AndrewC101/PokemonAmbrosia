@@ -1361,7 +1361,7 @@ StarWarsIntroText:
     line "Play games?!"
 
     para "I am starting"
-    line "a STAR WARS theme"
+    line "a Star Wars theme"
     cont "RPG."
 
     para "You can play too."

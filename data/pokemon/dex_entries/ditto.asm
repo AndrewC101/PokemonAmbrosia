@@ -5,7 +5,7 @@
 	next "every aspect of"
 	next "its opponent."
 
-	page "TRANSFORMS into"
+	page "Transforms into"
 	next "the enemy upon"
 	next "switching in.@"
 

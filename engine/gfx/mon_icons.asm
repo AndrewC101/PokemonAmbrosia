@@ -93,11 +93,6 @@ LoadPartyMenuMonIconColors:
 	ld e, a
 	ld d, 0
 
-	ld hl, wPartyMon1Item
-	call GetPartyLocation
-	ld a, [hl]
-	ld [wCurIconMonHasItemOrMail], a
-
 	ld hl, wPartySpecies
 	add hl, de
 	ld a, [hl]
@@ -114,25 +109,7 @@ LoadPartyMenuMonIconColors:
 	ld e, a
 	add hl, de
 	pop af
-
-	ld de, 4
-	ld [hl], a ; top left
-	add hl, de
-	ld [hl], a ; top right
-	add hl, de
-	push hl
-	add hl, de
-	ld [hl], a ; bottom right
-	pop hl
-	ld d, a
-	ld a, [wCurIconMonHasItemOrMail]
-	and a
-	ld a, PAL_OW_RED ; item or mail color
-	jr nz, .ok
-	ld a, d
-.ok
-	ld [hl], a ; bottom left
-	jr _FinishMenuMonIconColor
+	jp _ApplyMenuMonIconColor
 
 _ApplyMenuMonIconColor:
 	ld c, 4
@@ -279,7 +256,9 @@ Unused_GetPartyMenuMonIcon:
 	ret
 
 Mobile_InitAnimatedMonIcon:
-	call PartyMenu_InitAnimatedMonIcon
+	call InitPartyMenuIcon
+	call SetPartyMonHeldItemFrameset
+	call SetPartyMonIconAnimSpeed
 	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
 	add hl, bc
 	ld a, SPRITE_ANIM_FUNC_NULL
@@ -317,11 +296,10 @@ Mobile_InitPartyMenuBGPal71:
 
 PartyMenu_InitAnimatedMonIcon:
 	call InitPartyMenuIcon
-	call .SpawnItemIcon
 	call SetPartyMonIconAnimSpeed
 	ret
 
-.SpawnItemIcon:
+SetPartyMonHeldItemFrameset:
 	push bc
 	ldh a, [hObjectStructIndex]
 	ld hl, wPartyMon1Item
@@ -347,6 +325,16 @@ PartyMenu_InitAnimatedMonIcon:
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
+
+	; The mobile layout still embeds the marker in the bottom-left
+	; quadrant, so give that OAM object the marker palette explicitly.
+	ldh a, [hObjectStructIndex]
+	swap a ; four OAM objects per party icon
+	ld e, a
+	ld d, 0
+	ld hl, wShadowOAMSprite00Attributes + 2 * OBJ_SIZE
+	add hl, de
+	ld [hl], PAL_OW_RED
 	ret
 
 InitPartyMenuIcon:

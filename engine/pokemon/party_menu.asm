@@ -36,6 +36,7 @@ InitPartyMenuLayout:
 
 LoadPartyMenuGFX:
 	call LoadFontsBattleExtra
+	callfar LoadPartyMenuHeldItemIconGFX
 	callfar InitPartyMenuPalettes
 	callfar ClearSpriteAnims2
 	ret
@@ -62,6 +63,9 @@ WritePartyMenuTilemap:
 	pop hl
 	jr .loop
 .end
+	; Held-item markers are background tiles so they stay fixed while
+	; the party sprites move and bob.
+	callfar PlacePartyMenuHeldItemIcons
 	pop af
 	ld [wOptions], a
 	ret

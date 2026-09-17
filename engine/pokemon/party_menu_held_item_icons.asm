@@ -7,9 +7,9 @@ LoadPartyMenuHeldItemIconGFX:
 	ld hl, vTiles2 tile PARTY_MENU_MAIL_TILE
 	lb bc, BANK(PartyMenuMailIconGFX), 1
 	call .LoadTile
-	ld de, HeldItemIcons + 1 tiles ; regular held-item marker
+	ld de, PartyMenuItemIconGFX
 	ld hl, vTiles2 tile PARTY_MENU_ITEM_TILE
-	lb bc, BANK(HeldItemIcons), 1
+	lb bc, BANK(PartyMenuItemIconGFX), 1
 	; fallthrough
 
 .LoadTile
@@ -19,10 +19,14 @@ LoadPartyMenuHeldItemIconGFX:
 	jp Get2bppViaHDMA
 
 PartyMenuMailIconGFX:
-	; Skip the original top row and repeat its blank bottom row, moving
-	; the envelope up one pixel without changing the shared mail asset.
-	INCBIN "gfx/stats/mail.2bpp", 2, 14
-	INCBIN "gfx/stats/mail.2bpp", 14, 2
+	; Use a party-menu-specific source so its design can change independently.
+	; Skip its top row and repeat its blank bottom row to keep it one pixel higher.
+	INCBIN "gfx/stats/party_mail.2bpp", 2, 14
+	INCBIN "gfx/stats/party_mail.2bpp", 14, 2
+
+PartyMenuItemIconGFX:
+	; Keep the normal party marker independent of other HeldItemIcons users.
+	INCBIN "gfx/stats/party_item.2bpp"
 
 PlacePartyMenuHeldItemIcons:
 	ld a, [wPartyCount]

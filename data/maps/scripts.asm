@@ -504,10 +504,14 @@ SECTION "Map Scripts 44", ROMX
 INCLUDE "maps/AncientRuinPast.asm"
 INCLUDE "maps/AzaleaGym.asm"
 INCLUDE "maps/OlivineCafe.asm"
-INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
 INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/OlivinePortPassage.asm"
+
+; Keep the restored granny and her dialogue out of crowded bank 38.
+SECTION "Poke Seers House Scripts", ROMX, BANK[123]
+
+INCLUDE "maps/PokeSeersHouse.asm"
 
 SECTION "Map Scripts 45", ROMX
 

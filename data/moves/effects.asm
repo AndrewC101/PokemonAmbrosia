@@ -825,7 +825,6 @@ MultiFlinchHit:
 	startloop
 	lowersub
 	checkhit
-	effectchance
 	critical
 	damagestats
 	damagecalc
@@ -842,6 +841,7 @@ MultiFlinchHit:
 	buildopponentrage
 	endloop
 	raisesub
+	effectchance
 	kingsrock
 	flinchtarget
 	endmove

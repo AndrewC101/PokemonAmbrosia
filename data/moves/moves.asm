@@ -91,7 +91,7 @@ Moves: ; 41afb
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0
 	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,         STATUS,    90, 20,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,         STATUS,    70, 15,   0
-	move IRON_DUKES,   EFFECT_DOUBLE_FLINCH_HIT,  60, STEEL,         PHYSICAL, 100, 10,  30
+	move IRON_DUKES,   EFFECT_DOUBLE_FLINCH_HIT,  60, STEEL,         PHYSICAL, 100, 10,  50
 	move DRAGON_CLAW,  EFFECT_NORMAL_HIT,         85, DRAGON,        PHYSICAL, 100, 15,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,   70, 15,   0

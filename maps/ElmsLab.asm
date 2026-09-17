@@ -1823,6 +1823,11 @@ AideText_PocketPCInfoText:
 	line "quickly heal your"
 	cont "#mon after a"
 	cont "battle."
+
+	para "You can add up"
+	line "to 4 items to"
+	cont "the quick select"
+	cont "menu."
 	done
 
 AideText_GetTypeChartText:

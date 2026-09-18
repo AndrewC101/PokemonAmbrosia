@@ -927,6 +927,8 @@ GetPlayerMovePriority:
     jr z, .prankster
     cp MURKROW
     jr z, .prankster
+    cp HONCHKROW
+    jr z, .prankster
     jr .noPrankster
 .prankster
     push bc
@@ -977,6 +979,8 @@ GetEnemyMovePriority:
     cp RIOLU
     jr z, .prankster
     cp MURKROW
+    jr z, .prankster
+    cp HONCHKROW
     jr z, .prankster
     jr .noPrankster
 .prankster

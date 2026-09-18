@@ -1962,6 +1962,8 @@ AI_Smart_Substitute:
     jr z, .skipSpeedCheck
     cp MURKROW
     jr z, .skipSpeedCheck
+    ; Honchkrow not here as it is probably just attacking
+
 
 ; discourage if Player will move first
     call DoesAIOutSpeedPlayer
@@ -2096,6 +2098,7 @@ AI_Smart_Encore:
     jr z, .skipSpeedCheck
     cp MURKROW
     jr z, .skipSpeedCheck
+    ; Honchkrow not here as it is probably just attacking
 
 ; don't use if we are slower
 	call DoesAIOutSpeedPlayer

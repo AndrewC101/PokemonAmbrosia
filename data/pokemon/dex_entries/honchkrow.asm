@@ -5,7 +5,7 @@
 	next "and never shows"
 	next "forgiveness."
 
-	page "It lands"
-	next "critical hits"
-	next "more often.@"
+	page "Status moves go"
+	next "first. Gets"
+	next "criticals often.@"
 

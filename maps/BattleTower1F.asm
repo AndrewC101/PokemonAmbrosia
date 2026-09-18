@@ -304,6 +304,7 @@ Script_BattleTowerIntroductionYesNo:
 	iffalse Script_BattleTowerSkipExplanation
 Script_BattleTowerExplanation:
 	farwritetext Text_BattleTowerIntroduction_2
+	waitbutton
 Script_BattleTowerSkipExplanation:
 	setval BATTLETOWERACTION_SET_EXPLANATION_READ
 	special BattleTowerAction

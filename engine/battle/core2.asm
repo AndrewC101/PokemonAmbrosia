@@ -3,6 +3,33 @@
 ; ============================================
 ; These are functions used in effect_commands.asm
 ; they are defined here as that file is out of space
+DoubleSwitchInEffects:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player_1
+	; Preserve the original player-first/default effect order.
+	call SetPlayerTurn
+	farcall SwitchInEffects
+	call SetEnemyTurn
+	farcall SwitchInEffects
+	jr .clear_enemy_entrance_state
+
+.player_1
+	; Preserve the original enemy-first external-clock effect order.
+	call SetEnemyTurn
+	farcall SwitchInEffects
+	; The old enemy entrance cleared this state before the player's entrance.
+	call .clear_enemy_entrance_state
+	call SetPlayerTurn
+	farcall SwitchInEffects
+	ret
+
+.clear_enemy_entrance_state
+	xor a
+	ld [wEnemyMoveStruct + MOVE_ANIM], a
+	ld [wBattlePlayerAction], a
+	ret
+
 RainSwitch:
     ld a, [wBattleWeather]
     cp WEATHER_RAIN

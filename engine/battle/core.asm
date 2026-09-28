@@ -2453,25 +2453,28 @@ DoubleSwitch:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
-	call PlayerPartyMonEntrance
+	; Both active slots must be populated before either side's switch-in
+	; effects run, or opponent-targeting effects would hit a fainted mon.
+	call PlayerPartyMonEntrance_NoSwitchInEffects
 	ld a, $1
-	call EnemyPartyMonEntrance
-	jr .done
+	call EnemyPartyMonEntrance_NoSwitchInEffects
+	jr .switch_in_effects
 
 .player_1
 	ld a, [wCurPartyMon]
 	push af
 	ld a, $1
-	call EnemyPartyMonEntrance
+	call EnemyPartyMonEntrance_NoSwitchInEffects
 	call ClearSprites
 	call LoadTilemapToTempTilemap
 	pop af
 	ld [wCurPartyMon], a
-	call PlayerPartyMonEntrance
+	call PlayerPartyMonEntrance_NoSwitchInEffects
 
-.done
-	xor a ; BATTLEPLAYERACTION_USEMOVE
-	ld [wBattlePlayerAction], a
+.switch_in_effects
+	; Preserve the original link-clock ordering after both replacements exist.
+	farcall DoubleSwitchInEffects
+	xor a
 	ret
 
 UpdateBattleStateAndExperienceAfterEnemyFaint:
@@ -2769,6 +2772,15 @@ HandleEnemySwitch:
 	ret
 
 EnemyPartyMonEntrance:
+	call EnemyPartyMonEntrance_NoSwitchInEffects
+	call SwitchInEffects
+	xor a
+	ld [wEnemyMoveStruct + MOVE_ANIM], a
+	ld [wBattlePlayerAction], a
+	inc a
+	ret
+
+EnemyPartyMonEntrance_NoSwitchInEffects:
 	push af
 	xor a
 	ld [wEnemySwitchMonIndex], a
@@ -2787,13 +2799,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage
-	call SwitchInEffects
-	xor a
-	ld [wEnemyMoveStruct + MOVE_ANIM], a
-	ld [wBattlePlayerAction], a
-	inc a
-	ret
+	jp SpikesDamage
 
 WinTrainerBattle:
 ; Player won the battle
@@ -3254,6 +3260,10 @@ ForcePlayerMonChoice:
 	ret
 
 PlayerPartyMonEntrance:
+	call PlayerPartyMonEntrance_NoSwitchInEffects
+	jp SwitchInEffects
+
+PlayerPartyMonEntrance_NoSwitchInEffects:
 	ld a, [wCurBattleMon]
 	ld [wLastPlayerMon], a
 	ld a, [wCurPartyMon]
@@ -3268,8 +3278,7 @@ PlayerPartyMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	call SpikesDamage
-	jp SwitchInEffects
+	jp SpikesDamage
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]

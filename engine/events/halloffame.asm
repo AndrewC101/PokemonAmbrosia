@@ -24,6 +24,7 @@ HallOfFame::
 .ok
 	farcall SaveGameData
 	call GetHallOfFameParty
+	newfarcall BuildHallOfFamePalettePairs
 	farcall AddHallOfFameEntry
 
 	xor a
@@ -251,7 +252,7 @@ AnimateHOFMonEntrance:
 	call WaitBGMap
 	xor a
 	ldh [hBGMapMode], a
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_HALL_OF_FAME_MON_PALS
 	call GetSGBLayout
 	call SetDefaultBGPAndOBP
 	call HOF_SlideBackpic

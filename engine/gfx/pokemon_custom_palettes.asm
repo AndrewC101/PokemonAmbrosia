@@ -300,6 +300,57 @@ CopyPartyPalettePairs:
 	jr nz, .loop
 	ret
 
+BuildHallOfFamePalettePairs::
+; Build a transient palette list in the same egg-filtered order as the ceremony.
+; The Hall of Fame record itself remains unchanged. Clobbers af, bc, de, hl.
+	ld hl, wHallOfFamePalettePairs
+	ld bc, PARTY_LENGTH
+	xor a
+	call ByteFill
+	ld hl, wPartySpecies
+	ld de, wHallOfFamePalettePairs
+	ld c, 0 ; physical party slot; de advances only for displayed Pokemon
+.loop
+	ld a, [hli]
+	cp -1
+	ret z
+	cp EGG
+	jr z, .next
+	push hl
+	push bc
+	ld a, c
+	ld hl, wPartyMon1PalettePair
+	call GetPartyLocation
+	ld a, [hl]
+	pop bc
+	pop hl
+	ld [de], a
+	inc de
+.next
+	inc c
+	jr .loop
+
+LoadHallOfFameMonPalette::
+; Load the current ceremony mon's complete palette into CGB BG palette 0.
+; Species and DVs were already copied from the Hall of Fame record.
+	ld a, [wHallOfFameMonCounter]
+	cp PARTY_LENGTH
+	jr nc, .default
+	ld e, a
+	ld d, 0
+	ld hl, wHallOfFamePalettePairs
+	add hl, de
+	ld l, [hl]
+	jr .load
+
+.default
+	ld l, MON_PALETTE_DEFAULT
+.load
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	ld de, wBGPals1
+	jp LoadMonNormalShinyOrCustomPalette
+
 OverridePartyMenuIconPaletteWithCustom::
 ; Input: a/e = the species/shiny icon palette from GetMenuMonIconPalette.
 ; Output: a/e = that fallback, or the six-color approximation for a custom pair.

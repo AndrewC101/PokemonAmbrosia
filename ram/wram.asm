@@ -1007,6 +1007,10 @@ SECTION UNION "Overworld Map", WRAM0
 
 ; Hall of Fame data
 wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
+; Ceremony-only palette pairs follow the saved-format buffer without extending it.
+wHallOfFamePalettePairs:: ds PARTY_LENGTH
+wHallOfFamePalettePairsEnd::
+	assert wHallOfFamePalettePairs - wHallOfFamePokemonList == HOF_LENGTH
 
 
 SECTION UNION "Overworld Map", WRAM0

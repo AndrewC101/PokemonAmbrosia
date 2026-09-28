@@ -57,7 +57,7 @@ SGBLayoutJumptable:
 	dw .SGB_TradeTube
 	dw .SGB_TrainerOrMonFrontpicPals
 	dw .SGB_MysteryGift
-	dw .SGB_Unused1E
+	dw .SGB_PlayerOrMonFrontpicPals ; custom Pokemon palettes are CGB-only
 	assert_table_length NUM_SCGB_LAYOUTS
 
 .SGB_BattleGrayscale:

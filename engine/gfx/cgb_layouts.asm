@@ -64,7 +64,7 @@ CGBLayoutJumptable:
 	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
-	dw _CGB_Unused1E
+	dw _CGB_HallOfFameMonPals
 	assert_table_length NUM_SCGB_LAYOUTS
 
 _CGB_BattleGrayscale:
@@ -1368,13 +1368,12 @@ _CGB_PlayerOrMonFrontpicPals:
 	call ApplyPals
 	ret
 
-_CGB_Unused1E:
-	ld de, wBGPals1
-	ld a, [wCurPartySpecies]
-	call GetMonPalettePointer
-	call LoadPalette_White_Col1_Col2_Black
+_CGB_HallOfFameMonPals:
+	; The ceremony keeps its egg-filtered PalettePairs in a transient list.
+	newfarcall LoadHallOfFameMonPalette
 	call WipeAttrmap
 	call ApplyAttrmap
+	call ApplyPals
 	ret
 
 _CGB_TradeTube:

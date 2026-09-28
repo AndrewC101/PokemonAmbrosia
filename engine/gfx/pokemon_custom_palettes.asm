@@ -407,6 +407,29 @@ OverridePartyMenuIconPaletteWithCustom::
 	db PAL_ICON_GOLD   ; gold
 	assert_table_length NUM_CUSTOM_PALETTE_COLORS
 
+OverrideBillsPCIconPaletteWithCustom::
+; Input: bc/de = species/shiny icon colors from GetMonPalInBCDE.
+; Output: preserve that fallback, or replace it with the custom light-color family.
+	ld a, [wBufferMonAltSpecies]
+	cp EGG
+	ret z
+	ld a, [wBufferMonPalettePair]
+	ld l, a
+	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
+	ret nc
+
+	; Match the party menu by approximating the custom pair from its light color.
+	ld a, l
+	swap a
+	and $f
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, OverridePartyMenuIconPaletteWithCustom.ColorMap
+	add hl, bc
+	ld a, [hl]
+	newfarjp GetIconPalInBCDE
+
 ; CopyMonNormalShinyOrCustomMiddleColors may also receive the zero player
 ; sentinel, so every possible pointer from GetPlayerOrMonPalettePointer must be
 ; readable through the PokemonPalettes bank passed to FarCopyBytes.

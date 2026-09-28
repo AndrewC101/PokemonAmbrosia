@@ -143,6 +143,8 @@ GetMonPalInBCDE:
 .shiny
 	and $f
 
+GetIconPalInBCDE::
+; Sets BCDE to the two middle colors for icon palette index a.
 	; Now we have the target color. Get the palette (+ 2 to avoid white).
 	ld hl, PartyMenuOBPals + 2
 	ld bc, 1 palettes

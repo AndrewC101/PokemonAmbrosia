@@ -673,7 +673,7 @@ PCIconLoop:
 
 BillsPC_GetStorageBoxMonIconData:
 ; Lightweight variant for icon rendering.
-; For box mons, read just encoded DVs and AltSpecies directly from storage.
+; For box mons, read encoded DVs, PalettePair, and AltSpecies directly from storage.
 ; Party mons still use the full path.
 	xor a
 	ld [wBufferMonSlot], a
@@ -700,7 +700,11 @@ BillsPC_GetStorageBoxMonIconData:
 	inc de
 	ld a, [hli]
 	ld [de], a
-	ld bc, SAVEMON_ALTSPECIES - SAVEMON_DVS - 2
+	ld bc, SAVEMON_PALETTE_PAIR - SAVEMON_DVS - 2
+	add hl, bc
+	ld a, [hl]
+	ld [wBufferMonPalettePair], a
+	ld bc, SAVEMON_ALTSPECIES - SAVEMON_PALETTE_PAIR
 	add hl, bc
 	ld a, [hl]
 	and a
@@ -816,6 +820,7 @@ WriteIconPaletteData:
 	dec b
 .got_shininess
 	newfarcall GetMonPalInBCDE
+	newfarcall OverrideBillsPCIconPaletteWithCustom
 	ld h, b
 	ld l, c
 	pop bc

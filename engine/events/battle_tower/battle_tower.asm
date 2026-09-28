@@ -397,110 +397,19 @@ ReadBTTrainerParty:
 	jr nz, .otpartymon_loop
 	ld a, -1
 	ld [bc], a
-	ret
 
-ValidateBTParty: ; unreferenced
-; Check for and fix errors in party data
-	ld hl, wBT_OTTempMon1Species
-	ld d, BATTLETOWER_PARTY_LENGTH
-.pkmn_loop
-	push de
-	push hl
-	ld b, h
-	ld c, l
-	ld a, [hl]
-	and a
-for x, $ff, NUM_POKEMON, -1
-	jr z, .invalid
-	cp x
-endr
-	jr nz, .valid
-
-.invalid
-	ld a, SMEARGLE
-	ld [hl], a
-
-.valid
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, BANK(s5_b2fb)
-	call OpenSRAM
-	ld a, [s5_b2fb] ; s5_b2fb ; max level?
-	call CloseSRAM
-	ld e, a
-	ld hl, MON_LEVEL
-	add hl, bc
-	ld a, [hl]
-	cp MIN_LEVEL
-	ld a, MIN_LEVEL
-	jr c, .load
-	ld a, [hl]
-	cp e
-	jr c, .dont_load
-	ld a, e
-
-.load
-	ld [hl], a
-
-.dont_load
-	ld [wCurPartyLevel], a
-	ld hl, MON_MOVES
-	add hl, bc
-	ld d, NUM_MOVES - 1
-	ld a, [hli]
-	and a
-	jr z, .not_move
-	cp NUM_ATTACKS + 1
-	jr nc, .not_move
-	jr .valid_move
-
-.not_move
-	dec hl
-	ld a, POUND
-	ld [hli], a
+	; Battle Tower teams must always enter with a clean major status. Clear the
+	; toxic-persistence shadow byte too, after all serialized data is copied.
+	ld hl, wOTPartyMon1Status
+	ld de, PARTYMON_STRUCT_LENGTH - 1 ; from this mon's unused byte to the next status
+	ld b, PARTY_LENGTH
 	xor a
-	ld [hli], a
-	ld [hli], a
+.clear_status_loop
+	ld [hli], a ; status; hl advances to the toxic-persistence shadow byte
 	ld [hl], a
-	jr .done_moves
-
-.valid_move
-	ld a, [hl]
-	cp NUM_ATTACKS + 1
-	jr c, .next
-	ld [hl], $0
-
-.next
-	inc hl
-	dec d
-	jr nz, .valid_move
-
-.done_moves
-	ld hl, MON_MAXHP
-	add hl, bc
-	ld d, h
-	ld e, l
-	push hl
-	push de
-	ld hl, MON_STAT_EXP - 1
-	add hl, bc
-	ld b, TRUE
-	predef CalcMonStats
-	pop de
-	pop hl
-	dec de
-	dec de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hl]
-	ld [de], a
-	pop hl
-	ld bc, NICKNAMED_MON_STRUCT_LENGTH
-	add hl, bc
-	pop de
-	dec d
-	jp nz, .pkmn_loop
+	add hl, de
+	dec b
+	jr nz, .clear_status_loop
 	ret
 
 BT_ChrisName:

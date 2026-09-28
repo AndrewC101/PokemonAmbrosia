@@ -1059,13 +1059,22 @@ MoveInfoBox:
 	push af
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RETURN
-	jr nz, .check_fixed_damage
+	jr nz, .check_damage_effect
 	callfar BattleCommand_HappinessPower
 	ld a, d
 	ld [wPlayerMoveStruct + MOVE_POWER], a
 
-.check_fixed_damage
+.check_damage_effect
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	; Counter damage depends on the opponent's turn, while OHKO moves use a
+	; $ffff damage sentinel. Neither has a meaningful numeric preview.
+	cp EFFECT_COUNTER
+	jp z, .print_unavailable_damage
+	cp EFFECT_MIRROR_COAT
+	jp z, .print_unavailable_damage
+	cp EFFECT_OHKO
+	jp z, .print_unavailable_damage
+
 	; Fixed-damage moves bypass the normal damage-variation preview.
 	cp EFFECT_LEVEL_DAMAGE
 	jp z, .print_fixed_damage
@@ -1195,6 +1204,8 @@ MoveInfoBox:
 	ld [wTypeMatchup], a
 	pop af
 	ld [wTypeModifier], a
+
+.restore_power_and_damage
 	pop af
 	ld [wPlayerMoveStruct + MOVE_POWER], a
 
@@ -1204,21 +1215,19 @@ MoveInfoBox:
 	ld a, l
 	ld [wCurDamage + 1], a
 	ret
+
+.print_unavailable_damage
+	ld de, .nopower_string
+	hlcoord 3, 11
+	call PlaceString
+	jr .restore_power_and_damage
 
 .print_fixed_damage
 	; Fixed-damage moves preview one exact value.
 	call .LoadFixedDamagePreview
 	call .CapDisplayDamage
 	call .PrintSingleDamage
-
-	pop af
-	ld [wPlayerMoveStruct + MOVE_POWER], a
-	pop hl
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-	ret
+	jr .restore_power_and_damage
 
 .PrintSingleDamage
 	hlcoord 3, 11

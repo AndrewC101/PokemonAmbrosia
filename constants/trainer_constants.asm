@@ -236,7 +236,7 @@ DEF KRIS EQU __trainer_class__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK ; unused
+	const SUM1
 	const ANDY ; unused
 	const TYLER ; unused
 	const SEAN

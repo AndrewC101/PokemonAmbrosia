@@ -270,6 +270,33 @@ VictoryRoadRivalVictoryText:
 	line "my father."
 	done
 
+TrainerSum1Script:
+	trainer COOLTRAINERM, SUM1, EVENT_BEAT_SUM1, SumSeenText, SumBeatenText, SumVictoryText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SumAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SumSeenText:
+    text "..."
+    done
+
+SumBeatenText:
+    text "..."
+    done
+
+SumVictoryText:
+    text "..."
+    done
+
+SumAfterBattleText:
+    text ""
+    done
+
 InvaderSolaireScript:
 	trainer INVADER, SOLAIRE, EVENT_BEAT_INVADER_SOLAIRE, InvaderSolaireSeenText, InvaderSolaireBeatenText, InvaderSolaireVictoryText, .Script
 
@@ -350,7 +377,7 @@ VictoryRoadFieldMon6Script:
     end
 
 VictoryRoadFieldMon7Script:
-	trainer RHYPERIOR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 72, 0, .script
+	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_7, VictoryRoadPokemonAttacksText, 77, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_7
     end
@@ -359,12 +386,6 @@ VictoryRoadFieldMon8Script:
 	trainer GARCHOMP, FIELD_MON, EVENT_FIELD_MON_8, VictoryRoadPokemonAttacksText, 76, 0, .script
 .script
     disappear VICTORYROAD_FIELDMON_8
-    end
-
-VictoryRoadFieldMon9Script:
-	trainer TYRANITAR, FIELD_MON, EVENT_FIELD_MON_9, VictoryRoadPokemonAttacksText, 77, 0, .script
-.script
-    disappear VICTORYROAD_FIELDMON_9
     end
 
 VictoryRoadPokemonAttacksText:
@@ -411,4 +432,4 @@ VictoryRoad_MapEvents:
 	object_event  6, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon6Script, EVENT_FIELD_MON_6
 	object_event  3, 52, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon7Script, EVENT_FIELD_MON_7
 	object_event 13, 35, SPRITE_DRAGON, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon8Script, EVENT_FIELD_MON_8
-	object_event  3, 26, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, VictoryRoadFieldMon9Script, EVENT_FIELD_MON_9
+	object_event  3, 26, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSum1Script, -1

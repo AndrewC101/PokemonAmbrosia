@@ -499,6 +499,7 @@
 	const EVENT_SILVER_CAVE_ROOM_3_MT_SILVER_SCENE_HIDDEN
 	const EVENT_SILVER_CAVE_OUTSIDE_RPG_NPC_HIDDEN
 	const EVENT_MANOR_WEEKEND_KIDS_HIDDEN
+	const EVENT_BEAT_SUM1
 
 	; ======================================
 	; DevNote - here

@@ -21,8 +21,12 @@ TinTower1F_MapScripts:
 	callback MAPCALLBACK_TILES, TinTower1FStairsCallback
 
 TinTower1FSuicuneBattleScene:
-    checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
-    iffalse .end
+	checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
+	;iffalse .end
+	checkevent EVENT_TIN_TOWER_1F_SUICUNE
+	iffalse .suicune_visible
+	appear TINTOWER1F_SUICUNE
+.suicune_visible
 	sdefer SuicuneBattle
 .end
 	end
@@ -61,7 +65,6 @@ TinTower1FNPCsCallback:
 .FaceBeasts:
 ; if player has not fought suicune and has not caught raikou then both appear
 	moveobject TINTOWER1F_SUICUNE, 9, 9
-	appear TINTOWER1F_SUICUNE
 	appear TINTOWER1F_RAIKOU
 	appear TINTOWER1F_ENTEI
 

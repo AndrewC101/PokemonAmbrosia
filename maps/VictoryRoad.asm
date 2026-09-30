@@ -282,20 +282,29 @@ TrainerSum1Script:
 	end
 
 SumSeenText:
-    text "..."
-    done
+	text "The Elite Four are"
+	line "pretty tough but"
+	cont "I'm ready for"
+	cont "them!"
+	done
 
 SumBeatenText:
-    text "..."
+    text "You are ready"
+    line "too!"
     done
 
 SumVictoryText:
-    text "..."
+    text "You are not"
+    line "ready."
     done
 
 SumAfterBattleText:
-    text ""
-    done
+	text "Even after you"
+	line "beat the Elite"
+	cont "Four..."
+	para "There is a lot"
+	line "more left to do."
+	done
 
 InvaderSolaireScript:
 	trainer INVADER, SOLAIRE, EVENT_BEAT_INVADER_SOLAIRE, InvaderSolaireSeenText, InvaderSolaireBeatenText, InvaderSolaireVictoryText, .Script

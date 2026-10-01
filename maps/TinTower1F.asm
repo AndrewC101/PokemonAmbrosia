@@ -22,7 +22,7 @@ TinTower1F_MapScripts:
 
 TinTower1FSuicuneBattleScene:
 	checkitem CLEAR_BELL ; dont do anything if player does not have clear bell
-	;iffalse .end
+	iffalse .end
 	checkevent EVENT_TIN_TOWER_1F_SUICUNE
 	iffalse .suicune_visible
 	appear TINTOWER1F_SUICUNE

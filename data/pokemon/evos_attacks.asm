@@ -3043,6 +3043,7 @@ CelebiEvosAttacks:
 	db 1, LEECH_SEED
 	db 1, HEAL_BELL
 	db 1, ANCIENTPOWER
+	db 10, STUN_SPORE
 	db 20, RECOVER
 	db 30, BATON_PASS
 	db 35, PSYCHIC_M

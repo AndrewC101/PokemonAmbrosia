@@ -426,7 +426,7 @@ AI_Smart_Switch:
 ; switch if unboosted enemy is FRZ and player sets up
 ; 50% chance to switch if unboosted enemy is SLP and player sets up
 ; don't switch if enemy is weakened, just let it die
-; switch if enemy is choice locked into a NVE move
+; switch if enemy is choice locked into a resisted or immune move
 ; switch if enemy accuracy at -2 or lower
 ; switch if enemy attack at -2 or lower and has unboosted special attack
 ; switch if enemy is cursed
@@ -438,15 +438,17 @@ AI_Smart_Switch:
 ;	and 1 << FRZ
 ;	jp nz, .checkSetupAndSwitchIfPlayerSetsUp
 
-; switch if choice locked into a NVE move
+; switch if choice locked into a resisted or immune move
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
-    push hl
 	ld a, 1
 	ldh [hBattleTurn], a
 	ld a, [wCurEnemyMove]
 	call AIGetEnemyMove
+	call DoesEnemyMoveTypeTriggerPlayerAbilityImmunity
+	jp c, .switch
+	push hl
 	callfar BattleCheckTypeMatchup
 	pop hl
 	ld a, [wTypeMatchup]

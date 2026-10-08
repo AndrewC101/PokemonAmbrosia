@@ -1622,7 +1622,7 @@ LoadMapPals:
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
-	ret nz
+	jr nz, .finish
 .outside
 	ld a, [wMapGroup]
     add a
@@ -1652,17 +1652,17 @@ LoadMapPals:
 ; Day Care outdoor palettes
 	ld a, [wMapGroup]
 	cp GROUP_ROUTE_34
-	ret nz
+	jr nz, .finish
 
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_34
-	ret nz
+	jr nz, .finish
 
 	ld a, BANK(wBreedMon1Species)
 	ld hl, wBreedMon1Species
 	call GetFarWRAMByte
 	and a
-	ret z
+	jr z, .finish
 	ld [wCurPartySpecies], a
 
 	ld hl, wBreedMon1DVs ; HL now points to the params of the wBreedMon1, which is needed by GetMenuMonIconPalette to determine if it's shiny.
@@ -1688,7 +1688,8 @@ LoadMapPals:
 
 	; Day-care mon 2 now uses a fixed object palette so the reclaimed
 	; tree slot remains available for the yellow player color.
-	ret
+.finish
+	newfarjp ApplyMapWeatherPalettes
 
 LoadDexTypePals:
 	ldh a, [rSVBK]

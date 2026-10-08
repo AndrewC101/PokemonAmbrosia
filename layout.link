@@ -304,6 +304,7 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $7b
 	"Battle Tower Text"
+	"Overworld Weather"
 ROMX $7c
 	"Battle Tower Trainer Data"
 	"Ecruteak Lugia Speech House Scripts"
@@ -345,6 +346,7 @@ WRAMX 5
 	"GBC Video"
 	org $d300
 	"Battle Animations"
+	"Weather Fade Start Palettes"
 	org $d800
 	"Mobile RAM"
 WRAMX 6

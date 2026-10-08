@@ -152,6 +152,10 @@ HandleMap:
 	call NextOverworldFrame
 	call HandleMapBackground
 	call CheckPlayerState
+	; Keep CheckPlayerState's return flags.
+	push af
+	newfarcall UpdateOverworldWeatherFrame
+	pop af
 	ret
 
 MapEvents:

@@ -189,6 +189,8 @@ hFunctionTarget::
 hFunctionTargetLo:: db
 hFunctionTargetHi:: db
 
-	ds 12
+; Weather palette fade scratch byte
+hWeatherFadeProgress:: db
+	ds 11
 
 ENDSECTION

@@ -12,6 +12,7 @@
 	const STARTMENUITEM_SPEED    ; 9
 
 StartMenu::
+	newfarcall PrepareWeatherForFullScreen
 	call ClearWindowData
 
 	ld de, SFX_MENU

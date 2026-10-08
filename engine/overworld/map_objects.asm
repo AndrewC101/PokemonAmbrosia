@@ -1786,6 +1786,9 @@ StepFunction_ScreenShake:
 	dw .Run
 
 .Init:
+	; Screen shake is not player movement.
+	ld hl, wWeatherFlags
+	set WEATHER_IGNORE_PLAYER_Y_F, [hl]
 	xor a
 	ld hl, OBJECT_1D
 	add hl, bc
@@ -1814,8 +1817,9 @@ StepFunction_ScreenShake:
 	ret
 
 .ok
-	call DeleteMapObject
-	ret
+	ld hl, wWeatherFlags
+	res WEATHER_IGNORE_PLAYER_Y_F, [hl]
+	jp DeleteMapObject
 
 .GetSign:
 	ld hl, OBJECT_1E
@@ -2807,31 +2811,9 @@ _UpdateSprites::
 	ld a, 1
 	ldh [hOAMUpdate], a
 	call InitSprites
-	call .fill
+	newfarcall FillUnusedOAMPreservingWeather
 	pop af
 	ldh [hOAMUpdate], a
-	ret
-
-.fill
-	ld a, [wStateFlags]
-	bit LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
-	ld b, OAM_SIZE
-	jr z, .ok
-	ld b, (OAM_COUNT - 12) * OBJ_SIZE
-.ok
-	ldh a, [hUsedSpriteIndex]
-	cp b
-	ret nc
-	ld l, a
-	ld h, HIGH(wShadowOAM)
-	ld de, OBJ_SIZE
-	ld a, b
-	ld c, OAM_YCOORD_HIDDEN
-.loop
-	ld [hl], c ; y
-	add hl, de
-	cp l
-	jr nz, .loop
 	ret
 
 ApplyBGMapAnchorToObjects:

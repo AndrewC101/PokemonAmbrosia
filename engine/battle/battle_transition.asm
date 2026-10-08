@@ -9,6 +9,7 @@ DEF BATTLETRANSITION_SQUARE EQU '8' ; $fe
 DEF BATTLETRANSITION_BLACK  EQU '9' ; $ff
 
 DoBattleTransition:
+	newfarcall PrepareWeatherForFullScreen
 	call .InitGFX
 	ldh a, [rBGP]
 	ld [wBGP], a

@@ -599,6 +599,11 @@ SECTION "Battle Tower Text", ROMX
 INCLUDE "data/battle_tower/trainer_text.asm"
 
 
+SECTION "Overworld Weather", ROMX
+
+INCLUDE "engine/overworld/weather.asm"
+
+
 SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"

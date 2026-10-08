@@ -1,4 +1,5 @@
 ReanchorMap::
+	newfarcall PrepareWeatherForFullScreen
 	call ClearWindowData
 	ldh a, [hROMBank]
 	push af
@@ -25,6 +26,9 @@ CloseText::
 	ldh [hOAMUpdate], a
 	ld hl, wStateFlags
 	res TEXT_STATE_F, [hl]
+	push af
+	newfarcall ResumeWeather
+	pop af
 	ret
 
 .CloseText:
@@ -44,6 +48,7 @@ CloseText::
 	ret
 
 OpenText::
+	newfarcall PauseWeather
 	call ClearWindowData
 	ldh a, [hROMBank]
 	push af

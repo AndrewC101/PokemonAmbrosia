@@ -112,8 +112,7 @@ PlaceMapNameSign::
 	call PlaceMapNameCenterAlign
 	farcall HDMATransfer_OnlyTopFourRows
 .already_initialized
-	ld a, $80
-	ld a, $70
+	ld a, $78
 	ldh [rWY], a
 	ldh [hWY], a
 	ret
@@ -137,7 +136,7 @@ LoadMapNameSignGFX:
 
 InitMapNameFrame:
 	hlcoord 0, 0
-	ld b, 2
+	ld b, 1
 	ld c, 18
 	call InitMapSignAttrmap
 	call PlaceMapNameFrame
@@ -156,37 +155,6 @@ PlaceMapNameCenterAlign:
 	hlcoord 0, 1
 	add hl, bc
 	ld de, wStringBuffer1
-	call PlaceString
-
-	; check weather and print
-	hlcoord 1, 2
-	ld a, [wFieldWeather]
-	cp WEATHER_RAIN
-	jr z, .Raining
-	cp WEATHER_SUN
-	jr z, .Sunny
-	cp WEATHER_SANDSTORM
-	jr z, .Sandstorm
-	cp WEATHER_HAIL
-	ret nz
-
-;.Hailing:
-	ld de, .HailingStr
-	jr .print_weather
-
-.Raining:
-	ld de, .RainingStr
-	jr .print_weather
-
-.Sunny:
-	ld de, .SunnyStr
-	jr .print_weather
-
-.Sandstorm:
-	ld de, .SandstormStr
-	; fallthrough
-
-.print_weather:
 	jp PlaceString
 
 .GetNameLength:
@@ -204,15 +172,6 @@ PlaceMapNameCenterAlign:
 .stop
 	pop hl
 	ret
-
-.RainingStr:
-	db "Raining@"
-.SunnyStr:
-	db "Sunny@"
-.HailingStr:
-	db "Hailing@"
-.SandstormStr:
-	db "Sandstorm@"
 
 InitMapSignAttrmap:
 	ld de, wAttrmap - wTilemap
@@ -255,14 +214,6 @@ PlaceMapNameFrame:
 	call .FillMiddle
 	; right, first line
 	ld a, MAP_NAME_SIGN_START + 11
-	ld [hli], a
-	; left, second line
-	ld a, MAP_NAME_SIGN_START + 6
-	ld [hli], a
-	; second line
-	call .FillMiddle
-	; right, second line
-	ld a, MAP_NAME_SIGN_START + 12
 	ld [hli], a
 	; bottom left
 	ld a, MAP_NAME_SIGN_START + 7

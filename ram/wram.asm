@@ -2319,7 +2319,21 @@ wPoisonStepPartyFlags:: ds PARTY_LENGTH
 wPoisonStepDataEnd::
 ENDU
 
-	ds 23
+; Overworld weather state
+wOverworldWeatherState::
+wPreviousFieldWeather:: db
+wWeatherFlags:: db
+wOverworldWeatherTimer:: db
+wOverworldWeatherCooldown:: db
+wWeatherPalSlot:: db ; physical OBJ palette, or WEATHER_PAL_SLOT_NONE
+wPalTintWeather:: db
+wPrevPalTintWeather:: db
+wWeatherFadeSteps:: db
+wWeatherFadeFrame:: db
+wOverworldWeatherStateEnd::
+assert wOverworldWeatherStateEnd - wOverworldWeatherState == OVERWORLD_WEATHER_STATE_SIZE
+
+	ds 23 - OVERWORLD_WEATHER_STATE_SIZE
 
 
 SECTION "More WRAM 1", WRAMX
@@ -3700,6 +3714,18 @@ NEXTU
 wSurfWaveBGEffect:: ds $40
 wSurfWaveBGEffectEnd::
 ENDU
+
+
+SECTION "Weather Fade Start Palettes", WRAMX
+
+; Palettes at the start of a map connection
+wWeatherFadeStartPalettes::
+wWeatherFadeStartBGPals:: ds 8 palettes
+wWeatherFadeStartOBPals:: ds 8 palettes
+wWeatherFadeStartPalettesEnd::
+assert wWeatherFadeStartOBPals - wWeatherFadeStartBGPals == 8 palettes
+assert wWeatherFadeStartPalettesEnd - wWeatherFadeStartOBPals == 8 palettes
+assert wWeatherFadeStartPalettesEnd - wWeatherFadeStartPalettes == WEATHER_FADE_BUFFER_SIZE
 
 
 SECTION "Mobile RAM", WRAMX

@@ -50,10 +50,19 @@ MapSetupCommands:
 	add_mapsetup RefreshPlayerCoords ; 23
 	add_mapsetup ResetPlayerObjectAction ; 24
 	add_mapsetup SkipUpdateMapSprites ; 25
-	add_mapsetup FadeOutMapMusic ; 28
-	add_mapsetup ActivateMapAnims ; 29
-	add_mapsetup SuspendMapAnims ; 2a
-	add_mapsetup ApplyMapPalettes ; 2b
-	add_mapsetup EnableTextAcceleration ; 2c
-	add_mapsetup InitMapNameSign ; 2d
-	add_mapsetup RefreshSpritesForOutdoorConnection ; 2e
+	add_mapsetup FadeOutMapMusic ; 26
+	add_mapsetup ActivateMapAnims ; 27
+	add_mapsetup SuspendMapAnims ; 28
+	add_mapsetup ApplyMapPalettes ; 29
+	add_mapsetup EnableTextAcceleration ; 2a
+	add_mapsetup InitMapNameSign ; 2b
+	add_mapsetup RefreshSpritesForOutdoorConnection ; 2c
+	add_mapsetup HandleMapDefaultWeather ; 2d
+	add_mapsetup ClearWeather ; 2e
+	add_mapsetup SetCurrentWeather ; 2f
+	add_mapsetup SaveWeatherFadeSource ; 30
+	add_mapsetup MapConnWeatherFade ; 31
+	add_mapsetup SelectWeatherObjPalette ; 32
+	add_mapsetup CancelWeatherFade ; 33
+	add_mapsetup ResumeWeather ; 34
+	add_mapsetup PrepareWeatherForFullScreen ; 35

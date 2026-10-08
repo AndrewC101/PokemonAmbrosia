@@ -27,12 +27,15 @@ ENDM
 MapSetupScript_Teleport:
 	mapsetup ResetPlayerObjectAction
 MapSetupScript_Fly:
+	mapsetup PrepareWeatherForFullScreen
 	mapsetup FadeOutToWhite
 MapSetupScript_Warp:
 	mapsetup DisableLCD
 	mapsetup InitSound
 	mapsetup EnterMapSpawnPoint
 	mapsetup LoadMapAttributes
+	mapsetup ClearWeather
+	mapsetup HandleMapDefaultWeather
 	mapsetup HandleNewMap
 	mapsetup SpawnPlayer
 	mapsetup RefreshPlayerCoords
@@ -56,6 +59,8 @@ MapSetupScript_Warp:
 MapSetupScript_BadWarp:
 	mapsetup EnterMapSpawnPoint
 	mapsetup LoadMapAttributes
+	mapsetup ClearWeather
+	mapsetup HandleMapDefaultWeather
 	mapsetup HandleNewMap
 	mapsetup SpawnPlayer
 	mapsetup RefreshPlayerCoords
@@ -79,8 +84,10 @@ MapSetupScript_BadWarp:
 
 MapSetupScript_Connection:
 	mapsetup SuspendMapAnims
+	mapsetup SaveWeatherFadeSource
 	mapsetup EnterMapConnection
 	mapsetup LoadMapAttributes
+	mapsetup HandleMapDefaultWeather
 	mapsetup HandleNewMap
 	mapsetup RefreshPlayerCoords
 	mapsetup LoadBlockData
@@ -91,7 +98,7 @@ MapSetupScript_Connection:
 	mapsetup FadeToMapMusic
 	mapsetup LoadMapPalettes
 	mapsetup InitMapNameSign
-	mapsetup ApplyMapPalettes
+	mapsetup MapConnWeatherFade
 	mapsetup LoadWildMonData
 	mapsetup ActivateMapAnims
 	db -1 ; end
@@ -99,11 +106,14 @@ MapSetupScript_Connection:
 MapSetupScript_Fall:
 	mapsetup ResetPlayerObjectAction
 MapSetupScript_Door:
+	mapsetup PrepareWeatherForFullScreen
 	mapsetup FadeOutToWhite
 MapSetupScript_Train:
 	mapsetup EnterMapWarp
 	mapsetup LoadMapAttributes
 	mapsetup GetWarpDestCoords
+	mapsetup ClearWeather
+	mapsetup HandleMapDefaultWeather
 	mapsetup HandleNewMap
 	mapsetup RefreshPlayerCoords
 	mapsetup LoadBlockData
@@ -123,6 +133,8 @@ MapSetupScript_Train:
 	db -1 ; end
 
 MapSetupScript_ReloadMap:
+	mapsetup PrepareWeatherForFullScreen
+	mapsetup ResumeWeather
 	mapsetup FadeMapMusicAndPalettes
 	mapsetup ClearBGPalettes
 	mapsetup DisableLCD
@@ -141,10 +153,15 @@ MapSetupScript_ReloadMap:
 	db -1 ; end
 
 MapSetupScript_LinkReturn:
+	mapsetup PrepareWeatherForFullScreen
 	mapsetup FadeMapMusicAndPalettes
 	mapsetup DisableLCD
 	mapsetup InitSound
+	mapsetup ClearWeather
+	mapsetup HandleMapDefaultWeather
 	mapsetup HandleNewMap
+	mapsetup SetCurrentWeather
+	mapsetup SelectWeatherObjPalette
 	mapsetup LoadBlockData
 	mapsetup BufferScreen
 	mapsetup LoadMapGraphics
@@ -164,8 +181,11 @@ MapSetupScript_Continue:
 	mapsetup DisableLCD
 	mapsetup InitSound
 	mapsetup LoadMapAttributes_SkipObjects
+	mapsetup ClearWeather
 	mapsetup GetMapScreenCoords
 	mapsetup HandleContinueMap
+	mapsetup SetCurrentWeather
+	mapsetup SelectWeatherObjPalette
 	mapsetup LoadBlockData
 	mapsetup LoadConnectionBlockData
 	mapsetup BufferScreen

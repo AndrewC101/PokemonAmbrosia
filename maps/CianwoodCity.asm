@@ -560,8 +560,7 @@ PsychicGirlTalkScript:
     writetext YesIAm
     waitbutton
     closetext
-	setval WEATHER_RAIN
-	writemem wFieldWeather
+	callasm SetRainFieldWeatherAndLock
 	winlosstext HoenSpyBeatenText, HoenSpyWinsText
 	loadvar VAR_BATTLETYPE, BATTLETYPE_BOSS_BATTLE
 	loadtrainer SOLDIER, SOLDIER_SPY
@@ -596,8 +595,7 @@ PsychicGirlTalkScript:
 	appear CIANWOODCITY_MEWTWO
 	cry MEWTWO
 	turnobject CIANWOODCITY_GIRL_2, RIGHT
-	setval WEATHER_NONE
-	writemem wFieldWeather
+	callasm ClearFieldWeatherAndLock
 	setval RED
 	writemem wOtherTrainerClass
 	setval RED_MEWTWO

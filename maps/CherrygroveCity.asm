@@ -1007,8 +1007,7 @@ StarWarsRolePlayScript:
     iffalse .refused
     setval 0
     writemem wHandOfGod
-	setval WEATHER_NONE
-	writemem wFieldWeather
+	callasm ClearFieldWeatherAndLock
 	setval BATTLETYPE_BATTLE_FRONTIER
 	writemem wBattleType
 	special FadeOutMusic
@@ -1840,4 +1839,3 @@ CherrygroveCity_MapEvents:
 	object_event  4, 13, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
 	object_event  6, 12, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
 	object_event  6, 10, SPRITE_MAGIKARP, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpDeadScript, -1
-

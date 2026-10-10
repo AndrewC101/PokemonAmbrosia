@@ -5,6 +5,7 @@
 ; Weather uses free OAM entries from the end so map objects keep priority.
 
 UpdateOverworldWeatherFrame::
+	call UpdateScheduledWeather
 	call DoOverworldWeather
 	jp WeatherFadeStep
 
@@ -164,7 +165,290 @@ GetWeatherTint::
 
 ; Map setup
 
+HandleMapDefaultWeather::
+	call UpdateTime
+	call RefreshScheduledWeatherRoll
+
+	ld hl, wWeatherFlags
+	res WEATHER_SETUP_PENDING_F, [hl]
+	; Link returns skip object callbacks, so retain a saved fixed override.
+	ldh a, [hMapEntryMethod]
+	cp MAPSETUP_LINKRETURN
+	jr nz, .select_profile
+	ld a, [wScheduledWeatherProfile]
+	and WEATHER_PROFILE_MASK
+	cp WEATHER_PROFILE_FIXED
+	ret z
+
+.select_profile
+	call GetMapEnvironment
+	cp ROUTE
+	jr z, .outdoor
+	cp TOWN
+	jr z, .outdoor
+
+	ld a, WEATHER_PROFILE_FIXED
+	call SetScheduledWeatherProfile
+	xor a
+	ld [wFieldWeather], a
+	ret
+
+.outdoor
+	call GetMapScheduledWeatherProfile
+	call SetScheduledWeatherProfile
+	ld a, WEATHER_UNSET
+	ld [wFieldWeather], a
+	ld hl, wWeatherFlags
+	set WEATHER_SETUP_PENDING_F, [hl]
+	ret
+
+RefreshScheduledWeatherRoll:
+; Return carry when a new roll is generated.
+	call GetScheduledWeatherTime
+	ld a, [wScheduledWeatherProfile]
+	cp WEATHER_SCHEDULE_INITIALIZED
+	jr c, .initialize
+	cp WEATHER_SCHEDULE_INITIALIZED + NUM_WEATHER_PROFILES
+	jr nc, .initialize
+
+	ld a, [wScheduledWeatherRoll]
+	cp SCHEDULED_WEATHER_MIN
+	jr c, .initialize
+	cp SCHEDULED_WEATHER_MAX + 1
+	jr nc, .initialize
+
+	ld a, [wScheduledWeatherDay]
+	cp c
+	jr nz, .new_roll
+	ld a, [wScheduledWeatherSlot]
+	cp b
+	jr nz, .new_roll
+	and a
+	ret
+
+.initialize
+	; Without a valid saved profile, preserve the current map until it reloads.
+	ld a, WEATHER_SCHEDULE_INITIALIZED | WEATHER_PROFILE_FIXED
+	ld [wScheduledWeatherProfile], a
+.new_roll
+	ld a, c
+	ld [wScheduledWeatherDay], a
+	ld a, b
+	ld [wScheduledWeatherSlot], a
+	call Random
+	and %11
+	inc a
+	ld [wScheduledWeatherRoll], a
+	scf
+	ret
+
+GetScheduledWeatherTime:
+; Return the current ten-minute slot in b and day in c.
+	ldh a, [hHours]
+	ld b, a
+	add a
+	add b
+	add a ; hour * 6
+	ld b, a
+	ldh a, [hMinutes]
+	ld e, a
+	ld d, 0
+	ld hl, WeatherMinuteSlots
+	add hl, de
+	ld a, [hl]
+	add b
+	ld b, a
+	ld a, [wCurDay]
+	ld c, a
+	ret
+
+WeatherMinuteSlots:
+for n, 60
+	db n / 10
+endr
+WeatherMinuteSlotsEnd:
+	assert WeatherMinuteSlotsEnd - WeatherMinuteSlots == 60
+
+GetMapScheduledWeatherProfile:
+; Return the special profile for this map, or the regional profile.
+	; b = map group, c = map number
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	ld hl, .MapProfiles
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .regional
+	cp b
+	jr nz, .next
+	ld a, [hl]
+	cp c
+	jr z, .found
+.next
+	inc hl
+	inc hl
+	jr .loop
+.found
+	inc hl
+	ld a, [hl]
+	ret
+.regional
+	ld a, WEATHER_PROFILE_REGIONAL
+	ret
+
+.MapProfiles:
+	db GROUP_ROUTE_28, MAP_ROUTE_28, WEATHER_PROFILE_MOUNTAIN
+	db GROUP_ROUTE_45, MAP_ROUTE_45, WEATHER_PROFILE_MOUNTAIN
+	db GROUP_SILVER_CAVE_OUTSIDE, MAP_SILVER_CAVE_OUTSIDE, WEATHER_PROFILE_MOUNTAIN
+	db -1
+
+SetScheduledWeatherProfile:
+	or WEATHER_SCHEDULE_INITIALIZED
+	ld [wScheduledWeatherProfile], a
+	ret
+
+ClearFieldWeatherAndLock::
+; Used before a full-screen reload; discard any outgoing particle state now.
+	xor a
+	ld [wFieldWeather], a
+	ld [wPreviousFieldWeather], a
+	ld [wOverworldWeatherCooldown], a
+	ld a, WEATHER_SCHEDULE_INITIALIZED | WEATHER_PROFILE_FIXED
+	ld [wScheduledWeatherProfile], a
+	ret
+
+SetRainFieldWeatherAndLock::
+; Cianwood changes to rain while the map is still visible.
+	ld a, WEATHER_SCHEDULE_INITIALIZED | WEATHER_PROFILE_FIXED
+	ld [wScheduledWeatherProfile], a
+	ld a, WEATHER_RAIN
+	jp ApplyScheduledFieldWeather
+
+ResolvePendingMapWeather:
+	ld hl, wWeatherFlags
+	bit WEATHER_SETUP_PENDING_F, [hl]
+	ret z
+	res WEATHER_SETUP_PENDING_F, [hl]
+
+	ld a, [wFieldWeather]
+	cp WEATHER_UNSET
+	jr z, .scheduled
+	ld a, WEATHER_PROFILE_FIXED
+	jp SetScheduledWeatherProfile
+
+.scheduled
+	call ResolveScheduledFieldWeather
+	ld [wFieldWeather], a
+	ret
+
+ResolveScheduledFieldWeather:
+	ld a, [wScheduledWeatherProfile]
+	and WEATHER_PROFILE_MASK
+	cp WEATHER_PROFILE_MOUNTAIN
+	jr z, .mountain
+	cp WEATHER_PROFILE_REGIONAL
+	jr nz, .fixed
+
+	farcall RegionCheck
+	ld a, e
+	and a
+	ld hl, JohtoScheduledWeather
+	jr z, .lookup
+	ld hl, KantoScheduledWeather
+	jr .lookup
+
+.mountain
+	ld hl, MountainScheduledWeather
+.lookup
+	ld a, [wScheduledWeatherRoll]
+	dec a
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	cp WEATHER_SUN
+	ret nz
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr z, .clear
+	ld a, WEATHER_SUN
+	ret
+.clear
+	xor a
+	ret
+
+.fixed
+	ld a, [wFieldWeather]
+	ret
+
+JohtoScheduledWeather:
+	db WEATHER_NONE, WEATHER_NONE, WEATHER_RAIN, WEATHER_SUN
+JohtoScheduledWeatherEnd:
+	assert JohtoScheduledWeatherEnd - JohtoScheduledWeather == NUM_SCHEDULED_WEATHERS
+
+KantoScheduledWeather:
+	db WEATHER_NONE, WEATHER_NONE, WEATHER_SUN, WEATHER_RAIN
+KantoScheduledWeatherEnd:
+	assert KantoScheduledWeatherEnd - KantoScheduledWeather == NUM_SCHEDULED_WEATHERS
+
+MountainScheduledWeather:
+	db WEATHER_HAIL, WEATHER_SANDSTORM, WEATHER_RAIN, WEATHER_SUN
+MountainScheduledWeatherEnd:
+	assert MountainScheduledWeatherEnd - MountainScheduledWeather == NUM_SCHEDULED_WEATHERS
+
+UpdateScheduledWeather:
+; hHours/hMinutes were refreshed earlier in the overworld frame.
+	ld a, [wWeatherFlags]
+	bit WEATHER_PAUSED_F, a
+	ret nz
+	bit WEATHER_SETUP_PENDING_F, a
+	ret nz
+	ld a, [wOverworldWeatherTimer]
+	and WEATHER_SCHEDULE_CHECK_MASK
+	ret nz
+
+	push bc
+	push de
+	push hl
+	call RefreshScheduledWeatherRoll
+	jr nc, .done
+
+	ld a, [wScheduledWeatherProfile]
+	and WEATHER_PROFILE_MASK
+	cp WEATHER_PROFILE_FIXED
+	jr z, .done
+	call ResolveScheduledFieldWeather
+	ld b, a
+	ld a, [wFieldWeather]
+	cp b
+	jr z, .done
+	ld a, b
+	call ApplyScheduledFieldWeather
+.done
+	pop hl
+	pop de
+	pop bc
+	ret
+
+ApplyScheduledFieldWeather:
+; a = destination WEATHER_* value
+	push af
+	call SaveWeatherFadeSource
+	call ClearWeatherSprites
+	pop af
+	ld [wFieldWeather], a
+	ld [wPreviousFieldWeather], a
+	xor a
+	ld [wOverworldWeatherCooldown], a
+	call SelectWeatherObjPalette
+	call LoadWeatherGraphics
+	farcall LoadMapPals
+	jp MapConnWeatherFade
+
 SetCurrentWeather::
+	call ResolvePendingMapWeather
 	ld a, [wPreviousFieldWeather]
 	ld b, a
 	ld a, [wFieldWeather]

@@ -22,12 +22,9 @@ Route43_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
-	callback MAPCALLBACK_OBJECTS, WeatherAndFieldMon
+	callback MAPCALLBACK_OBJECTS, Route43FieldMon
 
-WeatherAndFieldMon:
-	setval WEATHER_RAIN
-	writemem wFieldWeather
-
+Route43FieldMon:
     appear ROUTE43_FIELDMON_1
     appear ROUTE43_FIELDMON_3
     appear ROUTE43_FIELDMON_4

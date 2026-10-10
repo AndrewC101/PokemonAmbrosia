@@ -15,6 +15,8 @@ CapeStorm_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .CapeStormFieldMon
 
 .CapeStormFieldMon:
+	setval WEATHER_RAIN
+	writemem wFieldWeather
 	appear CAPE_STORM_FIELDMON_1
 	appear CAPE_STORM_FIELDMON_2
 	appear CAPE_STORM_FIELDMON_3

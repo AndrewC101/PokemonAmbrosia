@@ -1737,8 +1737,7 @@ BattleArcadeReceptionistScript:
     iffalse .Declined
     setval 0
     writemem wHandOfGod
-	setval WEATHER_NONE
-	writemem wFieldWeather
+	callasm ClearFieldWeatherAndLock
    ; writetext WantToPlayAsAnotherText
    ; yesorno
    ; iffalse .pickEnemy

@@ -534,8 +534,7 @@ YuGiOhRolePlayScript:
     iffalse .refused
     setval 0
     writemem wHandOfGod
-	setval WEATHER_NONE
-	writemem wFieldWeather
+	callasm ClearFieldWeatherAndLock
 	setval BATTLETYPE_BATTLE_FRONTIER
 	writemem wBattleType
 	special FadeOutMusic

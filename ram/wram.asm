@@ -3055,7 +3055,10 @@ wVariableSprites:: ds $100 - SPRITE_VARS
 wMapNameSignFlags:: db
 wWhiteoutCount:: dw
 wTimeOfDayPal:: db
-	ds 4
+wScheduledWeatherRoll:: db
+wScheduledWeatherDay:: db
+wScheduledWeatherSlot:: db
+wScheduledWeatherProfile:: db
 wTimeOfDayPalFlags:: db
 wTimeOfDayPalset:: db
 wCurTimeOfDay:: db

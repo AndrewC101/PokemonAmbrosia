@@ -24,11 +24,6 @@ NationalPark_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .NationalParkFieldMon
 
 .NationalParkFieldMon:
-    checktime NITE
-    iftrue .skipWeather
-	setval WEATHER_SUN
-	writemem wFieldWeather
-.skipWeather
     disappear NATIONALPARK_LEON
     disappear NATIONALPARK_CHARIZARD
     checkevent EVENT_BEAT_MORTY
@@ -37,8 +32,6 @@ NationalPark_MapScripts:
 	ifequal SATURDAY, .appearLeon
     sjump .fieldMon
 .appearLeon
-	setval WEATHER_NONE
-	writemem wFieldWeather
     appear NATIONALPARK_LEON
     appear NATIONALPARK_CHARIZARD
     moveobject NATIONALPARK_TEACHER2, 16, 26

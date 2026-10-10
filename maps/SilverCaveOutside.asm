@@ -26,22 +26,7 @@ SilverCaveOutsideFlypointCallback:
 
 Objects:
     checkevent EVENT_BEAT_CRYSTAL_7
-    iffalse .noWeather
-    random 4
-    ifequal 1, .sand
-    ifequal 2, .hail
-	setval WEATHER_NONE
-	writemem wFieldWeather
-	sjump .spawn
-.hail
-	setval WEATHER_HAIL
-	writemem wFieldWeather
-	sjump .spawn
-.sand
-	setval WEATHER_SANDSTORM
-	writemem wFieldWeather
-	sjump .spawn
-.noWeather
+    iftrue .spawn
 	setval WEATHER_NONE
 	writemem wFieldWeather
 .spawn
@@ -745,8 +730,7 @@ HoenWarRolePlayScript:
     iffalse .refused
     setval 0
     writemem wHandOfGod
-	setval WEATHER_NONE
-	writemem wFieldWeather
+	callasm ClearFieldWeatherAndLock
 	setval BATTLETYPE_BATTLE_FRONTIER
 	writemem wBattleType
     writetext HoenWarHeroOrVillainChoiceText

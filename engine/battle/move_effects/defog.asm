@@ -1,8 +1,8 @@
 BattleCommand_Defog:
 ; clear weather
-	ld a, WEATHER_NONE
+	xor a
 	ld [wBattleWeather], a
-	ld [wFieldWeather], a
+	newfarcall ClearFieldWeatherAndLock
 
 ; clear all screens
     ld a, 1

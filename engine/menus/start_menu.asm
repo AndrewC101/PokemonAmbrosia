@@ -31,14 +31,12 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
-	call .DrawDifficultyTextBox
-	call .DrawMenuClockTextBox
+	call .DrawMenuInfoTextBox
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatusBox
 	call SafeUpdateSprites
 	call HDMATransferTilemapAndAttrmap_Menu
 	farcall LoadFonts_NoOAMUpdate
-	call .PrintDifficulty
 	call .DrawBugContestStatus
 	call UpdateTimePals
 	jr .Select
@@ -49,12 +47,11 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
-	call .PrintDifficulty
 
 .Select:
 	call .GetInput
 	jr c, .Exit
-	call ._DrawMenuClockTextBox
+	call ._DrawMenuInfoTextBox
 	ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	call PlayClickSFX
@@ -101,12 +98,12 @@ StartMenu::
 ; Return carry on exit, and no-carry on selection.
 	xor a
 	ldh [hBGMapMode], a
-	call ._DrawMenuClockTextBox
+	call ._DrawMenuInfoTextBox
 	call SetUpMenu
 	ld a, $ff
 	ld [wMenuSelection], a
 .loop
-	call .PrintMenuClock
+	call .PrintMenuInfo
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
 	cp PAD_B
@@ -152,10 +149,8 @@ StartMenu::
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
-	call .DrawDifficultyTextBox
-	call .DrawMenuClockTextBox
+	call .DrawMenuInfoTextBox
 	call DrawVariableLengthMenuBox
-	call .PrintDifficulty
 	call .DrawBugContestStatus
 	call UpdateSprites
 	call GSReloadPalettes
@@ -330,11 +325,11 @@ endr
 	inc c
 	ret
 
-.DrawMenuClockTextBox:
-	jp ._DrawMenuClockTextBox
+.DrawMenuInfoTextBox:
+	jp ._DrawMenuInfoTextBox
 
-.PrintMenuClock:
-	call .DrawMenuClockTextBox
+.PrintMenuInfo:
+	call .DrawMenuInfoTextBox
 	bccoord 1, 13
 	call TextCommand_DAY
 	ld a, [hHours]
@@ -343,71 +338,14 @@ endr
 	ld c, a
 	decoord 1, 14
 	farcall PrintHoursMins
-
-	ld a, [wFieldWeather]
-	cp WEATHER_RAIN
-	jr z, .PrintRaining
-
-	cp WEATHER_SUN
-	jr z, .PrintSunny
-
-	cp WEATHER_SANDSTORM
-	jr z, .PrintSandstorm
-
-	cp WEATHER_HAIL
-	jr z, .PrintHail
-
-    cp WEATHER_NONE
-	jr z, .PrintClearSkies
-	ret
-
-.PrintRaining:
-	hlcoord 1, 16
-	ld de, .RainingStr
-	call PlaceString
-	ret
-
-.PrintSunny:
-	hlcoord 1, 16
-	ld de, .SunnyStr
-	call PlaceString
-	ret
-
-.PrintSandstorm:
-	hlcoord 1, 16
-	ld de, .SandstormStr
-	call PlaceString
-	ret
-
-.PrintHail:
-	hlcoord 1, 16
-	ld de, .HailStr
-	call PlaceString
-	ret
-
-.PrintClearSkies:
-	hlcoord 1, 16
-	ld de, .ClearStr
-	call PlaceString
-	ret
-
-.RainingStr:
- 	db "Raining@"
-.SunnyStr:
- 	db "Sunny@"
-.SandstormStr:
- 	db "Sandstorm@"
-.HailStr:
- 	db "Hail@"
-.ClearStr:
-	db "Clear@"
+	jp .PrintDifficulty
 
 .IsMenuClockOn:
 	ld a, [wOptions2]
 	and 1 << BATTLE_INFO
 	ret
 
-._DrawMenuClockTextBox
+._DrawMenuInfoTextBox
 	; place white box
 	hlcoord 0, 12
 	lb bc, 6, 11
@@ -418,27 +356,7 @@ endr
 	lb bc, 4, 9
 	jp Textbox
 
-.DrawDifficultyTextBox:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	ret nz
-
-	hlcoord 2, 0
-	lb bc, 2, 6
-	call ClearBox
-	hlcoord 2, 0
-	lb bc, 2, 6
-	jp Textbox
-
 .PrintDifficulty:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	ret nz
-
-	hlcoord 3, 1
-	ld de, .ModeLabel
-	call PlaceString
-
 	ld a, [wDifficulty]
 	ld de, .Normal
 	cp DIFFICULTY_HARD
@@ -452,12 +370,9 @@ endr
 	ld de, .Easy
 
 .place_mode
-	hlcoord 3, 2
+	hlcoord 1, 16
 	call PlaceString
 	ret
-
-.ModeLabel:
-	db "Mode:@"
 
 .Hard:
 	db "Hard@"

@@ -24,11 +24,14 @@ MartTypeDialogs:
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw MarkupMart
 	assert_table_length NUM_MART_TYPES
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
 	ld [wMartType], a
+MarkupMart:
+	; Retain MARTTYPE_MARKUP so every purchase path applies its multiplier.
 	xor a ; STANDARDMART_HOWMAYIHELPYOU
 	ld [wMartJumptableIndex], a
 	call StandardMart
@@ -251,7 +254,7 @@ GetMartItemPrice:
 ; Return the price of item a in BCD at hl and in tiles at wStringBuffer1.
 	push hl
 	ld [wCurItem], a
-	farcall GetItemPrice
+	call GetCurrentMartItemPrice
 	pop hl
 
 GetMartPrice:
@@ -390,7 +393,7 @@ MartAskPurchaseQuantity:
 	call CheckItem
 	pop de
 	jp c, .AlreadyHaveTM
-	farcall GetItemPrice
+	call GetCurrentMartItemPrice
 	ld a, d
 	ld [wBuySellItemPrice + 0], a
 	ld a, e
@@ -433,11 +436,14 @@ GetMartDialogGroup:
 	ret
 
 .MartTextFunctionPointers:
+	table_width 3
 	dwb .StandardMartPointers, 0
 	dwb .HerbShopPointers, 0
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .StandardMartPointers, 0 ; MARTTYPE_MARKUP
+	assert_table_length NUM_MART_TYPES
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -544,7 +550,7 @@ BuyMenuLoop:
 	ret
 
 StandardMartAskPurchaseQuantity:
-	farcall GetItemPrice
+	call GetCurrentMartItemPrice
 	call GetMartMaxAffordableQuantity
 	and a
 	jp z, MartAskPurchaseQuantity_NotEnoughMoney
@@ -553,6 +559,17 @@ StandardMartAskPurchaseQuantity:
 	call LoadBuyMenuText
 	farcall SelectQuantityToBuy
 	call ExitMenu
+	ret
+
+GetCurrentMartItemPrice::
+; Return the current mart's 16-bit purchase price in de.
+; Markup stock must have base prices no greater than $7fff.
+	farcall GetItemPrice
+	ld a, [wMartType]
+	cp MARTTYPE_MARKUP
+	ret nz
+	sla e
+	rl d
 	ret
 
 MartConfirmPurchase:

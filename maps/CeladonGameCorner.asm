@@ -8,6 +8,7 @@
 	const CELADONGAMECORNER_FISHER2
 	const CELADONGAMECORNER_GYM_GUIDE
 	const CELADONGAMECORNER_GRAMPS
+	const CELADONGAMECORNER_ROCKET
 
 CeladonGameCorner_MapScripts:
 	def_scene_scripts
@@ -218,9 +219,6 @@ CeladonGymGuideText:
 	text "Hey! Champ in"
 	line "making!"
 
-	para "Are you playing"
-	line "the slots too?"
-
 	para "Look I need to"
 	line "get money somehow."
 
@@ -240,9 +238,6 @@ CeladonGameCornerGrampsText:
 
 	para "Solosis is way"
 	line "smaller."
-
-	para "I can fit several"
-	line "in my pockets."
 	done
 
 CeladonGameCornerPoster1Text:
@@ -266,6 +261,30 @@ CeladonGameCornerSodaCanText:
 	line "coming back…"
 
 	para "Huh? It's empty!"
+	done
+
+RocketMartScript:
+    faceplayer
+    opentext
+    writetext RocketMartText
+    waitbutton
+    pokemart MARTTYPE_MARKUP, MART_ROCKET
+    closetext
+    end
+
+RocketMartText:
+	text "Greetings!"
+	para "I have a"
+	line "particular talent"
+	cont "for procurement."
+	para "As long as one"
+	line "isn't too"
+	cont "curious about my"
+	cont "sources."
+	para "I can supply you"
+	line "anything for..."
+	para "appropriate"
+	line "compensation."
 	done
 
 CeladonGameCorner_MapEvents:
@@ -327,3 +346,4 @@ CeladonGameCorner_MapEvents:
 	object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1
 	object_event 11,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGymGuideScript, -1
 	object_event  2,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerGrampsScript, -1
+	object_event 19,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RocketMartScript, -1

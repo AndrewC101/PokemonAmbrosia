@@ -5,7 +5,7 @@ SelectQuantityToToss:
 	ret
 
 SelectQuantityToBuy:
-	farcall GetItemPrice
+	farcall GetCurrentMartItemPrice
 RooftopSale_SelectQuantityToBuy:
 	ld a, d
 	ld [wBuySellItemPrice + 0], a

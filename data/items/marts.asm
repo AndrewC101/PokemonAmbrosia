@@ -37,6 +37,7 @@ Marts:
 	dw MartBerry
 	dw MartNewGamePlus
 	dw MartMail
+	dw MartRocket
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -503,6 +504,26 @@ MartMail:
 	db MUSIC_MAIL
 	db MIRAGE_MAIL
 	db -1
+
+MartRocket:
+    db 16 ; # items
+    db RARE_CANDY
+    db MASTER_BALL
+    db LEFTOVERS
+    db LIFE_ORB
+    db CHOICE_BAND
+    db CHOICE_SPECS
+    db ASSAULT_VEST
+    db FOCUS_SASH
+    db EVIOLITE
+    db EXPERT_BELT
+    db FLAME_ORB
+    db MAX_REVIVE
+    db MAX_ELIXER
+    db SLOWPOKETAIL
+    db BIG_MUSHROOM
+    db STAR_PIECE
+    db -1
 
 DefaultMart:
 	db 2 ; # items

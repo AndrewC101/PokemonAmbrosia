@@ -111,7 +111,6 @@ INCLUDE "maps/CeladonMansionRoofHouse.asm"
 INCLUDE "maps/CeladonPokecenter1F.asm"
 ;INCLUDE "maps/CeladonPokecenter2FBeta.asm"
 INCLUDE "maps/CeladonGameCorner.asm"
-INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"
 INCLUDE "maps/CeladonGym.asm"
 
 SECTION "Map Scripts 8", ROMX
@@ -626,7 +625,6 @@ INCLUDE "maps/TohjoLake.asm"
 
 SECTION "Map Scripts 63", ROMX
 
-SECTION "Map Scripts 64", ROMX
-
 INCLUDE "maps/CherrygroveBay.asm"
 INCLUDE "maps/CherrygroveRuins.asm"
+INCLUDE "maps/CeladonGameCornerPrizeRoom.asm"

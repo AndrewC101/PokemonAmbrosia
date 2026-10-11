@@ -299,6 +299,9 @@ GetMapScheduledWeatherProfile:
 	ret
 
 .MapProfiles:
+	db GROUP_BLACKTHORN_CITY, MAP_BLACKTHORN_CITY, WEATHER_PROFILE_MOUNTAIN
+	db GROUP_ROUTE_23, MAP_ROUTE_23, WEATHER_PROFILE_MOUNTAIN
+	db GROUP_ROUTE_26, MAP_ROUTE_26, WEATHER_PROFILE_MOUNTAIN
 	db GROUP_ROUTE_28, MAP_ROUTE_28, WEATHER_PROFILE_MOUNTAIN
 	db GROUP_ROUTE_45, MAP_ROUTE_45, WEATHER_PROFILE_MOUNTAIN
 	db GROUP_SILVER_CAVE_OUTSIDE, MAP_SILVER_CAVE_OUTSIDE, WEATHER_PROFILE_MOUNTAIN
@@ -383,13 +386,14 @@ ResolveScheduledFieldWeather:
 	ld a, [wFieldWeather]
 	ret
 
+; Entries correspond to saved rolls 1..4 (zero-based indices 0..3).
 JohtoScheduledWeather:
 	db WEATHER_NONE, WEATHER_NONE, WEATHER_RAIN, WEATHER_SUN
 JohtoScheduledWeatherEnd:
 	assert JohtoScheduledWeatherEnd - JohtoScheduledWeather == NUM_SCHEDULED_WEATHERS
 
 KantoScheduledWeather:
-	db WEATHER_NONE, WEATHER_NONE, WEATHER_SUN, WEATHER_RAIN
+	db WEATHER_RAIN, WEATHER_SUN, WEATHER_NONE, WEATHER_NONE
 KantoScheduledWeatherEnd:
 	assert KantoScheduledWeatherEnd - KantoScheduledWeather == NUM_SCHEDULED_WEATHERS
 

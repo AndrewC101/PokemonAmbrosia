@@ -22,11 +22,6 @@ Route26_MapScripts:
 
 .Route26FieldMon:
 ; Pokemon which always appear
-    checkevent EVENT_BEAT_CRYSTAL_5
-    iftrue .skipWeather
-	setval WEATHER_NONE
-	writemem wFieldWeather
-.skipWeather
     appear ROUTE26_FIELDMON_1
     appear ROUTE26_FIELDMON_3
     appear ROUTE26_FIELDMON_4

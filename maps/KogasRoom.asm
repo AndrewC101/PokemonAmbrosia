@@ -40,11 +40,6 @@ KogasRoomDoorLocksBehindYouScript:
 	waitsfx
 	end
 
-;.Weather:
-;	setval WEATHER_RAIN
-;	writemem wFieldWeather
-;	endcallback
-
 AdamScript_Battle:
 	faceplayer
 	opentext

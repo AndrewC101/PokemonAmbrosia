@@ -17,6 +17,13 @@ Route28_MapScripts:
     callback MAPCALLBACK_OBJECTS, .FieldMon
 
 .FieldMon:
+    checkevent EVENT_BEAT_BLUE
+    iffalse .spawn
+    checkevent EVENT_BEAT_CRYSTAL_7
+    iftrue .spawn
+	setval WEATHER_NONE
+	writemem wFieldWeather
+.spawn
 	appear ROUTE28_FIELDMON_1
 	appear ROUTE28_FIELDMON_2
 	appear ROUTE28_FIELDMON_3

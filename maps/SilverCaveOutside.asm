@@ -25,6 +25,8 @@ SilverCaveOutsideFlypointCallback:
 	endcallback
 
 Objects:
+    checkevent EVENT_BEAT_BLUE
+    iffalse .spawn
     checkevent EVENT_BEAT_CRYSTAL_7
     iftrue .spawn
 	setval WEATHER_NONE

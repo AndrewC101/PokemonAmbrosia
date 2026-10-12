@@ -117,11 +117,8 @@ CinnabarIslandBlueText:
 
 	para "If you get seven"
 	line "Kanto Gym Badges"
-	cont "and manage to fix"
-	cont "the issues at the"
-	cont "Power Plant then"
-	cont "come see me in"
-	cont "Viridian."
+	cont "then come see me"
+	cont "in Viridian."
 
 	para "I'm the Gym"
 	line "Leader."

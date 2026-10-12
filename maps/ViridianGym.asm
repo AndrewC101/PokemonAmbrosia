@@ -10,12 +10,25 @@ ViridianGym_MapScripts:
 
 .Blue
     disappear VIRIDIANGYM_GREEN
-    checkevent EVENT_RESTORED_POWER_TO_KANTO
-    iffalse .gone
     checkevent EVENT_HOEN_INVASION_UNDERWAY
     iftrue .gone
     checkevent EVENT_VIRIDIAN_GYM_BLUE
     iftrue .gone
+	; Match the seven Kanto leaders required by Blue's battle script.
+	checkevent EVENT_BEAT_BROCK
+	iffalse .gone
+	checkevent EVENT_BEAT_MISTY
+	iffalse .gone
+	checkevent EVENT_BEAT_LTSURGE
+	iffalse .gone
+	checkevent EVENT_BEAT_ERIKA
+	iffalse .gone
+	checkevent EVENT_BEAT_JANINE
+	iffalse .gone
+	checkevent EVENT_BEAT_WILL
+	iffalse .gone
+	checkevent EVENT_BEAT_BLAINE
+	iffalse .gone
     appear VIRIDIANGYM_BLUE
     sjump .end
 .gone
@@ -361,8 +374,6 @@ RematchRefuseTextBlue:
     done
 
 ApproachBlueScript1:
-    checkevent EVENT_RESTORED_POWER_TO_KANTO
-    iffalse .end
     checkevent EVENT_HOEN_INVASION_UNDERWAY
     iftrue .end
     checkevent EVENT_VIRIDIAN_GYM_BLUE
@@ -389,8 +400,6 @@ ApproachBlueScript1:
     end
 
 ApproachBlueScript2:
-    checkevent EVENT_RESTORED_POWER_TO_KANTO
-    iffalse .end
     checkevent EVENT_HOEN_INVASION_UNDERWAY
     iftrue .end
     checkevent EVENT_VIRIDIAN_GYM_BLUE

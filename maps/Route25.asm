@@ -21,7 +21,7 @@ Route25_MapScripts:
 	scene_script Route25Noop2Scene, SCENE_ROUTE25_MISTYS_DATE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route25FieldMon
+	callback MAPCALLBACK_OBJECTS, Route25ObjectCallback
 
 Route25Noop1Scene:
 	end
@@ -29,7 +29,22 @@ Route25Noop1Scene:
 Route25Noop2Scene:
 	end
 
-Route25FieldMon:
+Route25ObjectCallback:
+; Misty's date becomes available after the Elite Four and remains available
+; until completing it returns the Cerulean Gym trainers.
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .hide_mistys_date
+	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
+	iffalse .hide_mistys_date
+	appear ROUTE25_MISTY
+	appear ROUTE25_COOLTRAINER_M1
+	setscene SCENE_ROUTE25_MISTYS_DATE
+	sjump .field_mons
+.hide_mistys_date
+	disappear ROUTE25_MISTY
+	disappear ROUTE25_COOLTRAINER_M1
+	setscene SCENE_ROUTE25_NOOP
+.field_mons
 ; Pokemon which always appear
     appear ROUTE25_FIELDMON_1
     appear ROUTE25_FIELDMON_2

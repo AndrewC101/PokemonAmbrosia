@@ -6,7 +6,11 @@
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
 	const VICTORYROAD_INVADER
-    const VICTORYROAD_PLAYER_1
+	const VICTORYROAD_PLAYER_1
+	const VICTORYROAD_DARKQ
+	const VICTORYROAD_MARECHAL
+	const VICTORYROAD_NYUON321
+	const VICTORYROAD_JO14
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -280,6 +284,132 @@ SumAfterBattleText:
 	line "more left to do."
 	done
 
+TrainerDarkQScript:
+	trainer COOLTRAINERM, DARKQ, EVENT_BEAT_DARKQ, DarkQSeenText, DarkQBeatenText, DarkQBeatenText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext DarkQAfterBattleText
+	waitbutton
+	closetext
+	end
+
+DarkQSeenText:
+	text "My #mon just"
+	line "hit things."
+	para "I don't waste"
+	line "turns not doing"
+	cont "damage!"
+	done
+
+DarkQBeatenText:
+	text "Keep the pressure"
+	line "up!"
+	done
+
+DarkQAfterBattleText:
+	text "You just got to"
+	line "keep attacking."
+	para "That's the only"
+	line "way to get through"
+	cont "life."
+	done
+
+TrainerMarechalScript:
+	trainer COOLTRAINERM, MARECHAL, EVENT_BEAT_MARECHAL, MarechalSeenText, MarechalBeatenText, MarechalBeatenText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext MarechalAfterBattleText
+	waitbutton
+	closetext
+	end
+
+MarechalSeenText:
+	text "BONJOUR MON"
+	line "BRAVE!"
+
+	para "I'm playing on my"
+	line "NumWorks"
+	cont "Calculator."
+	done
+
+MarechalBeatenText:
+	text "Fascinating"
+	line "calculation."
+	done
+
+MarechalAfterBattleText:
+	text "Yes, it's possible"
+	line "to play on a"
+	cont "NumWorks"
+	cont "Calculator."
+	done
+
+TrainerNyuon321Script:
+	trainer COOLTRAINERM, NYUON321, EVENT_BEAT_NYUON321, Nyuon321SeenText, Nyuon321BeatenText, Nyuon321BeatenText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext Nyuon321AfterBattleText
+	waitbutton
+	closetext
+	end
+
+Nyuon321SeenText:
+	text "This isn't all"
+	line "that difficult is"
+	cont "it?"
+	done
+
+Nyuon321BeatenText:
+	text "See what I mean."
+	done
+
+Nyuon321AfterBattleText:
+	text "A few set up"
+	line "sweepers."
+	para "A few Focus"
+	line "Sashes."
+	para "You're good to go!"
+	done
+
+TrainerJo14Script:
+	trainer COOLTRAINERM, JO14, EVENT_BEAT_JO14, Jo14SeenText, Jo14BeatenText, Jo14BeatenText, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext Jo14AfterBattleText
+	waitbutton
+	closetext
+	end
+
+Jo14SeenText:
+	text "I've done it!"
+	para "I've come up with"
+	line "the perfect team"
+	cont "to beat Lance!"
+	para "With this, I will"
+	line "become the Johto"
+	cont "Champion!"
+	done
+
+Jo14BeatenText:
+	text "You are not my"
+	line "target."
+	done
+
+Jo14AfterBattleText:
+	text "It didn't work on"
+	line "you but it will"
+	cont "work on Lance."
+	para "It will!"
+	done
+
 InvaderSolaireScript:
 	trainer INVADER, SOLAIRE, EVENT_BEAT_INVADER_SOLAIRE, InvaderSolaireSeenText, InvaderSolaireBeatenText, InvaderSolaireVictoryText, .Script
 
@@ -354,4 +484,9 @@ VictoryRoad_MapEvents:
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMFlamethrower, EVENT_VICTORY_ROAD_TM_FLAMETHROWER
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_ITEMBALL, 0, VictoryRoadAmbrosia, EVENT_VICTORY_ROAD_AMBROSIA
 	object_event 12, 38, SPRITE_MORTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderSolaireScript, -1
-	object_event  3, 26, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSum1Script, -1
+	object_event  3, 26, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerSum1Script, -1
+
+	object_event  9, 56, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerDarkQScript, -1
+	object_event 13, 29, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerMarechalScript, -1
+	object_event  6, 14, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, TrainerNyuon321Script, -1
+	object_event  6,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 0, TrainerJo14Script, -1

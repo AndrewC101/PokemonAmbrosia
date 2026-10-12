@@ -500,6 +500,10 @@
 	const EVENT_SILVER_CAVE_OUTSIDE_RPG_NPC_HIDDEN
 	const EVENT_MANOR_WEEKEND_KIDS_HIDDEN
 	const EVENT_BEAT_SUM1
+	const EVENT_BEAT_DARKQ
+	const EVENT_BEAT_MARECHAL
+	const EVENT_BEAT_NYUON321
+	const EVENT_BEAT_JO14
 
 	; ======================================
 	; DevNote - here

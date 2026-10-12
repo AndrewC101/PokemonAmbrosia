@@ -237,11 +237,11 @@ DEF KRIS EQU __trainer_class__
 	const BLAKE
 	const BRIAN
 	const SUM1
-	const ANDY ; unused
-	const TYLER ; unused
+	const DARKQ
+	const NYUON321
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const MARECHAL
 	const ALLEN
 	const DARIN
 	const TOBIAS
@@ -249,6 +249,7 @@ DEF KRIS EQU __trainer_class__
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const JO14
 
 	trainerclass COOLTRAINERF ; 1c
 	const GWEN

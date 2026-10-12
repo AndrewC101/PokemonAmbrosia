@@ -519,31 +519,6 @@ PokegearClock_Joypad:
 	ldh [hBGMapMode], a
 	ret
 
-GetMapName_hlcoord: ; FarStringLength: ; thanks Rangi!
-; input: a:de = "@"-terminated string
-; output: adjusted hlcoord ;;;; c = length of string
-	push de
-    ld c, 0 ; str len
-    ld h, d
-    ld l, e
-    ld d, a ; bank
-.loop:
-	ld a, d ; bank
-    call GetFarByte
-    cp "@"
-    jr z, .get_hlcoord
-    inc c
-    inc hl
-    jr .loop
-.get_hlcoord
-	pop de
-	hlcoord 1, 8
-	ld a, c
-	cp 18
-	ret z
-	hlcoord 2, 8
-	ret
-
 Pokegear_UpdateClock:
 	; makes the grey colored box
 	hlcoord 1, 5
@@ -599,10 +574,7 @@ Pokegear_UpdateClock:
 	ld d, a
 	farcall GetMapGroupNum_Name
 	; return string ptr in de
-	ld a, BANK(MapGroupNum_Names)
-	call GetMapName_hlcoord ; input a:de, output hlcoord 1 or 2 depending on length 
-	ld a, BANK(MapGroupNum_Names)
-	call PlaceFarString
+	farcall PlacePokegearMapName
 	; Fishing group
 	; d ; map num
 	; e ; map group

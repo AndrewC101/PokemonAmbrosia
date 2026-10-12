@@ -625,8 +625,9 @@ SelectWeatherObjPalette::
 	ret
 
 .PreferredSlots:
-	db PAL_OW_TREE, PAL_OW_PINK
-	db PAL_OW_RED, PAL_OW_BLUE, PAL_OW_GREEN, PAL_OW_BROWN
+	; Brown is less visually conspicuous if a runtime object later claims the slot.
+	db PAL_OW_BROWN, PAL_OW_YELLOW, PAL_OW_PINK
+	db PAL_OW_BLUE, PAL_OW_GREEN, PAL_OW_RED
 	db WEATHER_PAL_SLOT_NONE
 
 .PaletteBits:

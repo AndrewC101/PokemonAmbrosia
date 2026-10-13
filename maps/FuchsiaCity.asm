@@ -33,6 +33,8 @@ Invasion:
     iffalse .end
     checkevent EVENT_BEAT_SOLDIER_9
     iffalse .end
+ 	setval WEATHER_RAIN
+ 	writemem wFieldWeather
     appear FUCHSIACITY_SOLDIER_1
     appear FUCHSIACITY_SOLDIER_2
 .end

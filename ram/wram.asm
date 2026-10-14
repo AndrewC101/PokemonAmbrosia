@@ -1881,6 +1881,7 @@ wOptions2::
 ; bit 1: battle text normal/minimum
 ; bits 2-3: overworld speed, x1/x2/x4
 ; bits 4-5: battle engine speed, x1/x2/x4
+; bit 6: RTC/step-based time flow
 	db
 wPlayerColor:: db
 wPlayerSpriteChoice:: db

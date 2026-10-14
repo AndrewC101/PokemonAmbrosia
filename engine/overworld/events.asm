@@ -886,6 +886,13 @@ CountStep:
 	and a
 	jr nz, .done
 
+	; Advance once for the completed movement, even if this step triggers a script.
+	ld a, [wOptions2]
+	bit STEP_CLOCK_F, a
+	jr z, .skip_step_clock
+	farcall AdvanceStepClock
+.skip_step_clock
+
 	; If there is a special phone call, don't count the step.
 	farcall CheckSpecialPhoneCall
 	jr c, .doscript

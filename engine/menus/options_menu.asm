@@ -7,8 +7,9 @@
 	const OPT_MENU_CLOCK   ; 4
 	const OPT_DIFFICULTY   ; 5
 	const OPT_FRAME        ; 6
-	const OPT_CANCEL       ; 7
-DEF NUM_OPTIONS EQU const_value    ; 8
+	const OPT_TIME_FLOW    ; 7
+	const OPT_CANCEL       ; 8
+DEF NUM_OPTIONS EQU const_value    ; 9
 
 _Option::
     call ClearJoypad
@@ -17,18 +18,16 @@ _Option::
 	push af
 	ld [hl], TRUE
 	call ClearBGPalettes
-	hlcoord 0, 0
-	ld b, SCREEN_HEIGHT - 2
-	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	hlcoord 2, 2
+	call ClearScreen
+	call .DrawBorderRails
+	hlcoord 2, 0
 	ld de, StringOptions
 	call PlaceString
 	xor a
 	ld [wJumptableIndex], a
 
 ; display the settings of each option when the menu is opened
-	ld c, NUM_OPTIONS - 2 ; omit frame type, the last option
+	ld c, OPT_FRAME ; options before the specialized frame display
 .print_text_loop
 	push bc
 	xor a
@@ -40,6 +39,11 @@ _Option::
 	dec c
 	jr nz, .print_text_loop
 	call UpdateFrame ; display the frame type
+	ld a, OPT_TIME_FLOW
+	ld [wJumptableIndex], a
+	xor a
+	ldh [hJoyPressed], a
+	call Options_TimeFlow
 
 	xor a
 	ld [wJumptableIndex], a
@@ -79,6 +83,22 @@ _Option::
 	ldh [hInMenu], a
 	ret
 
+.DrawBorderRails:
+; Keep the frame preview visible while leaving all 18 screen rows usable.
+; de spans from the left rail to the right; inc hl then starts the next row.
+	hlcoord 0, 0
+	ld de, SCREEN_WIDTH - 1
+	ld a, '│'
+	ld c, SCREEN_HEIGHT
+.rail_loop
+	ld [hl], a
+	add hl, de
+	ld [hl], a
+	inc hl
+	dec c
+	jr nz, .rail_loop
+	ret
+
 StringOptions:
 	db "Text Speed<LF>"
 	db "        :<LF>"
@@ -94,6 +114,8 @@ StringOptions:
 	db "        :<LF>"
 	db "Frame<LF>"
 	db "        :Type<LF>"
+	db "Time Flow<LF>"
+	db "        :<LF>"
 	db "Done@"
 
 GetOptionPointer:
@@ -108,6 +130,7 @@ GetOptionPointer:
 	dw Options_MenuClock
 	dw Options_Difficulty
 	dw Options_Frame
+	dw Options_TimeFlow
 	dw Options_Cancel
 
 	const_def
@@ -158,7 +181,7 @@ Options_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 3
+	hlcoord 11, 1
 	call PlaceString
 	and a
 	ret
@@ -237,7 +260,7 @@ Options_BattleScene:
 	ld de, .Off
 
 .Display:
-	hlcoord 11, 5
+	hlcoord 11, 3
 	call PlaceString
 	and a
 	ret
@@ -275,7 +298,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 11, 5
 	call PlaceString
 	and a
 	ret
@@ -337,7 +360,7 @@ Options_Difficulty:
 	ld de, .Easy
 
 .place_string
-	hlcoord 11, 13
+	hlcoord 11, 11
 	call PlaceString
 	and a
 	ret
@@ -397,7 +420,7 @@ Options_BattleText:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 11, 7
 	call PlaceString
 	and a
 	ret
@@ -537,7 +560,7 @@ Options_MenuClock:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 11
+	hlcoord 11, 9
 	call PlaceString
 	and a
 	ret
@@ -569,12 +592,45 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 16, 13 ; where on the screen the number is drawn
 	add '1'
 	ld [hl], a
 	call LoadFontsExtra
 	and a
 	ret
+
+Options_TimeFlow:
+	ldh a, [hJoyPressed]
+	bit B_PAD_LEFT, a
+	jr nz, .Toggle
+	bit B_PAD_RIGHT, a
+	jr z, .Display
+
+.Toggle:
+	ld a, [wOptions2]
+	bit STEP_CLOCK_F, a
+	jr nz, .EnableRTC
+	farcall EnableStepClock
+	jr .Display
+
+.EnableRTC:
+	farcall EnableRTCClock
+
+.Display:
+	ld a, [wOptions2]
+	bit STEP_CLOCK_F, a
+	ld de, .RTC
+	jr z, .PlaceString
+	ld de, .Steps
+
+.PlaceString:
+	hlcoord 11, 15
+	call PlaceString
+	and a
+	ret
+
+.RTC:   db "RTC  @"
+.Steps: db "Steps@"
 
 Options_Cancel:
 	ldh a, [hJoyPressed]
@@ -600,15 +656,10 @@ OptionsControl:
 .DownPressed:
 	ld a, [hl]
 	cp OPT_CANCEL ; maximum option index
-	jr nz, .CheckDifficulty
+	jr nz, .Increase
 	ld [hl], OPT_TEXT_SPEED ; first option
 	scf
 	ret
-
-.CheckDifficulty: ; I have no idea why this exists...
-	cp OPT_DIFFICULTY
-	jr nz, .Increase
-	ld [hl], OPT_DIFFICULTY
 
 .Increase:
 	inc [hl]
@@ -617,15 +668,6 @@ OptionsControl:
 
 .UpPressed:
 	ld a, [hl]
-
-; Another thing where I'm not sure why it exists
-	cp OPT_FRAME
-	jr nz, .NotFrame
-	ld [hl], OPT_DIFFICULTY
-	scf
-	ret
-
-.NotFrame:
 	and a ; OPT_TEXT_SPEED, minimum option index
 	jr nz, .Decrease
 	ld [hl], NUM_OPTIONS ; decrements to OPT_CANCEL, maximum option index
@@ -636,15 +678,15 @@ OptionsControl:
 	ret
 
 Options_UpdateCursorPosition:
-	hlcoord 1, 1
+	hlcoord 1, 0
 	ld de, SCREEN_WIDTH
-	ld c, SCREEN_HEIGHT - 2
+	ld c, 2 * NUM_OPTIONS - 1 ; rows 0 through 16
 .loop
 	ld [hl], ' '
 	add hl, de
 	dec c
 	jr nz, .loop
-	hlcoord 1, 2
+	hlcoord 1, 0
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wJumptableIndex]
 	call AddNTimes

@@ -9,6 +9,13 @@ LatchClock::
 	ret
 
 UpdateTime::
+	ld a, [wOptions2]
+	bit STEP_CLOCK_F, a
+	jr z, .rtc
+	farcall LoadStepClock
+	ret
+
+.rtc
 	call GetClock
 	call FixDays
 	call FixTime
@@ -259,8 +266,16 @@ RecordRTCStatus::
 
 CheckRTCStatus::
 ; check sRTCStatusFlags
+	ld a, [wOptions2]
+	bit STEP_CLOCK_F, a
+	jr nz, .step_clock
 	ld a, BANK(sRTCStatusFlags)
 	call OpenSRAM
 	ld a, [sRTCStatusFlags]
 	call CloseSRAM
+	ret
+
+.step_clock
+	; A software clock cannot inherit stale hardware RTC errors.
+	xor a
 	ret

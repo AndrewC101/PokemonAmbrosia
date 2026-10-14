@@ -9,7 +9,7 @@ DefaultOptions:
 	db 1 << FAST_TEXT_DELAY_F
 ; wGBPrinterBrightness: lightest
 	db 0
-; wOptions2: battle info off, battle text normal, speed x1/x1
+; wOptions2: battle info off, battle text normal, speed x1/x1, RTC time flow
 	db 0
 ; wPlayerColor: red
 	db PLAYER_COLOR_RED

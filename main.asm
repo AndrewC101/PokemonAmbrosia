@@ -604,6 +604,11 @@ SECTION "Overworld Weather", ROMX
 INCLUDE "engine/overworld/weather.asm"
 
 
+SECTION "Step Clock", ROMX, BANK[123]
+
+INCLUDE "engine/rtc/step_clock.asm"
+
+
 SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"

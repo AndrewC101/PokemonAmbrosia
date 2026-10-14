@@ -61,7 +61,7 @@ EventWildMons::
 	specialencounter LATIOS, 	EVENT_CAUGHT_LATIOS, 			TOHJO_LAKE, LegendaryEncounterDescription
 	specialencounter DEOXYS, 	EVENT_CAUGHT_DEOXYS, 			MUSEUM, LegendaryEncounterDescription
 	specialencounter DARKRAI, 	EVENT_CAUGHT_DARKRAI, 			DARK_CAVE_BLACKTHORN_ENTRANCE, LegendaryEncounterDescription
-	specialencounter SHAYMIN, 	EVENT_CAUGHT_SHAYMIN, 			LAVENDER_FOREST, LegendaryEncounterDescription
+	specialencounter SHAYMIN, 	EVENT_CAUGHT_SHAYMIN, 			VIRIDIAN_FOREST, LegendaryEncounterDescription
 	specialencounter LUGIA, 	EVENT_FOUGHT_LUGIA, 			WHIRL_ISLAND_LUGIA_CHAMBER, LegendaryEncounterDescription
 	specialencounter HO_OH, 	EVENT_FOUGHT_HO_OH, 			TIN_TOWER_ROOF, LegendaryEncounterDescription
 	specialencounter GROUDON, 	EVENT_CAUGHT_GROUDON, 			ELEMENT_CAVE, LegendaryEncounterDescription
@@ -112,7 +112,7 @@ EventWildMons::
 	specialencounter RAICHU, -1, ROUTE_9, OverworldEncounterDescription
 	specialencounter RIOLU, -1, ROUTE_32, OverworldEncounterDescription
 	specialencounter RIOLU, -1, ROUTE_29, OverworldEncounterShinyDescription
-	specialencounter LUCARIO, -1, VICTORY_ROAD, OverworldEncounterDescription
+	specialencounter LUCARIO, -1, ANCIENT_RUIN_PAST, OverworldEncounterDescription
 	specialencounter VENIPEDE, -1, ROUTE_30, OverworldEncounterDescription
 	specialencounter SCOLIPEDE, -1, ROUTE_42, OverworldEncounterDayDescription
 	specialencounter SCOLIPEDE, -1, ROUTE_2, OverworldEncounterShinyDescription

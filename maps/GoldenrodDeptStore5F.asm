@@ -4,23 +4,11 @@
 	const GOLDENRODDEPTSTORE5F_MIKE
 	const GOLDENRODDEPTSTORE5F_POKEFAN_M
 	const GOLDENRODDEPTSTORE5F_CARRIE
-	const GOLDENRODDEPTSTORE5F_RECEPTIONIST
 
 GoldenrodDeptStore5F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, GoldenrodDeptStore5FCheckIfSundayCallback
-
-GoldenrodDeptStore5FCheckIfSundayCallback:
-	readvar VAR_WEEKDAY
-	ifequal SUNDAY, .yes
-	disappear GOLDENRODDEPTSTORE5F_RECEPTIONIST
-	endcallback
-
-.yes
-	appear GOLDENRODDEPTSTORE5F_RECEPTIONIST
-	endcallback
 
 GoldenrodDeptStore5FClerkScript:
 	faceplayer

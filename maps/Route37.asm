@@ -343,7 +343,7 @@ Route37FieldMon8Script:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_8
-	disappear ROUTE29_FIELDMON_8
+	disappear ROUTE37_FIELDMON_8
 	end
 
 Route37_MapEvents:

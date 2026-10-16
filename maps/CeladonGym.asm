@@ -3,8 +3,7 @@
 	const CELADONGYM_LASS1
 	const CELADONGYM_LASS2
 	const CELADONGYM_BEAUTY
-	const CELADONGYM_TWIN1
-	const CELADONGYM_TWIN2
+	const CELADONGYM_VENUSAUR
 
 CeladonGym_MapScripts:
 	def_scene_scripts

@@ -90,6 +90,9 @@ HDMATransfer_FillBGMap0WithBlack:
 	ld bc, wScratchAttrmap - wDecompressScratch
 	call ByteFill
 	ld a, HIGH(wDecompressScratch)
+	push af
+	call CancelFollowerUpload
+	pop af
 	ldh [rVDMA_SRC_HIGH], a
 	ld a, LOW(wDecompressScratch)
 	ldh [rVDMA_SRC_LOW], a

@@ -525,6 +525,7 @@ PsychicGirlTalkScript:
     special TryQuickSave
     closetext
     iffalse .noSave
+    hidefollower
     follow CIANWOODCITY_GIRL_2, PLAYER
     applymovement CIANWOODCITY_GIRL_2, Movement_PsychicGirlToShore
     stopfollow
@@ -657,6 +658,7 @@ PsychicGirlTalkScript:
     pause 10
     disappear CIANWOODCITY_GIRL_2
 .end
+    showfollower
     end
 .noSave
     opentext

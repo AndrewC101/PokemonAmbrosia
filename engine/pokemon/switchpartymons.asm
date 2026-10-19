@@ -9,6 +9,7 @@ _SwitchPartyMons:
 	cp b
 	jr z, .skip
 	call .SwapMonAndMail
+    newfarcall FollowerOnMenuSwap
 	ld a, [wSwitchMonFrom]
 	call .ClearSprite
 	ld a, [wSwitchMonTo]

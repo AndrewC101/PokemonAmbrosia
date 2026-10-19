@@ -1617,6 +1617,7 @@ LoadMapPals:
 	call LoadPlayerOverworldPalette
 .got_obj_pals
 	farcall ApplyDarkSkinNPCPaletteOverrides
+	newfarcall LoadFollowerOverworldPalette
 
 	ld a, [wEnvironment]
 	cp TOWN
@@ -1649,45 +1650,8 @@ LoadMapPals:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 
-; Day Care outdoor palettes
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_34
-	jr nz, .finish
+; Daycare icons use fixed Red; never replace the shared effect colors.
 
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_34
-	jr nz, .finish
-
-	ld a, BANK(wBreedMon1Species)
-	ld hl, wBreedMon1Species
-	call GetFarWRAMByte
-	and a
-	jr z, .finish
-	ld [wCurPartySpecies], a
-
-	ld hl, wBreedMon1DVs ; HL now points to the params of the wBreedMon1, which is needed by GetMenuMonIconPalette to determine if it's shiny.
-	ld de, GetMenuMonIconPalette
-	ld a, BANK(GetMenuMonIconPalette)
-	call FarCall_de
-	ld a, e
-	add a
-	add a
-	add a
-	ld e, a
-	ld d, 0
-	ld hl, PartyMenuOBPals
-	add hl, de
-
-	inc hl
-	inc hl
-
-	ld de, wOBPals1 palette PAL_OW_RED + 2
-	ld bc, 1 palettes - 2
-	ld a, BANK(wOBPals1)
-	call FarCopyWRAM
-
-	; Day-care mon 2 now uses a fixed object palette so the reclaimed
-	; tree slot remains available for the yellow player color.
 .finish
 	newfarjp ApplyMapWeatherPalettes
 

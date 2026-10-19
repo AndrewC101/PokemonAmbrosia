@@ -434,6 +434,9 @@ BattleTower_GenerateRandomPlayerParty:
 	; The farcall trampoline clobbers a while restoring the ROM bank, so the
 	; helper also returns the party length in c.
 	farcall BattleTower_GetChallengePartyLength
+    push bc
+    newfarcall SuspendBorrowedTeamFollower
+    pop bc
 	ld a, c
 	ld [wPartyCount], a
 	push af

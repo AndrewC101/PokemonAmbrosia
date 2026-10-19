@@ -449,7 +449,11 @@ DoPlayerMovement::
 ; make sure there's no NPC across the ledge
 	xor a
 	ldh [hMapObjectIndex], a
+if !DEF(FOLLOWER_TEST)
+	newfarcall FollowerPassableNPCAtCoord
+else
 	farcall IsNPCAtCoord
+endc
 	jr c, .DontJump
 
 	ld de, SFX_JUMP_OVER_LEDGE
@@ -718,7 +722,11 @@ ENDM
 	ld e, a
 ; Find an object struct with coordinates equal to d,e
 	ld bc, wObjectStructs ; redundant
+if !DEF(FOLLOWER_TEST)
+	newfarcall FollowerPassableNPCAtCoord
+else
 	farcall IsNPCAtCoord
+endc
 	jr nc, .no_npc
 	call .CheckStrengthBoulder
 	jr c, .no_bump

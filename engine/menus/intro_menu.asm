@@ -85,6 +85,8 @@ NewGameCommon_Finish:
 	jp FinishContinueFunction
 
 NewGameCommon_Init:
+	newfarcall ResetFollowerState
+    newfarcall InitializeFollowerSelection
 	xor a
 	ld [wDebugFlags], a
 	call NewGame_ClearTilemapEtc
@@ -461,6 +463,8 @@ Continue:
 	farcall TryLoadSaveFile
 	jr c, .FailToLoad
 	farcall _LoadData
+	newfarcall ResetFollowerState
+    newfarcall GetFollowerSelection
 	call LoadStandardMenuHeader
 	call DisplaySaveInfoOnContinue
 	ld a, $1

@@ -66,6 +66,9 @@ WritePartyMenuTilemap:
 	; Held-item markers are background tiles so they stay fixed while
 	; the party sprites move and bob.
 	callfar PlacePartyMenuHeldItemIcons
+if !DEF(FOLLOWER_TEST)
+    newfarcall PlaceFollowerPartyMarker
+endc
 	pop af
 	ld [wOptions], a
 	ret
@@ -676,7 +679,19 @@ PartyMenu2DMenuData:
 
 PartyMenuSelect:
 ; sets carry if exitted menu.
+.input
 	call StaticMenuJoypad
+if !DEF(FOLLOWER_TEST)
+    ld a, [wFollowerMenuContext]
+    and a
+    jr z, .ordinary
+    ldh a, [hJoyLast]
+    and PAD_SELECT
+    jr z, .ordinary
+    newfarcall HandleFollowerPartySelect
+    jr .input
+.ordinary
+endc
 	call PlaceHollowCursor
 	ld a, [wPartyCount]
 	inc a

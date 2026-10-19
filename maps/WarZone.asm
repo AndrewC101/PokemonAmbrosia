@@ -10,7 +10,7 @@
 	const WARZONE_BLUE
 	const WARZONE_SILVER
 	const WARZONE_CRYSTAL
-	const WARZONE_INVADER
+	;const WARZONE_INVADER
 	const WARZONE_OAK
 	const WARZONE_JONATHAN
 	const WARZONE_KYOGRE
@@ -45,6 +45,7 @@ WarZone_MapScripts:
 	endcallback
 
 WallaceScript:
+    hidefollower ; includes battle and multiple same-map reloads
     turnobject WARZONE_WALLACE, DOWN
 	opentext
 	writetext WallaceSeenText
@@ -195,6 +196,7 @@ WallaceScript:
     applymovement WARZONE_OAK, WarZoneMovement_CrystalLeaves
     disappear WARZONE_OAK
     turnobject PLAYER, UP
+    showfollower
 	end
 .lose
     applymovement PLAYER, Player_Fall
@@ -1222,6 +1224,7 @@ WarZoneBlueScript2:
     end
 
 WarZoneBlueScript:
+    hidefollower
     appear WARZONE_BLUE
     applymovement WARZONE_BLUE, WarZoneMovement_BlueApproaches
     opentext
@@ -1233,6 +1236,7 @@ WarZoneBlueScript:
     turnobject PLAYER, LEFT
     setevent EVENT_SPOKE_TO_WARZONE_BLUE
     setmapscene WAR_ZONE, SCENE_CUSTOM_1
+    showfollower
     end
 
 WarZoneBlueText:
@@ -1291,45 +1295,42 @@ WarZoneMovement_BlueLeaves:
     step DOWN
     step_end
 
-InvaderOroboroScript:
-	trainer INVADER, OROBORO, EVENT_BEAT_INVADER_OROBORO, InvaderOroboroSeenText, InvaderOroboroBeatenText, InvaderOroboroVictoryText, .Script
+;InvaderOroboroScript:
+;	trainer INVADER, OROBORO, EVENT_BEAT_INVADER_OROBORO, InvaderOroboroSeenText, InvaderOroboroBeatenText, InvaderOroboroVictoryText, .Script
 
-.Script:
-	endifjustbattled
-	opentext
-	writetext InvaderOroboroAfterBattleText
-	waitbutton
-	closetext
-	end
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext InvaderOroboroAfterBattleText
+;	waitbutton
+;	closetext
+;	end
 
-InvaderOroboroSeenText:
-    text "Oh Hi!"
+;InvaderOroboroSeenText:
+;    text "Oh Hi!"
+;    para "Nope you're not"
+;    line "making it to"
+;    cont "boss fog."
+;    para "Hang on let me"
+;    line "get my buffs up."
+;	done
 
-    para "Nope you're not"
-    line "making it to"
-    cont "boss fog."
+;InvaderOroboroVictoryText:
+;	text "Hahahaha!"
+;	line "Get recked dude"
+;	done
 
-    para "Hang on let me"
-    line "get my buffs up."
-	done
+;InvaderOroboroBeatenText:
+;	text "No way!"
+;	line "Good game."
+;	done
 
-InvaderOroboroVictoryText:
-	text "Hahahaha!"
-	line "Get recked dude"
-	done
-
-InvaderOroboroBeatenText:
-	text "No way!"
-	line "Good game."
-	done
-
-InvaderOroboroAfterBattleText:
-	text "There was some"
-	line "lag."
-
-	para "That's the only"
-	line "reason you won!"
-	done
+;InvaderOroboroAfterBattleText:
+;	text "There was some"
+;	line "lag."
+;	para "That's the only"
+;	line "reason you won!"
+;	done
 
 SaveBeforeWallaceScript:
     checkevent EVENT_BEAT_WALLACE
@@ -1542,7 +1543,7 @@ WarZone_MapEvents:
 	object_event 12, 35, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_3
 	object_event 20, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1
 	object_event 21, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_2
-	object_event 34,  4, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
+	;object_event 34,  4, SPRITE_FALKNER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 4, InvaderOroboroScript, -1
 	object_event 21, 10, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_6
 	object_event 20, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, JonathanScript, -1
 

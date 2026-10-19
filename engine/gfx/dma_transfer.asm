@@ -119,6 +119,9 @@ Function1040d4: ; unreferenced
 	ldh [rWBK], a
 	ld de, w3_d800
 	ldh a, [hBGMapAddress + 1]
+	push af
+	call CancelFollowerUpload
+	pop af
 	ldh [rVDMA_SRC_HIGH], a
 	ldh a, [hBGMapAddress]
 	ldh [rVDMA_SRC_LOW], a
@@ -280,6 +283,9 @@ HDMATransfer_NoDI:
 
 	; [rVDMA_SRC_HIGH, rVDMA_SRC_LOW] = hl & $fff0
 	ld a, h
+	push af
+	call CancelFollowerUpload
+	pop af
 	ldh [rVDMA_SRC_HIGH], a
 	ld a, l
 	and $f0
@@ -337,6 +343,9 @@ _continue_HDMATransfer:
 ; a lot of waiting around for hardware registers
 	; [rVDMA_SRC_HIGH, rVDMA_SRC_LOW] = hl & $fff0
 	ld a, h
+	push af
+	call CancelFollowerUpload
+	pop af
 	ldh [rVDMA_SRC_HIGH], a
 	ld a, l
 	and $f0 ; high nybble
@@ -395,6 +404,9 @@ _continue_HDMATransfer:
 
 _LoadHDMAParameters:
 	ld a, h
+	push af
+	call CancelFollowerUpload
+	pop af
 	ldh [rVDMA_SRC_HIGH], a
 	ld a, l
 	ldh [rVDMA_SRC_LOW], a

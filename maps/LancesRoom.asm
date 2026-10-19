@@ -30,6 +30,7 @@ LancesRoomDoorsCallback:
 	endcallback
 
 LancesRoomDoorLocksBehindYouScript:
+    hidefollower
 	applymovement PLAYER, LancesRoom_EnterMovement
 	reanchormap $86
 	playsound SFX_STRENGTH
@@ -39,6 +40,7 @@ LancesRoomDoorLocksBehindYouScript:
 	closetext
 	setscene SCENE_LANCESROOM_APPROACH_LANCE
 	setevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
+    showfollower
 	end
 
 Script_ApproachLanceFromLeft:
@@ -50,6 +52,7 @@ Script_ApproachLanceFromRight:
 	special FadeOutMusic
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
 LancesRoomLanceScript:
+    hidefollower
 	turnobject LANCESROOM_LANCE, LEFT
 	opentext
 	writetext LanceBattleIntroText
@@ -157,6 +160,7 @@ LancesRoomLanceScript:
 	special FadeOutToWhite
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
+    ; The real map entry clears the hold; Hall of Fame also denies followers.
 	end
 
 LancesRoom_EnterMovement:

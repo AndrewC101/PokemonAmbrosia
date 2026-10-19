@@ -1391,6 +1391,7 @@ OverridePlayerParty:
     ret
 
 ReadCopyOfTrainerParty:
+    newfarcall SuspendBorrowedTeamFollower
     xor a
     ld [wPartyCount], a
 

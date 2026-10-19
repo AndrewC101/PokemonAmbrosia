@@ -804,14 +804,24 @@ StartMenu_Pokemon:
 	farcall InitPartyMenuGFX
 
 .menunoreload
+if !DEF(FOLLOWER_TEST)
+    newfarcall BeginFollowerPartyMenu
+endc
 	farcall WritePartyMenuTilemap
 	farcall PlacePartyMenuText
+if !DEF(FOLLOWER_TEST)
+    newfarcall DrawFollowerPartyHint
+endc
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	farcall PartyMenuSelect
 	jr c, .return ; if cancelled or pressed B
 
+if !DEF(FOLLOWER_TEST)
+    xor a
+    ld [wFollowerMenuContext], a
+endc
 	call PokemonActionSubmenu
 	cp 3
 	jr z, .menu
@@ -823,6 +833,10 @@ StartMenu_Pokemon:
 	jr z, .quit
 
 .return
+if !DEF(FOLLOWER_TEST)
+    xor a
+    ld [wFollowerMenuContext], a
+endc
 	call CloseSubmenu
 	ld a, 0
 	ret

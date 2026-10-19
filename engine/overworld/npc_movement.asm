@@ -273,7 +273,11 @@ WillObjectBumpIntoSomeoneElse:
 	ld hl, OBJECT_MAP_Y
 	add hl, bc
 	ld e, [hl]
+if !DEF(FOLLOWER_TEST)
+	newfarjp FollowerPassableNPCAtCoord
+else
 	jr IsNPCAtCoord
+endc
 
 IsObjectFacingSomeoneElse: ; unreferenced
 	ldh a, [hMapObjectIndex]
@@ -319,6 +323,14 @@ IsNPCAtCoord:
 	ldh [hObjectStructIndex], a
 	call DoesObjectHaveASprite
 	jr z, .next
+if !DEF(FOLLOWER_TEST)
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary_object
+	ld a, [wFollowerLifecycleFlags]
+	bit FOLLOWER_SKIP_COLLISION_F, a
+	jr nz, .next
+.ordinary_object
+endc
 
 	ld hl, OBJECT_FLAGS1
 	add hl, bc

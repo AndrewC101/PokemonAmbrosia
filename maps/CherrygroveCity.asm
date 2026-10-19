@@ -35,6 +35,7 @@ CherrygroveFieldMon:
     endcallback
 
 CherrygroveCityGuideGent:
+    hidefollower
 	faceplayer
 	opentext
 	writetext GuideGentIntroText
@@ -110,6 +111,7 @@ CherrygroveCityGuideGent:
 	clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
 	setmapscene CHERRYGROVE_CITY, SCENE_CUSTOM_FINISHED
 	waitsfx
+    showfollower
 	end
 
 .JumpstdReceiveItem:
@@ -1833,7 +1835,7 @@ CherrygroveCity_MapEvents:
 	object_event 33, 20, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant1Script, -1
 	object_event 30, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Peasant2Script, -1
 	object_event 21, 4, SPRITE_WILL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, StarWarsRolePlayScript, -1
-	object_event 23, 20, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, CherrygroveMon1Script, EVENT_FIELD_MON_1
+	object_event 23, 20, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, CherrygroveMon1Script, EVENT_FIELD_MON_1
 	object_event 33, 22, SPRITE_ARCANINE, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveArcanineScript, -1
 	object_event  7, 11, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1
 	object_event  4, 13, SPRITE_MAGIKARP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMagikarpScript, -1

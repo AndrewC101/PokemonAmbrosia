@@ -106,6 +106,9 @@ StartMap:
 	farcall InitCallReceiveDelay
 	call ClearJoypad
 EnterMap:
+if !DEF(FOLLOWER_TEST)
+	newfarcall PrepareFollowerForMap
+endc
 	xor a
 	ld [wXYComparePointer], a
 	ld [wXYComparePointer + 1], a
@@ -148,7 +151,13 @@ HandleMap:
 	cp MAPSTATUS_HANDLE
 	ret nz
 
+if !DEF(FOLLOWER_TEST)
+	newfarcall ReconcilePartyFollower
+endc
 	call HandleMapObjects
+if DEF(FOLLOWER_TEST)
+	newfarcall FollowerTestTick
+endc
 	call NextOverworldFrame
 	call HandleMapBackground
 	call CheckPlayerState
@@ -207,6 +216,9 @@ HandleMapTimeAndJoypad:
 
 	call UpdateTime
 	call GetJoypad
+if DEF(FOLLOWER_TEST)
+	newfarcall FollowerTestInput
+endc
 	call TimeOfDayPals
 	ret
 
@@ -310,6 +322,9 @@ CheckTrainerEvent:
 	nop
 	call CheckTrainerBattle
 	jr nc, .nope
+if !DEF(FOLLOWER_TEST)
+	newfarcall SuspendFollowerForScene
+endc
 
 	ld a, PLAYEREVENT_SEENBYTRAINER
 	scf
@@ -600,6 +615,17 @@ ObjectEventTypeArray:
 	db -1 ; end
 
 .script
+if !DEF(FOLLOWER_TEST)
+	ld hl, MAPOBJECT_SPRITE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary_script
+	ld a, BANK(FollowerInteractionScript)
+	ld hl, FollowerInteractionScript
+	jp CallScript
+.ordinary_script
+endc
 	ld hl, MAPOBJECT_SCRIPT_POINTER
 	add hl, bc
 	ld a, [hli]

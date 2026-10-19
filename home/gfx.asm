@@ -34,6 +34,9 @@ FarCopyBytesDouble_DoubleBankSwitch::
 	
 SafeHDMATransfer::
 ; Copy c 2bpp tiles from b:de to hl using GDMA. Assumes $00 < c <= $80.
+	push af
+	call CancelFollowerUpload
+	pop af
 	dec c
 	ldh a, [hBGMapMode]
 	push af

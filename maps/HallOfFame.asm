@@ -16,6 +16,7 @@ HallOfFameNoopScene:
 	end
 
 HallOfFameEnterScript:
+    hidefollower ; ceremony -> credits/reset; the room is also restricted
 	follow HALLOFFAME_LANCE, PLAYER
 	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
 	stopfollow

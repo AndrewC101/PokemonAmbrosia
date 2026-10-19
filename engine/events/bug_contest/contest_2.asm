@@ -78,6 +78,7 @@ ContestDropOffMons:
 	or [hl]
 	jr z, .fainted
 ; Mask the rest of your party by setting the count to 1...
+    newfarcall SuspendContestFollower
 	ld hl, wPartyCount
 	ld a, 1
 	ld [hli], a
@@ -97,6 +98,7 @@ ContestDropOffMons:
 	ret
 
 ContestReturnMons:
+    newfarcall ResumeContestFollower
 ; Restore the species of the second mon.
 	ld hl, wPartySpecies + 1
 	ld a, [wBugContestSecondPartySpecies]

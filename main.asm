@@ -733,3 +733,6 @@ INCLUDE "engine/gfx/vwf.asm"
 ; This SECTION reserves space for those checksums.
 ; If it is removed, also remove the "tools/stadium" command in the Makefile.
 ; ds $220
+
+INCLUDE "engine/overworld/follower_graphics.asm"
+INCLUDE "gfx/followers.asm"

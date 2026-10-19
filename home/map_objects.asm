@@ -15,6 +15,12 @@ GetSpritePalette::
 	ret
 
 GetSpriteVTile::
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary
+	ld a, FOLLOWER_CACHE_TILE
+	and a
+	ret
+.ordinary
 	push hl
 	push bc
 	ld hl, wUsedSprites + 2

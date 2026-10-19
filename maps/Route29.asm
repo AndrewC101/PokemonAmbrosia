@@ -12,7 +12,7 @@
 	const ROUTE29_FIELDMON_4
 	const ROUTE29_FIELDMON_5
 	const ROUTE29_FIELDMON_6
-	const ROUTE29_FIELDMON_7
+	;const ROUTE29_FIELDMON_7
 	const ROUTE29_FIELDMON_8
 	const ROUTE29_FIELDMON_9
 	const ROUTE29_FIELDMON_10
@@ -37,7 +37,7 @@ Route29TuscanyCallback:
     appear ROUTE29_FIELDMON_4
     appear ROUTE29_FIELDMON_5
     appear ROUTE29_FIELDMON_6
-    appear ROUTE29_FIELDMON_7
+    ;appear ROUTE29_FIELDMON_7
     appear ROUTE29_FIELDMON_9
     appear ROUTE29_FIELDMON_10
 
@@ -70,7 +70,7 @@ Route29TuscanyCallback:
     appear ROUTE29_FIELDMON_3
 
 ; Pokemon that don't appear at night
-    disappear ROUTE29_FIELDMON_7
+    ;disappear ROUTE29_FIELDMON_7
 
 .tuscany
 	checkflag ENGINE_ZEPHYRBADGE
@@ -498,16 +498,16 @@ Route29FieldMon6Script:
 	disappear ROUTE29_FIELDMON_6
 	end
 	
-Route29FieldMon7Script:
-	faceplayer
-	cry JOLTIK
-	pause 15
-	loadwildmon JOLTIK, 7
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_FIELD_MON_7
-	disappear ROUTE29_FIELDMON_7
-	end
+;Route29FieldMon7Script:
+;	faceplayer
+;	cry JOLTIK
+;	pause 15
+;	loadwildmon JOLTIK, 7
+;	startbattle
+;	reloadmapafterbattle
+;	setevent EVENT_FIELD_MON_7
+;	disappear ROUTE29_FIELDMON_7
+;	end
 
 Route29FieldMon8Script:
 	faceplayer
@@ -573,7 +573,7 @@ Route29_MapEvents:
 	object_event 21,  4, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon4Script, EVENT_FIELD_MON_4
 	object_event 46,  6, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon5Script, EVENT_FIELD_MON_5
 	object_event 11,  3, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon6Script, EVENT_FIELD_MON_6
-	object_event  5, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 53,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8
+	;object_event  5, 15, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon7Script, EVENT_FIELD_MON_7
+	object_event 53,  2, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route29FieldMon8Script, EVENT_FIELD_MON_8
 	object_event 32, 23, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route29FieldMon9Script, EVENT_FIELD_MON_9
 	object_event 47, 15, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route29FieldMon10Script, EVENT_FIELD_MON_10

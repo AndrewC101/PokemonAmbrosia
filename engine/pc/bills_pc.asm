@@ -263,6 +263,7 @@ SwapPartyMonMail:
 SwapPartyMons:
 ; Swap 1-indexed partymon c and e. Preserves bc, de, hl.
 ; TODO: this is more efficient than SwitchPartyMons, maybe make it use this.
+    newfarcall SwapFollowerSelection
 	push hl
 	push de
 	push bc
@@ -631,6 +632,9 @@ SetStorageBoxPointer:
 	call ShiftPartySlotToEnd
 
 	; Then delete the partymon.
+    ld a, [wPartyCount]
+    ld c, a
+    newfarcall FollowerOnStorageWrite
 	ld hl, wPartyCount
 	dec [hl]
 	ld c, [hl]
@@ -651,6 +655,7 @@ SetStorageBoxPointer:
 
 .partyslot_not_empty
 	; b is 0 from earlier, from referencing the party.
+    newfarcall FollowerOnStorageWrite
 	call CopyBetweenPartyAndTemp
 .done
 	call CloseSRAM

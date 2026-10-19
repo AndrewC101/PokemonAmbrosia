@@ -955,6 +955,10 @@ ApplyDarkSkinNPCPaletteOverrides::
 	call GetSpritePalette
 
 .got_palette
+	cp PAL_OW_EFFECT
+	jr z, .next
+	cp PAL_OW_FOLLOWER
+	jr z, .next
 ; Marked objects darken the shared palette slot, affecting all objects using it.
 	add a
 	add a

@@ -108,6 +108,10 @@ VBlank_Normal::
 	call AnimateTileset
 
 .done
+	; Existing 1bpp/2bpp requests keep their strict early-VBlank deadline.
+	ld a, [wFollowerPending]
+	and a
+	call nz, FollowerVBlank
 
 	ldh a, [hOAMUpdate]
 	and a

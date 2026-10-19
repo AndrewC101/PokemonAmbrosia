@@ -519,7 +519,7 @@ SelectWeatherObjPalette::
 	call GetActiveOverworldWeather
 	jp z, .no_particles
 
-	ld d, (1 << PAL_OW_EMOTE) | (1 << PAL_OW_PLAYER) ; used palettes
+	ld d, (1 << PAL_OW_EFFECT) | (1 << PAL_OW_FOLLOWER) | (1 << PAL_OW_PLAYER) ; protected slots
 	ld e, NUM_OBJECTS
 	ld bc, wMapObjects
 	ld hl, wObjectMasks
@@ -585,7 +585,9 @@ SelectWeatherObjPalette::
 	ld a, [wWeatherPalSlot]
 	cp NUM_OVERWORLD_OBJ_PALETTES
 	jr nc, .try_preferred
-	cp PAL_OW_EMOTE
+	cp PAL_OW_EFFECT
+	jr z, .try_preferred
+	cp PAL_OW_FOLLOWER
 	jr z, .try_preferred
 	cp PAL_OW_PLAYER
 	jr z, .try_preferred

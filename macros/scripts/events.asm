@@ -1070,3 +1070,16 @@ MACRO nooryes
 ENDM
 
 DEF NUM_EVENT_COMMANDS EQU const_value
+
+; Callasm wrappers: no new opcode, persistent preference, or script-var writes.
+MACRO hidefollower
+if !DEF(FOLLOWER_TEST)
+    callasm HidePartyFollower
+endc
+ENDM
+
+MACRO showfollower
+if !DEF(FOLLOWER_TEST)
+    callasm ShowPartyFollower
+endc
+ENDM

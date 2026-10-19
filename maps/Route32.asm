@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE32_FISHER2
+	;const ROUTE32_FISHER2
 	const ROUTE32_FISHER3
 	const ROUTE32_YOUNGSTER2
 	const ROUTE32_YOUNGSTER3
@@ -126,16 +126,16 @@ TrainerCamperRoland:
 	closetext
 	end
 
-TrainerFisherRalph1:
-	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
+;TrainerFisherRalph1:
+;	trainer FISHER, RALPH1, EVENT_BEAT_FISHER_RALPH, FisherRalph1SeenText, FisherRalph1BeatenText, 0, .Script
 
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherRalphAfterText
-	waitbutton
-	closetext
-	end
+;.Script:
+;	endifjustbattled
+;	opentext
+;	writetext FisherRalphAfterText
+;	waitbutton
+;	closetext
+;	end
 
 TrainerFisherHenry:
 	trainer FISHER, HENRY, EVENT_BEAT_FISHER_HENRY, FisherHenrySeenText, FisherHenryBeatenText, 0, .Script
@@ -481,27 +481,27 @@ FisherJustinAfterText:
 	cont "a Feebas."
 	done
 
-FisherRalph1SeenText:
-	text "I'm so close."
+;FisherRalph1SeenText:
+;	text "I'm so close."
 
-	para "Once my #mon"
-	line "evolve, I shall"
-	cont "be the envy of"
-	cont "all fishers!"
-	done
+;	para "Once my #mon"
+;	line "evolve, I shall"
+;	cont "be the envy of"
+;	cont "all fishers!"
+;	done
 
-FisherRalph1BeatenText:
-	text "Just a little"
-	line "more."
-	done
+;FisherRalph1BeatenText:
+;	text "Just a little"
+;	line "more."
+;	done
 
-FisherRalphAfterText:
-	text "Justin over there"
-	line "will have a hard"
-	cont "time eating my"
-	cont "#mon once"
-	cont "they evolve."
-	done
+;FisherRalphAfterText:
+;	text "Justin over there"
+;	line "will have a hard"
+;	cont "time eating my"
+;	cont "#mon once"
+;	cont "they evolve."
+;	done
 
 FisherHenrySeenText:
 	text "I have it on good"
@@ -1040,12 +1040,12 @@ Route32_MapEvents:
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 
 	def_object_events
-	object_event 12, 56, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
+	;object_event 12, 56, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	object_event  6, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
 	object_event  4, 63, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
 	object_event  3, 45, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
 	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
-	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, MAPOBJECT_DARK_SKIN, Route32CooltrainerMScript, -1
+	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, MAPOBJECT_DARK_SKIN, Route32CooltrainerMScript, -1
 	object_event 11, 82, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, InvaderSiegmeyer, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
 
@@ -1056,6 +1056,6 @@ Route32_MapEvents:
 	object_event 12, 43, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon5Script, EVENT_FIELD_MON_5
 	object_event  1, 49, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon6Script, EVENT_FIELD_MON_6
 	object_event 3, 11, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route32FieldMon7Script, EVENT_FIELD_MON_7
-	object_event 8,  74, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
+	object_event 8,  74, SPRITE_MUDKIP, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, Route32FieldMon8Script, EVENT_FIELD_MON_8
 
 	object_event  17, 2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TEMP_EVENT_1

@@ -179,6 +179,7 @@
 	charmap "<physical>",$c6
 	charmap "<special>", $c7
 	charmap "<status>",  $c8
+	charmap "<FOLLOWER>",$c9 ; custom party-selection glyph, not the letter F
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1

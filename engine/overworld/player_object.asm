@@ -34,18 +34,6 @@ SpawnPlayer:
 	call GetMapObject
 	ld hl, MAPOBJECT_PALETTE
 	add hl, bc
-	ld a, [wInvading]
-	and a
-	jr z, .checkMasterOak
-	ln e, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT
-	jr .ok
-.checkMasterOak
-	ld a, [wMarkOfGod]
-	and a
-	jr z, .normalColour
-	ln e, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT
-	jr .ok
-.normalColour
 	call LoadPlayerColor
 
 .ok
@@ -150,6 +138,7 @@ CopyObjectStruct::
 	and a
 	ret nz ; masked
 
+.find_slot
 	ld hl, wObjectStructs + OBJECT_LENGTH * 1
 	ld a, 1
 	ld de, OBJECT_LENGTH
@@ -163,6 +152,10 @@ CopyObjectStruct::
 	inc a
 	cp NUM_OBJECT_STRUCTS
 	jr nz, .loop
+if !DEF(FOLLOWER_TEST)
+	newfarcall YieldFollowerForAllocation
+	jr nc, .find_slot
+endc
 	scf
 	ret ; overflow
 

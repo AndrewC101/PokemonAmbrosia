@@ -2015,6 +2015,10 @@ DoMovementFunction:
 INCLUDE "engine/overworld/movement.asm"
 
 ApplyMovementToFollower:
+if !DEF(FOLLOWER_TEST)
+	newfarcall GuardPokemonFollowerQueue
+	ret c
+endc
 	ld e, a
 	ld a, [wObjectFollow_Follower]
 	cp -1
@@ -2106,7 +2110,7 @@ SpawnShadow:
 
 .ShadowObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE, SPRITEMOVEDATA_SHADOW
+	db $00, PAL_OW_EFFECT, SPRITEMOVEDATA_SHADOW
 
 SpawnStrengthBoulderDust:
 	push bc
@@ -2118,7 +2122,7 @@ SpawnStrengthBoulderDust:
 
 .BoulderDustObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE, SPRITEMOVEDATA_BOULDERDUST
+	db $00, PAL_OW_EFFECT, SPRITEMOVEDATA_BOULDERDUST
 
 SpawnEmote:
 	push bc
@@ -2130,7 +2134,7 @@ SpawnEmote:
 
 .EmoteObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE, SPRITEMOVEDATA_EMOTE
+	db $00, PAL_OW_EFFECT, SPRITEMOVEDATA_EMOTE
 
 ShakeGrass:
 	push bc
@@ -2157,7 +2161,7 @@ ShakeScreen:
 
 .ScreenShakeObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE, SPRITEMOVEDATA_SCREENSHAKE
+	db $00, PAL_OW_EFFECT, SPRITEMOVEDATA_SCREENSHAKE
 
 DespawnEmote:
 	push bc
@@ -2198,7 +2202,16 @@ DespawnEmote:
 
 InitTempObject:
 	call FindFirstEmptyObjectStruct
+	jr c, .found
+if !DEF(FOLLOWER_TEST)
+	newfarcall YieldFollowerForAllocation
+	ret c
+	call FindFirstEmptyObjectStruct
 	ret nc
+else
+	ret
+endc
+.found
 	ld d, h
 	ld e, l
 	farcall CopyTempObjectToObjectStruct
@@ -2609,6 +2622,9 @@ _SetPlayerPalette:
 	ret
 
 StartFollow::
+if !DEF(FOLLOWER_TEST)
+	newfarcall YieldFollowerForScriptFollow
+endc
 	push bc
 	ld a, b
 	call SetLeaderIfVisible
@@ -2810,7 +2826,11 @@ _UpdateSprites::
 	push af
 	ld a, 1
 	ldh [hOAMUpdate], a
+	newfarcall BeginFollowerOAMFrame
 	call InitSprites
+if DEF(FOLLOWER_TEST)
+	newfarcall FollowerTestDraw
+endc
 	newfarcall FillUnusedOAMPreservingWeather
 	pop af
 	ldh [hOAMUpdate], a
@@ -2926,6 +2946,14 @@ InitSprites:
 .InitSpritesByPriority:
 	ld hl, wObjectPriorities
 .next_sprite
+	; The packed list can contain all 13 live objects, without a zero sentinel.
+	ld a, l
+	cp LOW(wObjectPriorities + NUM_OBJECT_STRUCTS)
+	jr nz, .read_priority
+	ld a, h
+	cp HIGH(wObjectPriorities + NUM_OBJECT_STRUCTS)
+	ret z
+.read_priority
 	ld a, [hli]
 	ld d, a
 	and $f0
@@ -2943,6 +2971,11 @@ InitSprites:
 	jr .next_sprite
 
 .InitSprite:
+	ld a, [bc]
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary_sprite
+	newfarjp RenderFollowerObject
+.ordinary_sprite
 	ld hl, OBJECT_SPRITE_TILE
 	add hl, bc
 	ld a, [hl]

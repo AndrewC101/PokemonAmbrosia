@@ -933,6 +933,7 @@ String_Egg:
 	db "Egg@"
 
 RemoveMonFromParty:
+    newfarcall FollowerOnPartyRemoval
 	ld hl, wPartyCount
 
 	ld a, [hl]

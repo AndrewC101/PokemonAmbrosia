@@ -43,6 +43,7 @@ FlyPoint:
 	endcallback
 
 NewBarkTown_TeacherStopsYouScene1:
+    hidefollower
 	playmusic MUSIC_MOM
 	turnobject NEWBARKTOWN_TEACHER, LEFT
 	opentext
@@ -63,9 +64,11 @@ NewBarkTown_TeacherStopsYouScene1:
 	waitbutton
 	closetext
 	special RestartMapMusic
+    showfollower
 	end
 
 NewBarkTown_TeacherStopsYouScene2:
+    hidefollower
 	playmusic MUSIC_MOM
 	turnobject NEWBARKTOWN_TEACHER, LEFT
 	opentext
@@ -87,6 +90,7 @@ NewBarkTown_TeacherStopsYouScene2:
 	waitbutton
 	closetext
 	special RestartMapMusic
+    showfollower
 	end
 
 NewBarkTownTeacherScript:
@@ -987,4 +991,4 @@ NewBarkTown_MapEvents:
 
 	object_event 14, 20, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FinalSilverScript, EVENT_TEMP_EVENT_2
 	object_event 12, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, FinalCrystalScript, EVENT_TEMP_EVENT_3
-	object_event 11,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, NewBarkPikachu, -1
+	object_event 11,  4, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, NewBarkPikachu, -1

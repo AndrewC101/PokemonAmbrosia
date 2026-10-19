@@ -224,6 +224,7 @@ LoadUsedSpritesGFX:
 	ld a, MAPCALLBACK_SPRITES
 	call RunMapCallback
 	call GetUsedSprites
+	newfarcall InvalidateFollowerCache
 	call LoadMiscTiles
 	ret
 
@@ -250,6 +251,16 @@ SafeGetSprite:
 	ret
 
 GetSprite:
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary
+	ld de, GenericFollowerGFX
+	ld b, BANK(GenericFollowerGFX)
+	ld c, 12 tiles
+	ld h, b
+	ld l, WALKING_SPRITE
+	and a
+	ret
+.ordinary
 	call GetMonSprite
 	ret c
 
@@ -279,6 +290,8 @@ GetSprite:
 GetMonSprite:
 ; Return carry if a monster sprite was loaded.
 
+	cp SPRITE_FOLLOWER
+	jr z, .NoBreedmon
 	cp SPRITE_POKEMON
 	jr c, .Normal
 	cp SPRITE_DAY_CARE_MON_1
@@ -366,6 +379,11 @@ _DoesSpriteHaveFacings::
 
 _GetSpritePalette::
 	ld a, c
+	cp SPRITE_FOLLOWER
+	jr nz, .ordinary
+	ld c, PAL_OW_FOLLOWER
+	ret
+.ordinary
 	call GetMonSprite
 	jr c, .is_pokemon
 
@@ -389,6 +407,8 @@ LoadAndSortSprites:
 	ret
 
 AddSpriteGFX:
+	cp SPRITE_FOLLOWER
+	ret z ; dedicated cache, not an ordinary 24-tile allocation
 ; Add any new sprite ids to a list of graphics to be loaded.
 ; Return carry if the list is full.
 
@@ -427,7 +447,7 @@ AddSpriteGFX:
 	ret
 
 LoadSpriteGFX:
-; BUG: LoadSpriteGFX does not limit the capacity of UsedSprites (see docs/bugs_and_glitches.md)
+; GetSprite clobbers bc; preserve the bounded list counter across each lookup.
 
 	ld hl, wUsedSprites
 	ld b, SPRITE_GFX_LIST_CAPACITY
@@ -436,7 +456,9 @@ LoadSpriteGFX:
 	and a
 	jr z, .done
 	push hl
+	push bc
 	call .LoadSprite
+	pop bc
 	pop hl
 	ld [hli], a
 	dec b
@@ -521,62 +543,7 @@ SortUsedSprites:
 	ret
 
 ArrangeUsedSprites:
-; Get the length of each sprite and space them out in VRAM.
-; Crystal introduces a second table in VRAM bank 0.
-
-	ld hl, wUsedSprites
-	ld c, SPRITE_GFX_LIST_CAPACITY
-	ld b, 0
-.FirstTableLength:
-; Keep going until the end of the list.
-	ld a, [hli]
-	and a
-	jr z, .quit
-
-	ld a, [hl]
-	call GetSpriteLength
-
-; Spill over into the second table after $80 tiles.
-	add b
-	cp $80
-	jr z, .loop
-	jr nc, .SecondTable
-
-.loop
-	ld [hl], b
-	inc hl
-	ld b, a
-
-; Assumes the next table will be reached before c hits 0.
-	dec c
-	jr nz, .FirstTableLength
-
-.SecondTable:
-; The second tile table starts at tile $80.
-	ld b, $80
-	dec hl
-.SecondTableLength:
-; Keep going until the end of the list.
-	ld a, [hli]
-	and a
-	jr z, .quit
-
-	ld a, [hl]
-	call GetSpriteLength
-
-; There are only two tables, so don't go any further than that.
-	add b
-	jr c, .quit
-
-	ld [hl], b
-	ld b, a
-	inc hl
-
-	dec c
-	jr nz, .SecondTableLength
-
-.quit
-	ret
+	newfarjp ArrangeFollowerSafeSprites
 
 GetSpriteLength:
 ; Return the length of sprite type a in tiles.

@@ -45,6 +45,7 @@ ClefairyDance:
 	ifnotequal MONDAY, .NoDancing
 	checktime NITE
 	iffalse .NoDancing
+    hidefollower
 	appear MOUNTMOONSQUARE_FAIRY1
 	appear MOUNTMOONSQUARE_FAIRY2
 	applymovement PLAYER, PlayerWalksUpToDancingClefairies
@@ -83,6 +84,7 @@ ClefairyDance:
 	stopfollow
 	clearevent EVENT_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
 	setflag ENGINE_MT_MOON_SQUARE_CLEFAIRY
+    showfollower
 	end
 
 .NoDancing:
@@ -310,4 +312,4 @@ MountMoonSquare_MapEvents:
 	object_event  7,  6, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_SQUARE_CLEFAIRY
 	object_event  7,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MtMoonSquareRock, EVENT_MT_MOON_SQUARE_ROCK
 	object_event  17,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MtMoonGreenScript, EVENT_FIELD_MON_1
-	object_event 24,  4, SPRITE_URSALUNA_B, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, MountMoonSquareFieldMon1Script, EVENT_FIELD_MON_2
+	object_event 24,  4, SPRITE_URSALUNA_B, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, MountMoonSquareFieldMon1Script, EVENT_FIELD_MON_2

@@ -54,4 +54,4 @@ RuinsOfAlphHoOhWordRoom_MapEvents:
 
 	def_object_events
 	object_event 14,  9, SPRITE_METAGROSS, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HoohWordRoomFieldMon1Script, EVENT_FIELD_MON_1
-	object_event  9,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GOLD, OBJECTTYPE_SCRIPT, 0, AtemStatueScript, -1
+	object_event  9,  4, SPRITE_RED, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, AtemStatueScript, -1

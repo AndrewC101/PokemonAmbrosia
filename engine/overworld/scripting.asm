@@ -822,6 +822,9 @@ Script_applymovement:
 	ld c, a
 
 ApplyMovement:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	push bc
 	ld a, c
 	farcall FreezeAllOtherObjects
@@ -986,6 +989,13 @@ Script_disappear:
 	jr nz, .ok
 	ldh a, [hLastTalked]
 .ok
+	; Hiding the player is staged scene work, even without applymovement.
+if !DEF(FOLLOWER_TEST)
+    and a
+    jr nz, .not_player
+    newfarcall SuspendFollowerForScene
+.not_player
+endc
 	call DeleteObjectStruct
 	ldh a, [hMapObjectIndex]
 	ld b, 1 ; set
@@ -1024,10 +1034,16 @@ Script_follow:
 	ret
 
 Script_stopfollow:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	farcall StopFollow
 	ret
 
 Script_moveobject:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	call GetScriptByte
 	call GetScriptObject
 	ld b, a
@@ -1052,6 +1068,9 @@ Script_writeobjectxy:
 	ret
 
 Script_follownotexact:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	call GetScriptByte
 	call GetScriptObject
 	ld b, a
@@ -1234,6 +1253,9 @@ Script_loadtrainer:
 	ret
 
 Script_startbattle:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	call BufferScreen
 	predef StartBattle
 	ld a, [wBattleResult]
@@ -1242,6 +1264,9 @@ Script_startbattle:
 	ret
 
 Script_catchtutorial:
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForScene
+endc
 	call GetScriptByte
 	ld [wBattleType], a
 	call BufferScreen

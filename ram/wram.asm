@@ -3456,9 +3456,20 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 22
+; Versioned follower preference, inside both primary/backup Pokémon save copies.
+; Name existing padding only: keep every later symbol and all structs fixed.
+wFollowerSelectionRecord::
+wFollowerSelectionMagic:: ds 2
+wFollowerSelection:: db ; 0 = none, 1..6 = party slot
+wFollowerSelectionInverse:: db
+wFollowerSelectionSuspended:: db ; Bug Contest / borrowed team
+wFollowerSelectionSuspendedInverse:: db
+wFollowerSelectionRecordEnd::
+    assert wFollowerSelectionRecordEnd - wFollowerSelectionRecord == 6
+	ds 22 - (wFollowerSelectionRecordEnd - wFollowerSelectionRecord)
 
 wPokedexCaught:: flag_array NUM_POKEMON
+    assert wPokedexCaught - wPartyMonNicknamesEnd == 22
 wEndPokedexCaught::
 
 wPokedexSeen:: flag_array NUM_POKEMON

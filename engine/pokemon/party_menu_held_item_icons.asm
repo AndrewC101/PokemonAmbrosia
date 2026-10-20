@@ -10,6 +10,10 @@ LoadPartyMenuHeldItemIconGFX:
 	ld de, PartyMenuItemIconGFX
 	ld hl, vTiles2 tile PARTY_MENU_ITEM_TILE
 	lb bc, BANK(PartyMenuItemIconGFX), 1
+	call .LoadTile
+	ld de, PartyMenuFollowerIconGFX
+	ld hl, vTiles1 tile (PARTY_MENU_FOLLOWER_TILE - $80)
+	lb bc, BANK(PartyMenuFollowerIconGFX), 1
 	; fallthrough
 
 .LoadTile
@@ -27,6 +31,12 @@ PartyMenuMailIconGFX:
 PartyMenuItemIconGFX:
 	; Keep the normal party marker independent of other HeldItemIcons users.
 	INCBIN "gfx/stats/party_item.2bpp"
+
+PartyMenuFollowerIconGFX:
+	; Full 2bpp badge: white background, colored interior and black outline.
+	; Load after the font so the reserved tile retains both color planes.
+	INCBIN "gfx/stats/party_follower.2bpp"
+assert @ - PartyMenuFollowerIconGFX == 1 tiles
 
 PlacePartyMenuHeldItemIcons:
 	ld a, [wPartyCount]

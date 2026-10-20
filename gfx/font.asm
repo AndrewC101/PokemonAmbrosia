@@ -2,7 +2,7 @@ FontExtra:
 INCBIN "gfx/font/font_extra.2bpp"
 
 Font:
-INCBIN "gfx/font/font.1bpp" ; includes custom <FOLLOWER> glyph at $c9
+INCBIN "gfx/font/font.1bpp" ; party menu overlays $c9 with its separate 2bpp badge
 
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"

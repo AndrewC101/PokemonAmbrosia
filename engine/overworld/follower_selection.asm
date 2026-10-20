@@ -247,10 +247,10 @@ PlaceFollowerPartyMarker::
     ld bc, 2 * SCREEN_WIDTH
     hlcoord 4, 2
     call AddNTimes
-    ld [hl], CHARVAL("<FOLLOWER>")
+    ld [hl], PARTY_MENU_FOLLOWER_TILE
     ld de, wAttrmap - wTilemap
     add hl, de
-    ld [hl], 0 ; normal UI background palette, independent of item/mail red
+    ld [hl], PARTY_MENU_FOLLOWER_PAL
     ld a, [hCGB]
     and a
     ret z

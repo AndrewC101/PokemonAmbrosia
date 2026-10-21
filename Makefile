@@ -29,6 +29,9 @@ pokecrystal11_debug_obj := $(rom_obj:.o=11_debug.o)
 
 ### Build tools
 
+# Optional settings for tools installed locally on this computer.
+-include .build-local.mk
+
 ifeq (,$(shell command -v sha1sum 2>/dev/null))
 SHA1 := shasum
 else
@@ -88,7 +91,7 @@ tools:
 	$(MAKE) -C tools/
 
 all:
-	tools/free_space.awk BANK=all pokecrystal.map
+	awk -f tools/free_space.awk BANK=all pokecrystal.map
 
 RGBASMFLAGS += -Q8 -P includes.asm
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`
@@ -163,7 +166,7 @@ include gfx/lz.mk
 
 gfx/pokemon/%/front.animated.2bpp: gfx/pokemon/%/front.2bpp gfx/pokemon/%/front.dimensions
 	tools/pokemon_animation_graphics -o $@ $^
-	tools/trim_animation.sh $@ $(word 2,$^)
+	sh tools/trim_animation.sh $@ $(word 2,$^)
 
 ### Pokemon and trainer sprite rules
 

@@ -209,17 +209,14 @@ Set level cap to 100
 
 ## Acknowledgements
 
-Ambrosia Dex Sheet and Discord
+### Ambrosia Discord
 - Maxwell
 
-Code
+### Code
 - All contributors to pret/pokecrystal tutorials
 - RaJa239
 
-Wild Encounter Sheet
--  Pepsi_Cola64
-
-Sprites
+### Sprites
 - Eeveeee1999
 - Rosehudson
 - Rangi
@@ -235,6 +232,131 @@ Sprites
 - Fokkos92
 - Egg3ggEgg
 
-Music
+### PokeWilds follower artwork and contributors
+
+Follower artwork comes from [PokeWilds](https://github.com/SheerSt/pokewilds)
+by SheerSt. The Prism team and Megaman-Omega are also credited for the
+original Prism overworld artwork.
+
+<details>
+<summary>Contributors credited by PokeWilds</summary>
+
+- A.J. Nitro
+- Aaamdacuaga
+- Adrian der Cube
+- Alifib
+- ash
+- Ayinai
+- Badsy the Edgecat
+- betsybugaboo
+- BloodlessNS
+- Blumiau
+- boomtox the boombox
+- boomtox-the-boombox
+- bugcut
+- Charade
+- CuervoTerras
+- CynderQuill
+- DerpKip
+- E.splash
+- EeVeeEe
+- Elusiveplayer
+- EnzoDaiki
+- Epharam
+- Et3rniti
+- Exet
+- Filth-sama
+- ForeverBurning
+- Galenorla
+- Gargoyle
+- GenDraconis
+- GlitchxCity
+- Gmerc
+- GML
+- Goose
+- Gyu
+- hades da god
+- HERO
+- Hibiwiki
+- ICantBelieveItsNotBowser
+- impl
+- IncuTyph
+- Indie
+- Internet_Goblin
+- Invader
+- Iustinus Tempus
+- JappaWakka
+- Jiggy
+- Kalvinz
+- Kazdraws0w0
+- Kedöshim
+- Kishibird
+- Kommie
+- kyro909
+- Lavios
+- Liminalia
+- Lockerz102
+- LunaMaddalena
+- Lux
+- LuxBeacon
+- Manik-Needlemouse
+- MapleSyrup
+- Megaman-Omega
+- MegamanOmega
+- Menu
+- Meowmie
+- Meowmie/Tabby
+- Miserable Pile Of Secrets
+- MKNZ
+- Molk
+- Morningdew
+- Mr Dustman
+- nik11dy6
+- Nuuk (nuukiie)
+- OtDxRaichunite
+- peach-n-key
+- Poisonous Gas
+- Potato Q
+- PotatoCheep
+- Queen Kami
+- Quilchess
+- Roffles
+- Rolyer
+- Sadfish
+- Sage
+- Sakaya
+- SaltExplosion
+- Sayaka
+- Scarlax
+- SCHLIEMONI
+- Scoobleblablebly
+- Seiiccubus
+- ShadowOne333
+- Shaqtothefuture
+- SharkGuy
+- SheerSt
+- Sir Fear-ali
+- Sir Feralipogchamp
+- SkwovetSquire
+- Skymaury
+- Snak
+- Solo993
+- Sorrel
+- sun_dew
+- TerraTerraCotta
+- the Prism team
+- Toastknight
+- Turner
+- Twilier / Reshidove
+- uchuu
+- Vandom
+- Ventilatore
+- Village
+- Zame
+- 𝔼z̶𝓊𝓹Δɔʞ / ITWinVis
+
+### Music
 - Mmmmmm
 - ShockSlayer
+
+</details>

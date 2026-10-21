@@ -1,4 +1,4 @@
-; Explicit Ambrosia species mapping; no upstream numeric IDs or aliases.
+; Explicit Ambrosia species mapping; no inferred species/form aliases.
 MACRO follower_sprite
     assert \1 == (@ - FollowerSpritePointers) / 4 + 1
     dba \2
@@ -16,25 +16,25 @@ FollowerSpritePointers:
     follower_sprite SQUIRTLE, SquirtleFollowerGFX, 1
     follower_sprite WARTORTLE, WartortleFollowerGFX, 1
     follower_sprite BLASTOISE, BlastoiseFollowerGFX, 1
-    follower_sprite VENIPEDE, GenericFollowerGFX, 0
-    follower_sprite WHIRLIPEDE, GenericFollowerGFX, 0
-    follower_sprite SCOLIPEDE, GenericFollowerGFX, 0
-    follower_sprite HONEDGE, GenericFollowerGFX, 0
-    follower_sprite DOUBLADE, GenericFollowerGFX, 0
-    follower_sprite AEGISLASH, GenericFollowerGFX, 0
-    follower_sprite STARLY, GenericFollowerGFX, 0
-    follower_sprite STARAVIA, GenericFollowerGFX, 0
-    follower_sprite STARAPTOR, GenericFollowerGFX, 0
+    follower_sprite VENIPEDE, VenipedeFollowerGFX, 1
+    follower_sprite WHIRLIPEDE, WhirlipedeFollowerGFX, 1
+    follower_sprite SCOLIPEDE, ScolipedeFollowerGFX, 1
+    follower_sprite HONEDGE, HonedgeFollowerGFX, 1
+    follower_sprite DOUBLADE, DoubladeFollowerGFX, 1
+    follower_sprite AEGISLASH, AegislashFollowerGFX, 1
+    follower_sprite STARLY, StarlyFollowerGFX, 1
+    follower_sprite STARAVIA, StaraviaFollowerGFX, 1
+    follower_sprite STARAPTOR, StaraptorFollowerGFX, 1
     follower_sprite RATTATA, RattataFollowerGFX, 1
     follower_sprite RATICATE, RaticateFollowerGFX, 1
-    follower_sprite BUNEARY, GenericFollowerGFX, 0
-    follower_sprite LOPUNNY, GenericFollowerGFX, 0
-    follower_sprite DEINO, GenericFollowerGFX, 0
+    follower_sprite BUNEARY, BunearyFollowerGFX, 1
+    follower_sprite LOPUNNY, LopunnyFollowerGFX, 1
+    follower_sprite DEINO, DeinoFollowerGFX, 1
     follower_sprite ARBOK, ArbokFollowerGFX, 1
     follower_sprite PIKACHU, PikachuFollowerGFX, 1
     follower_sprite RAICHU, RaichuFollowerGFX, 1
-    follower_sprite ROTOM, GenericFollowerGFX, 0
-    follower_sprite POLTEGEIST, GenericFollowerGFX, 0
+    follower_sprite ROTOM, RotomFollowerGFX, 1
+    follower_sprite POLTEGEIST, PoltegeistFollowerGFX, 1
     follower_sprite NIDORAN_F, NidoranFFollowerGFX, 1
     follower_sprite NIDORINA, NidorinaFollowerGFX, 1
     follower_sprite NIDOQUEEN, NidoqueenFollowerGFX, 1
@@ -49,19 +49,19 @@ FollowerSpritePointers:
     follower_sprite KINGAMBIT, GenericFollowerGFX, 0
     follower_sprite ZUBAT, ZubatFollowerGFX, 1
     follower_sprite GOLBAT, GolbatFollowerGFX, 1
-    follower_sprite PAWNIARD, GenericFollowerGFX, 0
-    follower_sprite BISHARP, GenericFollowerGFX, 0
-    follower_sprite REGIGIGAS, GenericFollowerGFX, 0
+    follower_sprite PAWNIARD, PawniardFollowerGFX, 1
+    follower_sprite BISHARP, BisharpFollowerGFX, 1
+    follower_sprite REGIGIGAS, RegigigasFollowerGFX, 1
     follower_sprite ZYGARDE, GenericFollowerGFX, 0
-    follower_sprite HAWLUCHA, GenericFollowerGFX, 0
-    follower_sprite LARVESTA, GenericFollowerGFX, 0
-    follower_sprite VOLCARONA, GenericFollowerGFX, 0
+    follower_sprite HAWLUCHA, HawluchaFollowerGFX, 1
+    follower_sprite LARVESTA, LarvestaFollowerGFX, 1
+    follower_sprite VOLCARONA, VolcaronaFollowerGFX, 1
     follower_sprite ARCTOZOLT, GenericFollowerGFX, 0
     follower_sprite DRACOVISH, GenericFollowerGFX, 0
     follower_sprite MEOWTH, MeowthFollowerGFX, 1
     follower_sprite PERSIAN, PersianFollowerGFX, 1
-    follower_sprite SNOVER, GenericFollowerGFX, 0
-    follower_sprite ABOMASNOW, GenericFollowerGFX, 0
+    follower_sprite SNOVER, SnoverFollowerGFX, 1
+    follower_sprite ABOMASNOW, AbomasnowFollowerGFX, 1
     follower_sprite SHROOMISH, ShroomishFollowerGFX, 1
     follower_sprite BRELOOM, BreloomFollowerGFX, 1
     follower_sprite GROWLITHE, GrowlitheFollowerGFX, 1
@@ -76,7 +76,7 @@ FollowerSpritePointers:
     follower_sprite MACHOKE, MachokeFollowerGFX, 1
     follower_sprite MACHAMP, MachampFollowerGFX, 1
     follower_sprite BELLSPROUT, BellsproutFollowerGFX, 1
-    follower_sprite MIMIKYU, GenericFollowerGFX, 0
+    follower_sprite MIMIKYU, MimikyuFollowerGFX, 1
     follower_sprite VICTREEBEL, VictreebelFollowerGFX, 1
     follower_sprite TENTACOOL, TentacoolFollowerGFX, 1
     follower_sprite TENTACRUEL, TentacruelFollowerGFX, 1
@@ -102,7 +102,7 @@ FollowerSpritePointers:
     follower_sprite HAUNTER, HaunterFollowerGFX, 1
     follower_sprite GENGAR, GengarFollowerGFX, 1
     follower_sprite ONIX, OnixFollowerGFX, 1
-    follower_sprite URSALUNA, GenericFollowerGFX, 0
+    follower_sprite URSALUNA, UrsalunaFollowerGFX, 1
     follower_sprite URSALUNA_B, GenericFollowerGFX, 0
     follower_sprite FEEBAS, FeebasFollowerGFX, 1
     follower_sprite MILOTIC, MiloticFollowerGFX, 1
@@ -112,10 +112,10 @@ FollowerSpritePointers:
     follower_sprite EXEGGUTOR, ExeggutorFollowerGFX, 1
     follower_sprite MARILL, MarillFollowerGFX, 1
     follower_sprite AZUMARILL, AzumarillFollowerGFX, 1
-    follower_sprite SOLOSIS, GenericFollowerGFX, 0
-    follower_sprite DUOSION, GenericFollowerGFX, 0
-    follower_sprite REUNICLUS, GenericFollowerGFX, 0
-    follower_sprite ZWEILOUS, GenericFollowerGFX, 0
+    follower_sprite SOLOSIS, SolosisFollowerGFX, 1
+    follower_sprite DUOSION, DuosionFollowerGFX, 1
+    follower_sprite REUNICLUS, ReuniclusFollowerGFX, 1
+    follower_sprite ZWEILOUS, ZweilousFollowerGFX, 1
     follower_sprite WEEZING, WeezingFollowerGFX, 1
     follower_sprite RHYHORN, RhyhornFollowerGFX, 1
     follower_sprite RHYDON, RhydonFollowerGFX, 1
@@ -161,26 +161,26 @@ FollowerSpritePointers:
     follower_sprite TREECKO, TreeckoFollowerGFX, 1
     follower_sprite GROVYLE, GrovyleFollowerGFX, 1
     follower_sprite SCEPTILE, SceptileFollowerGFX, 1
-    follower_sprite CHIMCHAR, GenericFollowerGFX, 0
-    follower_sprite MONFERNO, GenericFollowerGFX, 0
-    follower_sprite INFERNAPE, GenericFollowerGFX, 0
-    follower_sprite FROAKIE, GenericFollowerGFX, 0
-    follower_sprite FROGADIER, GenericFollowerGFX, 0
-    follower_sprite GRENINJA, GenericFollowerGFX, 0
-    follower_sprite RIOLU, GenericFollowerGFX, 0
-    follower_sprite LUCARIO, GenericFollowerGFX, 0
+    follower_sprite CHIMCHAR, ChimcharFollowerGFX, 1
+    follower_sprite MONFERNO, MonfernoFollowerGFX, 1
+    follower_sprite INFERNAPE, InfernapeFollowerGFX, 1
+    follower_sprite FROAKIE, FroakieFollowerGFX, 1
+    follower_sprite FROGADIER, FrogadierFollowerGFX, 1
+    follower_sprite GRENINJA, GreninjaFollowerGFX, 1
+    follower_sprite RIOLU, RioluFollowerGFX, 1
+    follower_sprite LUCARIO, LucarioFollowerGFX, 1
     follower_sprite HOOTHOOT, HoothootFollowerGFX, 1
     follower_sprite NOCTOWL, NoctowlFollowerGFX, 1
-    follower_sprite DRILBUR, GenericFollowerGFX, 0
-    follower_sprite EXCADRILL, GenericFollowerGFX, 0
-    follower_sprite JOLTIK, GenericFollowerGFX, 0
-    follower_sprite GALVANTULA, GenericFollowerGFX, 0
+    follower_sprite DRILBUR, DrilburFollowerGFX, 1
+    follower_sprite EXCADRILL, ExcadrillFollowerGFX, 1
+    follower_sprite JOLTIK, JoltikFollowerGFX, 1
+    follower_sprite GALVANTULA, GalvantulaFollowerGFX, 1
     follower_sprite CROBAT, CrobatFollowerGFX, 1
     follower_sprite FRIGIBAX, GenericFollowerGFX, 0
     follower_sprite ARCTIBAX, GenericFollowerGFX, 0
-    follower_sprite LITWICK, GenericFollowerGFX, 0
-    follower_sprite LAMPENT, GenericFollowerGFX, 0
-    follower_sprite CHANDELURE, GenericFollowerGFX, 0
+    follower_sprite LITWICK, LitwickFollowerGFX, 1
+    follower_sprite LAMPENT, LampentFollowerGFX, 1
+    follower_sprite CHANDELURE, ChandelureFollowerGFX, 1
     follower_sprite TOGEPI, TogepiFollowerGFX, 1
     follower_sprite TOGETIC, TogeticFollowerGFX, 1
     follower_sprite TOGEKISS, TogekissFollowerGFX, 1
@@ -188,14 +188,14 @@ FollowerSpritePointers:
     follower_sprite MAREEP, MareepFollowerGFX, 1
     follower_sprite FLAAFFY, FlaaffyFollowerGFX, 1
     follower_sprite AMPHAROS, AmpharosFollowerGFX, 1
-    follower_sprite SYLVEON, GenericFollowerGFX, 0
+    follower_sprite SYLVEON, SylveonFollowerGFX, 1
     follower_sprite MISMAGIUS, MismagiusFollowerGFX, 1
     follower_sprite PORYGONZ, PorygonzFollowerGFX, 1
     follower_sprite GENESECT, GenericFollowerGFX, 0
     follower_sprite POLITOED, PolitoedFollowerGFX, 1
-    follower_sprite TIMBURR, GenericFollowerGFX, 0
-    follower_sprite GURDURR, GenericFollowerGFX, 0
-    follower_sprite CONKELDURR, GenericFollowerGFX, 0
+    follower_sprite TIMBURR, TimburrFollowerGFX, 1
+    follower_sprite GURDURR, GurdurrFollowerGFX, 1
+    follower_sprite CONKELDURR, ConkeldurrFollowerGFX, 1
     follower_sprite BELDUM, BeldumFollowerGFX, 1
     follower_sprite METANG, MetangFollowerGFX, 1
     follower_sprite METAGROSS, MetagrossFollowerGFX, 1
@@ -208,16 +208,16 @@ FollowerSpritePointers:
     follower_sprite MELMETAL, GenericFollowerGFX, 0
     follower_sprite MISDREAVUS, MisdreavusFollowerGFX, 1
     follower_sprite UNOWN, UnownFollowerGFX, 1
-    follower_sprite MELTAN, GenericFollowerGFX, 0
+    follower_sprite MELTAN, MeltanFollowerGFX, 1
     follower_sprite BAGON, BagonFollowerGFX, 1
     follower_sprite SHELGON, ShelgonFollowerGFX, 1
     follower_sprite SALAMENCE, SalamenceFollowerGFX, 1
-    follower_sprite HYDREIGON, GenericFollowerGFX, 0
+    follower_sprite HYDREIGON, HydreigonFollowerGFX, 1
     follower_sprite GLIGAR, GligarFollowerGFX, 1
     follower_sprite STEELIX, SteelixFollowerGFX, 1
-    follower_sprite GIBLE, GenericFollowerGFX, 0
-    follower_sprite GABITE, GenericFollowerGFX, 0
-    follower_sprite GARCHOMP, GenericFollowerGFX, 0
+    follower_sprite GIBLE, GibleFollowerGFX, 1
+    follower_sprite GABITE, GabiteFollowerGFX, 1
+    follower_sprite GARCHOMP, GarchompFollowerGFX, 1
     follower_sprite SCIZOR, ScizorFollowerGFX, 1
     follower_sprite SHAYMIN, GenericFollowerGFX, 0
     follower_sprite HERACROSS, HeracrossFollowerGFX, 1
@@ -225,26 +225,26 @@ FollowerSpritePointers:
     follower_sprite TEDDIURSA, TeddiursaFollowerGFX, 1
     follower_sprite URSARING, UrsaringFollowerGFX, 1
     follower_sprite LATIAS, LatiasFollowerGFX, 1
-    follower_sprite DEOXYS, GenericFollowerGFX, 0
+    follower_sprite DEOXYS, DeoxysFollowerGFX, 1
     follower_sprite SWINUB, SwinubFollowerGFX, 1
     follower_sprite PILOSWINE, PiloswineFollowerGFX, 1
     follower_sprite NOWN, GenericFollowerGFX, 0
     follower_sprite LATIOS, LatiosFollowerGFX, 1
-    follower_sprite PALKIA, GenericFollowerGFX, 0
+    follower_sprite PALKIA, PalkiaFollowerGFX, 1
     follower_sprite KYOGRE, KyogreFollowerGFX, 1
     follower_sprite GROUDON, GroudonFollowerGFX, 1
     follower_sprite SKARMORY, SkarmoryFollowerGFX, 1
     follower_sprite HOUNDOUR, HoundourFollowerGFX, 1
     follower_sprite HOUNDOOM, HoundoomFollowerGFX, 1
     follower_sprite KINGDRA, KingdraFollowerGFX, 1
-    follower_sprite COTTONEE, GenericFollowerGFX, 0
-    follower_sprite WHIMSICOTT, GenericFollowerGFX, 0
+    follower_sprite COTTONEE, CottoneeFollowerGFX, 1
+    follower_sprite WHIMSICOTT, WhimsicottFollowerGFX, 1
     follower_sprite PORYGON2, Porygon2FollowerGFX, 1
     follower_sprite RAYQUAZA, RayquazaFollowerGFX, 1
     follower_sprite SMEARGLE, SmeargleFollowerGFX, 1
-    follower_sprite DIALGA, GenericFollowerGFX, 0
-    follower_sprite KLEAVOR, GenericFollowerGFX, 0
-    follower_sprite XERNEAS, GenericFollowerGFX, 0
+    follower_sprite DIALGA, DialgaFollowerGFX, 1
+    follower_sprite KLEAVOR, KleavorFollowerGFX, 1
+    follower_sprite XERNEAS, XerneasFollowerGFX, 1
     follower_sprite YVELTAL, GenericFollowerGFX, 0
     follower_sprite GIRATINA, GenericFollowerGFX, 0
     follower_sprite MILTANK, MiltankFollowerGFX, 1
@@ -259,6 +259,6 @@ FollowerSpritePointers:
     follower_sprite HO_OH, HoOhFollowerGFX, 1
     follower_sprite CELEBI, CelebiFollowerGFX, 1
     follower_sprite MEWTWO, MewtwoFollowerGFX, 1
-    follower_sprite ARCEUS, GenericFollowerGFX, 0
+    follower_sprite ARCEUS, ArceusFollowerGFX, 1
     assert_table_length NUM_POKEMON
 PURGE follower_sprite

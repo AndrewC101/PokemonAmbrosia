@@ -602,6 +602,11 @@ UrsalunaFollowerGFX::
     INCBIN "gfx/followers/ursaluna.2bpp"
 assert @ - UrsalunaFollowerGFX == FOLLOWER_GFX_SIZE
 
+SECTION "Follower art URSALUNA_B", ROMX
+UrsalunaBFollowerGFX::
+    INCBIN "gfx/followers/ursaluna_b.2bpp"
+assert @ - UrsalunaBFollowerGFX == FOLLOWER_GFX_SIZE
+
 SECTION "Follower art FEEBAS", ROMX
 FeebasFollowerGFX::
     INCBIN "gfx/followers/feebas.2bpp", 0, 16 tiles
@@ -1082,6 +1087,11 @@ TogekissFollowerGFX::
     INCBIN "gfx/followers/togekiss.2bpp", 16 tiles, 4 tiles
 assert @ - TogekissFollowerGFX == FOLLOWER_GFX_SIZE
 
+SECTION "Follower art NINETALES_A", ROMX
+NinetalesAFollowerGFX::
+    INCBIN "gfx/followers/ninetales_a.2bpp"
+assert @ - NinetalesAFollowerGFX == FOLLOWER_GFX_SIZE
+
 SECTION "Follower art MAREEP", ROMX
 MareepFollowerGFX::
     INCBIN "gfx/followers/mareep.2bpp", 0, 16 tiles
@@ -1442,6 +1452,11 @@ XerneasFollowerGFX::
     INCBIN "gfx/followers/xerneas.2bpp"
 assert @ - XerneasFollowerGFX == FOLLOWER_GFX_SIZE
 
+SECTION "Follower art YVELTAL", ROMX
+YveltalFollowerGFX::
+    INCBIN "gfx/followers/yveltal.2bpp"
+assert @ - YveltalFollowerGFX == FOLLOWER_GFX_SIZE
+
 SECTION "Follower art MILTANK", ROMX
 MiltankFollowerGFX::
     INCBIN "gfx/followers/miltank.2bpp", 0, 16 tiles
@@ -1523,3 +1538,13 @@ SECTION "Follower art ARCEUS", ROMX
 ArceusFollowerGFX::
     INCBIN "gfx/followers/arceus.2bpp"
 assert @ - ArceusFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art NOWN", ROMX
+NownFollowerGFX::
+    INCBIN "gfx/followers/nown.2bpp"
+assert @ - NownFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art SNEASLER", ROMX
+SneaslerFollowerGFX::
+    INCBIN "gfx/followers/sneasler.2bpp"
+assert @ - SneaslerFollowerGFX == FOLLOWER_GFX_SIZE

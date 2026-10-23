@@ -103,7 +103,7 @@ FollowerSpritePointers:
     follower_sprite GENGAR, GengarFollowerGFX, 1
     follower_sprite ONIX, OnixFollowerGFX, 1
     follower_sprite URSALUNA, UrsalunaFollowerGFX, 1
-    follower_sprite URSALUNA_B, GenericFollowerGFX, 0
+    follower_sprite URSALUNA_B, UrsalunaBFollowerGFX, 1
     follower_sprite FEEBAS, FeebasFollowerGFX, 1
     follower_sprite MILOTIC, MiloticFollowerGFX, 1
     follower_sprite MUDKIP, MudkipFollowerGFX, 1
@@ -122,7 +122,7 @@ FollowerSpritePointers:
     follower_sprite CHANSEY, ChanseyFollowerGFX, 1
     follower_sprite WEAVILE, WeavileFollowerGFX, 1
     follower_sprite RHYPERIOR, RhyperiorFollowerGFX, 1
-    follower_sprite SNEASLER, GenericFollowerGFX, 0
+    follower_sprite SNEASLER, SneaslerFollowerGFX, 1
     follower_sprite SEADRA, SeadraFollowerGFX, 1
     follower_sprite MAGMORTAR, MagmortarFollowerGFX, 1
     follower_sprite HONCHKROW, HonchkrowFollowerGFX, 1
@@ -184,7 +184,7 @@ FollowerSpritePointers:
     follower_sprite TOGEPI, TogepiFollowerGFX, 1
     follower_sprite TOGETIC, TogeticFollowerGFX, 1
     follower_sprite TOGEKISS, TogekissFollowerGFX, 1
-    follower_sprite NINETALES_A, GenericFollowerGFX, 0
+    follower_sprite NINETALES_A, NinetalesAFollowerGFX, 1
     follower_sprite MAREEP, MareepFollowerGFX, 1
     follower_sprite FLAAFFY, FlaaffyFollowerGFX, 1
     follower_sprite AMPHAROS, AmpharosFollowerGFX, 1
@@ -228,7 +228,7 @@ FollowerSpritePointers:
     follower_sprite DEOXYS, DeoxysFollowerGFX, 1
     follower_sprite SWINUB, SwinubFollowerGFX, 1
     follower_sprite PILOSWINE, PiloswineFollowerGFX, 1
-    follower_sprite NOWN, GenericFollowerGFX, 0
+    follower_sprite NOWN, NownFollowerGFX, 1
     follower_sprite LATIOS, LatiosFollowerGFX, 1
     follower_sprite PALKIA, PalkiaFollowerGFX, 1
     follower_sprite KYOGRE, KyogreFollowerGFX, 1
@@ -245,7 +245,7 @@ FollowerSpritePointers:
     follower_sprite DIALGA, DialgaFollowerGFX, 1
     follower_sprite KLEAVOR, KleavorFollowerGFX, 1
     follower_sprite XERNEAS, XerneasFollowerGFX, 1
-    follower_sprite YVELTAL, GenericFollowerGFX, 0
+    follower_sprite YVELTAL, YveltalFollowerGFX, 1
     follower_sprite GIRATINA, GenericFollowerGFX, 0
     follower_sprite MILTANK, MiltankFollowerGFX, 1
     follower_sprite BLISSEY, BlisseyFollowerGFX, 1

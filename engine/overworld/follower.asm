@@ -667,7 +667,21 @@ GuardPokemonFollowerQueue::
 
 FollowerInteractionScript::
     faceplayer
-    readmem wFollowerSpecies
-    cry 0
-    waitsfx
+    callasm ShowFollowerInteractionPreview
     end
+
+ShowFollowerInteractionPreview:
+; Reuse the field-move picture/cry with the selected follower's party colours.
+; Talking must not change the party member selected by other menu/script users.
+    ld a, [wCurPartyMon]
+    push af
+    ld a, [wCurPartySpecies]
+    push af
+    ld a, [wFollowerPartyIndex]
+    ld [wCurPartyMon], a
+    farcall ShowFieldMovePreview
+    pop af
+    ld [wCurPartySpecies], a
+    pop af
+    ld [wCurPartyMon], a
+    ret

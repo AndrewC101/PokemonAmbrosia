@@ -1548,3 +1548,43 @@ SECTION "Follower art SNEASLER", ROMX
 SneaslerFollowerGFX::
     INCBIN "gfx/followers/sneasler.2bpp"
 assert @ - SneaslerFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art SHAYMIN", ROMX
+ShayminFollowerGFX::
+    INCBIN "gfx/followers/shaymin.2bpp"
+assert @ - ShayminFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art FERROSEED", ROMX
+FerroseedFollowerGFX::
+    INCBIN "gfx/followers/ferroseed.2bpp"
+assert @ - FerroseedFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art FERROTHORN", ROMX
+FerrothornFollowerGFX::
+    INCBIN "gfx/followers/ferrothorn.2bpp"
+assert @ - FerrothornFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art GENESECT", ROMX
+GenesectFollowerGFX::
+    INCBIN "gfx/followers/genesect.2bpp"
+assert @ - GenesectFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art FRIGIBAX", ROMX
+FrigibaxFollowerGFX::
+    INCBIN "gfx/followers/frigibax.2bpp"
+assert @ - FrigibaxFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art ARCTIBAX", ROMX
+ArctibaxFollowerGFX::
+    INCBIN "gfx/followers/arctibax.2bpp"
+assert @ - ArctibaxFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art BAXCALIBUR", ROMX
+BaxcaliburFollowerGFX::
+    INCBIN "gfx/followers/baxcalibur.2bpp"
+assert @ - BaxcaliburFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art KINGAMBIT", ROMX
+KingambitFollowerGFX::
+    INCBIN "gfx/followers/kingambit.2bpp"
+assert @ - KingambitFollowerGFX == FOLLOWER_GFX_SIZE

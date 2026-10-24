@@ -324,6 +324,10 @@ ResetWRAM_NewGamePlus:
 	inc hl
 	ld [hl], LOW(MOM_MONEY)
 
+	; Set the mode explicitly; base-game progress also reaches a level cap of 100.
+	ld a, 1
+	ld [wNewGamePlus], a
+
 	; DevNote - New Game Plus - 100 level cap
 	ld a, 100
     ld [wLevelCap], a

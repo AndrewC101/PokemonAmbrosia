@@ -216,21 +216,22 @@ PokeBallEffect:
 	dec a
 	jp nz, UseBallInTrainerBattle
 
-; DevNote - capture level restrictions
-    ld a, [wLevelCap]
-    cp 100
-    jr z, .capture
-    push bc
-    ld b, a
-    ld a, [wEnemyMonLevel]
-    add 9
-    cp b
-    pop bc
-    jr c, .capture
+; Capture up to the training cap minus 10, or up to 100 when the cap is 100.
+	push bc
+	ld a, [wLevelCap]
+	cp 100
+	jr z, .check_capture_level
+	sub 10
+.check_capture_level
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	cp b
+	pop bc
+	jr c, .capture
+	jr z, .capture
 
-    ; restrict
-    call ReturnToBattle_UseBall
-    call DeflectBall
+	call ReturnToBattle_UseBall
+	call DeflectBall
 	ld hl, LevelTooHighText
 	call PrintText
 	ld hl, MoreBadgesText

@@ -52,12 +52,12 @@ FollowerSpritePointers:
     follower_sprite PAWNIARD, PawniardFollowerGFX, 1
     follower_sprite BISHARP, BisharpFollowerGFX, 1
     follower_sprite REGIGIGAS, RegigigasFollowerGFX, 1
-    follower_sprite ZYGARDE, GenericFollowerGFX, 0
+    follower_sprite ZYGARDE, ZygardeFollowerGFX, 1
     follower_sprite HAWLUCHA, HawluchaFollowerGFX, 1
     follower_sprite LARVESTA, LarvestaFollowerGFX, 1
     follower_sprite VOLCARONA, VolcaronaFollowerGFX, 1
-    follower_sprite ARCTOZOLT, GenericFollowerGFX, 0
-    follower_sprite DRACOVISH, GenericFollowerGFX, 0
+    follower_sprite ARCTOZOLT, ArctozoltFollowerGFX, 1
+    follower_sprite DRACOVISH, DracovishFollowerGFX, 1
     follower_sprite MEOWTH, MeowthFollowerGFX, 1
     follower_sprite PERSIAN, PersianFollowerGFX, 1
     follower_sprite SNOVER, SnoverFollowerGFX, 1
@@ -156,7 +156,7 @@ FollowerSpritePointers:
     follower_sprite DRATINI, DratiniFollowerGFX, 1
     follower_sprite DRAGONAIR, DragonairFollowerGFX, 1
     follower_sprite DRAGONITE, DragoniteFollowerGFX, 1
-    follower_sprite DARKRAI, GenericFollowerGFX, 0
+    follower_sprite DARKRAI, DarkraiFollowerGFX, 1
     follower_sprite MEW, MewFollowerGFX, 1
     follower_sprite TREECKO, TreeckoFollowerGFX, 1
     follower_sprite GROVYLE, GrovyleFollowerGFX, 1
@@ -205,7 +205,7 @@ FollowerSpritePointers:
     follower_sprite ESPEON, EspeonFollowerGFX, 1
     follower_sprite UMBREON, UmbreonFollowerGFX, 1
     follower_sprite MURKROW, MurkrowFollowerGFX, 1
-    follower_sprite MELMETAL, GenericFollowerGFX, 0
+    follower_sprite MELMETAL, MelmetalFollowerGFX, 1
     follower_sprite MISDREAVUS, MisdreavusFollowerGFX, 1
     follower_sprite UNOWN, UnownFollowerGFX, 1
     follower_sprite MELTAN, MeltanFollowerGFX, 1
@@ -246,7 +246,7 @@ FollowerSpritePointers:
     follower_sprite KLEAVOR, KleavorFollowerGFX, 1
     follower_sprite XERNEAS, XerneasFollowerGFX, 1
     follower_sprite YVELTAL, YveltalFollowerGFX, 1
-    follower_sprite GIRATINA, GenericFollowerGFX, 0
+    follower_sprite GIRATINA, GiratinaFollowerGFX, 1
     follower_sprite MILTANK, MiltankFollowerGFX, 1
     follower_sprite BLISSEY, BlisseyFollowerGFX, 1
     follower_sprite RAIKOU, RaikouFollowerGFX, 1

@@ -677,9 +677,11 @@ ShowFollowerInteractionPreview:
     push af
     ld a, [wCurPartySpecies]
     push af
+    call ReanchorMap
     ld a, [wFollowerPartyIndex]
     ld [wCurPartyMon], a
     farcall ShowFieldMovePreview
+    call CloseText
     pop af
     ld [wCurPartySpecies], a
     pop af

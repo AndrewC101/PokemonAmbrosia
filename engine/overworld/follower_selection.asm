@@ -11,6 +11,18 @@ InitializeFollowerSelection::
     ld [wFollowerSelectionMagic + 1], a
     jp SealFollowerSelection
 
+SelectElmStarterFollower::
+    ld a, [wNewGamePlus]
+    and a
+    ret nz
+    ld a, [wPartyCount]
+    cp 1
+    ret nz
+    call GetFollowerSelection
+    ld a, 1
+    ld [wFollowerSelection], a
+    jp SealFollowerSelection
+
 GetFollowerSelection::
 ; a = 0..6. Legacy/invalid records become none. Do not validate against the
 ; current count here: the Bug Contest deliberately masks all but party slot 1.

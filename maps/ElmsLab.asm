@@ -312,6 +312,7 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_CUSTOM_1
+	callasm SelectElmStarterFollower
 	end
 
 ElmDescribesMrPokemonScript:

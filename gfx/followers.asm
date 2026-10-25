@@ -1625,3 +1625,33 @@ SECTION "Follower art KINGAMBIT", ROMX
 KingambitFollowerGFX::
     INCBIN "gfx/followers/kingambit.2bpp"
 assert @ - KingambitFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art ZYGARDE", ROMX
+ZygardeFollowerGFX::
+    INCBIN "gfx/followers/zygarde.2bpp"
+assert @ - ZygardeFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art ARCTOZOLT", ROMX
+ArctozoltFollowerGFX::
+    INCBIN "gfx/followers/arctozolt.2bpp"
+assert @ - ArctozoltFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art DRACOVISH", ROMX
+DracovishFollowerGFX::
+    INCBIN "gfx/followers/dracovish.2bpp"
+assert @ - DracovishFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art DARKRAI", ROMX
+DarkraiFollowerGFX::
+    INCBIN "gfx/followers/darkrai.2bpp"
+assert @ - DarkraiFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art MELMETAL", ROMX
+MelmetalFollowerGFX::
+    INCBIN "gfx/followers/melmetal.2bpp"
+assert @ - MelmetalFollowerGFX == FOLLOWER_GFX_SIZE
+
+SECTION "Follower art GIRATINA", ROMX
+GiratinaFollowerGFX::
+    INCBIN "gfx/followers/giratina.2bpp"
+assert @ - GiratinaFollowerGFX == FOLLOWER_GFX_SIZE

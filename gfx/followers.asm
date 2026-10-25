@@ -1,5 +1,4 @@
 ; Follower graphics use the current PNGs in gfx/followers/.
-; Original imports swap their side pair below; new sheets use direct INCBIN.
 SECTION "Follower initial art", ROMX, BANK[$7a]
 
 ; Monster's original frame order is down/up/side rest, then down/up/side step.
@@ -129,7 +128,9 @@ assert @ - AegislashFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art STARLY", ROMX
 StarlyFollowerGFX::
-    INCBIN "gfx/followers/starly.2bpp"
+    INCBIN "gfx/followers/starly.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/starly.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/starly.2bpp", 16 tiles, 4 tiles
 assert @ - StarlyFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art STARAVIA", ROMX
@@ -158,12 +159,16 @@ assert @ - RaticateFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art BUNEARY", ROMX
 BunearyFollowerGFX::
-    INCBIN "gfx/followers/buneary.2bpp"
+    INCBIN "gfx/followers/buneary.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/buneary.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/buneary.2bpp", 16 tiles, 4 tiles
 assert @ - BunearyFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art LOPUNNY", ROMX
 LopunnyFollowerGFX::
-    INCBIN "gfx/followers/lopunny.2bpp"
+    INCBIN "gfx/followers/lopunny.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/lopunny.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/lopunny.2bpp", 16 tiles, 4 tiles
 assert @ - LopunnyFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art DEINO", ROMX
@@ -288,12 +293,16 @@ assert @ - GolbatFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art PAWNIARD", ROMX
 PawniardFollowerGFX::
-    INCBIN "gfx/followers/pawniard.2bpp"
+    INCBIN "gfx/followers/pawniard.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/pawniard.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/pawniard.2bpp", 16 tiles, 4 tiles
 assert @ - PawniardFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art BISHARP", ROMX
 BisharpFollowerGFX::
-    INCBIN "gfx/followers/bisharp.2bpp"
+    INCBIN "gfx/followers/bisharp.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/bisharp.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/bisharp.2bpp", 16 tiles, 4 tiles
 assert @ - BisharpFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art REGIGIGAS", ROMX
@@ -303,7 +312,9 @@ assert @ - RegigigasFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art HAWLUCHA", ROMX
 HawluchaFollowerGFX::
-    INCBIN "gfx/followers/hawlucha.2bpp"
+    INCBIN "gfx/followers/hawlucha.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/hawlucha.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/hawlucha.2bpp", 16 tiles, 4 tiles
 assert @ - HawluchaFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art LARVESTA", ROMX
@@ -337,7 +348,9 @@ assert @ - SnoverFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art ABOMASNOW", ROMX
 AbomasnowFollowerGFX::
-    INCBIN "gfx/followers/abomasnow.2bpp"
+    INCBIN "gfx/followers/abomasnow.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/abomasnow.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/abomasnow.2bpp", 16 tiles, 4 tiles
 assert @ - AbomasnowFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art SHROOMISH", ROMX
@@ -972,17 +985,23 @@ assert @ - SceptileFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art CHIMCHAR", ROMX
 ChimcharFollowerGFX::
-    INCBIN "gfx/followers/chimchar.2bpp"
+    INCBIN "gfx/followers/chimchar.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/chimchar.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/chimchar.2bpp", 16 tiles, 4 tiles
 assert @ - ChimcharFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art MONFERNO", ROMX
 MonfernoFollowerGFX::
-    INCBIN "gfx/followers/monferno.2bpp"
+    INCBIN "gfx/followers/monferno.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/monferno.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/monferno.2bpp", 16 tiles, 4 tiles
 assert @ - MonfernoFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art INFERNAPE", ROMX
 InfernapeFollowerGFX::
-    INCBIN "gfx/followers/infernape.2bpp"
+    INCBIN "gfx/followers/infernape.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/infernape.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/infernape.2bpp", 16 tiles, 4 tiles
 assert @ - InfernapeFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art FROAKIE", ROMX
@@ -1002,12 +1021,16 @@ assert @ - GreninjaFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art RIOLU", ROMX
 RioluFollowerGFX::
-    INCBIN "gfx/followers/riolu.2bpp"
+    INCBIN "gfx/followers/riolu.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/riolu.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/riolu.2bpp", 16 tiles, 4 tiles
 assert @ - RioluFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art LUCARIO", ROMX
 LucarioFollowerGFX::
-    INCBIN "gfx/followers/lucario.2bpp"
+    INCBIN "gfx/followers/lucario.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/lucario.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/lucario.2bpp", 16 tiles, 4 tiles
 assert @ - LucarioFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art HOOTHOOT", ROMX
@@ -1026,12 +1049,16 @@ assert @ - NoctowlFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art DRILBUR", ROMX
 DrilburFollowerGFX::
-    INCBIN "gfx/followers/drilbur.2bpp"
+    INCBIN "gfx/followers/drilbur.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/drilbur.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/drilbur.2bpp", 16 tiles, 4 tiles
 assert @ - DrilburFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art EXCADRILL", ROMX
 ExcadrillFollowerGFX::
-    INCBIN "gfx/followers/excadrill.2bpp"
+    INCBIN "gfx/followers/excadrill.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/excadrill.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/excadrill.2bpp", 16 tiles, 4 tiles
 assert @ - ExcadrillFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art JOLTIK", ROMX
@@ -1141,17 +1168,23 @@ assert @ - PolitoedFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art TIMBURR", ROMX
 TimburrFollowerGFX::
-    INCBIN "gfx/followers/timburr.2bpp"
+    INCBIN "gfx/followers/timburr.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/timburr.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/timburr.2bpp", 16 tiles, 4 tiles
 assert @ - TimburrFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art GURDURR", ROMX
 GurdurrFollowerGFX::
-    INCBIN "gfx/followers/gurdurr.2bpp"
+    INCBIN "gfx/followers/gurdurr.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/gurdurr.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/gurdurr.2bpp", 16 tiles, 4 tiles
 assert @ - GurdurrFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art CONKELDURR", ROMX
 ConkeldurrFollowerGFX::
-    INCBIN "gfx/followers/conkeldurr.2bpp"
+    INCBIN "gfx/followers/conkeldurr.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/conkeldurr.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/conkeldurr.2bpp", 16 tiles, 4 tiles
 assert @ - ConkeldurrFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art BELDUM", ROMX
@@ -1283,12 +1316,16 @@ assert @ - GibleFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art GABITE", ROMX
 GabiteFollowerGFX::
-    INCBIN "gfx/followers/gabite.2bpp"
+    INCBIN "gfx/followers/gabite.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/gabite.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/gabite.2bpp", 16 tiles, 4 tiles
 assert @ - GabiteFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art GARCHOMP", ROMX
 GarchompFollowerGFX::
-    INCBIN "gfx/followers/garchomp.2bpp"
+    INCBIN "gfx/followers/garchomp.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/garchomp.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/garchomp.2bpp", 16 tiles, 4 tiles
 assert @ - GarchompFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art SCIZOR", ROMX

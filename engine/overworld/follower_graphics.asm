@@ -106,10 +106,9 @@ PrepareFollowerColors::
     ld bc, wFollowerDVs
     ld de, wFollowerMiddleColors
     newfarcall CopyMonNormalShinyOrCustomMiddleColors
-    ; Temporary follower-wide ordering: swap the two 16-bit colors, keeping
-    ; each color's low/high bytes intact. Rebuild from the source on every call
-    ; so repeated refreshes never toggle the order. A shared species policy for
-    ; follower/menu-icon artwork will replace this blanket swap after review.
+    ld a, [wFollowerSpecies]
+    call ShouldReverseMonSpriteColors
+    jp nc, LoadFollowerOverworldPalette
     ld hl, wFollowerMiddleColors
     ld a, [hli]
     ld b, [hl]
@@ -123,6 +122,25 @@ PrepareFollowerColors::
     inc hl
     ld [hl], a
     jp LoadFollowerOverworldPalette
+
+ShouldReverseMonSpriteColors::
+    push bc
+    push hl
+    ld b, a
+    ld hl, PokemonSpriteColorReversals
+.loop
+    ld a, [hli]
+    and a
+    jr z, .done
+    cp b
+    jr nz, .loop
+    scf
+.done
+    pop hl
+    pop bc
+    ret
+
+INCLUDE "data/pokemon/sprite_color_reversals.asm"
 
 RenderFollowerObject::
 ; bc = ordinary object struct. Dedicated addressing, no ordinary $80 step offset.

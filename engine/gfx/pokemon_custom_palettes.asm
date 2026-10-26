@@ -368,10 +368,8 @@ OverridePartyMenuIconPaletteWithCustom::
 	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
 	jr nc, .fallback
 
-	; The high nibble is the player's first (lighter) color choice.
-	ld a, l
-	swap a
-	and $f
+	ld a, [wCurPartySpecies]
+	call GetCustomMenuMonColor
 	dec a
 	ld c, a
 	ld b, 0
@@ -409,7 +407,7 @@ OverridePartyMenuIconPaletteWithCustom::
 
 OverrideBillsPCIconPaletteWithCustom::
 ; Input: bc/de = species/shiny icon colors from GetMonPalInBCDE.
-; Output: preserve that fallback, or replace it with the custom light-color family.
+; Output: preserve that fallback, or replace it with the selected custom color family.
 	ld a, [wBufferMonAltSpecies]
 	cp EGG
 	ret z
@@ -418,10 +416,8 @@ OverrideBillsPCIconPaletteWithCustom::
 	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
 	ret nc
 
-	; Match the party menu by approximating the custom pair from its light color.
-	ld a, l
-	swap a
-	and $f
+	ld a, [wBufferMonAltSpecies]
+	call GetCustomMenuMonColor
 	dec a
 	ld c, a
 	ld b, 0
@@ -429,6 +425,15 @@ OverrideBillsPCIconPaletteWithCustom::
 	add hl, bc
 	ld a, [hl]
 	newfarjp GetIconPalInBCDE
+
+GetCustomMenuMonColor:
+	newfarcall ShouldReverseMonSpriteColors
+	ld a, l
+	jr c, .selected
+	swap a
+.selected
+	and $f
+	ret
 
 ; CopyMonNormalShinyOrCustomMiddleColors may also receive the zero player
 ; sentinel, so every possible pointer from GetPlayerOrMonPalettePointer must be

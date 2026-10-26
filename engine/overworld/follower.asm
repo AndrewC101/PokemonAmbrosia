@@ -256,10 +256,11 @@ FollowerIsEligible:
     ; suspend before staged actions; explicit hidefollower covers longer holds.
     ld a, [wStateFlags]
     bit SCRIPTED_MOVEMENT_STATE_F, a
-    jr nz, .no
-    ld a, [wMapGroup]
-    cp GROUP_TRADE_CENTER
+    jr z, .check_map
+    ld a, [wPlayerMovementType]
+    cp SPRITEMOVEDATA_SCRIPTED
     jr z, .no
+.check_map
     ld de, .restricted_maps
     call CheckFollowerMapList
     jr c, .no
@@ -269,11 +270,15 @@ FollowerIsEligible:
     and a
     ret
 .restricted_maps
+    map_id TRADE_CENTER
+    map_id COLOSSEUM
+    map_id TIME_CAPSULE
+    map_id MOBILE_TRADE_ROOM
+    map_id MOBILE_BATTLE_ROOM
     map_id BATTLE_TOWER_BATTLE_ROOM
     map_id BATTLE_TOWER_ELEVATOR
     map_id BATTLE_TOWER_HALLWAY
     map_id BATTLE_TOWER_1F
-    map_id HALL_OF_FAME
     db -1
 
 CheckFollowerMapList:

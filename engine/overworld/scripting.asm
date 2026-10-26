@@ -823,7 +823,8 @@ Script_applymovement:
 
 ApplyMovement:
 if !DEF(FOLLOWER_TEST)
-    newfarcall SuspendFollowerForScene
+    ld a, c
+    newfarcall SuspendFollowerForPlayerObject
 endc
 	push bc
 	ld a, c
@@ -1041,11 +1042,11 @@ endc
 	ret
 
 Script_moveobject:
-if !DEF(FOLLOWER_TEST)
-    newfarcall SuspendFollowerForScene
-endc
 	call GetScriptByte
 	call GetScriptObject
+if !DEF(FOLLOWER_TEST)
+    newfarcall SuspendFollowerForPlayerObject
+endc
 	ld b, a
 	call GetScriptByte
 	add 4

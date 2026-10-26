@@ -322,9 +322,6 @@ CheckTrainerEvent:
 	nop
 	call CheckTrainerBattle
 	jr nc, .nope
-if !DEF(FOLLOWER_TEST)
-	newfarcall SuspendFollowerForScene
-endc
 
 	ld a, PLAYEREVENT_SEENBYTRAINER
 	scf

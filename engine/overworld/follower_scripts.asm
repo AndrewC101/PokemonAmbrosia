@@ -26,6 +26,17 @@ UpdateFollowerScriptHold:
     res FOLLOWER_SCRIPT_AUTO_F, [hl]
     ret
 
+SuspendFollowerForPlayerObject::
+    push af
+    cp LAST_TALKED
+    jr nz, .check
+    ldh a, [hLastTalked]
+.check
+    and a
+    call z, SuspendFollowerForScene
+    pop af
+    ret
+
 SuspendFollowerForScene::
 ; Native hooks must preserve inputs/results and both object-index scratch bytes.
 ; In particular ApplyMovement consumes c/script state, and trainer detection

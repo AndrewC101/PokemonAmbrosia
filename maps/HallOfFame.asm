@@ -16,17 +16,20 @@ HallOfFameNoopScene:
 	end
 
 HallOfFameEnterScript:
-    hidefollower ; ceremony -> credits/reset; the room is also restricted
 	follow HALLOFFAME_LANCE, PLAYER
 	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
 	stopfollow
+    showfollower
 	turnobject PLAYER, RIGHT
+	deactivatefacing 8
 	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
 	turnobject HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
+    showfollower
+	deactivatefacing 8
 	setscene SCENE_HALLOFFAME_NOOP
 	pause 15
 	setval HEALMACHINE_HALL_OF_FAME
@@ -55,6 +58,7 @@ HallOfFameEnterScript:
 	iftrue .SkipPhoneCall
 	specialphonecall SPECIALCALL_SSTICKET
 .SkipPhoneCall:
+    hidefollower
 	halloffame
 	end
 

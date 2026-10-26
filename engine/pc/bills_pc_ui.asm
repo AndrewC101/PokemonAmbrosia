@@ -2677,7 +2677,7 @@ BillsPC_CanReleaseMon:
 ; 0: Can release
 ; 1: Can't release last healthy mon
 ; 2: Can't release Egg
-; 3: Can't release mon knowing HMs
+; 3: Knows HM moves
 ; 4: Empty slot
 	; Is there even anything there?
 	call GetStorageBoxMon
@@ -2706,7 +2706,7 @@ BillsPC_CanReleaseMon:
 	ld a, [wBufferMonAltSpecies]
 	cp EGG
 	ld a, 2
-	ret z
+	jr z, .done
 
 	; Ensure that the mon doesn't know any HMs.
 	push de
@@ -2753,9 +2753,11 @@ BillsPC_ReleaseAll:
 	jr c, .done
 
 	; We want to give 3 possible messages:
-	; * Nothing was released. You can't release Eggs or PKMN knowing HMs.
+	; * Nothing was released.
 	; * There's nothing there!
 	; * X PKMN released.
+	xor a
+	ld [wBillsPC_HMReleaseDecision], a
 	lb de, 0, 0 ; Successful and failed releases.
 	call BillsPC_GetCursorSlot
 .loop
@@ -2765,7 +2767,28 @@ BillsPC_ReleaseAll:
 	jr z, .releases_done
 
 	call BillsPC_CanReleaseMon
+	jr z, .release
+	cp 3
 	jr nz, .failed_release
+	ld a, [wBillsPC_HMReleaseDecision]
+	and a
+	jr nz, .hm_decided
+	push bc
+	push de
+	ld hl, BillsPC_DeleteHMUsersText
+	call PrintText
+	call NoYesBox
+	ld a, 1
+	jr c, .store_hm_decision
+	inc a
+.store_hm_decision
+	ld [wBillsPC_HMReleaseDecision], a
+	pop de
+	pop bc
+.hm_decided
+	cp 2
+	jr nz, .failed_release
+.release
 	inc d
 	push de
 	call RemoveStorageBoxMon
@@ -2821,9 +2844,8 @@ BillsPC_ReleaseAll:
 	prompt
 
 .NothingReleased:
-	text "You can't release"
-	line "Eggs or #mon"
-	cont "with HM moves."
+	text "No #mon were"
+	line "released."
 	prompt
 
 .ReleasedXMon:
@@ -2838,6 +2860,10 @@ BillsPC_ReleaseAll:
 	line "or know HM moves."
 	prompt
 
+BillsPC_DeleteHMUsersText:
+	text "Delete HM users?"
+	done
+
 BillsPC_Release:
 	call BillsPC_GetCursorSlot
 	call BillsPC_CanReleaseMon
@@ -2847,14 +2873,17 @@ BillsPC_Release:
 	ld hl, .CantReleaseEgg
 	dec a
 	jr z, .print
-	ld hl, .CantReleaseHMMons
 	dec a
-	jr z, .print
+	ld hl, .ReallyReleaseMon
+	jr nz, .confirm
+	ld hl, BillsPC_DeleteHMUsersText
 
 	; We don't need to check for error 4 (empty slot) since we can't get to this
 	; menu in that case.
+.confirm
+	push hl
 	call BillsPC_HideCursorAndMode
-	ld hl, .ReallyReleaseMon
+	pop hl
 	call MenuTextbox
 	call NoYesBox
 	jr c, .done
@@ -2892,11 +2921,6 @@ BillsPC_Release:
 .CantReleaseEgg:
 	text "You can't release"
 	line "an EGG!"
-	prompt
-
-.CantReleaseHMMons:
-	text "You can't release"
-	line "<PK><MN> with HM moves!"
 	prompt
 
 .ReallyReleaseMon:

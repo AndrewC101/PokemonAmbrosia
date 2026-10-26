@@ -572,20 +572,30 @@ endr
 
 	ld a, [wCurIcon]
 	push hl
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, IconPointers
-	add hl, de
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
+	call GetMenuMonIconPointer
 	pop hl
 
-	call GetIconBank
 	call GetGFXUnlessMobile
 
 	pop hl
+	ret
+
+GetMenuMonIconPointer:
+	cp ICON_EGG
+	jr z, .egg
+	and a
+	jr z, .fallback
+	cp NUM_POKEMON + 1
+	jr c, .species
+.fallback
+	ld a, BULBASAUR
+.species
+	newfarcall GetSharedMonSprite
+	ld c, 8
+	ret
+.egg
+	ld de, EggIcon
+	lb bc, BANK(EggIcon), 8
 	ret
 
 GetIconBank:
@@ -628,7 +638,7 @@ endr
 GetStorageIcon:
 	push hl
 	ld a, [wCurIcon]
-	call _LoadOverworldMonIcon
+	call GetMenuMonIconPointer
 	ld c, 4
 	pop hl
 	newfarjp BillsPC_SafeGet2bpp

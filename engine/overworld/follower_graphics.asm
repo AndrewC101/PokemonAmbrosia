@@ -12,18 +12,12 @@ endc
     call ByteFill
     jp InvalidateFollowerCache
 
-PrepareFollowerGraphics::
-; a = native species. Carry = valid species prepared. No turn-time decompression.
+GetSharedMonSprite::
     and a
     ret z
     cp NUM_POKEMON + 1
-    ret nc
-    ld [wFollowerSpecies], a
+    jr nc, .invalid
     push af
-    ld hl, wFollowerFlags
-    res FOLLOWER_READY_F, [hl]
-    call InvalidateFollowerCache
-    pop af
     dec a
     ld l, a
     ld h, 0
@@ -34,8 +28,25 @@ PrepareFollowerGraphics::
     ld a, [hli]
     ld b, a
     ld a, [hli]
-    ld h, [hl]
-    ld l, a
+    ld d, [hl]
+    ld e, a
+    pop af
+    scf
+    ret
+.invalid
+    and a
+    ret
+
+PrepareFollowerGraphics::
+; a = native species. Carry = valid species prepared. No turn-time decompression.
+    call GetSharedMonSprite
+    ret nc
+    ld [wFollowerSpecies], a
+    ld hl, wFollowerFlags
+    res FOLLOWER_READY_F, [hl]
+    call InvalidateFollowerCache
+    ld h, d
+    ld l, e
     ldh a, [rWBK]
     push af
     ld a, BANK(wFollowerFrames)

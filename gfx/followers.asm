@@ -173,7 +173,9 @@ assert @ - LopunnyFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art DEINO", ROMX
 DeinoFollowerGFX::
-    INCBIN "gfx/followers/deino.2bpp"
+    INCBIN "gfx/followers/deino.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/deino.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/deino.2bpp", 16 tiles, 4 tiles
 assert @ - DeinoFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art ARBOK", ROMX
@@ -307,7 +309,9 @@ assert @ - BisharpFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art REGIGIGAS", ROMX
 RegigigasFollowerGFX::
-    INCBIN "gfx/followers/regigigas.2bpp"
+    INCBIN "gfx/followers/regigigas.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/regigigas.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/regigigas.2bpp", 16 tiles, 4 tiles
 assert @ - RegigigasFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art HAWLUCHA", ROMX
@@ -1481,7 +1485,9 @@ assert @ - DialgaFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art KLEAVOR", ROMX
 KleavorFollowerGFX::
-    INCBIN "gfx/followers/kleavor.2bpp"
+    INCBIN "gfx/followers/kleavor.2bpp", 0, 16 tiles
+    INCBIN "gfx/followers/kleavor.2bpp", 20 tiles, 4 tiles
+    INCBIN "gfx/followers/kleavor.2bpp", 16 tiles, 4 tiles
 assert @ - KleavorFollowerGFX == FOLLOWER_GFX_SIZE
 
 SECTION "Follower art XERNEAS", ROMX

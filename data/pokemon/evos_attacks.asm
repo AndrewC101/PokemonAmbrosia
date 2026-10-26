@@ -2386,14 +2386,13 @@ MetagrossEvosAttacks:
 	db 32, BULLET_PUNCH
 	db 36, PSYCHIC_M
 	db 40, ZEN_HEADBUTT
-	db 43, IRON_HEAD
-	db 45, AGILITY
+	db 42, IRON_HEAD
+	db 44, AGILITY
+	db 46, COUNTER
+	db 46, MIRROR_COAT
 	db 48, METEOR_MASH
-	db 50, COUNTER
-	db 50, MIRROR_COAT
 	db 55, TRICK_ROOM
 	db 60, HYPER_BEAM
-	db 60, EXPLOSION
 	db 0 ; no more level-up moves
 
 MudkipEvosAttacks:

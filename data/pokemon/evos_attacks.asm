@@ -1993,6 +1993,7 @@ GreninjaEvosAttacks:
 	db 13, DISABLE
 	db 15, SWIFT
 	db 18, NIGHT_SHADE
+	db 20, U_TURN
 	db 20, FLIP_TURN
 	db 25, BUBBLEBEAM
 	db 30, PSYCHIC_M

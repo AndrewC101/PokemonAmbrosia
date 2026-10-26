@@ -649,6 +649,13 @@ _RegisteredItemText::
 	text "."
 	prompt
 
+_UnregisteredItemText::
+	text "Unregistered the"
+	line "@"
+	text_ram wStringBuffer2
+	text "."
+	prompt
+
 _CantRegisterText::
 	text "You can't register"
 	line "that item."

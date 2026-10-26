@@ -535,11 +535,16 @@ RegisterItem:
 	ld a, [wItemAttributeValue]
 	and a
 	jr nz, .cant_register
-	farcall AddRegisteredItem
+	farcall ToggleRegisteredItem
+	ld hl, RegisteredItemText
+	jr nc, .print_registration
+	ld hl, UnregisteredItemText
+.print_registration
+	push hl
 	call Pack_GetItemName
 	ld de, SFX_FULL_HEAL
 	call WaitPlaySFX
-	ld hl, RegisteredItemText
+	pop hl
 	call Pack_PrintTextNoScroll
 	ret
 
@@ -1544,6 +1549,10 @@ YouDontHaveAMonText:
 
 RegisteredItemText:
 	text_far _RegisteredItemText
+	text_end
+
+UnregisteredItemText:
+	text_far _UnregisteredItemText
 	text_end
 
 CantRegisterText:

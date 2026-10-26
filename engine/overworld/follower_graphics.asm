@@ -124,17 +124,31 @@ PrepareFollowerColors::
     jp LoadFollowerOverworldPalette
 
 ShouldReverseMonSpriteColors::
+    call GetMonSpriteColorFlags
+    and MON_COLOR_REVERSE_FOLLOWER
+    ret z
+    scf
+    ret
+
+ShouldUseSecondMenuMonColor::
+    call GetMonSpriteColorFlags
+    and MON_COLOR_SECOND_MENU
+    ret z
+    scf
+    ret
+
+GetMonSpriteColorFlags:
     push bc
     push hl
     ld b, a
-    ld hl, PokemonSpriteColorReversals
+    ld hl, PokemonSpriteColorRules
 .loop
     ld a, [hli]
     and a
     jr z, .done
     cp b
+    ld a, [hli]
     jr nz, .loop
-    scf
 .done
     pop hl
     pop bc

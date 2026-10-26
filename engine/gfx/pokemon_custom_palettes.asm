@@ -427,7 +427,7 @@ OverrideBillsPCIconPaletteWithCustom::
 	newfarjp GetIconPalInBCDE
 
 GetCustomMenuMonColor:
-	newfarcall ShouldReverseMonSpriteColors
+	newfarcall ShouldUseSecondMenuMonColor
 	ld a, l
 	jr c, .selected
 	swap a

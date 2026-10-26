@@ -159,10 +159,41 @@ INCLUDE "data/pokemon/sprite_color_reversals.asm"
 RenderFollowerObject::
 ; bc = ordinary object struct. Dedicated addressing, no ordinary $80 step offset.
     call FollowerObjectPixels
+    call GetFollowerObjectFacing
+    jp RenderFollowerAtPixels
+
+GetFollowerObjectFacing:
     ld hl, OBJECT_FACING
     add hl, bc
     ld a, [hl]
-    jp RenderFollowerAtPixels
+    cp FACING_FISH_DOWN
+    ret nc
+    ld e, a
+    ld hl, OBJECT_FLAGS2
+    add hl, bc
+    bit FROZEN_F, [hl]
+    jr nz, .current
+    ld hl, OBJECT_ACTION
+    add hl, bc
+    ld a, [hl]
+    cp OBJECT_ACTION_STAND
+    jr nz, .current
+    ld hl, OBJECT_WALKING
+    add hl, bc
+    ld a, [hl]
+    cp STANDING
+    jr nz, .current
+    ldh a, [hVBlankCounter]
+    swap a
+    and 1
+    ld d, a
+    ld a, e
+    and $c
+    or d
+    ret
+.current
+    ld a, e
+    ret
 
 FollowerObjectPixels:
     ld hl, OBJECT_FLAGS2

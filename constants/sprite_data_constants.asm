@@ -12,6 +12,7 @@ DEF NUM_SPRITEDATA_FIELDS EQU _RS
 	const WALKING_SPRITE  ; 1
 	const STANDING_SPRITE ; 2
 	const STILL_SPRITE    ; 3
+	const SHARED_MON_SPRITE
 
 ; sprite palettes
 	const_def

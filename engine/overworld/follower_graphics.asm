@@ -417,6 +417,7 @@ ServeFollowerGraphics::
 
 INCLUDE "data/sprites/followers.asm"
 
+INCLUDE "engine/overworld/shared_pokemon_graphics.asm"
 INCLUDE "engine/overworld/follower_allocation.asm"
 INCLUDE "engine/overworld/follower.asm"
 INCLUDE "engine/overworld/follower_selection.asm"

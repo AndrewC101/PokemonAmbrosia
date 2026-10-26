@@ -3761,6 +3761,10 @@ SECTION "Scratch RAM", WRAMX
 UNION
 wScratchTilemap:: ds TILEMAP_AREA
 wScratchAttrmap:: ds TILEMAP_AREA
+wOverworldMonFrames:: ds FOLLOWER_GFX_SIZE
+assert wOverworldMonFrames == wScratchTilemap + 2 * TILEMAP_AREA
+assert HIGH(wOverworldMonFrames) == HIGH(wOverworldMonFrames + 12 tiles)
+assert wOverworldMonFrames + FOLLOWER_GFX_SIZE <= wScratchTilemap + $1000
 
 NEXTU
 wDecompressScratch:: ds $80 tiles

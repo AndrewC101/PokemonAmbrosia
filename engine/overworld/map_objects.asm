@@ -3039,6 +3039,16 @@ InitSprites:
 	jp z, .done
 	cp NUM_FACINGS
 	jp nc, .done
+	ld e, a
+	ld hl, OBJECT_SPRITE_TILE
+	add hl, bc
+	bit 7, [hl]
+	ld a, e
+	jr z, .facing
+	cp FACING_FISH_DOWN
+	jr nc, .facing
+	newfarcall GetSharedOverworldMonFacing
+.facing
 	ld l, a
 	ld h, 0
 	add hl, hl

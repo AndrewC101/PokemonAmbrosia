@@ -217,9 +217,19 @@ SetFacingBounce:
 	ld [hl], a
 	and %00001000
 	jr z, SetFacingFreezeBounce
+	push bc
+	ld a, [bc]
+	newfarcall GetSharedOverworldMonSprite
+	pop bc
+	jr nc, .legacy
+	ld a, FACING_STEP_DOWN_1
+	jr .facing
+.legacy
+	ld a, FACING_STEP_UP_0
+.facing
 	ld hl, OBJECT_FACING
 	add hl, bc
-	ld [hl], FACING_STEP_UP_0
+	ld [hl], a
 	ret
 
 SetFacingFreezeBounce:

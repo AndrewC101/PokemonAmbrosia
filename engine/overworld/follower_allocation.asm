@@ -1,4 +1,4 @@
-; Preserve the old resident walking types, relocating only four-tile stills.
+; Preserve resident walking sprites and reserve the follower cache.
 ; Classification bytes live on the stack; no saved/HRAM/WRAM1 arrays are enlarged.
 ArrangeFollowerSafeSprites::
     add sp, -SPRITE_GFX_LIST_CAPACITY
@@ -106,6 +106,7 @@ ArrangeFollowerSafeSprites::
     bit 7, a
     jr nz, .bank_next
     and $3f
+    call .bank0_length
     call .place_bank0
     jr c, .fallback
 .bank_next
@@ -142,7 +143,6 @@ ArrangeFollowerSafeSprites::
 
 .place_bank0
     push de
-    call .length
     ld e, a
     ld a, b
     cp $ef
@@ -169,6 +169,12 @@ ArrangeFollowerSafeSprites::
     ld a, 12
     ret
 
+.bank0_length
+    cp SHARED_MON_SPRITE
+    jr nz, .length
+    ld a, 8
+    ret
+
 .legacy
     ld hl, wUsedSprites
     ld c, SPRITE_GFX_LIST_CAPACITY
@@ -192,7 +198,7 @@ ArrangeFollowerSafeSprites::
     ld b, $80
 .legacy_second
     ld a, [hl]
-    call .length
+    call .bank0_length
     add b
     ret c
     ld [hl], b

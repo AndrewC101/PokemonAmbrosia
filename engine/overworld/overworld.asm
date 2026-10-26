@@ -261,6 +261,8 @@ GetSprite:
 	and a
 	ret
 .ordinary
+	newfarcall GetSharedOverworldMonSprite
+	ret c
 	call GetMonSprite
 	ret c
 
@@ -327,10 +329,11 @@ GetMonSprite:
 	and a
 	jr z, .NoBreedmon
 
-	farcall LoadOverworldMonIcon
+	ld [wCurIcon], a
+	farcall GetMenuMonIconPointer
 
 	ld l, WALKING_SPRITE
-	ld h, 0
+	ld h, b
 	scf
 	ret
 
@@ -469,6 +472,10 @@ LoadSpriteGFX:
 
 .LoadSprite:
 	call GetSprite
+	ld a, h
+	and a
+	ld a, SHARED_MON_SPRITE
+	ret z
 	ld a, l
 	ret
 
@@ -604,7 +611,26 @@ GetUsedSprites:
 
 GetUsedSprite:
 	ldh a, [hUsedSpriteIndex]
-	call SafeGetSprite
+	call GetSprite
+	; h = 0 marks shared artwork.
+	ld a, h
+	and a
+	jr nz, .Load
+	ld a, [wSpriteFlags]
+	bit SPRITES_VRAM_BANK_0_F, a
+	jr z, .repack
+	ld c, 8
+	jr .Load
+.repack
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wOverworldMonFrames)
+	ldh [rWBK], a
+	newfarcall RepackSharedOverworldMonFrames
+	pop af
+	ldh [rWBK], a
+
+.Load
 	ldh a, [hUsedSpriteTile]
 	call .GetTileAddr
 	push hl
@@ -673,7 +699,17 @@ endr
 
 .bankswitch
 	ldh [rVBK], a
+	ldh a, [rWBK]
+	push af
+	ld a, d
+	cp HIGH(wOverworldMonFrames)
+	jr nz, .copy
+	ld a, BANK(wOverworldMonFrames)
+	ldh [rWBK], a
+.copy
 	call Get2bpp
+	pop af
+	ldh [rWBK], a
 	pop af
 	ldh [rVBK], a
 	ret

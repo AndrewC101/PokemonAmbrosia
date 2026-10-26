@@ -75,7 +75,7 @@ OverworldSprites:
 	overworld_sprite ReceptionistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite OfficerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite SlowpokeSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite SlowpokeFollowerGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CaptainSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BigLaprasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GymGuideSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -105,11 +105,11 @@ OverworldSprites:
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KrisBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite KurtOutsideSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
-	overworld_sprite SuicuneSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
-	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite SuicuneFollowerGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite EnteiFollowerGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite RaikouFollowerGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite MewtwoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite MewtwoFollowerGFX, 12, STANDING_SPRITE, PAL_OW_RED
  	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
  	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
     overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

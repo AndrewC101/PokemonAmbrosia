@@ -5,7 +5,7 @@
 ; - EvosAttacksPointers (see data/pokemon/evos_attacks_pointers.asm)
 ; - EggMovePointers (see data/pokemon/egg_move_pointers.asm)
 ; - PokemonCries (see data/pokemon/cries.asm)
-; - IconPointers (see data/pokemon/icon_pointers.asm)
+; - FollowerSpritePointers (see data/sprites/followers.asm)
 ; - PokemonPicPointers (see data/pokemon/pic_pointers.asm)
 ; - PokemonPalettes (see data/pokemon/palettes.asm)
 ; - PokedexDataPointerTable (see data/pokemon/dex_entry_pointers.asm)

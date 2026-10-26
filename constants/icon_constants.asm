@@ -1,4 +1,4 @@
-; IconPointers indexes (see data/icon_pointers.asm)
+; Menu icon species values; preserve legacy names.
 	const_def
 	const ICON_NULL
 	const ICON_BULBASAUR

@@ -1,18 +1,3 @@
-LoadOverworldMonIcon:
-	ld a, e
-	ld [wCurIcon], a
-	; fallthrough
-_LoadOverworldMonIcon:
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, IconPointers
-	add hl, de
-	ld a, [hli]
-	ld e, a
-	ld d, [hl]
-	jp GetIconBank
-
 SetMenuMonIconColor:
 	push hl
 	push de
@@ -598,26 +583,6 @@ GetMenuMonIconPointer:
 	lb bc, BANK(EggIcon), 8
 	ret
 
-GetIconBank:
-	ld a, [wCurIcon]
-	cp ICON_KADABRA
-	jr c, .icons1
-	cp ICON_MAGIKARP
-	jr c, .icons2
-	cp ICON_YANMA
-	jr c, .icons3
-	lb bc, BANK("Mon Icons 4"), 8
-	ret
-.icons1
-    lb bc, BANK("Mon Icons 1"), 8
-    ret
-.icons2
-    lb bc, BANK("Mon Icons 2"), 8
-    ret
-.icons3
-    lb bc, BANK("Mon Icons 3"), 8
-    ret
-
 GetGFXUnlessMobile:
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
@@ -729,5 +694,3 @@ HoldSwitchmonIcon:
 	ret
 
 INCLUDE "data/pokemon/menu_icon_pals.asm"
-
-INCLUDE "data/pokemon/icon_pointers.asm"

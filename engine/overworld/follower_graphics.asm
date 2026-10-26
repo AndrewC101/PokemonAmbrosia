@@ -185,7 +185,7 @@ GetFollowerObjectFacing:
     jr nz, .current
     ldh a, [hVBlankCounter]
     swap a
-    and 1
+    and 3
     ld d, a
     ld a, e
     and $c

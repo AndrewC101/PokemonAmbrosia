@@ -94,7 +94,7 @@ INCBIN "gfx/trainers/nurse.gbcpal", middle_colors
 
 RedPlayerPalette:
 	RGB 29,21,16
-	RGB 31,07,01
+	RGB 31,04,01
 
 BluePlayerPalette:
 	RGB 29,21,16

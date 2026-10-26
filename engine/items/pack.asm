@@ -499,7 +499,7 @@ TossMenu:
 .finish
 	ret
 
-ResetPocketCursorPositions: ; unreferenced
+ResetPocketCursorPositions:
 	ld a, [wCurPocket]
 	assert ITEM_POCKET == 0
 	and a
@@ -1236,6 +1236,9 @@ PackGFXPointers:
 
 Pack_InterpretJoypad:
 	ld hl, wMenuJoypad
+	ld a, [hl]
+	and PAD_START
+	jr nz, .sort
 	ld a, [wSwitchItem]
 	and a
 	jr nz, .switching_item
@@ -1293,6 +1296,16 @@ Pack_InterpretJoypad:
 	farcall SwitchItemsInBag
 	ld hl, AskItemMoveText
 	call Pack_PrintTextNoScroll
+	scf
+	ret
+
+.sort
+	farcall SortItemsInBag
+	xor a
+	ld [wSwitchItem], a
+	call ResetPocketCursorPositions
+	ld de, SFX_SWITCH_POKEMON
+	call PlaySFX
 	scf
 	ret
 
@@ -1440,7 +1453,7 @@ ItemsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumItems
@@ -1470,7 +1483,7 @@ KeyItemsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; item format
 	dbw 0, wNumKeyItems
@@ -1500,7 +1513,7 @@ BallsPocketMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
+	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR | SCROLLINGMENU_ENABLE_START ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumBalls

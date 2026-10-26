@@ -628,7 +628,7 @@ MoveTypeString:
 ; This is the string that precedes
 ; the move's attack number.
 MoveAttackString:
-	db "ATK/@"
+	db "Atk/@"
 
 ; This displays when a move has
 ; a metric with a null value.
@@ -638,12 +638,12 @@ MoveNullValueString:
 ; This is the string that precedes
 ; the move's accuracy number.
 MoveAccuracyString:
-	db "ACC/@"
+	db "Acc/@"
 
 ; This is the string that precedes the
 ; move's status effect chance number.
 MoveChanceString:
-	db "EFF/@"
+	db "Eff/@"
 
 ; This is the text that displays when the player
 ; first talks to the move reminder.

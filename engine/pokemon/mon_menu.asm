@@ -1694,11 +1694,11 @@ String_MoveType_Top:
 String_MoveType_Bottom:
 	db "│       └@"
 String_MoveAtk:
-	db "ATK/@"
+	db "Atk/@"
 String_MoveAcc:
-	db "ACC/@"
+	db "Acc/@"
 String_MoveEff:
-	db "EFF/@"
+	db "Eff/@"
 String_MoveNoPower:
 	db "---@"
 

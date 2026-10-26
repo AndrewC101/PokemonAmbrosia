@@ -238,7 +238,7 @@ DrawFollowerPartyHint::
     ld de, .hint
     jp PlaceString
 .hint
-    db "SELECT: Follow@"
+    db "Select: Follow@"
 
 PlaceFollowerPartyMarker::
     ld a, [wFollowerMenuContext]

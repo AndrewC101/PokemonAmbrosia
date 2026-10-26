@@ -239,8 +239,7 @@ PlayBattleMusic:
 	jp .done
 
 .usePersistentOverride
-	ld a, [wPersistentBattleMusicOverride + 1]
-	ld d, a
+	ld d, 0
 	ld a, [wPersistentBattleMusicOverride]
 	ld e, a
 	jp .done

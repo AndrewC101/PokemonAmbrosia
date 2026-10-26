@@ -2889,7 +2889,11 @@ OpenJukebox:
 .SavePersistentBattleSong:
 	call .GetSelectedSongID
 	ld [wPersistentBattleMusicOverride], a
-	xor a
+	and a
+	ld a, 0
+	jr nz, .store_override_flag
+	inc a
+.store_override_flag
 	ld [wPersistentBattleMusicOverride + 1], a
 	ret
 

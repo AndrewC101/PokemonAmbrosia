@@ -85,9 +85,8 @@ GetSharedOverworldMonFacing::
     call GetSharedOverworldMonSprite
     jr nc, .ordinary
     pop af
-    and 1
-    add a
-    add a
+    and %00000011
+    add FACING_WEIRD_TREE_0
     jr .done
 .ordinary
     pop af

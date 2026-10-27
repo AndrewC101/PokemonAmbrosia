@@ -120,8 +120,13 @@ MACRO object_event
 ;\<10>: function: a OBJECTTYPE_* constant
 ;\<11>: sight range: applies to OBJECTTYPE_TRAINER
 ;       set MAPOBJECT_DARK_SKIN for non-trainer NPCs to darken their shared palette's skin color
+;       set MAPOBJECT_GOLD for non-trainer objects to replace both shared palette colors with gold
 ;\<12>: script pointer
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
+	assert ((\<11>) & (MAPOBJECT_DARK_SKIN | MAPOBJECT_GOLD)) != (MAPOBJECT_DARK_SKIN | MAPOBJECT_GOLD), "Cannot combine MAPOBJECT_DARK_SKIN and MAPOBJECT_GOLD"
+	if \<10> == OBJECTTYPE_TRAINER
+		assert ((\<11>) & ~MAPOBJECT_SIGHT_RANGE_MASK) == 0, "Trainer sight range must be between 0 and 63"
+	endc
 	db \3, \2 + 4, \1 + 4, \4
 	dn \6, \5
 	db \7, \8

@@ -914,7 +914,7 @@ ApplyPlayerNamingScreenPalette::
 	ldh [hCGBPalUpdate], a
 	ret
 
-ApplyDarkSkinNPCPaletteOverrides::
+ApplyNPCPaletteOverrides::
 	ld bc, wMap1Object
 	ld e, NUM_OBJECTS - 1
 
@@ -923,7 +923,8 @@ ApplyDarkSkinNPCPaletteOverrides::
 	push de
 	ld hl, MAPOBJECT_SIGHT_RANGE
 	add hl, bc
-	bit MAPOBJECT_DARK_SKIN_F, [hl]
+	ld a, [hl]
+	and MAPOBJECT_DARK_SKIN | MAPOBJECT_GOLD
 	jr z, .next
 
 	ld hl, MAPOBJECT_TYPE
@@ -959,7 +960,8 @@ ApplyDarkSkinNPCPaletteOverrides::
 	jr z, .next
 	cp PAL_OW_FOLLOWER
 	jr z, .next
-; Marked objects darken the shared palette slot, affecting all objects using it.
+	cp PAL_OW_PLAYER
+	jr z, .next
 	add a
 	add a
 	add a
@@ -969,8 +971,15 @@ ApplyDarkSkinNPCPaletteOverrides::
 	add hl, de
 	ld d, h
 	ld e, l
+	ld hl, MAPOBJECT_SIGHT_RANGE
+	add hl, bc
+	bit MAPOBJECT_GOLD_F, [hl]
 	ld hl, .DarkSkinColor
 	ld bc, COLOR_SIZE
+	jr z, .copy
+	ld hl, .GoldColors
+	ld bc, 2 * COLOR_SIZE
+.copy
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 
@@ -987,6 +996,9 @@ ApplyDarkSkinNPCPaletteOverrides::
 
 .DarkSkinColor:
 	RGB 20,13,05
+
+.GoldColors:
+	RGB 31,26,00, 24,20,00
 
 LoadSelectedSelfTrainerPic::
 ; Load the chosen player frontpic for self battles without changing the active

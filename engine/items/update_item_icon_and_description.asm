@@ -3,6 +3,7 @@ DEF MART_ITEM_ICON_TILE EQU $1e
 DEF OVERWORLD_ITEM_ICON_TILE EQU $60
 
 UpdatePackItemIconAndDescription:
+	farcall DrawPackSortHint
 	ld a, [wMenuSelection]
 	ld [wCurItem], a
 	ld [wCurSpecies], a

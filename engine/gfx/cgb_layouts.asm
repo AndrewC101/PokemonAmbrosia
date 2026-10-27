@@ -1228,11 +1228,11 @@ _CGB_PackPals:
 	call .ApplyPlayerColor
 	call WipeAttrmap
 	hlcoord 0, 0, wAttrmap
-	lb bc, 1, 10
+	lb bc, 1, 12
 	ld a, $1
 	call FillBoxCGB
-	hlcoord 10, 0, wAttrmap
-	lb bc, 1, 10
+	hlcoord 12, 0, wAttrmap
+	lb bc, 1, 8
 	ld a, $2
 	call FillBoxCGB
 	hlcoord 7, 2, wAttrmap

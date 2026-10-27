@@ -1,3 +1,8 @@
+DEF PACK_SORT_HINT_TILE EQU $3c
+DEF PACK_SORT_HINT_LENGTH EQU 10
+
+	assert PACK_SORT_HINT_TILE + PACK_SORT_HINT_LENGTH <= $50
+
 ; Pack.Jumptable and BattlePack.Jumptable indexes
 	const_def
 	const PACKSTATE_INITGFX            ;  0
@@ -1341,6 +1346,7 @@ Pack_InitGFX:
 	ld bc, $60 tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes
+	call LoadPackSortHintTiles
 ; Background (blue if male, pink if female)
 	hlcoord 0, 1
 	ld bc, 11 * SCREEN_WIDTH
@@ -1350,15 +1356,6 @@ Pack_InitGFX:
 	hlcoord 5, 1
 	lb bc, 11, 15
 	call ClearBox
-; ◀▶ POCKET       ▼▲ ITEMS
-	hlcoord 0, 0
-	ld a, $28
-	ld c, SCREEN_WIDTH
-.loop
-	ld [hli], a
-	inc a
-	dec c
-	jr nz, .loop
 	call DrawPocketName
 	call PlacePackGFX
 ; Place the textbox for displaying the item description
@@ -1387,6 +1384,15 @@ PlacePackGFX:
 	ret
 
 DrawPocketName:
+	hlcoord 0, 0
+	ld a, $28
+	ld [hli], a
+	inc a
+	ld [hli], a
+	ld a, $2e
+	ld bc, SCREEN_WIDTH - 2
+	call ByteFill
+
 	hlcoord 0, 7
 	lb bc, 3, 5
 	call ClearBox
@@ -1404,7 +1410,7 @@ DrawPocketName:
 	add hl, de
 	ld d, h
 	ld e, l
-	hlcoord 11, 0
+	hlcoord 13, 0
 	ld c, 5
 .top_row
 	ld a, [de]
@@ -1417,6 +1423,58 @@ DrawPocketName:
 .tilemap: ; 5x12
 ; the 5x3 pieces correspond to *_POCKET constants
 INCBIN "gfx/pack/pack_menu.tilemap"
+
+LoadPackSortHintTiles:
+	ld de, vTiles2 tile PACK_SORT_HINT_TILE
+	ld hl, .HintText
+	ld b, PACK_SORT_HINT_LENGTH
+.character
+	ld a, [hli]
+	sub 'A'
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	push de
+	ld de, Font
+	add hl, de
+	pop de
+	ld c, TILE_1BPP_SIZE
+.row
+	ld a, BANK(Font)
+	call GetFarByte
+	inc hl
+	cpl
+	ld [de], a
+	inc de
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .row
+	pop hl
+	dec b
+	jr nz, .character
+	ret
+
+.HintText:
+	db "Start:Sort"
+	assert @ - .HintText == PACK_SORT_HINT_LENGTH
+
+DrawPackSortHint:
+	ld a, [wMenuDataFlags]
+	bit SCROLLINGMENU_ENABLE_START_F, a
+	ret z
+	hlcoord 2, 0
+	ld a, PACK_SORT_HINT_TILE
+	ld c, PACK_SORT_HINT_LENGTH
+.tile
+	ld [hli], a
+	inc a
+	dec c
+	jr nz, .tile
+	ret
 
 Pack_GetItemName:
 	ld a, [wCurItem]

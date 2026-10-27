@@ -36,8 +36,31 @@ CheckBreedmonCompatibility:
 .compare_gender
 	cp b
 	jr nz, .compute
+	jr .CheckDitto
 
 .genderless
+	ld a, [wBreedMon1Species]
+	cp DITTO
+	jr z, .CheckDitto
+	ld a, [wBreedMon2Species]
+	cp DITTO
+	jr z, .CheckDitto
+	ld a, [wBreedMon1Species]
+	ld [wCurPartySpecies], a
+	callfar GetPreEvolution
+	callfar GetPreEvolution
+	ld a, [wCurPartySpecies]
+	push af
+	ld a, [wBreedMon2Species]
+	ld [wCurPartySpecies], a
+	callfar GetPreEvolution
+	callfar GetPreEvolution
+	pop bc
+	ld a, [wCurPartySpecies]
+	cp b
+	jr z, .compute
+
+.CheckDitto
 	ld c, $0
 	ld a, [wBreedMon1Species]
 	cp DITTO

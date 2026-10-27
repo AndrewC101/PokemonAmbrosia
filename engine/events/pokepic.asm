@@ -1,11 +1,5 @@
 Pokepic::
-	ld hl, PokepicMenuHeader
-	call CopyMenuHeader
-	call MenuBox
-	ld b, SCGB_POKEPIC
-	call GetSGBLayout
-	call UpdateSprites
-	call ApplyTilemap
+	call InitPokepic
 	ld a, [wCurPartySpecies]
 	newfarcall GetMonPalettePointer
 	ld de, wBGPals1 palette PAL_BG_TEXT
@@ -13,6 +7,23 @@ Pokepic::
 	farcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
+	jr DisplayPokepic
+
+PartyMonPokepic::
+	call InitPokepic
+	farcall ApplyFieldMovePreviewPalette
+	jr DisplayPokepic
+
+InitPokepic:
+	ld hl, PokepicMenuHeader
+	call CopyMenuHeader
+	call MenuBox
+	ld b, SCGB_POKEPIC
+	call GetSGBLayout
+	call UpdateSprites
+	jp ApplyTilemap
+
+DisplayPokepic:
 	xor a
 	ldh [hBGMapMode], a
 	ld a, [wCurPartySpecies]

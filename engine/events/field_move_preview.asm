@@ -33,14 +33,13 @@ FieldMovePreview_DoPreview:
 	ld a, [hl]
 	ld [wCurPartySpecies], a
 
-	farcall Pokepic
-	call ApplyFieldMovePreviewPalette
+	farcall PartyMonPokepic
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	farcall ClosePokepic
 	ret
 
-ApplyFieldMovePreviewPalette:
+ApplyFieldMovePreviewPalette::
 ; Use the acting party mon's real palette, including its stored custom pair.
 	ldh a, [hCGB]
 	and a

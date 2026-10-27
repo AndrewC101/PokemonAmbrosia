@@ -19,6 +19,7 @@ ShowPartyPhoto::
 	newfarcall BuildHallOfFamePalettePairsAtDE
 	farcall HOF_ShowTeam
 	call CloseSubmenu
+	call CloseText
 	pop af
 	ldh [hInMenu], a
 	ret

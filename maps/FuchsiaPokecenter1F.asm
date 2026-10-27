@@ -178,6 +178,9 @@ FucExcadrillText:
     text "Excadrill!"
     done
 
+FuchsiaPokecenter1FPhotographerScript:
+	farsjump PokecenterPhotographerScript
+
 FuchsiaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -198,3 +201,4 @@ FuchsiaPokecenter1F_MapEvents:
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FucBlisseyScript, -1
 	object_event  1,  3, SPRITE_GRENINJA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FucGreninjaScript, -1
 	object_event  8,  2, SPRITE_EXCADRILL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FucExcadrillScript, -1
+	object_event  5,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaPokecenter1FPhotographerScript, -1

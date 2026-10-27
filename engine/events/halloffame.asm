@@ -92,13 +92,13 @@ AnimateHallOfFame:
 .loop
 	ld a, [wHallOfFameMonCounter]
 	cp PARTY_LENGTH
-	jr nc, .done
+	jr nc, .team
 	ld hl, wHallOfFameTempMon1
 	ld bc, wHallOfFameTempMon1End - wHallOfFameTempMon1
 	call AddNTimes
 	ld a, [hl]
 	cp -1
-	jr z, .done
+	jr z, .team
 	push hl
 	call AnimateHOFMonEntrance
 	pop hl
@@ -108,6 +108,8 @@ AnimateHallOfFame:
 	inc [hl]
 	jr .loop
 
+.team
+	farcall HOF_ShowCeremonyTeam
 .done
 	call HOF_AnimatePlayerPic
 	ld a, $4
@@ -133,12 +135,17 @@ AnimateHallOfFame:
 	db "New Hall of Famer!@"
 
 GetHallOfFameParty:
-	ld hl, wHallOfFamePokemonList
-	ld bc, wHallOfFamePokemonListEnd - wHallOfFamePokemonList + 1
+	ld de, wHallOfFamePokemonList
+
+GetHallOfFamePartyAtDE:
+	push de
+	ld h, d
+	ld l, e
+	ld bc, HOF_LENGTH
 	xor a
 	call ByteFill
+	pop de
 	ld a, [wHallOfFameCount]
-	ld de, wHallOfFamePokemonList
 	ld [de], a
 	inc de
 	ld hl, wPartySpecies

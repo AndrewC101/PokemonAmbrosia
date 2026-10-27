@@ -72,6 +72,9 @@ CerSwampertText:
     text "Swampert!"
     done
 
+CeruleanPokecenter1FPhotographerScript:
+	farsjump PokecenterPhotographerScript
+
 CeruleanPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -90,3 +93,4 @@ CeruleanPokecenter1F_MapEvents:
 	object_event  1,  5, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FGymGuideScript, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CerBlisseyScript, -1
 	object_event  2,  4, SPRITE_SWAMPERT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CerSwampertScript, -1
+	object_event  5,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPokecenter1FPhotographerScript, -1

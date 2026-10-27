@@ -303,12 +303,17 @@ CopyPartyPalettePairs:
 BuildHallOfFamePalettePairs::
 ; Build a transient palette list in the same egg-filtered order as the ceremony.
 ; The Hall of Fame record itself remains unchanged. Clobbers af, bc, de, hl.
-	ld hl, wHallOfFamePalettePairs
+	ld de, wHallOfFamePalettePairs
+
+BuildHallOfFamePalettePairsAtDE::
+	push de
+	ld h, d
+	ld l, e
 	ld bc, PARTY_LENGTH
 	xor a
 	call ByteFill
+	pop de
 	ld hl, wPartySpecies
-	ld de, wHallOfFamePalettePairs
 	ld c, 0 ; physical party slot; de advances only for displayed Pokemon
 .loop
 	ld a, [hli]

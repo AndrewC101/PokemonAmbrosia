@@ -125,6 +125,9 @@ VerUrsalunaBText:
     line "Luna!"
     done
 
+VermilionPokecenter1FPhotographerScript:
+	farsjump PokecenterPhotographerScript
+
 VermilionPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -145,3 +148,4 @@ VermilionPokecenter1F_MapEvents:
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VerBlisseyScript, -1
 	object_event  2,  3, SPRITE_URSALUNA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VerUrsalunaScript, -1
 	object_event  1,  3, SPRITE_URSALUNA_B, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, VerUrsalunaBScript, -1
+	object_event  5,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VermilionPokecenter1FPhotographerScript, -1

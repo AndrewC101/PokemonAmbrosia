@@ -100,6 +100,9 @@ PewUmbreonText:
     text "Umbreon!"
     done
 
+PewterPokecenter1FPhotographerScript:
+	farsjump PokecenterPhotographerScript
+
 PewterPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -120,3 +123,4 @@ PewterPokecenter1F_MapEvents:
 	object_event  7,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Chris, -1
 	object_event  4,  1, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PewBlisseyScript, -1
 	object_event  7,  6, SPRITE_UMBREON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PewUmbreonScript, -1
+	object_event  5,  3, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PewterPokecenter1FPhotographerScript, -1

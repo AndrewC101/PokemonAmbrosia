@@ -660,6 +660,10 @@ wTimeSetBufferEnd::
 NEXTU
 ; hall of fame temp struct
 wHallOfFameTemp:: hall_of_fame wHallOfFameTemp
+wHOFTeamPalettePairs:: ds PARTY_LENGTH
+wHOFTeamPalettePairsEnd::
+	assert wHOFTeamPalettePairs - wHallOfFameTemp == HOF_LENGTH
+	assert wHOFTeamPalettePairsEnd - wHallOfFameTemp <= 200
 
 NEXTU
 ; odd egg

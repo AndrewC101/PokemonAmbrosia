@@ -280,6 +280,16 @@ INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 
 
+SECTION "Hall of Fame Team", ROMX
+
+INCLUDE "engine/events/halloffame_team.asm"
+
+
+SECTION "Party Photo", ROMX
+
+INCLUDE "engine/events/party_photo.asm"
+
+
 SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
@@ -736,3 +746,7 @@ INCLUDE "engine/gfx/vwf.asm"
 
 INCLUDE "engine/overworld/follower_graphics.asm"
 INCLUDE "gfx/followers.asm"
+
+SECTION "Bag Sorting", ROMX
+
+INCLUDE "engine/items/sort_items.asm"

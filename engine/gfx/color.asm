@@ -514,7 +514,7 @@ RefreshTextboxTMHMIconPalette::
 FinishItemIconPaletteRefresh:
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
-	jp UpdatePalsIfCGB
+	ret
 
 LoadItemIconPalette:
 	ld hl, BillsPC_WhitePalette

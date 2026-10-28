@@ -110,7 +110,7 @@ MACRO object_event
 ;\3: sprite: a SPRITE_* constant
 ;\4: movement function: a SPRITEMOVEDATA_* constant
 ;\5, \6: movement radius: x, y
-;\7, \8: hour limits: h1, h2 (0-23)
+;\7, \8: hour limits; dynamic Pokemon use species, time-of-day mask
 ;  * if h1 < h2, the object_event will only appear from h1 to h2
 ;  * if h1 > h2, the object_event will not appear from h2 to h1
 ;  * if h1 == h2, the object_event will always appear
@@ -123,6 +123,10 @@ MACRO object_event
 ;       set MAPOBJECT_GOLD for non-trainer objects to replace both shared palette colors with gold
 ;\<12>: script pointer
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
+	if \3 == SPRITE_DYNAMIC_POKEMON
+		assert \7 >= 1 && \7 <= NUM_POKEMON, "Invalid dynamic Pokemon species"
+		assert (\8) == -1 || ((\8) & ~(MORN | DAY | NITE | EVE)) == 0, "Invalid dynamic Pokemon time mask"
+	endc
 	assert ((\<11>) & (MAPOBJECT_DARK_SKIN | MAPOBJECT_GOLD)) != (MAPOBJECT_DARK_SKIN | MAPOBJECT_GOLD), "Cannot combine MAPOBJECT_DARK_SKIN and MAPOBJECT_GOLD"
 	if \<10> == OBJECTTYPE_TRAINER
 		assert ((\<11>) & ~MAPOBJECT_SIGHT_RANGE_MASK) == 0, "Trainer sight range must be between 0 and 63"

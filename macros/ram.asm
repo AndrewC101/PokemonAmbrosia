@@ -390,7 +390,8 @@ MACRO map_object
 \1ObjectSightRange:: db
 \1ObjectScript::     dw
 \1ObjectEventFlag::  dw
-	ds 2
+\1ObjectSpecies::    db
+	ds 1
 ENDM
 
 MACRO sprite_oam_struct

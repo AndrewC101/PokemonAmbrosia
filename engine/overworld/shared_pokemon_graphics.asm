@@ -3,7 +3,7 @@ GetSharedOverworldMonSprite::
     ld c, SPRITE_FOLLOWER - SPRITE_VARS
 .resolve
     cp SPRITE_FOLLOWER
-    jr nc, .unavailable
+    jp nc, .unavailable
     cp SPRITE_VARS
     jr nc, .variable
     cp SPRITE_DAY_CARE_MON_1
@@ -21,7 +21,7 @@ GetSharedOverworldMonSprite::
     cp SPRITE_ENTEI
     jr z, .entei
     cp SPRITE_RAIKOU
-    jr nz, .unavailable
+    jp nz, .unavailable
     ld a, RAIKOU
     jr .lookup
 .entei
@@ -37,8 +37,15 @@ GetSharedOverworldMonSprite::
     ld a, MEWTWO
     jr .lookup
 .species
+    cp SPRITE_DYNAMIC_FIRST
+    jr c, .fixed_species
+    cp SPRITE_DYNAMIC_END
+    jp nc, .unavailable
+    newfarcall GetDynamicPokemonSpecies
+    jr .lookup
+.fixed_species
     cp SPRITE_POKEMON + NUM_POKEMON_SPRITES
-    jr nc, .unavailable
+    jp nc, .unavailable
     sub SPRITE_POKEMON
     ld l, a
     ld h, 0
@@ -54,7 +61,7 @@ GetSharedOverworldMonSprite::
     ld a, [wBreedMon2Species]
 .lookup
     call GetSharedMonSprite
-    jr nc, .unavailable
+    jp nc, .unavailable
     pop af
     ld c, 12
     ld hl, WALKING_SPRITE
@@ -68,31 +75,49 @@ GetSharedOverworldMonSprite::
     add hl, de
     ld a, c
     and a
-    jr z, .unavailable
+    jp z, .unavailable
     dec c
     ld a, [hl]
-    jr .resolve
+    jp .resolve
 .unavailable
     pop af
     and a
     ret
 
 GetSharedOverworldMonFacing::
+    push hl
     push bc
     push de
     push af
     ld a, [bc]
+    newfarcall GetLocalMapSpriteKind
+    cp SHARED_MON_TURNING_SPRITE
+    jr z, .turning
+    ld a, [bc]
     call GetSharedOverworldMonSprite
     jr nc, .ordinary
     pop af
+    cp FACING_FISH_DOWN
+    jr nc, .done
     and %00000011
     add FACING_WEIRD_TREE_0
+    jr .done
+.turning
+    pop af
+    cp FACING_FISH_DOWN
+    jr c, .turning_direction
+    ld hl, OBJECT_DIRECTION
+    add hl, bc
+    ld a, [hl]
+.turning_direction
+    and %00001100
     jr .done
 .ordinary
     pop af
 .done
     pop de
     pop bc
+    pop hl
     ret
 
 RepackSharedOverworldMonFrames::
@@ -119,4 +144,43 @@ RepackSharedOverworldMonFrames::
     ld bc, 4 tiles
     call FarCopyBytes
     pop af
+    ret
+
+CopySharedOverworldMonFrontFrames::
+    ld h, d
+    ld l, e
+    ld de, wOverworldMonFrames
+    ldh a, [rWBK]
+    push af
+    ld a, BANK(wOverworldMonFrames)
+    ldh [rWBK], a
+    ld a, b
+    ld bc, 8 tiles
+    call FarCopyBytes
+    pop af
+    ldh [rWBK], a
+    ld de, wOverworldMonFrames
+    lb bc, BANK(GetUsedSprite), 8
+    ret
+
+CopySharedOverworldMonStandingFrames::
+    ld h, d
+    ld l, e
+    ld de, wOverworldMonFrames
+    ldh a, [rWBK]
+    push af
+    ld a, BANK(wOverworldMonFrames)
+    ldh [rWBK], a
+    ld a, b
+    call RepackSharedOverworldMonFrames.CopyFrame
+    ld bc, 4 tiles
+    add hl, bc
+    call RepackSharedOverworldMonFrames.CopyFrame
+    ld bc, 4 tiles
+    add hl, bc
+    call RepackSharedOverworldMonFrames.CopyFrame
+    pop af
+    ldh [rWBK], a
+    ld de, wOverworldMonFrames
+    lb bc, BANK(GetUsedSprite), 12
     ret

@@ -1,6 +1,7 @@
 ; Core components of the battle engine.
 
 DoBattle:
+	newfarcall InvalidateDynamicSpriteCache
 	xor a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a

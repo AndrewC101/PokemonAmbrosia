@@ -2,6 +2,7 @@
 SECTION "Follower graphics", ROMX, BANK[$79]
 
 ResetFollowerState::
+    newfarcall ResetDynamicSpriteCache
 ; Transient only: New Game/Continue must not inherit an old fixture or request.
 if !DEF(FOLLOWER_TEST)
     call ResetFollowerLifecycle

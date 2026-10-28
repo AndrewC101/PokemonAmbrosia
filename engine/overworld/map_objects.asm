@@ -3045,8 +3045,6 @@ InitSprites:
 	bit 7, [hl]
 	ld a, e
 	jr z, .facing
-	cp FACING_FISH_DOWN
-	jr nc, .facing
 	newfarcall GetSharedOverworldMonFacing
 .facing
 	ld l, a

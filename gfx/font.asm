@@ -57,9 +57,6 @@ INCBIN "gfx/font/unused_up_arrow.1bpp"
 MobilePhoneTilesGFX:
 INCBIN "gfx/mobile/phone_tiles.2bpp"
 
-MapEntryFrameGFX:
-INCBIN "gfx/frames/map_entry_sign.2bpp"
-
 FontsExtra2_UpArrowGFX:
 INCBIN "gfx/font/up_arrow.2bpp"
 

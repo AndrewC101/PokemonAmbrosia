@@ -50,6 +50,8 @@ RefreshSprites::
 	call GetPlayerSprite
 	call AddMapSprites
 	call LoadAndSortSprites
+	newfarcall UpdateDynamicObjectTiles
+	newfarcall RestoreProfileContinueObjects
 	ret
 
 GetPlayerSprite:
@@ -100,6 +102,8 @@ GetPlayerSprite:
 INCLUDE "data/sprites/player_sprites.asm"
 
 AddMapSprites:
+	newfarcall AddDynamicMapSprites
+	ret c
 ; DevNote - sprites for indoor/outdoor here
 ; load indoor sprites for HallOfOrigin
     ld a, [wMapGroup]
@@ -171,6 +175,8 @@ RefreshSpritesForOutdoorConnection::
 	ldh a, [hMapEntryMethod]
 	cp MAPSETUP_CONNECTION
 	ret nz
+	newfarcall TryDynamicSpriteConnection
+	ret c
 
 	call .LandmarkChanged
 	ret z
@@ -226,7 +232,7 @@ LoadUsedSpritesGFX:
 	call GetUsedSprites
 	newfarcall InvalidateFollowerCache
 	call LoadMiscTiles
-	ret
+	newfarjp CacheDynamicSpriteGraphics
 
 LoadMiscTiles:
 	ld a, [wSpriteFlags]
@@ -309,6 +315,13 @@ GetMonSprite:
 	ret
 
 .Icon:
+	cp SPRITE_DYNAMIC_FIRST
+	jr c, .FixedIcon
+	cp SPRITE_DYNAMIC_END
+	jr nc, .NoBreedmon
+	newfarcall GetDynamicPokemonSpecies
+	jr .Mon
+.FixedIcon:
 	sub SPRITE_POKEMON
 	ld e, a
 	ld d, 0
@@ -471,12 +484,20 @@ LoadSpriteGFX:
 	ret
 
 .LoadSprite:
+	push af
 	call GetSprite
 	ld a, h
 	and a
 	ld a, SHARED_MON_SPRITE
-	ret z
+	jr z, .kind_ready
 	ld a, l
+.kind_ready
+	ld c, a
+	pop af
+	newfarcall GetLocalMapSpriteKind
+	and a
+	ret nz
+	ld a, c
 	ret
 
 SortUsedSprites:
@@ -619,7 +640,14 @@ GetUsedSprite:
 	ld a, [wSpriteFlags]
 	bit SPRITES_VRAM_BANK_0_F, a
 	jr z, .repack
-	ld c, 8
+	ldh a, [hUsedSpriteIndex]
+	newfarcall GetLocalMapSpriteKind
+	cp SHARED_MON_TURNING_SPRITE
+	jr z, .standing
+	newfarcall CopySharedOverworldMonFrontFrames
+	jr .Load
+.standing
+	newfarcall CopySharedOverworldMonStandingFrames
 	jr .Load
 .repack
 	ldh a, [rWBK]
@@ -744,6 +772,24 @@ LoadEmote::
 	ret
 
 INCLUDE "data/sprites/emotes.asm"
+
+FindCanonicalPokemonSprite::
+    ld d, a
+    ld hl, SpriteMons
+    ld b, NUM_POKEMON_SPRITES
+    ld c, SPRITE_POKEMON
+.loop
+    ld a, [hli]
+    cp d
+    jr z, .found
+    inc c
+    dec b
+    jr nz, .loop
+    xor a
+    ret
+.found
+    ld a, c
+    ret
 
 INCLUDE "data/sprites/sprite_mons.asm"
 

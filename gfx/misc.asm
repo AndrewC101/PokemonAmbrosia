@@ -62,3 +62,8 @@ SECTION "Bill's PC Graphics", ROMX
 BillsPC_TileGFX::   INCBIN "gfx/pc/pc.2bpp.lz"
 BillsPC_ObjGFX::    INCBIN "gfx/pc/obj.2bpp.lz"
 BillsPC_CursorGFX:: INCBIN "gfx/pc/cursor.2bpp"
+
+SECTION "Map Entry Frame", ROMX, ALIGN[4]
+
+MapEntryFrameGFX::
+INCBIN "gfx/frames/map_entry_sign.2bpp"

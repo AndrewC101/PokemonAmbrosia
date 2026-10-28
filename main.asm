@@ -750,3 +750,5 @@ INCLUDE "gfx/followers.asm"
 SECTION "Bag Sorting", ROMX
 
 INCLUDE "engine/items/sort_items.asm"
+
+INCLUDE "engine/overworld/dynamic_pokemon_sprites.asm"

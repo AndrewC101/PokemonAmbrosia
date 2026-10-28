@@ -17,6 +17,15 @@ ArrangeFollowerSafeSprites::
     and a
     jr z, .classified
     ld a, [hl]
+    cp SHARED_MON_TURNING_SPRITE
+    jr c, .primary_candidate
+    ld [de], a
+    inc de
+    inc hl
+    dec c
+    jr nz, .classify
+    jr .classified
+.primary_candidate
     call .length
     add b
     cp $81
@@ -171,7 +180,10 @@ ArrangeFollowerSafeSprites::
 
 .bank0_length
     cp SHARED_MON_SPRITE
+    jr z, .front_length
+    cp SHARED_MON_FRONT_SPRITE
     jr nz, .length
+.front_length
     ld a, 8
     ret
 

@@ -309,6 +309,7 @@ Coord2Attr:: ; unreferenced
 	ret
 
 LoadMenuHeader::
+	newfarcall InvalidateDynamicSpriteCache
 	call CopyMenuHeader
 	call PushWindow
 	ret

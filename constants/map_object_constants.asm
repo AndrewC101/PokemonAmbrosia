@@ -95,7 +95,8 @@ DEF MAPOBJECT_TYPE             rb ; 8
 DEF MAPOBJECT_SIGHT_RANGE      rb ; 9
 DEF MAPOBJECT_SCRIPT_POINTER   rw ; a
 DEF MAPOBJECT_EVENT_FLAG       rw ; c
-                               rb_skip 2
+DEF MAPOBJECT_SPECIES          rb ; e
+                               rb_skip 1
 DEF MAPOBJECT_LENGTH EQU _RS
 DEF NUM_OBJECTS EQU 18
 DEF PLAYER_OBJECT EQU 0

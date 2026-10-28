@@ -406,9 +406,16 @@ ReadMapEvents::
 
 	pop af
 	and a ; skip object events?
-	ret nz
-
-	call ReadObjectEvents
+	jr z, .objects
+	ld a, [hli]
+	ld [wCurMapObjectEventCount], a
+	ld a, l
+	ld [wCurMapObjectEventsPointer], a
+	ld a, h
+	ld [wCurMapObjectEventsPointer + 1], a
+	newfarjp RebindDynamicMapObjects
+.objects
+	newfarcall ReadObjectEvents
 	ret
 
 ReadMapScripts::
@@ -557,74 +564,6 @@ ReadBGEvents::
 
 	ld bc, BG_EVENT_SIZE
 	call AddNTimes
-	ret
-
-ReadObjectEvents::
-	push hl
-	call ClearObjectStructs
-	pop de
-	ld hl, wMap1Object
-	ld a, [de]
-	inc de
-	ld [wCurMapObjectEventCount], a
-	ld a, e
-	ld [wCurMapObjectEventsPointer], a
-	ld a, d
-	ld [wCurMapObjectEventsPointer + 1], a
-
-	ld a, [wCurMapObjectEventCount]
-	call CopyMapObjectEvents
-
-; get NUM_OBJECTS - [wCurMapObjectEventCount] - 1
-	ld a, [wCurMapObjectEventCount]
-	ld c, a
-	ld a, NUM_OBJECTS - 1
-	sub c
-	jr z, .skip
-	jr c, .skip
-
-	; could have done "inc hl" instead
-	ld bc, 1
-	add hl, bc
-	ld bc, MAPOBJECT_LENGTH
-.loop
-	ld [hl],  0
-	inc hl
-	ld [hl], -1
-	dec hl
-	add hl, bc
-	dec a
-	jr nz, .loop
-
-.skip
-	ld h, d
-	ld l, e
-	ret
-
-CopyMapObjectEvents::
-	and a
-	ret z
-
-	ld c, a
-.loop
-	push bc
-	push hl
-	ld a, $ff
-	ld [hli], a
-	ld b, OBJECT_EVENT_SIZE
-.loop2
-	ld a, [de]
-	inc de
-	ld [hli], a
-	dec b
-	jr nz, .loop2
-
-	pop hl
-	ld bc, MAPOBJECT_LENGTH
-	add hl, bc
-	pop bc
-	dec c
-	jr nz, .loop
 	ret
 
 ClearObjectStructs::

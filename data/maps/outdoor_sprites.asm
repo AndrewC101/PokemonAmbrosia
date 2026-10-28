@@ -93,7 +93,7 @@ CinnabarGroupSprites:
 CeruleanGroupSprites:
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
 	db SPRITE_COOLTRAINER_M
-	db SPRITE_SUPER_NERD
+	db SPRITE_ROCKET_GIRL
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER

@@ -1,5 +1,7 @@
 	object_const_def
 	const ROUTE24_ROCKET
+	const ROUTE24_ROCKET_GIRL
+	const ROUTE24_ROCKET_GRUNT
 
 Route24_MapScripts:
 	def_scene_scripts
@@ -9,8 +11,17 @@ Route24_MapScripts:
 
 .Rocket
     disappear ROUTE24_ROCKET
+    disappear ROUTE24_ROCKET_GIRL
+    disappear ROUTE24_ROCKET_GRUNT
+    checkevent EVENT_BEAT_WALLACE
+    iffalse .CheckGym
+    appear ROUTE24_ROCKET_GIRL
+    appear ROUTE24_ROCKET_GRUNT
+    sjump .ShowRocket
+.CheckGym
     checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
     iffalse .end
+.ShowRocket
     appear ROUTE24_ROCKET
 .end
     endcallback
@@ -19,6 +30,8 @@ Route24RocketScript:
 	faceplayer
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
+	checkevent EVENT_BEAT_WALLACE
+	iftrue .FightDone
 	checkevent EVENT_ROUTE_24_ROCKET
 	iftrue .FightDone
 	writetext Route24RocketSeenText
@@ -67,6 +80,72 @@ Route24RocketScript:
 	waitbutton
 	closetext
 	end
+
+Route24RocketGirlScript:
+	jumptextfaceplayer Route24RocketGirlText
+
+Route24RocketGruntScript:
+	jumptextfaceplayer Route24RocketGruntText
+
+Route24RocketGirlText:
+	text "You defeated"
+	line "Wallace."
+
+	para "I guess I can"
+	line "unironically call"
+	cont "you little hero"
+	cont "now."
+
+	para "You see, strength"
+	line "is all that"
+	cont "matters."
+
+	para "Now that you are"
+	line "far stronger than"
+	cont "me I am sorry for"
+	cont "how I treated you."
+
+	para "I wasn't going to"
+	line "actually hurt you"
+	cont "or your dad."
+
+	para "I am grateful for"
+	line "what you have done"
+	cont "for Kanto."
+
+	para "Thank you champion"
+	line "<PLAYER>."
+	done
+
+Route24RocketGruntText:
+	text "I wish I was there"
+	line "to watch every"
+	cont "painful expression"
+	cont "on Wallace's face"
+	cont "when he lost to"
+	cont "you."
+
+	para "You are beyond the"
+	line "mere title of"
+	cont "champion."
+
+	para "You are a peerless"
+	line "trainer and a true"
+	cont "visionary."
+
+	para "Just like Giovanni"
+	line "used to be."
+
+	para "Pity we didn't get"
+	line "to take command of"
+	cont "Wallace's #mon"
+	cont "though."
+
+	para "I'm sure there are"
+	line "other, more"
+	cont "powerful legendary"
+	cont "#mon to pursue."
+	done
 
 RematchTextRocket:
     text "How about a"
@@ -171,3 +250,5 @@ Route24_MapEvents:
 
 	def_object_events
 	object_event  8,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketScript, EVENT_TEMP_EVENT_1
+	object_event  8,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketGirlScript, EVENT_TEMP_EVENT_2
+	object_event  8,  9, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24RocketGruntScript, EVENT_TEMP_EVENT_3

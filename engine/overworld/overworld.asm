@@ -12,6 +12,14 @@ _UpdatePlayerSprite::
 	ldh [hUsedSpriteIndex], a
 	ld a, [wUsedSprites + 1]
 	ldh [hUsedSpriteTile], a
+	ld b, a
+	ld a, [wSpriteFlags]
+	res SPRITES_VRAM_BANK_0_F, a
+	bit 7, b
+	jr z, .bank_ready
+	set SPRITES_VRAM_BANK_0_F, a
+.bank_ready
+	ld [wSpriteFlags], a
 	call GetUsedSprite
 	ret
 
@@ -50,7 +58,7 @@ RefreshSprites::
 	call GetPlayerSprite
 	call AddMapSprites
 	call LoadAndSortSprites
-	newfarcall UpdateDynamicObjectTiles
+	newfarcall UpdateMapObjectSpriteTiles
 	newfarcall RestoreProfileContinueObjects
 	ret
 

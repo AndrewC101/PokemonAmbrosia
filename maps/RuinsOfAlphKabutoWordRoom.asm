@@ -35,4 +35,4 @@ RuinsOfAlphKabutoWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 14,  9, SPRITE_BELDUM, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KabutoWordRoomFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 14, 9, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_WANDER, 1, 1, BELDUM, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, KabutoWordRoomFieldMon1Script, EVENT_FIELD_MON_1

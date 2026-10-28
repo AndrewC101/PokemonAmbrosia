@@ -35,4 +35,4 @@ RuinsOfAlphAerodactylWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 14,  9, SPRITE_NOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AeroWordRoomFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 14, 9, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, NOWN, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AeroWordRoomFieldMon1Script, EVENT_FIELD_MON_1

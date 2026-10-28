@@ -77,6 +77,7 @@ WallaceScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WALLACE
+	setevent EVENT_ROUTE_24_ROCKET
 	setevent EVENT_BEAT_HOEN_ARMY
 	setmapscene ROUTE_22, SCENE_CUSTOM_FINISHED
 	setmapscene VERMILION_CITY, SCENE_CUSTOM_FINISHED

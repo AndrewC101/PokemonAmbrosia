@@ -493,6 +493,10 @@ AddDynamicMapSprites::
     ld a, [hl]
     and a
     jr z, .local_next
+    ld a, [wPlayerSprite]
+    cp [hl]
+    jr z, .local_next
+    ld a, [hl]
     newfarcall AddSpriteGFX
 .local_next
     pop hl
@@ -729,7 +733,7 @@ GetLocalMapSpriteKind::
 
 INCLUDE "data/maps/pokemon_sprite_profiles.asm"
 
-UpdateDynamicObjectTiles::
+UpdateMapObjectSpriteTiles::
     push bc
     push de
     push hl
@@ -750,14 +754,6 @@ UpdateDynamicObjectTiles::
     cp NUM_OBJECTS
     jr nc, .next
     ldh [hMapObjectIndex], a
-    push bc
-    call GetMapObject
-    ld hl, MAPOBJECT_SPECIES
-    add hl, bc
-    ld a, [hl]
-    pop bc
-    and a
-    jr z, .next
     ld a, [bc]
     call GetSpriteVTile
     ld hl, OBJECT_SPRITE_TILE
@@ -1113,10 +1109,10 @@ TryDynamicSpriteConnection::
     ldh [rWBK], a
     ld a, [wDynamicSpriteCacheValid]
     cp $d7
-    jr nz, .restore_full
+    jp nz, .restore_full
     ld a, [wDynamicSpriteCacheProfile]
     cp d
-    jr nz, .restore_full
+    jp nz, .restore_full
     ld a, 1
     ldh [rWBK], a
     newfarcall RefreshSprites.Refresh
@@ -1126,7 +1122,22 @@ TryDynamicSpriteConnection::
     ld a, BANK(wDynamicSpriteRecords)
     ldh [rWBK], a
     call CompareDynamicSpriteBase
-    jr nc, .restore_full
+    jr c, .base_ready
+    ld a, 1
+    ldh [rWBK], a
+    call GetMapEnvironment
+    call CheckOutdoorMap
+    jr nz, .restore_full
+    ld a, [wPrevMapGroup]
+    ld b, a
+    ld a, [wPrevMapNumber]
+    ld c, a
+    call GetAnyMapEnvironment
+    call CheckOutdoorMap
+    jr nz, .restore_full
+    ld a, BANK(wDynamicSpriteRecords)
+    ldh [rWBK], a
+.base_ready
     xor a
     ld [wDynamicSpriteIndex], a
 .loop
@@ -1135,15 +1146,6 @@ TryDynamicSpriteConnection::
     cp [hl]
     jr nc, .committed
     call GetDynamicTargetRecord
-    push hl
-    inc hl
-    inc hl
-    ld a, [hl]
-    cp SHARED_MON_SPRITE
-    pop hl
-    jr c, .next
-    cp OVERFLOW_STANDING_SPRITE
-    jr nc, .next
     call IsDynamicRecordResident
     jr c, .next
     ld a, [hli]

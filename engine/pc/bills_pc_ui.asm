@@ -1108,13 +1108,11 @@ _GetCursorMon:
 	call CopyBytes
 
 .delay_loop
-	; Delay first before finishing frontpic. Retry if it puts us too late.
-	; If we try to proceed otherwise, we might run past the hblank interrupt
-	; window with Get2bpp.
 	call DelayFrame
+.wait_frontpic_window
 	ldh a, [rLY]
 	cp $13
-	jr nc, .delay_loop
+	jr nc, .wait_frontpic_window
 
 	ld a, [wAttrmap]
 	and OAM_BANK1

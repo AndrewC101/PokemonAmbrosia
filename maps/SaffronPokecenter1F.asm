@@ -76,6 +76,7 @@ SaffBlisseyText:
     done
 
 SaffHoundoomScript:
+    faceplayer
     opentext
     writetext SaffHoundoomText
     cry HOUNDOOM
@@ -88,6 +89,7 @@ SaffHoundoomText:
     done
 
 SaffMachampScript:
+    faceplayer
     opentext
     writetext SaffMachampText
     cry MACHAMP

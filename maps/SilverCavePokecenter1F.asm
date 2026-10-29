@@ -198,6 +198,7 @@ SCBlisseyText:
     done
 
 SCSmeargleScript:
+    faceplayer
     opentext
     writetext SCSmeargleText
     cry SMEARGLE

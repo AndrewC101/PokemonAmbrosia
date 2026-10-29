@@ -75,6 +75,7 @@ BlackBlisseyText:
     done
 
 BlackDragonairScript:
+    faceplayer
     opentext
     writetext BlackDragonairText
     cry DRAGONAIR

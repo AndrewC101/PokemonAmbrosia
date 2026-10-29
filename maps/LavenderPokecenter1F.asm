@@ -110,6 +110,7 @@ LavBlisseyText:
     done
 
 LavAegiScript:
+    faceplayer
     opentext
     writetext LavAegiText
     cry AEGISLASH

@@ -110,6 +110,7 @@ CianBlisseyText:
     done
 
 CianMachampScript:
+    faceplayer
     opentext
     writetext CianMachampText
     cry MACHAMP

@@ -68,6 +68,7 @@ ChBlisseyText:
     done
 
 ChMudkipScript:
+    faceplayer
     opentext
     writetext ChMudkipText
     cry MUDKIP
@@ -80,6 +81,7 @@ ChMudkipText:
     done
 
 ChRaticateScript:
+    faceplayer
     opentext
     writetext ChRaticateText
     cry RATICATE

@@ -195,6 +195,7 @@ GolBlisseyText:
     done
 
 GolPersianScript:
+    faceplayer
     opentext
     writetext GolPersianText
     cry PERSIAN

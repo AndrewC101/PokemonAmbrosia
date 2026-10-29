@@ -941,6 +941,7 @@ CrystalFinalAfterBattleText:
     done
 
 NewBarkPikachu:
+    faceplayer
     opentext
     writetext NewBarkPikachuText
     cry PIKACHU

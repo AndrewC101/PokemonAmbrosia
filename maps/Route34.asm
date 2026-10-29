@@ -97,12 +97,14 @@ DayCareManScript_Outside:
 	end
 
 DayCareMon1Script:
+	faceplayer
 	opentext
 	special DayCareMon1
 	closetext
 	end
 
 DayCareMon2Script:
+	faceplayer
 	opentext
 	special DayCareMon2
 	closetext

@@ -67,6 +67,7 @@ MahBlisseyText:
     done
 
 MahChandelureScript:
+    faceplayer
     opentext
     writetext MahChandelureText
     cry CHANDELURE

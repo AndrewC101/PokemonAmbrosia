@@ -62,6 +62,7 @@ CinBlisseyText:
     done
 
 CinDittoScript:
+    faceplayer
     opentext
     writetext CinDittoText
     cry DITTO

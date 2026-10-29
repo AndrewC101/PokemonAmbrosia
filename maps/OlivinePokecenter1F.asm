@@ -59,6 +59,7 @@ OlBlisseyText:
     done
 
 OlRaichuScript:
+    faceplayer
     opentext
     writetext OlRaichuText
     cry RAICHU

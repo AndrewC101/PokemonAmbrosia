@@ -104,6 +104,7 @@ BlisseyText:
     done
 
 VRaticateScript:
+    faceplayer
     opentext
     writetext VRaticateText
     cry RATICATE
@@ -116,6 +117,7 @@ VRaticateText:
     done
 
 VStaraptorScript:
+    faceplayer
     opentext
     writetext VStaraptorText
     cry STARAPTOR

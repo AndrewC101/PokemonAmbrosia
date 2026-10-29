@@ -1767,6 +1767,7 @@ CherrygroveMon1Script:
 	end
 
 CherrygroveArcanineScript:
+    faceplayer
     opentext
     writetext CherrygroveArcanineText
     cry ARCANINE

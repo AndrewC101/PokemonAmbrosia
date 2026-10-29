@@ -83,6 +83,7 @@ AzaBlisseyText:
     done
 
 AzaGibleScript:
+    faceplayer
     opentext
     writetext AzaGibleText
     cry GIBLE

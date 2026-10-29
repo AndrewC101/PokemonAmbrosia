@@ -251,6 +251,7 @@ CelaBlisseyText:
     done
 
 CelaArcanineScript:
+    faceplayer
     opentext
     writetext CelaArcanineText
     cry ARCANINE

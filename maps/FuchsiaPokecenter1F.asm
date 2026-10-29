@@ -155,6 +155,7 @@ FucBlisseyText:
     done
 
 FucGreninjaScript:
+    faceplayer
     opentext
     writetext FucGreninjaText
     cry GRENINJA
@@ -167,6 +168,7 @@ FucGreninjaText:
     done
 
 FucExcadrillScript:
+    faceplayer
     opentext
     writetext FucExcadrillText
     cry EXCADRILL

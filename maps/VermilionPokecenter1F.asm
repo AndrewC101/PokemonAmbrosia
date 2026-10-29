@@ -101,6 +101,7 @@ VerBlisseyText:
     done
 
 VerUrsalunaScript:
+    faceplayer
     opentext
     writetext VerUrsalunaText
     cry URSALUNA
@@ -113,6 +114,7 @@ VerUrsalunaText:
     done
 
 VerUrsalunaBScript:
+    faceplayer
     opentext
     writetext VerUrsalunaBText
     cry URSALUNA_B

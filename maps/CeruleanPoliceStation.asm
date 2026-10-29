@@ -15,6 +15,7 @@ CeruleanPoliceStationPokefanFScript:
 	jumptextfaceplayer CeruleanPoliceStationPokefanFText
 
 CeruleanDiglett:
+	faceplayer
 	opentext
 	writetext CeruleanDiglettText
 	cry DRILBUR

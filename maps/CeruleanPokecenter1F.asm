@@ -61,6 +61,7 @@ CerBlisseyText:
     done
 
 CerSwampertScript:
+    faceplayer
     opentext
     writetext CerSwampertText
     cry SWAMPERT

@@ -17,6 +17,7 @@ PewterPokecenter1FTeacherScript:
 	jumptextfaceplayer PewterPokecenter1FTeacherText
 
 PewterMawile:
+	faceplayer
 	opentext
 	writetext PewterMawileText
 	cry CLEFAIRY
@@ -89,6 +90,7 @@ PewBlisseyText:
     done
 
 PewUmbreonScript:
+    faceplayer
     opentext
     writetext PewUmbreonText
     cry UMBREON

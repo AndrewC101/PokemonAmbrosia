@@ -84,6 +84,7 @@ EcBlisseyText:
     done
 
 EcEspeonScript:
+    faceplayer
     opentext
     writetext EcEspeonText
     cry ESPEON
@@ -96,6 +97,7 @@ EcEspeonText:
     done
 
 EcScizorScript:
+    faceplayer
     opentext
     writetext EcScizorText
     cry SCIZOR

@@ -219,7 +219,7 @@ SetFacingBounce:
 	jr z, SetFacingFreezeBounce
 	push bc
 	ld a, [bc]
-	newfarcall GetSharedOverworldMonSprite
+	newfarcall GetMapSharedOverworldMonSprite
 	pop bc
 	jr nc, .legacy
 	ld hl, OBJECT_STEP_FRAME

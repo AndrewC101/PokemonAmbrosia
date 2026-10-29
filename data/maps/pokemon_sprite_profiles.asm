@@ -2,6 +2,140 @@
 ; it used to be that outdoor_sprites defined this for outdoor maps - which sprites get walking frames
 ; now outdoor_sprites isn't needed as we dynamically reload the sprites we need upon crossing a map connection
 LocalPokemonSpriteProfiles:
+    db GROUP_ROUTE_11, MAP_ROUTE_11
+    dw Route11PokemonProfile
+    db GROUP_ANCIENT_RUIN_PRESENT, MAP_ANCIENT_RUIN_PRESENT
+    dw AncientRuinPresentPokemonProfile
+    db GROUP_ANCIENT_RUIN_PAST, MAP_ANCIENT_RUIN_PAST
+    dw AncientRuinPastPokemonProfile
+    db GROUP_MUSEUM, MAP_MUSEUM
+    dw MuseumPokemonProfile
+    db GROUP_ABYSS, MAP_ABYSS
+    dw AbyssPokemonProfile
+    db GROUP_MOUNT_MOON_SQUARE, MAP_MOUNT_MOON_SQUARE
+    dw MountMoonSquarePokemonProfile
+    db GROUP_TIN_TOWER_ROOF, MAP_TIN_TOWER_ROOF
+    dw TinTowerRoofPokemonProfile
+    db GROUP_ANCIENT_HALL, MAP_ANCIENT_HALL
+    dw AncientHallPokemonProfile
+    db GROUP_ANCIENT_HALL_STAIRS, MAP_ANCIENT_HALL_STAIRS
+    dw AncientHallStairsPokemonProfile
+    db GROUP_OLD_LIGHTHOUSE, MAP_OLD_LIGHTHOUSE
+    dw OldLighthousePokemonProfile
+    db GROUP_CINNABAR_LAB, MAP_CINNABAR_LAB
+    dw CinnabarLabPokemonProfile
+    db GROUP_NATIONAL_PARK_BUG_CONTEST, MAP_NATIONAL_PARK_BUG_CONTEST
+    dw NationalParkBugContestPokemonProfile
+    db GROUP_RADIO_TOWER_2F, MAP_RADIO_TOWER_2F
+    dw RadioTower2FPokemonProfile
+    db GROUP_RADIO_TOWER_4F, MAP_RADIO_TOWER_4F
+    dw RadioTower4FPokemonProfile
+    db GROUP_OLIVINE_LIGHTHOUSE_6F, MAP_OLIVINE_LIGHTHOUSE_6F
+    dw OlivineLighthouse6FPokemonProfile
+    db GROUP_TEAM_ROCKET_BASE_B1F, MAP_TEAM_ROCKET_BASE_B1F
+    dw TeamRocketBaseB1FPokemonProfile
+    db GROUP_TEAM_ROCKET_BASE_B2F, MAP_TEAM_ROCKET_BASE_B2F
+    dw TeamRocketBaseB2FPokemonProfile
+    db GROUP_TEAM_ROCKET_BASE_B3F, MAP_TEAM_ROCKET_BASE_B3F
+    dw TeamRocketBaseB3FPokemonProfile
+    db GROUP_SILVER_CAVE_OUTSIDE, MAP_SILVER_CAVE_OUTSIDE
+    dw SilverCaveOutsidePokemonProfile
+    db GROUP_SILVER_CAVE_ROOM_3, MAP_SILVER_CAVE_ROOM_3
+    dw SilverCaveRoom3PokemonProfile
+    db GROUP_SILVER_CAVE_ROOM_1, MAP_SILVER_CAVE_ROOM_1
+    dw SilverCaveRoom1PokemonProfile
+    db GROUP_SILVER_CAVE_ROOM_2, MAP_SILVER_CAVE_ROOM_2
+    dw SilverCaveRoom2PokemonProfile
+    db GROUP_SILVER_CAVE_ITEM_ROOMS, MAP_SILVER_CAVE_ITEM_ROOMS
+    dw SilverCaveItemRoomsPokemonProfile
+    db GROUP_VIRIDIAN_FOREST, MAP_VIRIDIAN_FOREST
+    dw ViridianForestPokemonProfile
+    db GROUP_ROUTE_19, MAP_ROUTE_19
+    dw Route19PokemonProfile
+    db GROUP_CAPE_STORM, MAP_CAPE_STORM
+    dw CapeStormPokemonProfile
+    db GROUP_SEAFOAM_CAVE, MAP_SEAFOAM_CAVE
+    dw SeafoamCavePokemonProfile
+    db GROUP_ROUTE_26, MAP_ROUTE_26
+    dw Route26PokemonProfile
+    db GROUP_ROUTE_27, MAP_ROUTE_27
+    dw Route27PokemonProfile
+    db GROUP_ROUTE_28, MAP_ROUTE_28
+    dw Route28PokemonProfile
+    db GROUP_ROUTE_1, MAP_ROUTE_1
+    dw Route1PokemonProfile
+    db GROUP_ROUTE_2, MAP_ROUTE_2
+    dw Route2PokemonProfile
+    db GROUP_ROUTE_3, MAP_ROUTE_3
+    dw Route3PokemonProfile
+    db GROUP_ROUTE_22, MAP_ROUTE_22
+    dw Route22PokemonProfile
+    db GROUP_ROUTE_7, MAP_ROUTE_7
+    dw Route7PokemonProfile
+    db GROUP_ROUTE_16, MAP_ROUTE_16
+    dw Route16PokemonProfile
+    db GROUP_ROUTE_17, MAP_ROUTE_17
+    dw Route17PokemonProfile
+    db GROUP_CELADON_CITY, MAP_CELADON_CITY
+    dw CeladonCityPokemonProfile
+    db GROUP_ROUTE_13, MAP_ROUTE_13
+    dw Route13PokemonProfile
+    db GROUP_ROUTE_14, MAP_ROUTE_14
+    dw Route14PokemonProfile
+    db GROUP_ROUTE_15, MAP_ROUTE_15
+    dw Route15PokemonProfile
+    db GROUP_ROUTE_18, MAP_ROUTE_18
+    dw Route18PokemonProfile
+    db GROUP_FUCHSIA_CITY, MAP_FUCHSIA_CITY
+    dw FuchsiaCityPokemonProfile
+    db GROUP_ROUTE_8, MAP_ROUTE_8
+    dw Route8PokemonProfile
+    db GROUP_ROUTE_10_SOUTH, MAP_ROUTE_10_SOUTH
+    dw Route10SouthPokemonProfile
+    db GROUP_LAVENDER_TOWN, MAP_LAVENDER_TOWN
+    dw LavenderTownPokemonProfile
+    db GROUP_ROUTE_12, MAP_ROUTE_12
+    dw Route12PokemonProfile
+    db GROUP_ROUTE_5, MAP_ROUTE_5
+    dw Route5PokemonProfile
+    db GROUP_ROUTE_6, MAP_ROUTE_6
+    dw Route6PokemonProfile
+    db GROUP_SAFFRON_CITY, MAP_SAFFRON_CITY
+    dw SaffronCityPokemonProfile
+    db GROUP_VERMILION_CITY, MAP_VERMILION_CITY
+    dw VermilionCityPokemonProfile
+    db GROUP_ROUTE_4, MAP_ROUTE_4
+    dw Route4PokemonProfile
+    db GROUP_ROUTE_9, MAP_ROUTE_9
+    dw Route9PokemonProfile
+    db GROUP_ROUTE_10_NORTH, MAP_ROUTE_10_NORTH
+    dw Route10NorthPokemonProfile
+    db GROUP_ROUTE_25, MAP_ROUTE_25
+    dw Route25PokemonProfile
+    db GROUP_CERULEAN_CITY, MAP_CERULEAN_CITY
+    dw CeruleanCityPokemonProfile
+    db GROUP_CIANWOOD_CITY, MAP_CIANWOOD_CITY
+    dw CianwoodCityPokemonProfile
+    db GROUP_ROUTE_36, MAP_ROUTE_36
+    dw Route36PokemonProfile
+    db GROUP_RUINS_OF_ALPH_OUTSIDE, MAP_RUINS_OF_ALPH_OUTSIDE
+    dw RuinsOfAlphOutsidePokemonProfile
+    db GROUP_NATIONAL_PARK, MAP_NATIONAL_PARK
+    dw NationalParkPokemonProfile
+    db GROUP_GOLDENROD_CITY, MAP_GOLDENROD_CITY
+    dw GoldenrodCityPokemonProfile
+    db GROUP_ROUTE_45, MAP_ROUTE_45
+    dw Route45PokemonProfile
+    db GROUP_BLACKTHORN_CITY, MAP_BLACKTHORN_CITY
+    dw BlackthornCityPokemonProfile
+    db GROUP_ROUTE_43, MAP_ROUTE_43
+    dw Route43PokemonProfile
+    db GROUP_LAKE_OF_RAGE, MAP_LAKE_OF_RAGE
+    dw LakeOfRagePokemonProfile
+    db GROUP_ROUTE_42, MAP_ROUTE_42
+    dw Route42PokemonProfile
+    db GROUP_ROUTE_44, MAP_ROUTE_44
+    dw Route44PokemonProfile
     db GROUP_ROUTE_38, MAP_ROUTE_38
     dw Route38PokemonProfile
     db GROUP_ROUTE_39, MAP_ROUTE_39
@@ -210,6 +344,48 @@ GoldenrodUndergroundPokemonProfile:
 TinTower1FPokemonProfile:
 BurnedTowerB1FPokemonProfile:
 OlivineCityPokemonProfile:
+
+
+BlackthornCityPokemonProfile:
+RuinsOfAlphOutsidePokemonProfile:
+GoldenrodCityPokemonProfile:
+
+Route10NorthPokemonProfile:
+Route25PokemonProfile:
+CeruleanCityPokemonProfile:
+Route6PokemonProfile:
+SaffronCityPokemonProfile:
+Route8PokemonProfile:
+Route10SouthPokemonProfile:
+LavenderTownPokemonProfile:
+Route12PokemonProfile:
+Route14PokemonProfile:
+Route18PokemonProfile:
+FuchsiaCityPokemonProfile:
+Route15PokemonProfile:
+Route7PokemonProfile:
+Route16PokemonProfile:
+Route17PokemonProfile:
+CeladonCityPokemonProfile:
+Route1PokemonProfile:
+Route2PokemonProfile:
+Route3PokemonProfile:
+Route22PokemonProfile:
+Route27PokemonProfile:
+Route19PokemonProfile:
+CapeStormPokemonProfile:
+
+
+NationalParkBugContestPokemonProfile:
+RadioTower2FPokemonProfile:
+RadioTower4FPokemonProfile:
+OlivineLighthouse6FPokemonProfile:
+TeamRocketBaseB1FPokemonProfile:
+TeamRocketBaseB3FPokemonProfile:
+AncientHallStairsPokemonProfile:
+MountMoonSquarePokemonProfile:
+
+Route11PokemonProfile:
 Route31PokemonProfile:
 Route33PokemonProfile:
 Route35PokemonProfile:
@@ -312,4 +488,159 @@ Route38PokemonProfile:
 Route39PokemonProfile:
     db 0
     db MAWILE, 0
+    db 0
+
+Route42PokemonProfile:
+    db 0
+    db MAGMAR, 0
+    db 0
+
+Route44PokemonProfile:
+    db 0
+    db CHANSEY, TOGEKISS, 0
+    db 0
+
+Route43PokemonProfile:
+    db 0
+    db ABOMASNOW, EXEGGUTOR, BRELOOM, 0
+    db 0
+
+LakeOfRagePokemonProfile:
+    db 0
+    db SALAMENCE, 0
+    db 0
+
+Route45PokemonProfile:
+    db 0
+    db EXCADRILL, RAIKOU, FRIGIBAX, 0
+    db 0
+
+Route36PokemonProfile:
+    db 0
+    db ZUBAT, NIDOQUEEN, NIDOKING, 0
+    db 0
+
+NationalParkPokemonProfile:
+    db 0
+    db EXEGGCUTE, KIRLIA, TEDDIURSA, CHARIZARD, 0
+    db 0
+
+CianwoodCityPokemonProfile:
+    db SPRITE_STANDING_YOUNGSTER, SPRITE_COOLTRAINER_F, 0
+    db GURDURR, MEWTWO, POLIWRATH, 0
+    db 0
+
+Route4PokemonProfile:
+    db 0
+    db BLASTOISE, 0
+    db 0
+
+Route9PokemonProfile:
+    db 0
+    db METANG, FERROTHORN, 0
+    db 0
+
+Route5PokemonProfile:
+    db 0
+    db BLISSEY, 0
+    db 0
+
+VermilionCityPokemonProfile:
+    db SPRITE_GRAMPS, 0
+    db 0
+    db 0
+
+Route13PokemonProfile:
+    db 0
+    db FERROTHORN, 0
+    db 0
+
+Route26PokemonProfile:
+    db 0
+    db GALVANTULA, EXEGGUTOR, BLISSEY, 0
+    db 0
+
+Route28PokemonProfile:
+    db 0
+    db BLISSEY, 0
+    db 0
+
+SeafoamCavePokemonProfile:
+    db 0
+    db ARTICUNO, 0
+    db 0
+
+SilverCaveRoom1PokemonProfile:
+    db 0
+    db HOUNDOOM, AEGISLASH, 0
+    db 0
+
+SilverCaveRoom2PokemonProfile:
+    db 0
+    db MACHAMP, MELMETAL, 0
+    db 0
+
+SilverCaveItemRoomsPokemonProfile:
+    db 0
+    db PALKIA, DIALGA, LUCARIO, ALAKAZAM, 0
+    db 0
+
+ViridianForestPokemonProfile:
+    db 0
+    db SHAYMIN, VOLCARONA, STARAPTOR, 0
+    db 0
+
+SilverCaveOutsidePokemonProfile:
+    db 0
+    db STARAPTOR, GALVANTULA, VOLCARONA, ABOMASNOW, 0
+    db 0
+
+SilverCaveRoom3PokemonProfile:
+    db 0
+    db MEWTWO, HO_OH, DRAGONITE, TYRANITAR, SALAMENCE, METAGROSS, GARCHOMP, HYDREIGON, 0
+    db 0
+
+TeamRocketBaseB2FPokemonProfile:
+    db 0
+    db MAGNETON, 0
+    db 0
+
+AncientHallPokemonProfile:
+    db 0
+    db ZYGARDE, 0
+    db 0
+
+OldLighthousePokemonProfile:
+    db 0
+    db ZAPDOS, 0
+    db 0
+
+CinnabarLabPokemonProfile:
+    db SPRITE_SCIENTIST, 0
+    db GENESECT, MEWTWO, DITTO, MAGMORTAR, 0
+    db 0
+
+TinTowerRoofPokemonProfile:
+    db 0
+    db HO_OH, 0
+    db 0
+
+AncientRuinPresentPokemonProfile:
+    db SPRITE_SAGE, 0
+    db YVELTAL, 0
+    db 0
+
+AncientRuinPastPokemonProfile:
+    db SPRITE_FISHER, SPRITE_COOLTRAINER_M, SPRITE_LASS, SPRITE_BEAUTY, SPRITE_RED, 0
+    db XERNEAS, 0
+    db ARCEUS, 0
+
+MuseumPokemonProfile:
+    db 0
+    db DEOXYS, 0
+    db 0
+
+AbyssPokemonProfile:
+    db SPRITE_SAGE, SPRITE_LANCE, 0
+    db DARKRAI, MELMETAL, GIRATINA, DRAGONITE, 0
     db 0

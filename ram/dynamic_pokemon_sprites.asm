@@ -12,5 +12,6 @@ wDynamicSpriteRecords:: ds SPRITE_GFX_LIST_CAPACITY * DYNAMIC_SPRITE_RECORD_LENG
 wDynamicSpriteTargetRecords:: ds SPRITE_GFX_LIST_CAPACITY * DYNAMIC_SPRITE_RECORD_LENGTH
 wDynamicSpriteStateEnd::
 wDynamicMapProfilePointer:: dw
+wMapPokemonAliases:: ds NUM_MAP_POKEMON_ALIASES * 2
 wDynamicSpriteStateMemoryEnd::
 assert wDynamicSpriteStateMemoryEnd <= $d600

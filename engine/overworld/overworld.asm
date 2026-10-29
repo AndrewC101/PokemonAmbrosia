@@ -264,6 +264,21 @@ SafeGetSprite:
 	pop hl
 	ret
 
+GetMapSprite::
+	push af
+	newfarcall GetMapPokemonAliasSpecies
+	and a
+	jr z, .ordinary
+	newfarcall GetSharedMonSprite
+	pop af
+	ld c, 12
+	ld hl, WALKING_SPRITE
+	scf
+	ret
+.ordinary
+	pop af
+	jp GetSprite
+
 GetSprite:
 	cp SPRITE_FOLLOWER
 	jr nz, .ordinary
@@ -493,7 +508,7 @@ LoadSpriteGFX:
 
 .LoadSprite:
 	push af
-	call GetSprite
+	call GetMapSprite
 	ld a, h
 	and a
 	ld a, SHARED_MON_SPRITE
@@ -640,7 +655,7 @@ GetUsedSprites:
 
 GetUsedSprite:
 	ldh a, [hUsedSpriteIndex]
-	call GetSprite
+	call GetMapSprite
 	; h = 0 marks shared artwork.
 	ld a, h
 	and a

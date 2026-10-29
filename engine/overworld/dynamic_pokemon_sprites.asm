@@ -103,6 +103,146 @@ GetDynamicPokemonSpecies::
     pop bc
     ret
 
+GetMapPokemonAliasSpecies::
+    push bc
+    push hl
+    ld c, a
+    ldh a, [rWBK]
+    push af
+    ld a, BANK(wMapPokemonAliases)
+    ldh [rWBK], a
+    ld hl, wMapPokemonAliases
+    ld b, NUM_MAP_POKEMON_ALIASES
+.loop
+    ld a, [hli]
+    and a
+    jr z, .missing
+    cp c
+    jr z, .found
+    inc hl
+    dec b
+    jr nz, .loop
+.missing
+    xor a
+    jr .done
+.found
+    ld a, [hl]
+.done
+    ld c, a
+    pop af
+    ldh [rWBK], a
+    ld a, c
+    pop hl
+    pop bc
+    ret
+
+BindMapPokemonAlias:
+    ld hl, wMapPokemonAliases
+    ld b, NUM_MAP_POKEMON_ALIASES
+.existing
+    ld a, [hli]
+    and a
+    jr z, .free
+    ld a, [hli]
+    cp d
+    jr z, .found
+    dec b
+    jr nz, .existing
+    xor a
+    ret
+.found
+    dec hl
+    dec hl
+    ld a, [hl]
+    ret
+.free
+    push hl
+    ld c, SPRITE_DYNAMIC_FIRST - 1
+.candidate
+    call IsMapPokemonIdentityReserved
+    and a
+    jr z, .assign
+    dec c
+    ld a, c
+    cp SPRITE_POKEMON
+    jr nc, .candidate
+    pop hl
+    xor a
+    ret
+.assign
+    pop hl
+    ld [hl], d
+    dec hl
+    ld [hl], c
+    ld a, c
+    ret
+
+IsMapPokemonIdentityReserved:
+    push bc
+    push de
+    push hl
+    ldh a, [rWBK]
+    push af
+    ld hl, wMapPokemonAliases
+    ld b, NUM_MAP_POKEMON_ALIASES
+.aliases
+    ld a, [hli]
+    cp c
+    jr z, .reserved
+    inc hl
+    dec b
+    jr nz, .aliases
+    ld a, 1
+    ldh [rWBK], a
+    ld hl, wMap1ObjectSprite
+    ld a, [wCurMapObjectEventCount]
+    ld b, a
+    and a
+    jr z, .variable_sprites
+.objects
+    ld a, [hl]
+    cp c
+    jr z, .reserved
+    cp SPRITE_DYNAMIC_POKEMON
+    jr nz, .next
+    push hl
+    ld de, MAPOBJECT_HOUR_1 - MAPOBJECT_SPRITE
+    add hl, de
+    ld a, [hl]
+    push bc
+    newfarcall FindCanonicalPokemonSprite
+    pop bc
+    pop hl
+    cp c
+    jr z, .reserved
+.next
+    ld de, MAPOBJECT_LENGTH
+    add hl, de
+    dec b
+    jr nz, .objects
+.variable_sprites
+    ld hl, wVariableSprites
+    ld b, SPRITE_FOLLOWER - SPRITE_VARS
+.variables
+    ld a, [hli]
+    cp c
+    jr z, .reserved
+    dec b
+    jr nz, .variables
+    xor a
+    jr .done
+.reserved
+    ld a, 1
+.done
+    ld e, a
+    pop af
+    ldh [rWBK], a
+    ld a, e
+    pop hl
+    pop de
+    pop bc
+    ret
+
 BindDynamicPokemonSpecies::
     push bc
     push de
@@ -161,7 +301,7 @@ BindDynamicPokemonSpecies::
     inc c
     dec b
     jr nz, .free
-    xor a
+    call BindMapPokemonAlias
     jr .restore_bank
 .reuse_previous
     ld hl, wDynamicSpriteBindings
@@ -208,6 +348,10 @@ RebindDynamicMapObjects::
     inc de
     dec b
     jr nz, .bindings
+    ld hl, wMapPokemonAliases
+    ld bc, NUM_MAP_POKEMON_ALIASES * 2
+    xor a
+    call ByteFill
     ld a, 1
     ldh [rWBK], a
     ld a, [wCurMapObjectEventCount]
@@ -519,7 +663,7 @@ AddDynamicMapSprites::
     jr z, .pokemon
     push hl
     push af
-    newfarcall GetSharedOverworldMonSprite
+    newfarcall GetMapSharedOverworldMonSprite
     jr c, .skip_base
     pop af
     newfarcall AddSpriteGFX
@@ -569,7 +713,7 @@ AddDynamicMapSprites::
     and a
     jr z, .mon_next
     push af
-    newfarcall GetSharedOverworldMonSprite
+    newfarcall GetMapSharedOverworldMonSprite
     jr nc, .skip_mon
     pop af
     newfarcall AddSpriteGFX
@@ -695,7 +839,7 @@ GetLocalMapSpriteKind::
     push hl
     push bc
     ld a, c
-    newfarcall GetSharedOverworldMonSprite
+    newfarcall GetMapSharedOverworldMonSprite
     pop bc
     pop hl
     jr nc, .ordinary
@@ -807,6 +951,14 @@ InvalidateDynamicSpriteCache::
     ret
 
 GetDynamicRecordSpecies:
+    push af
+    call GetMapPokemonAliasSpecies
+    and a
+    jr z, .not_alias
+    pop hl
+    ret
+.not_alias
+    pop af
     cp SPRITE_DYNAMIC_FIRST
     jr c, .canonical
     cp SPRITE_DYNAMIC_END
@@ -884,7 +1036,7 @@ BuildDynamicSpriteRecords:
     ldh [rWBK], a
     ld a, b
     push af
-    newfarcall GetSprite
+    newfarcall GetMapSprite
     ld a, h
     and a
     ld a, l

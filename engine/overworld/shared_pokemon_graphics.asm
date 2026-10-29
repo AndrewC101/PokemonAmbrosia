@@ -1,3 +1,18 @@
+GetMapSharedOverworldMonSprite::
+    push af
+    newfarcall GetMapPokemonAliasSpecies
+    and a
+    jr z, .ordinary
+    call GetSharedMonSprite
+    pop af
+    ld c, 12
+    ld hl, WALKING_SPRITE
+    scf
+    ret
+.ordinary
+    pop af
+    jp GetSharedOverworldMonSprite
+
 GetSharedOverworldMonSprite::
     push af
     ld c, SPRITE_FOLLOWER - SPRITE_VARS
@@ -94,7 +109,7 @@ GetSharedOverworldMonFacing::
     cp SHARED_MON_TURNING_SPRITE
     jr z, .turning
     ld a, [bc]
-    call GetSharedOverworldMonSprite
+    call GetMapSharedOverworldMonSprite
     jr nc, .ordinary
     pop af
     cp FACING_FISH_DOWN

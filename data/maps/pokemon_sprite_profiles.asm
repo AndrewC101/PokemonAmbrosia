@@ -27,6 +27,48 @@
 ; graphics for them, but does not stop wandering or scripted/trainer movement.
 ; Use one Pokemon list per species; the turning list takes priority over front.
 LocalPokemonSpriteProfiles:
+    db GROUP_VIOLET_POKECENTER_1F, MAP_VIOLET_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_GOLDENROD_POKECENTER_1F, MAP_GOLDENROD_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_FUCHSIA_POKECENTER_1F, MAP_FUCHSIA_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_INDIGO_PLATEAU_POKECENTER_1F, MAP_INDIGO_PLATEAU_POKECENTER_1F
+    dw IndigoPlateauPokecenter1FPokemonProfile
+    db GROUP_AZALEA_POKECENTER_1F, MAP_AZALEA_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_BLACKTHORN_POKECENTER_1F, MAP_BLACKTHORN_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_CELADON_POKECENTER_1F, MAP_CELADON_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_CERULEAN_POKECENTER_1F, MAP_CERULEAN_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_CIANWOOD_POKECENTER_1F, MAP_CIANWOOD_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_ECRUTEAK_POKECENTER_1F, MAP_ECRUTEAK_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_LAVENDER_POKECENTER_1F, MAP_LAVENDER_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_MAHOGANY_POKECENTER_1F, MAP_MAHOGANY_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_PEWTER_POKECENTER_1F, MAP_PEWTER_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_SAFFRON_POKECENTER_1F, MAP_SAFFRON_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_SILVER_CAVE_POKECENTER_1F, MAP_SILVER_CAVE_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_VERMILION_POKECENTER_1F, MAP_VERMILION_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_VIRIDIAN_POKECENTER_1F, MAP_VIRIDIAN_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_OLIVINE_POKECENTER_1F, MAP_OLIVINE_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_CHERRYGROVE_POKECENTER_1F, MAP_CHERRYGROVE_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_CINNABAR_POKECENTER_1F, MAP_CINNABAR_POKECENTER_1F
+    dw PokecenterPokemonProfile
+    db GROUP_ROUTE_32_POKECENTER_1F, MAP_ROUTE_32_POKECENTER_1F
+    dw PokecenterPokemonProfile
     db GROUP_ROUTE_29, MAP_ROUTE_29
     dw Route29PokemonProfile
     db GROUP_ROUTE_11, MAP_ROUTE_11
@@ -676,3 +718,13 @@ Route29PokemonProfile:
     db SPRITE_YOUNGSTER, SPRITE_BEAUTY, SPRITE_FISHER, SPRITE_COOLTRAINER_F, 0
     db 0
     db 0
+
+IndigoPlateauPokecenter1FPokemonProfile:
+    db 0
+    db 0
+    db BLISSEY, ALAKAZAM, 0
+
+PokecenterPokemonProfile:
+    db 0
+    db 0
+    db BLISSEY, 0

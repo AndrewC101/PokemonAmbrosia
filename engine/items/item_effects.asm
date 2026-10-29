@@ -217,6 +217,14 @@ PokeBallEffect:
 	jp nz, UseBallInTrainerBattle
 
 ; Capture up to the training cap minus 10, or up to 100 when the cap is 100.
+	ld a, [wLevelCap]
+	cp 100
+	jr nz, .normal_capture_check
+	ld a, [wMarkOfGod]
+	and a
+	jr nz, .capture
+
+.normal_capture_check
 	push bc
 	ld a, [wLevelCap]
 	cp 100

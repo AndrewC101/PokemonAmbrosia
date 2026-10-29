@@ -169,7 +169,7 @@ CinnabarLabFieldMon10Script:
 	cry MAGMORTAR
 	pause 15
 	loadvar VAR_BATTLETYPE, BATTLETYPE_PERFECT
-	loadwildmon MAGMORTAR, 150
+	loadwildmon MAGMORTAR, 120
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FIELD_MON_10

@@ -1,7 +1,34 @@
-; This defines which sprites on a map don't get full walking graphics
-; it used to be that outdoor_sprites defined this for outdoor maps - which sprites get walking frames
-; now outdoor_sprites isn't needed as we dynamically reload the sprites we need upon crossing a map connection
+; Map entries contain a group/number pair and a pointer to that map's profile:
+;     db GROUP_ROUTE_5, MAP_ROUTE_5
+;     dw Route5PokemonProfile
+;
+; Each profile contains three zero-terminated lists, in this order:
+; 1. Human SPRITE_* IDs: standing poses for all four facings, no walking frames.
+; 2. Pokemon species names: turning poses for all four facings, no stepping frames.
+; 3. Pokemon species names: two front-facing frames, supporting down-facing idle animation.
+; Use SPRITE_COOLTRAINER_F in list 1, but BLISSEY (not SPRITE_BLISSEY) in lists 2/3.
+; An empty list is db 0. Unlisted Pokemon request full walking graphics;
+; unlisted humans retain their normal graphics. All allocations must fit VRAM.
+;
+; These lists select graphics; each object_event's movement selects behavior.
+; Rules apply to every object sharing that sprite/species on this map.
+; Keep human types needed for trainer approaches or scripted walking out of list 1.
+; Duplicate Pokemon of one species share the same graphics allocation.
+;
+; Normally nine distinct NPC/Pokemon sets can have full walking graphics, plus
+; the player. Count shared graphic sets, not objects; repeated actors still use
+; separate live-object/OAM slots. Turning/front graphics also have limited space.
+; Empty lists request the normal defaults; stationary movement does not itself
+; reduce the requested graphics. Excess sets spill into the non-walking pool in
+; allocation order, not according to which actors need to walk. Animation/facings
+; can then be wrong; if both pools overflow, the fallback suppresses the follower.
+; Valid names unused by this map do not load extra graphics or consume space;
+; undefined names fail assembly. Listing every NPC/Pokemon requests reduced
+; graphics for them, but does not stop wandering or scripted/trainer movement.
+; Use one Pokemon list per species; the turning list takes priority over front.
 LocalPokemonSpriteProfiles:
+    db GROUP_ROUTE_29, MAP_ROUTE_29
+    dw Route29PokemonProfile
     db GROUP_ROUTE_11, MAP_ROUTE_11
     dw Route11PokemonProfile
     db GROUP_ANCIENT_RUIN_PRESENT, MAP_ANCIENT_RUIN_PRESENT
@@ -542,8 +569,8 @@ Route9PokemonProfile:
 
 Route5PokemonProfile:
     db 0
-    db BLISSEY, 0
     db 0
+    db BLISSEY, 0
 
 VermilionCityPokemonProfile:
     db SPRITE_GRAMPS, 0
@@ -643,4 +670,9 @@ MuseumPokemonProfile:
 AbyssPokemonProfile:
     db SPRITE_SAGE, SPRITE_LANCE, 0
     db DARKRAI, MELMETAL, GIRATINA, DRAGONITE, 0
+    db 0
+
+Route29PokemonProfile:
+    db SPRITE_YOUNGSTER, SPRITE_BEAUTY, SPRITE_FISHER, SPRITE_COOLTRAINER_F, 0
+    db 0
     db 0

@@ -348,8 +348,8 @@ Route32PokemonProfile:
 
 CeruleanCavePokemonProfile:
     db SPRITE_SUPER_NERD, 0
-    db RAICHU, REGIGIGAS, 0
-    db 0
+    db RAICHU, 0
+    db REGIGIGAS, 0
 
 Route40PokemonProfile:
     db SPRITE_BEAUTY, SPRITE_LASS, SPRITE_POKEFAN_M, SPRITE_STANDING_YOUNGSTER, 0
@@ -486,8 +486,8 @@ AzaleaTownPokemonProfile:
 
 DarkCaveBlackthornEntrancePokemonProfile:
     db 0
-    db NOWN, DARKRAI, 0
-    db 0
+    db NOWN, 0
+    db DARKRAI, 0
 
 IcePath1FPokemonProfile:
     db 0
@@ -496,13 +496,13 @@ IcePath1FPokemonProfile:
 
 RockTunnelB1FPokemonProfile:
     db 0
-    db MOLTRES, NOWN, 0
-    db 0
+    db NOWN, 0
+    db MOLTRES, 0
 
 RuinsOfAlphInnerChamberPokemonProfile:
     db 0
-    db ENTEI, 0
     db 0
+    db ENTEI, 0
 
 WhirlIslandSEPokemonProfile:
     db 0
@@ -516,8 +516,8 @@ WhirlIslandB1FPokemonProfile:
 
 WhirlIslandLugiaChamberPokemonProfile:
     db 0
-    db LUGIA, 0
     db 0
+    db LUGIA, 0
 
 RuinsOfAlphAerodactylWordRoomPokemonProfile:
     db 0
@@ -531,8 +531,8 @@ TinTower9FPokemonProfile:
 
 DragonsDenB1FPokemonProfile:
     db 0
-    db RAYQUAZA, DRAGONITE, BAGON, GIBLE, 0
-    db 0
+    db DRAGONITE, BAGON, GIBLE, 0
+    db RAYQUAZA, 0
 
 ElementCavePokemonProfile:
     db 0
@@ -546,8 +546,8 @@ IlexForestPokemonProfile:
 
 CherrygroveRuinsPokemonProfile:
     db 0
-    db MR__MIME, BLISSEY, SMEARGLE, MEW, 0
-    db 0
+    db MR__MIME, BLISSEY, SMEARGLE, 0
+    db MEW, 0
 
 Route38PokemonProfile:
     db 0
@@ -581,8 +581,8 @@ LakeOfRagePokemonProfile:
 
 Route45PokemonProfile:
     db 0
-    db EXCADRILL, RAIKOU, FRIGIBAX, 0
-    db 0
+    db EXCADRILL, FRIGIBAX, 0
+    db RAIKOU, 0
 
 Route36PokemonProfile:
     db 0
@@ -636,8 +636,8 @@ Route28PokemonProfile:
 
 SeafoamCavePokemonProfile:
     db 0
-    db ARTICUNO, 0
     db 0
+    db ARTICUNO, 0
 
 SilverCaveRoom1PokemonProfile:
     db 0
@@ -646,18 +646,18 @@ SilverCaveRoom1PokemonProfile:
 
 SilverCaveRoom2PokemonProfile:
     db 0
-    db MACHAMP, MELMETAL, 0
-    db 0
+    db MACHAMP, 0
+    db MELMETAL, 0
 
 SilverCaveItemRoomsPokemonProfile:
     db 0
-    db PALKIA, DIALGA, LUCARIO, ALAKAZAM, 0
-    db 0
+    db LUCARIO, ALAKAZAM, 0
+    db PALKIA, DIALGA, 0
 
 ViridianForestPokemonProfile:
     db 0
-    db SHAYMIN, VOLCARONA, STARAPTOR, 0
-    db 0
+    db VOLCARONA, STARAPTOR, 0
+    db SHAYMIN, 0
 
 SilverCaveOutsidePokemonProfile:
     db 0
@@ -676,43 +676,43 @@ TeamRocketBaseB2FPokemonProfile:
 
 AncientHallPokemonProfile:
     db 0
-    db ZYGARDE, 0
     db 0
+    db ZYGARDE, 0
 
 OldLighthousePokemonProfile:
     db 0
-    db ZAPDOS, 0
     db 0
+    db ZAPDOS, 0
 
 CinnabarLabPokemonProfile:
     db SPRITE_SCIENTIST, 0
-    db GENESECT, MEWTWO, DITTO, MAGMORTAR, 0
-    db 0
+    db MEWTWO, DITTO, MAGMORTAR, 0
+    db GENESECT, 0
 
 TinTowerRoofPokemonProfile:
     db 0
-    db HO_OH, 0
     db 0
+    db HO_OH, 0
 
 AncientRuinPresentPokemonProfile:
     db SPRITE_SAGE, 0
-    db YVELTAL, 0
     db 0
+    db YVELTAL, 0
 
 AncientRuinPastPokemonProfile:
     db SPRITE_FISHER, SPRITE_COOLTRAINER_M, SPRITE_LASS, SPRITE_BEAUTY, SPRITE_RED, 0
-    db XERNEAS, 0
-    db ARCEUS, 0
+    db 0
+    db ARCEUS, XERNEAS, 0
 
 MuseumPokemonProfile:
     db 0
-    db DEOXYS, 0
     db 0
+    db DEOXYS, 0
 
 AbyssPokemonProfile:
     db SPRITE_SAGE, SPRITE_LANCE, 0
-    db DARKRAI, MELMETAL, GIRATINA, DRAGONITE, 0
-    db 0
+    db DRAGONITE, 0
+    db DARKRAI, MELMETAL, GIRATINA, 0
 
 Route29PokemonProfile:
     db SPRITE_YOUNGSTER, SPRITE_BEAUTY, SPRITE_FISHER, SPRITE_COOLTRAINER_F, 0

@@ -2763,7 +2763,7 @@ JukeboxEffect:
 .open
 	farcall BlankScreen
 	call LoadStandardFont
-	call LoadFontsExtra
+	call LoadFontsBattleExtra
 	call OpenJukebox
 	ld a, [wUsingItemWithSelect]
 	and a
@@ -2785,60 +2785,72 @@ TypeChartEffect:
 	newfarjp Pack_InitColors
 
 OpenJukebox:
-	xor a
-	ld [wUnusedScriptByte], a
-	ld a, 1
-	ld [wTempByteValue], a
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 	call ClearSprites
+	xor a
+	ld [wJukeboxActiveRow], a
+	ld hl, wPersistentBattleMusicOverride
+	call .FindSongIndex
+	ld [wJukeboxBattleSelection], a
+	ld hl, wPersistentOverworldMusicOverride
+	call .FindSongIndex
+	ld [wJukeboxOverworldSelection], a
 	call .DrawJukebox
 
 .loop
 	call .GetJukeboxJoypad
+	and a
+	jr z, .loop
 	bit B_PAD_B, a
-	jr nz, .exit
+	jr nz, .save
 	bit B_PAD_START, a
 	jr nz, .save
-	bit B_PAD_LEFT, a
-	jr nz, .prev
-	bit B_PAD_UP, a
-	jr nz, .prev
-	bit B_PAD_A, a
-	jr nz, .play
 	bit B_PAD_SELECT, a
 	jr nz, .default
-	bit B_PAD_RIGHT, a
-	jr nz, .next
+	bit B_PAD_A, a
+	jr nz, .play
+	bit B_PAD_UP, a
+	jr nz, .change_row
 	bit B_PAD_DOWN, a
-	jr nz, .next
-	jr .loop
+	jr nz, .change_row
+	bit B_PAD_LEFT, a
+	jr nz, .prev
+	bit B_PAD_RIGHT, a
+	jr z, .loop
+	call .NextSong
+	jr .refresh
 
 .prev
 	call .PreviousSong
-	call .RefreshSongName
-	jr .loop
+	jr .refresh
+
+.change_row
+	ld a, [wJukeboxActiveRow]
+	xor 1
+	ld [wJukeboxActiveRow], a
+	jr .refresh
 
 .play
 	call .PlaySelectedSong
 	jr .loop
 
-.save
-	call .SavePersistentBattleSong
-	call .RefreshSongName
-	jr .loop
-
 .default
-	call .ClearPersistentBattleSong
-	call .RefreshSongName
+	xor a
+	ld [wJukeboxBattleSelection], a
+	ld [wJukeboxOverworldSelection], a
+.refresh
+	call .RefreshSongNames
 	jr .loop
 
-.next
-	call .NextSong
-	call .RefreshSongName
-	jr .loop
-
-.exit
+.save
+	ld a, [wJukeboxBattleSelection]
+	ld hl, wPersistentBattleMusicOverride
+	call .StoreSelection
+	ld a, [wJukeboxOverworldSelection]
+	ld hl, wPersistentOverworldMusicOverride
+	call .StoreSelection
+	call PlayMapMusicNew
 	call CloseWindow
 	call UpdateSprites
 	call WaitBGMap
@@ -2846,26 +2858,60 @@ OpenJukebox:
 	call QueueScript
 	ret
 
-.PreviousSong:
-	ld a, [wTempByteValue]
-	dec a
-	jr nz, .store_previous
+.FindSongIndex:
+	ld a, [hli]
+	ld c, a
+	or [hl]
+	ret z
 	call .GetSongCount
-.store_previous
-	ld [wTempByteValue], a
+	ld b, a
+	ld d, 1
+	ld hl, JukeboxSongs + 1
+.find_song
+	ld a, BANK(JukeboxSongs)
+	call GetFarByte
+	cp c
+	ld a, d
+	ret z
+	inc hl
+	inc d
+	dec b
+	jr nz, .find_song
+	xor a
+	ret
+
+.GetSelectionPointer:
+	ld hl, wJukeboxBattleSelection
+	ld a, [wJukeboxActiveRow]
+	and a
+	ret z
+	inc hl
+	ret
+
+.PreviousSong:
+	call .GetSelectionPointer
+	ld a, [hl]
+	and a
+	jr nz, .decrement
+	push hl
+	call .GetSongCount
+	pop hl
+	ld [hl], a
+	ret
+.decrement
+	dec [hl]
 	ret
 
 .NextSong:
-	ld a, [wTempByteValue]
-	inc a
-	ld b, a
+	call .GetSelectionPointer
+	inc [hl]
+	ld b, [hl]
+	push hl
 	call .GetSongCount
+	pop hl
 	cp b
-	ld a, b
-	jr nc, .store_next
-	ld a, 1
-.store_next
-	ld [wTempByteValue], a
+	ret nc
+	ld [hl], 0
 	ret
 
 .GetSongCount:
@@ -2875,7 +2921,6 @@ OpenJukebox:
 	ret
 
 .GetSelectedSongID:
-	ld a, [wTempByteValue]
 	dec a
 	ld c, a
 	ld b, 0
@@ -2886,70 +2931,80 @@ OpenJukebox:
 	ret
 
 .PlaySelectedSong:
+	call .GetSelectionPointer
+	ld a, [hl]
+	and a
+	jr z, .preview_default
 	call .GetSelectedSongID
 	ld e, a
 	ld d, 0
-	ld a, 1
-	ld [wUnusedScriptByte], a
-	call PlayMusic2
-	ret
+	jp PlayMusic2
+.preview_default
+	call GetDefaultMapMusic
+	jp PlayMusic2
 
-.SavePersistentBattleSong:
+.StoreSelection:
+	and a
+	jr z, .store_default
+	push hl
 	call .GetSelectedSongID
-	ld [wPersistentBattleMusicOverride], a
+	pop hl
+	ld [hli], a
 	and a
 	ld a, 0
-	jr nz, .store_override_flag
+	jr nz, .store_flag
 	inc a
-.store_override_flag
-	ld [wPersistentBattleMusicOverride + 1], a
+.store_flag
+	ld [hl], a
+	ret
+.store_default
+	ld [hli], a
+	ld [hl], a
 	ret
 
-.ClearPersistentBattleSong:
-	xor a
-	ld [wPersistentBattleMusicOverride], a
-	ld [wPersistentBattleMusicOverride + 1], a
-	ret
-
-.PlaceCurrentSongName:
-	hlcoord 1, 5
-	lb bc, 1, 18
-	call ClearBox
-	call .GetCurrentSongName
-	hlcoord 1, 5
-	call FarPlaceString
-	ret
-
-.PlaceSavedSongName:
-	hlcoord 1, 8
-	lb bc, 1, 18
-	call ClearBox
-	ld a, [wPersistentBattleMusicOverride]
+.PlaceSelection:
 	and a
-	jr nz, .saved_song
-	ld a, [wPersistentBattleMusicOverride + 1]
-	and a
-	jr nz, .saved_song
-	ld de, .DefaultName
-	hlcoord 1, 8
-	call PlaceString
-	ret
-
-.saved_song
-	ld a, [wPersistentBattleMusicOverride]
-	call .GetSongName
-	hlcoord 1, 8
-	call FarPlaceString
-	ret
-
-.RefreshSongName:
-	call .PlaceCurrentSongName
-	call .PlaceSavedSongName
-	call ApplyTilemap
-	ret
-
-.GetCurrentSongName:
+	jr z, .place_default
+	push hl
 	call .GetSelectedSongID
+	call .GetSongName
+	pop hl
+	jp FarPlaceString
+.place_default
+	ld de, .DefaultName
+	jp PlaceString
+
+.RefreshSongNames:
+	hlcoord 1, 3
+	ld [hl], ' '
+	hlcoord 1, 6
+	ld [hl], ' '
+	hlcoord 1, 4
+	lb bc, 1, 18
+	call ClearBox
+	hlcoord 1, 7
+	lb bc, 1, 18
+	call ClearBox
+	ld a, [wJukeboxBattleSelection]
+	hlcoord 2, 4
+	call .PlaceSelection
+	ld a, [wJukeboxOverworldSelection]
+	hlcoord 2, 7
+	call .PlaceSelection
+	ld a, [wJukeboxActiveRow]
+	and a
+	hlcoord 1, 3
+	jr z, .place_arrows
+	hlcoord 1, 6
+.place_arrows
+	ld [hl], '▶'
+	ld de, SCREEN_WIDTH
+	add hl, de
+	ld [hl], '◀'
+	ld de, 17
+	add hl, de
+	ld [hl], '▶'
+	jp ApplyTilemap
 
 .GetSongName:
 	; Read the far pointer for the selected song name from the packed pointer table.
@@ -2978,46 +3033,32 @@ OpenJukebox:
 	hlcoord 1, 1
 	ld de, .Title
 	call PlaceString
-	hlcoord 1, 4
-	ld de, .CurrentLabel
+	hlcoord 2, 3
+	ld de, .BattleLabel
 	call PlaceString
-	call .PlaceCurrentSongName
-	hlcoord 1, 7
-	ld de, .SavedLabel
+	hlcoord 2, 6
+	ld de, .OverworldLabel
 	call PlaceString
-	call .PlaceSavedSongName
-	hlcoord 1, 12
+	hlcoord 1, 10
 	ld de, .ControlsLine1
+	call PlaceString
+	hlcoord 1, 11
+	ld de, .ControlsLine2
+	call PlaceString
+	hlcoord 1, 12
+	ld de, .ControlsLine3
 	call PlaceString
 	hlcoord 1, 13
 	ld de, .ControlsLine4
 	call PlaceString
 	hlcoord 1, 14
-	ld de, .ControlsLine2
-	call PlaceString
-	hlcoord 1, 15
-	ld de, .ControlsLine3
-	call PlaceString
-	hlcoord 1, 16
 	ld de, .ControlsLine5
 	call PlaceString
-	call ApplyTilemap
-	ret
+	jp .RefreshSongNames
 
 .GetJukeboxJoypad:
-.wait
 	call JoyTextDelay_ForcehJoyDown
 	ld a, c
-	and PAD_A | PAD_B | PAD_SELECT | PAD_START | PAD_UP | PAD_DOWN
-	jr nz, .done_repeat
-	ldh a, [hJoyPressed]
-	and PAD_LEFT | PAD_RIGHT
-	jr nz, .done
-	jr .wait
-
-.done_repeat
-	ld a, c
-.done
 	ret
 
 .ExitScript:
@@ -3025,25 +3066,25 @@ OpenJukebox:
 	end
 
 .ControlsLine1:
-	db "L/R:Change Track@"
-
-.ControlsLine4:
-	db "U/D:Cycle Tracks@"
+	db "U/D:Choose Row@"
 
 .ControlsLine2:
-	db "A:Play  B:Quit@"
+	db "L/R:Change Track@"
 
 .ControlsLine3:
-	db "Start:Set Battle@"
+	db "A:Preview@"
+
+.ControlsLine4:
+	db "Start/B:Confirm@"
 
 .ControlsLine5:
-	db "Select:Default@"
+	db "Select:Defaults@"
 
-.CurrentLabel:
-	db "Current Track:@"
+.BattleLabel:
+	db "Battle@"
 
-.SavedLabel:
-	db "Battle Track:@"
+.OverworldLabel:
+	db "Overworld@"
 
 .DefaultName:
 	db "Default@"

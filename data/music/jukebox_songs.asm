@@ -157,7 +157,7 @@ JukeboxSongNamePointers::
 .PokemonCenter:       db "Pokemon Center@"
 .HikerEncounter:      db "Hiker Encounter@"
 .LassEncounter:       db "Lass Encounter@"
-.OfficerEncounter:    db "Officer Encounter@"
+.OfficerEncounter:    db "Officer Enc.@"
 .HealPokemon:         db "Heal Pokemon@"
 .Route2:              db "Route 2@"
 .MtMoon:              db "Mt. Moon@"

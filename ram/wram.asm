@@ -321,6 +321,13 @@ wTilemapEnd::
 ; This union spans 480 bytes.
 SECTION UNION "Miscellaneous", WRAM0
 
+wJukeboxBattleSelection:: db
+wJukeboxOverworldSelection:: db
+wJukeboxActiveRow:: db
+
+
+SECTION UNION "Miscellaneous", WRAM0
+
 ; surrounding tiles
 ; This buffer determines the size for the rest of the union;
 ; it uses exactly 480 bytes.
@@ -3283,8 +3290,8 @@ wForcedMenu:: db
 wPersistentBattleMusicOverride:: ds 2
 wDeferredSwitchHit:: db
 wVioletPokecenter2FSceneID:: db ; allocated from the existing free block
-; DevNote - 135 free bytes!
-	ds 135
+wPersistentOverworldMusicOverride:: ds 2
+	ds 133
 
 wPassword:: ds NAME_LENGTH
 wGiftOfGod:: db

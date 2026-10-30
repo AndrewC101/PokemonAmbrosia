@@ -443,6 +443,21 @@ SpecialMapMusic::
 	ret
 
 GetMapMusic_MaybeSpecial::
+	ld a, [wPersistentOverworldMusicOverride]
+	cp NUM_MUSIC_SONGS
+	jr nc, GetDefaultMapMusic
+	and a
+	jr nz, .override
+	ld a, [wPersistentOverworldMusicOverride + 1]
+	cp 1
+	jr nz, GetDefaultMapMusic
+.override
+	ld a, [wPersistentOverworldMusicOverride]
+	ld e, a
+	ld d, 0
+	ret
+
+GetDefaultMapMusic::
 	call SpecialMapMusic
 	ret c
 	call GetMapMusic

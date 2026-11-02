@@ -9,6 +9,8 @@
 	const ELMSLAB_DAD
 	const ELMSLAB_PARENTS_ELM
 	const ELMSLAB_CYNTHIA
+	const ELMSLAB_MR_MIME
+	const ELMSLAB_GARCHOMP
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -47,6 +49,7 @@ ElmsLabMoveElmCallback:
     disappear ELMSLAB_DAD
     disappear ELMSLAB_PARENTS_ELM
     disappear ELMSLAB_CYNTHIA
+	disappear ELMSLAB_GARCHOMP
     checkevent EVENT_GOT_A_POKEMON_FROM_ELM
     iftrue .cont
     appear ELMSLAB_CYNTHIA
@@ -54,6 +57,7 @@ ElmsLabMoveElmCallback:
 	checkscene
 	iftrue .Skip ; not SCENE_ELMSLAB_MEET_ELM
 	moveobject ELMSLAB_ELM, 3, 4
+	appear ELMSLAB_GARCHOMP
 .Skip:
 	endcallback
 
@@ -107,6 +111,18 @@ ElmsLabWalkUpToElmScript:
 
 	applymovement ELMSLAB_CYNTHIA, ElmsLabMovement_CynthiaLeaves
 	disappear ELMSLAB_CYNTHIA
+
+	applymovement ELMSLAB_GARCHOMP, ElmsLabMovement_GarchompBesidePlayer
+	pause 15
+	turnobject ELMSLAB_GARCHOMP, LEFT
+	refreshscreen
+	pokepic GARCHOMP
+	cry GARCHOMP
+	waitsfx
+	closepokepic
+	closetext
+	applymovement ELMSLAB_GARCHOMP, ElmsLabMovement_GarchompLeaves
+	disappear ELMSLAB_GARCHOMP
 
 	applymovement ELMSLAB_ELM, ElmsLabMovement_ElmReturns
 	turnobject PLAYER, LEFT
@@ -962,6 +978,19 @@ ElmsLabMovement_CynthiaLeaves:
     slow_step DOWN
     slow_step DOWN
     step_end
+
+ElmsLabMovement_GarchompBesidePlayer:
+	slow_step DOWN
+	slow_step DOWN
+	step_end
+
+ElmsLabMovement_GarchompLeaves:
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	slow_step DOWN
+	step_end
 
 ElmsLabMovement_ElmReturns:
     step DOWN
@@ -3016,3 +3045,4 @@ ElmsLab_MapEvents:
 	object_event  5,  4, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_3
 	object_event 4, 2, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, CynthiaScript, EVENT_FIELD_MON_4
 	object_event  9,  8, SPRITE_MR_MIME, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ElmsLabMrMimeScript, -1
+	object_event  5,  2, SPRITE_GARCHOMP, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FIELD_MON_5

@@ -699,6 +699,7 @@ GoldenrodCityPokemonAttacksText:
 	done
 	
 GoldenrodCitySelfScript:
+    hidefollower
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear GOLDENRODCITY_SELF
@@ -766,6 +767,7 @@ GoldenrodCitySelfScript:
 	disappear GOLDENRODCITY_SELF
 	playmusic MUSIC_GOLDENROD_CITY
 	special HealParty
+	showfollower
 	end
 .lose
     dontrestartmapmusic
@@ -782,6 +784,7 @@ GoldenrodCitySelfScript:
 	disappear GOLDENRODCITY_SELF
 	playmusic MUSIC_GOLDENROD_CITY
 	special HealParty
+	showfollower
 	end
 
 GoldenrodMovement_PlayerDown:

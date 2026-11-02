@@ -464,6 +464,7 @@ BlockingSoldier2Text:
 FuchsiaCitySelfScript:
     checkevent EVENT_BEAT_FUCHSIA_SELF
     iftrue .end
+    hidefollower
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear FUCHSIACITY_SELF
@@ -573,6 +574,7 @@ FuchsiaCitySelfScript:
 	disappear FUCHSIACITY_SELF
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 	special HealParty
+	showfollower
 .end
 	end
 .lose
@@ -590,6 +592,7 @@ FuchsiaCitySelfScript:
 	disappear FUCHSIACITY_SELF
 	playmusic MUSIC_RED_INDIGO_PLATEAU
 	special HealParty
+	showfollower
 	end
 
 FuchsiaSelfMerge:

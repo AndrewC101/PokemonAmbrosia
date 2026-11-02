@@ -27,6 +27,8 @@
 ; graphics for them, but does not stop wandering or scripted/trainer movement.
 ; Use one Pokemon list per species; the turning list takes priority over front.
 LocalPokemonSpriteProfiles:
+    db GROUP_ELMS_LAB, MAP_ELMS_LAB
+    dw ElmsLabPokemonProfile
     db GROUP_VIOLET_POKECENTER_1F, MAP_VIOLET_POKECENTER_1F
     dw PokecenterPokemonProfile
     db GROUP_GOLDENROD_POKECENTER_1F, MAP_GOLDENROD_POKECENTER_1F
@@ -728,3 +730,8 @@ PokecenterPokemonProfile:
     db 0
     db 0
     db BLISSEY, 0
+
+ElmsLabPokemonProfile:
+    db 0
+    db 0
+    db CHIMCHAR, FROAKIE, TREECKO, 0

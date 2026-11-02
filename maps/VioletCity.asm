@@ -404,6 +404,7 @@ VioletCityFieldMon5Script:
     end
 
 VioletCitySelfScript:
+    hidefollower
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear VIOLETCITY_SELF
@@ -468,6 +469,7 @@ VioletCitySelfScript:
 	disappear VIOLETCITY_SELF
 	playmusic MUSIC_VIOLET_CITY
 	special HealParty
+	showfollower
 	end
 .lose
     dontrestartmapmusic
@@ -483,6 +485,7 @@ VioletCitySelfScript:
 	disappear VIOLETCITY_SELF
 	playmusic MUSIC_VIOLET_CITY
 	special HealParty
+	showfollower
 	end
 
 VioletMovement_PlayerDown:

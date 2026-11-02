@@ -1025,21 +1025,20 @@ BattleMirrorReceptionistScript:
 
 GiveBattleMirrorPrize:
     opentext
-    random 14
+    random 13
     ifequal 0, .StarPiece
     ifequal 1, .SilverLeaf
     ifequal 2, .GoldLeaf
-    ifequal 3, .TeruSama
-    ifequal 4, .BigMushroom
-    ifequal 5, .CleanseTag
-    ifequal 6, .SlowpokeTail
-    ifequal 7, .BigPearl
-    ifequal 8, .RageCandyBar
-    ifequal 9, .SacredAsh
-    ifequal 10, .BrickPiece
-    ifequal 11, .MirageMail
-    ifequal 12, .MusicMail
-    ifequal 13, .MiracleBerry
+    ifequal 3, .BigMushroom
+    ifequal 4, .CleanseTag
+    ifequal 5, .SlowpokeTail
+    ifequal 6, .BigPearl
+    ifequal 7, .RageCandyBar
+    ifequal 8, .SacredAsh
+    ifequal 9, .BrickPiece
+    ifequal 10, .MirageMail
+    ifequal 11, .MusicMail
+    ifequal 12, .MiracleBerry
 .StarPiece
     verbosegiveitem STAR_PIECE
     closetext
@@ -1050,10 +1049,6 @@ GiveBattleMirrorPrize:
     end
 .GoldLeaf
     verbosegiveitem GOLD_LEAF
-    closetext
-    end
-.TeruSama
-    verbosegiveitem ITEM_BE
     closetext
     end
 .BigMushroom

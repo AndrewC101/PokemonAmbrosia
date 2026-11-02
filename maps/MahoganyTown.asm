@@ -139,6 +139,7 @@ MahoganyGymSignText:
 	done
 	
 MahoganyTownSelfScript:
+    hidefollower
     playmusic MUSIC_RUINS_OF_ALPH_RADIO
     pause 20
     appear MAHOGANYTOWN_SELF
@@ -205,6 +206,7 @@ MahoganyTownSelfScript:
 	disappear MAHOGANYTOWN_SELF
 	playmusic MUSIC_CHERRYGROVE_CITY
 	special HealParty
+	showfollower
 	end
 .lose
     dontrestartmapmusic
@@ -221,6 +223,7 @@ MahoganyTownSelfScript:
 	disappear MAHOGANYTOWN_SELF
 	playmusic MUSIC_CHERRYGROVE_CITY
 	special HealParty
+	showfollower
 	end
 
 MahoganyMovement_PlayerDown:

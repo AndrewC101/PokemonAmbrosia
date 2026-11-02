@@ -180,6 +180,7 @@
 	charmap "<special>", $c7
 	charmap "<status>",  $c8
 	charmap "<FOLLOWER>",$c9 ; reserved party badge tile, not the letter F
+	charmap "<JUKEBOX>", $ca
 
 	charmap "'d",        $d0
 	charmap "'l",        $d1

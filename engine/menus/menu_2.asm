@@ -162,8 +162,13 @@ StartMenu_PrintBugContestStatus:
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
+	farcall StartMenu_HasJukeboxOverride
 	hlcoord 1, 1
 	ld de, .CaughtString
+	jr z, .place_caught_label
+	hlcoord 4, 1
+	ld de, .GotString
+.place_caught_label
 	call PlaceString
 	ld a, [wContestMon]
 	and a
@@ -197,6 +202,8 @@ StartMenu_PrintBugContestStatus:
 	db "ボール　　　こ@"
 .CaughtString:
 	db "Caught@"
+.GotString:
+	db "Got@"
 .BallsString:
 	db "Balls:@"
 .NoneString:

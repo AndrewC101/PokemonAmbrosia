@@ -100,6 +100,7 @@ StartMenu::
 	ldh [hBGMapMode], a
 	call ._DrawMenuInfoTextBox
 	call SetUpMenu
+	call .DrawJukeboxIndicator
 	ld a, $ff
 	ld [wMenuSelection], a
 .loop
@@ -386,17 +387,34 @@ endr
 .DrawBugContestStatusBox:
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	ret z
+	jr z, .DrawJukeboxIndicator
 	farcall StartMenu_DrawBugContestStatusBox
-	ret
+	jr .DrawJukeboxIndicator
 
 .DrawBugContestStatus:
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	jr nz, .contest
-	ret
-.contest
+	jr z, .DrawJukeboxIndicator
 	farcall StartMenu_PrintBugContestStatus
+
+.DrawJukeboxIndicator:
+	call StartMenu_HasJukeboxOverride
+	ret z
+	hlcoord 0, 0
+	lb bc, 1, 1
+	call Textbox
+	hlcoord 1, 1
+	ld [hl], '<JUKEBOX>'
+	ret
+
+StartMenu_HasJukeboxOverride::
+	ld hl, wPersistentBattleMusicOverride
+	ld a, [hli]
+	or [hl]
+	ld hl, wPersistentOverworldMusicOverride
+	or [hl]
+	inc hl
+	or [hl]
 	ret
 
 OpenUnlockedWarpMenu::

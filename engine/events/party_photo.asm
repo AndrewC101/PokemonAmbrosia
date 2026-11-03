@@ -44,9 +44,8 @@ PokecenterPhotographerScript::
 	text "You and your"
 	line "#mon make a"
 	cont "great team."
-	para "Would you like"
-	line "your picture"
-	cont "taken?"
+	para "Can I take your"
+	line "picture?"
 	done
 
 .RefusalText:

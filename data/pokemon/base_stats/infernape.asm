@@ -1,6 +1,6 @@
 	db INFERNAPE ; 157
 
-	db  76,  104,  71, 108, 104,  71
+	db  76, 110,  65, 108, 110,  65
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIGHTING ; type

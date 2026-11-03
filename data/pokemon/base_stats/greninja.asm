@@ -1,6 +1,6 @@
 	db GRENINJA ; 160
 
-	db  72, 95, 67,  122,  103,  71
+	db  72, 78, 67,  122,  120,  71
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, DARK ; type

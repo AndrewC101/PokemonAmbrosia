@@ -229,46 +229,6 @@ BeginFollowerPartyMenu::
     ld [wMenuJoypadFilter], a
     ret
 
-DrawFollowerPartyHint::
-    hlcoord 1, 16
-    ld bc, 18
-    ld a, ' '
-    call ByteFill
-    hlcoord 1, 16
-    ld de, .hint
-    jp PlaceString
-.hint
-    db "Select: Follow@"
-
-PlaceFollowerPartyMarker::
-    ld a, [wFollowerMenuContext]
-    and a
-    ret z
-    call GetFollowerSelection
-    and a
-    ret z
-    ld c, a
-    ld a, [wFollowerSelectionSuspended]
-    and a
-    ret nz
-    ld a, [wPartyCount]
-    cp c
-    ret c
-    ld a, c
-    dec a
-    ld bc, 2 * SCREEN_WIDTH
-    hlcoord 4, 2
-    call AddNTimes
-    ld [hl], PARTY_MENU_FOLLOWER_TILE
-    ld de, wAttrmap - wTilemap
-    add hl, de
-    ld [hl], PARTY_MENU_FOLLOWER_PAL
-    ld a, [hCGB]
-    and a
-    ret z
-    farcall ApplyAttrmap
-    ret
-
 HandleFollowerPartySelect::
     ld a, [wCurPartyMon]
     push af
@@ -280,7 +240,6 @@ HandleFollowerPartySelect::
     jr c, .restore
     farcall WritePartyMenuTilemap
     farcall PlacePartyMenuText
-    call DrawFollowerPartyHint
     call WaitBGMap
 .restore
     pop af

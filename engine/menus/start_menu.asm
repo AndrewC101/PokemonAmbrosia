@@ -827,9 +827,6 @@ if !DEF(FOLLOWER_TEST)
 endc
 	farcall WritePartyMenuTilemap
 	farcall PlacePartyMenuText
-if !DEF(FOLLOWER_TEST)
-    newfarcall DrawFollowerPartyHint
-endc
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame

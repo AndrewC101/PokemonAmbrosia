@@ -105,12 +105,13 @@ CancelPokemonAction:
 	ret
 
 PokemonActionSubmenu:
-	hlcoord 1, 15
-	lb bc, 2, 18
-	call ClearBox
+	newfarcall PartyCardsHidePrompt
 	farcall MonSubmenu
+.dispatch
 	call GetCurNickname
 	ld a, [wMenuSelection]
+	cp MONMENUITEM_FIELD
+	jr z, .field
 	ld hl, .Actions
 	ld de, 3
 	call IsInArray
@@ -125,6 +126,14 @@ PokemonActionSubmenu:
 .nothing
 	ld a, 0
 	ret
+
+.field
+	newfarcall MonFieldSubmenu
+	ld a, [wMenuSelection]
+	cp MONMENUITEM_CANCEL
+	jr nz, .dispatch
+	farcall MonSubmenu
+	jr .dispatch
 
 .Actions:
 	dbw MONMENUITEM_CUT,        MonMenu_Cut
@@ -148,6 +157,10 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_MOVE,       ManagePokemonMoves
 	dbw MONMENUITEM_MAIL,       MonMailAction
 	dbw MONMENUITEM_POKEDEX,    MonMenu_Pokedex
+	dbw MONMENUITEM_NICKNAME,   MonMenu_Nickname
+
+MonMenu_Nickname:
+	newfarjp PartyCardsNickname
 
 MonMenu_Pokedex:
 	call FadeToMenu
@@ -179,12 +192,6 @@ SwitchPartyMons:
 	farcall WritePartyMenuTilemap
 	farcall PlacePartyMenuText
 
-	hlcoord 0, 1
-	ld bc, SCREEN_WIDTH * 2
-	ld a, [wSwitchMon]
-	dec a
-	call AddNTimes
-	ld [hl], '▷'
 	call WaitBGMap
 	call SetDefaultBGPAndOBP
 	call DelayFrame
@@ -229,6 +236,8 @@ GiveTakePartyMonItem:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 	ld a, [wMenuCursorY]
+	cp 3
+	jr z, .swap
 	cp 1
 	jr nz, .take
 
@@ -245,6 +254,9 @@ GiveTakePartyMonItem:
 	call TakePartyItem
 	ld a, 3
 	ret
+
+.swap
+	newfarjp PartyCardsSwapItem
 
 .cancel
 	ld a, 3
@@ -447,15 +459,16 @@ TakePartyItem:
 
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
-	menu_coords 12, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 12, 10, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .Items
 	db 1 ; default option
 
 .Items:
 	db STATICMENU_CURSOR ; flags
-	db 2 ; # items
+	db 3 ; # items
 	db "Give@"
 	db "Take@"
+	db "Swap@"
 
 PokemonSwapItemText:
 	text_far _PokemonSwapItemText
@@ -681,7 +694,12 @@ OpenPartyStats:
 	; fallthrough
 _OpenPartyStats:
 	call LoadStandardMenuHeader
+	call ClearBGPalettes
 	call ClearSprites
+	call DelayFrame
+	call ClearTilemap
+	newfarcall WipeAttrmap
+	call CopyTilemapAtOnce
 	call LowVolume
 	predef StatsScreenInit
 	call MaxVolume

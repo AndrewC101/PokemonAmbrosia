@@ -624,7 +624,6 @@ SECTION "Battle Tower Trainer Data", ROMX
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/player_sprite_choice.asm"
 INCLUDE "engine/pokegear/map_name.asm"
-INCLUDE "engine/pokemon/party_menu_held_item_icons.asm"
 INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
 INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
@@ -752,3 +751,6 @@ SECTION "Bag Sorting", ROMX
 INCLUDE "engine/items/sort_items.asm"
 
 INCLUDE "engine/overworld/dynamic_pokemon_sprites.asm"
+
+SECTION "Party Menu Cards", ROMX
+INCLUDE "engine/pokemon/party_cards.asm"

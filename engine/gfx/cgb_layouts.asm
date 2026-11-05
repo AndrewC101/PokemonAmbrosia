@@ -907,13 +907,10 @@ _CGB_MapPals:
 	ret
 
 _CGB_PartyMenu:
-	ld hl, PalPacket_PartyMenu + 1
-	call CopyFourPalettes
-	call InitPartyMenuBGPal0
+	newfarcall PartyCardsUpdatePals
 	call InitPartyMenuBGPal7
 	call InitPartyMenuOBPals
-	call ApplyAttrmap
-	ret
+	newfarjp PartyCardsDrawFollowerBadge
 
 _CGB_Evolution:
 	ld de, wBGPals1

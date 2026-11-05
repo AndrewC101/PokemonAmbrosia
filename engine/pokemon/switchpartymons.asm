@@ -18,14 +18,6 @@ _SwitchPartyMons:
 	ret
 
 .ClearSprite:
-	push af
-	hlcoord 0, 1
-	ld bc, 2 * SCREEN_WIDTH
-	call AddNTimes
-	ld bc, 2 * SCREEN_WIDTH
-	ld a, ' '
-	call ByteFill
-	pop af
 	ld hl, wShadowOAMSprite00
 	ld bc, 4 * OBJ_SIZE
 	call AddNTimes

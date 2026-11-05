@@ -59,6 +59,8 @@ SpriteAnimFunc_Null:
 	ret
 
 SpriteAnimFunc_PartyMon:
+	call PartyMonIconCovered
+	ret c
 	ld a, [wMenuCursorY]
 
 	ld hl, SPRITEANIMSTRUCT_INDEX
@@ -66,9 +68,13 @@ SpriteAnimFunc_PartyMon:
 	cp [hl]
 	jr z, SpriteAnimFunc_PartyMonSwitch
 
+	ld hl, SPRITEANIMSTRUCT_INDEX
+	add hl, bc
+	ld a, [hl]
+	call PartyMonIconX
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld [hl], 8 * 2
+	ld [hl], a
 
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
@@ -76,9 +82,15 @@ SpriteAnimFunc_PartyMon:
 	ret
 
 SpriteAnimFunc_PartyMonSwitch:
+	call PartyMonIconCovered
+	ret c
+	ld hl, SPRITEANIMSTRUCT_INDEX
+	add hl, bc
+	ld a, [hl]
+	call PartyMonIconX
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld [hl], 8 * 3
+	ld [hl], a
 
 	ld hl, SPRITEANIMSTRUCT_VAR1
 	add hl, bc
@@ -118,23 +130,94 @@ SpriteAnimFunc_PartyMonSwitch:
 	ret
 
 SpriteAnimFunc_PartyMonSelected:
-	ld a, [wMenuCursorY]
 
+	call PartyMonIconCovered
+	ret c
 	ld hl, SPRITEANIMSTRUCT_INDEX
 	add hl, bc
-	cp [hl]
-	jr z, .three_offset_right
-
+	ld a, [hl]
+	call PartyMonIconX
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld [hl], 8 * 2
+	ld [hl], a
 	ret
 
-.three_offset_right
+PartyMonIconCovered:
+
+	ld a, [wAttrmap]
+	cp BG_BANK1
+	jr nz, .not_cards
+	ld a, [wAttrmap + 1]
+	cp BG_BANK1
+	jr nz, .not_cards
+	push bc
+	ld hl, SPRITEANIMSTRUCT_INDEX
+	add hl, bc
+	ld a, [hl]
+	dec a
+	ld e, a
+
+	srl a
+	ld d, a
+	add a
+	add a
+	add d
+	inc a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	ld b, h
+	ld c, l
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	bit 0, e
+	jr z, .got_col
+	ld bc, 10
+	add hl, bc
+.got_col
+	ld bc, wAttrmap
+	add hl, bc
+
+	ld d, 2
+.row
+	ld e, 3
+	push hl
+.tile
+	ld a, [hli]
+	bit B_OAM_BANK1, a
+	jr z, .covered
+	dec e
+	jr nz, .tile
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	dec d
+	jr nz, .row
+	pop bc
+.not_cards
+	and a
+	ret
+
+.covered
+	pop hl
+	pop bc
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
-	ld [hl], 8 * 3
+	ld [hl], 0
+	scf
 	ret
+
+PartyMonIconX::
+
+	dec a
+	and 1
+	ld a, 19
+	ret z
+	ld a, 19 + 80
+	ret
+
 
 SpriteAnimFunc_GSTitleTrail:
 	call AnimSeqs_AnonJumptable

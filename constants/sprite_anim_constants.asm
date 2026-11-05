@@ -204,6 +204,7 @@ DEF NUM_SPRITE_ANIM_FUNCS EQU const_value
 	const SPRITE_ANIM_FRAMESET_PC_MODE                   ; 45
 	const SPRITE_ANIM_FRAMESET_PC_MODE2                  ; 46
 	const SPRITE_ANIM_FRAMESET_PC_PACK                   ; 47
+	const SPRITE_ANIM_FRAMESET_PARTY_MON_WALK
 DEF NUM_SPRITE_ANIM_FRAMESETS EQU const_value
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)

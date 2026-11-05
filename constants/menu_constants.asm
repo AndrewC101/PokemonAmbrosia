@@ -79,6 +79,8 @@
 	const MONMENUITEM_MAIL       ; 20
 	const MONMENUITEM_ERROR      ; 21
 	const MONMENUITEM_POKEDEX    ; 22
+	const MONMENUITEM_FIELD
+	const MONMENUITEM_NICKNAME
 DEF NUM_MONMENUITEMS EQU const_value - 1
 
 ; MonMenuOptions categories
@@ -91,7 +93,6 @@ DEF NUM_MONMENU_ITEMS EQU 8
 DEF HMENURETURN_SCRIPT EQU %10000000
 DEF HMENURETURN_ASM    EQU %11111111
 
-; PartyMenuQualityPointers indexes (see data/party_menu_qualities.asm)
 	const_def
 	const PARTYMENUACTION_CHOOSE_POKEMON
 	const PARTYMENUACTION_HEALING_ITEM

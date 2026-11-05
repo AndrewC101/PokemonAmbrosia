@@ -1915,7 +1915,7 @@ Mobile_PartyMenuSelect:
 	ld a, [wMenuJoypadFilter]
 	and c
 	jr z, .loop
-	call PlaceHollowCursor
+	newfarcall PartyCardsUpdatePals
 	ld a, [wPartyCount]
 	inc a
 	ld b, a

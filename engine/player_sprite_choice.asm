@@ -432,20 +432,10 @@ PokemonColorEditorScript::
 	ifequal 0, .done
 	ifequal 12, .default
 	callasm PokemonColorEditorCommitDarkColor
-	sjump .rename
+	sjump .reload
 
 .default
 	callasm PokemonColorEditorCommitDefault
-	sjump .reload
-
-.rename
-	writetext PokemonColorEditorRenameText
-	nooryes
-	iffalse .reload
-	closetext
-	callasm PokemonColorEditorNamingScreen
-	reloadmap
-	end
 
 .reload
 	closetext
@@ -519,10 +509,6 @@ PokemonColorEditorEggText:
 	line "colour."
 	done
 
-PokemonColorEditorRenameText:
-	text "Change its name?"
-	done
-
 PokemonColorEditorSelectMon::
 ; Return 0 for cancel, 1 for a Pokemon, or 2 for an Egg in wScriptVar.
 	newfarcall SelectMonFromParty
@@ -589,36 +575,6 @@ PokemonColorEditorStorePair:
 	pop af
 	ld [hl], a
 	ret
-
-PokemonColorEditorNamingScreen::
-; Reuse the Name Rater's validation against the already-selected party slot.
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Species
-	call GetPartyLocation
-	ld a, [hl]
-	ld [wCurPartySpecies], a
-	xor a ; PARTYMON
-	ld [wMonType], a
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld b, NAME_MON
-	ld de, wStringBuffer2
-	newfarcall _NamingScreen
-	newfarcall IsNewNameEmpty
-	ret c
-	newfarcall CompareNewToOld
-	ret c
-	ld hl, wPartyMonNicknames
-	ld bc, MON_NAME_LENGTH
-	ld a, [wCurPartyMon]
-	call AddNTimes
-	ld e, l
-	ld d, h
-	ld hl, wStringBuffer2
-	ld bc, MON_NAME_LENGTH
-	jp CopyBytes
 
 PlayerRecreationGenderHeader:
 	db MENU_BACKUP_TILES ; flags

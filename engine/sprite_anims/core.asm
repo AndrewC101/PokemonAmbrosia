@@ -24,6 +24,7 @@ PlaySpriteAnimations:
 	ld a, LOW(wShadowOAM)
 	ld [wCurSpriteOAMAddr], a
 	call DoNextFrameForAllSprites
+	newfarcall PartyCardsDrawFollowerBadge
 
 	pop af
 	pop bc
@@ -291,8 +292,17 @@ UpdateAnimFrame:
 	; [de] = GetSpriteOAMAttr([hl])
 	ld a, [hl]
 	cp SPRITEOAM_SKIP_PAL_APPLY
-	jr z, .skip_attributes
+	jr nz, .attributes
+	ld a, [de]
+	and ~(OAM_XFLIP | OAM_YFLIP)
+	ld b, a
+	ld a, [wCurSpriteOAMFlags]
+	and OAM_XFLIP | OAM_YFLIP
+	or b
+	jr .store_attributes
+.attributes
 	call GetSpriteOAMAttr
+.store_attributes
 	ld [de], a
 .skip_attributes
 	inc hl

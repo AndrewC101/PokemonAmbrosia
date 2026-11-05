@@ -1,11 +1,27 @@
 INCLUDE "data/mon_menu.asm"
 
+MonFieldSubmenu:
+	xor a
+	ldh [hBGMapMode], a
+	call ResetMonSubmenu
+	call AddEligibleFieldMoves
+	ld a, MONMENUITEM_CANCEL
+	call AddMonMenuItem
+	call TerminateMonSubmenu
+	jr ShowMonSubmenu
+
 MonSubmenu:
 	xor a
 	ldh [hBGMapMode], a
 	call GetMonSubmenuItems
+ShowMonSubmenu:
 	farcall FreezeMonIcons
+	ld a, [wMonSubmenuCount]
+	cp 6
 	ld hl, .MenuHeader
+	jr c, .header
+	ld hl, .WideMenuHeader
+.header
 	call LoadMenuHeader
 	call .GetTopCoord
 	call PopulateMonMenu
@@ -24,9 +40,20 @@ MonSubmenu:
 	dw 0
 	db 1 ; default option
 
+.WideMenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw 0
+	db 1
+
 .GetTopCoord:
 ; [wMenuBorderTopCoord] = 1 + [wMenuBorderBottomCoord] - 2 * ([wMonSubmenuCount] + 1)
 	ld a, [wMonSubmenuCount]
+	cp 6
+	jr c, .rows
+	inc a
+	srl a
+.rows
 	inc a
 	add a
 	ld b, a
@@ -38,6 +65,9 @@ MonSubmenu:
 	ret
 
 MonMenuLoop:
+	ld a, [wMonSubmenuCount]
+	cp 6
+	jp nc, MonMenuGridLoop
 .loop
 	ld a, MENU_UNUSED | MENU_BACKUP_TILES_2 ; flags
 	ld [wMenuDataFlags], a
@@ -71,6 +101,9 @@ MonMenuLoop:
 	ret
 
 PopulateMonMenu:
+	ld a, [wMonSubmenuCount]
+	cp 6
+	jp nc, PopulateMonMenuGrid
 	call MenuBoxCoord2Tile
 	ld bc, 2 * SCREEN_WIDTH + 2
 	add hl, bc
@@ -91,6 +124,18 @@ PopulateMonMenu:
 	jr .loop
 
 GetMonMenuString:
+	ld b, a
+	ld a, [wMonSubmenuCount]
+	cp 6
+	ld a, b
+	jr c, .lookup
+	cp MONMENUITEM_SOFTBOILED
+	ld de, .Softboiled
+	ret z
+	cp MONMENUITEM_MILKDRINK
+	ld de, .MilkDrink
+	ret z
+.lookup
 	ld hl, MonMenuOptions + 1
 	ld de, 3
 	call IsInArray
@@ -114,6 +159,9 @@ GetMonMenuString:
 	ld e, l
 	ret
 
+.Softboiled: db "Softboil@"
+.MilkDrink: db "Milk Dr.@"
+
 GetMonSubmenuItems:
 	call ResetMonSubmenu
 	ld a, [wCurPartySpecies]
@@ -123,13 +171,13 @@ GetMonSubmenuItems:
 	and a
 	jr nz, .skip_moves
 
-    call CanUseFlash
-	call CanUseFly
-	call CanUseDig
-	call CanUseTeleport
-    call CanUseSoftboiled
-	call CanUseMilkdrink
-	call CanUseHeal
+	call AddEligibleFieldMoves
+	ld a, [wMonSubmenuCount]
+	and a
+	jr z, .skip_moves
+	call ResetMonSubmenu
+	ld a, MONMENUITEM_FIELD
+	call AddMonMenuItem
 
 	.skip_moves
 		ld a, MONMENUITEM_STATS
@@ -158,6 +206,8 @@ GetMonSubmenuItems:
 	ld a, MONMENUITEM_ITEM
 
 .ok
+	call AddMonMenuItem
+	ld a, MONMENUITEM_NICKNAME
 	call AddMonMenuItem
 
 .skip2
@@ -558,3 +608,165 @@ CanUseHeal:
 	ld a, MONMENUITEM_HEAL
 	call AddMonMenuItem
 	ret
+
+AddEligibleFieldMoves:
+	call CanUseFlash
+	call CanUseFly
+	call CanUseDig
+	call CanUseTeleport
+	call CanUseSoftboiled
+	call CanUseMilkdrink
+	jp CanUseHeal
+
+PopulateMonMenuGrid:
+	ld de, wMonSubmenuItems
+	ld b, 0
+.loop
+	ld a, [de]
+	inc de
+	cp -1
+	ret z
+	ld c, a
+	push de
+	push bc
+	call MenuBoxCoord2Tile
+	ld de, 2 * SCREEN_WIDTH + 2
+	add hl, de
+	pop bc
+	push bc
+	bit 0, b
+	jr z, .column
+	ld de, 9
+	add hl, de
+.column
+	ld a, b
+	srl a
+	ld bc, 2 * SCREEN_WIDTH
+	call AddNTimes
+	pop bc
+	ld a, c
+	push bc
+	push hl
+	call GetMonMenuString
+	pop hl
+	call PlaceString
+	pop bc
+	pop de
+	inc b
+	jr .loop
+
+MonMenuGridLoop:
+	ld a, MENU_UNUSED | MENU_BACKUP_TILES_2
+	ld [wMenuDataFlags], a
+	ld a, [wMonSubmenuCount]
+	ld [wMenuDataItems], a
+	call InitVerticalMenuCursor
+	ld a, [wMonSubmenuCount]
+	inc a
+	srl a
+	ld [w2DMenuNumRows], a
+	ld a, 2
+	ld [w2DMenuNumCols], a
+	ld a, $29
+	ld [w2DMenuCursorOffsets], a
+	ld a, 1
+	ld [wMenuCursorY], a
+	ld [wMenuCursorX], a
+	ld [wMenuCursorPosition], a
+	newfarcall Move2DMenuCursor
+	call ApplyTilemap
+.loop
+	newfarcall PlaySpriteAnimationsAndDelayFrame
+	call JoyTextDelay
+	ldh a, [hJoyPressed]
+	bit B_PAD_B, a
+	jr nz, .cancel
+	bit B_PAD_A, a
+	jr nz, .select
+	ldh a, [hJoyLast]
+	ld b, a
+	call MonMenuGridMove
+	jr .loop
+.cancel
+	ld a, MONMENUITEM_CANCEL
+	ret
+.select
+	ld de, SFX_READ_TEXT_2
+	call PlaySFX
+	ld a, [wMenuCursorPosition]
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, wMonSubmenuItems
+	add hl, de
+	ld a, [hl]
+	ret
+
+MonMenuGridMove:
+	ld a, [wMenuCursorPosition]
+	ld c, a
+	ld a, b
+	bit B_PAD_UP, a
+	jr nz, .up
+	bit B_PAD_DOWN, a
+	jr nz, .down
+	bit B_PAD_LEFT, a
+	jr nz, .left
+	bit B_PAD_RIGHT, a
+	ret z
+	bit 0, c
+	ret z
+	inc c
+	ld a, [wMonSubmenuCount]
+	cp c
+	ret c
+	jr .moved
+.left
+	bit 0, c
+	ret nz
+	dec c
+	jr .moved
+.down
+	inc c
+	inc c
+	ld a, [wMonSubmenuCount]
+	cp c
+	jr nc, .moved
+	ld a, c
+	dec a
+	and 1
+	inc a
+	ld c, a
+	jr .moved
+.up
+	ld a, c
+	dec a
+	and 1
+	ld e, a
+	dec c
+	dec c
+	jr z, .last
+	bit 7, c
+	jr z, .moved
+.last
+	ld a, [wMonSubmenuCount]
+	ld c, a
+	dec a
+	xor e
+	and 1
+	jr z, .moved
+	dec c
+.moved
+	ld a, c
+	ld [wMenuCursorPosition], a
+	dec a
+	ld b, a
+	and 1
+	inc a
+	ld [wMenuCursorX], a
+	ld a, b
+	srl a
+	inc a
+	ld [wMenuCursorY], a
+	newfarcall Move2DMenuCursor
+	jp ApplyTilemap

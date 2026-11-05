@@ -54,12 +54,7 @@ ApplyTilemap::
 	jr CopyTilemapAtOnce
 
 .dmg
-; WaitBGMap
-	ld a, 1
-	ldh [hBGMapMode], a
-	ld c, 4
-	call DelayFrames
-	ret
+	newfarjp ApplyTilemapNoSpriteUpdates
 
 CGBOnly_CopyTilemapAtOnce::
 	ldh a, [hCGB]

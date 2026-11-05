@@ -117,6 +117,14 @@ TextboxPalette::
 	inc c
 	inc c
 
+	ld a, [wAttrmap]
+	cp BG_BANK1
+	jr nz, .ordinary
+	ld a, [wAttrmap + 1]
+	cp BG_BANK1
+	ld a, PAL_BG_TEXT
+	jr z, .col
+.ordinary
     ; DevNote - palette for battle text bg
 	ld a, [wBattleMode]
 	and a
@@ -139,7 +147,7 @@ TextboxPalette::
 	pop bc
 	dec b
 	jr nz, .col
-	ret
+	newfarjp PartyCardsTextboxHook
 
 SpeechTextbox::
 ; Standard textbox.

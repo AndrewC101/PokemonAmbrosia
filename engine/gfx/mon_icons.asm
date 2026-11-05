@@ -283,6 +283,13 @@ Mobile_InitPartyMenuBGPal71:
 
 PartyMenu_InitAnimatedMonIcon:
 	call InitPartyMenuIcon
+	ld a, [wCurIcon]
+	cp ICON_EGG
+	jr z, .speed
+	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
+	add hl, bc
+	ld [hl], SPRITE_ANIM_FRAMESET_PARTY_MON_WALK
+.speed
 	call SetPartyMonIconAnimSpeed
 	ret
 
@@ -337,15 +344,22 @@ InitPartyMenuIcon:
 	ld [wCurIcon], a
 	call GetMemIconGFX
 	ldh a, [hObjectStructIndex]
-; y coord
-	add a
-	add a
-	add a
-	add a
-	add $1c
+	and 1
+	ld e, 19
+	jr z, .x
+	ld e, 99
+.x
+	ldh a, [hObjectStructIndex]
+	srl a
 	ld d, a
-; x coord
-	ld e, $10
+	add a
+	add a
+	add d
+	add a
+	add a
+	add a
+	add 32
+	ld d, a
 ; type is partymon icon
 	ld a, SPRITE_ANIM_OBJ_PARTY_MON
 	call _InitSpriteAnimStruct
@@ -619,7 +633,7 @@ FreezeMonIcons:
 	jr z, .next
 	cp d
 	jr z, .loadwithtwo
-	ld a, SPRITE_ANIM_FUNC_NULL
+	ld a, SPRITE_ANIM_FUNC_PARTY_MON_SELECTED
 	jr .ok
 
 .loadwithtwo

@@ -1,4 +1,9 @@
 _AnimateHPBar:
+	ld a, [wWhichHPBar]
+	cp 2
+	jr nz, .not_party
+	newfarjp PartyCardsAnimateHP
+.not_party
 	call .IsMaximumMoreThan48Pixels
 	jr c, .MoreThan48Pixels
 	call .ComputePixels

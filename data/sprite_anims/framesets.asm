@@ -73,6 +73,7 @@ SpriteAnimFrameData:
 	dw .Frameset_PCMode
 	dw .Frameset_PCMode2
 	dw .Frameset_PCPack
+	dw .Frameset_PartyMonWalk
 	assert_table_length NUM_SPRITE_ANIM_FRAMESETS
 
 .Frameset_00:
@@ -527,4 +528,11 @@ SpriteAnimFrameData:
 
 .Frameset_PCPack:
 	oamframe SPRITE_ANIM_OAMSET_PC_PACK, 32
+	oamrestart
+
+.Frameset_PartyMonWalk:
+	oamframe SPRITE_ANIM_OAMSET_PARTY_MON_1, 8
+	oamframe SPRITE_ANIM_OAMSET_PARTY_MON_2, 8
+	oamframe SPRITE_ANIM_OAMSET_PARTY_MON_1, 8
+	oamframe SPRITE_ANIM_OAMSET_PARTY_MON_2, 8, B_OAM_XFLIP
 	oamrestart

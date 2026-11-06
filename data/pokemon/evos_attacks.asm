@@ -426,6 +426,7 @@ NidoqueenEvosAttacks:
 	db 30, STEALTH_ROCK
 	db 33, LOVELY_KISS
 	db 35, SLUDGE_BOMB
+	db 38, ACID_ARMOR
 	db 40, EARTH_POWER
 	db 0 ; no more level-up moves
 
@@ -924,6 +925,7 @@ TentacruelEvosAttacks:
 	db 33, CROSS_POISON
 	db 36, SLUDGE_BOMB
 	db 40, SCALD
+	db 43, ACID_ARMOR
 	db 45, RECOVER
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -994,6 +996,7 @@ SlowbroEvosAttacks:
 	db 22, BUBBLEBEAM
 	db 25, PSYBEAM
 	db 28, ZEN_HEADBUTT
+	db 30, AMNESIA
 	db 32, RECOVER
 	db 35, PSYCHIC_M
 	db 40, TRICK_ROOM
@@ -1137,7 +1140,8 @@ FerrothornEvosAttacks:
 	db 33, STEALTH_ROCK
 	db 35, FLASH_CANNON
 	db 38, STICKY_WEB
-	db 40, EXPLOSION
+	db 40, ACID_ARMOR
+	db 45, EXPLOSION
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
@@ -1459,6 +1463,7 @@ StarmieEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 30, FLIP_TURN
 	db 33, AURORA_BEAM
+	db 35, BARRIER
 	db 38, PSYCHIC_M
 	db 40, RECOVER
 	db 45, BLIZZARD
@@ -1728,6 +1733,7 @@ GaladeEvosAttacks:
 	db 30, NIGHT_SLASH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH
+	db 42, BARRIER
 	db 45, EXTREMESPEED
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
@@ -1847,6 +1853,7 @@ DragoniteEvosAttacks:
 	db 50, ROOST
 	db 53, DEFOG
 	db 55, DRAGON_DANCE
+	db 58, HAZE
 	db 60, HURRICANE
 	db 65, OUTRAGE
 	db 70, DRACO_IMPACT
@@ -2318,6 +2325,7 @@ PolitoedEvosAttacks:
 	db 20, BUBBLEBEAM
 	db 30, BODY_SLAM
 	db 35, PERISH_SONG
+	db 38, AMNESIA
 	db 40, SCALD
 	db 45, THUNDER
 	db 50, HYDRO_PUMP
@@ -2458,6 +2466,7 @@ UmbreonEvosAttacks:
 	db 32, MOONLIGHT
 	db 36, DARK_PULSE
 	db 41, CALM_MIND
+	db 45, ACID_ARMOR
 	db 0 ; no more level-up moves
 
 MeltanEvosAttacks:

@@ -97,15 +97,12 @@ InitPartyMenuGFX:
 	ret
 
 InitPartyMenuWithCancel:
-; with cancel
 	xor a
 	ld [wSwitchMon], a
 	ld de, PartyMenu2DMenuData
 	call Load2DMenuData
 	ld a, [wPartyCount]
-	inc a
 	ld [w2DMenuNumRows], a ; list length
-	dec a
 	ld b, a
 	ld a, [wPartyMenuCursor]
 	and a

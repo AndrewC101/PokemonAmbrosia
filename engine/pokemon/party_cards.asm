@@ -61,10 +61,6 @@ DEF PCT_BAR_MID    EQU $ec
 	assert PCT_BAR_MID == $80 + 3 * PC_CARD_TILES
 
 DEF PC_BAR_Y      EQU 15
-DEF PC_BUTTON_X   EQU 114
-DEF PC_BUTTON_Y   EQU 4
-DEF PC_BUTTON_W   EQU 44
-DEF PC_BUTTON_H   EQU 16
 DEF PC_PROMPT_TILES EQU 14
 
 DrawPartyCards::
@@ -1198,13 +1194,9 @@ DrawPartyMenuBar::
 	ldh [hBGMapMode], a
 	ld a, [wPartyCount]
 	ld b, a
-	ld a, [w2DMenuNumRows]
-	cp b
-	ld c, 0
-	jr z, .got_cancel
-	jr c, .got_cancel
-	inc c
-.got_cancel
+	ld a, [wMenuJoypadFilter]
+	and PAD_B
+	ld c, a
 
 	ld de, PartyCardPrompts.none
 	ld a, b
@@ -1248,42 +1240,20 @@ DrawPartyMenuBar::
 	pop bc
 	ld a, c
 	and a
-	jr z, .no_button
-	ld a, 3
-	ld [PC_DATA + PCV_COLOR], a
-	lb de, PC_BUTTON_X, PC_BUTTON_Y
-	lb bc, PC_BUTTON_W, PC_BUTTON_H
-	call PC_FillRect
-	ld a, 2
-	ld [PC_DATA + PCV_COLOR], a
-	lb de, PC_BUTTON_X + 1, PC_BUTTON_Y + 1
-	lb bc, PC_BUTTON_W - 2, PC_BUTTON_H - 2
-	call PC_FillRect
-	xor a
-	ld [PC_DATA + PCV_COLOR], a
-	lb de, PC_BUTTON_X, PC_BUTTON_Y
-	call PC_Dot
-	lb de, PC_BUTTON_X + PC_BUTTON_W - 1, PC_BUTTON_Y
-	call PC_Dot
-	lb de, PC_BUTTON_X, PC_BUTTON_Y + PC_BUTTON_H - 1
-	call PC_Dot
-	lb de, PC_BUTTON_X + PC_BUTTON_W - 1, PC_BUTTON_Y + PC_BUTTON_H - 1
-	call PC_Dot
-	ld de, .CancelString
+	jr z, .no_quit_hint
+	ld de, .QuitString
 	call GetVWFLength
 	ld b, a
-	ld a, PC_BUTTON_W
+	ld a, SCREEN_WIDTH * TILE_WIDTH - 4
 	sub b
-	srl a
-	add PC_BUTTON_X
 	ld c, a
-	ld de, .CancelString
+	ld de, .QuitString
 	call PC_VWFStrip
-	ld a, 3
+	ld a, 1
 	ld b, PC_PROMPT_TILES
 	ld c, SCREEN_WIDTH - PC_PROMPT_TILES
 	call PC_MergeStrip
-.no_button
+.no_quit_hint
 
 	ld a, PCT_NAVY
 	ld de, PC_CANVAS
@@ -1328,7 +1298,7 @@ DrawPartyMenuBar::
 	call PartyCardsPrepareFollowerBadge
 	jp SetDefaultBGPAndOBP
 
-.CancelString: db "Cancel@"
+.QuitString: db "B:Quit@"
 .FollowHint: db "Select: Follow@"
 
 PartyCardPrompts:
@@ -1816,14 +1786,7 @@ PartyCardsUpdatePals::
 
 	ld a, 1
 	ldh [rSVBK], a
-	ld a, [wPartyCount]
-	inc a
-	ld hl, wMenuCursorY
-	cp [hl]
 	ld hl, PartyCardFillColors + PCFILL_NORMAL * 4
-	jr nz, .got_button
-	ld hl, PartyCardFillColors + PCFILL_SELECTED * 4
-.got_button
 	ld bc, .BarColors
 	ld a, 6
 	call .Write
@@ -2015,7 +1978,6 @@ PartyCardsJoypad::
 	ret
 
 PartyCards_DPad:
-
 	ld a, [wMenuCursorY]
 	ld c, a
 	ld a, b
@@ -2027,10 +1989,6 @@ PartyCards_DPad:
 	jr nz, .left
 	bit B_PAD_RIGHT, a
 	ret z
-
-	ld a, c
-	call PartyCards_IsCancel
-	ret z
 	bit 0, c
 	ret z
 	inc c
@@ -2038,76 +1996,32 @@ PartyCards_DPad:
 	cp c
 	ret c
 	jr .moved
-
 .left
-	ld a, c
-	call PartyCards_IsCancel
-	ret z
 	bit 0, c
 	ret nz
 	dec c
 	jr .moved
-
 .down
-	ld a, c
-	call PartyCards_IsCancel
-	jr z, .wrap_top
 	inc c
 	inc c
 	ld a, [wPartyCount]
 	cp c
 	jr nc, .moved
-
-	call PartyCards_HasCancel
-	jr z, .wrap_top
-	ld a, [wPartyCount]
-	inc a
-	ld c, a
-	jr .moved
-.wrap_top
 	ld c, 1
 	jr .moved
-
 .up
-	ld a, c
-	call PartyCards_IsCancel
-	jr z, .to_last
 	dec c
 	dec c
-	jr z, .from_top
+	jr z, .last
 	bit 7, c
 	jr z, .moved
-.from_top
-
-	call PartyCards_HasCancel
-	jr z, .to_last
-	ld a, [wPartyCount]
-	inc a
-	ld c, a
-	jr .moved
-.to_last
+.last
 	ld a, [wPartyCount]
 	ld c, a
 .moved
 	ld a, c
 	ld [wMenuCursorY], a
 	jp PartyCardsUpdatePals
-
-PartyCards_IsCancel:
-
-	ld e, a
-	ld a, [wPartyCount]
-	inc a
-	cp e
-	ret
-
-PartyCards_HasCancel:
-
-	ld a, [wPartyCount]
-	ld e, a
-	ld a, [w2DMenuNumRows]
-	cp e
-	ret
 
 PartyCardsHidePrompt::
 

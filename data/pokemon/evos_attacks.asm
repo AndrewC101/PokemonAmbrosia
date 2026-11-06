@@ -428,6 +428,7 @@ NidoqueenEvosAttacks:
 	db 35, SLUDGE_BOMB
 	db 38, ACID_ARMOR
 	db 40, EARTH_POWER
+	db 45, HAZE
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
@@ -461,6 +462,7 @@ NidokingEvosAttacks:
 	db 30, TOXIC_SPIKES
 	db 33, LOVELY_KISS
 	db 35, CROSS_POISON
+	db 38, SWORDS_DANCE
 	db 40, EARTHQUAKE
 	db 45, MEGAHORN
 	db 0 ; no more level-up moves
@@ -475,6 +477,7 @@ ClefableEvosAttacks:
 	db 16, DRAIN_KISS
 	db 25, MOONLIGHT
 	db 30, ATTRACT
+	db 33, CHARM
 	db 36, PLAY_ROUGH
 	db 40, MOON_BLAST
 	db 45, CALM_MIND
@@ -1331,11 +1334,12 @@ WeezingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DISABLE
 	db 1, SMOKESCREEN
+	db 1, HAZE
+	db 1, ACID
 	db 17, SLUDGE
 	db 20, SELFDESTRUCT
 	db 24, WILL_O_WISP
-	db 28, HAZE
-	db 32, SLUDGE_BOMB
+	db 30, SLUDGE_BOMB
 	db 35, DESTINY_BOND
 	db 40, TOXIC_SPIKES
 	db 45, NASTY_PLOT
@@ -2466,7 +2470,7 @@ UmbreonEvosAttacks:
 	db 32, MOONLIGHT
 	db 36, DARK_PULSE
 	db 41, CALM_MIND
-	db 45, ACID_ARMOR
+	db 45, HAZE
 	db 0 ; no more level-up moves
 
 MeltanEvosAttacks:

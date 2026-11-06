@@ -147,7 +147,7 @@ MonMenuIconPals:
 	icon_pals GREEN,  GOLD  ; GARDEVOIR
 	icon_pals GREEN,  GOLD  ; GALLADE
 	icon_pals BLUE,  PURPLE        ; AERODACTYL
-	icon_pals RED,  BLUE     ; SNORLAX
+	icon_pals BLUE,  BLUE     ; SNORLAX
 	icon_pals BLUE,  TEAL       ; ARTICUNO
 	icon_pals GOLD,  RED        ; ZAPDOS
 	icon_pals RED,  PURPLE        ; MOLTRES
@@ -232,8 +232,8 @@ MonMenuIconPals:
 	icon_pals BLUE,  PURPLE      ; KYOGRE
 	icon_pals RED,  GOLD    ; GROUDON
 	icon_pals SILVER,  GREEN       ; SKARMORY
-	icon_pals RED,  RED        ; HOUNDOUR
-	icon_pals RED,  RED          ; HOUNDOOM
+	icon_pals BLUE,  RED        ; HOUNDOUR
+	icon_pals BLUE,  RED          ; HOUNDOOM
 	icon_pals BLUE,  PURPLE      ; KINGDRA
 	icon_pals GREEN,  BLUE    ; COTTONEE
 	icon_pals GREEN,  BLUE    ; WHIMSICOTT

@@ -5208,7 +5208,7 @@ SwitchInEffects:
     farcall SpecialAttackDownSwitch
 	ret
 .accDown ; DevNote - only Weezing uses this, can remove it if more room needed
-    farcall AccuracyDownSwitch
+    farcall HazeSwitch
 	ret
 .defenseMode
     farcall BattleCommand_DefenseUp2

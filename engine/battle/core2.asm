@@ -412,9 +412,20 @@ SpecialAttackDownSwitch:
     call PlayDropAnimation
 	ret
 
-AccuracyDownSwitch:
-    callfar BattleCommand_AccuracyDown
-    call PlayDropAnimation
+HazeSwitch:
+    ld de, HAZE
+    call PlayAnimationIfNeeded
+    ld a, BATTLE_VARS_MOVE_ANIM
+    call GetBattleVarAddr
+    ld a, [hl]
+    push hl
+    push af
+    xor a
+    ld [hl], a
+    callfar BattleCommand_ResetStats
+    pop af
+    pop hl
+    ld [hl], a
 	ret
 
 TransformSwitch:

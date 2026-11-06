@@ -5,7 +5,6 @@
 	next "its gases it can"
 	next "kill all around."
 
-	page "Lowers foes"
-	next "Accuracy. Has"
-	next "a final attack.@"
-
+	page "Uses Haze on"
+	next "switch. Has a"
+	next "final attack.@"

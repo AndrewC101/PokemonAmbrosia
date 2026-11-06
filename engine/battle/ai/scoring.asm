@@ -4103,10 +4103,22 @@ ShouldAIBoost:
 ; don't boost once Toxic has started ramping.
 ; Count 4 means the AI has already taken three Toxic ticks.
     call IsAIToxified
-    jr nc, .checkSuckerPunch
+    jr nc, .checkWeezing
     ld a, [wEnemyToxicCount]
     cp 4
     jp nc, .dontBoost
+
+; if players mon is Weezing, 50% chance to not boost
+; otherwise two Weezings swapping would get attacks for free
+.checkWeezing
+    ld a, [wEnemyMonSpecies]
+    call DoesPokemonHaveUberImmunity
+   	jr c, .checkSuckerPunch
+    ld a, [wBattleMonSpecies]
+    cp WEEZING
+    jr nz, .checkSuckerPunch
+	call AI_50_50
+	jp c, .dontBoost
 
 ; if players last move was sucker punch - 50% chance to boost
 .checkSuckerPunch

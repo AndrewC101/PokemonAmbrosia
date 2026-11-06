@@ -413,6 +413,10 @@ SpecialAttackDownSwitch:
 	ret
 
 HazeSwitch:
+    callfar BattleCommand_CheckDeathImmunity
+    ld a, [wEffectFailed]
+    and a
+    ret nz
     ld de, HAZE
     call PlayAnimationIfNeeded
     ld a, BATTLE_VARS_MOVE_ANIM

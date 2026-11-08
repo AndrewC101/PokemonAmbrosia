@@ -244,7 +244,7 @@ DefogSwitch:
 	ret
 
 TauntSwitch:
-    callfar BattleCommand_CheckDeathImmunity
+	call BattleCommand_CheckDeathImmunity_Core2
     ld a, [wEffectFailed]
     and a
     ret nz
@@ -413,7 +413,7 @@ SpecialAttackDownSwitch:
 	ret
 
 HazeSwitch:
-    callfar BattleCommand_CheckDeathImmunity
+	call BattleCommand_CheckDeathImmunity_Core2
     ld a, [wEffectFailed]
     and a
     ret nz
@@ -3135,3 +3135,80 @@ HLMultiply:
 	add hl, bc
 	pop bc
 	ret
+
+BattleCommand_CheckDeathImmunity_Core2:
+; always immune if in manor (my house)
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_MANOR
+	jr z, .immune
+
+	call BattleTargetHasUberImmunity
+	jr c, .immune
+	ret
+.immune
+	ld a, 1
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	ld hl, PowerTooGreatText
+	jp StdBattleTextbox
+
+BattleTargetHasUberImmunity:
+	push hl
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr nz, .got_target
+	ld a, [wEnemyMonSpecies]
+.got_target
+	cp ARCEUS
+	jr z, .immune
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr nz, .got_user
+	ld a, [wBattleMonSpecies]
+.got_user
+	call .is_uber
+	jr c, .user_is_uber
+	pop af
+	call .is_uber
+	jr .done
+.user_is_uber
+	pop af
+	and a
+	jr .done
+.immune
+	scf
+.done
+	pop bc
+	pop de
+	pop hl
+	ret
+.is_uber
+	ld hl, UberImmunePokemon
+	ld de, 1
+	jp IsInArray
+
+UberImmunePokemon:
+	db ARCEUS
+	db MEWTWO
+	db GIRATINA
+	db YVELTAL
+	db XERNEAS
+	db DIALGA
+	db PALKIA
+	db KYOGRE
+	db GROUDON
+	db RAYQUAZA
+	db LUGIA
+	db HO_OH
+	db REGIGIGAS
+	db ZYGARDE
+	db -1

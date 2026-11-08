@@ -1403,8 +1403,7 @@ AI_Smart_Defog:
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 ; don't use on Uber Pokemon as they are immune
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
    	jr c, .discourage
 
 ; don't use if player has only one pokemon left
@@ -1686,8 +1685,7 @@ AI_Smart_Ohko:
 
 .notFissure
 ; don't use on Uber Pokemon as they are immune
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
    	jr c, .discourage
 
 	ld a, [wBattleMonLevel]
@@ -1726,8 +1724,7 @@ AI_Smart_StaticDamage:
 
 .check_uber
 ; don't use on Uber Pokemon as they are immune
-	ld a, [wBattleMonSpecies]
-	call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
 	ret nc
 	jr .discourage
 
@@ -2117,8 +2114,7 @@ AI_Smart_Encore:
 	jr nz, .discourage
 
 ; don't use on Uber Pokemon as they are immune
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
    	jr c, .discourage
 
 ; don't use if no last move recorded
@@ -2738,8 +2734,7 @@ AI_Smart_PerishSong:
 	jr nz, .encourage ; if player is trapped then encourage
 
 ; don't use on Uber Pokemon as they are immune
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
    	jr c, .discourage
 
 ; encourage if player has only one pokemon left
@@ -3946,8 +3941,7 @@ AI_Smart_Taunt:
 	jp nz, .discourage
 
 ; never use against uber immune Pokemon
-    ld a, [wBattleMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesPlayerHaveUberImmunity
    	jp c, .discourage
 
 ; if player can KO - discourage
@@ -4111,8 +4105,7 @@ ShouldAIBoost:
 ; if players mon is Weezing, 50% chance to not boost
 ; otherwise two Weezings swapping would get attacks for free
 .checkWeezing
-    ld a, [wEnemyMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesAIHaveUberImmunity
    	jr c, .checkSuckerPunch
     ld a, [wBattleMonSpecies]
     cp WEEZING
@@ -4146,8 +4139,7 @@ ShouldAIBoost:
 
 .checkHaze
 ; if the player has roar/whirlwind/haze and we aren't immune to it then 50% to not boost
-    ld a, [wEnemyMonSpecies]
-    call DoesPokemonHaveUberImmunity
+	call DoesAIHaveUberImmunity
    	jr c, .noForceSwitch
 
     ld a, [wCurPlayerMove]
@@ -5739,7 +5731,42 @@ IsSpecialDefenseMaxed:
     scf
     ret
 
-DoesPokemonHaveUberImmunity:
+DoesPlayerHaveUberImmunity:
+	push bc
+	ld a, [wEnemyMonSpecies]
+	ld b, a
+	ld a, [wBattleMonSpecies]
+	call DoesTargetHaveUberImmunity
+	pop bc
+	ret
+
+DoesAIHaveUberImmunity:
+	push bc
+	ld a, [wBattleMonSpecies]
+	ld b, a
+	ld a, [wEnemyMonSpecies]
+	call DoesTargetHaveUberImmunity
+	pop bc
+	ret
+
+DoesTargetHaveUberImmunity:
+	cp ARCEUS
+	jr z, .immune
+	push af
+	ld a, b
+	call IsPokemonUber
+	jr c, .user_is_uber
+	pop af
+	jp IsPokemonUber
+.user_is_uber
+	pop af
+	and a
+	ret
+.immune
+	scf
+	ret
+
+IsPokemonUber:
     push hl
     push de
    	push bc

@@ -242,23 +242,6 @@ AdaptabilityPokemon:
     db SLOWBRO
     db -1
 
-UberImmunePokemon:
-    db ARCEUS
-    db MEWTWO
-    db GIRATINA
-    db YVELTAL
-    db XERNEAS
-    db DIALGA
-    db PALKIA
-    db KYOGRE
-    db GROUDON
-    db RAYQUAZA
-    db LUGIA
-    db HO_OH
-    db REGIGIGAS
-    db ZYGARDE
-    db -1
-
 ; ======== NOT USED HERE ===========
 
 ; the following abilities are here for reference

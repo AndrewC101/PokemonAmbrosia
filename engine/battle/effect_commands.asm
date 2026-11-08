@@ -5911,12 +5911,7 @@ BattleCommand_FlinchTarget:
 ; =============================
 ; ======== Inner Focus ========
 ; =============================
-    call GetOpposingMon
-	push bc
-	ld hl, UberImmunePokemon
-	ld de, 1
-	call IsInArray
-	pop bc
+	farcall BattleTargetHasUberImmunity
     jr nc, FlinchTarget
 .noFlinch
 	ld hl, CantFlinchText
@@ -5952,28 +5947,8 @@ BattleCommand_SwitchHit:
 	ret
 
 BattleCommand_CheckDeathImmunity:
-; checkDeathImmunity
-; always immune if in manor (my house)
-    ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	cp LANDMARK_MANOR
-    jr z, .immune
-
-    call GetOpposingMon
-	ld hl, UberImmunePokemon
-	ld de, 1
-	call IsInArray
-	jr c, .immune
-    ret
-.immune
-    ld a, 1
-    ld [wAttackMissed], a
-    ld [wEffectFailed], a
-	ld hl, PowerTooGreatText
-	jp StdBattleTextbox
+	farcall BattleCommand_CheckDeathImmunity_Core2
+	ret
 
 BattleCommand_BeatUp:
 BattleCommand_BeatUpFailText:

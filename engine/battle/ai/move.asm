@@ -206,7 +206,6 @@ AIScoringPointers:
 	dw AI_Types
 	dw AI_Offensive
 	dw AI_Smart
-	dw AI_Final_Attack
 	dw AI_Aggressive
 	dw AI_Cautious
 	dw AI_Status

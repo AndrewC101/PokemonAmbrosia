@@ -323,21 +323,21 @@ AI_Basic:
 	push hl
 	push de
 	push bc
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	call AIMinDamageCalc
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
-	ld a, [wBattleMonHP + 1]
-	cp c ; compare upper
-	ld a, [wBattleMonHP]
-	sbc b ; compare lower and set flag
+	ld hl, wBattleMonHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	pop bc
 	pop de
 	pop hl
-    jp nc, .checkmove
+    jp c, .checkmove
 
 ; don't encourage explosion as much
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
@@ -2319,19 +2319,19 @@ AI_Smart_PriorityHit:
 	ld a, 1
 	ldh [hBattleTurn], a
 	push hl
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
-	pop hl
+	call AIMinDamageCalc
 	ld a, [wCurDamage + 1]
 	ld c, a
 	ld a, [wCurDamage]
 	ld b, a
-	ld a, [wBattleMonHP + 1]
-	cp c
-	ld a, [wBattleMonHP]
-	sbc b
-	jr nc, .noKO
+	ld hl, wBattleMonHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
+	pop hl
+	jr c, .noKO
 	dec [hl]
 	dec [hl]
 	dec [hl]
@@ -4700,21 +4700,21 @@ CanAIKO:
 	push hl
 	push de
 	push bc
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	call AIMinDamageCalc
 	ld a, [wCurDamage + 1]
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
-	ld a, [wBattleMonHP + 1]
-	cp c ; compare upper
-	ld a, [wBattleMonHP]
-    sbc b ; compare lower and set flag
+	ld hl, wBattleMonHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	pop bc
 	pop de
 	pop hl
-    jp nc, .loopAIKOMoves
+    jp c, .loopAIKOMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_SELFDESTRUCT
@@ -4750,9 +4750,7 @@ CanAI2HKO:
 	push hl
 	push de
 	push bc
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	call AIMinDamageCalc
 
     call DoubleCurrentDamage
 
@@ -4760,14 +4758,16 @@ CanAI2HKO:
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
-	ld a, [wBattleMonHP + 1]
-	cp c ; compare upper
-	ld a, [wBattleMonHP]
-    sbc b ; compare lower and set flag
+	ld hl, wBattleMonHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	pop bc
 	pop de
 	pop hl
-    jp nc, .loopMoves
+    jp c, .loopMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
@@ -4811,9 +4811,7 @@ CanAI2HKOMaxHP:
 	push hl
 	push de
 	push bc
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	call AIMinDamageCalc
 
     call DoubleCurrentDamage
 
@@ -4821,14 +4819,16 @@ CanAI2HKOMaxHP:
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
-	ld a, [wBattleMonMaxHP + 1]
-	cp c ; compare upper
-	ld a, [wBattleMonMaxHP]
-    sbc b ; compare lower and set flag
+	ld hl, wBattleMonMaxHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	pop bc
 	pop de
 	pop hl
-    jp nc, .loopMoves
+    jp c, .loopMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
     ld a, [wEnemyMonSpecies]
     cp PORYGONZ
@@ -4872,9 +4872,7 @@ CanAI3HKO:
 	push hl
 	push de
 	push bc
-	callfar EnemyAttackDamage
-	callfar BattleCommand_DamageCalc
-	callfar BattleCommand_Stab
+	call AIMinDamageCalc
 	; AdjustForMelmetal
 ; triple current damage
 	ld hl, wCurDamage + 1
@@ -4894,14 +4892,16 @@ CanAI3HKO:
 	ld c, a ; c is curDamage upper
 	ld a, [wCurDamage]
 	ld b, a ; b is curDamage lower
-	ld a, [wBattleMonHP + 1]
-	cp c ; compare upper
-	ld a, [wBattleMonHP]
-    sbc b ; compare lower and set flag
+	ld hl, wBattleMonHP + 1
+	ld a, c
+	sub [hl]
+	dec hl
+	ld a, b
+	sbc [hl]
 	pop bc
 	pop de
 	pop hl
-    jp nc, .loopAI3HKOMoves
+    jp c, .loopAI3HKOMoves
 ; skip moves that can't be used on consecutive turns, except hyper beam
 ; skip moves that can't be used on consecutive turns, except hyper beam
     ld a, [wEnemyMonSpecies]
@@ -5220,52 +5220,6 @@ StandardDiscourage:
 
 INCLUDE "data/battle/ai/useful_moves.asm"
 
-; DevNote - this used to be AI_Opportunist
-; this used to discourage 0 power moves if the player is below 1/4 hp
-; that is no longer needed as AI_Basic now encourages any attack once it can KO the player
-; this discourages most 0 power moves if the player can KO the AI
-AI_Final_Attack:
-; Discourage stall moves if the player can KO us
-    call ShouldAIBoost
-    ret nc
-
-	ld hl, wEnemyAIMoveScores - 1
-	ld de, wEnemyMonMoves
-	ld c, NUM_MOVES + 1
-.checkmove
-	inc hl
-	dec c
-	jr z, .done
-
-	ld a, [de]
-	inc de
-	and a
-	jr z, .done
-
-	push hl
-	push de
-	push bc
-	ld hl, StallMoves
-	ld de, 1
-	call IsInArray
-
-	pop bc
-	pop de
-	pop hl
-	jr nc, .checkmove
-
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	jr .checkmove
-
-.done
-	ret
-
-INCLUDE "data/battle/ai/stall_moves.asm"
-
-
 AI_Aggressive:
 ; discourage all damaging moves except the one that deals the most damage
 
@@ -5379,6 +5333,28 @@ AI_Aggressive:
 	ret
 
 INCLUDE "data/battle/ai/reckless_moves.asm"
+
+AIMinDamageCalc:
+	call AIDamageCalc
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	ld hl, ConstantDamageEffects
+	ld de, 1
+	call IsInArray
+	ret c
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_DOUBLE_FLINCH_HIT
+	jr nz, .variation
+	ld hl, wCurDamage
+	srl [hl]
+	inc hl
+	rr [hl]
+.variation
+	ld b, 85 percent + 1
+	callfar ApplyDamageVariationMultiplierToCurDamage
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_DOUBLE_FLINCH_HIT
+	ret nz
+	jp DoubleCurrentDamage
 
 AIDamageCalc:
 	ld a, 1

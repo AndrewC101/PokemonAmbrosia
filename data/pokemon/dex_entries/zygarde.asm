@@ -5,7 +5,7 @@
 	next "planet. Bringer"
 	next "of order."
 
-	page "Raises Safeguard."
-	next "Regenerates HP"
-	next "every turn.@"
+	page "Resets boosts"
+	next "on switch."
+	next "Regens HP.@"
 

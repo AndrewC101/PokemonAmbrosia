@@ -5,6 +5,6 @@
 	next "its gases it can"
 	next "kill all around."
 
-	page "Uses Haze on"
+	page "Resets boosts on"
 	next "switch. Has a"
 	next "final attack.@"

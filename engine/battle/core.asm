@@ -4958,7 +4958,9 @@ SwitchInEffects:
 
 	ld a, c
     cp WEEZING
-    jp z, .accDown
+    jp z, .hazeSwitch
+    cp ZYGARDE
+    jp z, .hazeSwitch
 
 	ld a, c
 	ld hl, .SpecialAttackDownMons
@@ -5086,7 +5088,7 @@ SwitchInEffects:
 	db AMPHAROS, ZAPDOS, GARDEVOIR, LATIAS, NINETALES, XERNEAS, -1
 
 .SafeguardMons
-	db MOLTRES, ESPEON, POLTEGEIST, PALKIA, ZYGARDE, -1
+	db MOLTRES, ESPEON, POLTEGEIST, PALKIA, -1
 
 .NaturalCureMons
 	db STARMIE, SCEPTILE, CHANSEY, BLISSEY, SHAYMIN, TOGEKISS, MEW, -1
@@ -5207,7 +5209,7 @@ SwitchInEffects:
 .spAtkDown
     farcall SpecialAttackDownSwitch
 	ret
-.accDown ; DevNote - only Weezing uses this, can remove it if more room needed
+.hazeSwitch
     farcall HazeSwitch
 	ret
 .defenseMode

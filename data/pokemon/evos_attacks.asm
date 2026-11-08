@@ -428,7 +428,6 @@ NidoqueenEvosAttacks:
 	db 33, LOVELY_KISS
 	db 35, SLUDGE_BOMB
 	db 40, EARTH_POWER
-	db 45, HAZE
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
@@ -623,6 +622,7 @@ ZygardeEvosAttacks:
     db 1, ANCIENTPOWER
 	db 1, SPIKES
 	db 1, STEALTH_ROCK
+	db 10, HAZE
 	db 20, CRUNCH
 	db 30, GLARE
 	db 35, DRAGON_CLAW
@@ -932,6 +932,7 @@ TentacruelEvosAttacks:
 	db 43, ACID_ARMOR
 	db 45, RECOVER
 	db 50, HYDRO_PUMP
+	db 55, HAZE
 	db 0 ; no more level-up moves
 
 GeodudeEvosAttacks:
@@ -1144,7 +1145,8 @@ FerrothornEvosAttacks:
 	db 33, STEALTH_ROCK
 	db 35, FLASH_CANNON
 	db 38, STICKY_WEB
-	db 40, EXPLOSION
+	db 40, ACID_ARMOR
+	db 45, EXPLOSION
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
@@ -1181,6 +1183,7 @@ GastlyEvosAttacks:
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
+	db 50, HAZE
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
@@ -1200,6 +1203,7 @@ GengarEvosAttacks:
 	db 40, SLUDGE_BOMB
 	db 45, DREAM_EATER
 	db 48, DESTINY_BOND
+	db 50, HAZE
 	db 0 ; no more level-up moves
 
 UrsalunaEvosAttacks:
@@ -1247,13 +1251,14 @@ FeebasEvosAttacks:
 
 MiloticEvosAttacks:
 	db 0 ; no more evolutions
-	db 25, BUBBLEBEAM
+	db 1, BUBBLEBEAM
 	db 30, AURORA_BEAM
 	db 33, HYPNOSIS
 	db 36, RECOVER
 	db 40, SCALD
 	db 45, HYDRO_PUMP
 	db 50, CALM_MIND
+	db 55, HAZE
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -1640,9 +1645,9 @@ VaporeonEvosAttacks:
 	db 32, AURORA_BEAM
 	db 36, SCALD
 	db 40, DEFOG
-	db 42, HAZE
 	db 45, HYDRO_PUMP
 	db 50, CALM_MIND
+	db 55, HAZE
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
@@ -1777,6 +1782,7 @@ ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
 	db 1, POWDER_SNOW
+	db 1, HAZE
 	db 25, AGILITY
 	db 35, AURORA_BEAM
 	db 37, HAIL
@@ -1869,6 +1875,7 @@ DarkraiEvosAttacks:
 	db 1, TAUNT
 	db 1, HYPNOSIS
 	db 1, NIGHT_SHADE
+	db 1, HAZE
 	db 10, DREAM_EATER
 	db 20, DARK_PULSE
 	db 60, DARK_VOID
@@ -2011,6 +2018,7 @@ GreninjaEvosAttacks:
 	db 40, DARK_PULSE
 	db 45, HYDRO_PUMP
 	db 50, SUBSTITUTE
+	db 55, HAZE
 	db 0 ; no more level-up moves
 
 RioluEvosAttacks:

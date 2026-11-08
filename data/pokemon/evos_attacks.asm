@@ -2909,6 +2909,7 @@ KleavorEvosAttacks:
 XerneasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DRAIN_KISS
+	db 20, PERISH_SONG
 	db 30, CLOSE_COMBAT
 	db 35, MEGAHORN
 	db 40, PLAY_ROUGH
@@ -2935,11 +2936,13 @@ GiratinaEvosAttacks:
 	db 1, SCARY_FACE
 	db 1, OMINOUS_WIND
 	db 1, ANCIENTPOWER
+	db 1, HAZE
 	db 30, DRAGON_CLAW
 	db 35, WILL_O_WISP
 	db 40, SHADOW_BALL
 	db 50, RECOVER
 	db 55, DRAGON_PULSE
+	db 60, DESTINY_BOND
 	db 70, DRACO_METEOR
 	db 70, SHADOW_FORCE
 	db 0 ; no more level-up moves

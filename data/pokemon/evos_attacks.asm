@@ -248,6 +248,7 @@ StaraptorEvosAttacks:
 	db 17, U_TURN
 	db 20, DEFOG
 	db 24, SLASH
+	db 30, WHIRLWIND
 	db 34, FLY
 	db 36, ROOST
 	db 40, EXTREMESPEED
@@ -1783,6 +1784,7 @@ ArticunoEvosAttacks:
 	db 1, GUST
 	db 1, POWDER_SNOW
 	db 1, HAZE
+	db 1, WHIRLWIND
 	db 25, AGILITY
 	db 35, AURORA_BEAM
 	db 37, HAIL
@@ -1798,6 +1800,7 @@ ZapdosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDER_WAVE
 	db 1, DRILL_PECK
+	db 1, WHIRLWIND
 	db 25, VOLT_SWITCH
 	db 30, AIR_SLASH
 	db 35, DISCHARGE
@@ -1813,6 +1816,7 @@ MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WING_ATTACK
 	db 1, EMBER
+	db 1, WHIRLWIND
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 37, WILL_O_WISP
@@ -1850,6 +1854,7 @@ DragonairEvosAttacks:
 	db EVOLVE_LEVEL, 50, DRAGONITE
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, WHIRLWIND
 	db 1, WRAP
 	db 1, LEER
 	db 1, THUNDER_WAVE
@@ -2055,7 +2060,8 @@ NoctowlEvosAttacks:
 	db 22, ZEN_HEADBUTT
 	db 27, PSYCHIC_M
 	db 30, DEFOG
-	db 35, DREAM_EATER
+	db 33, DREAM_EATER
+	db 36, WHIRLWIND
 	db 40, HURRICANE
 	db 0 ; no more level-up moves
 
@@ -2842,6 +2848,7 @@ WhimsicottEvosAttacks:
 RayquazaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DEFOG
+	db 1, WHIRLWIND
 	db 1, SCARY_FACE
 	db 1, FLY
 	db 1, ANCIENTPOWER
@@ -2911,6 +2918,7 @@ XerneasEvosAttacks:
 
 YveltalEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, WHIRLWIND
 	db 1, AIR_SLASH
 	db 1, SUCKER_PUNCH
 	db 1, NIGHT_SHADE
@@ -3044,6 +3052,7 @@ LugiaEvosAttacks:
 	db 0 ; no more evolutions
     db 1, ANCIENTPOWER
     db 1, AIR_SLASH
+    db 1, WHIRLWIND
     db 30, PSYCHIC_M
     db 40, RECOVER
     db 50, AEROBLAST
@@ -3055,6 +3064,7 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ANCIENTPOWER
 	db 1, FLY
+	db 1, WHIRLWIND
 	db 30, FLAMETHROWER
 	db 40, RECOVER
 	db 50, SACRED_FIRE
@@ -3090,6 +3100,8 @@ ArceusEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
 	db 1, EXTREMESPEED
+	db 1, PERISH_SONG
+	db 1, HAZE
 	db 1, JUDGEMENT
 	db 1, HOLY_ARMOUR
 	db 1, SWORDS_DANCE

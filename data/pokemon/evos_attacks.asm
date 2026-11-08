@@ -51,6 +51,7 @@ VenusaurEvosAttacks:
 	db 32, SLUDGE_BOMB
 	db 36, GIGA_DRAIN
 	db 40, SYNTHESIS
+	db 42, AMNESIA
 	db 45, TOXIC_SPIKES
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -426,7 +427,6 @@ NidoqueenEvosAttacks:
 	db 30, STEALTH_ROCK
 	db 33, LOVELY_KISS
 	db 35, SLUDGE_BOMB
-	db 38, ACID_ARMOR
 	db 40, EARTH_POWER
 	db 45, HAZE
 	db 0 ; no more level-up moves
@@ -462,7 +462,6 @@ NidokingEvosAttacks:
 	db 30, TOXIC_SPIKES
 	db 33, LOVELY_KISS
 	db 35, CROSS_POISON
-	db 38, SWORDS_DANCE
 	db 40, EARTHQUAKE
 	db 45, MEGAHORN
 	db 0 ; no more level-up moves
@@ -795,6 +794,7 @@ PoliwhirlEvosAttacks:
 	db 25, FLIP_TURN
 	db 30, RAIN_DANCE
 	db 35, WATERFALL
+	db 38, AMNESIA
 	db 42, BULK_UP
 	db 45, HYDRO_PUMP
 	db 50, BELLY_DRUM
@@ -811,6 +811,7 @@ PoliwrathEvosAttacks:
 	db 25, RAIN_DANCE
 	db 30, DRAIN_PUNCH
 	db 35, WATERFALL
+	db 38, AMNESIA
 	db 42, BULK_UP
 	db 45, CLOSE_COMBAT
 	db 50, HYDRO_PUMP
@@ -828,7 +829,7 @@ AbraEvosAttacks:
     db 33, ZEN_HEADBUTT
 	db 38, PSYCHIC_M
 	db 40, CALM_MIND
-	db 45, REFLECT
+	db 45, BARRIER
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
@@ -844,7 +845,7 @@ AlakazamEvosAttacks:
     db 33, ZEN_HEADBUTT
 	db 38, PSYCHIC_M
 	db 40, CALM_MIND
-	db 45, REFLECT
+	db 45, BARRIER
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -1143,8 +1144,7 @@ FerrothornEvosAttacks:
 	db 33, STEALTH_ROCK
 	db 35, FLASH_CANNON
 	db 38, STICKY_WEB
-	db 40, ACID_ARMOR
-	db 45, EXPLOSION
+	db 40, EXPLOSION
 	db 0 ; no more level-up moves
 
 ShellderEvosAttacks:
@@ -1737,7 +1737,6 @@ GaladeEvosAttacks:
 	db 30, NIGHT_SLASH
 	db 35, DRAIN_PUNCH
 	db 40, PSYCHO_SLASH
-	db 42, BARRIER
 	db 45, EXTREMESPEED
 	db 50, CLOSE_COMBAT
 	db 55, SWORDS_DANCE
@@ -2153,6 +2152,7 @@ ChandelureEvosAttacks:
 	db 28, PAIN_SPLIT
 	db 30, SHADOW_BALL
 	db 36, FLAMETHROWER
+	db 40, ACID_ARMOR
 	db 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
@@ -2282,6 +2282,7 @@ PorygonEvosAttacks:
 	db 36, ZAP_CANNON
 	db 38, TRICK_ROOM
 	db 40, TRI_ATTACK
+	db 45, BARRIER
 	db 50, AGILITY
 	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -2299,6 +2300,7 @@ PorygonzEvosAttacks:
 	db 36, ZAP_CANNON
 	db 38, TRICK_ROOM
 	db 40, TRI_ATTACK
+	db 45, BARRIER
 	db 50, AGILITY
 	db 60, HYPER_BEAM
 	db 0 ; no more level-up moves
@@ -2484,7 +2486,8 @@ MelmetalEvosAttacks:
 	db 20, THUNDER_WAVE
 	db 25, THUNDERPUNCH
 	db 30, IRON_HEAD
-	db 40, FLASH_CANNON
+	db 30, FLASH_CANNON
+	db 40, ACID_ARMOR
 	db 50, IRON_DUKES
 	db 0 ; no more level-up moves
 

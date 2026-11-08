@@ -4097,19 +4097,45 @@ ShouldAIBoost:
 ; don't boost once Toxic has started ramping.
 ; Count 4 means the AI has already taken three Toxic ticks.
     call IsAIToxified
-    jr nc, .checkWeezing
+    jr nc, .checkHaze
     ld a, [wEnemyToxicCount]
     cp 4
     jp nc, .dontBoost
 
-; if players mon is Weezing, 50% chance to not boost
-; otherwise two Weezings swapping would get attacks for free
-.checkWeezing
+.checkHaze
 	call DoesAIHaveUberImmunity
-   	jr c, .checkSuckerPunch
+	jr c, .checkSuckerPunch
+	ld a, [wLastPlayerMove]
+	cp HAZE
+	jp z, .dontBoost
+	ld b, EFFECT_RESET_STATS
+	call PlayerHasMoveEffect
+	jr nc, .checkForceSwitch
+	call DoesAIOutSpeedPlayer
+	jr z, .hazeRoll
+	jp nc, .dontBoost
+.hazeRoll
+	call Random
+	cp 80 percent + 1
+	jp c, .dontBoost
+
+.checkForceSwitch
+	ld a, [wLastPlayerMove]
+	cp ROAR
+	jp z, .dontBoost
+	cp WHIRLWIND
+	jp z, .dontBoost
+	ld b, EFFECT_FORCE_SWITCH
+	call PlayerHasMoveEffect
+	jr nc, .checkWeezing
+	call Random
+	cp 80 percent + 1
+	jp c, .dontBoost
+
+.checkWeezing
     ld a, [wBattleMonSpecies]
     cp WEEZING
-    jr nz, .checkSuckerPunch
+    jr z, .checkSuckerPunch
 	call AI_50_50
 	jp c, .dontBoost
 
@@ -4136,30 +4162,6 @@ ShouldAIBoost:
 	ld a, [wEnemyEvaLevel]
 	cp BASE_STAT_LEVEL + 2
 	jp nc, .boost
-
-.checkHaze
-; if the player has roar/whirlwind/haze and we aren't immune to it then 50% to not boost
-	call DoesAIHaveUberImmunity
-   	jr c, .noForceSwitch
-
-    ld a, [wCurPlayerMove]
-	call AIGetPlayerMove
-    ld a, [wPlayerMoveStruct + MOVE_EFFECT]
-    cp EFFECT_FORCE_SWITCH
-    jp z, .dontBoost
-
-    ld b, EFFECT_FORCE_SWITCH
-	call PlayerHasMoveEffect
-	jr c, .maybeDontBoost
-    ld b, EFFECT_RESET_STATS
-	call PlayerHasMoveEffect
-	jr c, .maybeDontBoost
-	jr .noForceSwitch
-.maybeDontBoost
-	call Random
-	cp 50 percent
-	jp c, .decideNotToBoost
-.noForceSwitch
 
 ; if our offence is already at or over +1 and either side can 2HKO, just attack
 ; this is to prevent the AI from boosting until it only gets one attack off, should attack earlier for more damage
@@ -4952,7 +4954,7 @@ DoubleCurrentDamage:
 	ret
 
 DoesAIOutSpeedPlayer:
-; Return carry if enemy is faster than player.
+; Return carry if enemy moves first by Speed, zero if effective Speeds tie.
 	push hl
 	push de
 	push bc
@@ -4960,26 +4962,17 @@ DoesAIOutSpeedPlayer:
 	pop bc
 	pop de
 	pop hl
-	jr z, .doNo
-	jr nc, .no
-.yes
-    ld a, [wTrickRoomCount]
-    and a
-    jr z, .doYes
-    xor a
-    ret
-.doYes
-    scf
-    ret
-.no
-    ld a, [wTrickRoomCount]
-    and a
-    jr z, .doNo
-    scf
-    ret
-.doNo
-    xor a
-    ret
+	ret z
+	push af
+	ld a, [wTrickRoomCount]
+	and a
+	jr z, .normal
+	pop af
+	ccf
+	ret
+.normal
+	pop af
+	ret
 
 AICheckPlayerMaxHP:
 	push hl

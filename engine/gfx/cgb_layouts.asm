@@ -85,6 +85,22 @@ _CGB_BattleGrayscale:
 _CGB_BattleColors:
 	ld de, wBGPals1
 	newfarcall LoadBattleMonNormalShinyOrCustomPalette ; PAL_BATTLE_BG_PLAYER
+	ld a, [wTempBattleMonSpecies]
+	and a
+	jr nz, .enemy_palette
+	newfarcall GetSelectedPlayerSpriteChoice
+	cp PLAYER_SPRITE_GIOVANNI
+	jr nz, .enemy_palette
+	ldh a, [rWBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rWBK], a
+	xor a
+	ld [wBGPals1 palette PAL_BATTLE_BG_PLAYER color 2], a
+	ld [wBGPals1 palette PAL_BATTLE_BG_PLAYER color 2 + 1], a
+	pop af
+	ldh [rWBK], a
+.enemy_palette
 	newfarcall LoadEnemyMonNormalShinyOrCustomPalette ; PAL_BATTLE_BG_ENEMY
 	ld a, [wEnemyHPPal]
 	ld l, a

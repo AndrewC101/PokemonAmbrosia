@@ -1247,44 +1247,28 @@ AI_Smart_StatDown:
 
 
 AI_Smart_ResetStats:
-; 85% chance to encourage this move if any of enemy's stat levels is lower than -2.
+	call DoesPlayerHaveUberImmunity
+	jp c, StandardDiscourage
 	push hl
-	ld hl, wEnemyAtkLevel
-	ld c, NUM_LEVEL_STATS
-.enemystatsloop
-	dec c
-	jr z, .enemystatsdone
+	ld hl, wEnemyStatLevels
+	ld c, EVASION + 1
+.checkBoosts
 	ld a, [hli]
-	cp BASE_STAT_LEVEL - 2
-	jr c, .encourage
-	jr .enemystatsloop
-
-; 85% chance to encourage this move if any of player's stat levels is higher than +2.
-.enemystatsdone
-	ld hl, wPlayerAtkLevel
-	ld c, NUM_LEVEL_STATS
-.playerstatsloop
+	cp BASE_STAT_LEVEL + 1
+	jr nc, .boosted
 	dec c
-	jr z, .discourage
-	ld a, [hli]
-	cp BASE_STAT_LEVEL + 3
-	jr c, .playerstatsloop
-
-.encourage
+	jr nz, .checkBoosts
 	pop hl
-	call Random
-	cp 16 percent
-	ret c
-	dec [hl]
-	ret
-
-; Discourage this move if neither:
-; Any of enemy's stat levels is lower than -2.
-; Any of player's stat levels is higher than +2.
-.discourage
+	ld a, [wPlayerAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jp nc, StandardEncourage
+	ld a, [wPlayerSAtkLevel]
+	cp BASE_STAT_LEVEL + 2
+	jp nc, StandardEncourage
+	jp StandardDiscourage
+.boosted
 	pop hl
-	inc [hl]
-	ret
+	jp StandardDiscourage
 
 AI_Smart_Spikes:
 ; don't use if already up
@@ -1375,30 +1359,10 @@ AI_Smart_StickyWeb:
     jp DoIt
 
 AI_Smart_Defog:
-; don't use if player has only one pokemon left
-	;push hl
-	;call AICheckLastPlayerMon
-	;pop hl
-	;jr z, StandardDiscourage
-
-; use if player has any screens up
-	ld a, [wPlayerScreens]
-	bit SCREENS_STEALTH_ROCK, a
+	ld a, [wEnemyScreens]
+	and (1 << SCREENS_STEALTH_ROCK) | (1 << SCREENS_SPIKES) | (1 << SCREENS_TOXIC_SPIKES) | (1 << SCREENS_STICKY_WEB)
 	jp nz, StandardEncourage
-	bit SCREENS_SPIKES, a
-	jp nz, StandardEncourage
-	bit SCREENS_TOXIC_SPIKES, a
-	jp nz, StandardEncourage
-	bit SCREENS_STICKY_WEB, a
-	jp nz, StandardEncourage
-	;bit SCREENS_LIGHT_SCREEN, a
-	;jp nz, StandardEncourage
-	;bit SCREENS_REFLECT, a
-	;jp nz, StandardEncourage
-
-; otherwise discourage
-    jp StandardDiscourage
-
+	jp StandardDiscourage
 
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
@@ -1640,10 +1604,7 @@ AI_Smart_LeechSeed:
     jr c, .discourage
 
 ; otherwise use
-rept 5
-    dec [hl]
-endr
-    ret
+	jp StandardEncourage
 
 .discourage
     inc [hl]
@@ -1735,6 +1696,8 @@ AI_Smart_StaticDamage:
 	ret
 
 AI_Smart_SpDefenseUp2:
+	call CanAIKO
+	jp c, StandardDiscourage
 	call ShouldAIBoost
 	jr nc, .discourage
 
@@ -2072,6 +2035,8 @@ AI_Smart_HyperBeam:
 	ret
 
 AI_Smart_Counter:
+	call CanAIKO
+	jp c, StandardDiscourage
     call BattleRandom
     cp 10 percent + 1
     ret c
@@ -2513,6 +2478,9 @@ AI_Smart_Curse:
 	ld a, [wEnemyMonType2]
 	cp GHOST
 	jp z, .ghost_curse
+
+	call ShouldAIBoost
+	jp nc, StandardDiscourage
 
 	call IsAttackMaxed
 	jr nc, .continue
@@ -3605,9 +3573,12 @@ AI_Smart_TrickRoom:
     ld a, [wTrickRoomCount]
     and a
     jp nz, StandardDiscourage
-    ; fallthrough
+	jp AI_Smart_Agility.checkSpeed
 
 AI_Smart_Agility:
+	call ShouldAIBoost
+	jp nc, StandardDiscourage
+.checkSpeed
 ; discourage if we are faster
     call DoesAIOutSpeedPlayer
     jp c, StandardDiscourage
@@ -3703,10 +3674,7 @@ AI_Smart_Growth:
     jp nc, StandardDiscourage
 
 ; encourage if we have no reason not to
-rept 6
-    dec [hl]
-endr
-    ret
+	jp StandardEncourage
 
 AI_Smart_NastyPlot:
 	call IsSpecialAttackMaxed
@@ -4135,7 +4103,7 @@ ShouldAIBoost:
 .checkWeezing
     ld a, [wBattleMonSpecies]
     cp WEEZING
-    jr z, .checkSuckerPunch
+    jr nz, .checkSuckerPunch
 	call AI_50_50
 	jp c, .dontBoost
 

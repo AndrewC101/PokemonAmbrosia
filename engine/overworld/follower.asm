@@ -673,6 +673,23 @@ GuardPokemonFollowerQueue::
 FollowerInteractionScript::
     faceplayer
     callasm ShowFollowerInteractionPreview
+    callasm PrepareFollowerReaction
+    iffalse .done
+    opentext
+    callasm PrintFollowerReaction
+    iffalse .no_item
+    farwritetext _ReceivedItemText
+    callasm ShowCurrentItemIconScriptHelper
+    waitsfx
+    specialsound
+    waitbutton
+    itemnotify
+    closetext
+    end
+.no_item
+    waitbutton
+    closetext
+.done
     end
 
 ShowFollowerInteractionPreview:

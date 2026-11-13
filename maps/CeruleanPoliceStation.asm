@@ -73,4 +73,4 @@ CeruleanPoliceStation_MapEvents:
 	def_object_events
 	object_event  5,  1, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationFishingGuruScript, -1
 	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanPoliceStationPokefanFScript, -1
-	object_event 3, 5, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_WANDER, 1, 1, DRILBUR, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanDiglett, -1
+	object_event 3, 5, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_TERRITORIAL, 1, 1, DRILBUR, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanDiglett, -1

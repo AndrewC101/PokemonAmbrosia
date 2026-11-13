@@ -391,7 +391,7 @@ MACRO map_object
 \1ObjectScript::     dw
 \1ObjectEventFlag::  dw
 \1ObjectSpecies::    db
-	ds 1
+\1ObjectBehaviourState:: db
 ENDM
 
 MACRO sprite_oam_struct

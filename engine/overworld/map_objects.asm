@@ -553,7 +553,59 @@ StepFunction_FromMovement:
 	dw MovementFunction_SpinCounterclockwise ; 19
 	dw MovementFunction_BoulderDust          ; 1a
 	dw MovementFunction_ShakingGrass         ; 1b
+	dw MovementFunction_MonBehaviour
 	assert_table_length NUM_SPRITEMOVEFN
+
+MovementFunction_MonBehaviour:
+	newfarcall ChooseAmbientPokemonAction
+	bit 7, a
+	jr nz, .wait
+	push af
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	newfarcall NormalizeAmbientPokemonChaseType
+	cp SPRITEMOVEDATA_MON_CHASE
+	jr z, .chase
+	cp SPRITEMOVEDATA_MON_RELENTLESS_CHASE
+	jr z, .chase
+	pop af
+	jp _RandomWalkContinue
+.chase
+	newfarcall GetAmbientPokemonState
+	cp 1
+	jr z, .pursue
+	cp 3
+	jr z, .pursue
+	pop af
+	jp _RandomWalkContinue
+.pursue
+	pop af
+	call .Try
+	ret nc
+	xor 2
+	call .Try
+	ret nc
+	xor 1
+	jp _RandomWalkContinue
+.wait
+	and $7f
+	jp _SetRandomStepDuration
+.Try
+	push af
+	call InitStep
+	call CanObjectMoveInDirection
+	jr c, .blocked
+	pop af
+	call _RandomWalkContinue
+	and a
+	ret
+.blocked
+	call EndSpriteMovement
+	call CopyLastCoordsToCoords
+	pop af
+	scf
+	ret
 
 MovementFunction_Null:
 	ret
@@ -1058,9 +1110,68 @@ _RandomWalkContinue:
 	ret
 
 .new_duration:
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITEMOVEDATA_MON_PATROL
+	jr z, .reverse
+	cp SPRITEMOVEDATA_MON_FORAGE
+	jr nz, .reset
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld a, [hl]
+	add 1 << 2
+	and 3 << 2
+	ld [hl], a
+	jr .reset
+.reverse
+	ld hl, OBJECT_DIRECTION
+	add hl, bc
+	ld a, [hl]
+	xor 1 << 2
+	ld [hl], a
+.reset
 	call EndSpriteMovement
 	call CopyLastCoordsToCoords
-	; fallthrough
+	jp AutonomousStepDuration
+
+AutonomousStepDuration:
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	newfarcall NormalizeAmbientPokemonChaseType
+	cp SPRITEMOVEDATA_FAST_WANDER
+	jr z, .normal
+	cp SPRITEMOVEDATA_FAST_SWIM_WANDER
+	jr z, .normal
+	cp SPRITEMOVEDATA_MON_RELENTLESS_CHASE
+	jr z, .chase
+	cp SPRITEMOVEDATA_MON_SWIM_MIMIC
+	jr c, .land
+	cp SPRITEMOVEDATA_MON_SWIM_END
+	jr c, .normal
+.land
+	cp SPRITEMOVEDATA_MON_SCAN
+	jp c, RandomStepDuration_Slow
+	cp SPRITEMOVEDATA_MON_END
+	jp nc, RandomStepDuration_Slow
+	cp SPRITEMOVEDATA_MON_DASH
+	jr z, .burst
+	cp SPRITEMOVEDATA_MON_CHASE
+	jr nz, .normal
+.chase
+	newfarcall GetAmbientPokemonState
+	cp 1
+	jr z, .burst
+	cp 3
+	jr z, .burst
+	jp RandomStepDuration_Slow
+.normal
+	ld a, 16
+	jp _SetRandomStepDuration
+.burst
+	ld a, 1
+	jp _SetRandomStepDuration
 
 RandomStepDuration_Slow:
 	call Random
@@ -1577,7 +1688,7 @@ StepFunction_ContinueWalk:
 	ret nz
 .done
 	call CopyCoordsTileToLastCoordsTile
-	jp RandomStepDuration_Slow
+	jp AutonomousStepDuration
 
 StepFunction_PlayerWalk:
 	call ObjectStep_AnonJumptable

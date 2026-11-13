@@ -269,6 +269,9 @@ PlayerEvents:
 
 	call Dummy_CheckEnabledMapEventsBit5 ; This is a waste of time
 
+	newfarcall CheckAmbientPokemonEvents
+	jr c, .ok
+
 	call CheckTrainerEvent
 	jr c, .ok
 

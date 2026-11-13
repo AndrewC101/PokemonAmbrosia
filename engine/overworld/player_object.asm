@@ -537,6 +537,11 @@ TrainerWalkToPlayer:
 	ld b, a
 	ld c, PLAYER
 	ld d, 1
+	ld a, [wTempTrainerID]
+	cp FIELD_MON
+	jr nz, .approach
+	inc d
+.approach
 	call .GetPathToPlayer
 	call DecrementMovementBufferCount
 

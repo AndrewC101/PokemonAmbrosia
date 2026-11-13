@@ -66,6 +66,11 @@ CopyMapObjectEvents::
 	call FarCopyBytes
 
 	pop hl
+	push hl
+	ld bc, MAPOBJECT_BEHAVIOUR_STATE
+	add hl, bc
+	ld [hl], 0
+	pop hl
 	ld bc, MAPOBJECT_LENGTH
 	add hl, bc
 	pop de
@@ -442,7 +447,7 @@ RefreshProfileMovementDefaults:
     push bc
     push de
     push hl
-    call GetDynamicSpriteProfile
+    call MapNeedsMovementDefaultsRefresh
     and a
     jr z, .done
     ld a, [wCurMapObjectEventsPointer]
@@ -475,6 +480,15 @@ RefreshProfileMovementDefaults:
     inc hl
     inc hl
     ld e, MAPOBJECT_SIGHT_RANGE
+    call .copy_field
+    dec hl
+    dec hl
+    ld e, MAPOBJECT_TYPE
+    call .copy_field
+    inc hl
+    ld e, MAPOBJECT_SCRIPT_POINTER
+    call .copy_field
+    inc e
     call .copy_field
     ld a, d
     and a
@@ -513,6 +527,9 @@ RefreshProfileMovementDefaults:
     inc hl
     ret
 .reset_changed_object
+    ld hl, MAPOBJECT_BEHAVIOUR_STATE
+    add hl, bc
+    ld [hl], 0
     push bc
     ld a, [bc]
     and a
@@ -556,6 +573,44 @@ GetDynamicSpriteProfile::
     pop bc
     ret
 
+MapNeedsMovementDefaultsRefresh:
+    push bc
+    push de
+    push hl
+    call GetDynamicSpriteProfile
+    and a
+    jr nz, .done
+    ld a, [wCurMapObjectEventCount]
+    ld b, a
+    ld a, [wCurMapObjectEventsPointer]
+    ld l, a
+    ld a, [wCurMapObjectEventsPointer + 1]
+    ld h, a
+    ld de, MAPOBJECT_MOVEMENT - 1
+    add hl, de
+.loop
+    ld a, b
+    and a
+    jr z, .done
+    ld a, [wMapScriptsBank]
+    call GetFarByte
+    cp SPRITEMOVEDATA_MON_SCAN
+    jr c, .next
+    cp NUM_SPRITEMOVEDATA
+    jr c, .found
+.next
+    ld de, OBJECT_EVENT_SIZE
+    add hl, de
+    dec b
+    jr .loop
+.found
+    ld a, 1
+.done
+    pop hl
+    pop de
+    pop bc
+    ret
+
 RestoreProfileContinueObjects::
     ldh a, [hMapEntryMethod]
     cp MAPSETUP_CONTINUE
@@ -563,7 +618,7 @@ RestoreProfileContinueObjects::
     ld a, [wStateFlags]
     bit SCRIPTED_MOVEMENT_STATE_F, a
     ret nz
-    call GetDynamicSpriteProfile
+    call MapNeedsMovementDefaultsRefresh
     and a
     ret z
     ldh a, [hMapObjectIndex]

@@ -744,6 +744,7 @@ INCLUDE "engine/gfx/vwf.asm"
 ; ds $220
 
 INCLUDE "engine/overworld/follower_graphics.asm"
+INCLUDE "engine/overworld/follower_reactions.asm"
 INCLUDE "gfx/followers.asm"
 
 SECTION "Bag Sorting", ROMX
@@ -751,6 +752,7 @@ SECTION "Bag Sorting", ROMX
 INCLUDE "engine/items/sort_items.asm"
 
 INCLUDE "engine/overworld/dynamic_pokemon_sprites.asm"
+INCLUDE "engine/overworld/pokemon_behaviour.asm"
 
 SECTION "Party Menu Cards", ROMX
 INCLUDE "engine/pokemon/party_cards.asm"

@@ -238,15 +238,15 @@ Route33SignText:
 	done
 	
 Route33FieldMon3Script:
-	trainer GOLBAT, FIELD_MON, EVENT_FIELD_MON_3, Route33PokemonAttacksText, 26, 0, .script
-.script
-    disappear ROUTE33_FIELDMON_3
-    end
-    
-Route33PokemonAttacksText:
-	text "Wild #mon"
-	line "attacks!"
-	done
+	faceplayer
+	cry GOLBAT
+	pause 15
+	loadwildmon GOLBAT, 26
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
+	disappear ROUTE33_FIELDMON_3
+	end
 
 Route33FieldMon1Script:
 	faceplayer
@@ -311,6 +311,6 @@ Route33_MapEvents:
 	
 	object_event 12,  7, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_CURIOUS, 2, 2, SHROOMISH, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon1Script, EVENT_FIELD_MON_1
 	object_event  5, 15, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_TERRITORIAL, 2, 0, SNOVER, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon2Script, EVENT_FIELD_MON_2
-	object_event 6, 8, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, GOLBAT, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, Route33FieldMon3Script, EVENT_FIELD_MON_3
+	object_event 6, 8, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_CHASE, 2, 2, GOLBAT, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 2, Route33FieldMon3Script, EVENT_FIELD_MON_3
 	object_event 11, 14, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_FORAGE, 1, 1, MACHOP, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, Route33FieldMon4Script, EVENT_FIELD_MON_4
 	object_event  8,  4, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_TERRITORIAL, 1, 1, FERROSEED, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route33FieldMon5Script, EVENT_FIELD_MON_5

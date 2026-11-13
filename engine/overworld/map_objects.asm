@@ -1605,6 +1605,7 @@ StepFunction_DigTo:
 	jp WaitStep_InPlace
 
 StepFunction_Sleep:
+	newfarcall CheckAmbientPokemonChaseDetection
 	ld hl, OBJECT_WALKING
 	add hl, bc
 	ld [hl], STANDING

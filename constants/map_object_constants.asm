@@ -33,7 +33,8 @@ DEF OBJECT_1D               rb ; 1d
 DEF OBJECT_1E               rb ; 1e
 DEF OBJECT_JUMP_HEIGHT      rb ; 1f
 DEF OBJECT_RANGE            rb ; 20
-                            rb_skip 7
+DEF OBJECT_RETURN_ATTEMPTS  rb
+                            rb_skip 6
 DEF OBJECT_LENGTH EQU _RS
 DEF NUM_OBJECT_STRUCTS EQU 13 ; see wObjectStructs
 

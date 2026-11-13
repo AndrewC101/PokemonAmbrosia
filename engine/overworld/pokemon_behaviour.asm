@@ -1,6 +1,9 @@
 SECTION "Ambient Pokemon behaviour", ROMX
 
 DEF AMBIENT_PURSUIT_HOME_RANGE EQU 10
+DEF AMBIENT_RETURN_ATTEMPT_LIMIT EQU 20
+DEF AMBIENT_CHASE_DETECTION_RANGE EQU 3
+DEF AMBIENT_RELENTLESS_DETECTION_RANGE EQU 4
 
 NormalizeAmbientPokemonChaseType::
 	cp SPRITEMOVEDATA_MON_SWIM_CHASE
@@ -240,6 +243,10 @@ ChooseAmbientPokemonAction::
 	call .Face
 	call Random
 	ldh a, [hRandomAdd]
+	and $7f
+	jr nz, .spin_delay
+	inc a
+.spin_delay
 	or $80
 	ret
 
@@ -251,19 +258,11 @@ ChooseAmbientPokemonAction::
 	jr z, .go_home
 	cp 1
 	jr z, .pursue
-	ld a, [wMarkOfGod]
-	and a
-	jp nz, .SlowSpin
-	call .PlayerDirection
-	ld a, d
-	cp 4
-	jp nc, .SlowSpin
-	call .Facing
-	cp e
-	jp nz, .SlowSpin
+	call CheckAmbientPokemonChaseDetection
 	call GetAmbientPokemonState
-	ld [hl], 2
-	jp .BriefWait
+	cp 2
+	jp z, .BriefWait
+	jp .SlowSpin
 .pursue
 	ld hl, OBJECT_MOVEMENT_TYPE
 	add hl, bc
@@ -295,16 +294,34 @@ ChooseAmbientPokemonAction::
 .give_up
 	call GetAmbientPokemonState
 	ld [hl], 3
+	ld hl, OBJECT_RETURN_ATTEMPTS
+	add hl, bc
+	ld [hl], 0
 .go_home
 	call .HomeDirection
 	ld a, d
 	and a
 	ld a, e
 	jr z, .home
+	push af
+	ld hl, OBJECT_RETURN_ATTEMPTS
+	add hl, bc
+	ld a, [hl]
+	cp AMBIENT_RETURN_ATTEMPT_LIMIT
+	jr c, .return_step
+	pop af
+	call WarpAmbientPokemonHome
+	jr .home
+.return_step
+	inc [hl]
+	pop af
 	or STEP_WALK << 2
 	ret
 .home
 	call GetAmbientPokemonState
+	ld [hl], 0
+	ld hl, OBJECT_RETURN_ATTEMPTS
+	add hl, bc
 	ld [hl], 0
 	ld hl, OBJECT_FLAGS1
 	add hl, bc
@@ -460,6 +477,51 @@ ChooseAmbientPokemonAction::
 	ret z
 	cpl
 	inc a
+	ret
+
+CheckAmbientPokemonChaseDetection::
+	push bc
+	call .Check
+	pop bc
+	ret
+.Check
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	call NormalizeAmbientPokemonChaseType
+	cp SPRITEMOVEDATA_MON_CHASE
+	jr z, .chaser
+	cp SPRITEMOVEDATA_MON_RELENTLESS_CHASE
+	ret nz
+.chaser
+	call GetAmbientPokemonState
+	and a
+	ret nz
+	ld a, [wMarkOfGod]
+	and a
+	ret nz
+	call ChooseAmbientPokemonAction.PlayerDirection
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	call NormalizeAmbientPokemonChaseType
+	cp SPRITEMOVEDATA_MON_RELENTLESS_CHASE
+	ld a, d
+	jr z, .relentless_range
+	cp AMBIENT_CHASE_DETECTION_RANGE + 1
+	jr .range
+.relentless_range
+	cp AMBIENT_RELENTLESS_DETECTION_RANGE + 1
+.range
+	ret nc
+	call ChooseAmbientPokemonAction.Facing
+	cp e
+	ret nz
+	call GetAmbientPokemonState
+	ld [hl], 2
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], 1
 	ret
 
 GetAmbientPokemonState::
@@ -755,48 +817,7 @@ RelocateAmbientPokemon:
 	ret
 .found
 	pop af
-	push de
-	ld hl, OBJECT_LAST_MAP_X
-	add hl, bc
-	ld a, d
-	sub [hl]
-	swap a
-	and $f0
-	ld hl, OBJECT_SPRITE_X
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	ld hl, OBJECT_LAST_MAP_Y
-	add hl, bc
-	ld a, e
-	sub [hl]
-	swap a
-	and $f0
-	ld hl, OBJECT_SPRITE_Y
-	add hl, bc
-	add [hl]
-	ld [hl], a
-	ld hl, OBJECT_MAP_X
-	add hl, bc
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	ld hl, OBJECT_LAST_MAP_X
-	add hl, bc
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	push bc
-	call GetCoordTileCollision
-	pop bc
-	ld hl, OBJECT_TILE_COLLISION
-	add hl, bc
-	ld [hl], a
-	ld hl, OBJECT_LAST_TILE
-	add hl, bc
-	ld [hl], a
-	pop de
-	newfarjp SetTallGrassFlags
+	jp MoveAmbientPokemonToCoords
 
 .Candidate:
 	ld hl, OBJECT_LAST_MAP_X
@@ -884,3 +905,65 @@ RelocateAmbientPokemon:
 .blocked
 	scf
 	ret
+
+WarpAmbientPokemonHome::
+	newfarcall EndSpriteMovement
+	ld hl, OBJECT_INIT_X
+	add hl, bc
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	call MoveAmbientPokemonToCoords
+	newfarcall CheckObjectOnScreen
+	push af
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OFF_SCREEN_F, [hl]
+	pop af
+	ret nc
+	set OFF_SCREEN_F, [hl]
+	ret
+
+MoveAmbientPokemonToCoords:
+	push de
+	ld hl, OBJECT_LAST_MAP_X
+	add hl, bc
+	ld a, d
+	sub [hl]
+	swap a
+	and $f0
+	ld hl, OBJECT_SPRITE_X
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	ld hl, OBJECT_LAST_MAP_Y
+	add hl, bc
+	ld a, e
+	sub [hl]
+	swap a
+	and $f0
+	ld hl, OBJECT_SPRITE_Y
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	ld hl, OBJECT_MAP_X
+	add hl, bc
+	ld [hl], d
+	inc hl
+	ld [hl], e
+	ld hl, OBJECT_LAST_MAP_X
+	add hl, bc
+	ld [hl], d
+	inc hl
+	ld [hl], e
+	push bc
+	call GetCoordTileCollision
+	pop bc
+	ld hl, OBJECT_TILE_COLLISION
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_LAST_TILE
+	add hl, bc
+	ld [hl], a
+	pop de
+	newfarjp SetTallGrassFlags

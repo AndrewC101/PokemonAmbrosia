@@ -242,8 +242,12 @@ AncientRuinsPresentFieldMon5Script:
     end
 
 AncientRuinsPresentFieldMon6Script:
-	trainer HONCHKROW, FIELD_MON, EVENT_FIELD_MON_6, AncientRuinsPresentPokemonAttacksText, 72, 0, .script
-.script
+	faceplayer
+	cry HONCHKROW
+	loadwildmon HONCHKROW, 72
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
     disappear ANCIENTRUINPRESENT_FIELDMON_6
     end
 
@@ -254,8 +258,12 @@ AncientRuinsPresentFieldMon7Script:
     end
 
 AncientRuinsPresentFieldMon8Script:
-	trainer METAGROSS, FIELD_MON, EVENT_FIELD_MON_8, AncientRuinsPresentPokemonAttacksText, 75, 0, .script
-.script
+	faceplayer
+	cry METAGROSS
+	loadwildmon METAGROSS, 75
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
     disappear ANCIENTRUINPRESENT_FIELDMON_8
     end
 
@@ -299,8 +307,8 @@ AncientRuinPresent_MapEvents:
 	object_event  5, 23, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, AERODACTYL, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon3Script, EVENT_FIELD_MON_3
 	object_event 29, 36, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, METAGROSS, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AncientRuinsPresentMetagrossScript, EVENT_FIELD_MON_4
 	object_event  6, 11, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, KINGAMBIT, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon5Script, EVENT_FIELD_MON_5
-	object_event  4, 16, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, HONCHKROW, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon6Script, EVENT_FIELD_MON_6
+	object_event  4, 16, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_CHASE, 3, 3, HONCHKROW, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, AncientRuinsPresentFieldMon6Script, EVENT_FIELD_MON_6
 	object_event 33, 24, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, GARCHOMP, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 6, 31, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, METAGROSS, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon8Script, EVENT_FIELD_MON_8
+	object_event  6, 31, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_CHASE, 3, 3, METAGROSS, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, AncientRuinsPresentFieldMon8Script, EVENT_FIELD_MON_8
 	object_event 17, 33, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, MAGNEZONE, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon9Script, EVENT_FIELD_MON_9
 	object_event 20, 27, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 3, 3, HYDREIGON, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 3, AncientRuinsPresentFieldMon10Script, EVENT_FIELD_MON_10

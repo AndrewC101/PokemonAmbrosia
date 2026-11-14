@@ -1050,6 +1050,8 @@ RestoreForgetMoveScreen:
 	jr nz, .battle
 
 	ld a, [wPartyMenuActionText]
+	cp PARTYMENUTEXT_LEVEL_UP
+	jr z, .party_menu
 	and $f
 	cp PARTYMENUACTION_TEACH_TMHM
 	jr z, .party_menu

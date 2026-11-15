@@ -992,7 +992,7 @@ FollowerText_Cave3:
 FollowerText_Indoor1:
     follower_text_mon " is"
     line "looking around the"
-    cont "room."
+    cont "place."
     done
 
 FollowerText_Indoor2:
@@ -1126,7 +1126,7 @@ FollowerText_RainWater:
 
 FollowerText_RainGrass:
     follower_text_mon " is"
-    line "drinking in the"
+    line "drinking the"
     cont "rain."
     done
 

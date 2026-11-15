@@ -33,62 +33,102 @@ LavenderForest_MapScripts:
     endcallback
 
 LavenderForestFieldMon1Script:
-	trainer CHANDELURE, FIELD_MON, EVENT_FIELD_MON_1, LavenderForestPokemonAttacksText, 66, 0, .script
-.script
+	faceplayer
+	cry CHANDELURE
+	loadwildmon CHANDELURE, 66
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
     disappear LAVENDERFOREST_FIELDMON_1
     end
 
 LavenderForestFieldMon2Script:
-	trainer POLTEGEIST, FIELD_MON, EVENT_FIELD_MON_2, LavenderForestPokemonAttacksText, 62, 0, .script
-.script
+	faceplayer
+	cry POLTEGEIST
+	loadwildmon POLTEGEIST, 62
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
     disappear LAVENDERFOREST_FIELDMON_2
     end
 
 LavenderForestFieldMon3Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_3, LavenderForestPokemonAttacksText, 63, 0, .script
-.script
+	faceplayer
+	cry MISMAGIUS
+	loadwildmon MISMAGIUS, 63
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
     disappear LAVENDERFOREST_FIELDMON_3
     end
 
 LavenderForestFieldMon4Script:
-	trainer ROTOM, FIELD_MON, EVENT_FIELD_MON_4, LavenderForestPokemonAttacksText, 64, 0, .script
-.script
+	faceplayer
+	cry ROTOM
+	loadwildmon ROTOM, 64
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
     disappear LAVENDERFOREST_FIELDMON_4
     end
 
 LavenderForestFieldMon5Script:
-	trainer AEGISLASH, FIELD_MON, EVENT_FIELD_MON_5, LavenderForestPokemonAttacksText, 64, 0, .script
-.script
+	faceplayer
+	cry AEGISLASH
+	loadwildmon AEGISLASH, 64
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
     disappear LAVENDERFOREST_FIELDMON_5
     end
 
 LavenderForestFieldMon6Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_6, LavenderForestPokemonAttacksText, 67, 0, .script
-.script
+	faceplayer
+	cry GENGAR
+	loadwildmon GENGAR, 67
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
     disappear LAVENDERFOREST_FIELDMON_6
     end
 
 LavenderForestFieldMon7Script:
-	trainer MIMIKYU, FIELD_MON, EVENT_FIELD_MON_7, LavenderForestPokemonAttacksText, 63, 0, .script
-.script
+	faceplayer
+	cry MIMIKYU
+	loadwildmon MIMIKYU, 63
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_7
     disappear LAVENDERFOREST_FIELDMON_7
     end
 
 LavenderForestFieldMon8Script:
-	trainer GENGAR, FIELD_MON, EVENT_FIELD_MON_8, LavenderForestPokemonAttacksText, 65, 0, .script
-.script
+	faceplayer
+	cry GENGAR
+	loadwildmon GENGAR, 65
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_8
     disappear LAVENDERFOREST_FIELDMON_8
     end
 
 LavenderForestFieldMon9Script:
-	trainer MISMAGIUS, FIELD_MON, EVENT_FIELD_MON_9, LavenderForestPokemonAttacksText, 68, 0, .script
-.script
+	faceplayer
+	cry MISMAGIUS
+	loadwildmon MISMAGIUS, 68
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_9
     disappear LAVENDERFOREST_FIELDMON_9
     end
 
 LavenderForestFieldMon10Script:
-	trainer NOWN, FIELD_MON, EVENT_FIELD_MON_10, LavenderForestPokemonAttacksText, 77, 0, .script
-.script
+	faceplayer
+	cry NOWN
+	loadwildmon NOWN, 77
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_10
     disappear LAVENDERFOREST_FIELDMON_10
     end
 
@@ -220,14 +260,14 @@ LavenderForest_MapEvents:
 
 	def_object_events
 	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AgathaSisterScript, -1
-	object_event  5, 24, SPRITE_LASS, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon1Script, EVENT_FIELD_MON_1
-	object_event  3, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon2Script, EVENT_FIELD_MON_2
-	object_event 21, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 20, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 11, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 17, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon6Script, EVENT_FIELD_MON_6
-	object_event 12, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon7Script, EVENT_FIELD_MON_7
-	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon8Script, EVENT_FIELD_MON_8
-	object_event 19,  4, SPRITE_GRANNY, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon9Script, EVENT_FIELD_MON_9
-	object_event  7, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_FAST_WANDER, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, LavenderForestFieldMon10Script, EVENT_FIELD_MON_10
+	object_event  5, 24, SPRITE_LASS, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon1Script, EVENT_FIELD_MON_1
+	object_event  3, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 21, 26, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 20, 19, SPRITE_YOUNGSTER, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 11, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 17, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 12, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon7Script, EVENT_FIELD_MON_7
+	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon8Script, EVENT_FIELD_MON_8
+	object_event 19,  4, SPRITE_GRANNY, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon9Script, EVENT_FIELD_MON_9
+	object_event  7, 10, SPRITE_GRAMPS, SPRITEMOVEDATA_MON_WANDER_CHASE, 4, 4, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LavenderForestFieldMon10Script, EVENT_FIELD_MON_10
 	object_event 20,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LavenderForestLifeOrb, EVENT_LAVENDER_FOREST_LIFE_ORB

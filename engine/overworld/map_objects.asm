@@ -1165,6 +1165,13 @@ AutonomousStepDuration:
 	jr z, .burst
 	cp 3
 	jr z, .burst
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITEMOVEDATA_MON_WANDER_CHASE
+	jr z, .normal
+	cp SPRITEMOVEDATA_MON_SWIM_WANDER_CHASE
+	jr z, .normal
 	jp RandomStepDuration_Slow
 .normal
 	ld a, 16

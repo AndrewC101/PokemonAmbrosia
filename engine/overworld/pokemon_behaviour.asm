@@ -6,8 +6,13 @@ DEF AMBIENT_CHASE_DETECTION_RANGE EQU 3
 DEF AMBIENT_RELENTLESS_DETECTION_RANGE EQU 4
 
 NormalizeAmbientPokemonChaseType::
+	cp SPRITEMOVEDATA_MON_WANDER_CHASE
+	jr z, .chase
+	cp SPRITEMOVEDATA_MON_SWIM_WANDER_CHASE
+	jr z, .chase
 	cp SPRITEMOVEDATA_MON_SWIM_CHASE
 	jr nz, .relentless
+.chase
 	ld a, SPRITEMOVEDATA_MON_CHASE
 	ret
 .relentless
@@ -250,6 +255,16 @@ ChooseAmbientPokemonAction::
 	or $80
 	ret
 
+.ChaseIdle:
+	ld hl, OBJECT_MOVEMENT_TYPE
+	add hl, bc
+	ld a, [hl]
+	cp SPRITEMOVEDATA_MON_WANDER_CHASE
+	jp z, .RandomDirection
+	cp SPRITEMOVEDATA_MON_SWIM_WANDER_CHASE
+	jp z, .RandomDirection
+	jp .SlowSpin
+
 .Chase:
 	call GetAmbientPokemonState
 	cp 2
@@ -262,7 +277,7 @@ ChooseAmbientPokemonAction::
 	call GetAmbientPokemonState
 	cp 2
 	jp z, .BriefWait
-	jp .SlowSpin
+	jp .ChaseIdle
 .pursue
 	ld hl, OBJECT_MOVEMENT_TYPE
 	add hl, bc
@@ -327,7 +342,7 @@ ChooseAmbientPokemonAction::
 	add hl, bc
 	res MOVE_ANYWHERE_F, [hl]
 	res WONT_DELETE_F, [hl]
-	jp .SlowSpin
+	jp .ChaseIdle
 
 .Hider:
 	call GetAmbientPokemonState

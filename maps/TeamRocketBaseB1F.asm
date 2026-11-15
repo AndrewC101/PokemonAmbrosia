@@ -32,38 +32,62 @@ TeamRocketBaseB1FHideSecurityGruntCallback:
 	endcallback
 
 TeamRocketBaseB1FFieldMon1Script:
-	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_1, TeamRocketBaseB1FPokemonAttacksText, 52, 0, .script
-.script
+	faceplayer
+	cry NIDOKING
+	loadwildmon NIDOKING, 52
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_1
     disappear TEAMROCKETBASEB1F_FIELDMON_1
     end
 
 TeamRocketBaseB1FFieldMon2Script:
-	trainer NIDOKING, FIELD_MON, EVENT_FIELD_MON_2, TeamRocketBaseB1FPokemonAttacksText, 52, 0, .script
-.script
+	faceplayer
+	cry NIDOKING
+	loadwildmon NIDOKING, 52
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_2
     disappear TEAMROCKETBASEB1F_FIELDMON_2
     end
 
 TeamRocketBaseB1FFieldMon3Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_3, TeamRocketBaseB1FPokemonAttacksText, 53, 0, .script
-.script
+	faceplayer
+	cry HOUNDOOM
+	loadwildmon HOUNDOOM, 53
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_3
     disappear TEAMROCKETBASEB1F_FIELDMON_3
     end
 
 TeamRocketBaseB1FFieldMon4Script:
-	trainer HOUNDOOM, FIELD_MON, EVENT_FIELD_MON_4, TeamRocketBaseB1FPokemonAttacksText, 53, 0, .script
-.script
+	faceplayer
+	cry HOUNDOOM
+	loadwildmon HOUNDOOM, 53
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_4
     disappear TEAMROCKETBASEB1F_FIELDMON_4
     end
 
  TeamRocketBaseB1FFieldMon5Script:
- 	trainer MAWILE, FIELD_MON, EVENT_FIELD_MON_5, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
- .script
+	faceplayer
+	cry MAWILE
+	loadwildmon MAWILE, 54
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_5
      disappear TEAMROCKETBASEB1F_FIELDMON_5
      end
 
  TeamRocketBaseB1FFieldMon6Script:
- 	trainer MAWILE, FIELD_MON, EVENT_FIELD_MON_6, TeamRocketBaseB1FPokemonAttacksText, 54, 0, .script
- .script
+	faceplayer
+	cry MAWILE
+	loadwildmon MAWILE, 54
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_FIELD_MON_6
      disappear TEAMROCKETBASEB1F_FIELDMON_6
      end
 
@@ -806,9 +830,9 @@ TeamRocketBaseB1F_MapEvents:
 	object_event 27,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FHyperPotion, EVENT_TEAM_ROCKET_BASE_B1F_HYPER_POTION
 	object_event 14, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FNugget, EVENT_TEAM_ROCKET_BASE_B1F_NUGGET
 	object_event 21, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TeamRocketBaseB1FGuardSpec, EVENT_TEAM_ROCKET_BASE_B1F_GUARD_SPEC
-	object_event 1, 16, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, NIDOKING, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon1Script, EVENT_FIELD_MON_1
-	object_event 18, 6, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, NIDOKING, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon2Script, EVENT_FIELD_MON_2
-	object_event 27, 13, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, HOUNDOOM, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon3Script, EVENT_FIELD_MON_3
-	object_event 20, 2, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, HOUNDOOM, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon4Script, EVENT_FIELD_MON_4
-	object_event 9, 2, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, MAWILE, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon5Script, EVENT_FIELD_MON_5
-	object_event 9, 12, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_FAST_WANDER, 2, 2, MAWILE, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_TRAINER, 2, TeamRocketBaseB1FFieldMon6Script, EVENT_FIELD_MON_6
+	object_event 1, 16, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, NIDOKING, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon1Script, EVENT_FIELD_MON_1
+	object_event 18, 6, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, NIDOKING, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon2Script, EVENT_FIELD_MON_2
+	object_event 27, 13, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, HOUNDOOM, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon3Script, EVENT_FIELD_MON_3
+	object_event 20, 2, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, HOUNDOOM, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon4Script, EVENT_FIELD_MON_4
+	object_event 9, 2, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, MAWILE, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon5Script, EVENT_FIELD_MON_5
+	object_event 9, 12, SPRITE_DYNAMIC_POKEMON, SPRITEMOVEDATA_MON_WANDER_CHASE, 2, 2, MAWILE, -1, PAL_NPC_DEEP_RED, OBJECTTYPE_SCRIPT, 0, TeamRocketBaseB1FFieldMon6Script, EVENT_FIELD_MON_6

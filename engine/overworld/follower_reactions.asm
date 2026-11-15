@@ -112,6 +112,10 @@ FollowerTryFindItem:
     call Random
     cp FOLLOWER_ITEM_CHANCE
     jr nc, .none
+    ld a, [wCurSpecies]
+    cp ARCEUS
+    ld a, AMBROSIA
+    jr z, .give_item
     call Random
     ld hl, FollowerItems_Common
     cp 70 percent
@@ -127,6 +131,7 @@ FollowerTryFindItem:
     ld b, 0
     add hl, bc
     ld a, [hl]
+.give_item
     ld [wCurItem], a
     ld a, 1
     ld [wItemQuantityChange], a
@@ -154,17 +159,17 @@ FollowerTryFindItem:
 
 FollowerItems_Common:
     db 8
-    db BERRY, PSNCUREBERRY, PRZCUREBERRY, MINT_BERRY
-    db BURNT_BERRY, ICE_BERRY, POTION, POKE_BALL
+    db GOLD_BERRY, PSNCUREBERRY, PRZCUREBERRY, MINT_BERRY
+    db BURNT_BERRY, ICE_BERRY, SUPER_POTION, GREAT_BALL
 
 FollowerItems_Uncommon:
-    db 9
-    db GOLD_BERRY, MYSTERYBERRY, MIRACLEBERRY, SUPER_POTION, GREAT_BALL
-    db ETHER, TINYMUSHROOM, PEARL, STARDUST
+    db 8
+    db NUGGET, MIRACLEBERRY, MAX_REVIVE, ULTRA_BALL
+    db MAX_ELIXER, BIG_MUSHROOM, BIG_PEARL, STAR_PIECE
 
 FollowerItems_Rare:
-    db 5
-    db NUGGET, STAR_PIECE, BIG_PEARL, RARE_CANDY, PP_MAX
+    db 2
+    db RARE_CANDY, PP_MAX
 
 FollowerLine_HoldingItem: follower_line FollowerText_HoldingItem
 FollowerLine_PackFull: follower_line FollowerText_PackFull
@@ -992,7 +997,7 @@ FollowerText_Indoor1:
 
 FollowerText_Indoor2:
     follower_text_mon " seems"
-    line "relaxed indoors."
+    line "relaxed here."
     done
 
 FollowerText_Gate:

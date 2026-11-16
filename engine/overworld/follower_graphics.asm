@@ -361,6 +361,10 @@ FollowerFacingPair:
 FollowerFacingTiles:
 ; a = shown/wanted facing. Preserve bc. Build tile and OAM-attribute bytes.
     ld e, a
+    cp FACING_STEP_UP_0
+    jr c, .frame
+    xor 1
+.frame
     and 1
     add a
     add a

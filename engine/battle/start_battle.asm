@@ -212,12 +212,6 @@ PlayBattleMusic:
 	jp .done
 
 .trainermusic
-	; aggressive wild mon
-	ld de, MUSIC_RIVAL_BATTLE
-	ld a, [wOtherTrainerID]
-	cp FIELD_MON
-	jp z, .done
-
 	ld a, [wBattleMusicOverride]
 	and a
 	jr nz, .useOverride

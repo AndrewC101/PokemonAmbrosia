@@ -64,6 +64,9 @@ PokemonSpriteColorRules:
 	mon_color_rule AERODACTYL, 1, 1
 	mon_color_rule ARTICUNO, 1, 1
 	mon_color_rule DRAGONITE, 1, 1
+	mon_color_rule SALAMENCE, 1, 0
+	mon_color_rule DEINO, 1, 0
+	mon_color_rule PORYGON, 1, 0
 	mon_color_rule MEW, 1, 1
 	mon_color_rule TREECKO, 1, 1
 	mon_color_rule GROVYLE, 1, 1

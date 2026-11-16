@@ -143,13 +143,13 @@ RepackSharedOverworldMonFrames::
     call .CopyFrame
     ld de, wOverworldMonFrames + 12 tiles
     call .CopyFrame
-    ld de, wOverworldMonFrames + 4 tiles
-    call .CopyFrame
     ld de, wOverworldMonFrames + 16 tiles
     call .CopyFrame
-    ld de, wOverworldMonFrames + 8 tiles
+    ld de, wOverworldMonFrames + 4 tiles
     call .CopyFrame
     ld de, wOverworldMonFrames + 20 tiles
+    call .CopyFrame
+    ld de, wOverworldMonFrames + 8 tiles
     call .CopyFrame
     ld de, wOverworldMonFrames
     lb bc, BANK(GetUsedSprite), 12
@@ -188,7 +188,7 @@ CopySharedOverworldMonStandingFrames::
     ldh [rWBK], a
     ld a, b
     call RepackSharedOverworldMonFrames.CopyFrame
-    ld bc, 4 tiles
+    ld bc, 8 tiles
     add hl, bc
     call RepackSharedOverworldMonFrames.CopyFrame
     ld bc, 4 tiles

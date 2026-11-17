@@ -2291,8 +2291,6 @@ PartyCards_OnScreen:
 PartyCardsNickname::
 
 
-	call PartyCardsCheckOwnership
-	jr c, .traded
 	call LoadStandardMenuHeader
 	call ClearSprites
 	xor a
@@ -2323,54 +2321,6 @@ PartyCardsNickname::
 	call ClearSprites
 	call ExitMenu
 	xor a
-	ret
-
-.traded
-	ld hl, .TradedText
-	call MenuTextboxBackup
-	ld a, 1
-	ret
-
-.TradedText:
-	text_ram wStringBuffer1
-	text " came from"
-	line "a trade. Its name"
-	cont "can't be changed."
-	prompt
-
-
-PartyCardsCheckOwnership::
-	ld a, MON_OT_ID
-	call GetPartyParamLocation
-	ld de, wPlayerID
-	ld a, [de]
-	cp [hl]
-	jr nz, .other
-	inc de
-	inc hl
-	ld a, [de]
-	cp [hl]
-	jr nz, .other
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonOTs
-	call SkipNames
-	ld de, wPlayerName
-	ld b, NAME_LENGTH
-.loop
-	ld a, [de]
-	cp [hl]
-	jr nz, .other
-	cp CHARVAL("@")
-	jr z, .owned
-	inc de
-	inc hl
-	dec b
-	jr nz, .loop
-.owned
-	and a
-	ret
-.other
-	scf
 	ret
 
 PartyCardsSwapItem::

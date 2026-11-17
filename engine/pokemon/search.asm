@@ -55,7 +55,7 @@ MonCheck:
 
 CheckOwnMonAnywhere:
 ; Check if the player owns any monsters of the species in wScriptVar.
-; It must exist in either party or PC, and have the player's OT and ID.
+; It must exist in either party or PC, and have the player's trainer ID.
 ;
 ; NewBox makes the full storage scan expensive, so bail out early when the
 ; species is not even marked as caught in the dex. If it is caught, we still
@@ -93,23 +93,8 @@ CheckOwnMonAnywhere:
 	cp [hl]
 	jr nz, .next
 
-; check OT
-; This only checks five characters, which is fine for the Japanese version,
-; but in the English version the player name is 7 characters, so this is wrong.
-
-	; Verify OT
-	ld hl, wBufferMonOT
-	ld de, wPlayerName
-.cmp_ot
-	ld a, [de]
-	cp [hl]
-	inc de
-	inc hl
-	jr nz, .next
-	cp '@'
 	scf
-	ret z
-	jr .cmp_ot
+	ret
 .next
 	dec c
 	jr nz, .loop

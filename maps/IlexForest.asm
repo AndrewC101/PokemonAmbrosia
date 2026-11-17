@@ -80,7 +80,7 @@ ApprenticeGivesCutText:
     cont "the move to a"
     cont "#mon."
 
-    para "As long as it"
+    para "As long as it is"
     line "able to learn"
     cont "the move, it"
     cont "will be able"

@@ -1786,6 +1786,16 @@ wMenuData_ItemsPointerAddr:: dw
 wMenuData_ScrollingMenuFunction1:: ds 3
 wMenuData_ScrollingMenuFunction2:: ds 3
 wMenuData_ScrollingMenuFunction3:: ds 3
+
+NEXTU
+wLookPreviewMenu::
+wLookPreviewOptionCount:: db
+wLookPreviewFlags:: db
+wLookPreviewTitle:: dw
+wLookPreviewOptions:: dw
+wLookPreviewUpdate:: dw
+wLookPreviewCursor:: dw
+wLookPreviewMenuEnd::
 ENDU
 wMenuDataEnd::
 
@@ -3652,7 +3662,14 @@ wMagnetTrainPlayerSpriteInitX:: db
 
 	ds 106
 
+UNION
 wLYOverridesBackup:: ds SCREEN_HEIGHT_PX
+NEXTU
+wBattleVSPortraitScroll:: db
+wBattleVSNameScroll:: db
+wBattleVSShakeTimer:: db
+wBattleVSScrollTimer:: db
+ENDU
 wLYOverridesBackupEnd::
 
 

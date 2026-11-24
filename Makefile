@@ -235,6 +235,7 @@ gfx/mystery_gift/mystery_gift.2bpp: tools/gfx += --trim-whitespace
 
 gfx/title/crystal.2bpp: tools/gfx += --interleave --png=$<
 gfx/title/old_fg.2bpp: tools/gfx += --interleave --png=$<
+gfx/battle/vs.2bpp: tools/gfx += --interleave --png=$<
 gfx/title/logo.2bpp: RGBGFXFLAGS += --trim-end 4
 
 gfx/trade/ball.2bpp: tools/gfx += --remove-whitespace

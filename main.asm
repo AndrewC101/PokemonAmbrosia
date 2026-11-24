@@ -313,6 +313,16 @@ INCLUDE "engine/sprite_anims/core.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
 
 
+SECTION "Battle VS Intro", ROMX
+
+INCLUDE "engine/battle/vs_intro.asm"
+
+
+SECTION "Appearance Preview", ROMX
+
+INCLUDE "engine/menus/look_preview.asm"
+
+
 SECTION "bank24", ROMX
 
 INCLUDE "engine/phone/phone.asm"

@@ -157,53 +157,6 @@ GetDefaultPlayerOverworldSprite:
 	ld a, SPRITE_CHRIS
 	ret
 
-SetInitialPlayerSpriteChoice::
-	call ClearTilemap
-	call WaitBGMap2
-	ld hl, WhatSpriteWillYouUseText
-	call PrintText
-	call LoadPlayerSpriteChoiceMenuHeader
-	call LoadMenuHeader
-	call WaitBGMap2
-	call _2DMenu
-	push af
-	call CloseWindow
-	pop af
-	jr StorePlayerSpriteChoiceFromPosition
-
-LoadPlayerSpriteChoiceMenuHeader:
-	ld hl, MalePlayerSpriteChoiceMenuHeader
-	call IsEffectiveFemalePlayer
-	ret nc
-	ld hl, FemalePlayerSpriteChoiceMenuHeader
-	ret
-
-StorePlayerSpriteChoiceFromPosition:
-; Menu positions are 1-based; bad positions fall back to the default sprite.
-	and a
-	jr z, .default
-	cp 11
-	jr nc, .default
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, MalePlayerSpriteChoiceOptions
-	call IsEffectiveFemalePlayer
-	jr nc, .got_table
-	ld hl, FemalePlayerSpriteChoiceOptions
-
-.got_table
-	add hl, de
-	ld a, [hl]
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerSpriteChoice], a
-	ret
-
 PlayerSpriteChoiceSprites:
 	db SPRITE_RIVAL        ; PLAYER_SPRITE_SILVER
 	db SPRITE_BLUE         ; PLAYER_SPRITE_BLUE
@@ -264,138 +217,14 @@ PlayerSpriteChoiceTrainerClasses:
 	db KIMONO_GIRL
 	db CRYSTAL
 
-MalePlayerSpriteChoiceMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 11
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	dn 5, 2 ; rows, columns
-	db 8 ; spacing
-	dba MalePlayerSpriteChoiceText
-	dbw BANK(@), NULL
-
-FemalePlayerSpriteChoiceMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 11
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
-	dn 5, 2 ; rows, columns
-	db 8 ; spacing
-	dba FemalePlayerSpriteChoiceText
-	dbw BANK(@), NULL
-
-MalePlayerSpriteChoiceOptions:
-	db PLAYER_SPRITE_DEFAULT
-	db PLAYER_SPRITE_ASH
-	db PLAYER_SPRITE_SILVER
-	db PLAYER_SPRITE_BLUE
-	db PLAYER_SPRITE_FALKNER
-	db PLAYER_SPRITE_BRUNO
-	db PLAYER_SPRITE_MORTY
-	db PLAYER_SPRITE_LANCE
-	db PLAYER_SPRITE_EUSINE
-	db PLAYER_SPRITE_GIOVANNI
-
-FemalePlayerSpriteChoiceOptions:
-	db PLAYER_SPRITE_DEFAULT
-	db PLAYER_SPRITE_LASS
-    db PLAYER_SPRITE_WHITNEY
-	db PLAYER_SPRITE_MISTY
-	db PLAYER_SPRITE_JASMINE
-	db PLAYER_SPRITE_CLAIR
-	db PLAYER_SPRITE_ERIKA
-	db PLAYER_SPRITE_SABRINA
-	db PLAYER_SPRITE_KIMONO_GIRL
-	db PLAYER_SPRITE_ROCKET_GIRL
-
-MalePlayerSpriteChoiceText:
-	db "Default@"
-	db "Ash@"
-	db "Silver@"
-	db "Blue@"
-	db "Falkner@"
-	db "Bruno@"
-	db "Morty@"
-	db "Lance@"
-	db "Eusine@"
-	db "Giovanni@"
-
-FemalePlayerSpriteChoiceText:
-	db "Default@"
-	db "May@"
-	db "Whitney@"
-	db "Misty@"
-	db "Jasmine@"
-	db "Clair@"
-	db "Karen@"
-	db "Sabrina@"
-	db "Kimono@"
-	db "Rocket@"
-
-WhatSpriteWillYouUseText:
-	text "Now, who do you"
-	line "look like?"
-	prompt
-
 PlayerRecreationScript::
+	callasm ChoosePlayerAppearanceInField
 	opentext
-	writetext PlayerRecreationGenderText
-	loadmenu PlayerRecreationGenderHeader
-	_2dmenu
-	closewindow
-	ifequal 1, .Male
-	ifequal 2, .Female
-	closetext
-	end
-
-.Male
-	loadmem wPlayerGender, 0
-	sjump .chooseSprite
-
-.Female
-	loadmem wPlayerGender, 1
-	sjump .chooseSprite
-
-.chooseSprite
-	writetext PlayerRecreationSpriteText
-	readmem wPlayerGender
-	ifequal 1, .chooseFemaleSprite
-	loadmenu MalePlayerSpriteChoiceMenuHeader
-	sjump .openSpriteMenu
-
-.chooseFemaleSprite
-	loadmenu FemalePlayerSpriteChoiceMenuHeader
-
-.openSpriteMenu
-	_2dmenu
-	closewindow
-	callasm StoreScriptPlayerSpriteChoice
-
-.chooseComplexion
-	writetext PlayerRecreationComplexionText
-	loadmenu PlayerRecreationComplexionHeader
-	_2dmenu
-	closewindow
-	callasm StoreScriptPlayerComplexionChoice
-
-.chooseColor
-	writetext PlayerRecreationColorText
-	loadmenu PlayerRecreationColorHeader
-	_2dmenu
-	closewindow
-	callasm StoreScriptPlayerColorChoice
-
 	writetext PlayerRecreationChangeNameText
 	nooryes
 	iffalse .skipName
 	closetext
-	warpfacing UP, NONE, 0, 0
+	turnobject PLAYER, UP
 	opentext
 	writetext PlayerRecreationNameText
 	closetext
@@ -405,7 +234,7 @@ PlayerRecreationScript::
 
 .skipName
 	closetext
-	warpfacing UP, NONE, 0, 0
+	turnobject PLAYER, UP
 	end
 
 PokemonColorEditorScript::
@@ -416,30 +245,8 @@ PokemonColorEditorScript::
 	callasm PokemonColorEditorSelectMon
 	ifequal 0, .done
 	ifequal 2, .egg
-
-	writetext PokemonColorEditorLightText
-	loadmenu PokemonColorEditorMenuHeader
-	_2dmenu
-	closewindow
-	ifequal 0, .done
-	ifequal 12, .default
-	callasm PokemonColorEditorStageLightColor
-
-	writetext PokemonColorEditorDarkText
-	loadmenu PokemonColorEditorMenuHeader
-	_2dmenu
-	closewindow
-	ifequal 0, .done
-	ifequal 12, .default
-	callasm PokemonColorEditorCommitDarkColor
-	sjump .reload
-
-.default
-	callasm PokemonColorEditorCommitDefault
-
-.reload
 	closetext
-	reloadmap
+	callasm EditPokemonAppearance
 	end
 
 .egg
@@ -449,60 +256,10 @@ PokemonColorEditorScript::
 	closetext
 	end
 
-PokemonColorEditorMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 12
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
-	dn 6, 2 ; rows, columns
-	db 8 ; spacing
-	dba PokemonColorEditorChoices
-	dbw BANK(@), NULL
-
-PokemonColorEditorChoices:
-	db "Red@"
-	db "Blue@"
-	db "Green@"
-	db "Brown@"
-	db "Yellow@"
-	db "Pink@"
-	db "Purple@"
-	db "Orange@"
-	db "Silver@"
-	db "Black@"
-	db "Gold@"
-	db "Default@"
-
-PokemonColorEditorColorOptions:
-	table_width 1
-	db PAL_COLOR_RED
-	db PAL_COLOR_BLUE
-	db PAL_COLOR_GREEN
-	db PAL_COLOR_BROWN
-	db PAL_COLOR_YELLOW
-	db PAL_COLOR_PINK
-	db PAL_COLOR_PURPLE
-	db PAL_COLOR_ORANGE
-	db PAL_COLOR_SILVER
-	db PAL_COLOR_BLACK
-	db PAL_COLOR_GOLD
-	assert_table_length NUM_CUSTOM_PALETTE_COLORS
-
 PokemonColorEditorConfirmText:
 	text "Change a #mon's"
 	line "colour?"
 	done
-
-PokemonColorEditorLightText:
-	text "Color 1 (lighter):"
-	prompt
-
-PokemonColorEditorDarkText:
-	text "Color 2 (darker):"
-	prompt
 
 PokemonColorEditorEggText:
 	text "Eggs can't change"
@@ -529,146 +286,6 @@ PokemonColorEditorSelectMon::
 	ld [wScriptVar], a
 	ret
 
-PokemonColorEditorStageLightColor::
-; Convert menu positions 1..11 through the stable encoded-color table.
-	ld a, [wScriptVar]
-	and a
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
-	ret nc
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, PokemonColorEditorColorOptions
-	add hl, de
-	ld a, [hl]
-	swap a
-	ld [wPokemonPaletteEditorColor1], a
-	ret
-
-PokemonColorEditorCommitDarkColor::
-; Commit only after both menu choices exist; the staged byte holds color 1.
-	ld a, [wScriptVar]
-	and a
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
-	ret nc
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, PokemonColorEditorColorOptions
-	add hl, de
-	ld c, [hl]
-	ld a, [wPokemonPaletteEditorColor1]
-	or c
-	jr PokemonColorEditorStorePair
-
-PokemonColorEditorCommitDefault::
-	xor a
-
-PokemonColorEditorStorePair:
-; a = encoded pair. wCurPartyMon remains the party-menu selection.
-	push af
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1PalettePair
-	call GetPartyLocation
-	pop af
-	ld [hl], a
-	ret
-
-PlayerRecreationGenderHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 9, 5
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 2, 1 ; rows, columns
-	db 5 ; spacing
-	dba .Text
-	dbw BANK(@), NULL
-
-.Text:
-	db "Male@"
-	db "Female@"
-
-PlayerRecreationComplexionHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 11, 5
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 2, 1 ; rows, columns
-	db 8 ; spacing
-	dba .Text
-	dbw BANK(@), NULL
-
-.Text:
-	db "Lighter@"
-	db "Darker@"
-
-PlayerRecreationColorHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 19, 11
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
-	dn 5, 2 ; rows, columns
-	db 9 ; spacing
-	dba PlayerColorTextChoices
-	dbw BANK(@), NULL
-
-PlayerColorTextChoices:
-	db "Red@"
-	db "Blue@"
-	db "Green@"
-	db "Yellow@"
-	db "Purple@"
-	db "Pink@"
-	db "Orange@"
-	db "Brown@"
-	db "Silver@"
-	db "Black@"
-
-PlayerRecreationColorOptions:
-	table_width 1
-	db PLAYER_COLOR_RED
-	db PLAYER_COLOR_BLUE
-	db PLAYER_COLOR_GREEN
-	db PLAYER_COLOR_YELLOW
-	db PLAYER_COLOR_PURPLE
-	db PLAYER_COLOR_PINK
-	db PLAYER_COLOR_ORANGE
-	db PLAYER_COLOR_BROWN
-	db PLAYER_COLOR_SILVER
-	db PLAYER_COLOR_DARK_GREY
-	assert_table_length NUM_PLAYER_BASE_COLORS
-
-PlayerRecreationGenderText:
-	text "What is your new"
-	line "gender?"
-	prompt
-
-PlayerRecreationSpriteText:
-	text "Now, who do you"
-	line "look like?"
-	prompt
-
-PlayerRecreationComplexionText:
-	text "What is your"
-	line "complexion?"
-	prompt
-
-PlayerRecreationColorText:
-	text "Now, what colour"
-	line "suits you?"
-	prompt
-
 PlayerRecreationChangeNameText:
 	text "Change your name?"
 	done
@@ -682,93 +299,6 @@ PlayerRecreationDoneText:
 	text "You are reborn"
 	line "<PLAYER>!"
 	prompt
-
-StoreScriptPlayerComplexionChoice::
-; Convert the 1-based complexion menu cursor into a temporary complexion.
-	ld a, [wScriptVar]
-StorePlayerComplexionChoiceFromA:
-	and a
-	jr z, .default
-	cp NUM_PLAYER_COMPLEXIONS + 1
-	jr nc, .default
-	dec a
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerComplexionChoice], a
-	ret
-
-StoreScriptPlayerColorChoice::
-; Convert the 1-based color cursor and complexion choice into wPlayerColor.
-	ld a, [wScriptVar]
-StorePlayerColorChoiceFromA:
-	and a
-	jr z, .default
-	cp NUM_PLAYER_BASE_COLORS + 1
-	jr nc, .default
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, PlayerRecreationColorOptions
-	add hl, de
-	; c is the base color; b is the complexion offset multiplier.
-	ld c, [hl]
-	ld a, [wPlayerComplexionChoice]
-	cp NUM_PLAYER_COMPLEXIONS
-	jr c, .got_complexion
-	xor a
-
-.got_complexion
-	ld b, a
-	ld a, b
-	and a
-	ld a, c
-	jr z, .save
-
-.add_complexion_offset
-	add NUM_PLAYER_BASE_COLORS
-	dec b
-	jr nz, .add_complexion_offset
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerColor], a
-	ret
-
-StoreScriptPlayerSpriteChoice::
-; In-game recreation should use the newly selected gender, not transient sprite
-; setup overrides such as female-to-male disguise state.
-	ld a, [wScriptVar]
-	and a
-	jr z, .default
-	cp 11
-	jr nc, .default
-	dec a
-	ld e, a
-	ld d, 0
-	ld hl, MalePlayerSpriteChoiceOptions
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .got_table
-	ld hl, FemalePlayerSpriteChoiceOptions
-
-.got_table
-	add hl, de
-	ld a, [hl]
-	jr .save
-
-.default
-	xor a
-
-.save
-	ld [wPlayerSpriteChoice], a
-	ret
 
 PlayerRecreationNamingScreen::
 	ld b, NAME_PLAYER

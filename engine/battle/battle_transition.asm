@@ -4,6 +4,7 @@ DEF BATTLETRANSITION_CAVE_STRONGER    EQU $09
 DEF BATTLETRANSITION_NO_CAVE          EQU $10
 DEF BATTLETRANSITION_NO_CAVE_STRONGER EQU $18
 DEF BATTLETRANSITION_FINISH           EQU $20
+DEF BATTLETRANSITION_VS               EQU $21
 
 DEF BATTLETRANSITION_SQUARE EQU '8' ; $fe
 DEF BATTLETRANSITION_BLACK  EQU '9' ; $ff
@@ -308,6 +309,16 @@ BattleTransitionJumptable:
 	; BATTLETRANSITION_FINISH
 	dw StartTrainerBattle_Finish ; 20
 
+	dw StartTrainerBattle_LoadPokeBallGraphics
+	dw StartTrainerBattle_SetUpBGMap
+	dw StartTrainerBattle_Flash
+	dw StartTrainerBattle_Flash
+	dw StartTrainerBattle_Flash
+	dw StartTrainerBattle_PlayVSIntro
+
+StartTrainerBattle_PlayVSIntro:
+	newfarjp PlayTrainerVSIntro
+
 ; transition animations
 	const_def
 	const TRANS_CAVE
@@ -331,6 +342,11 @@ StartTrainerBattle_DetermineWhichAnimation:
 	and a
 	jr z, .wild
 	farcall SetTrainerBattleLevel
+	newfarcall ShouldShowTrainerVSIntro
+	jr nc, .wild
+	ld a, BATTLETRANSITION_VS
+	ld [wJumptableIndex], a
+	ret
 
 .wild
 	ld b, PARTY_LENGTH

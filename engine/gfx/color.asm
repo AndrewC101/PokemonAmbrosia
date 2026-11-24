@@ -1028,22 +1028,24 @@ GetPlayerOrMonPalettePointer:
 	ret
 
 GetPlayerPalettePointer:
-	push de
 	ld a, [wInvading]
 	and a
 	jr z, .check_mark
 	ld hl, DeepRedPlayerPalette
-	jr .done
+	ret
 
 .check_mark
 	ld a, [wMarkOfGod]
 	and a
 	jr z, .normal
 	ld hl, GoldPlayerPalette
-	jr .done
+	ret
 
 .normal
 	ld a, [wPlayerColor]
+	; fallthrough
+GetPlayerPresetPalettePointer::
+	push de
 	cp NUM_PLAYER_COLORS
 	jr c, .got_color
 	xor a
@@ -1054,7 +1056,6 @@ GetPlayerPalettePointer:
 	ld d, 0
 	ld hl, RedPlayerPalette
 	add hl, de
-.done
 	pop de
 	ret
 

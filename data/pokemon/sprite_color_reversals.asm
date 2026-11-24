@@ -42,11 +42,12 @@ PokemonSpriteColorRules:
 	mon_color_rule SHELLDER, 1, 1
 	mon_color_rule CLOYSTER, 1, 1
 	mon_color_rule GASTLY, 1, 1
+	mon_color_rule GENGAR, 0, 1
 	mon_color_rule BAXCALIBUR, 1, 1
 	mon_color_rule EXEGGCUTE, 1, 1
 	mon_color_rule EXEGGUTOR, 1, 1
 	mon_color_rule MARILL, 1, 1
-	mon_color_rule AZUMARILL, 1, 1
+	mon_color_rule AZUMARILL, 1, 0
 	mon_color_rule SOLOSIS, 1, 1
 	mon_color_rule DUOSION, 1, 1
 	mon_color_rule RHYHORN, 1, 1
@@ -68,9 +69,9 @@ PokemonSpriteColorRules:
 	mon_color_rule DEINO, 1, 0
 	mon_color_rule PORYGON, 1, 0
 	mon_color_rule MEW, 1, 1
-	mon_color_rule TREECKO, 1, 1
-	mon_color_rule GROVYLE, 1, 1
-	mon_color_rule SCEPTILE, 1, 1
+	mon_color_rule TREECKO, 1, 0
+	mon_color_rule GROVYLE, 1, 0
+	mon_color_rule SCEPTILE, 1, 0
 	mon_color_rule RIOLU, 1, 1
 	mon_color_rule LUCARIO, 1, 1
 	mon_color_rule HOOTHOOT, 1, 1
@@ -79,6 +80,7 @@ PokemonSpriteColorRules:
 	mon_color_rule ARCTIBAX, 1, 1
 	mon_color_rule GENESECT, 1, 1
 	mon_color_rule MARSHTOMP, 1, 1
+	mon_color_rule SWAMPERT, 0, 1
 	mon_color_rule ESPEON, 1, 1
 	mon_color_rule MELTAN, 1, 1
 	mon_color_rule GLIGAR, 1, 1
@@ -92,6 +94,7 @@ PokemonSpriteColorRules:
 	mon_color_rule PILOSWINE, 1, 1
 	mon_color_rule KYOGRE, 1, 1
 	mon_color_rule SKARMORY, 1, 1
+	mon_color_rule KINGDRA, 0, 1
 	mon_color_rule WHIMSICOTT, 1, 1
 	mon_color_rule MILTANK, 1, 1
 	mon_color_rule LARVITAR, 1, 1

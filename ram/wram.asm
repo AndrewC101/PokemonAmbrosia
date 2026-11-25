@@ -127,7 +127,6 @@ wDebugFlags:: db
 wGameLogicPaused:: db
 wSpriteUpdatesEnabled:: db
 
-wPlayerComplexionChoice::
 wUnusedScriptByte:: db
 
 wMapTimeOfDay:: db
@@ -1377,6 +1376,13 @@ wDebugRoomGBID:: dw
 ENDU
 
 endc
+
+
+SECTION "Player Palette RAM", WRAM0
+
+wResolvedPlayerPalette:: ds 2 * COLOR_SIZE
+wLookRGBOffset:: db
+wLookRGBComponents:: ds 3
 
 
 SECTION "Video", WRAM0
@@ -3396,7 +3402,10 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+wPlayerCustomPaletteSignature:: dw
+wPlayerCustomSkin:: dw
+wPlayerCustomHair:: dw
+	ds 12
 
 wStepCount:: db
 wPoisonStepCount:: db

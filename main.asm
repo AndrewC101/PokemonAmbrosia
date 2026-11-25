@@ -321,6 +321,7 @@ INCLUDE "engine/battle/vs_intro.asm"
 SECTION "Appearance Preview", ROMX
 
 INCLUDE "engine/menus/look_preview.asm"
+INCLUDE "engine/menus/look_rgb.asm"
 
 
 SECTION "bank24", ROMX

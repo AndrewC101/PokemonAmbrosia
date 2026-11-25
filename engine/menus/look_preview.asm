@@ -5,6 +5,7 @@ DEF LOOK_PREVIEW_LIST_Y EQU 4
 DEF LOOK_PREVIEW_WALK_TILE EQU 7 * 7
 DEF LOOK_PREVIEW_CANCEL_F EQU 0
 DEF LOOK_PREVIEW_GENDER_F EQU 1
+DEF NUM_LOOK_SKIN_TONES EQU 7
 
 ChoosePlayerAppearanceInField::
 	call OpenFieldLookPreview
@@ -49,7 +50,8 @@ ChoosePlayerLook:
 	hlcoord 12, 4
 	call DrawLookPreviewPortrait
 	call DrawLookPreviewWalkingSprite
-	xor a
+	call InitPlayerCustomPalette
+	call ResolveCurrentLookPalette
 	call ApplyLookPlayerPalette
 
 	call GetLookSpriteMenu
@@ -57,14 +59,8 @@ ChoosePlayerLook:
 	call ResolveLookSprite
 	ld [wPlayerSpriteChoice], a
 
-	ld hl, ComplexionLookPreviewMenu
-	call ChooseLookOption
-	ld [wPlayerComplexionChoice], a
-
-	ld hl, ColorLookPreviewMenu
-	call ChooseLookOption
-	call ResolveLookColor
-	ld [wPlayerColor], a
+	call ChooseLookSkin
+	call ChooseLookHair
 	pop af
 	ld [wPlayerSpriteSetupFlags], a
 	ret
@@ -178,6 +174,9 @@ DrawLookPreviewWalkingSprite:
 	jp FillBoxWithByte
 
 ChooseLookOption:
+	xor a
+ChooseLookOptionAt:
+	ld [wMenuCursorY], a
 	ldh a, [hInMenu]
 	push af
 	ld a, TRUE
@@ -186,8 +185,6 @@ ChooseLookOption:
 	ld de, wLookPreviewMenu
 	ld bc, wLookPreviewMenuEnd - wLookPreviewMenu
 	call CopyBytes
-	xor a
-	ld [wMenuCursorY], a
 	call DrawLookPreviewOptions
 	call UpdateLookPreview
 	call CGBOnly_CopyTilemapAtOnce
@@ -242,6 +239,8 @@ ChooseLookOption:
 	xor 1 << PLAYERGENDER_FEMALE_F
 	ld [wPlayerGender], a
 	call PlayClickSFX
+	xor a
+	ld [wMenuCursorY], a
 	call GetLookSpriteMenu
 	jr .redraw
 
@@ -388,32 +387,32 @@ ResolveLookSprite:
 	ld a, [hl]
 	ret
 
-PreviewLookComplexion:
-	and a
-	jr z, ApplyLookPlayerPalette
-	ld a, PLAYER_COLOR_DARKER_RED
+PreviewLookPlayerColor:
+	ld b, a
+	ld a, [wLookPreviewOptionCount]
+	dec a
+	cp b
+	jr z, PreviewCurrentLookPalette
+	ld a, b
+	call ReadLookColorPreset
+	push bc
+	call ResolveCurrentLookPalette
+	pop bc
+	jp ApplyLookPreviewRGB
+
+PreviewCurrentLookPalette:
+	call ResolveCurrentLookPalette
 	jr ApplyLookPlayerPalette
 
-PreviewLookColor:
-	call ResolveLookColor
+ResolveCurrentLookPalette:
+	ld a, [wPlayerColor]
+	newfarcall GetPlayerPresetPalettePointer
+	jp ResolvePlayerCustomPalette
 
 ApplyLookPlayerPalette:
-	newfarcall GetPlayerPresetPalettePointer
 	ld de, wBGPals1 palette LOOK_PREVIEW_PALETTE
 	newfarcall LoadPalette_White_Col1_Col2_Black
 	jr ShowLookPreviewPalette
-
-ResolveLookColor:
-	ld e, a
-	ld d, 0
-	ld hl, PlayerRecreationColorOptions
-	add hl, de
-	ld a, [wPlayerComplexionChoice]
-	and a
-	ld a, [hl]
-	ret z
-	add NUM_PLAYER_BASE_COLORS
-	ret
 
 PreviewLightMonColor:
 	cp NUM_CUSTOM_PALETTE_COLORS
@@ -494,13 +493,13 @@ FemaleLookPreviewMenu:
 	dwcoord LOOK_PREVIEW_PLAYER_LIST_X, LOOK_PREVIEW_LIST_Y
 
 ComplexionLookPreviewMenu:
-	db NUM_PLAYER_COMPLEXIONS, FALSE
-	dw LookComplexionTitle, LookComplexionOptions, PreviewLookComplexion
+	db NUM_LOOK_SKIN_TONES + 1, FALSE
+	dw LookComplexionTitle, LookComplexionOptions, PreviewLookPlayerColor
 	dwcoord LOOK_PREVIEW_PLAYER_LIST_X, LOOK_PREVIEW_LIST_Y
 
 ColorLookPreviewMenu:
-	db NUM_PLAYER_BASE_COLORS, FALSE
-	dw LookColorTitle, PlayerColorTextChoices, PreviewLookColor
+	db NUM_PLAYER_BASE_COLORS + 1, FALSE
+	dw LookColorTitle, PlayerColorTextChoices, PreviewLookPlayerColor
 	dwcoord LOOK_PREVIEW_PLAYER_LIST_X, LOOK_PREVIEW_LIST_Y
 
 LightMonLookPreviewMenu:
@@ -518,10 +517,12 @@ LookSpriteTitle:
 LookComplexionTitle:
 	db "Choose a skin tone@"
 LookComplexionOptions:
-	db "Lighter@"
-	db "Darker@"
+	for tone_index, 1, NUM_LOOK_SKIN_TONES + 1
+		db "Tone {d:tone_index}@"
+	endr
+	db "Custom@"
 LookColorTitle:
-	db "Choose a colour@"
+	db "Choose hair colour@"
 LookLightMonTitle:
 	db "Lighter colour@"
 LookDarkMonTitle:
@@ -586,20 +587,34 @@ PlayerColorTextChoices:
 	db "Brown@"
 	db "Silver@"
 	db "Black@"
+	db "Custom@"
 
-PlayerRecreationColorOptions:
-	table_width 1
-	db PLAYER_COLOR_RED
-	db PLAYER_COLOR_BLUE
-	db PLAYER_COLOR_GREEN
-	db PLAYER_COLOR_YELLOW
-	db PLAYER_COLOR_PURPLE
-	db PLAYER_COLOR_PINK
-	db PLAYER_COLOR_ORANGE
-	db PLAYER_COLOR_BROWN
-	db PLAYER_COLOR_SILVER
-	db PLAYER_COLOR_DARK_GREY
+LookSkinPresets:
+	table_width COLOR_SIZE
+	RGB 31, 26, 20
+	RGB 29, 21, 16
+	RGB 27, 18, 12
+	RGB 23, 15, 09
+	RGB 20, 13, 05
+	RGB 15, 09, 05
+	RGB 10, 06, 04
+	assert_table_length NUM_LOOK_SKIN_TONES
+	dw -1
+
+LookHairPresets:
+	table_width COLOR_SIZE
+	RGB 31, 04, 01
+	RGB 10, 09, 31
+	RGB 07, 23, 03
+	RGB 31, 24, 05
+	RGB 17, 07, 25
+	RGB 31, 12, 20
+	RGB 31, 13, 00
+	RGB 15, 10, 03
+	RGB 17, 17, 17
+	RGB 08, 08, 08
 	assert_table_length NUM_PLAYER_BASE_COLORS
+	dw -1
 
 PokemonColorEditorChoices:
 	db "Red@"

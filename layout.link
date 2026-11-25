@@ -308,6 +308,7 @@ ROMX $7b
 ROMX $7c
 	"Battle Tower Trainer Data"
 	"Ecruteak Lugia Speech House Scripts"
+	"Appearance Preview"
 ROMX $7d
     "Crystal Events"
 	"Battle VS Intro"
@@ -328,6 +329,7 @@ WRAM0
 	"Unused Map Buffer"
 	align 8
 	"Overworld Map"
+	"Player Palette RAM"
 	align 4
 	"Video"
 WRAMX 1

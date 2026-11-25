@@ -127,6 +127,7 @@ _ResetWRAM:
 
 	xor a
 	ld [wOptions2], a       ; battle info/text off, speeds x1, RTC time flow
+	ld [wPlayerColor], a
 
 	ld hl, STARTOF(WRAMX)
 	ld bc, wGameData - STARTOF(WRAMX)
@@ -244,6 +245,7 @@ ResetWRAM_NewGamePlus:
 
 	xor a
 	ld [wOptions2], a       ; battle info/text off, speeds x1, RTC time flow
+	ld [wPlayerColor], a
 
 	ld hl, STARTOF(WRAMX)
 	ld bc, wGameData - STARTOF(WRAMX)

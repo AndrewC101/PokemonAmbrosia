@@ -1043,7 +1043,9 @@ GetPlayerPalettePointer:
 
 .normal
 	ld a, [wPlayerColor]
-	; fallthrough
+	call GetPlayerPresetPalettePointer
+	newfarjp ResolvePlayerCustomPalette
+
 GetPlayerPresetPalettePointer::
 	push de
 	cp NUM_PLAYER_COLORS

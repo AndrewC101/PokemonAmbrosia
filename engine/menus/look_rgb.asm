@@ -407,7 +407,7 @@ DrawLookRGBScreen:
 .Adjust:
 	db "← → Adjust@"
 .Buttons:
-	db "A OK      B Back  @"
+	db "A: OK      B: Back  @"
 
 DrawLookRGBSliders:
 	ld de, wLookRGBComponents

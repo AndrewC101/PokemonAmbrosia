@@ -322,9 +322,9 @@ DrawLookPreviewOptions:
 	jp PlaceString
 
 .Select:
-	db "A Confirm@"
+	db "A: Confirm@"
 .Cancel:
-	db "B Cancel@"
+	db "B: Cancel@"
 .GenderHint:
 	db "Select: Gender@"
 .Male:

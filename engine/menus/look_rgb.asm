@@ -384,11 +384,11 @@ DrawLookRGBScreen:
 	ld de, .Hair
 	jr .title
 .mon_title
-	ld de, .Light
+	ld de, .CustomRGB
 	ld a, [wLookRGBOffset]
 	and a
 	jr z, .title
-	ld de, .Dark
+	ld de, .CustomRGB
 .title
 	hlcoord 1, 1
 	call PlaceString
@@ -402,10 +402,8 @@ DrawLookRGBScreen:
 	db "Custom skin tone@"
 .Hair:
 	db "Custom hair colour@"
-.Light:
-	db "Custom light RGB@"
-.Dark:
-	db "Custom dark RGB@"
+.CustomRGB:
+	db "Custom RGB@"
 .Adjust:
 	db "← → Adjust@"
 .Buttons:

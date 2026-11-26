@@ -268,11 +268,10 @@ _CGB_StatsScreenHPPals:
 	ld bc, HPBarPals
 	add hl, bc
 	call LoadPalette_White_Col1_Col2_Black ; hp palette
-	ld a, [wTempMonPalettePair]
-	ld l, a
+	ld hl, wTempMonPokerusStatus
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
-	newfarcall LoadMonNormalShinyOrCustomPalette ; mon palette
+	newfarcall LoadMonRecordPalette ; mon palette
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
@@ -946,13 +945,11 @@ _CGB_Evolution:
 	ld c, l
 	ld b, h
 	push bc
-	ld bc, MON_PALETTE_PAIR - MON_DVS
+	ld bc, MON_POKERUS - MON_DVS
 	add hl, bc
-	ld a, [hl]
-	ld l, a
 	pop bc
 	ld a, [wPlayerHPPal]
-	newfarcall LoadMonNormalShinyOrCustomPalette
+	newfarcall LoadMonRecordPalette
 	ld hl, BattleObjectPals
 	ld de, wOBPals1 palette PAL_BATTLE_OB_GRAY
 	ld bc, 6 palettes

@@ -637,12 +637,10 @@ LoadPinkPage:
 	hlcoord 0, 12
 	call PlaceString
 	ld a, [wTempMonPokerusStatus]
-	ld b, a
-	and $f
-	jr nz, .HasPokerus
-	ld a, b
-	and $f0
+	and MON_POKERUS_MASK
 	jr z, .NotImmuneToPkrs
+	cp MON_POKERUS_CURED
+	jr c, .HasPokerus
 	hlcoord 8, 8
 	ld [hl], '.' ; Pokérus immunity dot
 .NotImmuneToPkrs:
@@ -1002,11 +1000,9 @@ LoadBluePage:
 	hlcoord 2, 13
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
-	and a
+	and MON_OT_GENDER_MASK
 	jr z, .done
-	cp $7f
-	jr z, .done
-	and CAUGHT_GENDER_MASK
+	cp MON_OT_MALE
 	ld a, '♂'
 	jr z, .got_gender
 	ld a, '♀'

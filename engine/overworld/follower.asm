@@ -91,16 +91,17 @@ SelectPartyFollower::
     ld [wFollowerCandidateDVs], a
     ld a, [hl]
     ld [wFollowerCandidateDVs + 1], a
-    ld hl, MON_PALETTE_PAIR
-    add hl, de
-    ld a, [hl]
-    ld [wFollowerCandidatePair], a
     scf
     ret
 .invalid
     call ClearFollowerSelection
     and a
     ret
+
+GetFollowerCandidatePalette:
+    ld a, [wFollowerCandidateIndex]
+    ld hl, wPartyMon1PokerusStatus
+    jp GetPartyLocation
 
 GetPokemonFollowerObject::
 ; Carry = verified live ownership; bc = struct, a = live index.
@@ -381,9 +382,22 @@ ReconcilePartyFollower::
     ld hl, wFollowerDVs + 1
     cp [hl]
     jr nz, .new_colors
-    ld a, [wFollowerCandidatePair]
-    ld hl, wFollowerCustomPair
+    call GetFollowerCandidatePalette
+    ld de, wFollowerCustomRecord
+    ld a, [de]
+    xor [hl]
+    and ~MON_POKERUS_MASK
+    jr nz, .new_colors
+    inc de
+    inc hl
+    ld a, [de]
     cp [hl]
+    jr nz, .new_colors
+    inc de
+    inc hl
+    ld a, [de]
+    xor [hl]
+    and ~MON_OT_GENDER_MASK
     jr nz, .new_colors
     ld a, [wFollowerFlags]
     bit FOLLOWER_ENABLED_F, a
@@ -393,8 +407,10 @@ ReconcilePartyFollower::
     ld [wFollowerDVs], a
     ld a, [wFollowerCandidateDVs + 1]
     ld [wFollowerDVs + 1], a
-    ld a, [wFollowerCandidatePair]
-    ld [wFollowerCustomPair], a
+    call GetFollowerCandidatePalette
+    ld de, wFollowerCustomRecord
+    ld bc, MON_PALETTE_RECORD_SIZE
+    call CopyBytes
     ld hl, wFollowerFlags
     set FOLLOWER_ENABLED_F, [hl]
     call PrepareFollowerColors

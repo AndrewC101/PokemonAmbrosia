@@ -100,13 +100,11 @@ LoadFollowerOverworldPalette::
     jp FarCopyWRAM
 
 PrepareFollowerColors::
-; wFollowerSpecies/DVs/custom pair -> four unbanked middle-color bytes.
-    ld a, [wFollowerCustomPair]
-    ld l, a
+    ld hl, wFollowerCustomRecord
     ld a, [wFollowerSpecies]
     ld bc, wFollowerDVs
     ld de, wFollowerMiddleColors
-    newfarcall CopyMonNormalShinyOrCustomMiddleColors
+    newfarcall CopyMonRecordMiddleColors
     ld a, [wFollowerSpecies]
     call ShouldReverseMonSpriteColors
     jp nc, LoadFollowerOverworldPalette

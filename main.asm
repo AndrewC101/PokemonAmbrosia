@@ -318,10 +318,16 @@ SECTION "Battle VS Intro", ROMX
 INCLUDE "engine/battle/vs_intro.asm"
 
 
-SECTION "Appearance Preview", ROMX
+SECTION "Appearance Preview", ROMX, BANK[122]
 
 INCLUDE "engine/menus/look_preview.asm"
 INCLUDE "engine/menus/look_rgb.asm"
+
+
+SECTION "Pokemon Palette Codec", ROMX, BANK[122]
+
+INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
+INCLUDE "engine/gfx/pokemon_rgb_codec.asm"
 
 
 SECTION "bank24", ROMX
@@ -635,7 +641,6 @@ SECTION "Battle Tower Trainer Data", ROMX
 INCLUDE "data/battle_tower/unknown.asm"
 INCLUDE "engine/player_sprite_choice.asm"
 INCLUDE "engine/pokegear/map_name.asm"
-INCLUDE "engine/gfx/pokemon_custom_palettes.asm"
 INCLUDE "engine/overworld/multi_select_menu.asm"
 INCLUDE "engine/menus/game_speed_menu.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"

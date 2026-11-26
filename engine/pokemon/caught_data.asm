@@ -70,15 +70,6 @@ CheckPartyFullAfterContest:
 	ld a, [hl]
 	ld [wCurPartyLevel], a
 	call SetCaughtData
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1CaughtLocation
-	call GetPartyLocation
-	ld a, [hl]
-	and CAUGHT_GENDER_MASK
-	ld b, LANDMARK_NATIONAL_PARK
-	or b
-	ld [hl], a
 	xor a
 	ld [wContestMonSpecies], a
 	and a ; BUGCONTEST_CAUGHT_MON
@@ -128,13 +119,6 @@ CheckPartyFullAfterContest:
 	ld a, [wBufferMonLevel]
 	ld [wCurPartyLevel], a
 	call SetBoxMonCaughtData
-	ld hl, wBufferMonCaughtLocation
-	ld a, [hl]
-	and CAUGHT_GENDER_MASK
-	ld b, LANDMARK_NATIONAL_PARK
-	or b
-	ld [hl], a
-	newfarcall UpdateStorageBoxMonFromTemp
 	xor a
 	ld [wContestMon], a
 	ld a, BUGCONTEST_BOXED_MON
@@ -320,31 +304,12 @@ SetCaughtData:
 	ld hl, wPartyMon1PalettePair
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
-	ld a, MON_PALETTE_DEFAULT
-	ld [hli], a
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	cp MAP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-	ld a, b
-	cp GROUP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-
-	ld a, [wBackupMapGroup]
-	ld b, a
-	ld a, [wBackupMapNumber]
-	ld c, a
-
-.NotPokecenter2F:
-	call GetWorldMapLocation
-	ld b, a
 	ld a, [wPlayerGender]
-	rrca ; shift bit 0 (PLAYERGENDER_FEMALE_F) to bit 7 (CAUGHT_GENDER_MASK)
-	or b
-	ld [hl], a
-	ret
+	bit PLAYERGENDER_FEMALE_F, a
+	ld a, MON_OT_MALE
+	jr z, StoreMonCaughtGender
+	ld a, MON_OT_FEMALE
+	jr StoreMonCaughtGender
 
 SetBoxMonCaughtData:
 	ld hl, wBufferMonPalettePair
@@ -364,12 +329,20 @@ SetGiftPartyMonCaughtData:
 	call GetPartyLocation
 	pop bc
 SetGiftMonCaughtData:
-	ld a, MON_PALETTE_DEFAULT
+	bit 0, b
+	ld a, MON_OT_MALE
+	jr z, StoreMonCaughtGender
+	ld a, MON_OT_FEMALE
+
+StoreMonCaughtGender:
+	ld b, a
+	dec hl
+	ld a, [hl]
+	and MON_POKERUS_MASK
 	ld [hli], a
-	ld a, LANDMARK_GIFT
-	rrc b
-	or b
-	ld [hl], a
+	xor a
+	ld [hli], a
+	ld [hl], b
 	ret
 
 SetEggMonCaughtData:
@@ -386,23 +359,9 @@ SetEggMonCaughtData:
 GetCaughtGender:
 	ld hl, MON_CAUGHTGENDER
 	add hl, bc
-
 	ld a, [hl]
-	and CAUGHT_LOCATION_MASK
-	jr z, .genderless
-	cp LANDMARK_EVENT
-	jr z, .genderless
-
-	ld a, [hl]
-	and CAUGHT_GENDER_MASK
-	jr nz, .male
-	ld c, CAUGHT_BY_GIRL
-	ret
-
-.male
-	ld c, CAUGHT_BY_BOY
-	ret
-
-.genderless
-	ld c, CAUGHT_BY_UNKNOWN
+	and MON_OT_GENDER_MASK
+	rlca
+	rlca
+	ld c, a
 	ret

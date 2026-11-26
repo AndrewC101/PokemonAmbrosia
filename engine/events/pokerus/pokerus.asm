@@ -2,6 +2,8 @@ GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
+	and a
+	ret z
 	ld b, a
 	ld de, PARTYMON_STRUCT_LENGTH
 ; Check to see if any of your Pokemon already has Pokerus.
@@ -10,8 +12,11 @@ GivePokerusAndConvertBerries:
 ; a party member has an active infection.
 .loopMons
 	ld a, [hl]
-	and $f
-	jr nz, .TrySpreadPokerus
+	and MON_POKERUS_MASK
+	jr z, .next_mon
+	cp MON_POKERUS_CURED
+	jr c, .TrySpreadPokerus
+.next_mon
 	add hl, de
 	dec b
 	jr nz, .loopMons
@@ -64,26 +69,9 @@ GivePokerusAndConvertBerries:
 	ld hl, wPartyMon1PokerusStatus
 	call GetPartyLocation ; get pokerus byte of random mon
 	ld a, [hl]
-	and $f0
-	ret nz ; if it already has pokerus, do nothing
-.randomPokerusLoop ; Simultaneously sample the strain and duration
-	call Random
-	and a
-	jr z, .randomPokerusLoop
-	ld b, a
-	and $f0
-	jr z, .load_pkrs
-	ld a, b
-	and $7
-	inc a
-.load_pkrs
-	ld b, a ; this should come before the label
-	swap b
-	and $3
-	inc a
-	add b
-	ld [hl], a
-	ret
+	and MON_POKERUS_MASK
+	ret nz
+	jr .infectMon
 
 .TrySpreadPokerus:
 	call Random
@@ -94,7 +82,6 @@ GivePokerusAndConvertBerries:
 	cp 1
 	ret z ; only one mon, nothing to do
 
-	ld c, [hl]
 	ld a, b
 	cp 2
 	jr c, .checkPreviousMonsLoop ; no more mons after this one, go backwards
@@ -105,11 +92,10 @@ GivePokerusAndConvertBerries:
 .checkFollowingMonsLoop
 	add hl, de
 	ld a, [hl]
-	and a
+	and MON_POKERUS_MASK
 	jr z, .infectMon
-	ld c, a
-	and $3
-	ret z ; if mon has cured pokerus, stop searching
+	cp MON_POKERUS_CURED
+	ret nc
 	dec b ; go on to next mon
 	ld a, b
 	cp 1
@@ -127,23 +113,21 @@ GivePokerusAndConvertBerries:
 	sbc d
 	ld h, a
 	ld a, [hl]
-	and a
+	and MON_POKERUS_MASK
 	jr z, .infectMon
-	ld c, a
-	and $3
-	ret z ; if mon has cured pokerus, stop searching
+	cp MON_POKERUS_CURED
+	ret nc
 	inc b ; go on to next mon
 	jr .checkPreviousMonsLoop
 
 .infectMon
-	ld a, c
-	and $f0
-	ld b, a
-	ld a, c
-	swap a
-	and $3
+	call Random
+	and 3
 	inc a
-	add b
+	ld b, a
+	ld a, [hl]
+	and ~MON_POKERUS_MASK
+	or b
 	ld [hl], a
 	ret
 

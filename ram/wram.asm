@@ -666,7 +666,7 @@ wTimeSetBufferEnd::
 NEXTU
 ; hall of fame temp struct
 wHallOfFameTemp:: hall_of_fame wHallOfFameTemp
-wHOFTeamPalettePairs:: ds PARTY_LENGTH
+wHOFTeamPalettePairs:: ds PARTY_LENGTH * MON_PALETTE_RECORD_SIZE
 wHOFTeamPalettePairsEnd::
 	assert wHOFTeamPalettePairs - wHallOfFameTemp == HOF_LENGTH
 	assert wHOFTeamPalettePairsEnd - wHallOfFameTemp <= 200
@@ -1019,7 +1019,7 @@ SECTION UNION "Overworld Map", WRAM0
 ; Hall of Fame data
 wHallOfFamePokemonList:: hall_of_fame wHallOfFamePokemonList
 ; Ceremony-only palette pairs follow the saved-format buffer without extending it.
-wHallOfFamePalettePairs:: ds PARTY_LENGTH
+wHallOfFamePalettePairs:: ds PARTY_LENGTH * MON_PALETTE_RECORD_SIZE
 wHallOfFamePalettePairsEnd::
 	assert wHallOfFamePalettePairs - wHallOfFamePokemonList == HOF_LENGTH
 
@@ -1383,6 +1383,7 @@ SECTION "Player Palette RAM", WRAM0
 wResolvedPlayerPalette:: ds 2 * COLOR_SIZE
 wLookRGBOffset:: db
 wLookRGBComponents:: ds 3
+wMonResolvedPalette:: ds 2 * COLOR_SIZE
 
 
 SECTION "Video", WRAM0
@@ -1802,6 +1803,7 @@ wLookPreviewOptions:: dw
 wLookPreviewUpdate:: dw
 wLookPreviewCursor:: dw
 wLookPreviewMenuEnd::
+wLookMonPalette:: ds MON_PALETTE_RECORD_SIZE
 ENDU
 wMenuDataEnd::
 

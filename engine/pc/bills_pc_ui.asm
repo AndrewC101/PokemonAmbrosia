@@ -700,12 +700,13 @@ BillsPC_GetStorageBoxMonIconData:
 	inc de
 	ld a, [hli]
 	ld [de], a
-	ld bc, SAVEMON_PALETTE_PAIR - SAVEMON_DVS - 2
+	ld bc, SAVEMON_PKRUS - SAVEMON_DVS - 2
 	add hl, bc
-	ld a, [hl]
-	ld [wBufferMonPalettePair], a
-	ld bc, SAVEMON_ALTSPECIES - SAVEMON_PALETTE_PAIR
-	add hl, bc
+	ld de, wBufferMonPokerusStatus
+	ld bc, MON_PALETTE_RECORD_SIZE
+	call CopyBytes
+	inc hl
+	assert SAVEMON_ALTSPECIES == SAVEMON_PKRUS + MON_PALETTE_RECORD_SIZE + 1
 	ld a, [hl]
 	and a
 	jr nz, .got_species
@@ -1178,11 +1179,10 @@ _GetCursorMon:
 
 	; Colors
 	ld bc, wBufferMonDVs
-	ld a, [wBufferMonPalettePair]
-	ld l, a
+	ld hl, wBufferMonPokerusStatus
 	ld a, [wBufferMonAltSpecies]
 	ld de, wBillsPC_PokepicPal
-	newfarcall CopyMonNormalShinyOrCustomMiddleColors
+	newfarcall CopyMonRecordMiddleColors
 
 	; Show or hide item icon
 	ld hl, wShadowOAMSprite30
@@ -1262,12 +1262,12 @@ _GetCursorMon:
 	ld [hl], $43
 .not_shiny
 	ld a, [wBufferMonPokerusStatus]
-	and a
+	and MON_POKERUS_MASK
 	inc hl
 	jr z, .did_pokerus
 	ld [hl], '.'
-	and $f
-	jr z, .did_pokerus
+	cp MON_POKERUS_CURED
+	jr nc, .did_pokerus
 	ld [hl], $40 ; Rs
 .did_pokerus
 

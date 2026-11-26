@@ -8163,7 +8163,7 @@ GiveExperiencePoints:
 	ld a, MON_POKERUS
 	call GetPartyParamLocation
 	ld a, [hl]
-	and a
+	and MON_POKERUS_MASK
 	pop bc
 	pop hl
 	jr z, .stat_exp_awarded

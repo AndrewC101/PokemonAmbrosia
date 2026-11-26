@@ -51,15 +51,13 @@ ApplyFieldMovePreviewPalette::
 	ld b, h
 	ld c, l
 	push bc
-	ld bc, MON_PALETTE_PAIR - MON_DVS
+	ld bc, MON_POKERUS - MON_DVS
 	add hl, bc
-	ld a, [hl]
-	ld l, a
 	pop bc
 	ld a, [wCurPartySpecies]
 
 	ld de, wBGPals1 palette PAL_BG_TEXT
-	newfarcall LoadMonNormalShinyOrCustomPalette
+	newfarcall LoadMonRecordPalette
 	farcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a

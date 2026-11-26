@@ -1,71 +1,8 @@
-LoadMonNormalShinyOrCustomPalette::
-; Load a complete CGB Pokemon palette.
-; Input: a = species, or zero for the player palette
-;        bc = DV pointer
-;        de = destination palette buffer
-;        l = encoded light/dark custom color pair
-; Output: de advances by one palette, as in LoadPalette_White_Col1_Col2_Black.
-; Clobbers: af, bc, hl. The far calls preserve de and the four scratch bytes
-; above sp until the bank-2 palette loader consumes them.
-	and a
-	jr z, .default
-	cp NUM_POKEMON + 1
-	jr nc, .default ; Eggs and reserved species always use their own palettes.
-
-	; A valid custom pair takes precedence over the DV-based shiny palette.
-	; Save the species so the default branch can still perform its normal lookup.
-	push af
-	call .IsCustomPairValid
-	jr nc, .invalid
-	pop af ; discard the saved species after validation
-
-	; push rr stores the low register first at [sp]. Push dark before light so
-	; the four WRAM0 stack bytes read as light lo/hi, then dark lo/hi.
-	ld a, l
-	push af ; keep the encoded pair above the four-byte palette scratch
-	and $f
-	ld hl, PokemonCustomDarkColors
-	call .GetColor
-	push bc
-	ld hl, sp+3
-	ld a, [hl]
-	swap a
-	and $f
-	ld hl, PokemonCustomLightColors
-	call .GetColor
-	push bc
-	ld hl, sp+0
-	newfarcall LoadPalette_White_Col1_Col2_Black
-	add sp, 4
-	pop af
-	ret
-
-.invalid
-	pop af
-.default
-	; The pointer and loader both live in bank 2. Resolving the pointer first,
-	; then making a second banked call, keeps its hl result valid for the load.
+LoadMonDefaultPalette:
 	newfarcall GetPlayerOrMonPalettePointer
-	newfarcall LoadPalette_White_Col1_Col2_Black
-	ret
+	newfarjp LoadPalette_White_Col1_Col2_Black
 
-.IsCustomPairValid:
-; Return carry when both nibbles in l name one of the eleven shared colors.
-	ld a, l
-	and $f
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS + 1
-	ret nc
-	ld a, l
-	swap a
-	and $f
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS + 1 ; carry denotes a valid high nibble
-	ret
-
-.GetColor:
-; Read one little-endian RGB word. Input: a = index 1..11, hl = table.
-; Output: c = low byte, b = high byte.
+GetMonPresetColor:
 	dec a
 	add a
 	ld c, a
@@ -76,131 +13,134 @@ LoadMonNormalShinyOrCustomPalette::
 	ld b, [hl]
 	ret
 
-CopyMonNormalShinyOrCustomMiddleColors::
-; Copy only the two middle colors for Bill's PC palette animation.
-; Inputs match LoadMonNormalShinyOrCustomPalette; output de advances four bytes.
-; Clobbers af, bc, hl. Default data is copied bank-safely from bank 2.
+LoadMonRecordPalette::
+	push de
+	ld de, wMonResolvedPalette
+	call CopyMonRecordMiddleColors
+FinishMonRecordPalette:
+	pop de
+	ld hl, wMonResolvedPalette
+	newfarjp LoadPalette_White_Col1_Col2_Black
+
+CopyMonRecordMiddleColors::
 	and a
-	jr z, .default
+	jr z, CopyMonDefaultMiddleColors
 	cp NUM_POKEMON + 1
-	jr nc, .default
-	push af
-	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
-	jr nc, .invalid
-	pop af
+	jr nc, CopyMonDefaultMiddleColors
+	push hl
+	push de
+	call CopyMonDefaultMiddleColors
+	jr ApplyMonRecordMiddleColors
 
-	ld a, l
-	push af
-	and $f
-	ld hl, PokemonCustomDarkColors
-	call LoadMonNormalShinyOrCustomPalette.GetColor
-	push bc
-	ld hl, sp+3
-	ld a, [hl]
-	swap a
-	and $f
-	ld hl, PokemonCustomLightColors
-	call LoadMonNormalShinyOrCustomPalette.GetColor
-	push bc
-	ld hl, sp+0
-	ld bc, 2 * COLOR_SIZE
-	call CopyBytes
-	add sp, 4
-	pop af
-	ret
-
-.invalid
-	pop af
-.default
+CopyMonDefaultMiddleColors:
 	newfarcall GetPlayerOrMonPalettePointer
+CopyNativeMonMiddleColors:
 	ld bc, 2 * COLOR_SIZE
 	ld a, BANK(PokemonPalettes)
 	jp FarCopyBytes
 
+ApplyMonRecordMiddleColors:
+	pop de
+	pop hl
+	push de
+	call ReadMonPaletteChoices
+	pop hl
+	push de
+	ld de, PokemonCustomLightColors
+	call ApplyMonColorChoice
+	pop bc
+	ld de, PokemonCustomDarkColors
+	call ApplyMonColorChoice
+	ld d, h
+	ld e, l
+	ret
+
+ApplyMonColorChoice:
+	bit MON_RGB_CHOICE_F, b
+	jr nz, .rgb
+	ld a, c
+	and a
+	jr z, .keep
+	push hl
+	ld h, d
+	ld l, e
+	call GetMonPresetColor
+	pop hl
+	jr .write
+.rgb
+	call ExpandMonRGBChoice
+.write
+	ld [hl], c
+	inc hl
+	ld [hl], b
+	inc hl
+	ret
+.keep
+	inc hl
+	inc hl
+	ret
+
 LoadBattleMonNormalShinyOrCustomPalette::
-; The battle_struct has no PalettePair, so use the active owning party slot.
-; Transform changes the displayed species/DVs but deliberately keeps this pair.
 	ld a, [wTempBattleMonSpecies]
 	and a
 	jr z, .player
-	ld hl, wPartyMon1PalettePair
+	ld hl, wPartyMon1PokerusStatus
 	ld a, [wCurBattleMon]
 	call GetPartyLocation
-	ld a, [hl]
-	push af
+	push hl
 	newfarcall GetPartyMonDVs
 	ld c, l
 	ld b, h
-	pop af
-	ld l, a
+	pop hl
 	ld a, [wTempBattleMonSpecies]
-	jp LoadMonNormalShinyOrCustomPalette
+	jp LoadMonRecordPalette
 
 .player
-	ld l, MON_PALETTE_DEFAULT
-	jp LoadMonNormalShinyOrCustomPalette
+	jp LoadMonDefaultPalette
 
 LoadEnemyMonNormalShinyOrCustomPalette::
-; Trainer and link opponents own wOTPartyMons. Wild Pokemon have no stored pair.
 	ld a, [wTempEnemyMonSpecies]
 	and a
 	jr nz, .pokemon
-	; A zero enemy species normally selects the opposing trainer palette. CAL
-	; classes mirror the player and retain the zero-species player sentinel.
 	ld a, [wTrainerClass]
 	cp CAL
 	jr z, .player
 	cp CAL_F
 	jr z, .player
 	newfarcall GetTrainerPalettePointer
-	newfarcall LoadPalette_White_Col1_Col2_Black
-	ret
+	newfarjp LoadPalette_White_Col1_Col2_Black
 
 .pokemon
-	ld l, MON_PALETTE_DEFAULT
-	ld a, [wBattleMode]
-	cp TRAINER_BATTLE
-	jr nz, .got_pair
-	ld hl, wOTPartyMon1PalettePair
-	ld a, [wCurOTMon]
-	call GetPartyLocation
-	ld l, [hl]
-.got_pair
-	ld a, l
-	push af
 	newfarcall GetEnemyMonDVs
 	ld c, l
 	ld b, h
-	pop af
-	ld l, a
+	ld a, [wBattleMode]
+	cp TRAINER_BATTLE
+	jr nz, .wild
+	push bc
+	ld hl, wOTPartyMon1PokerusStatus
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	pop bc
+	push de
+	ld de, wMonResolvedPalette
+	call CopyEnemyMonRecordMiddleColors
+	jp FinishMonRecordPalette
+.wild
 	ld a, [wTempEnemyMonSpecies]
-	push af
-	ld a, [wOtherTrainerClass]
-	cp LORD_OAK
-	jr z, .lord_oak
-	pop af
-	jp LoadMonNormalShinyOrCustomPalette
-
-.lord_oak
-	; A custom pair overrides Lord Oak's forced-shiny rule as it does DV shininess.
-	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
-	jr nc, .lord_oak_shiny
-	pop af
-	jp LoadMonNormalShinyOrCustomPalette
-
-.lord_oak_shiny
-	; With no custom pair, retain Lord Oak's existing forced-shiny palette.
-	pop af
 	newfarcall GetEnemyMonNormalOrShinyPalettePointer
-	newfarcall LoadPalette_White_Col1_Col2_Black
-	ret
-
+	newfarjp LoadPalette_White_Col1_Col2_Black
 .player
-	; CAL/CAL_F comparisons leave a holding the trainer class; restore the zero
-	; species sentinel so the shared loader selects the current player palette.
 	xor a
-	ld l, MON_PALETTE_DEFAULT
-	jp LoadMonNormalShinyOrCustomPalette
+	jp LoadMonDefaultPalette
+
+CopyEnemyMonRecordMiddleColors:
+	push hl
+	push de
+	ld a, [wTempEnemyMonSpecies]
+	newfarcall GetEnemyMonNormalOrShinyPalettePointer
+	call CopyNativeMonMiddleColors
+	jp ApplyMonRecordMiddleColors
 
 StoreCurrentTrainerMonPalette::
 ; Input: hl = light color in the banked trainer record.
@@ -243,6 +183,13 @@ StoreCurrentTrainerMonPalette::
 	ld hl, wOTPartyMon1PalettePair
 	call GetPartyLocation
 	pop af
+	ld [hli], a
+	ld a, [hl]
+	and MON_OT_GENDER_MASK
+	ld [hld], a
+	dec hl
+	ld a, [hl]
+	and MON_POKERUS_MASK
 	ld [hl], a
 	pop hl
 	pop de
@@ -254,8 +201,8 @@ CopyPlayerPartyPalettePairsToOT::
 	push bc
 	push de
 	push hl
-	ld hl, wPartyMon1PalettePair
-	ld de, wOTPartyMon1PalettePair
+	ld hl, wPartyMon1PokerusStatus
+	ld de, wOTPartyMon1PokerusStatus
 	call CopyPartyPalettePairs
 	pop hl
 	pop de
@@ -268,8 +215,8 @@ CopyOTPartyPalettePairsToPlayer::
 	push bc
 	push de
 	push hl
-	ld hl, wOTPartyMon1PalettePair
-	ld de, wPartyMon1PalettePair
+	ld hl, wOTPartyMon1PokerusStatus
+	ld de, wPartyMon1PokerusStatus
 	call CopyPartyPalettePairs
 	pop hl
 	pop de
@@ -278,20 +225,35 @@ CopyOTPartyPalettePairsToPlayer::
 	ret
 
 CopyPartyPalettePairs:
-; Copy the non-contiguous field across all six fixed party struct slots.
-; Low-byte additions explicitly propagate carry into each pointer's high byte.
 	ld b, PARTY_LENGTH
 .loop
-	ld a, [hl]
+	ld a, [de]
+	and MON_POKERUS_MASK
+	ld c, a
+	ld a, [hli]
+	and ~MON_POKERUS_MASK
+	or c
 	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [de]
+	and MON_OT_GENDER_MASK
+	ld c, a
+	ld a, [hli]
+	and ~MON_OT_GENDER_MASK
+	or c
+	ld [de], a
+	inc de
 	ld a, l
-	add PARTYMON_STRUCT_LENGTH
+	add PARTYMON_STRUCT_LENGTH - MON_PALETTE_RECORD_SIZE
 	ld l, a
 	jr nc, .hl_ok
 	inc h
 .hl_ok
 	ld a, e
-	add PARTYMON_STRUCT_LENGTH
+	add PARTYMON_STRUCT_LENGTH - MON_PALETTE_RECORD_SIZE
 	ld e, a
 	jr nc, .de_ok
 	inc d
@@ -301,20 +263,18 @@ CopyPartyPalettePairs:
 	ret
 
 BuildHallOfFamePalettePairs::
-; Build a transient palette list in the same egg-filtered order as the ceremony.
-; The Hall of Fame record itself remains unchanged. Clobbers af, bc, de, hl.
 	ld de, wHallOfFamePalettePairs
 
 BuildHallOfFamePalettePairsAtDE::
 	push de
 	ld h, d
 	ld l, e
-	ld bc, PARTY_LENGTH
+	ld bc, PARTY_LENGTH * MON_PALETTE_RECORD_SIZE
 	xor a
 	call ByteFill
 	pop de
 	ld hl, wPartySpecies
-	ld c, 0 ; physical party slot; de advances only for displayed Pokemon
+	ld c, 0
 .loop
 	ld a, [hli]
 	cp -1
@@ -324,42 +284,34 @@ BuildHallOfFamePalettePairsAtDE::
 	push hl
 	push bc
 	ld a, c
-	ld hl, wPartyMon1PalettePair
+	ld hl, wPartyMon1PokerusStatus
 	call GetPartyLocation
-	ld a, [hl]
+	ld bc, MON_PALETTE_RECORD_SIZE
+	call CopyBytes
 	pop bc
 	pop hl
-	ld [de], a
-	inc de
 .next
 	inc c
 	jr .loop
 
 LoadHallOfFameMonPalette::
-; Load the current ceremony mon's complete palette into CGB BG palette 0.
-; Species and DVs were already copied from the Hall of Fame record.
 	ld a, [wHallOfFameMonCounter]
 	cp PARTY_LENGTH
 	jr nc, .default
-	ld e, a
-	ld d, 0
 	ld hl, wHallOfFamePalettePairs
-	add hl, de
-	ld l, [hl]
-	jr .load
-
-.default
-	ld l, MON_PALETTE_DEFAULT
-.load
+	ld bc, MON_PALETTE_RECORD_SIZE
+	call AddNTimes
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
 	ld de, wBGPals1
-	jp LoadMonNormalShinyOrCustomPalette
+	jp LoadMonRecordPalette
+.default
+	ld a, [wCurPartySpecies]
+	ld bc, wTempMonDVs
+	ld de, wBGPals1
+	jp LoadMonDefaultPalette
 
 OverridePartyMenuIconPaletteWithCustom::
-; Input: a/e = the species/shiny icon palette from GetMenuMonIconPalette.
-; Output: a/e = that fallback, or the six-color approximation for a custom pair.
-; Preserve bc, de except for e, and hl; wCurPartyMon identifies the owner.
 	push bc
 	push de
 	push hl
@@ -367,82 +319,93 @@ OverridePartyMenuIconPaletteWithCustom::
 	cp EGG
 	jr z, .fallback
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1PalettePair
+	ld hl, wPartyMon1PokerusStatus
 	call GetPartyLocation
-	ld l, [hl]
-	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
-	jr nc, .fallback
-
 	ld a, [wCurPartySpecies]
-	call GetCustomMenuMonColor
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, .ColorMap
-	add hl, bc
-	ld c, [hl]
+	call GetMonRecordIconFamily
+	jr nc, .fallback
 	pop hl
 	pop de
-	ld a, c
 	ld e, a
-	jr .done
-
+	pop bc
+	ret
 .fallback
 	pop hl
 	pop de
 	ld a, e
-.done
 	pop bc
 	ret
 
-.ColorMap:
-	table_width 1
-	db PAL_ICON_RED    ; red
-	db PAL_ICON_BLUE   ; blue
-	db PAL_ICON_GREEN  ; green
-	db PAL_ICON_BROWN  ; brown
-	db PAL_ICON_SILVER ; silver
-	db PAL_ICON_GOLD   ; yellow
-	db PAL_ICON_RED    ; pink
-	db PAL_ICON_PURPLE ; purple
-	db PAL_ICON_RED    ; orange
-	db PAL_ICON_BLUE   ; black
-	db PAL_ICON_GOLD   ; gold
-	assert_table_length NUM_CUSTOM_PALETTE_COLORS
-
 OverrideBillsPCIconPaletteWithCustom::
-; Input: bc/de = species/shiny icon colors from GetMonPalInBCDE.
-; Output: preserve that fallback, or replace it with the selected custom color family.
 	ld a, [wBufferMonAltSpecies]
 	cp EGG
 	ret z
-	ld a, [wBufferMonPalettePair]
-	ld l, a
-	call LoadMonNormalShinyOrCustomPalette.IsCustomPairValid
+	push bc
+	push de
+	ld hl, wBufferMonPokerusStatus
+	call GetMonRecordIconFamily
+	pop de
+	pop bc
 	ret nc
-
-	ld a, [wBufferMonAltSpecies]
-	call GetCustomMenuMonColor
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, OverridePartyMenuIconPaletteWithCustom.ColorMap
-	add hl, bc
-	ld a, [hl]
 	newfarjp GetIconPalInBCDE
 
-GetCustomMenuMonColor:
+GetMonRecordIconFamily:
+	push af
+	call ReadMonPaletteChoices
+	pop af
 	newfarcall ShouldUseSecondMenuMonColor
-	ld a, l
-	jr c, .selected
-	swap a
-.selected
-	and $f
+	jr nc, .light
+	ld b, d
+	ld c, e
+.light
+	bit MON_RGB_CHOICE_F, b
+	jr nz, GetMonRGBIconFamily
+	ld a, c
+	and a
+	ret z
+	dec a
+	ld hl, MonPresetIconFamilies
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	scf
 	ret
 
-; CopyMonNormalShinyOrCustomMiddleColors may also receive the zero player
-; sentinel, so every possible pointer from GetPlayerOrMonPalettePointer must be
-; readable through the PokemonPalettes bank passed to FarCopyBytes.
+GetMonRGBIconFamily:
+	res MON_RGB_CHOICE_F, b
+	srl b
+	rr c
+	push af
+	ld hl, MonRGBIconFamilies
+	add hl, bc
+	pop af
+	ld a, [hl]
+	jr nc, .low
+	swap a
+.low
+	and $f
+	scf
+	ret
+
+MonPresetIconFamilies:
+	table_width 1
+	db PAL_ICON_RED
+	db PAL_ICON_BLUE
+	db PAL_ICON_GREEN
+	db PAL_ICON_BROWN
+	db PAL_ICON_SILVER
+	db PAL_ICON_GOLD
+	db PAL_ICON_RED
+	db PAL_ICON_PURPLE
+	db PAL_ICON_RED
+	db PAL_ICON_BLUE
+	db PAL_ICON_GOLD
+	assert_table_length NUM_CUSTOM_PALETTE_COLORS
+
+INCLUDE "data/pokemon/rgb_icon_families.asm"
+
+; The player palette can also be read through the bank passed to FarCopyBytes.
 assert BANK(PokemonPalettes) == BANK(RedPlayerPalette)
 assert BANK(PokemonPalettes) == BANK(DeepRedPlayerPalette)
 assert BANK(PokemonPalettes) == BANK(GoldPlayerPalette)

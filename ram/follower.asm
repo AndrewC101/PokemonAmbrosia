@@ -8,8 +8,6 @@ wFollowerPendingPair:: db
 wFollowerPending:: db
 wFollowerWantedFacing:: db
 wFollowerOAMStart:: db
-wFollowerTestIndex:: db
-wFollowerTestPaletteMode:: db
 wFollowerShownFacing:: db
 wFollowerUploadCount:: db
 wFollowerRenderX:: db
@@ -18,7 +16,9 @@ wFollowerRenderTile:: db
 wFollowerRenderFlags:: db
 wFollowerBaseFlags:: db
 wFollowerDVs:: ds 2
+wFollowerCustomRecord:: db
 wFollowerCustomPair:: db
+	db
 wFollowerMiddleColors:: ds 4
 wFollowerDeferredCount:: db
 wFollowerStateEnd::
@@ -36,11 +36,12 @@ wFollowerRetry:: db
 wFollowerCandidateSpecies:: db
 wFollowerCandidateIndex:: db
 wFollowerCandidateDVs:: ds 2
-wFollowerCandidatePair:: db
+wFollowerTestIndex:: db
 wFollowerSpawnX:: db
 wFollowerSpawnY:: db
 wFollowerMenuContext:: db ; normal Start -> Pokémon list only; never saved
 wFollowerScriptFlags:: db ; explicit hide / automatic scene hold; never saved
+wFollowerTestPaletteMode:: db
 wFollowerLifecycleEnd::
 assert wFollowerLifecycleEnd <= $d000
 

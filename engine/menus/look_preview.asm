@@ -5,7 +5,11 @@ DEF LOOK_PREVIEW_LIST_Y EQU 4
 DEF LOOK_PREVIEW_WALK_TILE EQU 7 * 7
 DEF LOOK_PREVIEW_CANCEL_F EQU 0
 DEF LOOK_PREVIEW_GENDER_F EQU 1
+DEF LOOK_PREVIEW_MON_RGB_F EQU 2
 DEF NUM_LOOK_SKIN_TONES EQU 7
+DEF NUM_LOOK_MON_PRESETS EQU NUM_CUSTOM_PALETTE_COLORS - 1
+DEF LOOK_MON_CUSTOM_ROW EQU NUM_LOOK_MON_PRESETS + 1
+DEF NUM_LOOK_MON_OPTIONS EQU LOOK_MON_CUSTOM_ROW + 1
 
 ChoosePlayerAppearanceInField::
 	call OpenFieldLookPreview
@@ -90,33 +94,30 @@ ChoosePokemonColors:
 	hlcoord 2, 5
 	call DrawLookPreviewPortrait
 
-	ld hl, LightMonLookPreviewMenu
-	call ChooseLookOption
-	cp -1
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS
-	jr z, .default
-	call ResolveMonLookColor
-	swap a
-	ld [wPokemonPaletteEditorColor1], a
-
-	ld hl, DarkMonLookPreviewMenu
-	call ChooseLookOption
-	cp -1
-	ret z
-	cp NUM_CUSTOM_PALETTE_COLORS
-	jr z, .default
-	call ResolveMonLookPair
-	jr .commit
-
-.default
-	xor a
-.commit
-	ld b, a
-	ld a, MON_PALETTE_PAIR
+	ld a, MON_POKERUS
 	call GetPartyParamLocation
-	ld [hl], b
-	ret
+	ld de, wLookMonPalette
+	ld bc, MON_PALETTE_RECORD_SIZE
+	call CopyBytes
+	xor a
+	ld [wLookRGBOffset], a
+	ld hl, LightMonLookPreviewMenu
+	call ChooseLookMonColor
+	ret c
+
+	ld a, COLOR_SIZE
+	ld [wLookRGBOffset], a
+	ld hl, DarkMonLookPreviewMenu
+	call ChooseLookMonColor
+	ret c
+
+	ld a, MON_POKERUS
+	call GetPartyParamLocation
+	ld d, h
+	ld e, l
+	ld hl, wLookMonPalette
+	ld bc, MON_PALETTE_RECORD_SIZE
+	jp CopyBytes
 
 InitLookPreviewScreen:
 	xor a
@@ -274,7 +275,7 @@ DrawLookPreviewOptions:
 
 	ld hl, wLookPreviewCursor
 	call ReadLookPreviewPointer
-	lb bc, NUM_CUSTOM_PALETTE_COLORS + 1, 9
+	lb bc, NUM_LOOK_MON_OPTIONS, 9
 	call ClearBox
 
 	ld hl, wLookPreviewOptions
@@ -414,72 +415,153 @@ ApplyLookPlayerPalette:
 	newfarcall LoadPalette_White_Col1_Col2_Black
 	jr ShowLookPreviewPalette
 
-PreviewLightMonColor:
-	cp NUM_CUSTOM_PALETTE_COLORS
-	jr z, PreviewDefaultMonColor
-	push af
-	ld a, MON_PALETTE_PAIR
-	call GetPartyParamLocation
-	ld a, [hl]
-	call LoadLookMonPalette
-	pop af
-	call ResolveMonLookColor
-	ld hl, PokemonCustomLightColors
-	newfarcall LoadMonNormalShinyOrCustomPalette.GetColor
-	ldh a, [rWBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rWBK], a
-	ld hl, wBGPals1 palette LOOK_PREVIEW_PALETTE color 1
-	ld [hl], c
-	inc hl
-	ld [hl], b
-	pop af
-	ldh [rWBK], a
-	jr ShowLookPreviewPalette
-
-PreviewDarkMonColor:
-	cp NUM_CUSTOM_PALETTE_COLORS
-	jr z, PreviewDefaultMonColor
-	call ResolveMonLookPair
-	jr PreviewMonPair
-
-PreviewDefaultMonColor:
-	xor a
-PreviewMonPair:
-	call LoadLookMonPalette
-
 ShowLookPreviewPalette:
 	newfarcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
 	ret
 
-LoadLookMonPalette:
+ChooseLookMonColor:
+	push hl
+	call GetStagedLookMonChoice
+	bit MON_RGB_CHOICE_F, b
+	ld a, LOOK_MON_CUSTOM_ROW
+	jr nz, .initial
+	ld a, c
+	cp PAL_COLOR_GOLD
+	jr nz, .find_row
+	ld a, PAL_COLOR_YELLOW
+.find_row
+	ld hl, PokemonColorEditorColorOptions
+	ld de, 1
+	call IsInArray
+	ld a, b
+.initial
+	pop hl
+.choose
+	push hl
+	call ChooseLookOptionAt
+	pop hl
+	cp -1
+	jr z, .cancel
+	cp LOOK_MON_CUSTOM_ROW
+	jr z, .edit
+	call ResolveLookMonChoice
+	jr .save
+.edit
+	push hl
+	call EditLookRGB
+	pop hl
+	jr nz, .accept_rgb
+	ld a, LOOK_MON_CUSTOM_ROW
+	jr .choose
+.accept_rgb
+	call GetLookMonRGBChoice
+.save
+	call StageLookMonChoice
+	and a
+	ret
+.cancel
+	scf
+	ret
+
+GetStagedLookMonChoice:
+	ld hl, wLookMonPalette
+	newfarcall ReadMonPaletteChoices
+	ld a, [wLookRGBOffset]
+	and a
+	ret z
+	ld b, d
+	ld c, e
+	ret
+
+ResolveLookMonChoice:
+	cp LOOK_MON_CUSTOM_ROW
+	jr z, GetStagedLookMonChoice
+	ld hl, PokemonColorEditorColorOptions
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld c, [hl]
+	ld b, 0
+	ret
+
+PreviewLookMonColor:
+	call ResolveLookMonChoice
+
+PreviewLookMonChoice:
+	ld hl, wLookMonPalette
+	ld a, [hli]
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
 	push af
+	push de
+	call StageLookMonChoice
+	ld de, wBGPals1 palette LOOK_PREVIEW_PALETTE
+	call GetLookMonPaletteInputs
+	newfarcall LoadMonRecordPalette
+	call ShowLookPreviewPalette
+	pop de
+	pop af
+	ld hl, wLookMonPalette
+	ld [hli], a
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	ret
+
+StageLookMonChoice:
+	push bc
+	ld hl, wLookMonPalette
+	newfarcall ReadMonPaletteChoices
+	ld a, [wLookRGBOffset]
+	and a
+	jr nz, .dark
+	pop bc
+	jr .write
+.dark
+	pop de
+.write
+	ld hl, wLookMonPalette
+	newfarjp WriteMonPaletteChoices
+
+GetLookMonPaletteInputs:
+	push de
 	ld a, MON_DVS
 	call GetPartyParamLocation
 	ld b, h
 	ld c, l
-	pop af
-	ld l, a
-	ld de, wBGPals1 palette LOOK_PREVIEW_PALETTE
+	pop de
+	ld hl, wLookMonPalette
 	ld a, [wCurPartySpecies]
-	newfarjp LoadMonNormalShinyOrCustomPalette
-
-ResolveMonLookPair:
-	call ResolveMonLookColor
-	ld b, a
-	ld a, [wPokemonPaletteEditorColor1]
-	or b
 	ret
 
-ResolveMonLookColor:
-	ld e, a
-	ld d, 0
-	ld hl, PokemonColorEditorColorOptions
-	add hl, de
-	ld a, [hl]
+ResolveLookMonPalette:
+	ld de, wMonResolvedPalette
+	call GetLookMonPaletteInputs
+	newfarjp CopyMonRecordMiddleColors
+
+GetLookMonRGBChoice:
+	ld hl, wLookRGBComponents + 2
+	ld a, [hld]
+	ld b, a
+	rrca
+	rrca
+	and $c0
+	ld c, a
+	ld a, [hld]
+	add a
+	add a
+	add a
+	or c
+	or [hl]
+	ld c, a
+	ld a, b
+	srl a
+	srl a
+	or 1 << MON_RGB_CHOICE_F
+	ld b, a
 	ret
 
 MaleLookPreviewMenu:
@@ -503,13 +585,13 @@ ColorLookPreviewMenu:
 	dwcoord LOOK_PREVIEW_PLAYER_LIST_X, LOOK_PREVIEW_LIST_Y
 
 LightMonLookPreviewMenu:
-	db NUM_CUSTOM_PALETTE_COLORS + 1, 1 << LOOK_PREVIEW_CANCEL_F
-	dw LookLightMonTitle, PokemonColorEditorChoices, PreviewLightMonColor
+	db NUM_LOOK_MON_OPTIONS, (1 << LOOK_PREVIEW_CANCEL_F) | (1 << LOOK_PREVIEW_MON_RGB_F)
+	dw LookLightMonTitle, PokemonColorEditorChoices, PreviewLookMonColor
 	dwcoord LOOK_PREVIEW_POKEMON_LIST_X, LOOK_PREVIEW_LIST_Y
 
 DarkMonLookPreviewMenu:
-	db NUM_CUSTOM_PALETTE_COLORS + 1, 1 << LOOK_PREVIEW_CANCEL_F
-	dw LookDarkMonTitle, PokemonColorEditorChoices, PreviewDarkMonColor
+	db NUM_LOOK_MON_OPTIONS, (1 << LOOK_PREVIEW_CANCEL_F) | (1 << LOOK_PREVIEW_MON_RGB_F)
+	dw LookDarkMonTitle, PokemonColorEditorChoices, PreviewLookMonColor
 	dwcoord LOOK_PREVIEW_POKEMON_LIST_X, LOOK_PREVIEW_LIST_Y
 
 LookSpriteTitle:
@@ -617,6 +699,7 @@ LookHairPresets:
 	dw -1
 
 PokemonColorEditorChoices:
+	db "Default@"
 	db "Red@"
 	db "Blue@"
 	db "Green@"
@@ -627,11 +710,11 @@ PokemonColorEditorChoices:
 	db "Orange@"
 	db "Silver@"
 	db "Black@"
-	db "Gold@"
-	db "Default@"
+	db "Custom@"
 
 PokemonColorEditorColorOptions:
 	table_width 1
+	db MON_PALETTE_DEFAULT
 	db PAL_COLOR_RED
 	db PAL_COLOR_BLUE
 	db PAL_COLOR_GREEN
@@ -642,6 +725,6 @@ PokemonColorEditorColorOptions:
 	db PAL_COLOR_ORANGE
 	db PAL_COLOR_SILVER
 	db PAL_COLOR_BLACK
-	db PAL_COLOR_GOLD
-	assert_table_length NUM_CUSTOM_PALETTE_COLORS
+	db -1
+	assert_table_length NUM_LOOK_MON_OPTIONS
 

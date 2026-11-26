@@ -440,6 +440,7 @@ Gen2ToGen2LinkComms:
 	ld de, wOTPartyMons
 	ld bc, wOTPartyDataEnd - wOTPartyMons
 	call CopyBytes
+	newfarcall ImportLinkPartyPalettes
 
 	ld a, LOW(wOTPartyMonOTs)
 	ld [wUnusedNamesPointer], a
@@ -884,6 +885,7 @@ Link_PrepPartyData_Gen2:
 	ld hl, wPartyMonNicknames
 	ld bc, PARTY_LENGTH * MON_NAME_LENGTH
 	call CopyBytes
+	newfarcall ExportLinkPartyPalettes
 
 ; Okay, we did all that.  Now, are we in the trade center?
 	ld a, [wLinkMode]

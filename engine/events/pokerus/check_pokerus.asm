@@ -11,8 +11,11 @@ _CheckPokerus:
 	ld de, PARTYMON_STRUCT_LENGTH
 .Check:
 	ld a, [hl]
-	and $0f ; only the bottom nybble is used
-	jr nz, .HasPokerus
+	and MON_POKERUS_MASK
+	jr z, .next
+	cp MON_POKERUS_CURED
+	jr c, .HasPokerus
+.next
 ; Next PartyMon
 	add hl, de
 	dec b

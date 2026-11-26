@@ -863,6 +863,8 @@ EncodeBufferMon:
 	ld [hli], a
 	dec b
 	jr nz, .charmap_loop
+	ld hl, wEncodedBufferMonEnd - 1
+	set 7, [hl]
 	; fallthrough
 ChecksumBufferMon:
 ; Calculate and write a checksum and to BufferMon. Use a nonzero baseline to
@@ -871,6 +873,11 @@ ChecksumBufferMon:
 	; savemon struct except for nickname
 	ld bc, wEncodedBufferMon
 	ld hl, 127
+	ld a, [wEncodedBufferMonEnd - 1]
+	bit 7, a
+	jr z, .seeded
+	inc h
+.seeded
 	lb de, SAVEMON_NICKNAME, 0
 	call .DoChecksum
 
@@ -885,11 +892,10 @@ ChecksumBufferMon:
 	ld d, h
 	ld e, l
 
-	; Checksum is 16bit, further ones are padded with zeroes.
-	; The padding being nonzero is also counted as invalid.
 	ld b, 0 ; used for checksum error detection
 	ld hl, wEncodedBufferMonNickname
-	ld c, SAVEMON_STRUCT_LENGTH - SAVEMON_NICKNAME
+	ld c, 16
+	assert SAVEMON_STRUCT_LENGTH - SAVEMON_NICKNAME == 17
 .WriteChecksum:
 	ld a, [hl]
 	and %01111111
@@ -930,10 +936,8 @@ ChecksumBufferMon:
 
 DecodeBufferMon:
 ; Decodes BufferMon. Returns nz. Sets carry in case of invalid checksum.
-	; First, run a checksum check. Don't use the result until we've done
-	; character replacements back to their original state
 	call ChecksumBufferMon
-	push af
+	jr nz, .bad_egg
 
 	; Reverse the 7bit character encoding back to its original state.
 	ld hl, wEncodedBufferMonNickname
@@ -1011,9 +1015,9 @@ DecodeBufferMon:
 	dec b
 	jr nz, .pp_loop
 
-	pop af
-	jr z, SetTempPartyMonData
+	jr SetTempPartyMonData
 
+.bad_egg
 	ld hl, BadEgg
 	ld de, wBufferMon
 	ld bc, BadEggEnd - BadEgg

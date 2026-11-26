@@ -161,6 +161,10 @@ GetLookSavedRGBPointer:
 
 GetLookPreviewRGBPointer:
 	ld hl, wResolvedPlayerPalette
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr z, GetLookRGBPointer
+	ld hl, wMonResolvedPalette
 GetLookRGBPointer:
 	ld a, [wLookRGBOffset]
 	ld e, a
@@ -173,8 +177,17 @@ EditLookRGB:
 	push af
 	ld a, TRUE
 	ldh [hInMenu], a
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr nz, .mon
 	call ResolveCurrentLookPalette
 	call ReadLookRGBComponents
+	jr .ready
+.mon
+	call ResolveLookMonPalette
+	call ReadLookRGBComponents
+	call QuantizeLookMonRGB
+.ready
 	xor a
 	ld [wMenuCursorY], a
 	call DrawLookRGBScreen
@@ -201,8 +214,13 @@ EditLookRGB:
 	bit B_PAD_RIGHT, a
 	jr z, .loop
 	call GetLookRGBChannelAddress
-	ld a, [hl]
-	cp 31
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	ld a, 31
+	jr z, .limit
+	ld a, 7
+.limit
+	cp [hl]
 	jr z, .loop
 	inc [hl]
 	jr .update
@@ -213,7 +231,14 @@ EditLookRGB:
 	jr z, .loop
 	dec [hl]
 .update
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr nz, .mon_rgb
 	call ShowLookRGBColor
+	jr .redraw
+.mon_rgb
+	call GetLookMonRGBChoice
+	call PreviewLookMonChoice
 	jr .redraw
 .up
 	ld hl, wMenuCursorY
@@ -239,6 +264,11 @@ EditLookRGB:
 .exit
 	push bc
 	hlcoord 2, 6, wAttrmap
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr z, .clear_bars
+	hlcoord 11, 6, wAttrmap
+.clear_bars
 	lb bc, 7, 8
 	xor a
 	call FillBoxWithByte
@@ -284,6 +314,17 @@ ReadLookRGBComponents:
 	ld [hl], a
 	ret
 
+QuantizeLookMonRGB:
+	ld hl, wLookRGBComponents
+	ld b, 3
+.loop
+	ld a, [hl]
+	call QuantizeMonRGBChannel
+	ld [hli], a
+	dec b
+	jr nz, .loop
+	ret
+
 ShowLookRGBColor:
 	ld hl, wLookRGBComponents + 1
 	ld a, [hli]
@@ -323,15 +364,31 @@ DrawLookRGBScreen:
 	call ShowLookPreviewPalette
 	hlcoord 1, 4
 	lb bc, NUM_PLAYER_BASE_COLORS + 1, 9
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr z, .clear_list
+	hlcoord 10, 4
+	lb bc, NUM_LOOK_MON_OPTIONS, 9
+.clear_list
 	call ClearBox
 	hlcoord 1, 1
 	lb bc, 1, SCREEN_WIDTH - 2
 	call ClearBox
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr nz, .mon_title
 	ld de, .Skin
 	ld a, [wLookRGBOffset]
 	and a
 	jr z, .title
 	ld de, .Hair
+	jr .title
+.mon_title
+	ld de, .Light
+	ld a, [wLookRGBOffset]
+	and a
+	jr z, .title
+	ld de, .Dark
 .title
 	hlcoord 1, 1
 	call PlaceString
@@ -345,6 +402,10 @@ DrawLookRGBScreen:
 	db "Custom skin tone@"
 .Hair:
 	db "Custom hair colour@"
+.Light:
+	db "Custom light RGB@"
+.Dark:
+	db "Custom dark RGB@"
 .Adjust:
 	db "← → Adjust@"
 .Buttons:
@@ -353,15 +414,25 @@ DrawLookRGBScreen:
 DrawLookRGBSliders:
 	ld de, wLookRGBComponents
 	hlcoord 1, 5
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
+	jr z, .first
+	hlcoord 10, 5
+.first
 	lb bc, 0, 'R'
-	call .row
-	inc de
-	hlcoord 1, 8
+	call .next_row
 	lb bc, 1, 'G'
-	call .row
-	inc de
-	hlcoord 1, 11
+	call .next_row
 	lb bc, 2, 'B'
+	jr .row
+.next_row
+	push hl
+	call .row
+	pop hl
+	inc de
+	ld bc, 3 * SCREEN_WIDTH
+	add hl, bc
+	ret
 .row
 	push bc
 	push hl
@@ -386,10 +457,19 @@ DrawLookRGBSliders:
 	push af
 	ld bc, SCREEN_WIDTH + 1
 	add hl, bc
+	ld a, [wLookPreviewFlags]
+	bit LOOK_PREVIEW_MON_RGB_F, a
 	ld a, [de]
+	jr nz, .mon_bar
 	add 3
 	srl a
 	srl a
+	jr .width
+.mon_bar
+	and a
+	jr z, .width
+	inc a
+.width
 	ld b, a
 	ld c, 8
 	pop af

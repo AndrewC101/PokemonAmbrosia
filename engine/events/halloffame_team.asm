@@ -29,15 +29,13 @@ HOF_ShowTeam:
 	call .GetSlotMon
 	jr c, .player_palette
 	ld a, [wHallOfFameMonCounter]
-	ld e, a
-	ld d, 0
 	ld hl, wHOFTeamPalettePairs
-	add hl, de
-	ld l, [hl]
+	ld bc, MON_PALETTE_RECORD_SIZE
+	call AddNTimes
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonDVs
 	ld de, wBGPals1
-	newfarcall LoadMonNormalShinyOrCustomPalette
+	newfarcall LoadMonRecordPalette
 	ld a, [wHallOfFameMonCounter]
 	inc a
 	call .KeepPalette
@@ -381,6 +379,6 @@ HOF_ShowTeam:
 HOF_ShowCeremonyTeam:
 	ld hl, wHallOfFamePalettePairs
 	ld de, wHOFTeamPalettePairs
-	ld bc, PARTY_LENGTH
+	ld bc, PARTY_LENGTH * MON_PALETTE_RECORD_SIZE
 	call CopyBytes
 	jp HOF_ShowTeam

@@ -42,7 +42,6 @@ PokemonSpriteColorRules:
 	mon_color_rule SHELLDER, 1, 1
 	mon_color_rule CLOYSTER, 1, 1
 	mon_color_rule GASTLY, 1, 1
-	mon_color_rule GENGAR, 0, 1
 	mon_color_rule BAXCALIBUR, 1, 1
 	mon_color_rule EXEGGCUTE, 1, 1
 	mon_color_rule EXEGGUTOR, 1, 1
